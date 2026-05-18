@@ -1,0 +1,13 @@
+{
+  "name": "threshold_0.5_minlen_1",
+  "threshold": 0.5,
+  "min_length": 1.0,
+  "source_audio": "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren.mp3",
+  "audio_path": "/content/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren.mp3",
+  "run_id": "20260518_081759",
+  "model_config_name": "resnet_with_augmentation",
+  "sample_rate": 8000,
+  "probability_fps": 42.968954553955484,
+  "file_length_seconds": 1069.4,
+  "save_audio_files": true
+}

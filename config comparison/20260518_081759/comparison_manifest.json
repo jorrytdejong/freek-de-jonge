@@ -1,0 +1,166 @@
+{
+  "source_audio": "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren.mp3",
+  "audio_path": "/content/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren.mp3",
+  "run_id": "20260518_081759",
+  "run_root": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759",
+  "model_config_name": "resnet_with_augmentation",
+  "thresholds": [
+    0.3,
+    0.5,
+    0.7
+  ],
+  "min_lengths": [
+    0.2,
+    0.6,
+    1.0
+  ],
+  "configs": [
+    {
+      "name": "threshold_0.3_minlen_0.2",
+      "threshold": 0.3,
+      "min_length": 0.2
+    },
+    {
+      "name": "threshold_0.3_minlen_0.6",
+      "threshold": 0.3,
+      "min_length": 0.6
+    },
+    {
+      "name": "threshold_0.3_minlen_1",
+      "threshold": 0.3,
+      "min_length": 1.0
+    },
+    {
+      "name": "threshold_0.5_minlen_0.2",
+      "threshold": 0.5,
+      "min_length": 0.2
+    },
+    {
+      "name": "threshold_0.5_minlen_0.6",
+      "threshold": 0.5,
+      "min_length": 0.6
+    },
+    {
+      "name": "threshold_0.5_minlen_1",
+      "threshold": 0.5,
+      "min_length": 1.0
+    },
+    {
+      "name": "threshold_0.7_minlen_0.2",
+      "threshold": 0.7,
+      "min_length": 0.2
+    },
+    {
+      "name": "threshold_0.7_minlen_0.6",
+      "threshold": 0.7,
+      "min_length": 0.6
+    },
+    {
+      "name": "threshold_0.7_minlen_1",
+      "threshold": 0.7,
+      "min_length": 1.0
+    }
+  ],
+  "summary_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/comparison_summary.csv",
+  "results": [
+    {
+      "config_name": "threshold_0.3_minlen_0.2",
+      "threshold": 0.3,
+      "min_length": 0.2,
+      "laugh_count": 86,
+      "total_laughter_seconds": 685.9138255968311,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.2",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.2/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.2/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.2/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.3_minlen_0.6",
+      "threshold": 0.3,
+      "min_length": 0.6,
+      "laugh_count": 86,
+      "total_laughter_seconds": 685.9138255968311,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.6",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.6/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.6/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_0.6/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.3_minlen_1",
+      "threshold": 0.3,
+      "min_length": 1.0,
+      "laugh_count": 84,
+      "total_laughter_seconds": 684.0985615111746,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_1",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_1/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_1/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.3_minlen_1/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.5_minlen_0.2",
+      "threshold": 0.5,
+      "min_length": 0.2,
+      "laugh_count": 80,
+      "total_laughter_seconds": 381.275275837305,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.2",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.2/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.2/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.2/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.5_minlen_0.6",
+      "threshold": 0.5,
+      "min_length": 0.6,
+      "laugh_count": 79,
+      "total_laughter_seconds": 380.8098235076495,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.6",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.6/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.6/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_0.6/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.5_minlen_1",
+      "threshold": 0.5,
+      "min_length": 1.0,
+      "laugh_count": 72,
+      "total_laughter_seconds": 375.22439555178323,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_1",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_1/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_1/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.5_minlen_1/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.7_minlen_0.2",
+      "threshold": 0.7,
+      "min_length": 0.2,
+      "laugh_count": 54,
+      "total_laughter_seconds": 146.94330047224244,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.2",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.2/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.2/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.2/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.7_minlen_0.6",
+      "threshold": 0.7,
+      "min_length": 0.6,
+      "laugh_count": 53,
+      "total_laughter_seconds": 146.40803029313852,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.6",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.6/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.6/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_0.6/manual_evaluation.csv"
+    },
+    {
+      "config_name": "threshold_0.7_minlen_1",
+      "threshold": 0.7,
+      "min_length": 1.0,
+      "laugh_count": 42,
+      "total_laughter_seconds": 138.16952405823596,
+      "output_folder": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_1",
+      "timestamps_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_1/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_timestamps.json",
+      "run_config_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_1/run_config.json",
+      "manual_evaluation_csv": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_comparisons/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260518_081759/threshold_0.7_minlen_1/manual_evaluation.csv"
+    }
+  ]
+}
