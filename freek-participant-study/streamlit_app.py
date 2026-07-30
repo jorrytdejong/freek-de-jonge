@@ -1,14 +1,16 @@
+import os
 from html import escape
+from pathlib import Path
 from urllib.parse import urlencode
 
 import streamlit as st
-import streamlit.components.v1 as components
 
 from app.assignment import (
     ParticipantAssignment,
     assignment_fingerprint,
     build_assignment,
 )
+from app.config import STUDY_VERSION
 from app.health import health_snapshot
 from app.participant import ProfileValidationError, validate_profile
 from app.ratings import (
@@ -25,6 +27,8 @@ from app.sessions import (
     resolve_session,
 )
 from app.stimuli import JokeGroup, StimulusValidationError, load_stimuli
+from app.storage import CSVProgressStorage, ProgressStorageError
+from app.storage.csv_storage import DEFAULT_PROGRESS_PATH
 
 
 st.set_page_config(
@@ -35,6 +39,14 @@ st.set_page_config(
 )
 
 health = health_snapshot()
+progress_storage = CSVProgressStorage(
+    Path(
+        os.environ.get(
+            "FREEK_STUDY_PROGRESS_PATH",
+            str(DEFAULT_PROGRESS_PATH),
+        )
+    )
+)
 SCROLL_TO_TOP_KEY = "navigation:scroll_to_top"
 SCROLL_REQUEST_COUNTER_KEY = "navigation:scroll_request_counter"
 
@@ -52,7 +64,7 @@ def apply_requested_scroll() -> None:
     if request_number is None:
         return
 
-    components.html(
+    st.html(
         f"""
         <script>
             const requestNumber = {request_number};
@@ -85,7 +97,7 @@ def apply_requested_scroll() -> None:
             }});
         </script>
         """,
-        height=1,
+        unsafe_allow_javascript=True,
     )
 
 
@@ -107,6 +119,20 @@ def render_footer() -> None:
             <span class="study-footer-mark" aria-hidden="true"></span>
             <span>Onderzoeksversie {health["study_version"]}</span>
         </footer>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_save_status(session: ParticipantSession) -> None:
+    if st.session_state.get(f"saved_at:{session.session_id}") is None:
+        return
+    st.markdown(
+        """
+        <div class="save-status">
+            <span class="save-status-mark" aria-hidden="true"></span>
+            <span>Opgeslagen</span>
+        </div>
         """,
         unsafe_allow_html=True,
     )
@@ -183,7 +209,10 @@ def render_participant_start(
     render_footer()
 
 
-def render_participant_intro(session: ParticipantSession) -> None:
+def render_participant_intro(
+    session: ParticipantSession,
+    assignment: ParticipantAssignment,
+) -> None:
     render_header()
     with st.container(key="participant_intro"):
         back_href = f"?{urlencode({'session': session.session_id})}"
@@ -276,6 +305,11 @@ def render_participant_intro(session: ParticipantSession) -> None:
                     "freek_familiarity": profile.freek_familiarity,
                     "consent": profile.consent,
                 }
+                persist_progress(
+                    session,
+                    assignment,
+                    current_page="profile-complete",
+                )
                 st.query_params["page"] = "profile-complete"
                 st.rerun()
 
@@ -288,7 +322,7 @@ def render_profile_complete(
 ) -> None:
     profile = st.session_state.get(f"profile:{session.session_id}")
     if profile is None:
-        render_participant_intro(session)
+        render_participant_intro(session, assignment)
         return
 
     render_header()
@@ -306,6 +340,11 @@ def render_profile_complete(
             type="primary",
             icon=":material/arrow_forward:",
         ):
+            persist_progress(
+                session,
+                assignment,
+                current_page="group-1",
+            )
             request_scroll_to_top()
             st.query_params["page"] = "group-1"
             st.rerun()
@@ -326,6 +365,140 @@ def rating_widget_key(
     dimension: str,
 ) -> str:
     return f"rating:{session_id}:{variant_id}:{dimension}"
+
+
+def collect_progress_state(
+    session: ParticipantSession,
+    assignment: ParticipantAssignment,
+) -> tuple[
+    dict[str, object] | None,
+    dict[str, dict[str, object]],
+    dict[str, dict[str, object]],
+]:
+    profile = st.session_state.get(f"profile:{session.session_id}")
+    responses: dict[str, dict[str, object]] = {}
+    drafts: dict[str, dict[str, object]] = {}
+    for assigned_group in assignment.groups:
+        group_id = assigned_group.group_id
+        response = st.session_state.get(
+            group_response_key(session.session_id, group_id)
+        )
+        draft = st.session_state.get(
+            group_draft_key(session.session_id, group_id)
+        )
+        if response is not None:
+            responses[group_id] = response
+        if draft is not None:
+            drafts[group_id] = draft
+    return profile, responses, drafts
+
+
+def persist_progress(
+    session: ParticipantSession,
+    assignment: ParticipantAssignment,
+    *,
+    current_page: str,
+) -> None:
+    profile, responses, drafts = collect_progress_state(
+        session,
+        assignment,
+    )
+    try:
+        saved = progress_storage.save_progress(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+            current_page=current_page,
+            profile=profile,
+            responses=responses,
+            drafts=drafts,
+        )
+    except ProgressStorageError:
+        st.error(
+            "Je voortgang kon niet veilig worden opgeslagen. "
+            "Probeer het opnieuw voordat je verdergaat."
+        )
+        st.stop()
+    st.session_state[f"saved_at:{session.session_id}"] = (
+        saved.updated_at.isoformat()
+    )
+
+
+def hydrate_progress(
+    session: ParticipantSession,
+    assignment: ParticipantAssignment,
+) -> str | None:
+    hydrated_key = f"progress_hydrated:{session.session_id}"
+    if st.session_state.get(hydrated_key):
+        return None
+
+    try:
+        saved = progress_storage.load_progress(session.session_id)
+    except ProgressStorageError:
+        st.error(
+            "De opgeslagen voortgang is beschadigd en kan niet veilig "
+            "worden geopend."
+        )
+        st.stop()
+
+    st.session_state[hydrated_key] = True
+    if saved is None:
+        return None
+    if saved.study_version != STUDY_VERSION or saved.is_test != session.is_test:
+        st.error(
+            "De opgeslagen voortgang hoort bij een andere onderzoeksversie."
+        )
+        st.stop()
+
+    assigned_group_ids = {
+        assigned_group.group_id for assigned_group in assignment.groups
+    }
+    if (
+        set(saved.responses) - assigned_group_ids
+        or set(saved.drafts) - assigned_group_ids
+    ):
+        st.error(
+            "De opgeslagen voortgang past niet bij deze onderzoekslink."
+        )
+        st.stop()
+
+    allowed_pages = {
+        "intro",
+        "profile-complete",
+        "groups-complete",
+        *(
+            f"group-{group_index + 1}"
+            for group_index in range(len(assignment.groups))
+        ),
+    }
+    if saved.current_page not in allowed_pages:
+        st.error("De opgeslagen positie in het onderzoek is niet geldig.")
+        st.stop()
+
+    if saved.profile is not None:
+        try:
+            validate_profile(
+                age=saved.profile.get("age"),
+                freek_familiarity=saved.profile.get("freek_familiarity"),
+                consent=saved.profile.get("consent", False),
+            )
+        except ProfileValidationError:
+            st.error("De opgeslagen deelnemersgegevens zijn niet geldig.")
+            st.stop()
+        st.session_state[f"profile:{session.session_id}"] = saved.profile
+
+    for group_id, response in saved.responses.items():
+        st.session_state[
+            group_response_key(session.session_id, group_id)
+        ] = response
+    for group_id, draft in saved.drafts.items():
+        st.session_state[
+            group_draft_key(session.session_id, group_id)
+        ] = draft
+    st.session_state[f"saved_at:{session.session_id}"] = (
+        saved.updated_at.isoformat()
+    )
+    return saved.current_page
 
 
 def restore_group_widgets(
@@ -391,7 +564,7 @@ def render_rating_group(
 ) -> None:
     profile = st.session_state.get(f"profile:{session.session_id}")
     if profile is None:
-        render_participant_intro(session)
+        render_participant_intro(session, assignment)
         return
 
     assigned_group = assignment.groups[group_index]
@@ -412,6 +585,7 @@ def render_rating_group(
             group_number / group_count,
             text=f"Jokegroep {group_number} van {group_count}",
         )
+        render_save_status(session)
         st.markdown(
             f"""
             <div class="rating-heading">
@@ -426,9 +600,8 @@ def render_rating_group(
         )
 
         raw_ratings: dict[str, dict[str, int | None]] = {}
-        with st.form(
+        with st.container(
             key=f"group_rating_{session.session_id}_{joke_group.group_id}",
-            clear_on_submit=False,
             border=False,
         ):
             for variant in displayed_variants:
@@ -455,7 +628,6 @@ def render_rating_group(
                         funniness_value = st.select_slider(
                             "Grappigheid",
                             options=[0, 1, 2, 3, 4, 5],
-                            value=0,
                             format_func=lambda value: (
                                 "Kies" if value == 0 else str(value)
                             ),
@@ -478,7 +650,6 @@ def render_rating_group(
                         freek_value = st.select_slider(
                             "Lijkt op Freek de Jonge",
                             options=[0, 1, 2, 3, 4, 5],
-                            value=0,
                             format_func=lambda value: (
                                 "Kies" if value == 0 else str(value)
                             ),
@@ -520,13 +691,14 @@ def render_rating_group(
             with previous_column:
                 previous_clicked = False
                 if group_index > 0:
-                    previous_clicked = st.form_submit_button(
+                    previous_clicked = st.button(
                         "Vorige groep",
                         icon=":material/arrow_back:",
                         use_container_width=True,
+                        key=f"previous_group_{joke_group.group_id}",
                     )
             with next_column:
-                next_clicked = st.form_submit_button(
+                next_clicked = st.button(
                     (
                         "Groepen afronden"
                         if group_number == group_count
@@ -535,14 +707,74 @@ def render_rating_group(
                     type="primary",
                     icon=":material/arrow_forward:",
                     use_container_width=True,
+                    key=f"next_group_{joke_group.group_id}",
                 )
 
-        if previous_clicked:
+        draft_payload = {
+            "group_id": joke_group.group_id,
+            "ratings": raw_ratings,
+            "comment": comment,
+        }
+        existing_draft = st.session_state.get(
+            group_draft_key(session.session_id, joke_group.group_id)
+        )
+        response = st.session_state.get(
+            group_response_key(session.session_id, joke_group.group_id)
+        )
+        response_ratings = (
+            {
+                rating["variant_id"]: {
+                    "funniness": rating["funniness"],
+                    "freek_similarity": rating["freek_similarity"],
+                }
+                for rating in response["ratings"]
+            }
+            if response is not None
+            else None
+        )
+        matches_response = (
+            response is not None
+            and response_ratings == raw_ratings
+            and response["comment"] == comment.strip()
+        )
+        has_draft_content = any(
+            value is not None
+            for rating in raw_ratings.values()
+            for value in rating.values()
+        ) or bool(comment.strip())
+
+        progress_changed = False
+        if matches_response or not has_draft_content:
+            if existing_draft is not None:
+                st.session_state.pop(
+                    group_draft_key(
+                        session.session_id,
+                        joke_group.group_id,
+                    ),
+                    None,
+                )
+                progress_changed = True
+        elif existing_draft != draft_payload:
             store_group_draft(
                 session,
                 joke_group,
                 raw_ratings,
                 comment,
+            )
+            progress_changed = True
+
+        if progress_changed:
+            persist_progress(
+                session,
+                assignment,
+                current_page=f"group-{group_number}",
+            )
+
+        if previous_clicked:
+            persist_progress(
+                session,
+                assignment,
+                current_page=f"group-{group_index}",
             )
             request_scroll_to_top()
             st.query_params["page"] = f"group-{group_index}"
@@ -591,12 +823,18 @@ def render_rating_group(
                     ),
                     None,
                 )
-                request_scroll_to_top()
-                st.query_params["page"] = (
+                next_page = (
                     "groups-complete"
                     if group_number == group_count
                     else f"group-{group_number + 1}"
                 )
+                persist_progress(
+                    session,
+                    assignment,
+                    current_page=next_page,
+                )
+                request_scroll_to_top()
+                st.query_params["page"] = next_page
                 st.rerun()
     render_footer()
     apply_requested_scroll()
@@ -623,6 +861,7 @@ def render_groups_complete(
     render_header()
     with st.container(key="rating_complete"):
         st.progress(1.0, text="5 van 5 jokegroepen beoordeeld")
+        render_save_status(session)
         st.markdown(
             """
             <div class="completion-mark" aria-hidden="true"></div>
@@ -638,6 +877,11 @@ def render_groups_complete(
                 icon=":material/arrow_back:",
                 use_container_width=True,
             ):
+                persist_progress(
+                    session,
+                    assignment,
+                    current_page=f"group-{len(assignment.groups)}",
+                )
                 request_scroll_to_top()
                 st.query_params["page"] = f"group-{len(assignment.groups)}"
                 st.rerun()
@@ -1042,6 +1286,23 @@ st.markdown(
             font-weight: 650;
         }
 
+        .save-status {
+            align-items: center;
+            color: var(--study-muted);
+            display: flex;
+            font-size: 0.82rem;
+            gap: 0.5rem;
+            margin: -1.5rem 0 2rem;
+        }
+
+        .save-status-mark {
+            background: var(--study-green);
+            border-radius: 50%;
+            display: inline-block;
+            height: 0.45rem;
+            width: 0.45rem;
+        }
+
         .rating-context {
             color: var(--study-green);
             font-size: 0.9rem;
@@ -1065,7 +1326,7 @@ st.markdown(
             margin: 0;
         }
 
-        .st-key-rating_group [data-testid="stForm"] {
+        .st-key-rating_group [class*="st-key-group_rating_"] {
             border-top: 2px solid var(--study-green);
         }
 
@@ -1128,7 +1389,7 @@ st.markdown(
             padding-top: 2rem;
         }
 
-        .st-key-rating_group [data-testid="stFormSubmitButton"] button,
+        .st-key-rating_group [data-testid="stButton"] button,
         .st-key-rating_complete [data-testid="stButton"] button {
             border-radius: 6px;
             font-size: 1rem;
@@ -1136,16 +1397,8 @@ st.markdown(
             min-height: 3.25rem;
         }
 
-        .st-key-rating_group [data-testid="stFormSubmitButton"] {
+        .st-key-rating_group [data-testid="stButton"] {
             margin-top: 1rem;
-        }
-
-        .st-key-rating_group [data-testid="stForm"] >
-        div[data-testid="stVerticalBlock"] >
-        div[data-testid="stElementContainer"]:has(
-            [data-testid="stHorizontalBlock"]
-        ):last-child {
-            margin-top: 1.5rem;
         }
 
         .st-key-rating_complete [data-testid="stHorizontalBlock"] {
@@ -1338,13 +1591,23 @@ if session_access.status is not SessionAccessStatus.VALID:
 participant_session = session_access.session
 assert participant_session is not None
 participant_assignment = build_assignment(participant_session, stimulus_groups)
+resume_page = hydrate_progress(
+    participant_session,
+    participant_assignment,
+)
 page = st.query_params.get("page")
+if page is None and resume_page is not None:
+    st.query_params["page"] = resume_page
+    st.rerun()
 group_pages = {
     f"group-{group_index + 1}": group_index
     for group_index in range(len(participant_assignment.groups))
 }
 if page == "intro":
-    render_participant_intro(participant_session)
+    render_participant_intro(
+        participant_session,
+        participant_assignment,
+    )
 elif page == "profile-complete":
     render_profile_complete(participant_session, participant_assignment)
 elif page in group_pages:

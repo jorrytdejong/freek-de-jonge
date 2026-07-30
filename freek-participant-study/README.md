@@ -3,9 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 6 adds the full
-five-group flow with stable randomized assignments, Previous and Next
-navigation, progress, and temporary in-session draft retention.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 7 adds durable
+local autosave and resume for profiles, partial ratings, completed groups,
+comments, and the participant's current position.
 
 ## Requirements
 
@@ -72,24 +72,25 @@ curl --fail http://localhost:8501/_stcore/health
 
 The expected response is `ok`.
 
-## Checkpoint 6 Acceptance Test
+## Checkpoint 7 Acceptance Test
 
 1. Complete the checkpoint-4 participant questions.
 2. Choose `Verder` on the profile confirmation screen.
-3. Confirm the progress indicator starts at `Jokegroep 1 van 5`.
-4. Complete the first group and choose `Volgende groep`.
-5. Add a few ratings or a comment in the second group and choose
-   `Vorige groep`.
-6. Return to the second group and confirm its temporary draft remains.
-7. Complete all five groups and inspect the completion screen.
-8. Choose `Terug naar laatste groep`, revise a rating, and finish again.
-9. Open another test link and confirm its group and variant order differs.
-10. Refresh and refill the profile to confirm assignment order remains stable.
-11. Resize to a narrow mobile width and inspect the stacked navigation.
-12. Run the automated and HTTP health checks above.
+3. Change two sliders and add a partial group comment.
+4. Confirm the `Opgeslagen` status is visible.
+5. Refresh the page and confirm the two ratings and comment return.
+6. Close the tab, reopen the same anonymous link, and confirm it resumes on the
+   saved group.
+7. Complete the group, continue, and reopen the link again.
+8. Confirm the completed group and current position are retained.
+9. Move backward, change a previous answer, and verify the latest value returns
+   after another refresh.
+10. Run the automated and HTTP health checks above.
 
-Checkpoint 6 keeps the profile, responses, and drafts only in Streamlit session
-memory. Durable autosave, pause, and resume are introduced in checkpoint 7.
+Development progress is stored in the ignored file
+`data/runtime/progress.csv`. Set `FREEK_STUDY_PROGRESS_PATH` to use a different
+local path. Production Google Sheets storage is added later through the same
+storage contract.
 
 The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).
 

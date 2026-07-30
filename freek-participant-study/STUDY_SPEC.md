@@ -79,7 +79,8 @@ The second scale covers both style and subject matter.
 Sliders must begin in an unanswered state. An untouched slider must not silently
 count as a neutral rating.
 
-For checkpoint 6, the complete five-group rating flow is implemented:
+For checkpoint 7, the complete five-group rating and resume flow is
+implemented:
 
 - the deterministic assignment order maps to neutral labels `Versie A` through
   `Versie H`;
@@ -93,11 +94,14 @@ For checkpoint 6, the complete five-group rating flow is implemented:
 - choosing `3` is therefore distinguishable from leaving a slider untouched;
 - all 16 ratings are required before the group response is accepted;
 - the group comment remains optional;
-- Previous and Next navigation preserves completed responses and temporary
-  drafts within the active Streamlit session;
+- Previous and Next navigation preserves completed responses and partial
+  drafts;
 - a progress bar identifies the current group out of five;
-- validated responses and temporary drafts remain in Streamlit session memory
-  until durable autosave is introduced in checkpoint 7.
+- a compact `Opgeslagen` status confirms that persistent progress exists;
+- every slider or comment change, validated profile, and navigation action
+  updates the durable progress snapshot;
+- reopening the anonymous link restores the profile, current page, completed
+  groups, partial ratings, comments, group order, and variant order.
 
 ## Participant Questions
 
@@ -150,6 +154,26 @@ There is no attention check.
 - Reopening the same anonymous link restores assignment, order, answers, and
   position.
 - A final review page precedes submission.
+
+Checkpoint 7 stores local development progress in
+`data/runtime/progress.csv`. The fixed columns are:
+
+- `session_id`
+- `study_version`
+- `is_test`
+- `current_page`
+- `profile_json`
+- `responses_json`
+- `drafts_json`
+- `created_at`
+- `updated_at`
+
+The structured fields are JSON objects inside CSV cells. The complete file is
+written to a temporary sibling file, flushed, and atomically replaced. Invalid
+headers, malformed JSON, duplicate sessions, and invalid timestamps block reads
+and writes rather than silently discarding data. The runtime file is excluded
+from Git. `updated_at` records save events only; response durations are not
+measured.
 
 ## Session Rules
 
