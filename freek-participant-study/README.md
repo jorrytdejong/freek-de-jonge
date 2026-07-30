@@ -3,9 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 3 adds fixed
-anonymous test sessions, participant-link access control, and deterministic
-assignment ordering. The rating flow is not active yet.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 4 adds the Dutch
+participant information, consent, exact-age question, familiarity scale, and
+required-field validation. The rating flow is not active yet.
 
 ## Requirements
 
@@ -72,14 +72,18 @@ curl --fail http://localhost:8501/_stcore/health
 
 The expected response is `ok`.
 
-## Checkpoint 3 Acceptance Test
+## Checkpoint 4 Acceptance Test
 
-1. Open the app without a `session` query parameter and confirm access stops.
-2. Open an unknown session ID and confirm it is rejected.
-3. Open several test links and confirm the test-session notice appears.
-4. Refresh one test link and confirm the page remains valid.
-5. Resize to a narrow mobile width and check all access states.
-6. Run the automated and HTTP health checks above.
+1. Open a valid test link and choose `Start onderzoek`.
+2. Review the duration, Freek de Jonge, experimental-text, and privacy wording.
+3. Choose `Verder` without entering anything and inspect all validation messages.
+4. Enter an age but leave familiarity and consent unanswered.
+5. Complete all fields and confirm the temporary completion screen appears.
+6. Resize to a narrow mobile width and check the whole form.
+7. Run the automated and HTTP health checks above.
+
+Checkpoint 4 keeps the validated profile only in Streamlit session memory.
+Durable autosave is introduced in checkpoint 7.
 
 The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).
 

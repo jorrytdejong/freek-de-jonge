@@ -1,9 +1,11 @@
 from html import escape
+from urllib.parse import urlencode
 
 import streamlit as st
 
 from app.assignment import assignment_fingerprint, build_assignment
 from app.health import health_snapshot
+from app.participant import ProfileValidationError, validate_profile
 from app.sessions import (
     ParticipantSession,
     SessionAccessStatus,
@@ -92,14 +94,11 @@ def render_participant_start(
             "testgegevens gemarkeerd."
             "</p>"
         )
-
     render_header()
-    st.markdown(
-        f"""
-        <main
-            class="study-content"
-            data-assignment-fingerprint="{escape(fingerprint)}"
-        >
+    with st.container(key="participant_start"):
+        st.markdown(
+            f"""
+            <span class="assignment-fingerprint" data-assignment-fingerprint="{escape(fingerprint)}"></span>
             <h1>Onderzoek naar humor en stijl</h1>
             <div class="study-accent" aria-hidden="true"></div>
             <p class="study-intro">Welkom bij de onderzoeksomgeving.</p>
@@ -108,14 +107,140 @@ def render_participant_start(
                 <span>{escape(session_status)}</span>
             </div>
             {test_notice}
-            <button class="study-start" type="button" disabled aria-disabled="true">
-                <span class="study-start-icon" aria-hidden="true"></span>
-                <span>Start onderzoek</span>
-            </button>
-        </main>
-        """,
-        unsafe_allow_html=True,
-    )
+            """,
+            unsafe_allow_html=True,
+        )
+        if st.button(
+            "Start onderzoek",
+            type="primary",
+            icon=":material/play_arrow:",
+        ):
+            st.query_params["page"] = "intro"
+            st.rerun()
+    render_footer()
+
+
+def render_participant_intro(session: ParticipantSession) -> None:
+    render_header()
+    with st.container(key="participant_intro"):
+        back_href = f"?{urlencode({'session': session.session_id})}"
+        st.markdown(
+            f"""
+            <div class="intro-heading">
+                <a class="preview-back" href="{escape(back_href)}">Terug</a>
+                <h1>Over het onderzoek</h1>
+                <p>
+                    In dit onderzoek beoordeel je verschillende versies van
+                    korte grappen. Je krijgt 5 groepen met elk 8 versies.
+                    Deelname duurt ongeveer 15 minuten.
+                </p>
+            </div>
+            <section class="intro-section">
+                <h2>Freek de Jonge</h2>
+                <p>
+                    Bij iedere versie vragen we ook in hoeverre de tekst op
+                    Freek de Jonge lijkt. Daarmee bedoelen we zowel stijl als
+                    onderwerp. De teksten zijn experimenteel en niet door
+                    Freek de Jonge geschreven.
+                </p>
+            </section>
+            <section class="intro-section intro-privacy">
+                <h2>Privacy en je onderzoekslink</h2>
+                <p>
+                    We vragen geen naam of contactgegevens. Je antwoorden
+                    worden gekoppeld aan de unieke code in je onderzoekslink.
+                    Deel deze persoonlijke link daarom niet met anderen.
+                </p>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        with st.form(
+            key=f"participant_profile_{session.session_id}",
+            clear_on_submit=False,
+            border=False,
+        ):
+            st.markdown("## Over jou")
+            age = st.number_input(
+                "Wat is je leeftijd in hele jaren?",
+                min_value=1,
+                max_value=120,
+                value=None,
+                step=1,
+                placeholder="Bijvoorbeeld 34",
+            )
+            familiarity = st.radio(
+                "Hoe goed ken je het werk van Freek de Jonge?",
+                options=[1, 2, 3, 4, 5],
+                index=None,
+                horizontal=True,
+            )
+            st.markdown(
+                """
+                <div class="scale-endpoints">
+                    <span>1 = Helemaal niet bekend</span>
+                    <span>5 = Zeer bekend</span>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            consent = st.checkbox(
+                "Ik heb bovenstaande informatie gelezen en neem vrijwillig "
+                "deel aan dit onderzoek."
+            )
+            submitted = st.form_submit_button(
+                "Verder",
+                type="primary",
+                icon=":material/arrow_forward:",
+            )
+
+        if submitted:
+            try:
+                profile = validate_profile(
+                    age=age,
+                    freek_familiarity=familiarity,
+                    consent=consent,
+                )
+            except ProfileValidationError as error:
+                messages = "\n".join(
+                    f"- {message}" for message in error.messages
+                )
+                st.error(f"Controleer de verplichte velden:\n\n{messages}")
+            else:
+                st.session_state[f"profile:{session.session_id}"] = {
+                    "age": profile.age,
+                    "freek_familiarity": profile.freek_familiarity,
+                    "consent": profile.consent,
+                }
+                st.query_params["page"] = "profile-complete"
+                st.rerun()
+
+    render_footer()
+
+
+def render_profile_complete(session: ParticipantSession) -> None:
+    profile = st.session_state.get(f"profile:{session.session_id}")
+    if profile is None:
+        render_participant_intro(session)
+        return
+
+    render_header()
+    with st.container(key="profile_complete"):
+        st.markdown(
+            """
+            <div class="completion-mark" aria-hidden="true"></div>
+            <h1>Je gegevens zijn gecontroleerd</h1>
+            <p>Bedankt voor het invullen van de eerste vragen.</p>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.button(
+            "Verder",
+            type="primary",
+            disabled=True,
+            icon=":material/arrow_forward:",
+        )
     render_footer()
 
 
@@ -280,33 +405,6 @@ st.markdown(
             margin-bottom: 2.25rem;
         }
 
-        .study-start {
-            align-items: center;
-            background: #f7f8f7;
-            border: 1px solid #d1d7d4;
-            border-radius: 6px;
-            color: #9ba29f;
-            cursor: not-allowed;
-            display: inline-flex;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 650;
-            gap: 0.8rem;
-            justify-content: flex-start;
-            min-height: 3.5rem;
-            padding: 0 1.25rem;
-            width: 22rem;
-        }
-
-        .study-start-icon {
-            border-bottom: 0.38rem solid transparent;
-            border-left: 0.58rem solid #aeb4b1;
-            border-top: 0.38rem solid transparent;
-            display: inline-block;
-            height: 0;
-            width: 0;
-        }
-
         .study-session-note {
             border-left: 3px solid var(--study-coral);
             color: var(--study-muted);
@@ -319,6 +417,38 @@ st.markdown(
 
         .access-content {
             min-height: 620px;
+        }
+
+        .st-key-participant_start {
+            margin-left: clamp(1.5rem, 14vw, 14rem);
+            max-width: 50rem;
+            min-height: 620px;
+            padding: 9rem 3rem 5rem;
+        }
+
+        .st-key-participant_start h1 {
+            color: var(--study-text);
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.16;
+            margin: 0;
+            max-width: 48rem;
+        }
+
+        .st-key-participant_start [data-testid="stButton"] {
+            width: 22rem;
+        }
+
+        .st-key-participant_start [data-testid="stButton"] button {
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 650;
+            min-height: 3.5rem;
+            width: 100%;
+        }
+
+        .assignment-fingerprint {
+            display: none;
         }
 
         .study-status-mark {
@@ -368,6 +498,115 @@ st.markdown(
             margin: 0 auto;
             max-width: 58rem;
             padding: 4.5rem 2rem 5rem;
+        }
+
+        .st-key-participant_intro,
+        .st-key-profile_complete {
+            margin: 0 auto;
+            max-width: 48rem;
+            padding: 4.5rem 2rem 5rem;
+        }
+
+        .intro-heading {
+            margin-bottom: 2.75rem;
+        }
+
+        .intro-heading h1,
+        .st-key-profile_complete h1 {
+            color: var(--study-text);
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin: 1rem 0 1rem;
+        }
+
+        .intro-heading p,
+        .st-key-profile_complete p {
+            color: var(--study-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .intro-section {
+            border-top: 1px solid var(--study-border);
+            padding: 2rem 0;
+        }
+
+        .intro-section h2,
+        .st-key-participant_intro [data-testid="stForm"] h2 {
+            color: var(--study-text);
+            font-size: 1.25rem;
+            line-height: 1.4;
+            margin: 0 0 0.7rem;
+        }
+
+        .intro-section p {
+            color: var(--study-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .intro-privacy {
+            border-left: 3px solid var(--study-coral);
+            padding-left: 1.25rem;
+        }
+
+        .st-key-participant_intro [data-testid="stForm"] {
+            border-top: 1px solid var(--study-border);
+            margin-top: 0.5rem;
+            padding-top: 2rem;
+        }
+
+        .st-key-participant_intro [data-testid="stNumberInput"] {
+            max-width: 18rem;
+        }
+
+        .st-key-participant_intro [data-testid="stRadio"] {
+            margin-top: 1rem;
+        }
+
+        .scale-endpoints {
+            color: var(--study-muted);
+            display: flex;
+            font-size: 0.82rem;
+            justify-content: space-between;
+            margin: -0.5rem 0 1.5rem;
+            max-width: 28rem;
+        }
+
+        .st-key-participant_intro [data-testid="stFormSubmitButton"] button,
+        .st-key-profile_complete [data-testid="stButton"] button {
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 650;
+            min-height: 3.25rem;
+            min-width: 10rem;
+        }
+
+        .completion-mark {
+            border: 3px solid var(--study-green);
+            border-radius: 50%;
+            height: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            width: 3rem;
+        }
+
+        .completion-mark::after {
+            border-bottom: 3px solid var(--study-green);
+            border-right: 3px solid var(--study-green);
+            content: "";
+            height: 0.9rem;
+            left: 1.05rem;
+            position: absolute;
+            top: 0.55rem;
+            transform: rotate(45deg);
+            width: 0.48rem;
+        }
+
+        .st-key-profile_complete [data-testid="stButton"] {
+            margin-top: 2rem;
         }
 
         .preview-heading {
@@ -469,7 +708,17 @@ st.markdown(
                 font-size: 1.1rem;
             }
 
-            .study-start {
+            .st-key-participant_start {
+                margin-left: 0;
+                min-height: 560px;
+                padding: 5rem 1.25rem 3rem;
+            }
+
+            .st-key-participant_start h1 {
+                font-size: 2.1rem;
+            }
+
+            .st-key-participant_start [data-testid="stButton"] {
                 width: 100%;
             }
 
@@ -482,8 +731,22 @@ st.markdown(
                 padding: 3rem 1.25rem 4rem;
             }
 
+            .st-key-participant_intro,
+            .st-key-profile_complete {
+                padding: 3rem 1.25rem 4rem;
+            }
+
             .preview-heading h1 {
                 font-size: 2rem;
+            }
+
+            .intro-heading h1,
+            .st-key-profile_complete h1 {
+                font-size: 2rem;
+            }
+
+            .scale-endpoints {
+                gap: 1rem;
             }
 
             .preview-summary {
@@ -513,7 +776,13 @@ if session_access.status is not SessionAccessStatus.VALID:
 participant_session = session_access.session
 assert participant_session is not None
 participant_assignment = build_assignment(participant_session, stimulus_groups)
-render_participant_start(
-    participant_session,
-    assignment_fingerprint(participant_assignment),
-)
+page = st.query_params.get("page")
+if page == "intro":
+    render_participant_intro(participant_session)
+elif page == "profile-complete":
+    render_profile_complete(participant_session)
+else:
+    render_participant_start(
+        participant_session,
+        assignment_fingerprint(participant_assignment),
+    )

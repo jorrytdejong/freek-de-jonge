@@ -1,4 +1,4 @@
 """Version identifiers shared across the application."""
 
-APP_VERSION = "0.3.0"
+APP_VERSION = "0.4.0"
 STUDY_VERSION = "pilot-1"

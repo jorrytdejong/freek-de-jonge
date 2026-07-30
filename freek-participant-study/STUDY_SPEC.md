@@ -82,9 +82,22 @@ count as a neutral rating.
 
 Required:
 
-- consent;
-- exact age in whole years;
-- familiarity with the work of Freek de Jonge on a 1-5 scale.
+- consent with the wording: `Ik heb bovenstaande informatie gelezen en neem
+  vrijwillig deel aan dit onderzoek.`;
+- exact age in whole years from 1 through 120;
+- familiarity with the wording: `Hoe goed ken je het werk van Freek de Jonge?`
+  on a required 1-5 scale;
+- familiarity endpoints `Helemaal niet bekend` and `Zeer bekend`.
+
+The participant information page states:
+
+- the expected duration is approximately 15 minutes;
+- participants later receive 5 groups of 8 joke versions;
+- Freek de Jonge is named in the similarity measurement;
+- similarity covers both style and subject matter;
+- stimuli are experimental and not written by Freek de Jonge;
+- no name or contact details are collected;
+- answers are linked to the unique code in the personal research link.
 
 Not collected:
 
