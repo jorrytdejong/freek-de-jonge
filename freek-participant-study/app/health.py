@@ -1,7 +1,6 @@
 """Small, dependency-free health contract for local and deployed checks."""
 
-APP_VERSION = "0.1.0"
-STUDY_VERSION = "pilot-1"
+from app.config import APP_VERSION, STUDY_VERSION
 
 
 def health_snapshot() -> dict[str, str]:
@@ -11,4 +10,3 @@ def health_snapshot() -> dict[str, str]:
         "app_version": APP_VERSION,
         "study_version": STUDY_VERSION,
     }
-

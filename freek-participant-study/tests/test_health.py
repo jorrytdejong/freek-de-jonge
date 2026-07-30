@@ -9,7 +9,7 @@ class HealthSnapshotTest(unittest.TestCase):
             health_snapshot(),
             {
                 "status": "ok",
-                "app_version": "0.1.0",
+                "app_version": "0.2.0",
                 "study_version": "pilot-1",
             },
         )
@@ -17,4 +17,3 @@ class HealthSnapshotTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
