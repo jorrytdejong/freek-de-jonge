@@ -3,9 +3,18 @@ from urllib.parse import urlencode
 
 import streamlit as st
 
-from app.assignment import assignment_fingerprint, build_assignment
+from app.assignment import (
+    ParticipantAssignment,
+    assignment_fingerprint,
+    build_assignment,
+)
 from app.health import health_snapshot
 from app.participant import ProfileValidationError, validate_profile
+from app.ratings import (
+    GroupRatingValidationError,
+    build_displayed_variants,
+    validate_group_response,
+)
 from app.sessions import (
     ParticipantSession,
     SessionAccessStatus,
@@ -219,7 +228,10 @@ def render_participant_intro(session: ParticipantSession) -> None:
     render_footer()
 
 
-def render_profile_complete(session: ParticipantSession) -> None:
+def render_profile_complete(
+    session: ParticipantSession,
+    assignment: ParticipantAssignment,
+) -> None:
     profile = st.session_state.get(f"profile:{session.session_id}")
     if profile is None:
         render_participant_intro(session)
@@ -235,12 +247,262 @@ def render_profile_complete(session: ParticipantSession) -> None:
             """,
             unsafe_allow_html=True,
         )
-        st.button(
+        if st.button(
             "Verder",
             type="primary",
-            disabled=True,
             icon=":material/arrow_forward:",
+        ):
+            st.query_params["page"] = "group-1"
+            st.rerun()
+    render_footer()
+
+
+def render_single_group(
+    session: ParticipantSession,
+    assignment: ParticipantAssignment,
+    groups: tuple[JokeGroup, ...],
+) -> None:
+    profile = st.session_state.get(f"profile:{session.session_id}")
+    if profile is None:
+        render_participant_intro(session)
+        return
+
+    assigned_group = assignment.groups[0]
+    joke_group = next(
+        group for group in groups if group.group_id == assigned_group.group_id
+    )
+    displayed_variants = build_displayed_variants(
+        assigned_group,
+        joke_group,
+    )
+    response_key = (
+        f"group_response:{session.session_id}:{joke_group.group_id}"
+    )
+    saved_response = st.session_state.get(response_key)
+    if saved_response is not None:
+        saved_ratings = {
+            rating["variant_id"]: rating
+            for rating in saved_response["ratings"]
+        }
+        for variant in displayed_variants:
+            saved_rating = saved_ratings[variant.variant_id]
+            st.session_state.setdefault(
+                (
+                    f"rating:{session.session_id}:"
+                    f"{variant.variant_id}:funniness"
+                ),
+                saved_rating["funniness"],
+            )
+            st.session_state.setdefault(
+                (
+                    f"rating:{session.session_id}:"
+                    f"{variant.variant_id}:freek_similarity"
+                ),
+                saved_rating["freek_similarity"],
+            )
+        st.session_state.setdefault(
+            f"group_comment:{session.session_id}:{joke_group.group_id}",
+            saved_response["comment"],
         )
+
+    render_header()
+    with st.container(key="rating_group"):
+        st.markdown(
+            f"""
+            <div class="rating-heading">
+                <p class="rating-context">Jokegroep 1</p>
+                <h1>{escape(joke_group.title)}</h1>
+                <p>
+                    Beoordeel iedere versie op grappigheid en op de mate
+                    waarin de tekst op Freek de Jonge lijkt.
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        raw_ratings: dict[str, dict[str, int | None]] = {}
+        with st.form(
+            key=f"group_rating_{session.session_id}_{joke_group.group_id}",
+            clear_on_submit=False,
+            border=False,
+        ):
+            for variant in displayed_variants:
+                with st.container(
+                    key=f"rating_variant_{variant.display_label}"
+                ):
+                    st.markdown(
+                        f"""
+                        <div class="rating-variant-copy">
+                            <h2>Versie {escape(variant.display_label)}</h2>
+                            <p>{escape(variant.text)}</p>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+                    funniness_column, freek_column = st.columns(
+                        2,
+                        gap="large",
+                    )
+                    with funniness_column:
+                        funniness_value = st.select_slider(
+                            "Grappigheid",
+                            options=[0, 1, 2, 3, 4, 5],
+                            value=0,
+                            format_func=lambda value: (
+                                "Kies" if value == 0 else str(value)
+                            ),
+                            key=(
+                                f"rating:{session.session_id}:"
+                                f"{variant.variant_id}:funniness"
+                            ),
+                        )
+                        st.markdown(
+                            """
+                            <div class="rating-endpoints">
+                                <span>Helemaal niet grappig</span>
+                                <span>Heel grappig</span>
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+                    with freek_column:
+                        freek_value = st.select_slider(
+                            "Lijkt op Freek de Jonge",
+                            options=[0, 1, 2, 3, 4, 5],
+                            value=0,
+                            format_func=lambda value: (
+                                "Kies" if value == 0 else str(value)
+                            ),
+                            key=(
+                                f"rating:{session.session_id}:"
+                                f"{variant.variant_id}:freek_similarity"
+                            ),
+                        )
+                        st.markdown(
+                            """
+                            <div class="rating-endpoints">
+                                <span>Helemaal niet</span>
+                                <span>Heel erg</span>
+                            </div>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+
+                    raw_ratings[variant.variant_id] = {
+                        "funniness": (
+                            None if funniness_value == 0 else funniness_value
+                        ),
+                        "freek_similarity": (
+                            None if freek_value == 0 else freek_value
+                        ),
+                    }
+
+            comment = st.text_area(
+                "Opmerking over deze groep (optioneel)",
+                max_chars=1000,
+                height=120,
+                key=(
+                    f"group_comment:{session.session_id}:"
+                    f"{joke_group.group_id}"
+                ),
+            )
+            submitted = st.form_submit_button(
+                "Beoordelingen controleren",
+                type="primary",
+                icon=":material/check:",
+            )
+
+        if submitted:
+            try:
+                response = validate_group_response(
+                    group_id=joke_group.group_id,
+                    displayed_variants=displayed_variants,
+                    raw_ratings=raw_ratings,
+                    comment=comment,
+                )
+            except GroupRatingValidationError as error:
+                messages = "\n".join(
+                    f"- {message}" for message in error.messages
+                )
+                st.error(
+                    "Beantwoord beide schalen voor iedere versie:"
+                    f"\n\n{messages}"
+                )
+            else:
+                st.session_state[response_key] = {
+                    "group_id": response.group_id,
+                    "ratings": [
+                        {
+                            "display_label": rating.display_label,
+                            "display_position": rating.display_position,
+                            "variant_id": rating.variant_id,
+                            "funniness": rating.funniness,
+                            "freek_similarity": rating.freek_similarity,
+                        }
+                        for rating in response.ratings
+                    ],
+                    "comment": response.comment,
+                }
+                st.query_params["page"] = "group-complete"
+                st.rerun()
+    render_footer()
+
+
+def render_group_complete(
+    session: ParticipantSession,
+    assignment: ParticipantAssignment,
+    groups: tuple[JokeGroup, ...],
+) -> None:
+    assigned_group = assignment.groups[0]
+    response_key = (
+        f"group_response:{session.session_id}:{assigned_group.group_id}"
+    )
+    if st.session_state.get(response_key) is None:
+        render_single_group(session, assignment, groups)
+        return
+
+    render_header()
+    with st.container(key="rating_complete"):
+        st.markdown(
+            """
+            <div class="completion-mark" aria-hidden="true"></div>
+            <h1>Beoordelingen gecontroleerd</h1>
+            <p>Bedankt voor het beoordelen van deze groep.</p>
+            """,
+            unsafe_allow_html=True,
+        )
+        back_column, continue_column = st.columns(2, gap="medium")
+        with back_column:
+            if st.button(
+                "Terug naar groep",
+                icon=":material/arrow_back:",
+                use_container_width=True,
+            ):
+                saved_response = st.session_state[response_key]
+                for rating in saved_response["ratings"]:
+                    st.session_state[
+                        f"rating:{session.session_id}:"
+                        f"{rating['variant_id']}:funniness"
+                    ] = rating["funniness"]
+                    st.session_state[
+                        f"rating:{session.session_id}:"
+                        f"{rating['variant_id']}:freek_similarity"
+                    ] = rating["freek_similarity"]
+                st.session_state[
+                    f"group_comment:{session.session_id}:"
+                    f"{assigned_group.group_id}"
+                ] = saved_response["comment"]
+                st.query_params["page"] = "group-1"
+                st.rerun()
+        with continue_column:
+            st.button(
+                "Verder",
+                type="primary",
+                disabled=True,
+                icon=":material/arrow_forward:",
+                use_container_width=True,
+            )
     render_footer()
 
 
@@ -501,10 +763,16 @@ st.markdown(
         }
 
         .st-key-participant_intro,
-        .st-key-profile_complete {
+        .st-key-profile_complete,
+        .st-key-rating_group,
+        .st-key-rating_complete {
             margin: 0 auto;
             max-width: 48rem;
             padding: 4.5rem 2rem 5rem;
+        }
+
+        .st-key-rating_group {
+            max-width: 68rem;
         }
 
         .intro-heading {
@@ -606,6 +874,107 @@ st.markdown(
         }
 
         .st-key-profile_complete [data-testid="stButton"] {
+            margin-top: 2rem;
+        }
+
+        .rating-heading {
+            margin-bottom: 2.75rem;
+            max-width: 48rem;
+        }
+
+        .rating-context {
+            color: var(--study-green);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin: 0 0 0.7rem;
+        }
+
+        .rating-heading h1,
+        .st-key-rating_complete h1 {
+            color: var(--study-text);
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin: 0 0 1rem;
+        }
+
+        .rating-heading > p:last-child,
+        .st-key-rating_complete > div p {
+            color: var(--study-muted);
+            font-size: 1.02rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .st-key-rating_group [data-testid="stForm"] {
+            border-top: 2px solid var(--study-green);
+        }
+
+        .st-key-rating_group [class*="st-key-rating_variant_"] {
+            border-bottom: 1px solid var(--study-border);
+            padding: 2rem 0 2.25rem;
+        }
+
+        .rating-variant-copy {
+            margin-bottom: 1.35rem;
+        }
+
+        .rating-variant-copy h2 {
+            color: var(--study-green);
+            font-size: 1rem;
+            font-weight: 750;
+            line-height: 1.4;
+            margin: 0 0 0.55rem;
+        }
+
+        .rating-variant-copy p {
+            color: var(--study-text);
+            font-size: 1.08rem;
+            line-height: 1.65;
+            margin: 0;
+            max-width: 58rem;
+        }
+
+        .st-key-rating_group [data-testid="stSelectSlider"] label p {
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .rating-endpoints {
+            color: var(--study-muted);
+            display: flex;
+            font-size: 0.76rem;
+            justify-content: space-between;
+            line-height: 1.35;
+            margin-top: -0.55rem;
+        }
+
+        .rating-endpoints span {
+            max-width: 48%;
+        }
+
+        .rating-endpoints span:last-child {
+            text-align: right;
+        }
+
+        .st-key-rating_group [data-testid="stTextArea"] {
+            border-top: 1px solid var(--study-border);
+            margin-top: 1.5rem;
+            padding-top: 2rem;
+        }
+
+        .st-key-rating_group [data-testid="stFormSubmitButton"] button,
+        .st-key-rating_complete [data-testid="stButton"] button {
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 650;
+            min-height: 3.25rem;
+        }
+
+        .st-key-rating_group [data-testid="stFormSubmitButton"] {
+            margin-top: 1rem;
+        }
+
+        .st-key-rating_complete [data-testid="stHorizontalBlock"] {
             margin-top: 2rem;
         }
 
@@ -732,7 +1101,9 @@ st.markdown(
             }
 
             .st-key-participant_intro,
-            .st-key-profile_complete {
+            .st-key-profile_complete,
+            .st-key-rating_group,
+            .st-key-rating_complete {
                 padding: 3rem 1.25rem 4rem;
             }
 
@@ -741,8 +1112,19 @@ st.markdown(
             }
 
             .intro-heading h1,
-            .st-key-profile_complete h1 {
+            .st-key-profile_complete h1,
+            .rating-heading h1,
+            .st-key-rating_complete h1 {
                 font-size: 2rem;
+            }
+
+            .st-key-rating_group [data-testid="stHorizontalBlock"] {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .st-key-rating_group [data-testid="stColumn"] {
+                width: 100%;
             }
 
             .scale-endpoints {
@@ -780,7 +1162,19 @@ page = st.query_params.get("page")
 if page == "intro":
     render_participant_intro(participant_session)
 elif page == "profile-complete":
-    render_profile_complete(participant_session)
+    render_profile_complete(participant_session, participant_assignment)
+elif page == "group-1":
+    render_single_group(
+        participant_session,
+        participant_assignment,
+        stimulus_groups,
+    )
+elif page == "group-complete":
+    render_group_complete(
+        participant_session,
+        participant_assignment,
+        stimulus_groups,
+    )
 else:
     render_participant_start(
         participant_session,

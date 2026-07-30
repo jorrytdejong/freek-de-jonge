@@ -3,9 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 4 adds the Dutch
-participant information, consent, exact-age question, familiarity scale, and
-required-field validation. The rating flow is not active yet.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 5 adds one
+complete joke-group workflow with eight randomized versions, two required
+Likert sliders per version, and an optional group comment.
 
 ## Requirements
 
@@ -72,18 +72,21 @@ curl --fail http://localhost:8501/_stcore/health
 
 The expected response is `ok`.
 
-## Checkpoint 4 Acceptance Test
+## Checkpoint 5 Acceptance Test
 
-1. Open a valid test link and choose `Start onderzoek`.
-2. Review the duration, Freek de Jonge, experimental-text, and privacy wording.
-3. Choose `Verder` without entering anything and inspect all validation messages.
-4. Enter an age but leave familiarity and consent unanswered.
-5. Complete all fields and confirm the temporary completion screen appears.
-6. Resize to a narrow mobile width and check the whole form.
-7. Run the automated and HTTP health checks above.
+1. Complete the checkpoint-4 participant questions.
+2. Choose `Verder` on the profile confirmation screen.
+3. Confirm one descriptive group contains `Versie A` through `Versie H`.
+4. Confirm every version has both required sliders and starts at `Kies`.
+5. Submit everything untouched and inspect the 16 validation messages.
+6. Give every slider a value from 1 through 5 and optionally add a comment.
+7. Confirm the group-completion screen appears.
+8. Choose `Terug naar groep` and verify the selected ratings remain.
+9. Resize to a narrow mobile width and inspect the stacked sliders.
+10. Run the automated and HTTP health checks above.
 
-Checkpoint 4 keeps the validated profile only in Streamlit session memory.
-Durable autosave is introduced in checkpoint 7.
+Checkpoint 5 keeps the validated profile and group response only in Streamlit
+session memory. Durable autosave is introduced in checkpoint 7.
 
 The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).
 

@@ -78,6 +78,20 @@ The second scale covers both style and subject matter.
 Sliders must begin in an unanswered state. An untouched slider must not silently
 count as a neutral rating.
 
+For checkpoint 5, the first assigned group is implemented completely:
+
+- the deterministic assignment order maps to neutral labels `Versie A` through
+  `Versie H`;
+- participants never see internal variant IDs or variant roles;
+- each version is shown with both rating sliders side by side on desktop;
+- mobile layouts stack the two scales to preserve readable labels;
+- every slider begins at `Kies`, outside the 1-5 analysis scale;
+- choosing `3` is therefore distinguishable from leaving a slider untouched;
+- all 16 ratings are required before the group response is accepted;
+- the group comment remains optional;
+- the validated one-group response is held in Streamlit session memory until
+  durable autosave is introduced.
+
 ## Participant Questions
 
 Required:
