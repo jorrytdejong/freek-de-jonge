@@ -2,7 +2,15 @@ from html import escape
 
 import streamlit as st
 
+from app.assignment import assignment_fingerprint, build_assignment
 from app.health import health_snapshot
+from app.sessions import (
+    ParticipantSession,
+    SessionAccessStatus,
+    SessionValidationError,
+    load_sessions,
+    resolve_session,
+)
 from app.stimuli import JokeGroup, StimulusValidationError, load_stimuli
 
 
@@ -25,6 +33,90 @@ def render_header() -> None:
         """,
         unsafe_allow_html=True,
     )
+
+
+def render_footer() -> None:
+    st.markdown(
+        f"""
+        <footer class="study-footer">
+            <span class="study-footer-mark" aria-hidden="true"></span>
+            <span>Onderzoeksversie {health["study_version"]}</span>
+        </footer>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_access_state(status: SessionAccessStatus) -> None:
+    content = {
+        SessionAccessStatus.MISSING: (
+            "Onderzoekslink vereist",
+            "Open de persoonlijke link die je voor dit onderzoek hebt ontvangen.",
+        ),
+        SessionAccessStatus.UNKNOWN: (
+            "Deze onderzoekslink is niet geldig",
+            "Controleer of je de volledige link hebt geopend.",
+        ),
+        SessionAccessStatus.INACTIVE: (
+            "Deze onderzoekslink is niet actief",
+            "Deze sessie kan momenteel niet worden gebruikt.",
+        ),
+    }
+    title, message = content[status]
+    render_header()
+    st.markdown(
+        f"""
+        <main class="study-content access-content">
+            <h1>{escape(title)}</h1>
+            <div class="study-accent" aria-hidden="true"></div>
+            <p class="study-intro">{escape(message)}</p>
+        </main>
+        """,
+        unsafe_allow_html=True,
+    )
+    render_footer()
+
+
+def render_participant_start(
+    session: ParticipantSession,
+    fingerprint: str,
+) -> None:
+    session_status = "Testsessie is geldig." if session.is_test else (
+        "Onderzoekslink is geldig."
+    )
+    test_notice = ""
+    if session.is_test:
+        test_notice = (
+            '<p class="study-session-note">'
+            "Dit is een testsessie. Antwoorden worden later als "
+            "testgegevens gemarkeerd."
+            "</p>"
+        )
+
+    render_header()
+    st.markdown(
+        f"""
+        <main
+            class="study-content"
+            data-assignment-fingerprint="{escape(fingerprint)}"
+        >
+            <h1>Onderzoek naar humor en stijl</h1>
+            <div class="study-accent" aria-hidden="true"></div>
+            <p class="study-intro">Welkom bij de onderzoeksomgeving.</p>
+            <div class="study-status">
+                <span class="study-status-mark" aria-hidden="true"></span>
+                <span>{escape(session_status)}</span>
+            </div>
+            {test_notice}
+            <button class="study-start" type="button" disabled aria-disabled="true">
+                <span class="study-start-icon" aria-hidden="true"></span>
+                <span>Start onderzoek</span>
+            </button>
+        </main>
+        """,
+        unsafe_allow_html=True,
+    )
+    render_footer()
 
 
 def render_stimulus_preview(groups: tuple[JokeGroup, ...]) -> None:
@@ -87,8 +179,11 @@ def render_stimulus_preview(groups: tuple[JokeGroup, ...]) -> None:
 
 try:
     stimulus_groups = load_stimuli()
-except StimulusValidationError as error:
-    st.error(f"Stimuluscontrole mislukt: {error}")
+    session_registry = load_sessions(
+        {group.group_id for group in stimulus_groups}
+    )
+except (StimulusValidationError, SessionValidationError) as error:
+    st.error(f"Configuratiecontrole mislukt: {error}")
     st.stop()
 
 st.markdown(
@@ -210,6 +305,20 @@ st.markdown(
             display: inline-block;
             height: 0;
             width: 0;
+        }
+
+        .study-session-note {
+            border-left: 3px solid var(--study-coral);
+            color: var(--study-muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+            margin: -0.5rem 0 2rem;
+            max-width: 34rem;
+            padding-left: 1rem;
+        }
+
+        .access-content {
+            min-height: 620px;
         }
 
         .study-status-mark {
@@ -396,32 +505,15 @@ if st.query_params.get("preview") == "1":
     render_stimulus_preview(stimulus_groups)
     st.stop()
 
-render_header()
-st.markdown(
-    """
-    <main class="study-content">
-        <h1>Onderzoek naar humor en stijl</h1>
-        <div class="study-accent" aria-hidden="true"></div>
-        <p class="study-intro">Welkom bij de onderzoeksomgeving.</p>
-        <div class="study-status">
-            <span class="study-status-mark" aria-hidden="true"></span>
-            <span>De applicatie is gereed.</span>
-        </div>
-        <button class="study-start" type="button" disabled aria-disabled="true">
-            <span class="study-start-icon" aria-hidden="true"></span>
-            <span>Start onderzoek</span>
-        </button>
-    </main>
-    """,
-    unsafe_allow_html=True,
-)
+session_access = resolve_session(st.query_params.get("session"), session_registry)
+if session_access.status is not SessionAccessStatus.VALID:
+    render_access_state(session_access.status)
+    st.stop()
 
-st.markdown(
-    f"""
-    <footer class="study-footer">
-        <span class="study-footer-mark" aria-hidden="true"></span>
-        <span>Onderzoeksversie {health["study_version"]}</span>
-    </footer>
-    """,
-    unsafe_allow_html=True,
+participant_session = session_access.session
+assert participant_session is not None
+participant_assignment = build_assignment(participant_session, stimulus_groups)
+render_participant_start(
+    participant_session,
+    assignment_fingerprint(participant_assignment),
 )

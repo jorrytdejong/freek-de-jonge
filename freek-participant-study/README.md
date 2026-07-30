@@ -3,9 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 2 adds the
-versioned study specification, validated fictional mock stimuli, and an internal
-stimulus preview. Participant sessions and the rating flow are not active yet.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 3 adds fixed
+anonymous test sessions, participant-link access control, and deterministic
+assignment ordering. The rating flow is not active yet.
 
 ## Requirements
 
@@ -37,6 +37,25 @@ The temporary checkpoint-2 stimulus preview is available at:
 
 Change the port in this URL if Streamlit selected another local port.
 
+## Checkpoint 3 Test Links
+
+These links are test-only and may safely be committed to the repository:
+
+1. `?session=test-01-DU8NXu1m`
+2. `?session=test-02-CVM5_s67`
+3. `?session=test-03-viwspebC`
+4. `?session=test-04-es8fvhYW`
+5. `?session=test-05-SIhk_boI`
+6. `?session=test-06-fDpGFu6p`
+7. `?session=test-07-SNKbCw41`
+8. `?session=test-08-bxdyKo5y`
+9. `?session=test-09-rHQtzmEl`
+10. `?session=test-10-KvPvblxx`
+
+Append one of these paths to the local app URL. For example:
+
+<http://localhost:8501/?session=test-01-DU8NXu1m>
+
 ## Automated Checks
 
 Run the dependency-free health and stimulus-contract tests:
@@ -53,13 +72,13 @@ curl --fail http://localhost:8501/_stcore/health
 
 The expected response is `ok`.
 
-## Checkpoint 2 Acceptance Test
+## Checkpoint 3 Acceptance Test
 
-1. Open `/?preview=1`.
-2. Select each of the 12 joke groups.
-3. Confirm every selected group shows 8 variants.
-4. Review the Dutch wording, group titles, internal roles, and tone.
-5. Resize the browser to a narrow mobile width and check readability.
+1. Open the app without a `session` query parameter and confirm access stops.
+2. Open an unknown session ID and confirm it is rejected.
+3. Open several test links and confirm the test-session notice appears.
+4. Refresh one test link and confirm the page remains valid.
+5. Resize to a narrow mobile width and check all access states.
 6. Run the automated and HTTP health checks above.
 
 The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).

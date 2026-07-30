@@ -121,6 +121,11 @@ There is no attention check.
 
 - The participant app requires a valid anonymous session link.
 - Missing, unknown, and inactive links are rejected.
+- The fixed registry uses the columns `session_id`, `is_test`, `active`,
+  `assignment_groups`, `created_at`, and `notes`.
+- Every fixed session record contains exactly 5 unique group IDs.
+- The initial registry contains 10 active test sessions.
+- Test-session group exposure differs by at most one across the 12 groups.
 - Real sessions can submit once.
 - Reopening a submitted real session shows read-only answers.
 - Test sessions are clearly marked in stored data and can submit repeatedly.
@@ -144,4 +149,3 @@ participant questions, or output schema creates a new `study_version`.
 
 Bug fixes that do not alter the research treatment may retain the same study
 version, but must be recorded in `CHANGELOG.md` before production.
-
