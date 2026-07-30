@@ -2,6 +2,7 @@ from html import escape
 from urllib.parse import urlencode
 
 import streamlit as st
+import streamlit.components.v1 as components
 
 from app.assignment import (
     ParticipantAssignment,
@@ -11,6 +12,7 @@ from app.assignment import (
 from app.health import health_snapshot
 from app.participant import ProfileValidationError, validate_profile
 from app.ratings import (
+    DisplayedVariant,
     GroupRatingValidationError,
     build_displayed_variants,
     validate_group_response,
@@ -33,6 +35,58 @@ st.set_page_config(
 )
 
 health = health_snapshot()
+SCROLL_TO_TOP_KEY = "navigation:scroll_to_top"
+SCROLL_REQUEST_COUNTER_KEY = "navigation:scroll_request_counter"
+
+
+def request_scroll_to_top() -> None:
+    request_number = (
+        st.session_state.get(SCROLL_REQUEST_COUNTER_KEY, 0) + 1
+    )
+    st.session_state[SCROLL_REQUEST_COUNTER_KEY] = request_number
+    st.session_state[SCROLL_TO_TOP_KEY] = request_number
+
+
+def apply_requested_scroll() -> None:
+    request_number = st.session_state.pop(SCROLL_TO_TOP_KEY, None)
+    if request_number is None:
+        return
+
+    components.html(
+        f"""
+        <script>
+            const requestNumber = {request_number};
+            let attempts = 0;
+            const scrollToTop = () => {{
+                const parentDocument = window.parent.document;
+                const scrollTargets = [
+                    parentDocument.querySelector('[data-testid="stMain"]'),
+                    parentDocument.querySelector(
+                        '[data-testid="stAppViewContainer"]'
+                    ),
+                    parentDocument.scrollingElement,
+                    parentDocument.documentElement,
+                    parentDocument.body
+                ].filter(Boolean);
+
+                scrollTargets.forEach((target) => {{
+                    target.scrollTop = 0;
+                    target.scrollLeft = 0;
+                }});
+                window.parent.scrollTo(0, 0);
+
+                attempts += 1;
+                if (attempts < 30) {{
+                    window.parent.setTimeout(scrollToTop, 50);
+                }}
+            }};
+            window.parent.requestAnimationFrame(() => {{
+                window.parent.requestAnimationFrame(scrollToTop);
+            }});
+        </script>
+        """,
+        height=1,
+    )
 
 
 def render_header() -> None:
@@ -252,22 +306,95 @@ def render_profile_complete(
             type="primary",
             icon=":material/arrow_forward:",
         ):
+            request_scroll_to_top()
             st.query_params["page"] = "group-1"
             st.rerun()
     render_footer()
 
 
-def render_single_group(
+def group_response_key(session_id: str, group_id: str) -> str:
+    return f"group_response:{session_id}:{group_id}"
+
+
+def group_draft_key(session_id: str, group_id: str) -> str:
+    return f"group_draft:{session_id}:{group_id}"
+
+
+def rating_widget_key(
+    session_id: str,
+    variant_id: str,
+    dimension: str,
+) -> str:
+    return f"rating:{session_id}:{variant_id}:{dimension}"
+
+
+def restore_group_widgets(
+    session: ParticipantSession,
+    joke_group: JokeGroup,
+    displayed_variants: tuple[DisplayedVariant, ...],
+) -> None:
+    draft = st.session_state.get(
+        group_draft_key(session.session_id, joke_group.group_id)
+    )
+    response = st.session_state.get(
+        group_response_key(session.session_id, joke_group.group_id)
+    )
+
+    if draft is not None:
+        saved_ratings = draft["ratings"]
+        saved_comment = draft["comment"]
+    elif response is not None:
+        saved_ratings = {
+            rating["variant_id"]: rating for rating in response["ratings"]
+        }
+        saved_comment = response["comment"]
+    else:
+        return
+
+    for variant in displayed_variants:
+        saved_rating = saved_ratings[variant.variant_id]
+        for dimension in ("funniness", "freek_similarity"):
+            st.session_state.setdefault(
+                rating_widget_key(
+                    session.session_id,
+                    variant.variant_id,
+                    dimension,
+                ),
+                saved_rating[dimension] or 0,
+            )
+    st.session_state.setdefault(
+        f"group_comment:{session.session_id}:{joke_group.group_id}",
+        saved_comment,
+    )
+
+
+def store_group_draft(
+    session: ParticipantSession,
+    joke_group: JokeGroup,
+    raw_ratings: dict[str, dict[str, int | None]],
+    comment: str,
+) -> None:
+    st.session_state[
+        group_draft_key(session.session_id, joke_group.group_id)
+    ] = {
+        "group_id": joke_group.group_id,
+        "ratings": raw_ratings,
+        "comment": comment,
+    }
+
+
+def render_rating_group(
     session: ParticipantSession,
     assignment: ParticipantAssignment,
     groups: tuple[JokeGroup, ...],
+    group_index: int,
 ) -> None:
     profile = st.session_state.get(f"profile:{session.session_id}")
     if profile is None:
         render_participant_intro(session)
         return
 
-    assigned_group = assignment.groups[0]
+    assigned_group = assignment.groups[group_index]
     joke_group = next(
         group for group in groups if group.group_id == assigned_group.group_id
     )
@@ -275,42 +402,19 @@ def render_single_group(
         assigned_group,
         joke_group,
     )
-    response_key = (
-        f"group_response:{session.session_id}:{joke_group.group_id}"
-    )
-    saved_response = st.session_state.get(response_key)
-    if saved_response is not None:
-        saved_ratings = {
-            rating["variant_id"]: rating
-            for rating in saved_response["ratings"]
-        }
-        for variant in displayed_variants:
-            saved_rating = saved_ratings[variant.variant_id]
-            st.session_state.setdefault(
-                (
-                    f"rating:{session.session_id}:"
-                    f"{variant.variant_id}:funniness"
-                ),
-                saved_rating["funniness"],
-            )
-            st.session_state.setdefault(
-                (
-                    f"rating:{session.session_id}:"
-                    f"{variant.variant_id}:freek_similarity"
-                ),
-                saved_rating["freek_similarity"],
-            )
-        st.session_state.setdefault(
-            f"group_comment:{session.session_id}:{joke_group.group_id}",
-            saved_response["comment"],
-        )
+    restore_group_widgets(session, joke_group, displayed_variants)
+    group_number = group_index + 1
+    group_count = len(assignment.groups)
 
     render_header()
     with st.container(key="rating_group"):
+        st.progress(
+            group_number / group_count,
+            text=f"Jokegroep {group_number} van {group_count}",
+        )
         st.markdown(
             f"""
             <div class="rating-heading">
-                <p class="rating-context">Jokegroep 1</p>
                 <h1>{escape(joke_group.title)}</h1>
                 <p>
                     Beoordeel iedere versie op grappigheid en op de mate
@@ -329,7 +433,10 @@ def render_single_group(
         ):
             for variant in displayed_variants:
                 with st.container(
-                    key=f"rating_variant_{variant.display_label}"
+                    key=(
+                        f"rating_variant_{joke_group.group_id}_"
+                        f"{variant.display_label}"
+                    )
                 ):
                     st.markdown(
                         f"""
@@ -352,9 +459,10 @@ def render_single_group(
                             format_func=lambda value: (
                                 "Kies" if value == 0 else str(value)
                             ),
-                            key=(
-                                f"rating:{session.session_id}:"
-                                f"{variant.variant_id}:funniness"
+                            key=rating_widget_key(
+                                session.session_id,
+                                variant.variant_id,
+                                "funniness",
                             ),
                         )
                         st.markdown(
@@ -374,9 +482,10 @@ def render_single_group(
                             format_func=lambda value: (
                                 "Kies" if value == 0 else str(value)
                             ),
-                            key=(
-                                f"rating:{session.session_id}:"
-                                f"{variant.variant_id}:freek_similarity"
+                            key=rating_widget_key(
+                                session.session_id,
+                                variant.variant_id,
+                                "freek_similarity",
                             ),
                         )
                         st.markdown(
@@ -407,13 +516,39 @@ def render_single_group(
                     f"{joke_group.group_id}"
                 ),
             )
-            submitted = st.form_submit_button(
-                "Beoordelingen controleren",
-                type="primary",
-                icon=":material/check:",
-            )
+            previous_column, next_column = st.columns(2, gap="medium")
+            with previous_column:
+                previous_clicked = False
+                if group_index > 0:
+                    previous_clicked = st.form_submit_button(
+                        "Vorige groep",
+                        icon=":material/arrow_back:",
+                        use_container_width=True,
+                    )
+            with next_column:
+                next_clicked = st.form_submit_button(
+                    (
+                        "Groepen afronden"
+                        if group_number == group_count
+                        else "Volgende groep"
+                    ),
+                    type="primary",
+                    icon=":material/arrow_forward:",
+                    use_container_width=True,
+                )
 
-        if submitted:
+        if previous_clicked:
+            store_group_draft(
+                session,
+                joke_group,
+                raw_ratings,
+                comment,
+            )
+            request_scroll_to_top()
+            st.query_params["page"] = f"group-{group_index}"
+            st.rerun()
+
+        if next_clicked:
             try:
                 response = validate_group_response(
                     group_id=joke_group.group_id,
@@ -430,7 +565,12 @@ def render_single_group(
                     f"\n\n{messages}"
                 )
             else:
-                st.session_state[response_key] = {
+                st.session_state[
+                    group_response_key(
+                        session.session_id,
+                        joke_group.group_id,
+                    )
+                ] = {
                     "group_id": response.group_id,
                     "ratings": [
                         {
@@ -444,66 +584,73 @@ def render_single_group(
                     ],
                     "comment": response.comment,
                 }
-                st.query_params["page"] = "group-complete"
+                st.session_state.pop(
+                    group_draft_key(
+                        session.session_id,
+                        joke_group.group_id,
+                    ),
+                    None,
+                )
+                request_scroll_to_top()
+                st.query_params["page"] = (
+                    "groups-complete"
+                    if group_number == group_count
+                    else f"group-{group_number + 1}"
+                )
                 st.rerun()
     render_footer()
+    apply_requested_scroll()
 
 
-def render_group_complete(
+def render_groups_complete(
     session: ParticipantSession,
     assignment: ParticipantAssignment,
     groups: tuple[JokeGroup, ...],
 ) -> None:
-    assigned_group = assignment.groups[0]
-    response_key = (
-        f"group_response:{session.session_id}:{assigned_group.group_id}"
-    )
-    if st.session_state.get(response_key) is None:
-        render_single_group(session, assignment, groups)
-        return
+    for group_index, assigned_group in enumerate(assignment.groups):
+        response = st.session_state.get(
+            group_response_key(session.session_id, assigned_group.group_id)
+        )
+        if response is None:
+            render_rating_group(
+                session,
+                assignment,
+                groups,
+                group_index,
+            )
+            return
 
     render_header()
     with st.container(key="rating_complete"):
+        st.progress(1.0, text="5 van 5 jokegroepen beoordeeld")
         st.markdown(
             """
             <div class="completion-mark" aria-hidden="true"></div>
-            <h1>Beoordelingen gecontroleerd</h1>
-            <p>Bedankt voor het beoordelen van deze groep.</p>
+            <h1>Alle jokegroepen zijn beoordeeld</h1>
+            <p>Bedankt. Je antwoorden zijn klaar voor de laatste controle.</p>
             """,
             unsafe_allow_html=True,
         )
         back_column, continue_column = st.columns(2, gap="medium")
         with back_column:
             if st.button(
-                "Terug naar groep",
+                "Terug naar laatste groep",
                 icon=":material/arrow_back:",
                 use_container_width=True,
             ):
-                saved_response = st.session_state[response_key]
-                for rating in saved_response["ratings"]:
-                    st.session_state[
-                        f"rating:{session.session_id}:"
-                        f"{rating['variant_id']}:funniness"
-                    ] = rating["funniness"]
-                    st.session_state[
-                        f"rating:{session.session_id}:"
-                        f"{rating['variant_id']}:freek_similarity"
-                    ] = rating["freek_similarity"]
-                st.session_state[
-                    f"group_comment:{session.session_id}:"
-                    f"{assigned_group.group_id}"
-                ] = saved_response["comment"]
-                st.query_params["page"] = "group-1"
+                request_scroll_to_top()
+                st.query_params["page"] = f"group-{len(assignment.groups)}"
                 st.rerun()
         with continue_column:
             st.button(
-                "Verder",
+                "Antwoorden controleren",
                 type="primary",
                 disabled=True,
-                icon=":material/arrow_forward:",
+                icon=":material/fact_check:",
                 use_container_width=True,
             )
     render_footer()
+    apply_requested_scroll()
 
 
 def render_stimulus_preview(groups: tuple[JokeGroup, ...]) -> None:
@@ -750,6 +897,7 @@ st.markdown(
             background: var(--study-coral);
             display: inline-block;
             height: 1.1rem;
+            margin-right: 0.75rem;
             width: 0.25rem;
             box-shadow:
                 0.45rem 0 0 var(--study-coral),
@@ -882,6 +1030,18 @@ st.markdown(
             max-width: 48rem;
         }
 
+        .st-key-rating_group [data-testid="stProgress"],
+        .st-key-rating_complete [data-testid="stProgress"] {
+            margin-bottom: 2.25rem;
+        }
+
+        .st-key-rating_group [data-testid="stProgress"] p,
+        .st-key-rating_complete [data-testid="stProgress"] p {
+            color: var(--study-muted);
+            font-size: 0.88rem;
+            font-weight: 650;
+        }
+
         .rating-context {
             color: var(--study-green);
             font-size: 0.9rem;
@@ -912,6 +1072,12 @@ st.markdown(
         .st-key-rating_group [class*="st-key-rating_variant_"] {
             border-bottom: 1px solid var(--study-border);
             padding: 2rem 0 2.25rem;
+        }
+
+        .st-key-rating_group
+        [class*="st-key-rating_variant_"]
+        [data-testid="stHorizontalBlock"] {
+            gap: 4rem;
         }
 
         .rating-variant-copy {
@@ -972,6 +1138,14 @@ st.markdown(
 
         .st-key-rating_group [data-testid="stFormSubmitButton"] {
             margin-top: 1rem;
+        }
+
+        .st-key-rating_group [data-testid="stForm"] >
+        div[data-testid="stVerticalBlock"] >
+        div[data-testid="stElementContainer"]:has(
+            [data-testid="stHorizontalBlock"]
+        ):last-child {
+            margin-top: 1.5rem;
         }
 
         .st-key-rating_complete [data-testid="stHorizontalBlock"] {
@@ -1123,6 +1297,12 @@ st.markdown(
                 gap: 1.5rem;
             }
 
+            .st-key-rating_group
+            [class*="st-key-rating_variant_"]
+            [data-testid="stHorizontalBlock"] {
+                gap: 1.5rem;
+            }
+
             .st-key-rating_group [data-testid="stColumn"] {
                 width: 100%;
             }
@@ -1159,18 +1339,23 @@ participant_session = session_access.session
 assert participant_session is not None
 participant_assignment = build_assignment(participant_session, stimulus_groups)
 page = st.query_params.get("page")
+group_pages = {
+    f"group-{group_index + 1}": group_index
+    for group_index in range(len(participant_assignment.groups))
+}
 if page == "intro":
     render_participant_intro(participant_session)
 elif page == "profile-complete":
     render_profile_complete(participant_session, participant_assignment)
-elif page == "group-1":
-    render_single_group(
+elif page in group_pages:
+    render_rating_group(
         participant_session,
         participant_assignment,
         stimulus_groups,
+        group_pages[page],
     )
-elif page == "group-complete":
-    render_group_complete(
+elif page in {"group-complete", "groups-complete"}:
+    render_groups_complete(
         participant_session,
         participant_assignment,
         stimulus_groups,

@@ -42,21 +42,44 @@ class SessionRegistryTest(unittest.TestCase):
         self.assertLessEqual(max(exposure.values()) - min(exposure.values()), 1)
 
     def test_assignment_is_stable_and_complete(self) -> None:
-        session = next(iter(self.sessions.values()))
+        for session in self.sessions.values():
+            with self.subTest(session_id=session.session_id):
+                first = build_assignment(session, self.groups)
+                second = build_assignment(session, self.groups)
 
-        first = build_assignment(session, self.groups)
-        second = build_assignment(session, self.groups)
+                self.assertEqual(first, second)
+                self.assertEqual(
+                    assignment_fingerprint(first),
+                    assignment_fingerprint(second),
+                )
+                self.assertEqual(len(first.groups), 5)
+                self.assertEqual(
+                    len({group.group_id for group in first.groups}),
+                    5,
+                )
+                self.assertTrue(
+                    all(
+                        len(group.variant_ids) == 8
+                        for group in first.groups
+                    )
+                )
+                self.assertTrue(
+                    all(
+                        len(set(group.variant_ids))
+                        == len(group.variant_ids)
+                        for group in first.groups
+                    )
+                )
 
-        self.assertEqual(first, second)
-        self.assertEqual(assignment_fingerprint(first), assignment_fingerprint(second))
-        self.assertEqual(len(first.groups), 5)
-        self.assertTrue(all(len(group.variant_ids) == 8 for group in first.groups))
-        self.assertTrue(
-            all(
-                len(set(group.variant_ids)) == len(group.variant_ids)
-                for group in first.groups
+    def test_test_links_receive_different_stable_orders(self) -> None:
+        fingerprints = {
+            assignment_fingerprint(
+                build_assignment(session, self.groups)
             )
-        )
+            for session in self.sessions.values()
+        }
+
+        self.assertGreater(len(fingerprints), 1)
 
     def test_session_access_states(self) -> None:
         active_session = next(iter(self.sessions.values()))

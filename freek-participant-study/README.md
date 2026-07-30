@@ -3,9 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 5 adds one
-complete joke-group workflow with eight randomized versions, two required
-Likert sliders per version, and an optional group comment.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 6 adds the full
+five-group flow with stable randomized assignments, Previous and Next
+navigation, progress, and temporary in-session draft retention.
 
 ## Requirements
 
@@ -72,21 +72,24 @@ curl --fail http://localhost:8501/_stcore/health
 
 The expected response is `ok`.
 
-## Checkpoint 5 Acceptance Test
+## Checkpoint 6 Acceptance Test
 
 1. Complete the checkpoint-4 participant questions.
 2. Choose `Verder` on the profile confirmation screen.
-3. Confirm one descriptive group contains `Versie A` through `Versie H`.
-4. Confirm every version has both required sliders and starts at `Kies`.
-5. Submit everything untouched and inspect the 16 validation messages.
-6. Give every slider a value from 1 through 5 and optionally add a comment.
-7. Confirm the group-completion screen appears.
-8. Choose `Terug naar groep` and verify the selected ratings remain.
-9. Resize to a narrow mobile width and inspect the stacked sliders.
-10. Run the automated and HTTP health checks above.
+3. Confirm the progress indicator starts at `Jokegroep 1 van 5`.
+4. Complete the first group and choose `Volgende groep`.
+5. Add a few ratings or a comment in the second group and choose
+   `Vorige groep`.
+6. Return to the second group and confirm its temporary draft remains.
+7. Complete all five groups and inspect the completion screen.
+8. Choose `Terug naar laatste groep`, revise a rating, and finish again.
+9. Open another test link and confirm its group and variant order differs.
+10. Refresh and refill the profile to confirm assignment order remains stable.
+11. Resize to a narrow mobile width and inspect the stacked navigation.
+12. Run the automated and HTTP health checks above.
 
-Checkpoint 5 keeps the validated profile and group response only in Streamlit
-session memory. Durable autosave is introduced in checkpoint 7.
+Checkpoint 6 keeps the profile, responses, and drafts only in Streamlit session
+memory. Durable autosave, pause, and resume are introduced in checkpoint 7.
 
 The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).
 

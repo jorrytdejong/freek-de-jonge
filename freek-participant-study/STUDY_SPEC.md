@@ -60,7 +60,8 @@ unless a later study version explicitly defines them as such.
 - Exports retain the mapping from displayed label and position to internal
   variant ID.
 
-Assignment and session-link behaviour will be implemented in later checkpoints.
+Assignment and session-link behaviour are implemented from the fixed session
+registry and deterministic session-based ordering.
 
 ## Measurements
 
@@ -78,10 +79,13 @@ The second scale covers both style and subject matter.
 Sliders must begin in an unanswered state. An untouched slider must not silently
 count as a neutral rating.
 
-For checkpoint 5, the first assigned group is implemented completely:
+For checkpoint 6, the complete five-group rating flow is implemented:
 
 - the deterministic assignment order maps to neutral labels `Versie A` through
   `Versie H`;
+- each participant receives five unique groups in a deterministic randomized
+  order;
+- all eight variants in every group have a deterministic randomized order;
 - participants never see internal variant IDs or variant roles;
 - each version is shown with both rating sliders side by side on desktop;
 - mobile layouts stack the two scales to preserve readable labels;
@@ -89,8 +93,11 @@ For checkpoint 5, the first assigned group is implemented completely:
 - choosing `3` is therefore distinguishable from leaving a slider untouched;
 - all 16 ratings are required before the group response is accepted;
 - the group comment remains optional;
-- the validated one-group response is held in Streamlit session memory until
-  durable autosave is introduced.
+- Previous and Next navigation preserves completed responses and temporary
+  drafts within the active Streamlit session;
+- a progress bar identifies the current group out of five;
+- validated responses and temporary drafts remain in Streamlit session memory
+  until durable autosave is introduced in checkpoint 7.
 
 ## Participant Questions
 
