@@ -4,16 +4,27 @@ Checkpoint 11 uses a long-lived `staging` branch and Streamlit Community Cloud.
 Staging accepts only the ten links in `data/sessions.staging.csv`; the quality
 gate fails if that registry contains a real participant session.
 
+- Public app: <https://freek-participant-pilot.streamlit.app/>
+- Admin: <https://freek-participant-pilot.streamlit.app/?admin=1>
+- Example test link: <https://freek-participant-pilot.streamlit.app/?session=test-01-DU8NXu1m>
+
 ## Release Flow
 
 1. Develop on a `codex/*` feature branch.
 2. Run `python scripts/run_quality_gate.py` locally.
 3. Open a pull request and require the `Freek study quality gate` check.
 4. Merge an approved pull request into `staging` for participant testing.
-5. Merge the frozen release into `main` only after staging acceptance.
+5. Reconcile the repository branch history before selecting the production
+   branch, then merge the frozen release only after staging acceptance.
 
 Do not commit directly to `staging` or `main`. Configure both branches to require
 a pull request and the quality-gate status check in GitHub branch protection.
+
+The participant-study history currently descends from `master`. The repository's
+default `main` branch has separate orphan history for a notebook workflow, so
+GitHub cannot create a normal participant-study pull request to `main`. Draft PR
+#2 therefore targets `master`. Resolve this branch split before checkpoint 12's
+production release; do not use an unrelated-history merge as a shortcut.
 
 ## Community Cloud Coordinates
 

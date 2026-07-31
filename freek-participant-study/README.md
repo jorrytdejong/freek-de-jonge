@@ -144,3 +144,8 @@ by Git and must never be committed.
 
 Staging coordinates, secrets, test procedure, and the temporary-storage warning
 are documented in [`STAGING.md`](STAGING.md).
+
+The checkpoint 11 staging app is available at
+<https://freek-participant-pilot.streamlit.app/>. It accepts test links only;
+real participant recruitment remains blocked until checkpoint 12 adds durable
+storage and resolves the repository's production-branch history.
