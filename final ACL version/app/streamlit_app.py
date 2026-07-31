@@ -14,10 +14,6 @@ if PROJECT_PATH in sys.path:
     sys.path.remove(PROJECT_PATH)
 sys.path.insert(0, PROJECT_PATH)
 
-for module_name in list(sys.modules):
-    if module_name == "core" or module_name.startswith("core."):
-        del sys.modules[module_name]
-
 from core.categories import CATEGORY_INVENTORY
 from core.llm import DEFAULT_MODEL, MissingAPIKeyError, available_model_ids, model_description, model_label
 from core.runner import run_matrix
