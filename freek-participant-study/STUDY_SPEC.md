@@ -154,8 +154,15 @@ There is no attention check.
 - Reopening the same anonymous link restores assignment, order, answers, and
   position.
 - A final review page precedes submission.
+- The review page shows all five groups and supports direct editing.
+- Final submission appends an immutable event containing the complete profile,
+  ratings, comments, study version, test status, and submission timestamp.
+- The debrief repeats that the stimuli are experimental and not written by
+  Freek de Jonge.
+- Submitted real links always reopen on a read-only debrief.
+- Test links can return to review and append a separately numbered submission.
 
-Checkpoint 7 stores local development progress in
+Checkpoint 8 stores local development progress and submissions in
 `data/runtime/progress.csv`. The fixed columns are:
 
 - `session_id`
@@ -165,15 +172,21 @@ Checkpoint 7 stores local development progress in
 - `profile_json`
 - `responses_json`
 - `drafts_json`
+- `status`
+- `final_comment`
+- `submissions_json`
 - `created_at`
 - `updated_at`
 
-The structured fields are JSON objects inside CSV cells. The complete file is
-written to a temporary sibling file, flushed, and atomically replaced. Invalid
-headers, malformed JSON, duplicate sessions, and invalid timestamps block reads
-and writes rather than silently discarding data. The runtime file is excluded
-from Git. `updated_at` records save events only; response durations are not
-measured.
+The structured fields are JSON inside CSV cells. Each submission event receives
+a stable ID such as `test-01-DU8NXu1m-submission-001` and retains its own
+immutable response snapshot. The complete file is written to a temporary
+sibling file, flushed, and atomically replaced. Invalid headers, malformed JSON,
+duplicate sessions, invalid timestamps, inconsistent submission status, and
+duplicate real submissions block writes rather than silently discarding data.
+Checkpoint-7 files are accepted through an explicit legacy schema and upgraded
+on their next save. The runtime file is excluded from Git. `updated_at` records
+save events only; response durations are not measured.
 
 ## Session Rules
 

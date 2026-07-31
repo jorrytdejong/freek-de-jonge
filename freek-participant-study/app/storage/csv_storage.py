@@ -15,7 +15,7 @@ from app.storage.base import SavedProgress
 DEFAULT_PROGRESS_PATH = (
     Path(__file__).resolve().parents[2] / "data" / "runtime" / "progress.csv"
 )
-FIELDNAMES = (
+LEGACY_FIELDNAMES = (
     "session_id",
     "study_version",
     "is_test",
@@ -26,6 +26,20 @@ FIELDNAMES = (
     "created_at",
     "updated_at",
 )
+FIELDNAMES = (
+    "session_id",
+    "study_version",
+    "is_test",
+    "current_page",
+    "profile_json",
+    "responses_json",
+    "drafts_json",
+    "status",
+    "final_comment",
+    "submissions_json",
+    "created_at",
+    "updated_at",
+)
 
 _LOCKS_GUARD = threading.Lock()
 _FILE_LOCKS: dict[Path, threading.RLock] = {}
@@ -33,6 +47,10 @@ _FILE_LOCKS: dict[Path, threading.RLock] = {}
 
 class ProgressStorageError(RuntimeError):
     """Raised when progress cannot be read or replaced safely."""
+
+
+class AlreadySubmittedError(ProgressStorageError):
+    """Raised when a real participant session is submitted again."""
 
 
 def _file_lock(path: Path) -> threading.RLock:
@@ -79,6 +97,50 @@ def _parse_nested_objects(
             f"Session {session_id} has invalid records in {field}."
         )
     return parsed
+
+
+def _parse_submission_events(
+    value: str,
+    *,
+    session_id: str,
+    study_version: str,
+    is_test: bool,
+) -> tuple[dict[str, object], ...]:
+    try:
+        parsed = json.loads(value)
+    except json.JSONDecodeError as error:
+        raise ProgressStorageError(
+            f"Session {session_id} has invalid JSON in submissions_json."
+        ) from error
+    if not isinstance(parsed, list) or not all(
+        isinstance(event, dict) for event in parsed
+    ):
+        raise ProgressStorageError(
+            f"Session {session_id} has invalid submission events."
+        )
+    for submission_number, event in enumerate(parsed, start=1):
+        expected_id = (
+            f"{session_id}-submission-{submission_number:03d}"
+        )
+        if (
+            event.get("submission_id") != expected_id
+            or event.get("submission_number") != submission_number
+            or event.get("study_version") != study_version
+            or event.get("is_test") is not is_test
+            or not isinstance(event.get("profile"), dict)
+            or not isinstance(event.get("responses"), dict)
+            or not isinstance(event.get("final_comment"), str)
+            or not isinstance(event.get("submitted_at"), str)
+        ):
+            raise ProgressStorageError(
+                f"Session {session_id} has an invalid submission event."
+            )
+        _parse_timestamp(
+            event["submitted_at"],
+            field="submission submitted_at",
+            session_id=session_id,
+        )
+    return tuple(parsed)
 
 
 def _parse_timestamp(
@@ -128,6 +190,26 @@ def _parse_row(row: dict[str, str], *, row_number: int) -> SavedProgress:
             session_id=session_id,
         )
     )
+    submissions_text = (row.get("submissions_json") or "").strip()
+    submissions = (
+        ()
+        if not submissions_text
+        else _parse_submission_events(
+            submissions_text,
+            session_id=session_id,
+            study_version=study_version,
+            is_test=is_test_text == "true",
+        )
+    )
+    status = (row.get("status") or "in_progress").strip()
+    if status not in {"in_progress", "submitted"}:
+        raise ProgressStorageError(
+            f"Session {session_id} has invalid submission status."
+        )
+    if (status == "submitted") != bool(submissions):
+        raise ProgressStorageError(
+            f"Session {session_id} has inconsistent submission status."
+        )
     return SavedProgress(
         session_id=session_id,
         study_version=study_version,
@@ -144,6 +226,9 @@ def _parse_row(row: dict[str, str], *, row_number: int) -> SavedProgress:
             field="drafts_json",
             session_id=session_id,
         ),
+        status=status,
+        final_comment=row.get("final_comment") or "",
+        submissions=submissions,
         created_at=_parse_timestamp(
             row.get("created_at") or "",
             field="created_at",
@@ -170,7 +255,8 @@ class CSVProgressStorage:
         try:
             with self.path.open(encoding="utf-8", newline="") as handle:
                 reader = csv.DictReader(handle)
-                if tuple(reader.fieldnames or ()) != FIELDNAMES:
+                fieldnames = tuple(reader.fieldnames or ())
+                if fieldnames not in {FIELDNAMES, LEGACY_FIELDNAMES}:
                     raise ProgressStorageError(
                         "Progress file has an unexpected column contract."
                     )
@@ -204,6 +290,8 @@ class CSVProgressStorage:
         profile: dict[str, object] | None,
         responses: dict[str, dict[str, object]],
         drafts: dict[str, dict[str, object]],
+        final_comment: str = "",
+        submissions: tuple[dict[str, object], ...] = (),
         now: datetime | None = None,
     ) -> SavedProgress:
         saved_at = now or datetime.now(UTC)
@@ -213,6 +301,14 @@ class CSVProgressStorage:
         with self._lock:
             records = self._read_all()
             existing = records.get(session_id)
+            if (
+                existing is not None
+                and existing.status == "submitted"
+                and not existing.is_test
+            ):
+                raise AlreadySubmittedError(
+                    f"Real session {session_id} is already submitted."
+                )
             record = SavedProgress(
                 session_id=session_id,
                 study_version=study_version,
@@ -221,10 +317,81 @@ class CSVProgressStorage:
                 profile=profile,
                 responses=responses,
                 drafts=drafts,
+                status="submitted" if submissions else "in_progress",
+                final_comment=final_comment,
+                submissions=submissions,
                 created_at=(
                     existing.created_at if existing is not None else saved_at
                 ),
                 updated_at=saved_at,
+            )
+            records[session_id] = record
+            self._write_all(records)
+            return record
+
+    def submit_response(
+        self,
+        *,
+        session_id: str,
+        study_version: str,
+        is_test: bool,
+        profile: dict[str, object],
+        responses: dict[str, dict[str, object]],
+        final_comment: str,
+        now: datetime | None = None,
+    ) -> SavedProgress:
+        submitted_at = now or datetime.now(UTC)
+        if submitted_at.tzinfo is None:
+            raise ProgressStorageError(
+                "Submission timestamp must include a timezone."
+            )
+
+        with self._lock:
+            records = self._read_all()
+            existing = records.get(session_id)
+            if existing is not None and existing.submissions and not is_test:
+                raise AlreadySubmittedError(
+                    f"Real session {session_id} is already submitted."
+                )
+            if existing is not None and existing.is_test != is_test:
+                raise ProgressStorageError(
+                    f"Session type changed for {session_id}."
+                )
+
+            previous_submissions = (
+                existing.submissions if existing is not None else ()
+            )
+            submission_number = len(previous_submissions) + 1
+            event: dict[str, object] = {
+                "submission_id": (
+                    f"{session_id}-submission-{submission_number:03d}"
+                ),
+                "submission_number": submission_number,
+                "submitted_at": submitted_at.isoformat(),
+                "study_version": study_version,
+                "is_test": is_test,
+                "profile": profile,
+                "responses": responses,
+                "final_comment": final_comment,
+            }
+            submissions = (*previous_submissions, event)
+            record = SavedProgress(
+                session_id=session_id,
+                study_version=study_version,
+                is_test=is_test,
+                current_page="debrief",
+                profile=profile,
+                responses=responses,
+                drafts={},
+                status="submitted",
+                final_comment=final_comment,
+                submissions=submissions,
+                created_at=(
+                    existing.created_at
+                    if existing is not None
+                    else submitted_at
+                ),
+                updated_at=submitted_at,
             )
             records[session_id] = record
             self._write_all(records)
@@ -268,6 +435,14 @@ class CSVProgressStorage:
                             ),
                             "drafts_json": json.dumps(
                                 record.drafts,
+                                ensure_ascii=True,
+                                separators=(",", ":"),
+                                sort_keys=True,
+                            ),
+                            "status": record.status,
+                            "final_comment": record.final_comment,
+                            "submissions_json": json.dumps(
+                                record.submissions,
                                 ensure_ascii=True,
                                 separators=(",", ":"),
                                 sort_keys=True,

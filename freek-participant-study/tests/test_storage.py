@@ -1,10 +1,16 @@
 import csv
+import json
 import tempfile
 import unittest
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from app.storage import CSVProgressStorage, ProgressStorageError
+from app.storage import (
+    AlreadySubmittedError,
+    CSVProgressStorage,
+    ProgressStorageError,
+)
+from app.storage.csv_storage import FIELDNAMES, LEGACY_FIELDNAMES
 
 
 class CSVProgressStorageTest(unittest.TestCase):
@@ -144,6 +150,131 @@ class CSVProgressStorageTest(unittest.TestCase):
             "timestamp must include a timezone",
         ):
             self.save_example(now=datetime(2026, 7, 30, 12, 0))
+
+    def test_legacy_progress_is_loaded_and_upgraded_on_save(self) -> None:
+        with self.path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=LEGACY_FIELDNAMES)
+            writer.writeheader()
+            writer.writerow(
+                {
+                    "session_id": "test-session-01",
+                    "study_version": "pilot-1",
+                    "is_test": "true",
+                    "current_page": "group-2",
+                    "profile_json": "null",
+                    "responses_json": "{}",
+                    "drafts_json": "{}",
+                    "created_at": self.first_time.isoformat(),
+                    "updated_at": self.first_time.isoformat(),
+                }
+            )
+
+        loaded = self.storage.load_progress("test-session-01")
+
+        assert loaded is not None
+        self.assertEqual(loaded.status, "in_progress")
+        self.assertFalse(loaded.submissions)
+        self.save_example(now=self.first_time + timedelta(minutes=1))
+        with self.path.open(encoding="utf-8", newline="") as handle:
+            self.assertIn("submissions_json", next(csv.reader(handle)))
+
+    def test_real_session_can_only_be_submitted_once(self) -> None:
+        first = self.storage.submit_response(
+            session_id="real-session-01",
+            study_version="pilot-1",
+            is_test=False,
+            profile={"age": 40},
+            responses={"G01": {"ratings": []}},
+            final_comment="Klaar.",
+            now=self.first_time,
+        )
+
+        self.assertEqual(first.status, "submitted")
+        self.assertEqual(len(first.submissions), 1)
+        with self.assertRaises(AlreadySubmittedError):
+            self.storage.submit_response(
+                session_id="real-session-01",
+                study_version="pilot-1",
+                is_test=False,
+                profile={"age": 40},
+                responses={"G01": {"ratings": []}},
+                final_comment="Nogmaals.",
+                now=self.first_time + timedelta(minutes=1),
+            )
+        with self.assertRaises(AlreadySubmittedError):
+            self.storage.save_progress(
+                session_id="real-session-01",
+                study_version="pilot-1",
+                is_test=False,
+                current_page="group-1",
+                profile={"age": 40},
+                responses={},
+                drafts={},
+            )
+
+    def test_test_submissions_are_numbered_and_immutable(self) -> None:
+        first = self.storage.submit_response(
+            session_id="test-session-01",
+            study_version="pilot-1",
+            is_test=True,
+            profile={"age": 37},
+            responses={"G01": {"comment": "Eerste versie."}},
+            final_comment="Eerste inzending.",
+            now=self.first_time,
+        )
+        second = self.storage.submit_response(
+            session_id="test-session-01",
+            study_version="pilot-1",
+            is_test=True,
+            profile={"age": 38},
+            responses={"G01": {"comment": "Tweede versie."}},
+            final_comment="Tweede inzending.",
+            now=self.first_time + timedelta(minutes=1),
+        )
+
+        self.assertEqual(len(second.submissions), 2)
+        self.assertEqual(
+            first.submissions[0]["submission_id"],
+            "test-session-01-submission-001",
+        )
+        self.assertEqual(
+            second.submissions[1]["submission_id"],
+            "test-session-01-submission-002",
+        )
+        self.assertEqual(
+            second.submissions[0]["final_comment"],
+            "Eerste inzending.",
+        )
+        self.assertNotEqual(
+            json.dumps(second.submissions[0], sort_keys=True),
+            json.dumps(second.submissions[1], sort_keys=True),
+        )
+
+    def test_tampered_submission_event_is_rejected(self) -> None:
+        self.storage.submit_response(
+            session_id="test-session-01",
+            study_version="pilot-1",
+            is_test=True,
+            profile={"age": 37},
+            responses={"G01": {"ratings": []}},
+            final_comment="",
+            now=self.first_time,
+        )
+        with self.path.open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        events = json.loads(rows[0]["submissions_json"])
+        events[0]["submission_id"] = "tampered"
+        rows[0]["submissions_json"] = json.dumps(events)
+        with self.path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=FIELDNAMES)
+            writer.writeheader()
+            writer.writerows(rows)
+
+        with self.assertRaisesRegex(
+            ProgressStorageError,
+            "invalid submission event",
+        ):
+            self.storage.load_progress("test-session-01")
 
 
 if __name__ == "__main__":

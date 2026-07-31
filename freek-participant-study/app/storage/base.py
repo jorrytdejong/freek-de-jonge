@@ -16,6 +16,9 @@ class SavedProgress:
     profile: dict[str, object] | None
     responses: dict[str, dict[str, object]]
     drafts: dict[str, dict[str, object]]
+    status: str
+    final_comment: str
+    submissions: tuple[dict[str, object], ...]
     created_at: datetime
     updated_at: datetime
 
@@ -34,6 +37,21 @@ class ProgressStorage(Protocol):
         profile: dict[str, object] | None,
         responses: dict[str, dict[str, object]],
         drafts: dict[str, dict[str, object]],
+        final_comment: str = "",
+        submissions: tuple[dict[str, object], ...] = (),
         now: datetime | None = None,
     ) -> SavedProgress:
         """Atomically create or replace one anonymous session snapshot."""
+
+    def submit_response(
+        self,
+        *,
+        session_id: str,
+        study_version: str,
+        is_test: bool,
+        profile: dict[str, object],
+        responses: dict[str, dict[str, object]],
+        final_comment: str,
+        now: datetime | None = None,
+    ) -> SavedProgress:
+        """Append one atomic immutable submission event."""

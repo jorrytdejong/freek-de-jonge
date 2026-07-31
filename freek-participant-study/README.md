@@ -3,9 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 7 adds durable
-local autosave and resume for profiles, partial ratings, completed groups,
-comments, and the participant's current position.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 8 adds the final
+review, editable answers, optional overall comment, atomic submission, repeated
+test submissions, one-time real submissions, and a Dutch debrief.
 
 ## Requirements
 
@@ -58,7 +58,7 @@ Append one of these paths to the local app URL. For example:
 
 ## Automated Checks
 
-Run the dependency-free health and stimulus-contract tests:
+Run the automated contract and Streamlit flow tests:
 
 ```bash
 python -m unittest discover -s tests
@@ -72,25 +72,24 @@ curl --fail http://localhost:8501/_stcore/health
 
 The expected response is `ok`.
 
-## Checkpoint 7 Acceptance Test
+## Checkpoint 8 Acceptance Test
 
-1. Complete the checkpoint-4 participant questions.
-2. Choose `Verder` on the profile confirmation screen.
-3. Change two sliders and add a partial group comment.
-4. Confirm the `Opgeslagen` status is visible.
-5. Refresh the page and confirm the two ratings and comment return.
-6. Close the tab, reopen the same anonymous link, and confirm it resumes on the
-   saved group.
-7. Complete the group, continue, and reopen the link again.
-8. Confirm the completed group and current position are retained.
-9. Move backward, change a previous answer, and verify the latest value returns
-   after another refresh.
-10. Run the automated and HTTP health checks above.
+1. Complete all five joke groups with a test link.
+2. Expand every group on the review page and inspect its ratings.
+3. Choose `Bewerk jokegroep 2`, change a rating, and choose
+   `Terug naar controle`.
+4. Add an optional general comment.
+5. Choose `Definitief indienen` and review the Dutch debrief.
+6. Inspect the read-only submitted answers.
+7. Choose `Nieuwe testinzending` and submit the test link again.
+8. Confirm the debrief identifies the second test submission.
+9. Run the automated and HTTP health checks above.
 
 Development progress is stored in the ignored file
 `data/runtime/progress.csv`. Set `FREEK_STUDY_PROGRESS_PATH` to use a different
-local path. Production Google Sheets storage is added later through the same
-storage contract.
+local path. `FREEK_STUDY_SESSIONS_PATH` can point automated or staging runs to a
+separate session registry. Production Google Sheets storage is added later
+through the same storage contract.
 
 The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).
 

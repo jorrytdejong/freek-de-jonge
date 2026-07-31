@@ -16,6 +16,7 @@ class ResumeFlowTest(unittest.TestCase):
             progress_path = Path(temporary_directory) / "progress.csv"
             environment = {
                 "FREEK_STUDY_PROGRESS_PATH": str(progress_path),
+                "FREEK_STUDY_IN_PROCESS_NAVIGATION": "true",
             }
             with patch.dict(os.environ, environment):
                 app = AppTest.from_file(app_path)
@@ -87,6 +88,92 @@ class ResumeFlowTest(unittest.TestCase):
                 assert completed is not None
                 self.assertEqual(len(completed.responses), 1)
                 self.assertFalse(completed.drafts)
+
+                for group_number in range(2, 6):
+                    for slider in reopened.select_slider:
+                        if slider.value == 0:
+                            slider.set_value(3)
+                    reopened.run(timeout=15)
+                    next_label = (
+                        "Groepen afronden"
+                        if group_number == 5
+                        else "Volgende groep"
+                    )
+                    next(
+                        button
+                        for button in reopened.button
+                        if button.label == next_label
+                    ).click().run(timeout=15)
+
+                self.assertEqual(
+                    reopened.query_params["page"][0],
+                    "review",
+                )
+                self.assertEqual(len(reopened.expander), 5)
+                next(
+                    button
+                    for button in reopened.button
+                    if button.label == "Bewerk jokegroep 2"
+                ).click().run(timeout=15)
+                self.assertEqual(
+                    reopened.query_params["page"][0],
+                    "group-2",
+                )
+                reopened.select_slider[0].set_value(5).run(timeout=15)
+                next(
+                    button
+                    for button in reopened.button
+                    if button.label == "Terug naar controle"
+                ).click().run(timeout=15)
+                self.assertEqual(
+                    reopened.query_params["page"][0],
+                    "review",
+                )
+
+                reopened.text_area[0].set_value(
+                    "Algemene testopmerking."
+                ).run(timeout=15)
+                next(
+                    button
+                    for button in reopened.button
+                    if button.label == "Definitief indienen"
+                ).click().run(timeout=15)
+
+                self.assertEqual(
+                    reopened.query_params["page"][0],
+                    "debrief",
+                )
+                first_submission = storage.load_progress(
+                    "test-10-KvPvblxx"
+                )
+                assert first_submission is not None
+                self.assertEqual(first_submission.status, "submitted")
+                self.assertEqual(len(first_submission.submissions), 1)
+                self.assertEqual(
+                    first_submission.final_comment,
+                    "Algemene testopmerking.",
+                )
+
+                next(
+                    button
+                    for button in reopened.button
+                    if button.label == "Nieuwe testinzending"
+                ).click().run(timeout=15)
+                next(
+                    button
+                    for button in reopened.button
+                    if button.label == "Definitief indienen"
+                ).click().run(timeout=15)
+
+                second_submission = storage.load_progress(
+                    "test-10-KvPvblxx"
+                )
+                assert second_submission is not None
+                self.assertEqual(len(second_submission.submissions), 2)
+                self.assertNotEqual(
+                    second_submission.submissions[0]["submission_id"],
+                    second_submission.submissions[1]["submission_id"],
+                )
 
 
 if __name__ == "__main__":
