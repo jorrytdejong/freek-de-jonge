@@ -23,9 +23,7 @@ class ExportTablesTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.groups = load_stimuli()
-        cls.sessions = load_sessions(
-            {group.group_id for group in cls.groups}
-        )
+        cls.sessions = load_sessions({group.group_id for group in cls.groups})
         cls.session = cls.sessions["test-01-DU8NXu1m"]
         cls.assignment = build_assignment(cls.session, cls.groups)
 
@@ -120,8 +118,7 @@ class ExportTablesTest(unittest.TestCase):
         version_a = next(
             row
             for row in tables.ratings
-            if row["group_id"] == first_group.group_id
-            and row["display_label"] == "A"
+            if row["group_id"] == first_group.group_id and row["display_label"] == "A"
         )
 
         self.assertEqual(version_a["variant_id"], first_group.variant_ids[0])
@@ -213,10 +210,10 @@ class ExportTablesTest(unittest.TestCase):
     def test_csv_neutralizes_spreadsheet_formulas(self):
         text = rows_to_csv(
             ("comment",),
-            ({"comment": "=HYPERLINK(\"unsafe\")"},),
+            ({"comment": '=HYPERLINK("unsafe")'},),
         )
         parsed = next(csv.DictReader(text.splitlines()))
-        self.assertEqual(parsed["comment"], "'=HYPERLINK(\"unsafe\")")
+        self.assertEqual(parsed["comment"], '\'=HYPERLINK("unsafe")')
 
 
 if __name__ == "__main__":

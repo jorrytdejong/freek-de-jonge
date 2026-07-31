@@ -3,9 +3,8 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 10 adds a hidden,
-password-protected, read-only administration page backed by the validated
-checkpoint 9 exports.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 11 adds one local
+and GitHub Actions quality gate plus an isolated, test-only staging contract.
 
 ## Requirements
 
@@ -20,7 +19,7 @@ Run all commands from this directory:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+python -m pip install -r requirements.txt -r requirements-dev.txt
 ```
 
 ## Run The App
@@ -58,11 +57,16 @@ Append one of these paths to the local app URL. For example:
 
 ## Automated Checks
 
-Run the automated contract and Streamlit flow tests:
+Run the same complete gate used by GitHub Actions:
 
 ```bash
-python -m unittest discover -s tests
+python scripts/run_quality_gate.py
 ```
+
+It checks Ruff formatting and linting, Python compilation, primary and staging
+data contracts, unit and Streamlit flow tests, and a real process-level startup
+health check. The path-scoped workflow lives at
+`.github/workflows/freek-study-quality.yml` in the repository root.
 
 With the application running, verify Streamlit's process health endpoint:
 
@@ -113,19 +117,15 @@ research means. It shows completion totals, rating counts, both overall rating
 means, assigned-versus-rated group exposure, per-variant means, read-only
 answers, and two downloads that follow the current selection.
 
-## Checkpoint 10 Acceptance Test
+## Checkpoint 11 Acceptance Test
 
-1. Open `?admin=1` and try an incorrect password.
-2. Sign in with the configured local password.
-3. Switch to `Testsessies` and confirm the dashboard shows the expected totals.
-4. Switch between `Ingediend` and `Alle statussen` and inspect the difference.
-5. Compare dashboard rating totals with the downloaded rating CSV row count.
-6. Inspect a session and compare its displayed labels, internal variants,
-   scores, and comments with the participant submission.
-7. Switch to `Echte deelnemers` and confirm test sessions disappear.
-8. Open a participant link and confirm no admin controls are visible.
-9. Sign out and confirm the dashboard is protected again.
-10. Run the automated and HTTP health checks above.
+1. Run `python scripts/run_quality_gate.py` locally.
+2. Review the checkpoint pull request and its `Freek study quality gate` check.
+3. Confirm a deliberately malformed staging registry fails validation.
+4. Deploy the `staging` branch using [`STAGING.md`](STAGING.md).
+5. Complete two different test links from desktop and mobile.
+6. Review staging logs, admin totals, and both downloaded CSV files.
+7. Confirm no real participant link is accepted by staging.
 
 Development progress is stored in the ignored file
 `data/runtime/progress.csv`. Set `FREEK_STUDY_PROGRESS_PATH` to use a different
@@ -141,3 +141,6 @@ Shared Streamlit settings live in `.streamlit/config.toml`.
 
 Local secrets will later live in `.streamlit/secrets.toml`. That file is ignored
 by Git and must never be committed.
+
+Staging coordinates, secrets, test procedure, and the temporary-storage warning
+are documented in [`STAGING.md`](STAGING.md).

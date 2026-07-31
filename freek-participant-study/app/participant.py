@@ -44,15 +44,11 @@ def validate_profile(
         )
 
     if freek_familiarity is None:
-        messages.append(
-            "Geef aan hoe goed je het werk van Freek de Jonge kent."
-        )
+        messages.append("Geef aan hoe goed je het werk van Freek de Jonge kent.")
     elif (
         isinstance(freek_familiarity, bool)
         or not isinstance(freek_familiarity, int)
-        or not MINIMUM_FAMILIARITY
-        <= freek_familiarity
-        <= MAXIMUM_FAMILIARITY
+        or not MINIMUM_FAMILIARITY <= freek_familiarity <= MAXIMUM_FAMILIARITY
     ):
         messages.append("Kies voor bekendheid een waarde van 1 tot en met 5.")
 
@@ -69,4 +65,3 @@ def validate_profile(
         freek_familiarity=freek_familiarity,
         consent=True,
     )
-

@@ -40,9 +40,7 @@ class ResumeFlowTest(unittest.TestCase):
 
                 app.select_slider[0].set_value(2).run(timeout=15)
                 app.select_slider[1].set_value(4).run(timeout=15)
-                app.text_area[0].set_value("Halverwege opgeslagen.").run(
-                    timeout=15
-                )
+                app.text_area[0].set_value("Halverwege opgeslagen.").run(timeout=15)
 
                 storage = CSVProgressStorage(progress_path)
                 saved = storage.load_progress("test-10-KvPvblxx")
@@ -95,9 +93,7 @@ class ResumeFlowTest(unittest.TestCase):
                             slider.set_value(3)
                     reopened.run(timeout=15)
                     next_label = (
-                        "Groepen afronden"
-                        if group_number == 5
-                        else "Volgende groep"
+                        "Groepen afronden" if group_number == 5 else "Volgende groep"
                     )
                     next(
                         button
@@ -130,9 +126,9 @@ class ResumeFlowTest(unittest.TestCase):
                     "review",
                 )
 
-                reopened.text_area[0].set_value(
-                    "Algemene testopmerking."
-                ).run(timeout=15)
+                reopened.text_area[0].set_value("Algemene testopmerking.").run(
+                    timeout=15
+                )
                 next(
                     button
                     for button in reopened.button
@@ -143,9 +139,7 @@ class ResumeFlowTest(unittest.TestCase):
                     reopened.query_params["page"][0],
                     "debrief",
                 )
-                first_submission = storage.load_progress(
-                    "test-10-KvPvblxx"
-                )
+                first_submission = storage.load_progress("test-10-KvPvblxx")
                 assert first_submission is not None
                 self.assertEqual(first_submission.status, "submitted")
                 self.assertEqual(len(first_submission.submissions), 1)
@@ -165,9 +159,7 @@ class ResumeFlowTest(unittest.TestCase):
                     if button.label == "Definitief indienen"
                 ).click().run(timeout=15)
 
-                second_submission = storage.load_progress(
-                    "test-10-KvPvblxx"
-                )
+                second_submission = storage.load_progress("test-10-KvPvblxx")
                 assert second_submission is not None
                 self.assertEqual(len(second_submission.submissions), 2)
                 self.assertNotEqual(

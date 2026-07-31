@@ -83,7 +83,9 @@ def validate_stimuli(rows: list[dict[str, str]]) -> tuple[JokeGroup, ...]:
     seen_variant_ids: set[str] = set()
 
     for row_number, row in enumerate(rows, start=2):
-        values = {column: (row.get(column) or "").strip() for column in REQUIRED_COLUMNS}
+        values = {
+            column: (row.get(column) or "").strip() for column in REQUIRED_COLUMNS
+        }
         empty_columns = [column for column, value in values.items() if not value]
         if empty_columns:
             empty = ", ".join(sorted(empty_columns))
@@ -128,9 +130,7 @@ def validate_stimuli(rows: list[dict[str, str]]) -> tuple[JokeGroup, ...]:
         group_title = values["group_title"]
         existing_title = titles_by_group.setdefault(group_id, group_title)
         if existing_title != group_title:
-            raise StimulusValidationError(
-                f"Groep {group_id} gebruikt meerdere titels."
-            )
+            raise StimulusValidationError(f"Groep {group_id} gebruikt meerdere titels.")
 
         variants_by_group.setdefault(group_id, []).append(
             JokeVariant(

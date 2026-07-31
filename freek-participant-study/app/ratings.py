@@ -53,9 +53,7 @@ def build_displayed_variants(
     joke_group: JokeGroup,
 ) -> tuple[DisplayedVariant, ...]:
     """Map deterministic assignment order to neutral labels A through H."""
-    variants_by_id = {
-        variant.variant_id: variant for variant in joke_group.variants
-    }
+    variants_by_id = {variant.variant_id: variant for variant in joke_group.variants}
     assigned_ids = set(assigned_group.variant_ids)
     available_ids = set(variants_by_id)
     if assigned_group.group_id != joke_group.group_id:
@@ -107,8 +105,7 @@ def validate_group_response(
 
         if funniness is None:
             messages.append(
-                f"Versie {variant.display_label}: kies een score voor "
-                "Grappigheid."
+                f"Versie {variant.display_label}: kies een score voor Grappigheid."
             )
         elif (
             isinstance(funniness, bool)
@@ -141,9 +138,7 @@ def validate_group_response(
             and MINIMUM_RATING <= funniness <= MAXIMUM_RATING
             and isinstance(freek_similarity, int)
             and not isinstance(freek_similarity, bool)
-            and MINIMUM_RATING
-            <= freek_similarity
-            <= MAXIMUM_RATING
+            and MINIMUM_RATING <= freek_similarity <= MAXIMUM_RATING
         ):
             ratings.append(
                 VariantRating(
@@ -163,4 +158,3 @@ def validate_group_response(
         ratings=tuple(ratings),
         comment=comment.strip(),
     )
-

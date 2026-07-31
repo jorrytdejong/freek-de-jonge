@@ -17,19 +17,10 @@ class StimulusValidationTest(unittest.TestCase):
 
         self.assertEqual(len(groups), EXPECTED_GROUP_COUNT)
         self.assertTrue(
-            all(
-                len(group.variants) == EXPECTED_VARIANTS_PER_GROUP
-                for group in groups
-            )
+            all(len(group.variants) == EXPECTED_VARIANTS_PER_GROUP for group in groups)
         )
         self.assertEqual(
-            len(
-                {
-                    variant.variant_id
-                    for group in groups
-                    for variant in group.variants
-                }
-            ),
+            len({variant.variant_id for group in groups for variant in group.variants}),
             EXPECTED_GROUP_COUNT * EXPECTED_VARIANTS_PER_GROUP,
         )
 
@@ -73,4 +64,3 @@ class StimulusValidationTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

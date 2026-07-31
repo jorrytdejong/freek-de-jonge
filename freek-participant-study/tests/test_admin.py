@@ -191,9 +191,7 @@ class AdminSummaryTest(unittest.TestCase):
         selected = filter_export_tables(self.tables, SCOPE_TEST)
         overview = build_overview(selected)
         downloaded_rows = list(
-            csv.DictReader(
-                rows_to_csv(RATING_COLUMNS, selected.ratings).splitlines()
-            )
+            csv.DictReader(rows_to_csv(RATING_COLUMNS, selected.ratings).splitlines())
         )
 
         self.assertEqual(overview.rating_count, len(downloaded_rows))

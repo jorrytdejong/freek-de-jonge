@@ -90,9 +90,7 @@ class GroupRatingTest(unittest.TestCase):
         self.assertIsInstance(response, GroupRatingResponse)
         self.assertEqual(len(response.ratings), 8)
         self.assertEqual(response.comment, "Algemene opmerking.")
-        self.assertTrue(
-            all(rating.funniness == 3 for rating in response.ratings)
-        )
+        self.assertTrue(all(rating.funniness == 3 for rating in response.ratings))
 
     def test_out_of_range_score_is_rejected(self) -> None:
         raw_ratings = {
@@ -118,4 +116,3 @@ class GroupRatingTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

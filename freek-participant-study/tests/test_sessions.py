@@ -58,24 +58,18 @@ class SessionRegistryTest(unittest.TestCase):
                     5,
                 )
                 self.assertTrue(
-                    all(
-                        len(group.variant_ids) == 8
-                        for group in first.groups
-                    )
+                    all(len(group.variant_ids) == 8 for group in first.groups)
                 )
                 self.assertTrue(
                     all(
-                        len(set(group.variant_ids))
-                        == len(group.variant_ids)
+                        len(set(group.variant_ids)) == len(group.variant_ids)
                         for group in first.groups
                     )
                 )
 
     def test_test_links_receive_different_stable_orders(self) -> None:
         fingerprints = {
-            assignment_fingerprint(
-                build_assignment(session, self.groups)
-            )
+            assignment_fingerprint(build_assignment(session, self.groups))
             for session in self.sessions.values()
         }
 

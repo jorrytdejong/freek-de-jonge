@@ -95,9 +95,7 @@ def _integer(
         or not isinstance(value, int)
         or not minimum <= value <= maximum
     ):
-        raise ExportValidationError(
-            f"Session {session_id} has invalid {field}."
-        )
+        raise ExportValidationError(f"Session {session_id} has invalid {field}.")
     return value
 
 
@@ -164,9 +162,7 @@ def build_export_tables(
     """Create one participant row per session and one row per saved rating."""
     groups_by_id = {group.group_id: group for group in groups}
     stimulus_versions = {
-        variant.study_version
-        for group in groups
-        for variant in group.variants
+        variant.study_version for group in groups for variant in group.variants
     }
     if len(stimulus_versions) != 1:
         raise ExportValidationError("Stimuli contain inconsistent study versions.")
@@ -299,9 +295,7 @@ def build_export_tables(
                 )
             raw_ratings = response.get("ratings")
             group_comment = response.get("comment")
-            if not isinstance(raw_ratings, list) or not isinstance(
-                group_comment, str
-            ):
+            if not isinstance(raw_ratings, list) or not isinstance(group_comment, str):
                 raise ExportValidationError(
                     f"Session {session_id} has invalid response data for "
                     f"{assigned_group.group_id}."
@@ -328,8 +322,7 @@ def build_export_tables(
                 expected = displayed_by_id.get(variant_id)
                 if expected is None or (
                     raw_rating.get("display_label") != expected.display_label
-                    or raw_rating.get("display_position")
-                    != expected.display_position
+                    or raw_rating.get("display_position") != expected.display_position
                 ):
                     raise ExportValidationError(
                         f"Session {session_id} has an invalid displayed-version "
@@ -437,10 +430,7 @@ def rows_to_csv(
     writer.writeheader()
     for row in rows:
         writer.writerow(
-            {
-                column: _spreadsheet_safe_value(value)
-                for column, value in row.items()
-            }
+            {column: _spreadsheet_safe_value(value) for column, value in row.items()}
         )
     return output.getvalue()
 

@@ -58,7 +58,6 @@ from app.storage import (
 )
 from app.storage.csv_storage import DEFAULT_PROGRESS_PATH
 
-
 st.set_page_config(
     page_title="Onderzoek naar humor en stijl",
     page_icon=":material/rate_review:",
@@ -193,8 +192,8 @@ def render_participant_start(
     session: ParticipantSession,
     fingerprint: str,
 ) -> None:
-    session_status = "Testsessie is geldig." if session.is_test else (
-        "Onderzoekslink is geldig."
+    session_status = (
+        "Testsessie is geldig." if session.is_test else ("Onderzoekslink is geldig.")
     )
     test_notice = ""
     if session.is_test:
@@ -315,9 +314,7 @@ def render_participant_intro(
                     consent=consent,
                 )
             except ProfileValidationError as error:
-                messages = "\n".join(
-                    f"- {message}" for message in error.messages
-                )
+                messages = "\n".join(f"- {message}" for message in error.messages)
                 st.error(f"Controleer de verplichte velden:\n\n{messages}")
             else:
                 st.session_state[f"profile:{session.session_id}"] = {
@@ -465,9 +462,7 @@ def collect_progress_state(
         response = st.session_state.get(
             group_response_key(session.session_id, group_id)
         )
-        draft = st.session_state.get(
-            group_draft_key(session.session_id, group_id)
-        )
+        draft = st.session_state.get(group_draft_key(session.session_id, group_id))
         if response is not None:
             responses[group_id] = response
         if draft is not None:
@@ -514,9 +509,7 @@ def persist_progress(
             "Probeer het opnieuw voordat je verdergaat."
         )
         st.stop()
-    st.session_state[f"saved_at:{session.session_id}"] = (
-        saved.updated_at.isoformat()
-    )
+    st.session_state[f"saved_at:{session.session_id}"] = saved.updated_at.isoformat()
 
 
 def submit_progress(
@@ -531,9 +524,7 @@ def submit_progress(
     try:
         for assigned_group in assignment.groups:
             joke_group = next(
-                group
-                for group in groups
-                if group.group_id == assigned_group.group_id
+                group for group in groups if group.group_id == assigned_group.group_id
             )
             validate_response_record(
                 assigned_group,
@@ -546,9 +537,7 @@ def submit_progress(
         StopIteration,
         ValueError,
     ):
-        st.error(
-            "Een opgeslagen jokegroep is niet volledig of niet geldig."
-        )
+        st.error("Een opgeslagen jokegroep is niet volledig of niet geldig.")
         st.stop()
 
     final_comment = st.session_state.get(
@@ -569,18 +558,13 @@ def submit_progress(
         st.stop()
     except ProgressStorageError:
         st.error(
-            "Je antwoorden konden niet veilig worden ingediend. "
-            "Probeer het opnieuw."
+            "Je antwoorden konden niet veilig worden ingediend. Probeer het opnieuw."
         )
         st.stop()
 
-    st.session_state[submissions_key(session.session_id)] = list(
-        saved.submissions
-    )
+    st.session_state[submissions_key(session.session_id)] = list(saved.submissions)
     st.session_state[f"submission_status:{session.session_id}"] = saved.status
-    st.session_state[f"saved_at:{session.session_id}"] = (
-        saved.updated_at.isoformat()
-    )
+    st.session_state[f"saved_at:{session.session_id}"] = saved.updated_at.isoformat()
     for assigned_group in assignment.groups:
         st.session_state.pop(
             group_draft_key(
@@ -604,8 +588,7 @@ def hydrate_progress(
         saved = progress_storage.load_progress(session.session_id)
     except ProgressStorageError:
         st.error(
-            "De opgeslagen voortgang is beschadigd en kan niet veilig "
-            "worden geopend."
+            "De opgeslagen voortgang is beschadigd en kan niet veilig worden geopend."
         )
         st.stop()
 
@@ -613,9 +596,7 @@ def hydrate_progress(
     if saved is None:
         return None
     if saved.study_version != STUDY_VERSION or saved.is_test != session.is_test:
-        st.error(
-            "De opgeslagen voortgang hoort bij een andere onderzoeksversie."
-        )
+        st.error("De opgeslagen voortgang hoort bij een andere onderzoeksversie.")
         st.stop()
 
     assigned_group_ids = {
@@ -625,17 +606,13 @@ def hydrate_progress(
         set(saved.responses) - assigned_group_ids
         or set(saved.drafts) - assigned_group_ids
     ):
-        st.error(
-            "De opgeslagen voortgang past niet bij deze onderzoekslink."
-        )
+        st.error("De opgeslagen voortgang past niet bij deze onderzoekslink.")
         st.stop()
 
     try:
         for assigned_group in assignment.groups:
             joke_group = next(
-                group
-                for group in groups
-                if group.group_id == assigned_group.group_id
+                group for group in groups if group.group_id == assigned_group.group_id
             )
             response = saved.responses.get(assigned_group.group_id)
             if response is not None:
@@ -661,10 +638,7 @@ def hydrate_progress(
         "groups-complete",
         "review",
         "debrief",
-        *(
-            f"group-{group_index + 1}"
-            for group_index in range(len(assignment.groups))
-        ),
+        *(f"group-{group_index + 1}" for group_index in range(len(assignment.groups))),
     }
     if saved.current_page not in allowed_pages:
         st.error("De opgeslagen positie in het onderzoek is niet geldig.")
@@ -683,25 +657,15 @@ def hydrate_progress(
         st.session_state[f"profile:{session.session_id}"] = saved.profile
 
     for group_id, response in saved.responses.items():
-        st.session_state[
-            group_response_key(session.session_id, group_id)
-        ] = response
+        st.session_state[group_response_key(session.session_id, group_id)] = response
     for group_id, draft in saved.drafts.items():
-        st.session_state[
-            group_draft_key(session.session_id, group_id)
-        ] = draft
-    st.session_state[final_comment_key(session.session_id)] = (
-        saved.final_comment
-    )
-    st.session_state[submissions_key(session.session_id)] = list(
-        saved.submissions
-    )
+        st.session_state[group_draft_key(session.session_id, group_id)] = draft
+    st.session_state[final_comment_key(session.session_id)] = saved.final_comment
+    st.session_state[submissions_key(session.session_id)] = list(saved.submissions)
     st.session_state[f"submission_status:{session.session_id}"] = saved.status
     if saved.status == "submitted" and not session.is_test:
         st.session_state[f"force_debrief:{session.session_id}"] = True
-    st.session_state[f"saved_at:{session.session_id}"] = (
-        saved.updated_at.isoformat()
-    )
+    st.session_state[f"saved_at:{session.session_id}"] = saved.updated_at.isoformat()
     return (
         "debrief"
         if saved.status == "submitted" and not session.is_test
@@ -725,9 +689,7 @@ def restore_group_widgets(
         saved_ratings = draft["ratings"]
         saved_comment = draft["comment"]
     elif response is not None:
-        saved_ratings = {
-            rating["variant_id"]: rating for rating in response["ratings"]
-        }
+        saved_ratings = {rating["variant_id"]: rating for rating in response["ratings"]}
         saved_comment = response["comment"]
     else:
         return
@@ -755,9 +717,7 @@ def store_group_draft(
     raw_ratings: dict[str, dict[str, int | None]],
     comment: str,
 ) -> None:
-    st.session_state[
-        group_draft_key(session.session_id, joke_group.group_id)
-    ] = {
+    st.session_state[group_draft_key(session.session_id, joke_group.group_id)] = {
         "group_id": joke_group.group_id,
         "ratings": raw_ratings,
         "comment": comment,
@@ -787,9 +747,7 @@ def render_rating_group(
     group_number = group_index + 1
     group_count = len(assignment.groups)
     review_edit_key = f"review_edit_group:{session.session_id}"
-    returning_to_review = (
-        st.session_state.get(review_edit_key) == joke_group.group_id
-    )
+    returning_to_review = st.session_state.get(review_edit_key) == joke_group.group_id
 
     render_header()
     with st.container(key="rating_group"):
@@ -819,8 +777,7 @@ def render_rating_group(
             for variant in displayed_variants:
                 with st.container(
                     key=(
-                        f"rating_variant_{joke_group.group_id}_"
-                        f"{variant.display_label}"
+                        f"rating_variant_{joke_group.group_id}_{variant.display_label}"
                     )
                 ):
                     st.markdown(
@@ -885,19 +842,14 @@ def render_rating_group(
                         "funniness": (
                             None if funniness_value == 0 else funniness_value
                         ),
-                        "freek_similarity": (
-                            None if freek_value == 0 else freek_value
-                        ),
+                        "freek_similarity": (None if freek_value == 0 else freek_value),
                     }
 
             comment = st.text_area(
                 "Opmerking over deze groep (optioneel)",
                 max_chars=1000,
                 height=120,
-                key=(
-                    f"group_comment:{session.session_id}:"
-                    f"{joke_group.group_id}"
-                ),
+                key=(f"group_comment:{session.session_id}:{joke_group.group_id}"),
             )
             previous_column, next_column = st.columns(2, gap="medium")
             with previous_column:
@@ -1003,13 +955,8 @@ def render_rating_group(
                     comment=comment,
                 )
             except GroupRatingValidationError as error:
-                messages = "\n".join(
-                    f"- {message}" for message in error.messages
-                )
-                st.error(
-                    "Beantwoord beide schalen voor iedere versie:"
-                    f"\n\n{messages}"
-                )
+                messages = "\n".join(f"- {message}" for message in error.messages)
+                st.error(f"Beantwoord beide schalen voor iedere versie:\n\n{messages}")
             else:
                 st.session_state[
                     group_response_key(
@@ -1119,9 +1066,9 @@ def render_group_summary(
             key=f"edit_review_group_{group_index + 1}",
         ):
             destination = f"group-{group_index + 1}"
-            st.session_state[
-                f"review_edit_group:{session.session_id}"
-            ] = joke_group.group_id
+            st.session_state[f"review_edit_group:{session.session_id}"] = (
+                joke_group.group_id
+            )
             persist_progress(
                 session,
                 assignment,
@@ -1135,12 +1082,15 @@ def first_incomplete_group(
     assignment: ParticipantAssignment,
 ) -> int | None:
     for group_index, assigned_group in enumerate(assignment.groups):
-        if st.session_state.get(
-            group_response_key(
-                session.session_id,
-                assigned_group.group_id,
+        if (
+            st.session_state.get(
+                group_response_key(
+                    session.session_id,
+                    assigned_group.group_id,
+                )
             )
-        ) is None:
+            is None
+        ):
             return group_index
     return None
 
@@ -1394,9 +1344,7 @@ def render_admin_login() -> None:
         if submitted:
             expected = configured_admin_password()
             if expected is None:
-                st.error(
-                    "De beheeromgeving is nog niet geconfigureerd."
-                )
+                st.error("De beheeromgeving is nog niet geconfigureerd.")
             elif verify_admin_password(candidate, expected):
                 st.session_state["admin_authenticated"] = True
                 st.rerun()
@@ -1414,22 +1362,17 @@ def render_admin_session_inspection(
         st.info("Binnen deze selectie zijn geen sessies beschikbaar.")
         return
 
-    participants_by_id = {
-        str(row["session_id"]): row for row in participants
-    }
+    participants_by_id = {str(row["session_id"]): row for row in participants}
     selected_session_id = st.selectbox(
         "Sessie",
         options=tuple(participants_by_id),
         format_func=lambda session_id: (
-            f"{session_id} | "
-            f"{participants_by_id[session_id]['submission_status']}"
+            f"{session_id} | {participants_by_id[session_id]['submission_status']}"
         ),
     )
     participant = participants_by_id[selected_session_id]
     session_ratings = tuple(
-        row
-        for row in ratings
-        if row["session_id"] == selected_session_id
+        row for row in ratings if row["session_id"] == selected_session_id
     )
     metadata_columns = st.columns(4)
     metadata_columns[0].metric("Status", participant["submission_status"])
@@ -1448,9 +1391,7 @@ def render_admin_session_inspection(
         f"Testdata: {'ja' if participant['is_test'] else 'nee'}"
     )
 
-    group_ids = tuple(
-        dict.fromkeys(str(row["group_id"]) for row in session_ratings)
-    )
+    group_ids = tuple(dict.fromkeys(str(row["group_id"]) for row in session_ratings))
     for group_id in group_ids:
         group_rows = tuple(
             row for row in session_ratings if row["group_id"] == group_id
@@ -2515,9 +2456,7 @@ resume_page = hydrate_progress(
 )
 page = st.query_params.get("page")
 if (
-    st.session_state.get(
-        f"force_debrief:{participant_session.session_id}"
-    )
+    st.session_state.get(f"force_debrief:{participant_session.session_id}")
     and page != "debrief"
 ):
     st.query_params["page"] = "debrief"

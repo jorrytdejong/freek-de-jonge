@@ -119,8 +119,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
             )
             self.assertFalse(
                 any(
-                    button.label.startswith("Bewerk jokegroep")
-                    for button in app.button
+                    button.label.startswith("Bewerk jokegroep") for button in app.button
                 )
             )
             saved = storage.load_progress(session.session_id)

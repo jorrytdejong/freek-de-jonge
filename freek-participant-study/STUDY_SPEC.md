@@ -253,3 +253,18 @@ participant questions, or output schema creates a new `study_version`.
 
 Bug fixes that do not alter the research treatment may retain the same study
 version, but must be recorded in `CHANGELOG.md` before production.
+
+## Automated Delivery Contract
+
+- Python 3.11 is the shared local, CI, and staging runtime.
+- `python scripts/run_quality_gate.py` is the canonical local and CI command.
+- The gate checks formatting, linting, compilation, static data, deterministic
+  assignment, all automated tests, and a process-level Streamlit health probe.
+- GitHub Actions runs the gate for participant-study pull requests and pushes to
+  `main`, `staging`, and `codex/*` branches with read-only repository permission.
+- `data/sessions.staging.csv` contains test links only. Automated validation
+  blocks staging if any non-test session is added.
+- Staging deployment uses a long-lived `staging` branch and credentials that are
+  separate from production and stored outside Git.
+- Checkpoint 11 staging data is disposable because durable Google Sheets storage
+  is introduced in checkpoint 12 before real participant recruitment.

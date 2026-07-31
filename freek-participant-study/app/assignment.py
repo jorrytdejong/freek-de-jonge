@@ -68,8 +68,6 @@ def build_assignment(
 def assignment_fingerprint(assignment: ParticipantAssignment) -> str:
     """Return a short identifier useful for tests and operational diagnostics."""
     payload = "|".join(
-        f"{group.group_id}:{','.join(group.variant_ids)}"
-        for group in assignment.groups
+        f"{group.group_id}:{','.join(group.variant_ids)}" for group in assignment.groups
     )
     return hashlib.sha256(payload.encode()).hexdigest()[:12]
-

@@ -53,9 +53,7 @@ def filter_export_tables(tables: ExportTables, scope: str) -> ExportTables:
     )
     session_ids = {str(row["session_id"]) for row in participants}
     ratings = tuple(
-        row
-        for row in tables.ratings
-        if str(row["session_id"]) in session_ids
+        row for row in tables.ratings if str(row["session_id"]) in session_ids
     )
     filtered = ExportTables(participants=participants, ratings=ratings)
     validate_export_tables(filtered)
@@ -74,15 +72,11 @@ def filter_submission_status(
         return tables
 
     participants = tuple(
-        row
-        for row in tables.participants
-        if row["submission_status"] == "submitted"
+        row for row in tables.participants if row["submission_status"] == "submitted"
     )
     session_ids = {str(row["session_id"]) for row in participants}
     ratings = tuple(
-        row
-        for row in tables.ratings
-        if str(row["session_id"]) in session_ids
+        row for row in tables.ratings if str(row["session_id"]) in session_ids
     )
     filtered = ExportTables(participants=participants, ratings=ratings)
     validate_export_tables(filtered)
@@ -102,21 +96,16 @@ def build_overview(tables: ExportTables) -> AdminOverview:
     return AdminOverview(
         session_count=len(tables.participants),
         submitted_count=sum(
-            row["submission_status"] == "submitted"
-            for row in tables.participants
+            row["submission_status"] == "submitted" for row in tables.participants
         ),
         in_progress_count=sum(
-            row["submission_status"] == "in_progress"
-            for row in tables.participants
+            row["submission_status"] == "in_progress" for row in tables.participants
         ),
         completed_group_count=sum(
-            int(row["completed_group_count"])
-            for row in tables.participants
+            int(row["completed_group_count"]) for row in tables.participants
         ),
         rating_count=len(tables.ratings),
-        mean_funniness=_mean(
-            int(row["funniness"]) for row in tables.ratings
-        ),
+        mean_funniness=_mean(int(row["funniness"]) for row in tables.ratings),
         mean_freek_similarity=_mean(
             int(row["freek_similarity"]) for row in tables.ratings
         ),
@@ -151,13 +140,9 @@ def build_group_summary(
                     else (group_titles or {}).get(group_id, "")
                 ),
                 "Toegewezen": assigned_counts[group_id],
-                "Beoordeeld door": len(
-                    {str(row["session_id"]) for row in ratings}
-                ),
+                "Beoordeeld door": len({str(row["session_id"]) for row in ratings}),
                 "Beoordelingen": len(ratings),
-                "Gem. grappigheid": _mean(
-                    int(row["funniness"]) for row in ratings
-                ),
+                "Gem. grappigheid": _mean(int(row["funniness"]) for row in ratings),
                 "Gem. Freek-gelijkenis": _mean(
                     int(row["freek_similarity"]) for row in ratings
                 ),
@@ -184,9 +169,7 @@ def build_variant_summary(
                 "Variant": variant_id,
                 "Rol": ratings[0]["variant_role"],
                 "N": len(ratings),
-                "Gem. grappigheid": _mean(
-                    int(row["funniness"]) for row in ratings
-                ),
+                "Gem. grappigheid": _mean(int(row["funniness"]) for row in ratings),
                 "Gem. Freek-gelijkenis": _mean(
                     int(row["freek_similarity"]) for row in ratings
                 ),

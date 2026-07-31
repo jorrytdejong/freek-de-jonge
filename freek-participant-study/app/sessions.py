@@ -84,9 +84,7 @@ def load_sessions(
             column: (row.get(column) or "").strip() for column in REQUIRED_COLUMNS
         }
         required_nonempty = REQUIRED_COLUMNS - {"notes"}
-        empty_columns = [
-            column for column in required_nonempty if not values[column]
-        ]
+        empty_columns = [column for column in required_nonempty if not values[column]]
         if empty_columns:
             empty = ", ".join(sorted(empty_columns))
             raise SessionValidationError(
@@ -122,8 +120,7 @@ def load_sessions(
             created_at = date.fromisoformat(values["created_at"])
         except ValueError as error:
             raise SessionValidationError(
-                f"Rij {row_number} heeft ongeldige created_at "
-                f"{values['created_at']!r}."
+                f"Rij {row_number} heeft ongeldige created_at {values['created_at']!r}."
             ) from error
 
         sessions[session_id] = ParticipantSession(
@@ -146,8 +143,7 @@ def load_sessions(
     test_count = sum(session.is_test for session in sessions.values())
     if test_count != EXPECTED_TEST_SESSIONS:
         raise SessionValidationError(
-            f"Verwacht {EXPECTED_TEST_SESSIONS} testsessies; "
-            f"gevonden {test_count}."
+            f"Verwacht {EXPECTED_TEST_SESSIONS} testsessies; gevonden {test_count}."
         )
 
     return sessions

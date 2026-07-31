@@ -90,8 +90,7 @@ def _parse_nested_objects(
         session_id=session_id,
     )
     if not all(
-        isinstance(key, str) and isinstance(item, dict)
-        for key, item in parsed.items()
+        isinstance(key, str) and isinstance(item, dict) for key, item in parsed.items()
     ):
         raise ProgressStorageError(
             f"Session {session_id} has invalid records in {field}."
@@ -119,9 +118,7 @@ def _parse_submission_events(
             f"Session {session_id} has invalid submission events."
         )
     for submission_number, event in enumerate(parsed, start=1):
-        expected_id = (
-            f"{session_id}-submission-{submission_number:03d}"
-        )
+        expected_id = f"{session_id}-submission-{submission_number:03d}"
         if (
             event.get("submission_id") != expected_id
             or event.get("submission_number") != submission_number
@@ -156,29 +153,21 @@ def _parse_timestamp(
             f"Session {session_id} has invalid {field}."
         ) from error
     if parsed.tzinfo is None:
-        raise ProgressStorageError(
-            f"Session {session_id} has a timezone-free {field}."
-        )
+        raise ProgressStorageError(f"Session {session_id} has a timezone-free {field}.")
     return parsed
 
 
 def _parse_row(row: dict[str, str], *, row_number: int) -> SavedProgress:
     session_id = (row.get("session_id") or "").strip()
     if not session_id:
-        raise ProgressStorageError(
-            f"Progress row {row_number} has no session_id."
-        )
+        raise ProgressStorageError(f"Progress row {row_number} has no session_id.")
     is_test_text = (row.get("is_test") or "").strip().lower()
     if is_test_text not in {"true", "false"}:
-        raise ProgressStorageError(
-            f"Session {session_id} has invalid is_test."
-        )
+        raise ProgressStorageError(f"Session {session_id} has invalid is_test.")
     study_version = (row.get("study_version") or "").strip()
     current_page = (row.get("current_page") or "").strip()
     if not study_version or not current_page:
-        raise ProgressStorageError(
-            f"Session {session_id} has empty progress metadata."
-        )
+        raise ProgressStorageError(f"Session {session_id} has empty progress metadata.")
 
     profile_text = (row.get("profile_json") or "").strip()
     profile = (
@@ -325,9 +314,7 @@ class CSVProgressStorage:
                 status="submitted" if submissions else "in_progress",
                 final_comment=final_comment,
                 submissions=submissions,
-                created_at=(
-                    existing.created_at if existing is not None else saved_at
-                ),
+                created_at=(existing.created_at if existing is not None else saved_at),
                 updated_at=saved_at,
             )
             records[session_id] = record
@@ -347,9 +334,7 @@ class CSVProgressStorage:
     ) -> SavedProgress:
         submitted_at = now or datetime.now(UTC)
         if submitted_at.tzinfo is None:
-            raise ProgressStorageError(
-                "Submission timestamp must include a timezone."
-            )
+            raise ProgressStorageError("Submission timestamp must include a timezone.")
 
         with self._lock:
             records = self._read_all()
@@ -359,18 +344,12 @@ class CSVProgressStorage:
                     f"Real session {session_id} is already submitted."
                 )
             if existing is not None and existing.is_test != is_test:
-                raise ProgressStorageError(
-                    f"Session type changed for {session_id}."
-                )
+                raise ProgressStorageError(f"Session type changed for {session_id}.")
 
-            previous_submissions = (
-                existing.submissions if existing is not None else ()
-            )
+            previous_submissions = existing.submissions if existing is not None else ()
             submission_number = len(previous_submissions) + 1
             event: dict[str, object] = {
-                "submission_id": (
-                    f"{session_id}-submission-{submission_number:03d}"
-                ),
+                "submission_id": (f"{session_id}-submission-{submission_number:03d}"),
                 "submission_number": submission_number,
                 "submitted_at": submitted_at.isoformat(),
                 "study_version": study_version,
@@ -392,9 +371,7 @@ class CSVProgressStorage:
                 final_comment=final_comment,
                 submissions=submissions,
                 created_at=(
-                    existing.created_at
-                    if existing is not None
-                    else submitted_at
+                    existing.created_at if existing is not None else submitted_at
                 ),
                 updated_at=submitted_at,
             )
