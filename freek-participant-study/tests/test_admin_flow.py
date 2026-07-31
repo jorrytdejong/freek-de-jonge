@@ -1,0 +1,81 @@
+import os
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+from streamlit.testing.v1 import AppTest
+
+
+class AdminFlowTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.app_path = Path(__file__).resolve().parents[1] / "streamlit_app.py"
+
+    def run_admin(self, progress_path: Path) -> AppTest:
+        app = AppTest.from_file(self.app_path)
+        app.query_params["admin"] = "1"
+        app.run(timeout=15)
+        return app
+
+    def test_wrong_password_is_rejected_and_correct_password_opens_dashboard(self):
+        with tempfile.TemporaryDirectory() as directory, patch.dict(
+            os.environ,
+            {
+                "FREEK_STUDY_ADMIN_PASSWORD": "correct-password",
+                "FREEK_STUDY_PROGRESS_PATH": str(
+                    Path(directory) / "progress.csv"
+                ),
+            },
+        ):
+            app = self.run_admin(Path(directory) / "progress.csv")
+            self.assertFalse(app.exception)
+            self.assertEqual(app.text_input[0].label, "Wachtwoord")
+
+            app.text_input[0].set_value("wrong-password")
+            app.button[0].click().run(timeout=15)
+            self.assertTrue(
+                any("niet correct" in error.value for error in app.error)
+            )
+            self.assertEqual(app.text_input[0].label, "Wachtwoord")
+
+            app.text_input[0].set_value("correct-password")
+            app.button[0].click().run(timeout=15)
+            self.assertFalse(app.exception)
+            self.assertTrue(app.session_state["admin_authenticated"])
+            self.assertTrue(
+                any(
+                    "Onderzoeksdashboard" in markdown.value
+                    for markdown in app.markdown
+                )
+            )
+            self.assertEqual(len(app.metric), 5)
+            self.assertEqual(len(app.get("download_button")), 2)
+
+    def test_participant_route_does_not_expose_admin_controls(self):
+        with tempfile.TemporaryDirectory() as directory, patch.dict(
+            os.environ,
+            {
+                "FREEK_STUDY_ADMIN_PASSWORD": "correct-password",
+                "FREEK_STUDY_PROGRESS_PATH": str(
+                    Path(directory) / "progress.csv"
+                ),
+            },
+        ):
+            app = AppTest.from_file(self.app_path)
+            app.query_params["session"] = "test-02-CVM5_s67"
+            app.run(timeout=15)
+
+            self.assertFalse(app.exception)
+            self.assertFalse(app.text_input)
+            self.assertFalse(app.get("download_button"))
+            self.assertFalse(
+                any(
+                    "Beheeromgeving" in markdown.value
+                    for markdown in app.markdown
+                )
+            )
+
+
+if __name__ == "__main__":
+    unittest.main()

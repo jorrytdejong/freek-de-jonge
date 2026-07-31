@@ -5,7 +5,21 @@ from pathlib import Path
 from urllib.parse import urlencode
 
 import streamlit as st
+from streamlit.errors import StreamlitSecretNotFoundError
 
+from app.admin import (
+    ADMIN_SCOPES,
+    ADMIN_STATUSES,
+    SCOPE_REAL,
+    STATUS_SUBMITTED,
+    build_dimension_summary,
+    build_group_summary,
+    build_overview,
+    build_variant_summary,
+    filter_export_tables,
+    filter_submission_status,
+    verify_admin_password,
+)
 from app.assignment import (
     AssignedGroup,
     ParticipantAssignment,
@@ -13,6 +27,13 @@ from app.assignment import (
     build_assignment,
 )
 from app.config import STUDY_VERSION
+from app.exports import (
+    PARTICIPANT_COLUMNS,
+    RATING_COLUMNS,
+    ExportValidationError,
+    build_export_tables,
+    rows_to_csv,
+)
 from app.health import health_snapshot
 from app.participant import ProfileValidationError, validate_profile
 from app.ratings import (
@@ -54,6 +75,19 @@ progress_storage = CSVProgressStorage(
         )
     )
 )
+
+
+def configured_admin_password() -> str | None:
+    environment_password = os.environ.get("FREEK_STUDY_ADMIN_PASSWORD")
+    if environment_password:
+        return environment_password
+    try:
+        secret_password = st.secrets.get("admin_password")
+    except StreamlitSecretNotFoundError:
+        return None
+    return str(secret_password) if secret_password else None
+
+
 def final_comment_key(session_id: str) -> str:
     return f"final_comment:{session_id}"
 
@@ -1333,6 +1367,286 @@ def render_stimulus_preview(groups: tuple[JokeGroup, ...]) -> None:
         )
 
 
+def render_admin_login() -> None:
+    render_header()
+    with st.container(key="admin_login"):
+        st.markdown(
+            """
+            <div class="admin-heading">
+                <p class="admin-context">Beheeromgeving</p>
+                <h1>Inloggen</h1>
+                <p>Voer het beheerderswachtwoord in om onderzoeksdata te bekijken.</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        with st.form("admin_login_form", border=False):
+            candidate = st.text_input(
+                "Wachtwoord",
+                type="password",
+                autocomplete="current-password",
+            )
+            submitted = st.form_submit_button(
+                "Inloggen",
+                type="primary",
+                icon=":material/login:",
+            )
+        if submitted:
+            expected = configured_admin_password()
+            if expected is None:
+                st.error(
+                    "De beheeromgeving is nog niet geconfigureerd."
+                )
+            elif verify_admin_password(candidate, expected):
+                st.session_state["admin_authenticated"] = True
+                st.rerun()
+            else:
+                st.error("Het wachtwoord is niet correct.")
+    render_footer()
+
+
+def render_admin_session_inspection(
+    participants: tuple[dict[str, object], ...],
+    ratings: tuple[dict[str, object], ...],
+) -> None:
+    st.markdown("## Antwoorden bekijken")
+    if not participants:
+        st.info("Binnen deze selectie zijn geen sessies beschikbaar.")
+        return
+
+    participants_by_id = {
+        str(row["session_id"]): row for row in participants
+    }
+    selected_session_id = st.selectbox(
+        "Sessie",
+        options=tuple(participants_by_id),
+        format_func=lambda session_id: (
+            f"{session_id} | "
+            f"{participants_by_id[session_id]['submission_status']}"
+        ),
+    )
+    participant = participants_by_id[selected_session_id]
+    session_ratings = tuple(
+        row
+        for row in ratings
+        if row["session_id"] == selected_session_id
+    )
+    metadata_columns = st.columns(4)
+    metadata_columns[0].metric("Status", participant["submission_status"])
+    metadata_columns[1].metric(
+        "Voltooide groepen",
+        f"{participant['completed_group_count']} / {participant['group_count']}",
+    )
+    metadata_columns[2].metric("Leeftijd", participant["age"] or "-")
+    metadata_columns[3].metric(
+        "Bekendheid Freek",
+        participant["freek_familiarity"] or "-",
+    )
+    st.caption(
+        f"Study version: {participant['study_version']} | "
+        f"Assignment: {participant['assignment_fingerprint']} | "
+        f"Testdata: {'ja' if participant['is_test'] else 'nee'}"
+    )
+
+    group_ids = tuple(
+        dict.fromkeys(str(row["group_id"]) for row in session_ratings)
+    )
+    for group_id in group_ids:
+        group_rows = tuple(
+            row for row in session_ratings if row["group_id"] == group_id
+        )
+        with st.expander(
+            f"{group_id} · {group_rows[0]['group_title']}",
+            expanded=False,
+        ):
+            st.dataframe(
+                [
+                    {
+                        "Versie": f"Versie {row['display_label']}",
+                        "Variant": row["variant_id"],
+                        "Tekst": row["joke_text"],
+                        "Grappigheid": row["funniness"],
+                        "Freek-gelijkenis": row["freek_similarity"],
+                    }
+                    for row in group_rows
+                ],
+                hide_index=True,
+                width="stretch",
+            )
+            group_comment = str(group_rows[0]["group_comment"])
+            if group_comment:
+                st.markdown("**Opmerking bij deze groep**")
+                st.write(group_comment)
+
+    if participant["final_comment"]:
+        st.markdown("**Algemene opmerking**")
+        st.write(participant["final_comment"])
+
+
+def render_admin_dashboard(
+    groups: tuple[JokeGroup, ...],
+    sessions: dict[str, ParticipantSession],
+) -> None:
+    render_header()
+    try:
+        records = progress_storage.list_progress()
+        all_tables = build_export_tables(records, sessions, groups)
+    except (ProgressStorageError, ExportValidationError):
+        with st.container(key="admin_dashboard"):
+            st.error(
+                "De onderzoeksdata kon niet veilig worden gevalideerd. "
+                "Er zijn geen statistieken of downloads beschikbaar."
+            )
+        render_footer()
+        return
+
+    with st.container(key="admin_dashboard"):
+        heading_column, logout_column = st.columns([5, 1])
+        with heading_column:
+            st.markdown(
+                """
+                <div class="admin-heading">
+                    <p class="admin-context">Beheeromgeving</p>
+                    <h1>Onderzoeksdashboard</h1>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+        with logout_column:
+            if st.button(
+                "Uitloggen",
+                icon=":material/logout:",
+                width="stretch",
+            ):
+                st.session_state.pop("admin_authenticated", None)
+                st.rerun()
+
+        scope = st.segmented_control(
+            "Gegevensselectie",
+            options=ADMIN_SCOPES,
+            default=SCOPE_REAL,
+            selection_mode="single",
+        )
+        status = st.segmented_control(
+            "Inzendingsstatus",
+            options=ADMIN_STATUSES,
+            default=STATUS_SUBMITTED,
+            selection_mode="single",
+        )
+        scoped_tables = filter_export_tables(
+            all_tables,
+            scope or SCOPE_REAL,
+        )
+        selected_tables = filter_submission_status(
+            scoped_tables,
+            status or STATUS_SUBMITTED,
+        )
+        overview = build_overview(selected_tables)
+
+        metric_columns = st.columns(5)
+        metric_columns[0].metric("Sessies", overview.session_count)
+        metric_columns[1].metric("Ingediend", overview.submitted_count)
+        metric_columns[2].metric("Bezig", overview.in_progress_count)
+        metric_columns[3].metric(
+            "Voltooide groepen",
+            overview.completed_group_count,
+        )
+        metric_columns[4].metric("Beoordelingen", overview.rating_count)
+
+        st.markdown("## Vergelijking beoordelingsschalen")
+        dimension_rows = build_dimension_summary(selected_tables)
+        if dimension_rows:
+            dimension_columns = st.columns(2)
+            dimension_columns[0].metric(
+                "Gemiddelde grappigheid",
+                f"{overview.mean_funniness:.2f}",
+            )
+            dimension_columns[1].metric(
+                "Gemiddelde Freek-gelijkenis",
+                f"{overview.mean_freek_similarity:.2f}",
+            )
+            st.bar_chart(
+                dimension_rows,
+                x="Schaal",
+                y="Gemiddelde",
+                horizontal=True,
+            )
+        else:
+            st.info("Binnen deze selectie zijn nog geen beoordelingen.")
+
+        st.markdown("## Blootstelling per jokegroep")
+        group_summary = build_group_summary(
+            selected_tables,
+            {group.group_id: group.title for group in groups},
+        )
+        if group_summary:
+            st.dataframe(
+                group_summary,
+                hide_index=True,
+                width="stretch",
+            )
+        else:
+            st.info("Binnen deze selectie zijn nog geen voltooide groepen.")
+
+        st.markdown("## Resultaten per interne variant")
+        variant_summary = build_variant_summary(selected_tables)
+        if variant_summary:
+            st.dataframe(
+                variant_summary,
+                hide_index=True,
+                width="stretch",
+            )
+        else:
+            st.info("Binnen deze selectie zijn nog geen variantresultaten.")
+
+        st.markdown("## Downloads")
+        st.caption(
+            "Downloads volgen de huidige gegevensselectie en gebruiken "
+            "exportschema versie 1."
+        )
+        participant_download, rating_download = st.columns(2)
+        with participant_download:
+            st.download_button(
+                "Deelnemers downloaden",
+                data=rows_to_csv(
+                    PARTICIPANT_COLUMNS,
+                    selected_tables.participants,
+                ).encode("utf-8-sig"),
+                file_name="participants.csv",
+                mime="text/csv",
+                icon=":material/download:",
+                width="stretch",
+            )
+        with rating_download:
+            st.download_button(
+                "Beoordelingen downloaden",
+                data=rows_to_csv(
+                    RATING_COLUMNS,
+                    selected_tables.ratings,
+                ).encode("utf-8-sig"),
+                file_name="ratings.csv",
+                mime="text/csv",
+                icon=":material/download:",
+                width="stretch",
+            )
+
+        render_admin_session_inspection(
+            selected_tables.participants,
+            selected_tables.ratings,
+        )
+    render_footer()
+
+
+def render_admin(
+    groups: tuple[JokeGroup, ...],
+    sessions: dict[str, ParticipantSession],
+) -> None:
+    if not st.session_state.get("admin_authenticated", False):
+        render_admin_login()
+        return
+    render_admin_dashboard(groups, sessions)
+
+
 try:
     stimulus_groups = load_stimuli()
     session_registry = load_sessions(
@@ -1543,15 +1857,60 @@ st.markdown(
         .st-key-rating_group,
         .st-key-rating_complete,
         .st-key-study_review,
-        .st-key-study_debrief {
+        .st-key-study_debrief,
+        .st-key-admin_login,
+        .st-key-admin_dashboard {
             margin: 0 auto;
             max-width: 48rem;
             padding: 4.5rem 2rem 5rem;
         }
 
         .st-key-rating_group,
-        .st-key-study_review {
+        .st-key-study_review,
+        .st-key-admin_dashboard {
             max-width: 68rem;
+        }
+
+        .admin-heading {
+            margin-bottom: 2rem;
+        }
+
+        .admin-context {
+            color: var(--study-green);
+            font-size: 0.84rem;
+            font-weight: 750;
+            margin: 0 0 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .admin-heading h1 {
+            color: var(--study-text);
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin: 0 0 0.75rem;
+        }
+
+        .admin-heading p:last-child {
+            color: var(--study-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .st-key-admin_login [data-testid="stForm"] {
+            max-width: 28rem;
+        }
+
+        .st-key-admin_dashboard h2 {
+            border-top: 1px solid var(--study-border);
+            color: var(--study-text);
+            font-size: 1.2rem;
+            margin: 2.5rem 0 1rem;
+            padding-top: 2rem;
+        }
+
+        .st-key-admin_dashboard [data-testid="stMetric"] {
+            border-left: 3px solid var(--study-green);
+            padding-left: 0.8rem;
         }
 
         .intro-heading {
@@ -2054,7 +2413,9 @@ st.markdown(
             .st-key-rating_group,
             .st-key-rating_complete,
             .st-key-study_review,
-            .st-key-study_debrief {
+            .st-key-study_debrief,
+            .st-key-admin_login,
+            .st-key-admin_dashboard {
                 padding: 3rem 1.25rem 4rem;
             }
 
@@ -2070,7 +2431,8 @@ st.markdown(
             }
 
             .review-heading h1,
-            .debrief-heading h1 {
+            .debrief-heading h1,
+            .admin-heading h1 {
                 font-size: 2rem;
             }
 
@@ -2091,6 +2453,10 @@ st.markdown(
             .st-key-study_review [data-testid="stHorizontalBlock"] {
                 flex-direction: column;
                 gap: 1rem;
+            }
+
+            .st-key-admin_dashboard [data-testid="stHorizontalBlock"] {
+                flex-wrap: wrap;
             }
 
             .st-key-rating_group
@@ -2125,6 +2491,10 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+if st.query_params.get("admin") == "1":
+    render_admin(stimulus_groups, session_registry)
+    st.stop()
 
 if st.query_params.get("preview") == "1":
     render_stimulus_preview(stimulus_groups)

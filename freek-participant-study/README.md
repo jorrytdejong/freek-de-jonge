@@ -3,9 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 9 adds validated,
-analysis-ready participant and rating tables with reproducible mapping between
-the displayed `Versie A-H` and internal joke variants.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 10 adds a hidden,
+password-protected, read-only administration page backed by the validated
+checkpoint 9 exports.
 
 ## Requirements
 
@@ -89,17 +89,43 @@ versioned in [`EXPORT_SCHEMA.md`](EXPORT_SCHEMA.md).
 Before analysis, filter `is_test = false` and normally
 `submission_status = submitted`.
 
-## Checkpoint 9 Acceptance Test
+## Checkpoint 10 Admin Page
 
-1. Complete contrasting answers with at least two test links.
-2. Run `python scripts/export_results.py`.
-3. Open both generated files in a spreadsheet.
-4. Confirm each session occurs once in `participants.csv`.
-5. Confirm a submitted session has 40 rows in `ratings.csv`.
-6. Compare a displayed `Versie A-H` with its exported `display_label`,
-   `display_position`, `variant_id`, and `joke_text`.
-7. Filter out `is_test = true` and confirm no test rows remain.
-8. Run the automated and HTTP health checks above.
+The hidden local route is:
+
+<http://localhost:8501/?admin=1>
+
+Configure the password outside Git with either:
+
+```toml
+# .streamlit/secrets.toml
+admin_password = "use-a-long-unique-password"
+```
+
+or the `FREEK_STUDY_ADMIN_PASSWORD` environment variable. The committed
+`.streamlit/secrets.toml.example` documents the key; `.streamlit/secrets.toml`
+is ignored and must never be committed.
+
+The dashboard can switch between real participants, test sessions, and all
+saved sessions, and between definitive submissions or all saved states. It
+defaults to definitive submissions so provisional autosaves do not influence
+research means. It shows completion totals, rating counts, both overall rating
+means, assigned-versus-rated group exposure, per-variant means, read-only
+answers, and two downloads that follow the current selection.
+
+## Checkpoint 10 Acceptance Test
+
+1. Open `?admin=1` and try an incorrect password.
+2. Sign in with the configured local password.
+3. Switch to `Testsessies` and confirm the dashboard shows the expected totals.
+4. Switch between `Ingediend` and `Alle statussen` and inspect the difference.
+5. Compare dashboard rating totals with the downloaded rating CSV row count.
+6. Inspect a session and compare its displayed labels, internal variants,
+   scores, and comments with the participant submission.
+7. Switch to `Echte deelnemers` and confirm test sessions disappear.
+8. Open a participant link and confirm no admin controls are visible.
+9. Sign out and confirm the dashboard is protected again.
+10. Run the automated and HTTP health checks above.
 
 Development progress is stored in the ignored file
 `data/runtime/progress.csv`. Set `FREEK_STUDY_PROGRESS_PATH` to use a different

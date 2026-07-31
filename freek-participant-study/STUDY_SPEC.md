@@ -208,6 +208,21 @@ save events only; response durations are not measured.
 - The admin password is read from Streamlit secrets or an environment variable.
 - The admin view is read-only and supports CSV downloads and descriptive
   summaries.
+- There is no default or committed production password. Password comparison is
+  constant-time, and failed authentication does not expose research data.
+- The participant flow contains no link or control that reveals the hidden
+  administration route.
+- Administrators can select real participants, test sessions, or all sessions;
+  the statistics, inspection list, and downloads use the same selection.
+- Definitive submissions are the default status selection so provisional
+  autosaves do not enter research means; all saved states remain inspectable.
+- Summary statistics include session and completion counts, completed groups,
+  rating-row count, both overall rating means, group exposure, and means per
+  stable internal variant.
+- Read-only inspection shows participant metadata, assignment fingerprint,
+  displayed labels, stable variant IDs, exact texts, ratings, and comments.
+- Dashboard statistics and downloads are derived from the same validated
+  analysis tables defined in `EXPORT_SCHEMA.md`.
 - Development initially uses a replaceable CSV storage adapter.
 - Production uses Google Sheets because deployed Streamlit local files are not
   durable.
