@@ -280,6 +280,11 @@ class CSVProgressStorage:
         with self._lock:
             return self._read_all().get(session_id)
 
+    def list_progress(self) -> tuple[SavedProgress, ...]:
+        with self._lock:
+            records = self._read_all()
+            return tuple(records[session_id] for session_id in sorted(records))
+
     def save_progress(
         self,
         *,

@@ -213,6 +213,24 @@ save events only; response durations are not measured.
   durable.
 - Staging and production use separate data stores and credentials.
 
+## Analysis-Ready Exports
+
+- Export schema version `1` is documented in `EXPORT_SCHEMA.md`.
+- `participants.csv` contains one row per durable session.
+- `ratings.csv` contains eight rows per completed group and therefore 40 rows
+  for a fully submitted session.
+- Displayed labels A-H and display positions are exported beside stable internal
+  variant IDs, roles, and exact joke text.
+- Participant metadata, study version, assignment seed and fingerprint, test
+  status, submission status, comments, and selected submission metadata remain
+  available for filtering and reproducibility.
+- For a repeatedly submitted test link, analysis tables use the latest immutable
+  submission while preserving the full event history in raw progress storage.
+- In-progress sessions remain identifiable and only validated completed groups
+  create rating rows.
+- Export validation rejects data that no longer matches the session registry,
+  versioned stimuli, deterministic assignment, rating bounds, or row grain.
+
 ## Versioning Rule
 
 Any change to joke text, measurement wording, assignment logic, required

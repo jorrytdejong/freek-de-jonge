@@ -97,6 +97,15 @@ class CSVProgressStorageTest(unittest.TestCase):
         with self.path.open(encoding="utf-8", newline="") as handle:
             self.assertEqual(len(list(csv.DictReader(handle))), 2)
 
+    def test_list_progress_returns_sessions_in_stable_order(self) -> None:
+        self.save_example(session_id="test-session-02")
+        self.save_example(session_id="test-session-01")
+
+        self.assertEqual(
+            [record.session_id for record in self.storage.list_progress()],
+            ["test-session-01", "test-session-02"],
+        )
+
     def test_malformed_existing_file_is_not_overwritten(self) -> None:
         self.path.write_text(
             "session_id,unexpected\nbroken,value\n",

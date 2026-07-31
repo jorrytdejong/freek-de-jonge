@@ -24,6 +24,9 @@ class SavedProgress:
 
 
 class ProgressStorage(Protocol):
+    def list_progress(self) -> tuple[SavedProgress, ...]:
+        """Return all saved sessions in stable session-ID order."""
+
     def load_progress(self, session_id: str) -> SavedProgress | None:
         """Return saved state for one anonymous session."""
 
