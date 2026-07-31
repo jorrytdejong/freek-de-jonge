@@ -14,6 +14,7 @@ __pycache__/
 .env
 .env.local
 .env.*.local
+freek-participant-study/data/private/
 
 # Large media files
 MP3/

@@ -11,6 +11,7 @@ from app.sessions import (
     SessionAccessStatus,
     SessionValidationError,
     load_sessions,
+    load_sessions_csv_text,
     resolve_session,
 )
 from app.stimuli import load_stimuli
@@ -121,6 +122,16 @@ class SessionRegistryTest(unittest.TestCase):
                 "onbekende groepen: G99",
             ):
                 load_sessions(self.group_ids, invalid_path)
+
+    def test_registry_can_be_loaded_from_private_secret_text(self) -> None:
+        source_path = Path(__file__).resolve().parents[1] / "data" / "sessions.csv"
+
+        loaded = load_sessions_csv_text(
+            self.group_ids,
+            source_path.read_text(encoding="utf-8"),
+        )
+
+        self.assertEqual(loaded, self.sessions)
 
 
 if __name__ == "__main__":

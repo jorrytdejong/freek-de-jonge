@@ -157,7 +157,7 @@ def _parse_timestamp(
     return parsed
 
 
-def _parse_row(row: dict[str, str], *, row_number: int) -> SavedProgress:
+def parse_progress_row(row: dict[str, str], *, row_number: int) -> SavedProgress:
     session_id = (row.get("session_id") or "").strip()
     if not session_id:
         raise ProgressStorageError(f"Progress row {row_number} has no session_id.")
@@ -231,6 +231,44 @@ def _parse_row(row: dict[str, str], *, row_number: int) -> SavedProgress:
     )
 
 
+def serialize_progress_row(record: SavedProgress) -> dict[str, str]:
+    """Serialize one storage-neutral progress record to the tabular schema."""
+    return {
+        "session_id": record.session_id,
+        "study_version": record.study_version,
+        "is_test": str(record.is_test).lower(),
+        "current_page": record.current_page,
+        "profile_json": json.dumps(
+            record.profile,
+            ensure_ascii=True,
+            separators=(",", ":"),
+            sort_keys=True,
+        ),
+        "responses_json": json.dumps(
+            record.responses,
+            ensure_ascii=True,
+            separators=(",", ":"),
+            sort_keys=True,
+        ),
+        "drafts_json": json.dumps(
+            record.drafts,
+            ensure_ascii=True,
+            separators=(",", ":"),
+            sort_keys=True,
+        ),
+        "status": record.status,
+        "final_comment": record.final_comment,
+        "submissions_json": json.dumps(
+            record.submissions,
+            ensure_ascii=True,
+            separators=(",", ":"),
+            sort_keys=True,
+        ),
+        "created_at": record.created_at.isoformat(),
+        "updated_at": record.updated_at.isoformat(),
+    }
+
+
 class CSVProgressStorage:
     """Store one atomic progress snapshot per anonymous session."""
 
@@ -257,7 +295,7 @@ class CSVProgressStorage:
 
         records: dict[str, SavedProgress] = {}
         for row_number, row in enumerate(rows, start=2):
-            record = _parse_row(row, row_number=row_number)
+            record = parse_progress_row(row, row_number=row_number)
             if record.session_id in records:
                 raise ProgressStorageError(
                     f"Duplicate progress session: {record.session_id}."
@@ -397,42 +435,7 @@ class CSVProgressStorage:
                 writer.writeheader()
                 for session_id in sorted(records):
                     record = records[session_id]
-                    writer.writerow(
-                        {
-                            "session_id": record.session_id,
-                            "study_version": record.study_version,
-                            "is_test": str(record.is_test).lower(),
-                            "current_page": record.current_page,
-                            "profile_json": json.dumps(
-                                record.profile,
-                                ensure_ascii=True,
-                                separators=(",", ":"),
-                                sort_keys=True,
-                            ),
-                            "responses_json": json.dumps(
-                                record.responses,
-                                ensure_ascii=True,
-                                separators=(",", ":"),
-                                sort_keys=True,
-                            ),
-                            "drafts_json": json.dumps(
-                                record.drafts,
-                                ensure_ascii=True,
-                                separators=(",", ":"),
-                                sort_keys=True,
-                            ),
-                            "status": record.status,
-                            "final_comment": record.final_comment,
-                            "submissions_json": json.dumps(
-                                record.submissions,
-                                ensure_ascii=True,
-                                separators=(",", ":"),
-                                sort_keys=True,
-                            ),
-                            "created_at": record.created_at.isoformat(),
-                            "updated_at": record.updated_at.isoformat(),
-                        }
-                    )
+                    writer.writerow(serialize_progress_row(record))
                 handle.flush()
                 os.fsync(handle.fileno())
             os.replace(temporary_path, self.path)

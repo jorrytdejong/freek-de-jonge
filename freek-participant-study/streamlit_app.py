@@ -48,15 +48,16 @@ from app.sessions import (
     SessionAccessStatus,
     SessionValidationError,
     load_sessions,
+    load_sessions_csv_text,
     resolve_session,
 )
 from app.stimuli import JokeGroup, StimulusValidationError, load_stimuli
 from app.storage import (
     AlreadySubmittedError,
-    CSVProgressStorage,
     ProgressStorageError,
+    StorageConfigurationError,
+    create_progress_storage,
 )
-from app.storage.csv_storage import DEFAULT_PROGRESS_PATH
 
 st.set_page_config(
     page_title="Onderzoek naar humor en stijl",
@@ -66,14 +67,20 @@ st.set_page_config(
 )
 
 health = health_snapshot()
-progress_storage = CSVProgressStorage(
-    Path(
-        os.environ.get(
-            "FREEK_STUDY_PROGRESS_PATH",
-            str(DEFAULT_PROGRESS_PATH),
-        )
-    )
-)
+
+
+def configured_secrets() -> dict[str, object]:
+    try:
+        return dict(st.secrets)
+    except StreamlitSecretNotFoundError:
+        return {}
+
+
+try:
+    progress_storage = create_progress_storage(secrets=configured_secrets())
+except (ProgressStorageError, StorageConfigurationError) as error:
+    st.error(f"Opslagconfiguratie mislukt: {error}")
+    st.stop()
 
 
 def configured_admin_password() -> str | None:
@@ -1590,15 +1597,23 @@ def render_admin(
 
 try:
     stimulus_groups = load_stimuli()
-    session_registry = load_sessions(
-        {group.group_id for group in stimulus_groups},
-        Path(
-            os.environ.get(
-                "FREEK_STUDY_SESSIONS_PATH",
-                str(DEFAULT_SESSIONS_PATH),
-            )
-        ),
-    )
+    valid_group_ids = {group.group_id for group in stimulus_groups}
+    private_sessions_csv = configured_secrets().get("sessions_csv")
+    if private_sessions_csv and "FREEK_STUDY_SESSIONS_PATH" not in os.environ:
+        session_registry = load_sessions_csv_text(
+            valid_group_ids,
+            str(private_sessions_csv),
+        )
+    else:
+        session_registry = load_sessions(
+            valid_group_ids,
+            Path(
+                os.environ.get(
+                    "FREEK_STUDY_SESSIONS_PATH",
+                    str(DEFAULT_SESSIONS_PATH),
+                )
+            ),
+        )
 except (StimulusValidationError, SessionValidationError) as error:
     st.error(f"Configuratiecontrole mislukt: {error}")
     st.stop()

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import io
 import re
 from dataclasses import dataclass
 from datetime import date
@@ -70,13 +71,30 @@ def load_sessions(
         raise SessionValidationError(f"Sessiebestand niet gevonden: {path}")
 
     with path.open(encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle)
-        fieldnames = set(reader.fieldnames or [])
-        missing_columns = REQUIRED_COLUMNS - fieldnames
-        if missing_columns:
-            missing = ", ".join(sorted(missing_columns))
-            raise SessionValidationError(f"Ontbrekende sessiekolommen: {missing}")
-        rows = list(reader)
+        return _load_session_rows(valid_group_ids, csv.DictReader(handle))
+
+
+def load_sessions_csv_text(
+    valid_group_ids: set[str],
+    csv_text: str,
+) -> dict[str, ParticipantSession]:
+    """Load a private session registry supplied through deployment secrets."""
+    return _load_session_rows(
+        valid_group_ids,
+        csv.DictReader(io.StringIO(csv_text, newline="")),
+    )
+
+
+def _load_session_rows(
+    valid_group_ids: set[str],
+    reader: csv.DictReader,
+) -> dict[str, ParticipantSession]:
+    fieldnames = set(reader.fieldnames or [])
+    missing_columns = REQUIRED_COLUMNS - fieldnames
+    if missing_columns:
+        missing = ", ".join(sorted(missing_columns))
+        raise SessionValidationError(f"Ontbrekende sessiekolommen: {missing}")
+    rows = list(reader)
 
     sessions: dict[str, ParticipantSession] = {}
     for row_number, row in enumerate(rows, start=2):

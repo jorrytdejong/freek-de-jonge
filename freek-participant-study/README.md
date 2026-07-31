@@ -3,8 +3,9 @@
 Dutch Streamlit application for a participant study about humour and style.
 
 The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 11 adds one local
-and GitHub Actions quality gate plus an isolated, test-only staging contract.
+[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 12 adds durable
+Google Sheets storage, private production links, backup tooling, and the
+production operations contract.
 
 ## Requirements
 
@@ -117,21 +118,22 @@ research means. It shows completion totals, rating counts, both overall rating
 means, assigned-versus-rated group exposure, per-variant means, read-only
 answers, and two downloads that follow the current selection.
 
-## Checkpoint 11 Acceptance Test
+## Checkpoint 12 Production Preparation
 
 1. Run `python scripts/run_quality_gate.py` locally.
-2. Review the checkpoint pull request and its `Freek study quality gate` check.
-3. Confirm a deliberately malformed staging registry fails validation.
-4. Deploy the `staging` branch using [`STAGING.md`](STAGING.md).
-5. Complete two different test links from desktop and mobile.
-6. Review staging logs, admin totals, and both downloaded CSV files.
-7. Confirm no real participant link is accepted by staging.
+2. Create separate private staging and production Google Sheets.
+3. Generate the ignored production registry with
+   `python scripts/generate_production_sessions.py --real-count 40`.
+4. Configure Streamlit secrets using `.streamlit/secrets.toml.example`.
+5. Follow the rehearsal, backup, recovery, deactivation, and closure procedures
+   in [`PRODUCTION.md`](PRODUCTION.md).
 
 Development progress is stored in the ignored file
 `data/runtime/progress.csv`. Set `FREEK_STUDY_PROGRESS_PATH` to use a different
 local path. `FREEK_STUDY_SESSIONS_PATH` can point automated or staging runs to a
-separate session registry. Production Google Sheets storage is added later
-through the same storage contract.
+separate session registry. Set `storage_backend = "google_sheets"` and the
+documented private credentials in Streamlit secrets for durable deployed
+storage. CSV remains the local default.
 
 The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).
 
@@ -147,5 +149,5 @@ are documented in [`STAGING.md`](STAGING.md).
 
 The checkpoint 11 staging app is available at
 <https://freek-participant-pilot.streamlit.app/>. It accepts test links only;
-real participant recruitment remains blocked until checkpoint 12 adds durable
-storage and resolves the repository's production-branch history.
+real participant recruitment remains blocked until the external credential,
+pilot, and branch-integration items in `PRODUCTION.md` are accepted.
