@@ -15,7 +15,7 @@ import urllib.request
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_STAGING_SESSIONS = PROJECT_ROOT / "data" / "sessions.staging.csv"
+DEFAULT_STAGING_SESSIONS = PROJECT_ROOT / "data" / "acl_sessions.staging.csv"
 
 
 def parse_args() -> argparse.Namespace:

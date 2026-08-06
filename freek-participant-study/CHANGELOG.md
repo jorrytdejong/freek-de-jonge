@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### ACL-1
+
+- Replaced the pilot grouped-variant interface with 12 individual blinded jokes.
+- Added the locked 90-item `gpt-5.6-terra` stimulus bank.
+- Added exact balancing for 25 participants across topics, conditions, items,
+  and presentation positions.
+- Added four required ratings: funniness, Freek resemblance, coherence, and
+  originality.
+- Added item-level autosave, resume, review, submission, exports, and admin
+  summaries.
+- Added private generation of 25 participant URLs and a versioned export schema.
+
 ### Added
 
 - Durable private Google Sheets progress storage with bounded exponential retry.

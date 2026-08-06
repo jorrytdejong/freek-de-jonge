@@ -1,153 +1,77 @@
-# Freek Participant Study
+# Freek Participant Study — ACL Experiment
 
-Dutch Streamlit application for a participant study about humour and style.
+Dutch Streamlit application for the blinded `acl-1` humor-generation study.
 
-The project is being delivered in the checkpoints described in
-[`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md). Checkpoint 12 adds durable
-Google Sheets storage, private production links, backup tooling, and the
-production operations contract.
+## Locked design
 
-## Requirements
+- 90 accepted `gpt-5.6-terra` jokes: 15 topics × 6 conditions.
+- Conditions: baseline, script opposition, and validated GTVH, each with Freek
+  style guidance off and on.
+- Every participant rates 12 jokes from 12 different topics.
+- Every participant sees exactly two jokes from each condition.
+- Every joke receives four required 1–5 ratings: funniness, Freek-style
+  resemblance, coherence, and originality.
+- Expected duration: approximately 10 minutes.
 
-- Python 3.11 or newer
-- `pip`
+The old `pilot-1` modules and CSV files remain in the repository for historical
+reproducibility. The deployed `streamlit_app.py` uses only the `app/acl_*`
+modules and `data/acl_*` files.
 
-## Local Setup
-
-Run all commands from this directory:
+## Local setup
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip
 python -m pip install -r requirements.txt -r requirements-dev.txt
-```
-
-## Run The App
-
-```bash
 streamlit run streamlit_app.py
 ```
 
-Streamlit prints the local URL, normally <http://localhost:8501>.
+Example test link:
 
-The temporary checkpoint-2 stimulus preview is available at:
+<http://localhost:8501/?session=acl-test-01-913a93e2>
 
-<http://localhost:8501/?preview=1>
+Internal-only routes:
 
-Change the port in this URL if Streamlit selected another local port.
+- Stimulus preview: <http://localhost:8501/?preview=1>
+- Administration: <http://localhost:8501/?admin=1>
 
-## Checkpoint 3 Test Links
+## Test links
 
-These links are test-only and may safely be committed to the repository:
+1. `?session=acl-test-01-913a93e2`
+2. `?session=acl-test-02-979d4f77`
+3. `?session=acl-test-03-38452f51`
+4. `?session=acl-test-04-cb9df523`
+5. `?session=acl-test-05-d63af247`
+6. `?session=acl-test-06-7227edfd`
+7. `?session=acl-test-07-b5a26fc2`
+8. `?session=acl-test-08-8c0b1676`
+9. `?session=acl-test-09-030dcad5`
+10. `?session=acl-test-10-86726b66`
 
-1. `?session=test-01-DU8NXu1m`
-2. `?session=test-02-CVM5_s67`
-3. `?session=test-03-viwspebC`
-4. `?session=test-04-es8fvhYW`
-5. `?session=test-05-SIhk_boI`
-6. `?session=test-06-fDpGFu6p`
-7. `?session=test-07-SNKbCw41`
-8. `?session=test-08-bxdyKo5y`
-9. `?session=test-09-rHQtzmEl`
-10. `?session=test-10-KvPvblxx`
+## Validation
 
-Append one of these paths to the local app URL. For example:
-
-<http://localhost:8501/?session=test-01-DU8NXu1m>
-
-## Automated Checks
-
-Run the same complete gate used by GitHub Actions:
+Run the same gate used for release acceptance:
 
 ```bash
 python scripts/run_quality_gate.py
 ```
 
-It checks Ruff formatting and linting, Python compilation, primary and staging
-data contracts, unit and Streamlit flow tests, and a real process-level startup
-health check. The path-scoped workflow lives at
-`.github/workflows/freek-study-quality.yml` in the repository root.
+It validates formatting, linting, compilation, the 90-item bank, both test
+registries, the mathematical assignment constraints, all unit and Streamlit
+flow tests, and a process-level HTTP startup check.
 
-With the application running, verify Streamlit's process health endpoint:
+## Data and exports
 
-```bash
-curl --fail http://localhost:8501/_stcore/health
-```
-
-The expected response is `ok`.
-
-## Checkpoint 9 Data Export
-
-Generate both analysis CSV files from durable local progress:
+Local ACL progress is written to the ignored
+`data/runtime/acl_progress.csv`. Generate validated analysis tables with:
 
 ```bash
 python scripts/export_results.py
 ```
 
-The command writes `data/runtime/exports/participants.csv` and
-`data/runtime/exports/ratings.csv`. Optional `--progress`, `--sessions`,
-`--stimuli`, and `--output` arguments support isolated staging and test data.
-The exact row grain, fields, repeated-test policy, and validation rules are
-versioned in [`EXPORT_SCHEMA.md`](EXPORT_SCHEMA.md).
+Outputs are written to `data/runtime/acl_exports/`. See
+[`EXPORT_SCHEMA.md`](EXPORT_SCHEMA.md) for the exact columns.
 
-Before analysis, filter `is_test = false` and normally
-`submission_status = submitted`.
-
-## Checkpoint 10 Admin Page
-
-The hidden local route is:
-
-<http://localhost:8501/?admin=1>
-
-Configure the password outside Git with either:
-
-```toml
-# .streamlit/secrets.toml
-admin_password = "use-a-long-unique-password"
-```
-
-or the `FREEK_STUDY_ADMIN_PASSWORD` environment variable. The committed
-`.streamlit/secrets.toml.example` documents the key; `.streamlit/secrets.toml`
-is ignored and must never be committed.
-
-The dashboard can switch between real participants, test sessions, and all
-saved sessions, and between definitive submissions or all saved states. It
-defaults to definitive submissions so provisional autosaves do not influence
-research means. It shows completion totals, rating counts, both overall rating
-means, assigned-versus-rated group exposure, per-variant means, read-only
-answers, and two downloads that follow the current selection.
-
-## Checkpoint 12 Production Preparation
-
-1. Run `python scripts/run_quality_gate.py` locally.
-2. Create separate private staging and production Google Sheets.
-3. Generate the ignored production registry with
-   `python scripts/generate_production_sessions.py --real-count 40`.
-4. Configure Streamlit secrets using `.streamlit/secrets.toml.example`.
-5. Follow the rehearsal, backup, recovery, deactivation, and closure procedures
-   in [`PRODUCTION.md`](PRODUCTION.md).
-
-Development progress is stored in the ignored file
-`data/runtime/progress.csv`. Set `FREEK_STUDY_PROGRESS_PATH` to use a different
-local path. `FREEK_STUDY_SESSIONS_PATH` can point automated or staging runs to a
-separate session registry. Set `storage_backend = "google_sheets"` and the
-documented private credentials in Streamlit secrets for durable deployed
-storage. CSV remains the local default.
-
-The stimulus contract is documented in [`STUDY_SPEC.md`](STUDY_SPEC.md).
-
-## Configuration
-
-Shared Streamlit settings live in `.streamlit/config.toml`.
-
-Local secrets will later live in `.streamlit/secrets.toml`. That file is ignored
-by Git and must never be committed.
-
-Staging coordinates, secrets, test procedure, and the temporary-storage warning
-are documented in [`STAGING.md`](STAGING.md).
-
-The checkpoint 11 staging app is available at
-<https://freek-participant-pilot.streamlit.app/>. It accepts test links only;
-real participant recruitment remains blocked until the external credential,
-pilot, and branch-integration items in `PRODUCTION.md` are accepted.
+Real participant tokens and URL files belong in the ignored `data/private/`
+directory. See [`PRODUCTION.md`](PRODUCTION.md) before generating or deploying
+them.
