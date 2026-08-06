@@ -1,5 +1,10 @@
 # Freek Participant Study: Implementation and DevOps Plan
 
+> Historical note: this document describes the completed `pilot-1` grouped-
+> variant application. The active `acl-1` design is specified in
+> `STUDY_SPEC.md` and deployed by `streamlit_app.py` using the `app/acl_*`
+> modules.
+
 ## Goal
 
 Build a Dutch Streamlit research application in which participants use anonymous

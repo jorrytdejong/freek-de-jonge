@@ -10,15 +10,16 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from app.exports import (
+from app.acl_exports import (
     DEFAULT_EXPORT_DIRECTORY,
     build_export_tables,
     write_export_files,
 )
-from app.sessions import DEFAULT_SESSIONS_PATH, load_sessions
-from app.stimuli import DEFAULT_STIMULI_PATH, load_stimuli
+from app.acl_sessions import DEFAULT_SESSIONS_PATH, load_sessions
+from app.acl_stimuli import DEFAULT_STIMULI_PATH, load_stimuli
 from app.storage import CSVProgressStorage
-from app.storage.csv_storage import DEFAULT_PROGRESS_PATH
+
+DEFAULT_PROGRESS_PATH = PROJECT_ROOT / "data" / "runtime" / "acl_progress.csv"
 
 
 def parse_args() -> argparse.Namespace:
@@ -34,10 +35,10 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    groups = load_stimuli(args.stimuli)
-    sessions = load_sessions({group.group_id for group in groups}, args.sessions)
+    stimuli = load_stimuli(args.stimuli)
+    sessions = load_sessions(stimuli, args.sessions)
     records = CSVProgressStorage(args.progress).list_progress()
-    tables = build_export_tables(records, sessions, groups)
+    tables = build_export_tables(records, sessions, stimuli)
     participants_path, ratings_path = write_export_files(tables, args.output)
     print(
         f"Exported {len(tables.participants)} participants and "

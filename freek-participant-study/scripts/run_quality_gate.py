@@ -43,16 +43,17 @@ def main() -> int:
         *PYTHON_SOURCES,
     )
     run(
-        "Primary study data",
+        "Primary ACL study data",
         sys.executable,
-        "scripts/validate_study.py",
+        "scripts/validate_acl_study.py",
+        "--require-test-only",
     )
     run(
-        "Test-only staging data",
+        "Test-only ACL staging data",
         sys.executable,
-        "scripts/validate_study.py",
+        "scripts/validate_acl_study.py",
         "--sessions",
-        "data/sessions.staging.csv",
+        "data/acl_sessions.staging.csv",
         "--require-test-only",
     )
     run(
