@@ -43,9 +43,7 @@ class AdminFlowTest(unittest.TestCase):
             self.assertFalse(app.exception)
             self.assertTrue(app.session_state["admin_authenticated"])
             self.assertTrue(
-                any(
-                    "Onderzoeksdashboard" in markdown.value for markdown in app.markdown
-                )
+                any("Onderzoeksdashboard" in title.value for title in app.title)
             )
             self.assertEqual(len(app.metric), 5)
             self.assertEqual(len(app.get("download_button")), 2)
@@ -62,7 +60,7 @@ class AdminFlowTest(unittest.TestCase):
             ),
         ):
             app = AppTest.from_file(self.app_path)
-            app.query_params["session"] = "test-02-CVM5_s67"
+            app.query_params["session"] = "acl-test-02-979d4f77"
             app.run(timeout=15)
 
             self.assertFalse(app.exception)
