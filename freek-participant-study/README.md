@@ -203,6 +203,27 @@ cancels a reward.
 Older ledgers are atomically migrated with blank provider status fields on app
 startup. Checkpoint 9 continues to use only the Testflight API.
 
+### Pilot preflight
+
+Checkpoint 10 adds the final offline release gate to the authenticated dashboard
+and as a command-line check:
+
+```bash
+python scripts/reward_preflight.py
+```
+
+The command exits successfully only when rewards are enabled in Testflight mode,
+the admin password exists, issuance is active, capacity remains, no failed or
+stuck claims exist, no provider delivery is marked `FAILED`, and all issued
+rewards were reconciled within the previous 24 hours. It reads only local
+configuration and ledgers, makes no Tremendous request, and never prints API
+keys or other secret values.
+
+The dashboard presents the same checks under `Checkpoint 10 · pilot-preflight`.
+This is a sandbox-pilot readiness signal, not authorization for real payments.
+Production credentials and endpoints remain unsupported and
+`PRODUCTION PAYMENTS: disabled` is always explicit in the CLI output.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

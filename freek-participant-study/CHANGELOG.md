@@ -35,6 +35,9 @@
 - Added Checkpoint 9 manual Tremendous delivery-status reconciliation, persisted
   provider status/check timestamps, delivery-health metrics, and audit export
   fields without treating active links as proof of redemption.
+- Added the Checkpoint 10 offline sandbox-pilot preflight in the authenticated
+  dashboard and CLI, covering admin protection, kill-switch state, capacity,
+  claim health, and reconciliation freshness without exposing credentials.
 
 ### ACL-1
 

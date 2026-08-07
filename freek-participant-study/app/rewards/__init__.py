@@ -19,6 +19,12 @@ from app.rewards.ledger import (
     RewardLedgerError,
     RewardRecord,
 )
+from app.rewards.preflight import (
+    RewardPreflightCheck,
+    RewardPreflightReport,
+    build_reward_preflight,
+    preflight_rows,
+)
 from app.rewards.service import (
     RewardNotEligibleError,
     RewardReconciliationResult,
@@ -41,6 +47,8 @@ __all__ = [
     "RewardLedgerError",
     "RewardNotEligibleError",
     "RewardProvider",
+    "RewardPreflightCheck",
+    "RewardPreflightReport",
     "RewardReconciliationResult",
     "RewardRecord",
     "RewardService",
@@ -50,8 +58,10 @@ __all__ = [
     "TremendousAPIError",
     "TremendousSandboxRewardProvider",
     "build_reward_operations_overview",
+    "build_reward_preflight",
     "filter_reward_records",
     "participant_reward_reference",
+    "preflight_rows",
     "reward_audit_csv",
     "reward_audit_rows",
 ]

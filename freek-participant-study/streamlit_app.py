@@ -74,7 +74,9 @@ from app.rewards import (
     TremendousAPIError,
     TremendousSandboxRewardProvider,
     build_reward_operations_overview,
+    build_reward_preflight,
     filter_reward_records,
+    preflight_rows,
     reward_audit_csv,
     reward_audit_rows,
 )
@@ -1196,6 +1198,20 @@ def render_reward_operations() -> None:
         file_name="reward_operations.csv",
         mime="text/csv",
     )
+    st.markdown("## Checkpoint 10 · pilot-preflight")
+    preflight = build_reward_preflight(
+        reward_settings,
+        all_records,
+        control,
+        admin_password_configured=bool(configured_admin_password()),
+    )
+    if preflight.ready_for_sandbox_pilot:
+        st.success(
+            "GEREED VOOR SANDBOXPILOT — productiebetalingen blijven uitgeschakeld."
+        )
+    else:
+        st.error("NIET GEREED — los de controles met 'ACTIE NODIG' eerst op.")
+    st.dataframe(preflight_rows(preflight), hide_index=True, width="stretch")
 
 
 def render_admin(

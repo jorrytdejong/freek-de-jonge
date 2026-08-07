@@ -88,6 +88,9 @@ class AdminFlowTest(unittest.TestCase):
                     for button in app.button
                 )
             )
+            self.assertTrue(
+                any("pilot-preflight" in markdown.value for markdown in app.markdown)
+            )
             self.assertEqual(len(app.get("download_button")), 3)
 
     def test_participant_route_does_not_expose_admin_controls(self):
