@@ -34,3 +34,7 @@ class FakeRewardProvider:
             provider=self.provider_name,
             is_test=True,
         )
+
+    def get_redemption_link(self, reward_id: str) -> None:
+        """Fake claims have no external redemption destination."""
+        return None
