@@ -1,8 +1,11 @@
 import unittest
 from decimal import Decimal
 
-from app.rewards import TremendousAPIError, TremendousSandboxRewardProvider
-from app.rewards.tremendous import TREMENDOUS_SANDBOX_ORDERS_URL
+from app.rewards import TremendousSandboxRewardProvider
+from app.rewards.tremendous import (
+    TREMENDOUS_SANDBOX_ORDERS_URL,
+    TremendousAPIError,
+)
 
 
 class RecordingTransport:
@@ -23,8 +26,19 @@ class RecordingTransport:
         self.calls: list[dict] = []
 
     def post_json(self, **kwargs):
-        self.calls.append(kwargs)
+        self.calls.append({"method": "POST", **kwargs})
+        if kwargs["url"].endswith("/generate_link"):
+            return 200, {
+                "reward": {
+                    "id": "REWARD-123",
+                    "link": "https://reward.testflight.tremendous.com/rewards/fresh",
+                }
+            }
         return self.status, self.response
+
+    def get_json(self, **kwargs):
+        self.calls.append({"method": "GET", **kwargs})
+        return 200, {"order": {"rewards": [{"id": "REWARD-123"}]}}
 
 
 class TremendousSandboxRewardProviderTest(unittest.TestCase):
@@ -54,6 +68,7 @@ class TremendousSandboxRewardProviderTest(unittest.TestCase):
         )
         self.assertEqual(len(transport.calls), 1)
         call = transport.calls[0]
+        self.assertEqual(call["method"], "POST")
         self.assertEqual(call["url"], TREMENDOUS_SANDBOX_ORDERS_URL)
         self.assertEqual(call["headers"]["Authorization"], "Bearer TEST_secret-value")
         self.assertEqual(call["payload"]["external_id"], "reward-pseudonym-123")
@@ -95,6 +110,68 @@ class TremendousSandboxRewardProviderTest(unittest.TestCase):
 
         self.assertEqual(caught.exception.status_code, 402)
         self.assertNotIn("TEST_secret-value", str(caught.exception))
+
+    def test_insufficient_funds_is_specific_and_not_retried(self) -> None:
+        transport = RecordingTransport(status=402)
+
+        with self.assertRaisesRegex(TremendousAPIError, "insufficient"):
+            self.provider(transport).create_claim(
+                participant_reference="reward-reference",
+                amount=Decimal("3.40"),
+                currency="EUR",
+            )
+
+        self.assertEqual([call["method"] for call in transport.calls], ["POST"])
+
+    def test_timeout_after_creation_is_reconciled_by_external_id(self) -> None:
+        class LostResponseTransport(RecordingTransport):
+            def post_json(self, **kwargs):
+                if kwargs["url"] == TREMENDOUS_SANDBOX_ORDERS_URL:
+                    self.calls.append({"method": "POST", **kwargs})
+                    raise TremendousAPIError("timeout", retryable=True)
+                return super().post_json(**kwargs)
+
+        transport = LostResponseTransport()
+        claim = self.provider(transport).create_claim(
+            participant_reference="stable-external-id",
+            amount=Decimal("3.40"),
+            currency="EUR",
+        )
+
+        self.assertEqual(claim.reference, "REWARD-123")
+        self.assertEqual(
+            [call["method"] for call in transport.calls], ["POST", "GET", "POST"]
+        )
+        self.assertTrue(
+            transport.calls[1]["url"].endswith("/orders/stable-external-id")
+        )
+
+    def test_missing_order_after_timeout_remains_retryable(self) -> None:
+        class MissingOrderTransport(RecordingTransport):
+            def post_json(self, **kwargs):
+                self.calls.append({"method": "POST", **kwargs})
+                raise TremendousAPIError("timeout", retryable=True)
+
+            def get_json(self, **kwargs):
+                self.calls.append({"method": "GET", **kwargs})
+                return 404, {}
+
+        with self.assertRaises(TremendousAPIError) as caught:
+            self.provider(MissingOrderTransport()).create_claim(
+                participant_reference="stable-external-id",
+                amount=Decimal("3.40"),
+                currency="EUR",
+            )
+
+        self.assertTrue(caught.exception.retryable)
+
+    def test_fresh_link_can_be_generated_for_existing_reward(self) -> None:
+        transport = RecordingTransport()
+
+        link = self.provider(transport).get_redemption_link("REWARD-123")
+
+        self.assertEqual(link, "https://reward.testflight.tremendous.com/rewards/fresh")
+        self.assertTrue(transport.calls[0]["url"].endswith("generate_link"))
 
     def test_non_sandbox_redemption_url_is_rejected(self) -> None:
         transport = RecordingTransport(

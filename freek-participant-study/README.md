@@ -110,6 +110,25 @@ research app does not collect those details. Reopening an already-used link
 shows Tremendous's current payout status, while reopening the study link restores
 the same reward decision.
 
+### Reward recovery
+
+Checkpoint 5 makes sandbox issuance safe to retry. If an order request times out
+or returns a temporary server error, the app looks up the deterministic external
+order ID before allowing another attempt. This recovers orders whose response was
+lost without creating a second reward. Interrupted `issuing` records can likewise
+resume with the same ID.
+
+The participant sees separate, non-sensitive messages for insufficient sandbox
+funding, rejected configuration, temporary unavailability, and an uncertain
+order status. An issued reward remains recorded even if its link cannot currently
+be opened, and the debrief provides a link retry action.
+
+Redemption URLs are treated as short-lived bearer secrets: they are not stored in
+the reward ledger. The app retains only the Tremendous reward ID and asks
+Tremendous for a fresh link when the submitted study page is reopened. On startup,
+legacy ledgers containing a `redemption_url` column are atomically rewritten
+without that column or its values.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

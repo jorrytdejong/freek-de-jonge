@@ -32,6 +32,9 @@ class CountingFakeRewardProvider(FakeRewardProvider):
 class LinkRewardProvider:
     provider_name = "tremendous_sandbox"
 
+    def __init__(self) -> None:
+        self.link_count = 0
+
     def create_claim(self, *, amount, currency, **kwargs):
         return RewardClaim(
             reference="REWARD-123",
@@ -41,6 +44,10 @@ class LinkRewardProvider:
             is_test=True,
             redemption_url="https://testflight.tremendous.com/rewards/test-123",
         )
+
+    def get_redemption_link(self, reward_id):
+        self.link_count += 1
+        return f"https://testflight.tremendous.com/rewards/fresh-{self.link_count}"
 
 
 class CSVRewardLedgerTest(unittest.TestCase):
@@ -95,8 +102,9 @@ class CSVRewardLedgerTest(unittest.TestCase):
         self.assertEqual(self.provider.call_count, 1)
         self.assertEqual(len(self.ledger.list_records()), 1)
 
-    def test_sandbox_redemption_link_survives_fresh_ledger_instance(self) -> None:
-        service = RewardService(self.ledger, LinkRewardProvider())
+    def test_sandbox_link_is_regenerated_and_never_stored_in_ledger(self) -> None:
+        provider = LinkRewardProvider()
+        service = RewardService(self.ledger, provider)
         issued = service.claim_reward(
             session_id="sandbox-participant",
             study_version="acl-1",
@@ -105,18 +113,59 @@ class CSVRewardLedgerTest(unittest.TestCase):
             amount=Decimal("3.40"),
         )
 
-        reopened = RewardService(CSVRewardLedger(self.path), LinkRewardProvider())
+        reopened = RewardService(CSVRewardLedger(self.path), provider)
         loaded = reopened.load_claim(
             session_id="sandbox-participant",
             study_version="acl-1",
             is_test=True,
         )
-        self.assertEqual(loaded, issued)
         assert loaded is not None
-        self.assertEqual(
-            loaded.redemption_url,
-            "https://testflight.tremendous.com/rewards/test-123",
+        self.assertNotEqual(loaded.redemption_url, issued.redemption_url)
+        ledger_text = self.path.read_text(encoding="utf-8")
+        self.assertNotIn("redemption_url", ledger_text)
+        self.assertNotIn("https://", ledger_text)
+
+    def test_legacy_redemption_links_are_scrubbed(self) -> None:
+        provider = LinkRewardProvider()
+        RewardService(self.ledger, provider).claim_reward(
+            session_id="sandbox-participant",
+            study_version="acl-1",
+            is_test=True,
+            eligible=True,
+            amount=Decimal("3.40"),
         )
+        rows = self.ledger.list_records()
+        legacy_fields = list(REWARD_FIELDNAMES)
+        legacy_fields.insert(6, "redemption_url")
+        with self.path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=legacy_fields)
+            writer.writeheader()
+            row = {
+                key: value
+                for key, value in zip(
+                    REWARD_FIELDNAMES,
+                    (
+                        rows[0].reward_reference,
+                        rows[0].study_version,
+                        "true",
+                        rows[0].status,
+                        rows[0].provider,
+                        rows[0].provider_reward_id,
+                        str(rows[0].amount),
+                        rows[0].currency,
+                        rows[0].error_code,
+                        rows[0].created_at.isoformat(),
+                        rows[0].updated_at.isoformat(),
+                    ),
+                    strict=True,
+                )
+            }
+            row["redemption_url"] = "https://example.invalid/bearer-secret"
+            writer.writerow(row)
+
+        self.assertTrue(self.ledger.scrub_legacy_links())
+        self.assertNotIn("bearer-secret", self.path.read_text(encoding="utf-8"))
+        self.assertFalse(self.ledger.scrub_legacy_links())
 
     def test_ineligible_participant_cannot_create_ledger_record(self) -> None:
         with self.assertRaises(RewardNotEligibleError):
@@ -206,6 +255,36 @@ class CSVRewardLedgerTest(unittest.TestCase):
         assert issued is not None
         self.assertEqual(issued.status, "issued")
         self.assertEqual(issued.provider_reward_id, claim.reference)
+
+    def test_interrupted_issuing_record_can_resume_with_same_reference(self) -> None:
+        reference = participant_reward_reference("interrupted-session", "acl-1")
+        arguments = {
+            "reward_reference": reference,
+            "study_version": "acl-1",
+            "is_test": False,
+            "provider": "fake",
+            "amount": Decimal("3.40"),
+            "currency": "EUR",
+        }
+
+        with self.assertRaises(KeyboardInterrupt):
+            self.ledger.issue_once(
+                **arguments,
+                issuer=lambda: (_ for _ in ()).throw(KeyboardInterrupt()),
+            )
+        interrupted = self.ledger.load(reference)
+        assert interrupted is not None
+        self.assertEqual(interrupted.status, "issuing")
+
+        claim = self.service.claim_reward(
+            session_id="interrupted-session",
+            study_version="acl-1",
+            is_test=False,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+        self.assertTrue(claim.reference.startswith("fake-"))
+        self.assertEqual(self.ledger.load(reference).status, "issued")
 
     def test_reward_reference_is_stable_and_session_specific(self) -> None:
         first = participant_reward_reference("session-one", "acl-1")

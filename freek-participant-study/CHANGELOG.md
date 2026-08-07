@@ -12,13 +12,18 @@
   references, durable claim recovery, explicit eligibility enforcement, and
   one-claim behaviour across refreshes, restarts, and concurrent tabs.
 - Added a sandbox-only Tremendous adapter for idempotent Dutch EUR link rewards,
-  including strict `TEST_` credential validation, safe API errors, persisted
-  redemption links, and rejection of non-sandbox destinations.
+  including strict `TEST_` credential validation, safe API errors, and rejection
+  of non-sandbox destinations.
 - Added Tremendous's required generic `Deelnemer` recipient object to link
   orders without disclosing participant contact or research data.
 - Added the Checkpoint 4 voluntary accept/decline experience, persistent
   opt-out state, reversible reconsideration, clearer privacy wording, and a
   status-aware external Tremendous handoff.
+- Added Checkpoint 5 timeout reconciliation by deterministic external order ID,
+  interrupted-claim recovery, participant-safe failure states, and retryable
+  link generation.
+- Stopped persisting Tremendous redemption URLs and added an atomic migration
+  that scrubs URLs from existing reward ledgers.
 
 ### ACL-1
 
