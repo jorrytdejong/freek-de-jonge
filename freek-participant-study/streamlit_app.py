@@ -67,6 +67,7 @@ from app.rewards import (
     RewardBudgetExceededError,
     RewardClaim,
     RewardConfigurationError,
+    RewardIssuancePausedError,
     RewardLedgerError,
     RewardService,
     RewardSettings,
@@ -269,6 +270,15 @@ def stored_reward_status(session: ParticipantSession) -> str | None:
         st.stop()
 
 
+def reward_issuance_is_paused() -> bool:
+    assert reward_service is not None
+    try:
+        return reward_service.load_control().paused
+    except RewardLedgerError:
+        st.error("De uitgiftestatus van de testbeloning kon niet worden gelezen.")
+        st.stop()
+
+
 def issue_reward(session: ParticipantSession, *, eligible: bool) -> None:
     assert reward_service is not None
     try:
@@ -286,6 +296,12 @@ def issue_reward(session: ParticipantSession, *, eligible: bool) -> None:
         st.error(
             "Het maximale aantal testvergoedingen of het ingestelde testbudget "
             "is bereikt. Neem contact op met de onderzoeker."
+        )
+        return
+    except RewardIssuancePausedError:
+        st.info(
+            "Nieuwe testvergoedingen zijn tijdelijk gepauzeerd. Je kunt deze pagina "
+            "later opnieuw openen."
         )
         return
     except RewardLedgerError:
@@ -354,18 +370,35 @@ def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
         ):
             st.rerun()
         return
+    issuance_paused = reward_issuance_is_paused()
     if reward_status == "declined":
         st.info("Je hebt ervoor gekozen geen testvergoeding te ontvangen.")
         st.caption(
             "Deze keuze is apart van je onderzoeksantwoorden opgeslagen. "
             "Je kunt hieronder alsnog voor de testvergoeding kiezen."
         )
-        if st.button(
+        if issuance_paused:
+            st.info(
+                "Nieuwe testvergoedingen zijn tijdelijk gepauzeerd. Je eerdere "
+                "keuze blijft opgeslagen."
+            )
+        elif st.button(
             "Toch een testvergoeding ontvangen",
             type="primary",
             key=f"reward_reconsider:{session.session_id}",
         ):
             issue_reward(session, eligible=eligible)
+        return
+    if issuance_paused:
+        st.info(
+            "Nieuwe testvergoedingen zijn tijdelijk gepauzeerd. Je onderzoeksantwoorden "
+            "zijn wel veilig ingediend; open deze pagina later opnieuw."
+        )
+        if st.button(
+            "Geen testvergoeding, bedankt",
+            key=f"reward_decline_paused:{session.session_id}",
+        ):
+            decline_reward(session, eligible=eligible)
         return
     st.write("Wil je de optionele testvergoeding ontvangen?")
     accept_column, decline_column = st.columns(2)
@@ -1034,6 +1067,34 @@ def render_reward_operations() -> None:
     if reward_service is None:
         return
     st.markdown("## Beloningsoperaties")
+    try:
+        control = reward_service.load_control()
+    except RewardLedgerError:
+        st.error("De uitgiftebediening kon niet veilig worden gelezen.")
+        return
+    if control.paused:
+        st.warning(
+            "NIEUWE UITGIFTE GEPAUZEERD — bestaande beloningen blijven toegankelijk."
+        )
+        if st.button("Nieuwe uitgifte hervatten", type="primary"):
+            try:
+                reward_service.set_paused(False)
+            except RewardLedgerError:
+                st.error("De uitgifte kon niet veilig worden hervat.")
+            else:
+                st.rerun()
+    else:
+        st.success("Nieuwe uitgifte is actief.")
+        pause_confirmed = st.checkbox(
+            "Ik bevestig dat ik nieuwe testvergoedingen tijdelijk wil pauzeren."
+        )
+        if st.button("Nieuwe uitgifte pauzeren", disabled=not pause_confirmed):
+            try:
+                reward_service.set_paused(True)
+            except RewardLedgerError:
+                st.error("De uitgifte kon niet veilig worden gepauzeerd.")
+            else:
+                st.rerun()
     reward_scope = st.segmented_control(
         "Beloningsselectie",
         ADMIN_SCOPES,

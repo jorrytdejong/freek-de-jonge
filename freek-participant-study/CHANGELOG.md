@@ -29,6 +29,9 @@
   privacy-safe reconciliation export.
 - Added Checkpoint 7 atomic reward-count and EUR budget limits, participant-safe
   exhaustion handling, and remaining-capacity metrics in the admin dashboard.
+- Added the Checkpoint 8 persistent operator kill switch for pausing new reward
+  issuance without affecting existing claims, with atomic fail-closed controls
+  and participant-safe paused messaging.
 
 ### ACL-1
 

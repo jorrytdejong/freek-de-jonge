@@ -67,6 +67,18 @@ class AdminFlowTest(unittest.TestCase):
                     for metric in app.metric
                 )
             )
+            self.assertTrue(
+                any(
+                    success.value == "Nieuwe uitgifte is actief."
+                    for success in app.success
+                )
+            )
+            self.assertTrue(
+                any(
+                    checkbox.label.startswith("Ik bevestig")
+                    for checkbox in app.checkbox
+                )
+            )
             self.assertEqual(len(app.get("download_button")), 3)
 
     def test_participant_route_does_not_expose_admin_controls(self):

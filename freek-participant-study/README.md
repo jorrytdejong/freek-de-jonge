@@ -167,6 +167,24 @@ this pilot; use a transactional shared database before deploying multiple app
 replicas. Checkpoint 7 still uses Tremendous Testflight only and deliberately
 does not accept production API keys.
 
+### Emergency pause
+
+Checkpoint 8 adds a persistent issuance kill switch to the authenticated reward
+dashboard. While issuance is active, an explicit confirmation checkbox enables
+`Nieuwe uitgifte pauzeren`. Once paused, the dashboard displays a prominent
+warning and offers `Nieuwe uitgifte hervatten`.
+
+The state is atomically stored beside the ignored reward ledger in
+`*.csv.control.json`. A pause is checked under the same process lock immediately
+before reserving a reward, so Tremendous is not called for a newly blocked claim.
+Existing issued rewards remain accessible and declines remain possible. A
+participant without an issued reward sees a neutral message inviting them to
+reopen the page later. Missing control state defaults to active; corrupt or
+unreadable control state fails closed instead of issuing rewards.
+
+Use the pause before maintenance, credential rotation, campaign changes, or an
+unexpected delivery incident. Checkpoint 8 remains sandbox-only.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

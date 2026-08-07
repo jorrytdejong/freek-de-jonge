@@ -12,6 +12,8 @@ from app.rewards import (
     FakeRewardProvider,
     RewardBudgetExceededError,
     RewardClaim,
+    RewardIssuancePausedError,
+    RewardLedgerError,
     RewardNotEligibleError,
     RewardService,
     participant_reward_reference,
@@ -317,6 +319,33 @@ class CSVRewardLedgerTest(unittest.TestCase):
         )
         self.assertEqual(same, first)
         self.assertEqual(self.provider.call_count, 1)
+
+    def test_operator_pause_blocks_new_claims_but_not_existing_claims(self) -> None:
+        existing = self.claim("existing-session")
+        paused = self.service.set_paused(True)
+
+        self.assertTrue(paused.paused)
+        self.assertTrue(CSVRewardLedger(self.path).load_control().paused)
+        with self.assertRaises(RewardIssuancePausedError):
+            self.claim("new-session")
+        self.assertEqual(self.provider.call_count, 1)
+        self.assertEqual(self.claim("existing-session"), existing)
+        self.assertEqual(self.provider.call_count, 1)
+
+        resumed = self.service.set_paused(False)
+        self.assertFalse(resumed.paused)
+        self.claim("new-session")
+        self.assertEqual(self.provider.call_count, 2)
+
+    def test_invalid_control_file_fails_closed(self) -> None:
+        self.ledger.control_path.parent.mkdir(parents=True, exist_ok=True)
+        self.ledger.control_path.write_text("not-json", encoding="utf-8")
+
+        with self.assertRaises(RewardLedgerError):
+            self.ledger.load_control()
+        with self.assertRaises(RewardLedgerError):
+            self.claim("new-session")
+        self.assertEqual(self.provider.call_count, 0)
 
     def test_interrupted_issuing_record_can_resume_with_same_reference(self) -> None:
         reference = participant_reward_reference("interrupted-session", "acl-1")

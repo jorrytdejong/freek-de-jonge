@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import os
 import tempfile
 import threading
@@ -56,6 +57,18 @@ class RewardLedgerError(RuntimeError):
 
 class RewardBudgetExceededError(RuntimeError):
     """Raised before issuance when a configured hard limit is exhausted."""
+
+
+class RewardIssuancePausedError(RuntimeError):
+    """Raised before issuance while the operator kill switch is active."""
+
+
+@dataclass(frozen=True)
+class RewardControlState:
+    """Persistent operator controls stored separately from reward records."""
+
+    paused: bool = False
+    updated_at: datetime | None = None
 
 
 @dataclass(frozen=True)
@@ -162,7 +175,71 @@ class CSVRewardLedger:
 
     def __init__(self, path: Path = DEFAULT_REWARD_LEDGER_PATH) -> None:
         self.path = path
+        self.control_path = path.with_suffix(f"{path.suffix}.control.json")
         self._lock = _file_lock(path)
+
+    def _read_control(self) -> RewardControlState:
+        if not self.control_path.exists():
+            return RewardControlState()
+        try:
+            payload = json.loads(self.control_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            raise RewardLedgerError("Reward controls could not be read.") from error
+        if not isinstance(payload, dict) or not isinstance(payload.get("paused"), bool):
+            raise RewardLedgerError("Reward controls have invalid values.")
+        updated_at_text = payload.get("updated_at")
+        if not isinstance(updated_at_text, str):
+            raise RewardLedgerError("Reward controls have no update timestamp.")
+        return RewardControlState(
+            paused=payload["paused"],
+            updated_at=_timestamp(
+                updated_at_text,
+                reward_reference="controls",
+                field="updated_at",
+            ),
+        )
+
+    def load_control(self) -> RewardControlState:
+        with self._lock:
+            return self._read_control()
+
+    def set_paused(
+        self, paused: bool, *, now: datetime | None = None
+    ) -> RewardControlState:
+        changed_at = now or datetime.now(UTC)
+        if changed_at.tzinfo is None:
+            raise RewardLedgerError("Reward control timestamp must include a timezone.")
+        state = RewardControlState(paused=paused, updated_at=changed_at)
+        with self._lock:
+            self.control_path.parent.mkdir(parents=True, exist_ok=True)
+            temporary_path: Path | None = None
+            try:
+                descriptor, temporary_name = tempfile.mkstemp(
+                    dir=self.control_path.parent,
+                    prefix=f".{self.control_path.name}.",
+                    suffix=".tmp",
+                )
+                temporary_path = Path(temporary_name)
+                with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+                    json.dump(
+                        {
+                            "paused": state.paused,
+                            "updated_at": changed_at.isoformat(),
+                        },
+                        handle,
+                        separators=(",", ":"),
+                    )
+                    handle.flush()
+                    os.fsync(handle.fileno())
+                os.replace(temporary_path, self.control_path)
+            except OSError as error:
+                raise RewardLedgerError(
+                    "Reward controls could not be replaced."
+                ) from error
+            finally:
+                if temporary_path is not None and temporary_path.exists():
+                    temporary_path.unlink()
+        return state
 
     def _read_all(self) -> dict[str, RewardRecord]:
         if not self.path.exists():
@@ -329,6 +406,8 @@ class CSVRewardLedger:
                     )
                 if existing.status == "issued":
                     return existing
+            if self._read_control().paused:
+                raise RewardIssuancePausedError("Reward issuance is paused.")
             reserved = tuple(
                 record
                 for reference, record in records.items()

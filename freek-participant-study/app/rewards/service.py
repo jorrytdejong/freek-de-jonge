@@ -6,7 +6,7 @@ import hashlib
 from decimal import Decimal
 
 from app.rewards.base import RewardClaim, RewardProvider
-from app.rewards.ledger import CSVRewardLedger, RewardRecord
+from app.rewards.ledger import CSVRewardLedger, RewardControlState, RewardRecord
 
 
 class RewardNotEligibleError(RuntimeError):
@@ -36,6 +36,12 @@ class RewardService:
             raise ValueError("Reward limits must be greater than zero.")
         self.max_issued_count = max_issued_count
         self.budget_limit = budget_limit
+
+    def load_control(self) -> RewardControlState:
+        return self.ledger.load_control()
+
+    def set_paused(self, paused: bool) -> RewardControlState:
+        return self.ledger.set_paused(paused)
 
     def _claim_from_record(self, record: RewardRecord) -> RewardClaim | None:
         if record.status != "issued":
