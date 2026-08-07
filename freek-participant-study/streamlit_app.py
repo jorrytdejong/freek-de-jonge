@@ -1095,6 +1095,30 @@ def render_reward_operations() -> None:
                 st.error("De uitgifte kon niet veilig worden gepauzeerd.")
             else:
                 st.rerun()
+    if reward_settings.mode == "tremendous_sandbox":
+        if st.button("Tremendous-bezorgstatussen vernieuwen"):
+            try:
+                reconciliation = reward_service.reconcile_issued_rewards()
+            except RewardLedgerError:
+                st.error("De vernieuwde Tremendous-status kon niet worden opgeslagen.")
+            else:
+                st.session_state["reward_reconciliation_notice"] = {
+                    "checked": reconciliation.checked_count,
+                    "updated": reconciliation.updated_count,
+                    "failed": reconciliation.failed_count,
+                }
+                st.rerun()
+        if notice := st.session_state.pop("reward_reconciliation_notice", None):
+            if notice["failed"]:
+                st.warning(
+                    f"{notice['checked']} status(sen) gecontroleerd; "
+                    f"{notice['failed']} konden niet worden opgehaald."
+                )
+            else:
+                st.success(
+                    f"{notice['checked']} status(sen) gecontroleerd; "
+                    f"{notice['updated']} gewijzigd."
+                )
     reward_scope = st.segmented_control(
         "Beloningsselectie",
         ADMIN_SCOPES,
@@ -1126,7 +1150,7 @@ def render_reward_operations() -> None:
         else f"{overview.issued_amount} {overview.currency}"
     )
     metrics[5].metric("Aangemaakte waarde", amount_label)
-    capacity_metrics = st.columns(2)
+    capacity_metrics = st.columns(5)
     remaining_count = max(
         0, reward_settings.max_issued_count - capacity_overview.reserved_count
     )
@@ -1144,6 +1168,16 @@ def render_reward_operations() -> None:
         format_euro_amount(remaining_budget),
         help=f"Hard budget: {format_euro_amount(reward_settings.budget_eur)}",
     )
+    capacity_metrics[2].metric(
+        "Link actief",
+        overview.provider_succeeded_count,
+        help="Tremendous-bezorgstatus SUCCEEDED; dit bewijst geen verzilvering.",
+    )
+    capacity_metrics[3].metric(
+        "Providerfout",
+        overview.provider_failed_count,
+    )
+    capacity_metrics[4].metric("Niet gecontroleerd", overview.unchecked_count)
     if overview.failed_count:
         st.warning(
             f"{overview.failed_count} beloning(en) zijn mislukt en kunnen veilig "

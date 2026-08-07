@@ -38,6 +38,13 @@ class RecordingTransport:
 
     def get_json(self, **kwargs):
         self.calls.append({"method": "GET", **kwargs})
+        if "/rewards/" in kwargs["url"]:
+            return 200, {
+                "reward": {
+                    "id": "REWARD-123",
+                    "delivery": {"method": "LINK", "status": "SUCCEEDED"},
+                }
+            }
         return 200, {"order": {"rewards": [{"id": "REWARD-123"}]}}
 
 
@@ -172,6 +179,24 @@ class TremendousSandboxRewardProviderTest(unittest.TestCase):
 
         self.assertEqual(link, "https://reward.testflight.tremendous.com/rewards/fresh")
         self.assertTrue(transport.calls[0]["url"].endswith("generate_link"))
+
+    def test_retrieves_current_link_delivery_status(self) -> None:
+        transport = RecordingTransport()
+
+        status = self.provider(transport).get_reward_status("REWARD-123")
+
+        self.assertEqual(status, "SUCCEEDED")
+        self.assertEqual(transport.calls[0]["method"], "GET")
+        self.assertTrue(transport.calls[0]["url"].endswith("/rewards/REWARD-123"))
+
+    def test_unknown_delivery_status_is_rejected(self) -> None:
+        class UnknownStatusTransport(RecordingTransport):
+            def get_json(self, **kwargs):
+                self.calls.append({"method": "GET", **kwargs})
+                return 200, {"reward": {"delivery": {"status": "MYSTERY"}}}
+
+        with self.assertRaisesRegex(TremendousAPIError, "unknown"):
+            self.provider(UnknownStatusTransport()).get_reward_status("REWARD-123")
 
     def test_non_sandbox_redemption_url_is_rejected(self) -> None:
         transport = RecordingTransport(

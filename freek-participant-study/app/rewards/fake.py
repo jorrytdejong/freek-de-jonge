@@ -38,3 +38,7 @@ class FakeRewardProvider:
     def get_redemption_link(self, reward_id: str) -> None:
         """Fake claims have no external redemption destination."""
         return None
+
+    def get_reward_status(self, reward_id: str) -> str:
+        """A deterministic fake claim is immediately available."""
+        return "SUCCEEDED"

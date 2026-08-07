@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+from dataclasses import dataclass
 from decimal import Decimal
 
 from app.rewards.base import RewardClaim, RewardProvider
@@ -11,6 +12,16 @@ from app.rewards.ledger import CSVRewardLedger, RewardControlState, RewardRecord
 
 class RewardNotEligibleError(RuntimeError):
     """Raised when a reward is requested before a valid submission."""
+
+
+@dataclass(frozen=True)
+class RewardReconciliationResult:
+    """Summary of one manual provider-status reconciliation pass."""
+
+    checked_count: int
+    updated_count: int
+    failed_count: int
+    statuses: dict[str, int]
 
 
 def participant_reward_reference(session_id: str, study_version: str) -> str:
@@ -42,6 +53,40 @@ class RewardService:
 
     def set_paused(self, paused: bool) -> RewardControlState:
         return self.ledger.set_paused(paused)
+
+    def reconcile_issued_rewards(self) -> RewardReconciliationResult:
+        checked_count = 0
+        updated_count = 0
+        failed_count = 0
+        statuses: dict[str, int] = {}
+        for record in self.ledger.list_records():
+            if (
+                record.status != "issued"
+                or record.provider != self.provider.provider_name
+            ):
+                continue
+            try:
+                provider_status = self.provider.get_reward_status(
+                    record.provider_reward_id
+                )
+            except RuntimeError:
+                failed_count += 1
+                continue
+            checked_count += 1
+            if provider_status != record.provider_status:
+                updated_count += 1
+            updated = self.ledger.update_provider_status(
+                record.reward_reference, provider_status
+            )
+            statuses[updated.provider_status] = (
+                statuses.get(updated.provider_status, 0) + 1
+            )
+        return RewardReconciliationResult(
+            checked_count=checked_count,
+            updated_count=updated_count,
+            failed_count=failed_count,
+            statuses=statuses,
+        )
 
     def _claim_from_record(self, record: RewardRecord) -> RewardClaim | None:
         if record.status != "issued":

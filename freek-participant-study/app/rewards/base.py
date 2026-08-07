@@ -31,3 +31,6 @@ class RewardProvider(Protocol):
 
     def get_redemption_link(self, reward_id: str) -> str | None:
         """Return a fresh redemption link when the provider supports one."""
+
+    def get_reward_status(self, reward_id: str) -> str:
+        """Return the provider's current delivery status for a reward."""

@@ -32,6 +32,9 @@
 - Added the Checkpoint 8 persistent operator kill switch for pausing new reward
   issuance without affecting existing claims, with atomic fail-closed controls
   and participant-safe paused messaging.
+- Added Checkpoint 9 manual Tremendous delivery-status reconciliation, persisted
+  provider status/check timestamps, delivery-health metrics, and audit export
+  fields without treating active links as proof of redemption.
 
 ### ACL-1
 

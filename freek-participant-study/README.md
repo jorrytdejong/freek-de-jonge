@@ -185,6 +185,24 @@ unreadable control state fails closed instead of issuing rewards.
 Use the pause before maintenance, credential rotation, campaign changes, or an
 unexpected delivery incident. Checkpoint 8 remains sandbox-only.
 
+### Tremendous reconciliation
+
+Checkpoint 9 adds a manual `Tremendous-bezorgstatussen vernieuwen` action to the
+authenticated reward dashboard. It retrieves each issued sandbox reward by its
+provider reward ID, stores the current delivery status and check timestamp, and
+adds both fields to `reward_operations.csv`. One failed lookup does not prevent
+the remaining rewards from being checked.
+
+The dashboard distinguishes `SUCCEEDED`, `FAILED`, and not-yet-checked rewards.
+For a Tremendous `LINK` reward, `SUCCEEDED` means the link is active; it does
+**not** prove that the participant selected or completed a payout. The interface
+therefore labels this as a delivery status rather than a redemption or payment
+status. Refreshing is read-only at Tremendous and never creates, resends, or
+cancels a reward.
+
+Older ledgers are atomically migrated with blank provider status fields on app
+startup. Checkpoint 9 continues to use only the Testflight API.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

@@ -25,11 +25,18 @@ REWARD_FIELDNAMES = (
     "status",
     "provider",
     "provider_reward_id",
+    "provider_status",
+    "last_checked_at",
     "amount",
     "currency",
     "error_code",
     "created_at",
     "updated_at",
+)
+PRE_RECONCILIATION_REWARD_FIELDNAMES = tuple(
+    field
+    for field in REWARD_FIELDNAMES
+    if field not in {"provider_status", "last_checked_at"}
 )
 LEGACY_REWARD_FIELDNAMES = (
     "reward_reference",
@@ -86,6 +93,8 @@ class RewardRecord:
     error_code: str
     created_at: datetime
     updated_at: datetime
+    provider_status: str = ""
+    last_checked_at: datetime | None = None
 
 
 def _file_lock(path: Path) -> threading.RLock:
@@ -122,6 +131,8 @@ def parse_reward_row(row: dict[str, str], *, row_number: int) -> RewardRecord:
     study_version = (row.get("study_version") or "").strip()
     provider = (row.get("provider") or "").strip()
     provider_reward_id = (row.get("provider_reward_id") or "").strip()
+    provider_status = (row.get("provider_status") or "").strip().upper()
+    last_checked_text = (row.get("last_checked_at") or "").strip()
     if (
         not amount.is_finite()
         or amount <= 0
@@ -129,6 +140,14 @@ def parse_reward_row(row: dict[str, str], *, row_number: int) -> RewardRecord:
         or not study_version
         or not provider
         or (status == "issued" and not provider_reward_id)
+        or (
+            provider_status
+            and (
+                len(provider_status) > 32
+                or not provider_status.replace("_", "").isalnum()
+            )
+        )
+        or (provider_status and not last_checked_text)
     ):
         raise RewardLedgerError(f"Reward {reference} has invalid values.")
     return RewardRecord(
@@ -151,6 +170,16 @@ def parse_reward_row(row: dict[str, str], *, row_number: int) -> RewardRecord:
             reward_reference=reference,
             field="updated_at",
         ),
+        provider_status=provider_status,
+        last_checked_at=(
+            _timestamp(
+                last_checked_text,
+                reward_reference=reference,
+                field="last_checked_at",
+            )
+            if last_checked_text
+            else None
+        ),
     )
 
 
@@ -162,6 +191,10 @@ def serialize_reward_row(record: RewardRecord) -> dict[str, str]:
         "status": record.status,
         "provider": record.provider,
         "provider_reward_id": record.provider_reward_id,
+        "provider_status": record.provider_status,
+        "last_checked_at": (
+            record.last_checked_at.isoformat() if record.last_checked_at else ""
+        ),
         "amount": str(record.amount),
         "currency": record.currency,
         "error_code": record.error_code,
@@ -249,6 +282,7 @@ class CSVRewardLedger:
                 reader = csv.DictReader(handle)
                 if tuple(reader.fieldnames or ()) not in {
                     REWARD_FIELDNAMES,
+                    PRE_RECONCILIATION_REWARD_FIELDNAMES,
                     LEGACY_REWARD_FIELDNAMES,
                 }:
                     raise RewardLedgerError(
@@ -299,6 +333,38 @@ class CSVRewardLedger:
         with self._lock:
             records = self._read_all()
             return tuple(records[reference] for reference in sorted(records))
+
+    def update_provider_status(
+        self,
+        reward_reference: str,
+        provider_status: str,
+        *,
+        now: datetime | None = None,
+    ) -> RewardRecord:
+        checked_at = now or datetime.now(UTC)
+        if checked_at.tzinfo is None:
+            raise RewardLedgerError("Reward check timestamp must include a timezone.")
+        normalized = provider_status.strip().upper()
+        if (
+            not normalized
+            or len(normalized) > 32
+            or not normalized.replace("_", "").isalnum()
+        ):
+            raise RewardLedgerError("Reward provider status is invalid.")
+        with self._lock:
+            records = self._read_all()
+            existing = records.get(reward_reference)
+            if existing is None or existing.status != "issued":
+                raise RewardLedgerError("Issued reward record was not found.")
+            updated = replace(
+                existing,
+                provider_status=normalized,
+                last_checked_at=checked_at,
+                updated_at=checked_at,
+            )
+            records[reward_reference] = updated
+            self._write_all(records)
+            return updated
 
     def scrub_legacy_links(self) -> bool:
         """Rewrite a legacy ledger so bearer-style reward URLs are not retained."""

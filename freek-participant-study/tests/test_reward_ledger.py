@@ -18,7 +18,11 @@ from app.rewards import (
     RewardService,
     participant_reward_reference,
 )
-from app.rewards.ledger import REWARD_FIELDNAMES
+from app.rewards.ledger import (
+    LEGACY_REWARD_FIELDNAMES,
+    REWARD_FIELDNAMES,
+    serialize_reward_row,
+)
 
 
 class CountingFakeRewardProvider(FakeRewardProvider):
@@ -138,31 +142,12 @@ class CSVRewardLedgerTest(unittest.TestCase):
             amount=Decimal("3.40"),
         )
         rows = self.ledger.list_records()
-        legacy_fields = list(REWARD_FIELDNAMES)
-        legacy_fields.insert(6, "redemption_url")
         with self.path.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=legacy_fields)
+            writer = csv.DictWriter(handle, fieldnames=LEGACY_REWARD_FIELDNAMES)
             writer.writeheader()
-            row = {
-                key: value
-                for key, value in zip(
-                    REWARD_FIELDNAMES,
-                    (
-                        rows[0].reward_reference,
-                        rows[0].study_version,
-                        "true",
-                        rows[0].status,
-                        rows[0].provider,
-                        rows[0].provider_reward_id,
-                        str(rows[0].amount),
-                        rows[0].currency,
-                        rows[0].error_code,
-                        rows[0].created_at.isoformat(),
-                        rows[0].updated_at.isoformat(),
-                    ),
-                    strict=True,
-                )
-            }
+            row = serialize_reward_row(rows[0])
+            row.pop("provider_status")
+            row.pop("last_checked_at")
             row["redemption_url"] = "https://example.invalid/bearer-secret"
             writer.writerow(row)
 
@@ -336,6 +321,22 @@ class CSVRewardLedgerTest(unittest.TestCase):
         self.assertFalse(resumed.paused)
         self.claim("new-session")
         self.assertEqual(self.provider.call_count, 2)
+
+    def test_reconciliation_persists_provider_status_and_check_time(self) -> None:
+        self.claim("first-session")
+        self.claim("second-session")
+
+        first_pass = self.service.reconcile_issued_rewards()
+        second_pass = self.service.reconcile_issued_rewards()
+
+        self.assertEqual(first_pass.checked_count, 2)
+        self.assertEqual(first_pass.updated_count, 2)
+        self.assertEqual(first_pass.failed_count, 0)
+        self.assertEqual(first_pass.statuses, {"SUCCEEDED": 2})
+        self.assertEqual(second_pass.updated_count, 0)
+        for record in self.ledger.list_records():
+            self.assertEqual(record.provider_status, "SUCCEEDED")
+            self.assertIsNotNone(record.last_checked_at)
 
     def test_invalid_control_file_fails_closed(self) -> None:
         self.ledger.control_path.parent.mkdir(parents=True, exist_ok=True)

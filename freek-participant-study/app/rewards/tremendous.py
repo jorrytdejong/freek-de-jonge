@@ -157,6 +157,20 @@ def _generated_link(payload: Mapping[str, object]) -> str:
     return _validate_link(reward.get("link"))
 
 
+def _delivery_status(payload: Mapping[str, object]) -> str:
+    reward = payload.get("reward")
+    if not isinstance(reward, Mapping):
+        raise TremendousAPIError("Tremendous response has no reward.")
+    delivery = reward.get("delivery")
+    status = delivery.get("status") if isinstance(delivery, Mapping) else None
+    if not isinstance(status, str) or not status.strip():
+        raise TremendousAPIError("Tremendous response has no delivery status.")
+    normalized = status.strip().upper()
+    if normalized not in {"PENDING", "SCHEDULED", "SUCCEEDED", "FAILED"}:
+        raise TremendousAPIError("Tremendous returned an unknown delivery status.")
+    return normalized
+
+
 def _status_error(status: int) -> TremendousAPIError:
     if status == 402:
         return TremendousAPIError(
@@ -262,6 +276,18 @@ class TremendousSandboxRewardProvider:
         if status not in {200, 201}:
             raise _status_error(status)
         return _generated_link(response)
+
+    def get_reward_status(self, reward_id: str) -> str:
+        if not reward_id.strip():
+            raise TremendousAPIError("A Tremendous reward ID is required.")
+        status, response = self.transport.get_json(
+            url=f"{TREMENDOUS_SANDBOX_API}/rewards/{quote(reward_id, safe='')}",
+            headers=self._headers,
+            timeout=self.timeout_seconds,
+        )
+        if status != 200:
+            raise _status_error(status)
+        return _delivery_status(response)
 
     def create_claim(
         self, *, participant_reference: str, amount: Decimal, currency: str

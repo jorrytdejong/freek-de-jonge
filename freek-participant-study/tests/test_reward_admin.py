@@ -60,6 +60,9 @@ class RewardOperationsTest(unittest.TestCase):
         self.assertEqual(overview.issued_amount, Decimal("5.40"))
         self.assertEqual(overview.reserved_count, 4)
         self.assertEqual(overview.reserved_amount, Decimal("12.20"))
+        self.assertEqual(overview.provider_succeeded_count, 0)
+        self.assertEqual(overview.provider_failed_count, 0)
+        self.assertEqual(overview.unchecked_count, 2)
         self.assertEqual(overview.currency, "EUR")
 
     def test_scope_filter_separates_real_and_test_rewards(self) -> None:

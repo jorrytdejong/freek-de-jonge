@@ -21,6 +21,7 @@ from app.rewards.ledger import (
 )
 from app.rewards.service import (
     RewardNotEligibleError,
+    RewardReconciliationResult,
     RewardService,
     participant_reward_reference,
 )
@@ -40,6 +41,7 @@ __all__ = [
     "RewardLedgerError",
     "RewardNotEligibleError",
     "RewardProvider",
+    "RewardReconciliationResult",
     "RewardRecord",
     "RewardService",
     "RewardSettings",

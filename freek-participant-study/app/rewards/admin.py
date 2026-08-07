@@ -18,6 +18,8 @@ REWARD_AUDIT_COLUMNS = (
     "status",
     "provider",
     "provider_reward_id",
+    "provider_status",
+    "last_checked_at",
     "amount",
     "currency",
     "error_code",
@@ -39,6 +41,9 @@ class RewardOperationsOverview:
     issued_amount: Decimal
     reserved_count: int
     reserved_amount: Decimal
+    provider_succeeded_count: int
+    provider_failed_count: int
+    unchecked_count: int
     currency: str | None
 
 
@@ -91,6 +96,16 @@ def build_reward_operations_overview(
             ),
             start=Decimal("0"),
         ),
+        provider_succeeded_count=sum(
+            record.provider_status == "SUCCEEDED" for record in records
+        ),
+        provider_failed_count=sum(
+            record.provider_status == "FAILED" for record in records
+        ),
+        unchecked_count=sum(
+            record.status == "issued" and not record.provider_status
+            for record in records
+        ),
         currency=next(iter(currencies)) if len(currencies) == 1 else None,
     )
 
@@ -107,6 +122,10 @@ def reward_audit_rows(
             "status": record.status,
             "provider": record.provider,
             "provider_reward_id": record.provider_reward_id,
+            "provider_status": record.provider_status,
+            "last_checked_at": (
+                record.last_checked_at.isoformat() if record.last_checked_at else ""
+            ),
             "amount": str(record.amount),
             "currency": record.currency,
             "error_code": record.error_code,
