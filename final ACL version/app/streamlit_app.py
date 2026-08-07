@@ -98,7 +98,7 @@ def build_request() -> JokeRequest:
         A joke request populated from the Streamlit controls.
     """
     if "topic_input" not in st.session_state:
-        st.session_state["topic_input"] = TOPIC_PROPOSALS[0]
+        st.session_state["topic_input"] = "de wachtrij bij de gemeente"
 
     st.selectbox(
         "Topic proposal from the transcripts",

@@ -7,7 +7,6 @@ from typing import Any, TypeVar
 from pydantic import BaseModel
 
 from core.freek_examples import freek_example_context
-from core.comic_guidance import COMIC_REALIZATION_GUIDANCE, COMIC_SELECTION_GUIDANCE
 from core.llm import add_usage, generate_structured
 from core.schemas import (
     AudienceExpectationOutput,
@@ -315,12 +314,11 @@ def build_validated_variants_prompt(
         "gtvh_plan": plan.model_dump(),
     }
     return _structured_prompt(
-        f"""
+        """
 You realize a validated GTVH plan as concise Dutch jokes.
 
 Stage 6: Controlled joke generation.
 Write exactly three variants with variant_id V1, V2, and V3.
-The GTVH plan is a constraint, not finished joke copy.
 For every variant:
 - setup primarily activates Script A
 - punchline activates Script B late
@@ -331,9 +329,6 @@ For every variant:
 - the joke is specific to the supplied topic
 - full_text ends as close as possible to the planned strongest word or phrase
 
-{COMIC_REALIZATION_GUIDANCE}
-
-Discard and replace any draft for which no exact audience laugh moment can be identified.
 Return variant_id, setup, punchline, full_text, angle, and anchor_surface_form.
 """.strip(),
         payload,
@@ -395,19 +390,15 @@ def build_pairwise_selection_prompt(
         "required_pairs": pairs,
     }
     return _structured_prompt(
-        f"""
+        """
 You are the final comparative joke evaluator.
 Write rationales in Dutch.
 
 Stage 8: Pairwise selection.
 Judge every required pair and return exactly one comparison for each.
 For each pair, winner_variant_id must equal its left_variant_id or right_variant_id.
-
-{COMIC_SELECTION_GUIDANCE}
-
-For every pair, compare funniness, punchline strength, and performability first.
-Use recoverable script opposition, setup clarity, logical resolution, topic specificity,
-concision, and originality only as secondary criteria.
+Evaluate recoverable script opposition, setup clarity, strength of the switch,
+logical resolution, topic specificity, concision, funniness, and originality.
 
 Then return selected_variant_id for the best overall eligible variant and an overall rationale.
 Select by ID only. Never rewrite a joke.

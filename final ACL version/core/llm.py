@@ -8,18 +8,13 @@ from pydantic import BaseModel
 from core.schemas import UsageSummary
 
 
-DEFAULT_MODEL = "gpt-5.6-terra"
+DEFAULT_MODEL = "gpt-5.5"
 StructuredModel = TypeVar("StructuredModel", bound=BaseModel)
 AVAILABLE_MODELS: tuple[dict[str, str], ...] = (
     {
-        "id": "gpt-5.6-terra",
-        "label": "GPT-5.6 Terra",
-        "description": "Best-quality default for complex humor generation, semantic planning, and evaluation.",
-    },
-    {
         "id": "gpt-5.5",
         "label": "GPT-5.5",
-        "description": "High-quality fallback for complex humor generation and evaluation.",
+        "description": "Best-quality default for complex humor generation and evaluation.",
     },
     {
         "id": "gpt-5.4-mini",
