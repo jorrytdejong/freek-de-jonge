@@ -24,6 +24,9 @@
   link generation.
 - Stopped persisting Tremendous redemption URLs and added an atomic migration
   that scrubs URLs from existing reward ledgers.
+- Added the Checkpoint 6 authenticated reward-operations dashboard with scoped
+  delivery metrics, failed/stuck warnings, issued-value tracking, and a
+  privacy-safe reconciliation export.
 
 ### ACL-1
 

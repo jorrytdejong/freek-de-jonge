@@ -14,7 +14,9 @@ from streamlit.errors import StreamlitSecretNotFoundError
 from app.acl_admin import (
     ADMIN_SCOPES,
     ADMIN_STATUSES,
+    SCOPE_ALL,
     SCOPE_REAL,
+    SCOPE_TEST,
     STATUS_SUBMITTED,
     build_condition_summary,
     build_dimension_summary,
@@ -68,6 +70,10 @@ from app.rewards import (
     RewardSettings,
     TremendousAPIError,
     TremendousSandboxRewardProvider,
+    build_reward_operations_overview,
+    filter_reward_records,
+    reward_audit_csv,
+    reward_audit_rows,
 )
 from app.storage import (
     AlreadySubmittedError,
@@ -1006,7 +1012,57 @@ def render_admin_dashboard(
             rows_to_csv(RATING_COLUMNS, selected.ratings).encode("utf-8-sig"),
             file_name="ratings.csv",
         )
+    render_reward_operations(scope or SCOPE_REAL)
     render_footer()
+
+
+def render_reward_operations(scope: str) -> None:
+    """Show reward delivery health only inside the authenticated admin route."""
+    if reward_service is None:
+        return
+    include_test = None if scope == SCOPE_ALL else scope == SCOPE_TEST
+    try:
+        records = filter_reward_records(
+            reward_service.ledger.list_records(), include_test=include_test
+        )
+    except RewardLedgerError:
+        st.error("De beloningsadministratie kon niet veilig worden gelezen.")
+        return
+    overview = build_reward_operations_overview(records)
+    st.markdown("## Beloningsoperaties")
+    st.caption(
+        "Los van onderzoeksantwoorden; bevat alleen pseudonieme operationele gegevens."
+    )
+    metrics = st.columns(6)
+    metrics[0].metric("Keuzes", overview.total_count)
+    metrics[1].metric("Aangemaakt", overview.issued_count)
+    metrics[2].metric("Geweigerd", overview.declined_count)
+    metrics[3].metric("Mislukt", overview.failed_count)
+    metrics[4].metric("Bezig", overview.issuing_count)
+    amount_label = (
+        format_euro_amount(overview.issued_amount)
+        if overview.currency in {None, "EUR"}
+        else f"{overview.issued_amount} {overview.currency}"
+    )
+    metrics[5].metric("Aangemaakte waarde", amount_label)
+    if overview.failed_count:
+        st.warning(
+            f"{overview.failed_count} beloning(en) zijn mislukt en kunnen veilig "
+            "opnieuw worden geprobeerd via de deelnemerslink."
+        )
+    if overview.stuck_count:
+        st.warning(
+            f"{overview.stuck_count} beloning(en) staan langer dan tien minuten op "
+            "'issuing'. Een nieuwe poging gebruikt dezelfde orderreferentie."
+        )
+    audit_rows = reward_audit_rows(records)
+    st.dataframe(audit_rows, hide_index=True, width="stretch")
+    st.download_button(
+        "Beloningslog downloaden",
+        reward_audit_csv(records).encode("utf-8-sig"),
+        file_name="reward_operations.csv",
+        mime="text/csv",
+    )
 
 
 def render_admin(

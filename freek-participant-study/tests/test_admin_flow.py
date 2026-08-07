@@ -26,6 +26,11 @@ class AdminFlowTest(unittest.TestCase):
                 {
                     "FREEK_STUDY_ADMIN_PASSWORD": "correct-password",
                     "FREEK_STUDY_PROGRESS_PATH": str(Path(directory) / "progress.csv"),
+                    "FREEK_STUDY_REWARDS_ENABLED": "true",
+                    "FREEK_STUDY_REWARD_MODE": "fake",
+                    "FREEK_STUDY_REWARD_LEDGER_PATH": str(
+                        Path(directory) / "rewards.csv"
+                    ),
                 },
             ),
         ):
@@ -45,8 +50,12 @@ class AdminFlowTest(unittest.TestCase):
             self.assertTrue(
                 any("Onderzoeksdashboard" in title.value for title in app.title)
             )
-            self.assertEqual(len(app.metric), 5)
-            self.assertEqual(len(app.get("download_button")), 2)
+            self.assertEqual(len(app.metric), 11)
+            self.assertTrue(any(metric.label == "Aangemaakt" for metric in app.metric))
+            self.assertTrue(
+                any("Beloningsoperaties" in markdown.value for markdown in app.markdown)
+            )
+            self.assertEqual(len(app.get("download_button")), 3)
 
     def test_participant_route_does_not_expose_admin_controls(self):
         with (
@@ -56,6 +65,7 @@ class AdminFlowTest(unittest.TestCase):
                 {
                     "FREEK_STUDY_ADMIN_PASSWORD": "correct-password",
                     "FREEK_STUDY_PROGRESS_PATH": str(Path(directory) / "progress.csv"),
+                    "FREEK_STUDY_REWARDS_ENABLED": "false",
                 },
             ),
         ):

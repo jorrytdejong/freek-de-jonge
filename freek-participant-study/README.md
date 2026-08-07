@@ -129,6 +129,20 @@ Tremendous for a fresh link when the submitted study page is reopened. On startu
 legacy ledgers containing a `redemption_url` column are atomically rewritten
 without that column or its values.
 
+### Reward operations
+
+Checkpoint 6 adds reward-delivery monitoring to the password-protected
+`?admin=1` dashboard. The reward section follows the existing real/test/all
+scope selector and reports choices, issued rewards, declines, failures,
+in-progress claims, issued value, and claims stuck in `issuing` for at least ten
+minutes. Failed and stuck records produce an explicit operator warning.
+
+The authenticated dashboard also offers `reward_operations.csv` for audit and
+reconciliation. This export is deliberately separate from research responses:
+it contains pseudonymous reward references and provider IDs, but no raw session
+IDs, participant contact details, survey answers, or redemption URLs. Checkpoint
+6 remains sandbox-only and does not enable production payments.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>
