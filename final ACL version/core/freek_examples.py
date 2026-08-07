@@ -13,6 +13,26 @@ EXAMPLE_SEGMENTS = [
         1,
     ),
     (
+        "2005 - Freek de Jonge - Cordon Sanitaire (België)_laughter_with_humor_categories.json",
+        2,
+    ),
+    (
+        "2010 - Freek de Jonge - Het Verlossende Woord_laughter_with_humor_categories.json",
+        2,
+    ),
+    (
+        "2010 - Freek de Jonge - Het Verlossende Woord_laughter_with_humor_categories.json",
+        3,
+    ),
+    (
+        "2014 - Freek de Jonge - Als je me nu nog niet kent - Deel 2 - Na de pauze_laughter_with_humor_categories.json",
+        3,
+    ),
+    (
+        "2014 - Freek de Jonge - Als je me nu nog niet kent - Deel 2 - Na de pauze_laughter_with_humor_categories.json",
+        7,
+    ),
+    (
         "2020 - Freek de Jonge - Asociale afstand - Carre 5-7-2020_laughter_with_humor_categories.json",
         6,
     ),
@@ -23,6 +43,10 @@ EXAMPLE_SEGMENTS = [
     (
         "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_with_humor_categories.json",
         18,
+    ),
+    (
+        "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_with_humor_categories.json",
+        20,
     ),
 ]
 

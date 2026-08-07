@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from core.categories import CATEGORY_INVENTORY
+from core.freek_examples import EXAMPLE_SEGMENTS
 from core.llm import DEFAULT_MODEL, available_model_ids
 from core.runner import run_matrix
 from core.schemas import JokeRequest
@@ -19,6 +20,8 @@ def main() -> None:
     )
     assert DEFAULT_MODEL == "gpt-5.6-terra"
     assert available_model_ids()[0] == DEFAULT_MODEL
+    assert len(EXAMPLE_SEGMENTS) == 10
+    assert len({filename for filename, _ in EXAMPLE_SEGMENTS}) == 5
     results = run_matrix(request, dry_run=True)
     by_code = {result.pipeline_code: result for result in results}
     assert [result.pipeline_code for result in results] == PIPELINE_ORDER
