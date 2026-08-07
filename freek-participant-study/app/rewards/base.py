@@ -28,3 +28,6 @@ class RewardProvider(Protocol):
         self, *, participant_reference: str, amount: Decimal, currency: str
     ) -> RewardClaim:
         """Create or retrieve the claim for one participant reference."""
+
+    def get_redemption_link(self, reward_id: str) -> str | None:
+        """Return a fresh redemption link when the provider supports one."""

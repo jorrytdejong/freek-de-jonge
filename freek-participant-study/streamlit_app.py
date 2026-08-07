@@ -125,11 +125,15 @@ reward_provider = (
         funding_source_id=reward_settings.tremendous_funding_source_id,
     )
 )
-reward_service = (
-    RewardService(CSVRewardLedger(reward_settings.ledger_path), reward_provider)
-    if reward_settings.enabled
-    else None
-)
+reward_service = None
+if reward_settings.enabled:
+    reward_ledger = CSVRewardLedger(reward_settings.ledger_path)
+    try:
+        reward_ledger.scrub_legacy_links()
+    except RewardLedgerError as error:
+        st.error(f"Beloningsopslag kon niet veilig worden gemigreerd: {error}")
+        st.stop()
+    reward_service = RewardService(reward_ledger, reward_provider)
 
 
 def configured_admin_password() -> str | None:
@@ -201,6 +205,28 @@ def format_euro_amount(amount: object) -> str:
     return f"€{amount:.2f}".replace(".", ",")
 
 
+def reward_error_message(error: TremendousAPIError) -> str:
+    if error.status_code == 402:
+        return (
+            "De testrekening heeft onvoldoende saldo. De onderzoeker moet het "
+            "sandboxsaldo aanvullen voordat je de testvergoeding kunt openen."
+        )
+    if error.status_code in {401, 403, 422}:
+        return (
+            "De testvergoeding is momenteel verkeerd geconfigureerd. "
+            "Neem contact op met de onderzoeker."
+        )
+    if error.uncertain:
+        return (
+            "Tremendous heeft nog niet bevestigd wat er is gebeurd. Je vaste "
+            "orderreferentie voorkomt een dubbele testvergoeding; probeer zo opnieuw."
+        )
+    return (
+        "Tremendous is tijdelijk niet bereikbaar. Er wordt bij een nieuwe poging "
+        "eerst gecontroleerd of de testvergoeding al bestaat."
+    )
+
+
 def stored_reward_claim(session: ParticipantSession) -> RewardClaim | None:
     assert reward_service is not None
     try:
@@ -209,6 +235,9 @@ def stored_reward_claim(session: ParticipantSession) -> RewardClaim | None:
             study_version=STUDY_VERSION,
             is_test=session.is_test,
         )
+    except TremendousAPIError as error:
+        st.error(reward_error_message(error))
+        return None
     except RewardLedgerError:
         st.error("De status van je testbeloning kon niet veilig worden gelezen.")
         st.stop()
@@ -238,7 +267,7 @@ def issue_reward(session: ParticipantSession, *, eligible: bool) -> None:
             amount=reward_settings.amount_eur,
         )
     except TremendousAPIError as error:
-        st.error(f"Tremendous-sandboxfout: {error}")
+        st.error(reward_error_message(error))
         return
     except RewardLedgerError:
         st.error("Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw.")
@@ -274,7 +303,8 @@ def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
         st.warning("TREMENDOUS-SANDBOX — deze beloning gebruikt alleen testgeld.")
     else:
         st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
-    if claim := stored_reward_claim(session):
+    claim = stored_reward_claim(session)
+    if claim:
         st.success(
             f"Je testvergoeding van {format_euro_amount(claim.amount)} is aangemaakt."
         )
@@ -292,7 +322,20 @@ def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
             "toegevoegd. Een al gebruikte link toont de actuele uitbetalingsstatus."
         )
         return
-    if stored_reward_status(session) == "declined":
+    reward_status = stored_reward_status(session)
+    if reward_status == "issued":
+        st.info(
+            "Je testvergoeding is al veilig aangemaakt, maar de Tremendous-link "
+            "kon nu niet worden vernieuwd."
+        )
+        if st.button(
+            "Probeer de Tremendous-link opnieuw",
+            type="primary",
+            key=f"reward_link_retry:{session.session_id}",
+        ):
+            st.rerun()
+        return
+    if reward_status == "declined":
         st.info("Je hebt ervoor gekozen geen testvergoeding te ontvangen.")
         st.caption(
             "Deze keuze is apart van je onderzoeksantwoorden opgeslagen. "

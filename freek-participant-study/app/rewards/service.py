@@ -26,17 +26,17 @@ class RewardService:
         self.ledger = ledger
         self.provider = provider
 
-    @staticmethod
-    def _claim_from_record(record: RewardRecord) -> RewardClaim | None:
+    def _claim_from_record(self, record: RewardRecord) -> RewardClaim | None:
         if record.status != "issued":
             return None
+        redemption_url = self.provider.get_redemption_link(record.provider_reward_id)
         return RewardClaim(
             reference=record.provider_reward_id,
             amount=record.amount,
             currency=record.currency,
             provider=record.provider,
-            is_test=record.provider == "fake",
-            redemption_url=record.redemption_url or None,
+            is_test=record.provider in {"fake", "tremendous_sandbox"},
+            redemption_url=redemption_url,
         )
 
     def load_claim(

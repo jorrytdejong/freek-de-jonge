@@ -17,7 +17,7 @@ from app.rewards.base import RewardClaim
 DEFAULT_REWARD_LEDGER_PATH = (
     Path(__file__).resolve().parents[2] / "data" / "runtime" / "acl_rewards.csv"
 )
-LEGACY_REWARD_FIELDNAMES = (
+REWARD_FIELDNAMES = (
     "reward_reference",
     "study_version",
     "is_test",
@@ -30,7 +30,7 @@ LEGACY_REWARD_FIELDNAMES = (
     "created_at",
     "updated_at",
 )
-REWARD_FIELDNAMES = (
+LEGACY_REWARD_FIELDNAMES = (
     "reward_reference",
     "study_version",
     "is_test",
@@ -64,7 +64,6 @@ class RewardRecord:
     status: str
     provider: str
     provider_reward_id: str
-    redemption_url: str
     amount: Decimal
     currency: str
     error_code: str
@@ -122,7 +121,6 @@ def parse_reward_row(row: dict[str, str], *, row_number: int) -> RewardRecord:
         status=status,
         provider=provider,
         provider_reward_id=provider_reward_id,
-        redemption_url=(row.get("redemption_url") or "").strip(),
         amount=amount,
         currency=currency,
         error_code=(row.get("error_code") or "").strip(),
@@ -147,7 +145,6 @@ def serialize_reward_row(record: RewardRecord) -> dict[str, str]:
         "status": record.status,
         "provider": record.provider,
         "provider_reward_id": record.provider_reward_id,
-        "redemption_url": record.redemption_url,
         "amount": str(record.amount),
         "currency": record.currency,
         "error_code": record.error_code,
@@ -222,6 +219,22 @@ class CSVRewardLedger:
             records = self._read_all()
             return tuple(records[reference] for reference in sorted(records))
 
+    def scrub_legacy_links(self) -> bool:
+        """Rewrite a legacy ledger so bearer-style reward URLs are not retained."""
+        with self._lock:
+            if not self.path.exists():
+                return False
+            try:
+                with self.path.open(encoding="utf-8", newline="") as handle:
+                    fieldnames = tuple(csv.DictReader(handle).fieldnames or ())
+            except OSError as error:
+                raise RewardLedgerError("Reward ledger could not be read.") from error
+            if fieldnames == REWARD_FIELDNAMES:
+                return False
+            records = self._read_all()
+            self._write_all(records)
+            return True
+
     def decline(
         self,
         *,
@@ -261,7 +274,6 @@ class CSVRewardLedger:
                 status="declined",
                 provider=provider,
                 provider_reward_id="",
-                redemption_url="",
                 amount=amount,
                 currency=currency,
                 error_code="",
@@ -318,7 +330,6 @@ class CSVRewardLedger:
                 status="issuing",
                 provider=provider,
                 provider_reward_id="",
-                redemption_url="",
                 amount=amount,
                 currency=currency,
                 error_code="",
@@ -351,7 +362,6 @@ class CSVRewardLedger:
                 issuing,
                 status="issued",
                 provider_reward_id=claim.reference,
-                redemption_url=claim.redemption_url or "",
                 updated_at=issued_at,
             )
             records[reward_reference] = issued
