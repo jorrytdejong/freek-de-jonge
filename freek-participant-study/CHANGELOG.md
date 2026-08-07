@@ -14,6 +14,8 @@
 - Added a sandbox-only Tremendous adapter for idempotent Dutch EUR link rewards,
   including strict `TEST_` credential validation, safe API errors, persisted
   redemption links, and rejection of non-sandbox destinations.
+- Added Tremendous's required generic `Deelnemer` recipient object to link
+  orders without disclosing participant contact or research data.
 
 ### ACL-1
 

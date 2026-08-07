@@ -78,7 +78,9 @@ Use a separate sandbox ledger path so an already-issued local fake claim cannot
 be confused with a Tremendous sandbox claim. After submission, the app creates
 an idempotent `LINK` reward and displays the sandbox redemption button. The
 participant enters any redemption details on Tremendous, not in the research
-app. API keys are never stored in the reward ledger or displayed in errors.
+app. The API order uses only the generic required recipient name `Deelnemer`;
+it sends no participant email, phone number, session ID, or survey data. API
+keys are never stored in the reward ledger or displayed in errors.
 
 The equivalent Streamlit secrets are:
 

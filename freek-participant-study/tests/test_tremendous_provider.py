@@ -63,7 +63,10 @@ class TremendousSandboxRewardProviderTest(unittest.TestCase):
         self.assertEqual(reward["value"], {"denomination": 3.4, "currency_code": "EUR"})
         self.assertEqual(reward["delivery"], {"method": "LINK"})
         self.assertEqual(reward["language"], "nl")
-        self.assertNotIn("recipient", reward)
+        self.assertEqual(reward["recipient"], {"name": "Deelnemer"})
+        self.assertNotIn("email", reward["recipient"])
+        self.assertNotIn("phone", reward["recipient"])
+        self.assertNotIn("reward-pseudonym-123", str(reward["recipient"]))
 
     def test_duplicate_201_response_is_treated_as_same_success(self) -> None:
         claim = self.provider(RecordingTransport(status=201)).create_claim(

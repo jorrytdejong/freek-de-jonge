@@ -143,6 +143,10 @@ class TremendousSandboxRewardProvider:
                     "denomination": float(amount),
                     "currency_code": normalized_currency,
                 },
+                # Tremendous requires a recipient object for LINK delivery. A
+                # generic name satisfies the contract without sending email,
+                # phone, session ID, or other participant information.
+                "recipient": {"name": "Deelnemer"},
                 "delivery": {"method": "LINK"},
                 "language": "nl",
             },
