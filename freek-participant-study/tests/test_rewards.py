@@ -44,6 +44,12 @@ class RewardSettingsTest(unittest.TestCase):
             "TREMENDOUS_CAMPAIGN_ID": "CAMPAIGN-1",
             "TREMENDOUS_FUNDING_SOURCE_ID": "BALANCE",
             "FREEK_STUDY_REWARD_LEDGER_PATH": "data/runtime/rewards.production.csv",
+            "FREEK_STUDY_REWARD_MAX_ISSUED": "1",
+            "FREEK_STUDY_REWARD_BUDGET_EUR": "3.40",
+            "FREEK_STUDY_PRODUCTION_CANARY_ENABLED": "true",
+            "FREEK_STUDY_PRODUCTION_CANARY_REWARD_REFERENCE": (
+                "reward-0123456789abcdef01234567"
+            ),
         }
         with self.assertRaisesRegex(RewardConfigurationError, "ENVIRONMENT"):
             RewardSettings.from_sources(environ=base, secrets={})
@@ -73,6 +79,31 @@ class RewardSettingsTest(unittest.TestCase):
                     "FREEK_STUDY_DEPLOYMENT_ENVIRONMENT": "production",
                     "FREEK_STUDY_REAL_REWARDS_ACK": REAL_REWARD_ACKNOWLEDGEMENT,
                     "FREEK_STUDY_REWARD_LEDGER_PATH": "rewards-sandbox.csv",
+                    "FREEK_STUDY_REWARD_MAX_ISSUED": "1",
+                    "FREEK_STUDY_REWARD_BUDGET_EUR": "3.40",
+                    "FREEK_STUDY_PRODUCTION_CANARY_ENABLED": "true",
+                    "FREEK_STUDY_PRODUCTION_CANARY_REWARD_REFERENCE": (
+                        "reward-0123456789abcdef01234567"
+                    ),
+                    "TREMENDOUS_API_KEY": "PROD_safe-placeholder",
+                    "TREMENDOUS_CAMPAIGN_ID": "CAMPAIGN-1",
+                    "TREMENDOUS_FUNDING_SOURCE_ID": "BALANCE",
+                },
+                secrets={},
+            )
+
+    def test_production_canary_rejects_broad_limits(self) -> None:
+        with self.assertRaisesRegex(RewardConfigurationError, "max_issued=1"):
+            RewardSettings.from_sources(
+                environ={
+                    "FREEK_STUDY_REWARD_MODE": "tremendous_production",
+                    "FREEK_STUDY_DEPLOYMENT_ENVIRONMENT": "production",
+                    "FREEK_STUDY_REAL_REWARDS_ACK": REAL_REWARD_ACKNOWLEDGEMENT,
+                    "FREEK_STUDY_REWARD_LEDGER_PATH": "rewards.production.csv",
+                    "FREEK_STUDY_PRODUCTION_CANARY_ENABLED": "true",
+                    "FREEK_STUDY_PRODUCTION_CANARY_REWARD_REFERENCE": (
+                        "reward-0123456789abcdef01234567"
+                    ),
                     "TREMENDOUS_API_KEY": "PROD_safe-placeholder",
                     "TREMENDOUS_CAMPAIGN_ID": "CAMPAIGN-1",
                     "TREMENDOUS_FUNDING_SOURCE_ID": "BALANCE",

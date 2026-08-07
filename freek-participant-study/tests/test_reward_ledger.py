@@ -188,6 +188,61 @@ class CSVRewardLedgerTest(unittest.TestCase):
         self.assertFalse(self.path.exists())
         self.assertEqual(provider.call_count, 0)
 
+    def test_real_money_provider_rejects_participant_outside_canary(self) -> None:
+        provider = CountingFakeRewardProvider()
+        provider.is_real_money = True
+        service = RewardService(self.ledger, provider)
+
+        with self.assertRaisesRegex(RewardNotEligibleError, "production canary"):
+            service.claim_reward(
+                session_id="real-but-not-authorized",
+                study_version="acl-1",
+                is_test=False,
+                eligible=True,
+                amount=Decimal("3.40"),
+            )
+
+        self.assertFalse(self.path.exists())
+        self.assertEqual(provider.call_count, 0)
+
+    def test_real_money_decline_outside_canary_does_not_write_ledger(self) -> None:
+        provider = CountingFakeRewardProvider()
+        provider.is_real_money = True
+        service = RewardService(self.ledger, provider)
+
+        with self.assertRaisesRegex(RewardNotEligibleError, "production canary"):
+            service.decline_reward(
+                session_id="real-but-not-authorized",
+                study_version="acl-1",
+                is_test=False,
+                eligible=True,
+                amount=Decimal("3.40"),
+            )
+
+        self.assertFalse(self.path.exists())
+
+    def test_real_money_provider_allows_only_authorized_canary_reference(self) -> None:
+        provider = CountingFakeRewardProvider()
+        provider.is_real_money = True
+        allowed = participant_reward_reference("authorized", "acl-1")
+        service = RewardService(
+            self.ledger,
+            provider,
+            max_issued_count=1,
+            budget_limit=Decimal("3.40"),
+            allowed_real_reward_references=frozenset({allowed}),
+        )
+
+        service.claim_reward(
+            session_id="authorized",
+            study_version="acl-1",
+            is_test=False,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+
+        self.assertEqual(provider.call_count, 1)
+
     def test_decline_persists_and_participant_can_change_their_mind(self) -> None:
         status = self.service.decline_reward(
             session_id="real-session-one",

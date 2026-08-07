@@ -104,6 +104,10 @@ class RewardPreflightTest(unittest.TestCase):
             mode="tremendous_production",
             deployment_environment="production",
             real_rewards_acknowledged=True,
+            max_issued_count=1,
+            budget_eur=Decimal("3.40"),
+            production_canary_enabled=True,
+            production_canary_reward_reference="reward-0123456789abcdef01234567",
         )
         report = build_reward_preflight(
             production,
@@ -119,6 +123,30 @@ class RewardPreflightTest(unittest.TestCase):
             check for check in report.checks if check.name == "Deelnemersscope"
         )
         self.assertFalse(scope.passed)
+
+    def test_empty_production_canary_is_ready_with_all_gates(self) -> None:
+        production = replace(
+            settings(),
+            mode="tremendous_production",
+            max_issued_count=1,
+            budget_eur=Decimal("3.40"),
+            deployment_environment="production",
+            real_rewards_acknowledged=True,
+            production_canary_enabled=True,
+            production_canary_reward_reference="reward-0123456789abcdef01234567",
+        )
+
+        report = build_reward_preflight(
+            production,
+            (),
+            RewardControlState(),
+            admin_password_configured=True,
+            now=NOW,
+        )
+
+        self.assertTrue(report.ready_for_production)
+        self.assertTrue(report.production_payments_enabled)
+        self.assertFalse(report.ready_for_sandbox_pilot)
 
 
 if __name__ == "__main__":

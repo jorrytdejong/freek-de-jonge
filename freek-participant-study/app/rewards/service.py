@@ -40,6 +40,7 @@ class RewardService:
         *,
         max_issued_count: int = 25,
         budget_limit: Decimal = Decimal("85.00"),
+        allowed_real_reward_references: frozenset[str] = frozenset(),
     ) -> None:
         self.ledger = ledger
         self.provider = provider
@@ -47,12 +48,27 @@ class RewardService:
             raise ValueError("Reward limits must be greater than zero.")
         self.max_issued_count = max_issued_count
         self.budget_limit = budget_limit
+        self.allowed_real_reward_references = allowed_real_reward_references
 
     def load_control(self) -> RewardControlState:
         return self.ledger.load_control()
 
     def set_paused(self, paused: bool) -> RewardControlState:
         return self.ledger.set_paused(paused)
+
+    def _ensure_real_money_authorized(
+        self, *, reward_reference: str, is_test: bool
+    ) -> None:
+        if not getattr(self.provider, "is_real_money", False):
+            return
+        if is_test:
+            raise RewardNotEligibleError(
+                "Test participants can never receive a real-money reward."
+            )
+        if reward_reference not in self.allowed_real_reward_references:
+            raise RewardNotEligibleError(
+                "This participant is not authorized for the production canary."
+            )
 
     def reconcile_issued_rewards(self) -> RewardReconciliationResult:
         checked_count = 0
@@ -137,8 +153,13 @@ class RewardService:
             raise RewardNotEligibleError(
                 "A completed survey submission is required for a reward decision."
             )
+        reference = participant_reward_reference(session_id, study_version)
+        self._ensure_real_money_authorized(
+            reward_reference=reference,
+            is_test=is_test,
+        )
         record = self.ledger.decline(
-            reward_reference=participant_reward_reference(session_id, study_version),
+            reward_reference=reference,
             study_version=study_version,
             is_test=is_test,
             provider=self.provider.provider_name,
@@ -161,11 +182,11 @@ class RewardService:
             raise RewardNotEligibleError(
                 "A completed survey submission is required for a reward."
             )
-        if is_test and getattr(self.provider, "is_real_money", False):
-            raise RewardNotEligibleError(
-                "Test participants can never receive a real-money reward."
-            )
         reference = participant_reward_reference(session_id, study_version)
+        self._ensure_real_money_authorized(
+            reward_reference=reference,
+            is_test=is_test,
+        )
         provider_name = self.provider.provider_name
         record = self.ledger.issue_once(
             reward_reference=reference,

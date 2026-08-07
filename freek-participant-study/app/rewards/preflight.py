@@ -76,6 +76,12 @@ def build_reward_preflight(
     participant_scope_ok = not production_mode or not any(
         record.is_test and record.status in {"issuing", "issued"} for record in records
     )
+    canary_ok = not production_mode or (
+        settings.production_canary_enabled
+        and bool(settings.production_canary_reward_reference)
+        and settings.max_issued_count == 1
+        and settings.budget_eur == settings.amount_eur
+    )
     checks = (
         RewardPreflightCheck(
             "Beloningsfunctie",
@@ -147,6 +153,17 @@ def build_reward_preflight(
                 "Geen testdeelnemers in het productielogboek"
                 if production_mode
                 else "Testdeelnemers zijn toegestaan in sandbox"
+            ),
+        ),
+        RewardPreflightCheck(
+            "Productiecanary",
+            canary_ok,
+            (
+                "Eén vooraf geautoriseerde deelnemer; maximaal één beloning"
+                if production_mode and canary_ok
+                else "Uitgeschakeld in sandbox"
+                if not production_mode
+                else "Canary-allowlist of één-beloninglimiet ontbreekt"
             ),
         ),
     )

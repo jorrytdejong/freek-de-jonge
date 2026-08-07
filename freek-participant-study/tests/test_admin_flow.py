@@ -89,9 +89,7 @@ class AdminFlowTest(unittest.TestCase):
                 )
             )
             self.assertTrue(
-                any(
-                    "productie-preflight" in markdown.value for markdown in app.markdown
-                )
+                any("productiecanary" in markdown.value for markdown in app.markdown)
             )
             self.assertEqual(len(app.get("download_button")), 3)
 

@@ -69,6 +69,7 @@ from app.rewards import (
     RewardConfigurationError,
     RewardIssuancePausedError,
     RewardLedgerError,
+    RewardNotEligibleError,
     RewardService,
     RewardSettings,
     TremendousAPIError,
@@ -77,6 +78,7 @@ from app.rewards import (
     build_reward_operations_overview,
     build_reward_preflight,
     filter_reward_records,
+    participant_reward_reference,
     preflight_rows,
     reward_audit_csv,
     reward_audit_rows,
@@ -156,6 +158,11 @@ if reward_settings.enabled:
         reward_provider,
         max_issued_count=reward_settings.max_issued_count,
         budget_limit=reward_settings.budget_eur,
+        allowed_real_reward_references=frozenset(
+            {reward_settings.production_canary_reward_reference}
+            if reward_settings.production_canary_reward_reference
+            else ()
+        ),
     )
 
 
@@ -313,6 +320,9 @@ def issue_reward(session: ParticipantSession, *, eligible: bool) -> None:
             "later opnieuw openen."
         )
         return
+    except RewardNotEligibleError:
+        st.error("VEILIGHEIDSSTOP — deze deelnemer hoort niet bij de productiecanary.")
+        return
     except RewardLedgerError:
         st.error("Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw.")
         st.stop()
@@ -342,6 +352,15 @@ def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
         st.error(
             "VEILIGHEIDSSTOP — testdeelnemers kunnen nooit een echte vergoeding "
             "ontvangen."
+        )
+        return
+    if (
+        reward_settings.mode == "tremendous_production"
+        and participant_reward_reference(session.session_id, STUDY_VERSION)
+        != reward_settings.production_canary_reward_reference
+    ):
+        st.info(
+            "De productiecanary is alleen beschikbaar voor de aangewezen deelnemer."
         )
         return
     reward_label = (
@@ -1218,7 +1237,7 @@ def render_reward_operations() -> None:
         file_name="reward_operations.csv",
         mime="text/csv",
     )
-    st.markdown("## Checkpoint 11 · productie-preflight")
+    st.markdown("## Checkpoint 12 · productiecanary")
     preflight = build_reward_preflight(
         reward_settings,
         all_records,
@@ -1226,7 +1245,10 @@ def render_reward_operations() -> None:
         admin_password_configured=bool(configured_admin_password()),
     )
     if preflight.ready_for_production:
-        st.error("PRODUCTIE GEREED — nieuwe beloningen gebruiken echt geld.")
+        st.error(
+            "PRODUCTIECANARY GEREED — uitsluitend de aangewezen deelnemer kan "
+            "maximaal één echte beloning ontvangen."
+        )
     elif preflight.ready_for_sandbox_pilot:
         st.success("GEREED VOOR SANDBOXPILOT — productie blijft vergrendeld.")
     else:

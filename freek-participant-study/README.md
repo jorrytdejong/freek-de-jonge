@@ -244,6 +244,36 @@ The service rejects test participants before creating a ledger record or making
 a provider call. Checkpoint 11 tests the production adapter with an in-memory
 transport only; no production credentials are stored and no real reward is sent.
 
+### One-participant production canary
+
+Checkpoint 12 narrows the production path to one deliberately authorized
+participant and one €3.40 reward. Production configuration is rejected unless
+the maximum issued count is `1`, the total budget equals the reward amount, the
+canary switch is explicitly enabled, and exactly one valid pseudonymous reward
+reference is configured. Every test participant and every real participant not
+on that allowlist is stopped before the ledger is written or Tremendous is
+called.
+
+Generate the reference from the chosen private production session ID without
+putting that raw ID in the reward ledger:
+
+```bash
+python scripts/reward_reference.py PRIVATE_SESSION_ID
+```
+
+Then add these settings alongside the Checkpoint 11 production gates:
+
+```text
+FREEK_STUDY_REWARD_MAX_ISSUED=1
+FREEK_STUDY_REWARD_BUDGET_EUR=3.40
+FREEK_STUDY_PRODUCTION_CANARY_ENABLED=true
+FREEK_STUDY_PRODUCTION_CANARY_REWARD_REFERENCE=reward-...generated value...
+```
+
+The authenticated dashboard reports the canary gate without displaying the
+allowlisted reference. The local environment remains on Testflight, so
+Checkpoint 12 does not create a real order or activate production credentials.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

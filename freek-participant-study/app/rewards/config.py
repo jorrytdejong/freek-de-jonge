@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -17,6 +18,7 @@ class RewardConfigurationError(ValueError):
 TRUE_VALUES = frozenset({"1", "true", "yes", "on"})
 FALSE_VALUES = frozenset({"0", "false", "no", "off"})
 REAL_REWARD_ACKNOWLEDGEMENT = "I_UNDERSTAND_THIS_SENDS_REAL_MONEY"
+REWARD_REFERENCE_PATTERN = re.compile(r"^reward-[0-9a-f]{24}$")
 
 
 def _configured_value(
@@ -87,6 +89,8 @@ class RewardSettings:
     tremendous_funding_source_id: str = ""
     deployment_environment: str = "local"
     real_rewards_acknowledged: bool = False
+    production_canary_enabled: bool = False
+    production_canary_reward_reference: str = field(default="", repr=False)
 
     @classmethod
     def from_sources(
@@ -145,6 +149,24 @@ class RewardSettings:
             )
         ).strip()
         real_rewards_acknowledged = acknowledgement == REAL_REWARD_ACKNOWLEDGEMENT
+        production_canary_enabled = _parse_enabled(
+            _configured_value(
+                environ,
+                secrets,
+                "FREEK_STUDY_PRODUCTION_CANARY_ENABLED",
+                "production_canary_enabled",
+                False,
+            )
+        )
+        production_canary_reward_reference = str(
+            _configured_value(
+                environ,
+                secrets,
+                "FREEK_STUDY_PRODUCTION_CANARY_REWARD_REFERENCE",
+                "production_canary_reward_reference",
+                "",
+            )
+        ).strip()
         amount = _parse_amount(
             _configured_value(
                 environ,
@@ -247,6 +269,22 @@ class RewardSettings:
                 raise RewardConfigurationError(
                     "Tremendous productie vereist een afzonderlijk productielogboek."
                 )
+            if not production_canary_enabled:
+                raise RewardConfigurationError(
+                    "Checkpoint 12 vereist een expliciet ingeschakelde productiecanary."
+                )
+            if not REWARD_REFERENCE_PATTERN.fullmatch(
+                production_canary_reward_reference
+            ):
+                raise RewardConfigurationError(
+                    "De productiecanary vereist precies één geldige pseudonieme "
+                    "reward-reference."
+                )
+            if max_issued_count != 1 or budget_eur != amount:
+                raise RewardConfigurationError(
+                    "De productiecanary vereist max_issued=1 en een budget gelijk "
+                    "aan één beloning."
+                )
         return cls(
             enabled=enabled,
             mode=mode,
@@ -259,4 +297,6 @@ class RewardSettings:
             tremendous_funding_source_id=funding_source_id,
             deployment_environment=deployment_environment,
             real_rewards_acknowledged=real_rewards_acknowledged,
+            production_canary_enabled=production_canary_enabled,
+            production_canary_reward_reference=production_canary_reward_reference,
         )
