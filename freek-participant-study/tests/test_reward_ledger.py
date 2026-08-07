@@ -131,6 +131,56 @@ class CSVRewardLedgerTest(unittest.TestCase):
         self.assertFalse(self.path.exists())
         self.assertEqual(self.provider.call_count, 0)
 
+    def test_decline_persists_and_participant_can_change_their_mind(self) -> None:
+        status = self.service.decline_reward(
+            session_id="real-session-one",
+            study_version="acl-1",
+            is_test=False,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+
+        self.assertEqual(status, "declined")
+        self.assertEqual(self.provider.call_count, 0)
+        reopened = RewardService(CSVRewardLedger(self.path), self.provider)
+        self.assertEqual(
+            reopened.load_status(
+                session_id="real-session-one",
+                study_version="acl-1",
+                is_test=False,
+            ),
+            "declined",
+        )
+        claim = reopened.claim_reward(
+            session_id="real-session-one",
+            study_version="acl-1",
+            is_test=False,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+        self.assertTrue(claim.reference.startswith("fake-"))
+        self.assertEqual(self.provider.call_count, 1)
+        self.assertEqual(
+            reopened.load_status(
+                session_id="real-session-one",
+                study_version="acl-1",
+                is_test=False,
+            ),
+            "issued",
+        )
+
+    def test_ineligible_participant_cannot_decline_reward(self) -> None:
+        with self.assertRaises(RewardNotEligibleError):
+            self.service.decline_reward(
+                session_id="not-submitted",
+                study_version="acl-1",
+                is_test=False,
+                eligible=False,
+                amount=Decimal("3.40"),
+            )
+
+        self.assertFalse(self.path.exists())
+
     def test_failed_issue_is_recorded_and_can_retry_deterministically(self) -> None:
         reference = participant_reward_reference("real-session-one", "acl-1")
         now = datetime(2026, 8, 7, 12, 0, tzinfo=UTC)

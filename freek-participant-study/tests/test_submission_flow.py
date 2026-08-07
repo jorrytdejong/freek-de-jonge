@@ -109,12 +109,26 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 self.assertFalse(
                     any(b.label.startswith("Bewerk grap") for b in app.button)
                 )
-                reward_button = next(
+                self.assertIn(
+                    "Ontvang mijn testvergoeding",
+                    [button.label for button in app.button],
+                )
+                decline_button = next(
                     button
                     for button in app.button
-                    if button.label == "Ontvang mijn testbeloning"
+                    if button.label == "Geen testvergoeding, bedankt"
                 )
-                reward_button.click().run(timeout=20)
+                decline_button.click().run(timeout=20)
+                self.assertFalse(app.exception)
+                self.assertTrue(
+                    any("geen testvergoeding" in info.value for info in app.info)
+                )
+                reconsider_button = next(
+                    button
+                    for button in app.button
+                    if button.label == "Toch een testvergoeding ontvangen"
+                )
+                reconsider_button.click().run(timeout=20)
                 self.assertFalse(app.exception)
                 self.assertTrue(
                     any("TESTBELONING" in warning.value for warning in app.warning)
@@ -128,7 +142,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 reopened.run(timeout=20)
                 self.assertFalse(reopened.exception)
                 self.assertNotIn(
-                    "Ontvang mijn testbeloning",
+                    "Ontvang mijn testvergoeding",
                     [button.label for button in reopened.button],
                 )
                 self.assertTrue(

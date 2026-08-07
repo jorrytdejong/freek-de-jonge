@@ -214,62 +214,118 @@ def stored_reward_claim(session: ParticipantSession) -> RewardClaim | None:
         st.stop()
 
 
+def stored_reward_status(session: ParticipantSession) -> str | None:
+    assert reward_service is not None
+    try:
+        return reward_service.load_status(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+        )
+    except RewardLedgerError:
+        st.error("De status van je testbeloning kon niet veilig worden gelezen.")
+        st.stop()
+
+
+def issue_reward(session: ParticipantSession, *, eligible: bool) -> None:
+    assert reward_service is not None
+    try:
+        reward_service.claim_reward(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+            eligible=eligible,
+            amount=reward_settings.amount_eur,
+        )
+    except TremendousAPIError as error:
+        st.error(f"Tremendous-sandboxfout: {error}")
+        return
+    except RewardLedgerError:
+        st.error("Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw.")
+        st.stop()
+    st.rerun()
+
+
+def decline_reward(session: ParticipantSession, *, eligible: bool) -> None:
+    assert reward_service is not None
+    try:
+        reward_service.decline_reward(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+            eligible=eligible,
+            amount=reward_settings.amount_eur,
+        )
+    except RewardLedgerError:
+        st.error("Je keuze kon niet veilig worden opgeslagen. Probeer opnieuw.")
+        st.stop()
+    st.rerun()
+
+
 def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
     st.divider()
     st.subheader(f"Een koffie van {format_euro_amount(reward_settings.amount_eur)}")
     st.write(
-        "Als dank voor je deelname kun je hier een testbeloning aanvragen. "
-        "In deze ontwikkelfase wordt geen echt geld verstuurd."
+        "Als dank voor je deelname kun je een testvergoeding ter waarde van een "
+        "koffie ontvangen. Deze vergoeding is volledig vrijwillig: je keuze heeft "
+        "geen invloed op je deelname of je ingediende antwoorden."
     )
+    if reward_settings.mode == "tremendous_sandbox":
+        st.warning("TREMENDOUS-SANDBOX — deze beloning gebruikt alleen testgeld.")
+    else:
+        st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
     if claim := stored_reward_claim(session):
-        if claim.provider == "tremendous_sandbox":
-            st.warning("TREMENDOUS-SANDBOX — deze beloning gebruikt alleen testgeld.")
-        else:
-            st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
-        st.success(f"Je testclaim van {format_euro_amount(claim.amount)} staat klaar.")
+        st.success(
+            f"Je testvergoeding van {format_euro_amount(claim.amount)} is aangemaakt."
+        )
         if claim.redemption_url:
             st.link_button(
-                "Open testuitbetaling bij Tremendous",
+                "Open Tremendous om te kiezen of je status te bekijken",
                 claim.redemption_url,
                 type="primary",
             )
         else:
             st.code(claim.reference, language=None)
         st.caption(
-            "Eventuele testgegevens worden rechtstreeks in de sandbox ingevoerd en "
-            "niet aan je onderzoeksantwoorden toegevoegd."
+            "Tremendous verwerkt de gegevens die nodig zijn voor de gekozen "
+            "uitbetalingsvorm. Deze gegevens worden niet aan je onderzoeksantwoorden "
+            "toegevoegd. Een al gebruikte link toont de actuele uitbetalingsstatus."
         )
         return
-    button_label = (
-        "Maak Tremendous-sandboxbeloning aan"
-        if reward_settings.mode == "tremendous_sandbox"
-        else "Ontvang mijn testbeloning"
+    if stored_reward_status(session) == "declined":
+        st.info("Je hebt ervoor gekozen geen testvergoeding te ontvangen.")
+        st.caption(
+            "Deze keuze is apart van je onderzoeksantwoorden opgeslagen. "
+            "Je kunt hieronder alsnog voor de testvergoeding kiezen."
+        )
+        if st.button(
+            "Toch een testvergoeding ontvangen",
+            type="primary",
+            key=f"reward_reconsider:{session.session_id}",
+        ):
+            issue_reward(session, eligible=eligible)
+        return
+    st.write("Wil je de optionele testvergoeding ontvangen?")
+    accept_column, decline_column = st.columns(2)
+    with accept_column:
+        if st.button(
+            "Ontvang mijn testvergoeding",
+            type="primary",
+            use_container_width=True,
+            key=f"reward_accept:{session.session_id}",
+        ):
+            issue_reward(session, eligible=eligible)
+    with decline_column:
+        if st.button(
+            "Geen testvergoeding, bedankt",
+            use_container_width=True,
+            key=f"reward_decline:{session.session_id}",
+        ):
+            decline_reward(session, eligible=eligible)
+    st.caption(
+        "Bij accepteren opent Tremendous in een afzonderlijke pagina. Je kiest daar "
+        "zelf een beschikbare uitbetalingsvorm."
     )
-    if st.button(
-        button_label,
-        type="primary",
-        key=f"fake_reward:{session.session_id}",
-    ):
-        assert reward_service is not None
-        try:
-            reward_service.claim_reward(
-                session_id=session.session_id,
-                study_version=STUDY_VERSION,
-                is_test=session.is_test,
-                eligible=eligible,
-                amount=reward_settings.amount_eur,
-            )
-        except TremendousAPIError as error:
-            st.error(f"Tremendous-sandboxfout: {error}")
-            return
-        except RewardLedgerError:
-            st.error(
-                "Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw."
-            )
-            st.stop()
-        st.query_params["session"] = session.session_id
-        st.query_params["page"] = "debrief"
-        st.rerun()
 
 
 def collect_progress_state(

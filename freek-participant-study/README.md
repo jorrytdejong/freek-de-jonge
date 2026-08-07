@@ -96,6 +96,20 @@ campaign_id = "your_campaign_id"
 funding_source_id = "BALANCE"
 ```
 
+### Participant reward choice
+
+Checkpoint 4 presents the reward as a separate, voluntary decision after the
+research submission is final. Participants can accept the test reward or choose
+`Geen testvergoeding, bedankt`. A decline is stored only in the separate reward
+ledger and can be reversed with `Toch een testvergoeding ontvangen`; it never
+changes the submitted answers.
+
+After acceptance, the debrief links to Tremendous in a separate page. Tremendous
+collects any details needed for the participant's selected payout method. The
+research app does not collect those details. Reopening an already-used link
+shows Tremendous's current payout status, while reopening the study link restores
+the same reward decision.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

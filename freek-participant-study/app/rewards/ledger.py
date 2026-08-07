@@ -44,7 +44,7 @@ REWARD_FIELDNAMES = (
     "created_at",
     "updated_at",
 )
-REWARD_STATUSES = frozenset({"issuing", "issued", "failed"})
+REWARD_STATUSES = frozenset({"declined", "issuing", "issued", "failed"})
 
 _LOCKS_GUARD = threading.Lock()
 _FILE_LOCKS: dict[Path, threading.RLock] = {}
@@ -221,6 +221,56 @@ class CSVRewardLedger:
         with self._lock:
             records = self._read_all()
             return tuple(records[reference] for reference in sorted(records))
+
+    def decline(
+        self,
+        *,
+        reward_reference: str,
+        study_version: str,
+        is_test: bool,
+        provider: str,
+        amount: Decimal,
+        currency: str,
+        now: datetime | None = None,
+    ) -> RewardRecord:
+        declined_at = now or datetime.now(UTC)
+        if declined_at.tzinfo is None:
+            raise RewardLedgerError("Reward timestamp must include a timezone.")
+        with self._lock:
+            records = self._read_all()
+            existing = records.get(reward_reference)
+            if existing is not None:
+                expected = (study_version, is_test, provider, amount, currency)
+                actual = (
+                    existing.study_version,
+                    existing.is_test,
+                    existing.provider,
+                    existing.amount,
+                    existing.currency,
+                )
+                if actual != expected:
+                    raise RewardLedgerError(
+                        f"Reward configuration changed for {reward_reference}."
+                    )
+                if existing.status in {"declined", "issued", "issuing"}:
+                    return existing
+            declined = RewardRecord(
+                reward_reference=reward_reference,
+                study_version=study_version,
+                is_test=is_test,
+                status="declined",
+                provider=provider,
+                provider_reward_id="",
+                redemption_url="",
+                amount=amount,
+                currency=currency,
+                error_code="",
+                created_at=existing.created_at if existing else declined_at,
+                updated_at=declined_at,
+            )
+            records[reward_reference] = declined
+            self._write_all(records)
+            return declined
 
     def issue_once(
         self,

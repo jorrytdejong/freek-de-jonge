@@ -16,6 +16,9 @@
   redemption links, and rejection of non-sandbox destinations.
 - Added Tremendous's required generic `Deelnemer` recipient object to link
   orders without disclosing participant contact or research data.
+- Added the Checkpoint 4 voluntary accept/decline experience, persistent
+  opt-out state, reversible reconsideration, clearer privacy wording, and a
+  status-aware external Tremendous handoff.
 
 ### ACL-1
 
