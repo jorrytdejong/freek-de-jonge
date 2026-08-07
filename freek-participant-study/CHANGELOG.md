@@ -27,6 +27,8 @@
 - Added the Checkpoint 6 authenticated reward-operations dashboard with scoped
   delivery metrics, failed/stuck warnings, issued-value tracking, and a
   privacy-safe reconciliation export.
+- Added Checkpoint 7 atomic reward-count and EUR budget limits, participant-safe
+  exhaustion handling, and remaining-capacity metrics in the admin dashboard.
 
 ### ACL-1
 

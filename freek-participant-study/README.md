@@ -67,6 +67,8 @@ For local testing, set:
 FREEK_STUDY_REWARDS_ENABLED=true \
 FREEK_STUDY_REWARD_MODE=tremendous_sandbox \
 FREEK_STUDY_REWARD_AMOUNT_EUR=3.40 \
+FREEK_STUDY_REWARD_MAX_ISSUED=25 \
+FREEK_STUDY_REWARD_BUDGET_EUR=85.00 \
 FREEK_STUDY_REWARD_LEDGER_PATH=data/runtime/acl_rewards_sandbox.csv \
 TREMENDOUS_API_KEY=TEST_your_key \
 TREMENDOUS_CAMPAIGN_ID=your_campaign_id \
@@ -88,6 +90,8 @@ The equivalent Streamlit secrets are:
 rewards_enabled = true
 reward_mode = "tremendous_sandbox"
 reward_amount_eur = "3.40"
+reward_max_issued = 25
+reward_budget_eur = "85.00"
 reward_ledger_path = "data/runtime/acl_rewards_sandbox.csv"
 
 [tremendous]
@@ -142,6 +146,26 @@ reconciliation. This export is deliberately separate from research responses:
 it contains pseudonymous reward references and provider IDs, but no raw session
 IDs, participant contact details, survey answers, or redemption URLs. Checkpoint
 6 remains sandbox-only and does not enable production payments.
+
+### Launch limits
+
+Checkpoint 7 adds two atomic hard stops before any provider request:
+
+- `FREEK_STUDY_REWARD_MAX_ISSUED` / `reward_max_issued` limits the combined
+  number of issued and currently issuing rewards (default: 25).
+- `FREEK_STUDY_REWARD_BUDGET_EUR` / `reward_budget_eur` limits their combined
+  value (default: €85.00, or 25 × €3.40).
+
+Retries for the same participant do not reserve a second slot, and previously
+issued rewards remain accessible after a limit is reached. Failed and declined
+records do not consume capacity. When a hard stop is reached, the participant
+gets a neutral message and Tremendous is not called. The authenticated reward
+dashboard shows remaining claims and remaining budget.
+
+The CSV ledger lock is process-local. Run one Streamlit application process for
+this pilot; use a transactional shared database before deploying multiple app
+replicas. Checkpoint 7 still uses Tremendous Testflight only and deliberately
+does not accept production API keys.
 
 Internal-only routes:
 

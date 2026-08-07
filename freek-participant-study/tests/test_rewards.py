@@ -11,18 +11,24 @@ class RewardSettingsTest(unittest.TestCase):
         self.assertFalse(settings.enabled)
         self.assertEqual(settings.mode, "fake")
         self.assertEqual(settings.amount_eur, Decimal("3.40"))
+        self.assertEqual(settings.max_issued_count, 25)
+        self.assertEqual(settings.budget_eur, Decimal("85.00"))
 
     def test_environment_overrides_secrets(self) -> None:
         settings = RewardSettings.from_sources(
             environ={
                 "FREEK_STUDY_REWARDS_ENABLED": "true",
                 "FREEK_STUDY_REWARD_AMOUNT_EUR": "4.50",
+                "FREEK_STUDY_REWARD_MAX_ISSUED": "10",
+                "FREEK_STUDY_REWARD_BUDGET_EUR": "45.00",
             },
             secrets={"rewards_enabled": False, "reward_amount_eur": "8.00"},
         )
 
         self.assertTrue(settings.enabled)
         self.assertEqual(settings.amount_eur, Decimal("4.50"))
+        self.assertEqual(settings.max_issued_count, 10)
+        self.assertEqual(settings.budget_eur, Decimal("45.00"))
 
     def test_production_mode_is_rejected_at_checkpoint_three(self) -> None:
         with self.assertRaisesRegex(RewardConfigurationError, "alleen"):
@@ -70,6 +76,24 @@ class RewardSettingsTest(unittest.TestCase):
                         environ={"FREEK_STUDY_REWARD_AMOUNT_EUR": amount},
                         secrets={},
                     )
+
+    def test_invalid_reward_limits_are_rejected(self) -> None:
+        for value in ("0", "-1", "2.5", "many"):
+            with self.subTest(value=value):
+                with self.assertRaises(RewardConfigurationError):
+                    RewardSettings.from_sources(
+                        environ={"FREEK_STUDY_REWARD_MAX_ISSUED": value},
+                        secrets={},
+                    )
+        with self.assertRaisesRegex(RewardConfigurationError, "minstens één"):
+            RewardSettings.from_sources(
+                environ={
+                    "FREEK_STUDY_REWARDS_ENABLED": "true",
+                    "FREEK_STUDY_REWARD_AMOUNT_EUR": "3.40",
+                    "FREEK_STUDY_REWARD_BUDGET_EUR": "3.39",
+                },
+                secrets={},
+            )
 
 
 class FakeRewardProviderTest(unittest.TestCase):

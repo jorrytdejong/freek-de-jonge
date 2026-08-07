@@ -50,7 +50,7 @@ class AdminFlowTest(unittest.TestCase):
             self.assertTrue(
                 any("Onderzoeksdashboard" in title.value for title in app.title)
             )
-            self.assertEqual(len(app.metric), 11)
+            self.assertEqual(len(app.metric), 13)
             self.assertTrue(any(metric.label == "Aangemaakt" for metric in app.metric))
             self.assertTrue(
                 any("Beloningsoperaties" in markdown.value for markdown in app.markdown)
@@ -59,6 +59,12 @@ class AdminFlowTest(unittest.TestCase):
                 any(
                     control.label == "Beloningsselectie" and control.value == "Alles"
                     for control in app.segmented_control
+                )
+            )
+            self.assertTrue(
+                any(
+                    metric.label == "Resterende beloningen" and metric.value == "25"
+                    for metric in app.metric
                 )
             )
             self.assertEqual(len(app.get("download_button")), 3)

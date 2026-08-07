@@ -22,9 +22,20 @@ def participant_reward_reference(session_id: str, study_version: str) -> str:
 class RewardService:
     """Coordinate eligibility, persistence, and a deterministic provider."""
 
-    def __init__(self, ledger: CSVRewardLedger, provider: RewardProvider) -> None:
+    def __init__(
+        self,
+        ledger: CSVRewardLedger,
+        provider: RewardProvider,
+        *,
+        max_issued_count: int = 25,
+        budget_limit: Decimal = Decimal("85.00"),
+    ) -> None:
         self.ledger = ledger
         self.provider = provider
+        if max_issued_count <= 0 or budget_limit <= 0:
+            raise ValueError("Reward limits must be greater than zero.")
+        self.max_issued_count = max_issued_count
+        self.budget_limit = budget_limit
 
     def _claim_from_record(self, record: RewardRecord) -> RewardClaim | None:
         if record.status != "issued":
@@ -108,6 +119,8 @@ class RewardService:
             provider=provider_name,
             amount=amount,
             currency=currency,
+            max_issued_count=self.max_issued_count,
+            budget_limit=self.budget_limit,
             issuer=lambda: self.provider.create_claim(
                 participant_reference=reference,
                 amount=amount,

@@ -37,6 +37,8 @@ class RewardOperationsOverview:
     issuing_count: int
     stuck_count: int
     issued_amount: Decimal
+    reserved_count: int
+    reserved_amount: Decimal
     currency: str | None
 
 
@@ -76,6 +78,17 @@ def build_reward_operations_overview(
         ),
         issued_amount=sum(
             (record.amount for record in records if record.status == "issued"),
+            start=Decimal("0"),
+        ),
+        reserved_count=sum(
+            record.status in {"issuing", "issued"} for record in records
+        ),
+        reserved_amount=sum(
+            (
+                record.amount
+                for record in records
+                if record.status in {"issuing", "issued"}
+            ),
             start=Decimal("0"),
         ),
         currency=next(iter(currencies)) if len(currencies) == 1 else None,

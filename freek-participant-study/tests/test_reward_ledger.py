@@ -10,6 +10,7 @@ from pathlib import Path
 from app.rewards import (
     CSVRewardLedger,
     FakeRewardProvider,
+    RewardBudgetExceededError,
     RewardClaim,
     RewardNotEligibleError,
     RewardService,
@@ -255,6 +256,67 @@ class CSVRewardLedgerTest(unittest.TestCase):
         assert issued is not None
         self.assertEqual(issued.status, "issued")
         self.assertEqual(issued.provider_reward_id, claim.reference)
+
+    def test_reward_count_limit_blocks_provider_before_issuance(self) -> None:
+        limited = RewardService(
+            self.ledger,
+            self.provider,
+            max_issued_count=1,
+            budget_limit=Decimal("85.00"),
+        )
+        limited.claim_reward(
+            session_id="first-session",
+            study_version="acl-1",
+            is_test=False,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+
+        with self.assertRaises(RewardBudgetExceededError):
+            limited.claim_reward(
+                session_id="second-session",
+                study_version="acl-1",
+                is_test=False,
+                eligible=True,
+                amount=Decimal("3.40"),
+            )
+
+        self.assertEqual(self.provider.call_count, 1)
+        self.assertEqual(len(self.ledger.list_records()), 1)
+
+    def test_total_budget_blocks_provider_before_issuance(self) -> None:
+        limited = RewardService(
+            self.ledger,
+            self.provider,
+            max_issued_count=25,
+            budget_limit=Decimal("5.00"),
+        )
+        first = limited.claim_reward(
+            session_id="first-session",
+            study_version="acl-1",
+            is_test=False,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+
+        with self.assertRaises(RewardBudgetExceededError):
+            limited.claim_reward(
+                session_id="second-session",
+                study_version="acl-1",
+                is_test=False,
+                eligible=True,
+                amount=Decimal("3.40"),
+            )
+
+        same = limited.claim_reward(
+            session_id="first-session",
+            study_version="acl-1",
+            is_test=False,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+        self.assertEqual(same, first)
+        self.assertEqual(self.provider.call_count, 1)
 
     def test_interrupted_issuing_record_can_resume_with_same_reference(self) -> None:
         reference = participant_reward_reference("interrupted-session", "acl-1")

@@ -54,6 +54,10 @@ class RewardLedgerError(RuntimeError):
     """Raised when reward state cannot be read or changed safely."""
 
 
+class RewardBudgetExceededError(RuntimeError):
+    """Raised before issuance when a configured hard limit is exhausted."""
+
+
 @dataclass(frozen=True)
 class RewardRecord:
     """Pseudonymous reward state, deliberately separate from survey answers."""
@@ -294,6 +298,8 @@ class CSVRewardLedger:
         amount: Decimal,
         currency: str,
         issuer: Callable[[], RewardClaim],
+        max_issued_count: int = 25,
+        budget_limit: Decimal = Decimal("85.00"),
         now: datetime | None = None,
     ) -> RewardRecord:
         issued_at = now or datetime.now(UTC)
@@ -323,6 +329,23 @@ class CSVRewardLedger:
                     )
                 if existing.status == "issued":
                     return existing
+            reserved = tuple(
+                record
+                for reference, record in records.items()
+                if reference != reward_reference
+                and record.status in {"issuing", "issued"}
+            )
+            if any(record.currency != currency for record in reserved):
+                raise RewardLedgerError(
+                    "Reward ledger contains mixed currencies for one budget."
+                )
+            if len(reserved) >= max_issued_count:
+                raise RewardBudgetExceededError("Reward count limit has been reached.")
+            reserved_amount = sum(
+                (record.amount for record in reserved), start=Decimal("0")
+            )
+            if reserved_amount + amount > budget_limit:
+                raise RewardBudgetExceededError("Reward budget has been exhausted.")
             issuing = RewardRecord(
                 reward_reference=reward_reference,
                 study_version=study_version,

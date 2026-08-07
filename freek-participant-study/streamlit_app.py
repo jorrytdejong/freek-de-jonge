@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+from decimal import Decimal
 from html import escape
 from pathlib import Path
 from urllib.parse import urlencode
@@ -63,6 +64,7 @@ from app.participant import ProfileValidationError, validate_profile
 from app.rewards import (
     CSVRewardLedger,
     FakeRewardProvider,
+    RewardBudgetExceededError,
     RewardClaim,
     RewardConfigurationError,
     RewardLedgerError,
@@ -139,7 +141,12 @@ if reward_settings.enabled:
     except RewardLedgerError as error:
         st.error(f"Beloningsopslag kon niet veilig worden gemigreerd: {error}")
         st.stop()
-    reward_service = RewardService(reward_ledger, reward_provider)
+    reward_service = RewardService(
+        reward_ledger,
+        reward_provider,
+        max_issued_count=reward_settings.max_issued_count,
+        budget_limit=reward_settings.budget_eur,
+    )
 
 
 def configured_admin_password() -> str | None:
@@ -274,6 +281,12 @@ def issue_reward(session: ParticipantSession, *, eligible: bool) -> None:
         )
     except TremendousAPIError as error:
         st.error(reward_error_message(error))
+        return
+    except RewardBudgetExceededError:
+        st.error(
+            "Het maximale aantal testvergoedingen of het ingestelde testbudget "
+            "is bereikt. Neem contact op met de onderzoeker."
+        )
         return
     except RewardLedgerError:
         st.error("Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw.")
@@ -1030,13 +1043,13 @@ def render_reward_operations() -> None:
     )
     include_test = None if reward_scope == SCOPE_ALL else reward_scope == SCOPE_TEST
     try:
-        records = filter_reward_records(
-            reward_service.ledger.list_records(), include_test=include_test
-        )
+        all_records = reward_service.ledger.list_records()
+        records = filter_reward_records(all_records, include_test=include_test)
     except RewardLedgerError:
         st.error("De beloningsadministratie kon niet veilig worden gelezen.")
         return
     overview = build_reward_operations_overview(records)
+    capacity_overview = build_reward_operations_overview(all_records)
     st.caption(
         "Los van onderzoeksantwoorden; bevat alleen pseudonieme operationele gegevens."
     )
@@ -1052,6 +1065,24 @@ def render_reward_operations() -> None:
         else f"{overview.issued_amount} {overview.currency}"
     )
     metrics[5].metric("Aangemaakte waarde", amount_label)
+    capacity_metrics = st.columns(2)
+    remaining_count = max(
+        0, reward_settings.max_issued_count - capacity_overview.reserved_count
+    )
+    remaining_budget = max(
+        reward_settings.budget_eur - capacity_overview.reserved_amount,
+        Decimal("0"),
+    )
+    capacity_metrics[0].metric(
+        "Resterende beloningen",
+        remaining_count,
+        help=f"Harde limiet: {reward_settings.max_issued_count}",
+    )
+    capacity_metrics[1].metric(
+        "Resterend budget",
+        format_euro_amount(remaining_budget),
+        help=f"Hard budget: {format_euro_amount(reward_settings.budget_eur)}",
+    )
     if overview.failed_count:
         st.warning(
             f"{overview.failed_count} beloning(en) zijn mislukt en kunnen veilig "

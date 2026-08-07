@@ -11,7 +11,12 @@ from app.rewards.admin import (
 from app.rewards.base import RewardClaim, RewardProvider
 from app.rewards.config import RewardConfigurationError, RewardSettings
 from app.rewards.fake import FakeRewardProvider
-from app.rewards.ledger import CSVRewardLedger, RewardLedgerError, RewardRecord
+from app.rewards.ledger import (
+    CSVRewardLedger,
+    RewardBudgetExceededError,
+    RewardLedgerError,
+    RewardRecord,
+)
 from app.rewards.service import (
     RewardNotEligibleError,
     RewardService,
@@ -26,6 +31,7 @@ __all__ = [
     "CSVRewardLedger",
     "FakeRewardProvider",
     "RewardClaim",
+    "RewardBudgetExceededError",
     "RewardConfigurationError",
     "RewardLedgerError",
     "RewardNotEligibleError",

@@ -43,22 +43,32 @@ def _parse_enabled(value: object) -> bool:
     )
 
 
-def _parse_amount(value: object) -> Decimal:
+def _parse_amount(
+    value: object, *, setting: str = "FREEK_STUDY_REWARD_AMOUNT_EUR"
+) -> Decimal:
     try:
         amount = Decimal(str(value).strip())
     except InvalidOperation as error:
         raise RewardConfigurationError(
-            "FREEK_STUDY_REWARD_AMOUNT_EUR moet een geldig bedrag zijn."
+            f"{setting} moet een geldig bedrag zijn."
         ) from error
     if not amount.is_finite() or amount <= 0:
-        raise RewardConfigurationError(
-            "FREEK_STUDY_REWARD_AMOUNT_EUR moet groter dan nul zijn."
-        )
+        raise RewardConfigurationError(f"{setting} moet groter dan nul zijn.")
     if amount.as_tuple().exponent < -2:
-        raise RewardConfigurationError(
-            "FREEK_STUDY_REWARD_AMOUNT_EUR mag maximaal twee decimalen hebben."
-        )
+        raise RewardConfigurationError(f"{setting} mag maximaal twee decimalen hebben.")
     return amount
+
+
+def _parse_positive_integer(value: object, *, setting: str) -> int:
+    try:
+        parsed = int(str(value).strip())
+    except ValueError as error:
+        raise RewardConfigurationError(
+            f"{setting} moet een geheel getal zijn."
+        ) from error
+    if parsed <= 0:
+        raise RewardConfigurationError(f"{setting} moet groter dan nul zijn.")
+    return parsed
 
 
 @dataclass(frozen=True)
@@ -68,6 +78,8 @@ class RewardSettings:
     enabled: bool = False
     mode: str = "fake"
     amount_eur: Decimal = Decimal("3.40")
+    max_issued_count: int = 25
+    budget_eur: Decimal = Decimal("85.00")
     ledger_path: Path = DEFAULT_REWARD_LEDGER_PATH
     tremendous_api_key: str = field(default="", repr=False)
     tremendous_campaign_id: str = ""
@@ -115,6 +127,30 @@ class RewardSettings:
                 "3.40",
             )
         )
+        max_issued_count = _parse_positive_integer(
+            _configured_value(
+                environ,
+                secrets,
+                "FREEK_STUDY_REWARD_MAX_ISSUED",
+                "reward_max_issued",
+                25,
+            ),
+            setting="FREEK_STUDY_REWARD_MAX_ISSUED",
+        )
+        budget_eur = _parse_amount(
+            _configured_value(
+                environ,
+                secrets,
+                "FREEK_STUDY_REWARD_BUDGET_EUR",
+                "reward_budget_eur",
+                "85.00",
+            ),
+            setting="FREEK_STUDY_REWARD_BUDGET_EUR",
+        )
+        if enabled and budget_eur < amount:
+            raise RewardConfigurationError(
+                "FREEK_STUDY_REWARD_BUDGET_EUR moet minstens één beloning dekken."
+            )
         ledger_path = Path(
             str(
                 _configured_value(
@@ -162,6 +198,8 @@ class RewardSettings:
             enabled=enabled,
             mode=mode,
             amount_eur=amount,
+            max_issued_count=max_issued_count,
+            budget_eur=budget_eur,
             ledger_path=ledger_path,
             tremendous_api_key=api_key,
             tremendous_campaign_id=campaign_id,
