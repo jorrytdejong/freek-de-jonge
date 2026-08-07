@@ -36,6 +36,7 @@ class RewardService:
             currency=record.currency,
             provider=record.provider,
             is_test=record.provider == "fake",
+            redemption_url=record.redemption_url or None,
         )
 
     def load_claim(

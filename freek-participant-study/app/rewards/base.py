@@ -16,6 +16,7 @@ class RewardClaim:
     currency: str
     provider: str
     is_test: bool
+    redemption_url: str | None = None
 
 
 class RewardProvider(Protocol):

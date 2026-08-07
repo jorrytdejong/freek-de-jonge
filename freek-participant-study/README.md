@@ -52,6 +52,48 @@ session ID, survey answer, email address, or bank-account information. Reopening
 the submitted participant link restores the same claim; repeated clicks and
 concurrent tabs cannot issue another one.
 
+### Tremendous sandbox reward
+
+Checkpoint 3 can replace the local fake provider with Tremendous's test
+environment. Create a separate account at
+<https://app.testflight.tremendous.com>, configure a campaign, and create a
+read/write API key under **Team Settings → Developers**. Sandbox keys must start
+with `TEST_`; the application rejects `PROD_` keys and has no production API
+endpoint.
+
+For local testing, set:
+
+```bash
+FREEK_STUDY_REWARDS_ENABLED=true \
+FREEK_STUDY_REWARD_MODE=tremendous_sandbox \
+FREEK_STUDY_REWARD_AMOUNT_EUR=3.40 \
+FREEK_STUDY_REWARD_LEDGER_PATH=data/runtime/acl_rewards_sandbox.csv \
+TREMENDOUS_API_KEY=TEST_your_key \
+TREMENDOUS_CAMPAIGN_ID=your_campaign_id \
+TREMENDOUS_FUNDING_SOURCE_ID=BALANCE \
+streamlit run streamlit_app.py
+```
+
+Use a separate sandbox ledger path so an already-issued local fake claim cannot
+be confused with a Tremendous sandbox claim. After submission, the app creates
+an idempotent `LINK` reward and displays the sandbox redemption button. The
+participant enters any redemption details on Tremendous, not in the research
+app. API keys are never stored in the reward ledger or displayed in errors.
+
+The equivalent Streamlit secrets are:
+
+```toml
+rewards_enabled = true
+reward_mode = "tremendous_sandbox"
+reward_amount_eur = "3.40"
+reward_ledger_path = "data/runtime/acl_rewards_sandbox.csv"
+
+[tremendous]
+api_key = "TEST_your_key"
+campaign_id = "your_campaign_id"
+funding_source_id = "BALANCE"
+```
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

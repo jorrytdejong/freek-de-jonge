@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Mapping
@@ -63,12 +63,15 @@ def _parse_amount(value: object) -> Decimal:
 
 @dataclass(frozen=True)
 class RewardSettings:
-    """Validated runtime settings for the Checkpoint 2 fake reward flow."""
+    """Validated runtime settings for fake or Tremendous sandbox rewards."""
 
     enabled: bool = False
     mode: str = "fake"
     amount_eur: Decimal = Decimal("3.40")
     ledger_path: Path = DEFAULT_REWARD_LEDGER_PATH
+    tremendous_api_key: str = field(default="", repr=False)
+    tremendous_campaign_id: str = ""
+    tremendous_funding_source_id: str = ""
 
     @classmethod
     def from_sources(
@@ -99,9 +102,9 @@ class RewardSettings:
             .strip()
             .lower()
         )
-        if mode != "fake":
+        if mode not in {"fake", "tremendous_sandbox"}:
             raise RewardConfigurationError(
-                "Checkpoint 2 ondersteunt uitsluitend FREEK_STUDY_REWARD_MODE=fake."
+                "Checkpoint 3 ondersteunt alleen fake of tremendous_sandbox."
             )
         amount = _parse_amount(
             _configured_value(
@@ -123,9 +126,44 @@ class RewardSettings:
                 )
             )
         )
+        tremendous_section = secrets.get("tremendous", {})
+        if not isinstance(tremendous_section, Mapping):
+            raise RewardConfigurationError(
+                "De Tremendous-configuratie in secrets is ongeldig."
+            )
+        api_key = str(
+            environ.get(
+                "TREMENDOUS_API_KEY",
+                tremendous_section.get("api_key", ""),
+            )
+        ).strip()
+        campaign_id = str(
+            environ.get(
+                "TREMENDOUS_CAMPAIGN_ID",
+                tremendous_section.get("campaign_id", ""),
+            )
+        ).strip()
+        funding_source_id = str(
+            environ.get(
+                "TREMENDOUS_FUNDING_SOURCE_ID",
+                tremendous_section.get("funding_source_id", ""),
+            )
+        ).strip()
+        if mode == "tremendous_sandbox":
+            if not api_key.startswith("TEST_"):
+                raise RewardConfigurationError(
+                    "Tremendous sandbox vereist een TEST_ API-sleutel."
+                )
+            if not campaign_id or not funding_source_id:
+                raise RewardConfigurationError(
+                    "Tremendous sandbox vereist campaign_id en funding_source_id."
+                )
         return cls(
             enabled=enabled,
             mode=mode,
             amount_eur=amount,
             ledger_path=ledger_path,
+            tremendous_api_key=api_key,
+            tremendous_campaign_id=campaign_id,
+            tremendous_funding_source_id=funding_source_id,
         )

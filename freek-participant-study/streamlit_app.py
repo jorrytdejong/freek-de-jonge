@@ -66,6 +66,8 @@ from app.rewards import (
     RewardLedgerError,
     RewardService,
     RewardSettings,
+    TremendousAPIError,
+    TremendousSandboxRewardProvider,
 )
 from app.storage import (
     AlreadySubmittedError,
@@ -114,7 +116,15 @@ try:
 except RewardConfigurationError as error:
     st.error(f"Beloningsconfiguratie mislukt: {error}")
     st.stop()
-reward_provider = FakeRewardProvider()
+reward_provider = (
+    FakeRewardProvider()
+    if reward_settings.mode == "fake"
+    else TremendousSandboxRewardProvider(
+        api_key=reward_settings.tremendous_api_key,
+        campaign_id=reward_settings.tremendous_campaign_id,
+        funding_source_id=reward_settings.tremendous_funding_source_id,
+    )
+)
 reward_service = (
     RewardService(CSVRewardLedger(reward_settings.ledger_path), reward_provider)
     if reward_settings.enabled
@@ -191,7 +201,7 @@ def format_euro_amount(amount: object) -> str:
     return f"€{amount:.2f}".replace(".", ",")
 
 
-def stored_fake_claim(session: ParticipantSession) -> RewardClaim | None:
+def stored_reward_claim(session: ParticipantSession) -> RewardClaim | None:
     assert reward_service is not None
     try:
         return reward_service.load_claim(
@@ -204,37 +214,54 @@ def stored_fake_claim(session: ParticipantSession) -> RewardClaim | None:
         st.stop()
 
 
-def render_fake_reward(session: ParticipantSession, *, eligible: bool) -> None:
+def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
     st.divider()
     st.subheader(f"Een koffie van {format_euro_amount(reward_settings.amount_eur)}")
     st.write(
-        "Als dank voor je deelname kun je hier een testbeloning bekijken. "
+        "Als dank voor je deelname kun je hier een testbeloning aanvragen. "
         "In deze ontwikkelfase wordt geen echt geld verstuurd."
     )
-    if claim := stored_fake_claim(session):
-        st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
-        st.success(
-            f"Je lokale testclaim van {format_euro_amount(claim.amount)} staat klaar."
-        )
-        st.code(claim.reference, language=None)
+    if claim := stored_reward_claim(session):
+        if claim.provider == "tremendous_sandbox":
+            st.warning("TREMENDOUS-SANDBOX — deze beloning gebruikt alleen testgeld.")
+        else:
+            st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
+        st.success(f"Je testclaim van {format_euro_amount(claim.amount)} staat klaar.")
+        if claim.redemption_url:
+            st.link_button(
+                "Open testuitbetaling bij Tremendous",
+                claim.redemption_url,
+                type="primary",
+            )
+        else:
+            st.code(claim.reference, language=None)
         st.caption(
-            "Er zijn geen betaalgegevens gevraagd en er is geen externe dienst aangeroepen."
+            "Eventuele testgegevens worden rechtstreeks in de sandbox ingevoerd en "
+            "niet aan je onderzoeksantwoorden toegevoegd."
         )
         return
+    button_label = (
+        "Maak Tremendous-sandboxbeloning aan"
+        if reward_settings.mode == "tremendous_sandbox"
+        else "Ontvang mijn testbeloning"
+    )
     if st.button(
-        "Ontvang mijn testbeloning",
+        button_label,
         type="primary",
         key=f"fake_reward:{session.session_id}",
     ):
         assert reward_service is not None
         try:
-            claim = reward_service.claim_reward(
+            reward_service.claim_reward(
                 session_id=session.session_id,
                 study_version=STUDY_VERSION,
                 is_test=session.is_test,
                 eligible=eligible,
                 amount=reward_settings.amount_eur,
             )
+        except TremendousAPIError as error:
+            st.error(f"Tremendous-sandboxfout: {error}")
+            return
         except RewardLedgerError:
             st.error(
                 "Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw."
@@ -242,7 +269,6 @@ def render_fake_reward(session: ParticipantSession, *, eligible: bool) -> None:
             st.stop()
         st.query_params["session"] = session.session_id
         st.query_params["page"] = "debrief"
-        st.query_params["fake_reward"] = claim.reference
         st.rerun()
 
 
@@ -769,7 +795,7 @@ def render_debrief(
         "deelnemers te tonen."
     )
     if reward_settings.enabled:
-        render_fake_reward(session, eligible=bool(submissions))
+        render_reward(session, eligible=bool(submissions))
     if session.is_test:
         st.info(f"Testinzending {len(submissions)} is opgeslagen.")
         if st.button("Nieuwe testinzending"):

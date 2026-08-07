@@ -24,11 +24,43 @@ class RewardSettingsTest(unittest.TestCase):
         self.assertTrue(settings.enabled)
         self.assertEqual(settings.amount_eur, Decimal("4.50"))
 
-    def test_non_fake_mode_is_rejected_at_checkpoint_one(self) -> None:
-        with self.assertRaisesRegex(RewardConfigurationError, "uitsluitend"):
+    def test_production_mode_is_rejected_at_checkpoint_three(self) -> None:
+        with self.assertRaisesRegex(RewardConfigurationError, "alleen"):
             RewardSettings.from_sources(
                 environ={"FREEK_STUDY_REWARD_MODE": "production"}, secrets={}
             )
+
+    def test_sandbox_mode_requires_complete_test_credentials(self) -> None:
+        with self.assertRaisesRegex(RewardConfigurationError, "TEST_"):
+            RewardSettings.from_sources(
+                environ={"FREEK_STUDY_REWARD_MODE": "tremendous_sandbox"},
+                secrets={},
+            )
+        with self.assertRaisesRegex(RewardConfigurationError, "campaign_id"):
+            RewardSettings.from_sources(
+                environ={
+                    "FREEK_STUDY_REWARD_MODE": "tremendous_sandbox",
+                    "TREMENDOUS_API_KEY": "TEST_safe",
+                },
+                secrets={},
+            )
+
+    def test_sandbox_credentials_can_come_from_nested_secrets(self) -> None:
+        settings = RewardSettings.from_sources(
+            environ={"FREEK_STUDY_REWARD_MODE": "tremendous_sandbox"},
+            secrets={
+                "tremendous": {
+                    "api_key": "TEST_safe",
+                    "campaign_id": "CAMPAIGN-1",
+                    "funding_source_id": "BALANCE",
+                }
+            },
+        )
+
+        self.assertEqual(settings.mode, "tremendous_sandbox")
+        self.assertEqual(settings.tremendous_campaign_id, "CAMPAIGN-1")
+        self.assertEqual(settings.tremendous_funding_source_id, "BALANCE")
+        self.assertNotIn("TEST_safe", repr(settings))
 
     def test_invalid_amount_is_rejected(self) -> None:
         for amount in ("0", "-1", "five", "5.001"):

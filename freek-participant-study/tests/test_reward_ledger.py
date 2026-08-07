@@ -10,6 +10,7 @@ from pathlib import Path
 from app.rewards import (
     CSVRewardLedger,
     FakeRewardProvider,
+    RewardClaim,
     RewardNotEligibleError,
     RewardService,
     participant_reward_reference,
@@ -26,6 +27,20 @@ class CountingFakeRewardProvider(FakeRewardProvider):
         with self._lock:
             self.call_count += 1
         return super().create_claim(**kwargs)
+
+
+class LinkRewardProvider:
+    provider_name = "tremendous_sandbox"
+
+    def create_claim(self, *, amount, currency, **kwargs):
+        return RewardClaim(
+            reference="REWARD-123",
+            amount=amount,
+            currency=currency,
+            provider=self.provider_name,
+            is_test=True,
+            redemption_url="https://testflight.tremendous.com/rewards/test-123",
+        )
 
 
 class CSVRewardLedgerTest(unittest.TestCase):
@@ -79,6 +94,29 @@ class CSVRewardLedgerTest(unittest.TestCase):
         self.assertEqual(claims[0], claims[1])
         self.assertEqual(self.provider.call_count, 1)
         self.assertEqual(len(self.ledger.list_records()), 1)
+
+    def test_sandbox_redemption_link_survives_fresh_ledger_instance(self) -> None:
+        service = RewardService(self.ledger, LinkRewardProvider())
+        issued = service.claim_reward(
+            session_id="sandbox-participant",
+            study_version="acl-1",
+            is_test=True,
+            eligible=True,
+            amount=Decimal("3.40"),
+        )
+
+        reopened = RewardService(CSVRewardLedger(self.path), LinkRewardProvider())
+        loaded = reopened.load_claim(
+            session_id="sandbox-participant",
+            study_version="acl-1",
+            is_test=True,
+        )
+        self.assertEqual(loaded, issued)
+        assert loaded is not None
+        self.assertEqual(
+            loaded.redemption_url,
+            "https://testflight.tremendous.com/rewards/test-123",
+        )
 
     def test_ineligible_participant_cannot_create_ledger_record(self) -> None:
         with self.assertRaises(RewardNotEligibleError):

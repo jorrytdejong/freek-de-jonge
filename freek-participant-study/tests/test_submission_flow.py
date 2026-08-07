@@ -116,7 +116,6 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 )
                 reward_button.click().run(timeout=20)
                 self.assertFalse(app.exception)
-                self.assertTrue(app.query_params["fake_reward"][0].startswith("fake-"))
                 self.assertTrue(
                     any("TESTBELONING" in warning.value for warning in app.warning)
                 )

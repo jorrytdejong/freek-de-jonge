@@ -17,6 +17,19 @@ from app.rewards.base import RewardClaim
 DEFAULT_REWARD_LEDGER_PATH = (
     Path(__file__).resolve().parents[2] / "data" / "runtime" / "acl_rewards.csv"
 )
+LEGACY_REWARD_FIELDNAMES = (
+    "reward_reference",
+    "study_version",
+    "is_test",
+    "status",
+    "provider",
+    "provider_reward_id",
+    "amount",
+    "currency",
+    "error_code",
+    "created_at",
+    "updated_at",
+)
 REWARD_FIELDNAMES = (
     "reward_reference",
     "study_version",
@@ -24,6 +37,7 @@ REWARD_FIELDNAMES = (
     "status",
     "provider",
     "provider_reward_id",
+    "redemption_url",
     "amount",
     "currency",
     "error_code",
@@ -50,6 +64,7 @@ class RewardRecord:
     status: str
     provider: str
     provider_reward_id: str
+    redemption_url: str
     amount: Decimal
     currency: str
     error_code: str
@@ -107,6 +122,7 @@ def parse_reward_row(row: dict[str, str], *, row_number: int) -> RewardRecord:
         status=status,
         provider=provider,
         provider_reward_id=provider_reward_id,
+        redemption_url=(row.get("redemption_url") or "").strip(),
         amount=amount,
         currency=currency,
         error_code=(row.get("error_code") or "").strip(),
@@ -131,6 +147,7 @@ def serialize_reward_row(record: RewardRecord) -> dict[str, str]:
         "status": record.status,
         "provider": record.provider,
         "provider_reward_id": record.provider_reward_id,
+        "redemption_url": record.redemption_url,
         "amount": str(record.amount),
         "currency": record.currency,
         "error_code": record.error_code,
@@ -152,7 +169,10 @@ class CSVRewardLedger:
         try:
             with self.path.open(encoding="utf-8", newline="") as handle:
                 reader = csv.DictReader(handle)
-                if tuple(reader.fieldnames or ()) != REWARD_FIELDNAMES:
+                if tuple(reader.fieldnames or ()) not in {
+                    REWARD_FIELDNAMES,
+                    LEGACY_REWARD_FIELDNAMES,
+                }:
                     raise RewardLedgerError(
                         "Reward ledger has an unexpected column contract."
                     )
@@ -248,6 +268,7 @@ class CSVRewardLedger:
                 status="issuing",
                 provider=provider,
                 provider_reward_id="",
+                redemption_url="",
                 amount=amount,
                 currency=currency,
                 error_code="",
@@ -280,6 +301,7 @@ class CSVRewardLedger:
                 issuing,
                 status="issued",
                 provider_reward_id=claim.reference,
+                redemption_url=claim.redemption_url or "",
                 updated_at=issued_at,
             )
             records[reward_reference] = issued

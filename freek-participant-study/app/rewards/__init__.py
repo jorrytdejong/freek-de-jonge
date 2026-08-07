@@ -9,6 +9,10 @@ from app.rewards.service import (
     RewardService,
     participant_reward_reference,
 )
+from app.rewards.tremendous import (
+    TremendousAPIError,
+    TremendousSandboxRewardProvider,
+)
 
 __all__ = [
     "CSVRewardLedger",
@@ -21,5 +25,7 @@ __all__ = [
     "RewardRecord",
     "RewardService",
     "RewardSettings",
+    "TremendousAPIError",
+    "TremendousSandboxRewardProvider",
     "participant_reward_reference",
 ]

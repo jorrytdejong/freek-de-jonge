@@ -11,6 +11,9 @@
 - Added a separate atomic reward ledger with pseudonymous participant
   references, durable claim recovery, explicit eligibility enforcement, and
   one-claim behaviour across refreshes, restarts, and concurrent tabs.
+- Added a sandbox-only Tremendous adapter for idempotent Dutch EUR link rewards,
+  including strict `TEST_` credential validation, safe API errors, persisted
+  redemption links, and rejection of non-sandbox destinations.
 
 ### ACL-1
 
