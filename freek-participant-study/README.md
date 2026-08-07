@@ -132,10 +132,10 @@ without that column or its values.
 ### Reward operations
 
 Checkpoint 6 adds reward-delivery monitoring to the password-protected
-`?admin=1` dashboard. The reward section follows the existing real/test/all
-scope selector and reports choices, issued rewards, declines, failures,
-in-progress claims, issued value, and claims stuck in `issuing` for at least ten
-minutes. Failed and stuck records produce an explicit operator warning.
+`?admin=1` dashboard. The reward section has its own real/test/all selector,
+defaulting to all reward records, and reports choices, issued rewards, declines,
+failures, in-progress claims, issued value, and claims stuck in `issuing` for at
+least ten minutes. Failed and stuck records produce an explicit operator warning.
 
 The authenticated dashboard also offers `reward_operations.csv` for audit and
 reconciliation. This export is deliberately separate from research responses:

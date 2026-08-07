@@ -1012,15 +1012,23 @@ def render_admin_dashboard(
             rows_to_csv(RATING_COLUMNS, selected.ratings).encode("utf-8-sig"),
             file_name="ratings.csv",
         )
-    render_reward_operations(scope or SCOPE_REAL)
+    render_reward_operations()
     render_footer()
 
 
-def render_reward_operations(scope: str) -> None:
+def render_reward_operations() -> None:
     """Show reward delivery health only inside the authenticated admin route."""
     if reward_service is None:
         return
-    include_test = None if scope == SCOPE_ALL else scope == SCOPE_TEST
+    st.markdown("## Beloningsoperaties")
+    reward_scope = st.segmented_control(
+        "Beloningsselectie",
+        ADMIN_SCOPES,
+        default=SCOPE_ALL,
+        selection_mode="single",
+        key="reward_operations_scope",
+    )
+    include_test = None if reward_scope == SCOPE_ALL else reward_scope == SCOPE_TEST
     try:
         records = filter_reward_records(
             reward_service.ledger.list_records(), include_test=include_test
@@ -1029,7 +1037,6 @@ def render_reward_operations(scope: str) -> None:
         st.error("De beloningsadministratie kon niet veilig worden gelezen.")
         return
     overview = build_reward_operations_overview(records)
-    st.markdown("## Beloningsoperaties")
     st.caption(
         "Los van onderzoeksantwoorden; bevat alleen pseudonieme operationele gegevens."
     )
