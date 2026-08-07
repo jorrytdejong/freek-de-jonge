@@ -220,9 +220,29 @@ configuration and ledgers, makes no Tremendous request, and never prints API
 keys or other secret values.
 
 The dashboard presents the same checks under `Checkpoint 10 · pilot-preflight`.
-This is a sandbox-pilot readiness signal, not authorization for real payments.
-Production credentials and endpoints remain unsupported and
-`PRODUCTION PAYMENTS: disabled` is always explicit in the CLI output.
+At Checkpoint 10 this was a sandbox-pilot readiness signal, not authorization
+for real payments, and the CLI always reported `PRODUCTION PAYMENTS: disabled`.
+
+### Guarded production capability
+
+Checkpoint 11 adds the production Tremendous adapter but does **not** activate
+it. The production provider is pinned to `https://api.tremendous.com/api/v2`
+and accepts only `PROD_` API keys. Sandbox continues to accept only `TEST_`
+keys, so credentials cannot silently cross environments.
+
+Real rewards require every one of these independent controls:
+
+- `FREEK_STUDY_REWARD_MODE=tremendous_production`
+- `FREEK_STUDY_DEPLOYMENT_ENVIRONMENT=production`
+- `FREEK_STUDY_REAL_REWARDS_ACK=I_UNDERSTAND_THIS_SENDS_REAL_MONEY`
+- a separate ledger path whose name does not contain `sandbox`
+- complete production campaign, funding-source, and API-key values
+- enabled rewards, an active kill switch, remaining count/budget capacity, and a
+  passing production preflight
+
+The service rejects test participants before creating a ledger record or making
+a provider call. Checkpoint 11 tests the production adapter with an in-memory
+transport only; no production credentials are stored and no real reward is sent.
 
 Internal-only routes:
 

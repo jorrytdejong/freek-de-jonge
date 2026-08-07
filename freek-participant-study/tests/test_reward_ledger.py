@@ -38,6 +38,7 @@ class CountingFakeRewardProvider(FakeRewardProvider):
 
 class LinkRewardProvider:
     provider_name = "tremendous_sandbox"
+    is_real_money = False
 
     def __init__(self) -> None:
         self.link_count = 0
@@ -167,6 +168,25 @@ class CSVRewardLedgerTest(unittest.TestCase):
 
         self.assertFalse(self.path.exists())
         self.assertEqual(self.provider.call_count, 0)
+
+    def test_real_money_provider_rejects_test_participant_before_ledger_write(
+        self,
+    ) -> None:
+        provider = CountingFakeRewardProvider()
+        provider.is_real_money = True
+        service = RewardService(self.ledger, provider)
+
+        with self.assertRaisesRegex(RewardNotEligibleError, "Test participants"):
+            service.claim_reward(
+                session_id="test-session",
+                study_version="acl-1",
+                is_test=True,
+                eligible=True,
+                amount=Decimal("3.40"),
+            )
+
+        self.assertFalse(self.path.exists())
+        self.assertEqual(provider.call_count, 0)
 
     def test_decline_persists_and_participant_can_change_their_mind(self) -> None:
         status = self.service.decline_reward(

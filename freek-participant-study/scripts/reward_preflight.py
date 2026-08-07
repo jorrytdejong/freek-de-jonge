@@ -41,13 +41,19 @@ def main() -> int:
     for check in report.checks:
         marker = "PASS" if check.passed else "FAIL"
         print(f"[{marker}] {check.name}: {check.detail}")
+    ready = report.ready_for_sandbox_pilot or report.ready_for_production
+    if report.ready_for_production:
+        print("READY: production rewards (REAL MONEY)")
+    elif report.ready_for_sandbox_pilot:
+        print("READY: sandbox pilot")
+    else:
+        print("NOT READY: resolve failed checks")
     print(
-        "READY: sandbox pilot"
-        if report.ready_for_sandbox_pilot
-        else "NOT READY: resolve failed checks"
+        "PRODUCTION PAYMENTS: enabled (REAL MONEY)"
+        if report.production_payments_enabled
+        else "PRODUCTION PAYMENTS: disabled"
     )
-    print("PRODUCTION PAYMENTS: disabled")
-    return 0 if report.ready_for_sandbox_pilot else 1
+    return 0 if ready else 1
 
 
 if __name__ == "__main__":

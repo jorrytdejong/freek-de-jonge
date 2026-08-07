@@ -98,6 +98,28 @@ class RewardPreflightTest(unittest.TestCase):
         self.assertFalse(capacity.passed)
         self.assertFalse(report.ready_for_sandbox_pilot)
 
+    def test_production_report_requires_real_participants(self) -> None:
+        production = replace(
+            settings(),
+            mode="tremendous_production",
+            deployment_environment="production",
+            real_rewards_acknowledged=True,
+        )
+        report = build_reward_preflight(
+            production,
+            (issued_record(),),
+            RewardControlState(),
+            admin_password_configured=True,
+            now=NOW,
+        )
+
+        self.assertFalse(report.ready_for_production)
+        self.assertFalse(report.production_payments_enabled)
+        scope = next(
+            check for check in report.checks if check.name == "Deelnemersscope"
+        )
+        self.assertFalse(scope.passed)
+
 
 if __name__ == "__main__":
     unittest.main()

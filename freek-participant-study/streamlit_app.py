@@ -72,6 +72,7 @@ from app.rewards import (
     RewardService,
     RewardSettings,
     TremendousAPIError,
+    TremendousProductionRewardProvider,
     TremendousSandboxRewardProvider,
     build_reward_operations_overview,
     build_reward_preflight,
@@ -127,15 +128,21 @@ try:
 except RewardConfigurationError as error:
     st.error(f"Beloningsconfiguratie mislukt: {error}")
     st.stop()
-reward_provider = (
-    FakeRewardProvider()
-    if reward_settings.mode == "fake"
-    else TremendousSandboxRewardProvider(
+if reward_settings.mode == "fake":
+    reward_provider = FakeRewardProvider()
+elif reward_settings.mode == "tremendous_sandbox":
+    reward_provider = TremendousSandboxRewardProvider(
         api_key=reward_settings.tremendous_api_key,
         campaign_id=reward_settings.tremendous_campaign_id,
         funding_source_id=reward_settings.tremendous_funding_source_id,
     )
-)
+else:
+    reward_provider = TremendousProductionRewardProvider(
+        api_key=reward_settings.tremendous_api_key,
+        campaign_id=reward_settings.tremendous_campaign_id,
+        funding_source_id=reward_settings.tremendous_funding_source_id,
+        allow_real_money=reward_settings.real_rewards_acknowledged,
+    )
 reward_service = None
 if reward_settings.enabled:
     reward_ledger = CSVRewardLedger(reward_settings.ledger_path)
@@ -331,13 +338,26 @@ def decline_reward(session: ParticipantSession, *, eligible: bool) -> None:
 def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
     st.divider()
     st.subheader(f"Een koffie van {format_euro_amount(reward_settings.amount_eur)}")
+    if reward_settings.mode == "tremendous_production" and session.is_test:
+        st.error(
+            "VEILIGHEIDSSTOP — testdeelnemers kunnen nooit een echte vergoeding "
+            "ontvangen."
+        )
+        return
+    reward_label = (
+        "echte vergoeding"
+        if reward_settings.mode == "tremendous_production"
+        else "testvergoeding"
+    )
     st.write(
-        "Als dank voor je deelname kun je een testvergoeding ter waarde van een "
+        f"Als dank voor je deelname kun je een {reward_label} ter waarde van een "
         "koffie ontvangen. Deze vergoeding is volledig vrijwillig: je keuze heeft "
         "geen invloed op je deelname of je ingediende antwoorden."
     )
     if reward_settings.mode == "tremendous_sandbox":
         st.warning("TREMENDOUS-SANDBOX — deze beloning gebruikt alleen testgeld.")
+    elif reward_settings.mode == "tremendous_production":
+        st.error("ECHTE VERGOEDING — deze keuze kan echt geld laten uitbetalen.")
     else:
         st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
     claim = stored_reward_claim(session)
@@ -1097,7 +1117,7 @@ def render_reward_operations() -> None:
                 st.error("De uitgifte kon niet veilig worden gepauzeerd.")
             else:
                 st.rerun()
-    if reward_settings.mode == "tremendous_sandbox":
+    if reward_settings.mode in {"tremendous_sandbox", "tremendous_production"}:
         if st.button("Tremendous-bezorgstatussen vernieuwen"):
             try:
                 reconciliation = reward_service.reconcile_issued_rewards()
@@ -1198,17 +1218,17 @@ def render_reward_operations() -> None:
         file_name="reward_operations.csv",
         mime="text/csv",
     )
-    st.markdown("## Checkpoint 10 · pilot-preflight")
+    st.markdown("## Checkpoint 11 · productie-preflight")
     preflight = build_reward_preflight(
         reward_settings,
         all_records,
         control,
         admin_password_configured=bool(configured_admin_password()),
     )
-    if preflight.ready_for_sandbox_pilot:
-        st.success(
-            "GEREED VOOR SANDBOXPILOT — productiebetalingen blijven uitgeschakeld."
-        )
+    if preflight.ready_for_production:
+        st.error("PRODUCTIE GEREED — nieuwe beloningen gebruiken echt geld.")
+    elif preflight.ready_for_sandbox_pilot:
+        st.success("GEREED VOOR SANDBOXPILOT — productie blijft vergrendeld.")
     else:
         st.error("NIET GEREED — los de controles met 'ACTIE NODIG' eerst op.")
     st.dataframe(preflight_rows(preflight), hide_index=True, width="stretch")

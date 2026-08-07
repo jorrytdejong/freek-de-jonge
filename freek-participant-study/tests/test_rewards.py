@@ -2,6 +2,7 @@ import unittest
 from decimal import Decimal
 
 from app.rewards import FakeRewardProvider, RewardConfigurationError, RewardSettings
+from app.rewards.config import REAL_REWARD_ACKNOWLEDGEMENT
 
 
 class RewardSettingsTest(unittest.TestCase):
@@ -30,10 +31,53 @@ class RewardSettingsTest(unittest.TestCase):
         self.assertEqual(settings.max_issued_count, 10)
         self.assertEqual(settings.budget_eur, Decimal("45.00"))
 
-    def test_production_mode_is_rejected_at_checkpoint_three(self) -> None:
-        with self.assertRaisesRegex(RewardConfigurationError, "alleen"):
+    def test_production_mode_requires_prod_key_and_all_explicit_gates(self) -> None:
+        with self.assertRaisesRegex(RewardConfigurationError, "PROD_"):
             RewardSettings.from_sources(
-                environ={"FREEK_STUDY_REWARD_MODE": "production"}, secrets={}
+                environ={"FREEK_STUDY_REWARD_MODE": "tremendous_production"},
+                secrets={},
+            )
+
+        base = {
+            "FREEK_STUDY_REWARD_MODE": "tremendous_production",
+            "TREMENDOUS_API_KEY": "PROD_safe-placeholder",
+            "TREMENDOUS_CAMPAIGN_ID": "CAMPAIGN-1",
+            "TREMENDOUS_FUNDING_SOURCE_ID": "BALANCE",
+            "FREEK_STUDY_REWARD_LEDGER_PATH": "data/runtime/rewards.production.csv",
+        }
+        with self.assertRaisesRegex(RewardConfigurationError, "ENVIRONMENT"):
+            RewardSettings.from_sources(environ=base, secrets={})
+        with self.assertRaisesRegex(RewardConfigurationError, "real-money"):
+            RewardSettings.from_sources(
+                environ={**base, "FREEK_STUDY_DEPLOYMENT_ENVIRONMENT": "production"},
+                secrets={},
+            )
+
+        settings = RewardSettings.from_sources(
+            environ={
+                **base,
+                "FREEK_STUDY_DEPLOYMENT_ENVIRONMENT": "production",
+                "FREEK_STUDY_REAL_REWARDS_ACK": REAL_REWARD_ACKNOWLEDGEMENT,
+            },
+            secrets={},
+        )
+        self.assertEqual(settings.mode, "tremendous_production")
+        self.assertTrue(settings.real_rewards_acknowledged)
+        self.assertNotIn("PROD_safe-placeholder", repr(settings))
+
+    def test_production_mode_rejects_sandbox_ledger(self) -> None:
+        with self.assertRaisesRegex(RewardConfigurationError, "productielogboek"):
+            RewardSettings.from_sources(
+                environ={
+                    "FREEK_STUDY_REWARD_MODE": "tremendous_production",
+                    "FREEK_STUDY_DEPLOYMENT_ENVIRONMENT": "production",
+                    "FREEK_STUDY_REAL_REWARDS_ACK": REAL_REWARD_ACKNOWLEDGEMENT,
+                    "FREEK_STUDY_REWARD_LEDGER_PATH": "rewards-sandbox.csv",
+                    "TREMENDOUS_API_KEY": "PROD_safe-placeholder",
+                    "TREMENDOUS_CAMPAIGN_ID": "CAMPAIGN-1",
+                    "TREMENDOUS_FUNDING_SOURCE_ID": "BALANCE",
+                },
+                secrets={},
             )
 
     def test_sandbox_mode_requires_complete_test_credentials(self) -> None:

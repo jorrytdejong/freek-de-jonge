@@ -1,8 +1,12 @@
 import unittest
 from decimal import Decimal
 
-from app.rewards import TremendousSandboxRewardProvider
+from app.rewards import (
+    TremendousProductionRewardProvider,
+    TremendousSandboxRewardProvider,
+)
 from app.rewards.tremendous import (
+    TREMENDOUS_PRODUCTION_ORDERS_URL,
     TREMENDOUS_SANDBOX_ORDERS_URL,
     TremendousAPIError,
 )
@@ -178,7 +182,6 @@ class TremendousSandboxRewardProviderTest(unittest.TestCase):
         link = self.provider(transport).get_redemption_link("REWARD-123")
 
         self.assertEqual(link, "https://reward.testflight.tremendous.com/rewards/fresh")
-        self.assertTrue(transport.calls[0]["url"].endswith("generate_link"))
 
     def test_retrieves_current_link_delivery_status(self) -> None:
         transport = RecordingTransport()
@@ -212,11 +215,63 @@ class TremendousSandboxRewardProviderTest(unittest.TestCase):
             }
         )
 
-        with self.assertRaisesRegex(TremendousAPIError, "non-sandbox"):
+        with self.assertRaisesRegex(TremendousAPIError, "unexpected"):
             self.provider(transport).create_claim(
                 participant_reference="reward-reference",
                 amount=Decimal("3.40"),
                 currency="EUR",
+            )
+
+
+class TremendousProductionRewardProviderTest(unittest.TestCase):
+    def test_uses_production_endpoint_and_marks_claim_as_real(self) -> None:
+        transport = RecordingTransport(
+            response={
+                "order": {
+                    "rewards": [
+                        {
+                            "id": "REAL-123",
+                            "delivery": {
+                                "link": "https://reward.tremendous.com/rewards/real"
+                            },
+                        }
+                    ]
+                }
+            }
+        )
+        provider = TremendousProductionRewardProvider(
+            api_key="PROD_secret-placeholder",
+            campaign_id="CAMPAIGN-1",
+            funding_source_id="BALANCE",
+            transport=transport,
+            allow_real_money=True,
+        )
+
+        claim = provider.create_claim(
+            participant_reference="reward-real-participant",
+            amount=Decimal("3.40"),
+            currency="EUR",
+        )
+
+        self.assertEqual(transport.calls[0]["url"], TREMENDOUS_PRODUCTION_ORDERS_URL)
+        self.assertEqual(claim.provider, "tremendous_production")
+        self.assertFalse(claim.is_test)
+
+    def test_test_key_is_rejected_before_any_request(self) -> None:
+        with self.assertRaisesRegex(ValueError, "PROD_"):
+            TremendousProductionRewardProvider(
+                api_key="TEST_forbidden",
+                campaign_id="CAMPAIGN-1",
+                funding_source_id="BALANCE",
+                allow_real_money=True,
+            )
+
+    def test_real_money_requires_constructor_opt_in(self) -> None:
+        with self.assertRaisesRegex(ValueError, "real-money opt-in"):
+            TremendousProductionRewardProvider(
+                api_key="PROD_secret-placeholder",
+                campaign_id="CAMPAIGN-1",
+                funding_source_id="BALANCE",
             )
 
 

@@ -1,4 +1,4 @@
-"""Tremendous sandbox reward provider with recovery and no production capability."""
+"""Tremendous reward providers with strict sandbox/production separation."""
 
 from __future__ import annotations
 
@@ -14,6 +14,8 @@ from app.rewards.base import RewardClaim
 
 TREMENDOUS_SANDBOX_API = "https://testflight.tremendous.com/api/v2"
 TREMENDOUS_SANDBOX_ORDERS_URL = f"{TREMENDOUS_SANDBOX_API}/orders"
+TREMENDOUS_PRODUCTION_API = "https://api.tremendous.com/api/v2"
+TREMENDOUS_PRODUCTION_ORDERS_URL = f"{TREMENDOUS_PRODUCTION_API}/orders"
 SANDBOX_REDEMPTION_HOSTS = frozenset(
     {
         "testflight.tremendous.com",
@@ -21,10 +23,18 @@ SANDBOX_REDEMPTION_HOSTS = frozenset(
         "reward.testflight.tremendous.com",
     }
 )
+PRODUCTION_REDEMPTION_HOSTS = frozenset(
+    {
+        "tremendous.com",
+        "www.tremendous.com",
+        "app.tremendous.com",
+        "reward.tremendous.com",
+    }
+)
 
 
 class TremendousAPIError(RuntimeError):
-    """A safe, credential-free description of a sandbox API failure."""
+    """A safe, credential-free description of a Tremendous API failure."""
 
     def __init__(
         self,
@@ -68,25 +78,25 @@ class UrllibJSONTransport:
                 raw_body = response.read()
         except HTTPError as error:
             raise TremendousAPIError(
-                f"Tremendous sandbox returned HTTP {error.code}.",
+                f"Tremendous returned HTTP {error.code}.",
                 status_code=error.code,
                 retryable=error.code == 409 or error.code == 429 or error.code >= 500,
             ) from error
         except (TimeoutError, URLError) as error:
             raise TremendousAPIError(
-                "Tremendous sandbox could not be reached.", retryable=True
+                "Tremendous could not be reached.", retryable=True
             ) from error
         try:
             decoded = json.loads(raw_body)
         except (json.JSONDecodeError, UnicodeDecodeError) as error:
             raise TremendousAPIError(
-                "Tremendous sandbox returned invalid JSON.",
+                "Tremendous returned invalid JSON.",
                 status_code=status,
                 retryable=True,
             ) from error
         if not isinstance(decoded, dict):
             raise TremendousAPIError(
-                "Tremendous sandbox returned an invalid response.",
+                "Tremendous returned an invalid response.",
                 status_code=status,
                 retryable=True,
             )
@@ -138,23 +148,22 @@ def _reward_id(payload: Mapping[str, object]) -> str:
     return reward_id
 
 
-def _validate_link(link: object) -> str:
+def _validate_link(link: object, allowed_hosts: frozenset[str]) -> str:
     if not isinstance(link, str) or not link.strip():
         raise TremendousAPIError("Tremendous response has no redemption link.")
     parsed_link = urlparse(link)
-    if (
-        parsed_link.scheme != "https"
-        or parsed_link.hostname not in SANDBOX_REDEMPTION_HOSTS
-    ):
-        raise TremendousAPIError("Tremendous returned a non-sandbox redemption link.")
+    if parsed_link.scheme != "https" or parsed_link.hostname not in allowed_hosts:
+        raise TremendousAPIError("Tremendous returned an unexpected redemption link.")
     return link
 
 
-def _generated_link(payload: Mapping[str, object]) -> str:
+def _generated_link(
+    payload: Mapping[str, object], allowed_hosts: frozenset[str]
+) -> str:
     reward = payload.get("reward")
     if not isinstance(reward, Mapping):
         raise TremendousAPIError("Tremendous response has no reward.")
-    return _validate_link(reward.get("link"))
+    return _validate_link(reward.get("link"), allowed_hosts)
 
 
 def _delivery_status(payload: Mapping[str, object]) -> str:
@@ -174,28 +183,32 @@ def _delivery_status(payload: Mapping[str, object]) -> str:
 def _status_error(status: int) -> TremendousAPIError:
     if status == 402:
         return TremendousAPIError(
-            "Tremendous sandbox has insufficient funding.", status_code=status
+            "Tremendous has insufficient funding.", status_code=status
         )
     if status in {401, 403}:
         return TremendousAPIError(
-            "Tremendous sandbox credentials were rejected.", status_code=status
+            "Tremendous credentials were rejected.", status_code=status
         )
     if status == 422:
         return TremendousAPIError(
-            "Tremendous sandbox rejected the reward configuration.", status_code=status
+            "Tremendous rejected the reward configuration.", status_code=status
         )
     retryable = status == 409 or status == 429 or status >= 500
     return TremendousAPIError(
-        f"Tremendous sandbox returned HTTP {status}.",
+        f"Tremendous returned HTTP {status}.",
         status_code=status,
         retryable=retryable,
     )
 
 
-class TremendousSandboxRewardProvider:
-    """Create idempotent link rewards using fake Tremendous sandbox funds."""
+class _TremendousRewardProvider:
+    """Shared idempotent link-reward implementation for one fixed environment."""
 
-    provider_name = "tremendous_sandbox"
+    provider_name = "tremendous"
+    is_real_money = False
+    api_base = ""
+    api_key_prefix = ""
+    redemption_hosts: frozenset[str] = frozenset()
 
     def __init__(
         self,
@@ -205,9 +218,16 @@ class TremendousSandboxRewardProvider:
         funding_source_id: str,
         transport: JSONTransport | None = None,
         timeout_seconds: float = 15.0,
+        allow_real_money: bool = False,
     ) -> None:
-        if not api_key.startswith("TEST_"):
-            raise ValueError("Tremendous sandbox requires a TEST_ API key.")
+        if self.is_real_money and not allow_real_money:
+            raise ValueError(
+                "Tremendous production requires an explicit real-money opt-in."
+            )
+        if not api_key.startswith(self.api_key_prefix):
+            raise ValueError(
+                f"{self.provider_name} requires a {self.api_key_prefix} API key."
+            )
         if not campaign_id.strip() or not funding_source_id.strip():
             raise ValueError("Tremendous campaign and funding source are required.")
         self._api_key = api_key
@@ -229,7 +249,7 @@ class TremendousSandboxRewardProvider:
     ) -> RewardClaim:
         try:
             status, response = self.transport.get_json(
-                url=f"{TREMENDOUS_SANDBOX_ORDERS_URL}/{quote(external_id, safe='')}",
+                url=f"{self.api_base}/orders/{quote(external_id, safe='')}",
                 headers=self._headers,
                 timeout=self.timeout_seconds,
             )
@@ -257,7 +277,7 @@ class TremendousSandboxRewardProvider:
             amount=Decimal("0"),
             currency="",
             provider=self.provider_name,
-            is_test=True,
+            is_test=not self.is_real_money,
             redemption_url=link,
         )
 
@@ -265,23 +285,20 @@ class TremendousSandboxRewardProvider:
         if not reward_id.strip():
             raise TremendousAPIError("A Tremendous reward ID is required.")
         status, response = self.transport.post_json(
-            url=(
-                f"{TREMENDOUS_SANDBOX_API}/rewards/"
-                f"{quote(reward_id, safe='')}/generate_link"
-            ),
+            url=(f"{self.api_base}/rewards/{quote(reward_id, safe='')}/generate_link"),
             headers=self._headers,
             payload={},
             timeout=self.timeout_seconds,
         )
         if status not in {200, 201}:
             raise _status_error(status)
-        return _generated_link(response)
+        return _generated_link(response, self.redemption_hosts)
 
     def get_reward_status(self, reward_id: str) -> str:
         if not reward_id.strip():
             raise TremendousAPIError("A Tremendous reward ID is required.")
         status, response = self.transport.get_json(
-            url=f"{TREMENDOUS_SANDBOX_API}/rewards/{quote(reward_id, safe='')}",
+            url=f"{self.api_base}/rewards/{quote(reward_id, safe='')}",
             headers=self._headers,
             timeout=self.timeout_seconds,
         )
@@ -309,7 +326,7 @@ class TremendousSandboxRewardProvider:
         }
         try:
             status, response = self.transport.post_json(
-                url=TREMENDOUS_SANDBOX_ORDERS_URL,
+                url=f"{self.api_base}/orders",
                 headers=self._headers,
                 payload=payload,
                 timeout=self.timeout_seconds,
@@ -333,7 +350,7 @@ class TremendousSandboxRewardProvider:
         delivery = reward.get("delivery")
         response_link = delivery.get("link") if isinstance(delivery, Mapping) else None
         redemption_url = (
-            _validate_link(response_link)
+            _validate_link(response_link, self.redemption_hosts)
             if response_link
             else self.get_redemption_link(reward_id)
         )
@@ -342,6 +359,26 @@ class TremendousSandboxRewardProvider:
             amount=amount,
             currency=normalized_currency,
             provider=self.provider_name,
-            is_test=True,
+            is_test=not self.is_real_money,
             redemption_url=redemption_url,
         )
+
+
+class TremendousSandboxRewardProvider(_TremendousRewardProvider):
+    """Create idempotent link rewards using fake Tremendous sandbox funds."""
+
+    provider_name = "tremendous_sandbox"
+    is_real_money = False
+    api_base = TREMENDOUS_SANDBOX_API
+    api_key_prefix = "TEST_"
+    redemption_hosts = SANDBOX_REDEMPTION_HOSTS
+
+
+class TremendousProductionRewardProvider(_TremendousRewardProvider):
+    """Create real rewards, only after configuration has passed production gates."""
+
+    provider_name = "tremendous_production"
+    is_real_money = True
+    api_base = TREMENDOUS_PRODUCTION_API
+    api_key_prefix = "PROD_"
+    redemption_hosts = PRODUCTION_REDEMPTION_HOSTS

@@ -12,6 +12,7 @@ class FakeRewardProvider:
     """Create stable fake claims without network access or monetary value."""
 
     provider_name = "fake"
+    is_real_money = False
 
     def create_claim(
         self, *, participant_reference: str, amount: Decimal, currency: str

@@ -33,6 +33,7 @@ from app.rewards.service import (
 )
 from app.rewards.tremendous import (
     TremendousAPIError,
+    TremendousProductionRewardProvider,
     TremendousSandboxRewardProvider,
 )
 
@@ -56,6 +57,7 @@ __all__ = [
     "RewardOperationsOverview",
     "REWARD_AUDIT_COLUMNS",
     "TremendousAPIError",
+    "TremendousProductionRewardProvider",
     "TremendousSandboxRewardProvider",
     "build_reward_operations_overview",
     "build_reward_preflight",

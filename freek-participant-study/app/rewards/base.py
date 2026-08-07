@@ -23,6 +23,7 @@ class RewardProvider(Protocol):
     """Create a participant reward claim without exposing payment details."""
 
     provider_name: str
+    is_real_money: bool
 
     def create_claim(
         self, *, participant_reference: str, amount: Decimal, currency: str

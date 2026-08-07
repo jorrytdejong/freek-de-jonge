@@ -161,6 +161,10 @@ class RewardService:
             raise RewardNotEligibleError(
                 "A completed survey submission is required for a reward."
             )
+        if is_test and getattr(self.provider, "is_real_money", False):
+            raise RewardNotEligibleError(
+                "Test participants can never receive a real-money reward."
+            )
         reference = participant_reward_reference(session_id, study_version)
         provider_name = self.provider.provider_name
         record = self.ledger.issue_once(

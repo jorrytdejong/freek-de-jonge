@@ -1,4 +1,4 @@
-"""Offline go-live checks for the sandbox participant reward pilot."""
+"""Offline go-live checks for sandbox pilots and guarded production rewards."""
 
 from __future__ import annotations
 
@@ -23,6 +23,7 @@ class RewardPreflightReport:
     checks: tuple[RewardPreflightCheck, ...]
     ready_for_sandbox_pilot: bool
     production_payments_enabled: bool = False
+    ready_for_production: bool = False
 
 
 def build_reward_preflight(
@@ -67,6 +68,14 @@ def build_reward_preflight(
     )
     remaining_count = settings.max_issued_count - len(reserved)
     remaining_budget = settings.budget_eur - reserved_amount
+    production_mode = settings.mode == "tremendous_production"
+    environment_ok = (
+        settings.deployment_environment == "production"
+        and settings.real_rewards_acknowledged
+    )
+    participant_scope_ok = not production_mode or not any(
+        record.is_test and record.status in {"issuing", "issued"} for record in records
+    )
     checks = (
         RewardPreflightCheck(
             "Beloningsfunctie",
@@ -75,8 +84,12 @@ def build_reward_preflight(
         ),
         RewardPreflightCheck(
             "API-omgeving",
-            settings.mode == "tremendous_sandbox",
-            "Tremendous Testflight; productiesleutels worden geweigerd",
+            settings.mode in {"tremendous_sandbox", "tremendous_production"},
+            (
+                "Tremendous productie; uitsluitend PROD_-sleutels"
+                if production_mode
+                else "Tremendous Testflight; productiesleutels worden geweigerd"
+            ),
         ),
         RewardPreflightCheck(
             "Beheerwachtwoord",
@@ -117,14 +130,32 @@ def build_reward_preflight(
             f"{len(unchecked)} niet gecontroleerd; {len(stale)} ouder dan 24 uur",
         ),
         RewardPreflightCheck(
-            "Productiebetalingen",
-            True,
-            "Uitgeschakeld; deze build accepteert uitsluitend TEST_-sleutels",
+            "Productieslot",
+            environment_ok if production_mode else True,
+            (
+                "Ontgrendeld met productieomgeving en expliciete real-money bevestiging"
+                if environment_ok
+                else "Uitgeschakeld; sandbox kan geen echt geld versturen"
+                if not production_mode
+                else "Productieomgeving of expliciete real-money bevestiging ontbreekt"
+            ),
+        ),
+        RewardPreflightCheck(
+            "Deelnemersscope",
+            participant_scope_ok,
+            (
+                "Geen testdeelnemers in het productielogboek"
+                if production_mode
+                else "Testdeelnemers zijn toegestaan in sandbox"
+            ),
         ),
     )
+    all_passed = all(check.passed for check in checks)
     return RewardPreflightReport(
         checks=checks,
-        ready_for_sandbox_pilot=all(check.passed for check in checks),
+        ready_for_sandbox_pilot=all_passed and not production_mode,
+        production_payments_enabled=all_passed and production_mode,
+        ready_for_production=all_passed and production_mode,
     )
 
 

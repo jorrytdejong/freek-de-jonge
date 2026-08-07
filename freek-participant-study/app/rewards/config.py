@@ -16,6 +16,7 @@ class RewardConfigurationError(ValueError):
 
 TRUE_VALUES = frozenset({"1", "true", "yes", "on"})
 FALSE_VALUES = frozenset({"0", "false", "no", "off"})
+REAL_REWARD_ACKNOWLEDGEMENT = "I_UNDERSTAND_THIS_SENDS_REAL_MONEY"
 
 
 def _configured_value(
@@ -73,7 +74,7 @@ def _parse_positive_integer(value: object, *, setting: str) -> int:
 
 @dataclass(frozen=True)
 class RewardSettings:
-    """Validated runtime settings for fake or Tremendous sandbox rewards."""
+    """Validated runtime settings for fake, sandbox, or locked production rewards."""
 
     enabled: bool = False
     mode: str = "fake"
@@ -84,6 +85,8 @@ class RewardSettings:
     tremendous_api_key: str = field(default="", repr=False)
     tremendous_campaign_id: str = ""
     tremendous_funding_source_id: str = ""
+    deployment_environment: str = "local"
+    real_rewards_acknowledged: bool = False
 
     @classmethod
     def from_sources(
@@ -114,10 +117,34 @@ class RewardSettings:
             .strip()
             .lower()
         )
-        if mode not in {"fake", "tremendous_sandbox"}:
+        if mode not in {"fake", "tremendous_sandbox", "tremendous_production"}:
             raise RewardConfigurationError(
-                "Checkpoint 3 ondersteunt alleen fake of tremendous_sandbox."
+                "Beloningsmodus moet fake, tremendous_sandbox of "
+                "tremendous_production zijn."
             )
+        deployment_environment = (
+            str(
+                _configured_value(
+                    environ,
+                    secrets,
+                    "FREEK_STUDY_DEPLOYMENT_ENVIRONMENT",
+                    "deployment_environment",
+                    "local",
+                )
+            )
+            .strip()
+            .lower()
+        )
+        acknowledgement = str(
+            _configured_value(
+                environ,
+                secrets,
+                "FREEK_STUDY_REAL_REWARDS_ACK",
+                "real_rewards_ack",
+                "",
+            )
+        ).strip()
+        real_rewards_acknowledged = acknowledgement == REAL_REWARD_ACKNOWLEDGEMENT
         amount = _parse_amount(
             _configured_value(
                 environ,
@@ -151,6 +178,10 @@ class RewardSettings:
             raise RewardConfigurationError(
                 "FREEK_STUDY_REWARD_BUDGET_EUR moet minstens één beloning dekken."
             )
+        ledger_path_configured = (
+            "FREEK_STUDY_REWARD_LEDGER_PATH" in environ
+            or "reward_ledger_path" in secrets
+        )
         ledger_path = Path(
             str(
                 _configured_value(
@@ -194,6 +225,28 @@ class RewardSettings:
                 raise RewardConfigurationError(
                     "Tremendous sandbox vereist campaign_id en funding_source_id."
                 )
+        if mode == "tremendous_production":
+            if not api_key.startswith("PROD_"):
+                raise RewardConfigurationError(
+                    "Tremendous productie vereist een PROD_ API-sleutel."
+                )
+            if not campaign_id or not funding_source_id:
+                raise RewardConfigurationError(
+                    "Tremendous productie vereist campaign_id en funding_source_id."
+                )
+            if deployment_environment != "production":
+                raise RewardConfigurationError(
+                    "Tremendous productie vereist "
+                    "FREEK_STUDY_DEPLOYMENT_ENVIRONMENT=production."
+                )
+            if not real_rewards_acknowledged:
+                raise RewardConfigurationError(
+                    "Tremendous productie vereist de expliciete real-money bevestiging."
+                )
+            if not ledger_path_configured or "sandbox" in str(ledger_path).lower():
+                raise RewardConfigurationError(
+                    "Tremendous productie vereist een afzonderlijk productielogboek."
+                )
         return cls(
             enabled=enabled,
             mode=mode,
@@ -204,4 +257,6 @@ class RewardSettings:
             tremendous_api_key=api_key,
             tremendous_campaign_id=campaign_id,
             tremendous_funding_source_id=funding_source_id,
+            deployment_environment=deployment_environment,
+            real_rewards_acknowledged=real_rewards_acknowledged,
         )
