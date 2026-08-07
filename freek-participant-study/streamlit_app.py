@@ -58,6 +58,15 @@ from app.acl_sessions import (
 )
 from app.acl_stimuli import JokeItem, StimulusValidationError, load_stimuli
 from app.participant import ProfileValidationError, validate_profile
+from app.rewards import (
+    CSVRewardLedger,
+    FakeRewardProvider,
+    RewardClaim,
+    RewardConfigurationError,
+    RewardLedgerError,
+    RewardService,
+    RewardSettings,
+)
 from app.storage import (
     AlreadySubmittedError,
     ProgressStorageError,
@@ -96,6 +105,21 @@ try:
 except (ProgressStorageError, StorageConfigurationError) as error:
     st.error(f"Opslagconfiguratie mislukt: {error}")
     st.stop()
+
+try:
+    reward_settings = RewardSettings.from_sources(
+        environ=dict(os.environ),
+        secrets=configured_secrets(),
+    )
+except RewardConfigurationError as error:
+    st.error(f"Beloningsconfiguratie mislukt: {error}")
+    st.stop()
+reward_provider = FakeRewardProvider()
+reward_service = (
+    RewardService(CSVRewardLedger(reward_settings.ledger_path), reward_provider)
+    if reward_settings.enabled
+    else None
+)
 
 
 def configured_admin_password() -> str | None:
@@ -161,6 +185,65 @@ def final_comment_key(session_id: str) -> str:
 
 def submissions_key(session_id: str) -> str:
     return f"submissions:{session_id}"
+
+
+def format_euro_amount(amount: object) -> str:
+    return f"€{amount:.2f}".replace(".", ",")
+
+
+def stored_fake_claim(session: ParticipantSession) -> RewardClaim | None:
+    assert reward_service is not None
+    try:
+        return reward_service.load_claim(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+        )
+    except RewardLedgerError:
+        st.error("De status van je testbeloning kon niet veilig worden gelezen.")
+        st.stop()
+
+
+def render_fake_reward(session: ParticipantSession, *, eligible: bool) -> None:
+    st.divider()
+    st.subheader(f"Een koffie van {format_euro_amount(reward_settings.amount_eur)}")
+    st.write(
+        "Als dank voor je deelname kun je hier een testbeloning bekijken. "
+        "In deze ontwikkelfase wordt geen echt geld verstuurd."
+    )
+    if claim := stored_fake_claim(session):
+        st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
+        st.success(
+            f"Je lokale testclaim van {format_euro_amount(claim.amount)} staat klaar."
+        )
+        st.code(claim.reference, language=None)
+        st.caption(
+            "Er zijn geen betaalgegevens gevraagd en er is geen externe dienst aangeroepen."
+        )
+        return
+    if st.button(
+        "Ontvang mijn testbeloning",
+        type="primary",
+        key=f"fake_reward:{session.session_id}",
+    ):
+        assert reward_service is not None
+        try:
+            claim = reward_service.claim_reward(
+                session_id=session.session_id,
+                study_version=STUDY_VERSION,
+                is_test=session.is_test,
+                eligible=eligible,
+                amount=reward_settings.amount_eur,
+            )
+        except RewardLedgerError:
+            st.error(
+                "Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw."
+            )
+            st.stop()
+        st.query_params["session"] = session.session_id
+        st.query_params["page"] = "debrief"
+        st.query_params["fake_reward"] = claim.reference
+        st.rerun()
 
 
 def collect_progress_state(
@@ -685,6 +768,8 @@ def render_debrief(
         "We vergelijken verschillende generatieprocedures zonder die labels aan "
         "deelnemers te tonen."
     )
+    if reward_settings.enabled:
+        render_fake_reward(session, eligible=bool(submissions))
     if session.is_test:
         st.info(f"Testinzending {len(submissions)} is opgeslagen.")
         if st.button("Nieuwe testinzending"):

@@ -30,6 +30,28 @@ Example test link:
 
 <http://localhost:8501/?session=acl-test-01-913a93e2>
 
+### Fake participant reward
+
+Checkpoint 1 includes an optional local-only reward demonstration. Enable it
+when starting the app:
+
+```bash
+FREEK_STUDY_REWARDS_ENABLED=true \
+FREEK_STUDY_REWARD_MODE=fake \
+FREEK_STUDY_REWARD_AMOUNT_EUR=3.40 \
+FREEK_STUDY_REWARD_LEDGER_PATH=data/runtime/acl_rewards.csv \
+streamlit run streamlit_app.py
+```
+
+After a test submission, the debrief page shows a fake coffee-reward button.
+It never calls Tremendous, requests payment details, or transfers money. Reward
+configuration is disabled by default. Issued fake claims are kept in the
+separate ignored `data/runtime/acl_rewards.csv` ledger. The ledger contains a
+one-way participant reference and operational reward metadata, but no raw
+session ID, survey answer, email address, or bank-account information. Reopening
+the submitted participant link restores the same claim; repeated clicks and
+concurrent tabs cannot issue another one.
+
 Internal-only routes:
 
 - Stimulus preview: <http://localhost:8501/?preview=1>

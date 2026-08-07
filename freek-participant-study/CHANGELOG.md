@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### Participant rewards
+
+- Added the Checkpoint 1 provider-neutral reward contract and deterministic
+  local fake provider.
+- Added an optional fake coffee-reward demonstration to the submitted-session
+  debrief page, disabled by default and incapable of external API calls.
+- Added a separate atomic reward ledger with pseudonymous participant
+  references, durable claim recovery, explicit eligibility enforcement, and
+  one-claim behaviour across refreshes, restarts, and concurrent tabs.
+
 ### ACL-1
 
 - Replaced the pilot grouped-variant interface with 12 individual blinded jokes.
