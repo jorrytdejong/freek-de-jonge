@@ -30,7 +30,7 @@ PIPELINE_SPECS: dict[str, PipelineSpec] = {
         family="category",
         style_mode="freek",
         name="Category-Guided Generation with Freek Style",
-        description="Topic plus humor category, with explicit Freek de Jonge style guidance.",
+        description="Topic plus category guidance derived from Freek jokes tagged with that category.",
     ),
     "C1": PipelineSpec(
         code="C1",
@@ -58,7 +58,7 @@ PIPELINE_SPECS: dict[str, PipelineSpec] = {
         family="category_script",
         style_mode="freek",
         name="Category + Script-Opposition Generation with Freek Style",
-        description="Category-conditioned internal script-opposition pipeline with explicit Freek de Jonge style guidance.",
+        description="Internal script-opposition pipeline using category guidance derived from matching Freek jokes.",
     ),
     "E1": PipelineSpec(
         code="E1",
