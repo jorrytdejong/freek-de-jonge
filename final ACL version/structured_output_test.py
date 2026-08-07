@@ -3,6 +3,7 @@ from __future__ import annotations
 from core.runner import run_pipeline
 from core.schemas import (
     CriticOutput,
+    FreekCategoryGuidanceOutput,
     JokeRequest,
     JokeVariantOutput,
     JokeVariantsOutput,
@@ -28,6 +29,11 @@ def fake_generate_structured(prompt, response_model, *, model):
         Parsed fixture, serialized fixture, and fake usage metadata.
     """
     outputs = {
+        FreekCategoryGuidanceOutput: FreekCategoryGuidanceOutput(
+            category_realization="Ironie ontstaat door een beheerste tegenstelling.",
+            tonal_tendencies=["droog", "maatschappelijk observerend"],
+            generation_guidelines=["houd de formulering compact", "laat de tegenstelling impliciet ontstaan"],
+        ),
         ScriptAOutput: ScriptAOutput(script_a="normale verwachting"),
         ScriptBCandidatesOutput: ScriptBCandidatesOutput(
             candidates=[
@@ -69,23 +75,33 @@ def main() -> None:
     try:
         request = JokeRequest(topic="de gemeente", category="Ironie")
         direct = run_pipeline("A1", request, model="test-model")
+        freek_category_direct = run_pipeline("B2", request, model="test-model")
         staged = run_pipeline("D2", request, model="test-model")
     finally:
         script_opposition.generate_structured = original
 
     assert direct.joke == "Directe grap."
     assert direct.variants[0].angle == "direct"
+    assert freek_category_direct.joke == "Directe grap."
+    assert freek_category_direct.metadata["stages"] == ["freek_category_guidance", "direct_generation"]
+    assert freek_category_direct.metadata["category_context_source"] == "freek_category_jokes"
     assert staged.semantic_plan.setup_script == "normale verwachting"
     assert staged.semantic_plan.opposing_script == "verborgen eigenbelang"
     assert len(staged.script_b_candidates) == 2
     assert staged.joke == "Variant twee."
     assert staged.metadata["stages"] == [
         "script_a",
+        "freek_category_guidance",
         "script_b_candidates",
         "script_b_ranker",
         "plan_context",
         "variants",
         "critic",
+    ]
+    assert staged.metadata["category_context_source"] == "freek_category_jokes"
+    assert staged.metadata["freek_category_guidance"]["tonal_tendencies"] == [
+        "droog",
+        "maatschappelijk observerend",
     ]
     print("ACL final Pydantic structured-output test passed.")
 

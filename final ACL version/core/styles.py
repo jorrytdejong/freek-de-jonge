@@ -3,10 +3,11 @@ from __future__ import annotations
 
 FREEK_STYLE_GUIDANCE = """
 Use explicit Freek de Jonge style guidance, while keeping the output clearly AI-generated.
-Write in Dutch. Aim for politically alert Dutch cabaret: moral seriousness that turns
-into irony, compact social observation, verbal precision, dry cynicism, and a punchline
-that lands through semantic reversal rather than generic joke wording. Avoid claiming
-the text is an authentic Freek de Jonge joke.
+Write in Dutch. Aim for politically alert Dutch cabaret, compact social observation,
+verbal precision, irony, and dry cynicism. Begin from a socially serious perspective,
+but make the speaker, character, or situation comically compromised. The result must
+culminate in laughter rather than moral agreement.
+Avoid claiming the text is an authentic Freek de Jonge joke.
 """.strip()
 
 

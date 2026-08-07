@@ -20,6 +20,12 @@ class StrictStageModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
+class FreekCategoryGuidanceOutput(StrictStageModel):
+    category_realization: str = Field(min_length=1)
+    tonal_tendencies: list[str] = Field(min_length=1)
+    generation_guidelines: list[str] = Field(min_length=1)
+
+
 class ScriptAOutput(StrictStageModel):
     script_a: str = Field(min_length=1)
 

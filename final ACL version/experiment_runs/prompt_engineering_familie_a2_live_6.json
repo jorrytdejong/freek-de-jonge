@@ -1,0 +1,50 @@
+[
+  {
+    "pipeline_code": "A2",
+    "pipeline_name": "Baseline Prompt with Freek Style",
+    "request": {
+      "topic": "Familie en opvoeding",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "You are generating one Dutch cabaret-style joke for an ACL humor-generation experiment.\n\nPipeline: A2 - Baseline Prompt with Freek Style\n\nTopic:\nFamilie en opvoeding\n\nStyle mode:\nUse explicit Freek de Jonge style guidance, while keeping the output clearly AI-generated.\nWrite in Dutch. Aim for politically alert Dutch cabaret, compact social observation,\nverbal precision, irony, and dry cynicism. Begin from a socially serious perspective,\nbut make the speaker, character, or situation comically compromised. The result must\nculminate in laughter rather than moral agreement.\nAvoid claiming the text is an authentic Freek de Jonge joke.\n\nA2 Freek example context:\nSimple Freek de Jonge context examples from real categorized segments:\n- En toen zetten mijn ouders mijn wieg in de blijdschap voor het raam met een rood-wit-blauwe vlag eromheen. Dat was natuurlijk onzin om een zwart-geel-rooie vlag eromheen te doen.\n- Dus dan, nou ja. Het afgelopen etmaal zijn 15 nieuwe doden. Nieuwe doden. Zie je dat? Er zijn 15 nieuwe doden. Dus dat was toen wel even een doorbraak hoor. Ja, dat was altijd oude doden. Wat heb je eraan, weet je wel. Maar toen waren er echt vijftien nieuwe doden. Ik weet wel, toen hebben ze in een torentje eventjes met elkaar vijftien nieuwe doden gedaan.\n- Met Jaap van Dissel, waar toen nog een stambeeld van is opgericht, dat weet u nog wel. Want er waren toen heel veel stambeelden in die tijd omgegooid en wat moeten we met al die lege plekken?\n- Ja, mocht het zover komen, dan zetten we haar aan de grens met een paraplu. Nou jongen, die Russen schrikken zich te pletterig. Ze zeggen... Rechtsomkamer, alle drones raken in de war. Het hele zooitje gaat niet door. Mevrouw Faber.\n\nUse these only as lightweight tonal and contextual references. Do not copy wording, names, or specific situations.\n\nExperimental condition:\nCondition A: Baseline prompt.\nUse only the topic.\n\nOutput requirements:\n- Write exactly one joke in Dutch.\nComic validity requirements:\n- The result must create an immediate comic payoff, not merely express an insightful or critical idea.\n- A serious observation, aphorism, slogan, moral conclusion, or elegant metaphor without a laugh-trigger is invalid.\n- Build pressure toward a distinct punchline and place the funniest information as late as possible.\n- Do not explain the underlying point after the punchline; stop when the laugh lands.\n- Silently consider several punchlines and use the funniest complete realization.\n- Keep it concise enough for blinded human evaluation.\n- Return the joke in the text field and a concise description in the angle field.\n- Do not include analysis or explanations inside the joke text.",
+    "joke": "Opvoeden is prachtig. Je krijgt van de overheid een kind, van Instagram een schuldgevoel en van school de mededeling dat Bram vandaag ‘grensoverschrijdend’ was. Ik zei: „Dat kan niet, hij kent de buurt niet eens.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": null,
+      "opposing_script": null,
+      "opposition_type": null,
+      "trigger": null,
+      "setup_goal": null,
+      "punch_goal": null,
+      "style_mode": "freek"
+    },
+    "raw_response": "{\n  \"direct_generation\": \"{\\\"text\\\":\\\"Opvoeden is prachtig. Je krijgt van de overheid een kind, van Instagram een schuldgevoel en van school de mededeling dat Bram vandaag ‘grensoverschrijdend’ was. Ik zei: „Dat kan niet, hij kent de buurt niet eens.”\\\",\\\"angle\\\":\\\"Taalverwarring rond moderne opvoedtermen\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [],
+    "script_b_rationale": "",
+    "variants": [
+      {
+        "text": "Opvoeden is prachtig. Je krijgt van de overheid een kind, van Instagram een schuldgevoel en van school de mededeling dat Bram vandaag ‘grensoverschrijdend’ was. Ik zei: „Dat kan niet, hij kent de buurt niet eens.”",
+        "angle": "Taalverwarring rond moderne opvoedtermen"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 648,
+      "output_tokens": 81,
+      "total_tokens": 729
+    },
+    "metadata": {
+      "family": "baseline",
+      "style_mode": "freek",
+      "category_context_source": null,
+      "freek_category_guidance": null,
+      "stages": [
+        "direct_generation"
+      ]
+    }
+  }
+]

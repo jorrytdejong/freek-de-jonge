@@ -1,0 +1,50 @@
+[
+  {
+    "pipeline_code": "A1",
+    "pipeline_name": "Baseline Prompt without Freek Style",
+    "request": {
+      "topic": "Familie en opvoeding",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "You are generating one Dutch cabaret-style joke for an ACL humor-generation experiment.\n\nPipeline: A1 - Baseline Prompt\n\nTopic:\nFamilie en opvoeding\n\nStyle mode:\nWrite in Dutch. Deliver the joke as compact, performable cabaret material.\n\nExperimental condition:\nCondition A: Baseline prompt.\nUse only the topic.\n\nOutput requirements:\n- Write exactly one joke in Dutch.\nComic validity requirements:\n- The result must create an immediate comic payoff, not merely express an insightful or critical idea.\n- A serious observation, aphorism, slogan, moral conclusion, or elegant metaphor without a laugh-trigger is invalid.\n- Build pressure toward a distinct punchline and place the funniest information as late as possible.\n- Do not explain the underlying point after the punchline; stop when the laugh lands.\n- Silently consider several punchlines and use the funniest complete realization.\n- Keep it concise enough for blinded human evaluation.\n- Return the joke in the text field and a concise description in the angle field.\n- Do not include analysis or explanations inside the joke text.",
+    "joke": "Mijn ouders zeiden altijd: „Je mag later alles worden wat je wilt.” Dus ik ben volwassen geworden. Blijkt: dat was niet de bedoeling.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": null,
+      "opposing_script": null,
+      "opposition_type": null,
+      "trigger": null,
+      "setup_goal": null,
+      "punch_goal": null,
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"direct_generation\": \"{\\\"text\\\":\\\"Mijn ouders zeiden altijd: „Je mag later alles worden wat je wilt.” Dus ik ben volwassen geworden. Blijkt: dat was niet de bedoeling.\\\",\\\"angle\\\":\\\"Opvoedingsbelofte die letterlijk verkeerd uitpakt\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [],
+    "script_b_rationale": "",
+    "variants": [
+      {
+        "text": "Mijn ouders zeiden altijd: „Je mag later alles worden wat je wilt.” Dus ik ben volwassen geworden. Blijkt: dat was niet de bedoeling.",
+        "angle": "Opvoedingsbelofte die letterlijk verkeerd uitpakt"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 265,
+      "output_tokens": 58,
+      "total_tokens": 323
+    },
+    "metadata": {
+      "family": "baseline",
+      "style_mode": "none",
+      "category_context_source": null,
+      "freek_category_guidance": null,
+      "stages": [
+        "direct_generation"
+      ]
+    }
+  }
+]
