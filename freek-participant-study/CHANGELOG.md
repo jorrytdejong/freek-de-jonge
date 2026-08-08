@@ -4,6 +4,9 @@
 
 ### ACL-1
 
+- Replaced the locked stimulus contents with all 90 jokes from the final
+  `acl_3x2_prompt_engineering_a7e5ec5` registry generated on 2026-08-08,
+  while preserving every participant/test URL and its precomputed item order.
 - Replaced the pilot grouped-variant interface with 12 individual blinded jokes.
 - Added the locked 90-item `gpt-5.6-terra` stimulus bank.
 - Added exact balancing for 25 participants across topics, conditions, items,
