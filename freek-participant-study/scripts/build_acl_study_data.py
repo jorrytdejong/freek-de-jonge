@@ -10,16 +10,22 @@ import json
 import random
 import secrets
 import sys
-from collections import Counter, deque
+from collections import Counter
 from collections.abc import Callable
 from datetime import date
+from functools import lru_cache
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY_ROOT = PROJECT_ROOT.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from app.acl_config import CONDITION_CODES, STUDY_VERSION
+from app.acl_config import (
+    CONDITION_CODES,
+    ITEMS_PER_PARTICIPANT,
+    MAXIMUM_PARTICIPANTS,
+    STUDY_VERSION,
+)
 from app.acl_sessions import REQUIRED_COLUMNS, load_sessions
 from app.acl_stimuli import REQUIRED_COLUMNS as STIMULUS_COLUMNS
 from app.acl_stimuli import load_stimuli
@@ -28,7 +34,7 @@ SOURCE_ITEMS = (
     REPOSITORY_ROOT
     / "final ACL version"
     / "experiment_runs"
-    / "acl_3x2_items_v1"
+    / "acl_3x2_prompt_engineering_a7e5ec5"
     / "items"
 )
 DEFAULT_STIMULI = PROJECT_ROOT / "data" / "acl_jokes.csv"
@@ -56,54 +62,6 @@ SESSION_FIELDNAMES = (
 )
 
 
-class _Dinic:
-    def __init__(self, node_count: int) -> None:
-        self.graph: list[list[list[object]]] = [[] for _ in range(node_count)]
-
-    def add_edge(self, source: int, target: int, capacity: int, tag=None) -> None:
-        forward: list[object] = [target, capacity, len(self.graph[target]), tag]
-        backward: list[object] = [source, 0, len(self.graph[source]), None]
-        self.graph[source].append(forward)
-        self.graph[target].append(backward)
-
-    def max_flow(self, source: int, sink: int) -> int:
-        total = 0
-        while True:
-            level = [-1] * len(self.graph)
-            level[source] = 0
-            queue = deque([source])
-            while queue:
-                node = queue.popleft()
-                for target, capacity, _, _ in self.graph[node]:
-                    target = int(target)
-                    if int(capacity) and level[target] < 0:
-                        level[target] = level[node] + 1
-                        queue.append(target)
-            if level[sink] < 0:
-                return total
-            cursor = [0] * len(self.graph)
-
-            def send(node: int, amount: int) -> int:
-                if node == sink:
-                    return amount
-                while cursor[node] < len(self.graph[node]):
-                    edge = self.graph[node][cursor[node]]
-                    target, capacity, reverse, _ = edge
-                    target = int(target)
-                    if int(capacity) and level[target] == level[node] + 1:
-                        pushed = send(target, min(amount, int(capacity)))
-                        if pushed:
-                            edge[1] = int(edge[1]) - pushed
-                            reverse_edge = self.graph[target][int(reverse)]
-                            reverse_edge[1] = int(reverse_edge[1]) + pushed
-                            return pushed
-                    cursor[node] += 1
-                return 0
-
-            while pushed := send(source, 10**9):
-                total += pushed
-
-
 def stimulus_rows(source: Path) -> list[dict[str, str]]:
     rows = []
     for path in sorted(source.glob("*.json")):
@@ -128,161 +86,297 @@ def stimulus_rows(source: Path) -> list[dict[str, str]]:
     return rows
 
 
-def _selected_topics(participant_count: int) -> list[set[int]]:
-    if participant_count % 5:
-        raise ValueError("Balanced participant counts must be a multiple of five.")
-    selected = []
-    for participant in range(participant_count):
-        omitted = {
-            participant % 15,
-            (participant + 5) % 15,
-            (participant + 10) % 15,
-        }
-        selected.append(set(range(15)) - omitted)
-    exposure = Counter(topic for topics in selected for topic in topics)
-    if len(exposure) != 15 or len(set(exposure.values())) != 1:
-        raise RuntimeError("Topic selection construction is not balanced.")
-    return selected
+def _topic_condition_offsets(seed: int) -> list[int]:
+    """Return a fixed randomized condition offset for each of the 15 topics.
+
+    Three alternating conditions receive three topics and the other three
+    receive two. Rotating these offsets by participant makes total condition
+    exposure differ by at most one at every recruitment prefix.
+    """
+    offsets = [*range(6), *range(6), 0, 2, 4]
+    random.Random(seed).shuffle(offsets)
+    return offsets
 
 
-def _condition_targets(participant_count: int) -> dict[tuple[int, int], int]:
-    base = (2 * participant_count) // 15
-    return {
-        (topic, condition): base + (condition in {2 * (topic % 3), 2 * (topic % 3) + 1})
+def _repeat_assignments(
+    participant: int,
+    *,
+    seed: int,
+    base_conditions: list[int],
+    item_exposure: Counter[str],
+) -> list[str]:
+    """Choose nine second-topic items while filling every condition to four.
+
+    Moving the nine-topic window by six positions balances topic repetition.
+    A small dynamic program then chooses distinct conditions, preferring the
+    least-exposed topic-condition items in the registry built so far.
+    """
+    selected_topics = [(participant * 6 + step) % 15 for step in range(9)]
+    base_counts = Counter(base_conditions)
+    initial_quotas = tuple(4 - base_counts[condition] for condition in range(6))
+    selected_topics.sort(
+        key=lambda topic: hashlib.sha256(
+            f"{seed}:{participant}:{topic}:repeat-topic".encode()
+        ).digest()
+    )
+
+    @lru_cache(maxsize=None)
+    def solve(index: int, quotas: tuple[int, ...]) -> tuple[int, int, tuple[int, ...]]:
+        if index == len(selected_topics):
+            if any(quotas):
+                raise ValueError("Could not fill the repeat-condition quotas.")
+            return (0, 0, ())
+        topic = selected_topics[index]
+        candidates = []
+        for condition, quota in enumerate(quotas):
+            if quota == 0 or condition == base_conditions[topic]:
+                continue
+            next_quotas = list(quotas)
+            next_quotas[condition] -= 1
+            try:
+                future_exposure, future_tie, future_choices = solve(
+                    index + 1, tuple(next_quotas)
+                )
+            except ValueError:
+                continue
+            item_id = f"T{topic + 1:02d}-{CONDITION_CODES[condition]}"
+            tie = int.from_bytes(
+                hashlib.sha256(
+                    f"{seed}:{participant}:{topic}:{condition}:repeat".encode()
+                ).digest()[:4]
+            )
+            candidates.append(
+                (
+                    item_exposure[item_id] + future_exposure,
+                    tie + future_tie,
+                    (condition, *future_choices),
+                )
+            )
+        if not candidates:
+            raise ValueError("No valid repeat-condition assignment exists.")
+        return min(candidates)
+
+    _, _, choices = solve(0, initial_quotas)
+    return [
+        f"T{topic + 1:02d}-{CONDITION_CODES[condition]}"
+        for topic, condition in zip(selected_topics, choices, strict=True)
+    ]
+
+
+def _display_order(item_ids: list[str], *, participant: int, seed: int) -> list[str]:
+    """Return a deterministic shuffle with repeated topics well separated."""
+    random_seed = int.from_bytes(
+        hashlib.sha256(f"{seed}:{participant}:display".encode()).digest()[:8]
+    )
+    generator = random.Random(random_seed)
+    for _ in range(10_000):
+        candidate = item_ids.copy()
+        generator.shuffle(candidate)
+        positions: dict[str, list[int]] = {}
+        for position, item_id in enumerate(candidate):
+            positions.setdefault(item_id.split("-")[0], []).append(position)
+        if all(
+            len(topic_positions) == 1 or topic_positions[1] - topic_positions[0] >= 5
+            for topic_positions in positions.values()
+        ):
+            return candidate
+    raise ValueError("Could not separate repeated topics in the display order.")
+
+
+@lru_cache(maxsize=None)
+def _complete_assignment_matrix(seed: int) -> tuple[tuple[str, ...], ...]:
+    """Build and cache the locked 50-person matrix before taking prefixes."""
+    offsets = _topic_condition_offsets(seed)
+    item_exposure: Counter[str] = Counter()
+    base_conditions_by_participant: list[list[int]] = []
+    repeat_pairs: list[list[list[int]]] = []
+    for participant in range(MAXIMUM_PARTICIPANTS):
+        base_conditions = [(offset + participant) % 6 for offset in offsets]
+        base_conditions_by_participant.append(base_conditions)
+        base_ids = [
+            f"T{topic + 1:02d}-{CONDITION_CODES[condition]}"
+            for topic, condition in enumerate(base_conditions)
+        ]
+        repeat_ids = _repeat_assignments(
+            participant,
+            seed=seed,
+            base_conditions=base_conditions,
+            item_exposure=item_exposure,
+        )
+        repeat_pairs.append(
+            [
+                [int(item_id[1:3]) - 1, CONDITION_CODES.index(item_id[4:])]
+                for item_id in repeat_ids
+            ]
+        )
+        item_exposure.update([*base_ids, *repeat_ids])
+
+    # Swapping two repeat-condition labels within one participant preserves
+    # that person's four-per-condition quota and their selected topics. Use
+    # those swaps to make every recruitment prefix from 25 onward differ by
+    # at most two item ratings, while making the final 50-person registry
+    # optimal: 60 items receive 13 ratings and 30 receive 14.
+    prefix_exposure: list[Counter[tuple[int, int]]] = []
+    running_exposure: Counter[tuple[int, int]] = Counter()
+    for base_conditions, participant_pairs in zip(
+        base_conditions_by_participant, repeat_pairs, strict=True
+    ):
+        running_exposure.update(enumerate(base_conditions))
+        running_exposure.update(tuple(pair) for pair in participant_pairs)
+        prefix_exposure.append(running_exposure.copy())
+    final_minimum = 60 * 13**2 + 30 * 14**2
+    objective = sum(
+        prefix_exposure[-1][topic, condition] ** 2
         for topic in range(15)
         for condition in range(6)
-    }
-
-
-def _assign_conditions(
-    participant_count: int, selected: list[set[int]], seed: int
-) -> dict[tuple[int, int], int]:
-    targets = _condition_targets(participant_count)
-    for attempt in range(100):
-        randomizer = random.Random(seed + attempt)
-        remaining = {
-            (participant, topic)
-            for participant, topics in enumerate(selected)
-            for topic in topics
-        }
-        assignments: dict[tuple[int, int], int] = {}
-        condition_order = list(range(6))
-        randomizer.shuffle(condition_order)
-        solved = True
-        for condition in condition_order[:-1]:
-            source = 0
-            participant_offset = 1
-            topic_offset = participant_offset + participant_count
-            sink = topic_offset + 15
-            network = _Dinic(sink + 1)
-            for participant in range(participant_count):
-                network.add_edge(source, participant_offset + participant, 2)
-            edges = list(remaining)
-            randomizer.shuffle(edges)
-            for participant, topic in edges:
-                network.add_edge(
-                    participant_offset + participant,
-                    topic_offset + topic,
-                    1,
-                    (participant, topic),
+    )
+    generator = random.Random(seed ^ 0x24A11C)
+    for _ in range(200_000):
+        if objective == final_minimum:
+            break
+        participant = generator.randrange(MAXIMUM_PARTICIPANTS)
+        first, second = generator.sample(range(9), 2)
+        topic_1, condition_1 = repeat_pairs[participant][first]
+        topic_2, condition_2 = repeat_pairs[participant][second]
+        base_conditions = base_conditions_by_participant[participant]
+        if (
+            condition_1 == condition_2
+            or condition_2 == base_conditions[topic_1]
+            or condition_1 == base_conditions[topic_2]
+        ):
+            continue
+        changes = (
+            ((topic_1, condition_1), -1),
+            ((topic_2, condition_2), -1),
+            ((topic_1, condition_2), 1),
+            ((topic_2, condition_1), 1),
+        )
+        old_cost = sum(prefix_exposure[-1][key] ** 2 for key, _ in changes)
+        new_cost = sum(
+            (prefix_exposure[-1][key] + change) ** 2 for key, change in changes
+        )
+        if new_cost > old_cost:
+            continue
+        valid_prefixes = True
+        for prefix_index in range(max(24, participant), MAXIMUM_PARTICIPANTS):
+            changed = {
+                key: prefix_exposure[prefix_index][key] + change
+                for key, change in changes
+            }
+            values = [
+                changed.get(
+                    (topic, condition),
+                    prefix_exposure[prefix_index][topic, condition],
                 )
-            for topic in range(15):
-                network.add_edge(
-                    topic_offset + topic,
-                    sink,
-                    targets[topic, condition],
-                )
-            if network.max_flow(source, sink) != 2 * participant_count:
-                solved = False
+                for topic in range(15)
+                for condition in range(6)
+            ]
+            if max(values) - min(values) > 2:
+                valid_prefixes = False
                 break
-            used = []
-            for participant in range(participant_count):
-                for edge in network.graph[participant_offset + participant]:
-                    if edge[3] is not None and int(edge[1]) == 0:
-                        used.append(edge[3])
-            for edge in used:
-                assignments[edge] = condition
-                remaining.remove(edge)
-        if not solved:
+        if not valid_prefixes:
             continue
-        final_condition = condition_order[-1]
-        if not all(
-            sum(participant == candidate for participant, _ in remaining) == 2
-            for candidate in range(participant_count)
-        ):
-            continue
-        if not all(
-            sum(topic == candidate for _, topic in remaining)
-            == targets[candidate, final_condition]
-            for candidate in range(15)
-        ):
-            continue
-        assignments.update({edge: final_condition for edge in remaining})
-        return assignments
-    raise RuntimeError("Could not construct the balanced condition assignment.")
+        for key, change in changes:
+            for prefix_index in range(participant, MAXIMUM_PARTICIPANTS):
+                prefix_exposure[prefix_index][key] += change
+        repeat_pairs[participant][first][1] = condition_2
+        repeat_pairs[participant][second][1] = condition_1
+        objective += new_cost - old_cost
+    if objective != final_minimum:
+        raise ValueError("Could not balance item exposure across 50 sessions.")
+
+    all_rows = []
+    for participant, (base_conditions, participant_pairs) in enumerate(
+        zip(base_conditions_by_participant, repeat_pairs, strict=True)
+    ):
+        row = [
+            f"T{topic + 1:02d}-{CONDITION_CODES[condition]}"
+            for topic, condition in enumerate(base_conditions)
+        ]
+        row.extend(
+            f"T{topic + 1:02d}-{CONDITION_CODES[condition]}"
+            for topic, condition in participant_pairs
+        )
+        all_rows.append(tuple(_display_order(row, participant=participant, seed=seed)))
+    return tuple(all_rows)
 
 
 def assignment_item_ids(participant_count: int, *, seed: int) -> list[list[str]]:
-    selected = _selected_topics(participant_count)
-    assignments = _assign_conditions(participant_count, selected, seed)
-    all_rows: list[list[str]] = []
-    for participant in range(participant_count):
-        topics_by_condition: dict[int, list[int]] = {
-            condition: [] for condition in range(6)
-        }
-        for topic in selected[participant]:
-            topics_by_condition[assignments[participant, topic]].append(topic)
-        condition_sequence = [
-            (base_condition + participant) % 6
-            for base_condition in (*range(6), *range(6))
-        ]
-        row: list[str] = []
-        for position, condition in enumerate(condition_sequence):
-            topics = topics_by_condition[condition]
-            topics.sort(
-                key=lambda topic: hashlib.sha256(
-                    f"{seed}:{participant}:{condition}:{topic}".encode()
-                ).digest()
-            )
-            topic = topics.pop()
-            row.append(f"T{topic + 1:02d}-{CONDITION_CODES[condition]}")
-        all_rows.append(row)
-    validate_assignment_matrix(all_rows)
-    return all_rows
+    if not 1 <= participant_count <= MAXIMUM_PARTICIPANTS:
+        raise ValueError(
+            f"participant_count must be between 1 and {MAXIMUM_PARTICIPANTS}."
+        )
+    all_rows = [list(row) for row in _complete_assignment_matrix(seed)]
+    selected_rows = all_rows[:participant_count]
+    validate_assignment_matrix(selected_rows)
+    return selected_rows
 
 
 def validate_assignment_matrix(rows: list[list[str]]) -> None:
-    if not rows or any(len(row) != 12 or len(set(row)) != 12 for row in rows):
-        raise ValueError("Every participant must have 12 unique items.")
+    if not rows or len(rows) > MAXIMUM_PARTICIPANTS:
+        raise ValueError("The registry must contain between 1 and 50 participants.")
+    if any(
+        len(row) != ITEMS_PER_PARTICIPANT or len(set(row)) != ITEMS_PER_PARTICIPANT
+        for row in rows
+    ):
+        raise ValueError("Every participant must have 24 unique items.")
     topic_exposure = Counter()
     condition_exposure = Counter()
     item_exposure = Counter()
-    position_condition = Counter()
     for row in rows:
         topics = [item_id.split("-")[0] for item_id in row]
         conditions = [item_id.split("-")[1] for item_id in row]
-        if len(set(topics)) != 12:
-            raise ValueError("A participant has a repeated topic.")
-        if Counter(conditions) != Counter(
-            {condition: 2 for condition in CONDITION_CODES}
+        topic_counts = Counter(topics)
+        if sorted(topic_counts.values()) != [1] * 6 + [2] * 9:
+            raise ValueError("A participant must cover all topics and repeat nine.")
+        frequencies = [Counter(conditions).get(code, 0) for code in CONDITION_CODES]
+        if frequencies != [4] * 6:
+            raise ValueError("A participant must receive four items per condition.")
+        topic_positions: dict[str, list[int]] = {}
+        for position, topic in enumerate(topics):
+            topic_positions.setdefault(topic, []).append(position)
+        if any(
+            len(positions) == 2 and positions[1] - positions[0] < 5
+            for positions in topic_positions.values()
         ):
-            raise ValueError("A participant does not have two items per condition.")
+            raise ValueError("Repeated topics are too close in the display order.")
         topic_exposure.update(topics)
         condition_exposure.update(conditions)
         item_exposure.update(row)
-        position_condition.update(enumerate(conditions, start=1))
-    if len(set(topic_exposure.values())) != 1:
-        raise ValueError("Topic exposure is not exact.")
-    if len(set(condition_exposure.values())) != 1:
+    if max(topic_exposure.values()) - min(topic_exposure.values()) > 1:
+        raise ValueError("Topic exposure differs by more than one.")
+    if condition_exposure != Counter(
+        {condition: len(rows) * 4 for condition in CONDITION_CODES}
+    ):
         raise ValueError("Condition exposure is not exact.")
-    if max(item_exposure.values()) - min(item_exposure.values()) > 1:
-        raise ValueError("Individual item exposure differs by more than one.")
-    for position in range(1, 13):
-        values = [
-            position_condition[position, condition] for condition in CONDITION_CODES
-        ]
-        if max(values) - min(values) > 1:
-            raise ValueError(f"Condition order is imbalanced at position {position}.")
+    expected_items = {
+        f"T{topic:02d}-{condition}"
+        for topic in range(1, 16)
+        for condition in CONDITION_CODES
+    }
+    complete_item_exposure = Counter({item_id: 0 for item_id in expected_items})
+    complete_item_exposure.update(item_exposure)
+    item_range = max(complete_item_exposure.values()) - min(
+        complete_item_exposure.values()
+    )
+    if len(rows) >= 25 and item_range > 2:
+        raise ValueError("Individual item exposure differs by more than two.")
+    if len(rows) == MAXIMUM_PARTICIPANTS and item_range > 1:
+        raise ValueError("Final individual item exposure differs by more than one.")
+    for block_start in range(0, len(rows) - 5, 6):
+        block = rows[block_start : block_start + 6]
+        for topic in range(1, 16):
+            topic_id = f"T{topic:02d}"
+            conditions = {
+                item_id.split("-")[1]
+                for row in block
+                for item_id in row
+                if item_id.startswith(f"{topic_id}-")
+            }
+            if conditions != set(CONDITION_CODES):
+                raise ValueError(
+                    f"Six-person block does not rotate all conditions for {topic_id}."
+                )
 
 
 def session_rows(
@@ -313,7 +407,7 @@ def _write_csv(
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -329,7 +423,7 @@ def build_test_data(
         created_at=date.today(),
         id_factory=lambda index: (
             f"acl-test-{index:02d}-"
-            + hashlib.sha256(f"acl-test-{index}".encode()).hexdigest()[:8]
+            + hashlib.sha256(f"acl-test-24-items-{index}".encode()).hexdigest()[:8]
         ),
         seed=20260806,
     )
@@ -354,12 +448,12 @@ def build_production(
         created_at=date.today(),
         id_factory=lambda index: (
             f"acl-test-{index:02d}-"
-            + hashlib.sha256(f"acl-test-{index}".encode()).hexdigest()[:8]
+            + hashlib.sha256(f"acl-test-24-items-{index}".encode()).hexdigest()[:8]
         ),
         seed=20260806,
     )
     real_rows = session_rows(
-        25,
+        MAXIMUM_PARTICIPANTS,
         is_test=False,
         created_at=date.today(),
         id_factory=lambda _: f"participant-{secrets.token_urlsafe(16)}",
@@ -420,7 +514,10 @@ def main() -> int:
             urls_path=args.production_urls,
             base_url=args.base_url,
         )
-        print(f"Built 25 private production URLs at {args.production_urls}.")
+        print(
+            f"Built {MAXIMUM_PARTICIPANTS} private production URLs at "
+            f"{args.production_urls}."
+        )
     return 0
 
 

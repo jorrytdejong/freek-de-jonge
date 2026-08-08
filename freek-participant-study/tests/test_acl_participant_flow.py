@@ -10,9 +10,9 @@ from app.storage import CSVProgressStorage
 
 
 class ACLParticipantFlowTest(unittest.TestCase):
-    def test_twelve_items_can_be_rated_reviewed_and_submitted(self) -> None:
+    def test_twenty_four_items_can_be_rated_reviewed_and_submitted(self) -> None:
         app_path = Path(__file__).resolve().parents[1] / "streamlit_app.py"
-        session_id = "acl-test-01-913a93e2"
+        session_id = "acl-test-01-062f6e4e"
         with tempfile.TemporaryDirectory() as temporary_directory:
             progress_path = Path(temporary_directory) / "progress.csv"
             storage = CSVProgressStorage(progress_path)
@@ -36,17 +36,17 @@ class ACLParticipantFlowTest(unittest.TestCase):
                 app.query_params["session"] = session_id
                 app.query_params["page"] = "item-1"
                 app.run(timeout=20)
-                for position in range(1, 13):
+                for position in range(1, 25):
                     self.assertEqual(len(app.select_slider), 4)
                     for slider in app.select_slider:
                         slider.set_value(3)
                     app.run(timeout=20)
-                    label = "Naar controle" if position == 12 else "Volgende grap"
+                    label = "Naar controle" if position == 24 else "Volgende grap"
                     next(
                         button for button in app.button if button.label == label
                     ).click().run(timeout=20)
                 self.assertEqual(app.query_params["page"][0], "review")
-                self.assertEqual(len(app.expander), 12)
+                self.assertEqual(len(app.expander), 24)
                 app.text_area[0].set_value("Algemene testopmerking.").run(timeout=20)
                 next(
                     button
@@ -57,7 +57,7 @@ class ACLParticipantFlowTest(unittest.TestCase):
             saved = storage.load_progress(session_id)
             assert saved is not None
             self.assertEqual(saved.status, "submitted")
-            self.assertEqual(len(saved.responses), 12)
+            self.assertEqual(len(saved.responses), 24)
             self.assertEqual(saved.final_comment, "Algemene testopmerking.")
             self.assertEqual(len(saved.submissions), 1)
 

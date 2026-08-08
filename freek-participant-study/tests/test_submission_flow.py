@@ -30,7 +30,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 },
             ):
                 app = AppTest.from_file(app_path)
-                app.query_params["session"] = "acl-test-01-913a93e2"
+                app.query_params["session"] = "acl-test-01-062f6e4e"
                 app.query_params["page"] = "debrief"
                 app.run(timeout=20)
 
@@ -116,7 +116,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                         for markdown in app.markdown
                     )
                 )
-                self.assertEqual(len(app.expander), 12)
+                self.assertEqual(len(app.expander), 24)
                 self.assertNotIn("Nieuwe testinzending", [b.label for b in app.button])
                 self.assertFalse(
                     any(b.label.startswith("Bewerk grap") for b in app.button)

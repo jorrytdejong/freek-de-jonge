@@ -12,7 +12,7 @@ from app.storage import CSVProgressStorage
 class ResumeFlowTest(unittest.TestCase):
     def test_partial_item_is_restored_from_anonymous_link(self) -> None:
         app_path = Path(__file__).resolve().parents[1] / "streamlit_app.py"
-        session_id = "acl-test-10-86726b66"
+        session_id = "acl-test-10-70b41995"
         with tempfile.TemporaryDirectory() as temporary_directory:
             progress_path = Path(temporary_directory) / "progress.csv"
             storage = CSVProgressStorage(progress_path)

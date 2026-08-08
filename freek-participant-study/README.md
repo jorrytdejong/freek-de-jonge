@@ -7,11 +7,14 @@ Dutch Streamlit application for the blinded `acl-1` humor-generation study.
 - 90 accepted `gpt-5.6-terra` jokes: 15 topics × 6 conditions.
 - Conditions: baseline, script opposition, and validated GTVH, each with Freek
   style guidance off and on.
-- Every participant rates 12 jokes from 12 different topics.
-- Every participant sees exactly two jokes from each condition.
+- Every participant rates 24 unique jokes: all 15 topics, with nine topics
+  repeated under a different condition.
+- Every participant sees each of the six conditions exactly four times.
+- A single precomputed registry supports recruitment from 25 up to 50 valid
+  participants; every six-person block rotates all conditions over every topic.
 - Every joke receives four required 1–5 ratings: funniness, Freek-style
   resemblance, coherence, and originality.
-- Expected duration: approximately 10 minutes.
+- Expected duration: approximately 8–10 minutes.
 
 The old `pilot-1` modules and CSV files remain in the repository for historical
 reproducibility. The deployed `streamlit_app.py` uses only the `app/acl_*`
@@ -28,7 +31,7 @@ streamlit run streamlit_app.py
 
 Example test link:
 
-<http://localhost:8501/?session=acl-test-01-913a93e2>
+<http://localhost:8501/?session=acl-test-01-062f6e4e>
 
 ### Fake participant reward
 
@@ -281,16 +284,16 @@ Internal-only routes:
 
 ## Test links
 
-1. `?session=acl-test-01-913a93e2`
-2. `?session=acl-test-02-979d4f77`
-3. `?session=acl-test-03-38452f51`
-4. `?session=acl-test-04-cb9df523`
-5. `?session=acl-test-05-d63af247`
-6. `?session=acl-test-06-7227edfd`
-7. `?session=acl-test-07-b5a26fc2`
-8. `?session=acl-test-08-8c0b1676`
-9. `?session=acl-test-09-030dcad5`
-10. `?session=acl-test-10-86726b66`
+1. `?session=acl-test-01-062f6e4e`
+2. `?session=acl-test-02-9b7bec3d`
+3. `?session=acl-test-03-5f363b82`
+4. `?session=acl-test-04-d0090cbe`
+5. `?session=acl-test-05-51f4cade`
+6. `?session=acl-test-06-15d24940`
+7. `?session=acl-test-07-4442c4c8`
+8. `?session=acl-test-08-f5263daf`
+9. `?session=acl-test-09-f85baec3`
+10. `?session=acl-test-10-70b41995`
 
 ## Validation
 

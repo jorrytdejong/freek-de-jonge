@@ -707,7 +707,8 @@ def render_intro(
     render_header()
     st.title("Over het onderzoek")
     st.write(
-        "Je beoordeelt 12 korte, experimentele grappen. Per grap geef je vier "
+        f"Je beoordeelt {ITEMS_PER_PARTICIPANT} korte, experimentele grappen. "
+        "Per grap geef je vier "
         "scores. Deelname duurt ongeveer 10 minuten."
     )
     st.markdown("## Freek de Jonge")
@@ -767,7 +768,7 @@ def render_profile_complete(
         return
     render_header()
     st.title("Klaar om te beginnen")
-    st.write("Je krijgt nu 12 grappen, één per pagina.")
+    st.write(f"Je krijgt nu {ITEMS_PER_PARTICIPANT} grappen, één per pagina.")
     if st.button("Naar de eerste grap", type="primary"):
         persist_progress(session, assignment, current_page="item-1")
         navigate_to_page(session, "item-1")
@@ -818,7 +819,10 @@ def render_rating_item(
         st.session_state.get(f"review_edit:{session.session_id}") == assigned.item_id
     )
     render_header()
-    st.progress(position / len(assignment.items), text=f"Grap {position} van 12")
+    st.progress(
+        position / len(assignment.items),
+        text=f"Grap {position} van {ITEMS_PER_PARTICIPANT}",
+    )
     render_save_status(session)
     st.markdown(
         f'<article class="joke-card"><p>{escape(stimulus.text)}</p></article>',
@@ -992,7 +996,12 @@ def render_review(
         render_rating_item(session, assignment, stimuli, incomplete)
         return
     render_header()
-    st.progress(1.0, text="12 van 12 grappen beoordeeld")
+    st.progress(
+        1.0,
+        text=(
+            f"{ITEMS_PER_PARTICIPANT} van {ITEMS_PER_PARTICIPANT} grappen beoordeeld"
+        ),
+    )
     render_save_status(session)
     st.title("Controleer je antwoorden")
     st.write("Je kunt iedere grap nog openen en aanpassen vóór het indienen.")
@@ -1011,8 +1020,9 @@ def render_review(
     back_column, submit_column = st.columns(2)
     with back_column:
         if st.button("Terug naar laatste grap", use_container_width=True):
-            persist_progress(session, assignment, current_page="item-12")
-            navigate_to_page(session, "item-12")
+            last_page = f"item-{ITEMS_PER_PARTICIPANT}"
+            persist_progress(session, assignment, current_page=last_page)
+            navigate_to_page(session, last_page)
     with submit_column:
         if st.button("Definitief indienen", type="primary", use_container_width=True):
             submit_progress(session, assignment)

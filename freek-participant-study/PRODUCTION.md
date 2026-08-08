@@ -4,18 +4,20 @@ Do not distribute real participant URLs until the staging checklist passes.
 
 ## Private links
 
-Generate the 25 balanced private URLs only once:
+Generate the 50 balanced private URLs only once:
 
 ```bash
 python scripts/build_acl_study_data.py \
-  --production-registry data/private/acl_sessions.production.csv \
-  --production-urls data/private/acl_participant_urls.production.csv \
+  --production-registry data/private/acl_sessions_50x24.production.csv \
+  --production-urls data/private/acl_participant_urls_50x24.production.csv \
   --base-url https://freek-participant-pilot.streamlit.app/
 ```
 
 The command refuses to overwrite either output. Both files are ignored by Git.
 Back them up in the protected research folder. The registry contains ten test
-links plus 25 real links; the URL file contains only the 25 real links.
+links plus 50 real links; the URL file contains only the 50 real links. Use this
+one registry whether recruitment ends at 25, 40, or 50 valid participants; do
+not generate a second assignment schedule for a different sample size.
 
 Paste the complete registry into the private `sessions_csv` Streamlit secret.
 Never expose `assigned_item_ids` to participants.
