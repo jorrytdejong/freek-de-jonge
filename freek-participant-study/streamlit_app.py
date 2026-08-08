@@ -119,19 +119,18 @@ def render_debrief_background() -> None:
         /* coffee-watercolor-background */
         [data-testid="stAppViewContainer"] {{
             background-color: #fbf5ec;
-            background-image:
-                linear-gradient(rgba(255, 252, 247, 0.12), rgba(255, 252, 247, 0.12)),
-                url("{background_uri}");
+            background-blend-mode: multiply;
+            background-image: url("{background_uri}");
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
         }}
         [data-testid="stMainBlockContainer"] {{
-            background: rgba(255, 255, 255, 0.88);
+            background: rgba(255, 255, 255, 0.68);
             border-radius: 24px;
-            box-shadow: 0 16px 50px rgba(91, 65, 42, 0.10);
-            backdrop-filter: blur(1.5px);
+            box-shadow: 0 16px 50px rgba(91, 65, 42, 0.08);
+            backdrop-filter: blur(0.5px);
         }}
         @media (max-width: 700px) {{
             [data-testid="stAppViewContainer"] {{
@@ -139,7 +138,7 @@ def render_debrief_background() -> None:
                 background-size: auto 100vh;
             }}
             [data-testid="stMainBlockContainer"] {{
-                background: rgba(255, 255, 255, 0.92);
+                background: rgba(255, 255, 255, 0.80);
                 border-radius: 0;
                 box-shadow: none;
             }}
