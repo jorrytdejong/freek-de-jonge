@@ -26,6 +26,14 @@ class AdminFlowTest(unittest.TestCase):
                 {
                     "FREEK_STUDY_ADMIN_PASSWORD": "correct-password",
                     "FREEK_STUDY_PROGRESS_PATH": str(Path(directory) / "progress.csv"),
+                    "FREEK_STUDY_REWARDS_ENABLED": "true",
+                    "FREEK_STUDY_REWARD_MODE": "tremendous_sandbox",
+                    "FREEK_STUDY_REWARD_LEDGER_PATH": str(
+                        Path(directory) / "rewards.csv"
+                    ),
+                    "TREMENDOUS_API_KEY": "TEST_safe",
+                    "TREMENDOUS_CAMPAIGN_ID": "CAMPAIGN-1",
+                    "TREMENDOUS_FUNDING_SOURCE_ID": "BALANCE",
                 },
             ),
         ):
@@ -45,8 +53,45 @@ class AdminFlowTest(unittest.TestCase):
             self.assertTrue(
                 any("Onderzoeksdashboard" in title.value for title in app.title)
             )
-            self.assertEqual(len(app.metric), 5)
-            self.assertEqual(len(app.get("download_button")), 2)
+            self.assertEqual(len(app.metric), 16)
+            self.assertTrue(any(metric.label == "Aangemaakt" for metric in app.metric))
+            self.assertTrue(
+                any("Beloningsoperaties" in markdown.value for markdown in app.markdown)
+            )
+            self.assertTrue(
+                any(
+                    control.label == "Beloningsselectie" and control.value == "Alles"
+                    for control in app.segmented_control
+                )
+            )
+            self.assertTrue(
+                any(
+                    metric.label == "Resterende beloningen" and metric.value == "25"
+                    for metric in app.metric
+                )
+            )
+            self.assertTrue(
+                any(
+                    success.value == "Nieuwe uitgifte is actief."
+                    for success in app.success
+                )
+            )
+            self.assertTrue(
+                any(
+                    checkbox.label.startswith("Ik bevestig")
+                    for checkbox in app.checkbox
+                )
+            )
+            self.assertTrue(
+                any(
+                    button.label == "Tremendous-bezorgstatussen vernieuwen"
+                    for button in app.button
+                )
+            )
+            self.assertTrue(
+                any("productiecanary" in markdown.value for markdown in app.markdown)
+            )
+            self.assertEqual(len(app.get("download_button")), 3)
 
     def test_participant_route_does_not_expose_admin_controls(self):
         with (
@@ -56,6 +101,7 @@ class AdminFlowTest(unittest.TestCase):
                 {
                     "FREEK_STUDY_ADMIN_PASSWORD": "correct-password",
                     "FREEK_STUDY_PROGRESS_PATH": str(Path(directory) / "progress.csv"),
+                    "FREEK_STUDY_REWARDS_ENABLED": "false",
                 },
             ),
         ):

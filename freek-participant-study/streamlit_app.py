@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import os
+from decimal import Decimal
 from html import escape
 from pathlib import Path
 from urllib.parse import urlencode
@@ -14,7 +16,9 @@ from streamlit.errors import StreamlitSecretNotFoundError
 from app.acl_admin import (
     ADMIN_SCOPES,
     ADMIN_STATUSES,
+    SCOPE_ALL,
     SCOPE_REAL,
+    SCOPE_TEST,
     STATUS_SUBMITTED,
     build_condition_summary,
     build_dimension_summary,
@@ -58,6 +62,28 @@ from app.acl_sessions import (
 )
 from app.acl_stimuli import JokeItem, StimulusValidationError, load_stimuli
 from app.participant import ProfileValidationError, validate_profile
+from app.rewards import (
+    CSVRewardLedger,
+    FakeRewardProvider,
+    RewardBudgetExceededError,
+    RewardClaim,
+    RewardConfigurationError,
+    RewardIssuancePausedError,
+    RewardLedgerError,
+    RewardNotEligibleError,
+    RewardService,
+    RewardSettings,
+    TremendousAPIError,
+    TremendousProductionRewardProvider,
+    TremendousSandboxRewardProvider,
+    build_reward_operations_overview,
+    build_reward_preflight,
+    filter_reward_records,
+    participant_reward_reference,
+    preflight_rows,
+    reward_audit_csv,
+    reward_audit_rows,
+)
 from app.storage import (
     AlreadySubmittedError,
     ProgressStorageError,
@@ -71,6 +97,56 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
+
+DEBRIEF_BACKGROUND_PATH = (
+    Path(__file__).resolve().parent / "assets" / "coffee-watercolor-background.webp"
+)
+
+
+@st.cache_data(show_spinner=False)
+def debrief_background_data_uri() -> str:
+    """Return the selected background as an embedded, deployment-safe asset."""
+    encoded = base64.b64encode(DEBRIEF_BACKGROUND_PATH.read_bytes()).decode("ascii")
+    return f"data:image/webp;base64,{encoded}"
+
+
+def render_debrief_background() -> None:
+    """Apply the watercolor coffee pattern exclusively to the debrief page."""
+    background_uri = debrief_background_data_uri()
+    st.markdown(
+        f"""
+        <style>
+        /* coffee-watercolor-background */
+        [data-testid="stAppViewContainer"] {{
+            background-color: #fbf5ec;
+            background-blend-mode: multiply;
+            background-image: url("{background_uri}");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }}
+        [data-testid="stMainBlockContainer"] {{
+            background: rgba(255, 255, 255, 0.68);
+            border-radius: 24px;
+            box-shadow: 0 16px 50px rgba(91, 65, 42, 0.08);
+            backdrop-filter: blur(0.5px);
+        }}
+        @media (max-width: 700px) {{
+            [data-testid="stAppViewContainer"] {{
+                background-position: center top;
+                background-size: auto 100vh;
+            }}
+            [data-testid="stMainBlockContainer"] {{
+                background: rgba(255, 255, 255, 0.80);
+                border-radius: 0;
+                box-shadow: none;
+            }}
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def configured_secrets() -> dict[str, object]:
@@ -96,6 +172,49 @@ try:
 except (ProgressStorageError, StorageConfigurationError) as error:
     st.error(f"Opslagconfiguratie mislukt: {error}")
     st.stop()
+
+try:
+    reward_settings = RewardSettings.from_sources(
+        environ=dict(os.environ),
+        secrets=configured_secrets(),
+    )
+except RewardConfigurationError as error:
+    st.error(f"Beloningsconfiguratie mislukt: {error}")
+    st.stop()
+if reward_settings.mode == "fake":
+    reward_provider = FakeRewardProvider()
+elif reward_settings.mode == "tremendous_sandbox":
+    reward_provider = TremendousSandboxRewardProvider(
+        api_key=reward_settings.tremendous_api_key,
+        campaign_id=reward_settings.tremendous_campaign_id,
+        funding_source_id=reward_settings.tremendous_funding_source_id,
+    )
+else:
+    reward_provider = TremendousProductionRewardProvider(
+        api_key=reward_settings.tremendous_api_key,
+        campaign_id=reward_settings.tremendous_campaign_id,
+        funding_source_id=reward_settings.tremendous_funding_source_id,
+        allow_real_money=reward_settings.real_rewards_acknowledged,
+    )
+reward_service = None
+if reward_settings.enabled:
+    reward_ledger = CSVRewardLedger(reward_settings.ledger_path)
+    try:
+        reward_ledger.scrub_legacy_links()
+    except RewardLedgerError as error:
+        st.error(f"Beloningsopslag kon niet veilig worden gemigreerd: {error}")
+        st.stop()
+    reward_service = RewardService(
+        reward_ledger,
+        reward_provider,
+        max_issued_count=reward_settings.max_issued_count,
+        budget_limit=reward_settings.budget_eur,
+        allowed_real_reward_references=frozenset(
+            {reward_settings.production_canary_reward_reference}
+            if reward_settings.production_canary_reward_reference
+            else ()
+        ),
+    )
 
 
 def configured_admin_password() -> str | None:
@@ -161,6 +280,239 @@ def final_comment_key(session_id: str) -> str:
 
 def submissions_key(session_id: str) -> str:
     return f"submissions:{session_id}"
+
+
+def format_euro_amount(amount: object) -> str:
+    return f"€{amount:.2f}".replace(".", ",")
+
+
+def reward_error_message(error: TremendousAPIError) -> str:
+    if error.status_code == 402:
+        return (
+            "De testrekening heeft onvoldoende saldo. De onderzoeker moet het "
+            "sandboxsaldo aanvullen voordat je de testvergoeding kunt openen."
+        )
+    if error.status_code in {401, 403, 422}:
+        return (
+            "De testvergoeding is momenteel verkeerd geconfigureerd. "
+            "Neem contact op met de onderzoeker."
+        )
+    if error.uncertain:
+        return (
+            "Tremendous heeft nog niet bevestigd wat er is gebeurd. Je vaste "
+            "orderreferentie voorkomt een dubbele testvergoeding; probeer zo opnieuw."
+        )
+    return (
+        "Tremendous is tijdelijk niet bereikbaar. Er wordt bij een nieuwe poging "
+        "eerst gecontroleerd of de testvergoeding al bestaat."
+    )
+
+
+def stored_reward_claim(session: ParticipantSession) -> RewardClaim | None:
+    assert reward_service is not None
+    try:
+        return reward_service.load_claim(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+        )
+    except TremendousAPIError as error:
+        st.error(reward_error_message(error))
+        return None
+    except RewardLedgerError:
+        st.error("De status van je testbeloning kon niet veilig worden gelezen.")
+        st.stop()
+
+
+def stored_reward_status(session: ParticipantSession) -> str | None:
+    assert reward_service is not None
+    try:
+        return reward_service.load_status(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+        )
+    except RewardLedgerError:
+        st.error("De status van je testbeloning kon niet veilig worden gelezen.")
+        st.stop()
+
+
+def reward_issuance_is_paused() -> bool:
+    assert reward_service is not None
+    try:
+        return reward_service.load_control().paused
+    except RewardLedgerError:
+        st.error("De uitgiftestatus van de testbeloning kon niet worden gelezen.")
+        st.stop()
+
+
+def issue_reward(session: ParticipantSession, *, eligible: bool) -> None:
+    assert reward_service is not None
+    try:
+        reward_service.claim_reward(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+            eligible=eligible,
+            amount=reward_settings.amount_eur,
+        )
+    except TremendousAPIError as error:
+        st.error(reward_error_message(error))
+        return
+    except RewardBudgetExceededError:
+        st.error(
+            "Het maximale aantal testvergoedingen of het ingestelde testbudget "
+            "is bereikt. Neem contact op met de onderzoeker."
+        )
+        return
+    except RewardIssuancePausedError:
+        st.info(
+            "Nieuwe testvergoedingen zijn tijdelijk gepauzeerd. Je kunt deze pagina "
+            "later opnieuw openen."
+        )
+        return
+    except RewardNotEligibleError:
+        st.error("VEILIGHEIDSSTOP — deze deelnemer hoort niet bij de productiecanary.")
+        return
+    except RewardLedgerError:
+        st.error("Je testbeloning kon niet veilig worden opgeslagen. Probeer opnieuw.")
+        st.stop()
+    st.rerun()
+
+
+def decline_reward(session: ParticipantSession, *, eligible: bool) -> None:
+    assert reward_service is not None
+    try:
+        reward_service.decline_reward(
+            session_id=session.session_id,
+            study_version=STUDY_VERSION,
+            is_test=session.is_test,
+            eligible=eligible,
+            amount=reward_settings.amount_eur,
+        )
+    except RewardLedgerError:
+        st.error("Je keuze kon niet veilig worden opgeslagen. Probeer opnieuw.")
+        st.stop()
+    st.rerun()
+
+
+def render_reward(session: ParticipantSession, *, eligible: bool) -> None:
+    st.divider()
+    st.subheader(f"Een koffie van {format_euro_amount(reward_settings.amount_eur)}")
+    if reward_settings.mode == "tremendous_production" and session.is_test:
+        st.error(
+            "VEILIGHEIDSSTOP — testdeelnemers kunnen nooit een echte vergoeding "
+            "ontvangen."
+        )
+        return
+    if (
+        reward_settings.mode == "tremendous_production"
+        and participant_reward_reference(session.session_id, STUDY_VERSION)
+        != reward_settings.production_canary_reward_reference
+    ):
+        st.info(
+            "De productiecanary is alleen beschikbaar voor de aangewezen deelnemer."
+        )
+        return
+    reward_label = (
+        "echte vergoeding"
+        if reward_settings.mode == "tremendous_production"
+        else "testvergoeding"
+    )
+    st.write(
+        f"Als dank voor je deelname kun je een {reward_label} ter waarde van een "
+        "koffie ontvangen. Deze vergoeding is volledig vrijwillig: je keuze heeft "
+        "geen invloed op je deelname of je ingediende antwoorden."
+    )
+    if reward_settings.mode == "tremendous_sandbox":
+        st.warning("TREMENDOUS-SANDBOX — deze beloning gebruikt alleen testgeld.")
+    elif reward_settings.mode == "tremendous_production":
+        st.error("ECHTE VERGOEDING — deze keuze kan echt geld laten uitbetalen.")
+    else:
+        st.warning("TESTBELONING — deze claim heeft geen geldwaarde.")
+    claim = stored_reward_claim(session)
+    if claim:
+        st.success(
+            f"Je testvergoeding van {format_euro_amount(claim.amount)} is aangemaakt."
+        )
+        if claim.redemption_url:
+            st.link_button(
+                "Open Tremendous om te kiezen of je status te bekijken",
+                claim.redemption_url,
+                type="primary",
+            )
+        else:
+            st.code(claim.reference, language=None)
+        st.caption(
+            "Tremendous verwerkt de gegevens die nodig zijn voor de gekozen "
+            "uitbetalingsvorm. Deze gegevens worden niet aan je onderzoeksantwoorden "
+            "toegevoegd. Een al gebruikte link toont de actuele uitbetalingsstatus."
+        )
+        return
+    reward_status = stored_reward_status(session)
+    if reward_status == "issued":
+        st.info(
+            "Je testvergoeding is al veilig aangemaakt, maar de Tremendous-link "
+            "kon nu niet worden vernieuwd."
+        )
+        if st.button(
+            "Probeer de Tremendous-link opnieuw",
+            type="primary",
+            key=f"reward_link_retry:{session.session_id}",
+        ):
+            st.rerun()
+        return
+    issuance_paused = reward_issuance_is_paused()
+    if reward_status == "declined":
+        st.info("Je hebt ervoor gekozen geen testvergoeding te ontvangen.")
+        st.caption(
+            "Deze keuze is apart van je onderzoeksantwoorden opgeslagen. "
+            "Je kunt hieronder alsnog voor de testvergoeding kiezen."
+        )
+        if issuance_paused:
+            st.info(
+                "Nieuwe testvergoedingen zijn tijdelijk gepauzeerd. Je eerdere "
+                "keuze blijft opgeslagen."
+            )
+        elif st.button(
+            "Toch een testvergoeding ontvangen",
+            type="primary",
+            key=f"reward_reconsider:{session.session_id}",
+        ):
+            issue_reward(session, eligible=eligible)
+        return
+    if issuance_paused:
+        st.info(
+            "Nieuwe testvergoedingen zijn tijdelijk gepauzeerd. Je onderzoeksantwoorden "
+            "zijn wel veilig ingediend; open deze pagina later opnieuw."
+        )
+        if st.button(
+            "Geen testvergoeding, bedankt",
+            key=f"reward_decline_paused:{session.session_id}",
+        ):
+            decline_reward(session, eligible=eligible)
+        return
+    st.write("Wil je de optionele testvergoeding ontvangen?")
+    accept_column, decline_column = st.columns(2)
+    with accept_column:
+        if st.button(
+            "Ontvang mijn testvergoeding",
+            type="primary",
+            use_container_width=True,
+            key=f"reward_accept:{session.session_id}",
+        ):
+            issue_reward(session, eligible=eligible)
+    with decline_column:
+        if st.button(
+            "Geen testvergoeding, bedankt",
+            use_container_width=True,
+            key=f"reward_decline:{session.session_id}",
+        ):
+            decline_reward(session, eligible=eligible)
+    st.caption(
+        "Bij accepteren opent Tremendous in een afzonderlijke pagina. Je kiest daar "
+        "zelf een beschikbare uitbetalingsvorm."
+    )
 
 
 def collect_progress_state(
@@ -677,6 +1029,7 @@ def render_debrief(
     if not submissions:
         render_review(session, assignment, stimuli)
         return
+    render_debrief_background()
     render_header()
     st.title("Bedankt voor je deelname")
     st.success("Je antwoorden zijn veilig ingediend.")
@@ -685,6 +1038,8 @@ def render_debrief(
         "We vergelijken verschillende generatieprocedures zonder die labels aan "
         "deelnemers te tonen."
     )
+    if reward_settings.enabled:
+        render_reward(session, eligible=bool(submissions))
     if session.is_test:
         st.info(f"Testinzending {len(submissions)} is opgeslagen.")
         if st.button("Nieuwe testinzending"):
@@ -796,7 +1151,161 @@ def render_admin_dashboard(
             rows_to_csv(RATING_COLUMNS, selected.ratings).encode("utf-8-sig"),
             file_name="ratings.csv",
         )
+    render_reward_operations()
     render_footer()
+
+
+def render_reward_operations() -> None:
+    """Show reward delivery health only inside the authenticated admin route."""
+    if reward_service is None:
+        return
+    st.markdown("## Beloningsoperaties")
+    try:
+        control = reward_service.load_control()
+    except RewardLedgerError:
+        st.error("De uitgiftebediening kon niet veilig worden gelezen.")
+        return
+    if control.paused:
+        st.warning(
+            "NIEUWE UITGIFTE GEPAUZEERD — bestaande beloningen blijven toegankelijk."
+        )
+        if st.button("Nieuwe uitgifte hervatten", type="primary"):
+            try:
+                reward_service.set_paused(False)
+            except RewardLedgerError:
+                st.error("De uitgifte kon niet veilig worden hervat.")
+            else:
+                st.rerun()
+    else:
+        st.success("Nieuwe uitgifte is actief.")
+        pause_confirmed = st.checkbox(
+            "Ik bevestig dat ik nieuwe testvergoedingen tijdelijk wil pauzeren."
+        )
+        if st.button("Nieuwe uitgifte pauzeren", disabled=not pause_confirmed):
+            try:
+                reward_service.set_paused(True)
+            except RewardLedgerError:
+                st.error("De uitgifte kon niet veilig worden gepauzeerd.")
+            else:
+                st.rerun()
+    if reward_settings.mode in {"tremendous_sandbox", "tremendous_production"}:
+        if st.button("Tremendous-bezorgstatussen vernieuwen"):
+            try:
+                reconciliation = reward_service.reconcile_issued_rewards()
+            except RewardLedgerError:
+                st.error("De vernieuwde Tremendous-status kon niet worden opgeslagen.")
+            else:
+                st.session_state["reward_reconciliation_notice"] = {
+                    "checked": reconciliation.checked_count,
+                    "updated": reconciliation.updated_count,
+                    "failed": reconciliation.failed_count,
+                }
+                st.rerun()
+        if notice := st.session_state.pop("reward_reconciliation_notice", None):
+            if notice["failed"]:
+                st.warning(
+                    f"{notice['checked']} status(sen) gecontroleerd; "
+                    f"{notice['failed']} konden niet worden opgehaald."
+                )
+            else:
+                st.success(
+                    f"{notice['checked']} status(sen) gecontroleerd; "
+                    f"{notice['updated']} gewijzigd."
+                )
+    reward_scope = st.segmented_control(
+        "Beloningsselectie",
+        ADMIN_SCOPES,
+        default=SCOPE_ALL,
+        selection_mode="single",
+        key="reward_operations_scope",
+    )
+    include_test = None if reward_scope == SCOPE_ALL else reward_scope == SCOPE_TEST
+    try:
+        all_records = reward_service.ledger.list_records()
+        records = filter_reward_records(all_records, include_test=include_test)
+    except RewardLedgerError:
+        st.error("De beloningsadministratie kon niet veilig worden gelezen.")
+        return
+    overview = build_reward_operations_overview(records)
+    capacity_overview = build_reward_operations_overview(all_records)
+    st.caption(
+        "Los van onderzoeksantwoorden; bevat alleen pseudonieme operationele gegevens."
+    )
+    metrics = st.columns(6)
+    metrics[0].metric("Keuzes", overview.total_count)
+    metrics[1].metric("Aangemaakt", overview.issued_count)
+    metrics[2].metric("Geweigerd", overview.declined_count)
+    metrics[3].metric("Mislukt", overview.failed_count)
+    metrics[4].metric("Bezig", overview.issuing_count)
+    amount_label = (
+        format_euro_amount(overview.issued_amount)
+        if overview.currency in {None, "EUR"}
+        else f"{overview.issued_amount} {overview.currency}"
+    )
+    metrics[5].metric("Aangemaakte waarde", amount_label)
+    capacity_metrics = st.columns(5)
+    remaining_count = max(
+        0, reward_settings.max_issued_count - capacity_overview.reserved_count
+    )
+    remaining_budget = max(
+        reward_settings.budget_eur - capacity_overview.reserved_amount,
+        Decimal("0"),
+    )
+    capacity_metrics[0].metric(
+        "Resterende beloningen",
+        remaining_count,
+        help=f"Harde limiet: {reward_settings.max_issued_count}",
+    )
+    capacity_metrics[1].metric(
+        "Resterend budget",
+        format_euro_amount(remaining_budget),
+        help=f"Hard budget: {format_euro_amount(reward_settings.budget_eur)}",
+    )
+    capacity_metrics[2].metric(
+        "Link actief",
+        overview.provider_succeeded_count,
+        help="Tremendous-bezorgstatus SUCCEEDED; dit bewijst geen verzilvering.",
+    )
+    capacity_metrics[3].metric(
+        "Providerfout",
+        overview.provider_failed_count,
+    )
+    capacity_metrics[4].metric("Niet gecontroleerd", overview.unchecked_count)
+    if overview.failed_count:
+        st.warning(
+            f"{overview.failed_count} beloning(en) zijn mislukt en kunnen veilig "
+            "opnieuw worden geprobeerd via de deelnemerslink."
+        )
+    if overview.stuck_count:
+        st.warning(
+            f"{overview.stuck_count} beloning(en) staan langer dan tien minuten op "
+            "'issuing'. Een nieuwe poging gebruikt dezelfde orderreferentie."
+        )
+    audit_rows = reward_audit_rows(records)
+    st.dataframe(audit_rows, hide_index=True, width="stretch")
+    st.download_button(
+        "Beloningslog downloaden",
+        reward_audit_csv(records).encode("utf-8-sig"),
+        file_name="reward_operations.csv",
+        mime="text/csv",
+    )
+    st.markdown("## Checkpoint 12 · productiecanary")
+    preflight = build_reward_preflight(
+        reward_settings,
+        all_records,
+        control,
+        admin_password_configured=bool(configured_admin_password()),
+    )
+    if preflight.ready_for_production:
+        st.error(
+            "PRODUCTIECANARY GEREED — uitsluitend de aangewezen deelnemer kan "
+            "maximaal één echte beloning ontvangen."
+        )
+    elif preflight.ready_for_sandbox_pilot:
+        st.success("GEREED VOOR SANDBOXPILOT — productie blijft vergrendeld.")
+    else:
+        st.error("NIET GEREED — los de controles met 'ACTIE NODIG' eerst op.")
+    st.dataframe(preflight_rows(preflight), hide_index=True, width="stretch")
 
 
 def render_admin(

@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_dir": "category_jsons",
+    "selection": "Top 5 unique segments where humor_structured.script_opposition.detected is true, ranked by script_opposition.confidence.",
+    "max_examples": 5,
+    "text_field": "segments[].text",
+    "analysis_field": "segments[].humor_structured.script_opposition"
+  },
+  "examples": [
+    {
+      "text": "En theaters, sportscholen, sauna's, gemeenschappelijke wc's en douches op de campings en vakantieparken. Sportkantines, coffeeshops, casino's en sekswerkers. Kerken, congrescentra en crematoria, etc.",
+      "script_a": "Script A (normale lezing) leest de passage als satirische aanval op maatschappelijke en beleidsmatige absurditeiten tijdens de pandemie, waarbij de provocerende uitspraken dienen om het publiek te laten zien hoe belachelijk sommige maatregelen zijn. Het humoristische effect komt voort uit overdrijving, zelfspot en ironie die kritiek levert op autoriteit en sociale druk.",
+      "script_b": "Script B (tegenstrijdige lezing) leest dezelfde passage als een impliciete normalisatie van hardere, mogelijk onethische beleidsvoorkeuren (bijv. leeftijdsgrenzen, asymmetrische zorgtoegang), en ziet de humor als een manier om morele angst te neutraliseren terwijl de onderliggende boodschap cynisch blijft over de waarde van ouderen en armen. Trigger: “85 als maximale leeftijd” (D66-voorstel) fungeert als scharnierpunt voor een ernstigere, minder kritiekloze interpretatie.",
+      "opposition_type": "literal/figurative, social norm violation, possible/impossible",
+      "trigger": "85 als maximale leeftijd",
+      "setup_reading": "Het publiek leest een maatschappijkritische monoloog die normaalweg als satire wordt gezien en accepteert de setting van crisistijd en absurd beleid.",
+      "punch_reinterpretation": "Na de trigger wordt de tekst gelezen als een kritiek op het potentieel ontheemmen van ouderen en gemarginaliseerden, of als cynische demonstratie van hoe beleid mensen in hiërarchische rollen zet, wat de lach doet verschuiven naar morele reflectie.",
+      "ambiguity_type": "social norm violation, irony",
+      "confidence": 0.78,
+      "source_file": "2020 - Freek de Jonge - Asociale afstand - Carre 5-7-2020_laughter_with_humor_categories.json",
+      "segment_index": 17
+    },
+    {
+      "text": "En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat.",
+      "script_a": "Script A: The normal reading is that the speaker is framing a political/societal fix as achievable only by a specific football result; it treats the analogy as a conceivable, if exaggerated, possibility.",
+      "script_b": "Script B: The laugh-triggering reading treats the line as satirical hyperbole—sports outcomes cannot literally fix politics, revealing the statement as figurative critique.",
+      "opposition_type": "literal/figurative",
+      "trigger": "als Twente van PSV wint",
+      "setup_reading": "The setup frames current events as topical and in need of serious resolution, priming the audience to expect commentary on politics.",
+      "punch_reinterpretation": "The audience reinterprets the setup to see the line as a hyperbolic joke: a sports result serves as a symbolic fix rather than a real solution.",
+      "ambiguity_type": "literal/figurative",
+      "confidence": 0.78,
+      "source_file": "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_with_humor_categories.json",
+      "segment_index": 2
+    },
+    {
+      "text": "Maar bij de tweede wind vallen de zuurstofmaskers toch spontaan uit de luikjes. En dan hang je. En die controles op die vliegvelden vind ik ook zo mensonterend. Op Schiphol heb ik geen probleem, want ik ben een bekende Nederlander.",
+      "script_a": "Airport security checks apply uniformly; the masks failing and the dehumanizing atmosphere are observed as a general critique.",
+      "script_b": "Celebrity status grants privilege; the speaker can bypass checks, revealing a social hierarchy.",
+      "opposition_type": "high status/low status; literal/figurative; social norm violation",
+      "trigger": "Op Schiphol heb ik geen probleem, want ik ben een bekende Nederlander",
+      "setup_reading": "The setup frames routine travel annoyances and stern security as universal experiences.",
+      "punch_reinterpretation": "The punchline reframes the setup to reveal that privilege based on fame allows escaping scrutiny.",
+      "ambiguity_type": "social norm violation",
+      "confidence": 0.75,
+      "source_file": "2005 - Freek de Jonge - Cordon Sanitaire (België)_laughter_with_humor_categories.json",
+      "segment_index": 2
+    },
+    {
+      "text": "Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk...",
+      "script_a": "The line can be read as a normal vent about government and politics, within the expected rough-edged but acceptable range of political humor.",
+      "script_b": "The same line is read as a blunt, vulgar outburst that defies polite norms and marks the speaker as aggressively rebellious toward the political establishment.",
+      "opposition_type": "social norm violation",
+      "trigger": "Godver",
+      "setup_reading": "Audience expects a critical but controlled political remark, typical of stand-up commentary.",
+      "punch_reinterpretation": "The profanity reframes the setup from a measured critique to a raw, boundary-pushing emotional vent.",
+      "ambiguity_type": "social norm violation",
+      "confidence": 0.75,
+      "source_file": "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_with_humor_categories.json",
+      "segment_index": 1
+    },
+    {
+      "text": "Dus dan, nou ja. Het afgelopen etmaal zijn 15 nieuwe doden. Nieuwe doden. Zie je dat? Er zijn 15 nieuwe doden. Dus dat was toen wel even een doorbraak hoor. Ja, dat was altijd oude doden. Wat heb je eraan, weet je wel. Maar toen waren er echt vijftien nieuwe doden. Ik weet wel, toen hebben ze in een torentje eventjes met elkaar vijftien nieuwe doden gedaan.",
+      "script_a": "The setup is read as a sober observational routine about social behavior during a crisis, with a steady tone.",
+      "script_b": "The punchline reframes the setup into a paradoxical or cynical reading (numbers misread, societal norms mocked) that produces humor.",
+      "opposition_type": "literal/figurative",
+      "trigger": "Nieuwe doden",
+      "setup_reading": "Audience expects a serious death-toll report and factual commentary.",
+      "punch_reinterpretation": "The line is reinterpreted as a satirical jab at statistics and official discourse, turning the solemnism into irony.",
+      "ambiguity_type": "irony",
+      "confidence": 0.72,
+      "source_file": "2020 - Freek de Jonge - Asociale afstand - Carre 5-7-2020_laughter_with_humor_categories.json",
+      "segment_index": 6
+    }
+  ]
+}

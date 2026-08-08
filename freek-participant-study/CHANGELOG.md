@@ -2,6 +2,43 @@
 
 ## Unreleased
 
+### Participant rewards
+
+- Added the Checkpoint 1 provider-neutral reward contract and deterministic
+  local fake provider.
+- Added an optional fake coffee-reward demonstration to the submitted-session
+  debrief page, disabled by default and incapable of external API calls.
+- Added a separate atomic reward ledger with pseudonymous participant
+  references, durable claim recovery, explicit eligibility enforcement, and
+  one-claim behaviour across refreshes, restarts, and concurrent tabs.
+- Added a sandbox-only Tremendous adapter for idempotent Dutch EUR link rewards,
+  including strict `TEST_` credential validation, safe API errors, and rejection
+  of non-sandbox destinations.
+- Added Tremendous's required generic `Deelnemer` recipient object to link
+  orders without disclosing participant contact or research data.
+- Added the Checkpoint 4 voluntary accept/decline experience, persistent
+  opt-out state, reversible reconsideration, clearer privacy wording, and a
+  status-aware external Tremendous handoff.
+- Added Checkpoint 5 timeout reconciliation by deterministic external order ID,
+  interrupted-claim recovery, participant-safe failure states, and retryable
+  link generation.
+- Stopped persisting Tremendous redemption URLs and added an atomic migration
+  that scrubs URLs from existing reward ledgers.
+- Added the Checkpoint 6 authenticated reward-operations dashboard with scoped
+  delivery metrics, failed/stuck warnings, issued-value tracking, and a
+  privacy-safe reconciliation export.
+- Added Checkpoint 7 atomic reward-count and EUR budget limits, participant-safe
+  exhaustion handling, and remaining-capacity metrics in the admin dashboard.
+- Added the Checkpoint 8 persistent operator kill switch for pausing new reward
+  issuance without affecting existing claims, with atomic fail-closed controls
+  and participant-safe paused messaging.
+- Added Checkpoint 9 manual Tremendous delivery-status reconciliation, persisted
+  provider status/check timestamps, delivery-health metrics, and audit export
+  fields without treating active links as proof of redemption.
+- Added the Checkpoint 10 offline sandbox-pilot preflight in the authenticated
+  dashboard and CLI, covering admin protection, kill-switch state, capacity,
+  claim health, and reconciliation freshness without exposing credentials.
+
 ### ACL-1
 
 - Replaced the locked stimulus contents with all 90 jokes from the final

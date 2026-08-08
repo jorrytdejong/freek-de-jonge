@@ -1,0 +1,58 @@
+[
+  {
+    "code": "A1",
+    "family": "baseline",
+    "style_mode": "none",
+    "inputs": ["topic"],
+    "paper_label": "Baseline Prompt without Freek Style"
+  },
+  {
+    "code": "A2",
+    "family": "baseline",
+    "style_mode": "freek",
+    "inputs": ["topic", "freek_style_guidance"],
+    "paper_label": "Baseline Prompt with Freek Style"
+  },
+  {
+    "code": "B1",
+    "family": "category",
+    "style_mode": "none",
+    "inputs": ["topic", "humor_category"],
+    "paper_label": "Category-Guided Generation without Freek Style"
+  },
+  {
+    "code": "B2",
+    "family": "category",
+    "style_mode": "freek",
+    "inputs": ["topic", "humor_category", "freek_jokes_tagged_with_category"],
+    "paper_label": "Category-Guided Generation with Freek Style"
+  },
+  {
+    "code": "C1",
+    "family": "script_opposition",
+    "style_mode": "none",
+    "inputs": ["topic"],
+    "paper_label": "Script-Opposition-Guided Generation without Freek Style"
+  },
+  {
+    "code": "C2",
+    "family": "script_opposition",
+    "style_mode": "freek",
+    "inputs": ["topic", "freek_style_guidance"],
+    "paper_label": "Script-Opposition-Guided Generation with Freek Style"
+  },
+  {
+    "code": "D1",
+    "family": "category_script",
+    "style_mode": "none",
+    "inputs": ["topic", "humor_category"],
+    "paper_label": "Category + Script-Opposition Generation without Freek Style"
+  },
+  {
+    "code": "D2",
+    "family": "category_script",
+    "style_mode": "freek",
+    "inputs": ["topic", "humor_category", "freek_jokes_tagged_with_category"],
+    "paper_label": "Category + Script-Opposition Generation with Freek Style"
+  }
+]
