@@ -35,6 +35,12 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 app.run(timeout=20)
 
                 self.assertFalse(app.exception)
+                self.assertFalse(
+                    any(
+                        "coffee-watercolor-background" in markdown.value
+                        for markdown in app.markdown
+                    )
+                )
                 self.assertNotIn(
                     "Ontvang mijn testbeloning", [button.label for button in app.button]
                 )
@@ -104,6 +110,12 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 app.run(timeout=20)
                 self.assertFalse(app.exception)
                 self.assertEqual(app.query_params["page"][0], "debrief")
+                self.assertTrue(
+                    any(
+                        "coffee-watercolor-background" in markdown.value
+                        for markdown in app.markdown
+                    )
+                )
                 self.assertEqual(len(app.expander), 12)
                 self.assertNotIn("Nieuwe testinzending", [b.label for b in app.button])
                 self.assertFalse(

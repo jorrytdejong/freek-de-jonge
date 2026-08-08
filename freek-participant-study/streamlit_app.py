@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import os
 from decimal import Decimal
@@ -96,6 +97,57 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
+
+DEBRIEF_BACKGROUND_PATH = (
+    Path(__file__).resolve().parent / "assets" / "coffee-watercolor-background.webp"
+)
+
+
+@st.cache_data(show_spinner=False)
+def debrief_background_data_uri() -> str:
+    """Return the selected background as an embedded, deployment-safe asset."""
+    encoded = base64.b64encode(DEBRIEF_BACKGROUND_PATH.read_bytes()).decode("ascii")
+    return f"data:image/webp;base64,{encoded}"
+
+
+def render_debrief_background() -> None:
+    """Apply the watercolor coffee pattern exclusively to the debrief page."""
+    background_uri = debrief_background_data_uri()
+    st.markdown(
+        f"""
+        <style>
+        /* coffee-watercolor-background */
+        [data-testid="stAppViewContainer"] {{
+            background-color: #fbf5ec;
+            background-image:
+                linear-gradient(rgba(255, 252, 247, 0.12), rgba(255, 252, 247, 0.12)),
+                url("{background_uri}");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }}
+        [data-testid="stMainBlockContainer"] {{
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 24px;
+            box-shadow: 0 16px 50px rgba(91, 65, 42, 0.10);
+            backdrop-filter: blur(1.5px);
+        }}
+        @media (max-width: 700px) {{
+            [data-testid="stAppViewContainer"] {{
+                background-position: center top;
+                background-size: auto 100vh;
+            }}
+            [data-testid="stMainBlockContainer"] {{
+                background: rgba(255, 255, 255, 0.92);
+                border-radius: 0;
+                box-shadow: none;
+            }}
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def configured_secrets() -> dict[str, object]:
@@ -978,6 +1030,7 @@ def render_debrief(
     if not submissions:
         render_review(session, assignment, stimuli)
         return
+    render_debrief_background()
     render_header()
     st.title("Bedankt voor je deelname")
     st.success("Je antwoorden zijn veilig ingediend.")
