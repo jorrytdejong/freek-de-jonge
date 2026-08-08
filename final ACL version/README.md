@@ -20,9 +20,14 @@ changing A-D.
 | E2 | Validated GTVH generation with Freek style |
 
 The implementation keeps the experiment structure explicit: A-E describe the
-generation family, while 1-2 describe whether explicit Freek de Jonge style
-guidance is included. A1-D2 remain available and retain their original
-implementations.
+generation family, while 1-2 describe whether explicit Freek de Jonge context
+is included. A2/C2 use general Freek examples. When both category and Freek
+conditioning are enabled, B2/D2 derive their category context from Freek jokes
+tagged with the selected category.
+
+Category records contain only a name and general description. They never store
+a predefined setup script, opposing script, or trigger. Those semantic elements
+are generated afresh for the current topic.
 
 ## Structure
 
@@ -32,6 +37,7 @@ final ACL version/
     streamlit_app.py
   core/
     categories.py
+    category_guidance.py
     llm.py
     prompting.py
     runner.py
@@ -77,7 +83,7 @@ export OPENAI_API_KEY="..."
 python3 "final ACL version/run_matrix.py" \
   --topic "de wachtrij bij de gemeente" \
   --category Ironie \
-  --model gpt-5.5
+  --model gpt-5.6-terra
 ```
 
 The Streamlit sidebar includes a model selector. The CLI accepts the same model
@@ -97,8 +103,30 @@ request
   -> critic
 ```
 
-For `D1` and `D2`, the selected humor category is injected into the candidate,
-ranking, and plan-context stages so the script opposition is category-guided.
+For `D1`, the selected category's general description is injected after the
+category-neutral Script A stage. For `D2`, a separate Pydantic stage first
+derives high-level guidance from raw Freek jokes tagged with the selected
+category. That derived guidance then conditions Script B candidates, ranking,
+semantic planning, generation, and criticism. It cannot prescribe scripts,
+triggers, topics, or punchlines.
+
+```text
+D2 request
+  -> script_a (category-neutral)
+  -> Freek category guidance from matching raw jokes
+  -> script_b_candidates
+  -> script_b_ranker
+  -> plan_context (creates the trigger)
+  -> variants
+  -> critic
+```
+
+The prepared script-opposition example datasets remain available as research
+artifacts but are not injected into the A-D runtime prompts.
+
+`Leedvermaak`, `Cirkelhumor`, and `Antihumor` currently have no matching Freek
+examples in `data/freek_category_examples.json`. B2/D2 stop with a clear error
+for those categories instead of falling back to generic context.
 
 ## Validated GTVH Flow
 

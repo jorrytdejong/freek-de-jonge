@@ -41,9 +41,6 @@ def build_prompt(category: str, joke_text: str) -> str:
     payload = {
         "category": category,
         "category_description": category_info["description"],
-        "category_setup_pattern": category_info["setup_script"],
-        "category_opposing_pattern": category_info["opposing_script"],
-        "category_trigger_pattern": category_info["trigger"],
         "joke_text": joke_text,
     }
     return f"""
