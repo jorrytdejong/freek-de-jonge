@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Python/local runtime artifacts
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local secrets
+.env
+.env.local
+.env.*.local
+freek-participant-study/data/private/
+
+# Large media files
+MP3/
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.ogg
+*.wma
+*.aif
+*.aiff
+*.mp4
+*.mov
+
+# Bulky generated/exported artifacts
+*.zip
+
+# Large notebook export with embedded output/audio-derived data
+humor detection/laughter_detection_colab_newest.ipynb

@@ -1,0 +1,53 @@
+name: Freek study quality gate
+
+on:
+  pull_request:
+    paths:
+      - "freek-participant-study/**"
+      - ".github/workflows/freek-study-quality.yml"
+  push:
+    branches:
+      - main
+      - staging
+      - "codex/**"
+    paths:
+      - "freek-participant-study/**"
+      - ".github/workflows/freek-study-quality.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: freek-study-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Python 3.11 quality gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: freek-participant-study
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            freek-participant-study/requirements.txt
+            freek-participant-study/requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Run quality gate
+        run: python scripts/run_quality_gate.py
