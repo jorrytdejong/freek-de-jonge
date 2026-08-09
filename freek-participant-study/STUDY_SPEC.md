@@ -14,29 +14,52 @@ guidance switched off and on, giving six within-participant conditions:
 | E1 | Validated GTVH | Off |
 | E2 | Validated GTVH | On |
 
-The stimulus bank contains exactly 90 accepted jokes: one item for each of 15
+The stimulus bank contains exactly 120 accepted jokes: one item for each of 20
 topics in each condition. All were generated with `gpt-5.6-terra`; their source
 hashes are preserved in `data/acl_jokes.csv`.
 
 ## Participant assignment
 
-Every participant receives exactly 12 individual jokes:
+Every participant receives exactly 20 individual jokes:
 
-- 12 different topics, with no repeated topic;
-- exactly two jokes from every condition;
-- a precomputed order that balances condition-by-position exposure;
+- every one of the 20 topics exactly once;
+- four jokes from two conditions and three from each other condition, with the
+  larger condition slots rotating between participants;
+- a precomputed, deterministically randomized order;
 - no displayed topic, condition, pipeline, style-toggle, or model labels.
 
-For 25 real participants this yields 300 observations:
+The complete registry contains 50 real-participant assignments and is used for
+every recruitment outcome from 25 through 50. Assignment is cyclic in aligned
+blocks of six participants: within each complete six-person block, every topic
+appears once in every condition. Consequently:
 
-- every topic appears exactly 20 times;
-- every condition appears exactly 50 times;
-- every individual item appears three or four times;
-- at every one of the 12 display positions, condition frequencies differ by at
-  most one.
+- every participant sees all 20 topics and all six conditions;
+- topic exposure is exact at every recruitment prefix;
+- condition and individual-item exposure each differ by at most one at every
+  recruitment prefix;
+- at 50 participants four conditions have 167 observations and two have 166;
+- at 50 participants 40 items have nine observations and 80 have eight.
 
 The session registry stores the complete ordered item assignment. The personal
 token therefore reproduces the same order after interruption.
+
+## Recruitment and stopping rule
+
+- Minimum viable sample: 25 valid submitted participants.
+- Recruitment target: 40 valid submitted participants.
+- Maximum sample: 50 valid submitted participants.
+- Operational target: 40 participants; no balance-based stopping milestone is
+  needed because every recruitment prefix is maximally balanced.
+- Recruitment continues according to time and participant availability, up to
+  the maximum. It never depends on observed ratings, effect estimates, or
+  p-values.
+- All valid submissions received before the predetermined recruitment close are
+  analysed. Participants 49 and 50 are retained if valid; recruitment is not
+  truncated at 48 merely to obtain exact balance.
+
+The recruitment closing date or operational feasibility decision must be
+recorded before inspecting condition-level results. Recruitment must never
+continue or stop because a contrast has or has not reached significance.
 
 ## Questionnaire
 
@@ -69,7 +92,7 @@ Freek de Jonge, and consent. No name or contact details are collected.
 
 1. Personal-link validation.
 2. Information, privacy notice, familiarity, age, and consent.
-3. Twelve joke pages with four ratings each.
+3. Twenty joke pages with four ratings each.
 4. Review page with direct editing and an optional final comment.
 5. Immutable final submission and debrief.
 
@@ -94,6 +117,11 @@ secondary or exploratory unless separately preregistered.
 - Study version: `acl-1`.
 - Export schema version: `2`.
 - Generated items are immutable once recruitment starts.
+- The six conditions, topic-item mapping, Freek-context block, model and
+  generation settings, first-valid-output rule, assignment schedule,
+  randomization procedure, primary outcome and contrast, exclusion rules,
+  sample-size bounds, and stopping rule are locked before recruitment.
+- Items are not added or replaced after participant ratings have been viewed.
 - Real tokens and their assignments are private research data.
 - Condition metadata appears only in internal preview, admin, and exports.
 - Stimuli are experimental and not written by Freek de Jonge.

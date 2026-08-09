@@ -43,7 +43,7 @@ def validate_study(
             raise ValueError("Two sessions in one stratum share an assignment.")
         exposure = Counter(item_id for row in matrix for item_id in row)
         if set(exposure) != {item.item_id for item in stimuli}:
-            raise ValueError("A registry stratum does not expose all 90 items.")
+            raise ValueError("A registry stratum does not expose all 120 items.")
         total_exposure += sum(exposure.values())
     return len(stimuli), len(relevant), total_exposure
 

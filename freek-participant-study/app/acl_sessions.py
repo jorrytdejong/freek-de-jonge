@@ -1,4 +1,4 @@
-"""Load private ACL session links with explicit 12-item assignments."""
+"""Load private ACL session links with explicit 20-item assignments."""
 
 from __future__ import annotations
 
@@ -120,12 +120,18 @@ def _load_rows(
                 f"Sessie {session_id} bevat onbekende items: {sorted(unknown)}."
             )
         assigned_items = [items_by_id[item_id] for item_id in assigned]
-        if len({item.topic_id for item in assigned_items}) != ITEMS_PER_PARTICIPANT:
-            raise SessionValidationError(f"Sessie {session_id} herhaalt een topic.")
-        condition_counts = Counter(item.condition_code for item in assigned_items)
-        if condition_counts != Counter({condition: 2 for condition in CONDITION_CODES}):
+        topic_frequencies = Counter(item.topic_id for item in assigned_items)
+        if len(topic_frequencies) != 20 or set(topic_frequencies.values()) != {1}:
             raise SessionValidationError(
-                f"Sessie {session_id} heeft niet exact twee items per conditie."
+                f"Sessie {session_id} moet elk van de 20 topics eenmaal bevatten."
+            )
+        condition_counts = Counter(item.condition_code for item in assigned_items)
+        condition_frequencies = [
+            condition_counts.get(condition, 0) for condition in CONDITION_CODES
+        ]
+        if sorted(condition_frequencies) != [3, 3, 3, 3, 4, 4]:
+            raise SessionValidationError(
+                f"Sessie {session_id} moet per conditie drie of vier items bevatten."
             )
         try:
             created_at = date.fromisoformat(values["created_at"])

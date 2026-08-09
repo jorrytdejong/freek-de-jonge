@@ -2,7 +2,7 @@ import unittest
 from collections import Counter
 
 from app.acl_assignment import assignment_fingerprint, build_assignment
-from app.acl_config import CONDITION_CODES
+from app.acl_config import CONDITION_CODES, ITEMS_PER_PARTICIPANT
 from app.acl_sessions import load_sessions
 from app.acl_stimuli import load_stimuli
 from scripts.build_acl_study_data import (
@@ -17,11 +17,11 @@ class ACLDesignTest(unittest.TestCase):
         cls.stimuli = load_stimuli()
         cls.sessions = load_sessions(cls.stimuli)
 
-    def test_locked_bank_contains_15_topics_by_6_conditions(self) -> None:
-        self.assertEqual(len(self.stimuli), 90)
+    def test_locked_bank_contains_20_topics_by_6_conditions(self) -> None:
+        self.assertEqual(len(self.stimuli), 120)
         self.assertEqual(
             Counter(item.condition_code for item in self.stimuli),
-            Counter({condition: 15 for condition in CONDITION_CODES}),
+            Counter({condition: 20 for condition in CONDITION_CODES}),
         )
         self.assertEqual(
             set(Counter(item.topic_id for item in self.stimuli).values()), {6}
@@ -38,27 +38,68 @@ class ACLDesignTest(unittest.TestCase):
                 for item in self.stimuli
                 if item.item_id in session.assigned_item_ids
             }
-            self.assertEqual(len(assignment.items), 12)
-            self.assertEqual(len({item.topic_id for item in assigned.values()}), 12)
+            self.assertEqual(len(assignment.items), ITEMS_PER_PARTICIPANT)
             self.assertEqual(
-                Counter(item.condition_code for item in assigned.values()),
-                Counter({condition: 2 for condition in CONDITION_CODES}),
+                len({item.topic_id for item in assigned.values()}),
+                20,
+            )
+            self.assertEqual(
+                sorted(Counter(item.topic_id for item in assigned.values()).values()),
+                [1] * 20,
+            )
+            condition_counts = Counter(
+                item.condition_code for item in assigned.values()
+            )
+            self.assertEqual(
+                sorted(condition_counts[condition] for condition in CONDITION_CODES),
+                [3, 3, 3, 3, 4, 4],
             )
         self.assertEqual(len(fingerprints), len(self.sessions))
 
-    def test_25_participant_matrix_is_exactly_balanced(self) -> None:
-        matrix = assignment_item_ids(25, seed=20260806)
-        validate_assignment_matrix(matrix)
-        topic_exposure = Counter(
-            item_id.split("-")[0] for row in matrix for item_id in row
-        )
+    def test_every_recruitment_prefix_from_25_to_50_is_balanced(self) -> None:
+        full_matrix = assignment_item_ids(50, seed=20260806)
+        for participant_count in range(25, 51):
+            matrix = full_matrix[:participant_count]
+            validate_assignment_matrix(matrix)
+            topic_exposure = Counter(
+                item_id.split("-")[0] for row in matrix for item_id in row
+            )
+            condition_exposure = Counter(
+                item_id.split("-")[1] for row in matrix for item_id in row
+            )
+            item_exposure = Counter(item_id for row in matrix for item_id in row)
+            self.assertEqual(set(topic_exposure.values()), {participant_count})
+            self.assertLessEqual(
+                max(condition_exposure.values()) - min(condition_exposure.values()), 1
+            )
+            self.assertLessEqual(
+                max(item_exposure.values()) - min(item_exposure.values()),
+                1,
+            )
+
+    def test_selected_milestones_remain_tightly_balanced(self) -> None:
+        matrix = assignment_item_ids(50, seed=20260806)
+        for participant_count in (24, 30, 36, 42, 48):
+            prefix = matrix[:participant_count]
+            condition_exposure = Counter(
+                item_id.split("-")[1] for row in prefix for item_id in row
+            )
+            item_exposure = Counter(item_id for row in prefix for item_id in row)
+            self.assertEqual(len(set(condition_exposure.values())), 1)
+            self.assertLessEqual(
+                max(item_exposure.values()) - min(item_exposure.values()), 1
+            )
+
+    def test_50_participants_give_balanced_condition_and_item_exposure(self) -> None:
+        matrix = assignment_item_ids(50, seed=20260806)
         condition_exposure = Counter(
             item_id.split("-")[1] for row in matrix for item_id in row
         )
         item_exposure = Counter(item_id for row in matrix for item_id in row)
-        self.assertEqual(set(topic_exposure.values()), {20})
-        self.assertEqual(set(condition_exposure.values()), {50})
-        self.assertEqual(set(item_exposure.values()), {3, 4})
+        self.assertEqual(
+            Counter(condition_exposure.values()), Counter({167: 4, 166: 2})
+        )
+        self.assertEqual(Counter(item_exposure.values()), Counter({8: 80, 9: 40}))
 
 
 if __name__ == "__main__":
