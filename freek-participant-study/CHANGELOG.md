@@ -41,15 +41,28 @@
 
 ### ACL-1
 
-- Replaced the pilot grouped-variant interface with 12 individual blinded jokes.
+- Expanded the unlocked stimulus bank from 90 to 120 jokes by adding five
+  transcript-derived topics across all six conditions. The original 90 items
+  remain unchanged.
+- Redesigned each 20-item assignment to cover every topic exactly once. The six
+  conditions rotate in maximally balanced 4/4/3/3/3/3 allocations.
+
+- Expanded the locked assignment schedule to 50 production participants. Each
+  participant rates 20 unique jokes and sees all 20 topics exactly once.
+- Added a preregistered recruitment range of 25 to 50 valid participants, with
+  a target of 40 and stopping independent of observed outcomes.
+- Replaced the locked stimulus contents with all 120 jokes from the final
+  `acl_3x2_prompt_engineering_a7e5ec5` registry generated on 2026-08-08,
+  while preserving every participant/test URL and its precomputed item order.
+- Replaced the pilot grouped-variant interface with individual blinded jokes.
 - Added the locked 90-item `gpt-5.6-terra` stimulus bank.
-- Added exact balancing for 25 participants across topics, conditions, items,
-  and presentation positions.
+- Added cyclic balancing across topics, conditions, items, and recruitment
+  prefixes.
 - Added four required ratings: funniness, Freek resemblance, coherence, and
   originality.
 - Added item-level autosave, resume, review, submission, exports, and admin
   summaries.
-- Added private generation of 25 participant URLs and a versioned export schema.
+- Added private generation of 50 participant URLs and a versioned export schema.
 
 ### Added
 

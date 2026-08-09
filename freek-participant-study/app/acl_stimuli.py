@@ -1,4 +1,4 @@
-"""Load and validate the locked 90-item ACL stimulus bank."""
+"""Load and validate the locked 120-item ACL stimulus bank."""
 
 from __future__ import annotations
 
@@ -10,10 +10,10 @@ from pathlib import Path
 
 from app.acl_config import CONDITION_CODES, STUDY_VERSION
 
-EXPECTED_ITEM_COUNT = 90
-EXPECTED_TOPIC_COUNT = 15
+EXPECTED_ITEM_COUNT = 120
+EXPECTED_TOPIC_COUNT = 20
 EXPECTED_ITEMS_PER_TOPIC = 6
-EXPECTED_ITEMS_PER_CONDITION = 15
+EXPECTED_ITEMS_PER_CONDITION = 20
 REQUIRED_COLUMNS = {
     "study_version",
     "item_id",
@@ -27,7 +27,7 @@ REQUIRED_COLUMNS = {
     "result_sha256",
 }
 ITEM_ID_PATTERN = re.compile(r"^(T\d{2})-(A1|A2|C1|C2|E1|E2)$")
-TOPIC_ID_PATTERN = re.compile(r"^T(0[1-9]|1[0-5])$")
+TOPIC_ID_PATTERN = re.compile(r"^T(0[1-9]|1[0-9]|20)$")
 HASH_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 DEFAULT_STIMULI_PATH = Path(__file__).resolve().parents[1] / "data" / "acl_jokes.csv"
 
@@ -130,9 +130,9 @@ def validate_stimuli(rows: list[dict[str, str]]) -> tuple[JokeItem, ...]:
     if len(topic_counts) != EXPECTED_TOPIC_COUNT or set(topic_counts.values()) != {
         EXPECTED_ITEMS_PER_TOPIC
     }:
-        raise StimulusValidationError("De topicverdeling is niet 15 × 6.")
+        raise StimulusValidationError("De topicverdeling is niet 20 × 6.")
     if condition_counts != Counter(
         {condition: EXPECTED_ITEMS_PER_CONDITION for condition in CONDITION_CODES}
     ):
-        raise StimulusValidationError("De zes condities bevatten niet elk 15 items.")
+        raise StimulusValidationError("De zes condities bevatten niet elk 20 items.")
     return tuple(sorted(items, key=lambda item: item.item_id))

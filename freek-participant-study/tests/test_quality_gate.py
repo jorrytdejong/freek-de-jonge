@@ -22,7 +22,7 @@ class QualityGateDataTest(unittest.TestCase):
                 sessions_path=self.staging_sessions_path,
                 require_test_only=True,
             ),
-            (90, 10, 120),
+            (120, 10, 200),
         )
 
     def test_staging_validation_rejects_a_real_session(self) -> None:

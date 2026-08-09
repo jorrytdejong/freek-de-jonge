@@ -4,14 +4,17 @@ Dutch Streamlit application for the blinded `acl-1` humor-generation study.
 
 ## Locked design
 
-- 90 accepted `gpt-5.6-terra` jokes: 15 topics × 6 conditions.
+- 120 accepted `gpt-5.6-terra` jokes: 20 topics × 6 conditions.
 - Conditions: baseline, script opposition, and validated GTVH, each with Freek
   style guidance off and on.
-- Every participant rates 12 jokes from 12 different topics.
-- Every participant sees exactly two jokes from each condition.
+- Every participant rates 20 unique jokes: exactly one from each topic.
+- Every participant sees four jokes from two conditions and three jokes from
+  each of the other four conditions; the larger condition slots rotate.
+- A single precomputed registry supports recruitment from 25 up to 50 valid
+  participants; every six-person block rotates all conditions over every topic.
 - Every joke receives four required 1–5 ratings: funniness, Freek-style
   resemblance, coherence, and originality.
-- Expected duration: approximately 10 minutes.
+- Expected duration: approximately 7–9 minutes.
 
 The old `pilot-1` modules and CSV files remain in the repository for historical
 reproducibility. The deployed `streamlit_app.py` uses only the `app/acl_*`
@@ -28,7 +31,7 @@ streamlit run streamlit_app.py
 
 Example test link:
 
-<http://localhost:8501/?session=acl-test-01-913a93e2>
+<http://localhost:8501/?session=acl-test-01-d4df9936>
 
 ### Fake participant reward
 
@@ -281,16 +284,16 @@ Internal-only routes:
 
 ## Test links
 
-1. `?session=acl-test-01-913a93e2`
-2. `?session=acl-test-02-979d4f77`
-3. `?session=acl-test-03-38452f51`
-4. `?session=acl-test-04-cb9df523`
-5. `?session=acl-test-05-d63af247`
-6. `?session=acl-test-06-7227edfd`
-7. `?session=acl-test-07-b5a26fc2`
-8. `?session=acl-test-08-8c0b1676`
-9. `?session=acl-test-09-030dcad5`
-10. `?session=acl-test-10-86726b66`
+1. `?session=acl-test-01-d4df9936`
+2. `?session=acl-test-02-51509e02`
+3. `?session=acl-test-03-2a523785`
+4. `?session=acl-test-04-7dbcde52`
+5. `?session=acl-test-05-40f33984`
+6. `?session=acl-test-06-9a03d107`
+7. `?session=acl-test-07-0f91cf5e`
+8. `?session=acl-test-08-42b9cc91`
+9. `?session=acl-test-09-48dc81b7`
+10. `?session=acl-test-10-03614420`
 
 ## Validation
 
@@ -300,7 +303,7 @@ Run the same gate used for release acceptance:
 python scripts/run_quality_gate.py
 ```
 
-It validates formatting, linting, compilation, the 90-item bank, both test
+It validates formatting, linting, compilation, the 120-item bank, both test
 registries, the mathematical assignment constraints, all unit and Streamlit
 flow tests, and a process-level HTTP startup check.
 

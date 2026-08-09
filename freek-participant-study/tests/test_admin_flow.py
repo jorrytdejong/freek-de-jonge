@@ -106,7 +106,7 @@ class AdminFlowTest(unittest.TestCase):
             ),
         ):
             app = AppTest.from_file(self.app_path)
-            app.query_params["session"] = "acl-test-02-979d4f77"
+            app.query_params["session"] = "acl-test-02-51509e02"
             app.run(timeout=15)
 
             self.assertFalse(app.exception)
