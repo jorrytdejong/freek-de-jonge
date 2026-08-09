@@ -17,11 +17,11 @@ class ACLDesignTest(unittest.TestCase):
         cls.stimuli = load_stimuli()
         cls.sessions = load_sessions(cls.stimuli)
 
-    def test_locked_bank_contains_15_topics_by_6_conditions(self) -> None:
-        self.assertEqual(len(self.stimuli), 90)
+    def test_locked_bank_contains_20_topics_by_6_conditions(self) -> None:
+        self.assertEqual(len(self.stimuli), 120)
         self.assertEqual(
             Counter(item.condition_code for item in self.stimuli),
-            Counter({condition: 15 for condition in CONDITION_CODES}),
+            Counter({condition: 20 for condition in CONDITION_CODES}),
         )
         self.assertEqual(
             set(Counter(item.topic_id for item in self.stimuli).values()), {6}
@@ -41,18 +41,18 @@ class ACLDesignTest(unittest.TestCase):
             self.assertEqual(len(assignment.items), ITEMS_PER_PARTICIPANT)
             self.assertEqual(
                 len({item.topic_id for item in assigned.values()}),
-                15,
+                20,
             )
             self.assertEqual(
                 sorted(Counter(item.topic_id for item in assigned.values()).values()),
-                [1] * 6 + [2] * 9,
+                [1] * 20,
             )
             condition_counts = Counter(
                 item.condition_code for item in assigned.values()
             )
             self.assertEqual(
-                [condition_counts[condition] for condition in CONDITION_CODES],
-                [4] * 6,
+                sorted(condition_counts[condition] for condition in CONDITION_CODES),
+                [3, 3, 3, 3, 4, 4],
             )
         self.assertEqual(len(fingerprints), len(self.sessions))
 
@@ -68,18 +68,13 @@ class ACLDesignTest(unittest.TestCase):
                 item_id.split("-")[1] for row in matrix for item_id in row
             )
             item_exposure = Counter(item_id for row in matrix for item_id in row)
+            self.assertEqual(set(topic_exposure.values()), {participant_count})
             self.assertLessEqual(
-                max(topic_exposure.values()) - min(topic_exposure.values()), 1
-            )
-            self.assertEqual(
-                condition_exposure,
-                Counter(
-                    {condition: participant_count * 4 for condition in CONDITION_CODES}
-                ),
+                max(condition_exposure.values()) - min(condition_exposure.values()), 1
             )
             self.assertLessEqual(
                 max(item_exposure.values()) - min(item_exposure.values()),
-                2,
+                1,
             )
 
     def test_selected_milestones_remain_tightly_balanced(self) -> None:
@@ -92,20 +87,19 @@ class ACLDesignTest(unittest.TestCase):
             item_exposure = Counter(item_id for row in prefix for item_id in row)
             self.assertEqual(len(set(condition_exposure.values())), 1)
             self.assertLessEqual(
-                max(item_exposure.values()) - min(item_exposure.values()), 2
+                max(item_exposure.values()) - min(item_exposure.values()), 1
             )
 
-    def test_50_participants_give_200_ratings_per_condition(self) -> None:
+    def test_50_participants_give_balanced_condition_and_item_exposure(self) -> None:
         matrix = assignment_item_ids(50, seed=20260806)
         condition_exposure = Counter(
             item_id.split("-")[1] for row in matrix for item_id in row
         )
         item_exposure = Counter(item_id for row in matrix for item_id in row)
         self.assertEqual(
-            condition_exposure,
-            Counter({condition: 200 for condition in CONDITION_CODES}),
+            Counter(condition_exposure.values()), Counter({167: 4, 166: 2})
         )
-        self.assertEqual(Counter(item_exposure.values()), Counter({13: 60, 14: 30}))
+        self.assertEqual(Counter(item_exposure.values()), Counter({8: 80, 9: 40}))
 
 
 if __name__ == "__main__":

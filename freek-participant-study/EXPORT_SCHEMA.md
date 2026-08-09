@@ -4,7 +4,7 @@ Export schema: `2`
 Study version: `acl-1`
 
 `participants.csv` contains one row per saved session. `ratings.csv` contains
-one row per completed participant-item response: 24 rows for a complete
+one row per completed participant-item response: 20 rows for a complete
 submission.
 
 For repeatedly submitted test links, the latest immutable submission is the

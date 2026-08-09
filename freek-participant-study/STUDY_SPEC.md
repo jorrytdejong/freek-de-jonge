@@ -14,18 +14,17 @@ guidance switched off and on, giving six within-participant conditions:
 | E1 | Validated GTVH | Off |
 | E2 | Validated GTVH | On |
 
-The stimulus bank contains exactly 90 accepted jokes: one item for each of 15
+The stimulus bank contains exactly 120 accepted jokes: one item for each of 20
 topics in each condition. All were generated with `gpt-5.6-terra`; their source
 hashes are preserved in `data/acl_jokes.csv`.
 
 ## Participant assignment
 
-Every participant receives exactly 24 individual jokes:
+Every participant receives exactly 20 individual jokes:
 
-- all 15 topics at least once;
-- nine topics twice, always with a different condition and never the same joke;
-- each of the six conditions exactly four times;
-- at least four other jokes between two presentations of the same topic;
+- every one of the 20 topics exactly once;
+- four jokes from two conditions and three from each other condition, with the
+  larger condition slots rotating between participants;
 - a precomputed, deterministically randomized order;
 - no displayed topic, condition, pipeline, style-toggle, or model labels.
 
@@ -34,13 +33,12 @@ every recruitment outcome from 25 through 50. Assignment is cyclic in aligned
 blocks of six participants: within each complete six-person block, every topic
 appears once in every condition. Consequently:
 
-- every participant sees all 15 topics and all six conditions;
-- total condition exposure is exact at every recruitment prefix;
-- topic exposure differs by at most one at every recruitment prefix;
-- from 25 through 49 participants, individual item exposure differs by at most
-  two ratings;
-- at 50 participants every condition has 200 observations and every item has
-  13 or 14 observations.
+- every participant sees all 20 topics and all six conditions;
+- topic exposure is exact at every recruitment prefix;
+- condition and individual-item exposure each differ by at most one at every
+  recruitment prefix;
+- at 50 participants four conditions have 167 observations and two have 166;
+- at 50 participants 40 items have nine observations and 80 have eight.
 
 The session registry stores the complete ordered item assignment. The personal
 token therefore reproduces the same order after interruption.
@@ -51,7 +49,7 @@ token therefore reproduces the same order after interruption.
 - Recruitment target: 40 valid submitted participants.
 - Maximum sample: 50 valid submitted participants.
 - Operational target: 40 participants; no balance-based stopping milestone is
-  needed because condition exposure is exact for every sample size.
+  needed because every recruitment prefix is maximally balanced.
 - Recruitment continues according to time and participant availability, up to
   the maximum. It never depends on observed ratings, effect estimates, or
   p-values.
@@ -94,7 +92,7 @@ Freek de Jonge, and consent. No name or contact details are collected.
 
 1. Personal-link validation.
 2. Information, privacy notice, familiarity, age, and consent.
-3. Twenty-four joke pages with four ratings each.
+3. Twenty joke pages with four ratings each.
 4. Review page with direct editing and an optional final comment.
 5. Immutable final submission and debrief.
 

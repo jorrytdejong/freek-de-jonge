@@ -8,8 +8,8 @@ Generate the 50 balanced private URLs only once:
 
 ```bash
 python scripts/build_acl_study_data.py \
-  --production-registry data/private/acl_sessions_50x24.production.csv \
-  --production-urls data/private/acl_participant_urls_50x24.production.csv \
+  --production-registry data/private/acl_sessions_50x20.production.csv \
+  --production-urls data/private/acl_participant_urls_50x20.production.csv \
   --base-url https://freek-participant-pilot.streamlit.app/
 ```
 

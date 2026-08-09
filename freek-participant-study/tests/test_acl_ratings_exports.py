@@ -36,7 +36,7 @@ class ACLRatingAndExportTest(unittest.TestCase):
             )
         self.assertEqual(len(raised.exception.messages), 3)
 
-    def test_complete_submission_exports_24_item_rows_and_internal_factors(
+    def test_complete_submission_exports_20_item_rows_and_internal_factors(
         self,
     ) -> None:
         responses = {
@@ -77,7 +77,7 @@ class ACLRatingAndExportTest(unittest.TestCase):
         )
         tables = build_export_tables((record,), self.sessions, self.stimuli)
         self.assertEqual(len(tables.participants), 1)
-        self.assertEqual(len(tables.ratings), 24)
+        self.assertEqual(len(tables.ratings), 20)
         self.assertEqual(
             {row["condition_code"] for row in tables.ratings},
             {"A1", "A2", "C1", "C2", "E1", "E2"},

@@ -709,7 +709,7 @@ def render_intro(
     st.write(
         f"Je beoordeelt {ITEMS_PER_PARTICIPANT} korte, experimentele grappen. "
         "Per grap geef je vier "
-        "scores. Deelname duurt ongeveer 10 minuten."
+        "scores. Deelname duurt ongeveer 7–9 minuten."
     )
     st.markdown("## Freek de Jonge")
     st.write(
