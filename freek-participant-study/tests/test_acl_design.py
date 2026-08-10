@@ -7,6 +7,7 @@ from app.acl_sessions import load_sessions
 from app.acl_stimuli import load_stimuli
 from scripts.build_acl_study_data import (
     assignment_item_ids,
+    session_rows,
     validate_assignment_matrix,
 )
 
@@ -100,6 +101,21 @@ class ACLDesignTest(unittest.TestCase):
             Counter(condition_exposure.values()), Counter({167: 4, 166: 2})
         )
         self.assertEqual(Counter(item_exposure.values()), Counter({8: 80, 9: 40}))
+
+    def test_first_ten_production_links_are_reward_free(self) -> None:
+        rows = session_rows(
+            50,
+            is_test=False,
+            created_at=self.sessions[next(iter(self.sessions))].created_at,
+            id_factory=lambda index: f"participant-{index:02d}-demo",
+            seed=20260806,
+            reward_free_count=10,
+        )
+
+        self.assertEqual(
+            [row["reward_eligible"] for row in rows],
+            ["false"] * 10 + ["true"] * 40,
+        )
 
 
 if __name__ == "__main__":

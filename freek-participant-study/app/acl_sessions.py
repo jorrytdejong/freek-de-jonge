@@ -22,6 +22,7 @@ REQUIRED_COLUMNS = {
     "created_at",
     "notes",
 }
+OPTIONAL_COLUMNS = {"reward_eligible"}
 SESSION_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{12,64}$")
 DEFAULT_SESSIONS_PATH = (
     Path(__file__).resolve().parents[1] / "data" / "acl_sessions.csv"
@@ -44,6 +45,7 @@ class ParticipantSession:
     session_id: str
     is_test: bool
     active: bool
+    reward_eligible: bool
     assigned_item_ids: tuple[str, ...]
     created_at: date
     notes: str
@@ -95,6 +97,7 @@ def _load_rows(
         values = {
             column: (row.get(column) or "").strip() for column in REQUIRED_COLUMNS
         }
+        reward_eligible_value = (row.get("reward_eligible") or "true").strip()
         empty = sorted(
             column for column in REQUIRED_COLUMNS - {"notes"} if not values[column]
         )
@@ -145,6 +148,11 @@ def _load_rows(
                 values["is_test"], row_number=row_number, column="is_test"
             ),
             active=_boolean(values["active"], row_number=row_number, column="active"),
+            reward_eligible=_boolean(
+                reward_eligible_value,
+                row_number=row_number,
+                column="reward_eligible",
+            ),
             assigned_item_ids=assigned,
             created_at=created_at,
             notes=values["notes"],
