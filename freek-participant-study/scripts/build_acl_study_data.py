@@ -26,7 +26,7 @@ from app.acl_config import (
     MAXIMUM_PARTICIPANTS,
     STUDY_VERSION,
 )
-from app.acl_sessions import REQUIRED_COLUMNS, load_sessions
+from app.acl_sessions import OPTIONAL_COLUMNS, REQUIRED_COLUMNS, load_sessions
 from app.acl_stimuli import REQUIRED_COLUMNS as STIMULUS_COLUMNS
 from app.acl_stimuli import load_stimuli
 
@@ -56,6 +56,7 @@ SESSION_FIELDNAMES = (
     "session_id",
     "is_test",
     "active",
+    "reward_eligible",
     "assigned_item_ids",
     "created_at",
     "notes",
@@ -203,14 +204,18 @@ def session_rows(
     created_at: date,
     id_factory: Callable[[int], str],
     seed: int,
+    reward_free_count: int = 0,
 ) -> list[dict[str, str]]:
     assignments = assignment_item_ids(participant_count, seed=seed)
     label = "Test session" if is_test else "Production participant"
+    if reward_free_count < 0 or reward_free_count > participant_count:
+        raise ValueError("reward_free_count must fit within participant_count.")
     return [
         {
             "session_id": id_factory(index),
             "is_test": str(is_test).lower(),
             "active": "true",
+            "reward_eligible": str(index > reward_free_count).lower(),
             "assigned_item_ids": "|".join(item_ids),
             "created_at": created_at.isoformat(),
             "notes": f"{label} {index:02d}",
@@ -275,6 +280,7 @@ def build_production(
         created_at=date.today(),
         id_factory=lambda _: f"participant-{secrets.token_urlsafe(16)}",
         seed=20260806,
+        reward_free_count=10,
     )
     _write_csv(registry_path, SESSION_FIELDNAMES, [*test_rows, *real_rows])
     load_sessions(stimuli, registry_path)
@@ -283,13 +289,20 @@ def build_production(
             "participant_number": f"P{index:02d}",
             "session_id": row["session_id"],
             "url": f"{base_url.rstrip('/')}?session={row['session_id']}",
+            "reward_eligible": row["reward_eligible"],
             "assigned_item_ids": row["assigned_item_ids"],
         }
         for index, row in enumerate(real_rows, start=1)
     ]
     _write_csv(
         urls_path,
-        ("participant_number", "session_id", "url", "assigned_item_ids"),
+        (
+            "participant_number",
+            "session_id",
+            "url",
+            "reward_eligible",
+            "assigned_item_ids",
+        ),
         url_rows,
     )
 
@@ -312,9 +325,9 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    if STIMULUS_COLUMNS != set(STIMULUS_FIELDNAMES) or REQUIRED_COLUMNS != set(
-        SESSION_FIELDNAMES
-    ):
+    if STIMULUS_COLUMNS != set(STIMULUS_FIELDNAMES) or (
+        REQUIRED_COLUMNS | OPTIONAL_COLUMNS
+    ) != set(SESSION_FIELDNAMES):
         raise RuntimeError("Builder columns no longer match the application contract.")
     build_test_data(
         args.source,

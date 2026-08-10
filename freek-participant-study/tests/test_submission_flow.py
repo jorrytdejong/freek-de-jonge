@@ -165,6 +165,87 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 self.assertEqual(len(reward_rows), 1)
                 self.assertNotIn(session.session_id, reward_path.read_text())
 
+    def test_reward_free_link_gets_plain_debrief_without_coffee_controls(self) -> None:
+        project_root = Path(__file__).resolve().parents[1]
+        app_path = project_root / "streamlit_app.py"
+        stimuli = load_stimuli()
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary = Path(temporary_directory)
+            sessions_path = temporary / "sessions.csv"
+            progress_path = temporary / "progress.csv"
+            reward_path = temporary / "rewards.csv"
+            with (project_root / "data" / "acl_sessions.csv").open(
+                encoding="utf-8", newline=""
+            ) as source:
+                rows = list(csv.DictReader(source))
+            reward_free_row = {
+                **rows[0],
+                "session_id": "real-no-coffee-A1B2",
+                "is_test": "false",
+                "reward_eligible": "false",
+                "notes": "Automated reward-free session simulation",
+            }
+            rows.append(reward_free_row)
+            with sessions_path.open("w", encoding="utf-8", newline="") as target:
+                writer = csv.DictWriter(target, fieldnames=rows[0].keys())
+                writer.writeheader()
+                writer.writerows(rows)
+            session = load_sessions(stimuli, sessions_path)[
+                reward_free_row["session_id"]
+            ]
+            assignment = build_assignment(session, stimuli)
+            responses = {
+                item.item_id: {
+                    "item_id": item.item_id,
+                    "display_position": item.display_position,
+                    "funniness": 3,
+                    "freek_similarity": 3,
+                    "coherence": 3,
+                    "originality": 3,
+                }
+                for item in assignment.items
+            }
+            CSVProgressStorage(progress_path).submit_response(
+                session_id=session.session_id,
+                study_version="acl-1",
+                is_test=False,
+                profile={"age": 40, "freek_familiarity": 3, "consent": True},
+                responses=responses,
+                final_comment="Definitief.",
+                now=datetime(2026, 8, 6, 12, 0, tzinfo=UTC),
+            )
+            with patch.dict(
+                os.environ,
+                {
+                    "FREEK_STUDY_PROGRESS_PATH": str(progress_path),
+                    "FREEK_STUDY_SESSIONS_PATH": str(sessions_path),
+                    "FREEK_STUDY_REWARDS_ENABLED": "true",
+                    "FREEK_STUDY_REWARD_MODE": "fake",
+                    "FREEK_STUDY_REWARD_AMOUNT_EUR": "3.40",
+                    "FREEK_STUDY_REWARD_LEDGER_PATH": str(reward_path),
+                },
+            ):
+                app = AppTest.from_file(app_path)
+                app.query_params["session"] = session.session_id
+                app.query_params["page"] = "debrief"
+                app.run(timeout=20)
+
+                self.assertFalse(app.exception)
+                self.assertIn(
+                    "Bedankt voor je deelname",
+                    [title.value for title in app.title],
+                )
+                self.assertFalse(
+                    any(
+                        "coffee-watercolor-background" in markdown.value
+                        for markdown in app.markdown
+                    )
+                )
+                button_labels = [button.label for button in app.button]
+                self.assertNotIn("Ontvang mijn testvergoeding", button_labels)
+                self.assertNotIn("Geen testvergoeding, bedankt", button_labels)
+                self.assertFalse(reward_path.exists())
+
 
 if __name__ == "__main__":
     unittest.main()
