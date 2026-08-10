@@ -1039,7 +1039,9 @@ def render_debrief(
     if not submissions:
         render_review(session, assignment, stimuli)
         return
-    render_debrief_background()
+    show_reward = reward_settings.enabled and session.reward_eligible
+    if show_reward:
+        render_debrief_background()
     render_header()
     st.title("Bedankt voor je deelname")
     st.success("Je antwoorden zijn veilig ingediend.")
@@ -1048,8 +1050,11 @@ def render_debrief(
         "We vergelijken verschillende generatieprocedures zonder die labels aan "
         "deelnemers te tonen."
     )
-    if reward_settings.enabled:
-        render_reward(session, eligible=bool(submissions))
+    if show_reward:
+        render_reward(
+            session,
+            eligible=bool(submissions) and session.reward_eligible,
+        )
     if session.is_test:
         st.info(f"Testinzending {len(submissions)} is opgeslagen.")
         if st.button("Nieuwe testinzending"):

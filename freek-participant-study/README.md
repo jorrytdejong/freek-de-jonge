@@ -117,6 +117,14 @@ research app does not collect those details. Reopening an already-used link
 shows Tremendous's current payout status, while reopening the study link restores
 the same reward decision.
 
+Reward visibility can also be fixed per participant link through the private
+session registry's `reward_eligible` column. The production builder marks P01–P10
+as `false` and P11–P50 as `true`. A reward-free participant receives the same
+study and plain debrief, but no coffee background, reward text, or reward controls.
+Eligibility is resolved from the registered session ID and cannot be enabled with
+a query-string change. Older registries without the column remain compatible and
+default to eligible.
+
 ### Reward recovery
 
 Checkpoint 5 makes sandbox issuance safe to retry. If an order request times out
