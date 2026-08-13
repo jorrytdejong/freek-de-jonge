@@ -46,7 +46,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 )
                 self.assertFalse(app.warning)
 
-    def test_submitted_test_link_can_exercise_fake_reward_flow(self) -> None:
+    def test_submitted_test_link_gets_plain_debrief(self) -> None:
         project_root = Path(__file__).resolve().parents[1]
         app_path = project_root / "streamlit_app.py"
         stimuli = load_stimuli()
@@ -110,7 +110,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 app.run(timeout=20)
                 self.assertFalse(app.exception)
                 self.assertEqual(app.query_params["page"][0], "debrief")
-                self.assertTrue(
+                self.assertFalse(
                     any(
                         "coffee-watercolor-background" in markdown.value
                         for markdown in app.markdown
@@ -121,32 +121,9 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 self.assertFalse(
                     any(b.label.startswith("Bewerk grap") for b in app.button)
                 )
-                self.assertIn(
+                self.assertNotIn(
                     "Ontvang mijn testvergoeding",
                     [button.label for button in app.button],
-                )
-                decline_button = next(
-                    button
-                    for button in app.button
-                    if button.label == "Geen testvergoeding, bedankt"
-                )
-                decline_button.click().run(timeout=20)
-                self.assertFalse(app.exception)
-                self.assertTrue(
-                    any("geen testvergoeding" in info.value for info in app.info)
-                )
-                reconsider_button = next(
-                    button
-                    for button in app.button
-                    if button.label == "Toch een testvergoeding ontvangen"
-                )
-                reconsider_button.click().run(timeout=20)
-                self.assertFalse(app.exception)
-                self.assertTrue(
-                    any("TESTBELONING" in warning.value for warning in app.warning)
-                )
-                self.assertTrue(
-                    any("€3,40" in success.value for success in app.success)
                 )
                 reopened = AppTest.from_file(app_path)
                 reopened.query_params["session"] = session.session_id
@@ -157,13 +134,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                     "Ontvang mijn testvergoeding",
                     [button.label for button in reopened.button],
                 )
-                self.assertTrue(
-                    any("€3,40" in success.value for success in reopened.success)
-                )
-                with reward_path.open(encoding="utf-8", newline="") as handle:
-                    reward_rows = list(csv.DictReader(handle))
-                self.assertEqual(len(reward_rows), 1)
-                self.assertNotIn(session.session_id, reward_path.read_text())
+                self.assertFalse(reward_path.exists())
 
     def test_real_link_gets_plain_debrief_without_coffee_controls(self) -> None:
         project_root = Path(__file__).resolve().parents[1]

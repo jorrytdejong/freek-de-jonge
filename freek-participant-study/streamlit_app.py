@@ -1039,14 +1039,6 @@ def render_debrief(
     if not submissions:
         render_review(session, assignment, stimuli)
         return
-    # Real participant links always end on the plain research debrief. Keeping
-    # the registry flag in this check preserves the fake reward flow for
-    # explicitly eligible internal test sessions only.
-    show_reward = (
-        reward_settings.enabled and session.is_test and session.reward_eligible
-    )
-    if show_reward:
-        render_debrief_background()
     render_header()
     st.title("Bedankt voor je deelname")
     st.success("Je antwoorden zijn veilig ingediend.")
@@ -1055,11 +1047,6 @@ def render_debrief(
         "We vergelijken verschillende generatieprocedures zonder die labels aan "
         "deelnemers te tonen."
     )
-    if show_reward:
-        render_reward(
-            session,
-            eligible=bool(submissions) and session.reward_eligible,
-        )
     if session.is_test:
         st.info(f"Testinzending {len(submissions)} is opgeslagen.")
         if st.button("Nieuwe testinzending"):

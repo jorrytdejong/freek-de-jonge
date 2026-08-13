@@ -46,7 +46,7 @@ FREEK_STUDY_REWARD_LEDGER_PATH=data/runtime/acl_rewards.csv \
 streamlit run streamlit_app.py
 ```
 
-After a test submission, the debrief page shows a fake coffee-reward button.
+After a test submission, the app shows the same plain debrief as every other link.
 It never calls Tremendous, requests payment details, or transfers money. Reward
 configuration is disabled by default. Issued fake claims are kept in the
 separate ignored `data/runtime/acl_rewards.csv` ledger. The ledger contains a
@@ -117,14 +117,11 @@ research app does not collect those details. Reopening an already-used link
 shows Tremendous's current payout status, while reopening the study link restores
 the same reward decision.
 
-Reward visibility is restricted to eligible internal test links through the
-private session registry's `reward_eligible` column. The production builder marks
-P01–P50 as `false`, and the application also forces every real participant session
-to a plain debrief with no coffee background, reward text, or reward controls.
-This application-level safeguard also covers previously generated production
-registries. Eligibility is resolved from the registered session ID and cannot be
-enabled with a query-string change. Older registries without the column remain
-compatible, but real participant sessions still remain reward-free.
+The production builder marks P01–P50 as `reward_eligible=false`, and the
+application forces every participant and test session to a plain debrief with no
+coffee background, reward text, or reward controls. This application-level
+safeguard also covers previously generated registries and avoids relying on a
+hot-reloaded session object's schema.
 
 ### Reward recovery
 
