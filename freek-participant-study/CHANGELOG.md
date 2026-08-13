@@ -5,8 +5,8 @@
 ### Per-link reward eligibility
 
 - Added registry-backed reward eligibility to the ACL participant app.
-- Production links P01–P10 now receive a plain debrief without coffee styling or
-  reward controls; P11–P50 retain the configured coffee reward.
+- Production links P01–P50 now receive a plain debrief without coffee styling or
+  reward controls, including links from previously generated registries.
 - Added regression coverage for eligible and reward-free submitted sessions.
 
 ### Participant rewards

@@ -102,19 +102,19 @@ class ACLDesignTest(unittest.TestCase):
         )
         self.assertEqual(Counter(item_exposure.values()), Counter({8: 80, 9: 40}))
 
-    def test_first_ten_production_links_are_reward_free(self) -> None:
+    def test_all_production_links_are_reward_free(self) -> None:
         rows = session_rows(
             50,
             is_test=False,
             created_at=self.sessions[next(iter(self.sessions))].created_at,
             id_factory=lambda index: f"participant-{index:02d}-demo",
             seed=20260806,
-            reward_free_count=10,
+            reward_free_count=50,
         )
 
         self.assertEqual(
             [row["reward_eligible"] for row in rows],
-            ["false"] * 10 + ["true"] * 40,
+            ["false"] * 50,
         )
 
 
