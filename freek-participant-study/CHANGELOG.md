@@ -1,5 +1,18 @@
 # Changelog
 
+## Prolific integration
+
+- Added Prolific URL-parameter validation and preservation across participant
+  navigation.
+- Isolated Taskflow replacement participants from earlier autosaved progress and
+  blocked replaced submissions from reclaiming a slot.
+- Added configured completion and no-consent return links while keeping
+  Prolific identifiers out of analysis exports.
+- Enforced the prerecruitment eligibility threshold of 18 years.
+- Split production recruitment into 25 uncompensated private-network slots and
+  25 paid Prolific slots, with source-aware access control, exports, dashboard
+  reporting, and a dedicated Taskflow upload.
+
 ## Unreleased
 
 ### Per-link reward eligibility

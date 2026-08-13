@@ -10,15 +10,27 @@ Dutch Streamlit application for the blinded `acl-1` humor-generation study.
 - Every participant rates 20 unique jokes: exactly one from each topic.
 - Every participant sees four jokes from two conditions and three jokes from
   each of the other four conditions; the larger condition slots rotate.
-- A single precomputed registry supports recruitment from 25 up to 50 valid
-  participants; every six-person block rotates all conditions over every topic.
+- A single precomputed registry supports up to 50 valid participants: P01–P25
+  are private-network slots and P26–P50 are Prolific slots; every six-person
+  block rotates all conditions over every topic.
 - Every joke receives four required 1–5 ratings: funniness, Freek-style
   resemblance, coherence, and originality.
 - Expected duration: approximately 7–9 minutes.
+- Real participants must be at least 18 years old and able to read Dutch.
 
 The old `pilot-1` modules and CSV files remain in the repository for historical
 reproducibility. The deployed `streamlit_app.py` uses only the `app/acl_*`
 modules and `data/acl_*` files.
+
+## Prolific recruitment
+
+The production app supports a fixed 25/25 mixed recruitment design while
+retaining the locked P01–P50 assignments. When enabled, only sessions marked
+`prolific` must contain `PROLIFIC_PID`, `STUDY_ID`, and `SESSION_ID`; network and
+internal test links are exempt.
+Configure `prolific_enabled`, `prolific_completion_url`, and
+`prolific_no_consent_url` as Streamlit secrets after creating the corresponding
+Prolific completion paths. See `PRODUCTION.md` for the launch sequence.
 
 ## Local setup
 

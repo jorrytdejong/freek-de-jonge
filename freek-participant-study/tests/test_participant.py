@@ -40,7 +40,7 @@ class ParticipantProfileTest(unittest.TestCase):
         )
 
     def test_age_must_be_a_whole_year_in_range(self) -> None:
-        for invalid_age in (0, 121, 24.5, True):
+        for invalid_age in (0, 17, 121, 24.5, True):
             with self.subTest(age=invalid_age):
                 with self.assertRaises(ProfileValidationError):
                     validate_profile(
