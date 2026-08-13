@@ -280,7 +280,7 @@ def build_production(
         created_at=date.today(),
         id_factory=lambda _: f"participant-{secrets.token_urlsafe(16)}",
         seed=20260806,
-        reward_free_count=10,
+        reward_free_count=MAXIMUM_PARTICIPANTS,
     )
     _write_csv(registry_path, SESSION_FIELDNAMES, [*test_rows, *real_rows])
     load_sessions(stimuli, registry_path)

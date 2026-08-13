@@ -46,7 +46,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 )
                 self.assertFalse(app.warning)
 
-    def test_submitted_real_link_is_forced_to_read_only_debrief(self) -> None:
+    def test_submitted_test_link_can_exercise_fake_reward_flow(self) -> None:
         project_root = Path(__file__).resolve().parents[1]
         app_path = project_root / "streamlit_app.py"
         stimuli = load_stimuli()
@@ -59,18 +59,18 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 encoding="utf-8", newline=""
             ) as source:
                 rows = list(csv.DictReader(source))
-            real_row = {
+            test_row = {
                 **rows[0],
-                "session_id": "real-acl-demo-A1B2",
-                "is_test": "false",
-                "notes": "Automated real-session simulation",
+                "session_id": "test-acl-reward-A1B2",
+                "is_test": "true",
+                "notes": "Automated test reward simulation",
             }
-            rows.append(real_row)
+            rows.append(test_row)
             with sessions_path.open("w", encoding="utf-8", newline="") as target:
                 writer = csv.DictWriter(target, fieldnames=rows[0].keys())
                 writer.writeheader()
                 writer.writerows(rows)
-            session = load_sessions(stimuli, sessions_path)[real_row["session_id"]]
+            session = load_sessions(stimuli, sessions_path)[test_row["session_id"]]
             assignment = build_assignment(session, stimuli)
             responses = {
                 item.item_id: {
@@ -87,7 +87,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
             storage.submit_response(
                 session_id=session.session_id,
                 study_version="acl-1",
-                is_test=False,
+                is_test=True,
                 profile={"age": 40, "freek_familiarity": 3, "consent": True},
                 responses=responses,
                 final_comment="Definitief.",
@@ -106,7 +106,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
             ):
                 app = AppTest.from_file(app_path)
                 app.query_params["session"] = session.session_id
-                app.query_params["page"] = "item-1"
+                app.query_params["page"] = "debrief"
                 app.run(timeout=20)
                 self.assertFalse(app.exception)
                 self.assertEqual(app.query_params["page"][0], "debrief")
@@ -117,7 +117,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                     )
                 )
                 self.assertEqual(len(app.expander), 20)
-                self.assertNotIn("Nieuwe testinzending", [b.label for b in app.button])
+                self.assertIn("Nieuwe testinzending", [b.label for b in app.button])
                 self.assertFalse(
                     any(b.label.startswith("Bewerk grap") for b in app.button)
                 )
@@ -165,7 +165,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 self.assertEqual(len(reward_rows), 1)
                 self.assertNotIn(session.session_id, reward_path.read_text())
 
-    def test_reward_free_link_gets_plain_debrief_without_coffee_controls(self) -> None:
+    def test_real_link_gets_plain_debrief_without_coffee_controls(self) -> None:
         project_root = Path(__file__).resolve().parents[1]
         app_path = project_root / "streamlit_app.py"
         stimuli = load_stimuli()
@@ -182,8 +182,10 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 **rows[0],
                 "session_id": "real-no-coffee-A1B2",
                 "is_test": "false",
-                "reward_eligible": "false",
-                "notes": "Automated reward-free session simulation",
+                # Production links remain coffee-free even when an older
+                # deployed registry still marks them as reward eligible.
+                "reward_eligible": "true",
+                "notes": "Automated production session simulation",
             }
             rows.append(reward_free_row)
             with sessions_path.open("w", encoding="utf-8", newline="") as target:

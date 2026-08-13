@@ -19,11 +19,11 @@ links plus 50 real links; the URL file contains only the 50 real links. Use this
 one registry whether recruitment ends at 25, 40, or 50 valid participants; do
 not generate a second assignment schedule for a different sample size.
 
-In the 50-link URL file, P01–P10 have `reward_eligible=false` and end on a plain
-debrief without the coffee page. P11–P50 have `reward_eligible=true` and retain
-the configured coffee reward. Upload the matching production registry as the
-deployment's session CSV secret; changing only the URL list does not change
-eligibility.
+In the 50-link URL file, P01–P50 have `reward_eligible=false` and end on a plain
+debrief without the coffee page. The application also forces all real participant
+sessions to the plain debrief, so previously generated production registries are
+safe after deploying this version. Upload the matching production registry as the
+deployment's session CSV secret when rotating or regenerating links.
 
 Paste the complete registry into the private `sessions_csv` Streamlit secret.
 Never expose `assigned_item_ids` to participants.
