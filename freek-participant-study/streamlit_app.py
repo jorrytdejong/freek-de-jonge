@@ -25,6 +25,7 @@ from app.acl_admin import (
     build_item_summary,
     build_overview,
     build_pipeline_style_summary,
+    build_recruitment_source_summary,
     build_topic_summary,
     filter_export_tables,
     filter_submission_status,
@@ -62,6 +63,14 @@ from app.acl_sessions import (
 )
 from app.acl_stimuli import JokeItem, StimulusValidationError, load_stimuli
 from app.participant import ProfileValidationError, validate_profile
+from app.prolific import (
+    ProlificContext,
+    ProlificContextError,
+    attach_prolific_metadata,
+    parse_prolific_context,
+    read_profile_metadata,
+    replaced_submission_ids,
+)
 from app.rewards import (
     CSVRewardLedger,
     FakeRewardProvider,
@@ -101,6 +110,35 @@ st.set_page_config(
 DEBRIEF_BACKGROUND_PATH = (
     Path(__file__).resolve().parent / "assets" / "coffee-watercolor-background.webp"
 )
+
+prolific_context: ProlificContext | None = None
+
+
+def configured_setting(environment_name: str, secret_name: str) -> str | None:
+    if value := os.environ.get(environment_name):
+        return value
+    try:
+        value = st.secrets.get(secret_name)
+    except StreamlitSecretNotFoundError:
+        return None
+    return str(value) if value not in (None, "") else None
+
+
+def prolific_enabled() -> bool:
+    value = configured_setting("FREEK_STUDY_PROLIFIC_ENABLED", "prolific_enabled")
+    return value is not None and value.strip().lower() == "true"
+
+
+def prolific_completion_url() -> str | None:
+    return configured_setting(
+        "FREEK_STUDY_PROLIFIC_COMPLETION_URL", "prolific_completion_url"
+    )
+
+
+def prolific_no_consent_url() -> str | None:
+    return configured_setting(
+        "FREEK_STUDY_PROLIFIC_NO_CONSENT_URL", "prolific_no_consent_url"
+    )
 
 
 @st.cache_data(show_spinner=False)
@@ -231,7 +269,10 @@ def navigate_to_page(session: ParticipantSession, page: str) -> None:
     if os.environ.get("FREEK_STUDY_IN_PROCESS_NAVIGATION") == "true":
         st.query_params["page"] = page
         st.rerun()
-    destination = "?" + urlencode({"session": session.session_id, "page": page})
+    destination_params = {"session": session.session_id, "page": page}
+    if prolific_context is not None:
+        destination_params.update(prolific_context.query_params())
+    destination = "?" + urlencode(destination_params)
     st.html(
         f"<script>window.location.replace({json.dumps(destination)});</script>",
         unsafe_allow_javascript=True,
@@ -533,7 +574,13 @@ def collect_progress_state(
             draft_key(session.session_id, assigned.item_id)
         ):
             drafts[assigned.item_id] = draft
-    return st.session_state.get(profile_key(session.session_id)), responses, drafts
+    profile = st.session_state.get(profile_key(session.session_id))
+    if profile is not None and prolific_context is not None:
+        replaced = tuple(
+            st.session_state.get(f"prolific_replaced:{session.session_id}", ())
+        )
+        profile = attach_prolific_metadata(profile, prolific_context, replaced=replaced)
+    return profile, responses, drafts
 
 
 def persist_progress(
@@ -617,6 +664,28 @@ def hydrate_progress(
     st.session_state[hydrated_key] = True
     if saved is None:
         return None
+    if prolific_context is not None and not session.is_test:
+        metadata = read_profile_metadata(saved.profile)
+        if metadata is None:
+            st.error(
+                "Deze onderzoekslink bevat oudere voortgang zonder geldige "
+                "Prolific-koppeling. Neem via Prolific contact op met de onderzoeker."
+            )
+            st.stop()
+        blocked = replaced_submission_ids(metadata)
+        if prolific_context.submission_id in blocked:
+            st.error(
+                "Deze Prolific-inzending is vervangen en kan niet opnieuw worden geopend."
+            )
+            st.stop()
+        saved_submission_id = metadata.get("submission_id")
+        if saved_submission_id != prolific_context.submission_id:
+            if saved.status == "submitted":
+                st.error("Deze onderzoeksplaats is al definitief gebruikt.")
+                st.stop()
+            prior_ids = tuple(dict.fromkeys((*blocked, str(saved_submission_id))))
+            st.session_state[f"prolific_replaced:{session.session_id}"] = prior_ids
+            return None
     if saved.study_version != STUDY_VERSION or saved.is_test != session.is_test:
         st.error("De opgeslagen voortgang hoort bij een andere onderzoeksversie.")
         st.stop()
@@ -717,15 +786,33 @@ def render_intro(
         "De teksten zijn experimenteel en niet door Freek de Jonge geschreven."
     )
     st.markdown("## Privacy")
-    st.write(
-        "We vragen geen naam of contactgegevens. Antwoorden worden gekoppeld aan "
-        "de unieke code in je persoonlijke onderzoekslink."
-    )
+    if session.recruitment_source == "prolific":
+        st.write(
+            "We vragen geen naam of contactgegevens. Antwoorden worden gekoppeld "
+            "aan de unieke code in je onderzoekslink en je pseudonieme "
+            "Prolific-identificatie."
+        )
+        st.caption(
+            "De vergoeding voor een geldige voltooiing wordt via Prolific afgehandeld."
+        )
+    elif session.recruitment_source == "network":
+        st.write(
+            "We vragen in het onderzoek geen naam of contactgegevens. Antwoorden "
+            "worden gekoppeld aan de unieke code in je persoonlijke link. Een "
+            "eventuele verzendlijst met contactgegevens wordt apart van de "
+            "onderzoeksantwoorden bewaard en niet voor de analyse gebruikt."
+        )
+        st.caption("Voor deelname via het persoonlijke netwerk is geen vergoeding.")
+    else:
+        st.write(
+            "We vragen geen naam of contactgegevens. Antwoorden worden gekoppeld aan "
+            "de unieke code in je persoonlijke onderzoekslink."
+        )
     with st.form(f"participant_profile_{session.session_id}", border=False):
         st.markdown("## Over jou")
         age = st.number_input(
             "Wat is je leeftijd in hele jaren?",
-            min_value=1,
+            min_value=18,
             max_value=120,
             value=None,
             step=1,
@@ -742,6 +829,12 @@ def render_intro(
             "dit onderzoek."
         )
         submitted = st.form_submit_button("Verder", type="primary")
+    if prolific_context is not None and (url := prolific_no_consent_url()):
+        st.link_button(
+            "Ik geef geen toestemming en ga terug naar Prolific",
+            url,
+            use_container_width=True,
+        )
     if submitted:
         try:
             profile = validate_profile(
@@ -1047,6 +1140,20 @@ def render_debrief(
         "We vergelijken verschillende generatieprocedures zonder die labels aan "
         "deelnemers te tonen."
     )
+    if prolific_context is not None:
+        if completion_url := prolific_completion_url():
+            st.link_button(
+                "Terug naar Prolific en deelname afronden",
+                completion_url,
+                type="primary",
+                use_container_width=True,
+            )
+        else:
+            st.warning(
+                "Je antwoorden zijn opgeslagen, maar de terugkeerlink naar Prolific "
+                "is nog niet geconfigureerd. Neem via Prolific contact op met de "
+                "onderzoeker."
+            )
     if session.is_test:
         st.info(f"Testinzending {len(submissions)} is opgeslagen.")
         if st.button("Nieuwe testinzending"):
@@ -1133,6 +1240,10 @@ def render_admin_dashboard(
     metrics[2].metric("Bezig", overview.in_progress_count)
     metrics[3].metric("Voltooide items", overview.completed_item_count)
     metrics[4].metric("Beoordelingen", overview.rating_count)
+    st.markdown("## Voortgang per wervingsbron")
+    st.dataframe(
+        build_recruitment_source_summary(selected), hide_index=True, width="stretch"
+    )
     st.markdown("## Gemiddelden per schaal")
     st.dataframe(build_dimension_summary(selected), hide_index=True, width="stretch")
     st.markdown("## Resultaten per conditie")
@@ -1376,6 +1487,20 @@ if access.status is not SessionAccessStatus.VALID:
     st.stop()
 participant_session = access.session
 assert participant_session is not None
+try:
+    prolific_context = (
+        parse_prolific_context(
+            st.query_params,
+            required=prolific_enabled(),
+        )
+        if participant_session.recruitment_source == "prolific"
+        else None
+    )
+except ProlificContextError as error:
+    render_header()
+    st.error(str(error))
+    render_footer()
+    st.stop()
 participant_assignment = build_assignment(participant_session, stimulus_items)
 resume_page = hydrate_progress(participant_session, participant_assignment)
 page = st.query_params.get("page")

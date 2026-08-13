@@ -5,6 +5,7 @@ from app.acl_admin import (
     build_condition_summary,
     build_overview,
     build_pipeline_style_summary,
+    build_recruitment_source_summary,
 )
 from app.acl_assignment import build_assignment
 from app.acl_exports import build_export_tables
@@ -78,6 +79,10 @@ class ACLRatingAndExportTest(unittest.TestCase):
         tables = build_export_tables((record,), self.sessions, self.stimuli)
         self.assertEqual(len(tables.participants), 1)
         self.assertEqual(len(tables.ratings), 20)
+        self.assertEqual(tables.participants[0]["recruitment_source"], "test")
+        self.assertTrue(
+            all(row["recruitment_source"] == "test" for row in tables.ratings)
+        )
         self.assertEqual(
             {row["condition_code"] for row in tables.ratings},
             {"A1", "A2", "C1", "C2", "E1", "E2"},
@@ -87,6 +92,18 @@ class ACLRatingAndExportTest(unittest.TestCase):
         self.assertEqual(overview.means["originality"], 5.0)
         self.assertEqual(len(build_condition_summary(tables)), 6)
         self.assertEqual(len(build_pipeline_style_summary(tables)), 6)
+        self.assertEqual(
+            build_recruitment_source_summary(tables),
+            (
+                {
+                    "Wervingsbron": "test",
+                    "Sessies": 1,
+                    "Ingediend": 1,
+                    "Bezig": 0,
+                    "Voltooide items": 20,
+                },
+            ),
+        )
 
 
 if __name__ == "__main__":

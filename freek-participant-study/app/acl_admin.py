@@ -109,6 +109,25 @@ def build_dimension_summary(tables: ExportTables) -> tuple[dict[str, object], ..
     )
 
 
+def build_recruitment_source_summary(
+    tables: ExportTables,
+) -> tuple[dict[str, object], ...]:
+    validate_export_tables(tables)
+    grouped: dict[str, list[dict[str, object]]] = defaultdict(list)
+    for row in tables.participants:
+        grouped[str(row["recruitment_source"])].append(row)
+    return tuple(
+        {
+            "Wervingsbron": source,
+            "Sessies": len(rows),
+            "Ingediend": sum(row["submission_status"] == "submitted" for row in rows),
+            "Bezig": sum(row["submission_status"] == "in_progress" for row in rows),
+            "Voltooide items": sum(int(row["completed_item_count"]) for row in rows),
+        }
+        for source, rows in sorted(grouped.items())
+    )
+
+
 def _group_summary(
     tables: ExportTables, keys: tuple[str, ...]
 ) -> tuple[dict[str, object], ...]:

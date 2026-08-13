@@ -45,8 +45,15 @@ token therefore reproduces the same order after interruption.
 
 ## Recruitment and stopping rule
 
+- Eligibility: participants are at least 18 years old and can comfortably read
+  Dutch. Familiarity with Freek de Jonge is measured, not used as an exclusion
+  criterion.
+- The planned sample contains two prespecified recruitment sources: assignment
+  slots P01–P25 are recruited through the researcher's personal network without
+  compensation; P26–P50 are anonymous paid Prolific participants.
 - Minimum viable sample: 25 valid submitted participants.
-- Recruitment target: 40 valid submitted participants.
+- Recruitment target: 50 valid submitted participants, aiming for 25 valid
+  submissions from each source.
 - Maximum sample: 50 valid submitted participants.
 - Operational target: 40 participants; no balance-based stopping milestone is
   needed because every recruitment prefix is maximally balanced.
@@ -56,6 +63,9 @@ token therefore reproduces the same order after interruption.
 - All valid submissions received before the predetermined recruitment close are
   analysed. Participants 49 and 50 are retained if valid; recruitment is not
   truncated at 48 merely to obtain exact balance.
+- A source may finish below 25 when availability is exhausted at the
+  predetermined close. The other source is never expanded beyond its 25-slot
+  cap in response to observed ratings.
 
 The recruitment closing date or operational feasibility decision must be
 recorded before inspecting condition-level results. Recruitment must never
@@ -112,15 +122,22 @@ Primary confirmatory effects can be estimated with mixed-effects models using
 participant and item as random intercepts. Topic and familiarity effects are
 secondary or exploratory unless separately preregistered.
 
+Recruitment source is retained as a participant-level fixed effect. Interactions
+between recruitment source and experimental condition, plus source-stratified
+estimates, are prespecified sensitivity analyses. They are interpreted as
+exploratory because the study is not separately powered for source interactions.
+
 ## Version and blinding rules
 
 - Study version: `acl-1`.
-- Export schema version: `2`.
+- Export schema version: `3`.
 - Generated items are immutable once recruitment starts.
 - The six conditions, topic-item mapping, Freek-context block, model and
   generation settings, first-valid-output rule, assignment schedule,
   randomization procedure, primary outcome and contrast, exclusion rules,
   sample-size bounds, and stopping rule are locked before recruitment.
+- Recruitment-source allocation and source-specific compensation are locked
+  before recruitment.
 - Items are not added or replaced after participant ratings have been viewed.
 - Real tokens and their assignments are private research data.
 - Condition metadata appears only in internal preview, admin, and exports.

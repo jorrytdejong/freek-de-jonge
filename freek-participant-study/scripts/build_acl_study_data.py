@@ -24,6 +24,8 @@ from app.acl_config import (
     CONDITION_CODES,
     ITEMS_PER_PARTICIPANT,
     MAXIMUM_PARTICIPANTS,
+    NETWORK_PARTICIPANTS,
+    PROLIFIC_PARTICIPANTS,
     STUDY_VERSION,
 )
 from app.acl_sessions import OPTIONAL_COLUMNS, REQUIRED_COLUMNS, load_sessions
@@ -57,6 +59,7 @@ SESSION_FIELDNAMES = (
     "is_test",
     "active",
     "reward_eligible",
+    "recruitment_source",
     "assigned_item_ids",
     "created_at",
     "notes",
@@ -205,17 +208,20 @@ def session_rows(
     id_factory: Callable[[int], str],
     seed: int,
     reward_free_count: int = 0,
+    recruitment_source: str | None = None,
 ) -> list[dict[str, str]]:
     assignments = assignment_item_ids(participant_count, seed=seed)
     label = "Test session" if is_test else "Production participant"
     if reward_free_count < 0 or reward_free_count > participant_count:
         raise ValueError("reward_free_count must fit within participant_count.")
+    source = recruitment_source or ("test" if is_test else "direct")
     return [
         {
             "session_id": id_factory(index),
             "is_test": str(is_test).lower(),
             "active": "true",
             "reward_eligible": str(index > reward_free_count).lower(),
+            "recruitment_source": source,
             "assigned_item_ids": "|".join(item_ids),
             "created_at": created_at.isoformat(),
             "notes": f"{label} {index:02d}",
@@ -232,6 +238,13 @@ def _write_csv(
         writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
+
+
+def _write_taskflow_csv(path: Path, urls: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerows((url, "1") for url in urls)
 
 
 def build_test_data(
@@ -259,10 +272,13 @@ def build_production(
     stimuli_path: Path,
     registry_path: Path,
     urls_path: Path,
+    taskflow_path: Path,
     base_url: str,
 ) -> None:
-    if registry_path.exists() or urls_path.exists():
+    if registry_path.exists() or urls_path.exists() or taskflow_path.exists():
         raise FileExistsError("Refusing to overwrite a private production registry.")
+    if NETWORK_PARTICIPANTS + PROLIFIC_PARTICIPANTS != MAXIMUM_PARTICIPANTS:
+        raise ValueError("Recruitment-source allocations must fill the registry.")
     stimuli = load_stimuli(stimuli_path)
     test_rows = session_rows(
         10,
@@ -282,6 +298,10 @@ def build_production(
         seed=20260806,
         reward_free_count=MAXIMUM_PARTICIPANTS,
     )
+    for index, row in enumerate(real_rows, start=1):
+        row["recruitment_source"] = (
+            "network" if index <= NETWORK_PARTICIPANTS else "prolific"
+        )
     _write_csv(registry_path, SESSION_FIELDNAMES, [*test_rows, *real_rows])
     load_sessions(stimuli, registry_path)
     url_rows = [
@@ -290,6 +310,7 @@ def build_production(
             "session_id": row["session_id"],
             "url": f"{base_url.rstrip('/')}?session={row['session_id']}",
             "reward_eligible": row["reward_eligible"],
+            "recruitment_source": row["recruitment_source"],
             "assigned_item_ids": row["assigned_item_ids"],
         }
         for index, row in enumerate(real_rows, start=1)
@@ -301,9 +322,14 @@ def build_production(
             "session_id",
             "url",
             "reward_eligible",
+            "recruitment_source",
             "assigned_item_ids",
         ),
         url_rows,
+    )
+    _write_taskflow_csv(
+        taskflow_path,
+        [row["url"] for row in url_rows if row["recruitment_source"] == "prolific"],
     )
 
 
@@ -317,6 +343,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--production-registry", type=Path)
     parser.add_argument("--production-urls", type=Path)
+    parser.add_argument("--prolific-taskflow", type=Path)
     parser.add_argument(
         "--base-url", default="https://freek-participant-pilot.streamlit.app/"
     )
@@ -335,18 +362,25 @@ def main() -> int:
         (args.sessions, args.staging_sessions),
     )
     print("Built 120 stimuli and two balanced 10-link test registries.")
-    if bool(args.production_registry) != bool(args.production_urls):
-        raise ValueError("Provide both production output paths or neither.")
-    if args.production_registry and args.production_urls:
+    production_paths = (
+        args.production_registry,
+        args.production_urls,
+        args.prolific_taskflow,
+    )
+    if any(production_paths) and not all(production_paths):
+        raise ValueError("Provide all three production output paths or none.")
+    if all(production_paths):
         build_production(
             stimuli_path=args.stimuli,
             registry_path=args.production_registry,
             urls_path=args.production_urls,
+            taskflow_path=args.prolific_taskflow,
             base_url=args.base_url,
         )
         print(
-            f"Built {MAXIMUM_PARTICIPANTS} private production URLs at "
-            f"{args.production_urls}."
+            f"Built {NETWORK_PARTICIPANTS} network URLs, "
+            f"{PROLIFIC_PARTICIPANTS} Prolific URLs, and Taskflow upload at "
+            f"{args.prolific_taskflow}."
         )
     return 0
 

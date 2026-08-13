@@ -153,6 +153,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                 **rows[0],
                 "session_id": "real-no-coffee-A1B2",
                 "is_test": "false",
+                "recruitment_source": "direct",
                 # Production links remain coffee-free even when an older
                 # deployed registry still marks them as reward eligible.
                 "reward_eligible": "true",
