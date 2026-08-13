@@ -31,6 +31,7 @@ class QualityGateDataTest(unittest.TestCase):
             fieldnames = tuple(reader.fieldnames or ())
             rows = list(reader)
         rows[0]["is_test"] = "false"
+        rows[0]["recruitment_source"] = "direct"
         with tempfile.TemporaryDirectory() as directory:
             sessions_path = Path(directory) / "sessions.csv"
             with sessions_path.open("w", encoding="utf-8", newline="") as target:

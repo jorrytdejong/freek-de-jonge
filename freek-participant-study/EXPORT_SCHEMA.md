@@ -1,6 +1,6 @@
 # Analysis Export Schema
 
-Export schema: `2`
+Export schema: `3`
 Study version: `acl-1`
 
 `participants.csv` contains one row per saved session. `ratings.csv` contains
@@ -15,7 +15,8 @@ submit only once.
 
 The participant table includes:
 
-- anonymous session ID, study version, test flag, and submission status;
+- anonymous session ID, study version, test flag, recruitment source, and
+  submission status;
 - submission count and latest immutable submission identifiers;
 - age, Freek familiarity, and consent;
 - ordered `assigned_item_ids` and assignment fingerprint;
@@ -26,7 +27,7 @@ The participant table includes:
 
 The unique row key is `(session_id, item_id)`. Every row contains:
 
-- participant/session metadata and familiarity;
+- participant/session metadata, recruitment source, and familiarity;
 - assignment fingerprint and presentation position;
 - `item_id`, `topic_id`, and topic;
 - condition code, pipeline family, and Freek-style toggle;

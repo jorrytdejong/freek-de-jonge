@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-MINIMUM_AGE = 1
+MINIMUM_AGE = 18
 MAXIMUM_AGE = 120
 MINIMUM_FAMILIARITY = 1
 MAXIMUM_FAMILIARITY = 5

@@ -1,12 +1,22 @@
+import csv
+import tempfile
 import unittest
 from collections import Counter
+from pathlib import Path
+from unittest.mock import patch
 
 from app.acl_assignment import assignment_fingerprint, build_assignment
-from app.acl_config import CONDITION_CODES, ITEMS_PER_PARTICIPANT
+from app.acl_config import (
+    CONDITION_CODES,
+    ITEMS_PER_PARTICIPANT,
+    NETWORK_PARTICIPANTS,
+    PROLIFIC_PARTICIPANTS,
+)
 from app.acl_sessions import load_sessions
 from app.acl_stimuli import load_stimuli
 from scripts.build_acl_study_data import (
     assignment_item_ids,
+    build_production,
     session_rows,
     validate_assignment_matrix,
 )
@@ -116,6 +126,69 @@ class ACLDesignTest(unittest.TestCase):
             [row["reward_eligible"] for row in rows],
             ["false"] * 50,
         )
+
+    def test_production_outputs_fixed_network_and_prolific_split(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            registry = root / "sessions.csv"
+            urls = root / "urls.csv"
+            taskflow = root / "taskflow.csv"
+            tokens = (f"token-{index:02d}-secure" for index in range(1, 51))
+            with patch(
+                "scripts.build_acl_study_data.secrets.token_urlsafe",
+                side_effect=lambda _: next(tokens),
+            ):
+                build_production(
+                    stimuli_path=Path(__file__).resolve().parents[1]
+                    / "data"
+                    / "acl_jokes.csv",
+                    registry_path=registry,
+                    urls_path=urls,
+                    taskflow_path=taskflow,
+                    base_url="https://research.example/study",
+                )
+
+            with urls.open(encoding="utf-8", newline="") as handle:
+                url_rows = list(csv.DictReader(handle))
+            self.assertEqual(
+                Counter(row["recruitment_source"] for row in url_rows),
+                Counter(
+                    {
+                        "network": NETWORK_PARTICIPANTS,
+                        "prolific": PROLIFIC_PARTICIPANTS,
+                    }
+                ),
+            )
+            with taskflow.open(encoding="utf-8", newline="") as handle:
+                taskflow_rows = list(csv.reader(handle))
+            self.assertEqual(len(taskflow_rows), PROLIFIC_PARTICIPANTS)
+            self.assertTrue(all(row[1] == "1" for row in taskflow_rows))
+            prolific_urls = {
+                row["url"]
+                for row in url_rows
+                if row["recruitment_source"] == "prolific"
+            }
+            self.assertEqual({row[0] for row in taskflow_rows}, prolific_urls)
+
+            split_assignments = (
+                [row["assigned_item_ids"].split("|") for row in url_rows[:25]],
+                [row["assigned_item_ids"].split("|") for row in url_rows[25:]],
+            )
+            for assignments in split_assignments:
+                condition_counts = Counter(
+                    item_id.split("-")[1]
+                    for assignment in assignments
+                    for item_id in assignment
+                )
+                item_counts = Counter(
+                    item_id for assignment in assignments for item_id in assignment
+                )
+                self.assertLessEqual(
+                    max(condition_counts.values()) - min(condition_counts.values()), 1
+                )
+                self.assertLessEqual(
+                    max(item_counts.values()) - min(item_counts.values()), 1
+                )
 
 
 if __name__ == "__main__":

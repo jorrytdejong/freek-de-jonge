@@ -22,7 +22,8 @@ REQUIRED_COLUMNS = {
     "created_at",
     "notes",
 }
-OPTIONAL_COLUMNS = {"reward_eligible"}
+OPTIONAL_COLUMNS = {"reward_eligible", "recruitment_source"}
+RECRUITMENT_SOURCES = {"test", "network", "prolific", "direct"}
 SESSION_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{12,64}$")
 DEFAULT_SESSIONS_PATH = (
     Path(__file__).resolve().parents[1] / "data" / "acl_sessions.csv"
@@ -49,6 +50,7 @@ class ParticipantSession:
     assigned_item_ids: tuple[str, ...]
     created_at: date
     notes: str
+    recruitment_source: str = "direct"
 
 
 @dataclass(frozen=True)
@@ -142,11 +144,23 @@ def _load_rows(
             raise SessionValidationError(
                 f"Sessie {session_id} heeft een ongeldige datum."
             ) from error
+        is_test = _boolean(values["is_test"], row_number=row_number, column="is_test")
+        recruitment_source = (
+            (row.get("recruitment_source") or ("test" if is_test else "direct"))
+            .strip()
+            .lower()
+        )
+        if recruitment_source not in RECRUITMENT_SOURCES:
+            raise SessionValidationError(
+                f"Sessie {session_id} heeft een ongeldige recruitment_source."
+            )
+        if is_test != (recruitment_source == "test"):
+            raise SessionValidationError(
+                f"Sessie {session_id} heeft een inconsistente recruitment_source."
+            )
         sessions[session_id] = ParticipantSession(
             session_id=session_id,
-            is_test=_boolean(
-                values["is_test"], row_number=row_number, column="is_test"
-            ),
+            is_test=is_test,
             active=_boolean(values["active"], row_number=row_number, column="active"),
             reward_eligible=_boolean(
                 reward_eligible_value,
@@ -156,6 +170,7 @@ def _load_rows(
             assigned_item_ids=assigned,
             created_at=created_at,
             notes=values["notes"],
+            recruitment_source=recruitment_source,
         )
     if not sessions:
         raise SessionValidationError("Het sessieregister is leeg.")

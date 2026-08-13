@@ -16,9 +16,10 @@ from app.acl_config import RATING_DIMENSIONS, STUDY_VERSION
 from app.acl_ratings import MAXIMUM_RATING, MINIMUM_RATING
 from app.acl_sessions import ParticipantSession
 from app.acl_stimuli import JokeItem
+from app.participant import MAXIMUM_AGE, MINIMUM_AGE
 from app.storage.base import SavedProgress
 
-EXPORT_SCHEMA_VERSION = "2"
+EXPORT_SCHEMA_VERSION = "3"
 DEFAULT_EXPORT_DIRECTORY = (
     Path(__file__).resolve().parents[1] / "data" / "runtime" / "acl_exports"
 )
@@ -27,6 +28,7 @@ PARTICIPANT_COLUMNS = (
     "session_id",
     "study_version",
     "is_test",
+    "recruitment_source",
     "submission_status",
     "submission_count",
     "latest_submission_id",
@@ -51,6 +53,7 @@ RATING_COLUMNS = (
     "submission_number",
     "study_version",
     "is_test",
+    "recruitment_source",
     "submission_status",
     "age",
     "freek_familiarity",
@@ -195,8 +198,8 @@ def build_export_tables(
                 profile.get("age"),
                 field="age",
                 session_id=session_id,
-                minimum=1,
-                maximum=120,
+                minimum=MINIMUM_AGE,
+                maximum=MAXIMUM_AGE,
             )
             familiarity = _integer(
                 profile.get("freek_familiarity"),
@@ -215,6 +218,7 @@ def build_export_tables(
                 "session_id": session_id,
                 "study_version": record.study_version,
                 "is_test": record.is_test,
+                "recruitment_source": session.recruitment_source,
                 "submission_status": record.status,
                 "submission_count": len(record.submissions),
                 "latest_submission_id": submission_id,
@@ -270,6 +274,7 @@ def build_export_tables(
                     "submission_number": submission_number,
                     "study_version": record.study_version,
                     "is_test": record.is_test,
+                    "recruitment_source": session.recruitment_source,
                     "submission_status": record.status,
                     "age": age,
                     "freek_familiarity": familiarity,
