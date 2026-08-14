@@ -79,7 +79,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                     "funniness": 3,
                     "freek_similarity": 3,
                     "coherence": 3,
-                    "originality": 3,
+                    "comment": "",
                 }
                 for item in assignment.items
             }
@@ -175,7 +175,7 @@ class SubmittedRealSessionFlowTest(unittest.TestCase):
                     "funniness": 3,
                     "freek_similarity": 3,
                     "coherence": 3,
-                    "originality": 3,
+                    "comment": "",
                 }
                 for item in assignment.items
             }

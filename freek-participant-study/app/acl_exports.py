@@ -19,7 +19,7 @@ from app.acl_stimuli import JokeItem
 from app.participant import MAXIMUM_AGE, MINIMUM_AGE
 from app.storage.base import SavedProgress
 
-EXPORT_SCHEMA_VERSION = "3"
+EXPORT_SCHEMA_VERSION = "4"
 DEFAULT_EXPORT_DIRECTORY = (
     Path(__file__).resolve().parents[1] / "data" / "runtime" / "acl_exports"
 )
@@ -72,7 +72,7 @@ RATING_COLUMNS = (
     "funniness",
     "freek_similarity",
     "coherence",
-    "originality",
+    "comment",
     "final_comment",
     "submitted_at",
 )
@@ -265,6 +265,11 @@ def build_export_tables(
                 )
                 for dimension in RATING_DIMENSIONS
             }
+            comment = response.get("comment", "")
+            if not isinstance(comment, str):
+                raise ExportValidationError(
+                    f"Session {session_id} has an invalid item comment."
+                )
             stimulus = items_by_id[assigned.item_id]
             rating_rows.append(
                 {
@@ -291,6 +296,7 @@ def build_export_tables(
                     "result_sha256": stimulus.result_sha256,
                     "joke_text": stimulus.text,
                     **scores,
+                    "comment": comment,
                     "final_comment": final_comment,
                     "submitted_at": submitted_at,
                 }

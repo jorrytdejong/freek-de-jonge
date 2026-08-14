@@ -1,4 +1,4 @@
-"""Validate the four required ratings for one ACL joke item."""
+"""Validate the three required ratings and optional comment for one ACL joke."""
 
 from __future__ import annotations
 
@@ -23,11 +23,15 @@ class ItemRatingResponse:
     funniness: int
     freek_similarity: int
     coherence: int
-    originality: int
+    comment: str
 
 
 def validate_item_response(
-    *, item_id: str, display_position: int, raw_ratings: dict[str, int | None]
+    *,
+    item_id: str,
+    display_position: int,
+    raw_ratings: dict[str, int | None],
+    comment: str = "",
 ) -> ItemRatingResponse:
     messages: list[str] = []
     clean: dict[str, int] = {}
@@ -45,8 +49,11 @@ def validate_item_response(
             clean[dimension] = value
     if messages:
         raise ItemRatingValidationError(messages)
+    if not isinstance(comment, str):
+        raise ItemRatingValidationError(["De open toelichting is ongeldig."])
     return ItemRatingResponse(
         item_id=item_id,
         display_position=display_position,
+        comment=comment.strip(),
         **clean,
     )

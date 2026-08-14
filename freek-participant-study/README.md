@@ -13,8 +13,8 @@ Dutch Streamlit application for the blinded `acl-1` humor-generation study.
 - A single precomputed registry supports up to 50 valid participants: P01–P25
   are private-network slots and P26–P50 are Prolific slots; every six-person
   block rotates all conditions over every topic.
-- Every joke receives four required 1–5 ratings: funniness, Freek-style
-  resemblance, coherence, and originality.
+- Every joke receives three required 1–5 ratings—funniness, Freek-style
+  resemblance, and coherence—and one optional open comment.
 - Expected duration: approximately 7–9 minutes.
 - Real participants must be at least 18 years old and able to read Dutch.
 

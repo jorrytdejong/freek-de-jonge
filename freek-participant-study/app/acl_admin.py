@@ -100,7 +100,6 @@ def build_dimension_summary(tables: ExportTables) -> tuple[dict[str, object], ..
         "funniness": "Grappigheid",
         "freek_similarity": "Freek-gelijkenis",
         "coherence": "Coherentie",
-        "originality": "Originaliteit",
     }
     return tuple(
         {"Schaal": labels[dimension], "Gemiddelde": mean}

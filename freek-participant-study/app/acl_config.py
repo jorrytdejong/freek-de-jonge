@@ -1,6 +1,6 @@
 """Locked identifiers and questionnaire text for the ACL experiment."""
 
-APP_VERSION = "1.4.0"
+APP_VERSION = "1.5.0"
 STUDY_VERSION = "acl-1"
 ITEMS_PER_PARTICIPANT = 20
 MINIMUM_PARTICIPANTS = 25
@@ -13,19 +13,18 @@ RATING_DIMENSIONS = (
     "funniness",
     "freek_similarity",
     "coherence",
-    "originality",
 )
 
 RATING_QUESTIONS = {
-    "funniness": "Hoe grappig vind je deze grap?",
+    "funniness": "Hoe grappig is deze grap?",
     "freek_similarity": ("In hoeverre lijkt deze grap op de stijl van Freek de Jonge?"),
-    "coherence": "In hoeverre is deze grap coherent en begrijpelijk als grap?",
-    "originality": "Hoe origineel vind je deze grap?",
+    "coherence": "Is deze grap logisch als grap?",
 }
 
 RATING_ENDPOINTS = {
     "funniness": ("Helemaal niet grappig", "Heel grappig"),
-    "freek_similarity": ("Helemaal niet", "Heel erg"),
-    "coherence": ("Helemaal niet coherent", "Zeer coherent"),
-    "originality": ("Zeer algemeen", "Zeer origineel"),
+    "freek_similarity": ("Helemaal niet", "Heel sterk"),
+    "coherence": ("Onsamenhangend", "Zeer samenhangend"),
 }
+
+OPEN_COMMENT_QUESTION = "Wat maakt dat deze grap wel of niet werkt? (optioneel)"
