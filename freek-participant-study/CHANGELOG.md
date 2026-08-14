@@ -15,6 +15,15 @@
 
 ## Unreleased
 
+### Participant questionnaire
+
+- Replaced the required originality score with an optional per-joke open
+  comment asking what makes the joke work or not work.
+- Updated the Dutch wording and endpoints for funniness, Freek-style
+  resemblance, and coherence.
+- Updated review, autosave, validation, exports, documentation, and tests for
+  the three-score questionnaire.
+
 ### Per-link reward eligibility
 
 - Added registry-backed reward eligibility to the ACL participant app.

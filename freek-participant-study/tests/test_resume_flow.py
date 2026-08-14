@@ -35,10 +35,13 @@ class ResumeFlowTest(unittest.TestCase):
                 app.query_params["page"] = "item-1"
                 app.run(timeout=20)
                 self.assertFalse(app.exception)
-                self.assertEqual(len(app.select_slider), 4)
+                self.assertEqual(len(app.select_slider), 3)
 
                 app.select_slider[0].set_value(2).run(timeout=20)
                 app.select_slider[1].set_value(4).run(timeout=20)
+                app.text_area[0].set_value("Een gedeeltelijke toelichting.").run(
+                    timeout=20
+                )
                 saved = storage.load_progress(session_id)
                 assert saved is not None
                 self.assertEqual(saved.current_page, "item-1")
@@ -52,6 +55,9 @@ class ResumeFlowTest(unittest.TestCase):
                 self.assertEqual(resumed.query_params["page"][0], "item-1")
                 self.assertEqual(resumed.select_slider[0].value, 2)
                 self.assertEqual(resumed.select_slider[1].value, 4)
+                self.assertEqual(
+                    resumed.text_area[0].value, "Een gedeeltelijke toelichting."
+                )
                 for slider in resumed.select_slider:
                     if slider.value == 0:
                         slider.set_value(3)
