@@ -32,10 +32,10 @@ The unique row key is `(session_id, item_id)`. Every row contains:
 - `item_id`, `topic_id`, and topic;
 - condition code, pipeline family, and Freek-style toggle;
 - model, result hash, exact joke text;
-- funniness, Freek similarity, coherence, and originality scores;
-- optional final comment and submission timestamp.
+- funniness, Freek similarity, and coherence scores;
+- optional per-joke comment, legacy final-comment field, and submission timestamp.
 
-All four outcomes are integers from 1 through 5. Condition and pipeline columns
+All three outcomes are integers from 1 through 5. Condition and pipeline columns
 are internal research metadata and are never displayed to participants.
 
 ## Validation

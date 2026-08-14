@@ -73,27 +73,25 @@ continue or stop because a contrast has or has not reached significance.
 
 ## Questionnaire
 
-Each joke receives four required integer scores from 1 through 5. Sliders begin
-at `Kies`, which is outside the analysis scale.
+Each joke receives three required integer scores from 1 through 5 and one
+optional open comment. Sliders begin at `Kies`, which is outside the analysis
+scale.
 
-1. **Funniness:** `Hoe grappig vind je deze grap?`
+1. **Funniness:** `Hoe grappig is deze grap?`
    - 1: `Helemaal niet grappig`
    - 5: `Heel grappig`
 2. **Freek-style resemblance:**
    `In hoeverre lijkt deze grap op de stijl van Freek de Jonge?`
    - 1: `Helemaal niet`
-   - 5: `Heel erg`
+   - 5: `Heel sterk`
 3. **Coherence:**
-   `In hoeverre is deze grap coherent en begrijpelijk als grap?`
-   - 1: `Helemaal niet coherent`
-   - 5: `Zeer coherent`
-4. **Originality:** `Hoe origineel vind je deze grap?`
-   - 1: `Zeer algemeen`
-   - 5: `Zeer origineel`
+   `Is deze grap logisch als grap?`
+   - 1: `Onsamenhangend`
+   - 5: `Zeer samenhangend`
+4. **Open comment:** `Wat maakt dat deze grap wel of niet werkt? (optioneel)`
 
-One optional general comment is collected on the final review page. There is no
-per-joke comment, attention check, response-time measurement, gender question,
-or education question.
+There is no additional general comment on the final review page, attention
+check, response-time measurement, gender question, or education question.
 
 Before the jokes, participants provide exact age, required 1–5 familiarity with
 Freek de Jonge, and consent. No name or contact details are collected.
@@ -102,21 +100,22 @@ Freek de Jonge, and consent. No name or contact details are collected.
 
 1. Personal-link validation.
 2. Information, privacy notice, familiarity, age, and consent.
-3. Twenty joke pages with four ratings each.
+3. Twenty joke pages with three ratings and one optional open comment each.
 4. Review page with direct editing and an optional final comment.
 5. Immutable final submission and debrief.
 
 Every meaningful change is autosaved. Reopening the same token restores the
-profile, partial ratings, completed ratings, current position, final comment,
+profile, partial ratings and comments, completed responses, current position,
 and assignment order. A submitted real link reopens in read-only debrief mode.
 Test links may create numbered repeat submissions.
 
 ## Analysis contract
 
-The primary outcomes are funniness, Freek-style resemblance, coherence, and
-originality. The export contains one row per participant-item observation and
+The primary outcomes are funniness, Freek-style resemblance, and coherence.
+The export contains one row per participant-item observation and
 retains condition, pipeline family, Freek toggle, topic, item ID, presentation
-position, participant familiarity, exact text, model, and source hash.
+position, participant familiarity, optional open comment, exact text, model,
+and source hash.
 
 Primary confirmatory effects can be estimated with mixed-effects models using
 participant and item as random intercepts. Topic and familiarity effects are

@@ -37,9 +37,11 @@ class ACLParticipantFlowTest(unittest.TestCase):
                 app.query_params["page"] = "item-1"
                 app.run(timeout=20)
                 for position in range(1, 21):
-                    self.assertEqual(len(app.select_slider), 4)
+                    self.assertEqual(len(app.select_slider), 3)
                     for slider in app.select_slider:
                         slider.set_value(3)
+                    if position == 1:
+                        app.text_area[0].set_value("Werkt door de onverwachte wending.")
                     app.run(timeout=20)
                     label = "Naar controle" if position == 20 else "Volgende grap"
                     next(
@@ -47,7 +49,6 @@ class ACLParticipantFlowTest(unittest.TestCase):
                     ).click().run(timeout=20)
                 self.assertEqual(app.query_params["page"][0], "review")
                 self.assertEqual(len(app.expander), 20)
-                app.text_area[0].set_value("Algemene testopmerking.").run(timeout=20)
                 next(
                     button
                     for button in app.button
@@ -58,7 +59,15 @@ class ACLParticipantFlowTest(unittest.TestCase):
             assert saved is not None
             self.assertEqual(saved.status, "submitted")
             self.assertEqual(len(saved.responses), 20)
-            self.assertEqual(saved.final_comment, "Algemene testopmerking.")
+            first_response = next(
+                response
+                for response in saved.responses.values()
+                if response["display_position"] == 1
+            )
+            self.assertEqual(
+                first_response["comment"], "Werkt door de onverwachte wending."
+            )
+            self.assertEqual(saved.final_comment, "")
             self.assertEqual(len(saved.submissions), 1)
 
 

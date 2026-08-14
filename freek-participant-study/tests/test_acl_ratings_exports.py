@@ -23,7 +23,7 @@ class ACLRatingAndExportTest(unittest.TestCase):
         cls.session = next(iter(cls.sessions.values()))
         cls.assignment = build_assignment(cls.session, cls.stimuli)
 
-    def test_all_four_dimensions_are_required(self) -> None:
+    def test_all_three_dimensions_are_required(self) -> None:
         with self.assertRaises(ItemRatingValidationError) as raised:
             validate_item_response(
                 item_id="T01-A1",
@@ -32,10 +32,9 @@ class ACLRatingAndExportTest(unittest.TestCase):
                     "funniness": 3,
                     "freek_similarity": None,
                     "coherence": None,
-                    "originality": None,
                 },
             )
-        self.assertEqual(len(raised.exception.messages), 3)
+        self.assertEqual(len(raised.exception.messages), 2)
 
     def test_complete_submission_exports_20_item_rows_and_internal_factors(
         self,
@@ -47,7 +46,7 @@ class ACLRatingAndExportTest(unittest.TestCase):
                 "funniness": 2,
                 "freek_similarity": 3,
                 "coherence": 4,
-                "originality": 5,
+                "comment": "Deze toelichting hoort bij de grap.",
             }
             for assigned in self.assignment.items
         }
@@ -88,8 +87,14 @@ class ACLRatingAndExportTest(unittest.TestCase):
             {"A1", "A2", "C1", "C2", "E1", "E2"},
         )
         self.assertTrue(all(row["coherence"] == 4 for row in tables.ratings))
+        self.assertTrue(
+            all(
+                row["comment"] == "Deze toelichting hoort bij de grap."
+                for row in tables.ratings
+            )
+        )
         overview = build_overview(tables)
-        self.assertEqual(overview.means["originality"], 5.0)
+        self.assertEqual(overview.means["coherence"], 4.0)
         self.assertEqual(len(build_condition_summary(tables)), 6)
         self.assertEqual(len(build_pipeline_style_summary(tables)), 6)
         self.assertEqual(

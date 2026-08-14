@@ -39,6 +39,7 @@ from app.acl_assignment import (
 )
 from app.acl_config import (
     ITEMS_PER_PARTICIPANT,
+    OPEN_COMMENT_QUESTION,
     RATING_DIMENSIONS,
     RATING_ENDPOINTS,
     RATING_QUESTIONS,
@@ -313,6 +314,10 @@ def draft_key(session_id: str, item_id: str) -> str:
 
 def rating_key(session_id: str, item_id: str, dimension: str) -> str:
     return f"rating:{session_id}:{item_id}:{dimension}"
+
+
+def item_comment_key(session_id: str, item_id: str) -> str:
+    return f"item_comment:{session_id}:{item_id}"
 
 
 def final_comment_key(session_id: str) -> str:
@@ -624,6 +629,7 @@ def validate_response_record(assigned: AssignedItem, response: object) -> None:
         raw_ratings={
             dimension: response.get(dimension) for dimension in RATING_DIMENSIONS
         },
+        comment=response.get("comment", ""),
     )
     if (
         response.get("item_id") != assigned.item_id
@@ -638,6 +644,7 @@ def validate_draft_record(assigned: AssignedItem, draft: object) -> None:
         or draft.get("item_id") != assigned.item_id
         or draft.get("display_position") != assigned.display_position
         or not isinstance(draft.get("ratings"), dict)
+        or not isinstance(draft.get("comment", ""), str)
     ):
         raise ValueError("Invalid draft mapping.")
     ratings = draft["ratings"]
@@ -777,8 +784,8 @@ def render_intro(
     st.title("Over het onderzoek")
     st.write(
         f"Je beoordeelt {ITEMS_PER_PARTICIPANT} korte, experimentele grappen. "
-        "Per grap geef je vier "
-        "scores. Deelname duurt ongeveer 7–9 minuten."
+        "Per grap geef je drie scores en kun je een korte toelichting geven. "
+        "Deelname duurt ongeveer 7–9 minuten."
     )
     st.markdown("## Freek de Jonge")
     st.write(
@@ -879,6 +886,10 @@ def restore_rating_widgets(session: ParticipantSession, assigned: AssignedItem) 
             rating_key(session.session_id, assigned.item_id, dimension),
             ratings.get(dimension) or 0,
         )
+    st.session_state.setdefault(
+        item_comment_key(session.session_id, assigned.item_id),
+        (draft if draft is not None else response).get("comment", ""),
+    )
 
 
 def render_rating_slider(
@@ -930,14 +941,18 @@ def render_rating_item(
         raw_ratings["freek_similarity"] = render_rating_slider(
             session, assigned, "freek_similarity"
         )
-        raw_ratings["originality"] = render_rating_slider(
-            session, assigned, "originality"
-        )
+    comment = st.text_area(
+        OPEN_COMMENT_QUESTION,
+        max_chars=1000,
+        height=100,
+        key=item_comment_key(session.session_id, assigned.item_id),
+    )
 
     draft = {
         "item_id": assigned.item_id,
         "display_position": assigned.display_position,
         "ratings": raw_ratings,
+        "comment": comment,
     }
     existing_draft = st.session_state.get(
         draft_key(session.session_id, assigned.item_id)
@@ -945,8 +960,10 @@ def render_rating_item(
     response = st.session_state.get(response_key(session.session_id, assigned.item_id))
     matches_response = response is not None and all(
         response.get(dimension) == value for dimension, value in raw_ratings.items()
+    ) and response.get("comment", "") == comment.strip()
+    has_content = any(value is not None for value in raw_ratings.values()) or bool(
+        comment.strip()
     )
-    has_content = any(value is not None for value in raw_ratings.values())
     changed = False
     if matches_response or not has_content:
         if existing_draft is not None:
@@ -985,10 +1002,11 @@ def render_rating_item(
                 item_id=assigned.item_id,
                 display_position=assigned.display_position,
                 raw_ratings=raw_ratings,
+                comment=comment,
             )
         except ItemRatingValidationError as error:
             st.error(
-                "Beantwoord alle vier schalen:\n\n"
+                "Beantwoord alle drie schalen:\n\n"
                 + "\n".join(f"- {message}" for message in error.messages)
             )
         else:
@@ -999,6 +1017,7 @@ def render_rating_item(
                     dimension: getattr(validated, dimension)
                     for dimension in RATING_DIMENSIONS
                 },
+                "comment": validated.comment,
             }
             st.session_state.pop(draft_key(session.session_id, assigned.item_id), None)
             destination = (
@@ -1043,6 +1062,8 @@ def render_item_summary(
                 for dimension in RATING_DIMENSIONS
             )
         )
+        if response.get("comment"):
+            st.markdown(f"**Open toelichting:** {escape(response['comment'])}")
         if editable and st.button(f"Bewerk grap {index + 1}", key=f"edit-{index + 1}"):
             st.session_state[f"review_edit:{session.session_id}"] = assigned.item_id
             destination = f"item-{index + 1}"
@@ -1100,16 +1121,6 @@ def render_review(
     st.write("Je kunt iedere grap nog openen en aanpassen vóór het indienen.")
     for index in range(len(assignment.items)):
         render_item_summary(session, assignment, stimuli, index, editable=True)
-    final_comment = st.text_area(
-        "Algemene opmerking over de grappen of het onderzoek (optioneel)",
-        max_chars=2000,
-        height=120,
-        key=final_comment_key(session.session_id),
-    )
-    saved_comment_key = f"saved_final_comment:{session.session_id}"
-    if st.session_state.get(saved_comment_key) != final_comment:
-        persist_progress(session, assignment, current_page="review")
-        st.session_state[saved_comment_key] = final_comment
     back_column, submit_column = st.columns(2)
     with back_column:
         if st.button("Terug naar laatste grap", use_container_width=True):
