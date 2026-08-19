@@ -4,9 +4,9 @@ This module is deliberately separate from the experiment's original pipeline
 files.  It keeps their central comparison while using fewer calls and smaller,
 more readable prompts:
 
-    shared: make three script oppositions -> check and choose one
-    C:      write three jokes -> check and choose one
-    E:      add the other GTVH resources -> write three jokes -> check and choose one
+    shared: make two script oppositions -> check and choose one
+    C:      write two jokes -> check and choose one
+    E:      add the other GTVH resources -> write two jokes -> check and choose one
 
 The prompts say "normal meaning" and "hidden meaning" where the original
 implementation uses the more technical Script A and Script B terminology.  The
@@ -36,8 +36,8 @@ from core.schemas import (
 from core.styles import style_guidance
 
 
-VARIANT_IDS = ("V1", "V2", "V3")
-CANDIDATE_IDS = ("B1", "B2", "B3")
+VARIANT_IDS = ("V1", "V2")
+CANDIDATE_IDS = ("B1", "B2")
 
 
 class SimpleScriptA(StrictStageModel):
@@ -50,7 +50,7 @@ class SimpleScriptA(StrictStageModel):
 class SimpleOpposition(StrictStageModel):
     """One compact Script A/Script B plan."""
 
-    candidate_id: Literal["B1", "B2", "B3"]
+    candidate_id: Literal["B1", "B2"]
     script_b: str = Field(min_length=1)
     opposition_axis: str = Field(min_length=1)
     shared_cues: list[str] = Field(min_length=1)
@@ -60,18 +60,18 @@ class SimpleOpposition(StrictStageModel):
 
 
 class SimpleOppositionSet(StrictStageModel):
-    candidates: list[SimpleOpposition] = Field(min_length=3, max_length=3)
+    candidates: list[SimpleOpposition] = Field(min_length=2, max_length=2)
 
     @model_validator(mode="after")
     def require_candidate_ids(self) -> "SimpleOppositionSet":
         ids = tuple(candidate.candidate_id for candidate in self.candidates)
-        if len(set(ids)) != 3 or set(ids) != set(CANDIDATE_IDS):
-            raise ValueError("Candidates must be exactly B1, B2, and B3.")
+        if len(set(ids)) != 2 or set(ids) != set(CANDIDATE_IDS):
+            raise ValueError("Candidates must be exactly B1 and B2.")
         return self
 
 
 class SimpleOppositionAssessment(StrictStageModel):
-    candidate_id: Literal["B1", "B2", "B3"]
+    candidate_id: Literal["B1", "B2"]
     supports_both_meanings: bool
     meanings_really_conflict: bool
     normal_meaning_comes_first: bool
@@ -81,15 +81,15 @@ class SimpleOppositionAssessment(StrictStageModel):
 
 
 class SimpleOppositionAudit(StrictStageModel):
-    assessments: list[SimpleOppositionAssessment] = Field(min_length=3, max_length=3)
-    selected_candidate_id: Literal["B1", "B2", "B3"] | None = None
+    assessments: list[SimpleOppositionAssessment] = Field(min_length=2, max_length=2)
+    selected_candidate_id: Literal["B1", "B2"] | None = None
     selection_rationale: str = Field(min_length=1)
 
     @model_validator(mode="after")
     def require_assessment_ids(self) -> "SimpleOppositionAudit":
         ids = tuple(item.candidate_id for item in self.assessments)
-        if len(set(ids)) != 3 or set(ids) != set(CANDIDATE_IDS):
-            raise ValueError("Assessments must cover B1, B2, and B3 once each.")
+        if len(set(ids)) != 2 or set(ids) != set(CANDIDATE_IDS):
+            raise ValueError("Assessments must cover B1 and B2 once each.")
         return self
 
 
@@ -102,24 +102,24 @@ class SimpleGTVHPlan(StrictStageModel):
 
 
 class SimpleVariant(StrictStageModel):
-    variant_id: Literal["V1", "V2", "V3"]
+    variant_id: Literal["V1", "V2"]
     text: str = Field(min_length=1)
     angle: str = Field(min_length=1)
 
 
 class SimpleVariants(StrictStageModel):
-    variants: list[SimpleVariant] = Field(min_length=3, max_length=3)
+    variants: list[SimpleVariant] = Field(min_length=2, max_length=2)
 
     @model_validator(mode="after")
     def require_variant_ids(self) -> "SimpleVariants":
         ids = tuple(variant.variant_id for variant in self.variants)
-        if len(set(ids)) != 3 or set(ids) != set(VARIANT_IDS):
-            raise ValueError("Variants must be exactly V1, V2, and V3.")
+        if len(set(ids)) != 2 or set(ids) != set(VARIANT_IDS):
+            raise ValueError("Variants must be exactly V1 and V2.")
         return self
 
 
 class SimpleVariantAssessment(StrictStageModel):
-    variant_id: Literal["V1", "V2", "V3"]
+    variant_id: Literal["V1", "V2"]
     preserves_script_opposition: bool
     preserves_logical_mechanism: bool | None = None
     preserves_situation: bool | None = None
@@ -133,16 +133,16 @@ class SimpleVariantAssessment(StrictStageModel):
 
 
 class SimpleComparison(StrictStageModel):
-    left_variant_id: Literal["V1", "V2", "V3"]
-    right_variant_id: Literal["V1", "V2", "V3"]
-    winner_variant_id: Literal["V1", "V2", "V3"]
+    left_variant_id: Literal["V1", "V2"]
+    right_variant_id: Literal["V1", "V2"]
+    winner_variant_id: Literal["V1", "V2"]
     rationale: str = Field(min_length=1)
 
 
 class SimpleFinalEvaluation(StrictStageModel):
-    assessments: list[SimpleVariantAssessment] = Field(min_length=3, max_length=3)
-    comparisons: list[SimpleComparison] = Field(min_length=3, max_length=3)
-    selected_variant_id: Literal["V1", "V2", "V3"]
+    assessments: list[SimpleVariantAssessment] = Field(min_length=2, max_length=2)
+    comparisons: list[SimpleComparison] = Field(min_length=1, max_length=1)
+    selected_variant_id: Literal["V1", "V2"]
     selection_rationale: str = Field(min_length=1)
 
 
@@ -190,7 +190,7 @@ def build_opposition_prompt(request: JokeRequest, script_a: SimpleScriptA) -> st
 Normal situation:
 {_json(script_a)}
 
-Suggest exactly three different hidden meanings, B1, B2, and B3.
+Suggest exactly two different hidden meanings, B1 and B2.
 
 For each hidden meaning:
 - say what the hidden situation is
@@ -209,7 +209,7 @@ def build_opposition_audit_prompt(
     proposals: SimpleOppositionSet,
 ) -> str:
     """Build the independent shared SO check-and-selection prompt."""
-    return f"""Check these three plans for a Dutch joke about {request.topic}.
+    return f"""Check these two plans for a Dutch joke about {request.topic}.
 
 {_json(proposals)}
 
@@ -243,8 +243,8 @@ Original plans:
 Review feedback:
 {_json(audit)}
 
-Keep the normal situation exactly the same. Replace B1, B2,
-and B3 with three genuinely new plans that solve the problems in the feedback.
+Keep the normal situation exactly the same. Replace B1 and B2
+with two genuinely new plans that solve the problems in the feedback.
 Use the same fields as before.
 Do not write jokes yet."""
 
@@ -285,7 +285,7 @@ def build_generation_prompt(
         if gtvh is not None
         else "Use only the normal and hidden meanings above as the humor plan."
     )
-    return f"""Write exactly three different Dutch jokes, V1, V2, and V3.
+    return f"""Write exactly two different Dutch jokes, V1 and V2.
 
 Topic: {request.topic}
 Normal meaning: {script_a}
@@ -316,7 +316,7 @@ def build_evaluation_prompt(
         if gtvh is not None
         else "The five E-only preservation fields must be null because this is pipeline C."
     )
-    return f"""Judge three Dutch jokes about {request.topic}.
+    return f"""Judge two Dutch jokes about {request.topic}.
 
 Approved normal meaning: {script_a}
 Approved hidden meaning:
@@ -330,9 +330,9 @@ Jokes:
 For each joke, check whether it keeps the approved two meanings, has a clear late
 switch, and ends with a real punchline. Give humor a score from 1 to 5.
 
-Then compare V1 with V2, V1 with V3, and V2 with V3. A joke that preserves all
-required plan choices must beat one that does not. Otherwise prefer the funnier,
-clearer joke. Return one final winner. Do not rewrite the jokes."""
+Compare V1 with V2. A joke that preserves all required plan choices must beat one
+that does not. Otherwise prefer the funnier, clearer joke. Return one final winner.
+Do not rewrite the jokes."""
 
 
 def _validate_audit(
@@ -372,8 +372,8 @@ def _validate_evaluation(
     is_e: bool,
 ) -> tuple[list[str], list[str]]:
     assessment_ids = [item.variant_id for item in evaluation.assessments]
-    if len(set(assessment_ids)) != 3 or set(assessment_ids) != set(VARIANT_IDS):
-        raise ValueError("The final evaluation must assess V1, V2, and V3 once each.")
+    if len(set(assessment_ids)) != 2 or set(assessment_ids) != set(VARIANT_IDS):
+        raise ValueError("The final evaluation must assess V1 and V2 once each.")
 
     expected_pairs = {frozenset(pair) for pair in combinations(VARIANT_IDS, 2)}
     actual_pairs: set[frozenset[str]] = set()

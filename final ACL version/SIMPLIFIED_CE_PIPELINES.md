@@ -7,20 +7,20 @@ not replace or modify `shared_script_opposition.py`, `script_opposition.py`,
 ## Design
 
 ```text
-Shared: topic -> generate Script A -> propose three Script B options -> check and choose one
-                                                                     |-> C: write three jokes -> evaluate and choose
-                                                                     `-> E: add GTVH choices -> write three jokes -> evaluate and choose
+Shared: topic -> generate Script A -> propose two Script B options -> check and choose one
+                                                                    |-> C: write two jokes -> evaluate and choose
+                                                                    `-> E: add GTVH choices -> write two jokes -> evaluate and choose
 ```
 
 The normal path uses five model calls for C and six for E. Script A is generated
 in its own call and then passed unchanged to the Script B proposal call. If none
-of the three Script B options passes the check, the pipeline makes one repaired
+of the two Script B options passes the check, the pipeline makes one repaired
 set and checks it once more.
 
 The prompts use ordinary descriptions:
 
 - Script A is generated separately as the audience's normal situation.
-- Script B is generated in a later call as three alternative hidden situations.
+- Script B is generated in a later call as two alternative hidden situations.
 - Script Opposition is checked with five direct yes/no questions.
 - E adds the Logical Mechanism, Situation, Target, Narrative Strategy, and
   Language only after the shared meaning switch has been approved.
@@ -33,7 +33,7 @@ model to work through dense theoretical instructions.
 
 - C and E use the same meaning-switch construction and validation prompts.
 - E cannot change the Script Opposition selected by the shared stages.
-- Both pipelines produce exactly three variants.
+- Both pipelines produce exactly two variants.
 - Both use the same combined fidelity and pairwise-selection stage.
 - A variant that preserves all required choices outranks one that does not.
 - The existing 20–45 word and three-sentence limit remains in force.
