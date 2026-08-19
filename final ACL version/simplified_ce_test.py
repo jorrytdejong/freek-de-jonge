@@ -157,6 +157,28 @@ def test_c_and_e_keep_the_same_selected_opposition() -> None:
     )
 
 
+def test_generator_style_split() -> None:
+    selected = _validate_audit(PROPOSALS, AUDIT)
+    c1_prompt = build_generation_prompt(
+        PIPELINE_SPECS["C1"], REQUEST, SCRIPT_A.script_a, selected, None
+    )
+    e1_prompt = build_generation_prompt(
+        PIPELINE_SPECS["E1"], REQUEST, SCRIPT_A.script_a, selected, GTVH
+    )
+    c2_prompt = build_generation_prompt(
+        PIPELINE_SPECS["C2"], REQUEST, SCRIPT_A.script_a, selected, None
+    )
+    e2_prompt = build_generation_prompt(
+        PIPELINE_SPECS["E2"], REQUEST, SCRIPT_A.script_a, selected, GTVH
+    )
+    for prompt in (c1_prompt, e1_prompt, c2_prompt, e2_prompt):
+        assert "Act as a Dutch comedian" in prompt
+    assert "Freek de Jonge" not in c1_prompt
+    assert "Freek de Jonge" not in e1_prompt
+    assert "Freek de Jonge" in c2_prompt
+    assert "Freek de Jonge" in e2_prompt
+
+
 def test_combined_evaluation_preserves_condition_difference() -> None:
     selected = _validate_audit(PROPOSALS, AUDIT)
     c_prompt = build_evaluation_prompt(

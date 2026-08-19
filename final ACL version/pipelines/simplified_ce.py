@@ -21,6 +21,7 @@ from typing import Literal
 
 from pydantic import Field, model_validator
 
+from core.freek_examples import freek_example_context
 from core.joke_length import joke_length_instruction, validate_joke_length
 from core.llm import add_usage, generate_structured
 from core.schemas import (
@@ -38,6 +39,12 @@ from core.styles import style_guidance
 
 VARIANT_IDS = ("V1", "V2")
 CANDIDATE_IDS = ("B1", "B2")
+
+
+DUTCH_COMEDIAN_GUIDANCE = """Act as a Dutch comedian writing for a Dutch audience.
+Write in natural Dutch. Build a recognizable setup, make the semantic turn clear,
+and end on a concise punchline. Prefer precise observation and a surprising reversal
+over generic jokes. Do not explain the joke.""".strip()
 
 
 DOCTOR_PATIENT_DEMONSTRATION = """Worked script-opposition example
@@ -171,6 +178,22 @@ def _is_e(spec: PipelineSpec) -> bool:
     if spec.code not in {"C1", "C2", "E1", "E2"}:
         raise ValueError("The simplified pipeline supports only C1, C2, E1, and E2.")
     return spec.code.startswith("E")
+
+
+def _generator_style_guidance(spec: PipelineSpec) -> str:
+    """Return comedian guidance, with Freek context only for C2/E2."""
+    sections = [DUTCH_COMEDIAN_GUIDANCE]
+    if spec.style_mode == "freek":
+        sections.append(style_guidance("freek"))
+        examples = freek_example_context()
+        if examples:
+            sections.append(
+                "Freek de Jonge example context:\n"
+                f"{examples}\n\n"
+                "Use these examples only as structural and tonal context. Do not copy "
+                "wording, names, or situations, and do not claim the result is authentic Freek de Jonge."
+            )
+    return "\n\n".join(sections)
 
 
 def _passes_opposition(item: SimpleOppositionAssessment) -> bool:
@@ -340,7 +363,7 @@ meaning of an earlier detail. Do not explain the joke or copy the doctor example
 {joke_length_instruction()}
 
 Style:
-{style_guidance(spec.style_mode)}"""
+{_generator_style_guidance(spec)}"""
 
 
 def build_evaluation_prompt(
