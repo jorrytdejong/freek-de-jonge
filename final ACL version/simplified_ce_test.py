@@ -25,6 +25,7 @@ from pipelines.simplified_ce import (
     build_opposition_audit_prompt,
     build_opposition_prompt,
     build_script_a_prompt,
+    topic_context,
     _validate_audit,
     _validate_evaluation,
 )
@@ -125,6 +126,7 @@ def test_separate_script_a_and_script_b_prompts() -> None:
     proposal_prompt = build_opposition_prompt(REQUEST, SCRIPT_A)
     audit_prompt = build_opposition_audit_prompt(REQUEST, PROPOSALS)
     assert "script_a" in script_a_prompt
+    assert topic_context(REQUEST.topic) in script_a_prompt
     assert "Suggest exactly three" not in script_a_prompt
     assert "normal situation" in proposal_prompt
     assert "hidden meanings" in proposal_prompt

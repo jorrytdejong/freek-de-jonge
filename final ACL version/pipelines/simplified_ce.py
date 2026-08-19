@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 from itertools import combinations
+from pathlib import Path
 from typing import Literal
 
 from pydantic import Field, model_validator
@@ -58,6 +59,15 @@ Analysis:
 
 Use this example to understand the mechanism only. Do not reuse medicine, doctors,
 patients, spouses, affairs, whispering, the invitation phrase, or the non-sex/sex axis.""".strip()
+
+
+_TOPIC_CONTEXTS_PATH = Path(__file__).with_name("simplified_topic_contexts.json")
+_TOPIC_CONTEXTS = json.loads(_TOPIC_CONTEXTS_PATH.read_text(encoding="utf-8"))
+
+
+def topic_context(topic: str) -> str:
+    """Return the narrative setup for a topic, or an empty context if unknown."""
+    return str(_TOPIC_CONTEXTS.get(topic, ""))
 
 
 class SimpleScriptA(StrictStageModel):
@@ -195,6 +205,9 @@ def build_script_a_prompt(request: JokeRequest) -> str:
     return f"""For this topic, describe the ordinary situation an audience expects:
 {request.topic}
 
+Narrative topic context:
+{topic_context(request.topic)}
+
 Return:
 - script_a: the normal situation in one sentence
 - audience_expectation: what the audience expects to happen
@@ -209,6 +222,9 @@ def build_opposition_prompt(request: JokeRequest, script_a: SimpleScriptA) -> st
 
 Normal situation:
 {_json(script_a)}
+
+Narrative topic context:
+{topic_context(request.topic)}
 
 Here is a semantic example. Use its structure, not its subject matter:
 
@@ -234,6 +250,9 @@ def build_opposition_audit_prompt(
 ) -> str:
     """Build the independent shared SO check-and-selection prompt."""
     return f"""Check these two plans for a Dutch joke about {request.topic}.
+
+Narrative topic context:
+{topic_context(request.topic)}
 
 {_json(proposals)}
 
@@ -261,6 +280,9 @@ Topic: {request.topic}
 Frozen normal situation:
 {_json(script_a)}
 
+Narrative topic context:
+{topic_context(request.topic)}
+
 Original plans:
 {_json(proposals)}
 
@@ -285,6 +307,9 @@ Topic: {request.topic}
 Normal meaning: {script_a}
 Hidden meaning:
 {_json(selected)}
+
+Narrative topic context:
+{topic_context(request.topic)}
 
 Do not change either meaning, the contrast, or the reveal. Only add:
 - logical_mechanism: how the misunderstanding or reversal works
@@ -316,6 +341,9 @@ Normal meaning: {script_a}
 Hidden meaning:
 {_json(selected)}
 
+Narrative topic context:
+{topic_context(request.topic)}
+
 {extra}
 
 Each joke must make the normal meaning believable, reveal the hidden meaning late,
@@ -345,6 +373,9 @@ def build_evaluation_prompt(
 Approved normal meaning: {script_a}
 Approved hidden meaning:
 {_json(selected)}
+
+Narrative topic context:
+{topic_context(request.topic)}
 
 {resource_instruction}
 
