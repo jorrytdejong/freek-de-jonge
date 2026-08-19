@@ -40,6 +40,21 @@ VARIANT_IDS = ("V1", "V2")
 CANDIDATE_IDS = ("B1", "B2")
 
 
+DOCTOR_PATIENT_DEMONSTRATION = """Worked script-opposition example
+
+\"Is the doctor in?\" a patient asks in a bronchial whisper. The doctor's young wife
+whispers that he is not, then says: \"Come right in.\"
+
+Analysis:
+- Script A is a medical consultation; Script B is a secret affair.
+- Medical details make Script A dominant, while the invitation supports Script B.
+- The doctor's absence blocks the medical goal but enables the affair goal.
+- The final line changes the meaning of earlier details.
+
+Use this example only as a structural demonstration. Do not reuse its people,
+setting, wording, or non-sex/sex opposition.""".strip()
+
+
 class SimpleScriptA(StrictStageModel):
     """The audience's ordinary interpretation, generated independently."""
 
@@ -172,40 +187,58 @@ def _passes_opposition(item: SimpleOppositionAssessment) -> bool:
 
 def build_script_a_prompt(request: JokeRequest) -> str:
     """Build the independent Script A prompt."""
-    return f"""Treat this topic as a broad starting point, not a literal assignment.
+    return f"""You are the Script A stage of a Dutch joke pipeline.
+
+Treat this topic as a broad starting point, not a literal assignment.
 Use it to find an ordinary human situation related to the topic; the situation does
 not need to be a literal example of the topic.
+
+In SSTH, a script is a familiar, structured situation with typical participants,
+roles, goals, conditions, actions, and expected outcomes. Script A is the first
+reading the wording should activate. Audience expectation is the normal next step
+the listener would infer before any surprise or reinterpretation.
 
 Topic:
 {request.topic}
 
 Return:
-- script_a: the normal situation in one sentence
-- audience_expectation: what the audience expects to happen
+- script_a: the ordinary situation, including its typical people, goal, and action
+- audience_expectation: the normal next step the audience would infer
 
-Do not write a joke or introduce a hidden meaning."""
+Do not write a joke or invent Script B.
+Write in Dutch."""
 
 
 def build_opposition_prompt(request: JokeRequest, script_a: SimpleScriptA) -> str:
     """Build the shared C/E Script B proposal prompt."""
-    return f"""We need a short Dutch joke about this topic:
+    return f"""You are the Script B stage of a Dutch script-opposition pipeline.
+
+Topic:
 {request.topic}
 
-Normal situation:
+Script A:
 {_json(script_a)}
 
-Suggest exactly two different hidden meanings, B1 and B2.
+A joke works here when one text supports two overlapping but opposed scripts:
+Script A is expected first, while Script B becomes clear through a late clue.
 
-For each hidden meaning:
-- say what the hidden situation is
-- name the main contrast with the normal situation
-- give a few words or details that fit both meanings
-- give the late clue that reveals the hidden meaning
-- explain how the roles change
-- explain how the reveal changes the meaning of something heard earlier
+Worked example:
 
-Do not write jokes yet.
-Do not add other humor theory terms or GTVH resources."""
+{DOCTOR_PATIENT_DEMONSTRATION}
+
+Propose exactly two fresh candidates, B1 and B2.
+
+For each candidate, give:
+- script_b: the recognizable alternative situation
+- opposition: the specific conflict between Script A and Script B
+- shared_cue: one detail that naturally fits both scripts
+- switch_trigger: the late clue that makes Script B available
+- role_or_goal_reversal: what role or goal changes between the scripts
+- retrospective_reinterpretation: what earlier detail means differently afterward
+
+The scripts must genuinely conflict.
+Script A must remain the natural first reading.
+Do not write jokes yet."""
 
 
 def build_opposition_audit_prompt(
@@ -213,19 +246,21 @@ def build_opposition_audit_prompt(
     proposals: SimpleOppositionSet,
 ) -> str:
     """Build the independent shared SO check-and-selection prompt."""
-    return f"""Check these two plans for a Dutch joke about {request.topic}.
+    return f"""Audit these Script B candidates:
 
 {_json(proposals)}
 
-For each plan, answer these questions:
-1. Could one joke support both the normal and hidden meaning?
-2. Do the two meanings really conflict?
-3. Would readers believe the normal meaning first?
-4. Does the late clue make the hidden meaning clear?
-5. Does that clue give earlier words a new meaning?
+For each candidate, answer:
+- Does it support both scripts?
+- Are the scripts genuinely opposed?
+- Does Script A come first?
+- Does the late clue reveal Script B?
+- Does the clue change the meaning of something earlier?
 
-A plan passes only if every answer is true. Choose the strongest passing plan.
-If none passes, return no selected_candidate_id. Judge the plans; do not rewrite them."""
+Select the strongest passing candidate.
+Return one short assessment for B1 and B2, the selected candidate ID,
+and a brief reason for the selection.
+Do not rewrite the candidates."""
 
 
 def build_repair_prompt(
@@ -289,17 +324,19 @@ def build_generation_prompt(
         if gtvh is not None
         else "Use only the normal and hidden meanings above as the humor plan."
     )
-    return f"""Write exactly two different Dutch jokes, V1 and V2.
+    return f"""Write exactly two Dutch jokes, V1 and V2.
 
 Topic: {request.topic}
-Normal meaning: {script_a}
-Hidden meaning:
+Script A:
+{script_a}
+Selected Script B:
 {_json(selected)}
 
+Use the approved Script Opposition as the humor plan.
 {extra}
 
-Each joke must make the normal meaning believable, reveal the hidden meaning late,
-and end when the punchline lands. Do not explain the joke afterward.
+Make Script A believable first. Reveal Script B late. Let the final line change the
+meaning of an earlier detail. Do not explain the joke or copy the doctor example.
 {joke_length_instruction()}
 
 Style:
@@ -320,10 +357,11 @@ def build_evaluation_prompt(
         if gtvh is not None
         else "The five E-only preservation fields must be null because this is pipeline C."
     )
-    return f"""Judge two Dutch jokes about {request.topic}.
+    return f"""Evaluate these two jokes against the approved plan.
 
-Approved normal meaning: {script_a}
-Approved hidden meaning:
+Approved Script A:
+{script_a}
+Approved Script Opposition:
 {_json(selected)}
 
 {resource_instruction}
@@ -331,8 +369,9 @@ Approved hidden meaning:
 Jokes:
 {_json(variants)}
 
-For each joke, check whether it keeps the approved two meanings, has a clear late
-switch, and ends with a real punchline. Give humor a score from 1 to 5.
+For each joke, check whether Script A is the first reading, Script B is delayed,
+the scripts are opposed, the switch is clear and late, earlier material is
+reinterpreted, and the punchline lands. Give humor a score from 1 to 5.
 
 Compare V1 with V2. A joke that preserves all required plan choices must beat one
 that does not. Otherwise prefer the funnier, clearer joke. Return one final winner.
