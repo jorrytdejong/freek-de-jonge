@@ -11,6 +11,109 @@ The central mechanism is:
 3. A late clue makes Script B clear.
 4. The clue changes the meaning of something heard earlier.
 
+## What each component represents
+
+The pipeline uses GTVH as a planning representation, not as a guaranteed recipe
+for producing a funny joke. GTVH describes six ordered Knowledge Resources:
+
+```text
+Script Opposition > Logical Mechanism > Situation > Target > Narrative Strategy > Language
+```
+
+The hierarchy describes structural dependence and similarity between jokes. It does
+not require the model to generate the resources in this exact chronological order.
+
+This interpretation follows the GTVH overview supplied with the project and the
+foundational [Attardo--Raskin account](</Users/jorrytdejong/Documents/Freek%20de%20Jonge%20project/Literature/Attardo-Raskin-1991-Script-Theory-Revis-It-Ed.pdf>).
+
+### Script A
+
+Script A is the familiar, organized situation that the opening activates first.
+It includes typical participants, roles, goals, conditions, actions, and expected
+outcomes. The audience expectation records the normal inference that follows from
+that script before the punchline appears.
+
+The topic is deliberately only a broad starting point. It helps select a useful
+situation, but it should not force the joke to mention or literally enact the topic.
+
+### Script B
+
+Script B is a second situation that overlaps with Script A enough for one text to
+support both readings, but differs in a meaningful way. It should be a recognizable
+script, not merely an opinion, metaphor, exaggeration, or darker description of A.
+
+### Script Opposition
+
+Script Opposition identifies the incompatible interpretations at the center of the
+joke. The label should be specific to the text—for example, ordinary medical visit
+versus secret affair, or phone distraction versus accessibility—rather than only
+using a very broad label such as “normal versus abnormal.”
+
+### Shared cue
+
+A shared cue is a word, object, action, role, or circumstance that naturally fits
+both scripts. It lets Script B be supported before it is revealed, without making
+the second reading obvious too early.
+
+### Switch trigger
+
+The switch trigger is the late clue, usually near the punchline, that makes Script B
+available. It should create a small anomaly under Script A and make that anomaly
+purposeful under Script B.
+
+### Role or goal reversal
+
+This records what changes between the scripts. A person can become a different role,
+or an action that blocked the apparent goal can enable the hidden goal. This is an
+operational field for making the change between scripts concrete; it is not a
+separate GTVH resource.
+
+### Retrospective reinterpretation
+
+This records what the audience understands differently after the switch. A successful
+punchline does not merely add a surprising fact; it makes an earlier word, action,
+role, or condition meaningful under Script B.
+
+### Logical Mechanism (E only)
+
+Logical Mechanism describes how the listener moves from Script A to Script B. It may
+be ambiguity, role reversal, false analogy, figure–ground reversal, juxtaposition,
+faulty reasoning, or another playful bridge. The bridge need not make the situation
+literally logical; it only needs to make the second reading understandable.
+
+### Situation (E only)
+
+Situation describes the joke’s internal text world: its participants, objects,
+activities, setting, and relevant background. It is not the venue, audience, or
+performance context.
+
+### Target (E only)
+
+Target identifies who or what is ridiculed: a character, institution, convention,
+behaviour, political practice, or sometimes nobody. A joke may be targetless,
+especially when its effect is primarily absurdity or wordplay.
+
+### Narrative Strategy (E only)
+
+Narrative Strategy describes the textual form: dialogue, question-and-answer,
+one-liner, short anecdote, list, monologue, or escalation. It also controls where
+the switch and punch occur. A punchline normally closes the unit and forces a
+reinterpretation; a jab can create a local humorous moment without reorganizing
+the whole text.
+
+### Language (E only)
+
+Language is the exact Dutch realization: vocabulary, syntax, register, idiom,
+rhythm, lexical ambiguity, word order, and final punch wording. Two jokes can keep
+the same higher-level plan while differing only in Language.
+
+### What is shared and what differs
+
+C and E share Script A, Script B, Script Opposition, the switch, and the final
+fidelity check. E adds the lower GTVH resources only after Script Opposition has
+been selected. This keeps the central semantic comparison fixed while testing
+whether extra planning choices improve the realization.
+
 ## Shared Script A
 
 ```text
