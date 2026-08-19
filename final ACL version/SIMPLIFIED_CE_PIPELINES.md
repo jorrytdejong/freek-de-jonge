@@ -21,12 +21,10 @@ The prompts use ordinary descriptions:
 
 - Script A is generated separately as the audience's normal situation.
 - Script B is generated in a later call as two alternative hidden situations.
-- Each stage receives an original narrative setup for the selected topic from
-  `simplified_topic_contexts.json`. The setup supplies a setting and tension,
-  but does not contain a completed joke or punchline.
+- Script A treats the topic as a broad starting point, not a literal assignment.
+  It finds an ordinary situation related to the topic. Script B receives that
+  frozen situation and proposes hidden meanings without repeating this guidance.
 - Script Opposition is checked with five direct yes/no questions.
-- The Script B proposal prompt receives the doctor-patient example as a semantic
-  demonstration only; its subject matter is explicitly excluded from reuse.
 - E adds the Logical Mechanism, Situation, Target, Narrative Strategy, and
   Language only after the shared meaning switch has been approved.
 
@@ -44,8 +42,9 @@ model to work through dense theoretical instructions.
 - The existing 20–45 word and three-sentence limit remains in force.
 - C1/E1 use neutral guidance; C2/E2 use Freek-style guidance.
 
-The narrative setups are shared by C and E. They ground both conditions in the
-same topic material; E still differs only by adding its GTVH plan.
+The optional narrative setup and doctor-example artifacts remain in the separate
+files for possible later experiments, but they are not used by this topic-only
+version. E still differs from C only by adding its GTVH plan.
 
 ## Run
 

@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import json
 from itertools import combinations
-from pathlib import Path
 from typing import Literal
 
 from pydantic import Field, model_validator
@@ -39,35 +38,6 @@ from core.styles import style_guidance
 
 VARIANT_IDS = ("V1", "V2")
 CANDIDATE_IDS = ("B1", "B2")
-
-
-DOCTOR_PATIENT_DEMONSTRATION = """Worked script-opposition example
-
-Joke:
-\"Is the doctor in?\" a patient asks in a bronchial whisper. The doctor's young wife
-whispers that he is not, then says: \"Come right in.\"
-
-Analysis:
-- Script A is a medical consultation: a patient asks whether a physician is available.
-- Script B is a secret affair: a visitor checks whether the husband is absent.
-- The dominant abstract opposition is non-sex/sex.
-- \"Doctor\", \"patient\", and \"bronchial\" make the medical reading dominant.
-- Whispering overlaps both scripts: it can signal illness or secrecy.
-- The doctor's absence blocks the medical goal but enables the affair goal.
-- \"Come right in\" is anomalous under Script A but purposeful under Script B.
-- The punch retrospectively changes the roles and meaning of earlier details.
-
-Use this example to understand the mechanism only. Do not reuse medicine, doctors,
-patients, spouses, affairs, whispering, the invitation phrase, or the non-sex/sex axis.""".strip()
-
-
-_TOPIC_CONTEXTS_PATH = Path(__file__).with_name("simplified_topic_contexts.json")
-_TOPIC_CONTEXTS = json.loads(_TOPIC_CONTEXTS_PATH.read_text(encoding="utf-8"))
-
-
-def topic_context(topic: str) -> str:
-    """Return the narrative setup for a topic, or an empty context if unknown."""
-    return str(_TOPIC_CONTEXTS.get(topic, ""))
 
 
 class SimpleScriptA(StrictStageModel):
@@ -202,11 +172,12 @@ def _passes_opposition(item: SimpleOppositionAssessment) -> bool:
 
 def build_script_a_prompt(request: JokeRequest) -> str:
     """Build the independent Script A prompt."""
-    return f"""For this topic, describe the ordinary situation an audience expects:
-{request.topic}
+    return f"""Treat this topic as a broad starting point, not a literal assignment.
+Use it to find an ordinary human situation related to the topic; the situation does
+not need to be a literal example of the topic.
 
-Narrative topic context:
-{topic_context(request.topic)}
+Topic:
+{request.topic}
 
 Return:
 - script_a: the normal situation in one sentence
@@ -222,13 +193,6 @@ def build_opposition_prompt(request: JokeRequest, script_a: SimpleScriptA) -> st
 
 Normal situation:
 {_json(script_a)}
-
-Narrative topic context:
-{topic_context(request.topic)}
-
-Here is a semantic example. Use its structure, not its subject matter:
-
-{DOCTOR_PATIENT_DEMONSTRATION}
 
 Suggest exactly two different hidden meanings, B1 and B2.
 
@@ -250,9 +214,6 @@ def build_opposition_audit_prompt(
 ) -> str:
     """Build the independent shared SO check-and-selection prompt."""
     return f"""Check these two plans for a Dutch joke about {request.topic}.
-
-Narrative topic context:
-{topic_context(request.topic)}
 
 {_json(proposals)}
 
@@ -280,9 +241,6 @@ Topic: {request.topic}
 Frozen normal situation:
 {_json(script_a)}
 
-Narrative topic context:
-{topic_context(request.topic)}
-
 Original plans:
 {_json(proposals)}
 
@@ -307,9 +265,6 @@ Topic: {request.topic}
 Normal meaning: {script_a}
 Hidden meaning:
 {_json(selected)}
-
-Narrative topic context:
-{topic_context(request.topic)}
 
 Do not change either meaning, the contrast, or the reveal. Only add:
 - logical_mechanism: how the misunderstanding or reversal works
@@ -341,9 +296,6 @@ Normal meaning: {script_a}
 Hidden meaning:
 {_json(selected)}
 
-Narrative topic context:
-{topic_context(request.topic)}
-
 {extra}
 
 Each joke must make the normal meaning believable, reveal the hidden meaning late,
@@ -373,9 +325,6 @@ def build_evaluation_prompt(
 Approved normal meaning: {script_a}
 Approved hidden meaning:
 {_json(selected)}
-
-Narrative topic context:
-{topic_context(request.topic)}
 
 {resource_instruction}
 
