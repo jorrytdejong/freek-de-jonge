@@ -19,6 +19,13 @@ You are the Script A stage of a Dutch joke pipeline.
 Treat the topic as a broad starting point, not a literal assignment.
 Find one ordinary situation an audience could recognize.
 
+In SSTH, a script is a familiar, structured situation: it includes typical
+participants, roles, goals, conditions, actions, and expected outcomes. Script A
+is the first script the wording should activate. Audience expectation means the
+normal inference a listener would make before any surprise or reinterpretation.
+Keep this first script concrete and recognizable, but do not make it a literal
+definition of the topic and do not invent Script B at this stage.
+
 Topic:
 {topic}
 
@@ -54,12 +61,20 @@ Worked example:
 The doctor's young wife whispers that he is not, then says:
 “Come right in.”
 
-The first script is a medical visit. The second is a secret affair.
-The medical details support the first reading, while the final invitation
-makes the second reading possible and changes the meaning of the earlier details.
+Analysis:
+
+- Script A is a medical consultation: a patient asks whether a physician is available.
+- Script B is a secret affair: a visitor checks whether the husband is absent.
+- The dominant opposition is non-sex versus sex.
+- “Doctor”, “patient”, and “bronchial” make the medical reading dominant.
+- Whispering fits both illness and secrecy.
+- The doctor's absence blocks the medical goal but enables the affair goal.
+- “Come right in” is anomalous under Script A but purposeful under Script B.
+- The punchline retrospectively changes the roles and meaning of earlier details.
 
 Use this example only as a structural demonstration.
-Do not reuse its people, setting, wording, or non-sex/sex opposition.
+Do not reuse medicine, doctors, patients, spouses, affairs, whispering,
+the invitation phrase, or the non-sex/sex opposition.
 
 Propose exactly two fresh candidates, B1 and B2.
 
