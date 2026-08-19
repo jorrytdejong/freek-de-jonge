@@ -22,6 +22,8 @@ The prompts use ordinary descriptions:
 - Script A is generated separately as the audience's normal situation.
 - Script B is generated in a later call as two alternative hidden situations.
 - Script Opposition is checked with five direct yes/no questions.
+- The Script B proposal prompt receives the doctor-patient example as a semantic
+  demonstration only; its subject matter is explicitly excluded from reuse.
 - E adds the Logical Mechanism, Situation, Target, Narrative Strategy, and
   Language only after the shared meaning switch has been approved.
 

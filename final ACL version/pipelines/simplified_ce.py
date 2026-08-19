@@ -40,6 +40,26 @@ VARIANT_IDS = ("V1", "V2")
 CANDIDATE_IDS = ("B1", "B2")
 
 
+DOCTOR_PATIENT_DEMONSTRATION = """Worked script-opposition example
+
+Joke:
+\"Is the doctor in?\" a patient asks in a bronchial whisper. The doctor's young wife
+whispers that he is not, then says: \"Come right in.\"
+
+Analysis:
+- Script A is a medical consultation: a patient asks whether a physician is available.
+- Script B is a secret affair: a visitor checks whether the husband is absent.
+- The dominant abstract opposition is non-sex/sex.
+- \"Doctor\", \"patient\", and \"bronchial\" make the medical reading dominant.
+- Whispering overlaps both scripts: it can signal illness or secrecy.
+- The doctor's absence blocks the medical goal but enables the affair goal.
+- \"Come right in\" is anomalous under Script A but purposeful under Script B.
+- The punch retrospectively changes the roles and meaning of earlier details.
+
+Use this example to understand the mechanism only. Do not reuse medicine, doctors,
+patients, spouses, affairs, whispering, the invitation phrase, or the non-sex/sex axis.""".strip()
+
+
 class SimpleScriptA(StrictStageModel):
     """The audience's ordinary interpretation, generated independently."""
 
@@ -189,6 +209,10 @@ def build_opposition_prompt(request: JokeRequest, script_a: SimpleScriptA) -> st
 
 Normal situation:
 {_json(script_a)}
+
+Here is a semantic example. Use its structure, not its subject matter:
+
+{DOCTOR_PATIENT_DEMONSTRATION}
 
 Suggest exactly two different hidden meanings, B1 and B2.
 

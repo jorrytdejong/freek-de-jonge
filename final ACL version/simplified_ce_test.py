@@ -6,6 +6,7 @@ from core.schemas import JokeRequest
 from pipelines.conditions import PIPELINE_SPECS
 from pipelines.simplified_ce import (
     CANDIDATE_IDS,
+    DOCTOR_PATIENT_DEMONSTRATION,
     VARIANT_IDS,
     SimpleComparison,
     SimpleFinalEvaluation,
@@ -127,6 +128,7 @@ def test_separate_script_a_and_script_b_prompts() -> None:
     assert "Suggest exactly three" not in script_a_prompt
     assert "normal situation" in proposal_prompt
     assert "hidden meanings" in proposal_prompt
+    assert DOCTOR_PATIENT_DEMONSTRATION in proposal_prompt
     assert "these questions" in audit_prompt
     assert "Logical Mechanism" not in proposal_prompt
     assert _validate_audit(PROPOSALS, AUDIT).candidate_id == "B2"
@@ -143,6 +145,7 @@ def test_c_and_e_keep_the_same_selected_opposition() -> None:
     assert selected.script_b in c_prompt
     assert selected.script_b in e_prompt
     assert "Use only the normal and hidden meanings" in c_prompt
+    assert DOCTOR_PATIENT_DEMONSTRATION not in c_prompt
     assert GTVH.logical_mechanism in e_prompt
     assert "Do not change either meaning" in build_gtvh_prompt(
         REQUEST, SCRIPT_A.script_a, selected
