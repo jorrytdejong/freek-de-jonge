@@ -129,6 +129,28 @@ normal inference a listener would make before any surprise or reinterpretation.
 Keep this first script concrete and recognizable, but do not make it a literal
 definition of the topic and do not invent Script B at this stage.
 
+Worked examples for the general structure:
+
+1. Doctor example:
+
+“Is the doctor in?” a patient asks in a bronchial whisper. The doctor's young wife
+whispers that he is not, then says: “Come right in.”
+
+The ordinary first situation is a medical consultation. The later line supports a
+second situation and makes earlier details compatible with that new reading.
+
+2. Piano example:
+
+“Doctor, will I be able to play the piano after the operation?”
+“Certainly.”
+“Wonderful—I never could before.”
+
+The ordinary first situation is recovery after surgery. The final line reveals that
+“able to play” can instead mean acquiring an ability the patient never had.
+
+Use these examples to understand how an ordinary first interpretation is built and
+later reinterpreted. Do not reuse their people, settings, wording, or oppositions.
+
 Topic:
 {topic}
 
