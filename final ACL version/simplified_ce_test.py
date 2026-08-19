@@ -10,6 +10,7 @@ from pipelines.simplified_ce import (
     SimpleComparison,
     SimpleFinalEvaluation,
     SimpleGTVHPlan,
+    SimpleScriptA,
     SimpleOpposition,
     SimpleOppositionAssessment,
     SimpleOppositionAudit,
@@ -22,15 +23,18 @@ from pipelines.simplified_ce import (
     build_gtvh_prompt,
     build_opposition_audit_prompt,
     build_opposition_prompt,
+    build_script_a_prompt,
     _validate_audit,
     _validate_evaluation,
 )
 
 
 REQUEST = JokeRequest(topic="de wachtrij bij de gemeente")
-PROPOSALS = SimpleOppositionSet(
+SCRIPT_A = SimpleScriptA(
     script_a="De gemeente helpt een inwoner.",
     audience_expectation="De inwoner krijgt hulp.",
+)
+PROPOSALS = SimpleOppositionSet(
     candidates=[
         SimpleOpposition(
             candidate_id=candidate_id,
@@ -115,12 +119,15 @@ def evaluation(*, is_e: bool) -> SimpleFinalEvaluation:
     )
 
 
-def test_plain_language_prompts_and_shared_so() -> None:
-    proposal_prompt = build_opposition_prompt(REQUEST)
+def test_separate_script_a_and_script_b_prompts() -> None:
+    script_a_prompt = build_script_a_prompt(REQUEST)
+    proposal_prompt = build_opposition_prompt(REQUEST, SCRIPT_A)
     audit_prompt = build_opposition_audit_prompt(REQUEST, PROPOSALS)
+    assert "script_a" in script_a_prompt
+    assert "Suggest exactly three" not in script_a_prompt
     assert "normal situation" in proposal_prompt
     assert "hidden meanings" in proposal_prompt
-    assert "simple questions" in audit_prompt
+    assert "these questions" in audit_prompt
     assert "Logical Mechanism" not in proposal_prompt
     assert _validate_audit(PROPOSALS, AUDIT).candidate_id == "B2"
 
@@ -128,27 +135,27 @@ def test_plain_language_prompts_and_shared_so() -> None:
 def test_c_and_e_keep_the_same_selected_opposition() -> None:
     selected = _validate_audit(PROPOSALS, AUDIT)
     c_prompt = build_generation_prompt(
-        PIPELINE_SPECS["C1"], REQUEST, PROPOSALS.script_a, selected, None
+        PIPELINE_SPECS["C1"], REQUEST, SCRIPT_A.script_a, selected, None
     )
     e_prompt = build_generation_prompt(
-        PIPELINE_SPECS["E1"], REQUEST, PROPOSALS.script_a, selected, GTVH
+        PIPELINE_SPECS["E1"], REQUEST, SCRIPT_A.script_a, selected, GTVH
     )
     assert selected.script_b in c_prompt
     assert selected.script_b in e_prompt
     assert "Use only the normal and hidden meanings" in c_prompt
     assert GTVH.logical_mechanism in e_prompt
     assert "Do not change either meaning" in build_gtvh_prompt(
-        REQUEST, PROPOSALS.script_a, selected
+        REQUEST, SCRIPT_A.script_a, selected
     )
 
 
 def test_combined_evaluation_preserves_condition_difference() -> None:
     selected = _validate_audit(PROPOSALS, AUDIT)
     c_prompt = build_evaluation_prompt(
-        PIPELINE_SPECS["C1"], REQUEST, PROPOSALS.script_a, selected, VARIANTS, None
+        PIPELINE_SPECS["C1"], REQUEST, SCRIPT_A.script_a, selected, VARIANTS, None
     )
     e_prompt = build_evaluation_prompt(
-        PIPELINE_SPECS["E1"], REQUEST, PROPOSALS.script_a, selected, VARIANTS, GTVH
+        PIPELINE_SPECS["E1"], REQUEST, SCRIPT_A.script_a, selected, VARIANTS, GTVH
     )
     assert "must be null" in c_prompt
     assert "extra E choice" in e_prompt

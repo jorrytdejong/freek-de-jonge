@@ -7,19 +7,20 @@ not replace or modify `shared_script_opposition.py`, `script_opposition.py`,
 ## Design
 
 ```text
-Shared: topic -> propose three meaning switches -> check and choose one
-                                              |-> C: write three jokes -> evaluate and choose
-                                              `-> E: add GTVH choices -> write three jokes -> evaluate and choose
+Shared: topic -> generate Script A -> propose three Script B options -> check and choose one
+                                                                     |-> C: write three jokes -> evaluate and choose
+                                                                     `-> E: add GTVH choices -> write three jokes -> evaluate and choose
 ```
 
-The normal path uses four model calls for C and five for E. If none of the first
-three meaning switches passes the check, the pipeline makes one repaired set and
-checks it once more.
+The normal path uses five model calls for C and six for E. Script A is generated
+in its own call and then passed unchanged to the Script B proposal call. If none
+of the three Script B options passes the check, the pipeline makes one repaired
+set and checks it once more.
 
 The prompts use ordinary descriptions:
 
-- `script_a` is explained as the **normal meaning**.
-- `script_b` is explained as the **hidden meaning**.
+- Script A is generated separately as the audience's normal situation.
+- Script B is generated in a later call as three alternative hidden situations.
 - Script Opposition is checked with five direct yes/no questions.
 - E adds the Logical Mechanism, Situation, Target, Narrative Strategy, and
   Language only after the shared meaning switch has been approved.

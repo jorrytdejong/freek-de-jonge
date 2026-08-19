@@ -1,4 +1,4 @@
-"""Simplified, plain-language alternatives for the C and E pipelines.
+"""Simplified alternatives for the C and E pipelines.
 
 This module is deliberately separate from the experiment's original pipeline
 files.  It keeps their central comparison while using fewer calls and smaller,
@@ -40,6 +40,13 @@ VARIANT_IDS = ("V1", "V2", "V3")
 CANDIDATE_IDS = ("B1", "B2", "B3")
 
 
+class SimpleScriptA(StrictStageModel):
+    """The audience's ordinary interpretation, generated independently."""
+
+    script_a: str = Field(min_length=1)
+    audience_expectation: str = Field(min_length=1)
+
+
 class SimpleOpposition(StrictStageModel):
     """One compact Script A/Script B plan."""
 
@@ -53,8 +60,6 @@ class SimpleOpposition(StrictStageModel):
 
 
 class SimpleOppositionSet(StrictStageModel):
-    script_a: str = Field(min_length=1)
-    audience_expectation: str = Field(min_length=1)
     candidates: list[SimpleOpposition] = Field(min_length=3, max_length=3)
 
     @model_validator(mode="after")
@@ -165,13 +170,27 @@ def _passes_opposition(item: SimpleOppositionAssessment) -> bool:
     )
 
 
-def build_opposition_prompt(request: JokeRequest) -> str:
-    """Build the shared C/E planning prompt in plain language."""
+def build_script_a_prompt(request: JokeRequest) -> str:
+    """Build the independent Script A prompt."""
+    return f"""For this topic, describe the ordinary situation an audience expects:
+{request.topic}
+
+Return:
+- script_a: the normal situation in one sentence
+- audience_expectation: what the audience expects to happen
+
+Do not write a joke or introduce a hidden meaning."""
+
+
+def build_opposition_prompt(request: JokeRequest, script_a: SimpleScriptA) -> str:
+    """Build the shared C/E Script B proposal prompt."""
     return f"""We need a short Dutch joke about this topic:
 {request.topic}
 
-First describe the normal situation the audience expects. Call this script_a.
-Then suggest exactly three different hidden meanings, B1, B2, and B3.
+Normal situation:
+{_json(script_a)}
+
+Suggest exactly three different hidden meanings, B1, B2, and B3.
 
 For each hidden meaning:
 - say what the hidden situation is
@@ -181,7 +200,7 @@ For each hidden meaning:
 - explain how the roles change
 - explain how the reveal changes the meaning of something heard earlier
 
-Keep the ideas concrete and easy to understand. Do not write jokes yet.
+Do not write jokes yet.
 Do not add other humor theory terms or GTVH resources."""
 
 
@@ -194,7 +213,7 @@ def build_opposition_audit_prompt(
 
 {_json(proposals)}
 
-For each plan, answer these simple questions:
+For each plan, answer these questions:
 1. Could one joke support both the normal and hidden meaning?
 2. Do the two meanings really conflict?
 3. Would readers believe the normal meaning first?
@@ -207,6 +226,7 @@ If none passes, return no selected_candidate_id. Judge the plans; do not rewrite
 
 def build_repair_prompt(
     request: JokeRequest,
+    script_a: SimpleScriptA,
     proposals: SimpleOppositionSet,
     audit: SimpleOppositionAudit,
 ) -> str:
@@ -214,15 +234,18 @@ def build_repair_prompt(
     return f"""None of these joke plans worked well enough.
 
 Topic: {request.topic}
+Frozen normal situation:
+{_json(script_a)}
+
 Original plans:
 {_json(proposals)}
 
 Review feedback:
 {_json(audit)}
 
-Keep script_a and the audience expectation exactly the same. Replace B1, B2,
+Keep the normal situation exactly the same. Replace B1, B2,
 and B3 with three genuinely new plans that solve the problems in the feedback.
-Use the same fields as before. Keep everything concrete and easy to understand.
+Use the same fields as before.
 Do not write jokes yet."""
 
 
@@ -246,7 +269,7 @@ Do not change either meaning, the contrast, or the reveal. Only add:
 - narrative_strategy: the form of the joke, such as a short story or dialogue
 - language: the key wording that carries the double meaning
 
-Write short, concrete answers in Dutch."""
+Write the answers in Dutch."""
 
 
 def build_generation_prompt(
@@ -395,9 +418,16 @@ def run_simplified_ce_pipeline(
         usage = add_usage(usage, stage_usage)
         return parsed
 
+    script_a = call(
+        "script_a",
+        build_script_a_prompt(request),
+        SimpleScriptA,
+    )
+    assert isinstance(script_a, SimpleScriptA)
+
     proposals = call(
         "opposition_proposals",
-        build_opposition_prompt(request),
+        build_opposition_prompt(request, script_a),
         SimpleOppositionSet,
     )
     assert isinstance(proposals, SimpleOppositionSet)
@@ -414,12 +444,10 @@ def run_simplified_ce_pipeline(
     except ValueError:
         repaired = call(
             "opposition_repair",
-            build_repair_prompt(request, proposals, audit),
+            build_repair_prompt(request, script_a, proposals, audit),
             SimpleOppositionSet,
         )
         assert isinstance(repaired, SimpleOppositionSet)
-        if repaired.script_a != proposals.script_a:
-            raise ValueError("The repair stage changed the frozen Script A.")
         proposals = repaired
         audit = call(
             "opposition_reaudit",
@@ -433,14 +461,14 @@ def run_simplified_ce_pipeline(
     if is_e:
         gtvh = call(
             "gtvh_enrichment",
-            build_gtvh_prompt(request, proposals.script_a, selected),
+            build_gtvh_prompt(request, script_a.script_a, selected),
             SimpleGTVHPlan,
         )
         assert isinstance(gtvh, SimpleGTVHPlan)
 
     variants = call(
         "variants",
-        build_generation_prompt(spec, request, proposals.script_a, selected, gtvh),
+        build_generation_prompt(spec, request, script_a.script_a, selected, gtvh),
         SimpleVariants,
     )
     assert isinstance(variants, SimpleVariants)
@@ -452,7 +480,7 @@ def run_simplified_ce_pipeline(
         build_evaluation_prompt(
             spec,
             request,
-            proposals.script_a,
+            script_a.script_a,
             selected,
             variants,
             gtvh,
@@ -474,7 +502,7 @@ def run_simplified_ce_pipeline(
         prompt=combined_prompt,
         joke=best.text,
         semantic_plan=SemanticPlan(
-            setup_script=proposals.script_a,
+            setup_script=script_a.script_a,
             opposing_script=selected.script_b,
             opposition_type=selected.opposition_axis,
             trigger=selected.switch_trigger,
@@ -501,7 +529,7 @@ def run_simplified_ce_pipeline(
         usage=usage,
         metadata={
             "implementation": "simplified_ce",
-            "normal_path_calls": 5 if is_e else 4,
+            "normal_path_calls": 6 if is_e else 5,
             "selected_candidate_id": selected.candidate_id,
             "gtvh_plan": gtvh.model_dump() if gtvh else None,
             "passing_variant_ids": passing_ids,
