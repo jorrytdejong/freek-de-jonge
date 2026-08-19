@@ -134,8 +134,8 @@ Topic:
 
 Return:
 
-- script_a: the ordinary situation
-- audience_expectation: what the audience expects next
+- script_a: the ordinary situation, including its typical people, goal, and action
+- audience_expectation: the normal next step the audience would infer
 
 Do not write a joke or invent Script B.
 Write in Dutch.
@@ -183,12 +183,12 @@ Propose exactly two fresh candidates, B1 and B2.
 
 For each candidate, give:
 
-- script_b
-- opposition
-- shared_cue
-- switch_trigger
-- role_or_goal_reversal
-- retrospective_reinterpretation
+- script_b: the recognizable alternative situation
+- opposition: the specific conflict between Script A and Script B
+- shared_cue: one detail that naturally fits both scripts
+- switch_trigger: the late clue that makes Script B available
+- role_or_goal_reversal: what role or goal changes between the scripts
+- retrospective_reinterpretation: what earlier detail means differently afterward
 
 The scripts must genuinely conflict.
 Script A must remain the natural first reading.
@@ -211,6 +211,8 @@ For each candidate, answer:
 - Does the clue change the meaning of something earlier?
 
 Select the strongest passing candidate.
+Return one short assessment for B1 and B2, the selected candidate ID,
+and a brief reason for the selection.
 Do not rewrite the candidates.
 ```
 
@@ -246,6 +248,11 @@ Reveal Script B late.
 Let the final line change the meaning of an earlier detail.
 Do not explain the joke.
 Do not mention or copy the doctor example.
+
+Return for each variant:
+- variant_id
+- text
+- angle: the main comic approach
 ```
 
 ### C evaluator
@@ -269,7 +276,8 @@ For each joke, check:
 - The punchline lands.
 
 Give each joke a score from 1 to 5.
-Select the stronger joke.
+Return one assessment for each variant, one comparison, the selected variant ID,
+and a brief reason. Select the stronger joke.
 Do not rewrite them.
 ```
 
@@ -289,11 +297,11 @@ Do not change Script A, Script B, the opposition, or the switch.
 
 Return:
 
-- logical_mechanism
-- situation
-- target
-- narrative_strategy
-- language
+- logical_mechanism: the playful bridge from Script A to Script B
+- situation: the people, objects, activity, setting, and background in the joke
+- target: who or what is ridiculed, or null if nobody is targeted
+- narrative_strategy: the textual form and placement of the switch and punch
+- language: the Dutch wording, register, ambiguity, and final punch wording
 
 Write briefly in Dutch.
 ```
@@ -321,6 +329,11 @@ narrative strategy, and language.
 Let the punchline reinterpret an earlier detail.
 Do not explain the joke.
 Do not mention or copy the doctor example.
+
+Return for each variant:
+- variant_id
+- text
+- angle: the main comic approach
 ```
 
 ### E evaluator
@@ -351,7 +364,8 @@ For each joke, check:
 - The punchline lands.
 
 Give each joke a score from 1 to 5.
-Select the strongest joke.
+Return one assessment for each variant, one comparison, the selected variant ID,
+and a brief reason. Select the strongest joke.
 Do not rewrite them.
 ```
 
