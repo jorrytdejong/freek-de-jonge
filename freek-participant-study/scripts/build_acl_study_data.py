@@ -36,7 +36,7 @@ SOURCE_ITEMS = (
     REPOSITORY_ROOT
     / "final ACL version"
     / "experiment_runs"
-    / "acl_3x2_prompt_engineering_a7e5ec5"
+    / "acl_3x2_plan_fidelity_v4"
     / "items"
 )
 DEFAULT_STIMULI = PROJECT_ROOT / "data" / "acl_jokes.csv"
