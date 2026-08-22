@@ -195,6 +195,17 @@ def configured_secrets() -> dict[str, object]:
         return {}
 
 
+@st.cache_resource(show_spinner=False)
+def cached_progress_storage(
+    storage_environment_json: str,
+    secrets_json: str,
+):
+    return create_progress_storage(
+        environ=json.loads(storage_environment_json),
+        secrets=json.loads(secrets_json),
+    )
+
+
 storage_environment = dict(os.environ)
 if (
     "FREEK_STUDY_PROGRESS_PATH" not in storage_environment
@@ -204,9 +215,10 @@ if (
         Path(__file__).resolve().parent / "data" / "runtime" / "acl_progress.csv"
     )
 try:
-    progress_storage = create_progress_storage(
-        environ=storage_environment,
-        secrets=configured_secrets(),
+    current_secrets = configured_secrets()
+    progress_storage = cached_progress_storage(
+        json.dumps(storage_environment, sort_keys=True),
+        json.dumps(current_secrets, sort_keys=True),
     )
 except (ProgressStorageError, StorageConfigurationError) as error:
     st.error(f"Opslagconfiguratie mislukt: {error}")
