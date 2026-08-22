@@ -111,6 +111,15 @@ class GoogleSheetsProgressStorage:
                 )
             )
             return []
+        # Older spreadsheet exports could leave a pandas-style index column
+        # before the shared contract. Keep reading those rows so a harmless
+        # legacy layout cannot take the whole app offline.
+        if (
+            len(values[0]) == len(FIELDNAMES) + 1
+            and not values[0][0]
+            and tuple(values[0][1:]) == FIELDNAMES
+        ):
+            values = [row[1:] for row in values]
         if tuple(values[0]) != FIELDNAMES:
             raise ProgressStorageError(
                 "Google Sheets progress worksheet has an unexpected column contract."

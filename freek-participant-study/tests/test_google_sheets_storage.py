@@ -114,6 +114,14 @@ class GoogleSheetsProgressStorageTest(unittest.TestCase):
         self.assertIsNone(self.storage.load_progress("missing-session"))
         self.assertEqual(tuple(self.worksheet.values[0]), FIELDNAMES)
 
+    def test_legacy_index_column_is_ignored(self) -> None:
+        self.worksheet.values = [["", *FIELDNAMES], ["0", *[""] * len(FIELDNAMES)]]
+
+        self.assertEqual(
+            self.storage._read_rows(),
+            [[""] * len(FIELDNAMES)],
+        )
+
     def test_permanent_api_error_is_not_retried(self) -> None:
         self.worksheet.get_failures = [FakeAPIError(403)]
 
