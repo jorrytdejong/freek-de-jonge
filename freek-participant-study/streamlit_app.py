@@ -809,7 +809,6 @@ def render_intro(
             "eventuele verzendlijst met contactgegevens wordt apart van de "
             "onderzoeksantwoorden bewaard en niet voor de analyse gebruikt."
         )
-        st.caption("Voor deelname via het persoonlijke netwerk is geen vergoeding.")
     else:
         st.write(
             "We vragen geen naam of contactgegevens. Antwoorden worden gekoppeld aan "
