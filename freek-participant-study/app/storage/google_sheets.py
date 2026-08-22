@@ -102,7 +102,7 @@ class GoogleSheetsProgressStorage:
 
     def _read_rows(self) -> list[list[str]]:
         values = self._retry(self.worksheet.get_all_values)
-        if not values:
+        if not values or not any(values[0]):
             self._retry(
                 lambda: self.worksheet.update(
                     [list(FIELDNAMES)],
