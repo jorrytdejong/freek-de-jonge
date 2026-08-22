@@ -198,11 +198,11 @@ def configured_secrets() -> dict[str, object]:
 @st.cache_resource(show_spinner=False)
 def cached_progress_storage(
     storage_environment_json: str,
-    secrets_json: str,
+    _secrets: dict[str, object],
 ):
     return create_progress_storage(
         environ=json.loads(storage_environment_json),
-        secrets=json.loads(secrets_json),
+        secrets=_secrets,
     )
 
 
@@ -218,7 +218,7 @@ try:
     current_secrets = configured_secrets()
     progress_storage = cached_progress_storage(
         json.dumps(storage_environment, sort_keys=True),
-        json.dumps(current_secrets, sort_keys=True),
+        current_secrets,
     )
 except (ProgressStorageError, StorageConfigurationError) as error:
     st.error(f"Opslagconfiguratie mislukt: {error}")
