@@ -48,10 +48,11 @@ prolific_no_consent_url = "https://app.prolific.com/submissions/complete?cc=NO_C
 
 Taskflow appends `PROLIFIC_PID`, `STUDY_ID`, and `SESSION_ID`. The application
 preserves these parameters during navigation and stores them as pseudonymous
-operational metadata in the raw progress record. If Taskflow reallocates an
-unfinished URL after a return or timeout, the replacement receives a clean
-session and the replaced Prolific submission cannot reopen that slot. Analysis
-exports omit the Prolific identifiers.
+operational metadata in the raw progress record. Progress is physically scoped
+to the Prolific submission ID, so Prolific may reuse the same assignment URL for
+a replacement or an additional place without overwriting an earlier response.
+Analysis exports keep the records separate, map them to the shared assignment
+seed, and omit the Prolific identifiers.
 
 Keep `prolific_enabled = false` until the production URL, completion paths, and
 five-place Prolific pilot have all been tested. Test and network links remain

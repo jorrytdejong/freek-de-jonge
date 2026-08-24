@@ -8,11 +8,13 @@ from app.storage.csv_storage import (
 )
 from app.storage.factory import StorageConfigurationError, create_progress_storage
 from app.storage.google_sheets import GoogleSheetsProgressStorage
+from app.storage.prolific_scoped import ProlificScopedProgressStorage
 
 __all__ = [
     "AlreadySubmittedError",
     "CSVProgressStorage",
     "GoogleSheetsProgressStorage",
+    "ProlificScopedProgressStorage",
     "ProgressStorage",
     "ProgressStorageError",
     "SavedProgress",
