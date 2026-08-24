@@ -41,7 +41,9 @@ class SupabaseProgressStorage:
 
     @staticmethod
     def _json(value: object) -> object:
-        return json.loads(json.dumps(value))
+        from psycopg.types.json import Jsonb
+
+        return Jsonb(json.loads(json.dumps(value)))
 
     def load_progress(self, session_id: str) -> SavedProgress | None:
         with self._connect() as connection, connection.cursor() as cursor:
