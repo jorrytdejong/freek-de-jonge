@@ -10,6 +10,7 @@ from app.storage.factory import StorageConfigurationError, create_progress_stora
 from app.storage.google_sheets import GoogleSheetsProgressStorage
 from app.storage.shadow import ShadowProgressStorage
 from app.storage.supabase import SupabaseProgressStorage
+from app.storage.prolific_scoped import ProlificScopedProgressStorage
 
 __all__ = [
     "AlreadySubmittedError",
@@ -17,6 +18,7 @@ __all__ = [
     "GoogleSheetsProgressStorage",
     "ShadowProgressStorage",
     "SupabaseProgressStorage",
+    "ProlificScopedProgressStorage",
     "ProgressStorage",
     "ProgressStorageError",
     "SavedProgress",
