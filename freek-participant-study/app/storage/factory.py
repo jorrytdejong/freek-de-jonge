@@ -10,6 +10,8 @@ from pathlib import Path
 from app.storage.base import ProgressStorage
 from app.storage.csv_storage import DEFAULT_PROGRESS_PATH, CSVProgressStorage
 from app.storage.google_sheets import GoogleSheetsProgressStorage
+from app.storage.shadow import ShadowProgressStorage
+from app.storage.supabase import SupabaseProgressStorage
 
 
 class StorageConfigurationError(RuntimeError):
@@ -77,8 +79,19 @@ def create_progress_storage(
         raise StorageConfigurationError(
             "Google Sheets requires spreadsheet_url and worksheet."
         )
-    return GoogleSheetsProgressStorage.from_service_account(
+    primary = GoogleSheetsProgressStorage.from_service_account(
         spreadsheet_url=spreadsheet_url,
         worksheet_name=worksheet_name,
         credentials=credentials,
     )
+    shadow_section = configured_secrets.get("supabase_shadow")
+    if (
+        isinstance(shadow_section, Mapping)
+        and str(shadow_section.get("enabled", "false")).lower() == "true"
+    ):
+        connection_string = environment.get(
+            "SUPABASE_DB_URL",
+            str(shadow_section.get("connection_string", "")),
+        )
+        return ShadowProgressStorage(primary, SupabaseProgressStorage(connection_string))
+    return primary
