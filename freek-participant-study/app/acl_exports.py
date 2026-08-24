@@ -88,6 +88,14 @@ class ExportTables:
     ratings: tuple[dict[str, object], ...]
 
 
+def _registry_session_id(storage_session_id: str) -> str:
+    """Map a Prolific-scoped storage key back to its assignment URL token."""
+    marker = "--p-"
+    if marker in storage_session_id:
+        return storage_session_id.rsplit(marker, 1)[0]
+    return storage_session_id
+
+
 def _integer(
     value: object, *, field: str, session_id: str, minimum: int, maximum: int
 ) -> int:
@@ -145,14 +153,15 @@ def build_export_tables(
     seen_sessions: set[str] = set()
 
     for record in sorted(records, key=lambda item: item.session_id):
-        session_id = record.session_id
-        if session_id in seen_sessions:
-            raise ExportValidationError(f"Duplicate session {session_id}.")
-        seen_sessions.add(session_id)
+        storage_session_id = record.session_id
+        session_id = _registry_session_id(storage_session_id)
+        if storage_session_id in seen_sessions:
+            raise ExportValidationError(f"Duplicate session {storage_session_id}.")
+        seen_sessions.add(storage_session_id)
         session = sessions.get(session_id)
         if session is None:
             raise ExportValidationError(
-                f"Session {session_id} is absent from registry."
+                f"Session {storage_session_id} is absent from registry."
             )
         if (
             record.study_version != STUDY_VERSION
@@ -215,7 +224,7 @@ def build_export_tables(
         participant_rows.append(
             {
                 "export_schema_version": EXPORT_SCHEMA_VERSION,
-                "session_id": session_id,
+                "session_id": storage_session_id,
                 "study_version": record.study_version,
                 "is_test": record.is_test,
                 "recruitment_source": session.recruitment_source,
@@ -274,7 +283,7 @@ def build_export_tables(
             rating_rows.append(
                 {
                     "export_schema_version": EXPORT_SCHEMA_VERSION,
-                    "session_id": session_id,
+                    "session_id": storage_session_id,
                     "submission_id": submission_id,
                     "submission_number": submission_number,
                     "study_version": record.study_version,

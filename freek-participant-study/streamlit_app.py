@@ -97,6 +97,7 @@ from app.rewards import (
 from app.storage import (
     AlreadySubmittedError,
     ProgressStorageError,
+    ProlificScopedProgressStorage,
     StorageConfigurationError,
     create_progress_storage,
 )
@@ -1512,6 +1513,13 @@ except ProlificContextError as error:
     st.error(str(error))
     render_footer()
     st.stop()
+if prolific_context is not None:
+    progress_storage = ProlificScopedProgressStorage(
+        progress_storage,
+        assignment_session_id=participant_session.session_id,
+        study_id=prolific_context.study_id,
+        submission_id=prolific_context.submission_id,
+    )
 participant_assignment = build_assignment(participant_session, stimulus_items)
 resume_page = hydrate_progress(participant_session, participant_assignment)
 page = st.query_params.get("page")
