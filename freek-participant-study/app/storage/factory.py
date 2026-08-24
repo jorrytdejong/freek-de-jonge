@@ -49,8 +49,47 @@ def create_progress_storage(
                 )
             )
         )
-    if backend != "google_sheets":
+    if backend not in {"google_sheets", "supabase"}:
         raise StorageConfigurationError(f"Unknown storage backend: {backend!r}.")
+
+    if backend == "supabase":
+        supabase_section = _mapping(
+            configured_secrets.get("supabase"), name="supabase"
+        )
+        connection_string = environment.get(
+            "SUPABASE_DB_URL",
+            str(supabase_section.get("connection_string", "")),
+        )
+        primary = SupabaseProgressStorage(connection_string)
+        backup_section = configured_secrets.get("google_sheets_backup")
+        if isinstance(backup_section, Mapping) and str(
+            backup_section.get("enabled", "false")
+        ).lower() == "true":
+            section = _mapping(
+                configured_secrets.get("google_sheets"), name="google_sheets"
+            )
+            spreadsheet_url = environment.get(
+                "FREEK_STUDY_GOOGLE_SHEET_URL",
+                str(section.get("spreadsheet_url", "")),
+            ).strip()
+            worksheet_name = environment.get(
+                "FREEK_STUDY_GOOGLE_WORKSHEET",
+                str(section.get("worksheet", "progress")),
+            ).strip()
+            credentials = _mapping(section.get("credentials"), name="Google credentials")
+            if not spreadsheet_url or not worksheet_name:
+                raise StorageConfigurationError(
+                    "Google Sheets backup requires spreadsheet_url and worksheet."
+                )
+            return ShadowProgressStorage(
+                primary,
+                GoogleSheetsProgressStorage.from_service_account(
+                    spreadsheet_url=spreadsheet_url,
+                    worksheet_name=worksheet_name,
+                    credentials=credentials,
+                ),
+            )
+        return primary
 
     section = _mapping(configured_secrets.get("google_sheets"), name="google_sheets")
     spreadsheet_url = environment.get(
