@@ -32,6 +32,9 @@ MP3/
 
 # Bulky generated/exported artifacts
 *.zip
+paper/build/
+analysis/results/
+code/**/__pycache__/
 
 # Large notebook export with embedded output/audio-derived data
 humor detection/laughter_detection_colab_newest.ipynb

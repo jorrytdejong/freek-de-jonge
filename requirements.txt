@@ -1,3 +1,4 @@
+# Python dependencies for the paper code and public-data validation.
 openai>=2.0.0,<3.0.0
 pydantic>=2.10.0,<3.0.0
-streamlit>=1.36.0,<2.0.0
+pandas>=2.0.0,<3.0.0

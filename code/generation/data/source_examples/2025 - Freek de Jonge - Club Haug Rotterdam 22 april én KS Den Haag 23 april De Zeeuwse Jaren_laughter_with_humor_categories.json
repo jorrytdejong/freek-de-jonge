@@ -1,0 +1,951 @@
+{
+  "source_audio": "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren.mp3",
+  "transcript": "2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren.json",
+  "segments": [
+    {
+      "index": 0,
+      "start": 95.76681682661967,
+      "end": 98.04753324193163,
+      "time_range": "00:01:35:19 - 00:01:38:01",
+      "filename": "laugh_005.wav",
+      "context": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind?",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind?",
+      "text": "We hebben dichters in de zaal",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Clever observation",
+            "confidence": 0.72,
+            "evidence": "The line foregrounds audience capability and meta-commentary about the crowd's potential to respond with verse.",
+            "reasoning": "Observational humor: notes a social dynamic in the room; not a direct insult but a witty remark about audience."
+          },
+          {
+            "label": "Language humor",
+            "confidence": 0.52,
+            "evidence": "Mentions 'dichters' (poets) which plays on linguistic role and invites linguistic play (rhyme).",
+            "reasoning": "Wordplay potential and linguistic prompt to rhyme."
+          }
+        ],
+        "primary_category": "Clever observation",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "The line reads as a straightforward claim that there are poets in the audience, setting up an ordinary crowd dynamic.",
+          "script_b": "The line is interpreted as a playful challenge to the audience to respond with poetry or rhymes, creating a competition-like reading.",
+          "opposition_type": "literal/figurative",
+          "trigger": "We hebben dichters in de zaal",
+          "trigger_location": "punchline/line itself",
+          "setup_reading": "Audience perceives the setup as a normal remark about audience talent; no immediate demand for verse.",
+          "punch_reinterpretation": "The audience is invited to engage in rhyming or poetic response, flipping from observation to performance.",
+          "ambiguity_type": "category shift",
+          "overlap_explanation": "Both scripts share the same trigger text; Script A remains a factual read while Script B leverages it as a challenge to engage in poetry.",
+          "confidence": 0.66
+        },
+        "overall_explanation": "The line leverages meta-humor and audience interaction. It treats the crowd as potential poets, prompting a playful shift from simple observation to a call-and-response in verse, aligning with clever observation and language-based humor."
+      }
+    },
+    {
+      "index": 1,
+      "start": 249.94790102500494,
+      "end": 260.909303388392,
+      "time_range": "00:04:09:24 - 00:04:20:23",
+      "filename": "laugh_021.wav",
+      "context": "Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van...",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van...",
+      "text": "Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk...",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.85,
+            "evidence": "The text begins with 'Godver de Godver,' a direct profanity aimed at a political scene.",
+            "reasoning": "Profanity and boundary-pushing language are common drivers of punchline in stand-up, signaling a crude, attention-grabbing barb."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.4,
+            "evidence": "The speaker intensifies critique with emphatic phrasing like 'Dit is werkelijk…' suggesting hyperbolic sentiment toward the situation.",
+            "reasoning": "The heightened emotional tone is typical of political satire and can function as mild exaggeration, even if the explicit hyperbole isn’t fully visible in the snippet."
+          }
+        ],
+        "primary_category": "Inappropriate remark",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "The line can be read as a normal vent about government and politics, within the expected rough-edged but acceptable range of political humor.",
+          "script_b": "The same line is read as a blunt, vulgar outburst that defies polite norms and marks the speaker as aggressively rebellious toward the political establishment.",
+          "opposition_type": "social norm violation",
+          "trigger": "Godver",
+          "trigger_location": "start of text",
+          "setup_reading": "Audience expects a critical but controlled political remark, typical of stand-up commentary.",
+          "punch_reinterpretation": "The profanity reframes the setup from a measured critique to a raw, boundary-pushing emotional vent.",
+          "ambiguity_type": "social norm violation",
+          "overlap_explanation": "Both scripts use the same quoted text; Script A relies on a conventional critical setup, while Script B hinges on violating politeness norms to provoke laughter. They are overlapping readings of the same line rather than separate texts.",
+          "confidence": 0.75
+        },
+        "overall_explanation": "The humor primarily rests on an inappropriate remark (boundary-pushing profanity) within a political rant, which can be read as either a standard vent (Script A) or a provocative, norm-violating outburst (Script B). The trigger ('Godver') is what makes Script B available, signaling a shift from polite political critique to raw, impolite expression."
+      }
+    },
+    {
+      "index": 2,
+      "start": 268.0307240321212,
+      "end": 276.851045679093,
+      "time_range": "00:04:28:01 - 00:04:36:21",
+      "filename": "laugh_023.wav",
+      "context": "Het is werkelijk een godgeklaagd...",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd...",
+      "text": "En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Irony",
+            "confidence": 0.72,
+            "evidence": "The line treats a serious current-events mood as something that can be resolved by a football result, creating a contrast between gravity and triviality.",
+            "reasoning": "The setup emphasizes real-world politics and crisis, while the punchline suggests a ludicrously simple fix via sports, signaling irony."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.66,
+            "evidence": "\"en het kan maar op één manier goed gemaakt worden\"",
+            "reasoning": "Claims that everything can be made right by one football outcome hyperbolically amplifies the impact of a sports result."
+          }
+        ],
+        "primary_category": "Irony",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Script A: The normal reading is that the speaker is framing a political/societal fix as achievable only by a specific football result; it treats the analogy as a conceivable, if exaggerated, possibility.",
+          "script_b": "Script B: The laugh-triggering reading treats the line as satirical hyperbole—sports outcomes cannot literally fix politics, revealing the statement as figurative critique.",
+          "opposition_type": "literal/figurative",
+          "trigger": "als Twente van PSV wint",
+          "trigger_location": "punchline",
+          "setup_reading": "The setup frames current events as topical and in need of serious resolution, priming the audience to expect commentary on politics.",
+          "punch_reinterpretation": "The audience reinterprets the setup to see the line as a hyperbolic joke: a sports result serves as a symbolic fix rather than a real solution.",
+          "ambiguity_type": "literal/figurative",
+          "overlap_explanation": "Both readings can fit because the sentence can be taken as a sincere claim or as satire about overreliance on trivial events.",
+          "confidence": 0.78
+        },
+        "overall_explanation": "Humor stems from irony and exaggeration: juxtaposing the grave tone of current-events critique with a trivial sports outcome as the supposed remedy exposes the silliness of treating such outcomes as real solutions."
+      }
+    },
+    {
+      "index": 3,
+      "start": 388.1174250832409,
+      "end": 390.79377597876004,
+      "time_range": "00:06:28:03 - 00:06:30:20",
+      "filename": "laugh_032.wav",
+      "context": "Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen.",
+      "text": "Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Stupidity",
+            "confidence": 0.75,
+            "evidence": "The line describes attempting to take a slok benzine (a dangerous, foolish act) due to the drought.",
+            "reasoning": "The humor stems from deliberately foolish action in an exaggerated coping attempt, inviting the audience to feel superior to the imprudent idea."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.6,
+            "evidence": "Two evenings trying to drink gasoline as a response to drought is an extreme hyperbole.",
+            "reasoning": "The joke relies on an over-the-top, unrealistic measure to highlight the severity of the situation."
+          },
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.55,
+            "evidence": "Reference to drinking gasoline breaches social norms and safety expectations.",
+            "reasoning": "The line shocks by violating decorum, contributing to humor through taboo."
+          }
+        ],
+        "primary_category": null,
+        "script_opposition": {
+          "detected": true,
+          "script_a": "The setup frames a drought with a hyperbolic, figurative joke; the audience reads it as an absurd exaggeration rather than a real plan.",
+          "script_b": "The text is read as a literal admission of considering or attempting a dangerous act (drinking gasoline), which would be shocking and dangerous in reality.",
+          "opposition_type": "literal/figurative; social_norm_violation",
+          "trigger": "slok benzine nam",
+          "trigger_location": "Text: final phrase",
+          "setup_reading": "Audience expects a hyperbolic, humorous take on drought, using an extreme image to provoke laughter.",
+          "punch_reinterpretation": "The joke is reinterpreted as either a bold hyperbole about thirst or a dangerous literal consideration, creating tension between safety and absurdity.",
+          "ambiguity_type": "social norm violation; literalization",
+          "overlap_explanation": "Both scripts can fit the same line because the setup supports hyperbole while the phrasing can be interpreted as a shocking literal admission.",
+          "confidence": 0.65
+        },
+        "overall_explanation": "The humor hinges on an extreme, socially discouraged action used as a hyperbolic image to cope with drought. The line simultaneously invites a figurative (exaggeration) reading and a dangerous literal-reading, producing script opposition between figurative vs. literal interpretation."
+      }
+    },
+    {
+      "index": 4,
+      "start": 392.4461317490371,
+      "end": 402.6395377684926,
+      "time_range": "00:06:32:11 - 00:06:42:16",
+      "filename": "laugh_033.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte.",
+      "text": "Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Stupidity",
+            "confidence": 0.75,
+            "evidence": "The line describes attempting to gulp gasoline, a clearly foolish act, used for humor.",
+            "reasoning": "Humor arises from the audience feeling superior to the speaker's foolish action."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.65,
+            "evidence": "“Two evenings … a gulp of gasoline” is an extreme, unlikely stunt stretched for comic effect.",
+            "reasoning": "The setup amplifies risk to ridiculous levels to highlight the absurdity."
+          },
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.6,
+            "evidence": "Joking about drinking gasoline and defying safety norms is socially provocative.",
+            "reasoning": "Crosses social boundaries to provoke discomfort and laughter."
+          }
+        ],
+        "primary_category": "Stupidity",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Normal reading: The comedian recounts an actual risky stunt (drinking gasoline) as a literal, shocking anecdote to punch up the danger and then pivots to a safer on-stage method.",
+          "script_b": "Opposing reading: The gasoline act is a metaphorical or boundary-pushing device; the shift to 'do it this way' signals a transition from literal danger to a safer or more conventional comedic setup.",
+          "opposition_type": "literal/figurative",
+          "trigger": "slok benzine nam",
+          "trigger_location": "start of the sentence: 'Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam'",
+          "setup_reading": "The setup leads the audience to expect a real, risky stunt as material for humor.",
+          "punch_reinterpretation": "The punch reinterprets the setup as a pivot to a safer, controlled joke or a different comedic tactic, rather than sustaining real danger.",
+          "ambiguity_type": "literal/figurative",
+          "overlap_explanation": "The same line can be read as a literal dangerous stunt or as a satirical exaggeration of performative risk, allowing both Script A and Script B to fit.",
+          "confidence": 0.65
+        },
+        "overall_explanation": "Humor stems from a shocking, foolish premise (drinking gasoline) and a safety pivot, inviting two readings: literal danger vs. boundary-testing metaphor. This duality drives the joke’s appeal."
+      }
+    },
+    {
+      "index": 5,
+      "start": 464.61451546212277,
+      "end": 472.0617527366108,
+      "time_range": "00:07:44:15 - 00:07:52:02",
+      "filename": "laugh_040.wav",
+      "context": "Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd.",
+      "text": "Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Irony",
+            "confidence": 0.68,
+            "evidence": "The setup reads like earnest news-style commentary about a wolf, but the punchline reframes it with absurd human-centric treatment (a vet giving him a 'spuitje'), creating a gap between literal seriousness and humorous interpretation.",
+            "reasoning": "The humor hinges on contrast between a solemn reportage tone and an incongruous, humanized reaction to a wolf, typical of ironic humor."
+          },
+          {
+            "label": "Language humor",
+            "confidence": 0.45,
+            "evidence": "The text uses the dehumanizing descriptor 'het dier, een mannetje' for a wolf and plays on language around medical treatment ('spuitje'), which invites wordplay and lexical incongruity.",
+            "reasoning": "Humor arises from lexical choices and the funny shift in meaning between animal and human-centered language."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.3,
+            "evidence": "Describing the event and the veterinary response with heightened seriousness (a 'wolf' treated as if it were a social or human scenario) amplifies the situation beyond a typical animal incident.",
+            "reasoning": "The overstatement of the situation contributes to comedic effect by pushing a normal event into absurd scale."
+          }
+        ],
+        "primary_category": "Irony",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "A neutral, reportage-like reading: a wolf is hit by a car and described in routine terms ('het dier, een mannetje') with the Vet administering a treatment as standard medical care.",
+          "script_b": "A comedic reading: the same text is used to underscore the absurdity of referring to a wolf as a 'mannetje' and treating it with human-like medical pragmatism, highlighting social satire and anthropomorphism.",
+          "opposition_type": "literal/figurative; category_shift",
+          "trigger": "Hem ook een spuitje te geven",
+          "trigger_location": "punchline / final phrase",
+          "setup_reading": "The audience anticipates a straightforward news-type line about an animal incident.",
+          "punch_reinterpretation": "The line reframes the incident as a humorous, almost bureaucratic humanizing twist (a vet giving an injection to a wolf), creating a dissonant reinterpretation.",
+          "ambiguity_type": "category shift",
+          "overlap_explanation": "Both scripts share the same text; Script A uses it to read as dry reportage, while Script B uses it to flip into anthropomorphic humor.",
+          "confidence": 0.65
+        },
+        "overall_explanation": "The line functions as irony through tonal mismatch and anthropomorphized language. It also yields light language humor via the 'mannetje' descriptor and medical world framing, with a mild exaggeration of formality in a mundane animal incident."
+      }
+    },
+    {
+      "index": 6,
+      "start": 480.835529150617,
+      "end": 499.0347152401472,
+      "time_range": "00:08:00:21 - 00:08:19:01",
+      "filename": "laugh_042.wav",
+      "context": "De auto en de bestuurder moesten worden weggesleept.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept.",
+      "text": "Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": true,
+        "categories": [],
+        "primary_category": null,
+        "script_opposition": {
+          "detected": false,
+          "script_a": null,
+          "script_b": null,
+          "opposition_type": null,
+          "trigger": null,
+          "trigger_location": null,
+          "setup_reading": null,
+          "punch_reinterpretation": null,
+          "ambiguity_type": null,
+          "overlap_explanation": null,
+          "confidence": 0.2
+        },
+        "overall_explanation": "The text provides a straightforward factual statement about wolves in Drenthe and their offspring, with no comedic setup, punchline, or social move evident."
+      }
+    },
+    {
+      "index": 7,
+      "start": 501.2456138060108,
+      "end": 504.85286936084094,
+      "time_range": "00:08:21:06 - 00:08:24:21",
+      "filename": "laugh_043.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen.",
+      "text": "Een leuk einde van dat bericht.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Irony",
+            "confidence": 0.78,
+            "evidence": "Context includes grim current events and satirical framing; the line 'Een leuk einde van dat bericht.' contrasts with the surrounding serious content, implying sarcasm.",
+            "reasoning": "The setup and preceding content create an expectation of a grave news tone, so stating 'a nice ending' reads as a deliberate opposite for humorous effect."
+          }
+        ],
+        "primary_category": "Irony",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "A straightforward reading: the speaker is making a genuine, literal remark that the ending of the report is pleasant.",
+          "script_b": "A sarcastic reading: the phrase is ironic, signaling that the ending is not pleasant and mocks the grim content of the report.",
+          "opposition_type": "literal/figurative; irony",
+          "trigger": "Een leuk einde van dat bericht.",
+          "trigger_location": "final phrase",
+          "setup_reading": "The audience expects a conventional, neutral recap tone after a string of serious news items.",
+          "punch_reinterpretation": "The line reframes the closing as an ironic jab at the news, shifting from literal praise to critique/sarcasm.",
+          "ambiguity_type": "irony",
+          "overlap_explanation": "The same utterance can be read both as a literal compliment or an ironic remark; context determines which reading dominates.",
+          "confidence": 0.72
+        },
+        "overall_explanation": "The line 'Een leuk einde van dat bericht.' functions as an irony-based micro-punchline: it juxtaposes a positive descriptor with grim content, inviting the audience to reinterpret the closing as sarcastic commentary rather than a sincere compliment."
+      }
+    },
+    {
+      "index": 8,
+      "start": 506.4121346651869,
+      "end": 527.4040347326501,
+      "time_range": "00:08:26:10 - 00:08:47:10",
+      "filename": "laugh_044.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht.",
+      "text": "Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Irony",
+            "confidence": 0.78,
+            "evidence": "The announcer cues normal news talk, then the text undercuts it with unexpected whimsy ('welpen er nog in') and an extreme line about '14 arrestaties voor opruiming TikTok'.",
+            "reasoning": "Setup presents journalism as routine; the punchlines reveal the opposite, a sly mismatch between expectation and content."
+          },
+          {
+            "label": "Clever observation",
+            "confidence": 0.65,
+            "evidence": "Points out how newsrooms can seem arbitrary or performative, turning editorial quirks into humor.",
+            "reasoning": "Skewers everyday media norms by highlighting their absurdity."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.58,
+            "evidence": "Escalation from 'random insertions of welpen' to 'arrests for cleaning TikTok' heightens the satire.",
+            "reasoning": "Uses hyperbole to emphasize critique of media sensationalism."
+          }
+        ],
+        "primary_category": "Irony",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "The setup is treated as a mundane critique of media editing: editors act capriciously, but the news remains largely ordinary.",
+          "script_b": "The text invites a satirical reading where the newsroom is chaotic and the 'arrests' line is a critique of censorship and sensationalism.",
+          "opposition_type": "literal/figurative; social norm violation; category shift",
+          "trigger": "volstrekte willekeur; welpen insertion; '14 arrestaties voor opruiming TikTok'",
+          "trigger_location": "text around 'volstrekte willekeur' and the following line about arrests",
+          "setup_reading": "Audience expects standard, factual news presentation from a newsroom.",
+          "punch_reinterpretation": "Audience reframes as satire: editorial decisions mock journalism; everyday news becomes a commentary on media manipulation.",
+          "ambiguity_type": "category shift",
+          "overlap_explanation": "Both readings rely on the same lines; the humor arises from the tension between a straightforward news framing and a satirical, chaotic reinterpretation.",
+          "confidence": 0.65
+        },
+        "overall_explanation": "The humor rests on ironic undercutting of a normal newsroom setup, with observational critique and hyperbolic leaps (wolf cubs, arrests for tidying TikTok) that invite a second, satirical reading."
+      }
+    },
+    {
+      "index": 9,
+      "start": 529.1960262018238,
+      "end": 540.9952427585907,
+      "time_range": "00:08:49:05 - 00:09:00:24",
+      "filename": "laugh_045.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok.",
+      "text": "De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": true,
+        "categories": [],
+        "primary_category": null,
+        "script_opposition": {
+          "detected": false,
+          "script_a": null,
+          "script_b": null,
+          "opposition_type": null,
+          "trigger": null,
+          "trigger_location": null,
+          "setup_reading": null,
+          "punch_reinterpretation": null,
+          "ambiguity_type": null,
+          "overlap_explanation": null,
+          "confidence": 0.3
+        },
+        "overall_explanation": "The line presents a factual police operation summary without a humor mechanism. Any humor would stem from broader context or delivery in the surrounding stand-up material, which is not evidenced in this isolated text."
+      }
+    },
+    {
+      "index": 10,
+      "start": 607.8341972971209,
+      "end": 613.2334443211247,
+      "time_range": "00:10:07:21 - 00:10:13:06",
+      "filename": "laugh_054.wav",
+      "context": "Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen.",
+      "text": "Ja, dan kunnen de boventanden er zo uitschieten.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Exaggeration",
+            "confidence": 0.7,
+            "evidence": "\"Ja, dan kunnen de boventanden er zo uitschieten.\"",
+            "reasoning": "The line conjures a vivid, improbable image of teeth popping out, amplifying a mundane moment into a playful hyperbole."
+          }
+        ],
+        "primary_category": "Exaggeration",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Normal reading: the setup frames aging or bodily quirks as a mild, everyday aside; the line is read as a figurative overstatement about losing control or composure, not a literal dental action.",
+          "script_b": "Competing reading: the line is taken literally as a visual gag—the upper teeth actually popping out—creating a sudden, physical image for comic impact.",
+          "opposition_type": "literal/figurative",
+          "trigger": "\"Ja, dan kunnen de boventanden er zo uitschieten.\"",
+          "trigger_location": "punchline / final line",
+          "setup_reading": "Audience expects a conventional joke setup about aging or bodily quirks; the line then shifts to an exaggerated, image-based gag.",
+          "punch_reinterpretation": "The setup is reinterpreted from a figurative worry about aging to a concrete, cartoonish tooth-popping visual for humor.",
+          "ambiguity_type": "literal/figurative",
+          "overlap_explanation": "Both readings rely on the same line; the context allows interpreting it as a hyperbolic figure of speech or as a literal physical gag, generating laughter through either route.",
+          "confidence": 0.6
+        },
+        "overall_explanation": "The line uses hyperbolic, bodily imagery to generate humor. It supports a figurative exaggeration as part of aging/comedy, while also lending itself to a literal, slapstick interpretation. The dual readings create a mild script opposition between literal and figurative understandings."
+      }
+    },
+    {
+      "index": 11,
+      "start": 616.5614284781616,
+      "end": 622.7519444625798,
+      "time_range": "00:10:16:14 - 00:10:22:19",
+      "filename": "laugh_055.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten.",
+      "text": "En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Irony",
+            "confidence": 0.6,
+            "evidence": "En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen.",
+            "reasoning": "The sentence sets up an expectation that ideology would be disclosed and then presents an ironic absence, highlighting a disconnect between political labeling and reporting."
+          },
+          {
+            "label": "Clever observation",
+            "confidence": 0.55,
+            "evidence": "The line hints at how media sometimes omit ideological labels, prompting reflection on coverage.",
+            "reasoning": "It comments on a real-world pattern in journalism—the selective disclosure of ideology—an everyday norm the audience can recognize."
+          }
+        ],
+        "primary_category": "Irony",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "The straightforward reading: the report simply notes that ideology disclosure is not provided, i.e., a factual omission.",
+          "script_b": "The competing reading: the omission itself is the joke—mocking how media label or fail to label ideology, turning absence into a satirical target.",
+          "opposition_type": "literal/figurative",
+          "trigger": "En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen.",
+          "trigger_location": "final phrase",
+          "setup_reading": "Audience expects to learn or infer ideology; the setup positions journalism as a source of labeled identities.",
+          "punch_reinterpretation": "The audience reinterprets the setup to see the lack of disclosure as the punchline, exposing ambiguity in labeling.",
+          "ambiguity_type": "expected/unexpected",
+          "overlap_explanation": "Both scripts utilize the same sentence: a literal claim about missing information (Script A) and a satirical reading about media labeling (Script B).",
+          "confidence": 0.65
+        },
+        "overall_explanation": "The humor relies on irony and a clever observation about political reporting: treating the non-disclosure of ideology as a punchline, inviting scrutiny of how ideology is labeled or withheld in media coverage."
+      }
+    },
+    {
+      "index": 12,
+      "start": 698.7835825118061,
+      "end": 701.2039346260148,
+      "time_range": "00:11:38:20 - 00:11:41:05",
+      "filename": "laugh_059.wav",
+      "context": "En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die...",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die...",
+      "text": "Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou...",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Irony",
+            "confidence": 0.65,
+            "evidence": "The setup complains that current events are moving so fast, then the punchline pivots to a dark, sacred-topic reference (the pope’s death) to flip the expected tone.",
+            "reasoning": "Humor arises from a mismatch between a mundane, observational setup about news tempo and an abrupt, contrary twist that undermines seriousness."
+          },
+          {
+            "label": "Black humor",
+            "confidence": 0.5,
+            "evidence": "Line about the pope needing to die on a specific day and the surrounding sacred/secular clash is used as a joke in a political/current-events context.",
+            "reasoning": "Treads into a grave topic (death of a sacred figure) and treats it as fodder for humor."
+          },
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.4,
+            "evidence": "Presence of crude language and boundary-pushing social moves (e.g., references to intense topics and profanity).",
+            "reasoning": "Transgresses polite norms to provoke laughter through shock or rougher phrasing."
+          }
+        ],
+        "primary_category": "Irony",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Script A reads the pope-death line as a provocative but contextually driven pivot within a routine that riffs on current events; the setup remains anchored in observational humor about media speed.",
+          "script_b": "Script B reads the line as a bold, boundary-pushing twist that literalizes a sacred death to subvert expectations, highlighting a darker edge of the humor.",
+          "opposition_type": "literal/figurative; life/death",
+          "trigger": "'de paus is overleden op tweede paasdag' line",
+          "trigger_location": "punchline",
+          "setup_reading": "The audience expects standard topical humor about current events and stage life; the setup primes for relatable, observational material.",
+          "punch_reinterpretation": "The death reference is reinterpreted as a taboo, shocking twist that reframes the setup as dark satire about news cycles and sacred topics.",
+          "ambiguity_type": "life/death; social_norm_violation",
+          "overlap_explanation": "Both scripts can fit the same text because the line can be read as either a serious news-commentary claim or a provocative joke, depending on interpretation.",
+          "confidence": 0.6
+        },
+        "overall_explanation": "The humor relies on irony and a boundary-pushing moment involving a sacred figure's death, shifting the tone from observational commentary to dark humor, with multiple plausible readings for the audience."
+      }
+    },
+    {
+      "index": 13,
+      "start": 701.6693869556702,
+      "end": 732.0401514656918,
+      "time_range": "00:11:41:17 - 00:12:12:01",
+      "filename": "laugh_060.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag.",
+      "text": "Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Clever observation",
+            "confidence": 0.72,
+            "evidence": "The text foregrounds a pointed, everyday-reading remark about Omtzigt: 'Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah.'",
+            "reasoning": "It's a succinct, real-world observation about a public figure and the audience's familiar reaction, typical of observational humor."
+          },
+          {
+            "label": "Irony",
+            "confidence": 0.34,
+            "evidence": "There is a implied contrast between the seriousness of politics and the crowd's jokey reaction ('Ah, ah, ah'), suggesting a playful discrepancy between expectation and reception.",
+            "reasoning": "The setup hints at an ironic gap between political gravitas and comic reception."
+          }
+        ],
+        "primary_category": "Clever observation",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Script A reads the moment as straightforward stage banter: Omtzigt is a known figure, and the host simply notes his presence ('Kijk, daar is ie') and the audience's familiar reaction as part of regular humor about public figures.",
+          "script_b": "Script B reinterprets the beat as social commentary: Omtzigt's presence elicits a predictable, possibly begrudging or exasperated reaction ('Ah, ah'), turning the setup into critique of public perception.",
+          "opposition_type": "literal/figurative; social norm violation",
+          "trigger": "punchline/last phrase 'Ah, ah, ah'",
+          "trigger_location": "text end/punchline",
+          "setup_reading": "The setup presents Omtzigt as a familiar subject, primed for a standard audience nod toward a political figure.",
+          "punch_reinterpretation": "The same beat is read as commentary on the audience's or colleagues' reaction, reframing the moment as social critique rather than pure acknowledgment.",
+          "ambiguity_type": "literal/figurative",
+          "overlap_explanation": "Both scripts rely on the same lines; Script A treats them as normal banter about a public figure, while Script B reads them as ironic social commentary.",
+          "confidence": 0.58
+        },
+        "overall_explanation": "The text leverages clever observational humor about a public figure, with an underlying potential irony and a script-opposition reading that reframes the moment as social commentary rather than mere acknowledgment."
+      }
+    },
+    {
+      "index": 14,
+      "start": 732.3659680964506,
+      "end": 741.1862897434224,
+      "time_range": "00:12:12:09 - 00:12:21:05",
+      "filename": "laugh_061.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah.",
+      "text": "Nee, maar hij is namelijk in en in tegen. In en in tegen.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Language humor",
+            "confidence": 0.75,
+            "evidence": "The line uses an unusual, repetitive phrasing 'in en in tegen,' creating a playful rhythm and word-pattern",
+            "reasoning": "Presents humor through phrasing and sound rather than a straightforward joke; relies on language itself for comedic effect."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.6,
+            "evidence": "The phrase implies an extreme, all-encompassing stance ('in en in tegen')",
+            "reasoning": "Amplifies the stance to a hyperbolic level, which can be humorous by overstatement."
+          },
+          {
+            "label": "Irony",
+            "confidence": 0.4,
+            "evidence": "Possible contrast between a normal opposition and a paradoxical 'for and against' reading",
+            "reasoning": "If read as paradox, it carries an ironic tension between expected clarity and muddled stance."
+          }
+        ],
+        "primary_category": "Language humor",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Script A reads the line as a straightforward, binary opposition about someone's stance, aligning with a conventional setup before a punchline.",
+          "script_b": "Script B treats the line as a paradoxical reading where the subject is simultaneously for and against, creating a conflicting interpretation that triggers laughter.",
+          "opposition_type": "category shift",
+          "trigger": "the phrase 'in en in tegen'",
+          "trigger_location": "text (the line itself)",
+          "setup_reading": "The audience anticipates a clear, conventional stance about someone’s position.",
+          "punch_reinterpretation": "The audience reinterprets the setup as ironic/paradoxical, realizing the line can mean both for and against, which subverts expectation.",
+          "ambiguity_type": "category shift",
+          "overlap_explanation": "Both scripts can fit the same line: a normal setup reading and a playful, contradictory reading coexist in the same text.",
+          "confidence": 0.62
+        },
+        "overall_explanation": "The line functions as language-based humor with potential irony through paradoxical category shift; it invites two compatible readings, one conventional and one subversive."
+      }
+    },
+    {
+      "index": 15,
+      "start": 745.3055428608736,
+      "end": 769.2065199886837,
+      "time_range": "00:12:25:08 - 00:12:49:05",
+      "filename": "laugh_063.wav",
+      "context": "En dat is precies de pest.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah. Nee, maar hij is namelijk in en in tegen. In en in tegen. En dat is precies de pest.",
+      "text": "Want ja, moet je kijken door wie je omringd wordt in de politiek. Het is allemaal gaaiers en schoftentuig. Als je het niet aankunt, hoef er op! Blijf alleen op Twente zitten en blijf daar een beetje de figuur die het allemaal door heeft zitten. Maar kom alsjeblieft niet naar de Randstad! Nou ja, zo ging het gisteren ongeveer een half uur. Gaat u minister-president worden?",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Exaggeration",
+            "confidence": 0.72,
+            "evidence": "The speaker amplifies political dysfunction and insults ('gaaiers en schoftentuig') to absurd, sweeping terms.",
+            "reasoning": "Hyperbolic portrayal of the political class is a common satirical device to highlight perceived flaws."
+          },
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.6,
+            "evidence": "Direct insult toward politicians with loaded, rude terminology.",
+            "reasoning": "Breaks polite norms to intensify hostility and comedic effect."
+          },
+          {
+            "label": "Clever observation",
+            "confidence": 0.5,
+            "evidence": "Comments on media, TikTok, and current events reflect insights about modern political discourse.",
+            "reasoning": "Observational take on how news cycles and platforms shape public perception."
+          }
+        ],
+        "primary_category": "Exaggeration",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "The normal reading: the speaker is venting about a flawed political class, using satire to critique those in power; setup aligns with a justified social critique.",
+          "script_b": "The competing reading: the insult ('gaaiers en schoftentuig') targets politicians as a hostile group, turning the setup into a blunt, impolite indictment.",
+          "opposition_type": "polite/impolite",
+          "trigger": "gaaiers en schoftentuig",
+          "trigger_location": "the line asserting 'het is allemaal gaaiers en schoftentuig'",
+          "setup_reading": "Audience perceives a venting/satirical setup about political figures and their circle.",
+          "punch_reinterpretation": "The punch shifts from satire to a direct insult, reframing the setup as condemned behavior rather than a purely humorous observation.",
+          "ambiguity_type": "social norm violation",
+          "overlap_explanation": "Both scripts ride on the same insult-laden line; one reads as satirical critique, the other as aggressive insult, hence overlapping interpretations.",
+          "confidence": 0.6
+        },
+        "overall_explanation": "Humor here relies on exaggeration of political chaos and a provocative insult to magnify frustration; the same material supports a dual script-opposition (satirical critique vs. impolite attack) via the trigger line."
+      }
+    },
+    {
+      "index": 16,
+      "start": 779.1206546103459,
+      "end": 795.4114861482885,
+      "time_range": "00:12:59:03 - 00:13:15:10",
+      "filename": "laugh_064.wav",
+      "context": "Weet ik nog niet.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah. Nee, maar hij is namelijk in en in tegen. In en in tegen. En dat is precies de pest. Want ja, moet je kijken door wie je omringd wordt in de politiek. Het is allemaal gaaiers en schoftentuig. Als je het niet aankunt, hoef er op! Blijf alleen op Twente zitten en blijf daar een beetje de figuur die het allemaal door heeft zitten. Maar kom alsjeblieft niet naar de Randstad! Nou ja, zo ging het gisteren ongeveer een half uur. Gaat u minister-president worden? Weet ik nog niet.",
+      "text": "Godver. Godverdomme. Maar het is echt ongelooflijk. Dit land is gewoon... We hebben niks... We hebben geen voorjaarsnoten. Heeft u dat bestudeerd? Wat daar voor ontrein is. Allemaal te danken.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Exaggeration",
+            "confidence": 0.78,
+            "evidence": "Dit land is gewoon... We hebben niks... We hebben geen voorjaarsnoten.",
+            "reasoning": "The speaker amplifies national shortcomings to a sweeping, almost cartoonish level, a hallmark of exaggeration in political venting."
+          },
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.6,
+            "evidence": "Godverdomme. Maar het is echt ongelooflijk.",
+            "reasoning": "Profanity and blunt vulgarity function as a disruptive, boundary-pushing remark typical of dark or raw humor in stand-up."
+          }
+        ],
+        "primary_category": "Exaggeration",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Script A: The setup is read as a genuine, common-sense vent about the country's state, with humor emerging from earnest frustration and elevated rhetoric rather than a deliberate subversion of expectations.",
+          "script_b": "Script B: The laugh-triggering moment (the profanity) pivots to a performative outrage, framing the same setup as a controlled, theatrical vent meant to provoke laughter through boundary-pushing language.",
+          "opposition_type": "tone shift; social norm violation; literal/figurative",
+          "trigger": "Godverdomme",
+          "trigger_location": "final line",
+          "setup_reading": "The audience expects a conventional political lament, delivered with satirical overtones but rooted in real-world critique.",
+          "punch_reinterpretation": "The trigger reframes the setup as an exaggerated, performative outburst, turning frustration into a comedic weapon.",
+          "ambiguity_type": "inappropriate remark",
+          "overlap_explanation": "Both Script A and Script B use the same text; A uses straight frustration, B adds a transgressive punch via profanity to evoke laughter.",
+          "confidence": 0.65
+        },
+        "overall_explanation": "Humor here arises from exaggerated national grievance delivered with blunt language. The same lines can be read as a sincere vent (Script A) or a performative, boundary-pushing bit that weaponizes profanity for a punch (Script B)."
+      }
+    },
+    {
+      "index": 17,
+      "start": 797.6223847141521,
+      "end": 813.9364888685775,
+      "time_range": "00:13:17:16 - 00:13:33:23",
+      "filename": "laugh_065.wav",
+      "context": "",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah. Nee, maar hij is namelijk in en in tegen. In en in tegen. En dat is precies de pest. Want ja, moet je kijken door wie je omringd wordt in de politiek. Het is allemaal gaaiers en schoftentuig. Als je het niet aankunt, hoef er op! Blijf alleen op Twente zitten en blijf daar een beetje de figuur die het allemaal door heeft zitten. Maar kom alsjeblieft niet naar de Randstad! Nou ja, zo ging het gisteren ongeveer een half uur. Gaat u minister-president worden? Weet ik nog niet. Godver. Godverdomme. Maar het is echt ongelooflijk. Dit land is gewoon... We hebben niks... We hebben geen voorjaarsnoten. Heeft u dat bestudeerd? Wat daar voor ontrein is. Allemaal te danken.",
+      "text": "Goed, ik sta hier. Ik heb al drie keer gevloekt. Dan nodig de ruimte kennelijk toe uit. Ik weet niet wat het is. Mevrouw Faber heeft nu weer voor een gedeelte haar zin gekregen. Want de derde wereldlanders gaan dus nu terug naar hun derde wereldland.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.78,
+            "evidence": "The line contains xenophobic phrasing about 'derde wereldlanders' and returning them to their 'derde wereldland,' which is a social-norm violation used for shock/gag.",
+            "reasoning": "Xenophobic/erstwhile offensive content is leveraged for humor, creating discomfort that comedians often weaponize for satire."
+          },
+          {
+            "label": "Clever observation",
+            "confidence": 0.75,
+            "evidence": "The setup and delivery draw on current events, media coverage, and political figures, turning these everyday phenomena into jokes.",
+            "reasoning": "Humor derives from noticing and riffing on absurdities in public discourse and media culture."
+          },
+          {
+            "label": "Irony",
+            "confidence": 0.65,
+            "evidence": "The speaker frames serious current events with casual, jokey commentary, implying a mismatch between perceived gravity and delivered punchlines.",
+            "reasoning": "The audience is invited to read the surface joke as a reversal of expected seriousness."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.6,
+            "evidence": "The routine amplifies political events and reactions, pushing them toward humorous extremes.",
+            "reasoning": "Hyperbole is used to magnify everyday political antics for comedic effect."
+          }
+        ],
+        "primary_category": "Inappropriate remark",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Script A reads the line as a satirical critique of xenophobia and political rhetoric; the speaker uses provocation to expose prejudice rather than endorse it.",
+          "script_b": "Script B reads the line as a literal endorsement of returning immigrants to their homeland, revealing prejudice; the joke would land as a shocking stance.",
+          "opposition_type": "literal/figurative",
+          "trigger": "derde wereldlanders gaan dus nu terug naar hun derde wereldland",
+          "trigger_location": "final fragment",
+          "setup_reading": "Audiences expect critique of political discourse and media sensationalism; the phrase is encountered as a provocative setup rather than a straightforward statement.",
+          "punch_reinterpretation": "The audience reinterprets the setup as a satire or exposing prejudice, rather than accepting the xenophobic sentiment at face value.",
+          "ambiguity_type": "social norm violation",
+          "overlap_explanation": "Both scripts rely on the same phrase; the difference is whether the phrase is read as endorsing prejudice (Script B) or as a critique/satire (Script A).",
+          "confidence": 0.6
+        },
+        "overall_explanation": "Humor arises from a blend of topical political observation, transgressive remark, and irony; the line about 'derde wereldlanders' functions as a potential punchline that can either reveal or critique prejudice, depending on interpretation, producing script-opposition dynamics."
+      }
+    },
+    {
+      "index": 18,
+      "start": 902.5353398185024,
+      "end": 918.3374464103067,
+      "time_range": "00:15:02:13 - 00:15:18:08",
+      "filename": "laugh_072.wav",
+      "context": "En ik dacht dat de derde wereld niet meer bestond. Maar in dit geval hebben ze hem weer opnieuw in het leven. Dat zijn dus mensen die vanuit wat deel van de wereld ook een toekomst zagen in Oekraïne. en die toen gevlucht zijn, toen de Russen binnenvielen... en in Nederland zijn terechtgekomen. En ja, daar zit je dan opeens weer met 20.000 man... en die mogen er nu uitsturen. Dus mevrouw Faber zit vandaag met een krul in de staart thuis. Want die heeft het natuurlijk niet altijd makkelijk gehad. Maar ze is daar ter afschrikking. Schrikking. Zij moeten mensen... Want in die vluchtelingenkampen worden folders... door de mensen-smokkelaars folders uitgedeeld. Waar wil je heen? En dan slaan ze een bladje om en dan is het Nederland. En dan... Dat is de bedoeling. Dat is het masterplan van Geert Wilders. En nu is het zo. Want de oorlog dreigt. We zitten in een grijs gebied. Is er gisteren vastgesteld. We zitten in een grijs gebied waarvan je niet kan zeggen het is vrede. Maar je kan ook niet zeggen het is oorlog. En dat gaat ons 800 miljard kosten. Maar wij willen daar eigenlijk liever niet aan meedoen. Want is de redenatie hier van de coalitie. Wij hebben mevrouw Faber.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah. Nee, maar hij is namelijk in en in tegen. In en in tegen. En dat is precies de pest. Want ja, moet je kijken door wie je omringd wordt in de politiek. Het is allemaal gaaiers en schoftentuig. Als je het niet aankunt, hoef er op! Blijf alleen op Twente zitten en blijf daar een beetje de figuur die het allemaal door heeft zitten. Maar kom alsjeblieft niet naar de Randstad! Nou ja, zo ging het gisteren ongeveer een half uur. Gaat u minister-president worden? Weet ik nog niet. Godver. Godverdomme. Maar het is echt ongelooflijk. Dit land is gewoon... We hebben niks... We hebben geen voorjaarsnoten. Heeft u dat bestudeerd? Wat daar voor ontrein is. Allemaal te danken. Goed, ik sta hier. Ik heb al drie keer gevloekt. Dan nodig de ruimte kennelijk toe uit. Ik weet niet wat het is. Mevrouw Faber heeft nu weer voor een gedeelte haar zin gekregen. Want de derde wereldlanders gaan dus nu terug naar hun derde wereldland. En ik dacht dat de derde wereld niet meer bestond. Maar in dit geval hebben ze hem weer opnieuw in het leven. Dat zijn dus mensen die vanuit wat deel van de wereld ook een toekomst zagen in Oekraïne. en die toen gevlucht zijn, toen de Russen binnenvielen... en in Nederland zijn terechtgekomen. En ja, daar zit je dan opeens weer met 20.000 man... en die mogen er nu uitsturen. Dus mevrouw Faber zit vandaag met een krul in de staart thuis. Want die heeft het natuurlijk niet altijd makkelijk gehad. Maar ze is daar ter afschrikking. Schrikking. Zij moeten mensen... Want in die vluchtelingenkampen worden folders... door de mensen-smokkelaars folders uitgedeeld. Waar wil je heen? En dan slaan ze een bladje om en dan is het Nederland. En dan... Dat is de bedoeling. Dat is het masterplan van Geert Wilders. En nu is het zo. Want de oorlog dreigt. We zitten in een grijs gebied. Is er gisteren vastgesteld. We zitten in een grijs gebied waarvan je niet kan zeggen het is vrede. Maar je kan ook niet zeggen het is oorlog. En dat gaat ons 800 miljard kosten. Maar wij willen daar eigenlijk liever niet aan meedoen. Want is de redenatie hier van de coalitie. Wij hebben mevrouw Faber.",
+      "text": "Ja, mocht het zover komen, dan zetten we haar aan de grens met een paraplu. Nou jongen, die Russen schrikken zich te pletterig. Ze zeggen... Rechtsomkamer, alle drones raken in de war. Het hele zooitje gaat niet door. Mevrouw Faber.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Exaggeration",
+            "confidence": 0.72,
+            "evidence": "The line about defending the border with a mere umbrella inflates a trivial object into a strategic asset.",
+            "reasoning": "Hyperbolic framing to mock political responses creates a clear exaggeration."
+          },
+          {
+            "label": "Sudden twist",
+            "confidence": 0.68,
+            "evidence": "Setup builds toward a serious policy joke, then pivots to an absurd visual (umbrella as border defense).",
+            "reasoning": "Punchline violates expectation with an abrupt, incongruous shift."
+          },
+          {
+            "label": "Irony",
+            "confidence": 0.6,
+            "evidence": "Serious militarized rhetoric contrasted with a banal object (umbrella) highlights the mismatch between talk and action.",
+            "reasoning": "The intended meaning is undercut by opposing surface reading."
+          }
+        ],
+        "primary_category": "Exaggeration",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Normal reading: the speaker frames a serious policy scenario (border defense) and discusses it within the comic setup as a credible, albeit satirical, political move.",
+          "script_b": "Opposing reading: the punchline literalizes the absurd defense by proposing to shield or threaten with an umbrella, turning a political discussion into a farcical image.",
+          "opposition_type": "literal/figurative",
+          "trigger": "dan zetten we haar aan de grens met een paraplu",
+          "trigger_location": "punchline",
+          "setup_reading": "The audience expects a conventional policy joke about border security and political figures.",
+          "punch_reinterpretation": "The umbrella becomes the ridiculous stand-in for a real defense, reframing the setup as absurdist satire.",
+          "ambiguity_type": "category shift",
+          "overlap_explanation": "Both scripts share the same sentence; Script A reads it as a satire of policy, Script B treats the umbrella literally as a defense, creating a clash that triggers laughter.",
+          "confidence": 0.65
+        },
+        "overall_explanation": "The humor arises from a deliberate overstatement (exaggeration) and a sharp turn (sudden twist) that reframes serious political talk through irony. The umbrella gag also supports a literal/figurative script opposition, enhancing the comedic effect by forcing two coexisting readings of the same line."
+      }
+    },
+    {
+      "index": 19,
+      "start": 1010.6599159974757,
+      "end": 1025.3449369981067,
+      "time_range": "00:16:50:16 - 00:17:05:09",
+      "filename": "laugh_082.wav",
+      "context": "Ja, het leger. Ik heb een kleindochter van 16. 16 jaar. Onvoorstelbaar. Die kreeg een brief van de overheid... dat ze over twee jaar wel eens in dienst zou moeten kunnen gaan. 16 jaar. Ik krijg er nu al bericht van... bereid je er maar op voor dat je... De dienstbericht is nooit helemaal afgeschaft. Die wordt weer in het leven geroepen. En tussen jongens en meisjes wordt in ons land ook geen onderscheid meer gemaakt. Dus het is niet alleen de jongens. De meisjes zijn evenzeer de klos op dit moment. Het gaat vanavond voor een deel over dit boek. Dat speelt in de jaren 60. Van 62 tot 69. En daar ontmoet ik Bram Vermeulen. En daar hadden wij met jongens, we zaten dan zo bij elkaar. Dan ging het over de dienstkeuring opscheppen. Een beetje dingen opscheppen. Bram vertelde dat hij zou weigeren. Hij zou geweigerd hebben. Dat was zijn redenatie. Waren het niet dat zijn beide oudere broers al in dienst hadden gezeten. Dus broederdienst had je dan. Broederdienst. Ik ben afgekeurd op mijn ogen. Ik ben afgekeurd. Ja, je gelooft het niet, maar ik ben afgekeurd. Afgekeurd op mijn ogen. Die Sjusjan die mij op mijn ogen moest keuren, zat in zo'n kamertje. En daar hing zo'n bord van de opticien met van die grote letters aan de muur.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah. Nee, maar hij is namelijk in en in tegen. In en in tegen. En dat is precies de pest. Want ja, moet je kijken door wie je omringd wordt in de politiek. Het is allemaal gaaiers en schoftentuig. Als je het niet aankunt, hoef er op! Blijf alleen op Twente zitten en blijf daar een beetje de figuur die het allemaal door heeft zitten. Maar kom alsjeblieft niet naar de Randstad! Nou ja, zo ging het gisteren ongeveer een half uur. Gaat u minister-president worden? Weet ik nog niet. Godver. Godverdomme. Maar het is echt ongelooflijk. Dit land is gewoon... We hebben niks... We hebben geen voorjaarsnoten. Heeft u dat bestudeerd? Wat daar voor ontrein is. Allemaal te danken. Goed, ik sta hier. Ik heb al drie keer gevloekt. Dan nodig de ruimte kennelijk toe uit. Ik weet niet wat het is. Mevrouw Faber heeft nu weer voor een gedeelte haar zin gekregen. Want de derde wereldlanders gaan dus nu terug naar hun derde wereldland. En ik dacht dat de derde wereld niet meer bestond. Maar in dit geval hebben ze hem weer opnieuw in het leven. Dat zijn dus mensen die vanuit wat deel van de wereld ook een toekomst zagen in Oekraïne. en die toen gevlucht zijn, toen de Russen binnenvielen... en in Nederland zijn terechtgekomen. En ja, daar zit je dan opeens weer met 20.000 man... en die mogen er nu uitsturen. Dus mevrouw Faber zit vandaag met een krul in de staart thuis. Want die heeft het natuurlijk niet altijd makkelijk gehad. Maar ze is daar ter afschrikking. Schrikking. Zij moeten mensen... Want in die vluchtelingenkampen worden folders... door de mensen-smokkelaars folders uitgedeeld. Waar wil je heen? En dan slaan ze een bladje om en dan is het Nederland. En dan... Dat is de bedoeling. Dat is het masterplan van Geert Wilders. En nu is het zo. Want de oorlog dreigt. We zitten in een grijs gebied. Is er gisteren vastgesteld. We zitten in een grijs gebied waarvan je niet kan zeggen het is vrede. Maar je kan ook niet zeggen het is oorlog. En dat gaat ons 800 miljard kosten. Maar wij willen daar eigenlijk liever niet aan meedoen. Want is de redenatie hier van de coalitie. Wij hebben mevrouw Faber. Ja, mocht het zover komen, dan zetten we haar aan de grens met een paraplu. Nou jongen, die Russen schrikken zich te pletterig. Ze zeggen... Rechtsomkamer, alle drones raken in de war. Het hele zooitje gaat niet door. Mevrouw Faber. Ja, het leger. Ik heb een kleindochter van 16. 16 jaar. Onvoorstelbaar. Die kreeg een brief van de overheid... dat ze over twee jaar wel eens in dienst zou moeten kunnen gaan. 16 jaar. Ik krijg er nu al bericht van... bereid je er maar op voor dat je... De dienstbericht is nooit helemaal afgeschaft. Die wordt weer in het leven geroepen. En tussen jongens en meisjes wordt in ons land ook geen onderscheid meer gemaakt. Dus het is niet alleen de jongens. De meisjes zijn evenzeer de klos op dit moment. Het gaat vanavond voor een deel over dit boek. Dat speelt in de jaren 60. Van 62 tot 69. En daar ontmoet ik Bram Vermeulen. En daar hadden wij met jongens, we zaten dan zo bij elkaar. Dan ging het over de dienstkeuring opscheppen. Een beetje dingen opscheppen. Bram vertelde dat hij zou weigeren. Hij zou geweigerd hebben. Dat was zijn redenatie. Waren het niet dat zijn beide oudere broers al in dienst hadden gezeten. Dus broederdienst had je dan. Broederdienst. Ik ben afgekeurd op mijn ogen. Ik ben afgekeurd. Ja, je gelooft het niet, maar ik ben afgekeurd. Afgekeurd op mijn ogen. Die Sjusjan die mij op mijn ogen moest keuren, zat in zo'n kamertje. En daar hing zo'n bord van de opticien met van die grote letters aan de muur.",
+      "text": "En hij zei tegen mij, kijk even naar dat bord. En toen zei ik, welk bord? Dat was de goed begin. En we hadden nog een vriend, Eddie Habberma. Misschien zegt die naam u nog iets. Hij is groot regisseur geworden van musicals. Heeft nog op Broadway gestaan met Cyrano de Bergerac.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Self-mockery",
+            "confidence": 0.75,
+            "evidence": "Ik ben afgekeurd op mijn ogen.",
+            "reasoning": "The comedian undercuts status or authority by poking fun at his own vulnerability, a hallmark of self-mockery."
+          },
+          {
+            "label": "Language humor",
+            "confidence": 0.7,
+            "evidence": "kijk even naar dat bord. En toen zei ik, welk bord? Dat was de goed begin.",
+            "reasoning": "A pun/wordplay around bord and begin creates a lexical play; the humor relies on misinterpretation of signs."
+          },
+          {
+            "label": "Clever observation",
+            "confidence": 0.55,
+            "evidence": "16 jaar... Een brief van de overheid... dat ze over twee jaar wel eens in dienst zou moeten kunnen gaan.",
+            "reasoning": "Observes and satirizes social norms around conscription and gender expectations; audience recognizes real-world policy."
+          }
+        ],
+        "primary_category": "Self-mockery",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "The setup presents a straightforward anecdote about reading a sign; the listener expects a basic miscommunication story with a simple punch.",
+          "script_b": "The punchline reveals lexical ambiguity and wordplay; the same line can be read as a normal narrative or as a pun about starting well, creating a competing interpretation.",
+          "opposition_type": "literal/figurative, lexical ambiguity",
+          "trigger": "Dat was de goed begin",
+          "trigger_location": "punchline",
+          "setup_reading": "The audience is primed to take the encounter with the sign at face value, expecting a standard comic misreading.",
+          "punch_reinterpretation": "The line reframes into a pun about 'good start,' turning the ordinary setup into a linguistic joke.",
+          "ambiguity_type": "lexical ambiguity",
+          "overlap_explanation": "Both scripts share the same text; Script A relies on a normal reading of the anecdote, Script B relies on wordplay and reinterpretation; they coexist because misreadings are plausible within the same line.",
+          "confidence": 0.6
+        },
+        "overall_explanation": "The humor blends self-deprecating material (personal failings) with language humor (pun on 'bord' and 'begin'), and a dash of observational social commentary. The key punch arises from a lexical ambiguity that invites two readings of a single line."
+      }
+    },
+    {
+      "index": 20,
+      "start": 1035.3288894692173,
+      "end": 1060.300406955235,
+      "time_range": "00:17:15:08 - 00:17:40:08",
+      "filename": "laugh_084.wav",
+      "context": "En bij de keuring heeft hij homoseksualiteit voorgewend.",
+      "context_long": "Sinterklaas Mijn vrienden zijn vrij, mijn schalen meer. Mijn ouders werden radeloos, willen we een keer nog meer. Amen. Welkom bij Comedy Club Houw. Mag ik een katerpout voor de enige en gepreet de jongen? Zijn er tot zover vragen, dames en heren? GELACH Zijn er tot zover vragen? Sinterklaas was jarig. Ik kreeg een hele hoop cadeaus. Tenmidden van het pak papier was ik ontzettend boos. Een chocoladeletter. Een bal, een tol, een beer. Mijn ouders waren vanhopig Wat wil dat kind? We hebben dichters in de zaal Wat wil dat kind nog meer? Aandacht Aandacht Van aandacht krijgt niemand ooit genoeg. Aandacht. Aandacht. Van aandacht krijgt niemand ooit... genoeg. De een trekt hier en daar lacherig aandacht. De ander doet het ergens rauwig. Ik doe het al jaren op de planken van het nieuwe Luxor. tot aan Club Haug. Hele weekend na zitten denken, waar kan ik Haug op laten rijden? Ik zag nu al een heel groot gedeelte van het publiek de hele tijd naar dat bord Club Haug zitten kijken. De een die weet niet hoe het te trekken. De ander gaat ervoor op les. Ik sta al jaren op de planken van KD tot aan de KS. Het is uniek, hè. Alleen als ik hier sta is het zo. Laten we beginnen, dames en heren, met de actualiteit. En wat mij is opgevallen is dat eigenlijk de actualiteit... op dit moment eigenlijk nog nooit zo actueel geweest is als nu. Ik weet niet hoe u dat zelf... En het gaat razendsnel. Ik heb hier bijvoorbeeld staan Omtzigt. Nou, zie je wat? Het is alweer weg. Het is alweer weg! Dat was een paar... Gisteren was het... Mensen stonden op de banken. Maar bij Omtzigt zit er een sentiment. Ik weet niet of dat ook bij u zo is. Dan zit er een sentiment van... Godver de Godver. Die man heeft ervoor gezorgd dat wij met dit kabinet... en met Wilders en met die hele midbakzinnen opgeschreven... Dit is werkelijk... Het is werkelijk een godgeklaagd... En het kan maar op één manier goed gemaakt worden... als Twente van PSV wint. Laten we even naar teletext gaan... zoals het er op dit moment voor staat. Dat begint met... Trump haalt hard uit naar Zelensky. Ja, je zal zo'n onderhandelaar hebben... die gereeds van de steek van de vorige droepen... en je moet de krim inleveren... en je moet al je bezette gebieden, die zijn voor Rusland... en dan gaan we daarna onderhandelen. Het is echt een renner, zegt Zelensky. Ja, maar wacht even. Zij hebben het van ons afgepakt. En wij... Hou je grote bek! Wij bepalen hier als dit. Wij zijn dit. Ik heb een nieuwssoort diplomatie. We reden vanmiddag nog langs een cd-autootje. Met cd, zo'n nummer wordt cd. En daar zat zo'n diplomaat achterin. Het was toevallig een Tesla. Ik weet niet hoe dat zo kan. En die tijd is wel voorgoed voor mij. Verkrachter Nijmegen moet de cel in. Slaan we ook over. 18 jaar cel voor moorden naar Capelle. AI kan longkanker eerder opsporen. Dat is een fijn bericht natuurlijk. dat we dat nog even mee kunnen nemen. En dan gaan we naar meer gaswinning op de Noordzee. Want als er één leidt onder de huidige actualiteit... dan is het het milieu wel. Dat herinnert mij er meteen even aan dat ik even het decor van vanavond... Ho, ach. Nou, nou, ach. Nou ja, het is wel kenmerkend voor de staat van... Ah, ah, misschien heb ik nog een reserve. Kijk, dat gaat even om de bedreiging van de natuur. En dan had ik dat dit, zeg maar als symbolisch, je moet het allemaal symbolisch zien enzo. En dan had ik dit bij verzonnen. Vanwege de droogte. Twee avonden hebben we geprobeerd dat ik dan zo'n slok benzine nam. En dan... Maar dat was gevaarlijk. Dat heeft de brandweer verboden. Dus doen we het even op deze manier. Tot zover het milieu, dames en heren. Ja, teletext was, moet ik u eerlijk zeggen, gisteren aanzienlijk leuker. Er was een wolf aangereden in Drenthe. Een wolf. Wolf dood na aanrijving in Drenthe. Een automobilist heeft op de A28 bij Tienaarlo een wolf aangereden. Het dier, een mannetje. Ik vind dat zo ongelooflijk denigrerend. Het is godverdorie een wolf zeg. Ach een mannetje weet je wel. Een mannetje. Bleek zo zwaar gewond. Dat een dierenarts besloot hem een spuitje te geven. De automobilist is ongedeerd. Maar desondanks besloot de dierenarts. Hem ook een spuitje te geven. De auto en de bestuurder moesten worden weggesleept. Sinds enkele jaren zijn er wolven in Drenthe. Sinds enkele jaren zijn er wolven in Drenthe. En er staat eronder, in 2022 kreeg een wolvenpaar in het grensgebied met Friesland welpen. Een leuk einde van dat bericht. Wie? Er zitten mensen op de redactie. En die denken, oh, we gooien die welpen er nog in. Het is van een volstrekte willekeur. Wat moeten we met dit bericht? Nieuws. Gaan we verder. 14 arrestaties voor opruiming TikTok. De politie heeft 14 mensen opgepakt. Ze zouden onder meer op TikTok hebben geprobeerd mensen aan te sporen tot het plegen van terroristische misdrijven. Ik weet niet of u kleinkinderen heeft, ik heb ze. En die zitten op TikTok. En dan komen ze mij open op bezoek en dan zeg ik, en nog oproepen tot terroristisch. De verdachten zijn tussen de 14 en de 30 jaar. Acht van hen werden aangehouden door de eenheid landelijke opsporing en interventies. En de andere zes werden door politieeenheden Den Haag, Rotterdam en Amsterdam aangehouden. Dat is even om ons te laten weten dat ze daar niet uit hun neus zitten te vreten. Of de 14 elkaar kenden, kan het OM nog niet zeggen, zolang het onderzoek loopt. Mogelijk reageerden ze op elkaars posts. Het is niet op voorlezen geschreven deze ding. Want elkaars posts. Dat zal er bij een hoop mensen van mijn leeftijd heel moeilijk uitkomen. Ja, dan kunnen de boventanden er zo uitschieten. En dan staat er ook niet, is bekendgemaakt of ze een bepaalde ideologie aanhingen. En dan voeg ik eraan toe, maar het vermoeden bestaat... dat ze best wel eens fans van Roxy Dekker zouden kunnen zijn. En dan hadden we verder... is het natuurlijk de pauze is overleden. Ja, Schoof en Veldkamp gaan erin. De koning die moet tezelfde tijd... Dat is ook ongelooflijk toevallig. Dat kan je allemaal niet bedenken. Ja, God natuurlijk. Maar dat je op tweede paasdag overlijdt... waardoor, zeg maar, Koningsdag... eigenlijk, zeg maar, ontzondig was, dat die een dag naar voren schuift, waardoor de begrafenis van de paus samenvalt met Koningsdag. Ongelooflijk hoe dat in mekaar zit daar boven, wat ze allemaal, en dat de koning er dan niet heen gaat, want ja, het is Doetinchem. En ze kunnen echt niet zeggen, dat is de Achterhoek, ze kunnen echt niet zeggen, ja, we moeten naar de paus. Ja, daar heb je het weer hoor. Ze hebben een kut smoes om niet, dat doet u geen doven. Dus ja, die koning moet daar nu in Doetinchem terwijl Schoven Velk kan met zo'n gezicht bij die... Terwijl het nog afwachten is, want ja, je weet de paus is overleden op tweede paasdag. Die kan ook misschien op donderdag, dat die opeens zou... Wat de hek is dat hier zeg? Weet je, wat ik bedoel? Goed. Mevrouw Faber. Kijk, daar is ie. Daar is ie. Ja, het is met omzicht toch zo. Die heeft toch op de een of andere manier nog altijd... niet alleen bij z'n collega's, maar bij het publiek ook iets van... Ah, ah, ah. Nee, maar hij is namelijk in en in tegen. In en in tegen. En dat is precies de pest. Want ja, moet je kijken door wie je omringd wordt in de politiek. Het is allemaal gaaiers en schoftentuig. Als je het niet aankunt, hoef er op! Blijf alleen op Twente zitten en blijf daar een beetje de figuur die het allemaal door heeft zitten. Maar kom alsjeblieft niet naar de Randstad! Nou ja, zo ging het gisteren ongeveer een half uur. Gaat u minister-president worden? Weet ik nog niet. Godver. Godverdomme. Maar het is echt ongelooflijk. Dit land is gewoon... We hebben niks... We hebben geen voorjaarsnoten. Heeft u dat bestudeerd? Wat daar voor ontrein is. Allemaal te danken. Goed, ik sta hier. Ik heb al drie keer gevloekt. Dan nodig de ruimte kennelijk toe uit. Ik weet niet wat het is. Mevrouw Faber heeft nu weer voor een gedeelte haar zin gekregen. Want de derde wereldlanders gaan dus nu terug naar hun derde wereldland. En ik dacht dat de derde wereld niet meer bestond. Maar in dit geval hebben ze hem weer opnieuw in het leven. Dat zijn dus mensen die vanuit wat deel van de wereld ook een toekomst zagen in Oekraïne. en die toen gevlucht zijn, toen de Russen binnenvielen... en in Nederland zijn terechtgekomen. En ja, daar zit je dan opeens weer met 20.000 man... en die mogen er nu uitsturen. Dus mevrouw Faber zit vandaag met een krul in de staart thuis. Want die heeft het natuurlijk niet altijd makkelijk gehad. Maar ze is daar ter afschrikking. Schrikking. Zij moeten mensen... Want in die vluchtelingenkampen worden folders... door de mensen-smokkelaars folders uitgedeeld. Waar wil je heen? En dan slaan ze een bladje om en dan is het Nederland. En dan... Dat is de bedoeling. Dat is het masterplan van Geert Wilders. En nu is het zo. Want de oorlog dreigt. We zitten in een grijs gebied. Is er gisteren vastgesteld. We zitten in een grijs gebied waarvan je niet kan zeggen het is vrede. Maar je kan ook niet zeggen het is oorlog. En dat gaat ons 800 miljard kosten. Maar wij willen daar eigenlijk liever niet aan meedoen. Want is de redenatie hier van de coalitie. Wij hebben mevrouw Faber. Ja, mocht het zover komen, dan zetten we haar aan de grens met een paraplu. Nou jongen, die Russen schrikken zich te pletterig. Ze zeggen... Rechtsomkamer, alle drones raken in de war. Het hele zooitje gaat niet door. Mevrouw Faber. Ja, het leger. Ik heb een kleindochter van 16. 16 jaar. Onvoorstelbaar. Die kreeg een brief van de overheid... dat ze over twee jaar wel eens in dienst zou moeten kunnen gaan. 16 jaar. Ik krijg er nu al bericht van... bereid je er maar op voor dat je... De dienstbericht is nooit helemaal afgeschaft. Die wordt weer in het leven geroepen. En tussen jongens en meisjes wordt in ons land ook geen onderscheid meer gemaakt. Dus het is niet alleen de jongens. De meisjes zijn evenzeer de klos op dit moment. Het gaat vanavond voor een deel over dit boek. Dat speelt in de jaren 60. Van 62 tot 69. En daar ontmoet ik Bram Vermeulen. En daar hadden wij met jongens, we zaten dan zo bij elkaar. Dan ging het over de dienstkeuring opscheppen. Een beetje dingen opscheppen. Bram vertelde dat hij zou weigeren. Hij zou geweigerd hebben. Dat was zijn redenatie. Waren het niet dat zijn beide oudere broers al in dienst hadden gezeten. Dus broederdienst had je dan. Broederdienst. Ik ben afgekeurd op mijn ogen. Ik ben afgekeurd. Ja, je gelooft het niet, maar ik ben afgekeurd. Afgekeurd op mijn ogen. Die Sjusjan die mij op mijn ogen moest keuren, zat in zo'n kamertje. En daar hing zo'n bord van de opticien met van die grote letters aan de muur. En hij zei tegen mij, kijk even naar dat bord. En toen zei ik, welk bord? Dat was de goed begin. En we hadden nog een vriend, Eddie Habberma. Misschien zegt die naam u nog iets. Hij is groot regisseur geworden van musicals. Heeft nog op Broadway gestaan met Cyrano de Bergerac. En bij de keuring heeft hij homoseksualiteit voorgewend.",
+      "text": "Ja, nee, dat was echt zo. En toen heeft hij S5 gekregen. Dat was toen ook heel erg begeerlijk. Ik had geen S5, ik had plus 10. En nu hebben wij een zangeres in Nederland en die heet... S10, ja precies. Dus die komt niet in dienst, denk ik. Dat is... Een dubbele reden om haar af te keuren, denk ik.",
+      "speakers": [],
+      "humor_structured": {
+        "no_humor_detected": false,
+        "categories": [
+          {
+            "label": "Language humor",
+            "confidence": 0.75,
+            "evidence": "The joke hinges on the sequence of S-codes (S5, plus 10, S10) and the wordplay around labeling people by arbitrary codes.",
+            "reasoning": "Wordplay and coding of people into labels creates a humorous contrast between rigid bureaucratic categories and human unpredictability."
+          },
+          {
+            "label": "Stupidity",
+            "confidence": 0.4,
+            "evidence": "The anecdote about pretending homosexuality to avoid conscription depicts a foolish, socially condemned trick from a historical context.",
+            "reasoning": "Humor derives in part from pointing out the foolishness of using deception to navigate social systems."
+          },
+          {
+            "label": "Inappropriate remark",
+            "confidence": 0.3,
+            "evidence": "The material treats homosexuality and sexual orientation as a basis for dodging draft, which involves delicate social norms.",
+            "reasoning": "The setup touches on a taboo/edgy topic in a way that can be seen as provocative or offensive, contributing to humor through shock or discomfort."
+          },
+          {
+            "label": "Exaggeration",
+            "confidence": 0.25,
+            "evidence": "The rapid-fire enumeration of S-codes and the absurdity of labeling a singer as S10 for not serving.",
+            "reasoning": "The hyperbolic framing of bureaucratic codes as determinants of personal fate amplifies the comic effect."
+          }
+        ],
+        "primary_category": "Language humor",
+        "script_opposition": {
+          "detected": true,
+          "script_a": "Script A (normal reading): The S-code joke is treated as a straightforward historical anecdote about conscription and the ridiculousness of labeling people with codes (S5, plus 10) in the past.",
+          "script_b": "Script B (competing reading): The same S-code gag is read as a meta-commentary on labeling and social norms, turning the codes into a critique of how society stigmatizes sexuality and categorizes people, with the punchline reframing the codes as social satire rather than policy.",
+          "opposition_type": "literal/figurative; social norm violation",
+          "trigger": "S5/plus 10/S10 punchline about a singer not serving and being 'disqualified'",
+          "trigger_location": "punchline (final line about S10)",
+          "setup_reading": "The setup presents a historical anecdote about a draft keuring and the use of coded labels, inviting a conventional historical interpretation.",
+          "punch_reinterpretation": "The trigger reinterprets the setup as a critique of arbitrary labeling and norm violations, shifting from a factual anecdote to a satirical social comment.",
+          "ambiguity_type": "category shift; social norm violation; literal/figurative",
+          "overlap_explanation": "Both scripts rely on the same textual trigger; Script A uses a conventional historical angle, Script B leverages the same lines to produce a social-critique reading.",
+          "confidence": 0.58
+        },
+        "overall_explanation": "The humor stems from wordplay with S-codes and the incongruity of treating social labels as if they were serious policy determinants. The punchline invites a secondary, more critical reading (Script B) that mocks labeling and normative expectations, while the primary reading (Script A) treats it as a light historical anecdote."
+      }
+    }
+  ],
+  "source_input_json": "/content/drive/MyDrive/FreekdeJonge/laughter_detection_project/runs/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren/20260604_105040/with_text/2025 - Freek de Jonge - Club Haug Rotterdam 22 april én KS Den Haag 23 april De Zeeuwse Jaren_laughter_with_text.json",
+  "processed_at": "2026-06-12T15:51:20Z"
+}

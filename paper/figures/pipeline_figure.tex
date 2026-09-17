@@ -1,0 +1,29 @@
+\begin{figure*}[t]
+\centering
+\scriptsize
+\begin{tikzpicture}[
+  >=stealth,
+  node distance=7mm and 8mm,
+  every node/.style={align=center},
+  box/.style={draw, rounded corners, minimum height=7mm, text width=29mm},
+  wide/.style={draw, rounded corners, minimum height=7mm, text width=36mm},
+  note/.style={draw, dashed, rounded corners, minimum height=7mm, text width=48mm}
+]
+\node[wide] (input) {Common topic + shared output constraints};
+\node[box, right=of input, yshift=14mm] (direct) {Direct Generation};
+\node[box, right=of input] (script) {Script-Opposition plan};
+\node[box, right=of input, yshift=-14mm] (gtvh) {Script Opposition + GTVH resources};
+\node[box, right=of direct] (dj) {Generate joke};
+\node[box, right=of script] (sj) {Generate candidates + check};
+\node[box, right=of gtvh] (gj) {Generate candidates + check};
+\node[note] (style) at (4,-2.35) {Optional corpus-derived style guidance; neutral variants omit this block};
+\draw[->] (input) -- (direct);
+\draw[->] (input) -- (script);
+\draw[->] (input) -- (gtvh);
+\draw[->] (direct) -- (dj);
+\draw[->] (script) -- (sj);
+\draw[->] (gtvh) -- (gj);
+\end{tikzpicture}
+\caption{The three generation pipelines. Style guidance is added independently to each pipeline; it does not replace semantic planning.}
+\label{fig:pipelines}
+\end{figure*}

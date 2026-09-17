@@ -1,0 +1,5 @@
+# Install these packages in R before running the paper analyses.
+ordinal
+readr
+jsonlite
+lme4

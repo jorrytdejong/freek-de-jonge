@@ -1,0 +1,25 @@
+\begin{figure*}[t]
+\centering
+\scriptsize
+\begin{tikzpicture}[
+  >=stealth,
+  node distance=9mm and 9mm,
+  every node/.style={align=center},
+  box/.style={draw, rounded corners, minimum height=8mm, text width=30mm},
+  wide/.style={draw, rounded corners, minimum height=9mm, text width=54mm}
+]
+\node[box] (source) {Performance audio + time-aligned transcripts};
+\node[box, right=of source] (retrieval) {Laughter-linked candidate retrieval};
+\node[box, right=of retrieval] (analysis) {Script-Opposition corpus analysis};
+\node[box, below=12mm of source] (topic) {Common topic};
+\node[wide, right=of topic, xshift=10mm] (generation) {Direct, Script-Opposition, and GTVH-guided generation\\neutral or corpus-derived style guidance};
+\node[box, right=of generation] (evaluation) {Blinded human evaluation\\funniness, coherence, style alignment};
+\draw[->] (source) -- (retrieval);
+\draw[->] (retrieval) -- (analysis);
+\draw[->] (analysis) |- (generation);
+\draw[->] (topic) -- (generation);
+\draw[->] (generation) -- (evaluation);
+\end{tikzpicture}
+\caption{Overview of corpus analysis, controlled generation, and blinded evaluation.}
+\label{fig:overview}
+\end{figure*}
