@@ -1,0 +1,841 @@
+participant_code,study_version,submission_number,age,freek_familiarity,item_id,topic_id,condition_code,pipeline_family,display_position,funniness,coherence,freek_similarity,comment
+P01,acl-1,1,27,1,T01-C1,T01,C1,script_opposition,11,2,3,2,
+P01,acl-1,1,27,1,T02-E1,T02,E1,validated_gtvh,7,1,1,1,
+P01,acl-1,1,27,1,T03-C1,T03,C1,script_opposition,12,1,1,1,
+P01,acl-1,1,27,1,T04-C2,T04,C2,script_opposition,1,1,1,1,
+P01,acl-1,1,27,1,T05-E2,T05,E2,validated_gtvh,3,1,1,1,
+P01,acl-1,1,27,1,T06-C2,T06,C2,script_opposition,20,3,4,3,
+P01,acl-1,1,27,1,T07-A1,T07,A1,baseline,14,2,3,2,-
+P01,acl-1,1,27,1,T08-C2,T08,C2,script_opposition,18,2,2,2,
+P01,acl-1,1,27,1,T09-A2,T09,A2,baseline,8,4,4,3,
+P01,acl-1,1,27,1,T10-E1,T10,E1,validated_gtvh,17,1,1,1,
+P01,acl-1,1,27,1,T11-A1,T11,A1,baseline,16,4,2,1,
+P01,acl-1,1,27,1,T12-E2,T12,E2,validated_gtvh,9,2,2,2,
+P01,acl-1,1,27,1,T13-A2,T13,A2,baseline,13,2,3,2,
+P01,acl-1,1,27,1,T14-A2,T14,A2,baseline,4,3,4,2,
+P01,acl-1,1,27,1,T15-A1,T15,A1,baseline,5,5,5,4,
+P01,acl-1,1,27,1,T16-C2,T16,C2,script_opposition,2,1,2,1,
+P01,acl-1,1,27,1,T17-A1,T17,A1,baseline,6,2,2,2,
+P01,acl-1,1,27,1,T18-E1,T18,E1,validated_gtvh,15,1,1,1,
+P01,acl-1,1,27,1,T19-E2,T19,E2,validated_gtvh,10,1,1,1,
+P01,acl-1,1,27,1,T20-C1,T20,C1,script_opposition,19,1,1,1,
+P02,acl-1,1,39,3,T01-A2,T01,A2,baseline,13,3,5,4,
+P02,acl-1,1,39,3,T02-C2,T02,C2,script_opposition,3,1,3,1,Dit deed mij nergens denken aan humor.
+P02,acl-1,1,39,3,T03-A2,T03,A2,baseline,4,4,5,4,
+P02,acl-1,1,39,3,T04-C1,T04,C1,script_opposition,17,3,4,3,
+P02,acl-1,1,39,3,T05-E1,T05,E1,validated_gtvh,12,1,1,1,
+P02,acl-1,1,39,3,T06-C1,T06,C1,script_opposition,1,2,2,3,"Eerlijk gezegd snap ik het einde niet helemaal. Dit kan persoonlijk zijn, maar het maakt de grap voor mij minder goed."
+P02,acl-1,1,39,3,T07-E2,T07,E2,validated_gtvh,16,2,2,2,
+P02,acl-1,1,39,3,T08-C1,T08,C1,script_opposition,8,2,2,1,
+P02,acl-1,1,39,3,T09-A1,T09,A1,baseline,9,4,5,3,
+P02,acl-1,1,39,3,T10-C2,T10,C2,script_opposition,2,2,3,2,
+P02,acl-1,1,39,3,T11-E2,T11,E2,validated_gtvh,19,3,4,2,
+P02,acl-1,1,39,3,T12-E1,T12,E1,validated_gtvh,11,3,4,4,
+P02,acl-1,1,39,3,T13-A1,T13,A1,baseline,15,3,4,2,
+P02,acl-1,1,39,3,T14-A1,T14,A1,baseline,10,4,4,3,
+P02,acl-1,1,39,3,T15-E2,T15,E2,validated_gtvh,20,2,3,2,
+P02,acl-1,1,39,3,T16-C1,T16,C1,script_opposition,6,2,3,2,
+P02,acl-1,1,39,3,T17-E2,T17,E2,validated_gtvh,5,3,4,3,
+P02,acl-1,1,39,3,T18-C2,T18,C2,script_opposition,14,3,4,3,
+P02,acl-1,1,39,3,T19-E1,T19,E1,validated_gtvh,18,3,4,2,
+P02,acl-1,1,39,3,T20-A2,T20,A2,baseline,7,4,4,3,
+P03,acl-1,1,26,2,T01-A2,T01,A2,baseline,13,2,5,3,
+P03,acl-1,1,26,2,T02-C2,T02,C2,script_opposition,3,3,3,3,
+P03,acl-1,1,26,2,T03-A2,T03,A2,baseline,4,3,4,2,
+P03,acl-1,1,26,2,T04-C1,T04,C1,script_opposition,17,1,2,2,
+P03,acl-1,1,26,2,T05-E1,T05,E1,validated_gtvh,12,2,4,3,
+P03,acl-1,1,26,2,T06-C1,T06,C1,script_opposition,1,1,2,2,tape-markering is te vergezocht
+P03,acl-1,1,26,2,T07-E2,T07,E2,validated_gtvh,16,2,4,3,
+P03,acl-1,1,26,2,T08-C1,T08,C1,script_opposition,8,2,2,2,
+P03,acl-1,1,26,2,T09-A1,T09,A1,baseline,9,2,3,2,
+P03,acl-1,1,26,2,T10-C2,T10,C2,script_opposition,2,4,4,4,
+P03,acl-1,1,26,2,T11-E2,T11,E2,validated_gtvh,19,2,1,1,
+P03,acl-1,1,26,2,T12-E1,T12,E1,validated_gtvh,11,2,3,3,
+P03,acl-1,1,26,2,T13-A1,T13,A1,baseline,15,3,2,2,
+P03,acl-1,1,26,2,T14-A1,T14,A1,baseline,10,1,1,1,
+P03,acl-1,1,26,2,T15-E2,T15,E2,validated_gtvh,20,1,2,1,
+P03,acl-1,1,26,2,T16-C1,T16,C1,script_opposition,6,1,1,1,
+P03,acl-1,1,26,2,T17-E2,T17,E2,validated_gtvh,5,3,1,1,
+P03,acl-1,1,26,2,T18-C2,T18,C2,script_opposition,14,2,4,2,
+P03,acl-1,1,26,2,T19-E1,T19,E1,validated_gtvh,18,1,2,2,
+P03,acl-1,1,26,2,T20-A2,T20,A2,baseline,7,3,3,2,
+P04,acl-1,1,23,3,T01-A1,T01,A1,baseline,8,2,3,3,
+P04,acl-1,1,23,3,T02-C1,T02,C1,script_opposition,4,2,4,3,
+P04,acl-1,1,23,3,T03-A1,T03,A1,baseline,20,3,2,3,
+P04,acl-1,1,23,3,T04-A2,T04,A2,baseline,19,4,3,2,
+P04,acl-1,1,23,3,T05-C2,T05,C2,script_opposition,3,2,3,2,
+P04,acl-1,1,23,3,T06-A2,T06,A2,baseline,2,2,2,2,
+P04,acl-1,1,23,3,T07-E1,T07,E1,validated_gtvh,12,2,3,4,
+P04,acl-1,1,23,3,T08-A2,T08,A2,baseline,16,3,3,4,
+P04,acl-1,1,23,3,T09-E2,T09,E2,validated_gtvh,7,2,2,3,
+P04,acl-1,1,23,3,T10-C1,T10,C1,script_opposition,15,2,3,3,
+P04,acl-1,1,23,3,T11-E1,T11,E1,validated_gtvh,10,3,2,3,
+P04,acl-1,1,23,3,T12-C2,T12,C2,script_opposition,14,2,3,3,
+P04,acl-1,1,23,3,T13-E2,T13,E2,validated_gtvh,11,3,3,3,
+P04,acl-1,1,23,3,T14-E2,T14,E2,validated_gtvh,5,3,4,4,
+P04,acl-1,1,23,3,T15-E1,T15,E1,validated_gtvh,18,2,4,4,
+P04,acl-1,1,23,3,T16-A2,T16,A2,baseline,6,2,2,3,
+P04,acl-1,1,23,3,T17-E1,T17,E1,validated_gtvh,17,3,3,2,
+P04,acl-1,1,23,3,T18-C1,T18,C1,script_opposition,1,3,2,3,
+P04,acl-1,1,23,3,T19-C2,T19,C2,script_opposition,13,3,3,3,
+P04,acl-1,1,23,3,T20-A1,T20,A1,baseline,9,2,3,3,
+P05,acl-1,1,39,4,T01-A1,T01,A1,baseline,8,3,3,3,
+P05,acl-1,1,39,4,T02-C1,T02,C1,script_opposition,4,1,1,1,
+P05,acl-1,1,39,4,T03-A1,T03,A1,baseline,20,4,4,5,
+P05,acl-1,1,39,4,T04-A2,T04,A2,baseline,19,4,4,4,
+P05,acl-1,1,39,4,T05-C2,T05,C2,script_opposition,3,1,1,1,
+P05,acl-1,1,39,4,T06-A2,T06,A2,baseline,2,1,1,1,
+P05,acl-1,1,39,4,T07-E1,T07,E1,validated_gtvh,12,1,1,1,
+P05,acl-1,1,39,4,T08-A2,T08,A2,baseline,16,3,3,4,
+P05,acl-1,1,39,4,T09-E2,T09,E2,validated_gtvh,7,1,1,1,
+P05,acl-1,1,39,4,T10-C1,T10,C1,script_opposition,15,1,1,1,
+P05,acl-1,1,39,4,T11-E1,T11,E1,validated_gtvh,10,1,1,1,
+P05,acl-1,1,39,4,T12-C2,T12,C2,script_opposition,14,1,2,2,
+P05,acl-1,1,39,4,T13-E2,T13,E2,validated_gtvh,11,1,1,1,
+P05,acl-1,1,39,4,T14-E2,T14,E2,validated_gtvh,5,1,1,1,
+P05,acl-1,1,39,4,T15-E1,T15,E1,validated_gtvh,18,2,2,3,
+P05,acl-1,1,39,4,T16-A2,T16,A2,baseline,6,2,3,2,
+P05,acl-1,1,39,4,T17-E1,T17,E1,validated_gtvh,17,1,1,1,
+P05,acl-1,1,39,4,T18-C1,T18,C1,script_opposition,1,1,1,2,
+P05,acl-1,1,39,4,T19-C2,T19,C2,script_opposition,13,1,1,2,
+P05,acl-1,1,39,4,T20-A1,T20,A1,baseline,9,3,3,4,
+P06,acl-1,1,35,3,T01-A1,T01,A1,baseline,7,2,2,2,
+P06,acl-1,1,35,3,T02-C1,T02,C1,script_opposition,11,1,1,1,Dit is compleet onsamenhangend.
+P06,acl-1,1,35,3,T03-A1,T03,A1,baseline,1,2,1,2,De insteek over dat god dan ook geld van de pinpas af kan halen als 'afwijzing' is goed maar eigenlijk werkt de grap niet echt.
+P06,acl-1,1,35,3,T04-A2,T04,A2,baseline,12,2,3,2,
+P06,acl-1,1,35,3,T05-C2,T05,C2,script_opposition,10,1,2,1,
+P06,acl-1,1,35,3,T06-A2,T06,A2,baseline,15,2,3,2,"Rust als referentie naar het dood zijn en lui zijn tegelijk, het werkt wel maar is wederom naar mijn mening niet echt grappig."
+P06,acl-1,1,35,3,T07-E1,T07,E1,validated_gtvh,19,1,1,1,
+P06,acl-1,1,35,3,T08-A2,T08,A2,baseline,16,4,4,2,"Dit is de eerste grap die logisch is en goed werkt, alles is samenhangend en niet compleet onzinnig."
+P06,acl-1,1,35,3,T09-E2,T09,E2,validated_gtvh,8,2,3,3,Grap werkt en klinkt logisch maar is naar mijn mening nou niet echt heel leuk.
+P06,acl-1,1,35,3,T10-C1,T10,C1,script_opposition,20,2,2,1,
+P06,acl-1,1,35,3,T11-E1,T11,E1,validated_gtvh,4,1,3,2,"Misschien dat dit zou werken als videosketch, maar als tekst komt hij niet echt goed aan."
+P06,acl-1,1,35,3,T12-C2,T12,C2,script_opposition,13,1,2,2,
+P06,acl-1,1,35,3,T13-E2,T13,E2,validated_gtvh,2,1,1,2,Persoonlijk volg ik deze absoluut niet.
+P06,acl-1,1,35,3,T14-E2,T14,E2,validated_gtvh,14,1,2,1,
+P06,acl-1,1,35,3,T15-E1,T15,E1,validated_gtvh,6,2,3,1,
+P06,acl-1,1,35,3,T16-A2,T16,A2,baseline,5,1,1,1,
+P06,acl-1,1,35,3,T17-E1,T17,E1,validated_gtvh,18,1,1,1,
+P06,acl-1,1,35,3,T18-C1,T18,C1,script_opposition,17,1,1,1,
+P06,acl-1,1,35,3,T19-C2,T19,C2,script_opposition,9,1,1,1,
+P06,acl-1,1,35,3,T20-A1,T20,A1,baseline,3,3,4,2,"Vriendjespolitiek is herkenbaar, vooral als het door een minister gebracht wordt."
+P07,acl-1,1,45,4,T01-E1,T01,E1,validated_gtvh,12,1,1,1,
+P07,acl-1,1,45,4,T02-A1,T02,A1,baseline,6,1,1,1,
+P07,acl-1,1,45,4,T03-E1,T03,E1,validated_gtvh,1,1,1,2,"Beetje teveel uit het niets, te weinig context"
+P07,acl-1,1,45,4,T04-E2,T04,E2,validated_gtvh,14,1,1,1,
+P07,acl-1,1,45,4,T05-A2,T05,A2,baseline,19,1,1,1,
+P07,acl-1,1,45,4,T06-E2,T06,E2,validated_gtvh,5,1,1,1,"Mist echt een clue, of een veel logischer opbouw."
+P07,acl-1,1,45,4,T07-C1,T07,C1,script_opposition,13,1,1,2,
+P07,acl-1,1,45,4,T08-E2,T08,E2,validated_gtvh,11,1,1,1,
+P07,acl-1,1,45,4,T09-C2,T09,C2,script_opposition,9,1,1,1,
+P07,acl-1,1,45,4,T10-A1,T10,A1,baseline,16,1,1,1,
+P07,acl-1,1,45,4,T11-C1,T11,C1,script_opposition,3,2,2,1,
+P07,acl-1,1,45,4,T12-A2,T12,A2,baseline,20,1,1,2,
+P07,acl-1,1,45,4,T13-C2,T13,C2,script_opposition,18,1,1,1,
+P07,acl-1,1,45,4,T14-C2,T14,C2,script_opposition,17,1,1,1,Niet meer te volgen nu hoor
+P07,acl-1,1,45,4,T15-C1,T15,C1,script_opposition,10,1,1,1,
+P07,acl-1,1,45,4,T16-E2,T16,E2,validated_gtvh,8,1,1,1,"Het wordt steeds beroerder, totaal onsamenhangend."
+P07,acl-1,1,45,4,T17-C1,T17,C1,script_opposition,2,1,1,1,
+P07,acl-1,1,45,4,T18-A1,T18,A1,baseline,4,1,1,1,
+P07,acl-1,1,45,4,T19-A2,T19,A2,baseline,15,1,1,1,
+P07,acl-1,1,45,4,T20-E1,T20,E1,validated_gtvh,7,1,1,1,
+P08,acl-1,1,22,2,T01-E1,T01,E1,validated_gtvh,12,1,1,1,
+P08,acl-1,1,22,2,T02-A1,T02,A1,baseline,6,4,4,3,
+P08,acl-1,1,22,2,T03-E1,T03,E1,validated_gtvh,1,1,1,1,
+P08,acl-1,1,22,2,T04-E2,T04,E2,validated_gtvh,14,1,1,4,
+P08,acl-1,1,22,2,T05-A2,T05,A2,baseline,19,3,3,2,
+P08,acl-1,1,22,2,T06-E2,T06,E2,validated_gtvh,5,3,2,1,
+P08,acl-1,1,22,2,T07-C1,T07,C1,script_opposition,13,4,4,4,
+P08,acl-1,1,22,2,T08-E2,T08,E2,validated_gtvh,11,3,3,2,
+P08,acl-1,1,22,2,T09-C2,T09,C2,script_opposition,9,3,4,1,
+P08,acl-1,1,22,2,T10-A1,T10,A1,baseline,16,3,4,3,
+P08,acl-1,1,22,2,T11-C1,T11,C1,script_opposition,3,1,1,1,
+P08,acl-1,1,22,2,T12-A2,T12,A2,baseline,20,1,2,1,
+P08,acl-1,1,22,2,T13-C2,T13,C2,script_opposition,18,4,3,3,
+P08,acl-1,1,22,2,T14-C2,T14,C2,script_opposition,17,3,2,2,
+P08,acl-1,1,22,2,T15-C1,T15,C1,script_opposition,10,4,4,2,
+P08,acl-1,1,22,2,T16-E2,T16,E2,validated_gtvh,8,1,1,1,
+P08,acl-1,1,22,2,T17-C1,T17,C1,script_opposition,2,1,1,1,
+P08,acl-1,1,22,2,T18-A1,T18,A1,baseline,4,1,1,2,d
+P08,acl-1,1,22,2,T19-A2,T19,A2,baseline,15,3,3,3,
+P08,acl-1,1,22,2,T20-E1,T20,E1,validated_gtvh,7,1,1,2,
+P09,acl-1,1,25,3,T01-A2,T01,A2,baseline,5,3,3,4,
+P09,acl-1,1,25,3,T02-C2,T02,C2,script_opposition,19,3,4,4,
+P09,acl-1,1,25,3,T03-A2,T03,A2,baseline,13,4,3,5,
+P09,acl-1,1,25,3,T04-C1,T04,C1,script_opposition,18,3,3,4,
+P09,acl-1,1,25,3,T05-E1,T05,E1,validated_gtvh,20,2,3,4,
+P09,acl-1,1,25,3,T06-C1,T06,C1,script_opposition,14,3,2,3,
+P09,acl-1,1,25,3,T07-E2,T07,E2,validated_gtvh,7,2,4,4,
+P09,acl-1,1,25,3,T08-C1,T08,C1,script_opposition,8,3,2,3,
+P09,acl-1,1,25,3,T09-A1,T09,A1,baseline,11,3,3,3,
+P09,acl-1,1,25,3,T10-C2,T10,C2,script_opposition,9,2,2,2,
+P09,acl-1,1,25,3,T11-E2,T11,E2,validated_gtvh,1,2,1,1,
+P09,acl-1,1,25,3,T12-E1,T12,E1,validated_gtvh,3,4,2,1,
+P09,acl-1,1,25,3,T13-A1,T13,A1,baseline,4,3,4,4,
+P09,acl-1,1,25,3,T14-A1,T14,A1,baseline,6,4,3,5,
+P09,acl-1,1,25,3,T15-E2,T15,E2,validated_gtvh,15,3,3,4,
+P09,acl-1,1,25,3,T16-C1,T16,C1,script_opposition,10,1,1,1,
+P09,acl-1,1,25,3,T17-E2,T17,E2,validated_gtvh,2,3,2,2,
+P09,acl-1,1,25,3,T18-C2,T18,C2,script_opposition,16,1,1,2,
+P09,acl-1,1,25,3,T19-E1,T19,E1,validated_gtvh,17,1,1,1,
+P09,acl-1,1,25,3,T20-A2,T20,A2,baseline,12,2,1,4,
+P29,acl-1,1,34,2,T01-C2,T01,C2,script_opposition,5,1,1,2,
+P29,acl-1,1,34,2,T02-E2,T02,E2,validated_gtvh,7,4,4,4,
+P29,acl-1,1,34,2,T03-C2,T03,C2,script_opposition,1,1,2,3,
+P29,acl-1,1,34,2,T04-E1,T04,E1,validated_gtvh,2,1,1,1,
+P29,acl-1,1,34,2,T05-A1,T05,A1,baseline,6,2,2,3,
+P29,acl-1,1,34,2,T06-E1,T06,E1,validated_gtvh,20,1,1,1,
+P29,acl-1,1,34,2,T07-A2,T07,A2,baseline,4,4,4,4,
+P29,acl-1,1,34,2,T08-E1,T08,E1,validated_gtvh,18,1,1,1,
+P29,acl-1,1,34,2,T09-C1,T09,C1,script_opposition,15,1,1,1,
+P29,acl-1,1,34,2,T10-E2,T10,E2,validated_gtvh,16,1,1,1,
+P29,acl-1,1,34,2,T11-A2,T11,A2,baseline,3,3,4,4,
+P29,acl-1,1,34,2,T12-A1,T12,A1,baseline,10,3,5,4,
+P29,acl-1,1,34,2,T13-C1,T13,C1,script_opposition,9,1,1,1,
+P29,acl-1,1,34,2,T14-C1,T14,C1,script_opposition,19,5,2,2,
+P29,acl-1,1,34,2,T15-A2,T15,A2,baseline,12,3,5,3,
+P29,acl-1,1,34,2,T16-E1,T16,E1,validated_gtvh,17,2,3,2,
+P29,acl-1,1,34,2,T17-A2,T17,A2,baseline,11,1,2,3,
+P29,acl-1,1,34,2,T18-E2,T18,E2,validated_gtvh,13,1,1,1,
+P29,acl-1,1,34,2,T19-A1,T19,A1,baseline,14,4,2,2,
+P29,acl-1,1,34,2,T20-C2,T20,C2,script_opposition,8,1,3,1,
+P10,acl-1,1,29,1,T01-E2,T01,E2,validated_gtvh,9,1,1,3,
+P10,acl-1,1,29,1,T02-A2,T02,A2,baseline,1,1,1,2,
+P10,acl-1,1,29,1,T03-E2,T03,E2,validated_gtvh,15,1,1,4,
+P10,acl-1,1,29,1,T04-A1,T04,A1,baseline,20,3,2,2,
+P10,acl-1,1,29,1,T05-C1,T05,C1,script_opposition,13,4,1,2,
+P10,acl-1,1,29,1,T06-A1,T06,A1,baseline,3,1,1,3,
+P10,acl-1,1,29,1,T07-C2,T07,C2,script_opposition,16,3,1,2,
+P10,acl-1,1,29,1,T08-A1,T08,A1,baseline,8,3,3,3,
+P10,acl-1,1,29,1,T09-E1,T09,E1,validated_gtvh,18,1,1,1,
+P10,acl-1,1,29,1,T10-A2,T10,A2,baseline,5,1,1,3,
+P10,acl-1,1,29,1,T11-C2,T11,C2,script_opposition,12,1,2,1,
+P10,acl-1,1,29,1,T12-C1,T12,C1,script_opposition,17,1,2,2,
+P10,acl-1,1,29,1,T13-E1,T13,E1,validated_gtvh,7,1,1,3,
+P10,acl-1,1,29,1,T14-E1,T14,E1,validated_gtvh,14,1,1,1,
+P10,acl-1,1,29,1,T15-C2,T15,C2,script_opposition,4,1,1,3,
+P10,acl-1,1,29,1,T16-A1,T16,A1,baseline,2,1,1,3,
+P10,acl-1,1,29,1,T17-C2,T17,C2,script_opposition,11,1,1,1,
+P10,acl-1,1,29,1,T18-A2,T18,A2,baseline,10,2,1,3,
+P10,acl-1,1,29,1,T19-C1,T19,C1,script_opposition,19,1,2,1,
+P10,acl-1,1,29,1,T20-E2,T20,E2,validated_gtvh,6,1,2,3,
+P30,acl-1,1,25,1,T01-C1,T01,C1,script_opposition,8,2,1,1,
+P30,acl-1,1,25,1,T02-E1,T02,E1,validated_gtvh,10,1,1,1,
+P30,acl-1,1,25,1,T03-C1,T03,C1,script_opposition,2,1,1,1,
+P30,acl-1,1,25,1,T04-C2,T04,C2,script_opposition,14,3,2,3,
+P30,acl-1,1,25,1,T05-E2,T05,E2,validated_gtvh,16,2,2,2,
+P30,acl-1,1,25,1,T06-C2,T06,C2,script_opposition,6,1,1,1,
+P30,acl-1,1,25,1,T07-A1,T07,A1,baseline,19,1,2,2,
+P30,acl-1,1,25,1,T08-C2,T08,C2,script_opposition,7,2,3,1,
+P30,acl-1,1,25,1,T09-A2,T09,A2,baseline,12,2,3,1,
+P30,acl-1,1,25,1,T10-E1,T10,E1,validated_gtvh,1,1,1,1,Ik snap niet eens precies wat er met de tekst bedoeld wordt.
+P30,acl-1,1,25,1,T11-A1,T11,A1,baseline,18,2,3,1,
+P30,acl-1,1,25,1,T12-E2,T12,E2,validated_gtvh,5,1,2,3,
+P30,acl-1,1,25,1,T13-A2,T13,A2,baseline,9,2,2,2,
+P30,acl-1,1,25,1,T14-A2,T14,A2,baseline,4,1,3,1,
+P30,acl-1,1,25,1,T15-A1,T15,A1,baseline,20,3,3,1,
+P30,acl-1,1,25,1,T16-C2,T16,C2,script_opposition,17,3,1,2,
+P30,acl-1,1,25,1,T17-A1,T17,A1,baseline,11,2,3,1,
+P30,acl-1,1,25,1,T18-E1,T18,E1,validated_gtvh,15,2,3,2,
+P30,acl-1,1,25,1,T19-E2,T19,E2,validated_gtvh,13,2,1,2,
+P30,acl-1,1,25,1,T20-C1,T20,C1,script_opposition,3,2,3,2,
+P11,acl-1,1,34,2,T01-C2,T01,C2,script_opposition,8,2,2,3,
+P11,acl-1,1,34,2,T02-E2,T02,E2,validated_gtvh,9,1,2,3,
+P11,acl-1,1,34,2,T03-C2,T03,C2,script_opposition,2,1,1,1,
+P11,acl-1,1,34,2,T04-E1,T04,E1,validated_gtvh,11,1,1,1,
+P11,acl-1,1,34,2,T05-A1,T05,A1,baseline,13,1,2,3,
+P11,acl-1,1,34,2,T06-E1,T06,E1,validated_gtvh,19,1,4,2,
+P11,acl-1,1,34,2,T07-A2,T07,A2,baseline,5,1,2,2,
+P11,acl-1,1,34,2,T08-E1,T08,E1,validated_gtvh,7,1,1,1,
+P11,acl-1,1,34,2,T09-C1,T09,C1,script_opposition,1,1,1,3,Te ver gezocht. Benoem dan nog daarvoor indirect iets van een spaaractie
+P11,acl-1,1,34,2,T10-E2,T10,E2,validated_gtvh,14,1,1,3,
+P11,acl-1,1,34,2,T11-A2,T11,A2,baseline,10,1,1,2,
+P11,acl-1,1,34,2,T12-A1,T12,A1,baseline,18,2,2,3,
+P11,acl-1,1,34,2,T13-C1,T13,C1,script_opposition,16,1,1,2,
+P11,acl-1,1,34,2,T14-C1,T14,C1,script_opposition,6,1,2,2,
+P11,acl-1,1,34,2,T15-A2,T15,A2,baseline,12,2,2,3,
+P11,acl-1,1,34,2,T16-E1,T16,E1,validated_gtvh,4,1,2,2,
+P11,acl-1,1,34,2,T17-A2,T17,A2,baseline,17,1,1,2,
+P11,acl-1,1,34,2,T18-E2,T18,E2,validated_gtvh,20,1,1,3,
+P11,acl-1,1,34,2,T19-A1,T19,A1,baseline,3,1,3,2,"Logisch, maar vind het niet grappig en ook niet origineel"
+P11,acl-1,1,34,2,T20-C2,T20,C2,script_opposition,15,1,1,2,
+P12,acl-1,1,28,1,T01-C2,T01,C2,script_opposition,8,3,3,2,
+P12,acl-1,1,28,1,T02-E2,T02,E2,validated_gtvh,9,1,1,2,
+P12,acl-1,1,28,1,T03-C2,T03,C2,script_opposition,2,1,1,1,
+P12,acl-1,1,28,1,T04-E1,T04,E1,validated_gtvh,11,1,1,2,
+P12,acl-1,1,28,1,T05-A1,T05,A1,baseline,13,3,3,2,
+P12,acl-1,1,28,1,T06-E1,T06,E1,validated_gtvh,19,2,3,1,
+P12,acl-1,1,28,1,T07-A2,T07,A2,baseline,5,2,3,2,
+P12,acl-1,1,28,1,T08-E1,T08,E1,validated_gtvh,7,1,1,2,
+P12,acl-1,1,28,1,T09-C1,T09,C1,script_opposition,1,1,1,2,
+P12,acl-1,1,28,1,T10-E2,T10,E2,validated_gtvh,14,1,1,2,
+P12,acl-1,1,28,1,T11-A2,T11,A2,baseline,10,2,3,1,
+P12,acl-1,1,28,1,T12-A1,T12,A1,baseline,18,2,4,2,
+P12,acl-1,1,28,1,T13-C1,T13,C1,script_opposition,16,1,2,2,
+P12,acl-1,1,28,1,T14-C1,T14,C1,script_opposition,6,1,2,2,
+P12,acl-1,1,28,1,T15-A2,T15,A2,baseline,12,4,5,2,
+P12,acl-1,1,28,1,T16-E1,T16,E1,validated_gtvh,4,2,4,2,
+P12,acl-1,1,28,1,T17-A2,T17,A2,baseline,17,3,4,2,
+P12,acl-1,1,28,1,T18-E2,T18,E2,validated_gtvh,20,1,4,1,
+P12,acl-1,1,28,1,T19-A1,T19,A1,baseline,3,1,2,1,
+P12,acl-1,1,28,1,T20-C2,T20,C2,script_opposition,15,1,1,1,
+P13,acl-1,1,72,3,T01-A1,T01,A1,baseline,15,3,3,3,
+P13,acl-1,1,72,3,T02-C1,T02,C1,script_opposition,3,2,1,2,"De grap is te lang, de aandacht gaat weg."
+P13,acl-1,1,72,3,T03-A1,T03,A1,baseline,19,5,4,3,Mooie bondige grap
+P13,acl-1,1,72,3,T04-A2,T04,A2,baseline,4,4,5,4,Leuke kwinkslag aan het einde.
+P13,acl-1,1,72,3,T05-C2,T05,C2,script_opposition,9,3,3,3,
+P13,acl-1,1,72,3,T06-A2,T06,A2,baseline,10,3,3,3,
+P13,acl-1,1,72,3,T07-E1,T07,E1,validated_gtvh,13,2,2,2,
+P13,acl-1,1,72,3,T08-A2,T08,A2,baseline,12,5,5,5,Mooie wending
+P13,acl-1,1,72,3,T09-E2,T09,E2,validated_gtvh,17,4,4,4,
+P13,acl-1,1,72,3,T10-C1,T10,C1,script_opposition,11,2,2,2,
+P13,acl-1,1,72,3,T11-E1,T11,E1,validated_gtvh,5,3,3,2,Te lange tekst
+P13,acl-1,1,72,3,T12-C2,T12,C2,script_opposition,7,1,4,1,
+P13,acl-1,1,72,3,T13-E2,T13,E2,validated_gtvh,6,2,3,2,Te lang
+P13,acl-1,1,72,3,T14-E2,T14,E2,validated_gtvh,1,2,2,4,Te losse fragmenten
+P13,acl-1,1,72,3,T15-E1,T15,E1,validated_gtvh,18,4,4,4,Leuke draai aan het einde.
+P13,acl-1,1,72,3,T16-A2,T16,A2,baseline,8,5,5,5,Leuke nadenken.
+P13,acl-1,1,72,3,T17-E1,T17,E1,validated_gtvh,20,2,4,2,
+P13,acl-1,1,72,3,T18-C1,T18,C1,script_opposition,14,2,2,2,
+P13,acl-1,1,72,3,T19-C2,T19,C2,script_opposition,2,3,3,4,
+P13,acl-1,1,72,3,T20-A1,T20,A1,baseline,16,4,2,2,
+P14,acl-1,1,50,1,T01-E1,T01,E1,validated_gtvh,1,1,1,1,"daar maak je geen grapjes over, over beperkingen of ziektes van mensen"
+P14,acl-1,1,50,1,T02-A1,T02,A1,baseline,4,2,2,3,
+P14,acl-1,1,50,1,T03-E1,T03,E1,validated_gtvh,16,1,1,2,
+P14,acl-1,1,50,1,T04-E2,T04,E2,validated_gtvh,6,1,1,3,Ik zie niet in wat hier een grap aan is
+P14,acl-1,1,50,1,T05-A2,T05,A2,baseline,17,1,1,2,
+P14,acl-1,1,50,1,T06-E2,T06,E2,validated_gtvh,8,1,1,1,
+P14,acl-1,1,50,1,T07-C1,T07,C1,script_opposition,15,1,1,3,
+P14,acl-1,1,50,1,T08-E2,T08,E2,validated_gtvh,20,1,1,2,
+P14,acl-1,1,50,1,T09-C2,T09,C2,script_opposition,2,1,1,3,"Ik zie niet in wat de grap is, of wat er grappig aan is"
+P14,acl-1,1,50,1,T10-A1,T10,A1,baseline,3,1,1,3,Ik vind het niet grappig
+P14,acl-1,1,50,1,T11-C1,T11,C1,script_opposition,10,1,1,2,
+P14,acl-1,1,50,1,T12-A2,T12,A2,baseline,19,1,2,2,
+P14,acl-1,1,50,1,T13-C2,T13,C2,script_opposition,7,1,1,3,Ik zie niet wat de grap is
+P14,acl-1,1,50,1,T14-C2,T14,C2,script_opposition,5,1,1,1,Ik snap de grap niet
+P14,acl-1,1,50,1,T15-C1,T15,C1,script_opposition,9,1,1,3,
+P14,acl-1,1,50,1,T16-E2,T16,E2,validated_gtvh,12,1,1,3,
+P14,acl-1,1,50,1,T17-C1,T17,C1,script_opposition,11,1,1,2,
+P14,acl-1,1,50,1,T18-A1,T18,A1,baseline,14,1,3,2,
+P14,acl-1,1,50,1,T19-A2,T19,A2,baseline,18,2,3,3,
+P14,acl-1,1,50,1,T20-E1,T20,E1,validated_gtvh,13,1,1,2,
+P31,acl-1,1,28,1,T01-C2,T01,C2,script_opposition,8,1,2,2,heeft een verteller nodig om over te komen
+P31,acl-1,1,28,1,T02-E2,T02,E2,validated_gtvh,2,1,1,1,ik begrijp het niet
+P31,acl-1,1,28,1,T03-C2,T03,C2,script_opposition,5,3,3,2,op zich wel grappig. Ik denk dat dit soort grappen werken door de manier waarop de verteller het brengt. op papier is het niet heel grappig
+P31,acl-1,1,28,1,T04-E1,T04,E1,validated_gtvh,11,1,1,1,snap de grap niet
+P31,acl-1,1,28,1,T05-A1,T05,A1,baseline,20,1,1,1,niet logisch
+P31,acl-1,1,28,1,T06-E1,T06,E1,validated_gtvh,12,1,1,1,een huisarts zou toch nooit de kosten van overlijdingsriscio bespreken?
+P31,acl-1,1,28,1,T07-A2,T07,A2,baseline,9,2,2,2,zielig
+P31,acl-1,1,28,1,T08-E1,T08,E1,validated_gtvh,13,1,1,1,er wordt een verband gelegd in de laatste zin die totaal onduidelijk is
+P31,acl-1,1,28,1,T09-C1,T09,C1,script_opposition,17,1,1,1,het is een beetje lullig
+P31,acl-1,1,28,1,T10-E2,T10,E2,validated_gtvh,15,1,1,1,n
+P31,acl-1,1,28,1,T11-A2,T11,A2,baseline,18,1,1,1,niet grappig
+P31,acl-1,1,28,1,T12-A1,T12,A1,baseline,14,2,2,2,n
+P31,acl-1,1,28,1,T13-C1,T13,C1,script_opposition,1,1,2,1,ik begrijp de grap niet. welke welkoms avond?
+P31,acl-1,1,28,1,T14-C1,T14,C1,script_opposition,10,1,1,1,snap het niet
+P31,acl-1,1,28,1,T15-A2,T15,A2,baseline,16,4,4,4,dit vind ik wel grappig
+P31,acl-1,1,28,1,T16-E1,T16,E1,validated_gtvh,4,3,3,3,
+P31,acl-1,1,28,1,T17-A2,T17,A2,baseline,3,4,3,2,werkt als opzichzelf staande grap
+P31,acl-1,1,28,1,T18-E2,T18,E2,validated_gtvh,7,1,1,1,ik begrijp het niet
+P31,acl-1,1,28,1,T19-A1,T19,A1,baseline,19,1,1,1,
+P31,acl-1,1,28,1,T20-C2,T20,C2,script_opposition,6,1,1,1,n
+P15,acl-1,1,33,3,T01-E2,T01,E2,validated_gtvh,5,3,3,5,
+P15,acl-1,1,33,3,T02-A2,T02,A2,baseline,11,2,1,1,
+P15,acl-1,1,33,3,T03-E2,T03,E2,validated_gtvh,10,5,5,3,
+P15,acl-1,1,33,3,T04-A1,T04,A1,baseline,13,5,5,4,
+P15,acl-1,1,33,3,T05-C1,T05,C1,script_opposition,1,2,2,1,
+P15,acl-1,1,33,3,T06-A1,T06,A1,baseline,3,2,4,3,
+P15,acl-1,1,33,3,T07-C2,T07,C2,script_opposition,16,2,2,1,
+P15,acl-1,1,33,3,T08-A1,T08,A1,baseline,18,5,5,5,
+P15,acl-1,1,33,3,T09-E1,T09,E1,validated_gtvh,4,3,3,2,
+P15,acl-1,1,33,3,T10-A2,T10,A2,baseline,17,3,1,1,
+P15,acl-1,1,33,3,T11-C2,T11,C2,script_opposition,9,3,3,3,
+P15,acl-1,1,33,3,T12-C1,T12,C1,script_opposition,14,2,2,1,
+P15,acl-1,1,33,3,T13-E1,T13,E1,validated_gtvh,6,1,1,1,
+P15,acl-1,1,33,3,T14-E1,T14,E1,validated_gtvh,19,2,2,1,
+P15,acl-1,1,33,3,T15-C2,T15,C2,script_opposition,2,3,3,3,
+P15,acl-1,1,33,3,T16-A1,T16,A1,baseline,15,4,4,3,
+P15,acl-1,1,33,3,T17-C2,T17,C2,script_opposition,12,3,2,1,
+P15,acl-1,1,33,3,T18-A2,T18,A2,baseline,20,1,2,2,
+P15,acl-1,1,33,3,T19-C1,T19,C1,script_opposition,7,1,1,2,
+P15,acl-1,1,33,3,T20-E2,T20,E2,validated_gtvh,8,3,3,2,
+P16,acl-1,1,35,1,T01-C2,T01,C2,script_opposition,3,3,4,1,
+P16,acl-1,1,35,1,T02-E2,T02,E2,validated_gtvh,18,2,2,1,"Ik begrijp wat de grap tot uitdrukking probeert te brengen, maar de formulering mist hier doel."
+P16,acl-1,1,35,1,T03-C2,T03,C2,script_opposition,11,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T04-E1,T04,E1,validated_gtvh,15,3,3,1,
+P16,acl-1,1,35,1,T05-A1,T05,A1,baseline,16,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T06-E1,T06,E1,validated_gtvh,20,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T07-A2,T07,A2,baseline,1,4,5,1,De herkenbaarheid van de situatie en het sarcasme van de huisarts maken dat de grap voor mij werkt.
+P16,acl-1,1,35,1,T08-E1,T08,E1,validated_gtvh,7,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T09-C1,T09,C1,script_opposition,6,1,1,1,
+P16,acl-1,1,35,1,T10-E2,T10,E2,validated_gtvh,17,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T11-A2,T11,A2,baseline,13,2,3,1,
+P16,acl-1,1,35,1,T12-A1,T12,A1,baseline,2,3,3,1,De grap is wat mij betreft iets te voorspelbaar.
+P16,acl-1,1,35,1,T13-C1,T13,C1,script_opposition,14,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T14-C1,T14,C1,script_opposition,5,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T15-A2,T15,A2,baseline,9,2,3,1,"Ik begrijp wat de grap tot uitdrukking probeert te brengen, maar de formulering mist doel."
+P16,acl-1,1,35,1,T16-E1,T16,E1,validated_gtvh,4,1,1,1,"De eerste zin van de grap lijkt irrelevant voor de rest van de grap. De logica van de grap ontbreekt verder: 'iedereen liep achteruit'; dit kan niet op een tribune, en 'de megafoon zei'; een megafoon zegt natuurlijk niets."
+P16,acl-1,1,35,1,T17-A2,T17,A2,baseline,8,2,3,1,
+P16,acl-1,1,35,1,T18-E2,T18,E2,validated_gtvh,10,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T19-A1,T19,A1,baseline,19,1,1,1,De grap is onbegrijpelijk.
+P16,acl-1,1,35,1,T20-C2,T20,C2,script_opposition,12,3,4,1,
+P17,acl-1,1,73,4,T01-A1,T01,A1,baseline,1,1,1,2,"Het is een zuur verhaal, ik zie niet in waarom dit leuk is, alleen wrang."
+P17,acl-1,1,73,4,T02-C1,T02,C1,script_opposition,20,2,3,2,Morbide
+P17,acl-1,1,73,4,T03-A1,T03,A1,baseline,5,3,2,3,Beetje flauw
+P17,acl-1,1,73,4,T04-A2,T04,A2,baseline,18,2,2,3,
+P17,acl-1,1,73,4,T05-C2,T05,C2,script_opposition,16,4,4,4,
+P17,acl-1,1,73,4,T06-A2,T06,A2,baseline,4,1,1,2,"Het ""gaan uitslapen"" slaat hier nergens op."
+P17,acl-1,1,73,4,T07-E1,T07,E1,validated_gtvh,11,1,2,1,
+P17,acl-1,1,73,4,T08-A2,T08,A2,baseline,9,4,4,4,
+P17,acl-1,1,73,4,T09-E2,T09,E2,validated_gtvh,13,4,5,4,
+P17,acl-1,1,73,4,T10-C1,T10,C1,script_opposition,7,3,4,4,
+P17,acl-1,1,73,4,T11-E1,T11,E1,validated_gtvh,8,1,1,2,Ik blijf hier hangen op het woord afspeelbalk.
+P17,acl-1,1,73,4,T12-C2,T12,C2,script_opposition,2,1,1,3,De pointe zou van Freek kunnen zijn
+P17,acl-1,1,73,4,T13-E2,T13,E2,validated_gtvh,6,1,1,2,Ik snap hem niet
+P17,acl-1,1,73,4,T14-E2,T14,E2,validated_gtvh,3,2,3,4,"Het misverstand van de woningcorporatie heeft wel iets grappigs, past wel bij de stijl van Freek"
+P17,acl-1,1,73,4,T15-E1,T15,E1,validated_gtvh,14,3,4,4,
+P17,acl-1,1,73,4,T16-A2,T16,A2,baseline,10,2,3,2,
+P17,acl-1,1,73,4,T17-E1,T17,E1,validated_gtvh,19,1,2,2,
+P17,acl-1,1,73,4,T18-C1,T18,C1,script_opposition,17,1,2,1,
+P17,acl-1,1,73,4,T19-C2,T19,C2,script_opposition,15,4,4,4,
+P17,acl-1,1,73,4,T20-A1,T20,A1,baseline,12,2,3,4,
+P18,acl-1,1,40,4,T01-E2,T01,E2,validated_gtvh,5,1,1,1,De zinsdelen volgen niet op elkaar. Een zoon die een politiek technische term gebruikt? Waarom wordt het poetsen geschorst? Niet te volgen eigenlijk.
+P18,acl-1,1,40,4,T02-A2,T02,A2,baseline,12,2,2,3,"Niet helemaal duidelijk waarom de zee ""vroeger kwam en ging"", getijden zijn er nog steeds. Of bedoelde men qua overstromingen? Maar dat heeft weer weinig met normale getijden te maken."
+P18,acl-1,1,40,4,T03-E2,T03,E2,validated_gtvh,19,2,2,2,
+P18,acl-1,1,40,4,T04-A1,T04,A1,baseline,8,4,3,4,
+P18,acl-1,1,40,4,T05-C1,T05,C1,script_opposition,10,2,2,2,
+P18,acl-1,1,40,4,T06-A1,T06,A1,baseline,2,1,1,1,"""gokken op uw gezicht by Face ID"" is geen logische zinsbouw. Een Nederlander zou zeggen ""hopen dat ze er met Face ID alsnog in komen"". Net als dat je ook niet ""bij pincode"" gokt als je via die weg erin wil. Maar los hiervan, Face ID vereist kijkende ogen, dat lukt niet met een overledene. Ik kan eerlijk gezegd niet begrijpen waar deze grap op moet slaan."
+P18,acl-1,1,40,4,T07-C2,T07,C2,script_opposition,3,2,2,2,"""Te ingewikkeld voor zorg"" kan ik niet plaatsen als een diagnose.  ""Kunt u de link bevestigen"" klinkt ook als een wat kromme zinsbouw, wellicht wordt er ""Kunt u op de link klikken ter bevestiging"" of iets dergelijks? Maar dan nog snap ik niet waarom het dan te ingewikkeld zou worden."
+P18,acl-1,1,40,4,T08-A1,T08,A1,baseline,4,3,3,2,"Doktoren dragen meestal geen witte jas meer, maar ok het zou kunnen."
+P18,acl-1,1,40,4,T09-E1,T09,E1,validated_gtvh,20,1,1,1,Ik zie de humor er niet van in.
+P18,acl-1,1,40,4,T10-A2,T10,A2,baseline,11,1,2,2,"Weer een taalfout, dit keer Tante Betje stijl van één gezegde voor twee deelzinnen. In de tweede deelzin moet iets staan als ""houd ik de vergadering tijdens mijn lunch""."
+P18,acl-1,1,40,4,T11-C2,T11,C2,script_opposition,7,2,2,3,"Het controleert of jij wel je smartphone werkend hebt, het controleert niks qua bestaan eigenlijk."
+P18,acl-1,1,40,4,T12-C1,T12,C1,script_opposition,16,3,3,3,
+P18,acl-1,1,40,4,T13-E1,T13,E1,validated_gtvh,13,1,1,1,Te moeilijk om er humor uit te halen.
+P18,acl-1,1,40,4,T14-E1,T14,E1,validated_gtvh,15,1,1,2,"""tweede gratis: neem er drie"" is een geen logische aanbieding. Waarom de blender dan weg moet is mij ook niet duidelijk."
+P18,acl-1,1,40,4,T15-C2,T15,C2,script_opposition,14,2,2,2,"Ik kan niet volgen wat ""gel bij de deur"" moet betekenen."
+P18,acl-1,1,40,4,T16-A1,T16,A1,baseline,1,1,1,2,"Er staat meer dan 1 supporter, supporters schreeuwen een hoop, maar ik heb ze nog nooit gehoord over dat de scheids moet rennen."
+P18,acl-1,1,40,4,T17-C2,T17,C2,script_opposition,18,2,1,3,"De verteller zag een rode file OP de navigatie, de navigatie zag het niet... Ook is ""betaalt contant"" niet logisch, je zou eerder zeggen ""betaalt met hun woongenot en veiligheid"" om duidelijk te maken wat het hen kost."
+P18,acl-1,1,40,4,T18-A2,T18,A2,baseline,17,1,1,2,"Gebarentaal is ook taalgebonden, het is niet iets universeels. Nederlandse gebarentaal is anders dan Franse bijvoorbeeld. De grap is dus onlogisch."
+P18,acl-1,1,40,4,T19-C1,T19,C1,script_opposition,9,1,1,1,"Ik kan niet volgen waar ""mijn angst was te klein"" vandaan komt, waarom dat een probleem zou zijn en waarom die persoon dan terugmoet naar de auto. Ook filmt een camera niet, dat doet een cameraman of een filmploeg."
+P18,acl-1,1,40,4,T20-E2,T20,E2,validated_gtvh,6,2,3,2,"Er wordt ""Zodat"" bedoeld waar er ""Omdat"" staat. Ook is het wat raar dat het als ""financierde"" staat en niet als ""stelde hij in"" of ""bepaalde hij"", wat daadwerkelijk bepalend handelen inhoudt. Financieren is slechts ervoor zorg dragen dat het qua geld gedekt is."
+P19,acl-1,1,28,2,T01-E2,T01,E2,validated_gtvh,5,1,1,1,Snap hem niet
+P19,acl-1,1,28,2,T02-A2,T02,A2,baseline,12,3,2,2,
+P19,acl-1,1,28,2,T03-E2,T03,E2,validated_gtvh,19,2,1,1,
+P19,acl-1,1,28,2,T04-A1,T04,A1,baseline,8,2,2,1,
+P19,acl-1,1,28,2,T05-C1,T05,C1,script_opposition,10,3,2,1,
+P19,acl-1,1,28,2,T06-A1,T06,A1,baseline,2,4,3,2,
+P19,acl-1,1,28,2,T07-C2,T07,C2,script_opposition,3,1,1,1,Snap de grap niet
+P19,acl-1,1,28,2,T08-A1,T08,A1,baseline,4,3,2,2,
+P19,acl-1,1,28,2,T09-E1,T09,E1,validated_gtvh,20,3,2,2,
+P19,acl-1,1,28,2,T10-A2,T10,A2,baseline,11,3,2,2,
+P19,acl-1,1,28,2,T11-C2,T11,C2,script_opposition,7,2,4,1,
+P19,acl-1,1,28,2,T12-C1,T12,C1,script_opposition,16,2,2,1,
+P19,acl-1,1,28,2,T13-E1,T13,E1,validated_gtvh,13,3,3,1,
+P19,acl-1,1,28,2,T14-E1,T14,E1,validated_gtvh,15,3,2,2,
+P19,acl-1,1,28,2,T15-C2,T15,C2,script_opposition,14,3,3,3,
+P19,acl-1,1,28,2,T16-A1,T16,A1,baseline,1,1,1,1,"Ik snap hem niet helemaal, waarom geblesseerd"
+P19,acl-1,1,28,2,T17-C2,T17,C2,script_opposition,18,4,4,2,
+P19,acl-1,1,28,2,T18-A2,T18,A2,baseline,17,4,2,3,
+P19,acl-1,1,28,2,T19-C1,T19,C1,script_opposition,9,4,3,2,
+P19,acl-1,1,28,2,T20-E2,T20,E2,validated_gtvh,6,2,2,3,
+P21,acl-1,1,34,1,T01-C1,T01,C1,script_opposition,1,1,1,1,Het is totaal geen logische opbouw naar een punchline
+P21,acl-1,1,34,1,T02-E1,T02,E1,validated_gtvh,16,1,1,1,
+P21,acl-1,1,34,1,T03-C1,T03,C1,script_opposition,10,1,1,3,
+P21,acl-1,1,34,1,T04-C2,T04,C2,script_opposition,2,1,1,1,"Het is geen grap, nul samenhang, random zinnen"
+P21,acl-1,1,34,1,T05-E2,T05,E2,validated_gtvh,4,1,1,1,Lijkt wel een nieuwsbericht
+P21,acl-1,1,34,1,T06-C2,T06,C2,script_opposition,15,3,2,1,
+P21,acl-1,1,34,1,T07-A1,T07,A1,baseline,14,1,1,1,
+P21,acl-1,1,34,1,T08-C2,T08,C2,script_opposition,9,3,3,3,
+P21,acl-1,1,34,1,T09-A2,T09,A2,baseline,13,2,2,2,
+P21,acl-1,1,34,1,T10-E1,T10,E1,validated_gtvh,12,1,1,2,
+P21,acl-1,1,34,1,T11-A1,T11,A1,baseline,17,3,2,2,
+P21,acl-1,1,34,1,T12-E2,T12,E2,validated_gtvh,20,1,1,1,
+P21,acl-1,1,34,1,T13-A2,T13,A2,baseline,7,2,2,2,Eindelijk een semi grappige
+P21,acl-1,1,34,1,T14-A2,T14,A2,baseline,18,3,2,3,
+P21,acl-1,1,34,1,T15-A1,T15,A1,baseline,11,4,4,3,
+P21,acl-1,1,34,1,T16-C2,T16,C2,script_opposition,19,1,1,1,
+P21,acl-1,1,34,1,T17-A1,T17,A1,baseline,5,2,2,1,"Beter dan de vorige, nog steeds matig"
+P21,acl-1,1,34,1,T18-E1,T18,E1,validated_gtvh,6,1,1,4,Snap niet wat de grap moet zijn
+P21,acl-1,1,34,1,T19-E2,T19,E2,validated_gtvh,8,1,1,1,Wederom niet leuk
+P21,acl-1,1,34,1,T20-C1,T20,C1,script_opposition,3,1,1,1,Wederom geen logica
+P20,acl-1,1,20,1,T01-E1,T01,E1,validated_gtvh,15,1,1,1,De grap werkt niet omdat de zinnen grammaticaal niet helemaal kloppen en omdat het niet logisch is
+P20,acl-1,1,20,1,T02-A1,T02,A1,baseline,19,1,1,1,
+P20,acl-1,1,20,1,T03-E1,T03,E1,validated_gtvh,7,1,2,1,
+P20,acl-1,1,20,1,T04-E2,T04,E2,validated_gtvh,6,1,1,1,De grap werkt niet omdat er te veel context mist
+P20,acl-1,1,20,1,T05-A2,T05,A2,baseline,20,2,2,1,
+P20,acl-1,1,20,1,T06-E2,T06,E2,validated_gtvh,10,1,1,1,
+P20,acl-1,1,20,1,T07-C1,T07,C1,script_opposition,2,1,1,1,
+P20,acl-1,1,20,1,T08-E2,T08,E2,validated_gtvh,3,1,1,1,De grap werkt niet omdat er te weinig context is
+P20,acl-1,1,20,1,T09-C2,T09,C2,script_opposition,5,1,1,1,De grap werkt niet omdat niks ervan klopt/logisch is
+P20,acl-1,1,20,1,T10-A1,T10,A1,baseline,4,5,1,1,
+P20,acl-1,1,20,1,T11-C1,T11,C1,script_opposition,18,1,1,1,
+P20,acl-1,1,20,1,T12-A2,T12,A2,baseline,11,1,2,1,
+P20,acl-1,1,20,1,T13-C2,T13,C2,script_opposition,8,1,1,1,
+P20,acl-1,1,20,1,T14-C2,T14,C2,script_opposition,13,1,1,1,
+P20,acl-1,1,20,1,T15-C1,T15,C1,script_opposition,9,2,3,1,
+P20,acl-1,1,20,1,T16-E2,T16,E2,validated_gtvh,17,1,1,1,De grap werkt niet omdat alles onlogisch is en er context mist
+P20,acl-1,1,20,1,T17-C1,T17,C1,script_opposition,16,1,1,1,"De grap werkt niet, omdat je niet zomaar in een rijexamen terechtkomt"
+P20,acl-1,1,20,1,T18-A1,T18,A1,baseline,14,1,1,1,
+P20,acl-1,1,20,1,T19-A2,T19,A2,baseline,1,1,3,4,
+P20,acl-1,1,20,1,T20-E1,T20,E1,validated_gtvh,12,1,1,1,
+P22,acl-1,1,35,3,T01-A1,T01,A1,baseline,14,2,2,2,
+P22,acl-1,1,35,3,T02-C1,T02,C1,script_opposition,5,1,1,1,
+P22,acl-1,1,35,3,T03-A1,T03,A1,baseline,3,2,2,2,
+P22,acl-1,1,35,3,T04-A2,T04,A2,baseline,2,5,5,5,
+P22,acl-1,1,35,3,T05-C2,T05,C2,script_opposition,10,3,3,3,
+P22,acl-1,1,35,3,T06-A2,T06,A2,baseline,17,2,2,2,
+P22,acl-1,1,35,3,T07-E1,T07,E1,validated_gtvh,6,1,1,1,
+P22,acl-1,1,35,3,T08-A2,T08,A2,baseline,12,3,3,3,
+P22,acl-1,1,35,3,T09-E2,T09,E2,validated_gtvh,13,3,3,3,
+P22,acl-1,1,35,3,T10-C1,T10,C1,script_opposition,15,2,2,2,
+P22,acl-1,1,35,3,T11-E1,T11,E1,validated_gtvh,11,3,3,3,
+P22,acl-1,1,35,3,T12-C2,T12,C2,script_opposition,16,2,2,2,
+P22,acl-1,1,35,3,T13-E2,T13,E2,validated_gtvh,4,3,3,3,
+P22,acl-1,1,35,3,T14-E2,T14,E2,validated_gtvh,18,2,2,2,
+P22,acl-1,1,35,3,T15-E1,T15,E1,validated_gtvh,19,2,2,2,
+P22,acl-1,1,35,3,T16-A2,T16,A2,baseline,20,2,2,2,
+P22,acl-1,1,35,3,T17-E1,T17,E1,validated_gtvh,1,1,1,1,staging test
+P22,acl-1,1,35,3,T18-C1,T18,C1,script_opposition,9,3,3,3,
+P22,acl-1,1,35,3,T19-C2,T19,C2,script_opposition,8,1,1,1,
+P22,acl-1,1,35,3,T20-A1,T20,A1,baseline,7,5,5,5,
+P23,acl-1,1,32,2,T01-A1,T01,A1,baseline,14,1,3,2,
+P23,acl-1,1,32,2,T02-C1,T02,C1,script_opposition,5,1,1,1,
+P23,acl-1,1,32,2,T03-A1,T03,A1,baseline,3,1,3,1,
+P23,acl-1,1,32,2,T04-A2,T04,A2,baseline,2,2,4,3,
+P23,acl-1,1,32,2,T05-C2,T05,C2,script_opposition,10,1,1,1,
+P23,acl-1,1,32,2,T06-A2,T06,A2,baseline,17,1,2,2,
+P23,acl-1,1,32,2,T07-E1,T07,E1,validated_gtvh,6,1,1,1,
+P23,acl-1,1,32,2,T08-A2,T08,A2,baseline,12,1,2,3,
+P23,acl-1,1,32,2,T09-E2,T09,E2,validated_gtvh,13,1,1,1,
+P23,acl-1,1,32,2,T10-C1,T10,C1,script_opposition,15,1,3,2,
+P23,acl-1,1,32,2,T11-E1,T11,E1,validated_gtvh,11,1,2,2,
+P23,acl-1,1,32,2,T12-C2,T12,C2,script_opposition,16,1,1,1,
+P23,acl-1,1,32,2,T13-E2,T13,E2,validated_gtvh,4,1,2,1,
+P23,acl-1,1,32,2,T14-E2,T14,E2,validated_gtvh,18,1,1,1,
+P23,acl-1,1,32,2,T15-E1,T15,E1,validated_gtvh,19,2,4,2,
+P23,acl-1,1,32,2,T16-A2,T16,A2,baseline,20,3,4,2,
+P23,acl-1,1,32,2,T17-E1,T17,E1,validated_gtvh,1,1,1,1,
+P23,acl-1,1,32,2,T18-C1,T18,C1,script_opposition,9,1,1,1,
+P23,acl-1,1,32,2,T19-C2,T19,C2,script_opposition,8,1,1,1,
+P23,acl-1,1,32,2,T20-A1,T20,A1,baseline,7,2,2,1,
+P33,acl-1,1,68,3,T01-C2,T01,C2,script_opposition,13,4,4,3,
+P33,acl-1,1,68,3,T02-E2,T02,E2,validated_gtvh,19,3,3,4,
+P33,acl-1,1,68,3,T03-C2,T03,C2,script_opposition,14,5,4,3,
+P33,acl-1,1,68,3,T04-E1,T04,E1,validated_gtvh,2,1,2,3,
+P33,acl-1,1,68,3,T05-A1,T05,A1,baseline,3,3,4,4,Een grapje met een wrange ondertoon
+P33,acl-1,1,68,3,T06-E1,T06,E1,validated_gtvh,10,1,5,3,
+P33,acl-1,1,68,3,T07-A2,T07,A2,baseline,15,2,4,4,
+P33,acl-1,1,68,3,T08-E1,T08,E1,validated_gtvh,20,2,2,3,
+P33,acl-1,1,68,3,T09-C1,T09,C1,script_opposition,17,3,2,3,
+P33,acl-1,1,68,3,T10-E2,T10,E2,validated_gtvh,1,1,5,1,"Als deze ""grap"" in een context zou staan, zou hij misschien nog wel grappig zijn, maar hier kan ik niet om lachen."
+P33,acl-1,1,68,3,T11-A2,T11,A2,baseline,16,1,3,3,
+P33,acl-1,1,68,3,T12-A1,T12,A1,baseline,6,4,4,5,
+P33,acl-1,1,68,3,T13-C1,T13,C1,script_opposition,11,3,2,3,Beetje bizarre grap
+P33,acl-1,1,68,3,T14-C1,T14,C1,script_opposition,9,1,4,3,Flauw.
+P33,acl-1,1,68,3,T15-A2,T15,A2,baseline,12,4,4,4,
+P33,acl-1,1,68,3,T16-E1,T16,E1,validated_gtvh,5,2,3,3,Flauwe grap. In context was hij misschien leuker geweest.
+P33,acl-1,1,68,3,T17-A2,T17,A2,baseline,4,2,4,3,
+P33,acl-1,1,68,3,T18-E2,T18,E2,validated_gtvh,7,2,3,4,
+P33,acl-1,1,68,3,T19-A1,T19,A1,baseline,8,5,4,4,
+P33,acl-1,1,68,3,T20-C2,T20,C2,script_opposition,18,1,3,4,
+P32,acl-1,1,63,5,T01-E2,T01,E2,validated_gtvh,9,1,1,1,Onzinnig
+P32,acl-1,1,63,5,T02-A2,T02,A2,baseline,14,1,1,1,Onzinnig
+P32,acl-1,1,63,5,T03-E2,T03,E2,validated_gtvh,13,1,1,1,Wow. Hoe verzin je het.
+P32,acl-1,1,63,5,T04-A1,T04,A1,baseline,2,1,1,1,Te gezocht
+P32,acl-1,1,63,5,T05-C1,T05,C1,script_opposition,6,1,1,1,Slaat nergens op
+P32,acl-1,1,63,5,T06-A1,T06,A1,baseline,16,1,1,1,Onzinnig
+P32,acl-1,1,63,5,T07-C2,T07,C2,script_opposition,5,1,1,1,Het slaat nergens op.
+P32,acl-1,1,63,5,T08-A1,T08,A1,baseline,18,1,1,2,"Begon hoopvol, maar punchline mist de punch..."
+P32,acl-1,1,63,5,T09-E1,T09,E1,validated_gtvh,17,1,1,1,Pfffff
+P32,acl-1,1,63,5,T10-A2,T10,A2,baseline,7,1,1,1,Het wordt er niet beter op. Gewoon niet grappig.
+P32,acl-1,1,63,5,T11-C2,T11,C2,script_opposition,4,1,1,1,Tja... what can I say. Nul samenhang...
+P32,acl-1,1,63,5,T12-C1,T12,C1,script_opposition,11,1,1,1,Onzinnig
+P32,acl-1,1,63,5,T13-E1,T13,E1,validated_gtvh,20,1,1,1,Onzinnig
+P32,acl-1,1,63,5,T14-E1,T14,E1,validated_gtvh,19,1,1,1,Geen woorden om te beschrijven hoe dramatisch
+P32,acl-1,1,63,5,T15-C2,T15,C2,script_opposition,3,1,1,1,.... er no clue
+P32,acl-1,1,63,5,T16-A1,T16,A1,baseline,1,1,1,1,Punchline raakt kant nog wal
+P32,acl-1,1,63,5,T17-C2,T17,C2,script_opposition,10,1,1,1,Onzinnig
+P32,acl-1,1,63,5,T18-A2,T18,A2,baseline,12,1,1,1,Bizar slecht. En ook weer onzinnig
+P32,acl-1,1,63,5,T19-C1,T19,C1,script_opposition,8,1,1,1,Onzinnige tekst
+P32,acl-1,1,63,5,T20-E2,T20,E2,validated_gtvh,15,1,1,1,"Het woord saai, maar ook deze tekst is onzinnig"
+P24,acl-1,1,58,5,T01-E2,T01,E2,validated_gtvh,4,1,1,3,
+P24,acl-1,1,58,5,T02-A2,T02,A2,baseline,11,1,1,3,
+P24,acl-1,1,58,5,T03-E2,T03,E2,validated_gtvh,5,1,1,3,
+P24,acl-1,1,58,5,T04-A1,T04,A1,baseline,8,1,1,1,
+P24,acl-1,1,58,5,T05-C1,T05,C1,script_opposition,1,1,1,2,
+P24,acl-1,1,58,5,T06-A1,T06,A1,baseline,20,1,1,5,
+P24,acl-1,1,58,5,T07-C2,T07,C2,script_opposition,2,1,1,2,
+P24,acl-1,1,58,5,T08-A1,T08,A1,baseline,18,1,1,5,
+P24,acl-1,1,58,5,T09-E1,T09,E1,validated_gtvh,12,1,1,3,
+P24,acl-1,1,58,5,T10-A2,T10,A2,baseline,14,1,1,1,
+P24,acl-1,1,58,5,T11-C2,T11,C2,script_opposition,17,1,1,4,
+P24,acl-1,1,58,5,T12-C1,T12,C1,script_opposition,13,1,1,4,
+P24,acl-1,1,58,5,T13-E1,T13,E1,validated_gtvh,16,1,1,1,
+P24,acl-1,1,58,5,T14-E1,T14,E1,validated_gtvh,10,1,2,4,
+P24,acl-1,1,58,5,T15-C2,T15,C2,script_opposition,19,1,1,4,
+P24,acl-1,1,58,5,T16-A1,T16,A1,baseline,9,1,1,3,
+P24,acl-1,1,58,5,T17-C2,T17,C2,script_opposition,7,1,1,3,
+P24,acl-1,1,58,5,T18-A2,T18,A2,baseline,3,1,1,2,
+P24,acl-1,1,58,5,T19-C1,T19,C1,script_opposition,6,1,1,3,
+P24,acl-1,1,58,5,T20-E2,T20,E2,validated_gtvh,15,1,1,4,
+P25,acl-1,1,72,3,T01-E1,T01,E1,validated_gtvh,5,3,3,3,T thema is wel duidelijk.  Maar de grap komt niet echt uit de verf.
+P25,acl-1,1,72,3,T02-A1,T02,A1,baseline,10,3,2,3,
+P25,acl-1,1,72,3,T03-E1,T03,E1,validated_gtvh,8,2,3,3,
+P25,acl-1,1,72,3,T04-E2,T04,E2,validated_gtvh,19,1,1,1,
+P25,acl-1,1,72,3,T05-A2,T05,A2,baseline,15,3,2,3,
+P25,acl-1,1,72,3,T06-E2,T06,E2,validated_gtvh,3,2,3,3,Ja hij werkt; de sensor zal veel berichten sturen.
+P25,acl-1,1,72,3,T07-C1,T07,C1,script_opposition,7,1,1,1,Niet te volgen
+P25,acl-1,1,72,3,T08-E2,T08,E2,validated_gtvh,11,1,2,1,
+P25,acl-1,1,72,3,T09-C2,T09,C2,script_opposition,17,1,1,1,
+P25,acl-1,1,72,3,T10-A1,T10,A1,baseline,6,1,1,1,Onduidelijk: is t thema bezuinigingen?  is hij ontslagen?
+P25,acl-1,1,72,3,T11-C1,T11,C1,script_opposition,12,2,2,2,
+P25,acl-1,1,72,3,T12-A2,T12,A2,baseline,9,3,3,4,
+P25,acl-1,1,72,3,T13-C2,T13,C2,script_opposition,4,1,1,1,Onduidelijk
+P25,acl-1,1,72,3,T14-C2,T14,C2,script_opposition,13,1,1,1,
+P25,acl-1,1,72,3,T15-C1,T15,C1,script_opposition,20,3,3,3,
+P25,acl-1,1,72,3,T16-E2,T16,E2,validated_gtvh,16,1,1,1,
+P25,acl-1,1,72,3,T17-C1,T17,C1,script_opposition,18,1,1,1,
+P25,acl-1,1,72,3,T18-A1,T18,A1,baseline,1,2,1,3,"De grap is absurdistisch (als die van Freek kunnen zijn) maar werkt niet. Reden t woord uitspraak is niet logisch.  je zou eerder ""woordgebruik"" verwachten."
+P25,acl-1,1,72,3,T19-A2,T19,A2,baseline,14,2,2,2,
+P25,acl-1,1,72,3,T20-E1,T20,E1,validated_gtvh,2,1,1,1,Onsamenhangend; de tekst is eerder een inleiding van een grap.
+P26,acl-1,1,24,2,T01-A2,T01,A2,baseline,15,3,4,3,
+P26,acl-1,1,24,2,T02-C2,T02,C2,script_opposition,1,2,3,1,
+P26,acl-1,1,24,2,T03-A2,T03,A2,baseline,10,3,4,2,
+P26,acl-1,1,24,2,T04-C1,T04,C1,script_opposition,16,2,2,3,
+P26,acl-1,1,24,2,T05-E1,T05,E1,validated_gtvh,18,2,4,3,
+P26,acl-1,1,24,2,T06-C1,T06,C1,script_opposition,2,3,3,2,
+P26,acl-1,1,24,2,T07-E2,T07,E2,validated_gtvh,11,1,2,1,
+P26,acl-1,1,24,2,T08-C1,T08,C1,script_opposition,17,1,1,3,
+P26,acl-1,1,24,2,T09-A1,T09,A1,baseline,6,2,1,2,
+P26,acl-1,1,24,2,T10-C2,T10,C2,script_opposition,19,4,3,3,
+P26,acl-1,1,24,2,T11-E2,T11,E2,validated_gtvh,14,2,3,3,
+P26,acl-1,1,24,2,T12-E1,T12,E1,validated_gtvh,5,3,4,2,
+P26,acl-1,1,24,2,T13-A1,T13,A1,baseline,3,3,3,3,
+P26,acl-1,1,24,2,T14-A1,T14,A1,baseline,13,2,3,2,
+P26,acl-1,1,24,2,T15-E2,T15,E2,validated_gtvh,7,2,2,1,
+P26,acl-1,1,24,2,T16-C1,T16,C1,script_opposition,12,1,1,2,
+P26,acl-1,1,24,2,T17-E2,T17,E2,validated_gtvh,4,3,4,2,
+P26,acl-1,1,24,2,T18-C2,T18,C2,script_opposition,20,2,2,2,
+P26,acl-1,1,24,2,T19-E1,T19,E1,validated_gtvh,9,1,3,2,
+P26,acl-1,1,24,2,T20-A2,T20,A2,baseline,8,3,4,2,
+P34,acl-1,1,63,4,T01-E1,T01,E1,validated_gtvh,19,1,1,1,
+P34,acl-1,1,63,4,T02-A1,T02,A1,baseline,14,1,1,1,
+P34,acl-1,1,63,4,T03-E1,T03,E1,validated_gtvh,1,1,2,1,Ik snap de clou niet. We zijn op een filmset?
+P34,acl-1,1,63,4,T04-E2,T04,E2,validated_gtvh,2,1,1,2,"De punchline is begrijpelijk, maar door het onsamenhangende verhaaltje vooraf zie je hem niet aankomen"
+P34,acl-1,1,63,4,T05-A2,T05,A2,baseline,16,1,1,1,
+P34,acl-1,1,63,4,T06-E2,T06,E2,validated_gtvh,20,1,2,4,"Het verhaaltje is duidelijk, maar de punchline begrijp ik niet, dus niet grappig"
+P34,acl-1,1,63,4,T07-C1,T07,C1,script_opposition,3,3,3,4,"Ik snap de bedoeling, maar de uitwerking rammelt nog, niet helemaal duidelijk."
+P34,acl-1,1,63,4,T08-E2,T08,E2,validated_gtvh,4,1,1,1,
+P34,acl-1,1,63,4,T09-C2,T09,C2,script_opposition,8,1,1,1,"Bij, ‘ toen piepte mijn pas al rood’, haakte ik af"
+P34,acl-1,1,63,4,T10-A1,T10,A1,baseline,17,2,1,2,
+P34,acl-1,1,63,4,T11-C1,T11,C1,script_opposition,18,1,1,1,
+P34,acl-1,1,63,4,T12-A2,T12,A2,baseline,11,2,2,2,De punchline snap ik niet
+P34,acl-1,1,63,4,T13-C2,T13,C2,script_opposition,9,2,1,2,"Ik snap wat de bedoeling is, maar de opbouw is te warrig om grappig te zijn."
+P34,acl-1,1,63,4,T14-C2,T14,C2,script_opposition,15,1,1,1,
+P34,acl-1,1,63,4,T15-C1,T15,C1,script_opposition,12,2,2,2,"Ik snap de bedoeling, maar de uitwerking is niet helemaal te volgen,  in bijvoorbeeld het tussenwerpsel: ‘alsof wij verantwoordelijk waren’ en het woordje ‘tot’."
+P34,acl-1,1,63,4,T16-E2,T16,E2,validated_gtvh,6,1,2,2,
+P34,acl-1,1,63,4,T17-C1,T17,C1,script_opposition,7,1,1,1,
+P34,acl-1,1,63,4,T18-A1,T18,A1,baseline,10,1,1,1,
+P34,acl-1,1,63,4,T19-A2,T19,A2,baseline,5,1,2,2,"Niet helemaal duidelijk wat misdaad met belastingen van doen heeft. Wordt er bedoeld dat  belastingen heffen een misdaad is, of dat de anonieme belastingaangifte misdadig gedrag opwekt? Kortom te ingewikkeld om grappig te zijn."
+P34,acl-1,1,63,4,T20-E1,T20,E1,validated_gtvh,13,1,1,1,
+P35,acl-1,1,55,2,T01-A1,T01,A1,baseline,17,4,4,3,
+P35,acl-1,1,55,2,T02-C1,T02,C1,script_opposition,13,1,1,2,
+P35,acl-1,1,55,2,T03-A1,T03,A1,baseline,20,3,3,1,
+P35,acl-1,1,55,2,T04-A2,T04,A2,baseline,14,4,4,4,
+P35,acl-1,1,55,2,T05-C2,T05,C2,script_opposition,3,1,1,1,
+P35,acl-1,1,55,2,T06-A2,T06,A2,baseline,8,2,2,2,
+P35,acl-1,1,55,2,T07-E1,T07,E1,validated_gtvh,7,1,1,2,
+P35,acl-1,1,55,2,T08-A2,T08,A2,baseline,5,4,5,3,
+P35,acl-1,1,55,2,T09-E2,T09,E2,validated_gtvh,1,2,2,2,
+P35,acl-1,1,55,2,T10-C1,T10,C1,script_opposition,19,1,1,1,
+P35,acl-1,1,55,2,T11-E1,T11,E1,validated_gtvh,4,2,2,1,
+P35,acl-1,1,55,2,T12-C2,T12,C2,script_opposition,6,2,3,3,
+P35,acl-1,1,55,2,T13-E2,T13,E2,validated_gtvh,10,1,1,1,
+P35,acl-1,1,55,2,T14-E2,T14,E2,validated_gtvh,11,1,3,3,
+P35,acl-1,1,55,2,T15-E1,T15,E1,validated_gtvh,18,3,3,2,
+P35,acl-1,1,55,2,T16-A2,T16,A2,baseline,9,3,2,1,
+P35,acl-1,1,55,2,T17-E1,T17,E1,validated_gtvh,2,1,1,1,
+P35,acl-1,1,55,2,T18-C1,T18,C1,script_opposition,15,1,1,1,
+P35,acl-1,1,55,2,T19-C2,T19,C2,script_opposition,12,1,1,1,
+P35,acl-1,1,55,2,T20-A1,T20,A1,baseline,16,4,4,4,
+P36,acl-1,1,37,3,T01-C1,T01,C1,script_opposition,19,3,3,5,de twist naar zijn oude vader . ja dat is freek
+P36,acl-1,1,37,3,T02-E1,T02,E1,validated_gtvh,7,1,2,1,Weer een grap die te onsamenhangend is voor freek
+P36,acl-1,1,37,3,T03-C1,T03,C1,script_opposition,10,2,3,3,de casual grap richting religieuze onderwerpen voelt niet 100% Freek maar de stijl wel
+P36,acl-1,1,37,3,T04-C2,T04,C2,script_opposition,8,2,1,1,"Freeks grappen zijn laagdrempelig, scherp en erg samenhangend. dat lucifer. doosje is te ver gezocht."
+P36,acl-1,1,37,3,T05-E2,T05,E2,validated_gtvh,9,3,3,3,de twist op het laatste voelt me erg als Freek. Dit zou ik best in zij. stem kunnen inbeelden
+P36,acl-1,1,37,3,T06-C2,T06,C2,script_opposition,3,3,2,4,vooral de laatste sluiting voelt voor mij als Freek.
+P36,acl-1,1,37,3,T07-A1,T07,A1,baseline,6,4,2,4,"kort, krachtig en lekker scherp door de bocht. ja"
+P36,acl-1,1,37,3,T08-C2,T08,C2,script_opposition,1,2,3,2,"normaal heb ik het idee dat Freek iets feller is in zijn uitspraken, maar de milde twist voelt wel een beetje freek"
+P36,acl-1,1,37,3,T09-A2,T09,A2,baseline,5,2,3,3,"Dit klinkt een beetje als Freek, maar ik verwacht dat hij eerder kei hard in het briefje zou zijn of niet getekend. de grap zijnde dat we of anoniem willen zijn en er om. heen draaien of dat zelfs bij de keuze van anonimiteit we er in slaan"
+P36,acl-1,1,37,3,T10-E1,T10,E1,validated_gtvh,20,1,1,1,niet grappig
+P36,acl-1,1,37,3,T11-A1,T11,A1,baseline,17,3,2,2,voelt niet super als Freek. Ik las social media en toen dacht ik... te meta voor freek
+P36,acl-1,1,37,3,T12-E2,T12,E2,validated_gtvh,11,3,2,4,de twist met de notulist is erg Freek.
+P36,acl-1,1,37,3,T13-A2,T13,A2,baseline,2,1,1,1,te weinig samenhang in de grap. de boormachine voelt niet als Freek... of ik mis de grap totaal
+P36,acl-1,1,37,3,T14-A2,T14,A2,baseline,16,3,3,3,De simplistisch grap dus laagdrempeligheid voelt als Freek. een tussen grpaje
+P36,acl-1,1,37,3,T15-A1,T15,A1,baseline,15,3,3,2,
+P36,acl-1,1,37,3,T16-C2,T16,C2,script_opposition,12,1,1,1,ik zie de grap hier niet
+P36,acl-1,1,37,3,T17-A1,T17,A1,baseline,4,1,2,1,Freek zou eerder een grap maken over overstappen dan over vakantie. de vakantie voelt te random en onsamenhangend voor freek
+P36,acl-1,1,37,3,T18-E1,T18,E1,validated_gtvh,14,2,2,1,
+P36,acl-1,1,37,3,T19-E2,T19,E2,validated_gtvh,18,3,3,1,beetje grappig maar geen Freek materiaal
+P36,acl-1,1,37,3,T20-C1,T20,C1,script_opposition,13,3,2,3,"Misschien iets te erg een doordenker (het was een jongen), maar ja zou Freek wel mogelijk zo'n grap kunnen verzinnen maar meer door zee"
+P37,acl-1,1,64,2,T01-A2,T01,A2,baseline,20,4,4,4,
+P37,acl-1,1,64,2,T02-C2,T02,C2,script_opposition,18,4,4,3,
+P37,acl-1,1,64,2,T03-A2,T03,A2,baseline,5,4,4,4,"Begrijpelijk, beetje cynisch zoals Freek, lekker overal tegenaan schoppen. En leuk over die akoestiek en twijfels en slechte verbinding Gid"
+P37,acl-1,1,64,2,T04-C1,T04,C1,script_opposition,10,2,2,2,Leuke ingrediënten maar het totaal klopt niet
+P37,acl-1,1,64,2,T05-E1,T05,E1,validated_gtvh,4,1,1,1,
+P37,acl-1,1,64,2,T06-C1,T06,C1,script_opposition,6,3,2,2,"Begin was grappig, laatste zin onlogisch"
+P37,acl-1,1,64,2,T07-E2,T07,E2,validated_gtvh,1,2,1,1,Je moet er erg over nadenken en het onderlinge verband zoeken
+P37,acl-1,1,64,2,T08-C1,T08,C1,script_opposition,11,2,1,1,"Ook hier grappige ingrediënten maar ze passen niet bij elkaar, laatste stukje is onduidelijk"
+P37,acl-1,1,64,2,T09-A1,T09,A1,baseline,2,3,3,4,Ook hier moet je zelf te erg nadenken over het verband tussen de zinnetjes van de grap
+P37,acl-1,1,64,2,T10-C2,T10,C2,script_opposition,3,4,3,2,"Sneller te begrijpen, je hoeft niet zo op zoek naar de onderlinge samenhang van de zinnetjes"
+P37,acl-1,1,64,2,T11-E2,T11,E2,validated_gtvh,8,4,4,3,Heel leuke woordspelingen
+P37,acl-1,1,64,2,T12-E1,T12,E1,validated_gtvh,19,4,4,3,
+P37,acl-1,1,64,2,T13-A1,T13,A1,baseline,14,4,4,5,Begrijpelijk en redelijk samenhangend
+P37,acl-1,1,64,2,T14-A1,T14,A1,baseline,16,4,4,3,"Begrijpelijk, origineel, bijdetijd"
+P37,acl-1,1,64,2,T15-E2,T15,E2,validated_gtvh,12,4,4,2,Begrijpelijke onderdelen met onderlinge samenhang
+P37,acl-1,1,64,2,T16-C1,T16,C1,script_opposition,9,2,2,1,"Raakt aan een grap, maar zit er toch naast"
+P37,acl-1,1,64,2,T17-E2,T17,E2,validated_gtvh,15,2,4,4,Je moet heel goed nadenken over de samenhang en dan kun je er wel een soort van grap in zien
+P37,acl-1,1,64,2,T18-C2,T18,C2,script_opposition,17,4,4,3,"Begrijpelijk, Grappig, onderling samenhangend, bijdetijd"
+P37,acl-1,1,64,2,T19-E1,T19,E1,validated_gtvh,7,2,3,1,"Begin klopt niet helemaal, laatste zin is grappig omdat je het niet verwacht"
+P37,acl-1,1,64,2,T20-A2,T20,A2,baseline,13,4,4,3,
+P38,acl-1,1,44,2,T01-E2,T01,E2,validated_gtvh,17,5,4,4,
+P38,acl-1,1,44,2,T02-A2,T02,A2,baseline,3,4,4,4,
+P38,acl-1,1,44,2,T03-E2,T03,E2,validated_gtvh,19,5,5,2,
+P38,acl-1,1,44,2,T04-A1,T04,A1,baseline,15,5,5,5,
+P38,acl-1,1,44,2,T05-C1,T05,C1,script_opposition,4,1,1,1,
+P38,acl-1,1,44,2,T06-A1,T06,A1,baseline,11,1,4,1,
+P38,acl-1,1,44,2,T07-C2,T07,C2,script_opposition,8,5,4,1,
+P38,acl-1,1,44,2,T08-A1,T08,A1,baseline,2,5,5,4,
+P38,acl-1,1,44,2,T09-E1,T09,E1,validated_gtvh,9,1,1,4,
+P38,acl-1,1,44,2,T10-A2,T10,A2,baseline,7,4,5,3,
+P38,acl-1,1,44,2,T11-C2,T11,C2,script_opposition,16,5,5,5,
+P38,acl-1,1,44,2,T12-C1,T12,C1,script_opposition,1,2,2,1,
+P38,acl-1,1,44,2,T13-E1,T13,E1,validated_gtvh,10,5,5,5,
+P38,acl-1,1,44,2,T14-E1,T14,E1,validated_gtvh,13,2,1,1,
+P38,acl-1,1,44,2,T15-C2,T15,C2,script_opposition,20,5,5,2,
+P38,acl-1,1,44,2,T16-A1,T16,A1,baseline,18,5,5,5,
+P38,acl-1,1,44,2,T17-C2,T17,C2,script_opposition,14,1,1,1,
+P38,acl-1,1,44,2,T18-A2,T18,A2,baseline,12,1,1,1,
+P38,acl-1,1,44,2,T19-C1,T19,C1,script_opposition,6,1,1,1,
+P38,acl-1,1,44,2,T20-E2,T20,E2,validated_gtvh,5,1,1,1,
+P27,acl-1,1,68,3,T01-A2,T01,A2,baseline,17,3,3,3,
+P27,acl-1,1,68,3,T02-C2,T02,C2,script_opposition,1,1,4,1,
+P27,acl-1,1,68,3,T03-A2,T03,A2,baseline,9,3,3,3,
+P27,acl-1,1,68,3,T04-C1,T04,C1,script_opposition,13,2,2,1,
+P27,acl-1,1,68,3,T05-E1,T05,E1,validated_gtvh,6,2,1,1,
+P27,acl-1,1,68,3,T06-C1,T06,C1,script_opposition,10,1,2,1,
+P27,acl-1,1,68,3,T07-E2,T07,E2,validated_gtvh,4,2,2,3,
+P27,acl-1,1,68,3,T08-C1,T08,C1,script_opposition,3,1,1,1,Begrijp hem niet
+P27,acl-1,1,68,3,T09-A1,T09,A1,baseline,14,3,2,2,
+P27,acl-1,1,68,3,T10-C2,T10,C2,script_opposition,2,2,2,5,
+P27,acl-1,1,68,3,T11-E2,T11,E2,validated_gtvh,19,2,1,1,
+P27,acl-1,1,68,3,T12-E1,T12,E1,validated_gtvh,15,2,2,1,
+P27,acl-1,1,68,3,T13-A1,T13,A1,baseline,7,1,2,2,
+P27,acl-1,1,68,3,T14-A1,T14,A1,baseline,16,3,3,3,
+P27,acl-1,1,68,3,T15-E2,T15,E2,validated_gtvh,5,2,4,1,
+P27,acl-1,1,68,3,T16-C1,T16,C1,script_opposition,12,3,2,2,
+P27,acl-1,1,68,3,T17-E2,T17,E2,validated_gtvh,11,2,1,2,
+P27,acl-1,1,68,3,T18-C2,T18,C2,script_opposition,20,5,1,1,
+P27,acl-1,1,68,3,T19-E1,T19,E1,validated_gtvh,8,1,1,1,
+P27,acl-1,1,68,3,T20-A2,T20,A2,baseline,18,2,2,2,
+P28,acl-1,1,63,4,T01-A2,T01,A2,baseline,7,4,5,4,
+P28,acl-1,1,63,4,T02-C2,T02,C2,script_opposition,12,3,3,4,
+P28,acl-1,1,63,4,T03-A2,T03,A2,baseline,4,4,4,5,
+P28,acl-1,1,63,4,T04-C1,T04,C1,script_opposition,13,3,4,5,
+P28,acl-1,1,63,4,T05-E1,T05,E1,validated_gtvh,10,4,5,5,
+P28,acl-1,1,63,4,T06-C1,T06,C1,script_opposition,6,2,2,4,context te ver van het bed
+P28,acl-1,1,63,4,T07-E2,T07,E2,validated_gtvh,8,3,3,4,uit het leven van een patientenportaal gegrepen
+P28,acl-1,1,63,4,T08-C1,T08,C1,script_opposition,17,1,4,1,
+P28,acl-1,1,63,4,T09-A1,T09,A1,baseline,11,5,4,4,
+P28,acl-1,1,63,4,T10-C2,T10,C2,script_opposition,18,2,4,3,
+P28,acl-1,1,63,4,T11-E2,T11,E2,validated_gtvh,16,2,4,4,
+P28,acl-1,1,63,4,T12-E1,T12,E1,validated_gtvh,3,1,2,2,
+P28,acl-1,1,63,4,T13-A1,T13,A1,baseline,19,2,4,2,
+P28,acl-1,1,63,4,T14-A1,T14,A1,baseline,14,4,4,3,
+P28,acl-1,1,63,4,T15-E2,T15,E2,validated_gtvh,20,5,4,5,
+P28,acl-1,1,63,4,T16-C1,T16,C1,script_opposition,1,3,2,3,
+P28,acl-1,1,63,4,T17-E2,T17,E2,validated_gtvh,15,4,4,3,
+P28,acl-1,1,63,4,T18-C2,T18,C2,script_opposition,2,5,4,4,
+P28,acl-1,1,63,4,T19-E1,T19,E1,validated_gtvh,5,3,4,2,
+P28,acl-1,1,63,4,T20-A2,T20,A2,baseline,9,3,3,4,
+P39,acl-1,1,73,4,T01-C2,T01,C2,script_opposition,3,1,2,1,
+P39,acl-1,1,73,4,T02-E2,T02,E2,validated_gtvh,19,2,4,2,
+P39,acl-1,1,73,4,T03-C2,T03,C2,script_opposition,9,1,2,2,
+P39,acl-1,1,73,4,T04-E1,T04,E1,validated_gtvh,2,1,5,1,
+P39,acl-1,1,73,4,T05-A1,T05,A1,baseline,13,2,2,1,
+P39,acl-1,1,73,4,T06-E1,T06,E1,validated_gtvh,8,1,2,1,
+P39,acl-1,1,73,4,T07-A2,T07,A2,baseline,15,3,3,3,
+P39,acl-1,1,73,4,T08-E1,T08,E1,validated_gtvh,16,1,1,1,
+P39,acl-1,1,73,4,T09-C1,T09,C1,script_opposition,14,1,1,1,
+P39,acl-1,1,73,4,T10-E2,T10,E2,validated_gtvh,17,1,2,2,
+P39,acl-1,1,73,4,T11-A2,T11,A2,baseline,5,2,2,2,
+P39,acl-1,1,73,4,T12-A1,T12,A1,baseline,20,4,4,4,
+P39,acl-1,1,73,4,T13-C1,T13,C1,script_opposition,18,1,1,1,
+P39,acl-1,1,73,4,T14-C1,T14,C1,script_opposition,4,2,2,2,
+P39,acl-1,1,73,4,T15-A2,T15,A2,baseline,11,2,3,3,
+P39,acl-1,1,73,4,T16-E1,T16,E1,validated_gtvh,6,1,1,1,
+P39,acl-1,1,73,4,T17-A2,T17,A2,baseline,1,2,5,3,
+P39,acl-1,1,73,4,T18-E2,T18,E2,validated_gtvh,7,1,1,1,
+P39,acl-1,1,73,4,T19-A1,T19,A1,baseline,12,1,2,2,
+P39,acl-1,1,73,4,T20-C2,T20,C2,script_opposition,10,1,1,1,
+P40,acl-1,1,62,3,T01-C1,T01,C1,script_opposition,2,2,2,3,
+P40,acl-1,1,62,3,T02-E1,T02,E1,validated_gtvh,3,1,1,1,
+P40,acl-1,1,62,3,T03-C1,T03,C1,script_opposition,19,1,1,1,
+P40,acl-1,1,62,3,T04-C2,T04,C2,script_opposition,9,1,1,1,
+P40,acl-1,1,62,3,T05-E2,T05,E2,validated_gtvh,15,1,1,1,
+P40,acl-1,1,62,3,T06-C2,T06,C2,script_opposition,20,1,1,1,
+P40,acl-1,1,62,3,T07-A1,T07,A1,baseline,7,2,2,2,
+P40,acl-1,1,62,3,T08-C2,T08,C2,script_opposition,4,1,1,1,
+P40,acl-1,1,62,3,T09-A2,T09,A2,baseline,1,1,1,1,
+P40,acl-1,1,62,3,T10-E1,T10,E1,validated_gtvh,14,1,1,1,
+P40,acl-1,1,62,3,T11-A1,T11,A1,baseline,17,1,1,1,
+P40,acl-1,1,62,3,T12-E2,T12,E2,validated_gtvh,8,1,1,1,
+P40,acl-1,1,62,3,T13-A2,T13,A2,baseline,6,1,1,1,
+P40,acl-1,1,62,3,T14-A2,T14,A2,baseline,10,1,1,1,
+P40,acl-1,1,62,3,T15-A1,T15,A1,baseline,12,2,2,2,
+P40,acl-1,1,62,3,T16-C2,T16,C2,script_opposition,5,1,1,1,
+P40,acl-1,1,62,3,T17-A1,T17,A1,baseline,13,1,1,1,
+P40,acl-1,1,62,3,T18-E1,T18,E1,validated_gtvh,18,1,1,1,
+P40,acl-1,1,62,3,T19-E2,T19,E2,validated_gtvh,16,1,1,1,
+P40,acl-1,1,62,3,T20-C1,T20,C1,script_opposition,11,1,1,1,
+P41,acl-1,1,70,3,T01-C1,T01,C1,script_opposition,8,2,2,3,
+P41,acl-1,1,70,3,T02-E1,T02,E1,validated_gtvh,17,1,1,2,
+P41,acl-1,1,70,3,T03-C1,T03,C1,script_opposition,1,1,1,1,geen logisch verband
+P41,acl-1,1,70,3,T04-C2,T04,C2,script_opposition,16,1,1,2,
+P41,acl-1,1,70,3,T05-E2,T05,E2,validated_gtvh,15,2,2,3,
+P41,acl-1,1,70,3,T06-C2,T06,C2,script_opposition,18,2,2,3,
+P41,acl-1,1,70,3,T07-A1,T07,A1,baseline,14,1,1,2,
+P41,acl-1,1,70,3,T08-C2,T08,C2,script_opposition,12,3,4,4,
+P41,acl-1,1,70,3,T09-A2,T09,A2,baseline,2,2,3,2,het directe van de Nederlander wordt '\n' onderuitgehaald door ' waarschijnlijk nr 34 te melden op het briefje aan de buren
+P41,acl-1,1,70,3,T10-E1,T10,E1,validated_gtvh,10,3,3,4,
+P41,acl-1,1,70,3,T11-A1,T11,A1,baseline,3,2,3,3,
+P41,acl-1,1,70,3,T12-E2,T12,E2,validated_gtvh,5,2,2,3,
+P41,acl-1,1,70,3,T13-A2,T13,A2,baseline,11,3,3,4,
+P41,acl-1,1,70,3,T14-A2,T14,A2,baseline,9,4,4,4,
+P41,acl-1,1,70,3,T15-A1,T15,A1,baseline,6,2,2,2,
+P41,acl-1,1,70,3,T16-C2,T16,C2,script_opposition,4,1,4,1,snap er niets van
+P41,acl-1,1,70,3,T17-A1,T17,A1,baseline,13,1,1,1,
+P41,acl-1,1,70,3,T18-E1,T18,E1,validated_gtvh,20,1,1,1,
+P41,acl-1,1,70,3,T19-E2,T19,E2,validated_gtvh,7,1,1,1,
+P41,acl-1,1,70,3,T20-C1,T20,C1,script_opposition,19,1,1,1,
+P42,acl-1,1,69,3,T01-C1,T01,C1,script_opposition,10,1,1,1,
+P42,acl-1,1,69,3,T02-E1,T02,E1,validated_gtvh,2,1,2,1,
+P42,acl-1,1,69,3,T03-C1,T03,C1,script_opposition,16,1,1,1,
+P42,acl-1,1,69,3,T04-C2,T04,C2,script_opposition,4,1,1,2,
+P42,acl-1,1,69,3,T05-E2,T05,E2,validated_gtvh,17,1,1,1,
+P42,acl-1,1,69,3,T06-C2,T06,C2,script_opposition,7,1,2,1,
+P42,acl-1,1,69,3,T07-A1,T07,A1,baseline,3,1,1,1,
+P42,acl-1,1,69,3,T08-C2,T08,C2,script_opposition,1,1,1,1,
+P42,acl-1,1,69,3,T09-A2,T09,A2,baseline,5,1,1,2,
+P42,acl-1,1,69,3,T10-E1,T10,E1,validated_gtvh,6,1,1,1,
+P42,acl-1,1,69,3,T11-A1,T11,A1,baseline,11,1,1,1,
+P42,acl-1,1,69,3,T12-E2,T12,E2,validated_gtvh,9,1,1,1,
+P42,acl-1,1,69,3,T13-A2,T13,A2,baseline,19,1,1,1,
+P42,acl-1,1,69,3,T14-A2,T14,A2,baseline,12,1,2,1,
+P42,acl-1,1,69,3,T15-A1,T15,A1,baseline,15,1,1,1,
+P42,acl-1,1,69,3,T16-C2,T16,C2,script_opposition,14,1,1,1,
+P42,acl-1,1,69,3,T17-A1,T17,A1,baseline,8,2,3,2,
+P42,acl-1,1,69,3,T18-E1,T18,E1,validated_gtvh,13,1,1,1,
+P42,acl-1,1,69,3,T19-E2,T19,E2,validated_gtvh,18,1,1,1,
+P42,acl-1,1,69,3,T20-C1,T20,C1,script_opposition,20,1,1,1,
