@@ -196,6 +196,17 @@ def configured_secrets() -> dict[str, object]:
         return {}
 
 
+@st.cache_resource(show_spinner=False)
+def cached_progress_storage(
+    storage_environment_json: str,
+    _secrets: dict[str, object],
+):
+    return create_progress_storage(
+        environ=json.loads(storage_environment_json),
+        secrets=_secrets,
+    )
+
+
 storage_environment = dict(os.environ)
 if (
     "FREEK_STUDY_PROGRESS_PATH" not in storage_environment
@@ -205,9 +216,10 @@ if (
         Path(__file__).resolve().parent / "data" / "runtime" / "acl_progress.csv"
     )
 try:
-    progress_storage = create_progress_storage(
-        environ=storage_environment,
-        secrets=configured_secrets(),
+    current_secrets = configured_secrets()
+    progress_storage = cached_progress_storage(
+        json.dumps(storage_environment, sort_keys=True),
+        current_secrets,
     )
 except (ProgressStorageError, StorageConfigurationError) as error:
     st.error(f"Opslagconfiguratie mislukt: {error}")
@@ -810,7 +822,6 @@ def render_intro(
             "eventuele verzendlijst met contactgegevens wordt apart van de "
             "onderzoeksantwoorden bewaard en niet voor de analyse gebruikt."
         )
-        st.caption("Voor deelname via het persoonlijke netwerk is geen vergoeding.")
     else:
         st.write(
             "We vragen geen naam of contactgegevens. Antwoorden worden gekoppeld aan "

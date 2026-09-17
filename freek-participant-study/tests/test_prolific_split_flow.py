@@ -58,7 +58,7 @@ class ProlificSplitFlowTest(unittest.TestCase):
                 network.query_params["page"] = "intro"
                 network.run(timeout=20)
                 self.assertFalse(network.exception)
-                self.assertIn(
+                self.assertNotIn(
                     "Voor deelname via het persoonlijke netwerk is geen vergoeding.",
                     [caption.value for caption in network.caption],
                 )

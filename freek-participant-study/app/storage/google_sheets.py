@@ -19,6 +19,7 @@ from app.storage.csv_storage import (
 
 T = TypeVar("T")
 TRANSIENT_STATUS_CODES = {408, 429, 500, 502, 503, 504}
+INITIALIZATION_ATTEMPTS = 4
 
 
 class Worksheet(Protocol):
@@ -76,16 +77,22 @@ class GoogleSheetsProgressStorage:
         worksheet_name: str,
         credentials: Mapping[str, object],
     ) -> GoogleSheetsProgressStorage:
-        try:
-            import gspread
+        import gspread
 
-            client = gspread.service_account_from_dict(dict(credentials))
-            spreadsheet = client.open_by_url(spreadsheet_url)
-            worksheet = spreadsheet.worksheet(worksheet_name)
-        except Exception as error:
-            raise ProgressStorageError(
-                "Google Sheets storage could not be initialized."
-            ) from error
+        for attempt in range(1, INITIALIZATION_ATTEMPTS + 1):
+            try:
+                client = gspread.service_account_from_dict(dict(credentials))
+                spreadsheet = client.open_by_url(spreadsheet_url)
+                worksheet = spreadsheet.worksheet(worksheet_name)
+                break
+            except Exception as error:
+                if not _is_transient(error) or attempt == INITIALIZATION_ATTEMPTS:
+                    raise ProgressStorageError(
+                        "Google Sheets storage could not be initialized."
+                    ) from error
+                time.sleep(0.25 * (2 ** (attempt - 1)))
+        else:
+            raise AssertionError("Initialization loop exhausted without returning.")
         return cls(worksheet)
 
     def _retry(self, operation: Callable[[], T]) -> T:
@@ -102,7 +109,7 @@ class GoogleSheetsProgressStorage:
 
     def _read_rows(self) -> list[list[str]]:
         values = self._retry(self.worksheet.get_all_values)
-        if not values:
+        if not values or not any(values[0]):
             self._retry(
                 lambda: self.worksheet.update(
                     [list(FIELDNAMES)],
@@ -111,6 +118,15 @@ class GoogleSheetsProgressStorage:
                 )
             )
             return []
+        # Older spreadsheet exports could leave a pandas-style index column
+        # before the shared contract. Keep reading those rows so a harmless
+        # legacy layout cannot take the whole app offline.
+        if (
+            len(values[0]) == len(FIELDNAMES) + 1
+            and not values[0][0]
+            and tuple(values[0][1:]) == FIELDNAMES
+        ):
+            values = [row[1:] for row in values]
         if tuple(values[0]) != FIELDNAMES:
             raise ProgressStorageError(
                 "Google Sheets progress worksheet has an unexpected column contract."

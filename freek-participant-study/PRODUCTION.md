@@ -70,6 +70,22 @@ Configure `storage_backend = "google_sheets"`, the sheet URL, worksheet,
 service-account credentials, admin password, and `sessions_csv` through
 Streamlit secrets. Never reuse the staging sheet.
 
+During the Supabase migration, keep Google Sheets primary and enable shadow
+writes only after adding the server-side database connection string:
+
+```toml
+storage_backend = "google_sheets"
+
+[supabase_shadow]
+enabled = true
+connection_string = "postgresql://..."
+```
+
+The connection string is a private Streamlit secret. Never put it in source
+control or expose it to the participant browser. In shadow mode, reads and
+participant-facing behavior still come from Google Sheets; Supabase receives
+mirrored writes for comparison. Set `enabled = false` to roll back instantly.
+
 ## Release checklist
 
 1. Freeze `data/acl_jokes.csv`, the private registry, and study version.
