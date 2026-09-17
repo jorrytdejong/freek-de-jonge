@@ -72,7 +72,7 @@ The corpus comprises five timestamped transcript records derived from six Freek 
 
 \subsection{Laughter-Linked Candidate Units}\label{laughter-linked-candidate-units}
 
-Audience laughter was used to retrieve intervals, and overlapping transcript material was operationalized as a candidate joke unit. A ResNet-based detector and AST-based laughter filter identified 69 retained intervals. Each retained clip was manually checked for audible audience laughter: 67 clips contained laughter, while 2 were false positives, yielding a retained-set precision of 97.1\% (67/69). This validation supports the precision of the selected set; it does not estimate recall or validate the temporal boundaries of detected laughter. Detector checkpoints, thresholds, and smoothing are summarized in Appendix C; full configurations, timestamp-alignment details, and intermediate artifacts are provided in the repository materials. For each interval, the corpus stores the laughter-aligned candidate unit, local preceding context since the prior interval, and extended preceding context. Annotation targets the candidate unit; context is used only to reconstruct a plausible setup and initial interpretation. The records should therefore be understood as automatically retrieved text-accessible candidate moments, not verified complete jokes.
+Audience laughter was used to retrieve intervals, and overlapping transcript material was operationalized as a candidate joke unit. The ResNet-based detector first generated a substantially larger pool of candidate excerpts. The AST-based laughter filter then reduced this pool to 69 retained intervals. Each retained clip was manually checked for audible audience laughter: 67 clips contained laughter, while 2 were false positives, corresponding to a final retained-set precision of 97.1\% (67/69). This figure evaluates only the intervals that survived both filters; it does not estimate the precision or recall of the initial ResNet detector, complete-pipeline recall, or temporal-boundary accuracy. Detector checkpoints, thresholds, and smoothing are summarized in Appendix C; full configurations, timestamp-alignment details, and intermediate artifacts are provided in the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository. For each interval, the corpus stores the laughter-aligned candidate unit, local preceding context since the prior interval, and extended preceding context. Annotation targets the candidate unit; context is used only to reconstruct a plausible setup and initial interpretation. The records should therefore be understood as automatically retrieved text-accessible candidate moments, not verified complete jokes.
 
 \subsection{Text-Only Boundary}\label{text-only-boundary}
 
@@ -82,13 +82,13 @@ Laughter is an acoustic retrieval signal, while the analysis concerns transcript
 
 \subsection{Overview}\label{overview}
 
-The study separates corpus analysis, controlled generation, and evaluation. First, time-aligned transcripts and recordings are used to retrieve laughter-linked joke units. Each retained interval is operationalized as a joke unit and analysed in terms of an initial script, a competing script, and a possible switch that supports humorous reinterpretation. This is an automatic retrieval rule rather than manual joke-boundary validation \citep{raskin1985,amin2020survey}.
+The study separates corpus analysis, controlled generation, and evaluation. First, time-aligned transcripts and recordings are used to retrieve laughter-linked candidate units. We analyse each detector-defined interval in terms of an initial script, a competing script, and a possible switch that supports humorous reinterpretation. We did not manually determine the precise boundaries of each joke, and therefore do not claim that every retained interval constitutes a complete, self-contained joke.
 
 \input{overview_figure.tex} For each common topic, the experiment compares three generation conditions in two guidance modes, yielding six conditions. \emph{Direct generation} receives the topic and general output constraints. \emph{Script-opposition generation} additionally constructs and validates an ordinary interpretation, a competing interpretation, and a late switch between them. \emph{GTVH-guided generation} keeps that selected script opposition fixed and adds Logical Mechanism, Situation, Target where applicable, Narrative Strategy, and Language before candidates are written and assessed \citep{attardo1991}. Within every condition, one variant uses neutral guidance and one uses high-level style guidance derived from recurring corpus properties. This design tests semantic planning and stylistic context separately while holding the topic, output constraints, and rating procedure constant. The following sections first describe the LLM-assisted analysis of laughter-linked candidate units through Script Opposition, then explain how related representations were used to guide new joke generation, and finally report the associated computational measurements.
 
 \subsection{Script Opposition Analysis}\label{script-opposition-analysis}
 
-Structured representations were derived from the corpus through an LLM-assisted procedure in which each automatically retrieved laughter-linked candidate unit was analysed as a possible relation between two readings of the same passage, following the Script-Based Semantic Theory of Humor \citep{raskin1985}. \emph{Script A} records the ordinary, setup-compatible interpretation; \emph{Script B} records a competing interpretation made available by later wording, implication, or a social move. The procedure also identifies the opposition between the readings and the cue that permits retrospective reinterpretation. It does not assume that every audience response marks a self-contained verbal joke. Annotation was grounded in the laughter-aligned candidate unit. Local preceding context and extended preceding context were supplied only to reconstruct a plausible setup and initial interpretation; claims about the opposition and switch cue were based on the candidate unit itself. Applying this procedure to the reported dataset yielded 69 automatically retrieved candidate units across five performance records. Of these, 66 received an identifiable text-accessible Script Opposition; the remaining three were retained as no-clear-opposition cases rather than forced into an interpretation. For each unit, the procedure records Script A, Script B, the opposition axis, a shared textual anchor, a switch trigger, and a retrospective reinterpretation. Appendix A provides the complete annotation schema, while Appendix B summarizes the prompt and condition design; the full prompt texts are provided in the repository materials. These records are LLM-assisted analytical hypotheses rather than manually validated gold annotations. For each new topic, the generation pipeline constructs a new Script A and Script B plan. In the style-guided conditions, selected corpus excerpts and their Script-Opposition analyses are also provided as structural and stylistic context; the model is instructed not to copy their wording, names, or situations.
+Structured representations were derived from the corpus through an LLM-assisted procedure in which each automatically retrieved laughter-linked candidate unit was analysed as a possible relation between two readings of the same passage, following the Script-Based Semantic Theory of Humor \citep{raskin1985}. \emph{Script A} records the ordinary, setup-compatible interpretation; \emph{Script B} records a competing interpretation made available by later wording, implication, or a social move. The procedure also identifies the opposition between the readings and the cue that permits retrospective reinterpretation. It does not assume that every audience response marks a self-contained verbal joke. Annotation was grounded in the laughter-aligned candidate unit. Local preceding context and extended preceding context were supplied only to reconstruct a plausible setup and initial interpretation; claims about the opposition and switch cue were based on the candidate unit itself. Applying this procedure to the reported dataset yielded 69 automatically retrieved candidate units across five performance records. Of these, 66 received an identifiable text-accessible Script Opposition; the remaining three were retained as no-clear-opposition cases rather than forced into an interpretation. For each unit, the procedure records Script A, Script B, the opposition axis, a shared textual anchor, a switch trigger, and a retrospective reinterpretation. Appendix A provides the complete annotation schema, while Appendix B summarizes the prompt and condition design; the full prompt texts are provided in the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository. These records are LLM-assisted analytical hypotheses rather than manually validated gold annotations. For each new topic, the generation pipeline constructs a new Script A and Script B plan. In the style-guided conditions, selected corpus excerpts and their Script-Opposition analyses are also provided as structural and stylistic context; the model is instructed not to copy their wording, names, or situations.
 
 \subsection{Theory-Guided Joke Generation}\label{theory-guided-joke-generation}
 
@@ -96,7 +96,7 @@ The generation stage reverses the direction of the corpus analysis: rather than 
 
 \subsection{Computational Budget}\label{computational-budget}
 
-The 120-item bank was generated with \texttt{gpt-5.6-terra}. Appendix B summarizes the model and condition-level generation procedures; the repository materials contain the full generation records. Corpus analysis and human evaluation are excluded from those records.
+The 120-item bank was generated with \texttt{gpt-5.6-terra}. Appendix B summarizes the model and condition-level generation procedures; the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository contains the full generation records. The 69-unit corpus-analysis annotations and anonymized participant-level human-evaluation ratings are provided as separate reproducibility datasets in the repository.
 
 \section{Experimental Setup}\label{experimental-setup}
 
@@ -104,7 +104,10 @@ The 120-item bank was generated with \texttt{gpt-5.6-terra}. Appendix B summariz
 
 The experiment manipulates two factors: \emph{generation condition} and \emph{style guidance}. The generation-condition factor compares Direct Generation, Script-Opposition-Guided Generation, and GTVH-Guided Generation. The style-guidance factor compares neutral instructions with high-level, corpus-derived guidance describing text-accessible tendencies in the target cabaret material. Together, these factors yield six experimental conditions. All conditions receive the same 20 topics, use the same base model (\texttt{gpt-5.6-terra}), and follow the same surface constraints: each item must be a short Dutch joke of 20--45 words and no more than three sentences. The intended differences between conditions are therefore the amount of explicit semantic planning and the presence or absence of the style-guidance block, rather than topic, model, or target length.
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YYY}
+\begin{table*}[t]
+\centering
+\caption{Generation conditions and the information provided to each variant.}\label{tab:generation-conditions}
+\scriptsize\begin{tabularx}{\textwidth}{YYY}
 \toprule\noalign{}
 Generation condition & Neutral variant & Style-guided variant \\
 \midrule\noalign{}
@@ -119,17 +122,20 @@ GTVH-Guided Generation & Retains the selected Script Opposition and additionally
 
 The three conditions differ not only in the information available at generation time, but also in the sequence of operations performed before a final joke is retained. Direct Generation moves directly from a common topic and shared output constraints to one generated joke. It contains no explicit representation of competing interpretations or of a punchline mechanism. Script-Opposition-Guided Generation first constructs an audience-compatible expectation (Script A), then identifies a competing interpretation (Script B), a shared basis that keeps both readings plausible, and a late switch trigger. It generates three candidate jokes from this semantic plan and uses a plan-aware check and pairwise selection step to retain the strongest candidate. GTVH-Guided Generation begins with the same Script-Opposition procedure. After a Script A/Script B relation has been selected, it extends the plan with Logical Mechanism, Situation, Target where applicable, Narrative Strategy, and Language. It generates three candidate jokes from this extended representation and checks them against both the Script Opposition and the additional GTVH resources before pairwise selection. The GTVH condition therefore adds planning detail to the same central semantic relation; it is not a separate theory with no Script Opposition.
 
-\input{pipeline_figure.tex} For each common topic, the study contains one accepted item in every condition, yielding a fixed bank of 120 jokes. The principal comparisons are Direct Generation versus Script-Opposition-Guided Generation, which tests the full effect of explicit Script-Opposition planning; Script-Opposition-Guided Generation versus GTVH-Guided Generation, which tests the additional contribution of GTVH planning; and each neutral/style-guided pair, which tests the effect of corpus-derived style guidance. Because these are end-to-end pipelines, the comparisons estimate the effects of complete generation procedures rather than one isolated prompt field. Section 5.3 describes the generation procedures, Appendix B provides a compact condition summary, and the repository materials contain the full prompts, repair rules, validation criteria, and selection records.
+\input{pipeline_figure.tex} For each common topic, the study contains one accepted item in every condition, yielding a fixed bank of 120 jokes. The principal comparisons are Direct Generation versus Script-Opposition-Guided Generation, which tests the full effect of explicit Script-Opposition planning; Script-Opposition-Guided Generation versus GTVH-Guided Generation, which tests the additional contribution of GTVH planning; and each neutral/style-guided pair, which tests the effect of corpus-derived style guidance. Because these are end-to-end pipelines, the comparisons estimate the effects of complete generation procedures rather than one isolated prompt field. Section 5.3 describes the generation procedures, Appendix B provides a compact condition summary, and the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository contains the full prompts, repair rules, validation criteria, and selection records.
 
 \subsection{Topic Set and Input Control}\label{topic-set-and-input-control}
 
-To control for topic effects, all generation conditions were applied to the same locked set of 20 Dutch topic labels. The topics were selected from recurring thematic material across the five Freek de Jonge transcript records and span personal, social, cultural, and political domains, including family and upbringing, religion, Dutch politics and administration, ageing, health care, love and sexuality, work and money, technology, climate, migration, language, law, and social inequality. Each topic was used once in every experimental condition, yielding 20 × 3 × 2 = 120 accepted generated items. Topic identity was therefore held constant across the comparison: differences in ratings cannot be explained by one generation condition receiving a different set of subjects. The topic set, model, prompts, style-guidance block, and topic-to-item mapping were locked before participant recruitment. The model received only a short topic label, such as ``Religion, church and belief.'' No pre-written situation, joke setup, or transcript example for that specific topic was provided. In Direct Generation, it produced a joke directly from the label. In the planning conditions, the same label was used as the starting point for the planning steps. The complete topic set is provided in the repository materials; Appendix B summarizes how topic input was held constant across conditions.
+To control for topic effects, all generation conditions were applied to the same locked set of 20 Dutch topic labels. The topics were selected from recurring thematic material across the five Freek de Jonge transcript records and span personal, social, cultural, and political domains, including family and upbringing, religion, Dutch politics and administration, ageing, health care, love and sexuality, work and money, technology, climate, migration, language, law, and social inequality. Each topic was used once in every experimental condition, yielding 20 × 3 × 2 = 120 accepted generated items. Topic identity was therefore held constant across the comparison: differences in ratings cannot be explained by one generation condition receiving a different set of subjects. The topic set, model, prompts, style-guidance block, and topic-to-item mapping were locked before participant recruitment. The model received only a short topic label, such as ``Religion, church and belief.'' No pre-written situation, joke setup, or transcript example for that specific topic was provided. In Direct Generation, it produced a joke directly from the label. In the planning conditions, the same label was used as the starting point for the planning steps. The complete topic set is provided in the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository; Appendix B summarizes how topic input was held constant across conditions.
 
 \subsection{Human Evaluation Design}\label{human-evaluation-design}
 
 The primary evaluation uses a within-participant design in which each participant rates 20 individually presented AI-generated jokes. Each joke receives three required five-point ratings and may receive an optional free-text comment. Participants are at least 18 years old, can comfortably read Dutch, and provide informed consent before beginning the rating task. The original Dutch wording shown to participants is retained below; English glosses are provided for readers who do not speak Dutch.
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YYYY}
+\begin{table*}[t]
+\centering
+\caption{Human-evaluation outcomes, questions, English glosses, and scale endpoints.}\label{tab:evaluation-outcomes}
+\scriptsize\begin{tabularx}{\textwidth}{YYYY}
 \toprule\noalign{}
 Outcome & Question shown to participants (Dutch) & English gloss & Scale endpoints (Dutch; English) \\
 \midrule\noalign{}
@@ -144,7 +150,7 @@ The rating interface initially leaves every scale unselected (\texttt{Kies}, ``C
 
 \subsection{Evaluation Metrics and Analysis}\label{evaluation-metrics-and-analysis}
 
-The final analysis includes 42 valid Dutch-reading participants and 840 participant-item ratings. Funniness, perceived target-style alignment, and coherence are analyzed as separate ordered 1--5 outcomes. Descriptive results report condition-level means and standard deviations; they are not used to combine the three constructs into a single score. For each outcome, a cumulative-link ordinal mixed-effects model with a logit link estimates the effects of generation pipeline, style guidance, and their interaction. Recruitment source is included as a fixed effect. Random intercepts for participant and generated item account for repeated ratings by the same participant and for baseline differences among jokes. The primary report gives odds ratios for receiving a higher rating, with 95\% confidence intervals. Three confirmatory marginal contrasts are evaluated: Direct Generation versus Script-Opposition-Guided Generation on funniness; Script-Opposition-Guided Generation versus GTVH-Guided Generation on funniness; and style-guided versus neutral generation on perceived target-style alignment. These contrasts average over the other factor, and their \emph{p}-values are Holm-adjusted as one three-test family. Participant-paired bootstrap contrasts with 10,000 resamples and linear mixed models serve as sensitivity checks. Familiarity with Freek de Jonge is examined only as an exploratory participant-level predictor of perceived style alignment. The formal model and sensitivity-analysis specifications are provided in Appendix D. Optional comments are used only to illustrate qualitative error patterns, not as a fourth scored outcome.
+The final analysis includes 42 valid Dutch-reading participants and 840 participant-item ratings. Funniness, perceived target-style alignment, and coherence are analyzed as separate ordered 1--5 outcomes. Descriptive results report condition-level means and standard deviations; they are not used to combine the three constructs into a single score. For each outcome, a cumulative-link ordinal mixed-effects model with a logit link estimates the effects of generation pipeline, style guidance, and their interaction. Participants were recruited through the researchers' networks and Prolific. Recruitment source is included as a fixed effect to account for possible systematic differences between these participant pools. Random intercepts for participant and generated item account for repeated ratings by the same participant and for baseline differences among jokes. The primary report gives odds ratios for receiving a higher rating, with 95\% confidence intervals. Three confirmatory marginal contrasts are evaluated: Direct Generation versus Script-Opposition-Guided Generation on funniness; Script-Opposition-Guided Generation versus GTVH-Guided Generation on funniness; and style-guided versus neutral generation on perceived target-style alignment. These contrasts average over the other factor, and their \emph{p}-values are Holm-adjusted as one three-test family. Participant-paired bootstrap contrasts with 10,000 resamples and linear mixed models serve as sensitivity checks. Familiarity with Freek de Jonge is examined only as an exploratory participant-level predictor of perceived style alignment. The formal model and sensitivity-analysis specifications are provided in Appendix D. Optional comments are used only to illustrate qualitative error patterns, not as a fourth scored outcome.
 
 \section{Results}\label{results}
 
@@ -152,7 +158,10 @@ The final analysis includes 42 valid Dutch-reading participants and 840 particip
 
 Table 3 reports descriptive means and standard deviations for the 1--5 ratings. Direct Generation received the highest mean ratings on all three outcomes in both guidance variants. Across the theory-guided conditions, style guidance was descriptively associated with higher ratings, but inferential conclusions are based on the ordinal models in Section 7.2.
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YYYYY}
+\begin{table*}[t]
+\centering
+\caption{Descriptive means and standard deviations for the human-evaluation outcomes.}\label{tab:descriptive-results}
+\scriptsize\begin{tabularx}{\textwidth}{YYYYY}
 \toprule\noalign{}
 Generation condition & Guidance & Funniness, M (SD) & Coherence, M (SD) & Perceived style alignment, M (SD) \\
 \midrule\noalign{}
@@ -170,7 +179,10 @@ GTVH-Guided Generation & Style-guided & 1.77 (1.03) & 1.99 (1.20) & 2.07 (1.16) 
 
 The primary ordinal models did not support an improvement in funniness from explicit semantic planning. Averaged across guidance variants, Direct Generation had higher odds of receiving a higher funniness rating than Script-Opposition-Guided Generation. The Script-Opposition and GTVH conditions did not differ reliably on funniness. In contrast, style-guided generation had higher odds of receiving a higher target-style-alignment rating than neutral generation, averaged across pipelines.
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YYYYY}
+\begin{table*}[t]
+\centering
+\caption{Confirmatory model contrasts for funniness and perceived target-style alignment.}\label{tab:confirmatory-contrasts}
+\scriptsize\begin{tabularx}{\textwidth}{YYYYY}
 \toprule\noalign{}
 Confirmatory comparison & Outcome & Odds ratio & 95\% CI & Holm-adjusted \emph{p} \\
 \midrule\noalign{}
@@ -189,21 +201,7 @@ Exploratory ordinal modelling found no reliable association between self-reporte
 
 \subsection{Token Budget and Cost Estimates}\label{token-budget-and-cost-estimates}
 
-Table 5 reports mean API token usage and estimated cost across the 20 locked topics in each condition. Estimates use the pricing basis defined in §5.4 and include all calls required to produce one retained item. Because the locked run lacks per-item elapsed-time logs, no condition-level average latency is reported.
-
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YYYYYY}
-\toprule\noalign{}
-Generation condition & Guidance & Mean input tokens & Mean output tokens & Mean total tokens & Estimated cost / item (US\$) \\
-\midrule\noalign{}
-
-Direct generation & Neutral & 257.9 & 126.2 & 384.1 & 0.0020 \\
-Direct generation & Style-guided & 555.9 & 100.3 & 656.1 & 0.0023 \\
-Script-opposition generation & Neutral & 14,651.2 & 7,309.1 & 21,960.3 & 0.1170 \\
-Script-opposition generation & Style-guided & 21,599.7 & 7,877.2 & 29,476.9 & 0.1377 \\
-GTVH-guided generation & Neutral & 18,523.9 & 9,358.5 & 27,882.4 & 0.1493 \\
-GTVH-guided generation & Style-guided & 27,100.8 & 9,400.4 & 36,501.1 & 0.1670 \\
-\bottomrule
-\end{tabularx}\end{table*}
+The multi-stage Script-Opposition and GTVH pipelines used substantially more tokens and therefore incurred higher estimated API costs than Direct Generation because they generated and evaluated intermediate planning stages. These estimates describe resource use rather than generation quality; the complete per-condition breakdown is provided in Appendix F.
 
 \section{Analysis}\label{analysis}
 
@@ -213,7 +211,7 @@ The generation-time audit assessed whether final outputs of the planned conditio
 
 \subsection{Qualitative Interpretation}\label{qualitative-interpretation}
 
-The cases in Appendix E distinguish structural realization from reader reception. A planned switch can be recognizable yet receive low funniness or coherence ratings, whereas the strongest illustrative Direct Generation item has no explicit semantic plan. The examples therefore support the aggregate result: explicit planning improved structural control and transparency, but did not reliably improve perceived humor. They are diagnostic illustrations, not a representative coded analysis or evidence about the cause of individual ratings. An informal review of optional participant comments provides illustrative context for these patterns. Readers of low-rated items often described unclear links between setup and punchline, missing context, unidiomatic phrasing, or implausible details; some also suggested that delivery or a broader performance context might be needed for the joke to work. Comments that perceived stronger alignment with Freek de Jonge's style often referred to sharpness, directness, cynicism, or a clear final turn. These comments suggest that the planning stages could specify an intended twist, but this did not always result in a short, clear joke that worked as written text. Because comments were optional and no predefined coding procedure was used, this review is illustrative rather than a separate quantitative outcome. The audit and reader study answer different questions. A passing audit records correspondence to the pipeline\textquotesingle s stored representation; it does not establish that readers perceived the intended relation, or that this relation caused their ratings. Keeping these measures separate avoids interpreting structural compliance as independent evidence of humorous success.
+The cases in Appendix E distinguish structural realization from reader reception. A planned switch can be recognizable yet receive low funniness or coherence ratings, whereas the strongest illustrative Direct Generation item has no explicit semantic plan. The examples therefore support the aggregate result: explicit planning improved structural control and transparency, but did not reliably improve perceived humor. They are diagnostic illustrations, not a representative coded analysis or evidence about the cause of individual ratings. An informal review of optional participant comments provides illustrative context for these patterns. Readers of low-rated items often described unclear links between setup and punchline, missing context, unidiomatic phrasing, or implausible details; some also suggested that delivery or a broader performance context might be needed for the joke to work. Comments that perceived stronger alignment with Freek de Jonge's style often referred to sharpness, directness, cynicism, or a clear final turn. These comments suggest that the planning stages could specify an intended twist, but this did not always result in a short, clear joke that worked as written text. These qualitative observations are consistent with the possibility that detailed planning overloaded some final jokes, although this interpretation was not tested as a separate causal explanation. The audit and reader study answer different questions. A passing audit records correspondence to the pipeline\textquotesingle s stored representation; it does not establish that readers perceived the intended relation, or that this relation caused their ratings. Keeping these measures separate avoids interpreting structural compliance as independent evidence of humorous success.
 
 \section{Discussion}\label{discussion}
 
@@ -227,7 +225,7 @@ Style guidance had a different effect. Averaged across pipelines, corpus-derived
 
 \section{Conclusion}\label{conclusion}
 
-This study examined whether explicit semantic planning and corpus-derived style guidance improve the generation of short Dutch cabaret jokes. Using text-accessible material from transcribed Freek de Jonge performances, it compared Direct Generation, Script-Opposition-Guided Generation, and GTVH-Guided Generation under neutral and style-guided conditions. Forty-two Dutch-reading participants rated 120 generated items for funniness, coherence, and perceived alignment with the target cabaret style. The results did not show a funniness advantage for explicit semantic planning. Direct Generation received higher funniness ratings than Script-Opposition-Guided Generation, and extending Script Opposition with the additional GTVH resources did not reliably improve funniness. Nevertheless, the planned pipelines produced inspectable semantic representations and generally realized their intended structures, demonstrating their value for controlled and transparent generation. Corpus-derived style guidance, in contrast, increased perceived alignment with the study's text-accessible target-style description. The study therefore distinguishes two contributions that are often conflated: semantic theories can make generation more interpretable without necessarily making output funnier, while corpus-derived stylistic context can affect perceived stylistic alignment without replacing a successful punchline. These findings concern written, text-only jokes rather than live cabaret performance or authorial imitation. Future work should combine flexible semantic planning, stronger candidate selection, richer performance context, and independent structural evaluation to investigate how interpretable control can better support audience-perceived humor.
+This study examined whether explicit semantic planning and corpus-derived style guidance improve the generation of short Dutch cabaret jokes. Using text-accessible material from transcribed Freek de Jonge performances, it compared Direct Generation, Script-Opposition-Guided Generation, and GTVH-Guided Generation under neutral and style-guided conditions. Forty-two Dutch-reading participants rated 120 generated items for funniness, coherence, and perceived alignment with the target cabaret style. The results did not show a funniness advantage for explicit semantic planning. Direct Generation received higher funniness ratings than Script-Opposition-Guided Generation, and extending Script Opposition with the additional GTVH resources did not reliably improve funniness. Nevertheless, the planned pipelines produced inspectable semantic representations and generally realized their intended structures, demonstrating their value for controlled and transparent generation. Corpus-derived style guidance, in contrast, increased perceived alignment with the study's text-accessible target-style description. The study therefore distinguishes two contributions that are often conflated: semantic theories can make generation more interpretable without necessarily making output funnier, while corpus-derived stylistic context can affect perceived stylistic alignment without replacing a successful punchline. Future work should combine flexible semantic planning, stronger candidate selection, richer performance context, and independent structural evaluation to investigate how interpretable control can better support audience-perceived humor.
 
 \section{Limitations}\label{limitations}
 
@@ -254,7 +252,10 @@ This study is a controlled text-only experiment, and its findings should be inte
 
 The seven fields used in the LLM-assisted corpus analysis are defined below.
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YY}
+\begin{table*}[t]
+\centering
+\caption{Annotation fields used in the corpus analysis.}\label{tab:annotation-schema}
+\scriptsize\begin{tabularx}{\textwidth}{YY}
 \toprule\noalign{}
 Field & Operational definition \\
 \midrule\noalign{}
@@ -271,7 +272,10 @@ Retrospective reinterpretation & How the trigger changes the function or meaning
 
 \textbf{Worked example.} In a retained interval from \emph{Asociale afstand} (2020), the speaker describes the public applauding care workers at 8 p.m. and then says, ``Ik dacht, het is mijn kans'' (``I thought, this is my chance'').
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YY}
+\begin{table*}[t]
+\centering
+\caption{Worked example of a Script-Opposition corpus annotation.}\label{tab:annotation-example}
+\scriptsize\begin{tabularx}{\textwidth}{YY}
 \toprule\noalign{}
 Field & Example analysis \\
 \midrule\noalign{}
@@ -289,7 +293,10 @@ Retrospective reinterpretation & The civic ritual is re-read as a stage on which
 
 All conditions used the same 20 topic labels, the same model (\texttt{gpt-5.6-terra}), and the same constraint of one Dutch joke containing 20--45 words and no more than three sentences. Each method had a neutral and a style-guided variant.
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YY}
+\begin{table*}[t]
+\centering
+\caption{Generation methods and their stage sequences.}\label{tab:condition-specification}
+\scriptsize\begin{tabularx}{\textwidth}{YY}
 \toprule\noalign{}
 Generation method & Stage sequence \\
 \midrule\noalign{}
@@ -300,11 +307,14 @@ GTVH-Guided Generation & The same Script-Opposition stages → Logical Mechanism
 \bottomrule
 \end{tabularx}\end{table*}
 
-Full prompts, serialized stage outputs, prompt-source hashes, generation records, the topic list, and the complete 120-item bank are provided with the accompanying repository materials.
+Full prompts, serialized stage outputs, prompt-source hashes, generation records, the topic list, and the complete 120-item bank are provided with the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository.
 
 \section{Corpus and Laughter-Retrieval Configuration}\label{appendix-c-corpus-and-laughter-retrieval-configuration}
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YYY}
+\begin{table*}[t]
+\centering
+\caption{Corpus records and retained laughter-linked intervals.}\label{tab:corpus-records}
+\scriptsize\begin{tabularx}{\textwidth}{YYY}
 \toprule\noalign{}
 Corpus record & Year & Retained intervals \\
 \midrule\noalign{}
@@ -318,17 +328,20 @@ De Zeeuwse Jaren (combined excerpts) & 2025 & 21 \\
 \bottomrule
 \end{tabularx}\end{table*}
 
-The ResNet-based detector of \citet{gillick2021robust} used the authors' \texttt{resnet\_with\_augmentation} checkpoint. Frame-level probabilities were low-pass smoothed and grouped with a probability threshold of 0.30 and a minimum duration of 0.10 seconds. An Audio Spectrogram Transformer classifier \citep{gong2021ast} retained intervals with a laughter score of at least 0.20 using the \nolinkurl{MIT/ast-finetuned-audioset-10-10-0.4593} checkpoint. Full configurations and intermediate artifacts are provided in the repository materials.
+The ResNet-based detector of \citet{gillick2021robust} used the authors' \texttt{resnet\_with\_augmentation} checkpoint. Frame-level probabilities were low-pass smoothed and grouped with a probability threshold of 0.30 and a minimum duration of 0.10 seconds. An Audio Spectrogram Transformer classifier \citep{gong2021ast} retained intervals with a laughter score of at least 0.20 using the \nolinkurl{MIT/ast-finetuned-audioset-10-10-0.4593} checkpoint. Full configurations and intermediate artifacts are provided in the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository.
 
 \section{Statistical Model Specification}\label{appendix-d-statistical-model-specification}
 
-The primary model for each ordered outcome was: \emph{rating \textasciitilde{} generation pipeline × style guidance + recruitment source + (1 \textbar{} participant) + (1 \textbar{} item).} A cumulative-logit link was used. The bootstrap sensitivity analysis used 10,000 participant-level resamples stratified by recruitment source; the linear mixed-effects sensitivity model used the same fixed and random effects. Analysis scripts and machine-readable result tables are included in the repository materials.
+The primary model for each ordered outcome was: \emph{rating \textasciitilde{} generation pipeline × style guidance + recruitment source + (1 \textbar{} participant) + (1 \textbar{} item).} A cumulative-logit link was used. The bootstrap sensitivity analysis used 10,000 participant-level resamples stratified by recruitment source; the linear mixed-effects sensitivity model used the same fixed and random effects. Analysis scripts and machine-readable result tables are included in the accompanying \url{https://github.com/jorrytdejong/freek-de-jonge} repository.
 
 \section{Qualitative Cases}\label{appendix-e-qualitative-cases}
 
 The following three cases were selected for explanatory value; they are not a representative or formally coded sample. Each item received seven ratings.
 
-\begin{table*}[t]\centering\scriptsize\begin{tabularx}{\textwidth}{YYYY}
+\begin{table*}[t]
+\centering
+\caption{Illustrative qualitative cases linking generation condition, planned structure, and reader ratings.}\label{tab:qualitative-cases}
+\scriptsize\begin{tabularx}{\textwidth}{YYYY}
 \toprule\noalign{}
 Condition and topic & Generated joke and English gloss & What the case illustrates & Mean ratings \\
 \midrule\noalign{}
@@ -336,6 +349,27 @@ Condition and topic & Generated joke and English gloss & What the case illustrat
 Direct Generation, style-guided; Religion, church, and belief & \emph{Ik ben weer naar de kerk geweest. Prachtige akoestiek: je hoort daar zelfs je eigen twijfels terugkomen. Alleen God had blijkbaar een slechte verbinding; steeds als ik iets vroeg, kreeg ik een collecteformulier.}; ; I went to church again. Wonderful acoustics: you can even hear your own doubts returning. God apparently had a bad connection; whenever I asked something, I received a collection form. & No explicit semantic plan; the text moves from spiritual reflection to the church as a fundraising institution. & Funniness 3.57; Coherence 3.86; Style 3.57 \\
 Script-Opposition-Guided, style-guided; Language, words, and misunderstandings & \emph{Bij het loket zei ik: `Ik slaap tijdelijk bij mijn zus, want ik ben dakloos.' De medewerker knikte, stempelde mijn formulier `passend' en zei: `Gefeliciteerd, één nacht op de bank maakt u duurzaam gehuisvest.'}; ; A temporary stay on a sister's sofa is bureaucratically redefined as permanent housing. & The intended opposition is realized, but the item received lower ratings than the Direct Generation case. & Funniness 3.14; Coherence 2.86; Style 2.43 \\
 GTVH-Guided, neutral; Art, theatre, and cabaret & \emph{De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: `Mooi, rij voor rij naar buiten---jullie waren het publiek van de ontruimingsoefening.'}; ; The performance is reinterpreted as an evacuation drill in which the audience were exercise participants. & The extended plan produces a recognizable reinterpretation without ensuring high reader ratings. & Funniness 2.71; Coherence 3.00; Style 2.29 \\
+\bottomrule
+\end{tabularx}\end{table*}
+
+\section{Token Usage and Cost Estimates}\label{appendix-f-token-usage-and-cost-estimates}
+
+The table below reports mean input, output, and total token usage, together with the estimated API cost per retained item. Input tokens include prompts, planning records, style guidance, and other text sent to the model; output tokens include intermediate plans, candidate jokes, checks, repairs, selections, and audits. Costs use the pricing basis defined in §5.4.
+
+\begin{table*}[t]
+\centering
+\caption{Mean token usage and estimated API cost per retained item.}\label{tab:token-cost}
+\scriptsize\begin{tabularx}{\textwidth}{YYYYYY}
+\toprule\noalign{}
+Generation condition & Guidance & Mean input tokens & Mean output tokens & Mean total tokens & Estimated cost / item (US\$) \\
+\midrule\noalign{}
+
+Direct generation & Neutral & 257.9 & 126.2 & 384.1 & 0.0020 \\
+Direct generation & Style-guided & 555.9 & 100.3 & 656.1 & 0.0023 \\
+Script-opposition generation & Neutral & 14,651.2 & 7,309.1 & 21,960.3 & 0.1170 \\
+Script-opposition generation & Style-guided & 21,599.7 & 7,877.2 & 29,476.9 & 0.1377 \\
+GTVH-guided generation & Neutral & 18,523.9 & 9,358.5 & 27,882.4 & 0.1493 \\
+GTVH-guided generation & Style-guided & 27,100.8 & 9,400.4 & 36,501.1 & 0.1670 \\
 \bottomrule
 \end{tabularx}\end{table*}
 
