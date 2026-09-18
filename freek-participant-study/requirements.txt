@@ -1,3 +1,0 @@
-streamlit==1.57.0
-gspread==6.2.1
-psycopg[binary]==3.2.9
