@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T16:18:47.005552+00:00",
+  "job": {
+    "job_id": "T16-E2",
+    "topic_id": "T16",
+    "topic": "Sport, voetbal en supporterscultuur",
+    "condition_code": "E2"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V1 must contain 20-45 words; received 52."
+}

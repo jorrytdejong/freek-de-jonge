@@ -1,0 +1,850 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T19-C1",
+  "topic_id": "T19",
+  "topic": "Recht, politie en criminaliteit",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T17:02:25.830923+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Recht, politie en criminaliteit",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Recht, politie en criminaliteit\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Recht, politie en criminaliteit\",\n  \"script_a\": {\n    \"script_a\": \"Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.\",\n    \"participants_and_roles\": [\n      \"Slachtoffer of getuige: meldt het misdrijf en geeft informatie aan de autoriteiten.\",\n      \"Verdachte: persoon die mogelijk het strafbare feit heeft gepleegd en recht heeft op een eerlijk onderzoek en verdediging.\",\n      \"Politie: reageert op meldingen, beschermt de openbare orde, onderzoekt feiten en kan verdachten aanhouden.\",\n      \"Openbaar Ministerie / officier van justitie: beoordeelt het bewijs, leidt de vervolging en brengt de zaak zo nodig voor de rechter.\",\n      \"Rechter: weegt bewijs en wet, bewaakt een eerlijk proces en doet een onafhankelijke uitspraak.\",\n      \"Advocaat: verdedigt de rechten en belangen van de verdachte of staat een slachtoffer bij.\"\n    ],\n    \"apparent_goal\": \"Een misdrijf op een rechtmatige en zorgvuldige manier oplossen, de waarheid zo goed mogelijk vaststellen en veiligheid en rechtvaardigheid herstellen.\",\n    \"preconditions\": [\n      \"Er is een melding, aangifte of concrete aanwijzing dat mogelijk een strafbaar feit is gepleegd.\",\n      \"Politie en justitie hebben wettelijke bevoegdheden en moeten vaste procedures volgen.\",\n      \"Er moet voldoende, rechtmatig verkregen bewijs worden verzameld voordat iemand kan worden veroordeeld.\",\n      \"De verdachte geldt als onschuldig totdat schuld wettig en overtuigend is bewezen.\",\n      \"Alle betrokkenen hebben rechten, waaronder toegang tot juridische bijstand en een eerlijke behandeling.\"\n    ],\n    \"expected_actions\": [\n      \"De politie neemt de melding op, stelt de situatie veilig en spreekt met betrokkenen en getuigen.\",\n      \"Rechercheurs verzamelen en controleren bewijs, zoals verklaringen, camerabeelden of sporen.\",\n      \"Bij een redelijke verdenking ondervraagt of arresteert de politie een verdachte volgens de regels.\",\n      \"Het Openbaar Ministerie beslist of vervolging kansrijk en passend is.\",\n      \"Tijdens een rechtszitting presenteren aanklager en verdediging hun standpunten en bewijs.\",\n      \"De rechter doet uitspraak: vrijspraak bij onvoldoende bewijs, of een straf of maatregel bij bewezen schuld.\"\n    ],\n    \"expected_outcome\": \"De zaak wordt zorgvuldig afgehandeld: een schuldige wordt binnen de wet verantwoordelijk gehouden en een onschuldige wordt niet veroordeeld, waardoor vertrouwen, veiligheid en rechtsorde worden beschermd.\",\n    \"expected_propositions\": [\n      \"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\",\n      \"Een arrestatie betekent nog niet dat iemand schuldig is.\",\n      \"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\",\n      \"Iedere verdachte heeft recht op een eerlijk proces en verdediging.\",\n      \"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\"\n    ],\n    \"audience_expectation\": \"Een setup over recht, politie en criminaliteit activeert doorgaans de verwachting van een ordelijk proces: een misdrijf leidt tot onderzoek, bewijs leidt tot een eerlijke beoordeling, en de uitkomst herstelt rechtvaardigheid zonder de rechten van betrokkenen te schenden.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Recht, politie en criminaliteit\",\n  \"script_a\": {\n    \"script_a\": \"Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.\",\n    \"participants_and_roles\": [\n      \"Slachtoffer of getuige: meldt het misdrijf en geeft informatie aan de autoriteiten.\",\n      \"Verdachte: persoon die mogelijk het strafbare feit heeft gepleegd en recht heeft op een eerlijk onderzoek en verdediging.\",\n      \"Politie: reageert op meldingen, beschermt de openbare orde, onderzoekt feiten en kan verdachten aanhouden.\",\n      \"Openbaar Ministerie / officier van justitie: beoordeelt het bewijs, leidt de vervolging en brengt de zaak zo nodig voor de rechter.\",\n      \"Rechter: weegt bewijs en wet, bewaakt een eerlijk proces en doet een onafhankelijke uitspraak.\",\n      \"Advocaat: verdedigt de rechten en belangen van de verdachte of staat een slachtoffer bij.\"\n    ],\n    \"apparent_goal\": \"Een misdrijf op een rechtmatige en zorgvuldige manier oplossen, de waarheid zo goed mogelijk vaststellen en veiligheid en rechtvaardigheid herstellen.\",\n    \"preconditions\": [\n      \"Er is een melding, aangifte of concrete aanwijzing dat mogelijk een strafbaar feit is gepleegd.\",\n      \"Politie en justitie hebben wettelijke bevoegdheden en moeten vaste procedures volgen.\",\n      \"Er moet voldoende, rechtmatig verkregen bewijs worden verzameld voordat iemand kan worden veroordeeld.\",\n      \"De verdachte geldt als onschuldig totdat schuld wettig en overtuigend is bewezen.\",\n      \"Alle betrokkenen hebben rechten, waaronder toegang tot juridische bijstand en een eerlijke behandeling.\"\n    ],\n    \"expected_actions\": [\n      \"De politie neemt de melding op, stelt de situatie veilig en spreekt met betrokkenen en getuigen.\",\n      \"Rechercheurs verzamelen en controleren bewijs, zoals verklaringen, camerabeelden of sporen.\",\n      \"Bij een redelijke verdenking ondervraagt of arresteert de politie een verdachte volgens de regels.\",\n      \"Het Openbaar Ministerie beslist of vervolging kansrijk en passend is.\",\n      \"Tijdens een rechtszitting presenteren aanklager en verdediging hun standpunten en bewijs.\",\n      \"De rechter doet uitspraak: vrijspraak bij onvoldoende bewijs, of een straf of maatregel bij bewezen schuld.\"\n    ],\n    \"expected_outcome\": \"De zaak wordt zorgvuldig afgehandeld: een schuldige wordt binnen de wet verantwoordelijk gehouden en een onschuldige wordt niet veroordeeld, waardoor vertrouwen, veiligheid en rechtsorde worden beschermd.\",\n    \"expected_propositions\": [\n      \"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\",\n      \"Een arrestatie betekent nog niet dat iemand schuldig is.\",\n      \"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\",\n      \"Iedere verdachte heeft recht op een eerlijk proces en verdediging.\",\n      \"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\"\n    ],\n    \"audience_expectation\": \"Een setup over recht, politie en criminaliteit activeert doorgaans de verwachting van een ordelijk proces: een misdrijf leidt tot onderzoek, bewijs leidt tot een eerlijke beoordeling, en de uitkomst herstelt rechtvaardigheid zonder de rechten van betrokkenen te schenden.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.\",\n      \"opposition_axis\": \"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\",\n      \"opposed_proposition\": \"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\",\n      \"shared_anchor\": \"Een man wordt door agenten meegenomen voor ondervraging.\",\n      \"reading_a\": \"Agenten voeren een verdachte na een mogelijke misdaad af naar het bureau, waar zijn betrokkenheid zorgvuldig moet worden onderzocht.\",\n      \"reading_b\": \"Acteurs in politie-uniform begeleiden een collega naar de set, waar een verhoorscène opnieuw wordt opgenomen.\",\n      \"roles_b\": [\n        \"Acteur in handboeien: speelt de vermeende verdachte.\",\n        \"Acteurs als agenten: voeren de arrestatiehandeling uit.\",\n        \"Regisseur: beoordeelt de scène en geeft aanwijzingen.\",\n        \"Cameraploeg: registreert beeld en geluid.\",\n        \"Scriptsupervisor: bewaakt tekst en continuïteit.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige arrestatie- en verhoorscène opnemen.\",\n      \"role_remapping\": [\n        \"Verdachte → acteur die de verdachte speelt.\",\n        \"Politie → acteurs in de rollen van agenten.\",\n        \"Onderzoeker/rechercheur → regisseur die de handelingen stuurt.\",\n        \"Bewijs en dossier → script, rekwisieten en opgenomen beelden.\",\n        \"Onderzoek naar waarheid → beoordeling van geloofwaardig spel.\"\n      ],\n      \"shared_cues\": [\n        \"Uniformen en een politieauto bij een gebouw.\",\n        \"Een man krijgt te horen dat hij mee moet komen.\",\n        \"Een camera registreert het gebeuren.\",\n        \"Vragen over waar hij die avond was.\",\n        \"Een agent noteert details in een boekje.\"\n      ],\n      \"switch_trigger\": \"De regisseur roept vlak voor het vermeende verhoor: \\\"En... actie!\\\"\",\n      \"hinge_event\": \"De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.\",\n      \"anomaly_under_a\": \"Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.\",\n      \"resolution_under_b\": \"Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een groep vrienden organiseert een verrassingsfeest voor iemand die denkt dat hij naar een politiebureau wordt gelokt wegens een vermeende vernieling. De vrienden gebruiken een nepverhoor en een zorgvuldig opgebouwde schrikreactie om hem pas op het laatste moment naar een feestzaal te leiden.\",\n      \"opposition_axis\": \"Bestraffing van vermeend wangedrag tegenover feestelijke misleiding als verrassing.\",\n      \"opposed_proposition\": \"Een arrestatie betekent nog niet dat iemand schuldig is.\",\n      \"shared_anchor\": \"Iemand wordt apart genomen om vragen over een incident te beantwoorden.\",\n      \"reading_a\": \"De persoon is mogelijk verdachte van vernieling en wordt afgezonderd zodat de politie zijn verklaring kan opnemen.\",\n      \"reading_b\": \"De jarige wordt door vrienden in een geënsceneerde beschuldiging gehouden om hem weg te leiden van de voorbereidingen voor zijn feest.\",\n      \"roles_b\": [\n        \"Jarige: onwetend doelwit van de verrassing.\",\n        \"Vriend in politie-uniform: speelt de ondervrager.\",\n        \"Andere vrienden: spelen getuigen of wachten verborgen in de feestzaal.\",\n        \"Organisator: coördineert het scenario.\",\n        \"Café- of zaaleigenaar: stelt de feestlocatie beschikbaar.\"\n      ],\n      \"goal_b\": \"De jarige geloofwaardig verrassen en vervolgens met vrienden laten vieren.\",\n      \"role_remapping\": [\n        \"Verdachte → jarige die voor de grap als verdachte wordt behandeld.\",\n        \"Politie → verklede vriend die de ondervraging speelt.\",\n        \"Getuigen/slachtoffer → vrienden die het verzonnen incident bevestigen.\",\n        \"Politiebureau/verhoorkamer → versierde achterzaal.\",\n        \"Zaakafhandeling → onthulling van het verrassingsfeest.\"\n      ],\n      \"shared_cues\": [\n        \"Een telefoontje over schade aan een auto.\",\n        \"Een serieuze vraag naar de verblijfplaats van die avond.\",\n        \"Een aparte kamer met een tafel en stoelen.\",\n        \"Mensen die fluisteren en elkaar betekenisvol aankijken.\",\n        \"Een schriftelijke verklaring die moet worden gelezen.\"\n      ],\n      \"switch_trigger\": \"Achter de deur van de zogenaamd afgesloten verhoorkamer klinkt een groep die aftelt.\",\n      \"hinge_event\": \"De ondervrager opent de deur en zet geen dossier op tafel, maar een verjaardagstaart met brandende kaarsen.\",\n      \"anomaly_under_a\": \"Bij een werkelijk politieverhoor is een taart geen relevant of professioneel bewijsmiddel en zou zij de ernst en procedure van de zaak absurd onderbreken.\",\n      \"resolution_under_b\": \"De taart is het onthullingssignaal: de schijnbare ondervraging was uitsluitend een omweg naar het verrassingsfeest.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"In een escape room spelen deelnemers rechercheurs die een fictieve inbraak moeten oplossen. Zij doorzoeken kamers, vergelijken vingerafdrukken, ontcijferen verklaringen en moeten de juiste verdachte aanwijzen om vóór de tijdslimiet de uitgang te openen.\",\n      \"opposition_axis\": \"Wettelijk waarheidsvindingproces tegenover spelmatige puzzeloplossing onder tijdsdruk.\",\n      \"opposed_proposition\": \"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\",\n      \"shared_anchor\": \"Onderzoekers verzamelen sporen om een inbraakzaak op te lossen.\",\n      \"reading_a\": \"Rechercheurs verzamelen echte sporen van een misdrijf; de herkomst, betrouwbaarheid en rechtmatigheid daarvan bepalen of het bewijs bruikbaar is.\",\n      \"reading_b\": \"Spelers verzamelen vooraf geplaatste aanwijzingen die bedoeld zijn om een puzzelketen en een codeslot op te lossen.\",\n      \"roles_b\": [\n        \"Spelers: fictieve rechercheurs die puzzels oplossen.\",\n        \"Gamemaster: bewaakt veiligheid, tijd en spelverloop.\",\n        \"Fictieve dader: personage uit het verhaal.\",\n        \"Decor en rekwisieten: leveren gecodeerde aanwijzingen.\",\n        \"Teamcaptain: verdeelt taken en voert oplossingen in.\"\n      ],\n      \"goal_b\": \"Alle puzzels oplossen, de fictieve dader identificeren en op tijd uit de escape room ontsnappen.\",\n      \"role_remapping\": [\n        \"Politie/rechercheurs → escape-roomspelers.\",\n        \"Verdachte → fictief personage in het spelverhaal.\",\n        \"Bewijs → puzzelstukken, cijfers en verborgen sleutels.\",\n        \"Onderzoeksdossier → introductiebrief en aanwijzingen in de kamer.\",\n        \"Oplossing van de zaak → openen van het laatste slot.\"\n      ],\n      \"shared_cues\": [\n        \"Een afgezet ogende kamer.\",\n        \"Foto's, afdrukken en een plattegrond op tafel.\",\n        \"Een notitie met een tijdstip.\",\n        \"Mensen die aanwijzingen vergelijken.\",\n        \"Een afgesloten kast met mogelijk relevante inhoud.\"\n      ],\n      \"switch_trigger\": \"Een gevonden briefje zegt: \\\"Voer de code in voordat de klok nul bereikt.\\\"\",\n      \"hinge_event\": \"Na het aanwijzen van de vermeende dader springt geen rechercheur op, maar gaat een zwaar decorpaneel open met een elektronisch piepsignaal.\",\n      \"anomaly_under_a\": \"Een echte strafzaak wordt niet beslist doordat één oplossing een geheime deur opent; bewijs is geen mechanisme voor fysieke ontsnapping en een rechterlijke beoordeling ontbreekt.\",\n      \"resolution_under_b\": \"De daderaanwijzing is de laatste spelcode; het openende paneel bevestigt dat de deelnemers de escape room hebben gewonnen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een hondengeleider meldt zijn hond aan voor een speurhondenwedstrijd. Een keurmeester laat de hond langs verborgen geuren en voorwerpen zoeken; de geleider moet aantonen dat dier en handler nauwkeurig samenwerken om de juiste bron te vinden.\",\n      \"opposition_axis\": \"Opsporing van menselijke schuld tegenover sportieve demonstratie van speurvaardigheid.\",\n      \"opposed_proposition\": \"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\",\n      \"shared_anchor\": \"Een speurhond volgt een spoor naar een verborgen voorwerp.\",\n      \"reading_a\": \"Een politiehond helpt bij een strafrechtelijk onderzoek een relevant spoor of voorwerp lokaliseren, waarna mensen de betekenis ervan juridisch moeten beoordelen.\",\n      \"reading_b\": \"Een wedstrijdhond zoekt een vooraf verborgen geurbron, waarna een keurmeester punten toekent voor tempo en precisie.\",\n      \"roles_b\": [\n        \"Hondengeleider: begeleidt de deelnemende hond.\",\n        \"Speurhond: zoekt de verborgen geurbron.\",\n        \"Keurmeester: beoordeelt de uitvoering en kent punten toe.\",\n        \"Wedstrijdorganisatie: legt het parcours en de regels vast.\",\n        \"Andere deelnemers: wachten op hun beurt en vergelijken scores.\"\n      ],\n      \"goal_b\": \"Met de hond de beste speurproef afleggen en de wedstrijd winnen.\",\n      \"role_remapping\": [\n        \"Politie → hondengeleider met wedstrijdhond.\",\n        \"Rechercheur → keurmeester die de prestatie observeert.\",\n        \"Verdachte → niet aanwezige, fictieve spoorlegger.\",\n        \"Bewijsmateriaal → verborgen geurvoorwerp of markeringsobject.\",\n        \"Rechterlijke uitspraak → puntentoekenning en rangschikking.\"\n      ],\n      \"shared_cues\": [\n        \"Een afgebakend terrein.\",\n        \"Een hond die geconcentreerd aan de grond ruikt.\",\n        \"Een begeleider die korte aanwijzingen geeft.\",\n        \"Een gevonden voorwerp dat wordt gemarkeerd.\",\n        \"Omstanders die de afloop stil volgen.\"\n      ],\n      \"switch_trigger\": \"Na de vondst blaast de keurmeester op een fluitje en roept hij: \\\"Tijd: twee minuten zeven!\\\"\",\n      \"hinge_event\": \"In plaats van een proces-verbaal krijgt de hond bij het gevonden voorwerp een rozet omgehangen.\",\n      \"anomaly_under_a\": \"Een politiehond krijgt in een echt strafonderzoek geen ereteken voor het vinden van mogelijk bewijs; zo'n ceremonie zou de bewijsketen en ernst van de zaak miskennen.\",\n      \"resolution_under_b\": \"De rozet is de prijs voor een snelle, foutloze wedstrijdprestatie en maakt duidelijk dat de zoekactie een sportproef was.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Recht, politie en criminaliteit\",\n  \"script_a\": {\n    \"script_a\": \"Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.\",\n    \"participants_and_roles\": [\n      \"Slachtoffer of getuige: meldt het misdrijf en geeft informatie aan de autoriteiten.\",\n      \"Verdachte: persoon die mogelijk het strafbare feit heeft gepleegd en recht heeft op een eerlijk onderzoek en verdediging.\",\n      \"Politie: reageert op meldingen, beschermt de openbare orde, onderzoekt feiten en kan verdachten aanhouden.\",\n      \"Openbaar Ministerie / officier van justitie: beoordeelt het bewijs, leidt de vervolging en brengt de zaak zo nodig voor de rechter.\",\n      \"Rechter: weegt bewijs en wet, bewaakt een eerlijk proces en doet een onafhankelijke uitspraak.\",\n      \"Advocaat: verdedigt de rechten en belangen van de verdachte of staat een slachtoffer bij.\"\n    ],\n    \"apparent_goal\": \"Een misdrijf op een rechtmatige en zorgvuldige manier oplossen, de waarheid zo goed mogelijk vaststellen en veiligheid en rechtvaardigheid herstellen.\",\n    \"preconditions\": [\n      \"Er is een melding, aangifte of concrete aanwijzing dat mogelijk een strafbaar feit is gepleegd.\",\n      \"Politie en justitie hebben wettelijke bevoegdheden en moeten vaste procedures volgen.\",\n      \"Er moet voldoende, rechtmatig verkregen bewijs worden verzameld voordat iemand kan worden veroordeeld.\",\n      \"De verdachte geldt als onschuldig totdat schuld wettig en overtuigend is bewezen.\",\n      \"Alle betrokkenen hebben rechten, waaronder toegang tot juridische bijstand en een eerlijke behandeling.\"\n    ],\n    \"expected_actions\": [\n      \"De politie neemt de melding op, stelt de situatie veilig en spreekt met betrokkenen en getuigen.\",\n      \"Rechercheurs verzamelen en controleren bewijs, zoals verklaringen, camerabeelden of sporen.\",\n      \"Bij een redelijke verdenking ondervraagt of arresteert de politie een verdachte volgens de regels.\",\n      \"Het Openbaar Ministerie beslist of vervolging kansrijk en passend is.\",\n      \"Tijdens een rechtszitting presenteren aanklager en verdediging hun standpunten en bewijs.\",\n      \"De rechter doet uitspraak: vrijspraak bij onvoldoende bewijs, of een straf of maatregel bij bewezen schuld.\"\n    ],\n    \"expected_outcome\": \"De zaak wordt zorgvuldig afgehandeld: een schuldige wordt binnen de wet verantwoordelijk gehouden en een onschuldige wordt niet veroordeeld, waardoor vertrouwen, veiligheid en rechtsorde worden beschermd.\",\n    \"expected_propositions\": [\n      \"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\",\n      \"Een arrestatie betekent nog niet dat iemand schuldig is.\",\n      \"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\",\n      \"Iedere verdachte heeft recht op een eerlijk proces en verdediging.\",\n      \"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\"\n    ],\n    \"audience_expectation\": \"Een setup over recht, politie en criminaliteit activeert doorgaans de verwachting van een ordelijk proces: een misdrijf leidt tot onderzoek, bewijs leidt tot een eerlijke beoordeling, en de uitkomst herstelt rechtvaardigheid zonder de rechten van betrokkenen te schenden.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.\",\n      \"opposition_axis\": \"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\",\n      \"opposed_proposition\": \"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\",\n      \"shared_anchor\": \"Een man wordt door agenten meegenomen voor ondervraging.\",\n      \"reading_a\": \"Agenten voeren een verdachte na een mogelijke misdaad af naar het bureau, waar zijn betrokkenheid zorgvuldig moet worden onderzocht.\",\n      \"reading_b\": \"Acteurs in politie-uniform begeleiden een collega naar de set, waar een verhoorscène opnieuw wordt opgenomen.\",\n      \"roles_b\": [\n        \"Acteur in handboeien: speelt de vermeende verdachte.\",\n        \"Acteurs als agenten: voeren de arrestatiehandeling uit.\",\n        \"Regisseur: beoordeelt de scène en geeft aanwijzingen.\",\n        \"Cameraploeg: registreert beeld en geluid.\",\n        \"Scriptsupervisor: bewaakt tekst en continuïteit.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige arrestatie- en verhoorscène opnemen.\",\n      \"role_remapping\": [\n        \"Verdachte → acteur die de verdachte speelt.\",\n        \"Politie → acteurs in de rollen van agenten.\",\n        \"Onderzoeker/rechercheur → regisseur die de handelingen stuurt.\",\n        \"Bewijs en dossier → script, rekwisieten en opgenomen beelden.\",\n        \"Onderzoek naar waarheid → beoordeling van geloofwaardig spel.\"\n      ],\n      \"shared_cues\": [\n        \"Uniformen en een politieauto bij een gebouw.\",\n        \"Een man krijgt te horen dat hij mee moet komen.\",\n        \"Een camera registreert het gebeuren.\",\n        \"Vragen over waar hij die avond was.\",\n        \"Een agent noteert details in een boekje.\"\n      ],\n      \"switch_trigger\": \"De regisseur roept vlak voor het vermeende verhoor: \\\"En... actie!\\\"\",\n      \"hinge_event\": \"De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.\",\n      \"anomaly_under_a\": \"Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.\",\n      \"resolution_under_b\": \"Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een groep vrienden organiseert een verrassingsfeest voor iemand die denkt dat hij naar een politiebureau wordt gelokt wegens een vermeende vernieling. De vrienden gebruiken een nepverhoor en een zorgvuldig opgebouwde schrikreactie om hem pas op het laatste moment naar een feestzaal te leiden.\",\n      \"opposition_axis\": \"Bestraffing van vermeend wangedrag tegenover feestelijke misleiding als verrassing.\",\n      \"opposed_proposition\": \"Een arrestatie betekent nog niet dat iemand schuldig is.\",\n      \"shared_anchor\": \"Iemand wordt apart genomen om vragen over een incident te beantwoorden.\",\n      \"reading_a\": \"De persoon is mogelijk verdachte van vernieling en wordt afgezonderd zodat de politie zijn verklaring kan opnemen.\",\n      \"reading_b\": \"De jarige wordt door vrienden in een geënsceneerde beschuldiging gehouden om hem weg te leiden van de voorbereidingen voor zijn feest.\",\n      \"roles_b\": [\n        \"Jarige: onwetend doelwit van de verrassing.\",\n        \"Vriend in politie-uniform: speelt de ondervrager.\",\n        \"Andere vrienden: spelen getuigen of wachten verborgen in de feestzaal.\",\n        \"Organisator: coördineert het scenario.\",\n        \"Café- of zaaleigenaar: stelt de feestlocatie beschikbaar.\"\n      ],\n      \"goal_b\": \"De jarige geloofwaardig verrassen en vervolgens met vrienden laten vieren.\",\n      \"role_remapping\": [\n        \"Verdachte → jarige die voor de grap als verdachte wordt behandeld.\",\n        \"Politie → verklede vriend die de ondervraging speelt.\",\n        \"Getuigen/slachtoffer → vrienden die het verzonnen incident bevestigen.\",\n        \"Politiebureau/verhoorkamer → versierde achterzaal.\",\n        \"Zaakafhandeling → onthulling van het verrassingsfeest.\"\n      ],\n      \"shared_cues\": [\n        \"Een telefoontje over schade aan een auto.\",\n        \"Een serieuze vraag naar de verblijfplaats van die avond.\",\n        \"Een aparte kamer met een tafel en stoelen.\",\n        \"Mensen die fluisteren en elkaar betekenisvol aankijken.\",\n        \"Een schriftelijke verklaring die moet worden gelezen.\"\n      ],\n      \"switch_trigger\": \"Achter de deur van de zogenaamd afgesloten verhoorkamer klinkt een groep die aftelt.\",\n      \"hinge_event\": \"De ondervrager opent de deur en zet geen dossier op tafel, maar een verjaardagstaart met brandende kaarsen.\",\n      \"anomaly_under_a\": \"Bij een werkelijk politieverhoor is een taart geen relevant of professioneel bewijsmiddel en zou zij de ernst en procedure van de zaak absurd onderbreken.\",\n      \"resolution_under_b\": \"De taart is het onthullingssignaal: de schijnbare ondervraging was uitsluitend een omweg naar het verrassingsfeest.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"In een escape room spelen deelnemers rechercheurs die een fictieve inbraak moeten oplossen. Zij doorzoeken kamers, vergelijken vingerafdrukken, ontcijferen verklaringen en moeten de juiste verdachte aanwijzen om vóór de tijdslimiet de uitgang te openen.\",\n      \"opposition_axis\": \"Wettelijk waarheidsvindingproces tegenover spelmatige puzzeloplossing onder tijdsdruk.\",\n      \"opposed_proposition\": \"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\",\n      \"shared_anchor\": \"Onderzoekers verzamelen sporen om een inbraakzaak op te lossen.\",\n      \"reading_a\": \"Rechercheurs verzamelen echte sporen van een misdrijf; de herkomst, betrouwbaarheid en rechtmatigheid daarvan bepalen of het bewijs bruikbaar is.\",\n      \"reading_b\": \"Spelers verzamelen vooraf geplaatste aanwijzingen die bedoeld zijn om een puzzelketen en een codeslot op te lossen.\",\n      \"roles_b\": [\n        \"Spelers: fictieve rechercheurs die puzzels oplossen.\",\n        \"Gamemaster: bewaakt veiligheid, tijd en spelverloop.\",\n        \"Fictieve dader: personage uit het verhaal.\",\n        \"Decor en rekwisieten: leveren gecodeerde aanwijzingen.\",\n        \"Teamcaptain: verdeelt taken en voert oplossingen in.\"\n      ],\n      \"goal_b\": \"Alle puzzels oplossen, de fictieve dader identificeren en op tijd uit de escape room ontsnappen.\",\n      \"role_remapping\": [\n        \"Politie/rechercheurs → escape-roomspelers.\",\n        \"Verdachte → fictief personage in het spelverhaal.\",\n        \"Bewijs → puzzelstukken, cijfers en verborgen sleutels.\",\n        \"Onderzoeksdossier → introductiebrief en aanwijzingen in de kamer.\",\n        \"Oplossing van de zaak → openen van het laatste slot.\"\n      ],\n      \"shared_cues\": [\n        \"Een afgezet ogende kamer.\",\n        \"Foto's, afdrukken en een plattegrond op tafel.\",\n        \"Een notitie met een tijdstip.\",\n        \"Mensen die aanwijzingen vergelijken.\",\n        \"Een afgesloten kast met mogelijk relevante inhoud.\"\n      ],\n      \"switch_trigger\": \"Een gevonden briefje zegt: \\\"Voer de code in voordat de klok nul bereikt.\\\"\",\n      \"hinge_event\": \"Na het aanwijzen van de vermeende dader springt geen rechercheur op, maar gaat een zwaar decorpaneel open met een elektronisch piepsignaal.\",\n      \"anomaly_under_a\": \"Een echte strafzaak wordt niet beslist doordat één oplossing een geheime deur opent; bewijs is geen mechanisme voor fysieke ontsnapping en een rechterlijke beoordeling ontbreekt.\",\n      \"resolution_under_b\": \"De daderaanwijzing is de laatste spelcode; het openende paneel bevestigt dat de deelnemers de escape room hebben gewonnen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een hondengeleider meldt zijn hond aan voor een speurhondenwedstrijd. Een keurmeester laat de hond langs verborgen geuren en voorwerpen zoeken; de geleider moet aantonen dat dier en handler nauwkeurig samenwerken om de juiste bron te vinden.\",\n      \"opposition_axis\": \"Opsporing van menselijke schuld tegenover sportieve demonstratie van speurvaardigheid.\",\n      \"opposed_proposition\": \"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\",\n      \"shared_anchor\": \"Een speurhond volgt een spoor naar een verborgen voorwerp.\",\n      \"reading_a\": \"Een politiehond helpt bij een strafrechtelijk onderzoek een relevant spoor of voorwerp lokaliseren, waarna mensen de betekenis ervan juridisch moeten beoordelen.\",\n      \"reading_b\": \"Een wedstrijdhond zoekt een vooraf verborgen geurbron, waarna een keurmeester punten toekent voor tempo en precisie.\",\n      \"roles_b\": [\n        \"Hondengeleider: begeleidt de deelnemende hond.\",\n        \"Speurhond: zoekt de verborgen geurbron.\",\n        \"Keurmeester: beoordeelt de uitvoering en kent punten toe.\",\n        \"Wedstrijdorganisatie: legt het parcours en de regels vast.\",\n        \"Andere deelnemers: wachten op hun beurt en vergelijken scores.\"\n      ],\n      \"goal_b\": \"Met de hond de beste speurproef afleggen en de wedstrijd winnen.\",\n      \"role_remapping\": [\n        \"Politie → hondengeleider met wedstrijdhond.\",\n        \"Rechercheur → keurmeester die de prestatie observeert.\",\n        \"Verdachte → niet aanwezige, fictieve spoorlegger.\",\n        \"Bewijsmateriaal → verborgen geurvoorwerp of markeringsobject.\",\n        \"Rechterlijke uitspraak → puntentoekenning en rangschikking.\"\n      ],\n      \"shared_cues\": [\n        \"Een afgebakend terrein.\",\n        \"Een hond die geconcentreerd aan de grond ruikt.\",\n        \"Een begeleider die korte aanwijzingen geeft.\",\n        \"Een gevonden voorwerp dat wordt gemarkeerd.\",\n        \"Omstanders die de afloop stil volgen.\"\n      ],\n      \"switch_trigger\": \"Na de vondst blaast de keurmeester op een fluitje en roept hij: \\\"Tijd: twee minuten zeven!\\\"\",\n      \"hinge_event\": \"In plaats van een proces-verbaal krijgt de hond bij het gevonden voorwerp een rozet omgehangen.\",\n      \"anomaly_under_a\": \"Een politiehond krijgt in een echt strafonderzoek geen ereteken voor het vinden van mogelijk bewijs; zo'n ceremonie zou de bewijsketen en ernst van de zaak miskennen.\",\n      \"resolution_under_b\": \"De rozet is de prijs voor een snelle, foutloze wedstrijdprestatie en maakt duidelijk dat de zoekactie een sportproef was.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Recht, politie en criminaliteit\",\n  \"plan\": {\n    \"setup_script\": \"Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.\",\n    \"opposing_script\": \"Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.\",\n    \"opposition_type\": \"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\",\n    \"trigger\": \"De regisseur roept vlak voor het vermeende verhoor: \\\"En... actie!\\\"\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Uniformen en een politieauto bij een gebouw.\",\n      \"Een man krijgt te horen dat hij mee moet komen.\",\n      \"Een camera registreert het gebeuren.\",\n      \"Vragen over waar hij die avond was.\",\n      \"Een agent noteert details in een boekje.\"\n    ],\n    \"hinge_event\": \"De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.\",\n    \"anomaly_under_a\": \"Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.\",\n    \"resolution_under_b\": \"Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.\",\n    \"role_remapping\": [\n      \"Verdachte → acteur die de verdachte speelt.\",\n      \"Politie → acteurs in de rollen van agenten.\",\n      \"Onderzoeker/rechercheur → regisseur die de handelingen stuurt.\",\n      \"Bewijs en dossier → script, rekwisieten en opgenomen beelden.\",\n      \"Onderzoek naar waarheid → beoordeling van geloofwaardig spel.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Recht, politie en criminaliteit\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.\",\n      \"participants_and_roles\": [\n        \"Slachtoffer of getuige: meldt het misdrijf en geeft informatie aan de autoriteiten.\",\n        \"Verdachte: persoon die mogelijk het strafbare feit heeft gepleegd en recht heeft op een eerlijk onderzoek en verdediging.\",\n        \"Politie: reageert op meldingen, beschermt de openbare orde, onderzoekt feiten en kan verdachten aanhouden.\",\n        \"Openbaar Ministerie / officier van justitie: beoordeelt het bewijs, leidt de vervolging en brengt de zaak zo nodig voor de rechter.\",\n        \"Rechter: weegt bewijs en wet, bewaakt een eerlijk proces en doet een onafhankelijke uitspraak.\",\n        \"Advocaat: verdedigt de rechten en belangen van de verdachte of staat een slachtoffer bij.\"\n      ],\n      \"apparent_goal\": \"Een misdrijf op een rechtmatige en zorgvuldige manier oplossen, de waarheid zo goed mogelijk vaststellen en veiligheid en rechtvaardigheid herstellen.\",\n      \"preconditions\": [\n        \"Er is een melding, aangifte of concrete aanwijzing dat mogelijk een strafbaar feit is gepleegd.\",\n        \"Politie en justitie hebben wettelijke bevoegdheden en moeten vaste procedures volgen.\",\n        \"Er moet voldoende, rechtmatig verkregen bewijs worden verzameld voordat iemand kan worden veroordeeld.\",\n        \"De verdachte geldt als onschuldig totdat schuld wettig en overtuigend is bewezen.\",\n        \"Alle betrokkenen hebben rechten, waaronder toegang tot juridische bijstand en een eerlijke behandeling.\"\n      ],\n      \"expected_actions\": [\n        \"De politie neemt de melding op, stelt de situatie veilig en spreekt met betrokkenen en getuigen.\",\n        \"Rechercheurs verzamelen en controleren bewijs, zoals verklaringen, camerabeelden of sporen.\",\n        \"Bij een redelijke verdenking ondervraagt of arresteert de politie een verdachte volgens de regels.\",\n        \"Het Openbaar Ministerie beslist of vervolging kansrijk en passend is.\",\n        \"Tijdens een rechtszitting presenteren aanklager en verdediging hun standpunten en bewijs.\",\n        \"De rechter doet uitspraak: vrijspraak bij onvoldoende bewijs, of een straf of maatregel bij bewezen schuld.\"\n      ],\n      \"expected_outcome\": \"De zaak wordt zorgvuldig afgehandeld: een schuldige wordt binnen de wet verantwoordelijk gehouden en een onschuldige wordt niet veroordeeld, waardoor vertrouwen, veiligheid en rechtsorde worden beschermd.\",\n      \"expected_propositions\": [\n        \"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\",\n        \"Een arrestatie betekent nog niet dat iemand schuldig is.\",\n        \"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\",\n        \"Iedere verdachte heeft recht op een eerlijk proces en verdediging.\",\n        \"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\"\n      ],\n      \"audience_expectation\": \"Een setup over recht, politie en criminaliteit activeert doorgaans de verwachting van een ordelijk proces: een misdrijf leidt tot onderzoek, bewijs leidt tot een eerlijke beoordeling, en de uitkomst herstelt rechtvaardigheid zonder de rechten van betrokkenen te schenden.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.\",\n      \"opposition_axis\": \"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\",\n      \"opposed_proposition\": \"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\",\n      \"shared_anchor\": \"Een man wordt door agenten meegenomen voor ondervraging.\",\n      \"reading_a\": \"Agenten voeren een verdachte na een mogelijke misdaad af naar het bureau, waar zijn betrokkenheid zorgvuldig moet worden onderzocht.\",\n      \"reading_b\": \"Acteurs in politie-uniform begeleiden een collega naar de set, waar een verhoorscène opnieuw wordt opgenomen.\",\n      \"roles_b\": [\n        \"Acteur in handboeien: speelt de vermeende verdachte.\",\n        \"Acteurs als agenten: voeren de arrestatiehandeling uit.\",\n        \"Regisseur: beoordeelt de scène en geeft aanwijzingen.\",\n        \"Cameraploeg: registreert beeld en geluid.\",\n        \"Scriptsupervisor: bewaakt tekst en continuïteit.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige arrestatie- en verhoorscène opnemen.\",\n      \"role_remapping\": [\n        \"Verdachte → acteur die de verdachte speelt.\",\n        \"Politie → acteurs in de rollen van agenten.\",\n        \"Onderzoeker/rechercheur → regisseur die de handelingen stuurt.\",\n        \"Bewijs en dossier → script, rekwisieten en opgenomen beelden.\",\n        \"Onderzoek naar waarheid → beoordeling van geloofwaardig spel.\"\n      ],\n      \"shared_cues\": [\n        \"Uniformen en een politieauto bij een gebouw.\",\n        \"Een man krijgt te horen dat hij mee moet komen.\",\n        \"Een camera registreert het gebeuren.\",\n        \"Vragen over waar hij die avond was.\",\n        \"Een agent noteert details in een boekje.\"\n      ],\n      \"switch_trigger\": \"De regisseur roept vlak voor het vermeende verhoor: \\\"En... actie!\\\"\",\n      \"hinge_event\": \"De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.\",\n      \"anomaly_under_a\": \"Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.\",\n      \"resolution_under_b\": \"Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.\",\n      \"opposing_script\": \"Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.\",\n      \"opposition_type\": \"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\",\n      \"trigger\": \"De regisseur roept vlak voor het vermeende verhoor: \\\"En... actie!\\\"\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Uniformen en een politieauto bij een gebouw.\",\n        \"Een man krijgt te horen dat hij mee moet komen.\",\n        \"Een camera registreert het gebeuren.\",\n        \"Vragen over waar hij die avond was.\",\n        \"Een agent noteert details in een boekje.\"\n      ],\n      \"hinge_event\": \"De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.\",\n      \"anomaly_under_a\": \"Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.\",\n      \"resolution_under_b\": \"Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.\",\n      \"role_remapping\": [\n        \"Verdachte → acteur die de verdachte speelt.\",\n        \"Politie → acteurs in de rollen van agenten.\",\n        \"Onderzoeker/rechercheur → regisseur die de handelingen stuurt.\",\n        \"Bewijs en dossier → script, rekwisieten en opgenomen beelden.\",\n        \"Onderzoek naar waarheid → beoordeling van geloofwaardig spel.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij het politiebureau zag ik uniformen, een politieauto en een man in handboeien. Binnen vroeg een rechercheur waar hij gisteravond was; de man zuchtte: „Mag ik die laatste zin nog eens doen, maar dan schuldiger?”\",\n      \"angle\": \"De verdachte behandelt het verhoor als een nieuwe opname.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Een man wordt uit een flat meegenomen terwijl een camera alles filmt. Op het bureau legt een agent zijn verklaringen netjes vast, tot de geboeide man zegt: „Wacht even, mijn angst was te klein; kunnen we terug naar de politieauto?”\",\n      \"angle\": \"De arrestatie blijkt een scène waarvan de acteur een betere take wil.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De agent vroeg streng waar de verdachte die avond geweest was, terwijl iemand achter hem ieder woord noteerde. De man keek naar de camera en vroeg: „Was dat geloofwaardig, of wil de regisseur meer paniek bij de bekentenis?”\",\n      \"angle\": \"Een ogenschijnlijk echt verhoor kantelt naar een misdaadserie-opname.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Recht, politie en criminaliteit\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij het politiebureau zag ik uniformen, een politieauto en een man in handboeien. Binnen vroeg een rechercheur waar hij gisteravond was; de man zuchtte: „Mag ik die laatste zin nog eens doen, maar dan schuldiger?”\",\n      \"angle\": \"De verdachte behandelt het verhoor als een nieuwe opname.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Een man wordt uit een flat meegenomen terwijl een camera alles filmt. Op het bureau legt een agent zijn verklaringen netjes vast, tot de geboeide man zegt: „Wacht even, mijn angst was te klein; kunnen we terug naar de politieauto?”\",\n      \"angle\": \"De arrestatie blijkt een scène waarvan de acteur een betere take wil.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De agent vroeg streng waar de verdachte die avond geweest was, terwijl iemand achter hem ieder woord noteerde. De man keek naar de camera en vroeg: „Was dat geloofwaardig, of wil de regisseur meer paniek bij de bekentenis?”\",\n      \"angle\": \"Een ogenschijnlijk echt verhoor kantelt naar een misdaadserie-opname.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een ogenschijnlijk echt politieverhoor van een geboeide verdachte na een mogelijke misdaad.\",\n      \"realized_script_b\": \"Een slechts impliciet gesuggereerde uitvoering waarin de man zijn verhoorreactie opnieuw wil spelen.\",\n      \"realized_opposition_axis\": \"Werkelijk politieverhoor tegenover mogelijk geacteerd optreden, maar zonder duidelijk vastgelegde fictieproductie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De setup en de geplande hinge van een zin opnieuw willen doen zijn aanwezig, maar de tekst maakt niet voldoende duidelijk dat er een film- of serieproductie plaatsvindt. Camera, regisseur en een expliciete productieswitch ontbreken, waardoor de beoogde retrospectieve herlezing onzeker blijft.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": false,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant heeft een bruikbare politieverhoor-setup en een komische eindregel, maar realiseert de beoogde omslag naar een geënsceneerde opname niet helder genoeg.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een man wordt na een vermoedelijk misdrijf aangehouden, gefilmd en op het bureau verhoord.\",\n      \"realized_script_b\": \"Een acteur speelt een arrestatiescène en wil terug naar de politieauto om zijn angstreactie in een betere take opnieuw op te nemen.\",\n      \"realized_opposition_axis\": \"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De gedeelde arrestatie-, camera- en verhoorcues maken eerst een echt politieoptreden dominant. De vraag om terug te gaan voor een betere angstreactie activeert vervolgens functioneel de geplande acteurs-/opnamescript en herinterpreteert de eerdere camera en arrestatie als een scène.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant realiseert de geplande politie-naar-filmsetoppositie functioneel: de camera is eerst dubbelzinnig en de gewenste retake maakt de fictieproductie aan het einde duidelijk.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een streng politieverhoor waarin een verdachte over zijn alibi en een mogelijke bekentenis wordt ondervraagd.\",\n      \"realized_script_b\": \"Een misdaadserie-opname waarin een acteur zijn bekentenis speelt en de regisseur beoordeelt hoeveel paniek hij moet tonen.\",\n      \"realized_opposition_axis\": \"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het verhoor, de notulist en de camera ondersteunen aanvankelijk de onderzoeksscript. De expliciete verwijzing naar de regisseur en naar geloofwaardig gespeelde paniek schakelt helder naar de opname-script en herkadert de camera en verklaring als productie-elementen.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant voert de beoogde omslag duidelijk uit: een realistisch verhoor verandert in een geregisseerde misdaadserie-opname, met de camera als gedeelde cue en de regisseur als beslissende switch.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Een man wordt uit een flat meegenomen terwijl een camera alles filmt. Op het bureau legt een agent zijn verklaringen netjes vast, tot de geboeide man zegt: „Wacht even, mijn angst was te klein; kunnen we terug naar de politieauto?”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.",
+      "opposing_script": "Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.",
+      "opposition_type": "Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.",
+      "trigger": "De regisseur roept vlak voor het vermeende verhoor: \"En... actie!\"",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Uniformen en een politieauto bij een gebouw.",
+        "Een man krijgt te horen dat hij mee moet komen.",
+        "Een camera registreert het gebeuren.",
+        "Vragen over waar hij die avond was.",
+        "Een agent noteert details in een boekje."
+      ],
+      "hinge_event": "De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.",
+      "anomaly_under_a": "Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.",
+      "resolution_under_b": "Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.",
+      "role_remapping": [
+        "Verdachte → acteur die de verdachte speelt.",
+        "Politie → acteurs in de rollen van agenten.",
+        "Onderzoeker/rechercheur → regisseur die de handelingen stuurt.",
+        "Bewijs en dossier → script, rekwisieten en opgenomen beelden.",
+        "Onderzoek naar waarheid → beoordeling van geloofwaardig spel."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.\\\",\\\"participants_and_roles\\\":[\\\"Slachtoffer of getuige: meldt het misdrijf en geeft informatie aan de autoriteiten.\\\",\\\"Verdachte: persoon die mogelijk het strafbare feit heeft gepleegd en recht heeft op een eerlijk onderzoek en verdediging.\\\",\\\"Politie: reageert op meldingen, beschermt de openbare orde, onderzoekt feiten en kan verdachten aanhouden.\\\",\\\"Openbaar Ministerie / officier van justitie: beoordeelt het bewijs, leidt de vervolging en brengt de zaak zo nodig voor de rechter.\\\",\\\"Rechter: weegt bewijs en wet, bewaakt een eerlijk proces en doet een onafhankelijke uitspraak.\\\",\\\"Advocaat: verdedigt de rechten en belangen van de verdachte of staat een slachtoffer bij.\\\"],\\\"apparent_goal\\\":\\\"Een misdrijf op een rechtmatige en zorgvuldige manier oplossen, de waarheid zo goed mogelijk vaststellen en veiligheid en rechtvaardigheid herstellen.\\\",\\\"preconditions\\\":[\\\"Er is een melding, aangifte of concrete aanwijzing dat mogelijk een strafbaar feit is gepleegd.\\\",\\\"Politie en justitie hebben wettelijke bevoegdheden en moeten vaste procedures volgen.\\\",\\\"Er moet voldoende, rechtmatig verkregen bewijs worden verzameld voordat iemand kan worden veroordeeld.\\\",\\\"De verdachte geldt als onschuldig totdat schuld wettig en overtuigend is bewezen.\\\",\\\"Alle betrokkenen hebben rechten, waaronder toegang tot juridische bijstand en een eerlijke behandeling.\\\"],\\\"expected_actions\\\":[\\\"De politie neemt de melding op, stelt de situatie veilig en spreekt met betrokkenen en getuigen.\\\",\\\"Rechercheurs verzamelen en controleren bewijs, zoals verklaringen, camerabeelden of sporen.\\\",\\\"Bij een redelijke verdenking ondervraagt of arresteert de politie een verdachte volgens de regels.\\\",\\\"Het Openbaar Ministerie beslist of vervolging kansrijk en passend is.\\\",\\\"Tijdens een rechtszitting presenteren aanklager en verdediging hun standpunten en bewijs.\\\",\\\"De rechter doet uitspraak: vrijspraak bij onvoldoende bewijs, of een straf of maatregel bij bewezen schuld.\\\"],\\\"expected_outcome\\\":\\\"De zaak wordt zorgvuldig afgehandeld: een schuldige wordt binnen de wet verantwoordelijk gehouden en een onschuldige wordt niet veroordeeld, waardoor vertrouwen, veiligheid en rechtsorde worden beschermd.\\\",\\\"expected_propositions\\\":[\\\"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\\\",\\\"Een arrestatie betekent nog niet dat iemand schuldig is.\\\",\\\"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\\\",\\\"Iedere verdachte heeft recht op een eerlijk proces en verdediging.\\\",\\\"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\\\"],\\\"audience_expectation\\\":\\\"Een setup over recht, politie en criminaliteit activeert doorgaans de verwachting van een ordelijk proces: een misdrijf leidt tot onderzoek, bewijs leidt tot een eerlijke beoordeling, en de uitkomst herstelt rechtvaardigheid zonder de rechten van betrokkenen te schenden.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.\\\",\\\"opposition_axis\\\":\\\"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\\\",\\\"opposed_proposition\\\":\\\"De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.\\\",\\\"shared_anchor\\\":\\\"Een man wordt door agenten meegenomen voor ondervraging.\\\",\\\"reading_a\\\":\\\"Agenten voeren een verdachte na een mogelijke misdaad af naar het bureau, waar zijn betrokkenheid zorgvuldig moet worden onderzocht.\\\",\\\"reading_b\\\":\\\"Acteurs in politie-uniform begeleiden een collega naar de set, waar een verhoorscène opnieuw wordt opgenomen.\\\",\\\"roles_b\\\":[\\\"Acteur in handboeien: speelt de vermeende verdachte.\\\",\\\"Acteurs als agenten: voeren de arrestatiehandeling uit.\\\",\\\"Regisseur: beoordeelt de scène en geeft aanwijzingen.\\\",\\\"Cameraploeg: registreert beeld en geluid.\\\",\\\"Scriptsupervisor: bewaakt tekst en continuïteit.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige arrestatie- en verhoorscène opnemen.\\\",\\\"role_remapping\\\":[\\\"Verdachte → acteur die de verdachte speelt.\\\",\\\"Politie → acteurs in de rollen van agenten.\\\",\\\"Onderzoeker/rechercheur → regisseur die de handelingen stuurt.\\\",\\\"Bewijs en dossier → script, rekwisieten en opgenomen beelden.\\\",\\\"Onderzoek naar waarheid → beoordeling van geloofwaardig spel.\\\"],\\\"shared_cues\\\":[\\\"Uniformen en een politieauto bij een gebouw.\\\",\\\"Een man krijgt te horen dat hij mee moet komen.\\\",\\\"Een camera registreert het gebeuren.\\\",\\\"Vragen over waar hij die avond was.\\\",\\\"Een agent noteert details in een boekje.\\\"],\\\"switch_trigger\\\":\\\"De regisseur roept vlak voor het vermeende verhoor: \\\\\\\"En... actie!\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.\\\",\\\"anomaly_under_a\\\":\\\"Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.\\\",\\\"resolution_under_b\\\":\\\"Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een groep vrienden organiseert een verrassingsfeest voor iemand die denkt dat hij naar een politiebureau wordt gelokt wegens een vermeende vernieling. De vrienden gebruiken een nepverhoor en een zorgvuldig opgebouwde schrikreactie om hem pas op het laatste moment naar een feestzaal te leiden.\\\",\\\"opposition_axis\\\":\\\"Bestraffing van vermeend wangedrag tegenover feestelijke misleiding als verrassing.\\\",\\\"opposed_proposition\\\":\\\"Een arrestatie betekent nog niet dat iemand schuldig is.\\\",\\\"shared_anchor\\\":\\\"Iemand wordt apart genomen om vragen over een incident te beantwoorden.\\\",\\\"reading_a\\\":\\\"De persoon is mogelijk verdachte van vernieling en wordt afgezonderd zodat de politie zijn verklaring kan opnemen.\\\",\\\"reading_b\\\":\\\"De jarige wordt door vrienden in een geënsceneerde beschuldiging gehouden om hem weg te leiden van de voorbereidingen voor zijn feest.\\\",\\\"roles_b\\\":[\\\"Jarige: onwetend doelwit van de verrassing.\\\",\\\"Vriend in politie-uniform: speelt de ondervrager.\\\",\\\"Andere vrienden: spelen getuigen of wachten verborgen in de feestzaal.\\\",\\\"Organisator: coördineert het scenario.\\\",\\\"Café- of zaaleigenaar: stelt de feestlocatie beschikbaar.\\\"],\\\"goal_b\\\":\\\"De jarige geloofwaardig verrassen en vervolgens met vrienden laten vieren.\\\",\\\"role_remapping\\\":[\\\"Verdachte → jarige die voor de grap als verdachte wordt behandeld.\\\",\\\"Politie → verklede vriend die de ondervraging speelt.\\\",\\\"Getuigen/slachtoffer → vrienden die het verzonnen incident bevestigen.\\\",\\\"Politiebureau/verhoorkamer → versierde achterzaal.\\\",\\\"Zaakafhandeling → onthulling van het verrassingsfeest.\\\"],\\\"shared_cues\\\":[\\\"Een telefoontje over schade aan een auto.\\\",\\\"Een serieuze vraag naar de verblijfplaats van die avond.\\\",\\\"Een aparte kamer met een tafel en stoelen.\\\",\\\"Mensen die fluisteren en elkaar betekenisvol aankijken.\\\",\\\"Een schriftelijke verklaring die moet worden gelezen.\\\"],\\\"switch_trigger\\\":\\\"Achter de deur van de zogenaamd afgesloten verhoorkamer klinkt een groep die aftelt.\\\",\\\"hinge_event\\\":\\\"De ondervrager opent de deur en zet geen dossier op tafel, maar een verjaardagstaart met brandende kaarsen.\\\",\\\"anomaly_under_a\\\":\\\"Bij een werkelijk politieverhoor is een taart geen relevant of professioneel bewijsmiddel en zou zij de ernst en procedure van de zaak absurd onderbreken.\\\",\\\"resolution_under_b\\\":\\\"De taart is het onthullingssignaal: de schijnbare ondervraging was uitsluitend een omweg naar het verrassingsfeest.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"In een escape room spelen deelnemers rechercheurs die een fictieve inbraak moeten oplossen. Zij doorzoeken kamers, vergelijken vingerafdrukken, ontcijferen verklaringen en moeten de juiste verdachte aanwijzen om vóór de tijdslimiet de uitgang te openen.\\\",\\\"opposition_axis\\\":\\\"Wettelijk waarheidsvindingproces tegenover spelmatige puzzeloplossing onder tijdsdruk.\\\",\\\"opposed_proposition\\\":\\\"Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.\\\",\\\"shared_anchor\\\":\\\"Onderzoekers verzamelen sporen om een inbraakzaak op te lossen.\\\",\\\"reading_a\\\":\\\"Rechercheurs verzamelen echte sporen van een misdrijf; de herkomst, betrouwbaarheid en rechtmatigheid daarvan bepalen of het bewijs bruikbaar is.\\\",\\\"reading_b\\\":\\\"Spelers verzamelen vooraf geplaatste aanwijzingen die bedoeld zijn om een puzzelketen en een codeslot op te lossen.\\\",\\\"roles_b\\\":[\\\"Spelers: fictieve rechercheurs die puzzels oplossen.\\\",\\\"Gamemaster: bewaakt veiligheid, tijd en spelverloop.\\\",\\\"Fictieve dader: personage uit het verhaal.\\\",\\\"Decor en rekwisieten: leveren gecodeerde aanwijzingen.\\\",\\\"Teamcaptain: verdeelt taken en voert oplossingen in.\\\"],\\\"goal_b\\\":\\\"Alle puzzels oplossen, de fictieve dader identificeren en op tijd uit de escape room ontsnappen.\\\",\\\"role_remapping\\\":[\\\"Politie/rechercheurs → escape-roomspelers.\\\",\\\"Verdachte → fictief personage in het spelverhaal.\\\",\\\"Bewijs → puzzelstukken, cijfers en verborgen sleutels.\\\",\\\"Onderzoeksdossier → introductiebrief en aanwijzingen in de kamer.\\\",\\\"Oplossing van de zaak → openen van het laatste slot.\\\"],\\\"shared_cues\\\":[\\\"Een afgezet ogende kamer.\\\",\\\"Foto's, afdrukken en een plattegrond op tafel.\\\",\\\"Een notitie met een tijdstip.\\\",\\\"Mensen die aanwijzingen vergelijken.\\\",\\\"Een afgesloten kast met mogelijk relevante inhoud.\\\"],\\\"switch_trigger\\\":\\\"Een gevonden briefje zegt: \\\\\\\"Voer de code in voordat de klok nul bereikt.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Na het aanwijzen van de vermeende dader springt geen rechercheur op, maar gaat een zwaar decorpaneel open met een elektronisch piepsignaal.\\\",\\\"anomaly_under_a\\\":\\\"Een echte strafzaak wordt niet beslist doordat één oplossing een geheime deur opent; bewijs is geen mechanisme voor fysieke ontsnapping en een rechterlijke beoordeling ontbreekt.\\\",\\\"resolution_under_b\\\":\\\"De daderaanwijzing is de laatste spelcode; het openende paneel bevestigt dat de deelnemers de escape room hebben gewonnen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een hondengeleider meldt zijn hond aan voor een speurhondenwedstrijd. Een keurmeester laat de hond langs verborgen geuren en voorwerpen zoeken; de geleider moet aantonen dat dier en handler nauwkeurig samenwerken om de juiste bron te vinden.\\\",\\\"opposition_axis\\\":\\\"Opsporing van menselijke schuld tegenover sportieve demonstratie van speurvaardigheid.\\\",\\\"opposed_proposition\\\":\\\"Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.\\\",\\\"shared_anchor\\\":\\\"Een speurhond volgt een spoor naar een verborgen voorwerp.\\\",\\\"reading_a\\\":\\\"Een politiehond helpt bij een strafrechtelijk onderzoek een relevant spoor of voorwerp lokaliseren, waarna mensen de betekenis ervan juridisch moeten beoordelen.\\\",\\\"reading_b\\\":\\\"Een wedstrijdhond zoekt een vooraf verborgen geurbron, waarna een keurmeester punten toekent voor tempo en precisie.\\\",\\\"roles_b\\\":[\\\"Hondengeleider: begeleidt de deelnemende hond.\\\",\\\"Speurhond: zoekt de verborgen geurbron.\\\",\\\"Keurmeester: beoordeelt de uitvoering en kent punten toe.\\\",\\\"Wedstrijdorganisatie: legt het parcours en de regels vast.\\\",\\\"Andere deelnemers: wachten op hun beurt en vergelijken scores.\\\"],\\\"goal_b\\\":\\\"Met de hond de beste speurproef afleggen en de wedstrijd winnen.\\\",\\\"role_remapping\\\":[\\\"Politie → hondengeleider met wedstrijdhond.\\\",\\\"Rechercheur → keurmeester die de prestatie observeert.\\\",\\\"Verdachte → niet aanwezige, fictieve spoorlegger.\\\",\\\"Bewijsmateriaal → verborgen geurvoorwerp of markeringsobject.\\\",\\\"Rechterlijke uitspraak → puntentoekenning en rangschikking.\\\"],\\\"shared_cues\\\":[\\\"Een afgebakend terrein.\\\",\\\"Een hond die geconcentreerd aan de grond ruikt.\\\",\\\"Een begeleider die korte aanwijzingen geeft.\\\",\\\"Een gevonden voorwerp dat wordt gemarkeerd.\\\",\\\"Omstanders die de afloop stil volgen.\\\"],\\\"switch_trigger\\\":\\\"Na de vondst blaast de keurmeester op een fluitje en roept hij: \\\\\\\"Tijd: twee minuten zeven!\\\\\\\"\\\",\\\"hinge_event\\\":\\\"In plaats van een proces-verbaal krijgt de hond bij het gevonden voorwerp een rozet omgehangen.\\\",\\\"anomaly_under_a\\\":\\\"Een politiehond krijgt in een echt strafonderzoek geen ereteken voor het vinden van mogelijk bewijs; zo'n ceremonie zou de bewijsketen en ernst van de zaak miskennen.\\\",\\\"resolution_under_b\\\":\\\"De rozet is de prijs voor een snelle, foutloze wedstrijdprestatie en maakt duidelijk dat de zoekactie een sportproef was.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Dezelfde scène kan eerst als een echte aanhouding en verhoor en vervolgens als een opname op een filmset worden gelezen. De tegenstelling werkelijk strafonderzoek versus fictieproductie is lokaal onverenigbaar en overheerst duidelijk. Uniformen, meenemen, vragen en notities passen bij beide lezingen; de camera laat de setlezing al latent mogelijk zonder deze aanvankelijk dominant te maken. De vraag om een zin opnieuw te doen is onder Script A storend, maar is onder Script B een normale vraag om een nieuwe take. Daardoor krijgen de eerdere handelingen achteraf een opnamefunctie. Het opnieuw doen verhindert het strafrechtelijke doel niet noodzakelijk als vaste voorwaarde, ook al dient het wel het productiedoel.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén realiseerbare tekst kan iemand eerst als mogelijke verdachte in een serieus verhoor en later als doelwit van een verrassingsfeest tonen. De schijnbare strafrechtelijke afhandeling en de feestelijke misleiding sluiten elkaar op de dominante doelas uit. Telefoon over schade, vragen over een avond en een aparte kamer ondersteunen aanvankelijk de politielezing, terwijl fluisteren en betekenisvolle blikken de feestlezing latent mogelijk laten. Een taart tijdens een verhoor is onder Script A procedureel ongerijmd, maar is onder Script B precies het onthullingssignaal. De onthulling herdefinieert de eerdere beschuldiging en afzondering als een omweg naar het feest. De taart blokkeert de voortzetting van een echt verhoor en maakt tegelijk het feestdoel mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De gedeelde onderzoekssetting kan zowel een echte inbraakzaak als een escape-roomscenario dragen. De dominante tegenstelling betreft wettelijke waarheidsvinding tegenover spelmatige puzzeloplossing; die doelen en de status van de sporen zijn lokaal onverenigbaar. Sporen, foto’s, afdrukken en een plattegrond leiden eerst vanzelf naar politieonderzoek, maar kunnen ook als vooraf ontworpen spelcues functioneren. De code, klok en openende deur maken de tweede lezing herkenbaar. Een geheime deur die door het aanwijzen van een dader opent is onder Script A niet zinvol, maar vormt onder Script B de spelbeloning. Daardoor worden eerdere ‘bewijzen’ achteraf puzzelonderdelen. De codevoorwaarde vervangt en blokkeert een juridische beoordeling, terwijl zij juist de ontsnappingsdoelstelling van Script B realiseert.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een speurhond die een spoor naar een voorwerp volgt kan eerst als onderdeel van een politieonderzoek en later als wedstrijdproef worden gelezen. De dominante tegenstelling is opsporing ten behoeve van menselijke schuld en juridische afhandeling tegenover demonstratie van speurvaardigheid voor een score. Het terrein, de hond, de geleider en het gemarkeerde voorwerp passen bij beide lezingen; omstanders en een afgebakend parcours laten de wedstrijdlezing bovendien latent beschikbaar. De rozet is onder Script A een ongerijmde reactie op mogelijk bewijs, maar is onder Script B een normale prijs. Zij herdefinieert de zoekactie als een beoordeelde prestatie. De prijsuitreiking beëindigt een mogelijke bewijsverwerking en maakt tegelijk het wedstrijd- en beloningsdoel mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest economische tegenstelling: dezelfde zichtbare arrestatie- en verhoorcues dragen eerst overtuigend een strafrechtelijke lezing, maar worden volledig herinterpreteerbaar als filmproductie. De rollen, handelingen en objecten sluiten sterk op beide scripts aan, terwijl de vraag om een zin opnieuw te doen een duidelijke anomalie vormt die de tweede lezing natuurlijk onthult. Daardoor heeft de kandidaat hoog retrospectief payoff-potentieel zonder dat de oorspronkelijke politiecontext aan dominantie verliest.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Bij het politiebureau zag ik uniformen, een politieauto en een man in handboeien. Binnen vroeg een rechercheur waar hij gisteravond was; de man zuchtte: „Mag ik die laatste zin nog eens doen, maar dan schuldiger?”\\\",\\\"angle\\\":\\\"De verdachte behandelt het verhoor als een nieuwe opname.\\\"},{\\\"text\\\":\\\"Een man wordt uit een flat meegenomen terwijl een camera alles filmt. Op het bureau legt een agent zijn verklaringen netjes vast, tot de geboeide man zegt: „Wacht even, mijn angst was te klein; kunnen we terug naar de politieauto?”\\\",\\\"angle\\\":\\\"De arrestatie blijkt een scène waarvan de acteur een betere take wil.\\\"},{\\\"text\\\":\\\"De agent vroeg streng waar de verdachte die avond geweest was, terwijl iemand achter hem ieder woord noteerde. De man keek naar de camera en vroeg: „Was dat geloofwaardig, of wil de regisseur meer paniek bij de bekentenis?”\\\",\\\"angle\\\":\\\"Een ogenschijnlijk echt verhoor kantelt naar een misdaadserie-opname.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een ogenschijnlijk echt politieverhoor van een geboeide verdachte na een mogelijke misdaad.\\\",\\\"realized_script_b\\\":\\\"Een slechts impliciet gesuggereerde uitvoering waarin de man zijn verhoorreactie opnieuw wil spelen.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijk politieverhoor tegenover mogelijk geacteerd optreden, maar zonder duidelijk vastgelegde fictieproductie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De setup en de geplande hinge van een zin opnieuw willen doen zijn aanwezig, maar de tekst maakt niet voldoende duidelijk dat er een film- of serieproductie plaatsvindt. Camera, regisseur en een expliciete productieswitch ontbreken, waardoor de beoogde retrospectieve herlezing onzeker blijft.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":false,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":false,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant heeft een bruikbare politieverhoor-setup en een komische eindregel, maar realiseert de beoogde omslag naar een geënsceneerde opname niet helder genoeg.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een man wordt na een vermoedelijk misdrijf aangehouden, gefilmd en op het bureau verhoord.\\\",\\\"realized_script_b\\\":\\\"Een acteur speelt een arrestatiescène en wil terug naar de politieauto om zijn angstreactie in een betere take opnieuw op te nemen.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De gedeelde arrestatie-, camera- en verhoorcues maken eerst een echt politieoptreden dominant. De vraag om terug te gaan voor een betere angstreactie activeert vervolgens functioneel de geplande acteurs-/opnamescript en herinterpreteert de eerdere camera en arrestatie als een scène.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant realiseert de geplande politie-naar-filmsetoppositie functioneel: de camera is eerst dubbelzinnig en de gewenste retake maakt de fictieproductie aan het einde duidelijk.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een streng politieverhoor waarin een verdachte over zijn alibi en een mogelijke bekentenis wordt ondervraagd.\\\",\\\"realized_script_b\\\":\\\"Een misdaadserie-opname waarin een acteur zijn bekentenis speelt en de regisseur beoordeelt hoeveel paniek hij moet tonen.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het verhoor, de notulist en de camera ondersteunen aanvankelijk de onderzoeksscript. De expliciete verwijzing naar de regisseur en naar geloofwaardig gespeelde paniek schakelt helder naar de opname-script en herkadert de camera en verklaring als productie-elementen.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant voert de beoogde omslag duidelijk uit: een realistisch verhoor verandert in een geregisseerde misdaadserie-opname, met de camera als gedeelde cue en de regisseur als beslissende switch.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 wint omdat het een passerende variant is en V1 niet. De camera en de wens om terug te keren naar de politieauto maken de omslag naar een opgenomen scène helder en herinterpreteren de arrestatie effectief; V1 suggereert hoogstens een overdoen.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 wint omdat het de vereiste scriptoppositie volledig realiseert, terwijl V1 de fictieproductie onvoldoende vastlegt. De verwijzing naar de regisseur geeft een directe, performabele switch van verhoor naar misdaadserie.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide varianten slagen, maar V2 gebruikt de eerder genoemde camera sterker als dubbelzinnige cue. De vraag om voor een betere angstreactie terug te gaan naar de politieauto is concreet, compact en herkadert de hele arrestatie als een take.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 combineert de duidelijkste retrospectieve herinterpretatie met een natuurlijke gesproken punchline. De camera, arrestatie en terugkeer naar de politieauto vormen samen een heldere en komische omslag naar een filmopname.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.",
+        "candidate_id": "B1",
+        "opposition_axis": "Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.",
+        "opposed_expectation": "De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.",
+        "roles_b": [
+          "Acteur in handboeien: speelt de vermeende verdachte.",
+          "Acteurs als agenten: voeren de arrestatiehandeling uit.",
+          "Regisseur: beoordeelt de scène en geeft aanwijzingen.",
+          "Cameraploeg: registreert beeld en geluid.",
+          "Scriptsupervisor: bewaakt tekst en continuïteit."
+        ],
+        "goal_b": "Een geloofwaardige arrestatie- en verhoorscène opnemen.",
+        "role_remapping": [
+          "Verdachte → acteur die de verdachte speelt.",
+          "Politie → acteurs in de rollen van agenten.",
+          "Onderzoeker/rechercheur → regisseur die de handelingen stuurt.",
+          "Bewijs en dossier → script, rekwisieten en opgenomen beelden.",
+          "Onderzoek naar waarheid → beoordeling van geloofwaardig spel."
+        ],
+        "shared_cues": [
+          "Uniformen en een politieauto bij een gebouw.",
+          "Een man krijgt te horen dat hij mee moet komen.",
+          "Een camera registreert het gebeuren.",
+          "Vragen over waar hij die avond was.",
+          "Een agent noteert details in een boekje."
+        ],
+        "switch_trigger": "De regisseur roept vlak voor het vermeende verhoor: \"En... actie!\"",
+        "hinge_event": "De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.",
+        "anomaly_under_a": "Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.",
+        "resolution_under_b": "Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een groep vrienden organiseert een verrassingsfeest voor iemand die denkt dat hij naar een politiebureau wordt gelokt wegens een vermeende vernieling. De vrienden gebruiken een nepverhoor en een zorgvuldig opgebouwde schrikreactie om hem pas op het laatste moment naar een feestzaal te leiden.",
+        "candidate_id": "B2",
+        "opposition_axis": "Bestraffing van vermeend wangedrag tegenover feestelijke misleiding als verrassing.",
+        "opposed_expectation": "Een arrestatie betekent nog niet dat iemand schuldig is.",
+        "roles_b": [
+          "Jarige: onwetend doelwit van de verrassing.",
+          "Vriend in politie-uniform: speelt de ondervrager.",
+          "Andere vrienden: spelen getuigen of wachten verborgen in de feestzaal.",
+          "Organisator: coördineert het scenario.",
+          "Café- of zaaleigenaar: stelt de feestlocatie beschikbaar."
+        ],
+        "goal_b": "De jarige geloofwaardig verrassen en vervolgens met vrienden laten vieren.",
+        "role_remapping": [
+          "Verdachte → jarige die voor de grap als verdachte wordt behandeld.",
+          "Politie → verklede vriend die de ondervraging speelt.",
+          "Getuigen/slachtoffer → vrienden die het verzonnen incident bevestigen.",
+          "Politiebureau/verhoorkamer → versierde achterzaal.",
+          "Zaakafhandeling → onthulling van het verrassingsfeest."
+        ],
+        "shared_cues": [
+          "Een telefoontje over schade aan een auto.",
+          "Een serieuze vraag naar de verblijfplaats van die avond.",
+          "Een aparte kamer met een tafel en stoelen.",
+          "Mensen die fluisteren en elkaar betekenisvol aankijken.",
+          "Een schriftelijke verklaring die moet worden gelezen."
+        ],
+        "switch_trigger": "Achter de deur van de zogenaamd afgesloten verhoorkamer klinkt een groep die aftelt.",
+        "hinge_event": "De ondervrager opent de deur en zet geen dossier op tafel, maar een verjaardagstaart met brandende kaarsen.",
+        "anomaly_under_a": "Bij een werkelijk politieverhoor is een taart geen relevant of professioneel bewijsmiddel en zou zij de ernst en procedure van de zaak absurd onderbreken.",
+        "resolution_under_b": "De taart is het onthullingssignaal: de schijnbare ondervraging was uitsluitend een omweg naar het verrassingsfeest.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "In een escape room spelen deelnemers rechercheurs die een fictieve inbraak moeten oplossen. Zij doorzoeken kamers, vergelijken vingerafdrukken, ontcijferen verklaringen en moeten de juiste verdachte aanwijzen om vóór de tijdslimiet de uitgang te openen.",
+        "candidate_id": "B3",
+        "opposition_axis": "Wettelijk waarheidsvindingproces tegenover spelmatige puzzeloplossing onder tijdsdruk.",
+        "opposed_expectation": "Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.",
+        "roles_b": [
+          "Spelers: fictieve rechercheurs die puzzels oplossen.",
+          "Gamemaster: bewaakt veiligheid, tijd en spelverloop.",
+          "Fictieve dader: personage uit het verhaal.",
+          "Decor en rekwisieten: leveren gecodeerde aanwijzingen.",
+          "Teamcaptain: verdeelt taken en voert oplossingen in."
+        ],
+        "goal_b": "Alle puzzels oplossen, de fictieve dader identificeren en op tijd uit de escape room ontsnappen.",
+        "role_remapping": [
+          "Politie/rechercheurs → escape-roomspelers.",
+          "Verdachte → fictief personage in het spelverhaal.",
+          "Bewijs → puzzelstukken, cijfers en verborgen sleutels.",
+          "Onderzoeksdossier → introductiebrief en aanwijzingen in de kamer.",
+          "Oplossing van de zaak → openen van het laatste slot."
+        ],
+        "shared_cues": [
+          "Een afgezet ogende kamer.",
+          "Foto's, afdrukken en een plattegrond op tafel.",
+          "Een notitie met een tijdstip.",
+          "Mensen die aanwijzingen vergelijken.",
+          "Een afgesloten kast met mogelijk relevante inhoud."
+        ],
+        "switch_trigger": "Een gevonden briefje zegt: \"Voer de code in voordat de klok nul bereikt.\"",
+        "hinge_event": "Na het aanwijzen van de vermeende dader springt geen rechercheur op, maar gaat een zwaar decorpaneel open met een elektronisch piepsignaal.",
+        "anomaly_under_a": "Een echte strafzaak wordt niet beslist doordat één oplossing een geheime deur opent; bewijs is geen mechanisme voor fysieke ontsnapping en een rechterlijke beoordeling ontbreekt.",
+        "resolution_under_b": "De daderaanwijzing is de laatste spelcode; het openende paneel bevestigt dat de deelnemers de escape room hebben gewonnen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een hondengeleider meldt zijn hond aan voor een speurhondenwedstrijd. Een keurmeester laat de hond langs verborgen geuren en voorwerpen zoeken; de geleider moet aantonen dat dier en handler nauwkeurig samenwerken om de juiste bron te vinden.",
+        "candidate_id": "B4",
+        "opposition_axis": "Opsporing van menselijke schuld tegenover sportieve demonstratie van speurvaardigheid.",
+        "opposed_expectation": "Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.",
+        "roles_b": [
+          "Hondengeleider: begeleidt de deelnemende hond.",
+          "Speurhond: zoekt de verborgen geurbron.",
+          "Keurmeester: beoordeelt de uitvoering en kent punten toe.",
+          "Wedstrijdorganisatie: legt het parcours en de regels vast.",
+          "Andere deelnemers: wachten op hun beurt en vergelijken scores."
+        ],
+        "goal_b": "Met de hond de beste speurproef afleggen en de wedstrijd winnen.",
+        "role_remapping": [
+          "Politie → hondengeleider met wedstrijdhond.",
+          "Rechercheur → keurmeester die de prestatie observeert.",
+          "Verdachte → niet aanwezige, fictieve spoorlegger.",
+          "Bewijsmateriaal → verborgen geurvoorwerp of markeringsobject.",
+          "Rechterlijke uitspraak → puntentoekenning en rangschikking."
+        ],
+        "shared_cues": [
+          "Een afgebakend terrein.",
+          "Een hond die geconcentreerd aan de grond ruikt.",
+          "Een begeleider die korte aanwijzingen geeft.",
+          "Een gevonden voorwerp dat wordt gemarkeerd.",
+          "Omstanders die de afloop stil volgen."
+        ],
+        "switch_trigger": "Na de vondst blaast de keurmeester op een fluitje en roept hij: \"Tijd: twee minuten zeven!\"",
+        "hinge_event": "In plaats van een proces-verbaal krijgt de hond bij het gevonden voorwerp een rozet omgehangen.",
+        "anomaly_under_a": "Een politiehond krijgt in een echt strafonderzoek geen ereteken voor het vinden van mogelijk bewijs; zo'n ceremonie zou de bewijsketen en ernst van de zaak miskennen.",
+        "resolution_under_b": "De rozet is de prijs voor een snelle, foutloze wedstrijdprestatie en maakt duidelijk dat de zoekactie een sportproef was.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest economische tegenstelling: dezelfde zichtbare arrestatie- en verhoorcues dragen eerst overtuigend een strafrechtelijke lezing, maar worden volledig herinterpreteerbaar als filmproductie. De rollen, handelingen en objecten sluiten sterk op beide scripts aan, terwijl de vraag om een zin opnieuw te doen een duidelijke anomalie vormt die de tweede lezing natuurlijk onthult. Daardoor heeft de kandidaat hoog retrospectief payoff-potentieel zonder dat de oorspronkelijke politiecontext aan dominantie verliest.",
+    "variants": [
+      {
+        "text": "Bij het politiebureau zag ik uniformen, een politieauto en een man in handboeien. Binnen vroeg een rechercheur waar hij gisteravond was; de man zuchtte: „Mag ik die laatste zin nog eens doen, maar dan schuldiger?”",
+        "angle": "De verdachte behandelt het verhoor als een nieuwe opname."
+      },
+      {
+        "text": "Een man wordt uit een flat meegenomen terwijl een camera alles filmt. Op het bureau legt een agent zijn verklaringen netjes vast, tot de geboeide man zegt: „Wacht even, mijn angst was te klein; kunnen we terug naar de politieauto?”",
+        "angle": "De arrestatie blijkt een scène waarvan de acteur een betere take wil."
+      },
+      {
+        "text": "De agent vroeg streng waar de verdachte die avond geweest was, terwijl iemand achter hem ieder woord noteerde. De man keek naar de camera en vroeg: „Was dat geloofwaardig, of wil de regisseur meer paniek bij de bekentenis?”",
+        "angle": "Een ogenschijnlijk echt verhoor kantelt naar een misdaadserie-opname."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 15131,
+      "output_tokens": 8114,
+      "total_tokens": 23245
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Na een vermoedelijk misdrijf doet een slachtoffer of getuige aangifte; de politie onderzoekt de zaak, verzamelt bewijs en houdt bij voldoende verdenking een verdachte aan. Daarna beoordeelt justitie de zaak en beslist een rechter volgens de wet over schuld en een passende straf of vrijspraak.",
+          "participants_and_roles": [
+            "Slachtoffer of getuige: meldt het misdrijf en geeft informatie aan de autoriteiten.",
+            "Verdachte: persoon die mogelijk het strafbare feit heeft gepleegd en recht heeft op een eerlijk onderzoek en verdediging.",
+            "Politie: reageert op meldingen, beschermt de openbare orde, onderzoekt feiten en kan verdachten aanhouden.",
+            "Openbaar Ministerie / officier van justitie: beoordeelt het bewijs, leidt de vervolging en brengt de zaak zo nodig voor de rechter.",
+            "Rechter: weegt bewijs en wet, bewaakt een eerlijk proces en doet een onafhankelijke uitspraak.",
+            "Advocaat: verdedigt de rechten en belangen van de verdachte of staat een slachtoffer bij."
+          ],
+          "apparent_goal": "Een misdrijf op een rechtmatige en zorgvuldige manier oplossen, de waarheid zo goed mogelijk vaststellen en veiligheid en rechtvaardigheid herstellen.",
+          "preconditions": [
+            "Er is een melding, aangifte of concrete aanwijzing dat mogelijk een strafbaar feit is gepleegd.",
+            "Politie en justitie hebben wettelijke bevoegdheden en moeten vaste procedures volgen.",
+            "Er moet voldoende, rechtmatig verkregen bewijs worden verzameld voordat iemand kan worden veroordeeld.",
+            "De verdachte geldt als onschuldig totdat schuld wettig en overtuigend is bewezen.",
+            "Alle betrokkenen hebben rechten, waaronder toegang tot juridische bijstand en een eerlijke behandeling."
+          ],
+          "expected_actions": [
+            "De politie neemt de melding op, stelt de situatie veilig en spreekt met betrokkenen en getuigen.",
+            "Rechercheurs verzamelen en controleren bewijs, zoals verklaringen, camerabeelden of sporen.",
+            "Bij een redelijke verdenking ondervraagt of arresteert de politie een verdachte volgens de regels.",
+            "Het Openbaar Ministerie beslist of vervolging kansrijk en passend is.",
+            "Tijdens een rechtszitting presenteren aanklager en verdediging hun standpunten en bewijs.",
+            "De rechter doet uitspraak: vrijspraak bij onvoldoende bewijs, of een straf of maatregel bij bewezen schuld."
+          ],
+          "expected_outcome": "De zaak wordt zorgvuldig afgehandeld: een schuldige wordt binnen de wet verantwoordelijk gehouden en een onschuldige wordt niet veroordeeld, waardoor vertrouwen, veiligheid en rechtsorde worden beschermd.",
+          "expected_propositions": [
+            "De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.",
+            "Een arrestatie betekent nog niet dat iemand schuldig is.",
+            "Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.",
+            "Iedere verdachte heeft recht op een eerlijk proces en verdediging.",
+            "Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur."
+          ],
+          "audience_expectation": "Een setup over recht, politie en criminaliteit activeert doorgaans de verwachting van een ordelijk proces: een misdrijf leidt tot onderzoek, bewijs leidt tot een eerlijke beoordeling, en de uitkomst herstelt rechtvaardigheid zonder de rechten van betrokkenen te schenden."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.",
+            "opposition_axis": "Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.",
+            "opposed_proposition": "De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.",
+            "shared_anchor": "Een man wordt door agenten meegenomen voor ondervraging.",
+            "reading_a": "Agenten voeren een verdachte na een mogelijke misdaad af naar het bureau, waar zijn betrokkenheid zorgvuldig moet worden onderzocht.",
+            "reading_b": "Acteurs in politie-uniform begeleiden een collega naar de set, waar een verhoorscène opnieuw wordt opgenomen.",
+            "roles_b": [
+              "Acteur in handboeien: speelt de vermeende verdachte.",
+              "Acteurs als agenten: voeren de arrestatiehandeling uit.",
+              "Regisseur: beoordeelt de scène en geeft aanwijzingen.",
+              "Cameraploeg: registreert beeld en geluid.",
+              "Scriptsupervisor: bewaakt tekst en continuïteit."
+            ],
+            "goal_b": "Een geloofwaardige arrestatie- en verhoorscène opnemen.",
+            "role_remapping": [
+              "Verdachte → acteur die de verdachte speelt.",
+              "Politie → acteurs in de rollen van agenten.",
+              "Onderzoeker/rechercheur → regisseur die de handelingen stuurt.",
+              "Bewijs en dossier → script, rekwisieten en opgenomen beelden.",
+              "Onderzoek naar waarheid → beoordeling van geloofwaardig spel."
+            ],
+            "shared_cues": [
+              "Uniformen en een politieauto bij een gebouw.",
+              "Een man krijgt te horen dat hij mee moet komen.",
+              "Een camera registreert het gebeuren.",
+              "Vragen over waar hij die avond was.",
+              "Een agent noteert details in een boekje."
+            ],
+            "switch_trigger": "De regisseur roept vlak voor het vermeende verhoor: \"En... actie!\"",
+            "hinge_event": "De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.",
+            "anomaly_under_a": "Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.",
+            "resolution_under_b": "Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een groep vrienden organiseert een verrassingsfeest voor iemand die denkt dat hij naar een politiebureau wordt gelokt wegens een vermeende vernieling. De vrienden gebruiken een nepverhoor en een zorgvuldig opgebouwde schrikreactie om hem pas op het laatste moment naar een feestzaal te leiden.",
+            "opposition_axis": "Bestraffing van vermeend wangedrag tegenover feestelijke misleiding als verrassing.",
+            "opposed_proposition": "Een arrestatie betekent nog niet dat iemand schuldig is.",
+            "shared_anchor": "Iemand wordt apart genomen om vragen over een incident te beantwoorden.",
+            "reading_a": "De persoon is mogelijk verdachte van vernieling en wordt afgezonderd zodat de politie zijn verklaring kan opnemen.",
+            "reading_b": "De jarige wordt door vrienden in een geënsceneerde beschuldiging gehouden om hem weg te leiden van de voorbereidingen voor zijn feest.",
+            "roles_b": [
+              "Jarige: onwetend doelwit van de verrassing.",
+              "Vriend in politie-uniform: speelt de ondervrager.",
+              "Andere vrienden: spelen getuigen of wachten verborgen in de feestzaal.",
+              "Organisator: coördineert het scenario.",
+              "Café- of zaaleigenaar: stelt de feestlocatie beschikbaar."
+            ],
+            "goal_b": "De jarige geloofwaardig verrassen en vervolgens met vrienden laten vieren.",
+            "role_remapping": [
+              "Verdachte → jarige die voor de grap als verdachte wordt behandeld.",
+              "Politie → verklede vriend die de ondervraging speelt.",
+              "Getuigen/slachtoffer → vrienden die het verzonnen incident bevestigen.",
+              "Politiebureau/verhoorkamer → versierde achterzaal.",
+              "Zaakafhandeling → onthulling van het verrassingsfeest."
+            ],
+            "shared_cues": [
+              "Een telefoontje over schade aan een auto.",
+              "Een serieuze vraag naar de verblijfplaats van die avond.",
+              "Een aparte kamer met een tafel en stoelen.",
+              "Mensen die fluisteren en elkaar betekenisvol aankijken.",
+              "Een schriftelijke verklaring die moet worden gelezen."
+            ],
+            "switch_trigger": "Achter de deur van de zogenaamd afgesloten verhoorkamer klinkt een groep die aftelt.",
+            "hinge_event": "De ondervrager opent de deur en zet geen dossier op tafel, maar een verjaardagstaart met brandende kaarsen.",
+            "anomaly_under_a": "Bij een werkelijk politieverhoor is een taart geen relevant of professioneel bewijsmiddel en zou zij de ernst en procedure van de zaak absurd onderbreken.",
+            "resolution_under_b": "De taart is het onthullingssignaal: de schijnbare ondervraging was uitsluitend een omweg naar het verrassingsfeest."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "In een escape room spelen deelnemers rechercheurs die een fictieve inbraak moeten oplossen. Zij doorzoeken kamers, vergelijken vingerafdrukken, ontcijferen verklaringen en moeten de juiste verdachte aanwijzen om vóór de tijdslimiet de uitgang te openen.",
+            "opposition_axis": "Wettelijk waarheidsvindingproces tegenover spelmatige puzzeloplossing onder tijdsdruk.",
+            "opposed_proposition": "Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.",
+            "shared_anchor": "Onderzoekers verzamelen sporen om een inbraakzaak op te lossen.",
+            "reading_a": "Rechercheurs verzamelen echte sporen van een misdrijf; de herkomst, betrouwbaarheid en rechtmatigheid daarvan bepalen of het bewijs bruikbaar is.",
+            "reading_b": "Spelers verzamelen vooraf geplaatste aanwijzingen die bedoeld zijn om een puzzelketen en een codeslot op te lossen.",
+            "roles_b": [
+              "Spelers: fictieve rechercheurs die puzzels oplossen.",
+              "Gamemaster: bewaakt veiligheid, tijd en spelverloop.",
+              "Fictieve dader: personage uit het verhaal.",
+              "Decor en rekwisieten: leveren gecodeerde aanwijzingen.",
+              "Teamcaptain: verdeelt taken en voert oplossingen in."
+            ],
+            "goal_b": "Alle puzzels oplossen, de fictieve dader identificeren en op tijd uit de escape room ontsnappen.",
+            "role_remapping": [
+              "Politie/rechercheurs → escape-roomspelers.",
+              "Verdachte → fictief personage in het spelverhaal.",
+              "Bewijs → puzzelstukken, cijfers en verborgen sleutels.",
+              "Onderzoeksdossier → introductiebrief en aanwijzingen in de kamer.",
+              "Oplossing van de zaak → openen van het laatste slot."
+            ],
+            "shared_cues": [
+              "Een afgezet ogende kamer.",
+              "Foto's, afdrukken en een plattegrond op tafel.",
+              "Een notitie met een tijdstip.",
+              "Mensen die aanwijzingen vergelijken.",
+              "Een afgesloten kast met mogelijk relevante inhoud."
+            ],
+            "switch_trigger": "Een gevonden briefje zegt: \"Voer de code in voordat de klok nul bereikt.\"",
+            "hinge_event": "Na het aanwijzen van de vermeende dader springt geen rechercheur op, maar gaat een zwaar decorpaneel open met een elektronisch piepsignaal.",
+            "anomaly_under_a": "Een echte strafzaak wordt niet beslist doordat één oplossing een geheime deur opent; bewijs is geen mechanisme voor fysieke ontsnapping en een rechterlijke beoordeling ontbreekt.",
+            "resolution_under_b": "De daderaanwijzing is de laatste spelcode; het openende paneel bevestigt dat de deelnemers de escape room hebben gewonnen."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een hondengeleider meldt zijn hond aan voor een speurhondenwedstrijd. Een keurmeester laat de hond langs verborgen geuren en voorwerpen zoeken; de geleider moet aantonen dat dier en handler nauwkeurig samenwerken om de juiste bron te vinden.",
+            "opposition_axis": "Opsporing van menselijke schuld tegenover sportieve demonstratie van speurvaardigheid.",
+            "opposed_proposition": "Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.",
+            "shared_anchor": "Een speurhond volgt een spoor naar een verborgen voorwerp.",
+            "reading_a": "Een politiehond helpt bij een strafrechtelijk onderzoek een relevant spoor of voorwerp lokaliseren, waarna mensen de betekenis ervan juridisch moeten beoordelen.",
+            "reading_b": "Een wedstrijdhond zoekt een vooraf verborgen geurbron, waarna een keurmeester punten toekent voor tempo en precisie.",
+            "roles_b": [
+              "Hondengeleider: begeleidt de deelnemende hond.",
+              "Speurhond: zoekt de verborgen geurbron.",
+              "Keurmeester: beoordeelt de uitvoering en kent punten toe.",
+              "Wedstrijdorganisatie: legt het parcours en de regels vast.",
+              "Andere deelnemers: wachten op hun beurt en vergelijken scores."
+            ],
+            "goal_b": "Met de hond de beste speurproef afleggen en de wedstrijd winnen.",
+            "role_remapping": [
+              "Politie → hondengeleider met wedstrijdhond.",
+              "Rechercheur → keurmeester die de prestatie observeert.",
+              "Verdachte → niet aanwezige, fictieve spoorlegger.",
+              "Bewijsmateriaal → verborgen geurvoorwerp of markeringsobject.",
+              "Rechterlijke uitspraak → puntentoekenning en rangschikking."
+            ],
+            "shared_cues": [
+              "Een afgebakend terrein.",
+              "Een hond die geconcentreerd aan de grond ruikt.",
+              "Een begeleider die korte aanwijzingen geeft.",
+              "Een gevonden voorwerp dat wordt gemarkeerd.",
+              "Omstanders die de afloop stil volgen."
+            ],
+            "switch_trigger": "Na de vondst blaast de keurmeester op een fluitje en roept hij: \"Tijd: twee minuten zeven!\"",
+            "hinge_event": "In plaats van een proces-verbaal krijgt de hond bij het gevonden voorwerp een rozet omgehangen.",
+            "anomaly_under_a": "Een politiehond krijgt in een echt strafonderzoek geen ereteken voor het vinden van mogelijk bewijs; zo'n ceremonie zou de bewijsketen en ernst van de zaak miskennen.",
+            "resolution_under_b": "De rozet is de prijs voor een snelle, foutloze wedstrijdprestatie en maakt duidelijk dat de zoekactie een sportproef was."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een acteur repeteert voor een politierol in een misdaadserie. De regisseur en crew ensceneren een arrestatie en verhoren om een geloofwaardige scène op te nemen; de acteur probeert zijn tekst, timing en angstreactie overtuigend neer te zetten.",
+              "opposition_axis": "Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.",
+              "opposed_proposition": "De politie is er om burgers te beschermen en misdrijven professioneel te onderzoeken.",
+              "shared_anchor": "Een man wordt door agenten meegenomen voor ondervraging.",
+              "reading_a": "Agenten voeren een verdachte na een mogelijke misdaad af naar het bureau, waar zijn betrokkenheid zorgvuldig moet worden onderzocht.",
+              "reading_b": "Acteurs in politie-uniform begeleiden een collega naar de set, waar een verhoorscène opnieuw wordt opgenomen.",
+              "roles_b": [
+                "Acteur in handboeien: speelt de vermeende verdachte.",
+                "Acteurs als agenten: voeren de arrestatiehandeling uit.",
+                "Regisseur: beoordeelt de scène en geeft aanwijzingen.",
+                "Cameraploeg: registreert beeld en geluid.",
+                "Scriptsupervisor: bewaakt tekst en continuïteit."
+              ],
+              "goal_b": "Een geloofwaardige arrestatie- en verhoorscène opnemen.",
+              "role_remapping": [
+                "Verdachte → acteur die de verdachte speelt.",
+                "Politie → acteurs in de rollen van agenten.",
+                "Onderzoeker/rechercheur → regisseur die de handelingen stuurt.",
+                "Bewijs en dossier → script, rekwisieten en opgenomen beelden.",
+                "Onderzoek naar waarheid → beoordeling van geloofwaardig spel."
+              ],
+              "shared_cues": [
+                "Uniformen en een politieauto bij een gebouw.",
+                "Een man krijgt te horen dat hij mee moet komen.",
+                "Een camera registreert het gebeuren.",
+                "Vragen over waar hij die avond was.",
+                "Een agent noteert details in een boekje."
+              ],
+              "switch_trigger": "De regisseur roept vlak voor het vermeende verhoor: \"En... actie!\"",
+              "hinge_event": "De geboeide man onderbreekt zijn verklaring om te vragen of hij zijn laatste zin nog eens mag doen.",
+              "anomaly_under_a": "Een echte verdachte kan een politieverhoor niet behandelen als een scène die hij naar wens overdoet; dat zou het onderzoek onverklaarbaar verstoren.",
+              "resolution_under_b": "Als acteur vraagt hij om een nieuwe take, zodat de regisseur een betere opname van zijn verhoorreactie kan maken."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een groep vrienden organiseert een verrassingsfeest voor iemand die denkt dat hij naar een politiebureau wordt gelokt wegens een vermeende vernieling. De vrienden gebruiken een nepverhoor en een zorgvuldig opgebouwde schrikreactie om hem pas op het laatste moment naar een feestzaal te leiden.",
+              "opposition_axis": "Bestraffing van vermeend wangedrag tegenover feestelijke misleiding als verrassing.",
+              "opposed_proposition": "Een arrestatie betekent nog niet dat iemand schuldig is.",
+              "shared_anchor": "Iemand wordt apart genomen om vragen over een incident te beantwoorden.",
+              "reading_a": "De persoon is mogelijk verdachte van vernieling en wordt afgezonderd zodat de politie zijn verklaring kan opnemen.",
+              "reading_b": "De jarige wordt door vrienden in een geënsceneerde beschuldiging gehouden om hem weg te leiden van de voorbereidingen voor zijn feest.",
+              "roles_b": [
+                "Jarige: onwetend doelwit van de verrassing.",
+                "Vriend in politie-uniform: speelt de ondervrager.",
+                "Andere vrienden: spelen getuigen of wachten verborgen in de feestzaal.",
+                "Organisator: coördineert het scenario.",
+                "Café- of zaaleigenaar: stelt de feestlocatie beschikbaar."
+              ],
+              "goal_b": "De jarige geloofwaardig verrassen en vervolgens met vrienden laten vieren.",
+              "role_remapping": [
+                "Verdachte → jarige die voor de grap als verdachte wordt behandeld.",
+                "Politie → verklede vriend die de ondervraging speelt.",
+                "Getuigen/slachtoffer → vrienden die het verzonnen incident bevestigen.",
+                "Politiebureau/verhoorkamer → versierde achterzaal.",
+                "Zaakafhandeling → onthulling van het verrassingsfeest."
+              ],
+              "shared_cues": [
+                "Een telefoontje over schade aan een auto.",
+                "Een serieuze vraag naar de verblijfplaats van die avond.",
+                "Een aparte kamer met een tafel en stoelen.",
+                "Mensen die fluisteren en elkaar betekenisvol aankijken.",
+                "Een schriftelijke verklaring die moet worden gelezen."
+              ],
+              "switch_trigger": "Achter de deur van de zogenaamd afgesloten verhoorkamer klinkt een groep die aftelt.",
+              "hinge_event": "De ondervrager opent de deur en zet geen dossier op tafel, maar een verjaardagstaart met brandende kaarsen.",
+              "anomaly_under_a": "Bij een werkelijk politieverhoor is een taart geen relevant of professioneel bewijsmiddel en zou zij de ernst en procedure van de zaak absurd onderbreken.",
+              "resolution_under_b": "De taart is het onthullingssignaal: de schijnbare ondervraging was uitsluitend een omweg naar het verrassingsfeest."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "In een escape room spelen deelnemers rechercheurs die een fictieve inbraak moeten oplossen. Zij doorzoeken kamers, vergelijken vingerafdrukken, ontcijferen verklaringen en moeten de juiste verdachte aanwijzen om vóór de tijdslimiet de uitgang te openen.",
+              "opposition_axis": "Wettelijk waarheidsvindingproces tegenover spelmatige puzzeloplossing onder tijdsdruk.",
+              "opposed_proposition": "Bewijs moet betrouwbaar en legaal verkregen zijn om zwaar te kunnen wegen.",
+              "shared_anchor": "Onderzoekers verzamelen sporen om een inbraakzaak op te lossen.",
+              "reading_a": "Rechercheurs verzamelen echte sporen van een misdrijf; de herkomst, betrouwbaarheid en rechtmatigheid daarvan bepalen of het bewijs bruikbaar is.",
+              "reading_b": "Spelers verzamelen vooraf geplaatste aanwijzingen die bedoeld zijn om een puzzelketen en een codeslot op te lossen.",
+              "roles_b": [
+                "Spelers: fictieve rechercheurs die puzzels oplossen.",
+                "Gamemaster: bewaakt veiligheid, tijd en spelverloop.",
+                "Fictieve dader: personage uit het verhaal.",
+                "Decor en rekwisieten: leveren gecodeerde aanwijzingen.",
+                "Teamcaptain: verdeelt taken en voert oplossingen in."
+              ],
+              "goal_b": "Alle puzzels oplossen, de fictieve dader identificeren en op tijd uit de escape room ontsnappen.",
+              "role_remapping": [
+                "Politie/rechercheurs → escape-roomspelers.",
+                "Verdachte → fictief personage in het spelverhaal.",
+                "Bewijs → puzzelstukken, cijfers en verborgen sleutels.",
+                "Onderzoeksdossier → introductiebrief en aanwijzingen in de kamer.",
+                "Oplossing van de zaak → openen van het laatste slot."
+              ],
+              "shared_cues": [
+                "Een afgezet ogende kamer.",
+                "Foto's, afdrukken en een plattegrond op tafel.",
+                "Een notitie met een tijdstip.",
+                "Mensen die aanwijzingen vergelijken.",
+                "Een afgesloten kast met mogelijk relevante inhoud."
+              ],
+              "switch_trigger": "Een gevonden briefje zegt: \"Voer de code in voordat de klok nul bereikt.\"",
+              "hinge_event": "Na het aanwijzen van de vermeende dader springt geen rechercheur op, maar gaat een zwaar decorpaneel open met een elektronisch piepsignaal.",
+              "anomaly_under_a": "Een echte strafzaak wordt niet beslist doordat één oplossing een geheime deur opent; bewijs is geen mechanisme voor fysieke ontsnapping en een rechterlijke beoordeling ontbreekt.",
+              "resolution_under_b": "De daderaanwijzing is de laatste spelcode; het openende paneel bevestigt dat de deelnemers de escape room hebben gewonnen."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een hondengeleider meldt zijn hond aan voor een speurhondenwedstrijd. Een keurmeester laat de hond langs verborgen geuren en voorwerpen zoeken; de geleider moet aantonen dat dier en handler nauwkeurig samenwerken om de juiste bron te vinden.",
+              "opposition_axis": "Opsporing van menselijke schuld tegenover sportieve demonstratie van speurvaardigheid.",
+              "opposed_proposition": "Een rechter beslist onafhankelijk op basis van wet en bewijs, niet op basis van geruchten of persoonlijke voorkeur.",
+              "shared_anchor": "Een speurhond volgt een spoor naar een verborgen voorwerp.",
+              "reading_a": "Een politiehond helpt bij een strafrechtelijk onderzoek een relevant spoor of voorwerp lokaliseren, waarna mensen de betekenis ervan juridisch moeten beoordelen.",
+              "reading_b": "Een wedstrijdhond zoekt een vooraf verborgen geurbron, waarna een keurmeester punten toekent voor tempo en precisie.",
+              "roles_b": [
+                "Hondengeleider: begeleidt de deelnemende hond.",
+                "Speurhond: zoekt de verborgen geurbron.",
+                "Keurmeester: beoordeelt de uitvoering en kent punten toe.",
+                "Wedstrijdorganisatie: legt het parcours en de regels vast.",
+                "Andere deelnemers: wachten op hun beurt en vergelijken scores."
+              ],
+              "goal_b": "Met de hond de beste speurproef afleggen en de wedstrijd winnen.",
+              "role_remapping": [
+                "Politie → hondengeleider met wedstrijdhond.",
+                "Rechercheur → keurmeester die de prestatie observeert.",
+                "Verdachte → niet aanwezige, fictieve spoorlegger.",
+                "Bewijsmateriaal → verborgen geurvoorwerp of markeringsobject.",
+                "Rechterlijke uitspraak → puntentoekenning en rangschikking."
+              ],
+              "shared_cues": [
+                "Een afgebakend terrein.",
+                "Een hond die geconcentreerd aan de grond ruikt.",
+                "Een begeleider die korte aanwijzingen geeft.",
+                "Een gevonden voorwerp dat wordt gemarkeerd.",
+                "Omstanders die de afloop stil volgen."
+              ],
+              "switch_trigger": "Na de vondst blaast de keurmeester op een fluitje en roept hij: \"Tijd: twee minuten zeven!\"",
+              "hinge_event": "In plaats van een proces-verbaal krijgt de hond bij het gevonden voorwerp een rozet omgehangen.",
+              "anomaly_under_a": "Een politiehond krijgt in een echt strafonderzoek geen ereteken voor het vinden van mogelijk bewijs; zo'n ceremonie zou de bewijsketen en ernst van de zaak miskennen.",
+              "resolution_under_b": "De rozet is de prijs voor een snelle, foutloze wedstrijdprestatie en maakt duidelijk dat de zoekactie een sportproef was."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Dezelfde scène kan eerst als een echte aanhouding en verhoor en vervolgens als een opname op een filmset worden gelezen. De tegenstelling werkelijk strafonderzoek versus fictieproductie is lokaal onverenigbaar en overheerst duidelijk. Uniformen, meenemen, vragen en notities passen bij beide lezingen; de camera laat de setlezing al latent mogelijk zonder deze aanvankelijk dominant te maken. De vraag om een zin opnieuw te doen is onder Script A storend, maar is onder Script B een normale vraag om een nieuwe take. Daardoor krijgen de eerdere handelingen achteraf een opnamefunctie. Het opnieuw doen verhindert het strafrechtelijke doel niet noodzakelijk als vaste voorwaarde, ook al dient het wel het productiedoel."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén realiseerbare tekst kan iemand eerst als mogelijke verdachte in een serieus verhoor en later als doelwit van een verrassingsfeest tonen. De schijnbare strafrechtelijke afhandeling en de feestelijke misleiding sluiten elkaar op de dominante doelas uit. Telefoon over schade, vragen over een avond en een aparte kamer ondersteunen aanvankelijk de politielezing, terwijl fluisteren en betekenisvolle blikken de feestlezing latent mogelijk laten. Een taart tijdens een verhoor is onder Script A procedureel ongerijmd, maar is onder Script B precies het onthullingssignaal. De onthulling herdefinieert de eerdere beschuldiging en afzondering als een omweg naar het feest. De taart blokkeert de voortzetting van een echt verhoor en maakt tegelijk het feestdoel mogelijk."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De gedeelde onderzoekssetting kan zowel een echte inbraakzaak als een escape-roomscenario dragen. De dominante tegenstelling betreft wettelijke waarheidsvinding tegenover spelmatige puzzeloplossing; die doelen en de status van de sporen zijn lokaal onverenigbaar. Sporen, foto’s, afdrukken en een plattegrond leiden eerst vanzelf naar politieonderzoek, maar kunnen ook als vooraf ontworpen spelcues functioneren. De code, klok en openende deur maken de tweede lezing herkenbaar. Een geheime deur die door het aanwijzen van een dader opent is onder Script A niet zinvol, maar vormt onder Script B de spelbeloning. Daardoor worden eerdere ‘bewijzen’ achteraf puzzelonderdelen. De codevoorwaarde vervangt en blokkeert een juridische beoordeling, terwijl zij juist de ontsnappingsdoelstelling van Script B realiseert."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een speurhond die een spoor naar een voorwerp volgt kan eerst als onderdeel van een politieonderzoek en later als wedstrijdproef worden gelezen. De dominante tegenstelling is opsporing ten behoeve van menselijke schuld en juridische afhandeling tegenover demonstratie van speurvaardigheid voor een score. Het terrein, de hond, de geleider en het gemarkeerde voorwerp passen bij beide lezingen; omstanders en een afgebakend parcours laten de wedstrijdlezing bovendien latent beschikbaar. De rozet is onder Script A een ongerijmde reactie op mogelijk bewijs, maar is onder Script B een normale prijs. Zij herdefinieert de zoekactie als een beoordeelde prestatie. De prijsuitreiking beëindigt een mogelijke bewijsverwerking en maakt tegelijk het wedstrijd- en beloningsdoel mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Dezelfde scène kan eerst als een echte aanhouding en verhoor en vervolgens als een opname op een filmset worden gelezen. De tegenstelling werkelijk strafonderzoek versus fictieproductie is lokaal onverenigbaar en overheerst duidelijk. Uniformen, meenemen, vragen en notities passen bij beide lezingen; de camera laat de setlezing al latent mogelijk zonder deze aanvankelijk dominant te maken. De vraag om een zin opnieuw te doen is onder Script A storend, maar is onder Script B een normale vraag om een nieuwe take. Daardoor krijgen de eerdere handelingen achteraf een opnamefunctie. Het opnieuw doen verhindert het strafrechtelijke doel niet noodzakelijk als vaste voorwaarde, ook al dient het wel het productiedoel."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén realiseerbare tekst kan iemand eerst als mogelijke verdachte in een serieus verhoor en later als doelwit van een verrassingsfeest tonen. De schijnbare strafrechtelijke afhandeling en de feestelijke misleiding sluiten elkaar op de dominante doelas uit. Telefoon over schade, vragen over een avond en een aparte kamer ondersteunen aanvankelijk de politielezing, terwijl fluisteren en betekenisvolle blikken de feestlezing latent mogelijk laten. Een taart tijdens een verhoor is onder Script A procedureel ongerijmd, maar is onder Script B precies het onthullingssignaal. De onthulling herdefinieert de eerdere beschuldiging en afzondering als een omweg naar het feest. De taart blokkeert de voortzetting van een echt verhoor en maakt tegelijk het feestdoel mogelijk."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De gedeelde onderzoekssetting kan zowel een echte inbraakzaak als een escape-roomscenario dragen. De dominante tegenstelling betreft wettelijke waarheidsvinding tegenover spelmatige puzzeloplossing; die doelen en de status van de sporen zijn lokaal onverenigbaar. Sporen, foto’s, afdrukken en een plattegrond leiden eerst vanzelf naar politieonderzoek, maar kunnen ook als vooraf ontworpen spelcues functioneren. De code, klok en openende deur maken de tweede lezing herkenbaar. Een geheime deur die door het aanwijzen van een dader opent is onder Script A niet zinvol, maar vormt onder Script B de spelbeloning. Daardoor worden eerdere ‘bewijzen’ achteraf puzzelonderdelen. De codevoorwaarde vervangt en blokkeert een juridische beoordeling, terwijl zij juist de ontsnappingsdoelstelling van Script B realiseert."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een speurhond die een spoor naar een voorwerp volgt kan eerst als onderdeel van een politieonderzoek en later als wedstrijdproef worden gelezen. De dominante tegenstelling is opsporing ten behoeve van menselijke schuld en juridische afhandeling tegenover demonstratie van speurvaardigheid voor een score. Het terrein, de hond, de geleider en het gemarkeerde voorwerp passen bij beide lezingen; omstanders en een afgebakend parcours laten de wedstrijdlezing bovendien latent beschikbaar. De rozet is onder Script A een ongerijmde reactie op mogelijk bewijs, maar is onder Script B een normale prijs. Zij herdefinieert de zoekactie als een beoordeelde prestatie. De prijsuitreiking beëindigt een mogelijke bewijsverwerking en maakt tegelijk het wedstrijd- en beloningsdoel mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B1"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een ogenschijnlijk echt politieverhoor van een geboeide verdachte na een mogelijke misdaad.",
+          "realized_script_b": "Een slechts impliciet gesuggereerde uitvoering waarin de man zijn verhoorreactie opnieuw wil spelen.",
+          "realized_opposition_axis": "Werkelijk politieverhoor tegenover mogelijk geacteerd optreden, maar zonder duidelijk vastgelegde fictieproductie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De setup en de geplande hinge van een zin opnieuw willen doen zijn aanwezig, maar de tekst maakt niet voldoende duidelijk dat er een film- of serieproductie plaatsvindt. Camera, regisseur en een expliciete productieswitch ontbreken, waardoor de beoogde retrospectieve herlezing onzeker blijft."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": false,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": false,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant heeft een bruikbare politieverhoor-setup en een komische eindregel, maar realiseert de beoogde omslag naar een geënsceneerde opname niet helder genoeg.",
+          "passes_required_plan": false
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een man wordt na een vermoedelijk misdrijf aangehouden, gefilmd en op het bureau verhoord.",
+          "realized_script_b": "Een acteur speelt een arrestatiescène en wil terug naar de politieauto om zijn angstreactie in een betere take opnieuw op te nemen.",
+          "realized_opposition_axis": "Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De gedeelde arrestatie-, camera- en verhoorcues maken eerst een echt politieoptreden dominant. De vraag om terug te gaan voor een betere angstreactie activeert vervolgens functioneel de geplande acteurs-/opnamescript en herinterpreteert de eerdere camera en arrestatie als een scène."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant realiseert de geplande politie-naar-filmsetoppositie functioneel: de camera is eerst dubbelzinnig en de gewenste retake maakt de fictieproductie aan het einde duidelijk.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een streng politieverhoor waarin een verdachte over zijn alibi en een mogelijke bekentenis wordt ondervraagd.",
+          "realized_script_b": "Een misdaadserie-opname waarin een acteur zijn bekentenis speelt en de regisseur beoordeelt hoeveel paniek hij moet tonen.",
+          "realized_opposition_axis": "Werkelijk strafrechtelijk onderzoek tegenover geënsceneerde fictieproductie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "Het verhoor, de notulist en de camera ondersteunen aanvankelijk de onderzoeksscript. De expliciete verwijzing naar de regisseur en naar geloofwaardig gespeelde paniek schakelt helder naar de opname-script en herkadert de camera en verklaring als productie-elementen."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant voert de beoogde omslag duidelijk uit: een realistisch verhoor verandert in een geregisseerde misdaadserie-opname, met de camera als gedeelde cue en de regisseur als beslissende switch.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V2",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "V2 wint omdat het een passerende variant is en V1 niet. De camera en de wens om terug te keren naar de politieauto maken de omslag naar een opgenomen scène helder en herinterpreteren de arrestatie effectief; V1 suggereert hoogstens een overdoen."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V3",
+          "rationale": "V3 wint omdat het de vereiste scriptoppositie volledig realiseert, terwijl V1 de fictieproductie onvoldoende vastlegt. De verwijzing naar de regisseur geeft een directe, performabele switch van verhoor naar misdaadserie."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "Beide varianten slagen, maar V2 gebruikt de eerder genoemde camera sterker als dubbelzinnige cue. De vraag om voor een betere angstreactie terug te gaan naar de politieauto is concreet, compact en herkadert de hele arrestatie als een take."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 combineert de duidelijkste retrospectieve herinterpretatie met een natuurlijke gesproken punchline. De camera, arrestatie en terugkeer naar de politieauto vormen samen een heldere en komische omslag naar een filmopname."
+    }
+  },
+  "result_sha256": "c32178a4c0dd4960d5551888f827946c4e6ede5b758554282a4d3c4eb5e3d697"
+}

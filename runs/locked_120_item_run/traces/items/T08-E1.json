@@ -1,0 +1,876 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T08-E1",
+  "topic_id": "T08",
+  "topic": "Liefde, huwelijk en seksualiteit",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "2473cdc45693b116b55d54959eb022ceafa50efba507027e8ae21cac2091a15c",
+  "dry_run": false,
+  "attempt": 2,
+  "generated_at": "2026-08-20T05:55:07.408013+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Liefde, huwelijk en seksualiteit",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.\",\n    \"participants_and_roles\": [\n      \"Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.\",\n      \"De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis.\"\n    ],\n    \"apparent_goal\": \"Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.\",\n    \"preconditions\": [\n      \"Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.\",\n      \"Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.\",\n      \"Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.\",\n      \"Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.\",\n      \"Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.\",\n      \"Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.\",\n      \"Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.\",\n      \"Zij blijven communiceren, conflicten oplossen en de relatie onderhouden.\"\n    ],\n    \"expected_outcome\": \"De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.\",\n    \"expected_propositions\": [\n      \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\",\n      \"Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.\",\n      \"Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden.\"\n    ],\n    \"audience_expectation\": \"Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.\",\n    \"participants_and_roles\": [\n      \"Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.\",\n      \"De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis.\"\n    ],\n    \"apparent_goal\": \"Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.\",\n    \"preconditions\": [\n      \"Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.\",\n      \"Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.\",\n      \"Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.\",\n      \"Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.\",\n      \"Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.\",\n      \"Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.\",\n      \"Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.\",\n      \"Zij blijven communiceren, conflicten oplossen en de relatie onderhouden.\"\n    ],\n    \"expected_outcome\": \"De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.\",\n    \"expected_propositions\": [\n      \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\",\n      \"Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.\",\n      \"Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden.\"\n    ],\n    \"audience_expectation\": \"Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een schijnhuwelijk tussen twee huisgenoten die zich als echtpaar voordoen om aan de voorwaarden voor een gezamenlijke huurwoning of verblijfsregeling te voldoen.\",\n      \"opposition_axis\": \"Romantische verbintenis versus strategische administratieve samenwerking\",\n      \"opposed_proposition\": \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"shared_anchor\": \"De twee staan samen bij een loket om een huwelijk te regelen.\",\n      \"reading_a\": \"Twee verliefde partners voltooien de wettelijke formaliteiten voor hun gewenste huwelijk.\",\n      \"reading_b\": \"Twee praktische bondgenoten regelen documenten om hun gezamenlijke woon- of verblijfsbelang veilig te stellen.\",\n      \"roles_b\": [\n        \"Twee huisgenoten: tijdelijke bondgenoten die een overtuigend koppel moeten spelen.\",\n        \"Een baliemedewerker of ambtenaar: controleert de aanvraag.\",\n        \"Een verhuurder, instantie of huisvestingsorganisatie: stelt voorwaarden waaraan het paar probeert te voldoen.\"\n      ],\n      \"goal_b\": \"De indruk van een duurzame partnerschapssituatie wekken en daarmee een praktische woon- of verblijfsoplossing verkrijgen.\",\n      \"role_remapping\": [\n        \"De geliefden uit Script A worden huisgenoten met een gedeeld praktisch belang.\",\n        \"De huwelijksambtenaar blijft een formele begeleider, maar wordt in Script B een poortwachter voor documenten.\",\n        \"Familie en vrienden worden eventueel figuranten of ingewijde helpers die de schijnrelatie geloofwaardig maken.\"\n      ],\n      \"shared_cues\": [\n        \"Samen formulieren invullen.\",\n        \"Een afspraak bij de gemeente.\",\n        \"Foto's waarop zij dicht bij elkaar staan.\",\n        \"Oefenen van persoonlijke details over hun vermeende relatie.\",\n        \"Praten over een gezamenlijke toekomst.\"\n      ],\n      \"switch_trigger\": \"Wanneer de ambtenaar vraagt wat hun eerste afspraakje was, noemt een van hen zonder aarzelen de datum waarop het huurcontract afloopt.\",\n      \"hinge_event\": \"Een van de twee schuift tijdens het gesprek een map met huurachterstanden en woningtoewijzingen over de balie.\",\n      \"anomaly_under_a\": \"In een oprecht romantisch huwelijk is een dossier over woningnood een kille en misplaatste reactie op een vraag naar hun liefdesgeschiedenis.\",\n      \"resolution_under_b\": \"Het dossier toont dat de ceremonie vooral een middel is om huisvesting te behouden; de ogenschijnlijke intimiteit en toekomsttaal waren doelbewust ingestudeerd.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.\",\n      \"opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n      \"opposed_proposition\": \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"shared_anchor\": \"Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.\",\n      \"reading_a\": \"Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.\",\n      \"reading_b\": \"Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.\",\n      \"roles_b\": [\n        \"De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.\",\n        \"De tegenspeler: speelt de ideale partner volgens het format.\",\n        \"De producent en regisseur: sturen het verhaal en de emoties.\",\n        \"Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending.\"\n      ],\n      \"goal_b\": \"Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.\",\n      \"role_remapping\": [\n        \"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\",\n        \"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\",\n        \"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\"\n      ],\n      \"shared_cues\": [\n        \"Een witte outfit.\",\n        \"Geloften die hardop worden voorgelezen.\",\n        \"Bloemen, muziek en applaus.\",\n        \"Een emotionele omhelzing.\",\n        \"Een gesprek over een gezamenlijke toekomst.\"\n      ],\n      \"switch_trigger\": \"Vlak vóór het jawoord fluistert een regisseur: \\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\"\",\n      \"hinge_event\": \"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\",\n      \"anomaly_under_a\": \"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\",\n      \"resolution_under_b\": \"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee erfgenamen sluiten een formeel partnerschap om een familiebedrijf, nalatenschap of belastingvoordeel te beschermen, terwijl hun werkelijke band zakelijk en tijdelijk is.\",\n      \"opposition_axis\": \"Huwelijk als levensverbintenis versus huwelijk als juridische constructie\",\n      \"opposed_proposition\": \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"shared_anchor\": \"Een paar bespreekt met een notaris de voorwaarden van hun huwelijk.\",\n      \"reading_a\": \"Verloofden regelen verstandig hun financiën en toekomst voordat zij gaan trouwen.\",\n      \"reading_b\": \"Zakelijke partners ontwerpen een juridisch instrument om bezit en zeggenschap binnen de familie te houden.\",\n      \"roles_b\": [\n        \"Twee erfgenamen of mede-eigenaren: sluiten een tijdelijke overeenkomst.\",\n        \"Een notaris of advocaat: legt de juridische constructie vast.\",\n        \"Familieleden of aandeelhouders: oefenen druk uit vanwege de onderneming of nalatenschap.\"\n      ],\n      \"goal_b\": \"Voorkomen dat aandelen, eigendom of een erfenis buiten een familie- of bedrijfsconstructie terechtkomen.\",\n      \"role_remapping\": [\n        \"De geliefden uit Script A worden erfgenamen met complementaire belangen.\",\n        \"De formele huwelijksbegeleider wordt notaris of juridisch adviseur.\",\n        \"Familie en vrienden worden aandeelhouders, familieleden of belanghebbenden die de regeling volgen.\"\n      ],\n      \"shared_cues\": [\n        \"Een gesprek over de toekomst.\",\n        \"Documenten ondertekenen.\",\n        \"Ringen of een formele aankondiging.\",\n        \"Familie die feliciteert.\",\n        \"Een bespreking over samenwonen en financiële afspraken.\"\n      ],\n      \"switch_trigger\": \"De notaris vraagt wie de getuigen zijn, waarop een familielid antwoordt dat zij vooral moeten bevestigen dat de aandelen stemgerechtigd blijven.\",\n      \"hinge_event\": \"Tijdens het feliciteren overhandigt een tante geen huwelijkscadeau maar een bijgewerkte aandeelhoudersovereenkomst met een deadline.\",\n      \"anomaly_under_a\": \"Een aandeelhoudersdeadline op een huwelijksmoment past slecht bij een viering van affectie en een gezamenlijk leven.\",\n      \"resolution_under_b\": \"De deadline maakt duidelijk dat het partnerschap de juridische sleutel is tot bedrijfscontrole; de ceremonieel romantische aankleding beschermt de zakelijke regeling tegen sociale weerstand.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een koppel volgt relatietherapie na een ernstige vertrouwensbreuk; hun afspraak over grenzen en intimiteit is geen vanzelfsprekende romantische toenadering, maar een zorgvuldig herstelproces waarin een van beiden nog twijfelt.\",\n      \"opposition_axis\": \"Veronderstelde harmonieuze intimiteit versus voorwaardelijk herstel van vertrouwen\",\n      \"opposed_proposition\": \"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\",\n      \"shared_anchor\": \"Twee partners zitten tegenover elkaar en bespreken hun grenzen, toekomst en lichamelijke nabijheid.\",\n      \"reading_a\": \"Een gezond verliefd stel communiceert open over verlangens en bouwt vrijwillig aan meer intimiteit.\",\n      \"reading_b\": \"Twee partners leggen, onder begeleiding, concrete veiligheidsafspraken vast nadat vertrouwen en toestemming eerder onder druk hebben gestaan.\",\n      \"roles_b\": [\n        \"Twee partners: proberen te bepalen of herstel mogelijk is.\",\n        \"Een relatietherapeut of counselor: bewaakt veiligheid, tempo en communicatie.\",\n        \"Eventueel een vertrouwenspersoon: ondersteunt een partner buiten de sessies.\"\n      ],\n      \"goal_b\": \"Helder vaststellen welke grenzen gelden, welke veranderingen nodig zijn en of de relatie veilig en vrijwillig kan worden voortgezet.\",\n      \"role_remapping\": [\n        \"De geliefden uit Script A worden partners in een kwetsbaar hersteltraject.\",\n        \"Open communicatie blijft aanwezig, maar is in Script B een beschermende interventie in plaats van een teken dat alles al goed gaat.\",\n        \"Een ceremoniële begeleider wordt een therapeutische begeleider die geen verbintenis bekrachtigt maar grenzen helpt bewaken.\"\n      ],\n      \"shared_cues\": [\n        \"Handen vasthouden of juist aarzelend nabij zitten.\",\n        \"Praten over vertrouwen en toekomstplannen.\",\n        \"Een afspraak maken over tijd samen doorbrengen.\",\n        \"Excuses aanbieden.\",\n        \"Bespreken wat prettig, onprettig of te snel voelt.\"\n      ],\n      \"switch_trigger\": \"De therapeut vraagt of een eerder afgesproken stopwoord altijd direct is gerespecteerd, waarna een lange stilte valt.\",\n      \"hinge_event\": \"Een partner haalt een schriftelijke lijst met grenzen tevoorschijn en zegt dat die nodig was omdat een eerder \\\"nee\\\" als onderhandeling was behandeld.\",\n      \"anomaly_under_a\": \"Binnen het dominante beeld van een wederzijds veilige, communicatieve relatie is zo'n noodzaak voor expliciete herstelafspraken onverwacht en ontregelend.\",\n      \"resolution_under_b\": \"De lijst krijgt een duidelijke functie als veiligheidsplan: zij maakt zichtbaar dat intimiteit pas eventueel kan worden hersteld via aantoonbaar respect voor doorlopende toestemming en grenzen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.\",\n    \"participants_and_roles\": [\n      \"Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.\",\n      \"De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis.\"\n    ],\n    \"apparent_goal\": \"Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.\",\n    \"preconditions\": [\n      \"Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.\",\n      \"Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.\",\n      \"Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.\",\n      \"Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.\",\n      \"Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.\",\n      \"Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.\",\n      \"Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.\",\n      \"Zij blijven communiceren, conflicten oplossen en de relatie onderhouden.\"\n    ],\n    \"expected_outcome\": \"De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.\",\n    \"expected_propositions\": [\n      \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\",\n      \"Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.\",\n      \"Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden.\"\n    ],\n    \"audience_expectation\": \"Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een schijnhuwelijk tussen twee huisgenoten die zich als echtpaar voordoen om aan de voorwaarden voor een gezamenlijke huurwoning of verblijfsregeling te voldoen.\",\n      \"opposition_axis\": \"Romantische verbintenis versus strategische administratieve samenwerking\",\n      \"opposed_proposition\": \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"shared_anchor\": \"De twee staan samen bij een loket om een huwelijk te regelen.\",\n      \"reading_a\": \"Twee verliefde partners voltooien de wettelijke formaliteiten voor hun gewenste huwelijk.\",\n      \"reading_b\": \"Twee praktische bondgenoten regelen documenten om hun gezamenlijke woon- of verblijfsbelang veilig te stellen.\",\n      \"roles_b\": [\n        \"Twee huisgenoten: tijdelijke bondgenoten die een overtuigend koppel moeten spelen.\",\n        \"Een baliemedewerker of ambtenaar: controleert de aanvraag.\",\n        \"Een verhuurder, instantie of huisvestingsorganisatie: stelt voorwaarden waaraan het paar probeert te voldoen.\"\n      ],\n      \"goal_b\": \"De indruk van een duurzame partnerschapssituatie wekken en daarmee een praktische woon- of verblijfsoplossing verkrijgen.\",\n      \"role_remapping\": [\n        \"De geliefden uit Script A worden huisgenoten met een gedeeld praktisch belang.\",\n        \"De huwelijksambtenaar blijft een formele begeleider, maar wordt in Script B een poortwachter voor documenten.\",\n        \"Familie en vrienden worden eventueel figuranten of ingewijde helpers die de schijnrelatie geloofwaardig maken.\"\n      ],\n      \"shared_cues\": [\n        \"Samen formulieren invullen.\",\n        \"Een afspraak bij de gemeente.\",\n        \"Foto's waarop zij dicht bij elkaar staan.\",\n        \"Oefenen van persoonlijke details over hun vermeende relatie.\",\n        \"Praten over een gezamenlijke toekomst.\"\n      ],\n      \"switch_trigger\": \"Wanneer de ambtenaar vraagt wat hun eerste afspraakje was, noemt een van hen zonder aarzelen de datum waarop het huurcontract afloopt.\",\n      \"hinge_event\": \"Een van de twee schuift tijdens het gesprek een map met huurachterstanden en woningtoewijzingen over de balie.\",\n      \"anomaly_under_a\": \"In een oprecht romantisch huwelijk is een dossier over woningnood een kille en misplaatste reactie op een vraag naar hun liefdesgeschiedenis.\",\n      \"resolution_under_b\": \"Het dossier toont dat de ceremonie vooral een middel is om huisvesting te behouden; de ogenschijnlijke intimiteit en toekomsttaal waren doelbewust ingestudeerd.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.\",\n      \"opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n      \"opposed_proposition\": \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"shared_anchor\": \"Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.\",\n      \"reading_a\": \"Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.\",\n      \"reading_b\": \"Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.\",\n      \"roles_b\": [\n        \"De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.\",\n        \"De tegenspeler: speelt de ideale partner volgens het format.\",\n        \"De producent en regisseur: sturen het verhaal en de emoties.\",\n        \"Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending.\"\n      ],\n      \"goal_b\": \"Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.\",\n      \"role_remapping\": [\n        \"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\",\n        \"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\",\n        \"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\"\n      ],\n      \"shared_cues\": [\n        \"Een witte outfit.\",\n        \"Geloften die hardop worden voorgelezen.\",\n        \"Bloemen, muziek en applaus.\",\n        \"Een emotionele omhelzing.\",\n        \"Een gesprek over een gezamenlijke toekomst.\"\n      ],\n      \"switch_trigger\": \"Vlak vóór het jawoord fluistert een regisseur: \\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\"\",\n      \"hinge_event\": \"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\",\n      \"anomaly_under_a\": \"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\",\n      \"resolution_under_b\": \"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee erfgenamen sluiten een formeel partnerschap om een familiebedrijf, nalatenschap of belastingvoordeel te beschermen, terwijl hun werkelijke band zakelijk en tijdelijk is.\",\n      \"opposition_axis\": \"Huwelijk als levensverbintenis versus huwelijk als juridische constructie\",\n      \"opposed_proposition\": \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"shared_anchor\": \"Een paar bespreekt met een notaris de voorwaarden van hun huwelijk.\",\n      \"reading_a\": \"Verloofden regelen verstandig hun financiën en toekomst voordat zij gaan trouwen.\",\n      \"reading_b\": \"Zakelijke partners ontwerpen een juridisch instrument om bezit en zeggenschap binnen de familie te houden.\",\n      \"roles_b\": [\n        \"Twee erfgenamen of mede-eigenaren: sluiten een tijdelijke overeenkomst.\",\n        \"Een notaris of advocaat: legt de juridische constructie vast.\",\n        \"Familieleden of aandeelhouders: oefenen druk uit vanwege de onderneming of nalatenschap.\"\n      ],\n      \"goal_b\": \"Voorkomen dat aandelen, eigendom of een erfenis buiten een familie- of bedrijfsconstructie terechtkomen.\",\n      \"role_remapping\": [\n        \"De geliefden uit Script A worden erfgenamen met complementaire belangen.\",\n        \"De formele huwelijksbegeleider wordt notaris of juridisch adviseur.\",\n        \"Familie en vrienden worden aandeelhouders, familieleden of belanghebbenden die de regeling volgen.\"\n      ],\n      \"shared_cues\": [\n        \"Een gesprek over de toekomst.\",\n        \"Documenten ondertekenen.\",\n        \"Ringen of een formele aankondiging.\",\n        \"Familie die feliciteert.\",\n        \"Een bespreking over samenwonen en financiële afspraken.\"\n      ],\n      \"switch_trigger\": \"De notaris vraagt wie de getuigen zijn, waarop een familielid antwoordt dat zij vooral moeten bevestigen dat de aandelen stemgerechtigd blijven.\",\n      \"hinge_event\": \"Tijdens het feliciteren overhandigt een tante geen huwelijkscadeau maar een bijgewerkte aandeelhoudersovereenkomst met een deadline.\",\n      \"anomaly_under_a\": \"Een aandeelhoudersdeadline op een huwelijksmoment past slecht bij een viering van affectie en een gezamenlijk leven.\",\n      \"resolution_under_b\": \"De deadline maakt duidelijk dat het partnerschap de juridische sleutel is tot bedrijfscontrole; de ceremonieel romantische aankleding beschermt de zakelijke regeling tegen sociale weerstand.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.\",\n    \"participants_and_roles\": [\n      \"Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.\",\n      \"De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis.\"\n    ],\n    \"apparent_goal\": \"Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.\",\n    \"preconditions\": [\n      \"Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.\",\n      \"Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.\",\n      \"Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.\",\n      \"Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.\",\n      \"Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.\",\n      \"Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.\",\n      \"Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.\",\n      \"Zij blijven communiceren, conflicten oplossen en de relatie onderhouden.\"\n    ],\n    \"expected_outcome\": \"De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.\",\n    \"expected_propositions\": [\n      \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\",\n      \"Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.\",\n      \"Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden.\"\n    ],\n    \"audience_expectation\": \"Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B2\",\n    \"script_b\": \"Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.\",\n    \"opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n    \"opposed_proposition\": \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n    \"shared_anchor\": \"Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.\",\n    \"reading_a\": \"Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.\",\n    \"reading_b\": \"Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.\",\n    \"roles_b\": [\n      \"De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.\",\n      \"De tegenspeler: speelt de ideale partner volgens het format.\",\n      \"De producent en regisseur: sturen het verhaal en de emoties.\",\n      \"Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending.\"\n    ],\n    \"goal_b\": \"Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.\",\n    \"role_remapping\": [\n      \"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\",\n      \"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\",\n      \"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\"\n    ],\n    \"shared_cues\": [\n      \"Een witte outfit.\",\n      \"Geloften die hardop worden voorgelezen.\",\n      \"Bloemen, muziek en applaus.\",\n      \"Een emotionele omhelzing.\",\n      \"Een gesprek over een gezamenlijke toekomst.\"\n    ],\n    \"switch_trigger\": \"Vlak vóór het jawoord fluistert een regisseur: \\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\"\",\n    \"hinge_event\": \"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\",\n    \"anomaly_under_a\": \"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\",\n    \"resolution_under_b\": \"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.\",\n    \"participants_and_roles\": [\n      \"Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.\",\n      \"De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis.\"\n    ],\n    \"apparent_goal\": \"Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.\",\n    \"preconditions\": [\n      \"Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.\",\n      \"Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.\",\n      \"Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.\",\n      \"Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.\",\n      \"Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.\",\n      \"Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.\",\n      \"Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.\",\n      \"Zij blijven communiceren, conflicten oplossen en de relatie onderhouden.\"\n    ],\n    \"expected_outcome\": \"De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.\",\n    \"expected_propositions\": [\n      \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n      \"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\",\n      \"Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.\",\n      \"Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden.\"\n    ],\n    \"audience_expectation\": \"Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B2\",\n    \"script_b\": \"Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.\",\n    \"opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n    \"opposed_proposition\": \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n    \"shared_anchor\": \"Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.\",\n    \"reading_a\": \"Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.\",\n    \"reading_b\": \"Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.\",\n    \"roles_b\": [\n      \"De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.\",\n      \"De tegenspeler: speelt de ideale partner volgens het format.\",\n      \"De producent en regisseur: sturen het verhaal en de emoties.\",\n      \"Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending.\"\n    ],\n    \"goal_b\": \"Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.\",\n    \"role_remapping\": [\n      \"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\",\n      \"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\",\n      \"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\"\n    ],\n    \"shared_cues\": [\n      \"Een witte outfit.\",\n      \"Geloften die hardop worden voorgelezen.\",\n      \"Bloemen, muziek en applaus.\",\n      \"Een emotionele omhelzing.\",\n      \"Een gesprek over een gezamenlijke toekomst.\"\n    ],\n    \"switch_trigger\": \"Vlak vóór het jawoord fluistert een regisseur: \\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\"\",\n    \"hinge_event\": \"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\",\n    \"anomaly_under_a\": \"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\",\n    \"resolution_under_b\": \"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n    \"logical_mechanism\": \"Figuurlijk misverstand en scriptomkering: conventionele romantische huwelijkscues worden eerst als oprechte liefde gelezen, waarna productie- en betalingslogica diezelfde cues herkadert als geregisseerde realitytelevisie.\",\n    \"situation\": \"Een deelnemer en een gecaste of contractueel gebonden tegenspeler staan tijdens een televisiewedding in witte outfits voor een publiek van familieleden, figuranten, cameraoperators en studiogasten. Onder leiding van een presentator spreken zij geloften uit, omringd door bloemen, muziek en applaus, terwijl producenten en een regisseur de opname aansturen.\",\n    \"target\": \"De realitytelevisieconventie waarin oprechte intimiteit als produceerbaar publiek spektakel wordt verpakt.\",\n    \"narrative_strategy\": \"De opzet presenteert een herkenbare, ontroerende huwelijksceremonie en laat het publiek de romantische signalen volgens Script A interpreteren. De punchline introduceert vervolgens opnamekwaliteit en betaling, waardoor de ceremonie retrospectief een geplande televisieclimax volgens Script B blijkt.\",\n    \"lexical_anchor\": \"opname\",\n    \"supporting_dual_cues\": [\n      \"Een witte outfit.\",\n      \"Geloften die hardop worden voorgelezen.\",\n      \"Bloemen, muziek en applaus.\",\n      \"Een emotionele omhelzing.\",\n      \"Een gesprek over een gezamenlijke toekomst.\"\n    ],\n    \"switch_trigger\": \"Vlak vóór het jawoord fluistert een regisseur: \\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\"\",\n    \"hinge_event\": \"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\",\n    \"anomaly_under_a\": \"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\",\n    \"resolution_under_b\": \"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\",\n    \"role_remapping\": [\n      \"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\",\n      \"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\",\n      \"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\"\n    ],\n    \"setup_goal\": \"Script A dominant maken door de witte outfit, de hardop voorgelezen geloften, bloemen, muziek, applaus, de omhelzing en het gesprek over een gezamenlijke toekomst als signalen van vrijwillige romantische wederkerigheid te presenteren.\",\n    \"punch_goal\": \"Script B activeren door de vraag naar de bruikbaarheid van de opname en de uitbetaling van de bonus, zodat de liefdevolle ceremonie wordt herlezen als een geregisseerde realityproductie.\",\n    \"punch_final_word\": \"uitbetaald\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.\",\n      \"participants_and_roles\": [\n        \"Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.\",\n        \"Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.\",\n        \"De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis.\"\n      ],\n      \"apparent_goal\": \"Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.\",\n      \"preconditions\": [\n        \"Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.\",\n        \"Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.\",\n        \"Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.\",\n        \"Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen.\"\n      ],\n      \"expected_actions\": [\n        \"De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.\",\n        \"Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.\",\n        \"Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.\",\n        \"Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.\",\n        \"Zij blijven communiceren, conflicten oplossen en de relatie onderhouden.\"\n      ],\n      \"expected_outcome\": \"De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.\",\n      \"expected_propositions\": [\n        \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n        \"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\",\n        \"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\",\n        \"Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.\",\n        \"Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden.\"\n      ],\n      \"audience_expectation\": \"Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.\",\n      \"opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n      \"opposed_proposition\": \"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\",\n      \"shared_anchor\": \"Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.\",\n      \"reading_a\": \"Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.\",\n      \"reading_b\": \"Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.\",\n      \"roles_b\": [\n        \"De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.\",\n        \"De tegenspeler: speelt de ideale partner volgens het format.\",\n        \"De producent en regisseur: sturen het verhaal en de emoties.\",\n        \"Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending.\"\n      ],\n      \"goal_b\": \"Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.\",\n      \"role_remapping\": [\n        \"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\",\n        \"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\",\n        \"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\"\n      ],\n      \"shared_cues\": [\n        \"Een witte outfit.\",\n        \"Geloften die hardop worden voorgelezen.\",\n        \"Bloemen, muziek en applaus.\",\n        \"Een emotionele omhelzing.\",\n        \"Een gesprek over een gezamenlijke toekomst.\"\n      ],\n      \"switch_trigger\": \"Vlak vóór het jawoord fluistert een regisseur: \\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\"\",\n      \"hinge_event\": \"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\",\n      \"anomaly_under_a\": \"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\",\n      \"resolution_under_b\": \"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n      \"logical_mechanism\": \"Figuurlijk misverstand en scriptomkering: conventionele romantische huwelijkscues worden eerst als oprechte liefde gelezen, waarna productie- en betalingslogica diezelfde cues herkadert als geregisseerde realitytelevisie.\",\n      \"situation\": \"Een deelnemer en een gecaste of contractueel gebonden tegenspeler staan tijdens een televisiewedding in witte outfits voor een publiek van familieleden, figuranten, cameraoperators en studiogasten. Onder leiding van een presentator spreken zij geloften uit, omringd door bloemen, muziek en applaus, terwijl producenten en een regisseur de opname aansturen.\",\n      \"target\": \"De realitytelevisieconventie waarin oprechte intimiteit als produceerbaar publiek spektakel wordt verpakt.\",\n      \"narrative_strategy\": \"De opzet presenteert een herkenbare, ontroerende huwelijksceremonie en laat het publiek de romantische signalen volgens Script A interpreteren. De punchline introduceert vervolgens opnamekwaliteit en betaling, waardoor de ceremonie retrospectief een geplande televisieclimax volgens Script B blijkt.\",\n      \"lexical_anchor\": \"opname\",\n      \"supporting_dual_cues\": [\n        \"Een witte outfit.\",\n        \"Geloften die hardop worden voorgelezen.\",\n        \"Bloemen, muziek en applaus.\",\n        \"Een emotionele omhelzing.\",\n        \"Een gesprek over een gezamenlijke toekomst.\"\n      ],\n      \"switch_trigger\": \"Vlak vóór het jawoord fluistert een regisseur: \\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\"\",\n      \"hinge_event\": \"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\",\n      \"anomaly_under_a\": \"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\",\n      \"resolution_under_b\": \"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\",\n      \"role_remapping\": [\n        \"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\",\n        \"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\",\n        \"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\"\n      ],\n      \"setup_goal\": \"Script A dominant maken door de witte outfit, de hardop voorgelezen geloften, bloemen, muziek, applaus, de omhelzing en het gesprek over een gezamenlijke toekomst als signalen van vrijwillige romantische wederkerigheid te presenteren.\",\n      \"punch_goal\": \"Script B activeren door de vraag naar de bruikbaarheid van de opname en de uitbetaling van de bonus, zodat de liefdevolle ceremonie wordt herlezen als een geregisseerde realityproductie.\",\n      \"punch_final_word\": \"uitbetaald\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals. Daarna vroeg ze: \\\"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\\\"\",\n      \"angle\": \"Ontroerende omhelzing na de geloften\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden. Hij fluisterde: \\\"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\\\"\",\n      \"angle\": \"Gezamenlijke toekomst met een technische onderbreking\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden. Vlak voor de kus zei haar partner: \\\"Eerst de opname checken, dan worden we uitbetaald.\\\"\",\n      \"angle\": \"De kus wordt onverwacht een controlemoment\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals. Daarna vroeg ze: \\\"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\\\"\",\n      \"angle\": \"Ontroerende omhelzing na de geloften\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden. Hij fluisterde: \\\"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\\\"\",\n      \"angle\": \"Gezamenlijke toekomst met een technische onderbreking\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden. Vlak voor de kus zei haar partner: \\\"Eerst de opname checken, dan worden we uitbetaald.\\\"\",\n      \"angle\": \"De kus wordt onverwacht een controlemoment\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een oprechte, ontroerende huwelijksceremonie van twee geliefden, met geloften, bloemen, applaus en een omhelzing.\",\n      \"realized_script_b\": \"De ceremonie blijkt een gefilmde en betaalde geënsceneerde performance, impliciet een reality- of televisieproductie.\",\n      \"realized_opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De romantische ceremonie domineert eerst als Script A; de vraag naar opnamekwaliteit en bonus herkadert dezelfde ceremonie als een betaalde productie. De realitycontext blijft impliciet, maar is functioneel afleidbaar.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De punchline keert de romantische lezing retrospectief om via productie- en betalingslogica.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De huwelijkssetting en de relevante productie-elementen (opname en bonus) zijn aanwezig, zij het zonder expliciete producent, camera of presentator.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De onthulling richt zich functioneel op het produceren en verhandelen van ogenschijnlijk oprechte intimiteit als entertainment.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Een conventioneel ontroerende opzet wordt afgesloten met een productiegerichte punchline die herinterpretatie afdwingt.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De lexicale ankerterm \\\"opname\\\" is aanwezig en de tekst eindigt met \\\"uitbetaald\\\", zoals gepland.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant realiseert de geplande romantiek-versus-productieomkering overtuigend. Alleen de specifieke voorafgaande regisseursinstructie als switch-trigger ontbreekt; de omslag komt rechtstreeks in de slotvraag.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een vrouw belooft haar grote liefde een gezamenlijke toekomst tijdens een warme, publieke huwelijksceremonie.\",\n      \"realized_script_b\": \"De omhelzing en geloften maken deel uit van een opname waarvoor een bonus alleen volgt als de technische productie correct draait.\",\n      \"realized_opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De huwelijkscues activeren eerst oprechte liefde, terwijl opname- en bonuslogica de gebeurtenis vervolgens als geregisseerde, betaalde performance leest.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De technische onderbreking maakt de aanvankelijk romantische scène retrospectief begrijpelijk als productie.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Ceremonie, geloften, toekomstbelofte, muziek, applaus en omhelzing zijn aanwezig; de opname en bonus voegen de noodzakelijke productiecontext toe.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst zet de conventie van gemanipuleerde, verfilmde intimiteit functioneel neer als het object van de satire.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De setup leest als een sentimentele ceremonie, waarna de technische opmerking de romantische interpretatie ondermijnt.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"\\\"Opname\\\" vormt het beoogde lexicale anker en de punch eindigt met \\\"uitbetaald\\\".\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit is de meest directe realisatie van de geplande trigger: vlak in de ceremonie wordt gewacht op de opname en wordt betaling eraan gekoppeld. De expliciete reality-tvrollen blijven impliciet, maar de geplande tegenstelling en omkering functioneren.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een collega zegt haar jawoord in een liefdevolle, feestelijke huwelijksceremonie met familie, bloemen, applaus en geloften.\",\n      \"realized_script_b\": \"De partner behandelt de ceremonie als een betaalde opname die eerst technisch gecontroleerd moet worden voordat betaling volgt.\",\n      \"realized_opposition_axis\": \"Oprechte wederkerigheid versus geënsceneerde publieke performance\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De bruiloft wordt aanvankelijk als oprecht gelezen; opnamecontrole en uitbetaling onthullen de concurrerende productielezing.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De productiecheck en betaling leveren de geplande scriptomkering van romantiek naar gefabriceerde performance.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De kernsetting van een gefilmde, betaalde huwelijksperformance is functioneel aanwezig door de combinatie van ceremoniecues, opname en betaling.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De punchline problematiseert functioneel het verpakken van romantische intimiteit als betaalbare mediaproductie.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bouwt een herkenbare bruiloft op en plaatst de productieonthulling als slotwending vlak vóór de kus.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"\\\"Opname\\\" is als gepland aanwezig en de laatste formulering bevat het vereiste eindwoord \\\"uitbetaald\\\".\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De geplande tegenstelling wordt duidelijk gerealiseerd, met een goede romantische setup en een productiegerichte punch. De specifieke voorziene regisseursfluistering vlak vóór het jawoord is vervangen door een opnamecheck vlak vóór de kus.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden. Hij fluisterde: \"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\"",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.",
+      "opposing_script": "Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.",
+      "opposition_type": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+      "trigger": "Vlak vóór het jawoord fluistert een regisseur: \"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\"",
+      "setup_goal": "Script A dominant maken door de witte outfit, de hardop voorgelezen geloften, bloemen, muziek, applaus, de omhelzing en het gesprek over een gezamenlijke toekomst als signalen van vrijwillige romantische wederkerigheid te presenteren.",
+      "punch_goal": "Script B activeren door de vraag naar de bruikbaarheid van de opname en de uitbetaling van de bonus, zodat de liefdevolle ceremonie wordt herlezen als een geregisseerde realityproductie.",
+      "shared_cues": [
+        "Een witte outfit.",
+        "Geloften die hardop worden voorgelezen.",
+        "Bloemen, muziek en applaus.",
+        "Een emotionele omhelzing.",
+        "Een gesprek over een gezamenlijke toekomst."
+      ],
+      "hinge_event": "Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.",
+      "anomaly_under_a": "Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.",
+      "resolution_under_b": "De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.",
+      "role_remapping": [
+        "De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.",
+        "Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.",
+        "De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.\\\",\\\"participants_and_roles\\\":[\\\"Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.\\\",\\\"Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.\\\",\\\"De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis.\\\"],\\\"apparent_goal\\\":\\\"Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.\\\",\\\"preconditions\\\":[\\\"Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.\\\",\\\"Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.\\\",\\\"Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.\\\",\\\"Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen.\\\"],\\\"expected_actions\\\":[\\\"De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.\\\",\\\"Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.\\\",\\\"Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.\\\",\\\"Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.\\\",\\\"Zij blijven communiceren, conflicten oplossen en de relatie onderhouden.\\\"],\\\"expected_outcome\\\":\\\"De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.\\\",\\\"expected_propositions\\\":[\\\"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\\\",\\\"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\\\",\\\"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\\\",\\\"Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.\\\",\\\"Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een schijnhuwelijk tussen twee huisgenoten die zich als echtpaar voordoen om aan de voorwaarden voor een gezamenlijke huurwoning of verblijfsregeling te voldoen.\\\",\\\"opposition_axis\\\":\\\"Romantische verbintenis versus strategische administratieve samenwerking\\\",\\\"opposed_proposition\\\":\\\"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\\\",\\\"shared_anchor\\\":\\\"De twee staan samen bij een loket om een huwelijk te regelen.\\\",\\\"reading_a\\\":\\\"Twee verliefde partners voltooien de wettelijke formaliteiten voor hun gewenste huwelijk.\\\",\\\"reading_b\\\":\\\"Twee praktische bondgenoten regelen documenten om hun gezamenlijke woon- of verblijfsbelang veilig te stellen.\\\",\\\"roles_b\\\":[\\\"Twee huisgenoten: tijdelijke bondgenoten die een overtuigend koppel moeten spelen.\\\",\\\"Een baliemedewerker of ambtenaar: controleert de aanvraag.\\\",\\\"Een verhuurder, instantie of huisvestingsorganisatie: stelt voorwaarden waaraan het paar probeert te voldoen.\\\"],\\\"goal_b\\\":\\\"De indruk van een duurzame partnerschapssituatie wekken en daarmee een praktische woon- of verblijfsoplossing verkrijgen.\\\",\\\"role_remapping\\\":[\\\"De geliefden uit Script A worden huisgenoten met een gedeeld praktisch belang.\\\",\\\"De huwelijksambtenaar blijft een formele begeleider, maar wordt in Script B een poortwachter voor documenten.\\\",\\\"Familie en vrienden worden eventueel figuranten of ingewijde helpers die de schijnrelatie geloofwaardig maken.\\\"],\\\"shared_cues\\\":[\\\"Samen formulieren invullen.\\\",\\\"Een afspraak bij de gemeente.\\\",\\\"Foto's waarop zij dicht bij elkaar staan.\\\",\\\"Oefenen van persoonlijke details over hun vermeende relatie.\\\",\\\"Praten over een gezamenlijke toekomst.\\\"],\\\"switch_trigger\\\":\\\"Wanneer de ambtenaar vraagt wat hun eerste afspraakje was, noemt een van hen zonder aarzelen de datum waarop het huurcontract afloopt.\\\",\\\"hinge_event\\\":\\\"Een van de twee schuift tijdens het gesprek een map met huurachterstanden en woningtoewijzingen over de balie.\\\",\\\"anomaly_under_a\\\":\\\"In een oprecht romantisch huwelijk is een dossier over woningnood een kille en misplaatste reactie op een vraag naar hun liefdesgeschiedenis.\\\",\\\"resolution_under_b\\\":\\\"Het dossier toont dat de ceremonie vooral een middel is om huisvesting te behouden; de ogenschijnlijke intimiteit en toekomsttaal waren doelbewust ingestudeerd.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.\\\",\\\"opposition_axis\\\":\\\"Oprechte wederkerigheid versus geënsceneerde publieke performance\\\",\\\"opposed_proposition\\\":\\\"Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.\\\",\\\"shared_anchor\\\":\\\"Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.\\\",\\\"reading_a\\\":\\\"Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.\\\",\\\"reading_b\\\":\\\"Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.\\\",\\\"roles_b\\\":[\\\"De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.\\\",\\\"De tegenspeler: speelt de ideale partner volgens het format.\\\",\\\"De producent en regisseur: sturen het verhaal en de emoties.\\\",\\\"Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending.\\\"],\\\"goal_b\\\":\\\"Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.\\\",\\\"role_remapping\\\":[\\\"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\\\",\\\"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\\\",\\\"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\\\"],\\\"shared_cues\\\":[\\\"Een witte outfit.\\\",\\\"Geloften die hardop worden voorgelezen.\\\",\\\"Bloemen, muziek en applaus.\\\",\\\"Een emotionele omhelzing.\\\",\\\"Een gesprek over een gezamenlijke toekomst.\\\"],\\\"switch_trigger\\\":\\\"Vlak vóór het jawoord fluistert een regisseur: \\\\\\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\\\",\\\"anomaly_under_a\\\":\\\"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\\\",\\\"resolution_under_b\\\":\\\"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Twee erfgenamen sluiten een formeel partnerschap om een familiebedrijf, nalatenschap of belastingvoordeel te beschermen, terwijl hun werkelijke band zakelijk en tijdelijk is.\\\",\\\"opposition_axis\\\":\\\"Huwelijk als levensverbintenis versus huwelijk als juridische constructie\\\",\\\"opposed_proposition\\\":\\\"Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.\\\",\\\"shared_anchor\\\":\\\"Een paar bespreekt met een notaris de voorwaarden van hun huwelijk.\\\",\\\"reading_a\\\":\\\"Verloofden regelen verstandig hun financiën en toekomst voordat zij gaan trouwen.\\\",\\\"reading_b\\\":\\\"Zakelijke partners ontwerpen een juridisch instrument om bezit en zeggenschap binnen de familie te houden.\\\",\\\"roles_b\\\":[\\\"Twee erfgenamen of mede-eigenaren: sluiten een tijdelijke overeenkomst.\\\",\\\"Een notaris of advocaat: legt de juridische constructie vast.\\\",\\\"Familieleden of aandeelhouders: oefenen druk uit vanwege de onderneming of nalatenschap.\\\"],\\\"goal_b\\\":\\\"Voorkomen dat aandelen, eigendom of een erfenis buiten een familie- of bedrijfsconstructie terechtkomen.\\\",\\\"role_remapping\\\":[\\\"De geliefden uit Script A worden erfgenamen met complementaire belangen.\\\",\\\"De formele huwelijksbegeleider wordt notaris of juridisch adviseur.\\\",\\\"Familie en vrienden worden aandeelhouders, familieleden of belanghebbenden die de regeling volgen.\\\"],\\\"shared_cues\\\":[\\\"Een gesprek over de toekomst.\\\",\\\"Documenten ondertekenen.\\\",\\\"Ringen of een formele aankondiging.\\\",\\\"Familie die feliciteert.\\\",\\\"Een bespreking over samenwonen en financiële afspraken.\\\"],\\\"switch_trigger\\\":\\\"De notaris vraagt wie de getuigen zijn, waarop een familielid antwoordt dat zij vooral moeten bevestigen dat de aandelen stemgerechtigd blijven.\\\",\\\"hinge_event\\\":\\\"Tijdens het feliciteren overhandigt een tante geen huwelijkscadeau maar een bijgewerkte aandeelhoudersovereenkomst met een deadline.\\\",\\\"anomaly_under_a\\\":\\\"Een aandeelhoudersdeadline op een huwelijksmoment past slecht bij een viering van affectie en een gezamenlijk leven.\\\",\\\"resolution_under_b\\\":\\\"De deadline maakt duidelijk dat het partnerschap de juridische sleutel is tot bedrijfscontrole; de ceremonieel romantische aankleding beschermt de zakelijke regeling tegen sociale weerstand.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een koppel volgt relatietherapie na een ernstige vertrouwensbreuk; hun afspraak over grenzen en intimiteit is geen vanzelfsprekende romantische toenadering, maar een zorgvuldig herstelproces waarin een van beiden nog twijfelt.\\\",\\\"opposition_axis\\\":\\\"Veronderstelde harmonieuze intimiteit versus voorwaardelijk herstel van vertrouwen\\\",\\\"opposed_proposition\\\":\\\"Seks vereist duidelijke, doorlopende wederzijdse toestemming.\\\",\\\"shared_anchor\\\":\\\"Twee partners zitten tegenover elkaar en bespreken hun grenzen, toekomst en lichamelijke nabijheid.\\\",\\\"reading_a\\\":\\\"Een gezond verliefd stel communiceert open over verlangens en bouwt vrijwillig aan meer intimiteit.\\\",\\\"reading_b\\\":\\\"Twee partners leggen, onder begeleiding, concrete veiligheidsafspraken vast nadat vertrouwen en toestemming eerder onder druk hebben gestaan.\\\",\\\"roles_b\\\":[\\\"Twee partners: proberen te bepalen of herstel mogelijk is.\\\",\\\"Een relatietherapeut of counselor: bewaakt veiligheid, tempo en communicatie.\\\",\\\"Eventueel een vertrouwenspersoon: ondersteunt een partner buiten de sessies.\\\"],\\\"goal_b\\\":\\\"Helder vaststellen welke grenzen gelden, welke veranderingen nodig zijn en of de relatie veilig en vrijwillig kan worden voortgezet.\\\",\\\"role_remapping\\\":[\\\"De geliefden uit Script A worden partners in een kwetsbaar hersteltraject.\\\",\\\"Open communicatie blijft aanwezig, maar is in Script B een beschermende interventie in plaats van een teken dat alles al goed gaat.\\\",\\\"Een ceremoniële begeleider wordt een therapeutische begeleider die geen verbintenis bekrachtigt maar grenzen helpt bewaken.\\\"],\\\"shared_cues\\\":[\\\"Handen vasthouden of juist aarzelend nabij zitten.\\\",\\\"Praten over vertrouwen en toekomstplannen.\\\",\\\"Een afspraak maken over tijd samen doorbrengen.\\\",\\\"Excuses aanbieden.\\\",\\\"Bespreken wat prettig, onprettig of te snel voelt.\\\"],\\\"switch_trigger\\\":\\\"De therapeut vraagt of een eerder afgesproken stopwoord altijd direct is gerespecteerd, waarna een lange stilte valt.\\\",\\\"hinge_event\\\":\\\"Een partner haalt een schriftelijke lijst met grenzen tevoorschijn en zegt dat die nodig was omdat een eerder \\\\\\\"nee\\\\\\\" als onderhandeling was behandeld.\\\",\\\"anomaly_under_a\\\":\\\"Binnen het dominante beeld van een wederzijds veilige, communicatieve relatie is zo'n noodzaak voor expliciete herstelafspraken onverwacht en ontregelend.\\\",\\\"resolution_under_b\\\":\\\"De lijst krijgt een duidelijke functie als veiligheidsplan: zij maakt zichtbaar dat intimiteit pas eventueel kan worden hersteld via aantoonbaar respect voor doorlopende toestemming en grenzen.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde scène bij het loket kan eerst natuurlijk als romantische huwelijksformaliteit en vervolgens als administratieve schijnconstructie worden gelezen. De tegenstelling tussen affectieve levensverbintenis en strategisch documentgebruik is lokaal onverenigbaar en dominant. Het huur- en woningdossier is onder Script A misplaatst, maar wordt onder Script B precies het bewijs van het werkelijke doel. Het ontbreken van romantische motivatie ondermijnt Script A, terwijl het juist de strategische samenwerking van Script B verklaart en mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een publiek uitgesproken gelofte met bloemen en een omhelzing kan zowel een oprecht huwelijk als een televisieoptreden dragen. De dominante tegenstelling is oprechte wederkerige keuze versus geënsceneerde performance. De productie-aanwijzing kan aanvankelijk nog passen bij registratie van een echte ceremonie, maar de vraag naar bruikbare opname en bonus maakt die lezing anomalisch. Onder Script B krijgt die opmerking een directe functie: alle romantische signalen blijken geproduceerd materiaal. Werkelijke wederkerigheid zou het zuivere performance-doel doorkruisen, terwijl de geënsceneerde relatie dat doel dient.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een gesprek met een notaris over huwelijksvoorwaarden kan geloofwaardig beginnen als verstandig relationeel en financieel voorbereidend overleg, maar ook als vormgeving van een zakelijke constructie. De as levensverbintenis versus tijdelijk juridisch instrument is duidelijk dominant en, zoals Script B is omschreven, lokaal onverenigbaar. De aandeelhoudersdeadline is binnen een affectieve huwelijksviering ongepast, maar wordt onder Script B precies de reden voor het partnerschap. De eerdere toekomst-, familie- en documentcues veranderen daardoor van romantische voorbereiding in bescherming van bedrijfscontrole. Het ontbreken van een werkelijk gezamenlijk leven blokkeert Script A maar ondersteunt het zakelijke doel van Script B.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De scène kan aanvankelijk als open en veilige communicatie tussen geliefden worden gelezen en later als herstelgesprek na een grensoverschrijding. Script B is herkenbaar en de schriftelijke lijst met grenzen verklaart de stilte en herkadert eerdere intimiteitsgesprekken als veiligheidswerk. De scripts vormen echter geen geldige oppositionele tegenstelling op de opgegeven propositie: Script A stelt dat seks doorlopende toestemming vereist, en Script B bevestigt juist die norm door herstel en grensbewaking noodzakelijk te maken. Voorwaardelijk herstel is daarom niet lokaal incompatibel met duidelijke toestemming, maar een situatie waarin die toestemming opnieuw moet worden gewaarborgd. De vertrouwensbreuk belemmert Script A, maar is niet zelf een voorwaarde die het hersteldoel van Script B functioneel mogelijk maakt.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B2\\\",\\\"rationale\\\":\\\"B2 biedt de scherpste en meest economisch uitgewerkte oppositie: dezelfde zichtbare huwelijksrituelen—geloften, witte kleding, omhelzing, publiek en toekomsttaal—dragen eerst overtuigend de romantische lezing, maar blijken retrospectief functioneel voor een geënsceneerde televisieprestatie. De rolomkering is helder en compatibel met de opzet: geliefden worden deelnemer en tegenspeler, terwijl de ceremoniemeester en aanwezigen logisch verschuiven naar presentator, productie en decor. De regie-aanwijzing en de vraag naar opnamekwaliteit vormen een compact, sterk omslagpunt met hoge payoff, omdat zij eerdere emotionele signalen niet ontkennen maar herinterpreteren als vervaardigde geloofwaardigheid. Daarmee is de tegenstelling tussen oprechte wederkerigheid en publieke performance specifiek, latent voorbereid en narratief dominant.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Oprechte wederkerigheid versus geënsceneerde publieke performance\\\",\\\"logical_mechanism\\\":\\\"Figuurlijk misverstand en scriptomkering: conventionele romantische huwelijkscues worden eerst als oprechte liefde gelezen, waarna productie- en betalingslogica diezelfde cues herkadert als geregisseerde realitytelevisie.\\\",\\\"situation\\\":\\\"Een deelnemer en een gecaste of contractueel gebonden tegenspeler staan tijdens een televisiewedding in witte outfits voor een publiek van familieleden, figuranten, cameraoperators en studiogasten. Onder leiding van een presentator spreken zij geloften uit, omringd door bloemen, muziek en applaus, terwijl producenten en een regisseur de opname aansturen.\\\",\\\"target\\\":\\\"De realitytelevisieconventie waarin oprechte intimiteit als produceerbaar publiek spektakel wordt verpakt.\\\",\\\"narrative_strategy\\\":\\\"De opzet presenteert een herkenbare, ontroerende huwelijksceremonie en laat het publiek de romantische signalen volgens Script A interpreteren. De punchline introduceert vervolgens opnamekwaliteit en betaling, waardoor de ceremonie retrospectief een geplande televisieclimax volgens Script B blijkt.\\\",\\\"lexical_anchor\\\":\\\"opname\\\",\\\"supporting_dual_cues\\\":[\\\"Een witte outfit.\\\",\\\"Geloften die hardop worden voorgelezen.\\\",\\\"Bloemen, muziek en applaus.\\\",\\\"Een emotionele omhelzing.\\\",\\\"Een gesprek over een gezamenlijke toekomst.\\\"],\\\"switch_trigger\\\":\\\"Vlak vóór het jawoord fluistert een regisseur: \\\\\\\"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.\\\",\\\"anomaly_under_a\\\":\\\"Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.\\\",\\\"resolution_under_b\\\":\\\"De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.\\\",\\\"role_remapping\\\":[\\\"De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.\\\",\\\"Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.\\\",\\\"De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt.\\\"],\\\"setup_goal\\\":\\\"Script A dominant maken door de witte outfit, de hardop voorgelezen geloften, bloemen, muziek, applaus, de omhelzing en het gesprek over een gezamenlijke toekomst als signalen van vrijwillige romantische wederkerigheid te presenteren.\\\",\\\"punch_goal\\\":\\\"Script B activeren door de vraag naar de bruikbaarheid van de opname en de uitbetaling van de bonus, zodat de liefdevolle ceremonie wordt herlezen als een geregisseerde realityproductie.\\\",\\\"punch_final_word\\\":\\\"uitbetaald\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals.\\\",\\\"punchline\\\":\\\"Daarna vroeg ze: \\\\\\\"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\\\\\\\"\\\",\\\"full_text\\\":\\\"Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals. Daarna vroeg ze: \\\\\\\"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\\\\\\\"\\\",\\\"angle\\\":\\\"Ontroerende omhelzing na de geloften\\\",\\\"anchor_surface_form\\\":\\\"opname\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden.\\\",\\\"punchline\\\":\\\"Hij fluisterde: \\\\\\\"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\\\\\\\"\\\",\\\"full_text\\\":\\\"Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden. Hij fluisterde: \\\\\\\"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\\\\\\\"\\\",\\\"angle\\\":\\\"Gezamenlijke toekomst met een technische onderbreking\\\",\\\"anchor_surface_form\\\":\\\"opname\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden.\\\",\\\"punchline\\\":\\\"Vlak voor de kus zei haar partner: \\\\\\\"Eerst de opname checken, dan worden we uitbetaald.\\\\\\\"\\\",\\\"full_text\\\":\\\"Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden. Vlak voor de kus zei haar partner: \\\\\\\"Eerst de opname checken, dan worden we uitbetaald.\\\\\\\"\\\",\\\"angle\\\":\\\"De kus wordt onverwacht een controlemoment\\\",\\\"anchor_surface_form\\\":\\\"opname\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een oprechte, ontroerende huwelijksceremonie van twee geliefden, met geloften, bloemen, applaus en een omhelzing.\\\",\\\"realized_script_b\\\":\\\"De ceremonie blijkt een gefilmde en betaalde geënsceneerde performance, impliciet een reality- of televisieproductie.\\\",\\\"realized_opposition_axis\\\":\\\"Oprechte wederkerigheid versus geënsceneerde publieke performance\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De romantische ceremonie domineert eerst als Script A; de vraag naar opnamekwaliteit en bonus herkadert dezelfde ceremonie als een betaalde productie. De realitycontext blijft impliciet, maar is functioneel afleidbaar.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De punchline keert de romantische lezing retrospectief om via productie- en betalingslogica.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De huwelijkssetting en de relevante productie-elementen (opname en bonus) zijn aanwezig, zij het zonder expliciete producent, camera of presentator.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De onthulling richt zich functioneel op het produceren en verhandelen van ogenschijnlijk oprechte intimiteit als entertainment.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Een conventioneel ontroerende opzet wordt afgesloten met een productiegerichte punchline die herinterpretatie afdwingt.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De lexicale ankerterm \\\\\\\"opname\\\\\\\" is aanwezig en de tekst eindigt met \\\\\\\"uitbetaald\\\\\\\", zoals gepland.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant realiseert de geplande romantiek-versus-productieomkering overtuigend. Alleen de specifieke voorafgaande regisseursinstructie als switch-trigger ontbreekt; de omslag komt rechtstreeks in de slotvraag.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een vrouw belooft haar grote liefde een gezamenlijke toekomst tijdens een warme, publieke huwelijksceremonie.\\\",\\\"realized_script_b\\\":\\\"De omhelzing en geloften maken deel uit van een opname waarvoor een bonus alleen volgt als de technische productie correct draait.\\\",\\\"realized_opposition_axis\\\":\\\"Oprechte wederkerigheid versus geënsceneerde publieke performance\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De huwelijkscues activeren eerst oprechte liefde, terwijl opname- en bonuslogica de gebeurtenis vervolgens als geregisseerde, betaalde performance leest.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De technische onderbreking maakt de aanvankelijk romantische scène retrospectief begrijpelijk als productie.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Ceremonie, geloften, toekomstbelofte, muziek, applaus en omhelzing zijn aanwezig; de opname en bonus voegen de noodzakelijke productiecontext toe.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst zet de conventie van gemanipuleerde, verfilmde intimiteit functioneel neer als het object van de satire.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De setup leest als een sentimentele ceremonie, waarna de technische opmerking de romantische interpretatie ondermijnt.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"\\\\\\\"Opname\\\\\\\" vormt het beoogde lexicale anker en de punch eindigt met \\\\\\\"uitbetaald\\\\\\\".\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Dit is de meest directe realisatie van de geplande trigger: vlak in de ceremonie wordt gewacht op de opname en wordt betaling eraan gekoppeld. De expliciete reality-tvrollen blijven impliciet, maar de geplande tegenstelling en omkering functioneren.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een collega zegt haar jawoord in een liefdevolle, feestelijke huwelijksceremonie met familie, bloemen, applaus en geloften.\\\",\\\"realized_script_b\\\":\\\"De partner behandelt de ceremonie als een betaalde opname die eerst technisch gecontroleerd moet worden voordat betaling volgt.\\\",\\\"realized_opposition_axis\\\":\\\"Oprechte wederkerigheid versus geënsceneerde publieke performance\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De bruiloft wordt aanvankelijk als oprecht gelezen; opnamecontrole en uitbetaling onthullen de concurrerende productielezing.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De productiecheck en betaling leveren de geplande scriptomkering van romantiek naar gefabriceerde performance.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De kernsetting van een gefilmde, betaalde huwelijksperformance is functioneel aanwezig door de combinatie van ceremoniecues, opname en betaling.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De punchline problematiseert functioneel het verpakken van romantische intimiteit als betaalbare mediaproductie.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bouwt een herkenbare bruiloft op en plaatst de productieonthulling als slotwending vlak vóór de kus.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"\\\\\\\"Opname\\\\\\\" is als gepland aanwezig en de laatste formulering bevat het vereiste eindwoord \\\\\\\"uitbetaald\\\\\\\".\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De geplande tegenstelling wordt duidelijk gerealiseerd, met een goede romantische setup en een productiegerichte punch. De specifieke voorziene regisseursfluistering vlak vóór het jawoord is vervangen door een opnamecheck vlak vóór de kus.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de enige passerende variant en moet daarom voorgaan. Bovendien bevat hij de geplande technische onderbreking als expliciete switch-trigger; daardoor wordt de romantische omhelzing direct en helder een betaalde opname.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide varianten missen de voorgeschreven switch-trigger, maar V3 heeft een scherpere timing: de opnamecheck vlak vóór de kus geeft een duidelijker komische onderbreking. V1 heeft een natuurlijkere slotvraag, maar de bonusvraag voelt iets verklarender.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is passerend, V3 niet, dus V2 wint verplicht. Ook inhoudelijk is V2 sterker trouw aan het plan: het fluisteren over de nog niet draaiende opname activeert de productielogica precies op het omslagmoment.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de enige passerende variant, voldoet aan de lengte- en zinslimiet en realiseert alle vereiste middelen het volledigst. De technische fluistering vormt een performabele, heldere wending die de hele sentimentele ceremonie retrospectief als betaalde productie herkadert.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een schijnhuwelijk tussen twee huisgenoten die zich als echtpaar voordoen om aan de voorwaarden voor een gezamenlijke huurwoning of verblijfsregeling te voldoen.",
+        "candidate_id": "B1",
+        "opposition_axis": "Romantische verbintenis versus strategische administratieve samenwerking",
+        "opposed_expectation": "Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.",
+        "roles_b": [
+          "Twee huisgenoten: tijdelijke bondgenoten die een overtuigend koppel moeten spelen.",
+          "Een baliemedewerker of ambtenaar: controleert de aanvraag.",
+          "Een verhuurder, instantie of huisvestingsorganisatie: stelt voorwaarden waaraan het paar probeert te voldoen."
+        ],
+        "goal_b": "De indruk van een duurzame partnerschapssituatie wekken en daarmee een praktische woon- of verblijfsoplossing verkrijgen.",
+        "role_remapping": [
+          "De geliefden uit Script A worden huisgenoten met een gedeeld praktisch belang.",
+          "De huwelijksambtenaar blijft een formele begeleider, maar wordt in Script B een poortwachter voor documenten.",
+          "Familie en vrienden worden eventueel figuranten of ingewijde helpers die de schijnrelatie geloofwaardig maken."
+        ],
+        "shared_cues": [
+          "Samen formulieren invullen.",
+          "Een afspraak bij de gemeente.",
+          "Foto's waarop zij dicht bij elkaar staan.",
+          "Oefenen van persoonlijke details over hun vermeende relatie.",
+          "Praten over een gezamenlijke toekomst."
+        ],
+        "switch_trigger": "Wanneer de ambtenaar vraagt wat hun eerste afspraakje was, noemt een van hen zonder aarzelen de datum waarop het huurcontract afloopt.",
+        "hinge_event": "Een van de twee schuift tijdens het gesprek een map met huurachterstanden en woningtoewijzingen over de balie.",
+        "anomaly_under_a": "In een oprecht romantisch huwelijk is een dossier over woningnood een kille en misplaatste reactie op een vraag naar hun liefdesgeschiedenis.",
+        "resolution_under_b": "Het dossier toont dat de ceremonie vooral een middel is om huisvesting te behouden; de ogenschijnlijke intimiteit en toekomsttaal waren doelbewust ingestudeerd.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.",
+        "candidate_id": "B2",
+        "opposition_axis": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+        "opposed_expectation": "Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.",
+        "roles_b": [
+          "De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.",
+          "De tegenspeler: speelt de ideale partner volgens het format.",
+          "De producent en regisseur: sturen het verhaal en de emoties.",
+          "Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending."
+        ],
+        "goal_b": "Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.",
+        "role_remapping": [
+          "De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.",
+          "Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.",
+          "De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt."
+        ],
+        "shared_cues": [
+          "Een witte outfit.",
+          "Geloften die hardop worden voorgelezen.",
+          "Bloemen, muziek en applaus.",
+          "Een emotionele omhelzing.",
+          "Een gesprek over een gezamenlijke toekomst."
+        ],
+        "switch_trigger": "Vlak vóór het jawoord fluistert een regisseur: \"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\"",
+        "hinge_event": "Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.",
+        "anomaly_under_a": "Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.",
+        "resolution_under_b": "De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee erfgenamen sluiten een formeel partnerschap om een familiebedrijf, nalatenschap of belastingvoordeel te beschermen, terwijl hun werkelijke band zakelijk en tijdelijk is.",
+        "candidate_id": "B3",
+        "opposition_axis": "Huwelijk als levensverbintenis versus huwelijk als juridische constructie",
+        "opposed_expectation": "Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.",
+        "roles_b": [
+          "Twee erfgenamen of mede-eigenaren: sluiten een tijdelijke overeenkomst.",
+          "Een notaris of advocaat: legt de juridische constructie vast.",
+          "Familieleden of aandeelhouders: oefenen druk uit vanwege de onderneming of nalatenschap."
+        ],
+        "goal_b": "Voorkomen dat aandelen, eigendom of een erfenis buiten een familie- of bedrijfsconstructie terechtkomen.",
+        "role_remapping": [
+          "De geliefden uit Script A worden erfgenamen met complementaire belangen.",
+          "De formele huwelijksbegeleider wordt notaris of juridisch adviseur.",
+          "Familie en vrienden worden aandeelhouders, familieleden of belanghebbenden die de regeling volgen."
+        ],
+        "shared_cues": [
+          "Een gesprek over de toekomst.",
+          "Documenten ondertekenen.",
+          "Ringen of een formele aankondiging.",
+          "Familie die feliciteert.",
+          "Een bespreking over samenwonen en financiële afspraken."
+        ],
+        "switch_trigger": "De notaris vraagt wie de getuigen zijn, waarop een familielid antwoordt dat zij vooral moeten bevestigen dat de aandelen stemgerechtigd blijven.",
+        "hinge_event": "Tijdens het feliciteren overhandigt een tante geen huwelijkscadeau maar een bijgewerkte aandeelhoudersovereenkomst met een deadline.",
+        "anomaly_under_a": "Een aandeelhoudersdeadline op een huwelijksmoment past slecht bij een viering van affectie en een gezamenlijk leven.",
+        "resolution_under_b": "De deadline maakt duidelijk dat het partnerschap de juridische sleutel is tot bedrijfscontrole; de ceremonieel romantische aankleding beschermt de zakelijke regeling tegen sociale weerstand.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een koppel volgt relatietherapie na een ernstige vertrouwensbreuk; hun afspraak over grenzen en intimiteit is geen vanzelfsprekende romantische toenadering, maar een zorgvuldig herstelproces waarin een van beiden nog twijfelt.",
+        "candidate_id": "B4",
+        "opposition_axis": "Veronderstelde harmonieuze intimiteit versus voorwaardelijk herstel van vertrouwen",
+        "opposed_expectation": "Seks vereist duidelijke, doorlopende wederzijdse toestemming.",
+        "roles_b": [
+          "Twee partners: proberen te bepalen of herstel mogelijk is.",
+          "Een relatietherapeut of counselor: bewaakt veiligheid, tempo en communicatie.",
+          "Eventueel een vertrouwenspersoon: ondersteunt een partner buiten de sessies."
+        ],
+        "goal_b": "Helder vaststellen welke grenzen gelden, welke veranderingen nodig zijn en of de relatie veilig en vrijwillig kan worden voortgezet.",
+        "role_remapping": [
+          "De geliefden uit Script A worden partners in een kwetsbaar hersteltraject.",
+          "Open communicatie blijft aanwezig, maar is in Script B een beschermende interventie in plaats van een teken dat alles al goed gaat.",
+          "Een ceremoniële begeleider wordt een therapeutische begeleider die geen verbintenis bekrachtigt maar grenzen helpt bewaken."
+        ],
+        "shared_cues": [
+          "Handen vasthouden of juist aarzelend nabij zitten.",
+          "Praten over vertrouwen en toekomstplannen.",
+          "Een afspraak maken over tijd samen doorbrengen.",
+          "Excuses aanbieden.",
+          "Bespreken wat prettig, onprettig of te snel voelt."
+        ],
+        "switch_trigger": "De therapeut vraagt of een eerder afgesproken stopwoord altijd direct is gerespecteerd, waarna een lange stilte valt.",
+        "hinge_event": "Een partner haalt een schriftelijke lijst met grenzen tevoorschijn en zegt dat die nodig was omdat een eerder \"nee\" als onderhandeling was behandeld.",
+        "anomaly_under_a": "Binnen het dominante beeld van een wederzijds veilige, communicatieve relatie is zo'n noodzaak voor expliciete herstelafspraken onverwacht en ontregelend.",
+        "resolution_under_b": "De lijst krijgt een duidelijke functie als veiligheidsplan: zij maakt zichtbaar dat intimiteit pas eventueel kan worden hersteld via aantoonbaar respect voor doorlopende toestemming en grenzen.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B2 biedt de scherpste en meest economisch uitgewerkte oppositie: dezelfde zichtbare huwelijksrituelen—geloften, witte kleding, omhelzing, publiek en toekomsttaal—dragen eerst overtuigend de romantische lezing, maar blijken retrospectief functioneel voor een geënsceneerde televisieprestatie. De rolomkering is helder en compatibel met de opzet: geliefden worden deelnemer en tegenspeler, terwijl de ceremoniemeester en aanwezigen logisch verschuiven naar presentator, productie en decor. De regie-aanwijzing en de vraag naar opnamekwaliteit vormen een compact, sterk omslagpunt met hoge payoff, omdat zij eerdere emotionele signalen niet ontkennen maar herinterpreteren als vervaardigde geloofwaardigheid. Daarmee is de tegenstelling tussen oprechte wederkerigheid en publieke performance specifiek, latent voorbereid en narratief dominant.",
+    "variants": [
+      {
+        "text": "Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals. Daarna vroeg ze: \"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\"",
+        "angle": "Ontroerende omhelzing na de geloften"
+      },
+      {
+        "text": "Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden. Hij fluisterde: \"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\"",
+        "angle": "Gezamenlijke toekomst met een technische onderbreking"
+      },
+      {
+        "text": "Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden. Vlak voor de kus zei haar partner: \"Eerst de opname checken, dan worden we uitbetaald.\"",
+        "angle": "De kus wordt onverwacht een controlemoment"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 17183,
+      "output_tokens": 9202,
+      "total_tokens": 26385
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Twee geliefden bouwen een relatie op, kiezen vrijwillig voor een huwelijk en onderhouden daarin een wederzijds gewenste, intieme seksuele band.",
+          "participants_and_roles": [
+            "Twee partners: geliefden die elkaar vertrouwen, genegenheid tonen en gezamenlijke keuzes maken.",
+            "Eventueel familie en vrienden: getuigen en ondersteuners bij de relatie of huwelijksviering.",
+            "De ambtenaar, ceremoniemeester of religieuze voorganger: begeleidt de formele huwelijksverbintenis."
+          ],
+          "apparent_goal": "Een duurzame, liefdevolle en wederzijds bevredigende relatie vormen, eventueel bekrachtigd door een huwelijk.",
+          "preconditions": [
+            "Beide partners zijn meerderjarig, vrij om te kiezen en geven vrijwillig toestemming.",
+            "Er is wederzijdse aantrekkingskracht, vertrouwen en voldoende open communicatie.",
+            "Een huwelijk vereist een gedeelde wens om zich formeel en publiek aan elkaar te verbinden.",
+            "Seksuele intimiteit vindt plaats met wederzijdse instemming, respect en aandacht voor grenzen."
+          ],
+          "expected_actions": [
+            "De partners daten, leren elkaar kennen en spreken wensen, grenzen en toekomstplannen uit.",
+            "Zij besluiten al dan niet te trouwen en regelen, indien gewenst, een ceremonie en wettelijke formaliteiten.",
+            "Tijdens de ceremonie spreken zij een belofte of jawoord uit en vieren zij de verbintenis.",
+            "Binnen de relatie geven zij elkaar affectie en zoeken zij seksuele intimiteit op een manier die voor beiden prettig en vrijwillig is.",
+            "Zij blijven communiceren, conflicten oplossen en de relatie onderhouden."
+          ],
+          "expected_outcome": "De partners voelen zich verbonden en veilig, zijn formeel getrouwd als zij daarvoor kiezen, en hebben een duurzame relatie met wederkerige intimiteit.",
+          "expected_propositions": [
+            "Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.",
+            "Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.",
+            "Seks vereist duidelijke, doorlopende wederzijdse toestemming.",
+            "Goede communicatie over verwachtingen, grenzen en verlangens draagt bij aan een gezonde relatie.",
+            "Een huwelijk wordt doorgaans gevierd als een positieve mijlpaal met familie en vrienden."
+          ],
+          "audience_expectation": "Een opzet over liefde, huwelijk en seksualiteit activeert doorgaans het beeld van twee instemmende partners die via romantiek, commitment en open communicatie naar een warme, duurzame en intieme verbintenis toewerken."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een schijnhuwelijk tussen twee huisgenoten die zich als echtpaar voordoen om aan de voorwaarden voor een gezamenlijke huurwoning of verblijfsregeling te voldoen.",
+            "opposition_axis": "Romantische verbintenis versus strategische administratieve samenwerking",
+            "opposed_proposition": "Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.",
+            "shared_anchor": "De twee staan samen bij een loket om een huwelijk te regelen.",
+            "reading_a": "Twee verliefde partners voltooien de wettelijke formaliteiten voor hun gewenste huwelijk.",
+            "reading_b": "Twee praktische bondgenoten regelen documenten om hun gezamenlijke woon- of verblijfsbelang veilig te stellen.",
+            "roles_b": [
+              "Twee huisgenoten: tijdelijke bondgenoten die een overtuigend koppel moeten spelen.",
+              "Een baliemedewerker of ambtenaar: controleert de aanvraag.",
+              "Een verhuurder, instantie of huisvestingsorganisatie: stelt voorwaarden waaraan het paar probeert te voldoen."
+            ],
+            "goal_b": "De indruk van een duurzame partnerschapssituatie wekken en daarmee een praktische woon- of verblijfsoplossing verkrijgen.",
+            "role_remapping": [
+              "De geliefden uit Script A worden huisgenoten met een gedeeld praktisch belang.",
+              "De huwelijksambtenaar blijft een formele begeleider, maar wordt in Script B een poortwachter voor documenten.",
+              "Familie en vrienden worden eventueel figuranten of ingewijde helpers die de schijnrelatie geloofwaardig maken."
+            ],
+            "shared_cues": [
+              "Samen formulieren invullen.",
+              "Een afspraak bij de gemeente.",
+              "Foto's waarop zij dicht bij elkaar staan.",
+              "Oefenen van persoonlijke details over hun vermeende relatie.",
+              "Praten over een gezamenlijke toekomst."
+            ],
+            "switch_trigger": "Wanneer de ambtenaar vraagt wat hun eerste afspraakje was, noemt een van hen zonder aarzelen de datum waarop het huurcontract afloopt.",
+            "hinge_event": "Een van de twee schuift tijdens het gesprek een map met huurachterstanden en woningtoewijzingen over de balie.",
+            "anomaly_under_a": "In een oprecht romantisch huwelijk is een dossier over woningnood een kille en misplaatste reactie op een vraag naar hun liefdesgeschiedenis.",
+            "resolution_under_b": "Het dossier toont dat de ceremonie vooral een middel is om huisvesting te behouden; de ogenschijnlijke intimiteit en toekomsttaal waren doelbewust ingestudeerd."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.",
+            "opposition_axis": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+            "opposed_proposition": "Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.",
+            "shared_anchor": "Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.",
+            "reading_a": "Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.",
+            "reading_b": "Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.",
+            "roles_b": [
+              "De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.",
+              "De tegenspeler: speelt de ideale partner volgens het format.",
+              "De producent en regisseur: sturen het verhaal en de emoties.",
+              "Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending."
+            ],
+            "goal_b": "Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.",
+            "role_remapping": [
+              "De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.",
+              "Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.",
+              "De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt."
+            ],
+            "shared_cues": [
+              "Een witte outfit.",
+              "Geloften die hardop worden voorgelezen.",
+              "Bloemen, muziek en applaus.",
+              "Een emotionele omhelzing.",
+              "Een gesprek over een gezamenlijke toekomst."
+            ],
+            "switch_trigger": "Vlak vóór het jawoord fluistert een regisseur: \"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\"",
+            "hinge_event": "Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.",
+            "anomaly_under_a": "Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.",
+            "resolution_under_b": "De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Twee erfgenamen sluiten een formeel partnerschap om een familiebedrijf, nalatenschap of belastingvoordeel te beschermen, terwijl hun werkelijke band zakelijk en tijdelijk is.",
+            "opposition_axis": "Huwelijk als levensverbintenis versus huwelijk als juridische constructie",
+            "opposed_proposition": "Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.",
+            "shared_anchor": "Een paar bespreekt met een notaris de voorwaarden van hun huwelijk.",
+            "reading_a": "Verloofden regelen verstandig hun financiën en toekomst voordat zij gaan trouwen.",
+            "reading_b": "Zakelijke partners ontwerpen een juridisch instrument om bezit en zeggenschap binnen de familie te houden.",
+            "roles_b": [
+              "Twee erfgenamen of mede-eigenaren: sluiten een tijdelijke overeenkomst.",
+              "Een notaris of advocaat: legt de juridische constructie vast.",
+              "Familieleden of aandeelhouders: oefenen druk uit vanwege de onderneming of nalatenschap."
+            ],
+            "goal_b": "Voorkomen dat aandelen, eigendom of een erfenis buiten een familie- of bedrijfsconstructie terechtkomen.",
+            "role_remapping": [
+              "De geliefden uit Script A worden erfgenamen met complementaire belangen.",
+              "De formele huwelijksbegeleider wordt notaris of juridisch adviseur.",
+              "Familie en vrienden worden aandeelhouders, familieleden of belanghebbenden die de regeling volgen."
+            ],
+            "shared_cues": [
+              "Een gesprek over de toekomst.",
+              "Documenten ondertekenen.",
+              "Ringen of een formele aankondiging.",
+              "Familie die feliciteert.",
+              "Een bespreking over samenwonen en financiële afspraken."
+            ],
+            "switch_trigger": "De notaris vraagt wie de getuigen zijn, waarop een familielid antwoordt dat zij vooral moeten bevestigen dat de aandelen stemgerechtigd blijven.",
+            "hinge_event": "Tijdens het feliciteren overhandigt een tante geen huwelijkscadeau maar een bijgewerkte aandeelhoudersovereenkomst met een deadline.",
+            "anomaly_under_a": "Een aandeelhoudersdeadline op een huwelijksmoment past slecht bij een viering van affectie en een gezamenlijk leven.",
+            "resolution_under_b": "De deadline maakt duidelijk dat het partnerschap de juridische sleutel is tot bedrijfscontrole; de ceremonieel romantische aankleding beschermt de zakelijke regeling tegen sociale weerstand."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een koppel volgt relatietherapie na een ernstige vertrouwensbreuk; hun afspraak over grenzen en intimiteit is geen vanzelfsprekende romantische toenadering, maar een zorgvuldig herstelproces waarin een van beiden nog twijfelt.",
+            "opposition_axis": "Veronderstelde harmonieuze intimiteit versus voorwaardelijk herstel van vertrouwen",
+            "opposed_proposition": "Seks vereist duidelijke, doorlopende wederzijdse toestemming.",
+            "shared_anchor": "Twee partners zitten tegenover elkaar en bespreken hun grenzen, toekomst en lichamelijke nabijheid.",
+            "reading_a": "Een gezond verliefd stel communiceert open over verlangens en bouwt vrijwillig aan meer intimiteit.",
+            "reading_b": "Twee partners leggen, onder begeleiding, concrete veiligheidsafspraken vast nadat vertrouwen en toestemming eerder onder druk hebben gestaan.",
+            "roles_b": [
+              "Twee partners: proberen te bepalen of herstel mogelijk is.",
+              "Een relatietherapeut of counselor: bewaakt veiligheid, tempo en communicatie.",
+              "Eventueel een vertrouwenspersoon: ondersteunt een partner buiten de sessies."
+            ],
+            "goal_b": "Helder vaststellen welke grenzen gelden, welke veranderingen nodig zijn en of de relatie veilig en vrijwillig kan worden voortgezet.",
+            "role_remapping": [
+              "De geliefden uit Script A worden partners in een kwetsbaar hersteltraject.",
+              "Open communicatie blijft aanwezig, maar is in Script B een beschermende interventie in plaats van een teken dat alles al goed gaat.",
+              "Een ceremoniële begeleider wordt een therapeutische begeleider die geen verbintenis bekrachtigt maar grenzen helpt bewaken."
+            ],
+            "shared_cues": [
+              "Handen vasthouden of juist aarzelend nabij zitten.",
+              "Praten over vertrouwen en toekomstplannen.",
+              "Een afspraak maken over tijd samen doorbrengen.",
+              "Excuses aanbieden.",
+              "Bespreken wat prettig, onprettig of te snel voelt."
+            ],
+            "switch_trigger": "De therapeut vraagt of een eerder afgesproken stopwoord altijd direct is gerespecteerd, waarna een lange stilte valt.",
+            "hinge_event": "Een partner haalt een schriftelijke lijst met grenzen tevoorschijn en zegt dat die nodig was omdat een eerder \"nee\" als onderhandeling was behandeld.",
+            "anomaly_under_a": "Binnen het dominante beeld van een wederzijds veilige, communicatieve relatie is zo'n noodzaak voor expliciete herstelafspraken onverwacht en ontregelend.",
+            "resolution_under_b": "De lijst krijgt een duidelijke functie als veiligheidsplan: zij maakt zichtbaar dat intimiteit pas eventueel kan worden hersteld via aantoonbaar respect voor doorlopende toestemming en grenzen."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een schijnhuwelijk tussen twee huisgenoten die zich als echtpaar voordoen om aan de voorwaarden voor een gezamenlijke huurwoning of verblijfsregeling te voldoen.",
+              "opposition_axis": "Romantische verbintenis versus strategische administratieve samenwerking",
+              "opposed_proposition": "Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.",
+              "shared_anchor": "De twee staan samen bij een loket om een huwelijk te regelen.",
+              "reading_a": "Twee verliefde partners voltooien de wettelijke formaliteiten voor hun gewenste huwelijk.",
+              "reading_b": "Twee praktische bondgenoten regelen documenten om hun gezamenlijke woon- of verblijfsbelang veilig te stellen.",
+              "roles_b": [
+                "Twee huisgenoten: tijdelijke bondgenoten die een overtuigend koppel moeten spelen.",
+                "Een baliemedewerker of ambtenaar: controleert de aanvraag.",
+                "Een verhuurder, instantie of huisvestingsorganisatie: stelt voorwaarden waaraan het paar probeert te voldoen."
+              ],
+              "goal_b": "De indruk van een duurzame partnerschapssituatie wekken en daarmee een praktische woon- of verblijfsoplossing verkrijgen.",
+              "role_remapping": [
+                "De geliefden uit Script A worden huisgenoten met een gedeeld praktisch belang.",
+                "De huwelijksambtenaar blijft een formele begeleider, maar wordt in Script B een poortwachter voor documenten.",
+                "Familie en vrienden worden eventueel figuranten of ingewijde helpers die de schijnrelatie geloofwaardig maken."
+              ],
+              "shared_cues": [
+                "Samen formulieren invullen.",
+                "Een afspraak bij de gemeente.",
+                "Foto's waarop zij dicht bij elkaar staan.",
+                "Oefenen van persoonlijke details over hun vermeende relatie.",
+                "Praten over een gezamenlijke toekomst."
+              ],
+              "switch_trigger": "Wanneer de ambtenaar vraagt wat hun eerste afspraakje was, noemt een van hen zonder aarzelen de datum waarop het huurcontract afloopt.",
+              "hinge_event": "Een van de twee schuift tijdens het gesprek een map met huurachterstanden en woningtoewijzingen over de balie.",
+              "anomaly_under_a": "In een oprecht romantisch huwelijk is een dossier over woningnood een kille en misplaatste reactie op een vraag naar hun liefdesgeschiedenis.",
+              "resolution_under_b": "Het dossier toont dat de ceremonie vooral een middel is om huisvesting te behouden; de ogenschijnlijke intimiteit en toekomsttaal waren doelbewust ingestudeerd."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een producent en een deelnemer organiseren een televisiewedding waarin romantiek, geloften en publieke intimiteit vooral onderdelen zijn van een realityprogramma.",
+              "opposition_axis": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+              "opposed_proposition": "Liefde berust op wederkerigheid: beide partners kiezen voor elkaar.",
+              "shared_anchor": "Een bruidspaar spreekt voor een publiek een ontroerende belofte uit.",
+              "reading_a": "Twee partners verklaren voor hun naasten vrijwillig dat zij voor elkaar kiezen.",
+              "reading_b": "Een deelnemer levert, met een producent en een ingehuurde tegenspeler, de emotionele climax die het programma nodig heeft.",
+              "roles_b": [
+                "De deelnemer: wil zichtbaarheid, prijzengeld of een carrièrekans.",
+                "De tegenspeler: speelt de ideale partner volgens het format.",
+                "De producent en regisseur: sturen het verhaal en de emoties.",
+                "Publiek, familieleden en cameraoperators: vormen het decor en de geloofwaardigheid van de uitzending."
+              ],
+              "goal_b": "Een overtuigende finale opnemen die kijkers vasthoudt en de publieke bekendheid of financiële beloning van de deelnemer vergroot.",
+              "role_remapping": [
+                "De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.",
+                "Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.",
+                "De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt."
+              ],
+              "shared_cues": [
+                "Een witte outfit.",
+                "Geloften die hardop worden voorgelezen.",
+                "Bloemen, muziek en applaus.",
+                "Een emotionele omhelzing.",
+                "Een gesprek over een gezamenlijke toekomst."
+              ],
+              "switch_trigger": "Vlak vóór het jawoord fluistert een regisseur: \"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\"",
+              "hinge_event": "Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.",
+              "anomaly_under_a": "Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.",
+              "resolution_under_b": "De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Twee erfgenamen sluiten een formeel partnerschap om een familiebedrijf, nalatenschap of belastingvoordeel te beschermen, terwijl hun werkelijke band zakelijk en tijdelijk is.",
+              "opposition_axis": "Huwelijk als levensverbintenis versus huwelijk als juridische constructie",
+              "opposed_proposition": "Een huwelijk is een vrijwillige, serieuze afspraak om een leven te delen.",
+              "shared_anchor": "Een paar bespreekt met een notaris de voorwaarden van hun huwelijk.",
+              "reading_a": "Verloofden regelen verstandig hun financiën en toekomst voordat zij gaan trouwen.",
+              "reading_b": "Zakelijke partners ontwerpen een juridisch instrument om bezit en zeggenschap binnen de familie te houden.",
+              "roles_b": [
+                "Twee erfgenamen of mede-eigenaren: sluiten een tijdelijke overeenkomst.",
+                "Een notaris of advocaat: legt de juridische constructie vast.",
+                "Familieleden of aandeelhouders: oefenen druk uit vanwege de onderneming of nalatenschap."
+              ],
+              "goal_b": "Voorkomen dat aandelen, eigendom of een erfenis buiten een familie- of bedrijfsconstructie terechtkomen.",
+              "role_remapping": [
+                "De geliefden uit Script A worden erfgenamen met complementaire belangen.",
+                "De formele huwelijksbegeleider wordt notaris of juridisch adviseur.",
+                "Familie en vrienden worden aandeelhouders, familieleden of belanghebbenden die de regeling volgen."
+              ],
+              "shared_cues": [
+                "Een gesprek over de toekomst.",
+                "Documenten ondertekenen.",
+                "Ringen of een formele aankondiging.",
+                "Familie die feliciteert.",
+                "Een bespreking over samenwonen en financiële afspraken."
+              ],
+              "switch_trigger": "De notaris vraagt wie de getuigen zijn, waarop een familielid antwoordt dat zij vooral moeten bevestigen dat de aandelen stemgerechtigd blijven.",
+              "hinge_event": "Tijdens het feliciteren overhandigt een tante geen huwelijkscadeau maar een bijgewerkte aandeelhoudersovereenkomst met een deadline.",
+              "anomaly_under_a": "Een aandeelhoudersdeadline op een huwelijksmoment past slecht bij een viering van affectie en een gezamenlijk leven.",
+              "resolution_under_b": "De deadline maakt duidelijk dat het partnerschap de juridische sleutel is tot bedrijfscontrole; de ceremonieel romantische aankleding beschermt de zakelijke regeling tegen sociale weerstand."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een koppel volgt relatietherapie na een ernstige vertrouwensbreuk; hun afspraak over grenzen en intimiteit is geen vanzelfsprekende romantische toenadering, maar een zorgvuldig herstelproces waarin een van beiden nog twijfelt.",
+              "opposition_axis": "Veronderstelde harmonieuze intimiteit versus voorwaardelijk herstel van vertrouwen",
+              "opposed_proposition": "Seks vereist duidelijke, doorlopende wederzijdse toestemming.",
+              "shared_anchor": "Twee partners zitten tegenover elkaar en bespreken hun grenzen, toekomst en lichamelijke nabijheid.",
+              "reading_a": "Een gezond verliefd stel communiceert open over verlangens en bouwt vrijwillig aan meer intimiteit.",
+              "reading_b": "Twee partners leggen, onder begeleiding, concrete veiligheidsafspraken vast nadat vertrouwen en toestemming eerder onder druk hebben gestaan.",
+              "roles_b": [
+                "Twee partners: proberen te bepalen of herstel mogelijk is.",
+                "Een relatietherapeut of counselor: bewaakt veiligheid, tempo en communicatie.",
+                "Eventueel een vertrouwenspersoon: ondersteunt een partner buiten de sessies."
+              ],
+              "goal_b": "Helder vaststellen welke grenzen gelden, welke veranderingen nodig zijn en of de relatie veilig en vrijwillig kan worden voortgezet.",
+              "role_remapping": [
+                "De geliefden uit Script A worden partners in een kwetsbaar hersteltraject.",
+                "Open communicatie blijft aanwezig, maar is in Script B een beschermende interventie in plaats van een teken dat alles al goed gaat.",
+                "Een ceremoniële begeleider wordt een therapeutische begeleider die geen verbintenis bekrachtigt maar grenzen helpt bewaken."
+              ],
+              "shared_cues": [
+                "Handen vasthouden of juist aarzelend nabij zitten.",
+                "Praten over vertrouwen en toekomstplannen.",
+                "Een afspraak maken over tijd samen doorbrengen.",
+                "Excuses aanbieden.",
+                "Bespreken wat prettig, onprettig of te snel voelt."
+              ],
+              "switch_trigger": "De therapeut vraagt of een eerder afgesproken stopwoord altijd direct is gerespecteerd, waarna een lange stilte valt.",
+              "hinge_event": "Een partner haalt een schriftelijke lijst met grenzen tevoorschijn en zegt dat die nodig was omdat een eerder \"nee\" als onderhandeling was behandeld.",
+              "anomaly_under_a": "Binnen het dominante beeld van een wederzijds veilige, communicatieve relatie is zo'n noodzaak voor expliciete herstelafspraken onverwacht en ontregelend.",
+              "resolution_under_b": "De lijst krijgt een duidelijke functie als veiligheidsplan: zij maakt zichtbaar dat intimiteit pas eventueel kan worden hersteld via aantoonbaar respect voor doorlopende toestemming en grenzen."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde scène bij het loket kan eerst natuurlijk als romantische huwelijksformaliteit en vervolgens als administratieve schijnconstructie worden gelezen. De tegenstelling tussen affectieve levensverbintenis en strategisch documentgebruik is lokaal onverenigbaar en dominant. Het huur- en woningdossier is onder Script A misplaatst, maar wordt onder Script B precies het bewijs van het werkelijke doel. Het ontbreken van romantische motivatie ondermijnt Script A, terwijl het juist de strategische samenwerking van Script B verklaart en mogelijk maakt."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een publiek uitgesproken gelofte met bloemen en een omhelzing kan zowel een oprecht huwelijk als een televisieoptreden dragen. De dominante tegenstelling is oprechte wederkerige keuze versus geënsceneerde performance. De productie-aanwijzing kan aanvankelijk nog passen bij registratie van een echte ceremonie, maar de vraag naar bruikbare opname en bonus maakt die lezing anomalisch. Onder Script B krijgt die opmerking een directe functie: alle romantische signalen blijken geproduceerd materiaal. Werkelijke wederkerigheid zou het zuivere performance-doel doorkruisen, terwijl de geënsceneerde relatie dat doel dient."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een gesprek met een notaris over huwelijksvoorwaarden kan geloofwaardig beginnen als verstandig relationeel en financieel voorbereidend overleg, maar ook als vormgeving van een zakelijke constructie. De as levensverbintenis versus tijdelijk juridisch instrument is duidelijk dominant en, zoals Script B is omschreven, lokaal onverenigbaar. De aandeelhoudersdeadline is binnen een affectieve huwelijksviering ongepast, maar wordt onder Script B precies de reden voor het partnerschap. De eerdere toekomst-, familie- en documentcues veranderen daardoor van romantische voorbereiding in bescherming van bedrijfscontrole. Het ontbreken van een werkelijk gezamenlijk leven blokkeert Script A maar ondersteunt het zakelijke doel van Script B."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De scène kan aanvankelijk als open en veilige communicatie tussen geliefden worden gelezen en later als herstelgesprek na een grensoverschrijding. Script B is herkenbaar en de schriftelijke lijst met grenzen verklaart de stilte en herkadert eerdere intimiteitsgesprekken als veiligheidswerk. De scripts vormen echter geen geldige oppositionele tegenstelling op de opgegeven propositie: Script A stelt dat seks doorlopende toestemming vereist, en Script B bevestigt juist die norm door herstel en grensbewaking noodzakelijk te maken. Voorwaardelijk herstel is daarom niet lokaal incompatibel met duidelijke toestemming, maar een situatie waarin die toestemming opnieuw moet worden gewaarborgd. De vertrouwensbreuk belemmert Script A, maar is niet zelf een voorwaarde die het hersteldoel van Script B functioneel mogelijk maakt."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde scène bij het loket kan eerst natuurlijk als romantische huwelijksformaliteit en vervolgens als administratieve schijnconstructie worden gelezen. De tegenstelling tussen affectieve levensverbintenis en strategisch documentgebruik is lokaal onverenigbaar en dominant. Het huur- en woningdossier is onder Script A misplaatst, maar wordt onder Script B precies het bewijs van het werkelijke doel. Het ontbreken van romantische motivatie ondermijnt Script A, terwijl het juist de strategische samenwerking van Script B verklaart en mogelijk maakt."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een publiek uitgesproken gelofte met bloemen en een omhelzing kan zowel een oprecht huwelijk als een televisieoptreden dragen. De dominante tegenstelling is oprechte wederkerige keuze versus geënsceneerde performance. De productie-aanwijzing kan aanvankelijk nog passen bij registratie van een echte ceremonie, maar de vraag naar bruikbare opname en bonus maakt die lezing anomalisch. Onder Script B krijgt die opmerking een directe functie: alle romantische signalen blijken geproduceerd materiaal. Werkelijke wederkerigheid zou het zuivere performance-doel doorkruisen, terwijl de geënsceneerde relatie dat doel dient."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een gesprek met een notaris over huwelijksvoorwaarden kan geloofwaardig beginnen als verstandig relationeel en financieel voorbereidend overleg, maar ook als vormgeving van een zakelijke constructie. De as levensverbintenis versus tijdelijk juridisch instrument is duidelijk dominant en, zoals Script B is omschreven, lokaal onverenigbaar. De aandeelhoudersdeadline is binnen een affectieve huwelijksviering ongepast, maar wordt onder Script B precies de reden voor het partnerschap. De eerdere toekomst-, familie- en documentcues veranderen daardoor van romantische voorbereiding in bescherming van bedrijfscontrole. Het ontbreken van een werkelijk gezamenlijk leven blokkeert Script A maar ondersteunt het zakelijke doel van Script B."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De scène kan aanvankelijk als open en veilige communicatie tussen geliefden worden gelezen en later als herstelgesprek na een grensoverschrijding. Script B is herkenbaar en de schriftelijke lijst met grenzen verklaart de stilte en herkadert eerdere intimiteitsgesprekken als veiligheidswerk. De scripts vormen echter geen geldige oppositionele tegenstelling op de opgegeven propositie: Script A stelt dat seks doorlopende toestemming vereist, en Script B bevestigt juist die norm door herstel en grensbewaking noodzakelijk te maken. Voorwaardelijk herstel is daarom niet lokaal incompatibel met duidelijke toestemming, maar een situatie waarin die toestemming opnieuw moet worden gewaarborgd. De vertrouwensbreuk belemmert Script A, maar is niet zelf een voorwaarde die het hersteldoel van Script B functioneel mogelijk maakt."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "selected_candidate_id": "B2",
+        "gtvh_plan": {
+          "opposition_type": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+          "logical_mechanism": "Figuurlijk misverstand en scriptomkering: conventionele romantische huwelijkscues worden eerst als oprechte liefde gelezen, waarna productie- en betalingslogica diezelfde cues herkadert als geregisseerde realitytelevisie.",
+          "situation": "Een deelnemer en een gecaste of contractueel gebonden tegenspeler staan tijdens een televisiewedding in witte outfits voor een publiek van familieleden, figuranten, cameraoperators en studiogasten. Onder leiding van een presentator spreken zij geloften uit, omringd door bloemen, muziek en applaus, terwijl producenten en een regisseur de opname aansturen.",
+          "target": "De realitytelevisieconventie waarin oprechte intimiteit als produceerbaar publiek spektakel wordt verpakt.",
+          "narrative_strategy": "De opzet presenteert een herkenbare, ontroerende huwelijksceremonie en laat het publiek de romantische signalen volgens Script A interpreteren. De punchline introduceert vervolgens opnamekwaliteit en betaling, waardoor de ceremonie retrospectief een geplande televisieclimax volgens Script B blijkt.",
+          "lexical_anchor": "opname",
+          "supporting_dual_cues": [
+            "Een witte outfit.",
+            "Geloften die hardop worden voorgelezen.",
+            "Bloemen, muziek en applaus.",
+            "Een emotionele omhelzing.",
+            "Een gesprek over een gezamenlijke toekomst."
+          ],
+          "switch_trigger": "Vlak vóór het jawoord fluistert een regisseur: \"Wacht nog drie seconden voor de camera naar jullie gezichten draait.\"",
+          "hinge_event": "Na de omhelzing vraagt de ene partner niet om een kus, maar of de opname bruikbaar was en of de bonus nu wordt uitbetaald.",
+          "anomaly_under_a": "Direct over opnamekwaliteit en betaling spreken zou de emotionele echtheid van een liefdesverklaring abrupt en ongepast ondermijnen.",
+          "resolution_under_b": "De opmerking onthult dat de ceremonie een vervaardigd televisiemoment is; de eerder herkenbare romantische signalen waren nodig om de uitzending geloofwaardig te maken.",
+          "role_remapping": [
+            "De twee geliefden worden een deelnemer en een gecaste of contractueel gebonden tegenspeler.",
+            "Familie en vrienden worden studiopubliek, figuranten of geselecteerde gasten.",
+            "De ceremoniemeester wordt een presentator die de scène volgens draaiboek aanstuurt."
+          ],
+          "setup_goal": "Script A dominant maken door de witte outfit, de hardop voorgelezen geloften, bloemen, muziek, applaus, de omhelzing en het gesprek over een gezamenlijke toekomst als signalen van vrijwillige romantische wederkerigheid te presenteren.",
+          "punch_goal": "Script B activeren door de vraag naar de bruikbaarheid van de opname en de uitbetaling van de bonus, zodat de liefdevolle ceremonie wordt herlezen als een geregisseerde realityproductie.",
+          "punch_final_word": "uitbetaald"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals.",
+            "punchline": "Daarna vroeg ze: \"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\"",
+            "full_text": "Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals. Daarna vroeg ze: \"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\"",
+            "angle": "Ontroerende omhelzing na de geloften",
+            "anchor_surface_form": "opname"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden.",
+            "punchline": "Hij fluisterde: \"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\"",
+            "full_text": "Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden. Hij fluisterde: \"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\"",
+            "angle": "Gezamenlijke toekomst met een technische onderbreking",
+            "anchor_surface_form": "opname"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden.",
+            "punchline": "Vlak voor de kus zei haar partner: \"Eerst de opname checken, dan worden we uitbetaald.\"",
+            "full_text": "Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden. Vlak voor de kus zei haar partner: \"Eerst de opname checken, dan worden we uitbetaald.\"",
+            "angle": "De kus wordt onverwacht een controlemoment",
+            "anchor_surface_form": "opname"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Mijn zus trouwde in het wit, las haar geloften voor tussen bloemen en applaus, en viel haar man ontroerd om de hals. Daarna vroeg ze: \"Was de opname bruikbaar, en wordt mijn bonus nu uitbetaald?\"",
+            "angle": "Ontroerende omhelzing na de geloften"
+          },
+          {
+            "variant_id": "V2",
+            "text": "Tijdens de ceremonie beloofde mijn buurvrouw haar grote liefde een gezamenlijke toekomst; de muziek zwol aan en iedereen klapte toen ze elkaar omhelsden. Hij fluisterde: \"Wacht, de opname draait nog niet; anders wordt de bonus niet uitbetaald.\"",
+            "angle": "Gezamenlijke toekomst met een technische onderbreking"
+          },
+          {
+            "variant_id": "V3",
+            "text": "Bij het jawoord stond mijn collega stralend in het wit, terwijl bloemen, familie en applaus haar liefdevolle geloften begeleidden. Vlak voor de kus zei haar partner: \"Eerst de opname checken, dan worden we uitbetaald.\"",
+            "angle": "De kus wordt onverwacht een controlemoment"
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "TA",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een oprechte, ontroerende huwelijksceremonie van twee geliefden, met geloften, bloemen, applaus en een omhelzing.",
+            "realized_script_b": "De ceremonie blijkt een gefilmde en betaalde geënsceneerde performance, impliciet een reality- of televisieproductie.",
+            "realized_opposition_axis": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De romantische ceremonie domineert eerst als Script A; de vraag naar opnamekwaliteit en bonus herkadert dezelfde ceremonie als een betaalde productie. De realitycontext blijft impliciet, maar is functioneel afleidbaar."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De punchline keert de romantische lezing retrospectief om via productie- en betalingslogica."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De huwelijkssetting en de relevante productie-elementen (opname en bonus) zijn aanwezig, zij het zonder expliciete producent, camera of presentator."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De onthulling richt zich functioneel op het produceren en verhandelen van ogenschijnlijk oprechte intimiteit als entertainment."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Een conventioneel ontroerende opzet wordt afgesloten met een productiegerichte punchline die herinterpretatie afdwingt."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De lexicale ankerterm \"opname\" is aanwezig en de tekst eindigt met \"uitbetaald\", zoals gepland."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": false,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De variant realiseert de geplande romantiek-versus-productieomkering overtuigend. Alleen de specifieke voorafgaande regisseursinstructie als switch-trigger ontbreekt; de omslag komt rechtstreeks in de slotvraag.",
+            "passes_required_plan": false
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Een vrouw belooft haar grote liefde een gezamenlijke toekomst tijdens een warme, publieke huwelijksceremonie.",
+            "realized_script_b": "De omhelzing en geloften maken deel uit van een opname waarvoor een bonus alleen volgt als de technische productie correct draait.",
+            "realized_opposition_axis": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De huwelijkscues activeren eerst oprechte liefde, terwijl opname- en bonuslogica de gebeurtenis vervolgens als geregisseerde, betaalde performance leest."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De technische onderbreking maakt de aanvankelijk romantische scène retrospectief begrijpelijk als productie."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Ceremonie, geloften, toekomstbelofte, muziek, applaus en omhelzing zijn aanwezig; de opname en bonus voegen de noodzakelijke productiecontext toe."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst zet de conventie van gemanipuleerde, verfilmde intimiteit functioneel neer als het object van de satire."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De setup leest als een sentimentele ceremonie, waarna de technische opmerking de romantische interpretatie ondermijnt."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "\"Opname\" vormt het beoogde lexicale anker en de punch eindigt met \"uitbetaald\"."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Dit is de meest directe realisatie van de geplande trigger: vlak in de ceremonie wordt gewacht op de opname en wordt betaling eraan gekoppeld. De expliciete reality-tvrollen blijven impliciet, maar de geplande tegenstelling en omkering functioneren.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Een collega zegt haar jawoord in een liefdevolle, feestelijke huwelijksceremonie met familie, bloemen, applaus en geloften.",
+            "realized_script_b": "De partner behandelt de ceremonie als een betaalde opname die eerst technisch gecontroleerd moet worden voordat betaling volgt.",
+            "realized_opposition_axis": "Oprechte wederkerigheid versus geënsceneerde publieke performance",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De bruiloft wordt aanvankelijk als oprecht gelezen; opnamecontrole en uitbetaling onthullen de concurrerende productielezing."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De productiecheck en betaling leveren de geplande scriptomkering van romantiek naar gefabriceerde performance."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De kernsetting van een gefilmde, betaalde huwelijksperformance is functioneel aanwezig door de combinatie van ceremoniecues, opname en betaling."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De punchline problematiseert functioneel het verpakken van romantische intimiteit als betaalbare mediaproductie."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst bouwt een herkenbare bruiloft op en plaatst de productieonthulling als slotwending vlak vóór de kus."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "\"Opname\" is als gepland aanwezig en de laatste formulering bevat het vereiste eindwoord \"uitbetaald\"."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": false,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De geplande tegenstelling wordt duidelijk gerealiseerd, met een goede romantische setup en een productiegerichte punch. De specifieke voorziene regisseursfluistering vlak vóór het jawoord is vervangen door een opnamecheck vlak vóór de kus.",
+            "passes_required_plan": false
+          }
+        ],
+        "passing_variant_ids": [
+          "V2"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V2",
+            "rationale": "V2 is de enige passerende variant en moet daarom voorgaan. Bovendien bevat hij de geplande technische onderbreking als expliciete switch-trigger; daardoor wordt de romantische omhelzing direct en helder een betaalde opname."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "Beide varianten missen de voorgeschreven switch-trigger, maar V3 heeft een scherpere timing: de opnamecheck vlak vóór de kus geeft een duidelijker komische onderbreking. V1 heeft een natuurlijkere slotvraag, maar de bonusvraag voelt iets verklarender."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V2",
+            "rationale": "V2 is passerend, V3 niet, dus V2 wint verplicht. Ook inhoudelijk is V2 sterker trouw aan het plan: het fluisteren over de nog niet draaiende opname activeert de productielogica precies op het omslagmoment."
+          }
+        ],
+        "selected_variant_id": "V2",
+        "selection_rationale": "V2 is de enige passerende variant, voldoet aan de lengte- en zinslimiet en realiseert alle vereiste middelen het volledigst. De technische fluistering vormt een performabele, heldere wending die de hele sentimentele ceremonie retrospectief als betaalde productie herkadert."
+      }
+    }
+  },
+  "result_sha256": "07e8d94fda8c265d70bda1f08b43f745bc8469331163e725c322fba7ac3ae2d6"
+}

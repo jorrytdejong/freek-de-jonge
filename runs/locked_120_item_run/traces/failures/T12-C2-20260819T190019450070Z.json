@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T19:00:19.450033+00:00",
+  "job": {
+    "job_id": "T12-C2",
+    "topic_id": "T12",
+    "topic": "Kunst, theater en cabaret",
+    "condition_code": "C2"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V1 must contain 20-45 words; received 50."
+}

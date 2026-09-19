@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T06:07:37.574222+00:00",
+  "job": {
+    "job_id": "T19-E1",
+    "topic_id": "T19",
+    "topic": "Recht, politie en criminaliteit",
+    "condition_code": "E1"
+  },
+  "attempt": 2,
+  "exception_type": "APIConnectionError",
+  "message": "Connection error."
+}

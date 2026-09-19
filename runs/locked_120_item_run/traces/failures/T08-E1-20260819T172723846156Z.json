@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T17:27:23.846059+00:00",
+  "job": {
+    "job_id": "T08-E1",
+    "topic_id": "T08",
+    "topic": "Liefde, huwelijk en seksualiteit",
+    "condition_code": "E1"
+  },
+  "attempt": 1,
+  "exception_type": "AttributeError",
+  "message": "'JokeVariant' object has no attribute 'full_text'"
+}

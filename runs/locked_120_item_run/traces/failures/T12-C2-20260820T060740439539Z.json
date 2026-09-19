@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T06:07:40.439501+00:00",
+  "job": {
+    "job_id": "T12-C2",
+    "topic_id": "T12",
+    "topic": "Kunst, theater en cabaret",
+    "condition_code": "C2"
+  },
+  "attempt": 2,
+  "exception_type": "APIConnectionError",
+  "message": "Connection error."
+}

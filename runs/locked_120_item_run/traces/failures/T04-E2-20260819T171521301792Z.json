@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T17:15:21.301760+00:00",
+  "job": {
+    "job_id": "T04-E2",
+    "topic_id": "T04",
+    "topic": "Nederlandse politiek en bestuur",
+    "condition_code": "E2"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V2 must contain 20-45 words; received 48."
+}

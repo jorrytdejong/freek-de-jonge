@@ -1,0 +1,886 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T06-E1",
+  "topic_id": "T06",
+  "topic": "Ouder worden en sterfelijkheid",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:27:39.383365+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Ouder worden en sterfelijkheid",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.\",\n      \"Naasten: bieden gezelschap, praktische hulp en emotionele steun.\",\n      \"Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.\",\n      \"Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde.\"\n    ],\n    \"apparent_goal\": \"Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.\",\n    \"preconditions\": [\n      \"De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.\",\n      \"Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.\",\n      \"Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.\",\n      \"Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Financiën, woonwensen en eventuele zorg tijdig organiseren.\",\n      \"Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.\",\n      \"Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties.\"\n    ],\n    \"expected_outcome\": \"De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.\",\n    \"expected_propositions\": [\n      \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n      \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\",\n      \"Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.\",\n      \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.\",\n      \"Naasten: bieden gezelschap, praktische hulp en emotionele steun.\",\n      \"Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.\",\n      \"Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde.\"\n    ],\n    \"apparent_goal\": \"Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.\",\n    \"preconditions\": [\n      \"De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.\",\n      \"Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.\",\n      \"Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.\",\n      \"Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Financiën, woonwensen en eventuele zorg tijdig organiseren.\",\n      \"Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.\",\n      \"Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties.\"\n    ],\n    \"expected_outcome\": \"De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.\",\n    \"expected_propositions\": [\n      \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n      \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\",\n      \"Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.\",\n      \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.\",\n      \"opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n      \"opposed_proposition\": \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"shared_anchor\": \"Een afspraak over gezondheid en de toekomst.\",\n      \"reading_a\": \"Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.\",\n      \"reading_b\": \"Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.\",\n      \"roles_b\": [\n        \"Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.\",\n        \"Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.\",\n        \"Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.\",\n        \"Nabestaanden: zijn de mogelijke financiële begunstigden.\"\n      ],\n      \"goal_b\": \"Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt de verzekeringsaanvrager.\",\n        \"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\",\n        \"Naasten worden begunstigden die financieel beschermd moeten worden.\",\n        \"De voorbereiding op het levenseinde wordt contractuele risicodekking.\"\n      ],\n      \"shared_cues\": [\n        \"Vragen over medicatie, beweging en eerdere klachten.\",\n        \"Een gesprek over familie en toekomstige zekerheid.\",\n        \"Formulieren met persoonlijke gegevens en handtekeningen.\",\n        \"De opmerking dat men 'vooruit moet denken'.\"\n      ],\n      \"switch_trigger\": \"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\",\n      \"hinge_event\": \"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\",\n      \"anomaly_under_a\": \"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\",\n      \"resolution_under_b\": \"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een theatergezelschap repeteert een afscheidsvoorstelling waarin een oudere hoofdrolspeler op het podium een levenseinde verbeeldt; iedereen werkt toe naar een overtuigende en goed getimede finale.\",\n      \"opposition_axis\": \"Werkelijk levenseinde versus opgevoerd en herhaalbaar einde.\",\n      \"opposed_proposition\": \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\",\n      \"shared_anchor\": \"Een kring van naasten rond iemand die afscheid neemt.\",\n      \"reading_a\": \"Familie en zorgverleners verzamelen zich rond een ouder persoon om diens wensen te horen en steun te geven in de laatste fase.\",\n      \"reading_b\": \"Acteurs, regisseur en technici verzamelen zich rond de hoofdrolspeler om de afscheidsène geloofwaardig te repeteren.\",\n      \"roles_b\": [\n        \"Hoofdrolspeler: speelt iemand die afscheid neemt.\",\n        \"Regisseur: bewaakt interpretatie, tempo en emotionele geloofwaardigheid.\",\n        \"Medespelers: vertolken familieleden of verzorgers in de scène.\",\n        \"Technici: verzorgen licht, geluid en het slotsignaal.\"\n      ],\n      \"goal_b\": \"Een ontroerende, technisch vlekkeloze slotscène uitvoeren voor het publiek.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt de hoofdrolspeler.\",\n        \"Naasten worden medespelers die de familiekring spelen.\",\n        \"Zorgverleners worden regisseur en toneelploeg die aanwijzingen geven.\",\n        \"Wensen rond het levenseinde worden artistieke keuzes over tekst, houding en timing.\"\n      ],\n      \"shared_cues\": [\n        \"Zachte stemmen en een stille kring rond een bed of stoel.\",\n        \"Gesprekken over afscheid, herinneringen en laatste woorden.\",\n        \"Iemand die vraagt of alles geregeld is.\",\n        \"Bloemen, gedimd licht en aanwezige familiefiguren.\"\n      ],\n      \"switch_trigger\": \"De regisseur roept vanuit de stilte: 'Nog één keer vanaf je laatste zin, maar nu drie tellen langer.'\",\n      \"hinge_event\": \"De vermeend stervende persoon staat abrupt op, veegt zijn kostuum af en vraagt waar zijn markering op de vloer ligt.\",\n      \"anomaly_under_a\": \"In een werkelijk afscheid zou opstaan om een technische positie te controleren de emotionele en lichamelijke situatie absurd doorkruisen.\",\n      \"resolution_under_b\": \"Tijdens een repetitie is dit precies nuttig: de acteur moet zijn looplijn en lichtpositie corrigeren voordat de scène wordt gespeeld.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een familie organiseert een verrassingsfeest voor een groot jubileum en houdt de eregast met smoesjes, geheimzinnige telefoontjes en ongebruikelijke afspraken weg van de feestlocatie.\",\n      \"opposition_axis\": \"Voorbereiden op verlies versus voorbereiden op viering en voortzetting.\",\n      \"opposed_proposition\": \"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\",\n      \"shared_anchor\": \"Familie regelt heimelijk belangrijke zaken voor een oudere verwant.\",\n      \"reading_a\": \"De familie organiseert documenten, contacten en praktische afspraken omdat een kwetsbare oudere mogelijk meer zorg nodig heeft of wil vastleggen wat er later moet gebeuren.\",\n      \"reading_b\": \"De familie organiseert gasten, catering en versiering zonder dat de jubilaris de verrassing ontdekt.\",\n      \"roles_b\": [\n        \"Jubilaris: oudere eregast die niets van het feest mag merken.\",\n        \"Familieleden: plannen en verbergen de verrassing.\",\n        \"Vrienden en gasten: komen samen om te feliciteren.\",\n        \"Cateraar of locatiebeheerder: maakt de viering praktisch mogelijk.\"\n      ],\n      \"goal_b\": \"De jubilaris op het juiste moment verrassen met een feest dat diens leven en relaties viert.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt de jubilaris.\",\n        \"Naasten blijven naasten, maar worden samenzweerders en feestorganisatoren.\",\n        \"Praktische planners worden cateraar, locatiebeheerder en gastenlijstcoördinator.\",\n        \"Voorbereidende gesprekken worden gecodeerde feestafspraken.\"\n      ],\n      \"shared_cues\": [\n        \"Familieleden bellen onderling en fluisteren zodra de oudere binnenkomt.\",\n        \"Er worden lijsten, tijden en adressen afgestemd.\",\n        \"Iemand zegt dat belangrijke mensen op tijd moeten worden ingelicht.\",\n        \"Een ongebruikelijk excuus om de persoon naar een bepaalde locatie te krijgen.\"\n      ],\n      \"switch_trigger\": \"Achter een gesloten deur telt iedereen af en klinkt vervolgens luid: 'Verrassing!'\",\n      \"hinge_event\": \"De familie heeft de eregast onder een voorwendsel naar een zaal gebracht waar alle aanwezigen zich zwijgend achter tafels verstoppen.\",\n      \"anomaly_under_a\": \"Bij een serieus gesprek over latere zorg of een naderend levenseinde zou een zaal vol zwijgende, verborgen familieleden onbegrijpelijk en weinig respectvol zijn.\",\n      \"resolution_under_b\": \"Voor een verrassingsfeest is het verstoppen noodzakelijk om het effect van de gezamenlijke onthulling te behouden.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een producent cast een energieke senior voor een reclamecampagne voor een sporthorloge en laat kandidaten testen of zij jong, vitaal en onverslijtelijk genoeg overkomen in beeld.\",\n      \"opposition_axis\": \"Aanvaarding van lichamelijke verandering versus verkoop van schijnbare tijdloosheid.\",\n      \"opposed_proposition\": \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n      \"shared_anchor\": \"Een oudere persoon wordt beoordeeld op beweging, uitstraling en toekomstig functioneren.\",\n      \"reading_a\": \"Een arts of zorgverlener beoordeelt mobiliteit, energie en zelfstandigheid om passende ondersteuning en realistische adviezen te geven.\",\n      \"reading_b\": \"Een castingteam beoordeelt hoe overtuigend de persoon vitaliteit kan uitstralen om een product te verkopen.\",\n      \"roles_b\": [\n        \"Senior model: wil voor de campagne worden gekozen.\",\n        \"Castingdirector: selecteert de meest verkoopbare uitstraling.\",\n        \"Fotograaf en stylist: creëren een beeld van vitaliteit.\",\n        \"Reclamemaker: wil consumenten het gevoel geven dat veroudering te overwinnen is.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige campagne maken die een sporthorloge koppelt aan jeugdigheid, energie en zelfverbetering.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt het senior model.\",\n        \"Artsen en zorgverleners worden castingdirector, fotograaf en stylist.\",\n        \"Naasten worden figuranten die een actief sociaal leven verbeelden.\",\n        \"Gezondheidsadvies wordt commerciële coaching voor houding, tempo en uitstraling.\"\n      ],\n      \"shared_cues\": [\n        \"Vragen over conditie, slaap, dagelijkse beweging en energieniveau.\",\n        \"Een test waarbij iemand loopt, opstaat of een trap neemt.\",\n        \"Aanmoedigingen om actief te blijven.\",\n        \"Aandacht voor kleding, uiterlijk en zelfvertrouwen.\"\n      ],\n      \"switch_trigger\": \"De castingdirector onderbreekt de test met: 'Prachtig, maar kunt u vooral niet te oud in de camera kijken?'\",\n      \"hinge_event\": \"Na een realistische mobiliteitstest plakt de stylist rimpelvervagende tape en geeft de persoon de opdracht om met een overdreven jeugdige sprong in beeld te komen.\",\n      \"anomaly_under_a\": \"Bij een zorgbeoordeling zou het verhullen van lichamelijke signalen en het forceren van een sprong veilige diagnostiek en passende ondersteuning ondermijnen.\",\n      \"resolution_under_b\": \"In een reclameproductie is die ingreep doelgericht: het beeld moet vitaliteit verkopen, niet een nauwkeurige weergave van ouder worden geven.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.\",\n      \"Naasten: bieden gezelschap, praktische hulp en emotionele steun.\",\n      \"Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.\",\n      \"Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde.\"\n    ],\n    \"apparent_goal\": \"Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.\",\n    \"preconditions\": [\n      \"De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.\",\n      \"Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.\",\n      \"Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.\",\n      \"Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Financiën, woonwensen en eventuele zorg tijdig organiseren.\",\n      \"Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.\",\n      \"Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties.\"\n    ],\n    \"expected_outcome\": \"De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.\",\n    \"expected_propositions\": [\n      \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n      \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\",\n      \"Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.\",\n      \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.\",\n      \"opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n      \"opposed_proposition\": \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"shared_anchor\": \"Een afspraak over gezondheid en de toekomst.\",\n      \"reading_a\": \"Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.\",\n      \"reading_b\": \"Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.\",\n      \"roles_b\": [\n        \"Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.\",\n        \"Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.\",\n        \"Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.\",\n        \"Nabestaanden: zijn de mogelijke financiële begunstigden.\"\n      ],\n      \"goal_b\": \"Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt de verzekeringsaanvrager.\",\n        \"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\",\n        \"Naasten worden begunstigden die financieel beschermd moeten worden.\",\n        \"De voorbereiding op het levenseinde wordt contractuele risicodekking.\"\n      ],\n      \"shared_cues\": [\n        \"Vragen over medicatie, beweging en eerdere klachten.\",\n        \"Een gesprek over familie en toekomstige zekerheid.\",\n        \"Formulieren met persoonlijke gegevens en handtekeningen.\",\n        \"De opmerking dat men 'vooruit moet denken'.\"\n      ],\n      \"switch_trigger\": \"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\",\n      \"hinge_event\": \"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\",\n      \"anomaly_under_a\": \"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\",\n      \"resolution_under_b\": \"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een theatergezelschap repeteert een afscheidsvoorstelling waarin een oudere hoofdrolspeler op het podium een levenseinde verbeeldt; iedereen werkt toe naar een overtuigende en goed getimede finale.\",\n      \"opposition_axis\": \"Werkelijk levenseinde versus opgevoerd en herhaalbaar einde.\",\n      \"opposed_proposition\": \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\",\n      \"shared_anchor\": \"Een kring van naasten rond iemand die afscheid neemt.\",\n      \"reading_a\": \"Familie en zorgverleners verzamelen zich rond een ouder persoon om diens wensen te horen en steun te geven in de laatste fase.\",\n      \"reading_b\": \"Acteurs, regisseur en technici verzamelen zich rond de hoofdrolspeler om de afscheidsène geloofwaardig te repeteren.\",\n      \"roles_b\": [\n        \"Hoofdrolspeler: speelt iemand die afscheid neemt.\",\n        \"Regisseur: bewaakt interpretatie, tempo en emotionele geloofwaardigheid.\",\n        \"Medespelers: vertolken familieleden of verzorgers in de scène.\",\n        \"Technici: verzorgen licht, geluid en het slotsignaal.\"\n      ],\n      \"goal_b\": \"Een ontroerende, technisch vlekkeloze slotscène uitvoeren voor het publiek.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt de hoofdrolspeler.\",\n        \"Naasten worden medespelers die de familiekring spelen.\",\n        \"Zorgverleners worden regisseur en toneelploeg die aanwijzingen geven.\",\n        \"Wensen rond het levenseinde worden artistieke keuzes over tekst, houding en timing.\"\n      ],\n      \"shared_cues\": [\n        \"Zachte stemmen en een stille kring rond een bed of stoel.\",\n        \"Gesprekken over afscheid, herinneringen en laatste woorden.\",\n        \"Iemand die vraagt of alles geregeld is.\",\n        \"Bloemen, gedimd licht en aanwezige familiefiguren.\"\n      ],\n      \"switch_trigger\": \"De regisseur roept vanuit de stilte: 'Nog één keer vanaf je laatste zin, maar nu drie tellen langer.'\",\n      \"hinge_event\": \"De vermeend stervende persoon staat abrupt op, veegt zijn kostuum af en vraagt waar zijn markering op de vloer ligt.\",\n      \"anomaly_under_a\": \"In een werkelijk afscheid zou opstaan om een technische positie te controleren de emotionele en lichamelijke situatie absurd doorkruisen.\",\n      \"resolution_under_b\": \"Tijdens een repetitie is dit precies nuttig: de acteur moet zijn looplijn en lichtpositie corrigeren voordat de scène wordt gespeeld.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een producent cast een energieke senior voor een reclamecampagne voor een sporthorloge en laat kandidaten testen of zij jong, vitaal en onverslijtelijk genoeg overkomen in beeld.\",\n      \"opposition_axis\": \"Aanvaarding van lichamelijke verandering versus verkoop van schijnbare tijdloosheid.\",\n      \"opposed_proposition\": \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n      \"shared_anchor\": \"Een oudere persoon wordt beoordeeld op beweging, uitstraling en toekomstig functioneren.\",\n      \"reading_a\": \"Een arts of zorgverlener beoordeelt mobiliteit, energie en zelfstandigheid om passende ondersteuning en realistische adviezen te geven.\",\n      \"reading_b\": \"Een castingteam beoordeelt hoe overtuigend de persoon vitaliteit kan uitstralen om een product te verkopen.\",\n      \"roles_b\": [\n        \"Senior model: wil voor de campagne worden gekozen.\",\n        \"Castingdirector: selecteert de meest verkoopbare uitstraling.\",\n        \"Fotograaf en stylist: creëren een beeld van vitaliteit.\",\n        \"Reclamemaker: wil consumenten het gevoel geven dat veroudering te overwinnen is.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige campagne maken die een sporthorloge koppelt aan jeugdigheid, energie en zelfverbetering.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt het senior model.\",\n        \"Artsen en zorgverleners worden castingdirector, fotograaf en stylist.\",\n        \"Naasten worden figuranten die een actief sociaal leven verbeelden.\",\n        \"Gezondheidsadvies wordt commerciële coaching voor houding, tempo en uitstraling.\"\n      ],\n      \"shared_cues\": [\n        \"Vragen over conditie, slaap, dagelijkse beweging en energieniveau.\",\n        \"Een test waarbij iemand loopt, opstaat of een trap neemt.\",\n        \"Aanmoedigingen om actief te blijven.\",\n        \"Aandacht voor kleding, uiterlijk en zelfvertrouwen.\"\n      ],\n      \"switch_trigger\": \"De castingdirector onderbreekt de test met: 'Prachtig, maar kunt u vooral niet te oud in de camera kijken?'\",\n      \"hinge_event\": \"Na een realistische mobiliteitstest plakt de stylist rimpelvervagende tape en geeft de persoon de opdracht om met een overdreven jeugdige sprong in beeld te komen.\",\n      \"anomaly_under_a\": \"Bij een zorgbeoordeling zou het verhullen van lichamelijke signalen en het forceren van een sprong veilige diagnostiek en passende ondersteuning ondermijnen.\",\n      \"resolution_under_b\": \"In een reclameproductie is die ingreep doelgericht: het beeld moet vitaliteit verkopen, niet een nauwkeurige weergave van ouder worden geven.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.\",\n      \"Naasten: bieden gezelschap, praktische hulp en emotionele steun.\",\n      \"Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.\",\n      \"Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde.\"\n    ],\n    \"apparent_goal\": \"Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.\",\n    \"preconditions\": [\n      \"De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.\",\n      \"Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.\",\n      \"Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.\",\n      \"Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Financiën, woonwensen en eventuele zorg tijdig organiseren.\",\n      \"Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.\",\n      \"Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties.\"\n    ],\n    \"expected_outcome\": \"De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.\",\n    \"expected_propositions\": [\n      \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n      \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\",\n      \"Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.\",\n      \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.\",\n    \"opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n    \"opposed_proposition\": \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n    \"shared_anchor\": \"Een afspraak over gezondheid en de toekomst.\",\n    \"reading_a\": \"Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.\",\n    \"reading_b\": \"Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.\",\n    \"roles_b\": [\n      \"Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.\",\n      \"Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.\",\n      \"Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.\",\n      \"Nabestaanden: zijn de mogelijke financiële begunstigden.\"\n    ],\n    \"goal_b\": \"Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.\",\n    \"role_remapping\": [\n      \"De ouder wordende persoon wordt de verzekeringsaanvrager.\",\n      \"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\",\n      \"Naasten worden begunstigden die financieel beschermd moeten worden.\",\n      \"De voorbereiding op het levenseinde wordt contractuele risicodekking.\"\n    ],\n    \"shared_cues\": [\n      \"Vragen over medicatie, beweging en eerdere klachten.\",\n      \"Een gesprek over familie en toekomstige zekerheid.\",\n      \"Formulieren met persoonlijke gegevens en handtekeningen.\",\n      \"De opmerking dat men 'vooruit moet denken'.\"\n    ],\n    \"switch_trigger\": \"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\",\n    \"hinge_event\": \"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\",\n    \"anomaly_under_a\": \"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\",\n    \"resolution_under_b\": \"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.\",\n      \"Naasten: bieden gezelschap, praktische hulp en emotionele steun.\",\n      \"Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.\",\n      \"Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde.\"\n    ],\n    \"apparent_goal\": \"Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.\",\n    \"preconditions\": [\n      \"De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.\",\n      \"Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.\",\n      \"Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.\",\n      \"Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Financiën, woonwensen en eventuele zorg tijdig organiseren.\",\n      \"Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.\",\n      \"Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties.\"\n    ],\n    \"expected_outcome\": \"De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.\",\n    \"expected_propositions\": [\n      \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n      \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\",\n      \"Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.\",\n      \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.\",\n    \"opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n    \"opposed_proposition\": \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n    \"shared_anchor\": \"Een afspraak over gezondheid en de toekomst.\",\n    \"reading_a\": \"Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.\",\n    \"reading_b\": \"Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.\",\n    \"roles_b\": [\n      \"Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.\",\n      \"Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.\",\n      \"Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.\",\n      \"Nabestaanden: zijn de mogelijke financiële begunstigden.\"\n    ],\n    \"goal_b\": \"Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.\",\n    \"role_remapping\": [\n      \"De ouder wordende persoon wordt de verzekeringsaanvrager.\",\n      \"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\",\n      \"Naasten worden begunstigden die financieel beschermd moeten worden.\",\n      \"De voorbereiding op het levenseinde wordt contractuele risicodekking.\"\n    ],\n    \"shared_cues\": [\n      \"Vragen over medicatie, beweging en eerdere klachten.\",\n      \"Een gesprek over familie en toekomstige zekerheid.\",\n      \"Formulieren met persoonlijke gegevens en handtekeningen.\",\n      \"De opmerking dat men 'vooruit moet denken'.\"\n    ],\n    \"switch_trigger\": \"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\",\n    \"hinge_event\": \"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\",\n    \"anomaly_under_a\": \"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\",\n    \"resolution_under_b\": \"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n    \"logical_mechanism\": \"Figuur-grondomkering en herinterpretatie: een ogenschijnlijk zorgzaam medisch toekomstgesprek blijkt een verzekeringsacceptatie waarin gezondheidsinformatie financieel wordt geprijsd.\",\n    \"situation\": \"Een ouder wordende persoon voert een afspraak over gezondheid en de toekomst met een gesprekspartner die medische gegevens, leefstijl, formulieren en toekomstige zekerheid bespreekt. De setting lijkt eerst een artsenkamer of zorggesprek, maar blijkt een acceptatie- of keuringssituatie bij een levensverzekeraar, met een premietabel als beslissend object.\",\n    \"target\": \"De commerciële reductie van menselijke kwetsbaarheid en sterfelijkheid tot verzekerbaar risico en premie.\",\n    \"narrative_strategy\": \"De opzet houdt het gesprek bewust binnen het herkenbare kader van waardige ouderenzorg: klachten, medicatie, familie en vooruitdenken. De punchline onthult via de premietabel dat dezelfde signalen niet op zorg maar op financiële risicobeoordeling doelen; de felicitatie krijgt daardoor een kil maar functioneel tweede kader.\",\n    \"lexical_anchor\": \"premietabel\",\n    \"supporting_dual_cues\": [\n      \"Vragen over medicatie, beweging en eerdere klachten.\",\n      \"Een gesprek over familie en toekomstige zekerheid.\",\n      \"Formulieren met persoonlijke gegevens en handtekeningen.\",\n      \"De opmerking dat men 'vooruit moet denken'.\"\n    ],\n    \"switch_trigger\": \"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\",\n    \"hinge_event\": \"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\",\n    \"anomaly_under_a\": \"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\",\n    \"resolution_under_b\": \"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\",\n    \"role_remapping\": [\n      \"De ouder wordende persoon wordt de verzekeringsaanvrager.\",\n      \"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\",\n      \"Naasten worden begunstigden die financieel beschermd moeten worden.\",\n      \"De voorbereiding op het levenseinde wordt contractuele risicodekking.\"\n    ],\n    \"setup_goal\": \"Script A dominant maken door de afspraak te presenteren als een empathisch gesprek over ouder worden, gezondheid, familie en voorbereiding op de komende jaren.\",\n    \"punch_goal\": \"Script B activeren door de medische en toekomstgerichte signalen te laten terugvallen op acceptatievoorwaarden, berekend overlijdensrisico en premie.\",\n    \"punch_final_word\": \"overlijdensrisico\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.\",\n      \"participants_and_roles\": [\n        \"Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.\",\n        \"Naasten: bieden gezelschap, praktische hulp en emotionele steun.\",\n        \"Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.\",\n        \"Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde.\"\n      ],\n      \"apparent_goal\": \"Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.\",\n      \"preconditions\": [\n        \"De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.\",\n        \"Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.\",\n        \"Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.\",\n        \"Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden.\"\n      ],\n      \"expected_actions\": [\n        \"Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.\",\n        \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n        \"Financiën, woonwensen en eventuele zorg tijdig organiseren.\",\n        \"Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.\",\n        \"Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties.\"\n      ],\n      \"expected_outcome\": \"De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.\",\n      \"expected_propositions\": [\n        \"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\",\n        \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n        \"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\",\n        \"Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.\",\n        \"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\"\n      ],\n      \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.\",\n      \"opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n      \"opposed_proposition\": \"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\",\n      \"shared_anchor\": \"Een afspraak over gezondheid en de toekomst.\",\n      \"reading_a\": \"Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.\",\n      \"reading_b\": \"Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.\",\n      \"roles_b\": [\n        \"Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.\",\n        \"Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.\",\n        \"Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.\",\n        \"Nabestaanden: zijn de mogelijke financiële begunstigden.\"\n      ],\n      \"goal_b\": \"Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt de verzekeringsaanvrager.\",\n        \"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\",\n        \"Naasten worden begunstigden die financieel beschermd moeten worden.\",\n        \"De voorbereiding op het levenseinde wordt contractuele risicodekking.\"\n      ],\n      \"shared_cues\": [\n        \"Vragen over medicatie, beweging en eerdere klachten.\",\n        \"Een gesprek over familie en toekomstige zekerheid.\",\n        \"Formulieren met persoonlijke gegevens en handtekeningen.\",\n        \"De opmerking dat men 'vooruit moet denken'.\"\n      ],\n      \"switch_trigger\": \"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\",\n      \"hinge_event\": \"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\",\n      \"anomaly_under_a\": \"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\",\n      \"resolution_under_b\": \"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n      \"logical_mechanism\": \"Figuur-grondomkering en herinterpretatie: een ogenschijnlijk zorgzaam medisch toekomstgesprek blijkt een verzekeringsacceptatie waarin gezondheidsinformatie financieel wordt geprijsd.\",\n      \"situation\": \"Een ouder wordende persoon voert een afspraak over gezondheid en de toekomst met een gesprekspartner die medische gegevens, leefstijl, formulieren en toekomstige zekerheid bespreekt. De setting lijkt eerst een artsenkamer of zorggesprek, maar blijkt een acceptatie- of keuringssituatie bij een levensverzekeraar, met een premietabel als beslissend object.\",\n      \"target\": \"De commerciële reductie van menselijke kwetsbaarheid en sterfelijkheid tot verzekerbaar risico en premie.\",\n      \"narrative_strategy\": \"De opzet houdt het gesprek bewust binnen het herkenbare kader van waardige ouderenzorg: klachten, medicatie, familie en vooruitdenken. De punchline onthult via de premietabel dat dezelfde signalen niet op zorg maar op financiële risicobeoordeling doelen; de felicitatie krijgt daardoor een kil maar functioneel tweede kader.\",\n      \"lexical_anchor\": \"premietabel\",\n      \"supporting_dual_cues\": [\n        \"Vragen over medicatie, beweging en eerdere klachten.\",\n        \"Een gesprek over familie en toekomstige zekerheid.\",\n        \"Formulieren met persoonlijke gegevens en handtekeningen.\",\n        \"De opmerking dat men 'vooruit moet denken'.\"\n      ],\n      \"switch_trigger\": \"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\",\n      \"hinge_event\": \"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\",\n      \"anomaly_under_a\": \"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\",\n      \"resolution_under_b\": \"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\",\n      \"role_remapping\": [\n        \"De ouder wordende persoon wordt de verzekeringsaanvrager.\",\n        \"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\",\n        \"Naasten worden begunstigden die financieel beschermd moeten worden.\",\n        \"De voorbereiding op het levenseinde wordt contractuele risicodekking.\"\n      ],\n      \"setup_goal\": \"Script A dominant maken door de afspraak te presenteren als een empathisch gesprek over ouder worden, gezondheid, familie en voorbereiding op de komende jaren.\",\n      \"punch_goal\": \"Script B activeren door de medische en toekomstgerichte signalen te laten terugvallen op acceptatievoorwaarden, berekend overlijdensrisico en premie.\",\n      \"punch_final_word\": \"overlijdensrisico\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.” Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.\",\n      \"angle\": \"Een ogenschijnlijk empathisch ouderdomsgesprek kantelt naar een verzekeringskeuring.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt. Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.\",\n      \"angle\": \"De behoefte aan menselijke aandacht blijkt financiële dossierinformatie.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.” Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.\",\n      \"angle\": \"Medische geruststelling wordt herlezen als gunstige premieclassificatie.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.” Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.\",\n      \"angle\": \"Een ogenschijnlijk empathisch ouderdomsgesprek kantelt naar een verzekeringskeuring.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt. Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.\",\n      \"angle\": \"De behoefte aan menselijke aandacht blijkt financiële dossierinformatie.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.” Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.\",\n      \"angle\": \"Medische geruststelling wordt herlezen als gunstige premieclassificatie.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een ouder wordende persoon voert ogenschijnlijk een zorgzaam artsengesprek over gezondheid, beweging, kinderen en vooruitdenken.\",\n      \"realized_script_b\": \"Het gesprek blijkt een levensverzekeringskeuring waarin gezondheidsgegevens het overlijdensrisico en de premie bepalen.\",\n      \"realized_opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De zorglezing domineert eerst via de arts, medicijnen, wandelen, kinderen en vooruitdenken. De premietabel en het lage overlijdensrisico onthullen precies de beoogde verzekeringslezing.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De premietabel veroorzaakt een heldere figuur-grondomkering: medisch-zorgzame vragen blijken acceptatiegegevens voor prijsbepaling.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De beoogde afspraak, medische en toekomstgerichte vragen, familiecue en beslissende premietabel zijn aanwezig.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De felicitatie met een laag overlijdensrisico legt de kille commerciële omzetting van sterfelijkheid in prijs bloot.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst houdt Script A dominant tot de premietabel de herlezing naar Script B forceert, waarna de felicitatie functioneel maar kil wordt.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De vereiste lexicale ankers 'premietabel' en 'overlijdensrisico' realiseren de switch en de slotfunctie.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V1 realiseert het geplande zorggesprek-naar-verzekeringskeuring-patroon volledig, met een expliciete en goed geplaatste premietabelswitch.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"De verteller ervaart de vragen over lichamelijke klachten, beweging en familie als oprechte aandacht voor ouder worden en de toekomst.\",\n      \"realized_script_b\": \"De vragen blijken dossierinformatie voor een verzekeraar die het overlijdensrisico beoordeelt.\",\n      \"realized_opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De aanvankelijke lezing van menselijke aandacht wordt door de premietabel herzien als risicobeoordeling. De verzekeringsfunctie van vooral de familiebezoekfrequentie is echter minder vanzelfsprekend dan de geplande medische cues.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De premietabel maakt de retrospectieve herinterpretatie naar verzekeringsacceptatie mogelijk, al is de causale koppeling tussen familiebezoek en overlijdensrisico wat geforceerd.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Klachten, beweging, familie, toekomstverwachting en een premietabel realiseren de kernsituatie, hoewel arts/keuringscontext niet expliciet wordt gemaakt.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst richt zich op het reduceren van persoonlijke relaties en kwetsbaarheid tot financieel risicomateriaal.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De verteller leest de vragen eerst als empathie; de premietabel kantelt die lezing naar commerciële classificatie.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"'Premietabel' en het slotwoord 'overlijdensrisico' zijn aanwezig en dragen de geplande onthulling, ondanks de wat onnatuurlijke formulering van de laatste zin.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": false,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V2 volgt het bedoelde oppositionele plan en de premietabelswitch, maar de formulering 'mijn familie zag ik ... voor mijn overlijdensrisico' klinkt semantisch en mondeling stroef.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een ouder wordende persoon bespreekt met een arts gezondheid, beweging en zekerheid voor zijn vrouw en ontvangt ogenschijnlijk geruststellend medisch nieuws.\",\n      \"realized_script_b\": \"De arts blijkt als keuringsarts op te treden; de gegevens bepalen een gunstige verzekeringsclassificatie en premie op basis van overlijdensrisico.\",\n      \"realized_opposition_axis\": \"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Gezondheid, beweging, partnerzekerheid en medische geruststelling zetten Script A op; de omgedraaide premietabel onthult Script B en herkadert de hoopgevende beoordeling.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst realiseert de geplande herinterpretatie: een medisch oordeel blijkt financieel gunstige risicoclassificatie.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Formulieren, gezondheids- en bewegingsinformatie, zekerheid voor de partner, arts/keuringsrol en premietabel zijn functioneel aanwezig.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De verteller wordt expliciet gereduceerd tot geprijsd overlijdensrisico, wat het beoogde commerciële target raakt.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De medische geruststelling blijft eerst leidend en wordt direct na de premietabel als verzekeringsvoordeel herlezen.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De premietabel en het finale 'overlijdensrisico' vervullen de vereiste lexicale scharnierfunctie, al is 'goedkoop overlijdensrisico' grammaticaal onvolledig zonder 'een'.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": false,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V3 is inhoudelijk zeer plangetrouw: de premietabel herkadert medische geruststelling als verzekeringsclassificatie. De punchline klinkt echter niet volledig natuurlijk door 'ik was vooral goedkoop overlijdensrisico' in plaats van bijvoorbeeld 'een goedkoop overlijdensrisico'.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.” Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.",
+      "opposing_script": "Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.",
+      "opposition_type": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+      "trigger": "De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.",
+      "setup_goal": "Script A dominant maken door de afspraak te presenteren als een empathisch gesprek over ouder worden, gezondheid, familie en voorbereiding op de komende jaren.",
+      "punch_goal": "Script B activeren door de medische en toekomstgerichte signalen te laten terugvallen op acceptatievoorwaarden, berekend overlijdensrisico en premie.",
+      "shared_cues": [
+        "Vragen over medicatie, beweging en eerdere klachten.",
+        "Een gesprek over familie en toekomstige zekerheid.",
+        "Formulieren met persoonlijke gegevens en handtekeningen.",
+        "De opmerking dat men 'vooruit moet denken'."
+      ],
+      "hinge_event": "De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.",
+      "anomaly_under_a": "In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.",
+      "resolution_under_b": "Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.",
+      "role_remapping": [
+        "De ouder wordende persoon wordt de verzekeringsaanvrager.",
+        "De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.",
+        "Naasten worden begunstigden die financieel beschermd moeten worden.",
+        "De voorbereiding op het levenseinde wordt contractuele risicodekking."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.\\\",\\\"participants_and_roles\\\":[\\\"Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.\\\",\\\"Naasten: bieden gezelschap, praktische hulp en emotionele steun.\\\",\\\"Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.\\\",\\\"Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde.\\\"],\\\"apparent_goal\\\":\\\"Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.\\\",\\\"preconditions\\\":[\\\"De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.\\\",\\\"Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.\\\",\\\"Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.\\\",\\\"Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden.\\\"],\\\"expected_actions\\\":[\\\"Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.\\\",\\\"Contact met familie, vrienden en gemeenschap onderhouden.\\\",\\\"Financiën, woonwensen en eventuele zorg tijdig organiseren.\\\",\\\"Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.\\\",\\\"Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties.\\\"],\\\"expected_outcome\\\":\\\"De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.\\\",\\\"expected_propositions\\\":[\\\"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\\\",\\\"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\\\",\\\"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\\\",\\\"Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.\\\",\\\"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.\\\",\\\"opposition_axis\\\":\\\"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\\\",\\\"opposed_proposition\\\":\\\"Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.\\\",\\\"shared_anchor\\\":\\\"Een afspraak over gezondheid en de toekomst.\\\",\\\"reading_a\\\":\\\"Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.\\\",\\\"reading_b\\\":\\\"Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.\\\",\\\"roles_b\\\":[\\\"Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.\\\",\\\"Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.\\\",\\\"Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.\\\",\\\"Nabestaanden: zijn de mogelijke financiële begunstigden.\\\"],\\\"goal_b\\\":\\\"Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende persoon wordt de verzekeringsaanvrager.\\\",\\\"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\\\",\\\"Naasten worden begunstigden die financieel beschermd moeten worden.\\\",\\\"De voorbereiding op het levenseinde wordt contractuele risicodekking.\\\"],\\\"shared_cues\\\":[\\\"Vragen over medicatie, beweging en eerdere klachten.\\\",\\\"Een gesprek over familie en toekomstige zekerheid.\\\",\\\"Formulieren met persoonlijke gegevens en handtekeningen.\\\",\\\"De opmerking dat men 'vooruit moet denken'.\\\"],\\\"switch_trigger\\\":\\\"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\\\",\\\"hinge_event\\\":\\\"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\\\",\\\"anomaly_under_a\\\":\\\"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\\\",\\\"resolution_under_b\\\":\\\"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een theatergezelschap repeteert een afscheidsvoorstelling waarin een oudere hoofdrolspeler op het podium een levenseinde verbeeldt; iedereen werkt toe naar een overtuigende en goed getimede finale.\\\",\\\"opposition_axis\\\":\\\"Werkelijk levenseinde versus opgevoerd en herhaalbaar einde.\\\",\\\"opposed_proposition\\\":\\\"Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.\\\",\\\"shared_anchor\\\":\\\"Een kring van naasten rond iemand die afscheid neemt.\\\",\\\"reading_a\\\":\\\"Familie en zorgverleners verzamelen zich rond een ouder persoon om diens wensen te horen en steun te geven in de laatste fase.\\\",\\\"reading_b\\\":\\\"Acteurs, regisseur en technici verzamelen zich rond de hoofdrolspeler om de afscheidsène geloofwaardig te repeteren.\\\",\\\"roles_b\\\":[\\\"Hoofdrolspeler: speelt iemand die afscheid neemt.\\\",\\\"Regisseur: bewaakt interpretatie, tempo en emotionele geloofwaardigheid.\\\",\\\"Medespelers: vertolken familieleden of verzorgers in de scène.\\\",\\\"Technici: verzorgen licht, geluid en het slotsignaal.\\\"],\\\"goal_b\\\":\\\"Een ontroerende, technisch vlekkeloze slotscène uitvoeren voor het publiek.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende persoon wordt de hoofdrolspeler.\\\",\\\"Naasten worden medespelers die de familiekring spelen.\\\",\\\"Zorgverleners worden regisseur en toneelploeg die aanwijzingen geven.\\\",\\\"Wensen rond het levenseinde worden artistieke keuzes over tekst, houding en timing.\\\"],\\\"shared_cues\\\":[\\\"Zachte stemmen en een stille kring rond een bed of stoel.\\\",\\\"Gesprekken over afscheid, herinneringen en laatste woorden.\\\",\\\"Iemand die vraagt of alles geregeld is.\\\",\\\"Bloemen, gedimd licht en aanwezige familiefiguren.\\\"],\\\"switch_trigger\\\":\\\"De regisseur roept vanuit de stilte: 'Nog één keer vanaf je laatste zin, maar nu drie tellen langer.'\\\",\\\"hinge_event\\\":\\\"De vermeend stervende persoon staat abrupt op, veegt zijn kostuum af en vraagt waar zijn markering op de vloer ligt.\\\",\\\"anomaly_under_a\\\":\\\"In een werkelijk afscheid zou opstaan om een technische positie te controleren de emotionele en lichamelijke situatie absurd doorkruisen.\\\",\\\"resolution_under_b\\\":\\\"Tijdens een repetitie is dit precies nuttig: de acteur moet zijn looplijn en lichtpositie corrigeren voordat de scène wordt gespeeld.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een familie organiseert een verrassingsfeest voor een groot jubileum en houdt de eregast met smoesjes, geheimzinnige telefoontjes en ongebruikelijke afspraken weg van de feestlocatie.\\\",\\\"opposition_axis\\\":\\\"Voorbereiden op verlies versus voorbereiden op viering en voortzetting.\\\",\\\"opposed_proposition\\\":\\\"Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.\\\",\\\"shared_anchor\\\":\\\"Familie regelt heimelijk belangrijke zaken voor een oudere verwant.\\\",\\\"reading_a\\\":\\\"De familie organiseert documenten, contacten en praktische afspraken omdat een kwetsbare oudere mogelijk meer zorg nodig heeft of wil vastleggen wat er later moet gebeuren.\\\",\\\"reading_b\\\":\\\"De familie organiseert gasten, catering en versiering zonder dat de jubilaris de verrassing ontdekt.\\\",\\\"roles_b\\\":[\\\"Jubilaris: oudere eregast die niets van het feest mag merken.\\\",\\\"Familieleden: plannen en verbergen de verrassing.\\\",\\\"Vrienden en gasten: komen samen om te feliciteren.\\\",\\\"Cateraar of locatiebeheerder: maakt de viering praktisch mogelijk.\\\"],\\\"goal_b\\\":\\\"De jubilaris op het juiste moment verrassen met een feest dat diens leven en relaties viert.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende persoon wordt de jubilaris.\\\",\\\"Naasten blijven naasten, maar worden samenzweerders en feestorganisatoren.\\\",\\\"Praktische planners worden cateraar, locatiebeheerder en gastenlijstcoördinator.\\\",\\\"Voorbereidende gesprekken worden gecodeerde feestafspraken.\\\"],\\\"shared_cues\\\":[\\\"Familieleden bellen onderling en fluisteren zodra de oudere binnenkomt.\\\",\\\"Er worden lijsten, tijden en adressen afgestemd.\\\",\\\"Iemand zegt dat belangrijke mensen op tijd moeten worden ingelicht.\\\",\\\"Een ongebruikelijk excuus om de persoon naar een bepaalde locatie te krijgen.\\\"],\\\"switch_trigger\\\":\\\"Achter een gesloten deur telt iedereen af en klinkt vervolgens luid: 'Verrassing!'\\\",\\\"hinge_event\\\":\\\"De familie heeft de eregast onder een voorwendsel naar een zaal gebracht waar alle aanwezigen zich zwijgend achter tafels verstoppen.\\\",\\\"anomaly_under_a\\\":\\\"Bij een serieus gesprek over latere zorg of een naderend levenseinde zou een zaal vol zwijgende, verborgen familieleden onbegrijpelijk en weinig respectvol zijn.\\\",\\\"resolution_under_b\\\":\\\"Voor een verrassingsfeest is het verstoppen noodzakelijk om het effect van de gezamenlijke onthulling te behouden.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een producent cast een energieke senior voor een reclamecampagne voor een sporthorloge en laat kandidaten testen of zij jong, vitaal en onverslijtelijk genoeg overkomen in beeld.\\\",\\\"opposition_axis\\\":\\\"Aanvaarding van lichamelijke verandering versus verkoop van schijnbare tijdloosheid.\\\",\\\"opposed_proposition\\\":\\\"Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.\\\",\\\"shared_anchor\\\":\\\"Een oudere persoon wordt beoordeeld op beweging, uitstraling en toekomstig functioneren.\\\",\\\"reading_a\\\":\\\"Een arts of zorgverlener beoordeelt mobiliteit, energie en zelfstandigheid om passende ondersteuning en realistische adviezen te geven.\\\",\\\"reading_b\\\":\\\"Een castingteam beoordeelt hoe overtuigend de persoon vitaliteit kan uitstralen om een product te verkopen.\\\",\\\"roles_b\\\":[\\\"Senior model: wil voor de campagne worden gekozen.\\\",\\\"Castingdirector: selecteert de meest verkoopbare uitstraling.\\\",\\\"Fotograaf en stylist: creëren een beeld van vitaliteit.\\\",\\\"Reclamemaker: wil consumenten het gevoel geven dat veroudering te overwinnen is.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige campagne maken die een sporthorloge koppelt aan jeugdigheid, energie en zelfverbetering.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende persoon wordt het senior model.\\\",\\\"Artsen en zorgverleners worden castingdirector, fotograaf en stylist.\\\",\\\"Naasten worden figuranten die een actief sociaal leven verbeelden.\\\",\\\"Gezondheidsadvies wordt commerciële coaching voor houding, tempo en uitstraling.\\\"],\\\"shared_cues\\\":[\\\"Vragen over conditie, slaap, dagelijkse beweging en energieniveau.\\\",\\\"Een test waarbij iemand loopt, opstaat of een trap neemt.\\\",\\\"Aanmoedigingen om actief te blijven.\\\",\\\"Aandacht voor kleding, uiterlijk en zelfvertrouwen.\\\"],\\\"switch_trigger\\\":\\\"De castingdirector onderbreekt de test met: 'Prachtig, maar kunt u vooral niet te oud in de camera kijken?'\\\",\\\"hinge_event\\\":\\\"Na een realistische mobiliteitstest plakt de stylist rimpelvervagende tape en geeft de persoon de opdracht om met een overdreven jeugdige sprong in beeld te komen.\\\",\\\"anomaly_under_a\\\":\\\"Bij een zorgbeoordeling zou het verhullen van lichamelijke signalen en het forceren van een sprong veilige diagnostiek en passende ondersteuning ondermijnen.\\\",\\\"resolution_under_b\\\":\\\"In een reclameproductie is die ingreep doelgericht: het beeld moet vitaliteit verkopen, niet een nauwkeurige weergave van ouder worden geven.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Eén realiseerbare scène met een gezondheids- en toekomstgesprek eerst geloofwaardig neer als zorggesprek en kan na de premietabel als verzekeringskeuring worden gelezen. De dominante tegenstelling is zorg en persoonlijke regie tegenover financiële risicotaxatie. De medische vragen, toekomstzekerheid en formulieren dragen beide lezingen; de verzekeringslezing is vóór de trigger al mogelijk, maar de medische lezing kan aanvankelijk domineren. De felicitatie over een statistische levensverwachting is onder A ongepast en wordt onder B functioneel wegens de lagere premie. Eerdere zorgsignalen krijgen daardoor retrospectief een acceptatiefunctie. Er is geen expliciete voorwaarde die A's doel blokkeert terwijl zij B's doel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde enscenering van een stille kring, afscheid en laatste woorden kan zowel een werkelijk levenseinde als een repetitie tonen. Werkelijk en definitief afscheid staat lokaal tegenover een opgevoerd, herhaalbaar afscheid; dat is één dominante as. De toneellezing is herkenbaar en door licht, bloemen en geënsceneerde familiefiguren latent beschikbaar, terwijl de opzet eerst natuurlijk als ernstig afscheid kan worden gelezen. Opstaan voor een vloermarkering doorkruist A, maar is onder B noodzakelijk voor looplijn en lichtpositie. Daardoor herdefinieert B alle eerdere steun- en afscheidsdetails als toneelhandeling. Het technische opstaan blokkeert de sterfscène als werkelijkheid, maar maakt haar als repetitie juist mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":false,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De familie kan in één tekst heimelijk zaken organiseren die eerst als voorbereiding op zorg of verlies en later als feestvoorbereiding worden gelezen. De tegenstelling tussen voorbereiding op verlies en voorbereiding op viering en voortzetting is duidelijk dominant. De gedeelde ankerinformatie ondersteunt beide lezingen en een verrassingsfeest is sociaal onmiddellijk herkenbaar. De geheimzinnige telefoontjes, lijsten, afspraken en vooral een smoes om iemand naar een locatie te brengen maken B echter al zo sterk dat niet expliciet is gewaarborgd dat een normale lezer eerst A prefereert. Verborgen aanwezigen zijn onder A onbegrijpelijk, maar onder B nodig voor de verrassing; de onthulling herkadert de eerdere geheimhouding als feestlogistiek. Die geheimhouding belemmert transparante zorgvoorbereiding onder A en faciliteert het feestdoel onder B.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén scène met vragen over conditie, lopen, opstaan en functioneren kan eerst een zorgbeoordeling en vervolgens een casting voor reclame zijn. De dominante tegenstelling is realistische aanvaarding en beoordeling van lichamelijke verandering tegenover het commercieel produceren van schijnbare tijdloosheid. De gedeelde cues passen bij beide institutionele settings; kleding, uiterlijk en zelfvertrouwen houden de castingoptie latent, terwijl de functionele test en gezondheidsvragen aanvankelijk A kunnen dragen. Rimpelvervagende tape en een geforceerde jeugdige sprong ondermijnen onder A veilige, waarheidsgetrouwe zorgbeoordeling, maar dienen onder B rechtstreeks het verkoopbare beeld. B verandert daardoor retrospectief gezondheidsadvies in commerciële beeldcoaching. Het verhullen van signalen blokkeert A's diagnostische doel en maakt B's reclamedoel mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de sterkste dubbele lezing: een gesprek over gezondheid, toekomst en naasten past aanvankelijk volledig binnen ouder worden en voorbereiding op sterfelijkheid, maar kan achteraf zonder omslachtige herinterpretatie een verzekeringskeuring blijken. De omslag via de premietabel met ‘overlijdensrisico’ is helder, economisch en thematisch zeer specifiek. De tegenstelling tussen persoonlijke waardigheid en actuariële risicocalculatie creëert bovendien een scherp, potentieel wrang payoff-moment: de felicitatie is onder de eerste lezing ongepast, maar onder de tweede functioneel en logisch.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\\\",\\\"logical_mechanism\\\":\\\"Figuur-grondomkering en herinterpretatie: een ogenschijnlijk zorgzaam medisch toekomstgesprek blijkt een verzekeringsacceptatie waarin gezondheidsinformatie financieel wordt geprijsd.\\\",\\\"situation\\\":\\\"Een ouder wordende persoon voert een afspraak over gezondheid en de toekomst met een gesprekspartner die medische gegevens, leefstijl, formulieren en toekomstige zekerheid bespreekt. De setting lijkt eerst een artsenkamer of zorggesprek, maar blijkt een acceptatie- of keuringssituatie bij een levensverzekeraar, met een premietabel als beslissend object.\\\",\\\"target\\\":\\\"De commerciële reductie van menselijke kwetsbaarheid en sterfelijkheid tot verzekerbaar risico en premie.\\\",\\\"narrative_strategy\\\":\\\"De opzet houdt het gesprek bewust binnen het herkenbare kader van waardige ouderenzorg: klachten, medicatie, familie en vooruitdenken. De punchline onthult via de premietabel dat dezelfde signalen niet op zorg maar op financiële risicobeoordeling doelen; de felicitatie krijgt daardoor een kil maar functioneel tweede kader.\\\",\\\"lexical_anchor\\\":\\\"premietabel\\\",\\\"supporting_dual_cues\\\":[\\\"Vragen over medicatie, beweging en eerdere klachten.\\\",\\\"Een gesprek over familie en toekomstige zekerheid.\\\",\\\"Formulieren met persoonlijke gegevens en handtekeningen.\\\",\\\"De opmerking dat men 'vooruit moet denken'.\\\"],\\\"switch_trigger\\\":\\\"De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.\\\",\\\"hinge_event\\\":\\\"De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.\\\",\\\"anomaly_under_a\\\":\\\"In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.\\\",\\\"resolution_under_b\\\":\\\"Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende persoon wordt de verzekeringsaanvrager.\\\",\\\"De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.\\\",\\\"Naasten worden begunstigden die financieel beschermd moeten worden.\\\",\\\"De voorbereiding op het levenseinde wordt contractuele risicodekking.\\\"],\\\"setup_goal\\\":\\\"Script A dominant maken door de afspraak te presenteren als een empathisch gesprek over ouder worden, gezondheid, familie en voorbereiding op de komende jaren.\\\",\\\"punch_goal\\\":\\\"Script B activeren door de medische en toekomstgerichte signalen te laten terugvallen op acceptatievoorwaarden, berekend overlijdensrisico en premie.\\\",\\\"punch_final_word\\\":\\\"overlijdensrisico\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.”\\\",\\\"punchline\\\":\\\"Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.\\\",\\\"full_text\\\":\\\"Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.” Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.\\\",\\\"angle\\\":\\\"Een ogenschijnlijk empathisch ouderdomsgesprek kantelt naar een verzekeringskeuring.\\\",\\\"anchor_surface_form\\\":\\\"premietabel\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt.\\\",\\\"punchline\\\":\\\"Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.\\\",\\\"full_text\\\":\\\"De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt. Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.\\\",\\\"angle\\\":\\\"De behoefte aan menselijke aandacht blijkt financiële dossierinformatie.\\\",\\\"anchor_surface_form\\\":\\\"premietabel\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.”\\\",\\\"punchline\\\":\\\"Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.\\\",\\\"full_text\\\":\\\"Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.” Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.\\\",\\\"angle\\\":\\\"Medische geruststelling wordt herlezen als gunstige premieclassificatie.\\\",\\\"anchor_surface_form\\\":\\\"premietabel\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een ouder wordende persoon voert ogenschijnlijk een zorgzaam artsengesprek over gezondheid, beweging, kinderen en vooruitdenken.\\\",\\\"realized_script_b\\\":\\\"Het gesprek blijkt een levensverzekeringskeuring waarin gezondheidsgegevens het overlijdensrisico en de premie bepalen.\\\",\\\"realized_opposition_axis\\\":\\\"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De zorglezing domineert eerst via de arts, medicijnen, wandelen, kinderen en vooruitdenken. De premietabel en het lage overlijdensrisico onthullen precies de beoogde verzekeringslezing.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De premietabel veroorzaakt een heldere figuur-grondomkering: medisch-zorgzame vragen blijken acceptatiegegevens voor prijsbepaling.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De beoogde afspraak, medische en toekomstgerichte vragen, familiecue en beslissende premietabel zijn aanwezig.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De felicitatie met een laag overlijdensrisico legt de kille commerciële omzetting van sterfelijkheid in prijs bloot.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst houdt Script A dominant tot de premietabel de herlezing naar Script B forceert, waarna de felicitatie functioneel maar kil wordt.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De vereiste lexicale ankers 'premietabel' en 'overlijdensrisico' realiseren de switch en de slotfunctie.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V1 realiseert het geplande zorggesprek-naar-verzekeringskeuring-patroon volledig, met een expliciete en goed geplaatste premietabelswitch.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"De verteller ervaart de vragen over lichamelijke klachten, beweging en familie als oprechte aandacht voor ouder worden en de toekomst.\\\",\\\"realized_script_b\\\":\\\"De vragen blijken dossierinformatie voor een verzekeraar die het overlijdensrisico beoordeelt.\\\",\\\"realized_opposition_axis\\\":\\\"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De aanvankelijke lezing van menselijke aandacht wordt door de premietabel herzien als risicobeoordeling. De verzekeringsfunctie van vooral de familiebezoekfrequentie is echter minder vanzelfsprekend dan de geplande medische cues.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De premietabel maakt de retrospectieve herinterpretatie naar verzekeringsacceptatie mogelijk, al is de causale koppeling tussen familiebezoek en overlijdensrisico wat geforceerd.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Klachten, beweging, familie, toekomstverwachting en een premietabel realiseren de kernsituatie, hoewel arts/keuringscontext niet expliciet wordt gemaakt.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst richt zich op het reduceren van persoonlijke relaties en kwetsbaarheid tot financieel risicomateriaal.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De verteller leest de vragen eerst als empathie; de premietabel kantelt die lezing naar commerciële classificatie.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"'Premietabel' en het slotwoord 'overlijdensrisico' zijn aanwezig en dragen de geplande onthulling, ondanks de wat onnatuurlijke formulering van de laatste zin.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":false,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V2 volgt het bedoelde oppositionele plan en de premietabelswitch, maar de formulering 'mijn familie zag ik ... voor mijn overlijdensrisico' klinkt semantisch en mondeling stroef.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een ouder wordende persoon bespreekt met een arts gezondheid, beweging en zekerheid voor zijn vrouw en ontvangt ogenschijnlijk geruststellend medisch nieuws.\\\",\\\"realized_script_b\\\":\\\"De arts blijkt als keuringsarts op te treden; de gegevens bepalen een gunstige verzekeringsclassificatie en premie op basis van overlijdensrisico.\\\",\\\"realized_opposition_axis\\\":\\\"Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Gezondheid, beweging, partnerzekerheid en medische geruststelling zetten Script A op; de omgedraaide premietabel onthult Script B en herkadert de hoopgevende beoordeling.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst realiseert de geplande herinterpretatie: een medisch oordeel blijkt financieel gunstige risicoclassificatie.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Formulieren, gezondheids- en bewegingsinformatie, zekerheid voor de partner, arts/keuringsrol en premietabel zijn functioneel aanwezig.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De verteller wordt expliciet gereduceerd tot geprijsd overlijdensrisico, wat het beoogde commerciële target raakt.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De medische geruststelling blijft eerst leidend en wordt direct na de premietabel als verzekeringsvoordeel herlezen.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De premietabel en het finale 'overlijdensrisico' vervullen de vereiste lexicale scharnierfunctie, al is 'goedkoop overlijdensrisico' grammaticaal onvolledig zonder 'een'.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":false,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V3 is inhoudelijk zeer plangetrouw: de premietabel herkadert medische geruststelling als verzekeringsclassificatie. De punchline klinkt echter niet volledig natuurlijk door 'ik was vooral goedkoop overlijdensrisico' in plaats van bijvoorbeeld 'een goedkoop overlijdensrisico'.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 heeft als enige de passstatus en moet daarom voorgaan. Bovendien is de arts- en keuringscontext helderder, werkt de premietabel als scherpere switch en klinkt de slotzin natuurlijker dan de geforceerde koppeling tussen familiebezoek en overlijdensrisico in V2.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 heeft de passstatus en wint daarmee van V3. Beide volgen het plan sterk, maar V1 is mondeling natuurlijker en rondt de herinterpretatie helderder af; V3 verliest kracht door de grammaticaal stroeve formulering „goedkoop overlijdensrisico”.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide varianten falen op natuurlijke spreekbaarheid, maar V3 is trouwer aan de vereiste keuringssituatie: arts, gezondheid, beweging, partnerzekerheid en premietabel ondersteunen de retrospectieve switch. V2 heeft een minder logische en stroevere familiebezoek-overlijdensrisicokoppeling.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de enige passerende variant en realiseert alle vereiste middelen in een compact, goed uitvoerbaar zorggesprek dat overtuigend kantelt naar een verzekeringskeuring. De premietabel herkadert de eerdere vragen helder, met een natuurlijke en kille punchline.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.",
+        "candidate_id": "B1",
+        "opposition_axis": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+        "opposed_expectation": "Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.",
+        "roles_b": [
+          "Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.",
+          "Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.",
+          "Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.",
+          "Nabestaanden: zijn de mogelijke financiële begunstigden."
+        ],
+        "goal_b": "Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.",
+        "role_remapping": [
+          "De ouder wordende persoon wordt de verzekeringsaanvrager.",
+          "De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.",
+          "Naasten worden begunstigden die financieel beschermd moeten worden.",
+          "De voorbereiding op het levenseinde wordt contractuele risicodekking."
+        ],
+        "shared_cues": [
+          "Vragen over medicatie, beweging en eerdere klachten.",
+          "Een gesprek over familie en toekomstige zekerheid.",
+          "Formulieren met persoonlijke gegevens en handtekeningen.",
+          "De opmerking dat men 'vooruit moet denken'."
+        ],
+        "switch_trigger": "De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.",
+        "hinge_event": "De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.",
+        "anomaly_under_a": "In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.",
+        "resolution_under_b": "Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een theatergezelschap repeteert een afscheidsvoorstelling waarin een oudere hoofdrolspeler op het podium een levenseinde verbeeldt; iedereen werkt toe naar een overtuigende en goed getimede finale.",
+        "candidate_id": "B2",
+        "opposition_axis": "Werkelijk levenseinde versus opgevoerd en herhaalbaar einde.",
+        "opposed_expectation": "Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.",
+        "roles_b": [
+          "Hoofdrolspeler: speelt iemand die afscheid neemt.",
+          "Regisseur: bewaakt interpretatie, tempo en emotionele geloofwaardigheid.",
+          "Medespelers: vertolken familieleden of verzorgers in de scène.",
+          "Technici: verzorgen licht, geluid en het slotsignaal."
+        ],
+        "goal_b": "Een ontroerende, technisch vlekkeloze slotscène uitvoeren voor het publiek.",
+        "role_remapping": [
+          "De ouder wordende persoon wordt de hoofdrolspeler.",
+          "Naasten worden medespelers die de familiekring spelen.",
+          "Zorgverleners worden regisseur en toneelploeg die aanwijzingen geven.",
+          "Wensen rond het levenseinde worden artistieke keuzes over tekst, houding en timing."
+        ],
+        "shared_cues": [
+          "Zachte stemmen en een stille kring rond een bed of stoel.",
+          "Gesprekken over afscheid, herinneringen en laatste woorden.",
+          "Iemand die vraagt of alles geregeld is.",
+          "Bloemen, gedimd licht en aanwezige familiefiguren."
+        ],
+        "switch_trigger": "De regisseur roept vanuit de stilte: 'Nog één keer vanaf je laatste zin, maar nu drie tellen langer.'",
+        "hinge_event": "De vermeend stervende persoon staat abrupt op, veegt zijn kostuum af en vraagt waar zijn markering op de vloer ligt.",
+        "anomaly_under_a": "In een werkelijk afscheid zou opstaan om een technische positie te controleren de emotionele en lichamelijke situatie absurd doorkruisen.",
+        "resolution_under_b": "Tijdens een repetitie is dit precies nuttig: de acteur moet zijn looplijn en lichtpositie corrigeren voordat de scène wordt gespeeld.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een familie organiseert een verrassingsfeest voor een groot jubileum en houdt de eregast met smoesjes, geheimzinnige telefoontjes en ongebruikelijke afspraken weg van de feestlocatie.",
+        "candidate_id": "B3",
+        "opposition_axis": "Voorbereiden op verlies versus voorbereiden op viering en voortzetting.",
+        "opposed_expectation": "Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.",
+        "roles_b": [
+          "Jubilaris: oudere eregast die niets van het feest mag merken.",
+          "Familieleden: plannen en verbergen de verrassing.",
+          "Vrienden en gasten: komen samen om te feliciteren.",
+          "Cateraar of locatiebeheerder: maakt de viering praktisch mogelijk."
+        ],
+        "goal_b": "De jubilaris op het juiste moment verrassen met een feest dat diens leven en relaties viert.",
+        "role_remapping": [
+          "De ouder wordende persoon wordt de jubilaris.",
+          "Naasten blijven naasten, maar worden samenzweerders en feestorganisatoren.",
+          "Praktische planners worden cateraar, locatiebeheerder en gastenlijstcoördinator.",
+          "Voorbereidende gesprekken worden gecodeerde feestafspraken."
+        ],
+        "shared_cues": [
+          "Familieleden bellen onderling en fluisteren zodra de oudere binnenkomt.",
+          "Er worden lijsten, tijden en adressen afgestemd.",
+          "Iemand zegt dat belangrijke mensen op tijd moeten worden ingelicht.",
+          "Een ongebruikelijk excuus om de persoon naar een bepaalde locatie te krijgen."
+        ],
+        "switch_trigger": "Achter een gesloten deur telt iedereen af en klinkt vervolgens luid: 'Verrassing!'",
+        "hinge_event": "De familie heeft de eregast onder een voorwendsel naar een zaal gebracht waar alle aanwezigen zich zwijgend achter tafels verstoppen.",
+        "anomaly_under_a": "Bij een serieus gesprek over latere zorg of een naderend levenseinde zou een zaal vol zwijgende, verborgen familieleden onbegrijpelijk en weinig respectvol zijn.",
+        "resolution_under_b": "Voor een verrassingsfeest is het verstoppen noodzakelijk om het effect van de gezamenlijke onthulling te behouden.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een producent cast een energieke senior voor een reclamecampagne voor een sporthorloge en laat kandidaten testen of zij jong, vitaal en onverslijtelijk genoeg overkomen in beeld.",
+        "candidate_id": "B4",
+        "opposition_axis": "Aanvaarding van lichamelijke verandering versus verkoop van schijnbare tijdloosheid.",
+        "opposed_expectation": "Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.",
+        "roles_b": [
+          "Senior model: wil voor de campagne worden gekozen.",
+          "Castingdirector: selecteert de meest verkoopbare uitstraling.",
+          "Fotograaf en stylist: creëren een beeld van vitaliteit.",
+          "Reclamemaker: wil consumenten het gevoel geven dat veroudering te overwinnen is."
+        ],
+        "goal_b": "Een geloofwaardige campagne maken die een sporthorloge koppelt aan jeugdigheid, energie en zelfverbetering.",
+        "role_remapping": [
+          "De ouder wordende persoon wordt het senior model.",
+          "Artsen en zorgverleners worden castingdirector, fotograaf en stylist.",
+          "Naasten worden figuranten die een actief sociaal leven verbeelden.",
+          "Gezondheidsadvies wordt commerciële coaching voor houding, tempo en uitstraling."
+        ],
+        "shared_cues": [
+          "Vragen over conditie, slaap, dagelijkse beweging en energieniveau.",
+          "Een test waarbij iemand loopt, opstaat of een trap neemt.",
+          "Aanmoedigingen om actief te blijven.",
+          "Aandacht voor kleding, uiterlijk en zelfvertrouwen."
+        ],
+        "switch_trigger": "De castingdirector onderbreekt de test met: 'Prachtig, maar kunt u vooral niet te oud in de camera kijken?'",
+        "hinge_event": "Na een realistische mobiliteitstest plakt de stylist rimpelvervagende tape en geeft de persoon de opdracht om met een overdreven jeugdige sprong in beeld te komen.",
+        "anomaly_under_a": "Bij een zorgbeoordeling zou het verhullen van lichamelijke signalen en het forceren van een sprong veilige diagnostiek en passende ondersteuning ondermijnen.",
+        "resolution_under_b": "In een reclameproductie is die ingreep doelgericht: het beeld moet vitaliteit verkopen, niet een nauwkeurige weergave van ouder worden geven.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de sterkste dubbele lezing: een gesprek over gezondheid, toekomst en naasten past aanvankelijk volledig binnen ouder worden en voorbereiding op sterfelijkheid, maar kan achteraf zonder omslachtige herinterpretatie een verzekeringskeuring blijken. De omslag via de premietabel met ‘overlijdensrisico’ is helder, economisch en thematisch zeer specifiek. De tegenstelling tussen persoonlijke waardigheid en actuariële risicocalculatie creëert bovendien een scherp, potentieel wrang payoff-moment: de felicitatie is onder de eerste lezing ongepast, maar onder de tweede functioneel en logisch.",
+    "variants": [
+      {
+        "text": "Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.” Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.",
+        "angle": "Een ogenschijnlijk empathisch ouderdomsgesprek kantelt naar een verzekeringskeuring."
+      },
+      {
+        "text": "De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt. Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.",
+        "angle": "De behoefte aan menselijke aandacht blijkt financiële dossierinformatie."
+      },
+      {
+        "text": "Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.” Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.",
+        "angle": "Medische geruststelling wordt herlezen als gunstige premieclassificatie."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 17409,
+      "output_tokens": 8399,
+      "total_tokens": 25808
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Een volwassene merkt tekenen van ouder worden, past gewoonten en planning aan, en probeert gezondheid, zelfstandigheid en contacten zo lang mogelijk te behouden terwijl het leven uiteindelijk eindig is.",
+          "participants_and_roles": [
+            "Een ouder wordende persoon: bewaakt gezondheid, zelfstandigheid, relaties en toekomstplannen.",
+            "Naasten: bieden gezelschap, praktische hulp en emotionele steun.",
+            "Artsen en zorgverleners: signaleren risico's, behandelen klachten en adviseren over preventie en zorg.",
+            "Familie of maatschappij: verwacht dat belangrijke zaken tijdig worden geregeld, zoals wonen, financiën en wensen rond het levenseinde."
+          ],
+          "apparent_goal": "Zo lang mogelijk betekenisvol, gezond en zelfstandig leven, met realistische voorbereiding op kwetsbaarheid en het levenseinde.",
+          "preconditions": [
+            "De persoon wordt ouder en kan lichamelijke, cognitieve of sociale veranderingen ervaren.",
+            "Tijd, gezondheid en zelfstandigheid zijn niet onbeperkt voorspelbaar of volledig beheersbaar.",
+            "Er zijn naasten, zorgmogelijkheden of voorzieningen beschikbaar, al verschillen die per situatie.",
+            "Praktische en persoonlijke keuzes over gezondheid, wonen, relaties en nalatenschap kunnen nodig worden."
+          ],
+          "expected_actions": [
+            "Gezondheidsklachten laten controleren en adviezen over beweging, voeding of behandeling opvolgen.",
+            "Contact met familie, vrienden en gemeenschap onderhouden.",
+            "Financiën, woonwensen en eventuele zorg tijdig organiseren.",
+            "Wensen rond medische behandeling, uitvaart of nalatenschap bespreekbaar maken.",
+            "Terugblikken op het leven en prioriteit geven aan waardevolle tijd en relaties."
+          ],
+          "expected_outcome": "De persoon behoudt waar mogelijk kwaliteit van leven en regie, terwijl naasten en zorgverleners helpen om de laatste levensfase waardig en voorbereid te laten verlopen.",
+          "expected_propositions": [
+            "Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.",
+            "Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.",
+            "Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.",
+            "Nabije relaties worden belangrijker wanneer tijd en zelfstandigheid kwetsbaarder voelen.",
+            "Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen."
+          ],
+          "audience_expectation": "Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een serieuze, menselijke levensfase: iemand probeert met waardigheid en praktische voorbereiding om te gaan met afnemende tijd, gezondheid en zelfstandigheid."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.",
+            "opposition_axis": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+            "opposed_proposition": "Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.",
+            "shared_anchor": "Een afspraak over gezondheid en de toekomst.",
+            "reading_a": "Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.",
+            "reading_b": "Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.",
+            "roles_b": [
+              "Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.",
+              "Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.",
+              "Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.",
+              "Nabestaanden: zijn de mogelijke financiële begunstigden."
+            ],
+            "goal_b": "Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.",
+            "role_remapping": [
+              "De ouder wordende persoon wordt de verzekeringsaanvrager.",
+              "De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.",
+              "Naasten worden begunstigden die financieel beschermd moeten worden.",
+              "De voorbereiding op het levenseinde wordt contractuele risicodekking."
+            ],
+            "shared_cues": [
+              "Vragen over medicatie, beweging en eerdere klachten.",
+              "Een gesprek over familie en toekomstige zekerheid.",
+              "Formulieren met persoonlijke gegevens en handtekeningen.",
+              "De opmerking dat men 'vooruit moet denken'."
+            ],
+            "switch_trigger": "De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.",
+            "hinge_event": "De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.",
+            "anomaly_under_a": "In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.",
+            "resolution_under_b": "Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een theatergezelschap repeteert een afscheidsvoorstelling waarin een oudere hoofdrolspeler op het podium een levenseinde verbeeldt; iedereen werkt toe naar een overtuigende en goed getimede finale.",
+            "opposition_axis": "Werkelijk levenseinde versus opgevoerd en herhaalbaar einde.",
+            "opposed_proposition": "Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.",
+            "shared_anchor": "Een kring van naasten rond iemand die afscheid neemt.",
+            "reading_a": "Familie en zorgverleners verzamelen zich rond een ouder persoon om diens wensen te horen en steun te geven in de laatste fase.",
+            "reading_b": "Acteurs, regisseur en technici verzamelen zich rond de hoofdrolspeler om de afscheidsène geloofwaardig te repeteren.",
+            "roles_b": [
+              "Hoofdrolspeler: speelt iemand die afscheid neemt.",
+              "Regisseur: bewaakt interpretatie, tempo en emotionele geloofwaardigheid.",
+              "Medespelers: vertolken familieleden of verzorgers in de scène.",
+              "Technici: verzorgen licht, geluid en het slotsignaal."
+            ],
+            "goal_b": "Een ontroerende, technisch vlekkeloze slotscène uitvoeren voor het publiek.",
+            "role_remapping": [
+              "De ouder wordende persoon wordt de hoofdrolspeler.",
+              "Naasten worden medespelers die de familiekring spelen.",
+              "Zorgverleners worden regisseur en toneelploeg die aanwijzingen geven.",
+              "Wensen rond het levenseinde worden artistieke keuzes over tekst, houding en timing."
+            ],
+            "shared_cues": [
+              "Zachte stemmen en een stille kring rond een bed of stoel.",
+              "Gesprekken over afscheid, herinneringen en laatste woorden.",
+              "Iemand die vraagt of alles geregeld is.",
+              "Bloemen, gedimd licht en aanwezige familiefiguren."
+            ],
+            "switch_trigger": "De regisseur roept vanuit de stilte: 'Nog één keer vanaf je laatste zin, maar nu drie tellen langer.'",
+            "hinge_event": "De vermeend stervende persoon staat abrupt op, veegt zijn kostuum af en vraagt waar zijn markering op de vloer ligt.",
+            "anomaly_under_a": "In een werkelijk afscheid zou opstaan om een technische positie te controleren de emotionele en lichamelijke situatie absurd doorkruisen.",
+            "resolution_under_b": "Tijdens een repetitie is dit precies nuttig: de acteur moet zijn looplijn en lichtpositie corrigeren voordat de scène wordt gespeeld."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een familie organiseert een verrassingsfeest voor een groot jubileum en houdt de eregast met smoesjes, geheimzinnige telefoontjes en ongebruikelijke afspraken weg van de feestlocatie.",
+            "opposition_axis": "Voorbereiden op verlies versus voorbereiden op viering en voortzetting.",
+            "opposed_proposition": "Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.",
+            "shared_anchor": "Familie regelt heimelijk belangrijke zaken voor een oudere verwant.",
+            "reading_a": "De familie organiseert documenten, contacten en praktische afspraken omdat een kwetsbare oudere mogelijk meer zorg nodig heeft of wil vastleggen wat er later moet gebeuren.",
+            "reading_b": "De familie organiseert gasten, catering en versiering zonder dat de jubilaris de verrassing ontdekt.",
+            "roles_b": [
+              "Jubilaris: oudere eregast die niets van het feest mag merken.",
+              "Familieleden: plannen en verbergen de verrassing.",
+              "Vrienden en gasten: komen samen om te feliciteren.",
+              "Cateraar of locatiebeheerder: maakt de viering praktisch mogelijk."
+            ],
+            "goal_b": "De jubilaris op het juiste moment verrassen met een feest dat diens leven en relaties viert.",
+            "role_remapping": [
+              "De ouder wordende persoon wordt de jubilaris.",
+              "Naasten blijven naasten, maar worden samenzweerders en feestorganisatoren.",
+              "Praktische planners worden cateraar, locatiebeheerder en gastenlijstcoördinator.",
+              "Voorbereidende gesprekken worden gecodeerde feestafspraken."
+            ],
+            "shared_cues": [
+              "Familieleden bellen onderling en fluisteren zodra de oudere binnenkomt.",
+              "Er worden lijsten, tijden en adressen afgestemd.",
+              "Iemand zegt dat belangrijke mensen op tijd moeten worden ingelicht.",
+              "Een ongebruikelijk excuus om de persoon naar een bepaalde locatie te krijgen."
+            ],
+            "switch_trigger": "Achter een gesloten deur telt iedereen af en klinkt vervolgens luid: 'Verrassing!'",
+            "hinge_event": "De familie heeft de eregast onder een voorwendsel naar een zaal gebracht waar alle aanwezigen zich zwijgend achter tafels verstoppen.",
+            "anomaly_under_a": "Bij een serieus gesprek over latere zorg of een naderend levenseinde zou een zaal vol zwijgende, verborgen familieleden onbegrijpelijk en weinig respectvol zijn.",
+            "resolution_under_b": "Voor een verrassingsfeest is het verstoppen noodzakelijk om het effect van de gezamenlijke onthulling te behouden."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een producent cast een energieke senior voor een reclamecampagne voor een sporthorloge en laat kandidaten testen of zij jong, vitaal en onverslijtelijk genoeg overkomen in beeld.",
+            "opposition_axis": "Aanvaarding van lichamelijke verandering versus verkoop van schijnbare tijdloosheid.",
+            "opposed_proposition": "Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.",
+            "shared_anchor": "Een oudere persoon wordt beoordeeld op beweging, uitstraling en toekomstig functioneren.",
+            "reading_a": "Een arts of zorgverlener beoordeelt mobiliteit, energie en zelfstandigheid om passende ondersteuning en realistische adviezen te geven.",
+            "reading_b": "Een castingteam beoordeelt hoe overtuigend de persoon vitaliteit kan uitstralen om een product te verkopen.",
+            "roles_b": [
+              "Senior model: wil voor de campagne worden gekozen.",
+              "Castingdirector: selecteert de meest verkoopbare uitstraling.",
+              "Fotograaf en stylist: creëren een beeld van vitaliteit.",
+              "Reclamemaker: wil consumenten het gevoel geven dat veroudering te overwinnen is."
+            ],
+            "goal_b": "Een geloofwaardige campagne maken die een sporthorloge koppelt aan jeugdigheid, energie en zelfverbetering.",
+            "role_remapping": [
+              "De ouder wordende persoon wordt het senior model.",
+              "Artsen en zorgverleners worden castingdirector, fotograaf en stylist.",
+              "Naasten worden figuranten die een actief sociaal leven verbeelden.",
+              "Gezondheidsadvies wordt commerciële coaching voor houding, tempo en uitstraling."
+            ],
+            "shared_cues": [
+              "Vragen over conditie, slaap, dagelijkse beweging en energieniveau.",
+              "Een test waarbij iemand loopt, opstaat of een trap neemt.",
+              "Aanmoedigingen om actief te blijven.",
+              "Aandacht voor kleding, uiterlijk en zelfvertrouwen."
+            ],
+            "switch_trigger": "De castingdirector onderbreekt de test met: 'Prachtig, maar kunt u vooral niet te oud in de camera kijken?'",
+            "hinge_event": "Na een realistische mobiliteitstest plakt de stylist rimpelvervagende tape en geeft de persoon de opdracht om met een overdreven jeugdige sprong in beeld te komen.",
+            "anomaly_under_a": "Bij een zorgbeoordeling zou het verhullen van lichamelijke signalen en het forceren van een sprong veilige diagnostiek en passende ondersteuning ondermijnen.",
+            "resolution_under_b": "In een reclameproductie is die ingreep doelgericht: het beeld moet vitaliteit verkopen, niet een nauwkeurige weergave van ouder worden geven."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een levensverzekeraar beoordeelt een aanvraag en probeert met medische gegevens, leefstijl en statistische risicoklassen te bepalen welke premie en voorwaarden financieel verantwoord zijn.",
+              "opposition_axis": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+              "opposed_proposition": "Niemand kan sterfelijkheid vermijden; hoogstens kunnen gezondheid en risico's gedeeltelijk worden beïnvloed.",
+              "shared_anchor": "Een afspraak over gezondheid en de toekomst.",
+              "reading_a": "Een ouder wordende persoon zit bij een arts om klachten, preventie en wensen voor de komende jaren te bespreken.",
+              "reading_b": "Een aanvrager zit bij een acceptant of keuringsarts omdat diens gezondheid de verzekerbaarheid en premie bepaalt.",
+              "roles_b": [
+                "Aanvrager: wil financiële bescherming voor nabestaanden of een lening mogelijk maken.",
+                "Acceptant of verzekeraar: classificeert risico en bepaalt premie of uitsluiting.",
+                "Keuringsarts: verzamelt medische informatie voor de risicobeoordeling.",
+                "Nabestaanden: zijn de mogelijke financiële begunstigden."
+              ],
+              "goal_b": "Een verzekeringscontract afsluiten tegen een premie die past bij het berekende overlijdensrisico.",
+              "role_remapping": [
+                "De ouder wordende persoon wordt de verzekeringsaanvrager.",
+                "De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.",
+                "Naasten worden begunstigden die financieel beschermd moeten worden.",
+                "De voorbereiding op het levenseinde wordt contractuele risicodekking."
+              ],
+              "shared_cues": [
+                "Vragen over medicatie, beweging en eerdere klachten.",
+                "Een gesprek over familie en toekomstige zekerheid.",
+                "Formulieren met persoonlijke gegevens en handtekeningen.",
+                "De opmerking dat men 'vooruit moet denken'."
+              ],
+              "switch_trigger": "De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.",
+              "hinge_event": "De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.",
+              "anomaly_under_a": "In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.",
+              "resolution_under_b": "Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een theatergezelschap repeteert een afscheidsvoorstelling waarin een oudere hoofdrolspeler op het podium een levenseinde verbeeldt; iedereen werkt toe naar een overtuigende en goed getimede finale.",
+              "opposition_axis": "Werkelijk levenseinde versus opgevoerd en herhaalbaar einde.",
+              "opposed_proposition": "Een goed levenseinde vraagt doorgaans om communicatie, ondersteuning en respect voor persoonlijke wensen.",
+              "shared_anchor": "Een kring van naasten rond iemand die afscheid neemt.",
+              "reading_a": "Familie en zorgverleners verzamelen zich rond een ouder persoon om diens wensen te horen en steun te geven in de laatste fase.",
+              "reading_b": "Acteurs, regisseur en technici verzamelen zich rond de hoofdrolspeler om de afscheidsène geloofwaardig te repeteren.",
+              "roles_b": [
+                "Hoofdrolspeler: speelt iemand die afscheid neemt.",
+                "Regisseur: bewaakt interpretatie, tempo en emotionele geloofwaardigheid.",
+                "Medespelers: vertolken familieleden of verzorgers in de scène.",
+                "Technici: verzorgen licht, geluid en het slotsignaal."
+              ],
+              "goal_b": "Een ontroerende, technisch vlekkeloze slotscène uitvoeren voor het publiek.",
+              "role_remapping": [
+                "De ouder wordende persoon wordt de hoofdrolspeler.",
+                "Naasten worden medespelers die de familiekring spelen.",
+                "Zorgverleners worden regisseur en toneelploeg die aanwijzingen geven.",
+                "Wensen rond het levenseinde worden artistieke keuzes over tekst, houding en timing."
+              ],
+              "shared_cues": [
+                "Zachte stemmen en een stille kring rond een bed of stoel.",
+                "Gesprekken over afscheid, herinneringen en laatste woorden.",
+                "Iemand die vraagt of alles geregeld is.",
+                "Bloemen, gedimd licht en aanwezige familiefiguren."
+              ],
+              "switch_trigger": "De regisseur roept vanuit de stilte: 'Nog één keer vanaf je laatste zin, maar nu drie tellen langer.'",
+              "hinge_event": "De vermeend stervende persoon staat abrupt op, veegt zijn kostuum af en vraagt waar zijn markering op de vloer ligt.",
+              "anomaly_under_a": "In een werkelijk afscheid zou opstaan om een technische positie te controleren de emotionele en lichamelijke situatie absurd doorkruisen.",
+              "resolution_under_b": "Tijdens een repetitie is dit precies nuttig: de acteur moet zijn looplijn en lichtpositie corrigeren voordat de scène wordt gespeeld."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een familie organiseert een verrassingsfeest voor een groot jubileum en houdt de eregast met smoesjes, geheimzinnige telefoontjes en ongebruikelijke afspraken weg van de feestlocatie.",
+              "opposition_axis": "Voorbereiden op verlies versus voorbereiden op viering en voortzetting.",
+              "opposed_proposition": "Voorbereiden op latere zorg en overlijden vermindert vaak onzekerheid en praktische belasting voor naasten.",
+              "shared_anchor": "Familie regelt heimelijk belangrijke zaken voor een oudere verwant.",
+              "reading_a": "De familie organiseert documenten, contacten en praktische afspraken omdat een kwetsbare oudere mogelijk meer zorg nodig heeft of wil vastleggen wat er later moet gebeuren.",
+              "reading_b": "De familie organiseert gasten, catering en versiering zonder dat de jubilaris de verrassing ontdekt.",
+              "roles_b": [
+                "Jubilaris: oudere eregast die niets van het feest mag merken.",
+                "Familieleden: plannen en verbergen de verrassing.",
+                "Vrienden en gasten: komen samen om te feliciteren.",
+                "Cateraar of locatiebeheerder: maakt de viering praktisch mogelijk."
+              ],
+              "goal_b": "De jubilaris op het juiste moment verrassen met een feest dat diens leven en relaties viert.",
+              "role_remapping": [
+                "De ouder wordende persoon wordt de jubilaris.",
+                "Naasten blijven naasten, maar worden samenzweerders en feestorganisatoren.",
+                "Praktische planners worden cateraar, locatiebeheerder en gastenlijstcoördinator.",
+                "Voorbereidende gesprekken worden gecodeerde feestafspraken."
+              ],
+              "shared_cues": [
+                "Familieleden bellen onderling en fluisteren zodra de oudere binnenkomt.",
+                "Er worden lijsten, tijden en adressen afgestemd.",
+                "Iemand zegt dat belangrijke mensen op tijd moeten worden ingelicht.",
+                "Een ongebruikelijk excuus om de persoon naar een bepaalde locatie te krijgen."
+              ],
+              "switch_trigger": "Achter een gesloten deur telt iedereen af en klinkt vervolgens luid: 'Verrassing!'",
+              "hinge_event": "De familie heeft de eregast onder een voorwendsel naar een zaal gebracht waar alle aanwezigen zich zwijgend achter tafels verstoppen.",
+              "anomaly_under_a": "Bij een serieus gesprek over latere zorg of een naderend levenseinde zou een zaal vol zwijgende, verborgen familieleden onbegrijpelijk en weinig respectvol zijn.",
+              "resolution_under_b": "Voor een verrassingsfeest is het verstoppen noodzakelijk om het effect van de gezamenlijke onthulling te behouden."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een producent cast een energieke senior voor een reclamecampagne voor een sporthorloge en laat kandidaten testen of zij jong, vitaal en onverslijtelijk genoeg overkomen in beeld.",
+              "opposition_axis": "Aanvaarding van lichamelijke verandering versus verkoop van schijnbare tijdloosheid.",
+              "opposed_proposition": "Ouder worden brengt meestal zichtbare of voelbare veranderingen in lichaam, energie en mogelijkheden mee.",
+              "shared_anchor": "Een oudere persoon wordt beoordeeld op beweging, uitstraling en toekomstig functioneren.",
+              "reading_a": "Een arts of zorgverlener beoordeelt mobiliteit, energie en zelfstandigheid om passende ondersteuning en realistische adviezen te geven.",
+              "reading_b": "Een castingteam beoordeelt hoe overtuigend de persoon vitaliteit kan uitstralen om een product te verkopen.",
+              "roles_b": [
+                "Senior model: wil voor de campagne worden gekozen.",
+                "Castingdirector: selecteert de meest verkoopbare uitstraling.",
+                "Fotograaf en stylist: creëren een beeld van vitaliteit.",
+                "Reclamemaker: wil consumenten het gevoel geven dat veroudering te overwinnen is."
+              ],
+              "goal_b": "Een geloofwaardige campagne maken die een sporthorloge koppelt aan jeugdigheid, energie en zelfverbetering.",
+              "role_remapping": [
+                "De ouder wordende persoon wordt het senior model.",
+                "Artsen en zorgverleners worden castingdirector, fotograaf en stylist.",
+                "Naasten worden figuranten die een actief sociaal leven verbeelden.",
+                "Gezondheidsadvies wordt commerciële coaching voor houding, tempo en uitstraling."
+              ],
+              "shared_cues": [
+                "Vragen over conditie, slaap, dagelijkse beweging en energieniveau.",
+                "Een test waarbij iemand loopt, opstaat of een trap neemt.",
+                "Aanmoedigingen om actief te blijven.",
+                "Aandacht voor kleding, uiterlijk en zelfvertrouwen."
+              ],
+              "switch_trigger": "De castingdirector onderbreekt de test met: 'Prachtig, maar kunt u vooral niet te oud in de camera kijken?'",
+              "hinge_event": "Na een realistische mobiliteitstest plakt de stylist rimpelvervagende tape en geeft de persoon de opdracht om met een overdreven jeugdige sprong in beeld te komen.",
+              "anomaly_under_a": "Bij een zorgbeoordeling zou het verhullen van lichamelijke signalen en het forceren van een sprong veilige diagnostiek en passende ondersteuning ondermijnen.",
+              "resolution_under_b": "In een reclameproductie is die ingreep doelgericht: het beeld moet vitaliteit verkopen, niet een nauwkeurige weergave van ouder worden geven."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Eén realiseerbare scène met een gezondheids- en toekomstgesprek eerst geloofwaardig neer als zorggesprek en kan na de premietabel als verzekeringskeuring worden gelezen. De dominante tegenstelling is zorg en persoonlijke regie tegenover financiële risicotaxatie. De medische vragen, toekomstzekerheid en formulieren dragen beide lezingen; de verzekeringslezing is vóór de trigger al mogelijk, maar de medische lezing kan aanvankelijk domineren. De felicitatie over een statistische levensverwachting is onder A ongepast en wordt onder B functioneel wegens de lagere premie. Eerdere zorgsignalen krijgen daardoor retrospectief een acceptatiefunctie. Er is geen expliciete voorwaarde die A's doel blokkeert terwijl zij B's doel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde enscenering van een stille kring, afscheid en laatste woorden kan zowel een werkelijk levenseinde als een repetitie tonen. Werkelijk en definitief afscheid staat lokaal tegenover een opgevoerd, herhaalbaar afscheid; dat is één dominante as. De toneellezing is herkenbaar en door licht, bloemen en geënsceneerde familiefiguren latent beschikbaar, terwijl de opzet eerst natuurlijk als ernstig afscheid kan worden gelezen. Opstaan voor een vloermarkering doorkruist A, maar is onder B noodzakelijk voor looplijn en lichtpositie. Daardoor herdefinieert B alle eerdere steun- en afscheidsdetails als toneelhandeling. Het technische opstaan blokkeert de sterfscène als werkelijkheid, maar maakt haar als repetitie juist mogelijk."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": false,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De familie kan in één tekst heimelijk zaken organiseren die eerst als voorbereiding op zorg of verlies en later als feestvoorbereiding worden gelezen. De tegenstelling tussen voorbereiding op verlies en voorbereiding op viering en voortzetting is duidelijk dominant. De gedeelde ankerinformatie ondersteunt beide lezingen en een verrassingsfeest is sociaal onmiddellijk herkenbaar. De geheimzinnige telefoontjes, lijsten, afspraken en vooral een smoes om iemand naar een locatie te brengen maken B echter al zo sterk dat niet expliciet is gewaarborgd dat een normale lezer eerst A prefereert. Verborgen aanwezigen zijn onder A onbegrijpelijk, maar onder B nodig voor de verrassing; de onthulling herkadert de eerdere geheimhouding als feestlogistiek. Die geheimhouding belemmert transparante zorgvoorbereiding onder A en faciliteert het feestdoel onder B."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén scène met vragen over conditie, lopen, opstaan en functioneren kan eerst een zorgbeoordeling en vervolgens een casting voor reclame zijn. De dominante tegenstelling is realistische aanvaarding en beoordeling van lichamelijke verandering tegenover het commercieel produceren van schijnbare tijdloosheid. De gedeelde cues passen bij beide institutionele settings; kleding, uiterlijk en zelfvertrouwen houden de castingoptie latent, terwijl de functionele test en gezondheidsvragen aanvankelijk A kunnen dragen. Rimpelvervagende tape en een geforceerde jeugdige sprong ondermijnen onder A veilige, waarheidsgetrouwe zorgbeoordeling, maar dienen onder B rechtstreeks het verkoopbare beeld. B verandert daardoor retrospectief gezondheidsadvies in commerciële beeldcoaching. Het verhullen van signalen blokkeert A's diagnostische doel en maakt B's reclamedoel mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Eén realiseerbare scène met een gezondheids- en toekomstgesprek eerst geloofwaardig neer als zorggesprek en kan na de premietabel als verzekeringskeuring worden gelezen. De dominante tegenstelling is zorg en persoonlijke regie tegenover financiële risicotaxatie. De medische vragen, toekomstzekerheid en formulieren dragen beide lezingen; de verzekeringslezing is vóór de trigger al mogelijk, maar de medische lezing kan aanvankelijk domineren. De felicitatie over een statistische levensverwachting is onder A ongepast en wordt onder B functioneel wegens de lagere premie. Eerdere zorgsignalen krijgen daardoor retrospectief een acceptatiefunctie. Er is geen expliciete voorwaarde die A's doel blokkeert terwijl zij B's doel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde enscenering van een stille kring, afscheid en laatste woorden kan zowel een werkelijk levenseinde als een repetitie tonen. Werkelijk en definitief afscheid staat lokaal tegenover een opgevoerd, herhaalbaar afscheid; dat is één dominante as. De toneellezing is herkenbaar en door licht, bloemen en geënsceneerde familiefiguren latent beschikbaar, terwijl de opzet eerst natuurlijk als ernstig afscheid kan worden gelezen. Opstaan voor een vloermarkering doorkruist A, maar is onder B noodzakelijk voor looplijn en lichtpositie. Daardoor herdefinieert B alle eerdere steun- en afscheidsdetails als toneelhandeling. Het technische opstaan blokkeert de sterfscène als werkelijkheid, maar maakt haar als repetitie juist mogelijk."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": false,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De familie kan in één tekst heimelijk zaken organiseren die eerst als voorbereiding op zorg of verlies en later als feestvoorbereiding worden gelezen. De tegenstelling tussen voorbereiding op verlies en voorbereiding op viering en voortzetting is duidelijk dominant. De gedeelde ankerinformatie ondersteunt beide lezingen en een verrassingsfeest is sociaal onmiddellijk herkenbaar. De geheimzinnige telefoontjes, lijsten, afspraken en vooral een smoes om iemand naar een locatie te brengen maken B echter al zo sterk dat niet expliciet is gewaarborgd dat een normale lezer eerst A prefereert. Verborgen aanwezigen zijn onder A onbegrijpelijk, maar onder B nodig voor de verrassing; de onthulling herkadert de eerdere geheimhouding als feestlogistiek. Die geheimhouding belemmert transparante zorgvoorbereiding onder A en faciliteert het feestdoel onder B."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén scène met vragen over conditie, lopen, opstaan en functioneren kan eerst een zorgbeoordeling en vervolgens een casting voor reclame zijn. De dominante tegenstelling is realistische aanvaarding en beoordeling van lichamelijke verandering tegenover het commercieel produceren van schijnbare tijdloosheid. De gedeelde cues passen bij beide institutionele settings; kleding, uiterlijk en zelfvertrouwen houden de castingoptie latent, terwijl de functionele test en gezondheidsvragen aanvankelijk A kunnen dragen. Rimpelvervagende tape en een geforceerde jeugdige sprong ondermijnen onder A veilige, waarheidsgetrouwe zorgbeoordeling, maar dienen onder B rechtstreeks het verkoopbare beeld. B verandert daardoor retrospectief gezondheidsadvies in commerciële beeldcoaching. Het verhullen van signalen blokkeert A's diagnostische doel en maakt B's reclamedoel mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B4"
+        ],
+        "selected_candidate_id": "B1",
+        "gtvh_plan": {
+          "opposition_type": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+          "logical_mechanism": "Figuur-grondomkering en herinterpretatie: een ogenschijnlijk zorgzaam medisch toekomstgesprek blijkt een verzekeringsacceptatie waarin gezondheidsinformatie financieel wordt geprijsd.",
+          "situation": "Een ouder wordende persoon voert een afspraak over gezondheid en de toekomst met een gesprekspartner die medische gegevens, leefstijl, formulieren en toekomstige zekerheid bespreekt. De setting lijkt eerst een artsenkamer of zorggesprek, maar blijkt een acceptatie- of keuringssituatie bij een levensverzekeraar, met een premietabel als beslissend object.",
+          "target": "De commerciële reductie van menselijke kwetsbaarheid en sterfelijkheid tot verzekerbaar risico en premie.",
+          "narrative_strategy": "De opzet houdt het gesprek bewust binnen het herkenbare kader van waardige ouderenzorg: klachten, medicatie, familie en vooruitdenken. De punchline onthult via de premietabel dat dezelfde signalen niet op zorg maar op financiële risicobeoordeling doelen; de felicitatie krijgt daardoor een kil maar functioneel tweede kader.",
+          "lexical_anchor": "premietabel",
+          "supporting_dual_cues": [
+            "Vragen over medicatie, beweging en eerdere klachten.",
+            "Een gesprek over familie en toekomstige zekerheid.",
+            "Formulieren met persoonlijke gegevens en handtekeningen.",
+            "De opmerking dat men 'vooruit moet denken'."
+          ],
+          "switch_trigger": "De gesprekspartner schuift geen zorgplan maar een premietabel met de kolom 'overlijdensrisico' naar voren.",
+          "hinge_event": "De beoordelaar feliciteert de persoon met een lagere premie omdat deze volgens de statistiek nog lang genoeg te leven heeft.",
+          "anomaly_under_a": "In een ernstig medisch gesprek over kwetsbaarheid klinkt feliciteren met een cijfermatige inschatting van resterende levensduur kil en ongepast.",
+          "resolution_under_b": "Bij een verzekeringsacceptatie is de opmerking functioneel: een lager berekend risico leidt tot een lagere premie en maakt de aanvraag aantrekkelijker.",
+          "role_remapping": [
+            "De ouder wordende persoon wordt de verzekeringsaanvrager.",
+            "De arts of zorgverlener wordt de keuringsarts die gegevens vastlegt.",
+            "Naasten worden begunstigden die financieel beschermd moeten worden.",
+            "De voorbereiding op het levenseinde wordt contractuele risicodekking."
+          ],
+          "setup_goal": "Script A dominant maken door de afspraak te presenteren als een empathisch gesprek over ouder worden, gezondheid, familie en voorbereiding op de komende jaren.",
+          "punch_goal": "Script B activeren door de medische en toekomstgerichte signalen te laten terugvallen op acceptatievoorwaarden, berekend overlijdensrisico en premie.",
+          "punch_final_word": "overlijdensrisico"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.”",
+            "punchline": "Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.",
+            "full_text": "Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.” Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.",
+            "angle": "Een ogenschijnlijk empathisch ouderdomsgesprek kantelt naar een verzekeringskeuring.",
+            "anchor_surface_form": "premietabel"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt.",
+            "punchline": "Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.",
+            "full_text": "De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt. Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.",
+            "angle": "De behoefte aan menselijke aandacht blijkt financiële dossierinformatie.",
+            "anchor_surface_form": "premietabel"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.”",
+            "punchline": "Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.",
+            "full_text": "Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.” Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.",
+            "angle": "Medische geruststelling wordt herlezen als gunstige premieclassificatie.",
+            "anchor_surface_form": "premietabel"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Bij mijn gesprek over ouder worden vroeg de arts naar mijn medicijnen, wandelingen en of mijn kinderen later goed verzorgd zijn. Hij zei steeds: „U moet vooruitdenken.” Toen schoof hij een premietabel naar me toe en feliciteerde me met mijn lage overlijdensrisico.",
+            "angle": "Een ogenschijnlijk empathisch ouderdomsgesprek kantelt naar een verzekeringskeuring."
+          },
+          {
+            "variant_id": "V2",
+            "text": "De keurige man noteerde mijn rugklachten, mijn fitnessabonnement en hoe vaak ik mijn familie zie. Ik dacht: fijn, eindelijk iemand die mijn toekomst serieus neemt. Toen kwam de premietabel: mijn familie zag ik blijkbaar vooral voor mijn overlijdensrisico.",
+            "angle": "De behoefte aan menselijke aandacht blijkt financiële dossierinformatie."
+          },
+          {
+            "variant_id": "V3",
+            "text": "Ik tekende formulieren over mijn gezondheid, mijn beweging en de zekerheid voor mijn vrouw. De arts glimlachte: „Voor iemand van uw leeftijd ziet het er hoopgevend uit.” Daarna draaide hij de premietabel om: ik was vooral goedkoop overlijdensrisico.",
+            "angle": "Medische geruststelling wordt herlezen als gunstige premieclassificatie."
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "TA",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een ouder wordende persoon voert ogenschijnlijk een zorgzaam artsengesprek over gezondheid, beweging, kinderen en vooruitdenken.",
+            "realized_script_b": "Het gesprek blijkt een levensverzekeringskeuring waarin gezondheidsgegevens het overlijdensrisico en de premie bepalen.",
+            "realized_opposition_axis": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De zorglezing domineert eerst via de arts, medicijnen, wandelen, kinderen en vooruitdenken. De premietabel en het lage overlijdensrisico onthullen precies de beoogde verzekeringslezing."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De premietabel veroorzaakt een heldere figuur-grondomkering: medisch-zorgzame vragen blijken acceptatiegegevens voor prijsbepaling."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De beoogde afspraak, medische en toekomstgerichte vragen, familiecue en beslissende premietabel zijn aanwezig."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De felicitatie met een laag overlijdensrisico legt de kille commerciële omzetting van sterfelijkheid in prijs bloot."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst houdt Script A dominant tot de premietabel de herlezing naar Script B forceert, waarna de felicitatie functioneel maar kil wordt."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De vereiste lexicale ankers 'premietabel' en 'overlijdensrisico' realiseren de switch en de slotfunctie."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V1 realiseert het geplande zorggesprek-naar-verzekeringskeuring-patroon volledig, met een expliciete en goed geplaatste premietabelswitch.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "De verteller ervaart de vragen over lichamelijke klachten, beweging en familie als oprechte aandacht voor ouder worden en de toekomst.",
+            "realized_script_b": "De vragen blijken dossierinformatie voor een verzekeraar die het overlijdensrisico beoordeelt.",
+            "realized_opposition_axis": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De aanvankelijke lezing van menselijke aandacht wordt door de premietabel herzien als risicobeoordeling. De verzekeringsfunctie van vooral de familiebezoekfrequentie is echter minder vanzelfsprekend dan de geplande medische cues."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De premietabel maakt de retrospectieve herinterpretatie naar verzekeringsacceptatie mogelijk, al is de causale koppeling tussen familiebezoek en overlijdensrisico wat geforceerd."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Klachten, beweging, familie, toekomstverwachting en een premietabel realiseren de kernsituatie, hoewel arts/keuringscontext niet expliciet wordt gemaakt."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst richt zich op het reduceren van persoonlijke relaties en kwetsbaarheid tot financieel risicomateriaal."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De verteller leest de vragen eerst als empathie; de premietabel kantelt die lezing naar commerciële classificatie."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "'Premietabel' en het slotwoord 'overlijdensrisico' zijn aanwezig en dragen de geplande onthulling, ondanks de wat onnatuurlijke formulering van de laatste zin."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": false,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V2 volgt het bedoelde oppositionele plan en de premietabelswitch, maar de formulering 'mijn familie zag ik ... voor mijn overlijdensrisico' klinkt semantisch en mondeling stroef.",
+            "passes_required_plan": false
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Een ouder wordende persoon bespreekt met een arts gezondheid, beweging en zekerheid voor zijn vrouw en ontvangt ogenschijnlijk geruststellend medisch nieuws.",
+            "realized_script_b": "De arts blijkt als keuringsarts op te treden; de gegevens bepalen een gunstige verzekeringsclassificatie en premie op basis van overlijdensrisico.",
+            "realized_opposition_axis": "Persoonlijke waardigheid en zorg versus commerciële risicocalculatie.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Gezondheid, beweging, partnerzekerheid en medische geruststelling zetten Script A op; de omgedraaide premietabel onthult Script B en herkadert de hoopgevende beoordeling."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst realiseert de geplande herinterpretatie: een medisch oordeel blijkt financieel gunstige risicoclassificatie."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Formulieren, gezondheids- en bewegingsinformatie, zekerheid voor de partner, arts/keuringsrol en premietabel zijn functioneel aanwezig."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De verteller wordt expliciet gereduceerd tot geprijsd overlijdensrisico, wat het beoogde commerciële target raakt."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De medische geruststelling blijft eerst leidend en wordt direct na de premietabel als verzekeringsvoordeel herlezen."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De premietabel en het finale 'overlijdensrisico' vervullen de vereiste lexicale scharnierfunctie, al is 'goedkoop overlijdensrisico' grammaticaal onvolledig zonder 'een'."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": false,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V3 is inhoudelijk zeer plangetrouw: de premietabel herkadert medische geruststelling als verzekeringsclassificatie. De punchline klinkt echter niet volledig natuurlijk door 'ik was vooral goedkoop overlijdensrisico' in plaats van bijvoorbeeld 'een goedkoop overlijdensrisico'.",
+            "passes_required_plan": false
+          }
+        ],
+        "passing_variant_ids": [
+          "V1"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "V1 heeft als enige de passstatus en moet daarom voorgaan. Bovendien is de arts- en keuringscontext helderder, werkt de premietabel als scherpere switch en klinkt de slotzin natuurlijker dan de geforceerde koppeling tussen familiebezoek en overlijdensrisico in V2."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V1",
+            "rationale": "V1 heeft de passstatus en wint daarmee van V3. Beide volgen het plan sterk, maar V1 is mondeling natuurlijker en rondt de herinterpretatie helderder af; V3 verliest kracht door de grammaticaal stroeve formulering „goedkoop overlijdensrisico”."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "Beide varianten falen op natuurlijke spreekbaarheid, maar V3 is trouwer aan de vereiste keuringssituatie: arts, gezondheid, beweging, partnerzekerheid en premietabel ondersteunen de retrospectieve switch. V2 heeft een minder logische en stroevere familiebezoek-overlijdensrisicokoppeling."
+          }
+        ],
+        "selected_variant_id": "V1",
+        "selection_rationale": "V1 is de enige passerende variant en realiseert alle vereiste middelen in een compact, goed uitvoerbaar zorggesprek dat overtuigend kantelt naar een verzekeringskeuring. De premietabel herkadert de eerdere vragen helder, met een natuurlijke en kille punchline."
+      }
+    }
+  },
+  "result_sha256": "a07a3aae5db3c84e3a31033d6b359447a18312ec5b089a1b2b0ba73ee586a90b"
+}

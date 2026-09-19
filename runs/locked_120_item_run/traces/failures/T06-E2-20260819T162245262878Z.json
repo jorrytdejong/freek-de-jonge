@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T16:22:45.262779+00:00",
+  "job": {
+    "job_id": "T06-E2",
+    "topic_id": "T06",
+    "topic": "Ouder worden en sterfelijkheid",
+    "condition_code": "E2"
+  },
+  "attempt": 1,
+  "exception_type": "AttributeError",
+  "message": "'JokeVariant' object has no attribute 'full_text'"
+}

@@ -1,0 +1,903 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T20-E1",
+  "topic_id": "T20",
+  "topic": "Macht, gezag en sociale ongelijkheid",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:40:21.009501+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Macht, gezag en sociale ongelijkheid",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.\",\n    \"participants_and_roles\": [\n      \"Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.\",\n      \"Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.\",\n      \"Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.\",\n      \"Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen.\"\n    ],\n    \"apparent_goal\": \"De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.\",\n    \"preconditions\": [\n      \"Er bestaan formele regels en criteria voor de voorziening of beslissing.\",\n      \"De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.\",\n      \"De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.\",\n      \"De instantie presenteert zich als neutraal en toegankelijk voor iedereen.\",\n      \"Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat.\"\n    ],\n    \"expected_actions\": [\n      \"De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.\",\n      \"De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.\",\n      \"De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.\",\n      \"Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.\",\n      \"Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig.\"\n    ],\n    \"expected_outcome\": \"De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.\",\n    \"expected_propositions\": [\n      \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\",\n      \"Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.\",\n      \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n      \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\"\n    ],\n    \"audience_expectation\": \"De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.\",\n    \"participants_and_roles\": [\n      \"Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.\",\n      \"Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.\",\n      \"Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.\",\n      \"Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen.\"\n    ],\n    \"apparent_goal\": \"De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.\",\n    \"preconditions\": [\n      \"Er bestaan formele regels en criteria voor de voorziening of beslissing.\",\n      \"De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.\",\n      \"De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.\",\n      \"De instantie presenteert zich als neutraal en toegankelijk voor iedereen.\",\n      \"Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat.\"\n    ],\n    \"expected_actions\": [\n      \"De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.\",\n      \"De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.\",\n      \"De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.\",\n      \"Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.\",\n      \"Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig.\"\n    ],\n    \"expected_outcome\": \"De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.\",\n    \"expected_propositions\": [\n      \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\",\n      \"Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.\",\n      \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n      \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\"\n    ],\n    \"audience_expectation\": \"De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een aspirant-lid meldt zich bij een exclusieve privéclub, waar een toelatingsmanager beoordeelt of iemand voldoende status, uitstraling en koopkracht heeft om lid te mogen worden.\",\n      \"opposition_axis\": \"Gelijke publieke toegang versus commerciële sociale selectie.\",\n      \"opposed_proposition\": \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n      \"shared_anchor\": \"Een gesprek aan een balie over toelating.\",\n      \"reading_a\": \"Een burger dient bij een publieke instantie een aanvraag voor een voorziening in.\",\n      \"reading_b\": \"Een kandidaat ondergaat een selectiegesprek voor lidmaatschap van een exclusieve club.\",\n      \"roles_b\": [\n        \"Kandidaat-lid: probeert toegelaten te worden.\",\n        \"Toelatingsmanager: beoordeelt status en geschiktheid.\",\n        \"Privéclub: bewaakt haar exclusieve imago.\",\n        \"Bestaande leden: vormen de sociale maatstaf waaraan de kandidaat wordt afgemeten.\"\n      ],\n      \"goal_b\": \"Bepalen of de kandidaat de exclusiviteit van de club kan bevestigen en financieel aantrekkelijk is.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt kandidaat-lid.\",\n        \"Ambtenaar wordt toelatingsmanager.\",\n        \"Publieke instantie wordt privéclub.\",\n        \"Bezwaarcommissie wordt de ledencommissie, die niet op gelijke rechten maar op exclusiviteit toeziet.\"\n      ],\n      \"shared_cues\": [\n        \"Een nummertje trekken in een wachtruimte.\",\n        \"Een identiteitsbewijs en inkomensgegevens tonen.\",\n        \"Vragen over woonadres, beroep en gezinssituatie.\",\n        \"Een medewerker die gegevens in een systeem invoert.\",\n        \"Een gesprek over voorwaarden en toelating.\"\n      ],\n      \"switch_trigger\": \"De medewerker legt geen aanvraagformulier maar een glanzende ledenpas en een prijslijst voor.\",\n      \"hinge_event\": \"De medewerker vraagt niet of de burger recht heeft op hulp, maar of diens auto passend is voor de parkeerplaats voor leden.\",\n      \"anomaly_under_a\": \"Bij een publieke voorziening is het automerk irrelevant en ongepast als selectiecriterium; de vraag suggereert willekeurige statusbeoordeling.\",\n      \"resolution_under_b\": \"In een privéclub is de vraag doelgericht: de club verkoopt exclusiviteit en gebruikt zichtbare welvaart als toelatingsmaatstaf.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een deelnemer meldt zich voor een verborgen-camera-audit waarin wordt getest hoe medewerkers reageren op iemand die zich onzeker, arm of laaggeplaatst presenteert.\",\n      \"opposition_axis\": \"Onpartijdige dienstverlening versus een geënsceneerde proef van moreel gedrag.\",\n      \"opposed_proposition\": \"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\",\n      \"shared_anchor\": \"Een kwetsbaar ogende bezoeker legt aan een medewerker een probleem voor.\",\n      \"reading_a\": \"Een burger zoekt daadwerkelijke hulp en verwacht dat de medewerker een besluit volgens regels neemt.\",\n      \"reading_b\": \"Een testdeelnemer speelt een hulpvrager om de bejegening van de medewerker voor een audit of reportage vast te leggen.\",\n      \"roles_b\": [\n        \"Testdeelnemer: speelt de hulpvrager en volgt een vooraf afgesproken scenario.\",\n        \"Medewerker: weet niet dat diens gedrag wordt geobserveerd.\",\n        \"Onderzoeksleider of programmamaker: organiseert de test.\",\n        \"Camera- of auditteam: registreert de reactie voor beoordeling of uitzending.\"\n      ],\n      \"goal_b\": \"Aantonen of een medewerker mensen met weinig status anders behandelt dan zelfverzekerde of welgestelde bezoekers.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt testdeelnemer.\",\n        \"Ambtenaar blijft de onwetende medewerker.\",\n        \"Instelling/overheid wordt de onderzochte organisatie.\",\n        \"Leidinggevende of bezwaarcommissie wordt onderzoeksleider of redactie die de beelden beoordeelt.\"\n      ],\n      \"shared_cues\": [\n        \"Een rommelig mapje met papieren.\",\n        \"Een verzoek om uitleg over een regeling.\",\n        \"Een medewerker die om aanvullende bewijsstukken vraagt.\",\n        \"Een wachtruimte en een volgnummer.\",\n        \"Een opmerking over moeite met formulieren of digitale toegang.\"\n      ],\n      \"switch_trigger\": \"De bezoeker noemt plotseling het afgesproken stopwoord, waarna een cameraoperator uit een aangrenzende ruimte verschijnt.\",\n      \"hinge_event\": \"De bezoeker herhaalt een onhandige, ogenschijnlijk irrelevante vraag precies drie keer.\",\n      \"anomaly_under_a\": \"Een echte aanvrager zou zonder duidelijke reden dezelfde vraag blijven herhalen, waardoor het gesprek inefficiënt en vreemd wordt.\",\n      \"resolution_under_b\": \"De herhaling is een vooraf bepaald testmoment: zij meet of de medewerker geduldig blijft of neerbuigend reageert wanneer iemand kwetsbaar lijkt.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.\",\n      \"opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke patronage.\",\n      \"opposed_proposition\": \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"shared_anchor\": \"Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.\",\n      \"reading_a\": \"Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.\",\n      \"reading_b\": \"Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.\",\n      \"roles_b\": [\n        \"Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.\",\n        \"Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.\",\n        \"Politicus: belooft informele invloed of zichtbaarheid.\",\n        \"Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht.\"\n      ],\n      \"goal_b\": \"Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt aspirant-vrijwilliger.\",\n        \"Ambtenaar wordt campagnemanager.\",\n        \"Instelling/overheid wordt campagneorganisatie.\",\n        \"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\"\n      ],\n      \"shared_cues\": [\n        \"Een intakegesprek aan een bureau.\",\n        \"Vragen naar adres, werk en beschikbare tijd.\",\n        \"Een map met formulieren en contactgegevens.\",\n        \"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\",\n        \"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\"\n      ],\n      \"switch_trigger\": \"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\",\n      \"hinge_event\": \"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\",\n      \"anomaly_under_a\": \"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\",\n      \"resolution_under_b\": \"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een deelnemer verschijnt bij een televisiequiz waarin kandidaten zich voordoen als hulpvragers; de presentator en jury bepalen wie op basis van een meeslepend verhaal doorgaat naar de finale.\",\n      \"opposition_axis\": \"Recht op een voorziening versus verdienste als emotioneel spektakel.\",\n      \"opposed_proposition\": \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\",\n      \"shared_anchor\": \"Iemand vertelt aan een balie zijn financiële problemen terwijl een beoordelaar beslist over de volgende stap.\",\n      \"reading_a\": \"Een burger licht een aanvraag toe en verwacht een begrijpelijke, gemotiveerde beslissing.\",\n      \"reading_b\": \"Een quizkandidaat brengt een persoonlijk verhaal als onderdeel van een televisieronde waarin publiekswaarde doorslaggevend is.\",\n      \"roles_b\": [\n        \"Kandidaat: vertelt een aangrijpend verhaal om door te mogen.\",\n        \"Presentator of jurylid: leidt het gesprek en beoordeelt de televisiegeschiktheid.\",\n        \"Productieteam: organiseert de opname en stuurt op drama.\",\n        \"Studiopubliek: reageert en beïnvloedt de sfeer of uitslag.\"\n      ],\n      \"goal_b\": \"Een kandidaat kiezen die voldoende emotie, herkenbaarheid en kijkersreactie oplevert voor de volgende ronde.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt quizkandidaat.\",\n        \"Ambtenaar wordt presentator of jurylid.\",\n        \"Instelling/overheid wordt televisieproductie.\",\n        \"Bezwaarcommissie wordt publiek of jury, dat geen administratief herstel maar entertainmentwaarde beoordeelt.\"\n      ],\n      \"shared_cues\": [\n        \"Een gesprek over rekeningen, werkverlies en gezin.\",\n        \"Documenten die op tafel worden gelegd.\",\n        \"Een beoordelaar die doorvraagt naar details.\",\n        \"Een korte stilte voordat een besluit volgt.\",\n        \"De zin dat er maar beperkte mogelijkheden zijn.\"\n      ],\n      \"switch_trigger\": \"Na een emotioneel antwoord gaat er applaus op, draaien studiolampen aan en zegt de beoordelaar: \\\"U gaat door naar de finale.\\\"\",\n      \"hinge_event\": \"De medewerker laat de bezoeker kiezen tussen drie gesloten enveloppen voordat hij een besluit meedeelt.\",\n      \"anomaly_under_a\": \"Een publieke instantie mag een recht of voorziening niet via een willekeurige enveloppenkeuze toekennen; de handeling ontneemt het besluit iedere begrijpelijke motivering.\",\n      \"resolution_under_b\": \"In de quiz is de enveloppenkeuze een herkenbaar spelelement dat spanning creëert en bepaalt welke ronde, prijs of opdracht volgt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.\",\n    \"participants_and_roles\": [\n      \"Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.\",\n      \"Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.\",\n      \"Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.\",\n      \"Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen.\"\n    ],\n    \"apparent_goal\": \"De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.\",\n    \"preconditions\": [\n      \"Er bestaan formele regels en criteria voor de voorziening of beslissing.\",\n      \"De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.\",\n      \"De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.\",\n      \"De instantie presenteert zich als neutraal en toegankelijk voor iedereen.\",\n      \"Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat.\"\n    ],\n    \"expected_actions\": [\n      \"De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.\",\n      \"De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.\",\n      \"De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.\",\n      \"Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.\",\n      \"Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig.\"\n    ],\n    \"expected_outcome\": \"De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.\",\n    \"expected_propositions\": [\n      \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\",\n      \"Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.\",\n      \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n      \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\"\n    ],\n    \"audience_expectation\": \"De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een aspirant-lid meldt zich bij een exclusieve privéclub, waar een toelatingsmanager beoordeelt of iemand voldoende status, uitstraling en koopkracht heeft om lid te mogen worden.\",\n      \"opposition_axis\": \"Gelijke publieke toegang versus commerciële sociale selectie.\",\n      \"opposed_proposition\": \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n      \"shared_anchor\": \"Een gesprek aan een balie over toelating.\",\n      \"reading_a\": \"Een burger dient bij een publieke instantie een aanvraag voor een voorziening in.\",\n      \"reading_b\": \"Een kandidaat ondergaat een selectiegesprek voor lidmaatschap van een exclusieve club.\",\n      \"roles_b\": [\n        \"Kandidaat-lid: probeert toegelaten te worden.\",\n        \"Toelatingsmanager: beoordeelt status en geschiktheid.\",\n        \"Privéclub: bewaakt haar exclusieve imago.\",\n        \"Bestaande leden: vormen de sociale maatstaf waaraan de kandidaat wordt afgemeten.\"\n      ],\n      \"goal_b\": \"Bepalen of de kandidaat de exclusiviteit van de club kan bevestigen en financieel aantrekkelijk is.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt kandidaat-lid.\",\n        \"Ambtenaar wordt toelatingsmanager.\",\n        \"Publieke instantie wordt privéclub.\",\n        \"Bezwaarcommissie wordt de ledencommissie, die niet op gelijke rechten maar op exclusiviteit toeziet.\"\n      ],\n      \"shared_cues\": [\n        \"Een nummertje trekken in een wachtruimte.\",\n        \"Een identiteitsbewijs en inkomensgegevens tonen.\",\n        \"Vragen over woonadres, beroep en gezinssituatie.\",\n        \"Een medewerker die gegevens in een systeem invoert.\",\n        \"Een gesprek over voorwaarden en toelating.\"\n      ],\n      \"switch_trigger\": \"De medewerker legt geen aanvraagformulier maar een glanzende ledenpas en een prijslijst voor.\",\n      \"hinge_event\": \"De medewerker vraagt niet of de burger recht heeft op hulp, maar of diens auto passend is voor de parkeerplaats voor leden.\",\n      \"anomaly_under_a\": \"Bij een publieke voorziening is het automerk irrelevant en ongepast als selectiecriterium; de vraag suggereert willekeurige statusbeoordeling.\",\n      \"resolution_under_b\": \"In een privéclub is de vraag doelgericht: de club verkoopt exclusiviteit en gebruikt zichtbare welvaart als toelatingsmaatstaf.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.\",\n      \"opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke patronage.\",\n      \"opposed_proposition\": \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"shared_anchor\": \"Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.\",\n      \"reading_a\": \"Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.\",\n      \"reading_b\": \"Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.\",\n      \"roles_b\": [\n        \"Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.\",\n        \"Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.\",\n        \"Politicus: belooft informele invloed of zichtbaarheid.\",\n        \"Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht.\"\n      ],\n      \"goal_b\": \"Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt aspirant-vrijwilliger.\",\n        \"Ambtenaar wordt campagnemanager.\",\n        \"Instelling/overheid wordt campagneorganisatie.\",\n        \"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\"\n      ],\n      \"shared_cues\": [\n        \"Een intakegesprek aan een bureau.\",\n        \"Vragen naar adres, werk en beschikbare tijd.\",\n        \"Een map met formulieren en contactgegevens.\",\n        \"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\",\n        \"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\"\n      ],\n      \"switch_trigger\": \"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\",\n      \"hinge_event\": \"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\",\n      \"anomaly_under_a\": \"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\",\n      \"resolution_under_b\": \"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een deelnemer verschijnt bij een televisiequiz waarin kandidaten zich voordoen als hulpvragers; de presentator en jury bepalen wie op basis van een meeslepend verhaal doorgaat naar de finale.\",\n      \"opposition_axis\": \"Recht op een voorziening versus verdienste als emotioneel spektakel.\",\n      \"opposed_proposition\": \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\",\n      \"shared_anchor\": \"Iemand vertelt aan een balie zijn financiële problemen terwijl een beoordelaar beslist over de volgende stap.\",\n      \"reading_a\": \"Een burger licht een aanvraag toe en verwacht een begrijpelijke, gemotiveerde beslissing.\",\n      \"reading_b\": \"Een quizkandidaat brengt een persoonlijk verhaal als onderdeel van een televisieronde waarin publiekswaarde doorslaggevend is.\",\n      \"roles_b\": [\n        \"Kandidaat: vertelt een aangrijpend verhaal om door te mogen.\",\n        \"Presentator of jurylid: leidt het gesprek en beoordeelt de televisiegeschiktheid.\",\n        \"Productieteam: organiseert de opname en stuurt op drama.\",\n        \"Studiopubliek: reageert en beïnvloedt de sfeer of uitslag.\"\n      ],\n      \"goal_b\": \"Een kandidaat kiezen die voldoende emotie, herkenbaarheid en kijkersreactie oplevert voor de volgende ronde.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt quizkandidaat.\",\n        \"Ambtenaar wordt presentator of jurylid.\",\n        \"Instelling/overheid wordt televisieproductie.\",\n        \"Bezwaarcommissie wordt publiek of jury, dat geen administratief herstel maar entertainmentwaarde beoordeelt.\"\n      ],\n      \"shared_cues\": [\n        \"Een gesprek over rekeningen, werkverlies en gezin.\",\n        \"Documenten die op tafel worden gelegd.\",\n        \"Een beoordelaar die doorvraagt naar details.\",\n        \"Een korte stilte voordat een besluit volgt.\",\n        \"De zin dat er maar beperkte mogelijkheden zijn.\"\n      ],\n      \"switch_trigger\": \"Na een emotioneel antwoord gaat er applaus op, draaien studiolampen aan en zegt de beoordelaar: \\\"U gaat door naar de finale.\\\"\",\n      \"hinge_event\": \"De medewerker laat de bezoeker kiezen tussen drie gesloten enveloppen voordat hij een besluit meedeelt.\",\n      \"anomaly_under_a\": \"Een publieke instantie mag een recht of voorziening niet via een willekeurige enveloppenkeuze toekennen; de handeling ontneemt het besluit iedere begrijpelijke motivering.\",\n      \"resolution_under_b\": \"In de quiz is de enveloppenkeuze een herkenbaar spelelement dat spanning creëert en bepaalt welke ronde, prijs of opdracht volgt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.\",\n    \"participants_and_roles\": [\n      \"Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.\",\n      \"Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.\",\n      \"Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.\",\n      \"Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen.\"\n    ],\n    \"apparent_goal\": \"De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.\",\n    \"preconditions\": [\n      \"Er bestaan formele regels en criteria voor de voorziening of beslissing.\",\n      \"De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.\",\n      \"De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.\",\n      \"De instantie presenteert zich als neutraal en toegankelijk voor iedereen.\",\n      \"Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat.\"\n    ],\n    \"expected_actions\": [\n      \"De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.\",\n      \"De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.\",\n      \"De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.\",\n      \"Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.\",\n      \"Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig.\"\n    ],\n    \"expected_outcome\": \"De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.\",\n    \"expected_propositions\": [\n      \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\",\n      \"Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.\",\n      \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n      \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\"\n    ],\n    \"audience_expectation\": \"De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B3\",\n    \"script_b\": \"Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.\",\n    \"opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke patronage.\",\n    \"opposed_proposition\": \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n    \"shared_anchor\": \"Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.\",\n    \"reading_a\": \"Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.\",\n    \"reading_b\": \"Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.\",\n    \"roles_b\": [\n      \"Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.\",\n      \"Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.\",\n      \"Politicus: belooft informele invloed of zichtbaarheid.\",\n      \"Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht.\"\n    ],\n    \"goal_b\": \"Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.\",\n    \"role_remapping\": [\n      \"Burger/aanvrager wordt aspirant-vrijwilliger.\",\n      \"Ambtenaar wordt campagnemanager.\",\n      \"Instelling/overheid wordt campagneorganisatie.\",\n      \"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\"\n    ],\n    \"shared_cues\": [\n      \"Een intakegesprek aan een bureau.\",\n      \"Vragen naar adres, werk en beschikbare tijd.\",\n      \"Een map met formulieren en contactgegevens.\",\n      \"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\",\n      \"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\"\n    ],\n    \"switch_trigger\": \"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\",\n    \"hinge_event\": \"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\",\n    \"anomaly_under_a\": \"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\",\n    \"resolution_under_b\": \"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.\",\n    \"participants_and_roles\": [\n      \"Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.\",\n      \"Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.\",\n      \"Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.\",\n      \"Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen.\"\n    ],\n    \"apparent_goal\": \"De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.\",\n    \"preconditions\": [\n      \"Er bestaan formele regels en criteria voor de voorziening of beslissing.\",\n      \"De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.\",\n      \"De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.\",\n      \"De instantie presenteert zich als neutraal en toegankelijk voor iedereen.\",\n      \"Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat.\"\n    ],\n    \"expected_actions\": [\n      \"De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.\",\n      \"De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.\",\n      \"De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.\",\n      \"Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.\",\n      \"Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig.\"\n    ],\n    \"expected_outcome\": \"De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.\",\n    \"expected_propositions\": [\n      \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\",\n      \"Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.\",\n      \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n      \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\"\n    ],\n    \"audience_expectation\": \"De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B3\",\n    \"script_b\": \"Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.\",\n    \"opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke patronage.\",\n    \"opposed_proposition\": \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n    \"shared_anchor\": \"Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.\",\n    \"reading_a\": \"Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.\",\n    \"reading_b\": \"Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.\",\n    \"roles_b\": [\n      \"Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.\",\n      \"Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.\",\n      \"Politicus: belooft informele invloed of zichtbaarheid.\",\n      \"Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht.\"\n    ],\n    \"goal_b\": \"Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.\",\n    \"role_remapping\": [\n      \"Burger/aanvrager wordt aspirant-vrijwilliger.\",\n      \"Ambtenaar wordt campagnemanager.\",\n      \"Instelling/overheid wordt campagneorganisatie.\",\n      \"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\"\n    ],\n    \"shared_cues\": [\n      \"Een intakegesprek aan een bureau.\",\n      \"Vragen naar adres, werk en beschikbare tijd.\",\n      \"Een map met formulieren en contactgegevens.\",\n      \"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\",\n      \"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\"\n    ],\n    \"switch_trigger\": \"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\",\n    \"hinge_event\": \"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\",\n    \"anomaly_under_a\": \"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\",\n    \"resolution_under_b\": \"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Regelgebonden neutraliteit versus persoonlijke patronage.\",\n    \"logical_mechanism\": \"Scriptomschakeling door herinterpretatie: aanvankelijk worden intakegegevens gelezen als neutrale, regelgebonden beoordeling voor een publieke voorziening; het aantal stemgerechtigde huisgenoten onthult dat de gegevens dienen om politieke loyaliteit, electorale waarde en wederdiensten te beoordelen.\",\n    \"situation\": \"Een bezoeker zit tegenover een medewerker aan een bureau tijdens een intakegesprek. Er zijn formulieren, contactgegevens en een map aanwezig; er worden vragen gesteld over adres, werk, inkomen en beschikbare tijd. De setting lijkt eerst een publieke instantie waar toegang tot hulp of een voorziening wordt beoordeeld, maar blijkt een campagnekantoor van een lokale politicus te zijn.\",\n    \"target\": \"Persoonlijke patronage en cliëntelisme binnen politieke machtsuitoefening.\",\n    \"narrative_strategy\": \"De opzet volgt een herkenbare bureaucratische intake en laat de burger als aanvrager verwachten dat vaste regels neutraal worden toegepast. De punch introduceert een politiek campagneobject en laat de registratie van stemgerechtigde huisgenoten de eerdere intake retrospectief veranderen in een selectie op electorale bruikbaarheid.\",\n    \"lexical_anchor\": \"stemgerechtigde huisgenoten\",\n    \"supporting_dual_cues\": [\n      \"Een intakegesprek aan een bureau.\",\n      \"Vragen naar adres, werk en beschikbare tijd.\",\n      \"Een map met formulieren en contactgegevens.\",\n      \"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\",\n      \"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\"\n    ],\n    \"switch_trigger\": \"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\",\n    \"hinge_event\": \"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\",\n    \"anomaly_under_a\": \"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\",\n    \"resolution_under_b\": \"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\",\n    \"role_remapping\": [\n      \"Burger/aanvrager wordt aspirant-vrijwilliger.\",\n      \"Ambtenaar wordt campagnemanager.\",\n      \"Instelling/overheid wordt campagneorganisatie.\",\n      \"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\"\n    ],\n    \"setup_goal\": \"Script A dominant maken door de bezoeker, het bureau, de formulieren en de vragen naar persoonlijke gegevens te presenteren als een normale aanvraagprocedure bij een neutrale publieke instantie.\",\n    \"punch_goal\": \"Script B activeren doordat de folders van de politicus en het aantal stemgerechtigde huisgenoten duidelijk maken dat toegang niet op regels, maar op politieke inzet, netwerk en wederdiensten wordt beoordeeld.\",\n    \"punch_final_word\": \"stemgerechtigde huisgenoten\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.\",\n      \"participants_and_roles\": [\n        \"Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.\",\n        \"Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.\",\n        \"Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.\",\n        \"Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen.\"\n      ],\n      \"apparent_goal\": \"De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.\",\n      \"preconditions\": [\n        \"Er bestaan formele regels en criteria voor de voorziening of beslissing.\",\n        \"De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.\",\n        \"De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.\",\n        \"De instantie presenteert zich als neutraal en toegankelijk voor iedereen.\",\n        \"Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat.\"\n      ],\n      \"expected_actions\": [\n        \"De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.\",\n        \"De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.\",\n        \"De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.\",\n        \"Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.\",\n        \"Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig.\"\n      ],\n      \"expected_outcome\": \"De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.\",\n      \"expected_propositions\": [\n        \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n        \"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\",\n        \"Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.\",\n        \"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\",\n        \"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\"\n      ],\n      \"audience_expectation\": \"De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.\",\n      \"opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke patronage.\",\n      \"opposed_proposition\": \"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\",\n      \"shared_anchor\": \"Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.\",\n      \"reading_a\": \"Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.\",\n      \"reading_b\": \"Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.\",\n      \"roles_b\": [\n        \"Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.\",\n        \"Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.\",\n        \"Politicus: belooft informele invloed of zichtbaarheid.\",\n        \"Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht.\"\n      ],\n      \"goal_b\": \"Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt aspirant-vrijwilliger.\",\n        \"Ambtenaar wordt campagnemanager.\",\n        \"Instelling/overheid wordt campagneorganisatie.\",\n        \"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\"\n      ],\n      \"shared_cues\": [\n        \"Een intakegesprek aan een bureau.\",\n        \"Vragen naar adres, werk en beschikbare tijd.\",\n        \"Een map met formulieren en contactgegevens.\",\n        \"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\",\n        \"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\"\n      ],\n      \"switch_trigger\": \"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\",\n      \"hinge_event\": \"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\",\n      \"anomaly_under_a\": \"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\",\n      \"resolution_under_b\": \"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Regelgebonden neutraliteit versus persoonlijke patronage.\",\n      \"logical_mechanism\": \"Scriptomschakeling door herinterpretatie: aanvankelijk worden intakegegevens gelezen als neutrale, regelgebonden beoordeling voor een publieke voorziening; het aantal stemgerechtigde huisgenoten onthult dat de gegevens dienen om politieke loyaliteit, electorale waarde en wederdiensten te beoordelen.\",\n      \"situation\": \"Een bezoeker zit tegenover een medewerker aan een bureau tijdens een intakegesprek. Er zijn formulieren, contactgegevens en een map aanwezig; er worden vragen gesteld over adres, werk, inkomen en beschikbare tijd. De setting lijkt eerst een publieke instantie waar toegang tot hulp of een voorziening wordt beoordeeld, maar blijkt een campagnekantoor van een lokale politicus te zijn.\",\n      \"target\": \"Persoonlijke patronage en cliëntelisme binnen politieke machtsuitoefening.\",\n      \"narrative_strategy\": \"De opzet volgt een herkenbare bureaucratische intake en laat de burger als aanvrager verwachten dat vaste regels neutraal worden toegepast. De punch introduceert een politiek campagneobject en laat de registratie van stemgerechtigde huisgenoten de eerdere intake retrospectief veranderen in een selectie op electorale bruikbaarheid.\",\n      \"lexical_anchor\": \"stemgerechtigde huisgenoten\",\n      \"supporting_dual_cues\": [\n        \"Een intakegesprek aan een bureau.\",\n        \"Vragen naar adres, werk en beschikbare tijd.\",\n        \"Een map met formulieren en contactgegevens.\",\n        \"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\",\n        \"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\"\n      ],\n      \"switch_trigger\": \"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\",\n      \"hinge_event\": \"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\",\n      \"anomaly_under_a\": \"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\",\n      \"resolution_under_b\": \"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\",\n      \"role_remapping\": [\n        \"Burger/aanvrager wordt aspirant-vrijwilliger.\",\n        \"Ambtenaar wordt campagnemanager.\",\n        \"Instelling/overheid wordt campagneorganisatie.\",\n        \"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\"\n      ],\n      \"setup_goal\": \"Script A dominant maken door de bezoeker, het bureau, de formulieren en de vragen naar persoonlijke gegevens te presenteren als een normale aanvraagprocedure bij een neutrale publieke instantie.\",\n      \"punch_goal\": \"Script B activeren doordat de folders van de politicus en het aantal stemgerechtigde huisgenoten duidelijk maken dat toegang niet op regels, maar op politieke inzet, netwerk en wederdiensten wordt beoordeeld.\",\n      \"punch_final_word\": \"stemgerechtigde huisgenoten\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden. Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.\",\n      \"angle\": \"Bureaucratische intake blijkt electorale selectie.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen. Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.\",\n      \"angle\": \"Persoonlijke gegevens krijgen plots campagnewaarde.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens. Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.\",\n      \"angle\": \"Hulpaanvraag kantelt naar politieke ruilhandel.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Macht, gezag en sociale ongelijkheid\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden. Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.\",\n      \"angle\": \"Bureaucratische intake blijkt electorale selectie.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen. Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.\",\n      \"angle\": \"Persoonlijke gegevens krijgen plots campagnewaarde.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens. Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.\",\n      \"angle\": \"Hulpaanvraag kantelt naar politieke ruilhandel.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een bezoeker meldt persoonlijke gegevens bij een balie voor een ogenschijnlijk normale, schaarse publieke hulp- of voorzieningsaanvraag.\",\n      \"realized_script_b\": \"Dezelfde bezoeker wordt in feite beoordeeld als politiek bruikbare potentiële ondersteuner op basis van zijn electorale kring.\",\n      \"realized_opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke politieke patronage.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De balie-intake, persoonsgegevens en schaarste activeren een neutrale aanvraagprocedure; campagnefolders en stemgerechtigde huisgenoten hercoderen die gegevens als electorale waarde. De expliciete vraag hoeveel buren iemand meeneemt ontbreekt, maar de functionele omschakeling blijft intact.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De registratie van stemgerechtigde huisgenoten maakt retrospectief begrijpelijk dat de intake politieke bruikbaarheid meet in plaats van rechtmatige toegang.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Balie, persoonlijke gegevens, een medewerker en beperkte directe hulp realiseren de kern van de aanvankelijke intake; de campagnefolders verplaatsen die setting naar een politieke context.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst richt de spot op cliëntelistische politieke selectie, waarbij persoonlijke gegevens als toegangsmiddel tot politieke gunst worden gebruikt.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst begint in een plausibele bureaucratische lezing en plaatst de politieke onthulling pas in de laatste zin, waardoor eerdere details worden herlezen.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De vereiste lexicale ankerformule 'stemgerechtigde huisgenoten' staat aan het einde en werkt als duidelijke politieke hinge.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een werkende, compacte satire die het geplande contrast tussen neutrale intake en electorale selectie realiseert; alleen de campagnewervingsvraag is ingekort.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een aanvrager doorloopt een ogenschijnlijk reguliere intake waarin adres, beschikbare tijd en inkomen administratief worden vastgelegd.\",\n      \"realized_script_b\": \"De intake blijkt een selectie van een campagnehelper, waarbij buren en stemgerechtigde huisgenoten politieke mobilisatiewaarde vertegenwoordigen.\",\n      \"realized_opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke politieke patronage.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De formulieren en persoonlijke intakegegevens ondersteunen script A, terwijl wethoudersfolders, de vraag naar mee te nemen buren en de notitie over stemgerechtigde huisgenoten script B expliciet activeren.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De politieke folders en de burenvraag verklaren achteraf waarom ogenschijnlijk administratieve gegevens worden verzameld: zij meten campagne- en netwerkwaarde.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant bevat een intake, formulieren en de geplande gegevenscategorieën; de overgang naar de campagne van een wethouder is duidelijk gesitueerd.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De pointe maakt politieke toegang en waardering afhankelijk van mobiliseerbare persoonlijke netwerken, dus van patronage in plaats van gelijke maatstaven.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De bureaucratische inventarisatie staat voorop; daarna volgen folders en de burenvraag, met het lexicale anker als slotpointe.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De formulering bevat het beoogde anker 'stemgerechtigde huisgenoten' als laatste, opvallende registratiecategorie.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit is de meest volledige realisatie van het plan: de intakegegevens, campagnefolders, burenvraag en slotnotitie bouwen precies de beoogde herinterpretatie op.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een bezoeker ondergaat aan een bureau een ogenschijnlijk administratieve beoordeling op basis van adres, werk en contactgegevens.\",\n      \"realized_script_b\": \"De beoordeling blijkt een politieke selectie waarin het aantal stemgerechtigde huisgenoten de electorale bruikbaarheid van de bezoeker aangeeft.\",\n      \"realized_opposition_axis\": \"Regelgebonden neutraliteit versus persoonlijke politieke patronage.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Bureau, controle van gegevens en een aangekondigde beslissing ondersteunen de formele lezing; folders van een politicus en het tellen van stemgerechtigde huisgenoten schakelen overtuigend naar electorale selectie. De concrete burenvraag ontbreekt, maar de kernswitch is functioneel aanwezig.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het tellen van stemgerechtigde huisgenoten maakt de eerdere gegevenscontrole retrospectief tot een meting van politieke waarde.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant realiseert een bureausetting met medewerker, gegevenscontrole, map/contactgegevens en een politieke campagnecue, hoewel inkomen en beschikbare tijd niet worden genoemd.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst viseert cliëntelisme: de gezagsdrager waardeert iemand niet neutraal, maar naar diens potentiële electorale opbrengst.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Eerst wordt een administratieve beoordeling geschetst; de folders introduceren de politieke lezing en de slotactie levert de pointe.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"'Stemgerechtigde huisgenoten' is behouden als opvallende, finale lexicale hinge; 'telt' versterkt de instrumentele electorale lezing.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant volgt de beoogde bureaucratie-naar-campagneomslag en behoudt het anker en doelwit, al is de aanvankelijke publieke-hulpcontext minder expliciet dan in V1 en V2.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen. Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.",
+      "opposing_script": "Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.",
+      "opposition_type": "Regelgebonden neutraliteit versus persoonlijke patronage.",
+      "trigger": "De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.",
+      "setup_goal": "Script A dominant maken door de bezoeker, het bureau, de formulieren en de vragen naar persoonlijke gegevens te presenteren als een normale aanvraagprocedure bij een neutrale publieke instantie.",
+      "punch_goal": "Script B activeren doordat de folders van de politicus en het aantal stemgerechtigde huisgenoten duidelijk maken dat toegang niet op regels, maar op politieke inzet, netwerk en wederdiensten wordt beoordeeld.",
+      "shared_cues": [
+        "Een intakegesprek aan een bureau.",
+        "Vragen naar adres, werk en beschikbare tijd.",
+        "Een map met formulieren en contactgegevens.",
+        "Een medewerker die zegt dat niet iedereen direct geholpen kan worden.",
+        "Verwijzingen naar regels, termijnen en beschikbare plaatsen."
+      ],
+      "hinge_event": "De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.",
+      "anomaly_under_a": "Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.",
+      "resolution_under_b": "In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.",
+      "role_remapping": [
+        "Burger/aanvrager wordt aspirant-vrijwilliger.",
+        "Ambtenaar wordt campagnemanager.",
+        "Instelling/overheid wordt campagneorganisatie.",
+        "Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.\\\",\\\"participants_and_roles\\\":[\\\"Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.\\\",\\\"Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.\\\",\\\"Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.\\\",\\\"Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen.\\\"],\\\"apparent_goal\\\":\\\"De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.\\\",\\\"preconditions\\\":[\\\"Er bestaan formele regels en criteria voor de voorziening of beslissing.\\\",\\\"De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.\\\",\\\"De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.\\\",\\\"De instantie presenteert zich als neutraal en toegankelijk voor iedereen.\\\",\\\"Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat.\\\"],\\\"expected_actions\\\":[\\\"De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.\\\",\\\"De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.\\\",\\\"De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.\\\",\\\"Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.\\\",\\\"Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig.\\\"],\\\"expected_outcome\\\":\\\"De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.\\\",\\\"expected_propositions\\\":[\\\"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\\\",\\\"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\\\",\\\"Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.\\\",\\\"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\\\",\\\"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\\\"],\\\"audience_expectation\\\":\\\"De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een aspirant-lid meldt zich bij een exclusieve privéclub, waar een toelatingsmanager beoordeelt of iemand voldoende status, uitstraling en koopkracht heeft om lid te mogen worden.\\\",\\\"opposition_axis\\\":\\\"Gelijke publieke toegang versus commerciële sociale selectie.\\\",\\\"opposed_proposition\\\":\\\"Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.\\\",\\\"shared_anchor\\\":\\\"Een gesprek aan een balie over toelating.\\\",\\\"reading_a\\\":\\\"Een burger dient bij een publieke instantie een aanvraag voor een voorziening in.\\\",\\\"reading_b\\\":\\\"Een kandidaat ondergaat een selectiegesprek voor lidmaatschap van een exclusieve club.\\\",\\\"roles_b\\\":[\\\"Kandidaat-lid: probeert toegelaten te worden.\\\",\\\"Toelatingsmanager: beoordeelt status en geschiktheid.\\\",\\\"Privéclub: bewaakt haar exclusieve imago.\\\",\\\"Bestaande leden: vormen de sociale maatstaf waaraan de kandidaat wordt afgemeten.\\\"],\\\"goal_b\\\":\\\"Bepalen of de kandidaat de exclusiviteit van de club kan bevestigen en financieel aantrekkelijk is.\\\",\\\"role_remapping\\\":[\\\"Burger/aanvrager wordt kandidaat-lid.\\\",\\\"Ambtenaar wordt toelatingsmanager.\\\",\\\"Publieke instantie wordt privéclub.\\\",\\\"Bezwaarcommissie wordt de ledencommissie, die niet op gelijke rechten maar op exclusiviteit toeziet.\\\"],\\\"shared_cues\\\":[\\\"Een nummertje trekken in een wachtruimte.\\\",\\\"Een identiteitsbewijs en inkomensgegevens tonen.\\\",\\\"Vragen over woonadres, beroep en gezinssituatie.\\\",\\\"Een medewerker die gegevens in een systeem invoert.\\\",\\\"Een gesprek over voorwaarden en toelating.\\\"],\\\"switch_trigger\\\":\\\"De medewerker legt geen aanvraagformulier maar een glanzende ledenpas en een prijslijst voor.\\\",\\\"hinge_event\\\":\\\"De medewerker vraagt niet of de burger recht heeft op hulp, maar of diens auto passend is voor de parkeerplaats voor leden.\\\",\\\"anomaly_under_a\\\":\\\"Bij een publieke voorziening is het automerk irrelevant en ongepast als selectiecriterium; de vraag suggereert willekeurige statusbeoordeling.\\\",\\\"resolution_under_b\\\":\\\"In een privéclub is de vraag doelgericht: de club verkoopt exclusiviteit en gebruikt zichtbare welvaart als toelatingsmaatstaf.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een deelnemer meldt zich voor een verborgen-camera-audit waarin wordt getest hoe medewerkers reageren op iemand die zich onzeker, arm of laaggeplaatst presenteert.\\\",\\\"opposition_axis\\\":\\\"Onpartijdige dienstverlening versus een geënsceneerde proef van moreel gedrag.\\\",\\\"opposed_proposition\\\":\\\"Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.\\\",\\\"shared_anchor\\\":\\\"Een kwetsbaar ogende bezoeker legt aan een medewerker een probleem voor.\\\",\\\"reading_a\\\":\\\"Een burger zoekt daadwerkelijke hulp en verwacht dat de medewerker een besluit volgens regels neemt.\\\",\\\"reading_b\\\":\\\"Een testdeelnemer speelt een hulpvrager om de bejegening van de medewerker voor een audit of reportage vast te leggen.\\\",\\\"roles_b\\\":[\\\"Testdeelnemer: speelt de hulpvrager en volgt een vooraf afgesproken scenario.\\\",\\\"Medewerker: weet niet dat diens gedrag wordt geobserveerd.\\\",\\\"Onderzoeksleider of programmamaker: organiseert de test.\\\",\\\"Camera- of auditteam: registreert de reactie voor beoordeling of uitzending.\\\"],\\\"goal_b\\\":\\\"Aantonen of een medewerker mensen met weinig status anders behandelt dan zelfverzekerde of welgestelde bezoekers.\\\",\\\"role_remapping\\\":[\\\"Burger/aanvrager wordt testdeelnemer.\\\",\\\"Ambtenaar blijft de onwetende medewerker.\\\",\\\"Instelling/overheid wordt de onderzochte organisatie.\\\",\\\"Leidinggevende of bezwaarcommissie wordt onderzoeksleider of redactie die de beelden beoordeelt.\\\"],\\\"shared_cues\\\":[\\\"Een rommelig mapje met papieren.\\\",\\\"Een verzoek om uitleg over een regeling.\\\",\\\"Een medewerker die om aanvullende bewijsstukken vraagt.\\\",\\\"Een wachtruimte en een volgnummer.\\\",\\\"Een opmerking over moeite met formulieren of digitale toegang.\\\"],\\\"switch_trigger\\\":\\\"De bezoeker noemt plotseling het afgesproken stopwoord, waarna een cameraoperator uit een aangrenzende ruimte verschijnt.\\\",\\\"hinge_event\\\":\\\"De bezoeker herhaalt een onhandige, ogenschijnlijk irrelevante vraag precies drie keer.\\\",\\\"anomaly_under_a\\\":\\\"Een echte aanvrager zou zonder duidelijke reden dezelfde vraag blijven herhalen, waardoor het gesprek inefficiënt en vreemd wordt.\\\",\\\"resolution_under_b\\\":\\\"De herhaling is een vooraf bepaald testmoment: zij meet of de medewerker geduldig blijft of neerbuigend reageert wanneer iemand kwetsbaar lijkt.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.\\\",\\\"opposition_axis\\\":\\\"Regelgebonden neutraliteit versus persoonlijke patronage.\\\",\\\"opposed_proposition\\\":\\\"Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.\\\",\\\"shared_anchor\\\":\\\"Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.\\\",\\\"reading_a\\\":\\\"Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.\\\",\\\"reading_b\\\":\\\"Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.\\\",\\\"roles_b\\\":[\\\"Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.\\\",\\\"Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.\\\",\\\"Politicus: belooft informele invloed of zichtbaarheid.\\\",\\\"Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht.\\\"],\\\"goal_b\\\":\\\"Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.\\\",\\\"role_remapping\\\":[\\\"Burger/aanvrager wordt aspirant-vrijwilliger.\\\",\\\"Ambtenaar wordt campagnemanager.\\\",\\\"Instelling/overheid wordt campagneorganisatie.\\\",\\\"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\\\"],\\\"shared_cues\\\":[\\\"Een intakegesprek aan een bureau.\\\",\\\"Vragen naar adres, werk en beschikbare tijd.\\\",\\\"Een map met formulieren en contactgegevens.\\\",\\\"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\\\",\\\"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\\\"],\\\"switch_trigger\\\":\\\"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\\\",\\\"hinge_event\\\":\\\"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\\\",\\\"anomaly_under_a\\\":\\\"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\\\",\\\"resolution_under_b\\\":\\\"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een deelnemer verschijnt bij een televisiequiz waarin kandidaten zich voordoen als hulpvragers; de presentator en jury bepalen wie op basis van een meeslepend verhaal doorgaat naar de finale.\\\",\\\"opposition_axis\\\":\\\"Recht op een voorziening versus verdienste als emotioneel spektakel.\\\",\\\"opposed_proposition\\\":\\\"Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.\\\",\\\"shared_anchor\\\":\\\"Iemand vertelt aan een balie zijn financiële problemen terwijl een beoordelaar beslist over de volgende stap.\\\",\\\"reading_a\\\":\\\"Een burger licht een aanvraag toe en verwacht een begrijpelijke, gemotiveerde beslissing.\\\",\\\"reading_b\\\":\\\"Een quizkandidaat brengt een persoonlijk verhaal als onderdeel van een televisieronde waarin publiekswaarde doorslaggevend is.\\\",\\\"roles_b\\\":[\\\"Kandidaat: vertelt een aangrijpend verhaal om door te mogen.\\\",\\\"Presentator of jurylid: leidt het gesprek en beoordeelt de televisiegeschiktheid.\\\",\\\"Productieteam: organiseert de opname en stuurt op drama.\\\",\\\"Studiopubliek: reageert en beïnvloedt de sfeer of uitslag.\\\"],\\\"goal_b\\\":\\\"Een kandidaat kiezen die voldoende emotie, herkenbaarheid en kijkersreactie oplevert voor de volgende ronde.\\\",\\\"role_remapping\\\":[\\\"Burger/aanvrager wordt quizkandidaat.\\\",\\\"Ambtenaar wordt presentator of jurylid.\\\",\\\"Instelling/overheid wordt televisieproductie.\\\",\\\"Bezwaarcommissie wordt publiek of jury, dat geen administratief herstel maar entertainmentwaarde beoordeelt.\\\"],\\\"shared_cues\\\":[\\\"Een gesprek over rekeningen, werkverlies en gezin.\\\",\\\"Documenten die op tafel worden gelegd.\\\",\\\"Een beoordelaar die doorvraagt naar details.\\\",\\\"Een korte stilte voordat een besluit volgt.\\\",\\\"De zin dat er maar beperkte mogelijkheden zijn.\\\"],\\\"switch_trigger\\\":\\\"Na een emotioneel antwoord gaat er applaus op, draaien studiolampen aan en zegt de beoordelaar: \\\\\\\"U gaat door naar de finale.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De medewerker laat de bezoeker kiezen tussen drie gesloten enveloppen voordat hij een besluit meedeelt.\\\",\\\"anomaly_under_a\\\":\\\"Een publieke instantie mag een recht of voorziening niet via een willekeurige enveloppenkeuze toekennen; de handeling ontneemt het besluit iedere begrijpelijke motivering.\\\",\\\"resolution_under_b\\\":\\\"In de quiz is de enveloppenkeuze een herkenbaar spelelement dat spanning creëert en bepaalt welke ronde, prijs of opdracht volgt.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde baliescène met identificatie, inkomensgegevens, voorwaarden en toelating kan eerst als publieke aanvraag en daarna als clubselectie worden gelezen. Gelijke, regelgebonden publieke toegang botst lokaal met status- en koopkrachtselectie; dit is de dominante as. De ledenpas, prijslijst en vooral de autovraag maken de clublezing herkenbaar en verklaren waarom een irrelevant statuscriterium ineens doelgericht is. Daardoor krijgen eerdere gegevensvragen retrospectief de functie van exclusiviteitstoets. Statusselectie ondermijnt tegelijk het publieke doel van gelijke behandeling en dient het clubdoel van selectie.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén scène kan zowel een echte hulpvraag als een verborgen audit bevatten: de testdeelnemer kan zich uiterlijk precies als aanvrager gedragen. De audit is sociaal herkenbaar en de herhaalde vraag wordt daarin een expliciet testmoment voor geduld en respect. De eerdere hulpvraag en papieren worden daardoor retrospectief onderdeel van een geënsceneerd scenario. Er is echter geen echte lokale scripttegenstelling op de genoemde as: onpartijdige dienstverlening is juist het gedrag dat de audit wil meten en kan dus binnen Script B eveneens plaatsvinden. De doelbewuste herhaling belemmert een normale, efficiënte hulpafhandeling maar maakt de auditmeting mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Intake, persoonsgegevens, formulieren, beperkte plaatsen en een beslisser over toegang kunnen aanvankelijk een publieke aanvraag vormen, maar ook een campagne-intake. Regelgebonden neutraliteit en patronage zijn lokaal onverenigbaar en vormen duidelijk de dominante tegenstelling. De vraag naar mee te brengen buren en het noteren van stemgerechtigde huisgenoten maken de campagnelezing herkenbaar. Dat gegeven is onder Script A ongeoorloofd en onverklaard, maar onder Script B een maatstaf voor electorale waarde. Eerdere persoonsgegevens verschuiven daardoor van aanvraaggegevens naar politieke mobilisatiegegevens. Kiezerswaarde als criterium verdringt onpartijdige beoordeling en faciliteert selectie op loyaliteit en nut.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een gesprek over financiële problemen, documenten, doorvragen en beperkte mogelijkheden kan zowel een aanvraaggesprek als een televisieronde dragen. Een rechtmatige, begrijpelijk gemotiveerde voorzieningsbeslissing botst lokaal met selectie op emotionele entertainmentwaarde; die tegenstelling is dominant. De applausreactie, studiolampen en finaleformule maken Script B herkenbaar, terwijl Script A vooraf door de balie- en hulpvraagcues de natuurlijke eerste lezing blijft. De enveloppenkeuze is onder Script A willekeurig en onverenigbaar met motivering, maar is onder Script B een normaal quizmechanisme. Eerder verteld leed verandert zo van relevante aanvraagcontext in dramatisch wedstrijdmateriaal. De willekeurige keuze blokkeert een verklaarbaar publiek besluit en maakt tegelijk het speldoel mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B3\\\",\\\"rationale\\\":\\\"B3 biedt de scherpste oppositionele draai: de regelgebonden, controleerbare publieke besluitvorming uit Script A wordt vervangen door persoonlijke patronage, loyaliteit en ruil van politieke gunsten. De gedeelde intake, persoonsgegevens, formulieren en schaarste-taal houden de publieke lezing lang dominant, terwijl het noteren van stemgerechtigde huisgenoten een compacte maar krachtige anomalie vormt. Die cue is onder Script A evident onrechtmatig en onder Script B onmiddellijk functioneel, waardoor eerdere vragen retrospectief veranderen van zorgvuldige beoordeling in electorale waardemeting. De kandidaat is bovendien thematisch precies: macht, gezag en ongelijkheid komen samen in toegang die niet door rechten maar door netwerkwaarde wordt bepaald.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Regelgebonden neutraliteit versus persoonlijke patronage.\\\",\\\"logical_mechanism\\\":\\\"Scriptomschakeling door herinterpretatie: aanvankelijk worden intakegegevens gelezen als neutrale, regelgebonden beoordeling voor een publieke voorziening; het aantal stemgerechtigde huisgenoten onthult dat de gegevens dienen om politieke loyaliteit, electorale waarde en wederdiensten te beoordelen.\\\",\\\"situation\\\":\\\"Een bezoeker zit tegenover een medewerker aan een bureau tijdens een intakegesprek. Er zijn formulieren, contactgegevens en een map aanwezig; er worden vragen gesteld over adres, werk, inkomen en beschikbare tijd. De setting lijkt eerst een publieke instantie waar toegang tot hulp of een voorziening wordt beoordeeld, maar blijkt een campagnekantoor van een lokale politicus te zijn.\\\",\\\"target\\\":\\\"Persoonlijke patronage en cliëntelisme binnen politieke machtsuitoefening.\\\",\\\"narrative_strategy\\\":\\\"De opzet volgt een herkenbare bureaucratische intake en laat de burger als aanvrager verwachten dat vaste regels neutraal worden toegepast. De punch introduceert een politiek campagneobject en laat de registratie van stemgerechtigde huisgenoten de eerdere intake retrospectief veranderen in een selectie op electorale bruikbaarheid.\\\",\\\"lexical_anchor\\\":\\\"stemgerechtigde huisgenoten\\\",\\\"supporting_dual_cues\\\":[\\\"Een intakegesprek aan een bureau.\\\",\\\"Vragen naar adres, werk en beschikbare tijd.\\\",\\\"Een map met formulieren en contactgegevens.\\\",\\\"Een medewerker die zegt dat niet iedereen direct geholpen kan worden.\\\",\\\"Verwijzingen naar regels, termijnen en beschikbare plaatsen.\\\"],\\\"switch_trigger\\\":\\\"De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.\\\",\\\"hinge_event\\\":\\\"De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.\\\",\\\"anomaly_under_a\\\":\\\"Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.\\\",\\\"resolution_under_b\\\":\\\"In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.\\\",\\\"role_remapping\\\":[\\\"Burger/aanvrager wordt aspirant-vrijwilliger.\\\",\\\"Ambtenaar wordt campagnemanager.\\\",\\\"Instelling/overheid wordt campagneorganisatie.\\\",\\\"Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen.\\\"],\\\"setup_goal\\\":\\\"Script A dominant maken door de bezoeker, het bureau, de formulieren en de vragen naar persoonlijke gegevens te presenteren als een normale aanvraagprocedure bij een neutrale publieke instantie.\\\",\\\"punch_goal\\\":\\\"Script B activeren doordat de folders van de politicus en het aantal stemgerechtigde huisgenoten duidelijk maken dat toegang niet op regels, maar op politieke inzet, netwerk en wederdiensten wordt beoordeeld.\\\",\\\"punch_final_word\\\":\\\"stemgerechtigde huisgenoten\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden.\\\",\\\"punchline\\\":\\\"Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.\\\",\\\"full_text\\\":\\\"Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden. Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.\\\",\\\"angle\\\":\\\"Bureaucratische intake blijkt electorale selectie.\\\",\\\"anchor_surface_form\\\":\\\"stemgerechtigde huisgenoten\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen.\\\",\\\"punchline\\\":\\\"Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.\\\",\\\"full_text\\\":\\\"Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen. Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.\\\",\\\"angle\\\":\\\"Persoonlijke gegevens krijgen plots campagnewaarde.\\\",\\\"anchor_surface_form\\\":\\\"stemgerechtigde huisgenoten\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens.\\\",\\\"punchline\\\":\\\"Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.\\\",\\\"full_text\\\":\\\"De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens. Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.\\\",\\\"angle\\\":\\\"Hulpaanvraag kantelt naar politieke ruilhandel.\\\",\\\"anchor_surface_form\\\":\\\"stemgerechtigde huisgenoten\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een bezoeker meldt persoonlijke gegevens bij een balie voor een ogenschijnlijk normale, schaarse publieke hulp- of voorzieningsaanvraag.\\\",\\\"realized_script_b\\\":\\\"Dezelfde bezoeker wordt in feite beoordeeld als politiek bruikbare potentiële ondersteuner op basis van zijn electorale kring.\\\",\\\"realized_opposition_axis\\\":\\\"Regelgebonden neutraliteit versus persoonlijke politieke patronage.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De balie-intake, persoonsgegevens en schaarste activeren een neutrale aanvraagprocedure; campagnefolders en stemgerechtigde huisgenoten hercoderen die gegevens als electorale waarde. De expliciete vraag hoeveel buren iemand meeneemt ontbreekt, maar de functionele omschakeling blijft intact.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De registratie van stemgerechtigde huisgenoten maakt retrospectief begrijpelijk dat de intake politieke bruikbaarheid meet in plaats van rechtmatige toegang.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Balie, persoonlijke gegevens, een medewerker en beperkte directe hulp realiseren de kern van de aanvankelijke intake; de campagnefolders verplaatsen die setting naar een politieke context.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst richt de spot op cliëntelistische politieke selectie, waarbij persoonlijke gegevens als toegangsmiddel tot politieke gunst worden gebruikt.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst begint in een plausibele bureaucratische lezing en plaatst de politieke onthulling pas in de laatste zin, waardoor eerdere details worden herlezen.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De vereiste lexicale ankerformule 'stemgerechtigde huisgenoten' staat aan het einde en werkt als duidelijke politieke hinge.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een werkende, compacte satire die het geplande contrast tussen neutrale intake en electorale selectie realiseert; alleen de campagnewervingsvraag is ingekort.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een aanvrager doorloopt een ogenschijnlijk reguliere intake waarin adres, beschikbare tijd en inkomen administratief worden vastgelegd.\\\",\\\"realized_script_b\\\":\\\"De intake blijkt een selectie van een campagnehelper, waarbij buren en stemgerechtigde huisgenoten politieke mobilisatiewaarde vertegenwoordigen.\\\",\\\"realized_opposition_axis\\\":\\\"Regelgebonden neutraliteit versus persoonlijke politieke patronage.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De formulieren en persoonlijke intakegegevens ondersteunen script A, terwijl wethoudersfolders, de vraag naar mee te nemen buren en de notitie over stemgerechtigde huisgenoten script B expliciet activeren.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De politieke folders en de burenvraag verklaren achteraf waarom ogenschijnlijk administratieve gegevens worden verzameld: zij meten campagne- en netwerkwaarde.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant bevat een intake, formulieren en de geplande gegevenscategorieën; de overgang naar de campagne van een wethouder is duidelijk gesitueerd.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De pointe maakt politieke toegang en waardering afhankelijk van mobiliseerbare persoonlijke netwerken, dus van patronage in plaats van gelijke maatstaven.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De bureaucratische inventarisatie staat voorop; daarna volgen folders en de burenvraag, met het lexicale anker als slotpointe.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De formulering bevat het beoogde anker 'stemgerechtigde huisgenoten' als laatste, opvallende registratiecategorie.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Dit is de meest volledige realisatie van het plan: de intakegegevens, campagnefolders, burenvraag en slotnotitie bouwen precies de beoogde herinterpretatie op.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een bezoeker ondergaat aan een bureau een ogenschijnlijk administratieve beoordeling op basis van adres, werk en contactgegevens.\\\",\\\"realized_script_b\\\":\\\"De beoordeling blijkt een politieke selectie waarin het aantal stemgerechtigde huisgenoten de electorale bruikbaarheid van de bezoeker aangeeft.\\\",\\\"realized_opposition_axis\\\":\\\"Regelgebonden neutraliteit versus persoonlijke politieke patronage.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Bureau, controle van gegevens en een aangekondigde beslissing ondersteunen de formele lezing; folders van een politicus en het tellen van stemgerechtigde huisgenoten schakelen overtuigend naar electorale selectie. De concrete burenvraag ontbreekt, maar de kernswitch is functioneel aanwezig.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het tellen van stemgerechtigde huisgenoten maakt de eerdere gegevenscontrole retrospectief tot een meting van politieke waarde.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant realiseert een bureausetting met medewerker, gegevenscontrole, map/contactgegevens en een politieke campagnecue, hoewel inkomen en beschikbare tijd niet worden genoemd.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst viseert cliëntelisme: de gezagsdrager waardeert iemand niet neutraal, maar naar diens potentiële electorale opbrengst.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Eerst wordt een administratieve beoordeling geschetst; de folders introduceren de politieke lezing en de slotactie levert de pointe.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"'Stemgerechtigde huisgenoten' is behouden als opvallende, finale lexicale hinge; 'telt' versterkt de instrumentele electorale lezing.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant volgt de beoogde bureaucratie-naar-campagneomslag en behoudt het anker en doelwit, al is de aanvankelijke publieke-hulpcontext minder expliciet dan in V1 en V2.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengte-eis en realiseren de omslag van neutrale intake naar electorale patronage. V2 is trouwer aan het plan doordat naast formulieren, adres en inkomen ook de cruciale vraag naar mee te nemen buren expliciet wordt ingezet; daardoor is de herinterpretatie sterker en de pointe vollediger.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide zijn compacte, spreekbare satires met een heldere politieke slotdraai. V1 schetst de aanvankelijke publieke-hulpcontext overtuigender met inkomen en beperkte directe hulp, waardoor de latere electorale selectie scherper contrasteert; V3 blijft algemener en mist enkele intake-ankers.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 behoudt meer verplichte bouwstenen: de intakegegevens, campagnefolders, de burenvraag en het slotanker over stemgerechtigde huisgenoten. Daardoor bouwt V2 de switch geleidelijker op en hercodeert hij de eerdere gegevens overtuigender dan V3, dat minder concrete intake-informatie biedt.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de meest volledige en performabele realisatie van het plan. De bureaucratische intake krijgt via folders, buren en stemgerechtigde huisgenoten een duidelijke, retrospectief logische omslag naar politieke mobilisatie en patronage.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een aspirant-lid meldt zich bij een exclusieve privéclub, waar een toelatingsmanager beoordeelt of iemand voldoende status, uitstraling en koopkracht heeft om lid te mogen worden.",
+        "candidate_id": "B1",
+        "opposition_axis": "Gelijke publieke toegang versus commerciële sociale selectie.",
+        "opposed_expectation": "Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.",
+        "roles_b": [
+          "Kandidaat-lid: probeert toegelaten te worden.",
+          "Toelatingsmanager: beoordeelt status en geschiktheid.",
+          "Privéclub: bewaakt haar exclusieve imago.",
+          "Bestaande leden: vormen de sociale maatstaf waaraan de kandidaat wordt afgemeten."
+        ],
+        "goal_b": "Bepalen of de kandidaat de exclusiviteit van de club kan bevestigen en financieel aantrekkelijk is.",
+        "role_remapping": [
+          "Burger/aanvrager wordt kandidaat-lid.",
+          "Ambtenaar wordt toelatingsmanager.",
+          "Publieke instantie wordt privéclub.",
+          "Bezwaarcommissie wordt de ledencommissie, die niet op gelijke rechten maar op exclusiviteit toeziet."
+        ],
+        "shared_cues": [
+          "Een nummertje trekken in een wachtruimte.",
+          "Een identiteitsbewijs en inkomensgegevens tonen.",
+          "Vragen over woonadres, beroep en gezinssituatie.",
+          "Een medewerker die gegevens in een systeem invoert.",
+          "Een gesprek over voorwaarden en toelating."
+        ],
+        "switch_trigger": "De medewerker legt geen aanvraagformulier maar een glanzende ledenpas en een prijslijst voor.",
+        "hinge_event": "De medewerker vraagt niet of de burger recht heeft op hulp, maar of diens auto passend is voor de parkeerplaats voor leden.",
+        "anomaly_under_a": "Bij een publieke voorziening is het automerk irrelevant en ongepast als selectiecriterium; de vraag suggereert willekeurige statusbeoordeling.",
+        "resolution_under_b": "In een privéclub is de vraag doelgericht: de club verkoopt exclusiviteit en gebruikt zichtbare welvaart als toelatingsmaatstaf.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een deelnemer meldt zich voor een verborgen-camera-audit waarin wordt getest hoe medewerkers reageren op iemand die zich onzeker, arm of laaggeplaatst presenteert.",
+        "candidate_id": "B2",
+        "opposition_axis": "Onpartijdige dienstverlening versus een geënsceneerde proef van moreel gedrag.",
+        "opposed_expectation": "Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.",
+        "roles_b": [
+          "Testdeelnemer: speelt de hulpvrager en volgt een vooraf afgesproken scenario.",
+          "Medewerker: weet niet dat diens gedrag wordt geobserveerd.",
+          "Onderzoeksleider of programmamaker: organiseert de test.",
+          "Camera- of auditteam: registreert de reactie voor beoordeling of uitzending."
+        ],
+        "goal_b": "Aantonen of een medewerker mensen met weinig status anders behandelt dan zelfverzekerde of welgestelde bezoekers.",
+        "role_remapping": [
+          "Burger/aanvrager wordt testdeelnemer.",
+          "Ambtenaar blijft de onwetende medewerker.",
+          "Instelling/overheid wordt de onderzochte organisatie.",
+          "Leidinggevende of bezwaarcommissie wordt onderzoeksleider of redactie die de beelden beoordeelt."
+        ],
+        "shared_cues": [
+          "Een rommelig mapje met papieren.",
+          "Een verzoek om uitleg over een regeling.",
+          "Een medewerker die om aanvullende bewijsstukken vraagt.",
+          "Een wachtruimte en een volgnummer.",
+          "Een opmerking over moeite met formulieren of digitale toegang."
+        ],
+        "switch_trigger": "De bezoeker noemt plotseling het afgesproken stopwoord, waarna een cameraoperator uit een aangrenzende ruimte verschijnt.",
+        "hinge_event": "De bezoeker herhaalt een onhandige, ogenschijnlijk irrelevante vraag precies drie keer.",
+        "anomaly_under_a": "Een echte aanvrager zou zonder duidelijke reden dezelfde vraag blijven herhalen, waardoor het gesprek inefficiënt en vreemd wordt.",
+        "resolution_under_b": "De herhaling is een vooraf bepaald testmoment: zij meet of de medewerker geduldig blijft of neerbuigend reageert wanneer iemand kwetsbaar lijkt.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.",
+        "candidate_id": "B3",
+        "opposition_axis": "Regelgebonden neutraliteit versus persoonlijke patronage.",
+        "opposed_expectation": "Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.",
+        "roles_b": [
+          "Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.",
+          "Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.",
+          "Politicus: belooft informele invloed of zichtbaarheid.",
+          "Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht."
+        ],
+        "goal_b": "Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.",
+        "role_remapping": [
+          "Burger/aanvrager wordt aspirant-vrijwilliger.",
+          "Ambtenaar wordt campagnemanager.",
+          "Instelling/overheid wordt campagneorganisatie.",
+          "Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen."
+        ],
+        "shared_cues": [
+          "Een intakegesprek aan een bureau.",
+          "Vragen naar adres, werk en beschikbare tijd.",
+          "Een map met formulieren en contactgegevens.",
+          "Een medewerker die zegt dat niet iedereen direct geholpen kan worden.",
+          "Verwijzingen naar regels, termijnen en beschikbare plaatsen."
+        ],
+        "switch_trigger": "De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.",
+        "hinge_event": "De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.",
+        "anomaly_under_a": "Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.",
+        "resolution_under_b": "In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een deelnemer verschijnt bij een televisiequiz waarin kandidaten zich voordoen als hulpvragers; de presentator en jury bepalen wie op basis van een meeslepend verhaal doorgaat naar de finale.",
+        "candidate_id": "B4",
+        "opposition_axis": "Recht op een voorziening versus verdienste als emotioneel spektakel.",
+        "opposed_expectation": "Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.",
+        "roles_b": [
+          "Kandidaat: vertelt een aangrijpend verhaal om door te mogen.",
+          "Presentator of jurylid: leidt het gesprek en beoordeelt de televisiegeschiktheid.",
+          "Productieteam: organiseert de opname en stuurt op drama.",
+          "Studiopubliek: reageert en beïnvloedt de sfeer of uitslag."
+        ],
+        "goal_b": "Een kandidaat kiezen die voldoende emotie, herkenbaarheid en kijkersreactie oplevert voor de volgende ronde.",
+        "role_remapping": [
+          "Burger/aanvrager wordt quizkandidaat.",
+          "Ambtenaar wordt presentator of jurylid.",
+          "Instelling/overheid wordt televisieproductie.",
+          "Bezwaarcommissie wordt publiek of jury, dat geen administratief herstel maar entertainmentwaarde beoordeelt."
+        ],
+        "shared_cues": [
+          "Een gesprek over rekeningen, werkverlies en gezin.",
+          "Documenten die op tafel worden gelegd.",
+          "Een beoordelaar die doorvraagt naar details.",
+          "Een korte stilte voordat een besluit volgt.",
+          "De zin dat er maar beperkte mogelijkheden zijn."
+        ],
+        "switch_trigger": "Na een emotioneel antwoord gaat er applaus op, draaien studiolampen aan en zegt de beoordelaar: \"U gaat door naar de finale.\"",
+        "hinge_event": "De medewerker laat de bezoeker kiezen tussen drie gesloten enveloppen voordat hij een besluit meedeelt.",
+        "anomaly_under_a": "Een publieke instantie mag een recht of voorziening niet via een willekeurige enveloppenkeuze toekennen; de handeling ontneemt het besluit iedere begrijpelijke motivering.",
+        "resolution_under_b": "In de quiz is de enveloppenkeuze een herkenbaar spelelement dat spanning creëert en bepaalt welke ronde, prijs of opdracht volgt.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B3 biedt de scherpste oppositionele draai: de regelgebonden, controleerbare publieke besluitvorming uit Script A wordt vervangen door persoonlijke patronage, loyaliteit en ruil van politieke gunsten. De gedeelde intake, persoonsgegevens, formulieren en schaarste-taal houden de publieke lezing lang dominant, terwijl het noteren van stemgerechtigde huisgenoten een compacte maar krachtige anomalie vormt. Die cue is onder Script A evident onrechtmatig en onder Script B onmiddellijk functioneel, waardoor eerdere vragen retrospectief veranderen van zorgvuldige beoordeling in electorale waardemeting. De kandidaat is bovendien thematisch precies: macht, gezag en ongelijkheid komen samen in toegang die niet door rechten maar door netwerkwaarde wordt bepaald.",
+    "variants": [
+      {
+        "text": "Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden. Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.",
+        "angle": "Bureaucratische intake blijkt electorale selectie."
+      },
+      {
+        "text": "Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen. Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.",
+        "angle": "Persoonlijke gegevens krijgen plots campagnewaarde."
+      },
+      {
+        "text": "De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens. Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.",
+        "angle": "Hulpaanvraag kantelt naar politieke ruilhandel."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 17304,
+      "output_tokens": 9198,
+      "total_tokens": 26502
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Een burger met een lager inkomen of minder status heeft een afspraak bij een publieke instantie, waar een medewerker volgens vaste regels beslist over toegang tot hulp, rechten of voorzieningen.",
+          "participants_and_roles": [
+            "Burger/aanvrager: legt de situatie uit, levert informatie aan en verwacht een eerlijke behandeling.",
+            "Medewerker of ambtenaar: vertegenwoordigt de instantie, past regels toe en licht een besluit toe.",
+            "Instelling/overheid: hoort gelijke toegang, duidelijke procedures en bescherming tegen willekeur te bieden.",
+            "Eventueel een leidinggevende of bezwaarcommissie: controleert of het besluit zorgvuldig en rechtvaardig is genomen."
+          ],
+          "apparent_goal": "De burger wil op een normale, respectvolle manier gebruikmaken van een recht of voorziening en een eerlijk, begrijpelijk besluit krijgen.",
+          "preconditions": [
+            "Er bestaan formele regels en criteria voor de voorziening of beslissing.",
+            "De burger beschikt over de benodigde documenten, of krijgt redelijke hulp om die aan te leveren.",
+            "De medewerker heeft bevoegdheid, informatie en tijd om de aanvraag te behandelen.",
+            "De instantie presenteert zich als neutraal en toegankelijk voor iedereen.",
+            "Er is een mogelijkheid tot uitleg, correctie of bezwaar wanneer iets misgaat."
+          ],
+          "expected_actions": [
+            "De burger meldt zich, legt de vraag of aanvraag voor en verstrekt relevante gegevens.",
+            "De medewerker luistert, controleert de gegevens en past dezelfde regels toe als bij vergelijkbare gevallen.",
+            "De medewerker communiceert duidelijk en zonder neerbuigendheid over stappen, voorwaarden en termijnen.",
+            "Bij een afwijzing geeft de instantie een concrete motivering en wijst zij op bezwaar of aanvullende hulp.",
+            "Een leidinggevende of bezwaarprocedure herstelt fouten of ongelijke behandeling indien nodig."
+          ],
+          "expected_outcome": "De burger ontvangt de voorziening of een gemotiveerd besluit op basis van gelijke regels, met een reële kans om onduidelijkheden of fouten te laten herstellen.",
+          "expected_propositions": [
+            "Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.",
+            "Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.",
+            "Mensen in vergelijkbare omstandigheden behoren vergelijkbaar behandeld te worden.",
+            "Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.",
+            "Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom."
+          ],
+          "audience_expectation": "De opzet activeert de verwachting dat een kwetsbare burger in contact met een machtige instelling beschermd wordt door eerlijke procedures, duidelijke communicatie en gelijke behandeling."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een aspirant-lid meldt zich bij een exclusieve privéclub, waar een toelatingsmanager beoordeelt of iemand voldoende status, uitstraling en koopkracht heeft om lid te mogen worden.",
+            "opposition_axis": "Gelijke publieke toegang versus commerciële sociale selectie.",
+            "opposed_proposition": "Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.",
+            "shared_anchor": "Een gesprek aan een balie over toelating.",
+            "reading_a": "Een burger dient bij een publieke instantie een aanvraag voor een voorziening in.",
+            "reading_b": "Een kandidaat ondergaat een selectiegesprek voor lidmaatschap van een exclusieve club.",
+            "roles_b": [
+              "Kandidaat-lid: probeert toegelaten te worden.",
+              "Toelatingsmanager: beoordeelt status en geschiktheid.",
+              "Privéclub: bewaakt haar exclusieve imago.",
+              "Bestaande leden: vormen de sociale maatstaf waaraan de kandidaat wordt afgemeten."
+            ],
+            "goal_b": "Bepalen of de kandidaat de exclusiviteit van de club kan bevestigen en financieel aantrekkelijk is.",
+            "role_remapping": [
+              "Burger/aanvrager wordt kandidaat-lid.",
+              "Ambtenaar wordt toelatingsmanager.",
+              "Publieke instantie wordt privéclub.",
+              "Bezwaarcommissie wordt de ledencommissie, die niet op gelijke rechten maar op exclusiviteit toeziet."
+            ],
+            "shared_cues": [
+              "Een nummertje trekken in een wachtruimte.",
+              "Een identiteitsbewijs en inkomensgegevens tonen.",
+              "Vragen over woonadres, beroep en gezinssituatie.",
+              "Een medewerker die gegevens in een systeem invoert.",
+              "Een gesprek over voorwaarden en toelating."
+            ],
+            "switch_trigger": "De medewerker legt geen aanvraagformulier maar een glanzende ledenpas en een prijslijst voor.",
+            "hinge_event": "De medewerker vraagt niet of de burger recht heeft op hulp, maar of diens auto passend is voor de parkeerplaats voor leden.",
+            "anomaly_under_a": "Bij een publieke voorziening is het automerk irrelevant en ongepast als selectiecriterium; de vraag suggereert willekeurige statusbeoordeling.",
+            "resolution_under_b": "In een privéclub is de vraag doelgericht: de club verkoopt exclusiviteit en gebruikt zichtbare welvaart als toelatingsmaatstaf."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een deelnemer meldt zich voor een verborgen-camera-audit waarin wordt getest hoe medewerkers reageren op iemand die zich onzeker, arm of laaggeplaatst presenteert.",
+            "opposition_axis": "Onpartijdige dienstverlening versus een geënsceneerde proef van moreel gedrag.",
+            "opposed_proposition": "Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.",
+            "shared_anchor": "Een kwetsbaar ogende bezoeker legt aan een medewerker een probleem voor.",
+            "reading_a": "Een burger zoekt daadwerkelijke hulp en verwacht dat de medewerker een besluit volgens regels neemt.",
+            "reading_b": "Een testdeelnemer speelt een hulpvrager om de bejegening van de medewerker voor een audit of reportage vast te leggen.",
+            "roles_b": [
+              "Testdeelnemer: speelt de hulpvrager en volgt een vooraf afgesproken scenario.",
+              "Medewerker: weet niet dat diens gedrag wordt geobserveerd.",
+              "Onderzoeksleider of programmamaker: organiseert de test.",
+              "Camera- of auditteam: registreert de reactie voor beoordeling of uitzending."
+            ],
+            "goal_b": "Aantonen of een medewerker mensen met weinig status anders behandelt dan zelfverzekerde of welgestelde bezoekers.",
+            "role_remapping": [
+              "Burger/aanvrager wordt testdeelnemer.",
+              "Ambtenaar blijft de onwetende medewerker.",
+              "Instelling/overheid wordt de onderzochte organisatie.",
+              "Leidinggevende of bezwaarcommissie wordt onderzoeksleider of redactie die de beelden beoordeelt."
+            ],
+            "shared_cues": [
+              "Een rommelig mapje met papieren.",
+              "Een verzoek om uitleg over een regeling.",
+              "Een medewerker die om aanvullende bewijsstukken vraagt.",
+              "Een wachtruimte en een volgnummer.",
+              "Een opmerking over moeite met formulieren of digitale toegang."
+            ],
+            "switch_trigger": "De bezoeker noemt plotseling het afgesproken stopwoord, waarna een cameraoperator uit een aangrenzende ruimte verschijnt.",
+            "hinge_event": "De bezoeker herhaalt een onhandige, ogenschijnlijk irrelevante vraag precies drie keer.",
+            "anomaly_under_a": "Een echte aanvrager zou zonder duidelijke reden dezelfde vraag blijven herhalen, waardoor het gesprek inefficiënt en vreemd wordt.",
+            "resolution_under_b": "De herhaling is een vooraf bepaald testmoment: zij meet of de medewerker geduldig blijft of neerbuigend reageert wanneer iemand kwetsbaar lijkt."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.",
+            "opposition_axis": "Regelgebonden neutraliteit versus persoonlijke patronage.",
+            "opposed_proposition": "Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.",
+            "shared_anchor": "Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.",
+            "reading_a": "Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.",
+            "reading_b": "Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.",
+            "roles_b": [
+              "Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.",
+              "Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.",
+              "Politicus: belooft informele invloed of zichtbaarheid.",
+              "Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht."
+            ],
+            "goal_b": "Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.",
+            "role_remapping": [
+              "Burger/aanvrager wordt aspirant-vrijwilliger.",
+              "Ambtenaar wordt campagnemanager.",
+              "Instelling/overheid wordt campagneorganisatie.",
+              "Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen."
+            ],
+            "shared_cues": [
+              "Een intakegesprek aan een bureau.",
+              "Vragen naar adres, werk en beschikbare tijd.",
+              "Een map met formulieren en contactgegevens.",
+              "Een medewerker die zegt dat niet iedereen direct geholpen kan worden.",
+              "Verwijzingen naar regels, termijnen en beschikbare plaatsen."
+            ],
+            "switch_trigger": "De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.",
+            "hinge_event": "De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.",
+            "anomaly_under_a": "Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.",
+            "resolution_under_b": "In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een deelnemer verschijnt bij een televisiequiz waarin kandidaten zich voordoen als hulpvragers; de presentator en jury bepalen wie op basis van een meeslepend verhaal doorgaat naar de finale.",
+            "opposition_axis": "Recht op een voorziening versus verdienste als emotioneel spektakel.",
+            "opposed_proposition": "Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.",
+            "shared_anchor": "Iemand vertelt aan een balie zijn financiële problemen terwijl een beoordelaar beslist over de volgende stap.",
+            "reading_a": "Een burger licht een aanvraag toe en verwacht een begrijpelijke, gemotiveerde beslissing.",
+            "reading_b": "Een quizkandidaat brengt een persoonlijk verhaal als onderdeel van een televisieronde waarin publiekswaarde doorslaggevend is.",
+            "roles_b": [
+              "Kandidaat: vertelt een aangrijpend verhaal om door te mogen.",
+              "Presentator of jurylid: leidt het gesprek en beoordeelt de televisiegeschiktheid.",
+              "Productieteam: organiseert de opname en stuurt op drama.",
+              "Studiopubliek: reageert en beïnvloedt de sfeer of uitslag."
+            ],
+            "goal_b": "Een kandidaat kiezen die voldoende emotie, herkenbaarheid en kijkersreactie oplevert voor de volgende ronde.",
+            "role_remapping": [
+              "Burger/aanvrager wordt quizkandidaat.",
+              "Ambtenaar wordt presentator of jurylid.",
+              "Instelling/overheid wordt televisieproductie.",
+              "Bezwaarcommissie wordt publiek of jury, dat geen administratief herstel maar entertainmentwaarde beoordeelt."
+            ],
+            "shared_cues": [
+              "Een gesprek over rekeningen, werkverlies en gezin.",
+              "Documenten die op tafel worden gelegd.",
+              "Een beoordelaar die doorvraagt naar details.",
+              "Een korte stilte voordat een besluit volgt.",
+              "De zin dat er maar beperkte mogelijkheden zijn."
+            ],
+            "switch_trigger": "Na een emotioneel antwoord gaat er applaus op, draaien studiolampen aan en zegt de beoordelaar: \"U gaat door naar de finale.\"",
+            "hinge_event": "De medewerker laat de bezoeker kiezen tussen drie gesloten enveloppen voordat hij een besluit meedeelt.",
+            "anomaly_under_a": "Een publieke instantie mag een recht of voorziening niet via een willekeurige enveloppenkeuze toekennen; de handeling ontneemt het besluit iedere begrijpelijke motivering.",
+            "resolution_under_b": "In de quiz is de enveloppenkeuze een herkenbaar spelelement dat spanning creëert en bepaalt welke ronde, prijs of opdracht volgt."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een aspirant-lid meldt zich bij een exclusieve privéclub, waar een toelatingsmanager beoordeelt of iemand voldoende status, uitstraling en koopkracht heeft om lid te mogen worden.",
+              "opposition_axis": "Gelijke publieke toegang versus commerciële sociale selectie.",
+              "opposed_proposition": "Een lagere sociale positie mag niet leiden tot minder respect, minder toegang of minder geloofwaardigheid.",
+              "shared_anchor": "Een gesprek aan een balie over toelating.",
+              "reading_a": "Een burger dient bij een publieke instantie een aanvraag voor een voorziening in.",
+              "reading_b": "Een kandidaat ondergaat een selectiegesprek voor lidmaatschap van een exclusieve club.",
+              "roles_b": [
+                "Kandidaat-lid: probeert toegelaten te worden.",
+                "Toelatingsmanager: beoordeelt status en geschiktheid.",
+                "Privéclub: bewaakt haar exclusieve imago.",
+                "Bestaande leden: vormen de sociale maatstaf waaraan de kandidaat wordt afgemeten."
+              ],
+              "goal_b": "Bepalen of de kandidaat de exclusiviteit van de club kan bevestigen en financieel aantrekkelijk is.",
+              "role_remapping": [
+                "Burger/aanvrager wordt kandidaat-lid.",
+                "Ambtenaar wordt toelatingsmanager.",
+                "Publieke instantie wordt privéclub.",
+                "Bezwaarcommissie wordt de ledencommissie, die niet op gelijke rechten maar op exclusiviteit toeziet."
+              ],
+              "shared_cues": [
+                "Een nummertje trekken in een wachtruimte.",
+                "Een identiteitsbewijs en inkomensgegevens tonen.",
+                "Vragen over woonadres, beroep en gezinssituatie.",
+                "Een medewerker die gegevens in een systeem invoert.",
+                "Een gesprek over voorwaarden en toelating."
+              ],
+              "switch_trigger": "De medewerker legt geen aanvraagformulier maar een glanzende ledenpas en een prijslijst voor.",
+              "hinge_event": "De medewerker vraagt niet of de burger recht heeft op hulp, maar of diens auto passend is voor de parkeerplaats voor leden.",
+              "anomaly_under_a": "Bij een publieke voorziening is het automerk irrelevant en ongepast als selectiecriterium; de vraag suggereert willekeurige statusbeoordeling.",
+              "resolution_under_b": "In een privéclub is de vraag doelgericht: de club verkoopt exclusiviteit en gebruikt zichtbare welvaart als toelatingsmaatstaf."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een deelnemer meldt zich voor een verborgen-camera-audit waarin wordt getest hoe medewerkers reageren op iemand die zich onzeker, arm of laaggeplaatst presenteert.",
+              "opposition_axis": "Onpartijdige dienstverlening versus een geënsceneerde proef van moreel gedrag.",
+              "opposed_proposition": "Gezag is geloofwaardig wanneer het deskundig, consequent en respectvol wordt uitgeoefend.",
+              "shared_anchor": "Een kwetsbaar ogende bezoeker legt aan een medewerker een probleem voor.",
+              "reading_a": "Een burger zoekt daadwerkelijke hulp en verwacht dat de medewerker een besluit volgens regels neemt.",
+              "reading_b": "Een testdeelnemer speelt een hulpvrager om de bejegening van de medewerker voor een audit of reportage vast te leggen.",
+              "roles_b": [
+                "Testdeelnemer: speelt de hulpvrager en volgt een vooraf afgesproken scenario.",
+                "Medewerker: weet niet dat diens gedrag wordt geobserveerd.",
+                "Onderzoeksleider of programmamaker: organiseert de test.",
+                "Camera- of auditteam: registreert de reactie voor beoordeling of uitzending."
+              ],
+              "goal_b": "Aantonen of een medewerker mensen met weinig status anders behandelt dan zelfverzekerde of welgestelde bezoekers.",
+              "role_remapping": [
+                "Burger/aanvrager wordt testdeelnemer.",
+                "Ambtenaar blijft de onwetende medewerker.",
+                "Instelling/overheid wordt de onderzochte organisatie.",
+                "Leidinggevende of bezwaarcommissie wordt onderzoeksleider of redactie die de beelden beoordeelt."
+              ],
+              "shared_cues": [
+                "Een rommelig mapje met papieren.",
+                "Een verzoek om uitleg over een regeling.",
+                "Een medewerker die om aanvullende bewijsstukken vraagt.",
+                "Een wachtruimte en een volgnummer.",
+                "Een opmerking over moeite met formulieren of digitale toegang."
+              ],
+              "switch_trigger": "De bezoeker noemt plotseling het afgesproken stopwoord, waarna een cameraoperator uit een aangrenzende ruimte verschijnt.",
+              "hinge_event": "De bezoeker herhaalt een onhandige, ogenschijnlijk irrelevante vraag precies drie keer.",
+              "anomaly_under_a": "Een echte aanvrager zou zonder duidelijke reden dezelfde vraag blijven herhalen, waardoor het gesprek inefficiënt en vreemd wordt.",
+              "resolution_under_b": "De herhaling is een vooraf bepaald testmoment: zij meet of de medewerker geduldig blijft of neerbuigend reageert wanneer iemand kwetsbaar lijkt."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een werkzoekende meldt zich bij het campagnekantoor van een lokale politicus, waar vrijwilligers niet op gelijke geschiktheid maar op persoonlijke loyaliteit, bruikbaarheid en netwerk worden geselecteerd.",
+              "opposition_axis": "Regelgebonden neutraliteit versus persoonlijke patronage.",
+              "opposed_proposition": "Macht van een publieke instantie hoort gebonden te zijn aan regels en controle.",
+              "shared_anchor": "Een kandidaat geeft persoonlijke gegevens aan een gezagsdrager die over toegang beslist.",
+              "reading_a": "Een burger verstrekt gegevens aan een medewerker zodat een publieke aanvraag zorgvuldig kan worden beoordeeld.",
+              "reading_b": "Een aspirant-vrijwilliger laat zien hoeveel politieke steun, contacten en zichtbaarheid hij of zij kan leveren.",
+              "roles_b": [
+                "Aspirant-vrijwilliger: zoekt een plek, gunst of toekomstig netwerk.",
+                "Campagnemanager: verdeelt toegang en kansen op basis van loyaliteit.",
+                "Politicus: belooft informele invloed of zichtbaarheid.",
+                "Partijgenoten en donoren: vormen het netwerk dat wederdiensten verwacht."
+              ],
+              "goal_b": "Een betrouwbaar netwerk van loyale helpers opbouwen en gunsten ruilen voor politieke inzet.",
+              "role_remapping": [
+                "Burger/aanvrager wordt aspirant-vrijwilliger.",
+                "Ambtenaar wordt campagnemanager.",
+                "Instelling/overheid wordt campagneorganisatie.",
+                "Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen."
+              ],
+              "shared_cues": [
+                "Een intakegesprek aan een bureau.",
+                "Vragen naar adres, werk en beschikbare tijd.",
+                "Een map met formulieren en contactgegevens.",
+                "Een medewerker die zegt dat niet iedereen direct geholpen kan worden.",
+                "Verwijzingen naar regels, termijnen en beschikbare plaatsen."
+              ],
+              "switch_trigger": "De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.",
+              "hinge_event": "De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.",
+              "anomaly_under_a": "Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.",
+              "resolution_under_b": "In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een deelnemer verschijnt bij een televisiequiz waarin kandidaten zich voordoen als hulpvragers; de presentator en jury bepalen wie op basis van een meeslepend verhaal doorgaat naar de finale.",
+              "opposition_axis": "Recht op een voorziening versus verdienste als emotioneel spektakel.",
+              "opposed_proposition": "Wie afhankelijk is van een instantie moet kunnen begrijpen welke keuze wordt gemaakt en waarom.",
+              "shared_anchor": "Iemand vertelt aan een balie zijn financiële problemen terwijl een beoordelaar beslist over de volgende stap.",
+              "reading_a": "Een burger licht een aanvraag toe en verwacht een begrijpelijke, gemotiveerde beslissing.",
+              "reading_b": "Een quizkandidaat brengt een persoonlijk verhaal als onderdeel van een televisieronde waarin publiekswaarde doorslaggevend is.",
+              "roles_b": [
+                "Kandidaat: vertelt een aangrijpend verhaal om door te mogen.",
+                "Presentator of jurylid: leidt het gesprek en beoordeelt de televisiegeschiktheid.",
+                "Productieteam: organiseert de opname en stuurt op drama.",
+                "Studiopubliek: reageert en beïnvloedt de sfeer of uitslag."
+              ],
+              "goal_b": "Een kandidaat kiezen die voldoende emotie, herkenbaarheid en kijkersreactie oplevert voor de volgende ronde.",
+              "role_remapping": [
+                "Burger/aanvrager wordt quizkandidaat.",
+                "Ambtenaar wordt presentator of jurylid.",
+                "Instelling/overheid wordt televisieproductie.",
+                "Bezwaarcommissie wordt publiek of jury, dat geen administratief herstel maar entertainmentwaarde beoordeelt."
+              ],
+              "shared_cues": [
+                "Een gesprek over rekeningen, werkverlies en gezin.",
+                "Documenten die op tafel worden gelegd.",
+                "Een beoordelaar die doorvraagt naar details.",
+                "Een korte stilte voordat een besluit volgt.",
+                "De zin dat er maar beperkte mogelijkheden zijn."
+              ],
+              "switch_trigger": "Na een emotioneel antwoord gaat er applaus op, draaien studiolampen aan en zegt de beoordelaar: \"U gaat door naar de finale.\"",
+              "hinge_event": "De medewerker laat de bezoeker kiezen tussen drie gesloten enveloppen voordat hij een besluit meedeelt.",
+              "anomaly_under_a": "Een publieke instantie mag een recht of voorziening niet via een willekeurige enveloppenkeuze toekennen; de handeling ontneemt het besluit iedere begrijpelijke motivering.",
+              "resolution_under_b": "In de quiz is de enveloppenkeuze een herkenbaar spelelement dat spanning creëert en bepaalt welke ronde, prijs of opdracht volgt."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde baliescène met identificatie, inkomensgegevens, voorwaarden en toelating kan eerst als publieke aanvraag en daarna als clubselectie worden gelezen. Gelijke, regelgebonden publieke toegang botst lokaal met status- en koopkrachtselectie; dit is de dominante as. De ledenpas, prijslijst en vooral de autovraag maken de clublezing herkenbaar en verklaren waarom een irrelevant statuscriterium ineens doelgericht is. Daardoor krijgen eerdere gegevensvragen retrospectief de functie van exclusiviteitstoets. Statusselectie ondermijnt tegelijk het publieke doel van gelijke behandeling en dient het clubdoel van selectie."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén scène kan zowel een echte hulpvraag als een verborgen audit bevatten: de testdeelnemer kan zich uiterlijk precies als aanvrager gedragen. De audit is sociaal herkenbaar en de herhaalde vraag wordt daarin een expliciet testmoment voor geduld en respect. De eerdere hulpvraag en papieren worden daardoor retrospectief onderdeel van een geënsceneerd scenario. Er is echter geen echte lokale scripttegenstelling op de genoemde as: onpartijdige dienstverlening is juist het gedrag dat de audit wil meten en kan dus binnen Script B eveneens plaatsvinden. De doelbewuste herhaling belemmert een normale, efficiënte hulpafhandeling maar maakt de auditmeting mogelijk."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Intake, persoonsgegevens, formulieren, beperkte plaatsen en een beslisser over toegang kunnen aanvankelijk een publieke aanvraag vormen, maar ook een campagne-intake. Regelgebonden neutraliteit en patronage zijn lokaal onverenigbaar en vormen duidelijk de dominante tegenstelling. De vraag naar mee te brengen buren en het noteren van stemgerechtigde huisgenoten maken de campagnelezing herkenbaar. Dat gegeven is onder Script A ongeoorloofd en onverklaard, maar onder Script B een maatstaf voor electorale waarde. Eerdere persoonsgegevens verschuiven daardoor van aanvraaggegevens naar politieke mobilisatiegegevens. Kiezerswaarde als criterium verdringt onpartijdige beoordeling en faciliteert selectie op loyaliteit en nut."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een gesprek over financiële problemen, documenten, doorvragen en beperkte mogelijkheden kan zowel een aanvraaggesprek als een televisieronde dragen. Een rechtmatige, begrijpelijk gemotiveerde voorzieningsbeslissing botst lokaal met selectie op emotionele entertainmentwaarde; die tegenstelling is dominant. De applausreactie, studiolampen en finaleformule maken Script B herkenbaar, terwijl Script A vooraf door de balie- en hulpvraagcues de natuurlijke eerste lezing blijft. De enveloppenkeuze is onder Script A willekeurig en onverenigbaar met motivering, maar is onder Script B een normaal quizmechanisme. Eerder verteld leed verandert zo van relevante aanvraagcontext in dramatisch wedstrijdmateriaal. De willekeurige keuze blokkeert een verklaarbaar publiek besluit en maakt tegelijk het speldoel mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde baliescène met identificatie, inkomensgegevens, voorwaarden en toelating kan eerst als publieke aanvraag en daarna als clubselectie worden gelezen. Gelijke, regelgebonden publieke toegang botst lokaal met status- en koopkrachtselectie; dit is de dominante as. De ledenpas, prijslijst en vooral de autovraag maken de clublezing herkenbaar en verklaren waarom een irrelevant statuscriterium ineens doelgericht is. Daardoor krijgen eerdere gegevensvragen retrospectief de functie van exclusiviteitstoets. Statusselectie ondermijnt tegelijk het publieke doel van gelijke behandeling en dient het clubdoel van selectie."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén scène kan zowel een echte hulpvraag als een verborgen audit bevatten: de testdeelnemer kan zich uiterlijk precies als aanvrager gedragen. De audit is sociaal herkenbaar en de herhaalde vraag wordt daarin een expliciet testmoment voor geduld en respect. De eerdere hulpvraag en papieren worden daardoor retrospectief onderdeel van een geënsceneerd scenario. Er is echter geen echte lokale scripttegenstelling op de genoemde as: onpartijdige dienstverlening is juist het gedrag dat de audit wil meten en kan dus binnen Script B eveneens plaatsvinden. De doelbewuste herhaling belemmert een normale, efficiënte hulpafhandeling maar maakt de auditmeting mogelijk."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Intake, persoonsgegevens, formulieren, beperkte plaatsen en een beslisser over toegang kunnen aanvankelijk een publieke aanvraag vormen, maar ook een campagne-intake. Regelgebonden neutraliteit en patronage zijn lokaal onverenigbaar en vormen duidelijk de dominante tegenstelling. De vraag naar mee te brengen buren en het noteren van stemgerechtigde huisgenoten maken de campagnelezing herkenbaar. Dat gegeven is onder Script A ongeoorloofd en onverklaard, maar onder Script B een maatstaf voor electorale waarde. Eerdere persoonsgegevens verschuiven daardoor van aanvraaggegevens naar politieke mobilisatiegegevens. Kiezerswaarde als criterium verdringt onpartijdige beoordeling en faciliteert selectie op loyaliteit en nut."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een gesprek over financiële problemen, documenten, doorvragen en beperkte mogelijkheden kan zowel een aanvraaggesprek als een televisieronde dragen. Een rechtmatige, begrijpelijk gemotiveerde voorzieningsbeslissing botst lokaal met selectie op emotionele entertainmentwaarde; die tegenstelling is dominant. De applausreactie, studiolampen en finaleformule maken Script B herkenbaar, terwijl Script A vooraf door de balie- en hulpvraagcues de natuurlijke eerste lezing blijft. De enveloppenkeuze is onder Script A willekeurig en onverenigbaar met motivering, maar is onder Script B een normaal quizmechanisme. Eerder verteld leed verandert zo van relevante aanvraagcontext in dramatisch wedstrijdmateriaal. De willekeurige keuze blokkeert een verklaarbaar publiek besluit en maakt tegelijk het speldoel mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B3",
+        "gtvh_plan": {
+          "opposition_type": "Regelgebonden neutraliteit versus persoonlijke patronage.",
+          "logical_mechanism": "Scriptomschakeling door herinterpretatie: aanvankelijk worden intakegegevens gelezen als neutrale, regelgebonden beoordeling voor een publieke voorziening; het aantal stemgerechtigde huisgenoten onthult dat de gegevens dienen om politieke loyaliteit, electorale waarde en wederdiensten te beoordelen.",
+          "situation": "Een bezoeker zit tegenover een medewerker aan een bureau tijdens een intakegesprek. Er zijn formulieren, contactgegevens en een map aanwezig; er worden vragen gesteld over adres, werk, inkomen en beschikbare tijd. De setting lijkt eerst een publieke instantie waar toegang tot hulp of een voorziening wordt beoordeeld, maar blijkt een campagnekantoor van een lokale politicus te zijn.",
+          "target": "Persoonlijke patronage en cliëntelisme binnen politieke machtsuitoefening.",
+          "narrative_strategy": "De opzet volgt een herkenbare bureaucratische intake en laat de burger als aanvrager verwachten dat vaste regels neutraal worden toegepast. De punch introduceert een politiek campagneobject en laat de registratie van stemgerechtigde huisgenoten de eerdere intake retrospectief veranderen in een selectie op electorale bruikbaarheid.",
+          "lexical_anchor": "stemgerechtigde huisgenoten",
+          "supporting_dual_cues": [
+            "Een intakegesprek aan een bureau.",
+            "Vragen naar adres, werk en beschikbare tijd.",
+            "Een map met formulieren en contactgegevens.",
+            "Een medewerker die zegt dat niet iedereen direct geholpen kan worden.",
+            "Verwijzingen naar regels, termijnen en beschikbare plaatsen."
+          ],
+          "switch_trigger": "De manager schuift een stapel folders van de politicus over tafel en vraagt hoeveel buren de kandidaat kan meenemen naar een bijeenkomst.",
+          "hinge_event": "De manager noteert naast het inkomen van de bezoeker het aantal stemgerechtigde huisgenoten.",
+          "anomaly_under_a": "Voor een publieke voorziening is het aantal mogelijke kiezers van een aanvrager geen legitiem gegeven en wijst het op misbruik van positie.",
+          "resolution_under_b": "In een campagnecontext is dat aantal doelgericht: de manager schat de electorale waarde en mobilisatiekracht van de aspirant-vrijwilliger in.",
+          "role_remapping": [
+            "Burger/aanvrager wordt aspirant-vrijwilliger.",
+            "Ambtenaar wordt campagnemanager.",
+            "Instelling/overheid wordt campagneorganisatie.",
+            "Leidinggevende of bezwaarcommissie wordt de politicus of innerlijke partijkring die gunsten kan bevestigen."
+          ],
+          "setup_goal": "Script A dominant maken door de bezoeker, het bureau, de formulieren en de vragen naar persoonlijke gegevens te presenteren als een normale aanvraagprocedure bij een neutrale publieke instantie.",
+          "punch_goal": "Script B activeren doordat de folders van de politicus en het aantal stemgerechtigde huisgenoten duidelijk maken dat toegang niet op regels, maar op politieke inzet, netwerk en wederdiensten wordt beoordeeld.",
+          "punch_final_word": "stemgerechtigde huisgenoten"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden.",
+            "punchline": "Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.",
+            "full_text": "Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden. Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.",
+            "angle": "Bureaucratische intake blijkt electorale selectie.",
+            "anchor_surface_form": "stemgerechtigde huisgenoten"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen.",
+            "punchline": "Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.",
+            "full_text": "Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen. Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.",
+            "angle": "Persoonlijke gegevens krijgen plots campagnewaarde.",
+            "anchor_surface_form": "stemgerechtigde huisgenoten"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens.",
+            "punchline": "Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.",
+            "full_text": "De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens. Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.",
+            "angle": "Hulpaanvraag kantelt naar politieke ruilhandel.",
+            "anchor_surface_form": "stemgerechtigde huisgenoten"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Bij de balie leg ik mijn adres, werk en inkomen uit; de medewerker knikt en zegt dat niet iedereen direct geholpen kan worden. Dan schuift ze campagnefolders over tafel en noteert ze mijn stemgerechtigde huisgenoten.",
+            "angle": "Bureaucratische intake blijkt electorale selectie."
+          },
+          {
+            "variant_id": "V2",
+            "text": "Tijdens mijn intake vult de man formulieren in: adres, beschikbare tijd, inkomen. Hij schuift folders van de wethouder naar me toe, vraagt hoeveel buren ik meeneem, en schrijft: stemgerechtigde huisgenoten.",
+            "angle": "Persoonlijke gegevens krijgen plots campagnewaarde."
+          },
+          {
+            "variant_id": "V3",
+            "text": "De mevrouw achter het bureau controleert mijn adres en werk; haar map ligt vol contactgegevens. Ze belooft snel te beslissen, schuift folders van de politicus toe en telt mijn stemgerechtigde huisgenoten.",
+            "angle": "Hulpaanvraag kantelt naar politieke ruilhandel."
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "TA",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een bezoeker meldt persoonlijke gegevens bij een balie voor een ogenschijnlijk normale, schaarse publieke hulp- of voorzieningsaanvraag.",
+            "realized_script_b": "Dezelfde bezoeker wordt in feite beoordeeld als politiek bruikbare potentiële ondersteuner op basis van zijn electorale kring.",
+            "realized_opposition_axis": "Regelgebonden neutraliteit versus persoonlijke politieke patronage.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De balie-intake, persoonsgegevens en schaarste activeren een neutrale aanvraagprocedure; campagnefolders en stemgerechtigde huisgenoten hercoderen die gegevens als electorale waarde. De expliciete vraag hoeveel buren iemand meeneemt ontbreekt, maar de functionele omschakeling blijft intact."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De registratie van stemgerechtigde huisgenoten maakt retrospectief begrijpelijk dat de intake politieke bruikbaarheid meet in plaats van rechtmatige toegang."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Balie, persoonlijke gegevens, een medewerker en beperkte directe hulp realiseren de kern van de aanvankelijke intake; de campagnefolders verplaatsen die setting naar een politieke context."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst richt de spot op cliëntelistische politieke selectie, waarbij persoonlijke gegevens als toegangsmiddel tot politieke gunst worden gebruikt."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst begint in een plausibele bureaucratische lezing en plaatst de politieke onthulling pas in de laatste zin, waardoor eerdere details worden herlezen."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De vereiste lexicale ankerformule 'stemgerechtigde huisgenoten' staat aan het einde en werkt als duidelijke politieke hinge."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Een werkende, compacte satire die het geplande contrast tussen neutrale intake en electorale selectie realiseert; alleen de campagnewervingsvraag is ingekort.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Een aanvrager doorloopt een ogenschijnlijk reguliere intake waarin adres, beschikbare tijd en inkomen administratief worden vastgelegd.",
+            "realized_script_b": "De intake blijkt een selectie van een campagnehelper, waarbij buren en stemgerechtigde huisgenoten politieke mobilisatiewaarde vertegenwoordigen.",
+            "realized_opposition_axis": "Regelgebonden neutraliteit versus persoonlijke politieke patronage.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De formulieren en persoonlijke intakegegevens ondersteunen script A, terwijl wethoudersfolders, de vraag naar mee te nemen buren en de notitie over stemgerechtigde huisgenoten script B expliciet activeren."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De politieke folders en de burenvraag verklaren achteraf waarom ogenschijnlijk administratieve gegevens worden verzameld: zij meten campagne- en netwerkwaarde."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant bevat een intake, formulieren en de geplande gegevenscategorieën; de overgang naar de campagne van een wethouder is duidelijk gesitueerd."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De pointe maakt politieke toegang en waardering afhankelijk van mobiliseerbare persoonlijke netwerken, dus van patronage in plaats van gelijke maatstaven."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De bureaucratische inventarisatie staat voorop; daarna volgen folders en de burenvraag, met het lexicale anker als slotpointe."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De formulering bevat het beoogde anker 'stemgerechtigde huisgenoten' als laatste, opvallende registratiecategorie."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Dit is de meest volledige realisatie van het plan: de intakegegevens, campagnefolders, burenvraag en slotnotitie bouwen precies de beoogde herinterpretatie op.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Een bezoeker ondergaat aan een bureau een ogenschijnlijk administratieve beoordeling op basis van adres, werk en contactgegevens.",
+            "realized_script_b": "De beoordeling blijkt een politieke selectie waarin het aantal stemgerechtigde huisgenoten de electorale bruikbaarheid van de bezoeker aangeeft.",
+            "realized_opposition_axis": "Regelgebonden neutraliteit versus persoonlijke politieke patronage.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Bureau, controle van gegevens en een aangekondigde beslissing ondersteunen de formele lezing; folders van een politicus en het tellen van stemgerechtigde huisgenoten schakelen overtuigend naar electorale selectie. De concrete burenvraag ontbreekt, maar de kernswitch is functioneel aanwezig."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het tellen van stemgerechtigde huisgenoten maakt de eerdere gegevenscontrole retrospectief tot een meting van politieke waarde."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant realiseert een bureausetting met medewerker, gegevenscontrole, map/contactgegevens en een politieke campagnecue, hoewel inkomen en beschikbare tijd niet worden genoemd."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst viseert cliëntelisme: de gezagsdrager waardeert iemand niet neutraal, maar naar diens potentiële electorale opbrengst."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Eerst wordt een administratieve beoordeling geschetst; de folders introduceren de politieke lezing en de slotactie levert de pointe."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "'Stemgerechtigde huisgenoten' is behouden als opvallende, finale lexicale hinge; 'telt' versterkt de instrumentele electorale lezing."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De variant volgt de beoogde bureaucratie-naar-campagneomslag en behoudt het anker en doelwit, al is de aanvankelijke publieke-hulpcontext minder expliciet dan in V1 en V2.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V2",
+            "rationale": "Beide varianten voldoen aan de lengte-eis en realiseren de omslag van neutrale intake naar electorale patronage. V2 is trouwer aan het plan doordat naast formulieren, adres en inkomen ook de cruciale vraag naar mee te nemen buren expliciet wordt ingezet; daardoor is de herinterpretatie sterker en de pointe vollediger."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V1",
+            "rationale": "Beide zijn compacte, spreekbare satires met een heldere politieke slotdraai. V1 schetst de aanvankelijke publieke-hulpcontext overtuigender met inkomen en beperkte directe hulp, waardoor de latere electorale selectie scherper contrasteert; V3 blijft algemener en mist enkele intake-ankers."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V2",
+            "rationale": "V2 behoudt meer verplichte bouwstenen: de intakegegevens, campagnefolders, de burenvraag en het slotanker over stemgerechtigde huisgenoten. Daardoor bouwt V2 de switch geleidelijker op en hercodeert hij de eerdere gegevens overtuigender dan V3, dat minder concrete intake-informatie biedt."
+          }
+        ],
+        "selected_variant_id": "V2",
+        "selection_rationale": "V2 is de meest volledige en performabele realisatie van het plan. De bureaucratische intake krijgt via folders, buren en stemgerechtigde huisgenoten een duidelijke, retrospectief logische omslag naar politieke mobilisatie en patronage."
+      }
+    }
+  },
+  "result_sha256": "4cd9ae0fb10dd91e0d1acb12bccf4f8fc282976a737e3b61f0cdf6fb453b75e8"
+}

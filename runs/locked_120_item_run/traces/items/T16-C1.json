@@ -1,0 +1,842 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T16-C1",
+  "topic_id": "T16",
+  "topic": "Sport, voetbal en supporterscultuur",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T17:29:46.676400+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Sport, voetbal en supporterscultuur",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Sport, voetbal en supporterscultuur\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Sport, voetbal en supporterscultuur\",\n  \"script_a\": {\n    \"script_a\": \"Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.\",\n    \"participants_and_roles\": [\n      \"Spelers: proberen volgens de spelregels te winnen.\",\n      \"Trainer en staf: bepalen tactiek, wissels en begeleiding.\",\n      \"Scheidsrechter en assistenten: bewaken de regels en nemen beslissingen.\",\n      \"Supporters: steunen hun eigen club, beleven spanning en vieren of balen samen.\",\n      \"Tegenstander en diens supporters: streven hetzelfde legitieme sportieve doel na.\",\n      \"Stadionpersoneel en beveiliging: zorgen dat het evenement ordelijk en veilig verloopt.\"\n    ],\n    \"apparent_goal\": \"De wedstrijd op een spannende, eerlijke en veilige manier beleven, met winst voor de eigen club als gewenste uitkomst.\",\n    \"preconditions\": [\n      \"Er is een geplande wedstrijd tussen twee clubs met duidelijke competitie- of bekerinzet.\",\n      \"Teams, officials en stadionfaciliteiten zijn voorbereid.\",\n      \"Supporters hebben een band met een club en kennen de gebruikelijke rituelen, zoals sjaals, liederen en gezamenlijk kijken.\",\n      \"Er gelden spelregels, stadionregels en grenzen aan gedrag op de tribune.\"\n    ],\n    \"expected_actions\": [\n      \"De spelers voetballen, volgen de tactiek en proberen doelpunten te maken.\",\n      \"De scheidsrechter fluit overtredingen en bewaakt een eerlijk verloop.\",\n      \"Supporters zingen, klappen, dragen clubkleuren en reageren emotioneel op kansen, doelpunten en beslissingen.\",\n      \"Supporters discussiëren na afloop over de wedstrijd, de tactiek en cruciale momenten.\",\n      \"Beveiliging grijpt in als gedrag de veiligheid of orde bedreigt.\"\n    ],\n    \"expected_outcome\": \"Na negentig minuten, eventueel met verlenging of strafschoppen, is er een uitslag; supporters vieren de overwinning of verwerken teleurstelling, terwijl de rivaliteit vooral sportief blijft.\",\n    \"expected_propositions\": [\n      \"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\",\n      \"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\",\n      \"De scheidsrechter is een gezagsfiguur wiens beslissingen invloed hebben op de stemming, ook wanneer supporters het oneens zijn.\",\n      \"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\",\n      \"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\"\n    ],\n    \"audience_expectation\": \"Een setup over voetbal en supporterscultuur activeert het beeld van een beladen maar herkenbare wedstrijddag: loyale fans, collectieve rituelen, sportieve rivaliteit, discussie over arbitrage en een emotionele ontlading rond winst of verlies.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Sport, voetbal en supporterscultuur\",\n  \"script_a\": {\n    \"script_a\": \"Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.\",\n    \"participants_and_roles\": [\n      \"Spelers: proberen volgens de spelregels te winnen.\",\n      \"Trainer en staf: bepalen tactiek, wissels en begeleiding.\",\n      \"Scheidsrechter en assistenten: bewaken de regels en nemen beslissingen.\",\n      \"Supporters: steunen hun eigen club, beleven spanning en vieren of balen samen.\",\n      \"Tegenstander en diens supporters: streven hetzelfde legitieme sportieve doel na.\",\n      \"Stadionpersoneel en beveiliging: zorgen dat het evenement ordelijk en veilig verloopt.\"\n    ],\n    \"apparent_goal\": \"De wedstrijd op een spannende, eerlijke en veilige manier beleven, met winst voor de eigen club als gewenste uitkomst.\",\n    \"preconditions\": [\n      \"Er is een geplande wedstrijd tussen twee clubs met duidelijke competitie- of bekerinzet.\",\n      \"Teams, officials en stadionfaciliteiten zijn voorbereid.\",\n      \"Supporters hebben een band met een club en kennen de gebruikelijke rituelen, zoals sjaals, liederen en gezamenlijk kijken.\",\n      \"Er gelden spelregels, stadionregels en grenzen aan gedrag op de tribune.\"\n    ],\n    \"expected_actions\": [\n      \"De spelers voetballen, volgen de tactiek en proberen doelpunten te maken.\",\n      \"De scheidsrechter fluit overtredingen en bewaakt een eerlijk verloop.\",\n      \"Supporters zingen, klappen, dragen clubkleuren en reageren emotioneel op kansen, doelpunten en beslissingen.\",\n      \"Supporters discussiëren na afloop over de wedstrijd, de tactiek en cruciale momenten.\",\n      \"Beveiliging grijpt in als gedrag de veiligheid of orde bedreigt.\"\n    ],\n    \"expected_outcome\": \"Na negentig minuten, eventueel met verlenging of strafschoppen, is er een uitslag; supporters vieren de overwinning of verwerken teleurstelling, terwijl de rivaliteit vooral sportief blijft.\",\n    \"expected_propositions\": [\n      \"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\",\n      \"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\",\n      \"De scheidsrechter is een gezagsfiguur wiens beslissingen invloed hebben op de stemming, ook wanneer supporters het oneens zijn.\",\n      \"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\",\n      \"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\"\n    ],\n    \"audience_expectation\": \"Een setup over voetbal en supporterscultuur activeert het beeld van een beladen maar herkenbare wedstrijddag: loyale fans, collectieve rituelen, sportieve rivaliteit, discussie over arbitrage en een emotionele ontlading rond winst of verlies.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een stadion organiseert tijdens een ogenschijnlijk normale voetbalavond een grootschalige ontruimingsoefening, waarbij publiek, beveiliging en hulpdiensten testen of iedereen snel en ordelijk naar veilige zones kan worden geleid.\",\n      \"opposition_axis\": \"Sportieve beleving en blijven voor de uitslag tegenover veiligheidsprocedure en gecontroleerd vertrekken.\",\n      \"opposed_proposition\": \"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\",\n      \"shared_anchor\": \"Een vol stadion reageert collectief op signalen vanaf het veld.\",\n      \"reading_a\": \"Supporters volgen de wedstrijd, reageren op spelmomenten en willen tot het laatste fluitsignaal blijven om de uitslag mee te maken.\",\n      \"reading_b\": \"De aanwezigen fungeren als oefenpubliek en reageren op vooraf afgesproken veiligheids- en evacuatietekens.\",\n      \"roles_b\": [\n        \"Oefenpubliek: volgt instructies en verlaat het stadion via aangewezen routes.\",\n        \"Oefenleiding: plant het scenario en beoordeelt de doorstroming.\",\n        \"Beveiligers en stewards: sturen groepen naar uitgangen en registreren knelpunten.\",\n        \"Brandweer en ambulanceploegen: oefenen inzet, communicatie en opvang.\",\n        \"Omroeper: geeft geloofwaardige maar gecontroleerde instructies.\"\n      ],\n      \"goal_b\": \"Aantonen dat een vol stadion bij een incident snel, veilig en zonder paniek kan worden ontruimd.\",\n      \"role_remapping\": [\n        \"Supporters worden oefendeelnemers.\",\n        \"Stadionpersoneel en beveiliging worden begeleiders en beoordelaars van de oefening.\",\n        \"De scheidsrechterlijke fluit en stadionomroep worden deels gelezen als veiligheidssignalen.\",\n        \"De wedstrijd wordt een geloofwaardig decor voor een publieksproef.\"\n      ],\n      \"shared_cues\": [\n        \"Clubkleuren, gezang en een volle tribune.\",\n        \"Stewards langs de trappen en uitgangen.\",\n        \"Stadionomroep met korte aanwijzingen.\",\n        \"Een plotselinge onderbreking van het spel.\",\n        \"Groepen die tegelijk naar dezelfde kant kijken.\"\n      ],\n      \"switch_trigger\": \"De omroeper noemt onverwacht geen wissel of blessure, maar verzoekt vak voor vak via genummerde nooduitgangen te vertrekken.\",\n      \"hinge_event\": \"In de beslissende slotfase staat vrijwel iedereen zonder protest op en loopt men rustig in vaste rijen het stadion uit.\",\n      \"anomaly_under_a\": \"Bij een spannende wedstrijd is het onverklaarbaar dat supporters de onzekere ontknoping vrijwillig verlaten en zich opvallend gedisciplineerd over de tribunes verspreiden.\",\n      \"resolution_under_b\": \"Het vertrek is precies het meetmoment van de ontruimingsoefening: de vaste rijen, rustige houding en gefaseerde routes leveren bruikbare gegevens op over veiligheid en doorstroming.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.\",\n      \"opposition_axis\": \"Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.\",\n      \"opposed_proposition\": \"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\",\n      \"shared_anchor\": \"Een tribune vol mensen in clubkleuren juicht naar het veld.\",\n      \"reading_a\": \"Echte supporters dragen kleuren van hun club en juichen omdat zij emotioneel betrokken zijn bij de wedstrijd.\",\n      \"reading_b\": \"Figuranten dragen toegewezen kleuren en voeren enthousiasme uit volgens het draaiboek van een commercial.\",\n      \"roles_b\": [\n        \"Figuranten: spelen jubelende, nerveuze of teleurgestelde supporters.\",\n        \"Regisseur: bepaalt de gewenste emoties, bewegingen en camerastandpunten.\",\n        \"Productieassistenten: delen sjaals uit en geven stilzwijgende of zichtbare cues.\",\n        \"Camera- en geluidsploeg: registreert bruikbaar beeld en stadiongeluid.\",\n        \"Acteur op het veld: speelt een beslissend voetbalmoment.\"\n      ],\n      \"goal_b\": \"Opnemen van geloofwaardige beelden van collectieve supporterspassie voor een reclamecampagne.\",\n      \"role_remapping\": [\n        \"Supporters worden figuranten.\",\n        \"Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.\",\n        \"Spelers worden acteurs die vooraf bepaalde acties uitvoeren.\",\n        \"De stadionomroep wordt een productiemiddel voor aanwijzingen en resets.\"\n      ],\n      \"shared_cues\": [\n        \"Sjaals, vlaggen en clubshirts.\",\n        \"Gezamenlijk aftellen voor een aanval.\",\n        \"Luid gejuich na een schot richting doel.\",\n        \"Camera's langs de zijlijn.\",\n        \"Mensen die elkaar omhelzen op de tribune.\"\n      ],\n      \"switch_trigger\": \"Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.\",\n      \"hinge_event\": \"De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.\",\n      \"anomaly_under_a\": \"Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een voetbalstadion is het decor voor een internationale supporterszangwedstrijd, waarin groepen niet strijden om de uitslag van een wedstrijd maar om de beste uitvoering van liederen, choreografie en tribunecoördinatie.\",\n      \"opposition_axis\": \"Onvoorspelbare reactie op een sportwedstrijd tegenover vooraf ingestudeerde artistieke uitvoering.\",\n      \"opposed_proposition\": \"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\",\n      \"shared_anchor\": \"Duizenden mensen zingen tegelijk en steken sjaals in de lucht.\",\n      \"reading_a\": \"Supporters zetten liederen in als emotionele aanmoediging die meebeweegt met kansen, doelpunten en frustraties op het veld.\",\n      \"reading_b\": \"Deelnemende koren voeren beoordeelde nummers uit met vaste inzetten, toonhoogtes, bewegingen en visuele patronen.\",\n      \"roles_b\": [\n        \"Zanggroepen: vertegenwoordigen steden of verenigingen met ingestudeerde supportersliederen.\",\n        \"Dirigenten: leiden tempo, inzetten en meerstemmigheid.\",\n        \"Jury: beoordeelt samenzang, originaliteit en choreografie.\",\n        \"Presentator: kondigt rondes en deelnemers aan.\",\n        \"Technische ploeg: verzorgt licht, geluid en scoreweergave.\"\n      ],\n      \"goal_b\": \"De zangwedstrijd winnen door de meest indrukwekkende collectieve supportersperformance neer te zetten.\",\n      \"role_remapping\": [\n        \"Supporters worden koorleden en deelnemers.\",\n        \"De trainer wordt dirigent of groepsleider.\",\n        \"De scheidsrechter wordt een juryvoorzitter die prestaties beoordeelt.\",\n        \"Het scorebord wordt een beoordelings- en songinformatiebord.\",\n        \"Rivaliserende supporters worden concurrerende zanggroepen.\"\n      ],\n      \"shared_cues\": [\n        \"Tribunes in clubkleuren.\",\n        \"Sjaals die op een teken omhooggaan.\",\n        \"Ritmegeklap en massaal gezang.\",\n        \"Een scorebord dat de aandacht trekt.\",\n        \"Een gespannen stilte vlak vóór een collectieve uitbarsting.\"\n      ],\n      \"switch_trigger\": \"Het scorebord toont na een lange stilte geen stand of blessuretijd, maar een cijfermatige juryscore en de tekst 'toonladder A-mineur'.\",\n      \"hinge_event\": \"Na een schijnbaar beslissend moment op het veld blijven alle aanwezigen stil, waarna zij op één exact teken een vierstemmig refrein inzetten.\",\n      \"anomaly_under_a\": \"Een echte supportersmassa zou bij een beslissend voetbalmoment niet eerst technisch stilvallen en vervolgens muzikaal perfect, ongeacht het spelverloop, inzetten.\",\n      \"resolution_under_b\": \"De stilte en de uniforme inzet zijn onderdelen van een beoordeelde uitvoering; de groep wacht op de dirigent om precisie en discipline te demonstreren.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een groep stadionbezoekers organiseert tijdens een voetbalavond een grootschalige huwelijksaanzoek-flashmob, waarbij de vermeende supportersrituelen worden gebruikt om één nietsvermoedende partner publiekelijk te verrassen.\",\n      \"opposition_axis\": \"Collectieve trouw aan een voetbalclub tegenover een collectieve, persoonlijke romantische verrassing.\",\n      \"opposed_proposition\": \"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\",\n      \"shared_anchor\": \"Twee tribunevakken beantwoorden elkaar met gezang en grote spandoeken.\",\n      \"reading_a\": \"Tegenover elkaar staande supportersvakken zingen rivaliserende leuzen en tonen clubgebonden spandoeken als onderdeel van sportieve plagerij.\",\n      \"reading_b\": \"Vrienden, familie en ingehuurde deelnemers gebruiken de vakken als twee helften van één zorgvuldig voorbereide boodschap voor een aanzoek.\",\n      \"roles_b\": [\n        \"Aanstaande partner: denkt een gewone wedstrijd te bezoeken.\",\n        \"Initiatiefnemer: plant het aanzoek en geeft op het juiste moment het signaal.\",\n        \"Familie, vrienden en figuranten: vormen de flashmob en houden delen van de boodschap omhoog.\",\n        \"Stadionpresentator: werkt mee aan de afleiding en onthulling.\",\n        \"Cameraploeg: legt de verrassing vast.\"\n      ],\n      \"goal_b\": \"De partner op een verrassende maar warme manier ten huwelijk vragen met behulp van een stadionbrede choreografie.\",\n      \"role_remapping\": [\n        \"Supporters worden familieleden, vrienden en flashmobdeelnemers.\",\n        \"Twee rivaliserende vakken worden twee delen van één boodschap.\",\n        \"De stadionomroeper wordt medeplichtige presentator.\",\n        \"Een tifo wordt een persoonlijk aanzoek.\",\n        \"De vermeende wedstrijdspanning wordt een afleidingsmanoeuvre voor de aanstaande partner.\"\n      ],\n      \"shared_cues\": [\n        \"Clubliederen en beurtzang tussen vakken.\",\n        \"Grote opgerolde spandoeken.\",\n        \"Sjaals en kartonnen kleurvlakken.\",\n        \"Camera's die op de tribune gericht zijn.\",\n        \"Een stadionomroeper die het publiek tot stilte vraagt.\"\n      ],\n      \"switch_trigger\": \"De twee vakken rollen hun ogenschijnlijk rivaliserende doeken uit, die samen niet een clubmotto maar de woorden 'WIL JE MET MIJ TROUWEN?' vormen.\",\n      \"hinge_event\": \"De vermeende uitsupporters lopen zonder vijandigheid naar het thuisvak en vormen samen een hart rond één verbaasde toeschouwer.\",\n      \"anomaly_under_a\": \"Dat rivaliserende supporters hun eigen vak verlaten, elkaars kleuren omarmen en een gezamenlijk romantisch symbool vormen, past niet bij de verwachte clubtegenstelling.\",\n      \"resolution_under_b\": \"De rivaliteit was geënsceneerd: beide vakken zijn onderdelen van de flashmob en komen samen om het aanzoek zichtbaar, veilig en persoonlijk te laten slagen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Sport, voetbal en supporterscultuur\",\n  \"script_a\": {\n    \"script_a\": \"Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.\",\n    \"participants_and_roles\": [\n      \"Spelers: proberen volgens de spelregels te winnen.\",\n      \"Trainer en staf: bepalen tactiek, wissels en begeleiding.\",\n      \"Scheidsrechter en assistenten: bewaken de regels en nemen beslissingen.\",\n      \"Supporters: steunen hun eigen club, beleven spanning en vieren of balen samen.\",\n      \"Tegenstander en diens supporters: streven hetzelfde legitieme sportieve doel na.\",\n      \"Stadionpersoneel en beveiliging: zorgen dat het evenement ordelijk en veilig verloopt.\"\n    ],\n    \"apparent_goal\": \"De wedstrijd op een spannende, eerlijke en veilige manier beleven, met winst voor de eigen club als gewenste uitkomst.\",\n    \"preconditions\": [\n      \"Er is een geplande wedstrijd tussen twee clubs met duidelijke competitie- of bekerinzet.\",\n      \"Teams, officials en stadionfaciliteiten zijn voorbereid.\",\n      \"Supporters hebben een band met een club en kennen de gebruikelijke rituelen, zoals sjaals, liederen en gezamenlijk kijken.\",\n      \"Er gelden spelregels, stadionregels en grenzen aan gedrag op de tribune.\"\n    ],\n    \"expected_actions\": [\n      \"De spelers voetballen, volgen de tactiek en proberen doelpunten te maken.\",\n      \"De scheidsrechter fluit overtredingen en bewaakt een eerlijk verloop.\",\n      \"Supporters zingen, klappen, dragen clubkleuren en reageren emotioneel op kansen, doelpunten en beslissingen.\",\n      \"Supporters discussiëren na afloop over de wedstrijd, de tactiek en cruciale momenten.\",\n      \"Beveiliging grijpt in als gedrag de veiligheid of orde bedreigt.\"\n    ],\n    \"expected_outcome\": \"Na negentig minuten, eventueel met verlenging of strafschoppen, is er een uitslag; supporters vieren de overwinning of verwerken teleurstelling, terwijl de rivaliteit vooral sportief blijft.\",\n    \"expected_propositions\": [\n      \"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\",\n      \"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\",\n      \"De scheidsrechter is een gezagsfiguur wiens beslissingen invloed hebben op de stemming, ook wanneer supporters het oneens zijn.\",\n      \"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\",\n      \"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\"\n    ],\n    \"audience_expectation\": \"Een setup over voetbal en supporterscultuur activeert het beeld van een beladen maar herkenbare wedstrijddag: loyale fans, collectieve rituelen, sportieve rivaliteit, discussie over arbitrage en een emotionele ontlading rond winst of verlies.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een stadion organiseert tijdens een ogenschijnlijk normale voetbalavond een grootschalige ontruimingsoefening, waarbij publiek, beveiliging en hulpdiensten testen of iedereen snel en ordelijk naar veilige zones kan worden geleid.\",\n      \"opposition_axis\": \"Sportieve beleving en blijven voor de uitslag tegenover veiligheidsprocedure en gecontroleerd vertrekken.\",\n      \"opposed_proposition\": \"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\",\n      \"shared_anchor\": \"Een vol stadion reageert collectief op signalen vanaf het veld.\",\n      \"reading_a\": \"Supporters volgen de wedstrijd, reageren op spelmomenten en willen tot het laatste fluitsignaal blijven om de uitslag mee te maken.\",\n      \"reading_b\": \"De aanwezigen fungeren als oefenpubliek en reageren op vooraf afgesproken veiligheids- en evacuatietekens.\",\n      \"roles_b\": [\n        \"Oefenpubliek: volgt instructies en verlaat het stadion via aangewezen routes.\",\n        \"Oefenleiding: plant het scenario en beoordeelt de doorstroming.\",\n        \"Beveiligers en stewards: sturen groepen naar uitgangen en registreren knelpunten.\",\n        \"Brandweer en ambulanceploegen: oefenen inzet, communicatie en opvang.\",\n        \"Omroeper: geeft geloofwaardige maar gecontroleerde instructies.\"\n      ],\n      \"goal_b\": \"Aantonen dat een vol stadion bij een incident snel, veilig en zonder paniek kan worden ontruimd.\",\n      \"role_remapping\": [\n        \"Supporters worden oefendeelnemers.\",\n        \"Stadionpersoneel en beveiliging worden begeleiders en beoordelaars van de oefening.\",\n        \"De scheidsrechterlijke fluit en stadionomroep worden deels gelezen als veiligheidssignalen.\",\n        \"De wedstrijd wordt een geloofwaardig decor voor een publieksproef.\"\n      ],\n      \"shared_cues\": [\n        \"Clubkleuren, gezang en een volle tribune.\",\n        \"Stewards langs de trappen en uitgangen.\",\n        \"Stadionomroep met korte aanwijzingen.\",\n        \"Een plotselinge onderbreking van het spel.\",\n        \"Groepen die tegelijk naar dezelfde kant kijken.\"\n      ],\n      \"switch_trigger\": \"De omroeper noemt onverwacht geen wissel of blessure, maar verzoekt vak voor vak via genummerde nooduitgangen te vertrekken.\",\n      \"hinge_event\": \"In de beslissende slotfase staat vrijwel iedereen zonder protest op en loopt men rustig in vaste rijen het stadion uit.\",\n      \"anomaly_under_a\": \"Bij een spannende wedstrijd is het onverklaarbaar dat supporters de onzekere ontknoping vrijwillig verlaten en zich opvallend gedisciplineerd over de tribunes verspreiden.\",\n      \"resolution_under_b\": \"Het vertrek is precies het meetmoment van de ontruimingsoefening: de vaste rijen, rustige houding en gefaseerde routes leveren bruikbare gegevens op over veiligheid en doorstroming.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.\",\n      \"opposition_axis\": \"Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.\",\n      \"opposed_proposition\": \"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\",\n      \"shared_anchor\": \"Een tribune vol mensen in clubkleuren juicht naar het veld.\",\n      \"reading_a\": \"Echte supporters dragen kleuren van hun club en juichen omdat zij emotioneel betrokken zijn bij de wedstrijd.\",\n      \"reading_b\": \"Figuranten dragen toegewezen kleuren en voeren enthousiasme uit volgens het draaiboek van een commercial.\",\n      \"roles_b\": [\n        \"Figuranten: spelen jubelende, nerveuze of teleurgestelde supporters.\",\n        \"Regisseur: bepaalt de gewenste emoties, bewegingen en camerastandpunten.\",\n        \"Productieassistenten: delen sjaals uit en geven stilzwijgende of zichtbare cues.\",\n        \"Camera- en geluidsploeg: registreert bruikbaar beeld en stadiongeluid.\",\n        \"Acteur op het veld: speelt een beslissend voetbalmoment.\"\n      ],\n      \"goal_b\": \"Opnemen van geloofwaardige beelden van collectieve supporterspassie voor een reclamecampagne.\",\n      \"role_remapping\": [\n        \"Supporters worden figuranten.\",\n        \"Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.\",\n        \"Spelers worden acteurs die vooraf bepaalde acties uitvoeren.\",\n        \"De stadionomroep wordt een productiemiddel voor aanwijzingen en resets.\"\n      ],\n      \"shared_cues\": [\n        \"Sjaals, vlaggen en clubshirts.\",\n        \"Gezamenlijk aftellen voor een aanval.\",\n        \"Luid gejuich na een schot richting doel.\",\n        \"Camera's langs de zijlijn.\",\n        \"Mensen die elkaar omhelzen op de tribune.\"\n      ],\n      \"switch_trigger\": \"Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.\",\n      \"hinge_event\": \"De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.\",\n      \"anomaly_under_a\": \"Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een voetbalstadion is het decor voor een internationale supporterszangwedstrijd, waarin groepen niet strijden om de uitslag van een wedstrijd maar om de beste uitvoering van liederen, choreografie en tribunecoördinatie.\",\n      \"opposition_axis\": \"Onvoorspelbare reactie op een sportwedstrijd tegenover vooraf ingestudeerde artistieke uitvoering.\",\n      \"opposed_proposition\": \"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\",\n      \"shared_anchor\": \"Duizenden mensen zingen tegelijk en steken sjaals in de lucht.\",\n      \"reading_a\": \"Supporters zetten liederen in als emotionele aanmoediging die meebeweegt met kansen, doelpunten en frustraties op het veld.\",\n      \"reading_b\": \"Deelnemende koren voeren beoordeelde nummers uit met vaste inzetten, toonhoogtes, bewegingen en visuele patronen.\",\n      \"roles_b\": [\n        \"Zanggroepen: vertegenwoordigen steden of verenigingen met ingestudeerde supportersliederen.\",\n        \"Dirigenten: leiden tempo, inzetten en meerstemmigheid.\",\n        \"Jury: beoordeelt samenzang, originaliteit en choreografie.\",\n        \"Presentator: kondigt rondes en deelnemers aan.\",\n        \"Technische ploeg: verzorgt licht, geluid en scoreweergave.\"\n      ],\n      \"goal_b\": \"De zangwedstrijd winnen door de meest indrukwekkende collectieve supportersperformance neer te zetten.\",\n      \"role_remapping\": [\n        \"Supporters worden koorleden en deelnemers.\",\n        \"De trainer wordt dirigent of groepsleider.\",\n        \"De scheidsrechter wordt een juryvoorzitter die prestaties beoordeelt.\",\n        \"Het scorebord wordt een beoordelings- en songinformatiebord.\",\n        \"Rivaliserende supporters worden concurrerende zanggroepen.\"\n      ],\n      \"shared_cues\": [\n        \"Tribunes in clubkleuren.\",\n        \"Sjaals die op een teken omhooggaan.\",\n        \"Ritmegeklap en massaal gezang.\",\n        \"Een scorebord dat de aandacht trekt.\",\n        \"Een gespannen stilte vlak vóór een collectieve uitbarsting.\"\n      ],\n      \"switch_trigger\": \"Het scorebord toont na een lange stilte geen stand of blessuretijd, maar een cijfermatige juryscore en de tekst 'toonladder A-mineur'.\",\n      \"hinge_event\": \"Na een schijnbaar beslissend moment op het veld blijven alle aanwezigen stil, waarna zij op één exact teken een vierstemmig refrein inzetten.\",\n      \"anomaly_under_a\": \"Een echte supportersmassa zou bij een beslissend voetbalmoment niet eerst technisch stilvallen en vervolgens muzikaal perfect, ongeacht het spelverloop, inzetten.\",\n      \"resolution_under_b\": \"De stilte en de uniforme inzet zijn onderdelen van een beoordeelde uitvoering; de groep wacht op de dirigent om precisie en discipline te demonstreren.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een groep stadionbezoekers organiseert tijdens een voetbalavond een grootschalige huwelijksaanzoek-flashmob, waarbij de vermeende supportersrituelen worden gebruikt om één nietsvermoedende partner publiekelijk te verrassen.\",\n      \"opposition_axis\": \"Collectieve trouw aan een voetbalclub tegenover een collectieve, persoonlijke romantische verrassing.\",\n      \"opposed_proposition\": \"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\",\n      \"shared_anchor\": \"Twee tribunevakken beantwoorden elkaar met gezang en grote spandoeken.\",\n      \"reading_a\": \"Tegenover elkaar staande supportersvakken zingen rivaliserende leuzen en tonen clubgebonden spandoeken als onderdeel van sportieve plagerij.\",\n      \"reading_b\": \"Vrienden, familie en ingehuurde deelnemers gebruiken de vakken als twee helften van één zorgvuldig voorbereide boodschap voor een aanzoek.\",\n      \"roles_b\": [\n        \"Aanstaande partner: denkt een gewone wedstrijd te bezoeken.\",\n        \"Initiatiefnemer: plant het aanzoek en geeft op het juiste moment het signaal.\",\n        \"Familie, vrienden en figuranten: vormen de flashmob en houden delen van de boodschap omhoog.\",\n        \"Stadionpresentator: werkt mee aan de afleiding en onthulling.\",\n        \"Cameraploeg: legt de verrassing vast.\"\n      ],\n      \"goal_b\": \"De partner op een verrassende maar warme manier ten huwelijk vragen met behulp van een stadionbrede choreografie.\",\n      \"role_remapping\": [\n        \"Supporters worden familieleden, vrienden en flashmobdeelnemers.\",\n        \"Twee rivaliserende vakken worden twee delen van één boodschap.\",\n        \"De stadionomroeper wordt medeplichtige presentator.\",\n        \"Een tifo wordt een persoonlijk aanzoek.\",\n        \"De vermeende wedstrijdspanning wordt een afleidingsmanoeuvre voor de aanstaande partner.\"\n      ],\n      \"shared_cues\": [\n        \"Clubliederen en beurtzang tussen vakken.\",\n        \"Grote opgerolde spandoeken.\",\n        \"Sjaals en kartonnen kleurvlakken.\",\n        \"Camera's die op de tribune gericht zijn.\",\n        \"Een stadionomroeper die het publiek tot stilte vraagt.\"\n      ],\n      \"switch_trigger\": \"De twee vakken rollen hun ogenschijnlijk rivaliserende doeken uit, die samen niet een clubmotto maar de woorden 'WIL JE MET MIJ TROUWEN?' vormen.\",\n      \"hinge_event\": \"De vermeende uitsupporters lopen zonder vijandigheid naar het thuisvak en vormen samen een hart rond één verbaasde toeschouwer.\",\n      \"anomaly_under_a\": \"Dat rivaliserende supporters hun eigen vak verlaten, elkaars kleuren omarmen en een gezamenlijk romantisch symbool vormen, past niet bij de verwachte clubtegenstelling.\",\n      \"resolution_under_b\": \"De rivaliteit was geënsceneerd: beide vakken zijn onderdelen van de flashmob en komen samen om het aanzoek zichtbaar, veilig en persoonlijk te laten slagen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Sport, voetbal en supporterscultuur\",\n  \"plan\": {\n    \"setup_script\": \"Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.\",\n    \"opposing_script\": \"Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.\",\n    \"opposition_type\": \"Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.\",\n    \"trigger\": \"Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Sjaals, vlaggen en clubshirts.\",\n      \"Gezamenlijk aftellen voor een aanval.\",\n      \"Luid gejuich na een schot richting doel.\",\n      \"Camera's langs de zijlijn.\",\n      \"Mensen die elkaar omhelzen op de tribune.\"\n    ],\n    \"hinge_event\": \"De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.\",\n    \"anomaly_under_a\": \"Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.\",\n    \"resolution_under_b\": \"De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.\",\n    \"role_remapping\": [\n      \"Supporters worden figuranten.\",\n      \"Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.\",\n      \"Spelers worden acteurs die vooraf bepaalde acties uitvoeren.\",\n      \"De stadionomroep wordt een productiemiddel voor aanwijzingen en resets.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Sport, voetbal en supporterscultuur\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.\",\n      \"participants_and_roles\": [\n        \"Spelers: proberen volgens de spelregels te winnen.\",\n        \"Trainer en staf: bepalen tactiek, wissels en begeleiding.\",\n        \"Scheidsrechter en assistenten: bewaken de regels en nemen beslissingen.\",\n        \"Supporters: steunen hun eigen club, beleven spanning en vieren of balen samen.\",\n        \"Tegenstander en diens supporters: streven hetzelfde legitieme sportieve doel na.\",\n        \"Stadionpersoneel en beveiliging: zorgen dat het evenement ordelijk en veilig verloopt.\"\n      ],\n      \"apparent_goal\": \"De wedstrijd op een spannende, eerlijke en veilige manier beleven, met winst voor de eigen club als gewenste uitkomst.\",\n      \"preconditions\": [\n        \"Er is een geplande wedstrijd tussen twee clubs met duidelijke competitie- of bekerinzet.\",\n        \"Teams, officials en stadionfaciliteiten zijn voorbereid.\",\n        \"Supporters hebben een band met een club en kennen de gebruikelijke rituelen, zoals sjaals, liederen en gezamenlijk kijken.\",\n        \"Er gelden spelregels, stadionregels en grenzen aan gedrag op de tribune.\"\n      ],\n      \"expected_actions\": [\n        \"De spelers voetballen, volgen de tactiek en proberen doelpunten te maken.\",\n        \"De scheidsrechter fluit overtredingen en bewaakt een eerlijk verloop.\",\n        \"Supporters zingen, klappen, dragen clubkleuren en reageren emotioneel op kansen, doelpunten en beslissingen.\",\n        \"Supporters discussiëren na afloop over de wedstrijd, de tactiek en cruciale momenten.\",\n        \"Beveiliging grijpt in als gedrag de veiligheid of orde bedreigt.\"\n      ],\n      \"expected_outcome\": \"Na negentig minuten, eventueel met verlenging of strafschoppen, is er een uitslag; supporters vieren de overwinning of verwerken teleurstelling, terwijl de rivaliteit vooral sportief blijft.\",\n      \"expected_propositions\": [\n        \"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\",\n        \"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\",\n        \"De scheidsrechter is een gezagsfiguur wiens beslissingen invloed hebben op de stemming, ook wanneer supporters het oneens zijn.\",\n        \"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\",\n        \"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\"\n      ],\n      \"audience_expectation\": \"Een setup over voetbal en supporterscultuur activeert het beeld van een beladen maar herkenbare wedstrijddag: loyale fans, collectieve rituelen, sportieve rivaliteit, discussie over arbitrage en een emotionele ontlading rond winst of verlies.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.\",\n      \"opposition_axis\": \"Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.\",\n      \"opposed_proposition\": \"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\",\n      \"shared_anchor\": \"Een tribune vol mensen in clubkleuren juicht naar het veld.\",\n      \"reading_a\": \"Echte supporters dragen kleuren van hun club en juichen omdat zij emotioneel betrokken zijn bij de wedstrijd.\",\n      \"reading_b\": \"Figuranten dragen toegewezen kleuren en voeren enthousiasme uit volgens het draaiboek van een commercial.\",\n      \"roles_b\": [\n        \"Figuranten: spelen jubelende, nerveuze of teleurgestelde supporters.\",\n        \"Regisseur: bepaalt de gewenste emoties, bewegingen en camerastandpunten.\",\n        \"Productieassistenten: delen sjaals uit en geven stilzwijgende of zichtbare cues.\",\n        \"Camera- en geluidsploeg: registreert bruikbaar beeld en stadiongeluid.\",\n        \"Acteur op het veld: speelt een beslissend voetbalmoment.\"\n      ],\n      \"goal_b\": \"Opnemen van geloofwaardige beelden van collectieve supporterspassie voor een reclamecampagne.\",\n      \"role_remapping\": [\n        \"Supporters worden figuranten.\",\n        \"Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.\",\n        \"Spelers worden acteurs die vooraf bepaalde acties uitvoeren.\",\n        \"De stadionomroep wordt een productiemiddel voor aanwijzingen en resets.\"\n      ],\n      \"shared_cues\": [\n        \"Sjaals, vlaggen en clubshirts.\",\n        \"Gezamenlijk aftellen voor een aanval.\",\n        \"Luid gejuich na een schot richting doel.\",\n        \"Camera's langs de zijlijn.\",\n        \"Mensen die elkaar omhelzen op de tribune.\"\n      ],\n      \"switch_trigger\": \"Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.\",\n      \"hinge_event\": \"De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.\",\n      \"anomaly_under_a\": \"Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.\",\n      \"opposing_script\": \"Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.\",\n      \"opposition_type\": \"Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.\",\n      \"trigger\": \"Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Sjaals, vlaggen en clubshirts.\",\n        \"Gezamenlijk aftellen voor een aanval.\",\n        \"Luid gejuich na een schot richting doel.\",\n        \"Camera's langs de zijlijn.\",\n        \"Mensen die elkaar omhelzen op de tribune.\"\n      ],\n      \"hinge_event\": \"De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.\",\n      \"anomaly_under_a\": \"Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.\",\n      \"role_remapping\": [\n        \"Supporters worden figuranten.\",\n        \"Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.\",\n        \"Spelers worden acteurs die vooraf bepaalde acties uitvoeren.\",\n        \"De stadionomroep wordt een productiemiddel voor aanwijzingen en resets.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij ons in het stadion telde iedereen mee voor de aanval, sjaals omhoog, en na het schot vloog de hele tribune elkaar in de armen. Toen de bal vijf minuten later nog steeds stil lag, riep iemand: „Mooi, maar nu allemaal spontaner!”\",\n      \"angle\": \"Supporters blijken figuranten in een reclameshoot.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Ik zag supporters met vlaggen en clubshirts precies tegelijk juichen na een schot naast. Ik dacht: wat een trouw publiek, tot de stadionomroep zei: „Terug naar emotie drie, en deze keer de sjaal niet voor je gezicht.”\",\n      \"angle\": \"De stadionomroep verandert van wedstrijdinformatie in regieaanwijzing.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De camera’s langs de lijn filmden een volle tribune die aftelde, juichte en elkaar omhelsde alsof de beker gewonnen was. Daarna hield een man een bord omhoog: „Nog één keer, maar wacht nu op de bal.”\",\n      \"angle\": \"De identieke jubelactie krijgt laat de betekenis van een nieuwe take.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Sport, voetbal en supporterscultuur\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij ons in het stadion telde iedereen mee voor de aanval, sjaals omhoog, en na het schot vloog de hele tribune elkaar in de armen. Toen de bal vijf minuten later nog steeds stil lag, riep iemand: „Mooi, maar nu allemaal spontaner!”\",\n      \"angle\": \"Supporters blijken figuranten in een reclameshoot.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Ik zag supporters met vlaggen en clubshirts precies tegelijk juichen na een schot naast. Ik dacht: wat een trouw publiek, tot de stadionomroep zei: „Terug naar emotie drie, en deze keer de sjaal niet voor je gezicht.”\",\n      \"angle\": \"De stadionomroep verandert van wedstrijdinformatie in regieaanwijzing.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De camera’s langs de lijn filmden een volle tribune die aftelde, juichte en elkaar omhelsde alsof de beker gewonnen was. Daarna hield een man een bord omhoog: „Nog één keer, maar wacht nu op de bal.”\",\n      \"angle\": \"De identieke jubelactie krijgt laat de betekenis van een nieuwe take.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een voetbalpubliek telt af voor een aanval, zwaait met sjaals en viert een schot gezamenlijk in het stadion.\",\n      \"realized_script_b\": \"Een geregisseerde opname waarin het publiek zijn gejuich opnieuw en op aanwijzing moet uitvoeren.\",\n      \"realized_opposition_axis\": \"Spontane supporterspassie tegenover geregisseerde publieksperformance.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De voetbalsetup, sjaals, aftellen en collectief omhelzen ondersteunen Script A; de oproep om het 'spontaner' te doen schakelt naar een geënsceneerde take. De reclame- en betaalde-figurantencomponent blijft impliciet, maar de bedoelde kernoppositie en herinterpretatie functioneren.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant realiseert de geplande overgang van voetbaltribune naar geregisseerde opname. De formulering over de stil liggende bal maakt de enscenering al licht verdacht, maar de laatste repliek levert nog steeds de duidelijke omslag en grapafsluiting.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Supporters in vlaggen en clubshirts reageren eensgezind op een schot tijdens een voetbalwedstrijd.\",\n      \"realized_script_b\": \"Een productie regisseert figuranten via de stadionomroep en laat hen een specifieke emotie en beeldcompositie opnieuw uitvoeren.\",\n      \"realized_opposition_axis\": \"Oprechte supportersloyaliteit tegenover aangestuurde, voor opname uitgevoerde emotie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De aanvankelijke lezing is die van trouwe voetbalsupporters; 'Terug naar emotie drie' en de aanwijzing over de sjaal maken de omroep tot productieregie. Daarmee worden de synchroniciteit en het gejuich na een gemist schot retrospectief verklaard als een take.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Deze variant volgt het beoogde plan nauw: normale tribunecues worden eerst als clubliefde gelezen en vervolgens door een regieaanwijzing als geacteerde opname herzien. De specifieke commerciële context en betaling worden niet uitgesproken, maar de functionele Script-B-omslag is helder.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een volle voetbaltribune telt af, juicht en omhelst elkaar tijdens een ogenschijnlijk beslissend moment, terwijl camera's langs de lijn filmen.\",\n      \"realized_script_b\": \"Een productieploeg filmt een geënsceneerde supportersreactie en vraagt om een nieuwe take die beter op de baltiming aansluit.\",\n      \"realized_opposition_axis\": \"Spontaan voetbalenthousiasme tegenover geregisseerd enthousiasme voor een opname.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Camera's, tribune, aftellen, gejuich en omhelzingen zijn expliciete gedeelde cues. Het bord met 'Nog één keer' activeert direct de productielezing en verklaart het juichen als herhaalbare take; de formulering over wachten op de bal maakt de eerdere reactie retrospectief onnatuurlijk onder Script A.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V3 is de meest directe realisatie van de beoogde SO: gedeelde stadioncues bouwen Script A op en het bord maakt de gejuichscène expliciet een opnieuw te draaien opname. Reclame en betaling blijven ongenoemd, maar veroorzaken geen andere hoofdoppositie.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Ik zag supporters met vlaggen en clubshirts precies tegelijk juichen na een schot naast. Ik dacht: wat een trouw publiek, tot de stadionomroep zei: „Terug naar emotie drie, en deze keer de sjaal niet voor je gezicht.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.",
+      "opposing_script": "Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.",
+      "opposition_type": "Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.",
+      "trigger": "Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Sjaals, vlaggen en clubshirts.",
+        "Gezamenlijk aftellen voor een aanval.",
+        "Luid gejuich na een schot richting doel.",
+        "Camera's langs de zijlijn.",
+        "Mensen die elkaar omhelzen op de tribune."
+      ],
+      "hinge_event": "De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.",
+      "anomaly_under_a": "Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.",
+      "resolution_under_b": "De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.",
+      "role_remapping": [
+        "Supporters worden figuranten.",
+        "Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.",
+        "Spelers worden acteurs die vooraf bepaalde acties uitvoeren.",
+        "De stadionomroep wordt een productiemiddel voor aanwijzingen en resets."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.\\\",\\\"participants_and_roles\\\":[\\\"Spelers: proberen volgens de spelregels te winnen.\\\",\\\"Trainer en staf: bepalen tactiek, wissels en begeleiding.\\\",\\\"Scheidsrechter en assistenten: bewaken de regels en nemen beslissingen.\\\",\\\"Supporters: steunen hun eigen club, beleven spanning en vieren of balen samen.\\\",\\\"Tegenstander en diens supporters: streven hetzelfde legitieme sportieve doel na.\\\",\\\"Stadionpersoneel en beveiliging: zorgen dat het evenement ordelijk en veilig verloopt.\\\"],\\\"apparent_goal\\\":\\\"De wedstrijd op een spannende, eerlijke en veilige manier beleven, met winst voor de eigen club als gewenste uitkomst.\\\",\\\"preconditions\\\":[\\\"Er is een geplande wedstrijd tussen twee clubs met duidelijke competitie- of bekerinzet.\\\",\\\"Teams, officials en stadionfaciliteiten zijn voorbereid.\\\",\\\"Supporters hebben een band met een club en kennen de gebruikelijke rituelen, zoals sjaals, liederen en gezamenlijk kijken.\\\",\\\"Er gelden spelregels, stadionregels en grenzen aan gedrag op de tribune.\\\"],\\\"expected_actions\\\":[\\\"De spelers voetballen, volgen de tactiek en proberen doelpunten te maken.\\\",\\\"De scheidsrechter fluit overtredingen en bewaakt een eerlijk verloop.\\\",\\\"Supporters zingen, klappen, dragen clubkleuren en reageren emotioneel op kansen, doelpunten en beslissingen.\\\",\\\"Supporters discussiëren na afloop over de wedstrijd, de tactiek en cruciale momenten.\\\",\\\"Beveiliging grijpt in als gedrag de veiligheid of orde bedreigt.\\\"],\\\"expected_outcome\\\":\\\"Na negentig minuten, eventueel met verlenging of strafschoppen, is er een uitslag; supporters vieren de overwinning of verwerken teleurstelling, terwijl de rivaliteit vooral sportief blijft.\\\",\\\"expected_propositions\\\":[\\\"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\\\",\\\"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\\\",\\\"De scheidsrechter is een gezagsfiguur wiens beslissingen invloed hebben op de stemming, ook wanneer supporters het oneens zijn.\\\",\\\"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\\\",\\\"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\\\"],\\\"audience_expectation\\\":\\\"Een setup over voetbal en supporterscultuur activeert het beeld van een beladen maar herkenbare wedstrijddag: loyale fans, collectieve rituelen, sportieve rivaliteit, discussie over arbitrage en een emotionele ontlading rond winst of verlies.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een stadion organiseert tijdens een ogenschijnlijk normale voetbalavond een grootschalige ontruimingsoefening, waarbij publiek, beveiliging en hulpdiensten testen of iedereen snel en ordelijk naar veilige zones kan worden geleid.\\\",\\\"opposition_axis\\\":\\\"Sportieve beleving en blijven voor de uitslag tegenover veiligheidsprocedure en gecontroleerd vertrekken.\\\",\\\"opposed_proposition\\\":\\\"De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.\\\",\\\"shared_anchor\\\":\\\"Een vol stadion reageert collectief op signalen vanaf het veld.\\\",\\\"reading_a\\\":\\\"Supporters volgen de wedstrijd, reageren op spelmomenten en willen tot het laatste fluitsignaal blijven om de uitslag mee te maken.\\\",\\\"reading_b\\\":\\\"De aanwezigen fungeren als oefenpubliek en reageren op vooraf afgesproken veiligheids- en evacuatietekens.\\\",\\\"roles_b\\\":[\\\"Oefenpubliek: volgt instructies en verlaat het stadion via aangewezen routes.\\\",\\\"Oefenleiding: plant het scenario en beoordeelt de doorstroming.\\\",\\\"Beveiligers en stewards: sturen groepen naar uitgangen en registreren knelpunten.\\\",\\\"Brandweer en ambulanceploegen: oefenen inzet, communicatie en opvang.\\\",\\\"Omroeper: geeft geloofwaardige maar gecontroleerde instructies.\\\"],\\\"goal_b\\\":\\\"Aantonen dat een vol stadion bij een incident snel, veilig en zonder paniek kan worden ontruimd.\\\",\\\"role_remapping\\\":[\\\"Supporters worden oefendeelnemers.\\\",\\\"Stadionpersoneel en beveiliging worden begeleiders en beoordelaars van de oefening.\\\",\\\"De scheidsrechterlijke fluit en stadionomroep worden deels gelezen als veiligheidssignalen.\\\",\\\"De wedstrijd wordt een geloofwaardig decor voor een publieksproef.\\\"],\\\"shared_cues\\\":[\\\"Clubkleuren, gezang en een volle tribune.\\\",\\\"Stewards langs de trappen en uitgangen.\\\",\\\"Stadionomroep met korte aanwijzingen.\\\",\\\"Een plotselinge onderbreking van het spel.\\\",\\\"Groepen die tegelijk naar dezelfde kant kijken.\\\"],\\\"switch_trigger\\\":\\\"De omroeper noemt onverwacht geen wissel of blessure, maar verzoekt vak voor vak via genummerde nooduitgangen te vertrekken.\\\",\\\"hinge_event\\\":\\\"In de beslissende slotfase staat vrijwel iedereen zonder protest op en loopt men rustig in vaste rijen het stadion uit.\\\",\\\"anomaly_under_a\\\":\\\"Bij een spannende wedstrijd is het onverklaarbaar dat supporters de onzekere ontknoping vrijwillig verlaten en zich opvallend gedisciplineerd over de tribunes verspreiden.\\\",\\\"resolution_under_b\\\":\\\"Het vertrek is precies het meetmoment van de ontruimingsoefening: de vaste rijen, rustige houding en gefaseerde routes leveren bruikbare gegevens op over veiligheid en doorstroming.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.\\\",\\\"opposition_axis\\\":\\\"Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.\\\",\\\"opposed_proposition\\\":\\\"Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.\\\",\\\"shared_anchor\\\":\\\"Een tribune vol mensen in clubkleuren juicht naar het veld.\\\",\\\"reading_a\\\":\\\"Echte supporters dragen kleuren van hun club en juichen omdat zij emotioneel betrokken zijn bij de wedstrijd.\\\",\\\"reading_b\\\":\\\"Figuranten dragen toegewezen kleuren en voeren enthousiasme uit volgens het draaiboek van een commercial.\\\",\\\"roles_b\\\":[\\\"Figuranten: spelen jubelende, nerveuze of teleurgestelde supporters.\\\",\\\"Regisseur: bepaalt de gewenste emoties, bewegingen en camerastandpunten.\\\",\\\"Productieassistenten: delen sjaals uit en geven stilzwijgende of zichtbare cues.\\\",\\\"Camera- en geluidsploeg: registreert bruikbaar beeld en stadiongeluid.\\\",\\\"Acteur op het veld: speelt een beslissend voetbalmoment.\\\"],\\\"goal_b\\\":\\\"Opnemen van geloofwaardige beelden van collectieve supporterspassie voor een reclamecampagne.\\\",\\\"role_remapping\\\":[\\\"Supporters worden figuranten.\\\",\\\"Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.\\\",\\\"Spelers worden acteurs die vooraf bepaalde acties uitvoeren.\\\",\\\"De stadionomroep wordt een productiemiddel voor aanwijzingen en resets.\\\"],\\\"shared_cues\\\":[\\\"Sjaals, vlaggen en clubshirts.\\\",\\\"Gezamenlijk aftellen voor een aanval.\\\",\\\"Luid gejuich na een schot richting doel.\\\",\\\"Camera's langs de zijlijn.\\\",\\\"Mensen die elkaar omhelzen op de tribune.\\\"],\\\"switch_trigger\\\":\\\"Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.\\\",\\\"hinge_event\\\":\\\"De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.\\\",\\\"anomaly_under_a\\\":\\\"Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.\\\",\\\"resolution_under_b\\\":\\\"De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een voetbalstadion is het decor voor een internationale supporterszangwedstrijd, waarin groepen niet strijden om de uitslag van een wedstrijd maar om de beste uitvoering van liederen, choreografie en tribunecoördinatie.\\\",\\\"opposition_axis\\\":\\\"Onvoorspelbare reactie op een sportwedstrijd tegenover vooraf ingestudeerde artistieke uitvoering.\\\",\\\"opposed_proposition\\\":\\\"Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.\\\",\\\"shared_anchor\\\":\\\"Duizenden mensen zingen tegelijk en steken sjaals in de lucht.\\\",\\\"reading_a\\\":\\\"Supporters zetten liederen in als emotionele aanmoediging die meebeweegt met kansen, doelpunten en frustraties op het veld.\\\",\\\"reading_b\\\":\\\"Deelnemende koren voeren beoordeelde nummers uit met vaste inzetten, toonhoogtes, bewegingen en visuele patronen.\\\",\\\"roles_b\\\":[\\\"Zanggroepen: vertegenwoordigen steden of verenigingen met ingestudeerde supportersliederen.\\\",\\\"Dirigenten: leiden tempo, inzetten en meerstemmigheid.\\\",\\\"Jury: beoordeelt samenzang, originaliteit en choreografie.\\\",\\\"Presentator: kondigt rondes en deelnemers aan.\\\",\\\"Technische ploeg: verzorgt licht, geluid en scoreweergave.\\\"],\\\"goal_b\\\":\\\"De zangwedstrijd winnen door de meest indrukwekkende collectieve supportersperformance neer te zetten.\\\",\\\"role_remapping\\\":[\\\"Supporters worden koorleden en deelnemers.\\\",\\\"De trainer wordt dirigent of groepsleider.\\\",\\\"De scheidsrechter wordt een juryvoorzitter die prestaties beoordeelt.\\\",\\\"Het scorebord wordt een beoordelings- en songinformatiebord.\\\",\\\"Rivaliserende supporters worden concurrerende zanggroepen.\\\"],\\\"shared_cues\\\":[\\\"Tribunes in clubkleuren.\\\",\\\"Sjaals die op een teken omhooggaan.\\\",\\\"Ritmegeklap en massaal gezang.\\\",\\\"Een scorebord dat de aandacht trekt.\\\",\\\"Een gespannen stilte vlak vóór een collectieve uitbarsting.\\\"],\\\"switch_trigger\\\":\\\"Het scorebord toont na een lange stilte geen stand of blessuretijd, maar een cijfermatige juryscore en de tekst 'toonladder A-mineur'.\\\",\\\"hinge_event\\\":\\\"Na een schijnbaar beslissend moment op het veld blijven alle aanwezigen stil, waarna zij op één exact teken een vierstemmig refrein inzetten.\\\",\\\"anomaly_under_a\\\":\\\"Een echte supportersmassa zou bij een beslissend voetbalmoment niet eerst technisch stilvallen en vervolgens muzikaal perfect, ongeacht het spelverloop, inzetten.\\\",\\\"resolution_under_b\\\":\\\"De stilte en de uniforme inzet zijn onderdelen van een beoordeelde uitvoering; de groep wacht op de dirigent om precisie en discipline te demonstreren.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een groep stadionbezoekers organiseert tijdens een voetbalavond een grootschalige huwelijksaanzoek-flashmob, waarbij de vermeende supportersrituelen worden gebruikt om één nietsvermoedende partner publiekelijk te verrassen.\\\",\\\"opposition_axis\\\":\\\"Collectieve trouw aan een voetbalclub tegenover een collectieve, persoonlijke romantische verrassing.\\\",\\\"opposed_proposition\\\":\\\"Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.\\\",\\\"shared_anchor\\\":\\\"Twee tribunevakken beantwoorden elkaar met gezang en grote spandoeken.\\\",\\\"reading_a\\\":\\\"Tegenover elkaar staande supportersvakken zingen rivaliserende leuzen en tonen clubgebonden spandoeken als onderdeel van sportieve plagerij.\\\",\\\"reading_b\\\":\\\"Vrienden, familie en ingehuurde deelnemers gebruiken de vakken als twee helften van één zorgvuldig voorbereide boodschap voor een aanzoek.\\\",\\\"roles_b\\\":[\\\"Aanstaande partner: denkt een gewone wedstrijd te bezoeken.\\\",\\\"Initiatiefnemer: plant het aanzoek en geeft op het juiste moment het signaal.\\\",\\\"Familie, vrienden en figuranten: vormen de flashmob en houden delen van de boodschap omhoog.\\\",\\\"Stadionpresentator: werkt mee aan de afleiding en onthulling.\\\",\\\"Cameraploeg: legt de verrassing vast.\\\"],\\\"goal_b\\\":\\\"De partner op een verrassende maar warme manier ten huwelijk vragen met behulp van een stadionbrede choreografie.\\\",\\\"role_remapping\\\":[\\\"Supporters worden familieleden, vrienden en flashmobdeelnemers.\\\",\\\"Twee rivaliserende vakken worden twee delen van één boodschap.\\\",\\\"De stadionomroeper wordt medeplichtige presentator.\\\",\\\"Een tifo wordt een persoonlijk aanzoek.\\\",\\\"De vermeende wedstrijdspanning wordt een afleidingsmanoeuvre voor de aanstaande partner.\\\"],\\\"shared_cues\\\":[\\\"Clubliederen en beurtzang tussen vakken.\\\",\\\"Grote opgerolde spandoeken.\\\",\\\"Sjaals en kartonnen kleurvlakken.\\\",\\\"Camera's die op de tribune gericht zijn.\\\",\\\"Een stadionomroeper die het publiek tot stilte vraagt.\\\"],\\\"switch_trigger\\\":\\\"De twee vakken rollen hun ogenschijnlijk rivaliserende doeken uit, die samen niet een clubmotto maar de woorden 'WIL JE MET MIJ TROUWEN?' vormen.\\\",\\\"hinge_event\\\":\\\"De vermeende uitsupporters lopen zonder vijandigheid naar het thuisvak en vormen samen een hart rond één verbaasde toeschouwer.\\\",\\\"anomaly_under_a\\\":\\\"Dat rivaliserende supporters hun eigen vak verlaten, elkaars kleuren omarmen en een gezamenlijk romantisch symbool vormen, past niet bij de verwachte clubtegenstelling.\\\",\\\"resolution_under_b\\\":\\\"De rivaliteit was geënsceneerd: beide vakken zijn onderdelen van de flashmob en komen samen om het aanzoek zichtbaar, veilig en persoonlijk te laten slagen.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde stadiontekst kan eerst als een normale, spannende wedstrijd worden gelezen en vervolgens als een geplande ontruimingsoefening. De dominante tegenstelling is blijven voor de sportieve ontknoping versus vertrekken voor veiligheid en oefendoeleinden. Het collectief reageren op veldsignalen, stewards en omroep past bij beide scripts; vóór de expliciete vertrekoproep domineert echter duidelijk de wedstrijduitleg. Het gedisciplineerde vertrek in de slotfase is onder Script A anomalisch, maar onder Script B precies het gewenste meetmoment. Daardoor krijgen fluit, omroep, stewards en de wedstrijd zelf achteraf een veiligheidsfunctie. Het verlaten van het stadion verhindert bovendien het volgen van de uitslag onder A, maar maakt juist het doel van B mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén realiseerbare scène met clubkleuren, gejuich, omhelzingen en camera's kan zowel echte supporterspassie als een commerciële opname ondersteunen. De tegenstelling tussen spontane betrokkenheid en geregisseerde, betaalde uitvoering is lokaal onverenigbaar en blijft de dominante as. Een reclameopname met figuranten is een herkenbaar sociaal script, terwijl de aanwezige camera's en zichtbare productieomstandigheden die tweede lezing vóór de trigger beschikbaar houden zonder de wedstrijduitleg aanvankelijk te overheersen. Het identieke herhaalde gejuich zonder spelactie is onder A onverklaarbaar, maar is onder B een logische nieuwe take. Eerdere reacties worden daardoor retrospectief acteerprestaties; de uniforme herhaling ondermijnt spontane wedstrijdemotie maar levert B juist bruikbaar reclamemateriaal op.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Massaal zingen, sjaals omhooghouden, ritmegeklap en een gespannen stilte kunnen aanvankelijk als supporterscultuur en later als een beoordeelde zanguitvoering worden gelezen. De centrale tegenstelling is spontane, spelafhankelijke emotie tegenover vooraf ingestudeerde en gecontroleerde uitvoering. Die twee functies van het gedrag zijn op dit moment incompatibel en er is geen concurrerende sterkere as. Een supporterszangwedstrijd is een coherent, herkenbaar alternatief script; de collectieve coördinatie en het scorebord laten dit vóór de expliciete juryscore al latent toe, terwijl de voetbalcontext eerst dominant blijft. De technische stilte en perfecte vierstemmige inzet zijn onder A anomalisch, maar vormen onder B bewijs van discipline voor de jury. Daarmee worden het gezang, het scorebord en de tribuneorganisatie retrospectief onderdelen van een wedstrijdperformance. Het uitstellen van spontane reactie blokkeert A's emotionele wedstrijdfunctie en faciliteert B's beoordelingsdoel.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een tekst met beurtzang, twee vakken, spandoeken, clubkleuren en een omroeper kan zowel sportieve vakrivaliteit als een voorbereide aanzoek-flashmob dragen. De overheersende tegenstelling betreft de functie van de collectieve actie: clubgebonden rivaliteit versus gezamenlijke persoonlijke verrassing. In de concrete scène zijn werkelijk tegengestelde supportersvakken en één gecoördineerde groep met een gedeeld romantisch doel lokaal incompatibel. Een stadionaanzoek via choreografie is sociaal herkenbaar; camera's, opgerolde doeken en een omroeper die stilte vraagt houden die lezing vooraf latent beschikbaar, maar een gewone wedstrijdcontext stuurt eerst naar A. Het zonder vijandigheid samenkomen van beide vakken en vormen van een hart is onder A afwijkend, maar onder B precies de onthulling. Hierdoor worden de tifo, vakindeling en vermeende rivaliteit achteraf middelen voor het aanzoek. Het opgeven van de rivaliserende vakrol blokkeert A's tegenstelling, maar maakt B's gezamenlijke boodschap mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B2\\\",\\\"rationale\\\":\\\"B2 biedt de scherpste en meest economisch opgebouwde scriptoppositie: authentieke, spontane supportersbetrokkenheid staat direct tegenover geregisseerd en betaald gedrag. De cues blijven lang volledig compatibel met een gewone voetbalsetting—clubkleuren, gejuich, omhelzingen en camera’s—waardoor de eerste lezing dominant blijft. Het bord ‘JUICHEN, NOG EEN KEER’ is vervolgens een heldere, topicspecifieke schakeltrigger. De identieke herhaling van het gejuich vormt een sterke anomalie die onder Script A moeilijk verklaarbaar is, maar onder Script B onmiddellijk functioneel wordt als een nieuwe opname. Daardoor ondersteunt B2 zowel een natuurlijke tweede lezing als een krachtige retrospectieve herinterpretatie, met veel payoff en weinig overbodige constructie.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Bij ons in het stadion telde iedereen mee voor de aanval, sjaals omhoog, en na het schot vloog de hele tribune elkaar in de armen. Toen de bal vijf minuten later nog steeds stil lag, riep iemand: „Mooi, maar nu allemaal spontaner!”\\\",\\\"angle\\\":\\\"Supporters blijken figuranten in een reclameshoot.\\\"},{\\\"text\\\":\\\"Ik zag supporters met vlaggen en clubshirts precies tegelijk juichen na een schot naast. Ik dacht: wat een trouw publiek, tot de stadionomroep zei: „Terug naar emotie drie, en deze keer de sjaal niet voor je gezicht.”\\\",\\\"angle\\\":\\\"De stadionomroep verandert van wedstrijdinformatie in regieaanwijzing.\\\"},{\\\"text\\\":\\\"De camera’s langs de lijn filmden een volle tribune die aftelde, juichte en elkaar omhelsde alsof de beker gewonnen was. Daarna hield een man een bord omhoog: „Nog één keer, maar wacht nu op de bal.”\\\",\\\"angle\\\":\\\"De identieke jubelactie krijgt laat de betekenis van een nieuwe take.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een voetbalpubliek telt af voor een aanval, zwaait met sjaals en viert een schot gezamenlijk in het stadion.\\\",\\\"realized_script_b\\\":\\\"Een geregisseerde opname waarin het publiek zijn gejuich opnieuw en op aanwijzing moet uitvoeren.\\\",\\\"realized_opposition_axis\\\":\\\"Spontane supporterspassie tegenover geregisseerde publieksperformance.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De voetbalsetup, sjaals, aftellen en collectief omhelzen ondersteunen Script A; de oproep om het 'spontaner' te doen schakelt naar een geënsceneerde take. De reclame- en betaalde-figurantencomponent blijft impliciet, maar de bedoelde kernoppositie en herinterpretatie functioneren.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant realiseert de geplande overgang van voetbaltribune naar geregisseerde opname. De formulering over de stil liggende bal maakt de enscenering al licht verdacht, maar de laatste repliek levert nog steeds de duidelijke omslag en grapafsluiting.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Supporters in vlaggen en clubshirts reageren eensgezind op een schot tijdens een voetbalwedstrijd.\\\",\\\"realized_script_b\\\":\\\"Een productie regisseert figuranten via de stadionomroep en laat hen een specifieke emotie en beeldcompositie opnieuw uitvoeren.\\\",\\\"realized_opposition_axis\\\":\\\"Oprechte supportersloyaliteit tegenover aangestuurde, voor opname uitgevoerde emotie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De aanvankelijke lezing is die van trouwe voetbalsupporters; 'Terug naar emotie drie' en de aanwijzing over de sjaal maken de omroep tot productieregie. Daarmee worden de synchroniciteit en het gejuich na een gemist schot retrospectief verklaard als een take.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Deze variant volgt het beoogde plan nauw: normale tribunecues worden eerst als clubliefde gelezen en vervolgens door een regieaanwijzing als geacteerde opname herzien. De specifieke commerciële context en betaling worden niet uitgesproken, maar de functionele Script-B-omslag is helder.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een volle voetbaltribune telt af, juicht en omhelst elkaar tijdens een ogenschijnlijk beslissend moment, terwijl camera's langs de lijn filmen.\\\",\\\"realized_script_b\\\":\\\"Een productieploeg filmt een geënsceneerde supportersreactie en vraagt om een nieuwe take die beter op de baltiming aansluit.\\\",\\\"realized_opposition_axis\\\":\\\"Spontaan voetbalenthousiasme tegenover geregisseerd enthousiasme voor een opname.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Camera's, tribune, aftellen, gejuich en omhelzingen zijn expliciete gedeelde cues. Het bord met 'Nog één keer' activeert direct de productielezing en verklaart het juichen als herhaalbare take; de formulering over wachten op de bal maakt de eerdere reactie retrospectief onnatuurlijk onder Script A.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V3 is de meest directe realisatie van de beoogde SO: gedeelde stadioncues bouwen Script A op en het bord maakt de gejuichscène expliciet een opnieuw te draaien opname. Reclame en betaling blijven ongenoemd, maar veroorzaken geen andere hoofdoppositie.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengte-eis en realiseren de vereiste scriptoppositie. V2 schakelt scherper: het synchroon juichen na een misser wordt door „emotie drie” en de sjaalaanwijzing overtuigend én grappig als geregisseerde take herlezen. V1 verraadt de enscenering al wat door de stil liggende bal.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide behouden de overgang van authentieke supporterspassie naar productie-regie. V3 levert de retrospectieve herinterpretatie helderder, omdat „Nog één keer” en het wachten op de bal de eerdere jubel precies verklaren. V1 heeft een natuurlijke afsluiter, maar bouwt de afwijking eerder en minder elegant op.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 en V3 zijn beide compacte, goed performbare SO-grappen met een duidelijke omslag. V2 is origineler en komischer door de concrete, bureaucratisch klinkende regietaal van „emotie drie” en de sjaalcorrectie; die details maken de productielezing levendig zonder de setup vooraf te veel weg te geven.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de sterkste passerende variant: de voetbalsetting blijft eerst geloofwaardig, waarna de stadionomroep de hele scène snel en volledig als geregisseerde opname herkadert. De specifieke regieaanwijzingen versterken zowel de verrassing als de spreekbaarheid.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een stadion organiseert tijdens een ogenschijnlijk normale voetbalavond een grootschalige ontruimingsoefening, waarbij publiek, beveiliging en hulpdiensten testen of iedereen snel en ordelijk naar veilige zones kan worden geleid.",
+        "candidate_id": "B1",
+        "opposition_axis": "Sportieve beleving en blijven voor de uitslag tegenover veiligheidsprocedure en gecontroleerd vertrekken.",
+        "opposed_expectation": "De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.",
+        "roles_b": [
+          "Oefenpubliek: volgt instructies en verlaat het stadion via aangewezen routes.",
+          "Oefenleiding: plant het scenario en beoordeelt de doorstroming.",
+          "Beveiligers en stewards: sturen groepen naar uitgangen en registreren knelpunten.",
+          "Brandweer en ambulanceploegen: oefenen inzet, communicatie en opvang.",
+          "Omroeper: geeft geloofwaardige maar gecontroleerde instructies."
+        ],
+        "goal_b": "Aantonen dat een vol stadion bij een incident snel, veilig en zonder paniek kan worden ontruimd.",
+        "role_remapping": [
+          "Supporters worden oefendeelnemers.",
+          "Stadionpersoneel en beveiliging worden begeleiders en beoordelaars van de oefening.",
+          "De scheidsrechterlijke fluit en stadionomroep worden deels gelezen als veiligheidssignalen.",
+          "De wedstrijd wordt een geloofwaardig decor voor een publieksproef."
+        ],
+        "shared_cues": [
+          "Clubkleuren, gezang en een volle tribune.",
+          "Stewards langs de trappen en uitgangen.",
+          "Stadionomroep met korte aanwijzingen.",
+          "Een plotselinge onderbreking van het spel.",
+          "Groepen die tegelijk naar dezelfde kant kijken."
+        ],
+        "switch_trigger": "De omroeper noemt onverwacht geen wissel of blessure, maar verzoekt vak voor vak via genummerde nooduitgangen te vertrekken.",
+        "hinge_event": "In de beslissende slotfase staat vrijwel iedereen zonder protest op en loopt men rustig in vaste rijen het stadion uit.",
+        "anomaly_under_a": "Bij een spannende wedstrijd is het onverklaarbaar dat supporters de onzekere ontknoping vrijwillig verlaten en zich opvallend gedisciplineerd over de tribunes verspreiden.",
+        "resolution_under_b": "Het vertrek is precies het meetmoment van de ontruimingsoefening: de vaste rijen, rustige houding en gefaseerde routes leveren bruikbare gegevens op over veiligheid en doorstroming.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.",
+        "candidate_id": "B2",
+        "opposition_axis": "Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.",
+        "opposed_expectation": "Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.",
+        "roles_b": [
+          "Figuranten: spelen jubelende, nerveuze of teleurgestelde supporters.",
+          "Regisseur: bepaalt de gewenste emoties, bewegingen en camerastandpunten.",
+          "Productieassistenten: delen sjaals uit en geven stilzwijgende of zichtbare cues.",
+          "Camera- en geluidsploeg: registreert bruikbaar beeld en stadiongeluid.",
+          "Acteur op het veld: speelt een beslissend voetbalmoment."
+        ],
+        "goal_b": "Opnemen van geloofwaardige beelden van collectieve supporterspassie voor een reclamecampagne.",
+        "role_remapping": [
+          "Supporters worden figuranten.",
+          "Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.",
+          "Spelers worden acteurs die vooraf bepaalde acties uitvoeren.",
+          "De stadionomroep wordt een productiemiddel voor aanwijzingen en resets."
+        ],
+        "shared_cues": [
+          "Sjaals, vlaggen en clubshirts.",
+          "Gezamenlijk aftellen voor een aanval.",
+          "Luid gejuich na een schot richting doel.",
+          "Camera's langs de zijlijn.",
+          "Mensen die elkaar omhelzen op de tribune."
+        ],
+        "switch_trigger": "Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.",
+        "hinge_event": "De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.",
+        "anomaly_under_a": "Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.",
+        "resolution_under_b": "De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een voetbalstadion is het decor voor een internationale supporterszangwedstrijd, waarin groepen niet strijden om de uitslag van een wedstrijd maar om de beste uitvoering van liederen, choreografie en tribunecoördinatie.",
+        "candidate_id": "B3",
+        "opposition_axis": "Onvoorspelbare reactie op een sportwedstrijd tegenover vooraf ingestudeerde artistieke uitvoering.",
+        "opposed_expectation": "Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.",
+        "roles_b": [
+          "Zanggroepen: vertegenwoordigen steden of verenigingen met ingestudeerde supportersliederen.",
+          "Dirigenten: leiden tempo, inzetten en meerstemmigheid.",
+          "Jury: beoordeelt samenzang, originaliteit en choreografie.",
+          "Presentator: kondigt rondes en deelnemers aan.",
+          "Technische ploeg: verzorgt licht, geluid en scoreweergave."
+        ],
+        "goal_b": "De zangwedstrijd winnen door de meest indrukwekkende collectieve supportersperformance neer te zetten.",
+        "role_remapping": [
+          "Supporters worden koorleden en deelnemers.",
+          "De trainer wordt dirigent of groepsleider.",
+          "De scheidsrechter wordt een juryvoorzitter die prestaties beoordeelt.",
+          "Het scorebord wordt een beoordelings- en songinformatiebord.",
+          "Rivaliserende supporters worden concurrerende zanggroepen."
+        ],
+        "shared_cues": [
+          "Tribunes in clubkleuren.",
+          "Sjaals die op een teken omhooggaan.",
+          "Ritmegeklap en massaal gezang.",
+          "Een scorebord dat de aandacht trekt.",
+          "Een gespannen stilte vlak vóór een collectieve uitbarsting."
+        ],
+        "switch_trigger": "Het scorebord toont na een lange stilte geen stand of blessuretijd, maar een cijfermatige juryscore en de tekst 'toonladder A-mineur'.",
+        "hinge_event": "Na een schijnbaar beslissend moment op het veld blijven alle aanwezigen stil, waarna zij op één exact teken een vierstemmig refrein inzetten.",
+        "anomaly_under_a": "Een echte supportersmassa zou bij een beslissend voetbalmoment niet eerst technisch stilvallen en vervolgens muzikaal perfect, ongeacht het spelverloop, inzetten.",
+        "resolution_under_b": "De stilte en de uniforme inzet zijn onderdelen van een beoordeelde uitvoering; de groep wacht op de dirigent om precisie en discipline te demonstreren.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een groep stadionbezoekers organiseert tijdens een voetbalavond een grootschalige huwelijksaanzoek-flashmob, waarbij de vermeende supportersrituelen worden gebruikt om één nietsvermoedende partner publiekelijk te verrassen.",
+        "candidate_id": "B4",
+        "opposition_axis": "Collectieve trouw aan een voetbalclub tegenover een collectieve, persoonlijke romantische verrassing.",
+        "opposed_expectation": "Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.",
+        "roles_b": [
+          "Aanstaande partner: denkt een gewone wedstrijd te bezoeken.",
+          "Initiatiefnemer: plant het aanzoek en geeft op het juiste moment het signaal.",
+          "Familie, vrienden en figuranten: vormen de flashmob en houden delen van de boodschap omhoog.",
+          "Stadionpresentator: werkt mee aan de afleiding en onthulling.",
+          "Cameraploeg: legt de verrassing vast."
+        ],
+        "goal_b": "De partner op een verrassende maar warme manier ten huwelijk vragen met behulp van een stadionbrede choreografie.",
+        "role_remapping": [
+          "Supporters worden familieleden, vrienden en flashmobdeelnemers.",
+          "Twee rivaliserende vakken worden twee delen van één boodschap.",
+          "De stadionomroeper wordt medeplichtige presentator.",
+          "Een tifo wordt een persoonlijk aanzoek.",
+          "De vermeende wedstrijdspanning wordt een afleidingsmanoeuvre voor de aanstaande partner."
+        ],
+        "shared_cues": [
+          "Clubliederen en beurtzang tussen vakken.",
+          "Grote opgerolde spandoeken.",
+          "Sjaals en kartonnen kleurvlakken.",
+          "Camera's die op de tribune gericht zijn.",
+          "Een stadionomroeper die het publiek tot stilte vraagt."
+        ],
+        "switch_trigger": "De twee vakken rollen hun ogenschijnlijk rivaliserende doeken uit, die samen niet een clubmotto maar de woorden 'WIL JE MET MIJ TROUWEN?' vormen.",
+        "hinge_event": "De vermeende uitsupporters lopen zonder vijandigheid naar het thuisvak en vormen samen een hart rond één verbaasde toeschouwer.",
+        "anomaly_under_a": "Dat rivaliserende supporters hun eigen vak verlaten, elkaars kleuren omarmen en een gezamenlijk romantisch symbool vormen, past niet bij de verwachte clubtegenstelling.",
+        "resolution_under_b": "De rivaliteit was geënsceneerd: beide vakken zijn onderdelen van de flashmob en komen samen om het aanzoek zichtbaar, veilig en persoonlijk te laten slagen.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B2 biedt de scherpste en meest economisch opgebouwde scriptoppositie: authentieke, spontane supportersbetrokkenheid staat direct tegenover geregisseerd en betaald gedrag. De cues blijven lang volledig compatibel met een gewone voetbalsetting—clubkleuren, gejuich, omhelzingen en camera’s—waardoor de eerste lezing dominant blijft. Het bord ‘JUICHEN, NOG EEN KEER’ is vervolgens een heldere, topicspecifieke schakeltrigger. De identieke herhaling van het gejuich vormt een sterke anomalie die onder Script A moeilijk verklaarbaar is, maar onder Script B onmiddellijk functioneel wordt als een nieuwe opname. Daardoor ondersteunt B2 zowel een natuurlijke tweede lezing als een krachtige retrospectieve herinterpretatie, met veel payoff en weinig overbodige constructie.",
+    "variants": [
+      {
+        "text": "Bij ons in het stadion telde iedereen mee voor de aanval, sjaals omhoog, en na het schot vloog de hele tribune elkaar in de armen. Toen de bal vijf minuten later nog steeds stil lag, riep iemand: „Mooi, maar nu allemaal spontaner!”",
+        "angle": "Supporters blijken figuranten in een reclameshoot."
+      },
+      {
+        "text": "Ik zag supporters met vlaggen en clubshirts precies tegelijk juichen na een schot naast. Ik dacht: wat een trouw publiek, tot de stadionomroep zei: „Terug naar emotie drie, en deze keer de sjaal niet voor je gezicht.”",
+        "angle": "De stadionomroep verandert van wedstrijdinformatie in regieaanwijzing."
+      },
+      {
+        "text": "De camera’s langs de lijn filmden een volle tribune die aftelde, juichte en elkaar omhelsde alsof de beker gewonnen was. Daarna hield een man een bord omhoog: „Nog één keer, maar wacht nu op de bal.”",
+        "angle": "De identieke jubelactie krijgt laat de betekenis van een nieuwe take."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 15137,
+      "output_tokens": 7520,
+      "total_tokens": 22657
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een voetbalteam speelt een belangrijke wedstrijd in een stadion, terwijl supporters hun club luidruchtig maar binnen de regels aanmoedigen en na afloop de uitslag verwerken.",
+          "participants_and_roles": [
+            "Spelers: proberen volgens de spelregels te winnen.",
+            "Trainer en staf: bepalen tactiek, wissels en begeleiding.",
+            "Scheidsrechter en assistenten: bewaken de regels en nemen beslissingen.",
+            "Supporters: steunen hun eigen club, beleven spanning en vieren of balen samen.",
+            "Tegenstander en diens supporters: streven hetzelfde legitieme sportieve doel na.",
+            "Stadionpersoneel en beveiliging: zorgen dat het evenement ordelijk en veilig verloopt."
+          ],
+          "apparent_goal": "De wedstrijd op een spannende, eerlijke en veilige manier beleven, met winst voor de eigen club als gewenste uitkomst.",
+          "preconditions": [
+            "Er is een geplande wedstrijd tussen twee clubs met duidelijke competitie- of bekerinzet.",
+            "Teams, officials en stadionfaciliteiten zijn voorbereid.",
+            "Supporters hebben een band met een club en kennen de gebruikelijke rituelen, zoals sjaals, liederen en gezamenlijk kijken.",
+            "Er gelden spelregels, stadionregels en grenzen aan gedrag op de tribune."
+          ],
+          "expected_actions": [
+            "De spelers voetballen, volgen de tactiek en proberen doelpunten te maken.",
+            "De scheidsrechter fluit overtredingen en bewaakt een eerlijk verloop.",
+            "Supporters zingen, klappen, dragen clubkleuren en reageren emotioneel op kansen, doelpunten en beslissingen.",
+            "Supporters discussiëren na afloop over de wedstrijd, de tactiek en cruciale momenten.",
+            "Beveiliging grijpt in als gedrag de veiligheid of orde bedreigt."
+          ],
+          "expected_outcome": "Na negentig minuten, eventueel met verlenging of strafschoppen, is er een uitslag; supporters vieren de overwinning of verwerken teleurstelling, terwijl de rivaliteit vooral sportief blijft.",
+          "expected_propositions": [
+            "Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.",
+            "Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.",
+            "De scheidsrechter is een gezagsfiguur wiens beslissingen invloed hebben op de stemming, ook wanneer supporters het oneens zijn.",
+            "Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.",
+            "De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend."
+          ],
+          "audience_expectation": "Een setup over voetbal en supporterscultuur activeert het beeld van een beladen maar herkenbare wedstrijddag: loyale fans, collectieve rituelen, sportieve rivaliteit, discussie over arbitrage en een emotionele ontlading rond winst of verlies."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een stadion organiseert tijdens een ogenschijnlijk normale voetbalavond een grootschalige ontruimingsoefening, waarbij publiek, beveiliging en hulpdiensten testen of iedereen snel en ordelijk naar veilige zones kan worden geleid.",
+            "opposition_axis": "Sportieve beleving en blijven voor de uitslag tegenover veiligheidsprocedure en gecontroleerd vertrekken.",
+            "opposed_proposition": "De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.",
+            "shared_anchor": "Een vol stadion reageert collectief op signalen vanaf het veld.",
+            "reading_a": "Supporters volgen de wedstrijd, reageren op spelmomenten en willen tot het laatste fluitsignaal blijven om de uitslag mee te maken.",
+            "reading_b": "De aanwezigen fungeren als oefenpubliek en reageren op vooraf afgesproken veiligheids- en evacuatietekens.",
+            "roles_b": [
+              "Oefenpubliek: volgt instructies en verlaat het stadion via aangewezen routes.",
+              "Oefenleiding: plant het scenario en beoordeelt de doorstroming.",
+              "Beveiligers en stewards: sturen groepen naar uitgangen en registreren knelpunten.",
+              "Brandweer en ambulanceploegen: oefenen inzet, communicatie en opvang.",
+              "Omroeper: geeft geloofwaardige maar gecontroleerde instructies."
+            ],
+            "goal_b": "Aantonen dat een vol stadion bij een incident snel, veilig en zonder paniek kan worden ontruimd.",
+            "role_remapping": [
+              "Supporters worden oefendeelnemers.",
+              "Stadionpersoneel en beveiliging worden begeleiders en beoordelaars van de oefening.",
+              "De scheidsrechterlijke fluit en stadionomroep worden deels gelezen als veiligheidssignalen.",
+              "De wedstrijd wordt een geloofwaardig decor voor een publieksproef."
+            ],
+            "shared_cues": [
+              "Clubkleuren, gezang en een volle tribune.",
+              "Stewards langs de trappen en uitgangen.",
+              "Stadionomroep met korte aanwijzingen.",
+              "Een plotselinge onderbreking van het spel.",
+              "Groepen die tegelijk naar dezelfde kant kijken."
+            ],
+            "switch_trigger": "De omroeper noemt onverwacht geen wissel of blessure, maar verzoekt vak voor vak via genummerde nooduitgangen te vertrekken.",
+            "hinge_event": "In de beslissende slotfase staat vrijwel iedereen zonder protest op en loopt men rustig in vaste rijen het stadion uit.",
+            "anomaly_under_a": "Bij een spannende wedstrijd is het onverklaarbaar dat supporters de onzekere ontknoping vrijwillig verlaten en zich opvallend gedisciplineerd over de tribunes verspreiden.",
+            "resolution_under_b": "Het vertrek is precies het meetmoment van de ontruimingsoefening: de vaste rijen, rustige houding en gefaseerde routes leveren bruikbare gegevens op over veiligheid en doorstroming."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.",
+            "opposition_axis": "Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.",
+            "opposed_proposition": "Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.",
+            "shared_anchor": "Een tribune vol mensen in clubkleuren juicht naar het veld.",
+            "reading_a": "Echte supporters dragen kleuren van hun club en juichen omdat zij emotioneel betrokken zijn bij de wedstrijd.",
+            "reading_b": "Figuranten dragen toegewezen kleuren en voeren enthousiasme uit volgens het draaiboek van een commercial.",
+            "roles_b": [
+              "Figuranten: spelen jubelende, nerveuze of teleurgestelde supporters.",
+              "Regisseur: bepaalt de gewenste emoties, bewegingen en camerastandpunten.",
+              "Productieassistenten: delen sjaals uit en geven stilzwijgende of zichtbare cues.",
+              "Camera- en geluidsploeg: registreert bruikbaar beeld en stadiongeluid.",
+              "Acteur op het veld: speelt een beslissend voetbalmoment."
+            ],
+            "goal_b": "Opnemen van geloofwaardige beelden van collectieve supporterspassie voor een reclamecampagne.",
+            "role_remapping": [
+              "Supporters worden figuranten.",
+              "Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.",
+              "Spelers worden acteurs die vooraf bepaalde acties uitvoeren.",
+              "De stadionomroep wordt een productiemiddel voor aanwijzingen en resets."
+            ],
+            "shared_cues": [
+              "Sjaals, vlaggen en clubshirts.",
+              "Gezamenlijk aftellen voor een aanval.",
+              "Luid gejuich na een schot richting doel.",
+              "Camera's langs de zijlijn.",
+              "Mensen die elkaar omhelzen op de tribune."
+            ],
+            "switch_trigger": "Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.",
+            "hinge_event": "De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.",
+            "anomaly_under_a": "Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.",
+            "resolution_under_b": "De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een voetbalstadion is het decor voor een internationale supporterszangwedstrijd, waarin groepen niet strijden om de uitslag van een wedstrijd maar om de beste uitvoering van liederen, choreografie en tribunecoördinatie.",
+            "opposition_axis": "Onvoorspelbare reactie op een sportwedstrijd tegenover vooraf ingestudeerde artistieke uitvoering.",
+            "opposed_proposition": "Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.",
+            "shared_anchor": "Duizenden mensen zingen tegelijk en steken sjaals in de lucht.",
+            "reading_a": "Supporters zetten liederen in als emotionele aanmoediging die meebeweegt met kansen, doelpunten en frustraties op het veld.",
+            "reading_b": "Deelnemende koren voeren beoordeelde nummers uit met vaste inzetten, toonhoogtes, bewegingen en visuele patronen.",
+            "roles_b": [
+              "Zanggroepen: vertegenwoordigen steden of verenigingen met ingestudeerde supportersliederen.",
+              "Dirigenten: leiden tempo, inzetten en meerstemmigheid.",
+              "Jury: beoordeelt samenzang, originaliteit en choreografie.",
+              "Presentator: kondigt rondes en deelnemers aan.",
+              "Technische ploeg: verzorgt licht, geluid en scoreweergave."
+            ],
+            "goal_b": "De zangwedstrijd winnen door de meest indrukwekkende collectieve supportersperformance neer te zetten.",
+            "role_remapping": [
+              "Supporters worden koorleden en deelnemers.",
+              "De trainer wordt dirigent of groepsleider.",
+              "De scheidsrechter wordt een juryvoorzitter die prestaties beoordeelt.",
+              "Het scorebord wordt een beoordelings- en songinformatiebord.",
+              "Rivaliserende supporters worden concurrerende zanggroepen."
+            ],
+            "shared_cues": [
+              "Tribunes in clubkleuren.",
+              "Sjaals die op een teken omhooggaan.",
+              "Ritmegeklap en massaal gezang.",
+              "Een scorebord dat de aandacht trekt.",
+              "Een gespannen stilte vlak vóór een collectieve uitbarsting."
+            ],
+            "switch_trigger": "Het scorebord toont na een lange stilte geen stand of blessuretijd, maar een cijfermatige juryscore en de tekst 'toonladder A-mineur'.",
+            "hinge_event": "Na een schijnbaar beslissend moment op het veld blijven alle aanwezigen stil, waarna zij op één exact teken een vierstemmig refrein inzetten.",
+            "anomaly_under_a": "Een echte supportersmassa zou bij een beslissend voetbalmoment niet eerst technisch stilvallen en vervolgens muzikaal perfect, ongeacht het spelverloop, inzetten.",
+            "resolution_under_b": "De stilte en de uniforme inzet zijn onderdelen van een beoordeelde uitvoering; de groep wacht op de dirigent om precisie en discipline te demonstreren."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een groep stadionbezoekers organiseert tijdens een voetbalavond een grootschalige huwelijksaanzoek-flashmob, waarbij de vermeende supportersrituelen worden gebruikt om één nietsvermoedende partner publiekelijk te verrassen.",
+            "opposition_axis": "Collectieve trouw aan een voetbalclub tegenover een collectieve, persoonlijke romantische verrassing.",
+            "opposed_proposition": "Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.",
+            "shared_anchor": "Twee tribunevakken beantwoorden elkaar met gezang en grote spandoeken.",
+            "reading_a": "Tegenover elkaar staande supportersvakken zingen rivaliserende leuzen en tonen clubgebonden spandoeken als onderdeel van sportieve plagerij.",
+            "reading_b": "Vrienden, familie en ingehuurde deelnemers gebruiken de vakken als twee helften van één zorgvuldig voorbereide boodschap voor een aanzoek.",
+            "roles_b": [
+              "Aanstaande partner: denkt een gewone wedstrijd te bezoeken.",
+              "Initiatiefnemer: plant het aanzoek en geeft op het juiste moment het signaal.",
+              "Familie, vrienden en figuranten: vormen de flashmob en houden delen van de boodschap omhoog.",
+              "Stadionpresentator: werkt mee aan de afleiding en onthulling.",
+              "Cameraploeg: legt de verrassing vast."
+            ],
+            "goal_b": "De partner op een verrassende maar warme manier ten huwelijk vragen met behulp van een stadionbrede choreografie.",
+            "role_remapping": [
+              "Supporters worden familieleden, vrienden en flashmobdeelnemers.",
+              "Twee rivaliserende vakken worden twee delen van één boodschap.",
+              "De stadionomroeper wordt medeplichtige presentator.",
+              "Een tifo wordt een persoonlijk aanzoek.",
+              "De vermeende wedstrijdspanning wordt een afleidingsmanoeuvre voor de aanstaande partner."
+            ],
+            "shared_cues": [
+              "Clubliederen en beurtzang tussen vakken.",
+              "Grote opgerolde spandoeken.",
+              "Sjaals en kartonnen kleurvlakken.",
+              "Camera's die op de tribune gericht zijn.",
+              "Een stadionomroeper die het publiek tot stilte vraagt."
+            ],
+            "switch_trigger": "De twee vakken rollen hun ogenschijnlijk rivaliserende doeken uit, die samen niet een clubmotto maar de woorden 'WIL JE MET MIJ TROUWEN?' vormen.",
+            "hinge_event": "De vermeende uitsupporters lopen zonder vijandigheid naar het thuisvak en vormen samen een hart rond één verbaasde toeschouwer.",
+            "anomaly_under_a": "Dat rivaliserende supporters hun eigen vak verlaten, elkaars kleuren omarmen en een gezamenlijk romantisch symbool vormen, past niet bij de verwachte clubtegenstelling.",
+            "resolution_under_b": "De rivaliteit was geënsceneerd: beide vakken zijn onderdelen van de flashmob en komen samen om het aanzoek zichtbaar, veilig en persoonlijk te laten slagen."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een stadion organiseert tijdens een ogenschijnlijk normale voetbalavond een grootschalige ontruimingsoefening, waarbij publiek, beveiliging en hulpdiensten testen of iedereen snel en ordelijk naar veilige zones kan worden geleid.",
+              "opposition_axis": "Sportieve beleving en blijven voor de uitslag tegenover veiligheidsprocedure en gecontroleerd vertrekken.",
+              "opposed_proposition": "De uitslag is onzeker tot het einde en juist die onzekerheid maakt de wedstrijd spannend.",
+              "shared_anchor": "Een vol stadion reageert collectief op signalen vanaf het veld.",
+              "reading_a": "Supporters volgen de wedstrijd, reageren op spelmomenten en willen tot het laatste fluitsignaal blijven om de uitslag mee te maken.",
+              "reading_b": "De aanwezigen fungeren als oefenpubliek en reageren op vooraf afgesproken veiligheids- en evacuatietekens.",
+              "roles_b": [
+                "Oefenpubliek: volgt instructies en verlaat het stadion via aangewezen routes.",
+                "Oefenleiding: plant het scenario en beoordeelt de doorstroming.",
+                "Beveiligers en stewards: sturen groepen naar uitgangen en registreren knelpunten.",
+                "Brandweer en ambulanceploegen: oefenen inzet, communicatie en opvang.",
+                "Omroeper: geeft geloofwaardige maar gecontroleerde instructies."
+              ],
+              "goal_b": "Aantonen dat een vol stadion bij een incident snel, veilig en zonder paniek kan worden ontruimd.",
+              "role_remapping": [
+                "Supporters worden oefendeelnemers.",
+                "Stadionpersoneel en beveiliging worden begeleiders en beoordelaars van de oefening.",
+                "De scheidsrechterlijke fluit en stadionomroep worden deels gelezen als veiligheidssignalen.",
+                "De wedstrijd wordt een geloofwaardig decor voor een publieksproef."
+              ],
+              "shared_cues": [
+                "Clubkleuren, gezang en een volle tribune.",
+                "Stewards langs de trappen en uitgangen.",
+                "Stadionomroep met korte aanwijzingen.",
+                "Een plotselinge onderbreking van het spel.",
+                "Groepen die tegelijk naar dezelfde kant kijken."
+              ],
+              "switch_trigger": "De omroeper noemt onverwacht geen wissel of blessure, maar verzoekt vak voor vak via genummerde nooduitgangen te vertrekken.",
+              "hinge_event": "In de beslissende slotfase staat vrijwel iedereen zonder protest op en loopt men rustig in vaste rijen het stadion uit.",
+              "anomaly_under_a": "Bij een spannende wedstrijd is het onverklaarbaar dat supporters de onzekere ontknoping vrijwillig verlaten en zich opvallend gedisciplineerd over de tribunes verspreiden.",
+              "resolution_under_b": "Het vertrek is precies het meetmoment van de ontruimingsoefening: de vaste rijen, rustige houding en gefaseerde routes leveren bruikbare gegevens op over veiligheid en doorstroming."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een productieploeg draait in een stadion een reclamefilm voor een voetbalproduct, met betaalde figuranten die overtuigend supportersgedrag moeten uitbeelden terwijl de wedstrijd slechts als decor is geënsceneerd.",
+              "opposition_axis": "Oprechte, spontane clubliefde tegenover geregisseerde en betaalde publieksperformance.",
+              "opposed_proposition": "Supporters zijn partijdig voor hun eigen club, maar de wedstrijd wordt door iedereen als een gedeeld sportief evenement herkend.",
+              "shared_anchor": "Een tribune vol mensen in clubkleuren juicht naar het veld.",
+              "reading_a": "Echte supporters dragen kleuren van hun club en juichen omdat zij emotioneel betrokken zijn bij de wedstrijd.",
+              "reading_b": "Figuranten dragen toegewezen kleuren en voeren enthousiasme uit volgens het draaiboek van een commercial.",
+              "roles_b": [
+                "Figuranten: spelen jubelende, nerveuze of teleurgestelde supporters.",
+                "Regisseur: bepaalt de gewenste emoties, bewegingen en camerastandpunten.",
+                "Productieassistenten: delen sjaals uit en geven stilzwijgende of zichtbare cues.",
+                "Camera- en geluidsploeg: registreert bruikbaar beeld en stadiongeluid.",
+                "Acteur op het veld: speelt een beslissend voetbalmoment."
+              ],
+              "goal_b": "Opnemen van geloofwaardige beelden van collectieve supporterspassie voor een reclamecampagne.",
+              "role_remapping": [
+                "Supporters worden figuranten.",
+                "Trainer en staf worden regisseur en productieassistenten die gedrag aansturen.",
+                "Spelers worden acteurs die vooraf bepaalde acties uitvoeren.",
+                "De stadionomroep wordt een productiemiddel voor aanwijzingen en resets."
+              ],
+              "shared_cues": [
+                "Sjaals, vlaggen en clubshirts.",
+                "Gezamenlijk aftellen voor een aanval.",
+                "Luid gejuich na een schot richting doel.",
+                "Camera's langs de zijlijn.",
+                "Mensen die elkaar omhelzen op de tribune."
+              ],
+              "switch_trigger": "Tussen twee ogenschijnlijk normale spelmomenten houdt een productieassistent een bord omhoog met daarop: 'JUICHEN, NOG EEN KEER'.",
+              "hinge_event": "De hele tribune juicht exact opnieuw met dezelfde armbewegingen, hoewel de bal al minuten niet meer in het spel is.",
+              "anomaly_under_a": "Bij een echte wedstrijd zou identiek, synchroon herhaald gejuich zonder nieuw doelpunt of spannende actie ongepast en onbegrijpelijk zijn.",
+              "resolution_under_b": "De herhaling is een nieuwe take: de regisseur heeft een bruikbare, uniforme reactie nodig en de figuranten voeren de cue doelbewust opnieuw uit."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een voetbalstadion is het decor voor een internationale supporterszangwedstrijd, waarin groepen niet strijden om de uitslag van een wedstrijd maar om de beste uitvoering van liederen, choreografie en tribunecoördinatie.",
+              "opposition_axis": "Onvoorspelbare reactie op een sportwedstrijd tegenover vooraf ingestudeerde artistieke uitvoering.",
+              "opposed_proposition": "Een doelpunt veroorzaakt onmiddellijk sterke, collectieve emotie op de tribune.",
+              "shared_anchor": "Duizenden mensen zingen tegelijk en steken sjaals in de lucht.",
+              "reading_a": "Supporters zetten liederen in als emotionele aanmoediging die meebeweegt met kansen, doelpunten en frustraties op het veld.",
+              "reading_b": "Deelnemende koren voeren beoordeelde nummers uit met vaste inzetten, toonhoogtes, bewegingen en visuele patronen.",
+              "roles_b": [
+                "Zanggroepen: vertegenwoordigen steden of verenigingen met ingestudeerde supportersliederen.",
+                "Dirigenten: leiden tempo, inzetten en meerstemmigheid.",
+                "Jury: beoordeelt samenzang, originaliteit en choreografie.",
+                "Presentator: kondigt rondes en deelnemers aan.",
+                "Technische ploeg: verzorgt licht, geluid en scoreweergave."
+              ],
+              "goal_b": "De zangwedstrijd winnen door de meest indrukwekkende collectieve supportersperformance neer te zetten.",
+              "role_remapping": [
+                "Supporters worden koorleden en deelnemers.",
+                "De trainer wordt dirigent of groepsleider.",
+                "De scheidsrechter wordt een juryvoorzitter die prestaties beoordeelt.",
+                "Het scorebord wordt een beoordelings- en songinformatiebord.",
+                "Rivaliserende supporters worden concurrerende zanggroepen."
+              ],
+              "shared_cues": [
+                "Tribunes in clubkleuren.",
+                "Sjaals die op een teken omhooggaan.",
+                "Ritmegeklap en massaal gezang.",
+                "Een scorebord dat de aandacht trekt.",
+                "Een gespannen stilte vlak vóór een collectieve uitbarsting."
+              ],
+              "switch_trigger": "Het scorebord toont na een lange stilte geen stand of blessuretijd, maar een cijfermatige juryscore en de tekst 'toonladder A-mineur'.",
+              "hinge_event": "Na een schijnbaar beslissend moment op het veld blijven alle aanwezigen stil, waarna zij op één exact teken een vierstemmig refrein inzetten.",
+              "anomaly_under_a": "Een echte supportersmassa zou bij een beslissend voetbalmoment niet eerst technisch stilvallen en vervolgens muzikaal perfect, ongeacht het spelverloop, inzetten.",
+              "resolution_under_b": "De stilte en de uniforme inzet zijn onderdelen van een beoordeelde uitvoering; de groep wacht op de dirigent om precisie en discipline te demonstreren."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een groep stadionbezoekers organiseert tijdens een voetbalavond een grootschalige huwelijksaanzoek-flashmob, waarbij de vermeende supportersrituelen worden gebruikt om één nietsvermoedende partner publiekelijk te verrassen.",
+              "opposition_axis": "Collectieve trouw aan een voetbalclub tegenover een collectieve, persoonlijke romantische verrassing.",
+              "opposed_proposition": "Rivaliteit tussen clubs uit zich normaal in gezang, plagerijen, vlaggen en debat, niet in gevaarlijk gedrag.",
+              "shared_anchor": "Twee tribunevakken beantwoorden elkaar met gezang en grote spandoeken.",
+              "reading_a": "Tegenover elkaar staande supportersvakken zingen rivaliserende leuzen en tonen clubgebonden spandoeken als onderdeel van sportieve plagerij.",
+              "reading_b": "Vrienden, familie en ingehuurde deelnemers gebruiken de vakken als twee helften van één zorgvuldig voorbereide boodschap voor een aanzoek.",
+              "roles_b": [
+                "Aanstaande partner: denkt een gewone wedstrijd te bezoeken.",
+                "Initiatiefnemer: plant het aanzoek en geeft op het juiste moment het signaal.",
+                "Familie, vrienden en figuranten: vormen de flashmob en houden delen van de boodschap omhoog.",
+                "Stadionpresentator: werkt mee aan de afleiding en onthulling.",
+                "Cameraploeg: legt de verrassing vast."
+              ],
+              "goal_b": "De partner op een verrassende maar warme manier ten huwelijk vragen met behulp van een stadionbrede choreografie.",
+              "role_remapping": [
+                "Supporters worden familieleden, vrienden en flashmobdeelnemers.",
+                "Twee rivaliserende vakken worden twee delen van één boodschap.",
+                "De stadionomroeper wordt medeplichtige presentator.",
+                "Een tifo wordt een persoonlijk aanzoek.",
+                "De vermeende wedstrijdspanning wordt een afleidingsmanoeuvre voor de aanstaande partner."
+              ],
+              "shared_cues": [
+                "Clubliederen en beurtzang tussen vakken.",
+                "Grote opgerolde spandoeken.",
+                "Sjaals en kartonnen kleurvlakken.",
+                "Camera's die op de tribune gericht zijn.",
+                "Een stadionomroeper die het publiek tot stilte vraagt."
+              ],
+              "switch_trigger": "De twee vakken rollen hun ogenschijnlijk rivaliserende doeken uit, die samen niet een clubmotto maar de woorden 'WIL JE MET MIJ TROUWEN?' vormen.",
+              "hinge_event": "De vermeende uitsupporters lopen zonder vijandigheid naar het thuisvak en vormen samen een hart rond één verbaasde toeschouwer.",
+              "anomaly_under_a": "Dat rivaliserende supporters hun eigen vak verlaten, elkaars kleuren omarmen en een gezamenlijk romantisch symbool vormen, past niet bij de verwachte clubtegenstelling.",
+              "resolution_under_b": "De rivaliteit was geënsceneerd: beide vakken zijn onderdelen van de flashmob en komen samen om het aanzoek zichtbaar, veilig en persoonlijk te laten slagen."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde stadiontekst kan eerst als een normale, spannende wedstrijd worden gelezen en vervolgens als een geplande ontruimingsoefening. De dominante tegenstelling is blijven voor de sportieve ontknoping versus vertrekken voor veiligheid en oefendoeleinden. Het collectief reageren op veldsignalen, stewards en omroep past bij beide scripts; vóór de expliciete vertrekoproep domineert echter duidelijk de wedstrijduitleg. Het gedisciplineerde vertrek in de slotfase is onder Script A anomalisch, maar onder Script B precies het gewenste meetmoment. Daardoor krijgen fluit, omroep, stewards en de wedstrijd zelf achteraf een veiligheidsfunctie. Het verlaten van het stadion verhindert bovendien het volgen van de uitslag onder A, maar maakt juist het doel van B mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén realiseerbare scène met clubkleuren, gejuich, omhelzingen en camera's kan zowel echte supporterspassie als een commerciële opname ondersteunen. De tegenstelling tussen spontane betrokkenheid en geregisseerde, betaalde uitvoering is lokaal onverenigbaar en blijft de dominante as. Een reclameopname met figuranten is een herkenbaar sociaal script, terwijl de aanwezige camera's en zichtbare productieomstandigheden die tweede lezing vóór de trigger beschikbaar houden zonder de wedstrijduitleg aanvankelijk te overheersen. Het identieke herhaalde gejuich zonder spelactie is onder A onverklaarbaar, maar is onder B een logische nieuwe take. Eerdere reacties worden daardoor retrospectief acteerprestaties; de uniforme herhaling ondermijnt spontane wedstrijdemotie maar levert B juist bruikbaar reclamemateriaal op."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Massaal zingen, sjaals omhooghouden, ritmegeklap en een gespannen stilte kunnen aanvankelijk als supporterscultuur en later als een beoordeelde zanguitvoering worden gelezen. De centrale tegenstelling is spontane, spelafhankelijke emotie tegenover vooraf ingestudeerde en gecontroleerde uitvoering. Die twee functies van het gedrag zijn op dit moment incompatibel en er is geen concurrerende sterkere as. Een supporterszangwedstrijd is een coherent, herkenbaar alternatief script; de collectieve coördinatie en het scorebord laten dit vóór de expliciete juryscore al latent toe, terwijl de voetbalcontext eerst dominant blijft. De technische stilte en perfecte vierstemmige inzet zijn onder A anomalisch, maar vormen onder B bewijs van discipline voor de jury. Daarmee worden het gezang, het scorebord en de tribuneorganisatie retrospectief onderdelen van een wedstrijdperformance. Het uitstellen van spontane reactie blokkeert A's emotionele wedstrijdfunctie en faciliteert B's beoordelingsdoel."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een tekst met beurtzang, twee vakken, spandoeken, clubkleuren en een omroeper kan zowel sportieve vakrivaliteit als een voorbereide aanzoek-flashmob dragen. De overheersende tegenstelling betreft de functie van de collectieve actie: clubgebonden rivaliteit versus gezamenlijke persoonlijke verrassing. In de concrete scène zijn werkelijk tegengestelde supportersvakken en één gecoördineerde groep met een gedeeld romantisch doel lokaal incompatibel. Een stadionaanzoek via choreografie is sociaal herkenbaar; camera's, opgerolde doeken en een omroeper die stilte vraagt houden die lezing vooraf latent beschikbaar, maar een gewone wedstrijdcontext stuurt eerst naar A. Het zonder vijandigheid samenkomen van beide vakken en vormen van een hart is onder A afwijkend, maar onder B precies de onthulling. Hierdoor worden de tifo, vakindeling en vermeende rivaliteit achteraf middelen voor het aanzoek. Het opgeven van de rivaliserende vakrol blokkeert A's tegenstelling, maar maakt B's gezamenlijke boodschap mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde stadiontekst kan eerst als een normale, spannende wedstrijd worden gelezen en vervolgens als een geplande ontruimingsoefening. De dominante tegenstelling is blijven voor de sportieve ontknoping versus vertrekken voor veiligheid en oefendoeleinden. Het collectief reageren op veldsignalen, stewards en omroep past bij beide scripts; vóór de expliciete vertrekoproep domineert echter duidelijk de wedstrijduitleg. Het gedisciplineerde vertrek in de slotfase is onder Script A anomalisch, maar onder Script B precies het gewenste meetmoment. Daardoor krijgen fluit, omroep, stewards en de wedstrijd zelf achteraf een veiligheidsfunctie. Het verlaten van het stadion verhindert bovendien het volgen van de uitslag onder A, maar maakt juist het doel van B mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén realiseerbare scène met clubkleuren, gejuich, omhelzingen en camera's kan zowel echte supporterspassie als een commerciële opname ondersteunen. De tegenstelling tussen spontane betrokkenheid en geregisseerde, betaalde uitvoering is lokaal onverenigbaar en blijft de dominante as. Een reclameopname met figuranten is een herkenbaar sociaal script, terwijl de aanwezige camera's en zichtbare productieomstandigheden die tweede lezing vóór de trigger beschikbaar houden zonder de wedstrijduitleg aanvankelijk te overheersen. Het identieke herhaalde gejuich zonder spelactie is onder A onverklaarbaar, maar is onder B een logische nieuwe take. Eerdere reacties worden daardoor retrospectief acteerprestaties; de uniforme herhaling ondermijnt spontane wedstrijdemotie maar levert B juist bruikbaar reclamemateriaal op."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Massaal zingen, sjaals omhooghouden, ritmegeklap en een gespannen stilte kunnen aanvankelijk als supporterscultuur en later als een beoordeelde zanguitvoering worden gelezen. De centrale tegenstelling is spontane, spelafhankelijke emotie tegenover vooraf ingestudeerde en gecontroleerde uitvoering. Die twee functies van het gedrag zijn op dit moment incompatibel en er is geen concurrerende sterkere as. Een supporterszangwedstrijd is een coherent, herkenbaar alternatief script; de collectieve coördinatie en het scorebord laten dit vóór de expliciete juryscore al latent toe, terwijl de voetbalcontext eerst dominant blijft. De technische stilte en perfecte vierstemmige inzet zijn onder A anomalisch, maar vormen onder B bewijs van discipline voor de jury. Daarmee worden het gezang, het scorebord en de tribuneorganisatie retrospectief onderdelen van een wedstrijdperformance. Het uitstellen van spontane reactie blokkeert A's emotionele wedstrijdfunctie en faciliteert B's beoordelingsdoel."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een tekst met beurtzang, twee vakken, spandoeken, clubkleuren en een omroeper kan zowel sportieve vakrivaliteit als een voorbereide aanzoek-flashmob dragen. De overheersende tegenstelling betreft de functie van de collectieve actie: clubgebonden rivaliteit versus gezamenlijke persoonlijke verrassing. In de concrete scène zijn werkelijk tegengestelde supportersvakken en één gecoördineerde groep met een gedeeld romantisch doel lokaal incompatibel. Een stadionaanzoek via choreografie is sociaal herkenbaar; camera's, opgerolde doeken en een omroeper die stilte vraagt houden die lezing vooraf latent beschikbaar, maar een gewone wedstrijdcontext stuurt eerst naar A. Het zonder vijandigheid samenkomen van beide vakken en vormen van een hart is onder A afwijkend, maar onder B precies de onthulling. Hierdoor worden de tifo, vakindeling en vermeende rivaliteit achteraf middelen voor het aanzoek. Het opgeven van de rivaliserende vakrol blokkeert A's tegenstelling, maar maakt B's gezamenlijke boodschap mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B2"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een voetbalpubliek telt af voor een aanval, zwaait met sjaals en viert een schot gezamenlijk in het stadion.",
+          "realized_script_b": "Een geregisseerde opname waarin het publiek zijn gejuich opnieuw en op aanwijzing moet uitvoeren.",
+          "realized_opposition_axis": "Spontane supporterspassie tegenover geregisseerde publieksperformance.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De voetbalsetup, sjaals, aftellen en collectief omhelzen ondersteunen Script A; de oproep om het 'spontaner' te doen schakelt naar een geënsceneerde take. De reclame- en betaalde-figurantencomponent blijft impliciet, maar de bedoelde kernoppositie en herinterpretatie functioneren."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant realiseert de geplande overgang van voetbaltribune naar geregisseerde opname. De formulering over de stil liggende bal maakt de enscenering al licht verdacht, maar de laatste repliek levert nog steeds de duidelijke omslag en grapafsluiting.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Supporters in vlaggen en clubshirts reageren eensgezind op een schot tijdens een voetbalwedstrijd.",
+          "realized_script_b": "Een productie regisseert figuranten via de stadionomroep en laat hen een specifieke emotie en beeldcompositie opnieuw uitvoeren.",
+          "realized_opposition_axis": "Oprechte supportersloyaliteit tegenover aangestuurde, voor opname uitgevoerde emotie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De aanvankelijke lezing is die van trouwe voetbalsupporters; 'Terug naar emotie drie' en de aanwijzing over de sjaal maken de omroep tot productieregie. Daarmee worden de synchroniciteit en het gejuich na een gemist schot retrospectief verklaard als een take."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Deze variant volgt het beoogde plan nauw: normale tribunecues worden eerst als clubliefde gelezen en vervolgens door een regieaanwijzing als geacteerde opname herzien. De specifieke commerciële context en betaling worden niet uitgesproken, maar de functionele Script-B-omslag is helder.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een volle voetbaltribune telt af, juicht en omhelst elkaar tijdens een ogenschijnlijk beslissend moment, terwijl camera's langs de lijn filmen.",
+          "realized_script_b": "Een productieploeg filmt een geënsceneerde supportersreactie en vraagt om een nieuwe take die beter op de baltiming aansluit.",
+          "realized_opposition_axis": "Spontaan voetbalenthousiasme tegenover geregisseerd enthousiasme voor een opname.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "Camera's, tribune, aftellen, gejuich en omhelzingen zijn expliciete gedeelde cues. Het bord met 'Nog één keer' activeert direct de productielezing en verklaart het juichen als herhaalbare take; de formulering over wachten op de bal maakt de eerdere reactie retrospectief onnatuurlijk onder Script A."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "V3 is de meest directe realisatie van de beoogde SO: gedeelde stadioncues bouwen Script A op en het bord maakt de gejuichscène expliciet een opnieuw te draaien opname. Reclame en betaling blijven ongenoemd, maar veroorzaken geen andere hoofdoppositie.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "Beide varianten voldoen aan de lengte-eis en realiseren de vereiste scriptoppositie. V2 schakelt scherper: het synchroon juichen na een misser wordt door „emotie drie” en de sjaalaanwijzing overtuigend én grappig als geregisseerde take herlezen. V1 verraadt de enscenering al wat door de stil liggende bal."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V3",
+          "rationale": "Beide behouden de overgang van authentieke supporterspassie naar productie-regie. V3 levert de retrospectieve herinterpretatie helderder, omdat „Nog één keer” en het wachten op de bal de eerdere jubel precies verklaren. V1 heeft een natuurlijke afsluiter, maar bouwt de afwijking eerder en minder elegant op."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 en V3 zijn beide compacte, goed performbare SO-grappen met een duidelijke omslag. V2 is origineler en komischer door de concrete, bureaucratisch klinkende regietaal van „emotie drie” en de sjaalcorrectie; die details maken de productielezing levendig zonder de setup vooraf te veel weg te geven."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 is de sterkste passerende variant: de voetbalsetting blijft eerst geloofwaardig, waarna de stadionomroep de hele scène snel en volledig als geregisseerde opname herkadert. De specifieke regieaanwijzingen versterken zowel de verrassing als de spreekbaarheid."
+    }
+  },
+  "result_sha256": "c7694cb5b5aa209283a26b187690799570e117093db20cdfdbb6aa6fc802c161"
+}

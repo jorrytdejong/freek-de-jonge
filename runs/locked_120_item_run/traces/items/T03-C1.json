@@ -1,0 +1,834 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T03-C1",
+  "topic_id": "T03",
+  "topic": "Religie, kerk en geloof",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T17:07:19.712190+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Religie, kerk en geloof",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Religie, kerk en geloof\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Religie, kerk en geloof\",\n  \"script_a\": {\n    \"script_a\": \"Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.\",\n    \"participants_and_roles\": [\n      \"De voorganger, priester of dominee: leidt de dienst, leest voor, legt religieuze teksten uit en biedt geestelijke begeleiding.\",\n      \"De gelovige bezoeker: komt om te bidden, te luisteren, verbondenheid te ervaren en het geloof te beleven.\",\n      \"De kerkgemeenschap: vormt een respectvolle groep die gezamenlijk zingt, luistert, rituelen volgt en elkaar ondersteunt.\",\n      \"Eventueel een koster, cantor of muzikant: verzorgt de praktische gang van zaken of muzikale begeleiding.\"\n    ],\n    \"apparent_goal\": \"Samen het geloof beleven en de bezoekers geestelijke steun, betekenis en richting bieden.\",\n    \"preconditions\": [\n      \"Er is een kerkelijke ruimte of een vergelijkbare rustige, gewijde bijeenkomst.\",\n      \"De aanwezigen kennen globaal de omgangsvormen: op tijd komen, respectvol luisteren en rituelen niet verstoren.\",\n      \"Er is een gedeelde of ten minste erkende religieuze context, met teksten, symbolen en gebruiken.\",\n      \"De voorganger is voorbereid en heeft een dienstorde, thema of boodschap.\"\n    ],\n    \"expected_actions\": [\n      \"De gemeenschap komt bijeen en neemt plaats.\",\n      \"Er worden gebeden uitgesproken, religieuze teksten gelezen en vaak liederen gezongen.\",\n      \"De voorganger houdt een preek, overdenking of uitleg over geloof en dagelijks leven.\",\n      \"Bezoekers luisteren aandachtig, doen mee met vaste antwoorden of rituelen en zoeken eventueel contact met anderen na afloop.\"\n    ],\n    \"expected_outcome\": \"De bezoekers verlaten de bijeenkomst met een gevoel van bezinning, gemeenschap, troost of hernieuwde motivatie om naar hun geloof te handelen.\",\n    \"expected_propositions\": [\n      \"Een kerkdienst verloopt ordelijk en met respect voor de religieuze omgeving.\",\n      \"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\",\n      \"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\",\n      \"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\",\n      \"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond religie, kerk en geloof activeert doorgaans de verwachting van een plechtige maar menselijke bijeenkomst waarin een geestelijk leider en gelovigen samen rituelen uitvoeren, naar een betekenisvolle boodschap luisteren en steun of richting zoeken.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Religie, kerk en geloof\",\n  \"script_a\": {\n    \"script_a\": \"Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.\",\n    \"participants_and_roles\": [\n      \"De voorganger, priester of dominee: leidt de dienst, leest voor, legt religieuze teksten uit en biedt geestelijke begeleiding.\",\n      \"De gelovige bezoeker: komt om te bidden, te luisteren, verbondenheid te ervaren en het geloof te beleven.\",\n      \"De kerkgemeenschap: vormt een respectvolle groep die gezamenlijk zingt, luistert, rituelen volgt en elkaar ondersteunt.\",\n      \"Eventueel een koster, cantor of muzikant: verzorgt de praktische gang van zaken of muzikale begeleiding.\"\n    ],\n    \"apparent_goal\": \"Samen het geloof beleven en de bezoekers geestelijke steun, betekenis en richting bieden.\",\n    \"preconditions\": [\n      \"Er is een kerkelijke ruimte of een vergelijkbare rustige, gewijde bijeenkomst.\",\n      \"De aanwezigen kennen globaal de omgangsvormen: op tijd komen, respectvol luisteren en rituelen niet verstoren.\",\n      \"Er is een gedeelde of ten minste erkende religieuze context, met teksten, symbolen en gebruiken.\",\n      \"De voorganger is voorbereid en heeft een dienstorde, thema of boodschap.\"\n    ],\n    \"expected_actions\": [\n      \"De gemeenschap komt bijeen en neemt plaats.\",\n      \"Er worden gebeden uitgesproken, religieuze teksten gelezen en vaak liederen gezongen.\",\n      \"De voorganger houdt een preek, overdenking of uitleg over geloof en dagelijks leven.\",\n      \"Bezoekers luisteren aandachtig, doen mee met vaste antwoorden of rituelen en zoeken eventueel contact met anderen na afloop.\"\n    ],\n    \"expected_outcome\": \"De bezoekers verlaten de bijeenkomst met een gevoel van bezinning, gemeenschap, troost of hernieuwde motivatie om naar hun geloof te handelen.\",\n    \"expected_propositions\": [\n      \"Een kerkdienst verloopt ordelijk en met respect voor de religieuze omgeving.\",\n      \"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\",\n      \"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\",\n      \"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\",\n      \"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond religie, kerk en geloof activeert doorgaans de verwachting van een plechtige maar menselijke bijeenkomst waarin een geestelijk leider en gelovigen samen rituelen uitvoeren, naar een betekenisvolle boodschap luisteren en steun of richting zoeken.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een makelaar leidt potentiële kopers rond in een monumentaal kerkgebouw dat is herbestemd tot luxe appartementencomplex. Hij gebruikt plechtige taal en laat de groep stilstaan bij de bijzondere ruimte om de verkoopwaarde te verhogen.\",\n      \"opposition_axis\": \"geestelijke bezinning versus commerciële verkoop\",\n      \"opposed_proposition\": \"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\",\n      \"shared_anchor\": \"Een leider spreekt een aandachtige groep toe in een kerkruimte.\",\n      \"reading_a\": \"Een voorganger bereidt de aanwezigen met uitleg en stilte voor op geestelijke bezinning.\",\n      \"reading_b\": \"Een makelaar bereidt geïnteresseerden met verkooptaal en een rondleiding voor op een aankoopbeslissing.\",\n      \"roles_b\": [\n        \"De makelaar: leidt de bezichtiging en verkoopt de woningen.\",\n        \"Potentiële kopers: luisteren, bekijken de ruimte en beoordelen de investering.\",\n        \"De groep bezichtigers: volgt de route en stelt vragen.\",\n        \"Een assistent of gebouwbeheerder: opent deuren en verstrekt brochures.\"\n      ],\n      \"goal_b\": \"Kopers overtuigen dat wonen in het voormalige kerkgebouw exclusief en financieel aantrekkelijk is.\",\n      \"role_remapping\": [\n        \"De voorganger wordt de makelaar die de bijeenkomst leidt.\",\n        \"De gelovige bezoeker wordt een potentiële koper.\",\n        \"De kerkgemeenschap wordt een groep bezichtigers.\",\n        \"De koster wordt een gebouwbeheerder of verkoopassistent.\",\n        \"De religieuze uitleg wordt een verkoopverhaal over locatie, historie en voorzieningen.\"\n      ],\n      \"shared_cues\": [\n        \"Een groep komt op tijd binnen en neemt plaats op banken of stoelen.\",\n        \"Een centrale spreker gebruikt een rustige, gezaghebbende toon.\",\n        \"Er klinkt een verhaal over geschiedenis, waarden en de betekenis van de ruimte.\",\n        \"Aanwezigen knikken, luisteren stil en kijken rond.\",\n        \"Er liggen folders of gedrukte teksten bij de ingang.\"\n      ],\n      \"switch_trigger\": \"De spreker sluit af met de mededeling dat wie vandaag tekent de keukenupgrade gratis krijgt.\",\n      \"hinge_event\": \"Hij wijst naar het altaar en noemt het de ideale plek voor een kookeiland.\",\n      \"anomaly_under_a\": \"Tijdens een kerkdienst is een altaar geen verkoopbaar interieuronderdeel; de opmerking reduceert een gewijde plek ongepast tot vastgoed.\",\n      \"resolution_under_b\": \"Als bezichtiging is de opmerking doelgericht: de makelaar visualiseert de toekomstige woningindeling en probeert urgentie bij kopers te creëren.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.\",\n      \"opposition_axis\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n      \"opposed_proposition\": \"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\",\n      \"shared_anchor\": \"Een leider organiseert gebedachtige woorden, zang en stilte voor een verzamelde groep.\",\n      \"reading_a\": \"De voorganger leidt rituelen die voor de aanwezigen religieuze betekenis hebben.\",\n      \"reading_b\": \"De regisseur repeteert rituelen als geloofwaardige theatrale handelingen voor de voorstelling.\",\n      \"roles_b\": [\n        \"De regisseur: geeft spel- en timingaanwijzingen.\",\n        \"Acteurs: vertolken de voorganger en kerkbezoekers.\",\n        \"Figuranten: vullen de kerkbanken en reageren volgens instructie.\",\n        \"Technici of muzikaal leider: verzorgen licht, geluid en muziek.\"\n      ],\n      \"goal_b\": \"Een overtuigende, emotioneel geloofwaardige voorstelling afleveren voor een betalend publiek.\",\n      \"role_remapping\": [\n        \"De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.\",\n        \"De gelovige bezoeker wordt een acteur in de rol van kerkganger.\",\n        \"De kerkgemeenschap wordt het ensemble en de figuranten.\",\n        \"De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.\",\n        \"De preek wordt een ingestudeerde tekstscène.\"\n      ],\n      \"shared_cues\": [\n        \"Mensen verzamelen zich in rijen banken.\",\n        \"Een centrale persoon spreekt vanaf een verhoogde plek.\",\n        \"Er worden passages hardop gelezen.\",\n        \"Een lied wordt gezamenlijk ingezet.\",\n        \"Na een ernstige zin valt een stilte.\"\n      ],\n      \"switch_trigger\": \"De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'\",\n      \"hinge_event\": \"Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.\",\n      \"anomaly_under_a\": \"Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.\",\n      \"resolution_under_b\": \"In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een fraudepreventietrainer leidt een verplichte bedrijfsworkshop waarin medewerkers een valse beleggingssekte naspelen. De trainer gebruikt kerkelijke vormen om te demonstreren hoe groepsdruk en charismatisch leiderschap kunnen werken.\",\n      \"opposition_axis\": \"geestelijke begeleiding versus manipulatiepreventie\",\n      \"opposed_proposition\": \"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\",\n      \"shared_anchor\": \"Een gezaghebbende spreker vraagt een groep om aandacht, herhaling en vertrouwen.\",\n      \"reading_a\": \"Een voorganger vraagt de gemeenschap aandachtig te luisteren naar een boodschap die geestelijke richting biedt.\",\n      \"reading_b\": \"Een trainer laat deelnemers ervaren hoe een manipulatieve leider vertrouwen en groepsconformiteit opbouwt.\",\n      \"roles_b\": [\n        \"De trainer: begeleidt de simulatie en bespreekt manipulatieve technieken.\",\n        \"Medewerkers: spelen deelnemers aan de fictieve beleggingsgroep.\",\n        \"Een aangewezen deelnemer: speelt de charismatische groepsleider.\",\n        \"Observatoren of compliance-medewerkers: noteren drukmiddelen en waarschuwingssignalen.\"\n      ],\n      \"goal_b\": \"Medewerkers weerbaarder maken tegen fraude, sektarische verkooptechnieken en ongepaste groepsdruk.\",\n      \"role_remapping\": [\n        \"De voorganger wordt de trainer of de deelnemer die een manipulator speelt.\",\n        \"De gelovige bezoeker wordt een medewerker die de simulatie meedoet.\",\n        \"De kerkgemeenschap wordt een workshopgroep.\",\n        \"De koster of organisator wordt een compliance-medewerker die materiaal uitdeelt.\",\n        \"De geloofsboodschap wordt een fictieve belofte van financieel of persoonlijk gewin.\"\n      ],\n      \"shared_cues\": [\n        \"Stoelen staan in een halve kring of in rijen.\",\n        \"Een leider heet iedereen welkom en vraagt om telefoons weg te leggen.\",\n        \"De groep herhaalt korte zinnen in koor.\",\n        \"Er wordt een persoonlijk getuigenis verteld.\",\n        \"De leider vraagt om een moment van stilte en reflectie.\"\n      ],\n      \"switch_trigger\": \"Na de gezamenlijke herhaling projecteert de trainer groot: 'Welke zin was bedoeld om u geld te laten overmaken?'\",\n      \"hinge_event\": \"De leider deelt formulieren uit waarop aanwezigen hun salaris en beschikbare spaargeld moeten invullen.\",\n      \"anomaly_under_a\": \"Het opvragen van persoonlijke financiële middelen is binnen een normale dienst een ongepaste en verdachte inbreuk op de persoonlijke sfeer.\",\n      \"resolution_under_b\": \"In de workshop is het formulier een bewust alarmsignaal: deelnemers herkennen concreet hoe een fraudeur financiële kwetsbaarheid inventariseert.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een evenementenbegeleider organiseert in een kerkzaal een stille datingavond voor singles. Deelnemers luisteren naar korte persoonlijke verhalen, zingen mee met neutrale muziek en krijgen daarna discrete gespreksopdrachten om een passende partner te vinden.\",\n      \"opposition_axis\": \"gemeenschappelijke geloofsbeleving versus partnerselectie\",\n      \"opposed_proposition\": \"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\",\n      \"shared_anchor\": \"Bezoekers komen in een rustige kerkachtige ruimte bijeen, luisteren naar een spreker en zoeken contact met anderen.\",\n      \"reading_a\": \"De bezoekers zoeken gemeenschap, troost en morele of spirituele oriëntatie binnen een kerkdienst.\",\n      \"reading_b\": \"De deelnemers zoeken in een veilige, ingetogen setting romantische aansluiting met andere singles.\",\n      \"roles_b\": [\n        \"De evenementenbegeleider: legt de avondregels uit en koppelt deelnemers.\",\n        \"Singles: luisteren, doen mee aan opdrachten en zoeken een mogelijke match.\",\n        \"De groep deelnemers: creëert een rustige, respectvolle sfeer.\",\n        \"Een muzikant of gastheer: begeleidt muziek en praktische overgangen.\"\n      ],\n      \"goal_b\": \"Singles op een laagdrempelige en respectvolle manier met potentiële partners in contact brengen.\",\n      \"role_remapping\": [\n        \"De voorganger wordt de evenementenbegeleider.\",\n        \"De gelovige bezoeker wordt een singledeelnemer.\",\n        \"De kerkgemeenschap wordt de groep zoekende deelnemers.\",\n        \"De cantor of muzikant wordt een performer of gastheer.\",\n        \"Het nagesprek na de dienst wordt een begeleide kennismakingsronde.\"\n      ],\n      \"shared_cues\": [\n        \"Bezoekers worden welkom geheten bij de ingang.\",\n        \"Iedereen neemt stil plaats en luistert naar een centrale spreker.\",\n        \"Er klinkt rustige gezamenlijke muziek.\",\n        \"De spreker vraagt om respect, openheid en aandacht voor elkaar.\",\n        \"Na afloop worden aanwezigen uitgenodigd om met anderen te praten.\"\n      ],\n      \"switch_trigger\": \"De begeleider zegt: 'Kijk nu onder uw stoel; het nummer daarop is uw eerste gesprekspartner voor zeven minuten.'\",\n      \"hinge_event\": \"De spreker vraagt de aanwezigen om hun hand op te steken als zij openstaan voor iemand tussen de dertig en veertig.\",\n      \"anomaly_under_a\": \"Leeftijdsselectie en het publiekelijk aangeven van romantische beschikbaarheid zijn ongepast binnen een dienst die op geloof en gezamenlijke bezinning is gericht.\",\n      \"resolution_under_b\": \"Bij een datingavond maakt de vraag de matching efficiënter en geeft zij deelnemers een duidelijke, vrijwillige manier om wederzijdse interesse aan te geven.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Religie, kerk en geloof\",\n  \"script_a\": {\n    \"script_a\": \"Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.\",\n    \"participants_and_roles\": [\n      \"De voorganger, priester of dominee: leidt de dienst, leest voor, legt religieuze teksten uit en biedt geestelijke begeleiding.\",\n      \"De gelovige bezoeker: komt om te bidden, te luisteren, verbondenheid te ervaren en het geloof te beleven.\",\n      \"De kerkgemeenschap: vormt een respectvolle groep die gezamenlijk zingt, luistert, rituelen volgt en elkaar ondersteunt.\",\n      \"Eventueel een koster, cantor of muzikant: verzorgt de praktische gang van zaken of muzikale begeleiding.\"\n    ],\n    \"apparent_goal\": \"Samen het geloof beleven en de bezoekers geestelijke steun, betekenis en richting bieden.\",\n    \"preconditions\": [\n      \"Er is een kerkelijke ruimte of een vergelijkbare rustige, gewijde bijeenkomst.\",\n      \"De aanwezigen kennen globaal de omgangsvormen: op tijd komen, respectvol luisteren en rituelen niet verstoren.\",\n      \"Er is een gedeelde of ten minste erkende religieuze context, met teksten, symbolen en gebruiken.\",\n      \"De voorganger is voorbereid en heeft een dienstorde, thema of boodschap.\"\n    ],\n    \"expected_actions\": [\n      \"De gemeenschap komt bijeen en neemt plaats.\",\n      \"Er worden gebeden uitgesproken, religieuze teksten gelezen en vaak liederen gezongen.\",\n      \"De voorganger houdt een preek, overdenking of uitleg over geloof en dagelijks leven.\",\n      \"Bezoekers luisteren aandachtig, doen mee met vaste antwoorden of rituelen en zoeken eventueel contact met anderen na afloop.\"\n    ],\n    \"expected_outcome\": \"De bezoekers verlaten de bijeenkomst met een gevoel van bezinning, gemeenschap, troost of hernieuwde motivatie om naar hun geloof te handelen.\",\n    \"expected_propositions\": [\n      \"Een kerkdienst verloopt ordelijk en met respect voor de religieuze omgeving.\",\n      \"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\",\n      \"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\",\n      \"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\",\n      \"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond religie, kerk en geloof activeert doorgaans de verwachting van een plechtige maar menselijke bijeenkomst waarin een geestelijk leider en gelovigen samen rituelen uitvoeren, naar een betekenisvolle boodschap luisteren en steun of richting zoeken.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een makelaar leidt potentiële kopers rond in een monumentaal kerkgebouw dat is herbestemd tot luxe appartementencomplex. Hij gebruikt plechtige taal en laat de groep stilstaan bij de bijzondere ruimte om de verkoopwaarde te verhogen.\",\n      \"opposition_axis\": \"geestelijke bezinning versus commerciële verkoop\",\n      \"opposed_proposition\": \"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\",\n      \"shared_anchor\": \"Een leider spreekt een aandachtige groep toe in een kerkruimte.\",\n      \"reading_a\": \"Een voorganger bereidt de aanwezigen met uitleg en stilte voor op geestelijke bezinning.\",\n      \"reading_b\": \"Een makelaar bereidt geïnteresseerden met verkooptaal en een rondleiding voor op een aankoopbeslissing.\",\n      \"roles_b\": [\n        \"De makelaar: leidt de bezichtiging en verkoopt de woningen.\",\n        \"Potentiële kopers: luisteren, bekijken de ruimte en beoordelen de investering.\",\n        \"De groep bezichtigers: volgt de route en stelt vragen.\",\n        \"Een assistent of gebouwbeheerder: opent deuren en verstrekt brochures.\"\n      ],\n      \"goal_b\": \"Kopers overtuigen dat wonen in het voormalige kerkgebouw exclusief en financieel aantrekkelijk is.\",\n      \"role_remapping\": [\n        \"De voorganger wordt de makelaar die de bijeenkomst leidt.\",\n        \"De gelovige bezoeker wordt een potentiële koper.\",\n        \"De kerkgemeenschap wordt een groep bezichtigers.\",\n        \"De koster wordt een gebouwbeheerder of verkoopassistent.\",\n        \"De religieuze uitleg wordt een verkoopverhaal over locatie, historie en voorzieningen.\"\n      ],\n      \"shared_cues\": [\n        \"Een groep komt op tijd binnen en neemt plaats op banken of stoelen.\",\n        \"Een centrale spreker gebruikt een rustige, gezaghebbende toon.\",\n        \"Er klinkt een verhaal over geschiedenis, waarden en de betekenis van de ruimte.\",\n        \"Aanwezigen knikken, luisteren stil en kijken rond.\",\n        \"Er liggen folders of gedrukte teksten bij de ingang.\"\n      ],\n      \"switch_trigger\": \"De spreker sluit af met de mededeling dat wie vandaag tekent de keukenupgrade gratis krijgt.\",\n      \"hinge_event\": \"Hij wijst naar het altaar en noemt het de ideale plek voor een kookeiland.\",\n      \"anomaly_under_a\": \"Tijdens een kerkdienst is een altaar geen verkoopbaar interieuronderdeel; de opmerking reduceert een gewijde plek ongepast tot vastgoed.\",\n      \"resolution_under_b\": \"Als bezichtiging is de opmerking doelgericht: de makelaar visualiseert de toekomstige woningindeling en probeert urgentie bij kopers te creëren.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.\",\n      \"opposition_axis\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n      \"opposed_proposition\": \"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\",\n      \"shared_anchor\": \"Een leider organiseert gebedachtige woorden, zang en stilte voor een verzamelde groep.\",\n      \"reading_a\": \"De voorganger leidt rituelen die voor de aanwezigen religieuze betekenis hebben.\",\n      \"reading_b\": \"De regisseur repeteert rituelen als geloofwaardige theatrale handelingen voor de voorstelling.\",\n      \"roles_b\": [\n        \"De regisseur: geeft spel- en timingaanwijzingen.\",\n        \"Acteurs: vertolken de voorganger en kerkbezoekers.\",\n        \"Figuranten: vullen de kerkbanken en reageren volgens instructie.\",\n        \"Technici of muzikaal leider: verzorgen licht, geluid en muziek.\"\n      ],\n      \"goal_b\": \"Een overtuigende, emotioneel geloofwaardige voorstelling afleveren voor een betalend publiek.\",\n      \"role_remapping\": [\n        \"De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.\",\n        \"De gelovige bezoeker wordt een acteur in de rol van kerkganger.\",\n        \"De kerkgemeenschap wordt het ensemble en de figuranten.\",\n        \"De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.\",\n        \"De preek wordt een ingestudeerde tekstscène.\"\n      ],\n      \"shared_cues\": [\n        \"Mensen verzamelen zich in rijen banken.\",\n        \"Een centrale persoon spreekt vanaf een verhoogde plek.\",\n        \"Er worden passages hardop gelezen.\",\n        \"Een lied wordt gezamenlijk ingezet.\",\n        \"Na een ernstige zin valt een stilte.\"\n      ],\n      \"switch_trigger\": \"De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'\",\n      \"hinge_event\": \"Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.\",\n      \"anomaly_under_a\": \"Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.\",\n      \"resolution_under_b\": \"In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een fraudepreventietrainer leidt een verplichte bedrijfsworkshop waarin medewerkers een valse beleggingssekte naspelen. De trainer gebruikt kerkelijke vormen om te demonstreren hoe groepsdruk en charismatisch leiderschap kunnen werken.\",\n      \"opposition_axis\": \"geestelijke begeleiding versus manipulatiepreventie\",\n      \"opposed_proposition\": \"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\",\n      \"shared_anchor\": \"Een gezaghebbende spreker vraagt een groep om aandacht, herhaling en vertrouwen.\",\n      \"reading_a\": \"Een voorganger vraagt de gemeenschap aandachtig te luisteren naar een boodschap die geestelijke richting biedt.\",\n      \"reading_b\": \"Een trainer laat deelnemers ervaren hoe een manipulatieve leider vertrouwen en groepsconformiteit opbouwt.\",\n      \"roles_b\": [\n        \"De trainer: begeleidt de simulatie en bespreekt manipulatieve technieken.\",\n        \"Medewerkers: spelen deelnemers aan de fictieve beleggingsgroep.\",\n        \"Een aangewezen deelnemer: speelt de charismatische groepsleider.\",\n        \"Observatoren of compliance-medewerkers: noteren drukmiddelen en waarschuwingssignalen.\"\n      ],\n      \"goal_b\": \"Medewerkers weerbaarder maken tegen fraude, sektarische verkooptechnieken en ongepaste groepsdruk.\",\n      \"role_remapping\": [\n        \"De voorganger wordt de trainer of de deelnemer die een manipulator speelt.\",\n        \"De gelovige bezoeker wordt een medewerker die de simulatie meedoet.\",\n        \"De kerkgemeenschap wordt een workshopgroep.\",\n        \"De koster of organisator wordt een compliance-medewerker die materiaal uitdeelt.\",\n        \"De geloofsboodschap wordt een fictieve belofte van financieel of persoonlijk gewin.\"\n      ],\n      \"shared_cues\": [\n        \"Stoelen staan in een halve kring of in rijen.\",\n        \"Een leider heet iedereen welkom en vraagt om telefoons weg te leggen.\",\n        \"De groep herhaalt korte zinnen in koor.\",\n        \"Er wordt een persoonlijk getuigenis verteld.\",\n        \"De leider vraagt om een moment van stilte en reflectie.\"\n      ],\n      \"switch_trigger\": \"Na de gezamenlijke herhaling projecteert de trainer groot: 'Welke zin was bedoeld om u geld te laten overmaken?'\",\n      \"hinge_event\": \"De leider deelt formulieren uit waarop aanwezigen hun salaris en beschikbare spaargeld moeten invullen.\",\n      \"anomaly_under_a\": \"Het opvragen van persoonlijke financiële middelen is binnen een normale dienst een ongepaste en verdachte inbreuk op de persoonlijke sfeer.\",\n      \"resolution_under_b\": \"In de workshop is het formulier een bewust alarmsignaal: deelnemers herkennen concreet hoe een fraudeur financiële kwetsbaarheid inventariseert.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een evenementenbegeleider organiseert in een kerkzaal een stille datingavond voor singles. Deelnemers luisteren naar korte persoonlijke verhalen, zingen mee met neutrale muziek en krijgen daarna discrete gespreksopdrachten om een passende partner te vinden.\",\n      \"opposition_axis\": \"gemeenschappelijke geloofsbeleving versus partnerselectie\",\n      \"opposed_proposition\": \"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\",\n      \"shared_anchor\": \"Bezoekers komen in een rustige kerkachtige ruimte bijeen, luisteren naar een spreker en zoeken contact met anderen.\",\n      \"reading_a\": \"De bezoekers zoeken gemeenschap, troost en morele of spirituele oriëntatie binnen een kerkdienst.\",\n      \"reading_b\": \"De deelnemers zoeken in een veilige, ingetogen setting romantische aansluiting met andere singles.\",\n      \"roles_b\": [\n        \"De evenementenbegeleider: legt de avondregels uit en koppelt deelnemers.\",\n        \"Singles: luisteren, doen mee aan opdrachten en zoeken een mogelijke match.\",\n        \"De groep deelnemers: creëert een rustige, respectvolle sfeer.\",\n        \"Een muzikant of gastheer: begeleidt muziek en praktische overgangen.\"\n      ],\n      \"goal_b\": \"Singles op een laagdrempelige en respectvolle manier met potentiële partners in contact brengen.\",\n      \"role_remapping\": [\n        \"De voorganger wordt de evenementenbegeleider.\",\n        \"De gelovige bezoeker wordt een singledeelnemer.\",\n        \"De kerkgemeenschap wordt de groep zoekende deelnemers.\",\n        \"De cantor of muzikant wordt een performer of gastheer.\",\n        \"Het nagesprek na de dienst wordt een begeleide kennismakingsronde.\"\n      ],\n      \"shared_cues\": [\n        \"Bezoekers worden welkom geheten bij de ingang.\",\n        \"Iedereen neemt stil plaats en luistert naar een centrale spreker.\",\n        \"Er klinkt rustige gezamenlijke muziek.\",\n        \"De spreker vraagt om respect, openheid en aandacht voor elkaar.\",\n        \"Na afloop worden aanwezigen uitgenodigd om met anderen te praten.\"\n      ],\n      \"switch_trigger\": \"De begeleider zegt: 'Kijk nu onder uw stoel; het nummer daarop is uw eerste gesprekspartner voor zeven minuten.'\",\n      \"hinge_event\": \"De spreker vraagt de aanwezigen om hun hand op te steken als zij openstaan voor iemand tussen de dertig en veertig.\",\n      \"anomaly_under_a\": \"Leeftijdsselectie en het publiekelijk aangeven van romantische beschikbaarheid zijn ongepast binnen een dienst die op geloof en gezamenlijke bezinning is gericht.\",\n      \"resolution_under_b\": \"Bij een datingavond maakt de vraag de matching efficiënter en geeft zij deelnemers een duidelijke, vrijwillige manier om wederzijdse interesse aan te geven.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Religie, kerk en geloof\",\n  \"plan\": {\n    \"setup_script\": \"Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.\",\n    \"opposing_script\": \"Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.\",\n    \"opposition_type\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n    \"trigger\": \"De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Mensen verzamelen zich in rijen banken.\",\n      \"Een centrale persoon spreekt vanaf een verhoogde plek.\",\n      \"Er worden passages hardop gelezen.\",\n      \"Een lied wordt gezamenlijk ingezet.\",\n      \"Na een ernstige zin valt een stilte.\"\n    ],\n    \"hinge_event\": \"Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.\",\n    \"anomaly_under_a\": \"Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.\",\n    \"resolution_under_b\": \"In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.\",\n    \"role_remapping\": [\n      \"De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.\",\n      \"De gelovige bezoeker wordt een acteur in de rol van kerkganger.\",\n      \"De kerkgemeenschap wordt het ensemble en de figuranten.\",\n      \"De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.\",\n      \"De preek wordt een ingestudeerde tekstscène.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Religie, kerk en geloof\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.\",\n      \"participants_and_roles\": [\n        \"De voorganger, priester of dominee: leidt de dienst, leest voor, legt religieuze teksten uit en biedt geestelijke begeleiding.\",\n        \"De gelovige bezoeker: komt om te bidden, te luisteren, verbondenheid te ervaren en het geloof te beleven.\",\n        \"De kerkgemeenschap: vormt een respectvolle groep die gezamenlijk zingt, luistert, rituelen volgt en elkaar ondersteunt.\",\n        \"Eventueel een koster, cantor of muzikant: verzorgt de praktische gang van zaken of muzikale begeleiding.\"\n      ],\n      \"apparent_goal\": \"Samen het geloof beleven en de bezoekers geestelijke steun, betekenis en richting bieden.\",\n      \"preconditions\": [\n        \"Er is een kerkelijke ruimte of een vergelijkbare rustige, gewijde bijeenkomst.\",\n        \"De aanwezigen kennen globaal de omgangsvormen: op tijd komen, respectvol luisteren en rituelen niet verstoren.\",\n        \"Er is een gedeelde of ten minste erkende religieuze context, met teksten, symbolen en gebruiken.\",\n        \"De voorganger is voorbereid en heeft een dienstorde, thema of boodschap.\"\n      ],\n      \"expected_actions\": [\n        \"De gemeenschap komt bijeen en neemt plaats.\",\n        \"Er worden gebeden uitgesproken, religieuze teksten gelezen en vaak liederen gezongen.\",\n        \"De voorganger houdt een preek, overdenking of uitleg over geloof en dagelijks leven.\",\n        \"Bezoekers luisteren aandachtig, doen mee met vaste antwoorden of rituelen en zoeken eventueel contact met anderen na afloop.\"\n      ],\n      \"expected_outcome\": \"De bezoekers verlaten de bijeenkomst met een gevoel van bezinning, gemeenschap, troost of hernieuwde motivatie om naar hun geloof te handelen.\",\n      \"expected_propositions\": [\n        \"Een kerkdienst verloopt ordelijk en met respect voor de religieuze omgeving.\",\n        \"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\",\n        \"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\",\n        \"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\",\n        \"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\"\n      ],\n      \"audience_expectation\": \"Een opzet rond religie, kerk en geloof activeert doorgaans de verwachting van een plechtige maar menselijke bijeenkomst waarin een geestelijk leider en gelovigen samen rituelen uitvoeren, naar een betekenisvolle boodschap luisteren en steun of richting zoeken.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.\",\n      \"opposition_axis\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n      \"opposed_proposition\": \"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\",\n      \"shared_anchor\": \"Een leider organiseert gebedachtige woorden, zang en stilte voor een verzamelde groep.\",\n      \"reading_a\": \"De voorganger leidt rituelen die voor de aanwezigen religieuze betekenis hebben.\",\n      \"reading_b\": \"De regisseur repeteert rituelen als geloofwaardige theatrale handelingen voor de voorstelling.\",\n      \"roles_b\": [\n        \"De regisseur: geeft spel- en timingaanwijzingen.\",\n        \"Acteurs: vertolken de voorganger en kerkbezoekers.\",\n        \"Figuranten: vullen de kerkbanken en reageren volgens instructie.\",\n        \"Technici of muzikaal leider: verzorgen licht, geluid en muziek.\"\n      ],\n      \"goal_b\": \"Een overtuigende, emotioneel geloofwaardige voorstelling afleveren voor een betalend publiek.\",\n      \"role_remapping\": [\n        \"De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.\",\n        \"De gelovige bezoeker wordt een acteur in de rol van kerkganger.\",\n        \"De kerkgemeenschap wordt het ensemble en de figuranten.\",\n        \"De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.\",\n        \"De preek wordt een ingestudeerde tekstscène.\"\n      ],\n      \"shared_cues\": [\n        \"Mensen verzamelen zich in rijen banken.\",\n        \"Een centrale persoon spreekt vanaf een verhoogde plek.\",\n        \"Er worden passages hardop gelezen.\",\n        \"Een lied wordt gezamenlijk ingezet.\",\n        \"Na een ernstige zin valt een stilte.\"\n      ],\n      \"switch_trigger\": \"De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'\",\n      \"hinge_event\": \"Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.\",\n      \"anomaly_under_a\": \"Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.\",\n      \"resolution_under_b\": \"In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.\",\n      \"opposing_script\": \"Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.\",\n      \"opposition_type\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n      \"trigger\": \"De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Mensen verzamelen zich in rijen banken.\",\n        \"Een centrale persoon spreekt vanaf een verhoogde plek.\",\n        \"Er worden passages hardop gelezen.\",\n        \"Een lied wordt gezamenlijk ingezet.\",\n        \"Na een ernstige zin valt een stilte.\"\n      ],\n      \"hinge_event\": \"Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.\",\n      \"anomaly_under_a\": \"Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.\",\n      \"resolution_under_b\": \"In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.\",\n      \"role_remapping\": [\n        \"De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.\",\n        \"De gelovige bezoeker wordt een acteur in de rol van kerkganger.\",\n        \"De kerkgemeenschap wordt het ensemble en de figuranten.\",\n        \"De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.\",\n        \"De preek wordt een ingestudeerde tekstscène.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik zat achterin bij een prachtige dienst: iedereen zong mee, de dominee las ernstig voor en na zijn gebed viel het helemaal stil. Toen zei hij: „Nog een keer, mensen, maar nu alsof jullie echt bang zijn voor de recensent.”\",\n      \"angle\": \"Kerkdienst blijkt een repetitie\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De voorganger deed een ontroerend gebed, zo ontroerend dat de vrouw naast me haar zakdoek al klaar had. Hij keek op en zei: „Mooi, maar tweede bank: jullie tranen pas bij het blauwe licht.”\",\n      \"angle\": \"Plechtige emotie krijgt toneelregie\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"In de kerk herhaalde de voorganger zijn gebed twee keer; hij vond de eerste versies blijkbaar niet diep genoeg. Bij de derde zei hij: „En nu allemaal amen, dan kunnen we eindelijk door naar de generale repetitie.”\",\n      \"angle\": \"Oprecht ritueel wordt uitvoering\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Religie, kerk en geloof\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik zat achterin bij een prachtige dienst: iedereen zong mee, de dominee las ernstig voor en na zijn gebed viel het helemaal stil. Toen zei hij: „Nog een keer, mensen, maar nu alsof jullie echt bang zijn voor de recensent.”\",\n      \"angle\": \"Kerkdienst blijkt een repetitie\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De voorganger deed een ontroerend gebed, zo ontroerend dat de vrouw naast me haar zakdoek al klaar had. Hij keek op en zei: „Mooi, maar tweede bank: jullie tranen pas bij het blauwe licht.”\",\n      \"angle\": \"Plechtige emotie krijgt toneelregie\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"In de kerk herhaalde de voorganger zijn gebed twee keer; hij vond de eerste versies blijkbaar niet diep genoeg. Bij de derde zei hij: „En nu allemaal amen, dan kunnen we eindelijk door naar de generale repetitie.”\",\n      \"angle\": \"Oprecht ritueel wordt uitvoering\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een bezoeker woont een plechtige kerkdienst bij, met samenzang, een ernstige lezing, gebed en stilte.\",\n      \"realized_script_b\": \"De aanwezigen blijken een religieuze scène voor een voorstelling te herhalen en krijgen acteeraanwijzingen.\",\n      \"realized_opposition_axis\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet activeert duidelijk een kerkdienst en schakelt laat naar een repetitie/uitvoering via de opdracht om het opnieuw te doen en geloofwaardig angstig te spelen. De recensent vervangt wel de geplande licht- en rijaanwijzing, maar vervult functioneel dezelfde theatrale switch.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een herkenbare dienst blijft dominant tot de slotzin. De herhalingsinstructie herkadert zang, gebed en stilte als gespeeld materiaal; de uitvoeringstrigger is functioneel, al wijkt hij lexicaal af van het voorziene blauwe licht.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een bezoeker maakt een ontroerende kerkdienst mee waarin een voorganger een gebed uitspreekt en kerkgangers emotioneel reageren.\",\n      \"realized_script_b\": \"Een regisseur stuurt acteurs of figuranten in een kerkelijke toneelscène en bepaalt wanneer zij moeten huilen en hoe het licht moet vallen.\",\n      \"realized_opposition_axis\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst behoudt het bedoelde kerkelijke ritueel als dominante lezing en realiseert de geplande theatrale switch zeer direct: de tweede bank moet pas huilen bij blauw licht. Het gebed en de zakdoek worden daardoor retrospectief spel en regie.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit is een directe realisatie van de beoogde tegenstelling. De emotionele gebedsscène wordt pas in de slotzin als geënsceneerde uitvoering leesbaar, met de voorziene cues van tweede bank, tranen en blauw licht.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een voorganger leidt in een kerk een gebed dat hij herhaalt omdat hij het inhoudelijk of geestelijk niet diep genoeg vindt, waarna de aanwezigen amen zeggen.\",\n      \"realized_script_b\": \"Een ensemble repeteert een kerkelijke scène voor een generale repetitie; het gebed wordt herhaald om de uitvoering te verbeteren.\",\n      \"realized_opposition_axis\": \"oprecht religieus ritueel versus artistieke uitvoering\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De herhaling van het gebed realiseert precies de geplande anomalie, en de expliciete verwijzing naar de generale repetitie activeert het bedoelde Script B. Daardoor wordt de eerdere beoordeling van de gebedsversies als uitvoeringsregie begrijpelijk.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De tekst volgt de beoogde hinge bijzonder nauw: een gebed wordt opnieuw gedaan omdat het niet diep genoeg klinkt. De finale met \\\"generale repetitie\\\" maakt van die religieuze anomalie een functionele repetitiehandeling.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "De voorganger deed een ontroerend gebed, zo ontroerend dat de vrouw naast me haar zakdoek al klaar had. Hij keek op en zei: „Mooi, maar tweede bank: jullie tranen pas bij het blauwe licht.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.",
+      "opposing_script": "Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.",
+      "opposition_type": "oprecht religieus ritueel versus artistieke uitvoering",
+      "trigger": "De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Mensen verzamelen zich in rijen banken.",
+        "Een centrale persoon spreekt vanaf een verhoogde plek.",
+        "Er worden passages hardop gelezen.",
+        "Een lied wordt gezamenlijk ingezet.",
+        "Na een ernstige zin valt een stilte."
+      ],
+      "hinge_event": "Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.",
+      "anomaly_under_a": "Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.",
+      "resolution_under_b": "In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.",
+      "role_remapping": [
+        "De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.",
+        "De gelovige bezoeker wordt een acteur in de rol van kerkganger.",
+        "De kerkgemeenschap wordt het ensemble en de figuranten.",
+        "De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.",
+        "De preek wordt een ingestudeerde tekstscène."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.\\\",\\\"participants_and_roles\\\":[\\\"De voorganger, priester of dominee: leidt de dienst, leest voor, legt religieuze teksten uit en biedt geestelijke begeleiding.\\\",\\\"De gelovige bezoeker: komt om te bidden, te luisteren, verbondenheid te ervaren en het geloof te beleven.\\\",\\\"De kerkgemeenschap: vormt een respectvolle groep die gezamenlijk zingt, luistert, rituelen volgt en elkaar ondersteunt.\\\",\\\"Eventueel een koster, cantor of muzikant: verzorgt de praktische gang van zaken of muzikale begeleiding.\\\"],\\\"apparent_goal\\\":\\\"Samen het geloof beleven en de bezoekers geestelijke steun, betekenis en richting bieden.\\\",\\\"preconditions\\\":[\\\"Er is een kerkelijke ruimte of een vergelijkbare rustige, gewijde bijeenkomst.\\\",\\\"De aanwezigen kennen globaal de omgangsvormen: op tijd komen, respectvol luisteren en rituelen niet verstoren.\\\",\\\"Er is een gedeelde of ten minste erkende religieuze context, met teksten, symbolen en gebruiken.\\\",\\\"De voorganger is voorbereid en heeft een dienstorde, thema of boodschap.\\\"],\\\"expected_actions\\\":[\\\"De gemeenschap komt bijeen en neemt plaats.\\\",\\\"Er worden gebeden uitgesproken, religieuze teksten gelezen en vaak liederen gezongen.\\\",\\\"De voorganger houdt een preek, overdenking of uitleg over geloof en dagelijks leven.\\\",\\\"Bezoekers luisteren aandachtig, doen mee met vaste antwoorden of rituelen en zoeken eventueel contact met anderen na afloop.\\\"],\\\"expected_outcome\\\":\\\"De bezoekers verlaten de bijeenkomst met een gevoel van bezinning, gemeenschap, troost of hernieuwde motivatie om naar hun geloof te handelen.\\\",\\\"expected_propositions\\\":[\\\"Een kerkdienst verloopt ordelijk en met respect voor de religieuze omgeving.\\\",\\\"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\\\",\\\"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\\\",\\\"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\\\",\\\"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\\\"],\\\"audience_expectation\\\":\\\"Een opzet rond religie, kerk en geloof activeert doorgaans de verwachting van een plechtige maar menselijke bijeenkomst waarin een geestelijk leider en gelovigen samen rituelen uitvoeren, naar een betekenisvolle boodschap luisteren en steun of richting zoeken.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een makelaar leidt potentiële kopers rond in een monumentaal kerkgebouw dat is herbestemd tot luxe appartementencomplex. Hij gebruikt plechtige taal en laat de groep stilstaan bij de bijzondere ruimte om de verkoopwaarde te verhogen.\\\",\\\"opposition_axis\\\":\\\"geestelijke bezinning versus commerciële verkoop\\\",\\\"opposed_proposition\\\":\\\"Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.\\\",\\\"shared_anchor\\\":\\\"Een leider spreekt een aandachtige groep toe in een kerkruimte.\\\",\\\"reading_a\\\":\\\"Een voorganger bereidt de aanwezigen met uitleg en stilte voor op geestelijke bezinning.\\\",\\\"reading_b\\\":\\\"Een makelaar bereidt geïnteresseerden met verkooptaal en een rondleiding voor op een aankoopbeslissing.\\\",\\\"roles_b\\\":[\\\"De makelaar: leidt de bezichtiging en verkoopt de woningen.\\\",\\\"Potentiële kopers: luisteren, bekijken de ruimte en beoordelen de investering.\\\",\\\"De groep bezichtigers: volgt de route en stelt vragen.\\\",\\\"Een assistent of gebouwbeheerder: opent deuren en verstrekt brochures.\\\"],\\\"goal_b\\\":\\\"Kopers overtuigen dat wonen in het voormalige kerkgebouw exclusief en financieel aantrekkelijk is.\\\",\\\"role_remapping\\\":[\\\"De voorganger wordt de makelaar die de bijeenkomst leidt.\\\",\\\"De gelovige bezoeker wordt een potentiële koper.\\\",\\\"De kerkgemeenschap wordt een groep bezichtigers.\\\",\\\"De koster wordt een gebouwbeheerder of verkoopassistent.\\\",\\\"De religieuze uitleg wordt een verkoopverhaal over locatie, historie en voorzieningen.\\\"],\\\"shared_cues\\\":[\\\"Een groep komt op tijd binnen en neemt plaats op banken of stoelen.\\\",\\\"Een centrale spreker gebruikt een rustige, gezaghebbende toon.\\\",\\\"Er klinkt een verhaal over geschiedenis, waarden en de betekenis van de ruimte.\\\",\\\"Aanwezigen knikken, luisteren stil en kijken rond.\\\",\\\"Er liggen folders of gedrukte teksten bij de ingang.\\\"],\\\"switch_trigger\\\":\\\"De spreker sluit af met de mededeling dat wie vandaag tekent de keukenupgrade gratis krijgt.\\\",\\\"hinge_event\\\":\\\"Hij wijst naar het altaar en noemt het de ideale plek voor een kookeiland.\\\",\\\"anomaly_under_a\\\":\\\"Tijdens een kerkdienst is een altaar geen verkoopbaar interieuronderdeel; de opmerking reduceert een gewijde plek ongepast tot vastgoed.\\\",\\\"resolution_under_b\\\":\\\"Als bezichtiging is de opmerking doelgericht: de makelaar visualiseert de toekomstige woningindeling en probeert urgentie bij kopers te creëren.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.\\\",\\\"opposition_axis\\\":\\\"oprecht religieus ritueel versus artistieke uitvoering\\\",\\\"opposed_proposition\\\":\\\"Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.\\\",\\\"shared_anchor\\\":\\\"Een leider organiseert gebedachtige woorden, zang en stilte voor een verzamelde groep.\\\",\\\"reading_a\\\":\\\"De voorganger leidt rituelen die voor de aanwezigen religieuze betekenis hebben.\\\",\\\"reading_b\\\":\\\"De regisseur repeteert rituelen als geloofwaardige theatrale handelingen voor de voorstelling.\\\",\\\"roles_b\\\":[\\\"De regisseur: geeft spel- en timingaanwijzingen.\\\",\\\"Acteurs: vertolken de voorganger en kerkbezoekers.\\\",\\\"Figuranten: vullen de kerkbanken en reageren volgens instructie.\\\",\\\"Technici of muzikaal leider: verzorgen licht, geluid en muziek.\\\"],\\\"goal_b\\\":\\\"Een overtuigende, emotioneel geloofwaardige voorstelling afleveren voor een betalend publiek.\\\",\\\"role_remapping\\\":[\\\"De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.\\\",\\\"De gelovige bezoeker wordt een acteur in de rol van kerkganger.\\\",\\\"De kerkgemeenschap wordt het ensemble en de figuranten.\\\",\\\"De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.\\\",\\\"De preek wordt een ingestudeerde tekstscène.\\\"],\\\"shared_cues\\\":[\\\"Mensen verzamelen zich in rijen banken.\\\",\\\"Een centrale persoon spreekt vanaf een verhoogde plek.\\\",\\\"Er worden passages hardop gelezen.\\\",\\\"Een lied wordt gezamenlijk ingezet.\\\",\\\"Na een ernstige zin valt een stilte.\\\"],\\\"switch_trigger\\\":\\\"De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'\\\",\\\"hinge_event\\\":\\\"Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.\\\",\\\"anomaly_under_a\\\":\\\"Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.\\\",\\\"resolution_under_b\\\":\\\"In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een fraudepreventietrainer leidt een verplichte bedrijfsworkshop waarin medewerkers een valse beleggingssekte naspelen. De trainer gebruikt kerkelijke vormen om te demonstreren hoe groepsdruk en charismatisch leiderschap kunnen werken.\\\",\\\"opposition_axis\\\":\\\"geestelijke begeleiding versus manipulatiepreventie\\\",\\\"opposed_proposition\\\":\\\"De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.\\\",\\\"shared_anchor\\\":\\\"Een gezaghebbende spreker vraagt een groep om aandacht, herhaling en vertrouwen.\\\",\\\"reading_a\\\":\\\"Een voorganger vraagt de gemeenschap aandachtig te luisteren naar een boodschap die geestelijke richting biedt.\\\",\\\"reading_b\\\":\\\"Een trainer laat deelnemers ervaren hoe een manipulatieve leider vertrouwen en groepsconformiteit opbouwt.\\\",\\\"roles_b\\\":[\\\"De trainer: begeleidt de simulatie en bespreekt manipulatieve technieken.\\\",\\\"Medewerkers: spelen deelnemers aan de fictieve beleggingsgroep.\\\",\\\"Een aangewezen deelnemer: speelt de charismatische groepsleider.\\\",\\\"Observatoren of compliance-medewerkers: noteren drukmiddelen en waarschuwingssignalen.\\\"],\\\"goal_b\\\":\\\"Medewerkers weerbaarder maken tegen fraude, sektarische verkooptechnieken en ongepaste groepsdruk.\\\",\\\"role_remapping\\\":[\\\"De voorganger wordt de trainer of de deelnemer die een manipulator speelt.\\\",\\\"De gelovige bezoeker wordt een medewerker die de simulatie meedoet.\\\",\\\"De kerkgemeenschap wordt een workshopgroep.\\\",\\\"De koster of organisator wordt een compliance-medewerker die materiaal uitdeelt.\\\",\\\"De geloofsboodschap wordt een fictieve belofte van financieel of persoonlijk gewin.\\\"],\\\"shared_cues\\\":[\\\"Stoelen staan in een halve kring of in rijen.\\\",\\\"Een leider heet iedereen welkom en vraagt om telefoons weg te leggen.\\\",\\\"De groep herhaalt korte zinnen in koor.\\\",\\\"Er wordt een persoonlijk getuigenis verteld.\\\",\\\"De leider vraagt om een moment van stilte en reflectie.\\\"],\\\"switch_trigger\\\":\\\"Na de gezamenlijke herhaling projecteert de trainer groot: 'Welke zin was bedoeld om u geld te laten overmaken?'\\\",\\\"hinge_event\\\":\\\"De leider deelt formulieren uit waarop aanwezigen hun salaris en beschikbare spaargeld moeten invullen.\\\",\\\"anomaly_under_a\\\":\\\"Het opvragen van persoonlijke financiële middelen is binnen een normale dienst een ongepaste en verdachte inbreuk op de persoonlijke sfeer.\\\",\\\"resolution_under_b\\\":\\\"In de workshop is het formulier een bewust alarmsignaal: deelnemers herkennen concreet hoe een fraudeur financiële kwetsbaarheid inventariseert.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een evenementenbegeleider organiseert in een kerkzaal een stille datingavond voor singles. Deelnemers luisteren naar korte persoonlijke verhalen, zingen mee met neutrale muziek en krijgen daarna discrete gespreksopdrachten om een passende partner te vinden.\\\",\\\"opposition_axis\\\":\\\"gemeenschappelijke geloofsbeleving versus partnerselectie\\\",\\\"opposed_proposition\\\":\\\"De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.\\\",\\\"shared_anchor\\\":\\\"Bezoekers komen in een rustige kerkachtige ruimte bijeen, luisteren naar een spreker en zoeken contact met anderen.\\\",\\\"reading_a\\\":\\\"De bezoekers zoeken gemeenschap, troost en morele of spirituele oriëntatie binnen een kerkdienst.\\\",\\\"reading_b\\\":\\\"De deelnemers zoeken in een veilige, ingetogen setting romantische aansluiting met andere singles.\\\",\\\"roles_b\\\":[\\\"De evenementenbegeleider: legt de avondregels uit en koppelt deelnemers.\\\",\\\"Singles: luisteren, doen mee aan opdrachten en zoeken een mogelijke match.\\\",\\\"De groep deelnemers: creëert een rustige, respectvolle sfeer.\\\",\\\"Een muzikant of gastheer: begeleidt muziek en praktische overgangen.\\\"],\\\"goal_b\\\":\\\"Singles op een laagdrempelige en respectvolle manier met potentiële partners in contact brengen.\\\",\\\"role_remapping\\\":[\\\"De voorganger wordt de evenementenbegeleider.\\\",\\\"De gelovige bezoeker wordt een singledeelnemer.\\\",\\\"De kerkgemeenschap wordt de groep zoekende deelnemers.\\\",\\\"De cantor of muzikant wordt een performer of gastheer.\\\",\\\"Het nagesprek na de dienst wordt een begeleide kennismakingsronde.\\\"],\\\"shared_cues\\\":[\\\"Bezoekers worden welkom geheten bij de ingang.\\\",\\\"Iedereen neemt stil plaats en luistert naar een centrale spreker.\\\",\\\"Er klinkt rustige gezamenlijke muziek.\\\",\\\"De spreker vraagt om respect, openheid en aandacht voor elkaar.\\\",\\\"Na afloop worden aanwezigen uitgenodigd om met anderen te praten.\\\"],\\\"switch_trigger\\\":\\\"De begeleider zegt: 'Kijk nu onder uw stoel; het nummer daarop is uw eerste gesprekspartner voor zeven minuten.'\\\",\\\"hinge_event\\\":\\\"De spreker vraagt de aanwezigen om hun hand op te steken als zij openstaan voor iemand tussen de dertig en veertig.\\\",\\\"anomaly_under_a\\\":\\\"Leeftijdsselectie en het publiekelijk aangeven van romantische beschikbaarheid zijn ongepast binnen een dienst die op geloof en gezamenlijke bezinning is gericht.\\\",\\\"resolution_under_b\\\":\\\"Bij een datingavond maakt de vraag de matching efficiënter en geeft zij deelnemers een duidelijke, vrijwillige manier om wederzijdse interesse aan te geven.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde scène kan eerst als kerkdienst en achteraf als vastgoedbezichtiging worden gelezen. De dominante tegenstelling is geestelijke bezinning tegenover commerciële verkoop. De kerkruimte, de centrale spreker, de luisterende groep en de plechtige taal dragen beide lezingen, terwijl de religieuze lezing aanvankelijk sterker is. De opmerking over een kookeiland bij het altaar is onder Script A storend en ongepast, maar wordt onder Script B een verkoopgerichte visualisatie. Daardoor krijgen eerdere plechtigheid, folders en uitleg achteraf een commerciële functie. De vastgoedgerichte ingreep verstoort het doel van een dienst, maar helpt het verkoopdoel.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén uitvoerbare scène met gebedachtige tekst, zang, stilte en een leider kan zowel een kerkdienst als een repetitie voor een voorstelling dragen. De centrale tegenstelling is de oprechte rituele betekenis tegenover de theatrale enscenering; die is lokaal onverenigbaar als primaire functie van dezelfde handelingen. De religieuze lezing domineert aanvankelijk door de kerkelijke vormen. De repetitielezing blijft echter beschikbaar, omdat een regisseur en acteurs zulke vormen geloofwaardig kunnen oefenen. Het driemaal herhalen van een gebed wegens onvoldoende emotie is onder Script A afwijkend, maar onder Script B functioneel voor spel, timing en effect. Daarmee worden eerdere woorden, zang en stiltes retrospectief toneelmiddelen. De herhaling belemmert spontane oprechtheid, maar faciliteert de repetitie.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde groepsscène met een gezaghebbende leider, koorherhaling, getuigenis en reflectie kan als geloofsbijeenkomst of als trainingssimulatie worden gerealiseerd. De dominante tegenstelling is geestelijke begeleiding tegenover een didactische demonstratie van manipulatiepreventie: de kerkelijke vormen zijn in Script B geen geloofsdoel, maar oefenmateriaal. De religieuze lezing ligt aanvankelijk voor de hand, terwijl een workshopvorm met simulatie sociaal herkenbaar blijft. Het formulier over salaris en spaargeld is onder Script A verdacht en ongepast, maar onder Script B een bewust ontworpen alarmsignaal voor fraudetechnieken. De onthulling verandert eerdere herhaling en vertrouwensoproepen in voorbeelden van groepsdruk. Het opvragen van financiële kwetsbaarheid ondermijnt geestelijke begeleiding maar ondersteunt de preventieve les.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een bijeenkomst in een rustige kerkachtige ruimte met muziek, een centrale spreker en contact na afloop kan zowel een dienst als een ingetogen datingavond voorstellen. De dominante tegenstelling is gezamenlijke geloofsbeleving tegenover partnerselectie. De gedeelde cues ondersteunen beide lezingen, maar de kerkdienst is aanvankelijk de normale lezing. Een stille datingavond is daarnaast een coherent en herkenbaar alternatief dat vóór de expliciete onthulling mogelijk blijft. De publieke vraag naar beschikbaarheid binnen een leeftijdscategorie is onder Script A ongepast, maar onder Script B een functionele matchingsstap. Hierdoor krijgen eerdere oproepen tot openheid, respect en gesprek achteraf een romantisch-selectieve functie. De vraag doorkruist het religieuze doel, maar maakt het datingdoel mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B2\\\",\\\"rationale\\\":\\\"B2 biedt de scherpste en meest compacte tegenstelling: dezelfde zichtbare handelingen — plechtige woorden, zang, lezing en stilte — passen eerst overtuigend bij een kerkdienst, maar krijgen achteraf volledig functionele betekenis als repetitie-instructies. De rolomkering van voorganger naar regisseur en kerkgangers naar acteurs/figuranten is helder zonder de gedeelde setting te verliezen. De herhaling van een gebed omdat het ‘niet emotioneel genoeg’ is, werkt als sterk scharniermoment: binnen Script A is dit anomalistisch, terwijl het binnen Script B precies de professionele logica van spel, timing en enscenering bevestigt. Daardoor ondersteunt de kandidaat zowel een dominante eerste lezing als een krachtige retrospectieve herinterpretatie, met hoge payoff en weinig overbodige elementen.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik zat achterin bij een prachtige dienst: iedereen zong mee, de dominee las ernstig voor en na zijn gebed viel het helemaal stil. Toen zei hij: „Nog een keer, mensen, maar nu alsof jullie echt bang zijn voor de recensent.”\\\",\\\"angle\\\":\\\"Kerkdienst blijkt een repetitie\\\"},{\\\"text\\\":\\\"De voorganger deed een ontroerend gebed, zo ontroerend dat de vrouw naast me haar zakdoek al klaar had. Hij keek op en zei: „Mooi, maar tweede bank: jullie tranen pas bij het blauwe licht.”\\\",\\\"angle\\\":\\\"Plechtige emotie krijgt toneelregie\\\"},{\\\"text\\\":\\\"In de kerk herhaalde de voorganger zijn gebed twee keer; hij vond de eerste versies blijkbaar niet diep genoeg. Bij de derde zei hij: „En nu allemaal amen, dan kunnen we eindelijk door naar de generale repetitie.”\\\",\\\"angle\\\":\\\"Oprecht ritueel wordt uitvoering\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een bezoeker woont een plechtige kerkdienst bij, met samenzang, een ernstige lezing, gebed en stilte.\\\",\\\"realized_script_b\\\":\\\"De aanwezigen blijken een religieuze scène voor een voorstelling te herhalen en krijgen acteeraanwijzingen.\\\",\\\"realized_opposition_axis\\\":\\\"oprecht religieus ritueel versus artistieke uitvoering\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet activeert duidelijk een kerkdienst en schakelt laat naar een repetitie/uitvoering via de opdracht om het opnieuw te doen en geloofwaardig angstig te spelen. De recensent vervangt wel de geplande licht- en rijaanwijzing, maar vervult functioneel dezelfde theatrale switch.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een herkenbare dienst blijft dominant tot de slotzin. De herhalingsinstructie herkadert zang, gebed en stilte als gespeeld materiaal; de uitvoeringstrigger is functioneel, al wijkt hij lexicaal af van het voorziene blauwe licht.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een bezoeker maakt een ontroerende kerkdienst mee waarin een voorganger een gebed uitspreekt en kerkgangers emotioneel reageren.\\\",\\\"realized_script_b\\\":\\\"Een regisseur stuurt acteurs of figuranten in een kerkelijke toneelscène en bepaalt wanneer zij moeten huilen en hoe het licht moet vallen.\\\",\\\"realized_opposition_axis\\\":\\\"oprecht religieus ritueel versus artistieke uitvoering\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst behoudt het bedoelde kerkelijke ritueel als dominante lezing en realiseert de geplande theatrale switch zeer direct: de tweede bank moet pas huilen bij blauw licht. Het gebed en de zakdoek worden daardoor retrospectief spel en regie.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Dit is een directe realisatie van de beoogde tegenstelling. De emotionele gebedsscène wordt pas in de slotzin als geënsceneerde uitvoering leesbaar, met de voorziene cues van tweede bank, tranen en blauw licht.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een voorganger leidt in een kerk een gebed dat hij herhaalt omdat hij het inhoudelijk of geestelijk niet diep genoeg vindt, waarna de aanwezigen amen zeggen.\\\",\\\"realized_script_b\\\":\\\"Een ensemble repeteert een kerkelijke scène voor een generale repetitie; het gebed wordt herhaald om de uitvoering te verbeteren.\\\",\\\"realized_opposition_axis\\\":\\\"oprecht religieus ritueel versus artistieke uitvoering\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De herhaling van het gebed realiseert precies de geplande anomalie, en de expliciete verwijzing naar de generale repetitie activeert het bedoelde Script B. Daardoor wordt de eerdere beoordeling van de gebedsversies als uitvoeringsregie begrijpelijk.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De tekst volgt de beoogde hinge bijzonder nauw: een gebed wordt opnieuw gedaan omdat het niet diep genoeg klinkt. De finale met \\\\\\\"generale repetitie\\\\\\\" maakt van die religieuze anomalie een functionele repetitiehandeling.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengte-eis en realiseren de vereiste scripttegenstelling. V2 volgt de beoogde middelen preciezer met de tweede bank, de tranen en het blauwe licht; de regie-instructie herkadert de emotie onmiddellijk en helder. V1 heeft een leuke switch, maar de recensent is minder direct verbonden met de opgebouwde kerkscène.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide zijn passende, spreekbare grappen met een duidelijke omslag van ritueel naar repetitie. V3 benut de herhaling van het gebed als sterke voorafgaande anomalie en verklaart die achteraf expliciet als uitvoering. V1 heeft een vlotte slotwending, maar V3 sluit nauwer aan op het vereiste repetitieconcept.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 en V3 behouden allebei de kerkdienst als dominante eerste lezing en voldoen aan de vormeisen. V2 is compacter, origineler in zijn concrete toneelcue en levert een scherpere retrospectieve herinterpretatie van de zakdoek en het gebed. Bij V3 maakt de verwijzing naar de generale repetitie de wending iets voorspelbaarder en minder elegant.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de sterkste passing variant: hij realiseert de vereiste tegenstelling tussen oprecht gebed en geënsceneerde uitvoering het meest precies, met een heldere setup, een late scherpe switch en doelmatige concrete regiecues.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een makelaar leidt potentiële kopers rond in een monumentaal kerkgebouw dat is herbestemd tot luxe appartementencomplex. Hij gebruikt plechtige taal en laat de groep stilstaan bij de bijzondere ruimte om de verkoopwaarde te verhogen.",
+        "candidate_id": "B1",
+        "opposition_axis": "geestelijke bezinning versus commerciële verkoop",
+        "opposed_expectation": "Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.",
+        "roles_b": [
+          "De makelaar: leidt de bezichtiging en verkoopt de woningen.",
+          "Potentiële kopers: luisteren, bekijken de ruimte en beoordelen de investering.",
+          "De groep bezichtigers: volgt de route en stelt vragen.",
+          "Een assistent of gebouwbeheerder: opent deuren en verstrekt brochures."
+        ],
+        "goal_b": "Kopers overtuigen dat wonen in het voormalige kerkgebouw exclusief en financieel aantrekkelijk is.",
+        "role_remapping": [
+          "De voorganger wordt de makelaar die de bijeenkomst leidt.",
+          "De gelovige bezoeker wordt een potentiële koper.",
+          "De kerkgemeenschap wordt een groep bezichtigers.",
+          "De koster wordt een gebouwbeheerder of verkoopassistent.",
+          "De religieuze uitleg wordt een verkoopverhaal over locatie, historie en voorzieningen."
+        ],
+        "shared_cues": [
+          "Een groep komt op tijd binnen en neemt plaats op banken of stoelen.",
+          "Een centrale spreker gebruikt een rustige, gezaghebbende toon.",
+          "Er klinkt een verhaal over geschiedenis, waarden en de betekenis van de ruimte.",
+          "Aanwezigen knikken, luisteren stil en kijken rond.",
+          "Er liggen folders of gedrukte teksten bij de ingang."
+        ],
+        "switch_trigger": "De spreker sluit af met de mededeling dat wie vandaag tekent de keukenupgrade gratis krijgt.",
+        "hinge_event": "Hij wijst naar het altaar en noemt het de ideale plek voor een kookeiland.",
+        "anomaly_under_a": "Tijdens een kerkdienst is een altaar geen verkoopbaar interieuronderdeel; de opmerking reduceert een gewijde plek ongepast tot vastgoed.",
+        "resolution_under_b": "Als bezichtiging is de opmerking doelgericht: de makelaar visualiseert de toekomstige woningindeling en probeert urgentie bij kopers te creëren.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.",
+        "candidate_id": "B2",
+        "opposition_axis": "oprecht religieus ritueel versus artistieke uitvoering",
+        "opposed_expectation": "Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.",
+        "roles_b": [
+          "De regisseur: geeft spel- en timingaanwijzingen.",
+          "Acteurs: vertolken de voorganger en kerkbezoekers.",
+          "Figuranten: vullen de kerkbanken en reageren volgens instructie.",
+          "Technici of muzikaal leider: verzorgen licht, geluid en muziek."
+        ],
+        "goal_b": "Een overtuigende, emotioneel geloofwaardige voorstelling afleveren voor een betalend publiek.",
+        "role_remapping": [
+          "De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.",
+          "De gelovige bezoeker wordt een acteur in de rol van kerkganger.",
+          "De kerkgemeenschap wordt het ensemble en de figuranten.",
+          "De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.",
+          "De preek wordt een ingestudeerde tekstscène."
+        ],
+        "shared_cues": [
+          "Mensen verzamelen zich in rijen banken.",
+          "Een centrale persoon spreekt vanaf een verhoogde plek.",
+          "Er worden passages hardop gelezen.",
+          "Een lied wordt gezamenlijk ingezet.",
+          "Na een ernstige zin valt een stilte."
+        ],
+        "switch_trigger": "De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'",
+        "hinge_event": "Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.",
+        "anomaly_under_a": "Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.",
+        "resolution_under_b": "In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een fraudepreventietrainer leidt een verplichte bedrijfsworkshop waarin medewerkers een valse beleggingssekte naspelen. De trainer gebruikt kerkelijke vormen om te demonstreren hoe groepsdruk en charismatisch leiderschap kunnen werken.",
+        "candidate_id": "B3",
+        "opposition_axis": "geestelijke begeleiding versus manipulatiepreventie",
+        "opposed_expectation": "De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.",
+        "roles_b": [
+          "De trainer: begeleidt de simulatie en bespreekt manipulatieve technieken.",
+          "Medewerkers: spelen deelnemers aan de fictieve beleggingsgroep.",
+          "Een aangewezen deelnemer: speelt de charismatische groepsleider.",
+          "Observatoren of compliance-medewerkers: noteren drukmiddelen en waarschuwingssignalen."
+        ],
+        "goal_b": "Medewerkers weerbaarder maken tegen fraude, sektarische verkooptechnieken en ongepaste groepsdruk.",
+        "role_remapping": [
+          "De voorganger wordt de trainer of de deelnemer die een manipulator speelt.",
+          "De gelovige bezoeker wordt een medewerker die de simulatie meedoet.",
+          "De kerkgemeenschap wordt een workshopgroep.",
+          "De koster of organisator wordt een compliance-medewerker die materiaal uitdeelt.",
+          "De geloofsboodschap wordt een fictieve belofte van financieel of persoonlijk gewin."
+        ],
+        "shared_cues": [
+          "Stoelen staan in een halve kring of in rijen.",
+          "Een leider heet iedereen welkom en vraagt om telefoons weg te leggen.",
+          "De groep herhaalt korte zinnen in koor.",
+          "Er wordt een persoonlijk getuigenis verteld.",
+          "De leider vraagt om een moment van stilte en reflectie."
+        ],
+        "switch_trigger": "Na de gezamenlijke herhaling projecteert de trainer groot: 'Welke zin was bedoeld om u geld te laten overmaken?'",
+        "hinge_event": "De leider deelt formulieren uit waarop aanwezigen hun salaris en beschikbare spaargeld moeten invullen.",
+        "anomaly_under_a": "Het opvragen van persoonlijke financiële middelen is binnen een normale dienst een ongepaste en verdachte inbreuk op de persoonlijke sfeer.",
+        "resolution_under_b": "In de workshop is het formulier een bewust alarmsignaal: deelnemers herkennen concreet hoe een fraudeur financiële kwetsbaarheid inventariseert.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een evenementenbegeleider organiseert in een kerkzaal een stille datingavond voor singles. Deelnemers luisteren naar korte persoonlijke verhalen, zingen mee met neutrale muziek en krijgen daarna discrete gespreksopdrachten om een passende partner te vinden.",
+        "candidate_id": "B4",
+        "opposition_axis": "gemeenschappelijke geloofsbeleving versus partnerselectie",
+        "opposed_expectation": "De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.",
+        "roles_b": [
+          "De evenementenbegeleider: legt de avondregels uit en koppelt deelnemers.",
+          "Singles: luisteren, doen mee aan opdrachten en zoeken een mogelijke match.",
+          "De groep deelnemers: creëert een rustige, respectvolle sfeer.",
+          "Een muzikant of gastheer: begeleidt muziek en praktische overgangen."
+        ],
+        "goal_b": "Singles op een laagdrempelige en respectvolle manier met potentiële partners in contact brengen.",
+        "role_remapping": [
+          "De voorganger wordt de evenementenbegeleider.",
+          "De gelovige bezoeker wordt een singledeelnemer.",
+          "De kerkgemeenschap wordt de groep zoekende deelnemers.",
+          "De cantor of muzikant wordt een performer of gastheer.",
+          "Het nagesprek na de dienst wordt een begeleide kennismakingsronde."
+        ],
+        "shared_cues": [
+          "Bezoekers worden welkom geheten bij de ingang.",
+          "Iedereen neemt stil plaats en luistert naar een centrale spreker.",
+          "Er klinkt rustige gezamenlijke muziek.",
+          "De spreker vraagt om respect, openheid en aandacht voor elkaar.",
+          "Na afloop worden aanwezigen uitgenodigd om met anderen te praten."
+        ],
+        "switch_trigger": "De begeleider zegt: 'Kijk nu onder uw stoel; het nummer daarop is uw eerste gesprekspartner voor zeven minuten.'",
+        "hinge_event": "De spreker vraagt de aanwezigen om hun hand op te steken als zij openstaan voor iemand tussen de dertig en veertig.",
+        "anomaly_under_a": "Leeftijdsselectie en het publiekelijk aangeven van romantische beschikbaarheid zijn ongepast binnen een dienst die op geloof en gezamenlijke bezinning is gericht.",
+        "resolution_under_b": "Bij een datingavond maakt de vraag de matching efficiënter en geeft zij deelnemers een duidelijke, vrijwillige manier om wederzijdse interesse aan te geven.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B2 biedt de scherpste en meest compacte tegenstelling: dezelfde zichtbare handelingen — plechtige woorden, zang, lezing en stilte — passen eerst overtuigend bij een kerkdienst, maar krijgen achteraf volledig functionele betekenis als repetitie-instructies. De rolomkering van voorganger naar regisseur en kerkgangers naar acteurs/figuranten is helder zonder de gedeelde setting te verliezen. De herhaling van een gebed omdat het ‘niet emotioneel genoeg’ is, werkt als sterk scharniermoment: binnen Script A is dit anomalistisch, terwijl het binnen Script B precies de professionele logica van spel, timing en enscenering bevestigt. Daardoor ondersteunt de kandidaat zowel een dominante eerste lezing als een krachtige retrospectieve herinterpretatie, met hoge payoff en weinig overbodige elementen.",
+    "variants": [
+      {
+        "text": "Ik zat achterin bij een prachtige dienst: iedereen zong mee, de dominee las ernstig voor en na zijn gebed viel het helemaal stil. Toen zei hij: „Nog een keer, mensen, maar nu alsof jullie echt bang zijn voor de recensent.”",
+        "angle": "Kerkdienst blijkt een repetitie"
+      },
+      {
+        "text": "De voorganger deed een ontroerend gebed, zo ontroerend dat de vrouw naast me haar zakdoek al klaar had. Hij keek op en zei: „Mooi, maar tweede bank: jullie tranen pas bij het blauwe licht.”",
+        "angle": "Plechtige emotie krijgt toneelregie"
+      },
+      {
+        "text": "In de kerk herhaalde de voorganger zijn gebed twee keer; hij vond de eerste versies blijkbaar niet diep genoeg. Bij de derde zei hij: „En nu allemaal amen, dan kunnen we eindelijk door naar de generale repetitie.”",
+        "angle": "Oprecht ritueel wordt uitvoering"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 14342,
+      "output_tokens": 6968,
+      "total_tokens": 21310
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een gelovige bezoeker woont een kerkdienst bij waarin een voorganger de geloofsgemeenschap door gebed, lezing en uitleg helpt om samen stil te staan bij God en moreel of spiritueel richting te vinden.",
+          "participants_and_roles": [
+            "De voorganger, priester of dominee: leidt de dienst, leest voor, legt religieuze teksten uit en biedt geestelijke begeleiding.",
+            "De gelovige bezoeker: komt om te bidden, te luisteren, verbondenheid te ervaren en het geloof te beleven.",
+            "De kerkgemeenschap: vormt een respectvolle groep die gezamenlijk zingt, luistert, rituelen volgt en elkaar ondersteunt.",
+            "Eventueel een koster, cantor of muzikant: verzorgt de praktische gang van zaken of muzikale begeleiding."
+          ],
+          "apparent_goal": "Samen het geloof beleven en de bezoekers geestelijke steun, betekenis en richting bieden.",
+          "preconditions": [
+            "Er is een kerkelijke ruimte of een vergelijkbare rustige, gewijde bijeenkomst.",
+            "De aanwezigen kennen globaal de omgangsvormen: op tijd komen, respectvol luisteren en rituelen niet verstoren.",
+            "Er is een gedeelde of ten minste erkende religieuze context, met teksten, symbolen en gebruiken.",
+            "De voorganger is voorbereid en heeft een dienstorde, thema of boodschap."
+          ],
+          "expected_actions": [
+            "De gemeenschap komt bijeen en neemt plaats.",
+            "Er worden gebeden uitgesproken, religieuze teksten gelezen en vaak liederen gezongen.",
+            "De voorganger houdt een preek, overdenking of uitleg over geloof en dagelijks leven.",
+            "Bezoekers luisteren aandachtig, doen mee met vaste antwoorden of rituelen en zoeken eventueel contact met anderen na afloop."
+          ],
+          "expected_outcome": "De bezoekers verlaten de bijeenkomst met een gevoel van bezinning, gemeenschap, troost of hernieuwde motivatie om naar hun geloof te handelen.",
+          "expected_propositions": [
+            "Een kerkdienst verloopt ordelijk en met respect voor de religieuze omgeving.",
+            "De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.",
+            "Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.",
+            "Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.",
+            "De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie."
+          ],
+          "audience_expectation": "Een opzet rond religie, kerk en geloof activeert doorgaans de verwachting van een plechtige maar menselijke bijeenkomst waarin een geestelijk leider en gelovigen samen rituelen uitvoeren, naar een betekenisvolle boodschap luisteren en steun of richting zoeken."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een makelaar leidt potentiële kopers rond in een monumentaal kerkgebouw dat is herbestemd tot luxe appartementencomplex. Hij gebruikt plechtige taal en laat de groep stilstaan bij de bijzondere ruimte om de verkoopwaarde te verhogen.",
+            "opposition_axis": "geestelijke bezinning versus commerciële verkoop",
+            "opposed_proposition": "Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.",
+            "shared_anchor": "Een leider spreekt een aandachtige groep toe in een kerkruimte.",
+            "reading_a": "Een voorganger bereidt de aanwezigen met uitleg en stilte voor op geestelijke bezinning.",
+            "reading_b": "Een makelaar bereidt geïnteresseerden met verkooptaal en een rondleiding voor op een aankoopbeslissing.",
+            "roles_b": [
+              "De makelaar: leidt de bezichtiging en verkoopt de woningen.",
+              "Potentiële kopers: luisteren, bekijken de ruimte en beoordelen de investering.",
+              "De groep bezichtigers: volgt de route en stelt vragen.",
+              "Een assistent of gebouwbeheerder: opent deuren en verstrekt brochures."
+            ],
+            "goal_b": "Kopers overtuigen dat wonen in het voormalige kerkgebouw exclusief en financieel aantrekkelijk is.",
+            "role_remapping": [
+              "De voorganger wordt de makelaar die de bijeenkomst leidt.",
+              "De gelovige bezoeker wordt een potentiële koper.",
+              "De kerkgemeenschap wordt een groep bezichtigers.",
+              "De koster wordt een gebouwbeheerder of verkoopassistent.",
+              "De religieuze uitleg wordt een verkoopverhaal over locatie, historie en voorzieningen."
+            ],
+            "shared_cues": [
+              "Een groep komt op tijd binnen en neemt plaats op banken of stoelen.",
+              "Een centrale spreker gebruikt een rustige, gezaghebbende toon.",
+              "Er klinkt een verhaal over geschiedenis, waarden en de betekenis van de ruimte.",
+              "Aanwezigen knikken, luisteren stil en kijken rond.",
+              "Er liggen folders of gedrukte teksten bij de ingang."
+            ],
+            "switch_trigger": "De spreker sluit af met de mededeling dat wie vandaag tekent de keukenupgrade gratis krijgt.",
+            "hinge_event": "Hij wijst naar het altaar en noemt het de ideale plek voor een kookeiland.",
+            "anomaly_under_a": "Tijdens een kerkdienst is een altaar geen verkoopbaar interieuronderdeel; de opmerking reduceert een gewijde plek ongepast tot vastgoed.",
+            "resolution_under_b": "Als bezichtiging is de opmerking doelgericht: de makelaar visualiseert de toekomstige woningindeling en probeert urgentie bij kopers te creëren."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.",
+            "opposition_axis": "oprecht religieus ritueel versus artistieke uitvoering",
+            "opposed_proposition": "Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.",
+            "shared_anchor": "Een leider organiseert gebedachtige woorden, zang en stilte voor een verzamelde groep.",
+            "reading_a": "De voorganger leidt rituelen die voor de aanwezigen religieuze betekenis hebben.",
+            "reading_b": "De regisseur repeteert rituelen als geloofwaardige theatrale handelingen voor de voorstelling.",
+            "roles_b": [
+              "De regisseur: geeft spel- en timingaanwijzingen.",
+              "Acteurs: vertolken de voorganger en kerkbezoekers.",
+              "Figuranten: vullen de kerkbanken en reageren volgens instructie.",
+              "Technici of muzikaal leider: verzorgen licht, geluid en muziek."
+            ],
+            "goal_b": "Een overtuigende, emotioneel geloofwaardige voorstelling afleveren voor een betalend publiek.",
+            "role_remapping": [
+              "De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.",
+              "De gelovige bezoeker wordt een acteur in de rol van kerkganger.",
+              "De kerkgemeenschap wordt het ensemble en de figuranten.",
+              "De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.",
+              "De preek wordt een ingestudeerde tekstscène."
+            ],
+            "shared_cues": [
+              "Mensen verzamelen zich in rijen banken.",
+              "Een centrale persoon spreekt vanaf een verhoogde plek.",
+              "Er worden passages hardop gelezen.",
+              "Een lied wordt gezamenlijk ingezet.",
+              "Na een ernstige zin valt een stilte."
+            ],
+            "switch_trigger": "De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'",
+            "hinge_event": "Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.",
+            "anomaly_under_a": "Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.",
+            "resolution_under_b": "In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een fraudepreventietrainer leidt een verplichte bedrijfsworkshop waarin medewerkers een valse beleggingssekte naspelen. De trainer gebruikt kerkelijke vormen om te demonstreren hoe groepsdruk en charismatisch leiderschap kunnen werken.",
+            "opposition_axis": "geestelijke begeleiding versus manipulatiepreventie",
+            "opposed_proposition": "De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.",
+            "shared_anchor": "Een gezaghebbende spreker vraagt een groep om aandacht, herhaling en vertrouwen.",
+            "reading_a": "Een voorganger vraagt de gemeenschap aandachtig te luisteren naar een boodschap die geestelijke richting biedt.",
+            "reading_b": "Een trainer laat deelnemers ervaren hoe een manipulatieve leider vertrouwen en groepsconformiteit opbouwt.",
+            "roles_b": [
+              "De trainer: begeleidt de simulatie en bespreekt manipulatieve technieken.",
+              "Medewerkers: spelen deelnemers aan de fictieve beleggingsgroep.",
+              "Een aangewezen deelnemer: speelt de charismatische groepsleider.",
+              "Observatoren of compliance-medewerkers: noteren drukmiddelen en waarschuwingssignalen."
+            ],
+            "goal_b": "Medewerkers weerbaarder maken tegen fraude, sektarische verkooptechnieken en ongepaste groepsdruk.",
+            "role_remapping": [
+              "De voorganger wordt de trainer of de deelnemer die een manipulator speelt.",
+              "De gelovige bezoeker wordt een medewerker die de simulatie meedoet.",
+              "De kerkgemeenschap wordt een workshopgroep.",
+              "De koster of organisator wordt een compliance-medewerker die materiaal uitdeelt.",
+              "De geloofsboodschap wordt een fictieve belofte van financieel of persoonlijk gewin."
+            ],
+            "shared_cues": [
+              "Stoelen staan in een halve kring of in rijen.",
+              "Een leider heet iedereen welkom en vraagt om telefoons weg te leggen.",
+              "De groep herhaalt korte zinnen in koor.",
+              "Er wordt een persoonlijk getuigenis verteld.",
+              "De leider vraagt om een moment van stilte en reflectie."
+            ],
+            "switch_trigger": "Na de gezamenlijke herhaling projecteert de trainer groot: 'Welke zin was bedoeld om u geld te laten overmaken?'",
+            "hinge_event": "De leider deelt formulieren uit waarop aanwezigen hun salaris en beschikbare spaargeld moeten invullen.",
+            "anomaly_under_a": "Het opvragen van persoonlijke financiële middelen is binnen een normale dienst een ongepaste en verdachte inbreuk op de persoonlijke sfeer.",
+            "resolution_under_b": "In de workshop is het formulier een bewust alarmsignaal: deelnemers herkennen concreet hoe een fraudeur financiële kwetsbaarheid inventariseert."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een evenementenbegeleider organiseert in een kerkzaal een stille datingavond voor singles. Deelnemers luisteren naar korte persoonlijke verhalen, zingen mee met neutrale muziek en krijgen daarna discrete gespreksopdrachten om een passende partner te vinden.",
+            "opposition_axis": "gemeenschappelijke geloofsbeleving versus partnerselectie",
+            "opposed_proposition": "De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.",
+            "shared_anchor": "Bezoekers komen in een rustige kerkachtige ruimte bijeen, luisteren naar een spreker en zoeken contact met anderen.",
+            "reading_a": "De bezoekers zoeken gemeenschap, troost en morele of spirituele oriëntatie binnen een kerkdienst.",
+            "reading_b": "De deelnemers zoeken in een veilige, ingetogen setting romantische aansluiting met andere singles.",
+            "roles_b": [
+              "De evenementenbegeleider: legt de avondregels uit en koppelt deelnemers.",
+              "Singles: luisteren, doen mee aan opdrachten en zoeken een mogelijke match.",
+              "De groep deelnemers: creëert een rustige, respectvolle sfeer.",
+              "Een muzikant of gastheer: begeleidt muziek en praktische overgangen."
+            ],
+            "goal_b": "Singles op een laagdrempelige en respectvolle manier met potentiële partners in contact brengen.",
+            "role_remapping": [
+              "De voorganger wordt de evenementenbegeleider.",
+              "De gelovige bezoeker wordt een singledeelnemer.",
+              "De kerkgemeenschap wordt de groep zoekende deelnemers.",
+              "De cantor of muzikant wordt een performer of gastheer.",
+              "Het nagesprek na de dienst wordt een begeleide kennismakingsronde."
+            ],
+            "shared_cues": [
+              "Bezoekers worden welkom geheten bij de ingang.",
+              "Iedereen neemt stil plaats en luistert naar een centrale spreker.",
+              "Er klinkt rustige gezamenlijke muziek.",
+              "De spreker vraagt om respect, openheid en aandacht voor elkaar.",
+              "Na afloop worden aanwezigen uitgenodigd om met anderen te praten."
+            ],
+            "switch_trigger": "De begeleider zegt: 'Kijk nu onder uw stoel; het nummer daarop is uw eerste gesprekspartner voor zeven minuten.'",
+            "hinge_event": "De spreker vraagt de aanwezigen om hun hand op te steken als zij openstaan voor iemand tussen de dertig en veertig.",
+            "anomaly_under_a": "Leeftijdsselectie en het publiekelijk aangeven van romantische beschikbaarheid zijn ongepast binnen een dienst die op geloof en gezamenlijke bezinning is gericht.",
+            "resolution_under_b": "Bij een datingavond maakt de vraag de matching efficiënter en geeft zij deelnemers een duidelijke, vrijwillige manier om wederzijdse interesse aan te geven."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een makelaar leidt potentiële kopers rond in een monumentaal kerkgebouw dat is herbestemd tot luxe appartementencomplex. Hij gebruikt plechtige taal en laat de groep stilstaan bij de bijzondere ruimte om de verkoopwaarde te verhogen.",
+              "opposition_axis": "geestelijke bezinning versus commerciële verkoop",
+              "opposed_proposition": "Geloofsvragen worden serieus en persoonlijk behandeld, niet als vrijblijvend vermaak.",
+              "shared_anchor": "Een leider spreekt een aandachtige groep toe in een kerkruimte.",
+              "reading_a": "Een voorganger bereidt de aanwezigen met uitleg en stilte voor op geestelijke bezinning.",
+              "reading_b": "Een makelaar bereidt geïnteresseerden met verkooptaal en een rondleiding voor op een aankoopbeslissing.",
+              "roles_b": [
+                "De makelaar: leidt de bezichtiging en verkoopt de woningen.",
+                "Potentiële kopers: luisteren, bekijken de ruimte en beoordelen de investering.",
+                "De groep bezichtigers: volgt de route en stelt vragen.",
+                "Een assistent of gebouwbeheerder: opent deuren en verstrekt brochures."
+              ],
+              "goal_b": "Kopers overtuigen dat wonen in het voormalige kerkgebouw exclusief en financieel aantrekkelijk is.",
+              "role_remapping": [
+                "De voorganger wordt de makelaar die de bijeenkomst leidt.",
+                "De gelovige bezoeker wordt een potentiële koper.",
+                "De kerkgemeenschap wordt een groep bezichtigers.",
+                "De koster wordt een gebouwbeheerder of verkoopassistent.",
+                "De religieuze uitleg wordt een verkoopverhaal over locatie, historie en voorzieningen."
+              ],
+              "shared_cues": [
+                "Een groep komt op tijd binnen en neemt plaats op banken of stoelen.",
+                "Een centrale spreker gebruikt een rustige, gezaghebbende toon.",
+                "Er klinkt een verhaal over geschiedenis, waarden en de betekenis van de ruimte.",
+                "Aanwezigen knikken, luisteren stil en kijken rond.",
+                "Er liggen folders of gedrukte teksten bij de ingang."
+              ],
+              "switch_trigger": "De spreker sluit af met de mededeling dat wie vandaag tekent de keukenupgrade gratis krijgt.",
+              "hinge_event": "Hij wijst naar het altaar en noemt het de ideale plek voor een kookeiland.",
+              "anomaly_under_a": "Tijdens een kerkdienst is een altaar geen verkoopbaar interieuronderdeel; de opmerking reduceert een gewijde plek ongepast tot vastgoed.",
+              "resolution_under_b": "Als bezichtiging is de opmerking doelgericht: de makelaar visualiseert de toekomstige woningindeling en probeert urgentie bij kopers te creëren."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een regisseur geeft vlak voor een première aanwijzingen aan acteurs en publiekfiguranten voor een toneelstuk over een dorpskerk. De plechtige woorden, liederen en stiltes zijn onderdelen van de enscenering.",
+              "opposition_axis": "oprecht religieus ritueel versus artistieke uitvoering",
+              "opposed_proposition": "Rituelen zoals bidden, zingen en stiltes hebben betekenis voor de aanwezigen.",
+              "shared_anchor": "Een leider organiseert gebedachtige woorden, zang en stilte voor een verzamelde groep.",
+              "reading_a": "De voorganger leidt rituelen die voor de aanwezigen religieuze betekenis hebben.",
+              "reading_b": "De regisseur repeteert rituelen als geloofwaardige theatrale handelingen voor de voorstelling.",
+              "roles_b": [
+                "De regisseur: geeft spel- en timingaanwijzingen.",
+                "Acteurs: vertolken de voorganger en kerkbezoekers.",
+                "Figuranten: vullen de kerkbanken en reageren volgens instructie.",
+                "Technici of muzikaal leider: verzorgen licht, geluid en muziek."
+              ],
+              "goal_b": "Een overtuigende, emotioneel geloofwaardige voorstelling afleveren voor een betalend publiek.",
+              "role_remapping": [
+                "De voorganger wordt een acteur of, buiten de scène, de regisseur die aanwijzingen geeft.",
+                "De gelovige bezoeker wordt een acteur in de rol van kerkganger.",
+                "De kerkgemeenschap wordt het ensemble en de figuranten.",
+                "De cantor of muzikant wordt de muzikaal leider of geluidstechnicus.",
+                "De preek wordt een ingestudeerde tekstscène."
+              ],
+              "shared_cues": [
+                "Mensen verzamelen zich in rijen banken.",
+                "Een centrale persoon spreekt vanaf een verhoogde plek.",
+                "Er worden passages hardop gelezen.",
+                "Een lied wordt gezamenlijk ingezet.",
+                "Na een ernstige zin valt een stilte."
+              ],
+              "switch_trigger": "De leider onderbreekt de stilte met: 'Stop, de tweede rij moet pas huilen nadat het licht naar blauw draait.'",
+              "hinge_event": "Een aanwezige herhaalt een gebed driemaal omdat de eerste twee versies 'niet emotioneel genoeg' waren.",
+              "anomaly_under_a": "Een gebed opnieuw laten doen voor een sterker effect past niet bij een dienst waarin het gebed oprecht tot God is gericht.",
+              "resolution_under_b": "In een repetitie is herhaling functioneel: de regisseur zoekt de juiste tekstbeheersing, emotie en timing voor de scène."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een fraudepreventietrainer leidt een verplichte bedrijfsworkshop waarin medewerkers een valse beleggingssekte naspelen. De trainer gebruikt kerkelijke vormen om te demonstreren hoe groepsdruk en charismatisch leiderschap kunnen werken.",
+              "opposition_axis": "geestelijke begeleiding versus manipulatiepreventie",
+              "opposed_proposition": "De voorganger spreekt vanuit kennis, overtuiging en een verantwoordelijkheid voor de gemeenschap.",
+              "shared_anchor": "Een gezaghebbende spreker vraagt een groep om aandacht, herhaling en vertrouwen.",
+              "reading_a": "Een voorganger vraagt de gemeenschap aandachtig te luisteren naar een boodschap die geestelijke richting biedt.",
+              "reading_b": "Een trainer laat deelnemers ervaren hoe een manipulatieve leider vertrouwen en groepsconformiteit opbouwt.",
+              "roles_b": [
+                "De trainer: begeleidt de simulatie en bespreekt manipulatieve technieken.",
+                "Medewerkers: spelen deelnemers aan de fictieve beleggingsgroep.",
+                "Een aangewezen deelnemer: speelt de charismatische groepsleider.",
+                "Observatoren of compliance-medewerkers: noteren drukmiddelen en waarschuwingssignalen."
+              ],
+              "goal_b": "Medewerkers weerbaarder maken tegen fraude, sektarische verkooptechnieken en ongepaste groepsdruk.",
+              "role_remapping": [
+                "De voorganger wordt de trainer of de deelnemer die een manipulator speelt.",
+                "De gelovige bezoeker wordt een medewerker die de simulatie meedoet.",
+                "De kerkgemeenschap wordt een workshopgroep.",
+                "De koster of organisator wordt een compliance-medewerker die materiaal uitdeelt.",
+                "De geloofsboodschap wordt een fictieve belofte van financieel of persoonlijk gewin."
+              ],
+              "shared_cues": [
+                "Stoelen staan in een halve kring of in rijen.",
+                "Een leider heet iedereen welkom en vraagt om telefoons weg te leggen.",
+                "De groep herhaalt korte zinnen in koor.",
+                "Er wordt een persoonlijk getuigenis verteld.",
+                "De leider vraagt om een moment van stilte en reflectie."
+              ],
+              "switch_trigger": "Na de gezamenlijke herhaling projecteert de trainer groot: 'Welke zin was bedoeld om u geld te laten overmaken?'",
+              "hinge_event": "De leider deelt formulieren uit waarop aanwezigen hun salaris en beschikbare spaargeld moeten invullen.",
+              "anomaly_under_a": "Het opvragen van persoonlijke financiële middelen is binnen een normale dienst een ongepaste en verdachte inbreuk op de persoonlijke sfeer.",
+              "resolution_under_b": "In de workshop is het formulier een bewust alarmsignaal: deelnemers herkennen concreet hoe een fraudeur financiële kwetsbaarheid inventariseert."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een evenementenbegeleider organiseert in een kerkzaal een stille datingavond voor singles. Deelnemers luisteren naar korte persoonlijke verhalen, zingen mee met neutrale muziek en krijgen daarna discrete gespreksopdrachten om een passende partner te vinden.",
+              "opposition_axis": "gemeenschappelijke geloofsbeleving versus partnerselectie",
+              "opposed_proposition": "De kerk is voor veel bezoekers een plek van gemeenschap, steun en morele reflectie.",
+              "shared_anchor": "Bezoekers komen in een rustige kerkachtige ruimte bijeen, luisteren naar een spreker en zoeken contact met anderen.",
+              "reading_a": "De bezoekers zoeken gemeenschap, troost en morele of spirituele oriëntatie binnen een kerkdienst.",
+              "reading_b": "De deelnemers zoeken in een veilige, ingetogen setting romantische aansluiting met andere singles.",
+              "roles_b": [
+                "De evenementenbegeleider: legt de avondregels uit en koppelt deelnemers.",
+                "Singles: luisteren, doen mee aan opdrachten en zoeken een mogelijke match.",
+                "De groep deelnemers: creëert een rustige, respectvolle sfeer.",
+                "Een muzikant of gastheer: begeleidt muziek en praktische overgangen."
+              ],
+              "goal_b": "Singles op een laagdrempelige en respectvolle manier met potentiële partners in contact brengen.",
+              "role_remapping": [
+                "De voorganger wordt de evenementenbegeleider.",
+                "De gelovige bezoeker wordt een singledeelnemer.",
+                "De kerkgemeenschap wordt de groep zoekende deelnemers.",
+                "De cantor of muzikant wordt een performer of gastheer.",
+                "Het nagesprek na de dienst wordt een begeleide kennismakingsronde."
+              ],
+              "shared_cues": [
+                "Bezoekers worden welkom geheten bij de ingang.",
+                "Iedereen neemt stil plaats en luistert naar een centrale spreker.",
+                "Er klinkt rustige gezamenlijke muziek.",
+                "De spreker vraagt om respect, openheid en aandacht voor elkaar.",
+                "Na afloop worden aanwezigen uitgenodigd om met anderen te praten."
+              ],
+              "switch_trigger": "De begeleider zegt: 'Kijk nu onder uw stoel; het nummer daarop is uw eerste gesprekspartner voor zeven minuten.'",
+              "hinge_event": "De spreker vraagt de aanwezigen om hun hand op te steken als zij openstaan voor iemand tussen de dertig en veertig.",
+              "anomaly_under_a": "Leeftijdsselectie en het publiekelijk aangeven van romantische beschikbaarheid zijn ongepast binnen een dienst die op geloof en gezamenlijke bezinning is gericht.",
+              "resolution_under_b": "Bij een datingavond maakt de vraag de matching efficiënter en geeft zij deelnemers een duidelijke, vrijwillige manier om wederzijdse interesse aan te geven."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde scène kan eerst als kerkdienst en achteraf als vastgoedbezichtiging worden gelezen. De dominante tegenstelling is geestelijke bezinning tegenover commerciële verkoop. De kerkruimte, de centrale spreker, de luisterende groep en de plechtige taal dragen beide lezingen, terwijl de religieuze lezing aanvankelijk sterker is. De opmerking over een kookeiland bij het altaar is onder Script A storend en ongepast, maar wordt onder Script B een verkoopgerichte visualisatie. Daardoor krijgen eerdere plechtigheid, folders en uitleg achteraf een commerciële functie. De vastgoedgerichte ingreep verstoort het doel van een dienst, maar helpt het verkoopdoel."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén uitvoerbare scène met gebedachtige tekst, zang, stilte en een leider kan zowel een kerkdienst als een repetitie voor een voorstelling dragen. De centrale tegenstelling is de oprechte rituele betekenis tegenover de theatrale enscenering; die is lokaal onverenigbaar als primaire functie van dezelfde handelingen. De religieuze lezing domineert aanvankelijk door de kerkelijke vormen. De repetitielezing blijft echter beschikbaar, omdat een regisseur en acteurs zulke vormen geloofwaardig kunnen oefenen. Het driemaal herhalen van een gebed wegens onvoldoende emotie is onder Script A afwijkend, maar onder Script B functioneel voor spel, timing en effect. Daarmee worden eerdere woorden, zang en stiltes retrospectief toneelmiddelen. De herhaling belemmert spontane oprechtheid, maar faciliteert de repetitie."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde groepsscène met een gezaghebbende leider, koorherhaling, getuigenis en reflectie kan als geloofsbijeenkomst of als trainingssimulatie worden gerealiseerd. De dominante tegenstelling is geestelijke begeleiding tegenover een didactische demonstratie van manipulatiepreventie: de kerkelijke vormen zijn in Script B geen geloofsdoel, maar oefenmateriaal. De religieuze lezing ligt aanvankelijk voor de hand, terwijl een workshopvorm met simulatie sociaal herkenbaar blijft. Het formulier over salaris en spaargeld is onder Script A verdacht en ongepast, maar onder Script B een bewust ontworpen alarmsignaal voor fraudetechnieken. De onthulling verandert eerdere herhaling en vertrouwensoproepen in voorbeelden van groepsdruk. Het opvragen van financiële kwetsbaarheid ondermijnt geestelijke begeleiding maar ondersteunt de preventieve les."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een bijeenkomst in een rustige kerkachtige ruimte met muziek, een centrale spreker en contact na afloop kan zowel een dienst als een ingetogen datingavond voorstellen. De dominante tegenstelling is gezamenlijke geloofsbeleving tegenover partnerselectie. De gedeelde cues ondersteunen beide lezingen, maar de kerkdienst is aanvankelijk de normale lezing. Een stille datingavond is daarnaast een coherent en herkenbaar alternatief dat vóór de expliciete onthulling mogelijk blijft. De publieke vraag naar beschikbaarheid binnen een leeftijdscategorie is onder Script A ongepast, maar onder Script B een functionele matchingsstap. Hierdoor krijgen eerdere oproepen tot openheid, respect en gesprek achteraf een romantisch-selectieve functie. De vraag doorkruist het religieuze doel, maar maakt het datingdoel mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde scène kan eerst als kerkdienst en achteraf als vastgoedbezichtiging worden gelezen. De dominante tegenstelling is geestelijke bezinning tegenover commerciële verkoop. De kerkruimte, de centrale spreker, de luisterende groep en de plechtige taal dragen beide lezingen, terwijl de religieuze lezing aanvankelijk sterker is. De opmerking over een kookeiland bij het altaar is onder Script A storend en ongepast, maar wordt onder Script B een verkoopgerichte visualisatie. Daardoor krijgen eerdere plechtigheid, folders en uitleg achteraf een commerciële functie. De vastgoedgerichte ingreep verstoort het doel van een dienst, maar helpt het verkoopdoel."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén uitvoerbare scène met gebedachtige tekst, zang, stilte en een leider kan zowel een kerkdienst als een repetitie voor een voorstelling dragen. De centrale tegenstelling is de oprechte rituele betekenis tegenover de theatrale enscenering; die is lokaal onverenigbaar als primaire functie van dezelfde handelingen. De religieuze lezing domineert aanvankelijk door de kerkelijke vormen. De repetitielezing blijft echter beschikbaar, omdat een regisseur en acteurs zulke vormen geloofwaardig kunnen oefenen. Het driemaal herhalen van een gebed wegens onvoldoende emotie is onder Script A afwijkend, maar onder Script B functioneel voor spel, timing en effect. Daarmee worden eerdere woorden, zang en stiltes retrospectief toneelmiddelen. De herhaling belemmert spontane oprechtheid, maar faciliteert de repetitie."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde groepsscène met een gezaghebbende leider, koorherhaling, getuigenis en reflectie kan als geloofsbijeenkomst of als trainingssimulatie worden gerealiseerd. De dominante tegenstelling is geestelijke begeleiding tegenover een didactische demonstratie van manipulatiepreventie: de kerkelijke vormen zijn in Script B geen geloofsdoel, maar oefenmateriaal. De religieuze lezing ligt aanvankelijk voor de hand, terwijl een workshopvorm met simulatie sociaal herkenbaar blijft. Het formulier over salaris en spaargeld is onder Script A verdacht en ongepast, maar onder Script B een bewust ontworpen alarmsignaal voor fraudetechnieken. De onthulling verandert eerdere herhaling en vertrouwensoproepen in voorbeelden van groepsdruk. Het opvragen van financiële kwetsbaarheid ondermijnt geestelijke begeleiding maar ondersteunt de preventieve les."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een bijeenkomst in een rustige kerkachtige ruimte met muziek, een centrale spreker en contact na afloop kan zowel een dienst als een ingetogen datingavond voorstellen. De dominante tegenstelling is gezamenlijke geloofsbeleving tegenover partnerselectie. De gedeelde cues ondersteunen beide lezingen, maar de kerkdienst is aanvankelijk de normale lezing. Een stille datingavond is daarnaast een coherent en herkenbaar alternatief dat vóór de expliciete onthulling mogelijk blijft. De publieke vraag naar beschikbaarheid binnen een leeftijdscategorie is onder Script A ongepast, maar onder Script B een functionele matchingsstap. Hierdoor krijgen eerdere oproepen tot openheid, respect en gesprek achteraf een romantisch-selectieve functie. De vraag doorkruist het religieuze doel, maar maakt het datingdoel mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B2"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een bezoeker woont een plechtige kerkdienst bij, met samenzang, een ernstige lezing, gebed en stilte.",
+          "realized_script_b": "De aanwezigen blijken een religieuze scène voor een voorstelling te herhalen en krijgen acteeraanwijzingen.",
+          "realized_opposition_axis": "oprecht religieus ritueel versus artistieke uitvoering",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De opzet activeert duidelijk een kerkdienst en schakelt laat naar een repetitie/uitvoering via de opdracht om het opnieuw te doen en geloofwaardig angstig te spelen. De recensent vervangt wel de geplande licht- en rijaanwijzing, maar vervult functioneel dezelfde theatrale switch."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een herkenbare dienst blijft dominant tot de slotzin. De herhalingsinstructie herkadert zang, gebed en stilte als gespeeld materiaal; de uitvoeringstrigger is functioneel, al wijkt hij lexicaal af van het voorziene blauwe licht.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een bezoeker maakt een ontroerende kerkdienst mee waarin een voorganger een gebed uitspreekt en kerkgangers emotioneel reageren.",
+          "realized_script_b": "Een regisseur stuurt acteurs of figuranten in een kerkelijke toneelscène en bepaalt wanneer zij moeten huilen en hoe het licht moet vallen.",
+          "realized_opposition_axis": "oprecht religieus ritueel versus artistieke uitvoering",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De tekst behoudt het bedoelde kerkelijke ritueel als dominante lezing en realiseert de geplande theatrale switch zeer direct: de tweede bank moet pas huilen bij blauw licht. Het gebed en de zakdoek worden daardoor retrospectief spel en regie."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Dit is een directe realisatie van de beoogde tegenstelling. De emotionele gebedsscène wordt pas in de slotzin als geënsceneerde uitvoering leesbaar, met de voorziene cues van tweede bank, tranen en blauw licht.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een voorganger leidt in een kerk een gebed dat hij herhaalt omdat hij het inhoudelijk of geestelijk niet diep genoeg vindt, waarna de aanwezigen amen zeggen.",
+          "realized_script_b": "Een ensemble repeteert een kerkelijke scène voor een generale repetitie; het gebed wordt herhaald om de uitvoering te verbeteren.",
+          "realized_opposition_axis": "oprecht religieus ritueel versus artistieke uitvoering",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De herhaling van het gebed realiseert precies de geplande anomalie, en de expliciete verwijzing naar de generale repetitie activeert het bedoelde Script B. Daardoor wordt de eerdere beoordeling van de gebedsversies als uitvoeringsregie begrijpelijk."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De tekst volgt de beoogde hinge bijzonder nauw: een gebed wordt opnieuw gedaan omdat het niet diep genoeg klinkt. De finale met \"generale repetitie\" maakt van die religieuze anomalie een functionele repetitiehandeling.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "Beide varianten voldoen aan de lengte-eis en realiseren de vereiste scripttegenstelling. V2 volgt de beoogde middelen preciezer met de tweede bank, de tranen en het blauwe licht; de regie-instructie herkadert de emotie onmiddellijk en helder. V1 heeft een leuke switch, maar de recensent is minder direct verbonden met de opgebouwde kerkscène."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V3",
+          "rationale": "Beide zijn passende, spreekbare grappen met een duidelijke omslag van ritueel naar repetitie. V3 benut de herhaling van het gebed als sterke voorafgaande anomalie en verklaart die achteraf expliciet als uitvoering. V1 heeft een vlotte slotwending, maar V3 sluit nauwer aan op het vereiste repetitieconcept."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 en V3 behouden allebei de kerkdienst als dominante eerste lezing en voldoen aan de vormeisen. V2 is compacter, origineler in zijn concrete toneelcue en levert een scherpere retrospectieve herinterpretatie van de zakdoek en het gebed. Bij V3 maakt de verwijzing naar de generale repetitie de wending iets voorspelbaarder en minder elegant."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 is de sterkste passing variant: hij realiseert de vereiste tegenstelling tussen oprecht gebed en geënsceneerde uitvoering het meest precies, met een heldere setup, een late scherpe switch en doelmatige concrete regiecues."
+    }
+  },
+  "result_sha256": "e4658425ca77900b88885a5b8bded426a11ec3b0e9306ad6b24c82f9889acba5"
+}

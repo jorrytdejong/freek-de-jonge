@@ -1,0 +1,820 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T09-C1",
+  "topic_id": "T09",
+  "topic": "Nederlandse identiteit en volksaard",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "2473cdc45693b116b55d54959eb022ceafa50efba507027e8ae21cac2091a15c",
+  "dry_run": false,
+  "attempt": 2,
+  "generated_at": "2026-08-20T05:42:37.269872+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Nederlandse identiteit en volksaard",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.\",\n    \"participants_and_roles\": [\n      \"Nederlanders: inwoners die zich in alledaagse situaties gedragen volgens vertrouwde sociale normen en gewoonten.\",\n      \"Bezoeker of buitenstaander: observeert het gedrag en probeert de cultuur te begrijpen.\",\n      \"Gesprekspartner, collega, buur of gastheer: licht desgevraagd gebruiken, taal en omgangsvormen toe.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat mensen doorgaans bedoelen met Nederlandse identiteit en volksaard, en hoe die zichtbaar wordt in het dagelijks contact.\",\n    \"preconditions\": [\n      \"Er is een alledaagse sociale context, zoals werk, een buurt, een bezoek, een winkel of een gezamenlijke maaltijd.\",\n      \"De deelnemers spreken grotendeels dezelfde taal of kunnen hun bedoelingen duidelijk maken.\",\n      \"Er bestaan gedeelde, herkenbare normen rond afspraak is afspraak, persoonlijke ruimte, gelijkwaardigheid en praktische communicatie.\",\n      \"De buitenstaander verwacht dat culturele kenmerken in gedrag en gewoonten zichtbaar zijn.\"\n    ],\n    \"expected_actions\": [\n      \"Mensen maken kennis en communiceren relatief direct en informeel.\",\n      \"Afspraken worden gepland, op tijd nagekomen en praktisch afgestemd.\",\n      \"Men geeft een eigen mening zonder veel ceremonie, maar verwacht ook dat anderen dat kunnen verdragen.\",\n      \"Kosten, taken en verantwoordelijkheden worden duidelijk verdeeld.\",\n      \"Typische gewoonten of tradities worden uitgelegd als onderdeel van het dagelijks leven.\"\n    ],\n    \"expected_outcome\": \"De bezoeker krijgt een herkenbaar, samenhangend beeld van een cultuur waarin directheid, nuchterheid, zelfstandigheid, overleg en praktische organisatie belangrijke waarden lijken.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\",\n      \"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\",\n      \"Afspraken, punctualiteit en duidelijke planning worden serieus genomen.\",\n      \"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\",\n      \"De Nederlandse identiteit is niet voor iedereen hetzelfde, maar wordt vaak verbonden met taal, gewoonten, geschiedenis en alledaagse omgangsvormen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de verwachting van een alledaagse ontmoeting waarin bekende nationale stereotypen en sociale gewoonten herkenbaar, serieus en praktisch zichtbaar worden.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.\",\n    \"participants_and_roles\": [\n      \"Nederlanders: inwoners die zich in alledaagse situaties gedragen volgens vertrouwde sociale normen en gewoonten.\",\n      \"Bezoeker of buitenstaander: observeert het gedrag en probeert de cultuur te begrijpen.\",\n      \"Gesprekspartner, collega, buur of gastheer: licht desgevraagd gebruiken, taal en omgangsvormen toe.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat mensen doorgaans bedoelen met Nederlandse identiteit en volksaard, en hoe die zichtbaar wordt in het dagelijks contact.\",\n    \"preconditions\": [\n      \"Er is een alledaagse sociale context, zoals werk, een buurt, een bezoek, een winkel of een gezamenlijke maaltijd.\",\n      \"De deelnemers spreken grotendeels dezelfde taal of kunnen hun bedoelingen duidelijk maken.\",\n      \"Er bestaan gedeelde, herkenbare normen rond afspraak is afspraak, persoonlijke ruimte, gelijkwaardigheid en praktische communicatie.\",\n      \"De buitenstaander verwacht dat culturele kenmerken in gedrag en gewoonten zichtbaar zijn.\"\n    ],\n    \"expected_actions\": [\n      \"Mensen maken kennis en communiceren relatief direct en informeel.\",\n      \"Afspraken worden gepland, op tijd nagekomen en praktisch afgestemd.\",\n      \"Men geeft een eigen mening zonder veel ceremonie, maar verwacht ook dat anderen dat kunnen verdragen.\",\n      \"Kosten, taken en verantwoordelijkheden worden duidelijk verdeeld.\",\n      \"Typische gewoonten of tradities worden uitgelegd als onderdeel van het dagelijks leven.\"\n    ],\n    \"expected_outcome\": \"De bezoeker krijgt een herkenbaar, samenhangend beeld van een cultuur waarin directheid, nuchterheid, zelfstandigheid, overleg en praktische organisatie belangrijke waarden lijken.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\",\n      \"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\",\n      \"Afspraken, punctualiteit en duidelijke planning worden serieus genomen.\",\n      \"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\",\n      \"De Nederlandse identiteit is niet voor iedereen hetzelfde, maar wordt vaak verbonden met taal, gewoonten, geschiedenis en alledaagse omgangsvormen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de verwachting van een alledaagse ontmoeting waarin bekende nationale stereotypen en sociale gewoonten herkenbaar, serieus en praktisch zichtbaar worden.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een bezoeker denkt dat hij een gewone Nederlandse buurtbarbecue bijwoont, maar blijkt terecht te zijn gekomen bij een uiterst strikt georganiseerde algemene ledenvergadering van de straatvereniging.\",\n      \"opposition_axis\": \"Informele gelijkwaardigheid versus formele procedure en hiërarchie.\",\n      \"opposed_proposition\": \"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\",\n      \"shared_anchor\": \"De buurtenkomst met koffie en een agenda.\",\n      \"reading_a\": \"De bezoeker leest de koffie, de voornamen, de kring van stoelen en de losse opmerkingen als een informele, gelijkwaardige Nederlandse buurtbijeenkomst.\",\n      \"reading_b\": \"Dezelfde elementen blijken middelen om alle aanwezige leden volgens een vaste verenigingsprocedure aan het woord te laten en besluiten formeel vast te leggen.\",\n      \"roles_b\": [\n        \"Voorzitter van de straatvereniging: leidt de vergadering en bewaakt de procedure.\",\n        \"Secretaris: noteert moties, stemmen en besluiten.\",\n        \"Leden/buurtbewoners: dienen voorstellen in en stemmen erover.\",\n        \"Bezoeker: wordt aangezien voor een lid met stemrecht.\"\n      ],\n      \"goal_b\": \"Een rechtsgeldig besluit nemen over de aanleg van een gezamenlijke fietsenstalling.\",\n      \"role_remapping\": [\n        \"De informele gastheer uit Script A wordt de voorzitter.\",\n        \"De gesprekspartner of buur wordt de secretaris.\",\n        \"De alledaagse aanwezigen worden stemgerechtigde leden.\",\n        \"De observerende bezoeker wordt een onverwacht, maar administratief ingeschreven lid.\"\n      ],\n      \"shared_cues\": [\n        \"Koffie aan de keukentafel.\",\n        \"Iedereen spreekt elkaar met de voornaam aan.\",\n        \"Er wordt openlijk kritiek geuit.\",\n        \"Er ligt een agenda op tafel.\",\n        \"Kosten worden ter sprake gebracht.\"\n      ],\n      \"switch_trigger\": \"De voorzitter vraagt de bezoeker zijn hand op te steken bij de stemming en telt zijn stem hardop mee.\",\n      \"hinge_event\": \"Na een luchtige discussie haalt de voorzitter een stembus en een notulenboek tevoorschijn.\",\n      \"anomaly_under_a\": \"Bij een gewone buurtbarbecue is een stembus met formele notulen ongepast en overdreven; de eerdere losse omgang suggereerde geen officiële besluitvorming.\",\n      \"resolution_under_b\": \"Als ledenvergadering is de stembus precies nodig om een collectief besluit controleerbaar te nemen; de schijnbare informaliteit maakt de procedure toegankelijk voor de leden.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een bezoeker ziet Nederlanders in een kantoor open en direct met elkaar overleggen, maar ontdekt dat het gesprek een oefening is voor een diplomatieke onderhandeling waarin iedereen juist zorgvuldig gecodeerde taal moet gebruiken.\",\n      \"opposition_axis\": \"Onverbloemde directheid versus strategische diplomatie.\",\n      \"opposed_proposition\": \"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\",\n      \"shared_anchor\": \"Het overleg rond een tafel over een gezamenlijk plan.\",\n      \"reading_a\": \"De bezoeker hoort korte zinnen, kritische vragen en opmerkingen over geld als kenmerk van directe, praktische werkcommunicatie.\",\n      \"reading_b\": \"De deelnemers gebruiken die ogenschijnlijk gewone opmerkingen als vooraf afgesproken diplomatieke signalen om posities te verkennen zonder een conflict openlijk te maken.\",\n      \"roles_b\": [\n        \"Onderhandelingsleider: bewaakt de buitenlandse belangen en de boodschap.\",\n        \"Delegatieleden: testen standpunten met voorzichtige formuleringen.\",\n        \"Tolk of beleidsadviseur: duidt de codetaal en noteert toezeggingen.\",\n        \"Bezoeker: denkt een regulier teamoverleg bij te wonen.\"\n      ],\n      \"goal_b\": \"Een internationaal akkoord voorbereiden zonder de andere delegatie publiekelijk te bruuskeren.\",\n      \"role_remapping\": [\n        \"De collega of gesprekspartner uit Script A wordt een delegatielid.\",\n        \"De praktische organisator wordt de onderhandelingsleider.\",\n        \"De buitenstaander blijft observator, maar mist aanvankelijk de diplomatieke context.\",\n        \"De uitlegger van gewoonten wordt een tolk of beleidsadviseur.\"\n      ],\n      \"shared_cues\": [\n        \"Een vergadertafel.\",\n        \"Een strakke planning.\",\n        \"Kritische vragen over kosten.\",\n        \"Korte, zakelijke antwoorden.\",\n        \"Aantekeningen en actiepunten.\"\n      ],\n      \"switch_trigger\": \"De tolk fluistert de bezoeker toe dat de zin 'dat nemen we mee' in dit overleg een beleefde afwijzing betekent.\",\n      \"hinge_event\": \"Na een scherpe opmerking bedankt iedereen elkaar opvallend hartelijk en laat men de omstreden passage woordelijk in het verslag staan.\",\n      \"anomaly_under_a\": \"In een direct kantooroverleg zou zo'n omslachtige, vriendelijke reactie na openlijke kritiek onlogisch zijn; men zou een standpunt helder bevestigen of verwerpen.\",\n      \"resolution_under_b\": \"In diplomatieke voorbereiding voorkomt de vaste beleefdheidsformule gezichtsverlies en houdt zij onderhandelingsruimte open; de passage wordt juist bewaard als bewust dubbelzinnig signaal.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.\",\n      \"opposition_axis\": \"Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.\",\n      \"opposed_proposition\": \"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\",\n      \"shared_anchor\": \"De gezamenlijke maaltijd waarvoor geld wordt verzameld.\",\n      \"reading_a\": \"De bezoeker ziet een tikkieverzoek, een lijstje met boodschappen en precies verdeelde taken als een praktische afrekening van een gewoon etentje.\",\n      \"reading_b\": \"Dezelfde betaalverzoeken en taaklijst blijken een dekmantel: de bijdragen worden samengevoegd en buiten medeweten van de ontvanger aan de buur geschonken.\",\n      \"roles_b\": [\n        \"Organiserende buur: coördineert de inzameling en bewaart het geheim.\",\n        \"Genodigden: dragen geld of eten bij zonder de ontvanger te beschamen.\",\n        \"Buurtbewoner in nood: denkt gast te zijn bij een gewoon diner.\",\n        \"Bezoeker: interpreteert de voorbereiding aanvankelijk als kostenbeheersing.\"\n      ],\n      \"goal_b\": \"Discreet financiële steun geven zonder dat de geholpen buur zich afhankelijk of tentoongesteld voelt.\",\n      \"role_remapping\": [\n        \"De gastheer uit Script A wordt de organisator van de inzameling.\",\n        \"De deelnemers die kosten verdelen worden anonieme gevers.\",\n        \"De gesprekspartner wordt de buur die hulp ontvangt.\",\n        \"De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim.\"\n      ],\n      \"shared_cues\": [\n        \"Een boodschappenlijst.\",\n        \"Een betaalverzoek op de telefoon.\",\n        \"Taken voor koken en opruimen.\",\n        \"Een gesprek over budget.\",\n        \"Een gezamenlijke maaltijd aan tafel.\"\n      ],\n      \"switch_trigger\": \"Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.\",\n      \"hinge_event\": \"De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.\",\n      \"anomaly_under_a\": \"Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.\",\n      \"resolution_under_b\": \"Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bezoeker denkt dat Nederlanders een strak geplande fietstocht precies volgens afspraak uitvoeren, maar de groep blijkt deelnemers te begeleiden in een improvisatie-oefening waarin men bewust route, tijd en bestemming loslaat.\",\n      \"opposition_axis\": \"Punctualiteit en voorspelbare planning versus doelbewuste improvisatie.\",\n      \"opposed_proposition\": \"Afspraken, punctualiteit en duidelijke planning worden serieus genomen.\",\n      \"shared_anchor\": \"De fietstocht met een vertrektijd en een routekaart.\",\n      \"reading_a\": \"De bezoeker leest de verzameltijd, de routekaart, de veiligheidsinstructies en de duidelijke taakverdeling als bewijs van een zorgvuldig geplande Nederlandse groepsactiviteit.\",\n      \"reading_b\": \"Die ordelijke start is het kader van een improvisatieworkshop: deelnemers moeten later leren reageren op onverwachte aanwijzingen en gezamenlijk een nieuwe route verzinnen.\",\n      \"roles_b\": [\n        \"Workshopbegeleider: zet improvisatieopdrachten uit en observeert reacties.\",\n        \"Deelnemers: verlaten geleidelijk het vaste reisschema.\",\n        \"Fietsverhuurder of veiligheidsbegeleider: verzorgt slechts de praktische start.\",\n        \"Bezoeker: verwacht een gewone, punctuele excursie.\"\n      ],\n      \"goal_b\": \"Deelnemers laten oefenen met flexibiliteit, vertrouwen en gezamenlijk improviseren.\",\n      \"role_remapping\": [\n        \"De organisator uit Script A wordt de workshopbegeleider.\",\n        \"De reizigers of buren worden deelnemers aan een oefening.\",\n        \"De praktische uitlegger wordt de veiligheidsbegeleider.\",\n        \"De bezoeker blijft waarnemer, maar wordt later zelf tot deelnemer gemaakt.\"\n      ],\n      \"shared_cues\": [\n        \"Een afgesproken vertrektijd.\",\n        \"Fietsen op een rij.\",\n        \"Een routekaart.\",\n        \"Veiligheidsinstructies.\",\n        \"Een lijst met deelnemers.\"\n      ],\n      \"switch_trigger\": \"Precies op het geplande vertrekmoment scheurt de begeleider de routekaart doormidden en zegt hij dat niemand vandaag op tijd mag aankomen.\",\n      \"hinge_event\": \"De begeleider laat de groep bij het eerste kruispunt zonder bestemming wachten en verbiedt het gebruik van navigatie.\",\n      \"anomaly_under_a\": \"Voor een normale geplande fietstocht is het absurd om de route weg te nemen en navigatie te verbieden; daardoor kan de afspraak niet efficiënt worden nagekomen.\",\n      \"resolution_under_b\": \"Binnen de improvisatie-oefening dwingt dit verbod de deelnemers om onzekerheid te verdragen, samen keuzes te maken en het voorafgaande planningsgedrag bewust los te laten.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.\",\n    \"participants_and_roles\": [\n      \"Nederlanders: inwoners die zich in alledaagse situaties gedragen volgens vertrouwde sociale normen en gewoonten.\",\n      \"Bezoeker of buitenstaander: observeert het gedrag en probeert de cultuur te begrijpen.\",\n      \"Gesprekspartner, collega, buur of gastheer: licht desgevraagd gebruiken, taal en omgangsvormen toe.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat mensen doorgaans bedoelen met Nederlandse identiteit en volksaard, en hoe die zichtbaar wordt in het dagelijks contact.\",\n    \"preconditions\": [\n      \"Er is een alledaagse sociale context, zoals werk, een buurt, een bezoek, een winkel of een gezamenlijke maaltijd.\",\n      \"De deelnemers spreken grotendeels dezelfde taal of kunnen hun bedoelingen duidelijk maken.\",\n      \"Er bestaan gedeelde, herkenbare normen rond afspraak is afspraak, persoonlijke ruimte, gelijkwaardigheid en praktische communicatie.\",\n      \"De buitenstaander verwacht dat culturele kenmerken in gedrag en gewoonten zichtbaar zijn.\"\n    ],\n    \"expected_actions\": [\n      \"Mensen maken kennis en communiceren relatief direct en informeel.\",\n      \"Afspraken worden gepland, op tijd nagekomen en praktisch afgestemd.\",\n      \"Men geeft een eigen mening zonder veel ceremonie, maar verwacht ook dat anderen dat kunnen verdragen.\",\n      \"Kosten, taken en verantwoordelijkheden worden duidelijk verdeeld.\",\n      \"Typische gewoonten of tradities worden uitgelegd als onderdeel van het dagelijks leven.\"\n    ],\n    \"expected_outcome\": \"De bezoeker krijgt een herkenbaar, samenhangend beeld van een cultuur waarin directheid, nuchterheid, zelfstandigheid, overleg en praktische organisatie belangrijke waarden lijken.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\",\n      \"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\",\n      \"Afspraken, punctualiteit en duidelijke planning worden serieus genomen.\",\n      \"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\",\n      \"De Nederlandse identiteit is niet voor iedereen hetzelfde, maar wordt vaak verbonden met taal, gewoonten, geschiedenis en alledaagse omgangsvormen.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de verwachting van een alledaagse ontmoeting waarin bekende nationale stereotypen en sociale gewoonten herkenbaar, serieus en praktisch zichtbaar worden.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een bezoeker denkt dat hij een gewone Nederlandse buurtbarbecue bijwoont, maar blijkt terecht te zijn gekomen bij een uiterst strikt georganiseerde algemene ledenvergadering van de straatvereniging.\",\n      \"opposition_axis\": \"Informele gelijkwaardigheid versus formele procedure en hiërarchie.\",\n      \"opposed_proposition\": \"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\",\n      \"shared_anchor\": \"De buurtenkomst met koffie en een agenda.\",\n      \"reading_a\": \"De bezoeker leest de koffie, de voornamen, de kring van stoelen en de losse opmerkingen als een informele, gelijkwaardige Nederlandse buurtbijeenkomst.\",\n      \"reading_b\": \"Dezelfde elementen blijken middelen om alle aanwezige leden volgens een vaste verenigingsprocedure aan het woord te laten en besluiten formeel vast te leggen.\",\n      \"roles_b\": [\n        \"Voorzitter van de straatvereniging: leidt de vergadering en bewaakt de procedure.\",\n        \"Secretaris: noteert moties, stemmen en besluiten.\",\n        \"Leden/buurtbewoners: dienen voorstellen in en stemmen erover.\",\n        \"Bezoeker: wordt aangezien voor een lid met stemrecht.\"\n      ],\n      \"goal_b\": \"Een rechtsgeldig besluit nemen over de aanleg van een gezamenlijke fietsenstalling.\",\n      \"role_remapping\": [\n        \"De informele gastheer uit Script A wordt de voorzitter.\",\n        \"De gesprekspartner of buur wordt de secretaris.\",\n        \"De alledaagse aanwezigen worden stemgerechtigde leden.\",\n        \"De observerende bezoeker wordt een onverwacht, maar administratief ingeschreven lid.\"\n      ],\n      \"shared_cues\": [\n        \"Koffie aan de keukentafel.\",\n        \"Iedereen spreekt elkaar met de voornaam aan.\",\n        \"Er wordt openlijk kritiek geuit.\",\n        \"Er ligt een agenda op tafel.\",\n        \"Kosten worden ter sprake gebracht.\"\n      ],\n      \"switch_trigger\": \"De voorzitter vraagt de bezoeker zijn hand op te steken bij de stemming en telt zijn stem hardop mee.\",\n      \"hinge_event\": \"Na een luchtige discussie haalt de voorzitter een stembus en een notulenboek tevoorschijn.\",\n      \"anomaly_under_a\": \"Bij een gewone buurtbarbecue is een stembus met formele notulen ongepast en overdreven; de eerdere losse omgang suggereerde geen officiële besluitvorming.\",\n      \"resolution_under_b\": \"Als ledenvergadering is de stembus precies nodig om een collectief besluit controleerbaar te nemen; de schijnbare informaliteit maakt de procedure toegankelijk voor de leden.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een bezoeker ziet Nederlanders in een kantoor open en direct met elkaar overleggen, maar ontdekt dat het gesprek een oefening is voor een diplomatieke onderhandeling waarin iedereen juist zorgvuldig gecodeerde taal moet gebruiken.\",\n      \"opposition_axis\": \"Onverbloemde directheid versus strategische diplomatie.\",\n      \"opposed_proposition\": \"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\",\n      \"shared_anchor\": \"Het overleg rond een tafel over een gezamenlijk plan.\",\n      \"reading_a\": \"De bezoeker hoort korte zinnen, kritische vragen en opmerkingen over geld als kenmerk van directe, praktische werkcommunicatie.\",\n      \"reading_b\": \"De deelnemers gebruiken die ogenschijnlijk gewone opmerkingen als vooraf afgesproken diplomatieke signalen om posities te verkennen zonder een conflict openlijk te maken.\",\n      \"roles_b\": [\n        \"Onderhandelingsleider: bewaakt de buitenlandse belangen en de boodschap.\",\n        \"Delegatieleden: testen standpunten met voorzichtige formuleringen.\",\n        \"Tolk of beleidsadviseur: duidt de codetaal en noteert toezeggingen.\",\n        \"Bezoeker: denkt een regulier teamoverleg bij te wonen.\"\n      ],\n      \"goal_b\": \"Een internationaal akkoord voorbereiden zonder de andere delegatie publiekelijk te bruuskeren.\",\n      \"role_remapping\": [\n        \"De collega of gesprekspartner uit Script A wordt een delegatielid.\",\n        \"De praktische organisator wordt de onderhandelingsleider.\",\n        \"De buitenstaander blijft observator, maar mist aanvankelijk de diplomatieke context.\",\n        \"De uitlegger van gewoonten wordt een tolk of beleidsadviseur.\"\n      ],\n      \"shared_cues\": [\n        \"Een vergadertafel.\",\n        \"Een strakke planning.\",\n        \"Kritische vragen over kosten.\",\n        \"Korte, zakelijke antwoorden.\",\n        \"Aantekeningen en actiepunten.\"\n      ],\n      \"switch_trigger\": \"De tolk fluistert de bezoeker toe dat de zin 'dat nemen we mee' in dit overleg een beleefde afwijzing betekent.\",\n      \"hinge_event\": \"Na een scherpe opmerking bedankt iedereen elkaar opvallend hartelijk en laat men de omstreden passage woordelijk in het verslag staan.\",\n      \"anomaly_under_a\": \"In een direct kantooroverleg zou zo'n omslachtige, vriendelijke reactie na openlijke kritiek onlogisch zijn; men zou een standpunt helder bevestigen of verwerpen.\",\n      \"resolution_under_b\": \"In diplomatieke voorbereiding voorkomt de vaste beleefdheidsformule gezichtsverlies en houdt zij onderhandelingsruimte open; de passage wordt juist bewaard als bewust dubbelzinnig signaal.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.\",\n      \"opposition_axis\": \"Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.\",\n      \"opposed_proposition\": \"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\",\n      \"shared_anchor\": \"De gezamenlijke maaltijd waarvoor geld wordt verzameld.\",\n      \"reading_a\": \"De bezoeker ziet een tikkieverzoek, een lijstje met boodschappen en precies verdeelde taken als een praktische afrekening van een gewoon etentje.\",\n      \"reading_b\": \"Dezelfde betaalverzoeken en taaklijst blijken een dekmantel: de bijdragen worden samengevoegd en buiten medeweten van de ontvanger aan de buur geschonken.\",\n      \"roles_b\": [\n        \"Organiserende buur: coördineert de inzameling en bewaart het geheim.\",\n        \"Genodigden: dragen geld of eten bij zonder de ontvanger te beschamen.\",\n        \"Buurtbewoner in nood: denkt gast te zijn bij een gewoon diner.\",\n        \"Bezoeker: interpreteert de voorbereiding aanvankelijk als kostenbeheersing.\"\n      ],\n      \"goal_b\": \"Discreet financiële steun geven zonder dat de geholpen buur zich afhankelijk of tentoongesteld voelt.\",\n      \"role_remapping\": [\n        \"De gastheer uit Script A wordt de organisator van de inzameling.\",\n        \"De deelnemers die kosten verdelen worden anonieme gevers.\",\n        \"De gesprekspartner wordt de buur die hulp ontvangt.\",\n        \"De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim.\"\n      ],\n      \"shared_cues\": [\n        \"Een boodschappenlijst.\",\n        \"Een betaalverzoek op de telefoon.\",\n        \"Taken voor koken en opruimen.\",\n        \"Een gesprek over budget.\",\n        \"Een gezamenlijke maaltijd aan tafel.\"\n      ],\n      \"switch_trigger\": \"Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.\",\n      \"hinge_event\": \"De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.\",\n      \"anomaly_under_a\": \"Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.\",\n      \"resolution_under_b\": \"Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"plan\": {\n    \"setup_script\": \"Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.\",\n    \"opposing_script\": \"Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.\",\n    \"opposition_type\": \"Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.\",\n    \"trigger\": \"Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Een boodschappenlijst.\",\n      \"Een betaalverzoek op de telefoon.\",\n      \"Taken voor koken en opruimen.\",\n      \"Een gesprek over budget.\",\n      \"Een gezamenlijke maaltijd aan tafel.\"\n    ],\n    \"hinge_event\": \"De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.\",\n    \"anomaly_under_a\": \"Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.\",\n    \"resolution_under_b\": \"Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.\",\n    \"role_remapping\": [\n      \"De gastheer uit Script A wordt de organisator van de inzameling.\",\n      \"De deelnemers die kosten verdelen worden anonieme gevers.\",\n      \"De gesprekspartner wordt de buur die hulp ontvangt.\",\n      \"De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.\",\n      \"participants_and_roles\": [\n        \"Nederlanders: inwoners die zich in alledaagse situaties gedragen volgens vertrouwde sociale normen en gewoonten.\",\n        \"Bezoeker of buitenstaander: observeert het gedrag en probeert de cultuur te begrijpen.\",\n        \"Gesprekspartner, collega, buur of gastheer: licht desgevraagd gebruiken, taal en omgangsvormen toe.\"\n      ],\n      \"apparent_goal\": \"Begrijpen wat mensen doorgaans bedoelen met Nederlandse identiteit en volksaard, en hoe die zichtbaar wordt in het dagelijks contact.\",\n      \"preconditions\": [\n        \"Er is een alledaagse sociale context, zoals werk, een buurt, een bezoek, een winkel of een gezamenlijke maaltijd.\",\n        \"De deelnemers spreken grotendeels dezelfde taal of kunnen hun bedoelingen duidelijk maken.\",\n        \"Er bestaan gedeelde, herkenbare normen rond afspraak is afspraak, persoonlijke ruimte, gelijkwaardigheid en praktische communicatie.\",\n        \"De buitenstaander verwacht dat culturele kenmerken in gedrag en gewoonten zichtbaar zijn.\"\n      ],\n      \"expected_actions\": [\n        \"Mensen maken kennis en communiceren relatief direct en informeel.\",\n        \"Afspraken worden gepland, op tijd nagekomen en praktisch afgestemd.\",\n        \"Men geeft een eigen mening zonder veel ceremonie, maar verwacht ook dat anderen dat kunnen verdragen.\",\n        \"Kosten, taken en verantwoordelijkheden worden duidelijk verdeeld.\",\n        \"Typische gewoonten of tradities worden uitgelegd als onderdeel van het dagelijks leven.\"\n      ],\n      \"expected_outcome\": \"De bezoeker krijgt een herkenbaar, samenhangend beeld van een cultuur waarin directheid, nuchterheid, zelfstandigheid, overleg en praktische organisatie belangrijke waarden lijken.\",\n      \"expected_propositions\": [\n        \"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\",\n        \"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\",\n        \"Afspraken, punctualiteit en duidelijke planning worden serieus genomen.\",\n        \"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\",\n        \"De Nederlandse identiteit is niet voor iedereen hetzelfde, maar wordt vaak verbonden met taal, gewoonten, geschiedenis en alledaagse omgangsvormen.\"\n      ],\n      \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de verwachting van een alledaagse ontmoeting waarin bekende nationale stereotypen en sociale gewoonten herkenbaar, serieus en praktisch zichtbaar worden.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.\",\n      \"opposition_axis\": \"Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.\",\n      \"opposed_proposition\": \"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\",\n      \"shared_anchor\": \"De gezamenlijke maaltijd waarvoor geld wordt verzameld.\",\n      \"reading_a\": \"De bezoeker ziet een tikkieverzoek, een lijstje met boodschappen en precies verdeelde taken als een praktische afrekening van een gewoon etentje.\",\n      \"reading_b\": \"Dezelfde betaalverzoeken en taaklijst blijken een dekmantel: de bijdragen worden samengevoegd en buiten medeweten van de ontvanger aan de buur geschonken.\",\n      \"roles_b\": [\n        \"Organiserende buur: coördineert de inzameling en bewaart het geheim.\",\n        \"Genodigden: dragen geld of eten bij zonder de ontvanger te beschamen.\",\n        \"Buurtbewoner in nood: denkt gast te zijn bij een gewoon diner.\",\n        \"Bezoeker: interpreteert de voorbereiding aanvankelijk als kostenbeheersing.\"\n      ],\n      \"goal_b\": \"Discreet financiële steun geven zonder dat de geholpen buur zich afhankelijk of tentoongesteld voelt.\",\n      \"role_remapping\": [\n        \"De gastheer uit Script A wordt de organisator van de inzameling.\",\n        \"De deelnemers die kosten verdelen worden anonieme gevers.\",\n        \"De gesprekspartner wordt de buur die hulp ontvangt.\",\n        \"De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim.\"\n      ],\n      \"shared_cues\": [\n        \"Een boodschappenlijst.\",\n        \"Een betaalverzoek op de telefoon.\",\n        \"Taken voor koken en opruimen.\",\n        \"Een gesprek over budget.\",\n        \"Een gezamenlijke maaltijd aan tafel.\"\n      ],\n      \"switch_trigger\": \"Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.\",\n      \"hinge_event\": \"De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.\",\n      \"anomaly_under_a\": \"Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.\",\n      \"resolution_under_b\": \"Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.\",\n      \"opposing_script\": \"Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.\",\n      \"opposition_type\": \"Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.\",\n      \"trigger\": \"Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Een boodschappenlijst.\",\n        \"Een betaalverzoek op de telefoon.\",\n        \"Taken voor koken en opruimen.\",\n        \"Een gesprek over budget.\",\n        \"Een gezamenlijke maaltijd aan tafel.\"\n      ],\n      \"hinge_event\": \"De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.\",\n      \"anomaly_under_a\": \"Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.\",\n      \"resolution_under_b\": \"Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.\",\n      \"role_remapping\": [\n        \"De gastheer uit Script A wordt de organisator van de inzameling.\",\n        \"De deelnemers die kosten verdelen worden anonieme gevers.\",\n        \"De gesprekspartner wordt de buur die hulp ontvangt.\",\n        \"De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik at bij een Nederlands gezin; iedereen had een taak, de boodschappenlijst lag klaar en na afloop kwam er keurig een betaalverzoek. De buurman pakte zijn telefoon, maar de gastheer gaf hem een envelop: „Jij hoeft niet te betalen, jij bent waarvoor we spaarden.”\",\n      \"angle\": \"Een strak verdeeld etentje kantelt in stille buurthulp.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Een buitenlander zei: „Nederlanders delen zelfs het afwasmiddel eerlijk.” Bij het buurtetentje kreeg iedereen een Tikkie, behalve de man die steeds over zijn budget begon; hij kreeg de opbrengst mee in een boodschappentas.\",\n      \"angle\": \"Directe kostendeling blijkt een gecamoufleerde inzameling.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij ons aan tafel verdeelden we koken, opruimen en de rekening zo precies dat ik dacht: typisch Nederlands. Tot de buurvrouw haar betaalverzoek wilde openen en mijn vader zei: „Niet klikken, daar staat je huur in.”\",\n      \"angle\": \"De bekende betaalapp wordt plotseling een hulpmiddel voor anonieme solidariteit.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik at bij een Nederlands gezin; iedereen had een taak, de boodschappenlijst lag klaar en na afloop kwam er keurig een betaalverzoek. De buurman pakte zijn telefoon, maar de gastheer gaf hem een envelop: „Jij hoeft niet te betalen, jij bent waarvoor we spaarden.”\",\n      \"angle\": \"Een strak verdeeld etentje kantelt in stille buurthulp.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Een buitenlander zei: „Nederlanders delen zelfs het afwasmiddel eerlijk.” Bij het buurtetentje kreeg iedereen een Tikkie, behalve de man die steeds over zijn budget begon; hij kreeg de opbrengst mee in een boodschappentas.\",\n      \"angle\": \"Directe kostendeling blijkt een gecamoufleerde inzameling.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij ons aan tafel verdeelden we koken, opruimen en de rekening zo precies dat ik dacht: typisch Nederlands. Tot de buurvrouw haar betaalverzoek wilde openen en mijn vader zei: „Niet klikken, daar staat je huur in.”\",\n      \"angle\": \"De bekende betaalapp wordt plotseling een hulpmiddel voor anonieme solidariteit.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een nauwkeurig georganiseerd Nederlands etentje waarin taken, boodschappen en kosten netjes worden verdeeld.\",\n      \"realized_script_b\": \"Het etentje en de betaalverzoeken blijken een verborgen inzameling voor de buurman die financiële hulp nodig heeft.\",\n      \"realized_opposition_axis\": \"Individuele, overzichtelijke kostenverdeling versus discrete gezamenlijke solidariteit.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet activeert een strak verdeeld etentje via taken, boodschappenlijst en betaalverzoek. De envelop voor de buurman veroorzaakt de bedoelde omslag naar een geheime inzameling en herinterpreteert de betaalcues.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant realiseert rechtstreeks de geplande kostenverdeling-naar-buurthulpomkering; de envelop is een duidelijke, late punch die het eerdere Tikkie en de organisatie herkadert.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een buitenlander ziet een buurtetentje waarin Nederlanders zelfs kleine huishoudelijke kosten en de maaltijd uiterst eerlijk via Tikkies verdelen.\",\n      \"realized_script_b\": \"De Tikkies zijn een gecamoufleerde collecte; de man met geldproblemen ontvangt de gezamenlijke opbrengst.\",\n      \"realized_opposition_axis\": \"Strikte individuele afrekening versus gezamenlijke financiële steun aan iemand in nood.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst behoudt de beoogde A-lezing van precieze kostendeling en schakelt bij de uitzondering voor de man met budgetproblemen naar een verborgen inzameling. Niet alle geplande gedeelde cues komen voor, maar Tikkies, het etentje en het budgetsignaal dragen de omslag functioneel.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De generieke stereotype-opening leidt naar de geplande etentjessituatie; de uitzondering op het Tikkie en de boodschappentas leveren de bedoelde onthulling van stille financiële hulp.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Aan een Nederlands aandoende tafel worden koken, opruimen en de rekening precies verdeeld, waardoor een betaalverzoek als normale afrekening geldt.\",\n      \"realized_script_b\": \"De buurvrouw hoeft niet bij te dragen: de groep blijkt haar huur te willen betalen.\",\n      \"realized_opposition_axis\": \"Precieze verdeling van individuele uitgaven versus gezamenlijke financiële hulp.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De gedeelde etentjescues en het betaalverzoek vestigen de afrekenlezing, waarna de huur-onthulling de ontvanger in een geholpen buur remapt. De formulering over wat er 'in' een betaalverzoek staat is technisch en semantisch wat onhelder, maar de bedoelde omslag blijft herkenbaar.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant volgt de beoogde omslag van nauwkeurige rekeningverdeling naar buurthulp. De punch is duidelijk als intentie, al is de Tikkie-logica minder natuurlijk uitgewerkt dan de envelopoplossing uit het plan.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Ik at bij een Nederlands gezin; iedereen had een taak, de boodschappenlijst lag klaar en na afloop kwam er keurig een betaalverzoek. De buurman pakte zijn telefoon, maar de gastheer gaf hem een envelop: „Jij hoeft niet te betalen, jij bent waarvoor we spaarden.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.",
+      "opposing_script": "Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.",
+      "opposition_type": "Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.",
+      "trigger": "Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Een boodschappenlijst.",
+        "Een betaalverzoek op de telefoon.",
+        "Taken voor koken en opruimen.",
+        "Een gesprek over budget.",
+        "Een gezamenlijke maaltijd aan tafel."
+      ],
+      "hinge_event": "De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.",
+      "anomaly_under_a": "Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.",
+      "resolution_under_b": "Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.",
+      "role_remapping": [
+        "De gastheer uit Script A wordt de organisator van de inzameling.",
+        "De deelnemers die kosten verdelen worden anonieme gevers.",
+        "De gesprekspartner wordt de buur die hulp ontvangt.",
+        "De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.\\\",\\\"participants_and_roles\\\":[\\\"Nederlanders: inwoners die zich in alledaagse situaties gedragen volgens vertrouwde sociale normen en gewoonten.\\\",\\\"Bezoeker of buitenstaander: observeert het gedrag en probeert de cultuur te begrijpen.\\\",\\\"Gesprekspartner, collega, buur of gastheer: licht desgevraagd gebruiken, taal en omgangsvormen toe.\\\"],\\\"apparent_goal\\\":\\\"Begrijpen wat mensen doorgaans bedoelen met Nederlandse identiteit en volksaard, en hoe die zichtbaar wordt in het dagelijks contact.\\\",\\\"preconditions\\\":[\\\"Er is een alledaagse sociale context, zoals werk, een buurt, een bezoek, een winkel of een gezamenlijke maaltijd.\\\",\\\"De deelnemers spreken grotendeels dezelfde taal of kunnen hun bedoelingen duidelijk maken.\\\",\\\"Er bestaan gedeelde, herkenbare normen rond afspraak is afspraak, persoonlijke ruimte, gelijkwaardigheid en praktische communicatie.\\\",\\\"De buitenstaander verwacht dat culturele kenmerken in gedrag en gewoonten zichtbaar zijn.\\\"],\\\"expected_actions\\\":[\\\"Mensen maken kennis en communiceren relatief direct en informeel.\\\",\\\"Afspraken worden gepland, op tijd nagekomen en praktisch afgestemd.\\\",\\\"Men geeft een eigen mening zonder veel ceremonie, maar verwacht ook dat anderen dat kunnen verdragen.\\\",\\\"Kosten, taken en verantwoordelijkheden worden duidelijk verdeeld.\\\",\\\"Typische gewoonten of tradities worden uitgelegd als onderdeel van het dagelijks leven.\\\"],\\\"expected_outcome\\\":\\\"De bezoeker krijgt een herkenbaar, samenhangend beeld van een cultuur waarin directheid, nuchterheid, zelfstandigheid, overleg en praktische organisatie belangrijke waarden lijken.\\\",\\\"expected_propositions\\\":[\\\"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\\\",\\\"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\\\",\\\"Afspraken, punctualiteit en duidelijke planning worden serieus genomen.\\\",\\\"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\\\",\\\"De Nederlandse identiteit is niet voor iedereen hetzelfde, maar wordt vaak verbonden met taal, gewoonten, geschiedenis en alledaagse omgangsvormen.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over Nederlandse identiteit activeert de verwachting van een alledaagse ontmoeting waarin bekende nationale stereotypen en sociale gewoonten herkenbaar, serieus en praktisch zichtbaar worden.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een bezoeker denkt dat hij een gewone Nederlandse buurtbarbecue bijwoont, maar blijkt terecht te zijn gekomen bij een uiterst strikt georganiseerde algemene ledenvergadering van de straatvereniging.\\\",\\\"opposition_axis\\\":\\\"Informele gelijkwaardigheid versus formele procedure en hiërarchie.\\\",\\\"opposed_proposition\\\":\\\"Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.\\\",\\\"shared_anchor\\\":\\\"De buurtenkomst met koffie en een agenda.\\\",\\\"reading_a\\\":\\\"De bezoeker leest de koffie, de voornamen, de kring van stoelen en de losse opmerkingen als een informele, gelijkwaardige Nederlandse buurtbijeenkomst.\\\",\\\"reading_b\\\":\\\"Dezelfde elementen blijken middelen om alle aanwezige leden volgens een vaste verenigingsprocedure aan het woord te laten en besluiten formeel vast te leggen.\\\",\\\"roles_b\\\":[\\\"Voorzitter van de straatvereniging: leidt de vergadering en bewaakt de procedure.\\\",\\\"Secretaris: noteert moties, stemmen en besluiten.\\\",\\\"Leden/buurtbewoners: dienen voorstellen in en stemmen erover.\\\",\\\"Bezoeker: wordt aangezien voor een lid met stemrecht.\\\"],\\\"goal_b\\\":\\\"Een rechtsgeldig besluit nemen over de aanleg van een gezamenlijke fietsenstalling.\\\",\\\"role_remapping\\\":[\\\"De informele gastheer uit Script A wordt de voorzitter.\\\",\\\"De gesprekspartner of buur wordt de secretaris.\\\",\\\"De alledaagse aanwezigen worden stemgerechtigde leden.\\\",\\\"De observerende bezoeker wordt een onverwacht, maar administratief ingeschreven lid.\\\"],\\\"shared_cues\\\":[\\\"Koffie aan de keukentafel.\\\",\\\"Iedereen spreekt elkaar met de voornaam aan.\\\",\\\"Er wordt openlijk kritiek geuit.\\\",\\\"Er ligt een agenda op tafel.\\\",\\\"Kosten worden ter sprake gebracht.\\\"],\\\"switch_trigger\\\":\\\"De voorzitter vraagt de bezoeker zijn hand op te steken bij de stemming en telt zijn stem hardop mee.\\\",\\\"hinge_event\\\":\\\"Na een luchtige discussie haalt de voorzitter een stembus en een notulenboek tevoorschijn.\\\",\\\"anomaly_under_a\\\":\\\"Bij een gewone buurtbarbecue is een stembus met formele notulen ongepast en overdreven; de eerdere losse omgang suggereerde geen officiële besluitvorming.\\\",\\\"resolution_under_b\\\":\\\"Als ledenvergadering is de stembus precies nodig om een collectief besluit controleerbaar te nemen; de schijnbare informaliteit maakt de procedure toegankelijk voor de leden.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een bezoeker ziet Nederlanders in een kantoor open en direct met elkaar overleggen, maar ontdekt dat het gesprek een oefening is voor een diplomatieke onderhandeling waarin iedereen juist zorgvuldig gecodeerde taal moet gebruiken.\\\",\\\"opposition_axis\\\":\\\"Onverbloemde directheid versus strategische diplomatie.\\\",\\\"opposed_proposition\\\":\\\"Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.\\\",\\\"shared_anchor\\\":\\\"Het overleg rond een tafel over een gezamenlijk plan.\\\",\\\"reading_a\\\":\\\"De bezoeker hoort korte zinnen, kritische vragen en opmerkingen over geld als kenmerk van directe, praktische werkcommunicatie.\\\",\\\"reading_b\\\":\\\"De deelnemers gebruiken die ogenschijnlijk gewone opmerkingen als vooraf afgesproken diplomatieke signalen om posities te verkennen zonder een conflict openlijk te maken.\\\",\\\"roles_b\\\":[\\\"Onderhandelingsleider: bewaakt de buitenlandse belangen en de boodschap.\\\",\\\"Delegatieleden: testen standpunten met voorzichtige formuleringen.\\\",\\\"Tolk of beleidsadviseur: duidt de codetaal en noteert toezeggingen.\\\",\\\"Bezoeker: denkt een regulier teamoverleg bij te wonen.\\\"],\\\"goal_b\\\":\\\"Een internationaal akkoord voorbereiden zonder de andere delegatie publiekelijk te bruuskeren.\\\",\\\"role_remapping\\\":[\\\"De collega of gesprekspartner uit Script A wordt een delegatielid.\\\",\\\"De praktische organisator wordt de onderhandelingsleider.\\\",\\\"De buitenstaander blijft observator, maar mist aanvankelijk de diplomatieke context.\\\",\\\"De uitlegger van gewoonten wordt een tolk of beleidsadviseur.\\\"],\\\"shared_cues\\\":[\\\"Een vergadertafel.\\\",\\\"Een strakke planning.\\\",\\\"Kritische vragen over kosten.\\\",\\\"Korte, zakelijke antwoorden.\\\",\\\"Aantekeningen en actiepunten.\\\"],\\\"switch_trigger\\\":\\\"De tolk fluistert de bezoeker toe dat de zin 'dat nemen we mee' in dit overleg een beleefde afwijzing betekent.\\\",\\\"hinge_event\\\":\\\"Na een scherpe opmerking bedankt iedereen elkaar opvallend hartelijk en laat men de omstreden passage woordelijk in het verslag staan.\\\",\\\"anomaly_under_a\\\":\\\"In een direct kantooroverleg zou zo'n omslachtige, vriendelijke reactie na openlijke kritiek onlogisch zijn; men zou een standpunt helder bevestigen of verwerpen.\\\",\\\"resolution_under_b\\\":\\\"In diplomatieke voorbereiding voorkomt de vaste beleefdheidsformule gezichtsverlies en houdt zij onderhandelingsruimte open; de passage wordt juist bewaard als bewust dubbelzinnig signaal.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.\\\",\\\"opposition_axis\\\":\\\"Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.\\\",\\\"opposed_proposition\\\":\\\"Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.\\\",\\\"shared_anchor\\\":\\\"De gezamenlijke maaltijd waarvoor geld wordt verzameld.\\\",\\\"reading_a\\\":\\\"De bezoeker ziet een tikkieverzoek, een lijstje met boodschappen en precies verdeelde taken als een praktische afrekening van een gewoon etentje.\\\",\\\"reading_b\\\":\\\"Dezelfde betaalverzoeken en taaklijst blijken een dekmantel: de bijdragen worden samengevoegd en buiten medeweten van de ontvanger aan de buur geschonken.\\\",\\\"roles_b\\\":[\\\"Organiserende buur: coördineert de inzameling en bewaart het geheim.\\\",\\\"Genodigden: dragen geld of eten bij zonder de ontvanger te beschamen.\\\",\\\"Buurtbewoner in nood: denkt gast te zijn bij een gewoon diner.\\\",\\\"Bezoeker: interpreteert de voorbereiding aanvankelijk als kostenbeheersing.\\\"],\\\"goal_b\\\":\\\"Discreet financiële steun geven zonder dat de geholpen buur zich afhankelijk of tentoongesteld voelt.\\\",\\\"role_remapping\\\":[\\\"De gastheer uit Script A wordt de organisator van de inzameling.\\\",\\\"De deelnemers die kosten verdelen worden anonieme gevers.\\\",\\\"De gesprekspartner wordt de buur die hulp ontvangt.\\\",\\\"De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim.\\\"],\\\"shared_cues\\\":[\\\"Een boodschappenlijst.\\\",\\\"Een betaalverzoek op de telefoon.\\\",\\\"Taken voor koken en opruimen.\\\",\\\"Een gesprek over budget.\\\",\\\"Een gezamenlijke maaltijd aan tafel.\\\"],\\\"switch_trigger\\\":\\\"Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.\\\",\\\"hinge_event\\\":\\\"De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.\\\",\\\"anomaly_under_a\\\":\\\"Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.\\\",\\\"resolution_under_b\\\":\\\"Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een bezoeker denkt dat Nederlanders een strak geplande fietstocht precies volgens afspraak uitvoeren, maar de groep blijkt deelnemers te begeleiden in een improvisatie-oefening waarin men bewust route, tijd en bestemming loslaat.\\\",\\\"opposition_axis\\\":\\\"Punctualiteit en voorspelbare planning versus doelbewuste improvisatie.\\\",\\\"opposed_proposition\\\":\\\"Afspraken, punctualiteit en duidelijke planning worden serieus genomen.\\\",\\\"shared_anchor\\\":\\\"De fietstocht met een vertrektijd en een routekaart.\\\",\\\"reading_a\\\":\\\"De bezoeker leest de verzameltijd, de routekaart, de veiligheidsinstructies en de duidelijke taakverdeling als bewijs van een zorgvuldig geplande Nederlandse groepsactiviteit.\\\",\\\"reading_b\\\":\\\"Die ordelijke start is het kader van een improvisatieworkshop: deelnemers moeten later leren reageren op onverwachte aanwijzingen en gezamenlijk een nieuwe route verzinnen.\\\",\\\"roles_b\\\":[\\\"Workshopbegeleider: zet improvisatieopdrachten uit en observeert reacties.\\\",\\\"Deelnemers: verlaten geleidelijk het vaste reisschema.\\\",\\\"Fietsverhuurder of veiligheidsbegeleider: verzorgt slechts de praktische start.\\\",\\\"Bezoeker: verwacht een gewone, punctuele excursie.\\\"],\\\"goal_b\\\":\\\"Deelnemers laten oefenen met flexibiliteit, vertrouwen en gezamenlijk improviseren.\\\",\\\"role_remapping\\\":[\\\"De organisator uit Script A wordt de workshopbegeleider.\\\",\\\"De reizigers of buren worden deelnemers aan een oefening.\\\",\\\"De praktische uitlegger wordt de veiligheidsbegeleider.\\\",\\\"De bezoeker blijft waarnemer, maar wordt later zelf tot deelnemer gemaakt.\\\"],\\\"shared_cues\\\":[\\\"Een afgesproken vertrektijd.\\\",\\\"Fietsen op een rij.\\\",\\\"Een routekaart.\\\",\\\"Veiligheidsinstructies.\\\",\\\"Een lijst met deelnemers.\\\"],\\\"switch_trigger\\\":\\\"Precies op het geplande vertrekmoment scheurt de begeleider de routekaart doormidden en zegt hij dat niemand vandaag op tijd mag aankomen.\\\",\\\"hinge_event\\\":\\\"De begeleider laat de groep bij het eerste kruispunt zonder bestemming wachten en verbiedt het gebruik van navigatie.\\\",\\\"anomaly_under_a\\\":\\\"Voor een normale geplande fietstocht is het absurd om de route weg te nemen en navigatie te verbieden; daardoor kan de afspraak niet efficiënt worden nagekomen.\\\",\\\"resolution_under_b\\\":\\\"Binnen de improvisatie-oefening dwingt dit verbod de deelnemers om onzekerheid te verdragen, samen keuzes te maken en het voorafgaande planningsgedrag bewust los te laten.\\\"}] }\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén scène met koffie, voornamen, open kritiek, een agenda en kostenbespreking geloofwaardig zowel neer als informele buurtontmoeting als ledenvergadering. De dominante tegenstelling is informeel-gelijkwaardig tegenover formeel-procedureel; hoewel voornamen en gelijkheid ook binnen een vereniging kunnen bestaan, veranderen stemming, notulen en voorzitterschap de lokale functie van de ontmoeting duidelijk. De agenda houdt de vergaderlezing al latent beschikbaar, maar de losse sociale signalen laten aanvankelijk de informele lezing domineren. Stembus en notulen zijn onder A overdreven, maar onder B noodzakelijk voor besluitvorming. De formele procedure verhindert een vrijblijvende barbecuefunctie en maakt het rechtsgeldige verenigingsdoel mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Hetzelfde zakelijke overleg met korte vragen, kosten, planning en actiepunten kan zowel direct werkoverleg als diplomatieke voorbereiding voorstellen. De tegenstelling tussen onverbloemde directheid en strategisch gecodeerde diplomatie is lokaal incompatibel en overheerst de kandidaat. De tweede lezing is sociaal herkenbaar: diplomatieke formuleringen kunnen beleefd, dubbelzinnig en gezichtsreddend zijn. De normale kantoorlezing ligt aanvankelijk voor de hand, terwijl de opvallend hartelijke reactie en het woordelijk bewaren van de passage de diplomatieke lezing al als mogelijkheid openhouden. Wat onder A omslachtig is, wordt onder B functioneel als signaal en onderhandelingsruimte. De codetaal verhindert volledige openheid, maar maakt het diplomatieke doel mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een maaltijd met boodschappenlijst, betaalverzoek, taakverdeling en budgetgesprek kan realiseerbaar zowel een praktische kostenafrekening als een afgeschermde inzameling zijn. De dominante oppositie is individuele, overzichtelijke afrekening tegenover anonieme solidariteit. De geheime hulpactie is een herkenbare sociale praktijk en blijft, doordat geld wordt verzameld en taken worden gecoördineerd, als latente alternatieve functie mogelijk, al domineert eerst de gewone Tikkie-lezing. Het niet accepteren van betaling en het geven van een envelop is onder A een breuk met de afrekening, maar onder B precies de bedoelde hulp. Daardoor krijgen de eerdere betaalcues achteraf de functie van dekmantel. De afwijking blokkeert de individuele kostenverdeling en maakt discrete steun mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":false,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde vertrektijd, routekaart, fietsen, veiligheidsinstructies en deelnemerslijst kunnen zowel de start van een geplande tocht als het gecontroleerde begin van een improvisatieworkshop vormen. Planning tegenover doelbewuste improvisatie is één duidelijke en lokaal onverenigbare as. Een improvisatieworkshop is herkenbaar, en de gewone geplande fietstocht domineert aanvankelijk. De tweede lezing is vóór de trigger echter niet expliciet latent gemaakt: de gedeelde cues wijzen zonder aanvullende workshopaanwijzing vooral op planning. Het verscheuren van de kaart en het navigatieverbod zijn onder A absurd, maar onder B doelgerichte oefenmiddelen. Zij herdefiniëren de eerdere planning als kader voor het later loslaten ervan en blokkeren de geplande tocht terwijl zij improvisatie mogelijk maken.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B3\\\",\\\"rationale\\\":\\\"B3 biedt de scherpste en meest thematisch specifieke oppositie: de herkenbare Nederlandse cues van een tikkieverzoek, boodschappenlijst, taakverdeling en budgetgesprek ondersteunen eerst overtuigend het beeld van nuchtere, overzichtelijke kostenverdeling. De envelop voor de buur vormt vervolgens een heldere omslag die al diezelfde cues retrospectief herduidt als discrete, anonieme solidariteit. Daardoor blijven beide lezingen compatibel met dezelfde setting, terwijl de tweede lezing niet slechts contrasteert maar verborgen menselijkheid en zorg onder de praktische organisatie blootlegt. De payoff is compact, emotioneel en goed voorbereid zonder Script A onnodig te verlaten.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik at bij een Nederlands gezin; iedereen had een taak, de boodschappenlijst lag klaar en na afloop kwam er keurig een betaalverzoek. De buurman pakte zijn telefoon, maar de gastheer gaf hem een envelop: „Jij hoeft niet te betalen, jij bent waarvoor we spaarden.”\\\",\\\"angle\\\":\\\"Een strak verdeeld etentje kantelt in stille buurthulp.\\\"},{\\\"text\\\":\\\"Een buitenlander zei: „Nederlanders delen zelfs het afwasmiddel eerlijk.” Bij het buurtetentje kreeg iedereen een Tikkie, behalve de man die steeds over zijn budget begon; hij kreeg de opbrengst mee in een boodschappentas.\\\",\\\"angle\\\":\\\"Directe kostendeling blijkt een gecamoufleerde inzameling.\\\"},{\\\"text\\\":\\\"Bij ons aan tafel verdeelden we koken, opruimen en de rekening zo precies dat ik dacht: typisch Nederlands. Tot de buurvrouw haar betaalverzoek wilde openen en mijn vader zei: „Niet klikken, daar staat je huur in.”\\\",\\\"angle\\\":\\\"De bekende betaalapp wordt plotseling een hulpmiddel voor anonieme solidariteit.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een nauwkeurig georganiseerd Nederlands etentje waarin taken, boodschappen en kosten netjes worden verdeeld.\\\",\\\"realized_script_b\\\":\\\"Het etentje en de betaalverzoeken blijken een verborgen inzameling voor de buurman die financiële hulp nodig heeft.\\\",\\\"realized_opposition_axis\\\":\\\"Individuele, overzichtelijke kostenverdeling versus discrete gezamenlijke solidariteit.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet activeert een strak verdeeld etentje via taken, boodschappenlijst en betaalverzoek. De envelop voor de buurman veroorzaakt de bedoelde omslag naar een geheime inzameling en herinterpreteert de betaalcues.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant realiseert rechtstreeks de geplande kostenverdeling-naar-buurthulpomkering; de envelop is een duidelijke, late punch die het eerdere Tikkie en de organisatie herkadert.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een buitenlander ziet een buurtetentje waarin Nederlanders zelfs kleine huishoudelijke kosten en de maaltijd uiterst eerlijk via Tikkies verdelen.\\\",\\\"realized_script_b\\\":\\\"De Tikkies zijn een gecamoufleerde collecte; de man met geldproblemen ontvangt de gezamenlijke opbrengst.\\\",\\\"realized_opposition_axis\\\":\\\"Strikte individuele afrekening versus gezamenlijke financiële steun aan iemand in nood.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst behoudt de beoogde A-lezing van precieze kostendeling en schakelt bij de uitzondering voor de man met budgetproblemen naar een verborgen inzameling. Niet alle geplande gedeelde cues komen voor, maar Tikkies, het etentje en het budgetsignaal dragen de omslag functioneel.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De generieke stereotype-opening leidt naar de geplande etentjessituatie; de uitzondering op het Tikkie en de boodschappentas leveren de bedoelde onthulling van stille financiële hulp.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Aan een Nederlands aandoende tafel worden koken, opruimen en de rekening precies verdeeld, waardoor een betaalverzoek als normale afrekening geldt.\\\",\\\"realized_script_b\\\":\\\"De buurvrouw hoeft niet bij te dragen: de groep blijkt haar huur te willen betalen.\\\",\\\"realized_opposition_axis\\\":\\\"Precieze verdeling van individuele uitgaven versus gezamenlijke financiële hulp.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De gedeelde etentjescues en het betaalverzoek vestigen de afrekenlezing, waarna de huur-onthulling de ontvanger in een geholpen buur remapt. De formulering over wat er 'in' een betaalverzoek staat is technisch en semantisch wat onhelder, maar de bedoelde omslag blijft herkenbaar.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant volgt de beoogde omslag van nauwkeurige rekeningverdeling naar buurthulp. De punch is duidelijk als intentie, al is de Tikkie-logica minder natuurlijk uitgewerkt dan de envelopoplossing uit het plan.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengte-eis en realiseren de vereiste scriptomkering. V1 bouwt de Nederlandse precisie sterker op met taken, boodschappenlijst en betaalverzoek; de envelop herkadert die signalen helder als discrete buurthulp. V2 is bondiger, maar de stereotypische opening en boodschappentas geven minder rijke retrospectieve herinterpretatie.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 heeft de natuurlijkste gesproken opbouw en de duidelijkste switch: de envelop maakt onmiddellijk duidelijk dat de groep voor de buurman heeft gespaard. V3 volgt dezelfde vereiste tegenstelling, maar de formulering dat de huur 'in' een betaalverzoek staat is semantisch en praktisch minder helder, waardoor de punch verzwakt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide teksten halen de lengte-eis en de beoogde omslag van afrekenen naar hulp. V3 sluit trouwer aan op het vereiste script met de precieze verdeling van taken én rekening, zodat het betaalverzoek beter retrospectief wordt herlezen. V2 heeft een helderder slotbeeld, maar een minder uitgewerkte opzet.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste totaalvariant: hij realiseert de vereiste SO-omkering volledig, zet de Nederlandse kosten- en taakverdeling concreet neer en levert met de envelop een heldere, performabele onthulling van stille solidariteit.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een bezoeker denkt dat hij een gewone Nederlandse buurtbarbecue bijwoont, maar blijkt terecht te zijn gekomen bij een uiterst strikt georganiseerde algemene ledenvergadering van de straatvereniging.",
+        "candidate_id": "B1",
+        "opposition_axis": "Informele gelijkwaardigheid versus formele procedure en hiërarchie.",
+        "opposed_expectation": "Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.",
+        "roles_b": [
+          "Voorzitter van de straatvereniging: leidt de vergadering en bewaakt de procedure.",
+          "Secretaris: noteert moties, stemmen en besluiten.",
+          "Leden/buurtbewoners: dienen voorstellen in en stemmen erover.",
+          "Bezoeker: wordt aangezien voor een lid met stemrecht."
+        ],
+        "goal_b": "Een rechtsgeldig besluit nemen over de aanleg van een gezamenlijke fietsenstalling.",
+        "role_remapping": [
+          "De informele gastheer uit Script A wordt de voorzitter.",
+          "De gesprekspartner of buur wordt de secretaris.",
+          "De alledaagse aanwezigen worden stemgerechtigde leden.",
+          "De observerende bezoeker wordt een onverwacht, maar administratief ingeschreven lid."
+        ],
+        "shared_cues": [
+          "Koffie aan de keukentafel.",
+          "Iedereen spreekt elkaar met de voornaam aan.",
+          "Er wordt openlijk kritiek geuit.",
+          "Er ligt een agenda op tafel.",
+          "Kosten worden ter sprake gebracht."
+        ],
+        "switch_trigger": "De voorzitter vraagt de bezoeker zijn hand op te steken bij de stemming en telt zijn stem hardop mee.",
+        "hinge_event": "Na een luchtige discussie haalt de voorzitter een stembus en een notulenboek tevoorschijn.",
+        "anomaly_under_a": "Bij een gewone buurtbarbecue is een stembus met formele notulen ongepast en overdreven; de eerdere losse omgang suggereerde geen officiële besluitvorming.",
+        "resolution_under_b": "Als ledenvergadering is de stembus precies nodig om een collectief besluit controleerbaar te nemen; de schijnbare informaliteit maakt de procedure toegankelijk voor de leden.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bezoeker ziet Nederlanders in een kantoor open en direct met elkaar overleggen, maar ontdekt dat het gesprek een oefening is voor een diplomatieke onderhandeling waarin iedereen juist zorgvuldig gecodeerde taal moet gebruiken.",
+        "candidate_id": "B2",
+        "opposition_axis": "Onverbloemde directheid versus strategische diplomatie.",
+        "opposed_expectation": "Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.",
+        "roles_b": [
+          "Onderhandelingsleider: bewaakt de buitenlandse belangen en de boodschap.",
+          "Delegatieleden: testen standpunten met voorzichtige formuleringen.",
+          "Tolk of beleidsadviseur: duidt de codetaal en noteert toezeggingen.",
+          "Bezoeker: denkt een regulier teamoverleg bij te wonen."
+        ],
+        "goal_b": "Een internationaal akkoord voorbereiden zonder de andere delegatie publiekelijk te bruuskeren.",
+        "role_remapping": [
+          "De collega of gesprekspartner uit Script A wordt een delegatielid.",
+          "De praktische organisator wordt de onderhandelingsleider.",
+          "De buitenstaander blijft observator, maar mist aanvankelijk de diplomatieke context.",
+          "De uitlegger van gewoonten wordt een tolk of beleidsadviseur."
+        ],
+        "shared_cues": [
+          "Een vergadertafel.",
+          "Een strakke planning.",
+          "Kritische vragen over kosten.",
+          "Korte, zakelijke antwoorden.",
+          "Aantekeningen en actiepunten."
+        ],
+        "switch_trigger": "De tolk fluistert de bezoeker toe dat de zin 'dat nemen we mee' in dit overleg een beleefde afwijzing betekent.",
+        "hinge_event": "Na een scherpe opmerking bedankt iedereen elkaar opvallend hartelijk en laat men de omstreden passage woordelijk in het verslag staan.",
+        "anomaly_under_a": "In een direct kantooroverleg zou zo'n omslachtige, vriendelijke reactie na openlijke kritiek onlogisch zijn; men zou een standpunt helder bevestigen of verwerpen.",
+        "resolution_under_b": "In diplomatieke voorbereiding voorkomt de vaste beleefdheidsformule gezichtsverlies en houdt zij onderhandelingsruimte open; de passage wordt juist bewaard als bewust dubbelzinnig signaal.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.",
+        "candidate_id": "B3",
+        "opposition_axis": "Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.",
+        "opposed_expectation": "Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.",
+        "roles_b": [
+          "Organiserende buur: coördineert de inzameling en bewaart het geheim.",
+          "Genodigden: dragen geld of eten bij zonder de ontvanger te beschamen.",
+          "Buurtbewoner in nood: denkt gast te zijn bij een gewoon diner.",
+          "Bezoeker: interpreteert de voorbereiding aanvankelijk als kostenbeheersing."
+        ],
+        "goal_b": "Discreet financiële steun geven zonder dat de geholpen buur zich afhankelijk of tentoongesteld voelt.",
+        "role_remapping": [
+          "De gastheer uit Script A wordt de organisator van de inzameling.",
+          "De deelnemers die kosten verdelen worden anonieme gevers.",
+          "De gesprekspartner wordt de buur die hulp ontvangt.",
+          "De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim."
+        ],
+        "shared_cues": [
+          "Een boodschappenlijst.",
+          "Een betaalverzoek op de telefoon.",
+          "Taken voor koken en opruimen.",
+          "Een gesprek over budget.",
+          "Een gezamenlijke maaltijd aan tafel."
+        ],
+        "switch_trigger": "Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.",
+        "hinge_event": "De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.",
+        "anomaly_under_a": "Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.",
+        "resolution_under_b": "Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bezoeker denkt dat Nederlanders een strak geplande fietstocht precies volgens afspraak uitvoeren, maar de groep blijkt deelnemers te begeleiden in een improvisatie-oefening waarin men bewust route, tijd en bestemming loslaat.",
+        "candidate_id": "B4",
+        "opposition_axis": "Punctualiteit en voorspelbare planning versus doelbewuste improvisatie.",
+        "opposed_expectation": "Afspraken, punctualiteit en duidelijke planning worden serieus genomen.",
+        "roles_b": [
+          "Workshopbegeleider: zet improvisatieopdrachten uit en observeert reacties.",
+          "Deelnemers: verlaten geleidelijk het vaste reisschema.",
+          "Fietsverhuurder of veiligheidsbegeleider: verzorgt slechts de praktische start.",
+          "Bezoeker: verwacht een gewone, punctuele excursie."
+        ],
+        "goal_b": "Deelnemers laten oefenen met flexibiliteit, vertrouwen en gezamenlijk improviseren.",
+        "role_remapping": [
+          "De organisator uit Script A wordt de workshopbegeleider.",
+          "De reizigers of buren worden deelnemers aan een oefening.",
+          "De praktische uitlegger wordt de veiligheidsbegeleider.",
+          "De bezoeker blijft waarnemer, maar wordt later zelf tot deelnemer gemaakt."
+        ],
+        "shared_cues": [
+          "Een afgesproken vertrektijd.",
+          "Fietsen op een rij.",
+          "Een routekaart.",
+          "Veiligheidsinstructies.",
+          "Een lijst met deelnemers."
+        ],
+        "switch_trigger": "Precies op het geplande vertrekmoment scheurt de begeleider de routekaart doormidden en zegt hij dat niemand vandaag op tijd mag aankomen.",
+        "hinge_event": "De begeleider laat de groep bij het eerste kruispunt zonder bestemming wachten en verbiedt het gebruik van navigatie.",
+        "anomaly_under_a": "Voor een normale geplande fietstocht is het absurd om de route weg te nemen en navigatie te verbieden; daardoor kan de afspraak niet efficiënt worden nagekomen.",
+        "resolution_under_b": "Binnen de improvisatie-oefening dwingt dit verbod de deelnemers om onzekerheid te verdragen, samen keuzes te maken en het voorafgaande planningsgedrag bewust los te laten.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B3 biedt de scherpste en meest thematisch specifieke oppositie: de herkenbare Nederlandse cues van een tikkieverzoek, boodschappenlijst, taakverdeling en budgetgesprek ondersteunen eerst overtuigend het beeld van nuchtere, overzichtelijke kostenverdeling. De envelop voor de buur vormt vervolgens een heldere omslag die al diezelfde cues retrospectief herduidt als discrete, anonieme solidariteit. Daardoor blijven beide lezingen compatibel met dezelfde setting, terwijl de tweede lezing niet slechts contrasteert maar verborgen menselijkheid en zorg onder de praktische organisatie blootlegt. De payoff is compact, emotioneel en goed voorbereid zonder Script A onnodig te verlaten.",
+    "variants": [
+      {
+        "text": "Ik at bij een Nederlands gezin; iedereen had een taak, de boodschappenlijst lag klaar en na afloop kwam er keurig een betaalverzoek. De buurman pakte zijn telefoon, maar de gastheer gaf hem een envelop: „Jij hoeft niet te betalen, jij bent waarvoor we spaarden.”",
+        "angle": "Een strak verdeeld etentje kantelt in stille buurthulp."
+      },
+      {
+        "text": "Een buitenlander zei: „Nederlanders delen zelfs het afwasmiddel eerlijk.” Bij het buurtetentje kreeg iedereen een Tikkie, behalve de man die steeds over zijn budget begon; hij kreeg de opbrengst mee in een boodschappentas.",
+        "angle": "Directe kostendeling blijkt een gecamoufleerde inzameling."
+      },
+      {
+        "text": "Bij ons aan tafel verdeelden we koken, opruimen en de rekening zo precies dat ik dacht: typisch Nederlands. Tot de buurvrouw haar betaalverzoek wilde openen en mijn vader zei: „Niet klikken, daar staat je huur in.”",
+        "angle": "De bekende betaalapp wordt plotseling een hulpmiddel voor anonieme solidariteit."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 13532,
+      "output_tokens": 7949,
+      "total_tokens": 21481
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een bezoeker ontmoet Nederlanders in het dagelijks leven en vormt uit hun taal, gewoonten en omgangsvormen een beeld van de Nederlandse identiteit: nuchter, direct, gelijkwaardig en praktisch georganiseerd.",
+          "participants_and_roles": [
+            "Nederlanders: inwoners die zich in alledaagse situaties gedragen volgens vertrouwde sociale normen en gewoonten.",
+            "Bezoeker of buitenstaander: observeert het gedrag en probeert de cultuur te begrijpen.",
+            "Gesprekspartner, collega, buur of gastheer: licht desgevraagd gebruiken, taal en omgangsvormen toe."
+          ],
+          "apparent_goal": "Begrijpen wat mensen doorgaans bedoelen met Nederlandse identiteit en volksaard, en hoe die zichtbaar wordt in het dagelijks contact.",
+          "preconditions": [
+            "Er is een alledaagse sociale context, zoals werk, een buurt, een bezoek, een winkel of een gezamenlijke maaltijd.",
+            "De deelnemers spreken grotendeels dezelfde taal of kunnen hun bedoelingen duidelijk maken.",
+            "Er bestaan gedeelde, herkenbare normen rond afspraak is afspraak, persoonlijke ruimte, gelijkwaardigheid en praktische communicatie.",
+            "De buitenstaander verwacht dat culturele kenmerken in gedrag en gewoonten zichtbaar zijn."
+          ],
+          "expected_actions": [
+            "Mensen maken kennis en communiceren relatief direct en informeel.",
+            "Afspraken worden gepland, op tijd nagekomen en praktisch afgestemd.",
+            "Men geeft een eigen mening zonder veel ceremonie, maar verwacht ook dat anderen dat kunnen verdragen.",
+            "Kosten, taken en verantwoordelijkheden worden duidelijk verdeeld.",
+            "Typische gewoonten of tradities worden uitgelegd als onderdeel van het dagelijks leven."
+          ],
+          "expected_outcome": "De bezoeker krijgt een herkenbaar, samenhangend beeld van een cultuur waarin directheid, nuchterheid, zelfstandigheid, overleg en praktische organisatie belangrijke waarden lijken.",
+          "expected_propositions": [
+            "Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.",
+            "Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.",
+            "Afspraken, punctualiteit en duidelijke planning worden serieus genomen.",
+            "Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.",
+            "De Nederlandse identiteit is niet voor iedereen hetzelfde, maar wordt vaak verbonden met taal, gewoonten, geschiedenis en alledaagse omgangsvormen."
+          ],
+          "audience_expectation": "Een opzet over Nederlandse identiteit activeert de verwachting van een alledaagse ontmoeting waarin bekende nationale stereotypen en sociale gewoonten herkenbaar, serieus en praktisch zichtbaar worden."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een bezoeker denkt dat hij een gewone Nederlandse buurtbarbecue bijwoont, maar blijkt terecht te zijn gekomen bij een uiterst strikt georganiseerde algemene ledenvergadering van de straatvereniging.",
+            "opposition_axis": "Informele gelijkwaardigheid versus formele procedure en hiërarchie.",
+            "opposed_proposition": "Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.",
+            "shared_anchor": "De buurtenkomst met koffie en een agenda.",
+            "reading_a": "De bezoeker leest de koffie, de voornamen, de kring van stoelen en de losse opmerkingen als een informele, gelijkwaardige Nederlandse buurtbijeenkomst.",
+            "reading_b": "Dezelfde elementen blijken middelen om alle aanwezige leden volgens een vaste verenigingsprocedure aan het woord te laten en besluiten formeel vast te leggen.",
+            "roles_b": [
+              "Voorzitter van de straatvereniging: leidt de vergadering en bewaakt de procedure.",
+              "Secretaris: noteert moties, stemmen en besluiten.",
+              "Leden/buurtbewoners: dienen voorstellen in en stemmen erover.",
+              "Bezoeker: wordt aangezien voor een lid met stemrecht."
+            ],
+            "goal_b": "Een rechtsgeldig besluit nemen over de aanleg van een gezamenlijke fietsenstalling.",
+            "role_remapping": [
+              "De informele gastheer uit Script A wordt de voorzitter.",
+              "De gesprekspartner of buur wordt de secretaris.",
+              "De alledaagse aanwezigen worden stemgerechtigde leden.",
+              "De observerende bezoeker wordt een onverwacht, maar administratief ingeschreven lid."
+            ],
+            "shared_cues": [
+              "Koffie aan de keukentafel.",
+              "Iedereen spreekt elkaar met de voornaam aan.",
+              "Er wordt openlijk kritiek geuit.",
+              "Er ligt een agenda op tafel.",
+              "Kosten worden ter sprake gebracht."
+            ],
+            "switch_trigger": "De voorzitter vraagt de bezoeker zijn hand op te steken bij de stemming en telt zijn stem hardop mee.",
+            "hinge_event": "Na een luchtige discussie haalt de voorzitter een stembus en een notulenboek tevoorschijn.",
+            "anomaly_under_a": "Bij een gewone buurtbarbecue is een stembus met formele notulen ongepast en overdreven; de eerdere losse omgang suggereerde geen officiële besluitvorming.",
+            "resolution_under_b": "Als ledenvergadering is de stembus precies nodig om een collectief besluit controleerbaar te nemen; de schijnbare informaliteit maakt de procedure toegankelijk voor de leden."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een bezoeker ziet Nederlanders in een kantoor open en direct met elkaar overleggen, maar ontdekt dat het gesprek een oefening is voor een diplomatieke onderhandeling waarin iedereen juist zorgvuldig gecodeerde taal moet gebruiken.",
+            "opposition_axis": "Onverbloemde directheid versus strategische diplomatie.",
+            "opposed_proposition": "Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.",
+            "shared_anchor": "Het overleg rond een tafel over een gezamenlijk plan.",
+            "reading_a": "De bezoeker hoort korte zinnen, kritische vragen en opmerkingen over geld als kenmerk van directe, praktische werkcommunicatie.",
+            "reading_b": "De deelnemers gebruiken die ogenschijnlijk gewone opmerkingen als vooraf afgesproken diplomatieke signalen om posities te verkennen zonder een conflict openlijk te maken.",
+            "roles_b": [
+              "Onderhandelingsleider: bewaakt de buitenlandse belangen en de boodschap.",
+              "Delegatieleden: testen standpunten met voorzichtige formuleringen.",
+              "Tolk of beleidsadviseur: duidt de codetaal en noteert toezeggingen.",
+              "Bezoeker: denkt een regulier teamoverleg bij te wonen."
+            ],
+            "goal_b": "Een internationaal akkoord voorbereiden zonder de andere delegatie publiekelijk te bruuskeren.",
+            "role_remapping": [
+              "De collega of gesprekspartner uit Script A wordt een delegatielid.",
+              "De praktische organisator wordt de onderhandelingsleider.",
+              "De buitenstaander blijft observator, maar mist aanvankelijk de diplomatieke context.",
+              "De uitlegger van gewoonten wordt een tolk of beleidsadviseur."
+            ],
+            "shared_cues": [
+              "Een vergadertafel.",
+              "Een strakke planning.",
+              "Kritische vragen over kosten.",
+              "Korte, zakelijke antwoorden.",
+              "Aantekeningen en actiepunten."
+            ],
+            "switch_trigger": "De tolk fluistert de bezoeker toe dat de zin 'dat nemen we mee' in dit overleg een beleefde afwijzing betekent.",
+            "hinge_event": "Na een scherpe opmerking bedankt iedereen elkaar opvallend hartelijk en laat men de omstreden passage woordelijk in het verslag staan.",
+            "anomaly_under_a": "In een direct kantooroverleg zou zo'n omslachtige, vriendelijke reactie na openlijke kritiek onlogisch zijn; men zou een standpunt helder bevestigen of verwerpen.",
+            "resolution_under_b": "In diplomatieke voorbereiding voorkomt de vaste beleefdheidsformule gezichtsverlies en houdt zij onderhandelingsruimte open; de passage wordt juist bewaard als bewust dubbelzinnig signaal."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.",
+            "opposition_axis": "Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.",
+            "opposed_proposition": "Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.",
+            "shared_anchor": "De gezamenlijke maaltijd waarvoor geld wordt verzameld.",
+            "reading_a": "De bezoeker ziet een tikkieverzoek, een lijstje met boodschappen en precies verdeelde taken als een praktische afrekening van een gewoon etentje.",
+            "reading_b": "Dezelfde betaalverzoeken en taaklijst blijken een dekmantel: de bijdragen worden samengevoegd en buiten medeweten van de ontvanger aan de buur geschonken.",
+            "roles_b": [
+              "Organiserende buur: coördineert de inzameling en bewaart het geheim.",
+              "Genodigden: dragen geld of eten bij zonder de ontvanger te beschamen.",
+              "Buurtbewoner in nood: denkt gast te zijn bij een gewoon diner.",
+              "Bezoeker: interpreteert de voorbereiding aanvankelijk als kostenbeheersing."
+            ],
+            "goal_b": "Discreet financiële steun geven zonder dat de geholpen buur zich afhankelijk of tentoongesteld voelt.",
+            "role_remapping": [
+              "De gastheer uit Script A wordt de organisator van de inzameling.",
+              "De deelnemers die kosten verdelen worden anonieme gevers.",
+              "De gesprekspartner wordt de buur die hulp ontvangt.",
+              "De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim."
+            ],
+            "shared_cues": [
+              "Een boodschappenlijst.",
+              "Een betaalverzoek op de telefoon.",
+              "Taken voor koken en opruimen.",
+              "Een gesprek over budget.",
+              "Een gezamenlijke maaltijd aan tafel."
+            ],
+            "switch_trigger": "Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.",
+            "hinge_event": "De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.",
+            "anomaly_under_a": "Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.",
+            "resolution_under_b": "Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een bezoeker denkt dat Nederlanders een strak geplande fietstocht precies volgens afspraak uitvoeren, maar de groep blijkt deelnemers te begeleiden in een improvisatie-oefening waarin men bewust route, tijd en bestemming loslaat.",
+            "opposition_axis": "Punctualiteit en voorspelbare planning versus doelbewuste improvisatie.",
+            "opposed_proposition": "Afspraken, punctualiteit en duidelijke planning worden serieus genomen.",
+            "shared_anchor": "De fietstocht met een vertrektijd en een routekaart.",
+            "reading_a": "De bezoeker leest de verzameltijd, de routekaart, de veiligheidsinstructies en de duidelijke taakverdeling als bewijs van een zorgvuldig geplande Nederlandse groepsactiviteit.",
+            "reading_b": "Die ordelijke start is het kader van een improvisatieworkshop: deelnemers moeten later leren reageren op onverwachte aanwijzingen en gezamenlijk een nieuwe route verzinnen.",
+            "roles_b": [
+              "Workshopbegeleider: zet improvisatieopdrachten uit en observeert reacties.",
+              "Deelnemers: verlaten geleidelijk het vaste reisschema.",
+              "Fietsverhuurder of veiligheidsbegeleider: verzorgt slechts de praktische start.",
+              "Bezoeker: verwacht een gewone, punctuele excursie."
+            ],
+            "goal_b": "Deelnemers laten oefenen met flexibiliteit, vertrouwen en gezamenlijk improviseren.",
+            "role_remapping": [
+              "De organisator uit Script A wordt de workshopbegeleider.",
+              "De reizigers of buren worden deelnemers aan een oefening.",
+              "De praktische uitlegger wordt de veiligheidsbegeleider.",
+              "De bezoeker blijft waarnemer, maar wordt later zelf tot deelnemer gemaakt."
+            ],
+            "shared_cues": [
+              "Een afgesproken vertrektijd.",
+              "Fietsen op een rij.",
+              "Een routekaart.",
+              "Veiligheidsinstructies.",
+              "Een lijst met deelnemers."
+            ],
+            "switch_trigger": "Precies op het geplande vertrekmoment scheurt de begeleider de routekaart doormidden en zegt hij dat niemand vandaag op tijd mag aankomen.",
+            "hinge_event": "De begeleider laat de groep bij het eerste kruispunt zonder bestemming wachten en verbiedt het gebruik van navigatie.",
+            "anomaly_under_a": "Voor een normale geplande fietstocht is het absurd om de route weg te nemen en navigatie te verbieden; daardoor kan de afspraak niet efficiënt worden nagekomen.",
+            "resolution_under_b": "Binnen de improvisatie-oefening dwingt dit verbod de deelnemers om onzekerheid te verdragen, samen keuzes te maken en het voorafgaande planningsgedrag bewust los te laten."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een bezoeker denkt dat hij een gewone Nederlandse buurtbarbecue bijwoont, maar blijkt terecht te zijn gekomen bij een uiterst strikt georganiseerde algemene ledenvergadering van de straatvereniging.",
+              "opposition_axis": "Informele gelijkwaardigheid versus formele procedure en hiërarchie.",
+              "opposed_proposition": "Gelijkheid en een informele omgangsvorm zijn belangrijker dan zichtbare hiërarchie.",
+              "shared_anchor": "De buurtenkomst met koffie en een agenda.",
+              "reading_a": "De bezoeker leest de koffie, de voornamen, de kring van stoelen en de losse opmerkingen als een informele, gelijkwaardige Nederlandse buurtbijeenkomst.",
+              "reading_b": "Dezelfde elementen blijken middelen om alle aanwezige leden volgens een vaste verenigingsprocedure aan het woord te laten en besluiten formeel vast te leggen.",
+              "roles_b": [
+                "Voorzitter van de straatvereniging: leidt de vergadering en bewaakt de procedure.",
+                "Secretaris: noteert moties, stemmen en besluiten.",
+                "Leden/buurtbewoners: dienen voorstellen in en stemmen erover.",
+                "Bezoeker: wordt aangezien voor een lid met stemrecht."
+              ],
+              "goal_b": "Een rechtsgeldig besluit nemen over de aanleg van een gezamenlijke fietsenstalling.",
+              "role_remapping": [
+                "De informele gastheer uit Script A wordt de voorzitter.",
+                "De gesprekspartner of buur wordt de secretaris.",
+                "De alledaagse aanwezigen worden stemgerechtigde leden.",
+                "De observerende bezoeker wordt een onverwacht, maar administratief ingeschreven lid."
+              ],
+              "shared_cues": [
+                "Koffie aan de keukentafel.",
+                "Iedereen spreekt elkaar met de voornaam aan.",
+                "Er wordt openlijk kritiek geuit.",
+                "Er ligt een agenda op tafel.",
+                "Kosten worden ter sprake gebracht."
+              ],
+              "switch_trigger": "De voorzitter vraagt de bezoeker zijn hand op te steken bij de stemming en telt zijn stem hardop mee.",
+              "hinge_event": "Na een luchtige discussie haalt de voorzitter een stembus en een notulenboek tevoorschijn.",
+              "anomaly_under_a": "Bij een gewone buurtbarbecue is een stembus met formele notulen ongepast en overdreven; de eerdere losse omgang suggereerde geen officiële besluitvorming.",
+              "resolution_under_b": "Als ledenvergadering is de stembus precies nodig om een collectief besluit controleerbaar te nemen; de schijnbare informaliteit maakt de procedure toegankelijk voor de leden."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een bezoeker ziet Nederlanders in een kantoor open en direct met elkaar overleggen, maar ontdekt dat het gesprek een oefening is voor een diplomatieke onderhandeling waarin iedereen juist zorgvuldig gecodeerde taal moet gebruiken.",
+              "opposition_axis": "Onverbloemde directheid versus strategische diplomatie.",
+              "opposed_proposition": "Nederlanders zeggen doorgaans vrij rechtstreeks wat zij denken.",
+              "shared_anchor": "Het overleg rond een tafel over een gezamenlijk plan.",
+              "reading_a": "De bezoeker hoort korte zinnen, kritische vragen en opmerkingen over geld als kenmerk van directe, praktische werkcommunicatie.",
+              "reading_b": "De deelnemers gebruiken die ogenschijnlijk gewone opmerkingen als vooraf afgesproken diplomatieke signalen om posities te verkennen zonder een conflict openlijk te maken.",
+              "roles_b": [
+                "Onderhandelingsleider: bewaakt de buitenlandse belangen en de boodschap.",
+                "Delegatieleden: testen standpunten met voorzichtige formuleringen.",
+                "Tolk of beleidsadviseur: duidt de codetaal en noteert toezeggingen.",
+                "Bezoeker: denkt een regulier teamoverleg bij te wonen."
+              ],
+              "goal_b": "Een internationaal akkoord voorbereiden zonder de andere delegatie publiekelijk te bruuskeren.",
+              "role_remapping": [
+                "De collega of gesprekspartner uit Script A wordt een delegatielid.",
+                "De praktische organisator wordt de onderhandelingsleider.",
+                "De buitenstaander blijft observator, maar mist aanvankelijk de diplomatieke context.",
+                "De uitlegger van gewoonten wordt een tolk of beleidsadviseur."
+              ],
+              "shared_cues": [
+                "Een vergadertafel.",
+                "Een strakke planning.",
+                "Kritische vragen over kosten.",
+                "Korte, zakelijke antwoorden.",
+                "Aantekeningen en actiepunten."
+              ],
+              "switch_trigger": "De tolk fluistert de bezoeker toe dat de zin 'dat nemen we mee' in dit overleg een beleefde afwijzing betekent.",
+              "hinge_event": "Na een scherpe opmerking bedankt iedereen elkaar opvallend hartelijk en laat men de omstreden passage woordelijk in het verslag staan.",
+              "anomaly_under_a": "In een direct kantooroverleg zou zo'n omslachtige, vriendelijke reactie na openlijke kritiek onlogisch zijn; men zou een standpunt helder bevestigen of verwerpen.",
+              "resolution_under_b": "In diplomatieke voorbereiding voorkomt de vaste beleefdheidsformule gezichtsverlies en houdt zij onderhandelingsruimte open; de passage wordt juist bewaard als bewust dubbelzinnig signaal."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een bezoeker denkt dat een Nederlands gezin een eenvoudige gezamenlijke maaltijd organiseert waarbij iedereen zijn eigen deel betaalt, maar de avond blijkt een geheime inzamelactie voor een buur die financiële hulp nodig heeft.",
+              "opposition_axis": "Overzichtelijke individuele kostenverdeling versus anonieme solidariteit.",
+              "opposed_proposition": "Mensen regelen zaken graag efficiënt en houden verantwoordelijkheden overzichtelijk.",
+              "shared_anchor": "De gezamenlijke maaltijd waarvoor geld wordt verzameld.",
+              "reading_a": "De bezoeker ziet een tikkieverzoek, een lijstje met boodschappen en precies verdeelde taken als een praktische afrekening van een gewoon etentje.",
+              "reading_b": "Dezelfde betaalverzoeken en taaklijst blijken een dekmantel: de bijdragen worden samengevoegd en buiten medeweten van de ontvanger aan de buur geschonken.",
+              "roles_b": [
+                "Organiserende buur: coördineert de inzameling en bewaart het geheim.",
+                "Genodigden: dragen geld of eten bij zonder de ontvanger te beschamen.",
+                "Buurtbewoner in nood: denkt gast te zijn bij een gewoon diner.",
+                "Bezoeker: interpreteert de voorbereiding aanvankelijk als kostenbeheersing."
+              ],
+              "goal_b": "Discreet financiële steun geven zonder dat de geholpen buur zich afhankelijk of tentoongesteld voelt.",
+              "role_remapping": [
+                "De gastheer uit Script A wordt de organisator van de inzameling.",
+                "De deelnemers die kosten verdelen worden anonieme gevers.",
+                "De gesprekspartner wordt de buur die hulp ontvangt.",
+                "De bezoeker blijft buitenstaander en is niet ingevoerd in het geheim."
+              ],
+              "shared_cues": [
+                "Een boodschappenlijst.",
+                "Een betaalverzoek op de telefoon.",
+                "Taken voor koken en opruimen.",
+                "Een gesprek over budget.",
+                "Een gezamenlijke maaltijd aan tafel."
+              ],
+              "switch_trigger": "Wanneer de buur wil betalen, zet de organisator geen bedrag maar een envelop met zijn naam voor hem neer.",
+              "hinge_event": "De organisator weigert plotseling het betaalverzoek van de gast te accepteren en geeft hem in plaats daarvan geld mee naar huis.",
+              "anomaly_under_a": "Bij een zorgvuldig verdeeld etentje is het onverklaarbaar dat juist één gast niet betaalt en zelfs geld ontvangt; dit doorbreekt de verwachte wederkerigheid.",
+              "resolution_under_b": "Als verborgen inzamelactie is de omkering het doel: de technische betaalcues hielden de hulp onopvallend, terwijl de envelop de gezamenlijke steun op het juiste moment zichtbaar maakt."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een bezoeker denkt dat Nederlanders een strak geplande fietstocht precies volgens afspraak uitvoeren, maar de groep blijkt deelnemers te begeleiden in een improvisatie-oefening waarin men bewust route, tijd en bestemming loslaat.",
+              "opposition_axis": "Punctualiteit en voorspelbare planning versus doelbewuste improvisatie.",
+              "opposed_proposition": "Afspraken, punctualiteit en duidelijke planning worden serieus genomen.",
+              "shared_anchor": "De fietstocht met een vertrektijd en een routekaart.",
+              "reading_a": "De bezoeker leest de verzameltijd, de routekaart, de veiligheidsinstructies en de duidelijke taakverdeling als bewijs van een zorgvuldig geplande Nederlandse groepsactiviteit.",
+              "reading_b": "Die ordelijke start is het kader van een improvisatieworkshop: deelnemers moeten later leren reageren op onverwachte aanwijzingen en gezamenlijk een nieuwe route verzinnen.",
+              "roles_b": [
+                "Workshopbegeleider: zet improvisatieopdrachten uit en observeert reacties.",
+                "Deelnemers: verlaten geleidelijk het vaste reisschema.",
+                "Fietsverhuurder of veiligheidsbegeleider: verzorgt slechts de praktische start.",
+                "Bezoeker: verwacht een gewone, punctuele excursie."
+              ],
+              "goal_b": "Deelnemers laten oefenen met flexibiliteit, vertrouwen en gezamenlijk improviseren.",
+              "role_remapping": [
+                "De organisator uit Script A wordt de workshopbegeleider.",
+                "De reizigers of buren worden deelnemers aan een oefening.",
+                "De praktische uitlegger wordt de veiligheidsbegeleider.",
+                "De bezoeker blijft waarnemer, maar wordt later zelf tot deelnemer gemaakt."
+              ],
+              "shared_cues": [
+                "Een afgesproken vertrektijd.",
+                "Fietsen op een rij.",
+                "Een routekaart.",
+                "Veiligheidsinstructies.",
+                "Een lijst met deelnemers."
+              ],
+              "switch_trigger": "Precies op het geplande vertrekmoment scheurt de begeleider de routekaart doormidden en zegt hij dat niemand vandaag op tijd mag aankomen.",
+              "hinge_event": "De begeleider laat de groep bij het eerste kruispunt zonder bestemming wachten en verbiedt het gebruik van navigatie.",
+              "anomaly_under_a": "Voor een normale geplande fietstocht is het absurd om de route weg te nemen en navigatie te verbieden; daardoor kan de afspraak niet efficiënt worden nagekomen.",
+              "resolution_under_b": "Binnen de improvisatie-oefening dwingt dit verbod de deelnemers om onzekerheid te verdragen, samen keuzes te maken en het voorafgaande planningsgedrag bewust los te laten."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén scène met koffie, voornamen, open kritiek, een agenda en kostenbespreking geloofwaardig zowel neer als informele buurtontmoeting als ledenvergadering. De dominante tegenstelling is informeel-gelijkwaardig tegenover formeel-procedureel; hoewel voornamen en gelijkheid ook binnen een vereniging kunnen bestaan, veranderen stemming, notulen en voorzitterschap de lokale functie van de ontmoeting duidelijk. De agenda houdt de vergaderlezing al latent beschikbaar, maar de losse sociale signalen laten aanvankelijk de informele lezing domineren. Stembus en notulen zijn onder A overdreven, maar onder B noodzakelijk voor besluitvorming. De formele procedure verhindert een vrijblijvende barbecuefunctie en maakt het rechtsgeldige verenigingsdoel mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Hetzelfde zakelijke overleg met korte vragen, kosten, planning en actiepunten kan zowel direct werkoverleg als diplomatieke voorbereiding voorstellen. De tegenstelling tussen onverbloemde directheid en strategisch gecodeerde diplomatie is lokaal incompatibel en overheerst de kandidaat. De tweede lezing is sociaal herkenbaar: diplomatieke formuleringen kunnen beleefd, dubbelzinnig en gezichtsreddend zijn. De normale kantoorlezing ligt aanvankelijk voor de hand, terwijl de opvallend hartelijke reactie en het woordelijk bewaren van de passage de diplomatieke lezing al als mogelijkheid openhouden. Wat onder A omslachtig is, wordt onder B functioneel als signaal en onderhandelingsruimte. De codetaal verhindert volledige openheid, maar maakt het diplomatieke doel mogelijk."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een maaltijd met boodschappenlijst, betaalverzoek, taakverdeling en budgetgesprek kan realiseerbaar zowel een praktische kostenafrekening als een afgeschermde inzameling zijn. De dominante oppositie is individuele, overzichtelijke afrekening tegenover anonieme solidariteit. De geheime hulpactie is een herkenbare sociale praktijk en blijft, doordat geld wordt verzameld en taken worden gecoördineerd, als latente alternatieve functie mogelijk, al domineert eerst de gewone Tikkie-lezing. Het niet accepteren van betaling en het geven van een envelop is onder A een breuk met de afrekening, maar onder B precies de bedoelde hulp. Daardoor krijgen de eerdere betaalcues achteraf de functie van dekmantel. De afwijking blokkeert de individuele kostenverdeling en maakt discrete steun mogelijk."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": false,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde vertrektijd, routekaart, fietsen, veiligheidsinstructies en deelnemerslijst kunnen zowel de start van een geplande tocht als het gecontroleerde begin van een improvisatieworkshop vormen. Planning tegenover doelbewuste improvisatie is één duidelijke en lokaal onverenigbare as. Een improvisatieworkshop is herkenbaar, en de gewone geplande fietstocht domineert aanvankelijk. De tweede lezing is vóór de trigger echter niet expliciet latent gemaakt: de gedeelde cues wijzen zonder aanvullende workshopaanwijzing vooral op planning. Het verscheuren van de kaart en het navigatieverbod zijn onder A absurd, maar onder B doelgerichte oefenmiddelen. Zij herdefiniëren de eerdere planning als kader voor het later loslaten ervan en blokkeren de geplande tocht terwijl zij improvisatie mogelijk maken."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén scène met koffie, voornamen, open kritiek, een agenda en kostenbespreking geloofwaardig zowel neer als informele buurtontmoeting als ledenvergadering. De dominante tegenstelling is informeel-gelijkwaardig tegenover formeel-procedureel; hoewel voornamen en gelijkheid ook binnen een vereniging kunnen bestaan, veranderen stemming, notulen en voorzitterschap de lokale functie van de ontmoeting duidelijk. De agenda houdt de vergaderlezing al latent beschikbaar, maar de losse sociale signalen laten aanvankelijk de informele lezing domineren. Stembus en notulen zijn onder A overdreven, maar onder B noodzakelijk voor besluitvorming. De formele procedure verhindert een vrijblijvende barbecuefunctie en maakt het rechtsgeldige verenigingsdoel mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Hetzelfde zakelijke overleg met korte vragen, kosten, planning en actiepunten kan zowel direct werkoverleg als diplomatieke voorbereiding voorstellen. De tegenstelling tussen onverbloemde directheid en strategisch gecodeerde diplomatie is lokaal incompatibel en overheerst de kandidaat. De tweede lezing is sociaal herkenbaar: diplomatieke formuleringen kunnen beleefd, dubbelzinnig en gezichtsreddend zijn. De normale kantoorlezing ligt aanvankelijk voor de hand, terwijl de opvallend hartelijke reactie en het woordelijk bewaren van de passage de diplomatieke lezing al als mogelijkheid openhouden. Wat onder A omslachtig is, wordt onder B functioneel als signaal en onderhandelingsruimte. De codetaal verhindert volledige openheid, maar maakt het diplomatieke doel mogelijk."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een maaltijd met boodschappenlijst, betaalverzoek, taakverdeling en budgetgesprek kan realiseerbaar zowel een praktische kostenafrekening als een afgeschermde inzameling zijn. De dominante oppositie is individuele, overzichtelijke afrekening tegenover anonieme solidariteit. De geheime hulpactie is een herkenbare sociale praktijk en blijft, doordat geld wordt verzameld en taken worden gecoördineerd, als latente alternatieve functie mogelijk, al domineert eerst de gewone Tikkie-lezing. Het niet accepteren van betaling en het geven van een envelop is onder A een breuk met de afrekening, maar onder B precies de bedoelde hulp. Daardoor krijgen de eerdere betaalcues achteraf de functie van dekmantel. De afwijking blokkeert de individuele kostenverdeling en maakt discrete steun mogelijk."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": false,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde vertrektijd, routekaart, fietsen, veiligheidsinstructies en deelnemerslijst kunnen zowel de start van een geplande tocht als het gecontroleerde begin van een improvisatieworkshop vormen. Planning tegenover doelbewuste improvisatie is één duidelijke en lokaal onverenigbare as. Een improvisatieworkshop is herkenbaar, en de gewone geplande fietstocht domineert aanvankelijk. De tweede lezing is vóór de trigger echter niet expliciet latent gemaakt: de gedeelde cues wijzen zonder aanvullende workshopaanwijzing vooral op planning. Het verscheuren van de kaart en het navigatieverbod zijn onder A absurd, maar onder B doelgerichte oefenmiddelen. Zij herdefiniëren de eerdere planning als kader voor het later loslaten ervan en blokkeren de geplande tocht terwijl zij improvisatie mogelijk maken."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "selected_candidate_id": "B3"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een nauwkeurig georganiseerd Nederlands etentje waarin taken, boodschappen en kosten netjes worden verdeeld.",
+          "realized_script_b": "Het etentje en de betaalverzoeken blijken een verborgen inzameling voor de buurman die financiële hulp nodig heeft.",
+          "realized_opposition_axis": "Individuele, overzichtelijke kostenverdeling versus discrete gezamenlijke solidariteit.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De opzet activeert een strak verdeeld etentje via taken, boodschappenlijst en betaalverzoek. De envelop voor de buurman veroorzaakt de bedoelde omslag naar een geheime inzameling en herinterpreteert de betaalcues."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant realiseert rechtstreeks de geplande kostenverdeling-naar-buurthulpomkering; de envelop is een duidelijke, late punch die het eerdere Tikkie en de organisatie herkadert.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een buitenlander ziet een buurtetentje waarin Nederlanders zelfs kleine huishoudelijke kosten en de maaltijd uiterst eerlijk via Tikkies verdelen.",
+          "realized_script_b": "De Tikkies zijn een gecamoufleerde collecte; de man met geldproblemen ontvangt de gezamenlijke opbrengst.",
+          "realized_opposition_axis": "Strikte individuele afrekening versus gezamenlijke financiële steun aan iemand in nood.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De tekst behoudt de beoogde A-lezing van precieze kostendeling en schakelt bij de uitzondering voor de man met budgetproblemen naar een verborgen inzameling. Niet alle geplande gedeelde cues komen voor, maar Tikkies, het etentje en het budgetsignaal dragen de omslag functioneel."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De generieke stereotype-opening leidt naar de geplande etentjessituatie; de uitzondering op het Tikkie en de boodschappentas leveren de bedoelde onthulling van stille financiële hulp.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Aan een Nederlands aandoende tafel worden koken, opruimen en de rekening precies verdeeld, waardoor een betaalverzoek als normale afrekening geldt.",
+          "realized_script_b": "De buurvrouw hoeft niet bij te dragen: de groep blijkt haar huur te willen betalen.",
+          "realized_opposition_axis": "Precieze verdeling van individuele uitgaven versus gezamenlijke financiële hulp.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De gedeelde etentjescues en het betaalverzoek vestigen de afrekenlezing, waarna de huur-onthulling de ontvanger in een geholpen buur remapt. De formulering over wat er 'in' een betaalverzoek staat is technisch en semantisch wat onhelder, maar de bedoelde omslag blijft herkenbaar."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant volgt de beoogde omslag van nauwkeurige rekeningverdeling naar buurthulp. De punch is duidelijk als intentie, al is de Tikkie-logica minder natuurlijk uitgewerkt dan de envelopoplossing uit het plan.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "Beide varianten voldoen aan de lengte-eis en realiseren de vereiste scriptomkering. V1 bouwt de Nederlandse precisie sterker op met taken, boodschappenlijst en betaalverzoek; de envelop herkadert die signalen helder als discrete buurthulp. V2 is bondiger, maar de stereotypische opening en boodschappentas geven minder rijke retrospectieve herinterpretatie."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "V1 heeft de natuurlijkste gesproken opbouw en de duidelijkste switch: de envelop maakt onmiddellijk duidelijk dat de groep voor de buurman heeft gespaard. V3 volgt dezelfde vereiste tegenstelling, maar de formulering dat de huur 'in' een betaalverzoek staat is semantisch en praktisch minder helder, waardoor de punch verzwakt."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V3",
+          "rationale": "Beide teksten halen de lengte-eis en de beoogde omslag van afrekenen naar hulp. V3 sluit trouwer aan op het vereiste script met de precieze verdeling van taken én rekening, zodat het betaalverzoek beter retrospectief wordt herlezen. V2 heeft een helderder slotbeeld, maar een minder uitgewerkte opzet."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 is de sterkste totaalvariant: hij realiseert de vereiste SO-omkering volledig, zet de Nederlandse kosten- en taakverdeling concreet neer en levert met de envelop een heldere, performabele onthulling van stille solidariteit."
+    }
+  },
+  "result_sha256": "0161fa64dde65f66de734b621f83a52e40dfcc694771aeeb3f4e6773c6913425"
+}

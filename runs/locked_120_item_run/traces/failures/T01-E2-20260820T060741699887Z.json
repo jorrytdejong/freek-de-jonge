@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T06:07:41.699858+00:00",
+  "job": {
+    "job_id": "T01-E2",
+    "topic_id": "T01",
+    "topic": "Familie en opvoeding",
+    "condition_code": "E2"
+  },
+  "attempt": 2,
+  "exception_type": "APIConnectionError",
+  "message": "Connection error."
+}

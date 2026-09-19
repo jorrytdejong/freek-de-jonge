@@ -1,0 +1,819 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T06-C1",
+  "topic_id": "T06",
+  "topic": "Ouder worden en sterfelijkheid",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T17:11:38.992965+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Ouder worden en sterfelijkheid",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende volwassene: merkt veranderingen op, maakt keuzes en wil regie houden.\",\n      \"Dierbaren/familie: bieden gezelschap, steun en praktische hulp wanneer dat nodig wordt.\",\n      \"Artsen en zorgverleners: signaleren gezondheidsproblemen, behandelen en adviseren.\",\n      \"De samenleving en voorzieningen: bieden pensioen, zorg, wonen en ondersteuning voor latere levensfasen.\"\n    ],\n    \"apparent_goal\": \"Op een waardige, gezonde en betekenisvolle manier ouder worden, met zo veel mogelijk autonomie en voorbereiding op het onvermijdelijke levenseinde.\",\n    \"preconditions\": [\n      \"De persoon heeft genoeg tijd geleefd om veranderingen in energie, uiterlijk, gezondheid of sociale positie te merken.\",\n      \"Veroudering verloopt geleidelijk, maar verschilt per persoon.\",\n      \"Gezondheid, financiën, relaties en toegang tot zorg beïnvloeden de mate van zelfstandigheid.\",\n      \"Sterfelijkheid is onvermijdelijk, ook al is het moment ervan doorgaans onzeker.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en medische adviezen volgen.\",\n      \"Praktische zaken regelen, zoals pensioen, wonen, verzekeringen, een testament of wensen rond zorg.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Zich aanpassen aan beperkingen en zo nodig hulp of zorg accepteren.\",\n      \"Nadenken of praten over nalatenschap, afscheid en wensen voor het levenseinde.\"\n    ],\n    \"expected_outcome\": \"De persoon leeft zo lang en prettig mogelijk, behoudt waar mogelijk zelfstandigheid, krijgt steun bij toenemende kwetsbaarheid en laat uiteindelijk dierbaren en praktische zaken zo goed mogelijk achter.\",\n    \"expected_propositions\": [\n      \"Met de leeftijd nemen lichamelijke beperkingen en gezondheidsrisico's gemiddeld toe.\",\n      \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"Ouder worden vraagt vaak om aanpassing, maar hoeft niet te betekenen dat iemands leven geen plezier, betekenis of autonomie meer heeft.\",\n      \"Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.\",\n      \"Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een volwassene die geleidelijk kwetsbaarder wordt, verantwoordelijkheid neemt voor gezondheid en praktische voorbereiding, steun zoekt of ontvangt, en probeert waardigheid en regie te bewaren terwijl de eindigheid van het leven dichterbij komt.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende volwassene: merkt veranderingen op, maakt keuzes en wil regie houden.\",\n      \"Dierbaren/familie: bieden gezelschap, steun en praktische hulp wanneer dat nodig wordt.\",\n      \"Artsen en zorgverleners: signaleren gezondheidsproblemen, behandelen en adviseren.\",\n      \"De samenleving en voorzieningen: bieden pensioen, zorg, wonen en ondersteuning voor latere levensfasen.\"\n    ],\n    \"apparent_goal\": \"Op een waardige, gezonde en betekenisvolle manier ouder worden, met zo veel mogelijk autonomie en voorbereiding op het onvermijdelijke levenseinde.\",\n    \"preconditions\": [\n      \"De persoon heeft genoeg tijd geleefd om veranderingen in energie, uiterlijk, gezondheid of sociale positie te merken.\",\n      \"Veroudering verloopt geleidelijk, maar verschilt per persoon.\",\n      \"Gezondheid, financiën, relaties en toegang tot zorg beïnvloeden de mate van zelfstandigheid.\",\n      \"Sterfelijkheid is onvermijdelijk, ook al is het moment ervan doorgaans onzeker.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en medische adviezen volgen.\",\n      \"Praktische zaken regelen, zoals pensioen, wonen, verzekeringen, een testament of wensen rond zorg.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Zich aanpassen aan beperkingen en zo nodig hulp of zorg accepteren.\",\n      \"Nadenken of praten over nalatenschap, afscheid en wensen voor het levenseinde.\"\n    ],\n    \"expected_outcome\": \"De persoon leeft zo lang en prettig mogelijk, behoudt waar mogelijk zelfstandigheid, krijgt steun bij toenemende kwetsbaarheid en laat uiteindelijk dierbaren en praktische zaken zo goed mogelijk achter.\",\n    \"expected_propositions\": [\n      \"Met de leeftijd nemen lichamelijke beperkingen en gezondheidsrisico's gemiddeld toe.\",\n      \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"Ouder worden vraagt vaak om aanpassing, maar hoeft niet te betekenen dat iemands leven geen plezier, betekenis of autonomie meer heeft.\",\n      \"Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.\",\n      \"Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een volwassene die geleidelijk kwetsbaarder wordt, verantwoordelijkheid neemt voor gezondheid en praktische voorbereiding, steun zoekt of ontvangt, en probeert waardigheid en regie te bewaren terwijl de eindigheid van het leven dichterbij komt.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een eigenaar probeert een oude computer nog bruikbaar te houden. De machine wordt trager, het geheugen raakt vol, onderdelen vallen uit en vóór definitieve uitval wil de eigenaar de gegevens veiligstellen of het apparaat vervangen.\",\n      \"opposition_axis\": \"menselijke sterfelijkheid en waardigheid versus technische veroudering en vervanging\",\n      \"opposed_proposition\": \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"shared_anchor\": \"Voorbereiden op een naderend, onomkeerbaar einde.\",\n      \"reading_a\": \"Een ouder wordende volwassene merkt afnemende energie en geheugenproblemen op, raadpleegt zorgverleners en regelt wensen voor het levenseinde.\",\n      \"reading_b\": \"Een verouderde computer vertoont prestatie- en geheugenproblemen; een technicus probeert gegevens te redden voordat het apparaat definitief uitvalt.\",\n      \"roles_b\": [\n        \"De oude computer: vertoont slijtage, traagheid en geheugenproblemen.\",\n        \"De eigenaar: wil het apparaat nog gebruiken en belangrijke bestanden behouden.\",\n        \"De technicus: onderzoekt storingen, vervangt onderdelen en adviseert over back-ups.\",\n        \"Gebruikers en clouddiensten: leveren bestanden, ondersteuning en een mogelijke nieuwe omgeving.\"\n      ],\n      \"goal_b\": \"De gegevens veiligstellen en bepalen of de computer nog gerepareerd kan worden voordat hij wordt afgeschreven.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de oude computer.\",\n        \"Dierbaren en familie worden de eigenaar, gebruikers en opgeslagen contacten.\",\n        \"Artsen en zorgverleners worden de technicus of reparatiedienst.\",\n        \"Zorg, wonen en praktische voorzieningen worden back-ups, reserveonderdelen, opslag en vervangende hardware.\"\n      ],\n      \"shared_cues\": [\n        \"Afnemende energie en trager functioneren.\",\n        \"Geheugen dat minder betrouwbaar wordt.\",\n        \"Een controle of onderzoek door een deskundige.\",\n        \"Het ordenen en veiligstellen van belangrijke zaken.\",\n        \"De vraag hoe lang zelfstandig functioneren nog mogelijk is.\"\n      ],\n      \"switch_trigger\": \"De deskundige vraagt niet naar een zorgwens, maar zegt: \\\"Zet hem uit; eerst maken we een volledige back-up.\\\"\",\n      \"hinge_event\": \"De vermeende patiënt wordt opengeklapt, waarna de technicus een harde schijf uit de romp haalt.\",\n      \"anomaly_under_a\": \"Bij een mens zou uitschakelen, openklappen en een harde schijf verwijderen een volstrekt ongepaste en onmogelijke reactie op kwetsbaarheid zijn.\",\n      \"resolution_under_b\": \"Als het om een computer gaat, is uitschakelen juist noodzakelijk om gegevensverlies te voorkomen; de harde schijf bevat de te redden 'nalatenschap'.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.\",\n      \"opposition_axis\": \"werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering\",\n      \"opposed_proposition\": \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"shared_anchor\": \"Een kwetsbare oudere bereidt een laatste afscheid voor.\",\n      \"reading_a\": \"Een oudere persoon bespreekt met naasten en zorgverleners toenemende kwetsbaarheid, laatste wensen en een naderend afscheid.\",\n      \"reading_b\": \"Een acteur en gezelschap oefenen zorgvuldig een fictief afscheid, inclusief medische rekwisieten, familieleden op het toneel en een sterfscène.\",\n      \"roles_b\": [\n        \"De oudere acteur: speelt de kwetsbare hoofdpersoon.\",\n        \"Medespelers: spelen familieleden en bieden steun binnen de scène.\",\n        \"Regisseur en grimeur: sturen de uitvoering en maken ziekte of ouderdom zichtbaar.\",\n        \"Publiek en toneeltechniek: ontvangen de voorstelling en ondersteunen decor, licht en geluid.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige en ontroerende sterfscène neerzetten voor de première.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de acteur in de hoofdrol.\",\n        \"Dierbaren en familie worden medespelers die familie vertolken.\",\n        \"Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.\",\n        \"Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning.\"\n      ],\n      \"shared_cues\": [\n        \"Een zwakke oudere in bed.\",\n        \"Familie die zich rond de persoon verzamelt.\",\n        \"Gesprekken over afscheid en laatste woorden.\",\n        \"Een witte jas en ogenschijnlijk medische handelingen.\",\n        \"Een stille, plechtige ruimte met gedempt licht.\"\n      ],\n      \"switch_trigger\": \"Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \\\"En... cut, terug naar de markering.\\\"\",\n      \"hinge_event\": \"De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.\",\n      \"anomaly_under_a\": \"Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.\",\n      \"resolution_under_b\": \"In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een langdurig gedetineerde bereidt zich voor op vrijlating. Hij heeft een lichamelijke keuring, ontvangt bezoek, regelt papieren, moet wennen aan zelfstandigheid en probeert na jaren van afhankelijkheid opnieuw een plaats buiten de gevangenis te vinden.\",\n      \"opposition_axis\": \"toenemende afhankelijkheid en zorg versus beëindiging van opsluiting en herwonnen vrijheid\",\n      \"opposed_proposition\": \"Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.\",\n      \"shared_anchor\": \"Iemand bereidt met hulp van anderen een ingrijpende overgang naar een onzekere laatste levensfase voor.\",\n      \"reading_a\": \"Een ouder wordende volwassene wordt kwetsbaarder, krijgt meer ondersteuning en bereidt met familie en professionals een veilige overgang naar verdere zorg of het levenseinde voor.\",\n      \"reading_b\": \"Een gedetineerde nadert het einde van zijn straf, krijgt begeleiding bij terugkeer en moet buiten de instelling opnieuw zelfstandig leren leven.\",\n      \"roles_b\": [\n        \"De gedetineerde: bereidt zich voor op vertrek uit een gecontroleerde omgeving.\",\n        \"Bezoekers en familie: onderhouden contact en bieden steun bij terugkeer.\",\n        \"Gevangenisarts, bewakers en reclassering: keuren, begeleiden en controleren.\",\n        \"Gevangenis en reclasseringsvoorzieningen: bieden huisvesting, regels, administratie en nazorg.\"\n      ],\n      \"goal_b\": \"De gevangenis verlaten en een zelfstandig bestaan opbouwen zonder opnieuw de fout in te gaan.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de gedetineerde.\",\n        \"Dierbaren en familie blijven bezoekers en een mogelijk opvangnetwerk.\",\n        \"Artsen en zorgverleners worden gevangenisarts, bewakers en reclasseringsbegeleiders.\",\n        \"Zorg- en woonvoorzieningen worden de cel, de gevangenisadministratie, opvang en reclassering.\"\n      ],\n      \"shared_cues\": [\n        \"Medische controles en formulieren.\",\n        \"Bezoek op vaste tijden.\",\n        \"Een kleine kamer waarin iemand afhankelijk is van hulp en regels.\",\n        \"Gesprekken over wonen, geld, steun en toekomstplannen.\",\n        \"Het inpakken van persoonlijke bezittingen voor een grote overgang.\"\n      ],\n      \"switch_trigger\": \"De begeleider zegt niet dat er thuiszorg komt, maar: \\\"Morgenochtend gaat de poort open; uw straf zit erop.\\\"\",\n      \"hinge_event\": \"Een bewaker doet de deur open, geeft de man zijn veters terug en wijst hem naar de uitgangspoort.\",\n      \"anomaly_under_a\": \"Een kwetsbare oudere zijn veters teruggeven en hem door een bewaakte poort naar buiten sturen zou geen passende vorm van zorg of voorbereiding op sterven zijn.\",\n      \"resolution_under_b\": \"Voor een gedetineerde markeren de veters en de open poort juist het herstel van bewegingsvrijheid en het concrete begin van terugkeer in de samenleving.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een ouder wordende politicus voert een campagne om ondanks vragen over leeftijd, gezondheid en opvolging opnieuw gekozen te worden. Hij mobiliseert familie, adviseurs, artsen en kiezers om zijn publieke geloofwaardigheid en politieke invloed te behouden.\",\n      \"opposition_axis\": \"persoonlijke waardigheid en aanvaarding van eindigheid versus publieke machtsbehoud en electorale overleving\",\n      \"opposed_proposition\": \"Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.\",\n      \"shared_anchor\": \"Een oudere persoon probeert onder toenemende druk de regie over de toekomst te behouden.\",\n      \"reading_a\": \"Een ouder wordende persoon houdt regie over zorg, wonen, nalatenschap en beslissingen rond een waardig levenseinde.\",\n      \"reading_b\": \"Een ervaren politicus probeert de regie over zijn loopbaan en partij te behouden door kiezers ervan te overtuigen dat hij nog een ambtstermijn aankan.\",\n      \"roles_b\": [\n        \"De oudere politicus: kandidaat die zijn vitaliteit en ervaring moet bewijzen.\",\n        \"Familie en partijvrijwilligers: bieden emotionele steun en organiseren campagneactiviteiten.\",\n        \"Artsen en communicatiestrategen: beoordelen gezondheid en sturen de publieke boodschap.\",\n        \"Kiezers, media en partijbestuur: bepalen toegang tot steun, middelen en herverkiezing.\"\n      ],\n      \"goal_b\": \"Herverkozen worden en voorkomen dat een jongere opvolger zijn positie overneemt.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de oudere kandidaat.\",\n        \"Dierbaren en familie worden familieleden, partijvrijwilligers en trouwe achterban.\",\n        \"Artsen en zorgverleners worden artsen, persadviseurs en communicatiestrategen.\",\n        \"De samenleving en voorzieningen worden kiezers, media, partijbestuur en campagneorganisatie.\"\n      ],\n      \"shared_cues\": [\n        \"Vragen over gezondheid, energie en belastbaarheid.\",\n        \"Familieleden die steunend naast de oudere staan.\",\n        \"Documenten waarin wensen en toekomstige regelingen worden vastgelegd.\",\n        \"Gesprekken over opvolging en wat iemand achterlaat.\",\n        \"Een nadruk op zelfstandigheid, ervaring en waardigheid.\"\n      ],\n      \"switch_trigger\": \"Na een ernstig gesprek over zijn toekomst fluistert de adviseur: \\\"Over tien seconden bent u live in het televisiedebat.\\\"\",\n      \"hinge_event\": \"De vermeende patiënt zet een campagnebutton op, loopt naar een spreekgestoelte en begint: \\\"Beste kiezers, ik ben nog lang niet klaar.\\\"\",\n      \"anomaly_under_a\": \"Een spreekgestoelte, campagnebutton en live debat zouden een ongepaste verschuiving zijn tijdens een intiem gesprek over zorg, kwetsbaarheid en het levenseinde.\",\n      \"resolution_under_b\": \"Voor de politicus zijn ze functioneel: hij zet twijfel over ouderdom om in een zichtbaar bewijs van ambitie, vitaliteit en aanspraak op politieke regie.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.\",\n    \"participants_and_roles\": [\n      \"Een ouder wordende volwassene: merkt veranderingen op, maakt keuzes en wil regie houden.\",\n      \"Dierbaren/familie: bieden gezelschap, steun en praktische hulp wanneer dat nodig wordt.\",\n      \"Artsen en zorgverleners: signaleren gezondheidsproblemen, behandelen en adviseren.\",\n      \"De samenleving en voorzieningen: bieden pensioen, zorg, wonen en ondersteuning voor latere levensfasen.\"\n    ],\n    \"apparent_goal\": \"Op een waardige, gezonde en betekenisvolle manier ouder worden, met zo veel mogelijk autonomie en voorbereiding op het onvermijdelijke levenseinde.\",\n    \"preconditions\": [\n      \"De persoon heeft genoeg tijd geleefd om veranderingen in energie, uiterlijk, gezondheid of sociale positie te merken.\",\n      \"Veroudering verloopt geleidelijk, maar verschilt per persoon.\",\n      \"Gezondheid, financiën, relaties en toegang tot zorg beïnvloeden de mate van zelfstandigheid.\",\n      \"Sterfelijkheid is onvermijdelijk, ook al is het moment ervan doorgaans onzeker.\"\n    ],\n    \"expected_actions\": [\n      \"Gezondheidsklachten laten controleren en medische adviezen volgen.\",\n      \"Praktische zaken regelen, zoals pensioen, wonen, verzekeringen, een testament of wensen rond zorg.\",\n      \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n      \"Zich aanpassen aan beperkingen en zo nodig hulp of zorg accepteren.\",\n      \"Nadenken of praten over nalatenschap, afscheid en wensen voor het levenseinde.\"\n    ],\n    \"expected_outcome\": \"De persoon leeft zo lang en prettig mogelijk, behoudt waar mogelijk zelfstandigheid, krijgt steun bij toenemende kwetsbaarheid en laat uiteindelijk dierbaren en praktische zaken zo goed mogelijk achter.\",\n    \"expected_propositions\": [\n      \"Met de leeftijd nemen lichamelijke beperkingen en gezondheidsrisico's gemiddeld toe.\",\n      \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"Ouder worden vraagt vaak om aanpassing, maar hoeft niet te betekenen dat iemands leven geen plezier, betekenis of autonomie meer heeft.\",\n      \"Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.\",\n      \"Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.\"\n    ],\n    \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een volwassene die geleidelijk kwetsbaarder wordt, verantwoordelijkheid neemt voor gezondheid en praktische voorbereiding, steun zoekt of ontvangt, en probeert waardigheid en regie te bewaren terwijl de eindigheid van het leven dichterbij komt.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een eigenaar probeert een oude computer nog bruikbaar te houden. De machine wordt trager, het geheugen raakt vol, onderdelen vallen uit en vóór definitieve uitval wil de eigenaar de gegevens veiligstellen of het apparaat vervangen.\",\n      \"opposition_axis\": \"menselijke sterfelijkheid en waardigheid versus technische veroudering en vervanging\",\n      \"opposed_proposition\": \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"shared_anchor\": \"Voorbereiden op een naderend, onomkeerbaar einde.\",\n      \"reading_a\": \"Een ouder wordende volwassene merkt afnemende energie en geheugenproblemen op, raadpleegt zorgverleners en regelt wensen voor het levenseinde.\",\n      \"reading_b\": \"Een verouderde computer vertoont prestatie- en geheugenproblemen; een technicus probeert gegevens te redden voordat het apparaat definitief uitvalt.\",\n      \"roles_b\": [\n        \"De oude computer: vertoont slijtage, traagheid en geheugenproblemen.\",\n        \"De eigenaar: wil het apparaat nog gebruiken en belangrijke bestanden behouden.\",\n        \"De technicus: onderzoekt storingen, vervangt onderdelen en adviseert over back-ups.\",\n        \"Gebruikers en clouddiensten: leveren bestanden, ondersteuning en een mogelijke nieuwe omgeving.\"\n      ],\n      \"goal_b\": \"De gegevens veiligstellen en bepalen of de computer nog gerepareerd kan worden voordat hij wordt afgeschreven.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de oude computer.\",\n        \"Dierbaren en familie worden de eigenaar, gebruikers en opgeslagen contacten.\",\n        \"Artsen en zorgverleners worden de technicus of reparatiedienst.\",\n        \"Zorg, wonen en praktische voorzieningen worden back-ups, reserveonderdelen, opslag en vervangende hardware.\"\n      ],\n      \"shared_cues\": [\n        \"Afnemende energie en trager functioneren.\",\n        \"Geheugen dat minder betrouwbaar wordt.\",\n        \"Een controle of onderzoek door een deskundige.\",\n        \"Het ordenen en veiligstellen van belangrijke zaken.\",\n        \"De vraag hoe lang zelfstandig functioneren nog mogelijk is.\"\n      ],\n      \"switch_trigger\": \"De deskundige vraagt niet naar een zorgwens, maar zegt: \\\"Zet hem uit; eerst maken we een volledige back-up.\\\"\",\n      \"hinge_event\": \"De vermeende patiënt wordt opengeklapt, waarna de technicus een harde schijf uit de romp haalt.\",\n      \"anomaly_under_a\": \"Bij een mens zou uitschakelen, openklappen en een harde schijf verwijderen een volstrekt ongepaste en onmogelijke reactie op kwetsbaarheid zijn.\",\n      \"resolution_under_b\": \"Als het om een computer gaat, is uitschakelen juist noodzakelijk om gegevensverlies te voorkomen; de harde schijf bevat de te redden 'nalatenschap'.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.\",\n      \"opposition_axis\": \"werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering\",\n      \"opposed_proposition\": \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"shared_anchor\": \"Een kwetsbare oudere bereidt een laatste afscheid voor.\",\n      \"reading_a\": \"Een oudere persoon bespreekt met naasten en zorgverleners toenemende kwetsbaarheid, laatste wensen en een naderend afscheid.\",\n      \"reading_b\": \"Een acteur en gezelschap oefenen zorgvuldig een fictief afscheid, inclusief medische rekwisieten, familieleden op het toneel en een sterfscène.\",\n      \"roles_b\": [\n        \"De oudere acteur: speelt de kwetsbare hoofdpersoon.\",\n        \"Medespelers: spelen familieleden en bieden steun binnen de scène.\",\n        \"Regisseur en grimeur: sturen de uitvoering en maken ziekte of ouderdom zichtbaar.\",\n        \"Publiek en toneeltechniek: ontvangen de voorstelling en ondersteunen decor, licht en geluid.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige en ontroerende sterfscène neerzetten voor de première.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de acteur in de hoofdrol.\",\n        \"Dierbaren en familie worden medespelers die familie vertolken.\",\n        \"Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.\",\n        \"Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning.\"\n      ],\n      \"shared_cues\": [\n        \"Een zwakke oudere in bed.\",\n        \"Familie die zich rond de persoon verzamelt.\",\n        \"Gesprekken over afscheid en laatste woorden.\",\n        \"Een witte jas en ogenschijnlijk medische handelingen.\",\n        \"Een stille, plechtige ruimte met gedempt licht.\"\n      ],\n      \"switch_trigger\": \"Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \\\"En... cut, terug naar de markering.\\\"\",\n      \"hinge_event\": \"De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.\",\n      \"anomaly_under_a\": \"Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.\",\n      \"resolution_under_b\": \"In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"plan\": {\n    \"setup_script\": \"Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.\",\n    \"opposing_script\": \"Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.\",\n    \"opposition_type\": \"werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering\",\n    \"trigger\": \"Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \\\"En... cut, terug naar de markering.\\\"\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Een zwakke oudere in bed.\",\n      \"Familie die zich rond de persoon verzamelt.\",\n      \"Gesprekken over afscheid en laatste woorden.\",\n      \"Een witte jas en ogenschijnlijk medische handelingen.\",\n      \"Een stille, plechtige ruimte met gedempt licht.\"\n    ],\n    \"hinge_event\": \"De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.\",\n    \"anomaly_under_a\": \"Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.\",\n    \"resolution_under_b\": \"In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.\",\n    \"role_remapping\": [\n      \"De ouder wordende volwassene wordt de acteur in de hoofdrol.\",\n      \"Dierbaren en familie worden medespelers die familie vertolken.\",\n      \"Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.\",\n      \"Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.\",\n      \"participants_and_roles\": [\n        \"Een ouder wordende volwassene: merkt veranderingen op, maakt keuzes en wil regie houden.\",\n        \"Dierbaren/familie: bieden gezelschap, steun en praktische hulp wanneer dat nodig wordt.\",\n        \"Artsen en zorgverleners: signaleren gezondheidsproblemen, behandelen en adviseren.\",\n        \"De samenleving en voorzieningen: bieden pensioen, zorg, wonen en ondersteuning voor latere levensfasen.\"\n      ],\n      \"apparent_goal\": \"Op een waardige, gezonde en betekenisvolle manier ouder worden, met zo veel mogelijk autonomie en voorbereiding op het onvermijdelijke levenseinde.\",\n      \"preconditions\": [\n        \"De persoon heeft genoeg tijd geleefd om veranderingen in energie, uiterlijk, gezondheid of sociale positie te merken.\",\n        \"Veroudering verloopt geleidelijk, maar verschilt per persoon.\",\n        \"Gezondheid, financiën, relaties en toegang tot zorg beïnvloeden de mate van zelfstandigheid.\",\n        \"Sterfelijkheid is onvermijdelijk, ook al is het moment ervan doorgaans onzeker.\"\n      ],\n      \"expected_actions\": [\n        \"Gezondheidsklachten laten controleren en medische adviezen volgen.\",\n        \"Praktische zaken regelen, zoals pensioen, wonen, verzekeringen, een testament of wensen rond zorg.\",\n        \"Contact met familie, vrienden en gemeenschap onderhouden.\",\n        \"Zich aanpassen aan beperkingen en zo nodig hulp of zorg accepteren.\",\n        \"Nadenken of praten over nalatenschap, afscheid en wensen voor het levenseinde.\"\n      ],\n      \"expected_outcome\": \"De persoon leeft zo lang en prettig mogelijk, behoudt waar mogelijk zelfstandigheid, krijgt steun bij toenemende kwetsbaarheid en laat uiteindelijk dierbaren en praktische zaken zo goed mogelijk achter.\",\n      \"expected_propositions\": [\n        \"Met de leeftijd nemen lichamelijke beperkingen en gezondheidsrisico's gemiddeld toe.\",\n        \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n        \"Ouder worden vraagt vaak om aanpassing, maar hoeft niet te betekenen dat iemands leven geen plezier, betekenis of autonomie meer heeft.\",\n        \"Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.\",\n        \"Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.\"\n      ],\n      \"audience_expectation\": \"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een volwassene die geleidelijk kwetsbaarder wordt, verantwoordelijkheid neemt voor gezondheid en praktische voorbereiding, steun zoekt of ontvangt, en probeert waardigheid en regie te bewaren terwijl de eindigheid van het leven dichterbij komt.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.\",\n      \"opposition_axis\": \"werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering\",\n      \"opposed_proposition\": \"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\",\n      \"shared_anchor\": \"Een kwetsbare oudere bereidt een laatste afscheid voor.\",\n      \"reading_a\": \"Een oudere persoon bespreekt met naasten en zorgverleners toenemende kwetsbaarheid, laatste wensen en een naderend afscheid.\",\n      \"reading_b\": \"Een acteur en gezelschap oefenen zorgvuldig een fictief afscheid, inclusief medische rekwisieten, familieleden op het toneel en een sterfscène.\",\n      \"roles_b\": [\n        \"De oudere acteur: speelt de kwetsbare hoofdpersoon.\",\n        \"Medespelers: spelen familieleden en bieden steun binnen de scène.\",\n        \"Regisseur en grimeur: sturen de uitvoering en maken ziekte of ouderdom zichtbaar.\",\n        \"Publiek en toneeltechniek: ontvangen de voorstelling en ondersteunen decor, licht en geluid.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige en ontroerende sterfscène neerzetten voor de première.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de acteur in de hoofdrol.\",\n        \"Dierbaren en familie worden medespelers die familie vertolken.\",\n        \"Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.\",\n        \"Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning.\"\n      ],\n      \"shared_cues\": [\n        \"Een zwakke oudere in bed.\",\n        \"Familie die zich rond de persoon verzamelt.\",\n        \"Gesprekken over afscheid en laatste woorden.\",\n        \"Een witte jas en ogenschijnlijk medische handelingen.\",\n        \"Een stille, plechtige ruimte met gedempt licht.\"\n      ],\n      \"switch_trigger\": \"Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \\\"En... cut, terug naar de markering.\\\"\",\n      \"hinge_event\": \"De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.\",\n      \"anomaly_under_a\": \"Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.\",\n      \"resolution_under_b\": \"In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.\",\n      \"opposing_script\": \"Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.\",\n      \"opposition_type\": \"werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering\",\n      \"trigger\": \"Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \\\"En... cut, terug naar de markering.\\\"\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Een zwakke oudere in bed.\",\n        \"Familie die zich rond de persoon verzamelt.\",\n        \"Gesprekken over afscheid en laatste woorden.\",\n        \"Een witte jas en ogenschijnlijk medische handelingen.\",\n        \"Een stille, plechtige ruimte met gedempt licht.\"\n      ],\n      \"hinge_event\": \"De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.\",\n      \"anomaly_under_a\": \"Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.\",\n      \"resolution_under_b\": \"In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.\",\n      \"role_remapping\": [\n        \"De ouder wordende volwassene wordt de acteur in de hoofdrol.\",\n        \"Dierbaren en familie worden medespelers die familie vertolken.\",\n        \"Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.\",\n        \"Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Mijn vader lag zwak in bed, wij stonden er stil omheen en de man in witte jas controleerde nog één keer zijn pols. Hij fluisterde zijn laatste woorden, stond op en zei: \\\"Kunnen we bij mijn dood iets meer licht zetten?\\\"\",\n      \"angle\": \"De ernstige sterfscène blijkt een repetitie waarin de hoofdrolspeler technische aanwijzingen geeft.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Oma had ons allemaal rond haar bed geroepen voor afscheid; zelfs de verpleegkundige hield haar hand vast. Na haar laatste zucht ging ze rechtop zitten: \\\"Mooi, maar wie heeft mijn sterfbed op de tape-markering gezet?\\\"\",\n      \"angle\": \"Een geloofwaardig familie-afscheid kantelt naar een toneelrepetitie met podiummarkeringen.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Mijn oom sprak heel zacht over loslaten, terwijl wij met tranen naast zijn bed zaten in dat gedempte licht. Toen riep iemand achterin: \\\"En... cut\\\", en oom vroeg of zijn sterven volgende keer van links gefilmd kon worden.\",\n      \"angle\": \"De intieme doodsscène blijkt opnamewerk, waardoor het afscheid een cameravraag krijgt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Ouder worden en sterfelijkheid\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Mijn vader lag zwak in bed, wij stonden er stil omheen en de man in witte jas controleerde nog één keer zijn pols. Hij fluisterde zijn laatste woorden, stond op en zei: \\\"Kunnen we bij mijn dood iets meer licht zetten?\\\"\",\n      \"angle\": \"De ernstige sterfscène blijkt een repetitie waarin de hoofdrolspeler technische aanwijzingen geeft.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Oma had ons allemaal rond haar bed geroepen voor afscheid; zelfs de verpleegkundige hield haar hand vast. Na haar laatste zucht ging ze rechtop zitten: \\\"Mooi, maar wie heeft mijn sterfbed op de tape-markering gezet?\\\"\",\n      \"angle\": \"Een geloofwaardig familie-afscheid kantelt naar een toneelrepetitie met podiummarkeringen.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Mijn oom sprak heel zacht over loslaten, terwijl wij met tranen naast zijn bed zaten in dat gedempte licht. Toen riep iemand achterin: \\\"En... cut\\\", en oom vroeg of zijn sterven volgende keer van links gefilmd kon worden.\",\n      \"angle\": \"De intieme doodsscène blijkt opnamewerk, waardoor het afscheid een cameravraag krijgt.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een vader ligt zwak in bed, omringd door familie en een man in een witte jas, en spreekt vermoedelijk zijn laatste woorden tijdens een werkelijk afscheid.\",\n      \"realized_script_b\": \"Een acteur speelt een sterfscène en onderbreekt die om technische aanwijzingen over de belichting te geven.\",\n      \"realized_opposition_axis\": \"Werkelijke levensbeëindiging versus een gespeelde dood als artistieke uitvoering.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet activeert overtuigend een werkelijk sterfbed met de beoogde gedeelde cues. De late vraag om meer licht bij zijn dood maakt een uitvoeringscontext aannemelijk en herkadert de situatie als een gespeelde scène. De geplande expliciete cue \\\"cut, terug naar de markering\\\" ontbreekt, maar de technische lichtaanwijzing vervult functioneel dezelfde switch.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant realiseert de geplande overgang van een echt sterfbed naar een toneelmatige uitvoering. De punch is iets minder expliciet dan de geplande \\\"cut\\\"-cue, maar blijft begrijpelijk als technische toneelaanwijzing.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Oma neemt in bed afscheid van haar familie, terwijl een verpleegkundige haar hand vasthoudt tijdens haar laatste momenten.\",\n      \"realized_script_b\": \"Een actrice repeteert een sterfscène; na de gespeelde laatste zucht bespreekt zij de positie van het sterfbed ten opzichte van een podiummarkering.\",\n      \"realized_opposition_axis\": \"Werkelijke levensbeëindiging versus een gespeelde dood als artistieke uitvoering.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bouwt eerst het bedoelde geloofwaardige familie-afscheid op met bed, familie, medische figuur en laatste adem. Het rechtop gaan zitten en de verwijzing naar tape-markering vormen een heldere repetitiecue, waardoor de eerdere rouwsituatie retrospectief als toneelscène wordt gelezen.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit is een sterke realisatie van het geplande SO: de sterfbedcues domineren de opzet en de tape-markering onthult laat maar ondubbelzinnig de repetitiecontext.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een oom ligt stervend in bed, spreekt over loslaten en wordt door huilende familie omringd in gedempt licht.\",\n      \"realized_script_b\": \"Een gefilmde sterfscène wordt onderbroken door een regiecue, waarna de speler bespreekt vanuit welke camerahoek zijn sterven moet worden opgenomen.\",\n      \"realized_opposition_axis\": \"Werkelijk overlijden versus een opgenomen, gespeelde dood voor filmwerk.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De opzet en de late \\\"cut\\\"-cue realiseren wel een overgang van echt afscheid naar geënsceneerde dood, maar Script B is specifiek filmopnamewerk. Het bedoelde Script B was een theatergezelschap dat een slotscène repeteert, met een toneelmatige technische herinterpretatie. De kernas is verwant, maar de gerealiseerde tegenlezing is niet de geplande theaterrepetitie.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De tekst werkt als grap en heeft een duidelijke omslag, maar hij vervangt de geplande theaterrepetitie door een filmopname. Daardoor werkt hij hoofdzakelijk via een niet-geplande variant van de scriptoppositie.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Oma had ons allemaal rond haar bed geroepen voor afscheid; zelfs de verpleegkundige hield haar hand vast. Na haar laatste zucht ging ze rechtop zitten: \"Mooi, maar wie heeft mijn sterfbed op de tape-markering gezet?\"",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.",
+      "opposing_script": "Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.",
+      "opposition_type": "werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering",
+      "trigger": "Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \"En... cut, terug naar de markering.\"",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Een zwakke oudere in bed.",
+        "Familie die zich rond de persoon verzamelt.",
+        "Gesprekken over afscheid en laatste woorden.",
+        "Een witte jas en ogenschijnlijk medische handelingen.",
+        "Een stille, plechtige ruimte met gedempt licht."
+      ],
+      "hinge_event": "De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.",
+      "anomaly_under_a": "Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.",
+      "resolution_under_b": "In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.",
+      "role_remapping": [
+        "De ouder wordende volwassene wordt de acteur in de hoofdrol.",
+        "Dierbaren en familie worden medespelers die familie vertolken.",
+        "Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.",
+        "Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.\\\",\\\"participants_and_roles\\\":[\\\"Een ouder wordende volwassene: merkt veranderingen op, maakt keuzes en wil regie houden.\\\",\\\"Dierbaren/familie: bieden gezelschap, steun en praktische hulp wanneer dat nodig wordt.\\\",\\\"Artsen en zorgverleners: signaleren gezondheidsproblemen, behandelen en adviseren.\\\",\\\"De samenleving en voorzieningen: bieden pensioen, zorg, wonen en ondersteuning voor latere levensfasen.\\\"],\\\"apparent_goal\\\":\\\"Op een waardige, gezonde en betekenisvolle manier ouder worden, met zo veel mogelijk autonomie en voorbereiding op het onvermijdelijke levenseinde.\\\",\\\"preconditions\\\":[\\\"De persoon heeft genoeg tijd geleefd om veranderingen in energie, uiterlijk, gezondheid of sociale positie te merken.\\\",\\\"Veroudering verloopt geleidelijk, maar verschilt per persoon.\\\",\\\"Gezondheid, financiën, relaties en toegang tot zorg beïnvloeden de mate van zelfstandigheid.\\\",\\\"Sterfelijkheid is onvermijdelijk, ook al is het moment ervan doorgaans onzeker.\\\"],\\\"expected_actions\\\":[\\\"Gezondheidsklachten laten controleren en medische adviezen volgen.\\\",\\\"Praktische zaken regelen, zoals pensioen, wonen, verzekeringen, een testament of wensen rond zorg.\\\",\\\"Contact met familie, vrienden en gemeenschap onderhouden.\\\",\\\"Zich aanpassen aan beperkingen en zo nodig hulp of zorg accepteren.\\\",\\\"Nadenken of praten over nalatenschap, afscheid en wensen voor het levenseinde.\\\"],\\\"expected_outcome\\\":\\\"De persoon leeft zo lang en prettig mogelijk, behoudt waar mogelijk zelfstandigheid, krijgt steun bij toenemende kwetsbaarheid en laat uiteindelijk dierbaren en praktische zaken zo goed mogelijk achter.\\\",\\\"expected_propositions\\\":[\\\"Met de leeftijd nemen lichamelijke beperkingen en gezondheidsrisico's gemiddeld toe.\\\",\\\"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\\\",\\\"Ouder worden vraagt vaak om aanpassing, maar hoeft niet te betekenen dat iemands leven geen plezier, betekenis of autonomie meer heeft.\\\",\\\"Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.\\\",\\\"Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een volwassene die geleidelijk kwetsbaarder wordt, verantwoordelijkheid neemt voor gezondheid en praktische voorbereiding, steun zoekt of ontvangt, en probeert waardigheid en regie te bewaren terwijl de eindigheid van het leven dichterbij komt.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een eigenaar probeert een oude computer nog bruikbaar te houden. De machine wordt trager, het geheugen raakt vol, onderdelen vallen uit en vóór definitieve uitval wil de eigenaar de gegevens veiligstellen of het apparaat vervangen.\\\",\\\"opposition_axis\\\":\\\"menselijke sterfelijkheid en waardigheid versus technische veroudering en vervanging\\\",\\\"opposed_proposition\\\":\\\"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\\\",\\\"shared_anchor\\\":\\\"Voorbereiden op een naderend, onomkeerbaar einde.\\\",\\\"reading_a\\\":\\\"Een ouder wordende volwassene merkt afnemende energie en geheugenproblemen op, raadpleegt zorgverleners en regelt wensen voor het levenseinde.\\\",\\\"reading_b\\\":\\\"Een verouderde computer vertoont prestatie- en geheugenproblemen; een technicus probeert gegevens te redden voordat het apparaat definitief uitvalt.\\\",\\\"roles_b\\\":[\\\"De oude computer: vertoont slijtage, traagheid en geheugenproblemen.\\\",\\\"De eigenaar: wil het apparaat nog gebruiken en belangrijke bestanden behouden.\\\",\\\"De technicus: onderzoekt storingen, vervangt onderdelen en adviseert over back-ups.\\\",\\\"Gebruikers en clouddiensten: leveren bestanden, ondersteuning en een mogelijke nieuwe omgeving.\\\"],\\\"goal_b\\\":\\\"De gegevens veiligstellen en bepalen of de computer nog gerepareerd kan worden voordat hij wordt afgeschreven.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende volwassene wordt de oude computer.\\\",\\\"Dierbaren en familie worden de eigenaar, gebruikers en opgeslagen contacten.\\\",\\\"Artsen en zorgverleners worden de technicus of reparatiedienst.\\\",\\\"Zorg, wonen en praktische voorzieningen worden back-ups, reserveonderdelen, opslag en vervangende hardware.\\\"],\\\"shared_cues\\\":[\\\"Afnemende energie en trager functioneren.\\\",\\\"Geheugen dat minder betrouwbaar wordt.\\\",\\\"Een controle of onderzoek door een deskundige.\\\",\\\"Het ordenen en veiligstellen van belangrijke zaken.\\\",\\\"De vraag hoe lang zelfstandig functioneren nog mogelijk is.\\\"],\\\"switch_trigger\\\":\\\"De deskundige vraagt niet naar een zorgwens, maar zegt: \\\\\\\"Zet hem uit; eerst maken we een volledige back-up.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De vermeende patiënt wordt opengeklapt, waarna de technicus een harde schijf uit de romp haalt.\\\",\\\"anomaly_under_a\\\":\\\"Bij een mens zou uitschakelen, openklappen en een harde schijf verwijderen een volstrekt ongepaste en onmogelijke reactie op kwetsbaarheid zijn.\\\",\\\"resolution_under_b\\\":\\\"Als het om een computer gaat, is uitschakelen juist noodzakelijk om gegevensverlies te voorkomen; de harde schijf bevat de te redden 'nalatenschap'.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.\\\",\\\"opposition_axis\\\":\\\"werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering\\\",\\\"opposed_proposition\\\":\\\"Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.\\\",\\\"shared_anchor\\\":\\\"Een kwetsbare oudere bereidt een laatste afscheid voor.\\\",\\\"reading_a\\\":\\\"Een oudere persoon bespreekt met naasten en zorgverleners toenemende kwetsbaarheid, laatste wensen en een naderend afscheid.\\\",\\\"reading_b\\\":\\\"Een acteur en gezelschap oefenen zorgvuldig een fictief afscheid, inclusief medische rekwisieten, familieleden op het toneel en een sterfscène.\\\",\\\"roles_b\\\":[\\\"De oudere acteur: speelt de kwetsbare hoofdpersoon.\\\",\\\"Medespelers: spelen familieleden en bieden steun binnen de scène.\\\",\\\"Regisseur en grimeur: sturen de uitvoering en maken ziekte of ouderdom zichtbaar.\\\",\\\"Publiek en toneeltechniek: ontvangen de voorstelling en ondersteunen decor, licht en geluid.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige en ontroerende sterfscène neerzetten voor de première.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende volwassene wordt de acteur in de hoofdrol.\\\",\\\"Dierbaren en familie worden medespelers die familie vertolken.\\\",\\\"Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.\\\",\\\"Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning.\\\"],\\\"shared_cues\\\":[\\\"Een zwakke oudere in bed.\\\",\\\"Familie die zich rond de persoon verzamelt.\\\",\\\"Gesprekken over afscheid en laatste woorden.\\\",\\\"Een witte jas en ogenschijnlijk medische handelingen.\\\",\\\"Een stille, plechtige ruimte met gedempt licht.\\\"],\\\"switch_trigger\\\":\\\"Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \\\\\\\"En... cut, terug naar de markering.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.\\\",\\\"anomaly_under_a\\\":\\\"Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.\\\",\\\"resolution_under_b\\\":\\\"In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een langdurig gedetineerde bereidt zich voor op vrijlating. Hij heeft een lichamelijke keuring, ontvangt bezoek, regelt papieren, moet wennen aan zelfstandigheid en probeert na jaren van afhankelijkheid opnieuw een plaats buiten de gevangenis te vinden.\\\",\\\"opposition_axis\\\":\\\"toenemende afhankelijkheid en zorg versus beëindiging van opsluiting en herwonnen vrijheid\\\",\\\"opposed_proposition\\\":\\\"Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.\\\",\\\"shared_anchor\\\":\\\"Iemand bereidt met hulp van anderen een ingrijpende overgang naar een onzekere laatste levensfase voor.\\\",\\\"reading_a\\\":\\\"Een ouder wordende volwassene wordt kwetsbaarder, krijgt meer ondersteuning en bereidt met familie en professionals een veilige overgang naar verdere zorg of het levenseinde voor.\\\",\\\"reading_b\\\":\\\"Een gedetineerde nadert het einde van zijn straf, krijgt begeleiding bij terugkeer en moet buiten de instelling opnieuw zelfstandig leren leven.\\\",\\\"roles_b\\\":[\\\"De gedetineerde: bereidt zich voor op vertrek uit een gecontroleerde omgeving.\\\",\\\"Bezoekers en familie: onderhouden contact en bieden steun bij terugkeer.\\\",\\\"Gevangenisarts, bewakers en reclassering: keuren, begeleiden en controleren.\\\",\\\"Gevangenis en reclasseringsvoorzieningen: bieden huisvesting, regels, administratie en nazorg.\\\"],\\\"goal_b\\\":\\\"De gevangenis verlaten en een zelfstandig bestaan opbouwen zonder opnieuw de fout in te gaan.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende volwassene wordt de gedetineerde.\\\",\\\"Dierbaren en familie blijven bezoekers en een mogelijk opvangnetwerk.\\\",\\\"Artsen en zorgverleners worden gevangenisarts, bewakers en reclasseringsbegeleiders.\\\",\\\"Zorg- en woonvoorzieningen worden de cel, de gevangenisadministratie, opvang en reclassering.\\\"],\\\"shared_cues\\\":[\\\"Medische controles en formulieren.\\\",\\\"Bezoek op vaste tijden.\\\",\\\"Een kleine kamer waarin iemand afhankelijk is van hulp en regels.\\\",\\\"Gesprekken over wonen, geld, steun en toekomstplannen.\\\",\\\"Het inpakken van persoonlijke bezittingen voor een grote overgang.\\\"],\\\"switch_trigger\\\":\\\"De begeleider zegt niet dat er thuiszorg komt, maar: \\\\\\\"Morgenochtend gaat de poort open; uw straf zit erop.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Een bewaker doet de deur open, geeft de man zijn veters terug en wijst hem naar de uitgangspoort.\\\",\\\"anomaly_under_a\\\":\\\"Een kwetsbare oudere zijn veters teruggeven en hem door een bewaakte poort naar buiten sturen zou geen passende vorm van zorg of voorbereiding op sterven zijn.\\\",\\\"resolution_under_b\\\":\\\"Voor een gedetineerde markeren de veters en de open poort juist het herstel van bewegingsvrijheid en het concrete begin van terugkeer in de samenleving.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een ouder wordende politicus voert een campagne om ondanks vragen over leeftijd, gezondheid en opvolging opnieuw gekozen te worden. Hij mobiliseert familie, adviseurs, artsen en kiezers om zijn publieke geloofwaardigheid en politieke invloed te behouden.\\\",\\\"opposition_axis\\\":\\\"persoonlijke waardigheid en aanvaarding van eindigheid versus publieke machtsbehoud en electorale overleving\\\",\\\"opposed_proposition\\\":\\\"Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.\\\",\\\"shared_anchor\\\":\\\"Een oudere persoon probeert onder toenemende druk de regie over de toekomst te behouden.\\\",\\\"reading_a\\\":\\\"Een ouder wordende persoon houdt regie over zorg, wonen, nalatenschap en beslissingen rond een waardig levenseinde.\\\",\\\"reading_b\\\":\\\"Een ervaren politicus probeert de regie over zijn loopbaan en partij te behouden door kiezers ervan te overtuigen dat hij nog een ambtstermijn aankan.\\\",\\\"roles_b\\\":[\\\"De oudere politicus: kandidaat die zijn vitaliteit en ervaring moet bewijzen.\\\",\\\"Familie en partijvrijwilligers: bieden emotionele steun en organiseren campagneactiviteiten.\\\",\\\"Artsen en communicatiestrategen: beoordelen gezondheid en sturen de publieke boodschap.\\\",\\\"Kiezers, media en partijbestuur: bepalen toegang tot steun, middelen en herverkiezing.\\\"],\\\"goal_b\\\":\\\"Herverkozen worden en voorkomen dat een jongere opvolger zijn positie overneemt.\\\",\\\"role_remapping\\\":[\\\"De ouder wordende volwassene wordt de oudere kandidaat.\\\",\\\"Dierbaren en familie worden familieleden, partijvrijwilligers en trouwe achterban.\\\",\\\"Artsen en zorgverleners worden artsen, persadviseurs en communicatiestrategen.\\\",\\\"De samenleving en voorzieningen worden kiezers, media, partijbestuur en campagneorganisatie.\\\"],\\\"shared_cues\\\":[\\\"Vragen over gezondheid, energie en belastbaarheid.\\\",\\\"Familieleden die steunend naast de oudere staan.\\\",\\\"Documenten waarin wensen en toekomstige regelingen worden vastgelegd.\\\",\\\"Gesprekken over opvolging en wat iemand achterlaat.\\\",\\\"Een nadruk op zelfstandigheid, ervaring en waardigheid.\\\"],\\\"switch_trigger\\\":\\\"Na een ernstig gesprek over zijn toekomst fluistert de adviseur: \\\\\\\"Over tien seconden bent u live in het televisiedebat.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De vermeende patiënt zet een campagnebutton op, loopt naar een spreekgestoelte en begint: \\\\\\\"Beste kiezers, ik ben nog lang niet klaar.\\\\\\\"\\\",\\\"anomaly_under_a\\\":\\\"Een spreekgestoelte, campagnebutton en live debat zouden een ongepaste verschuiving zijn tijdens een intiem gesprek over zorg, kwetsbaarheid en het levenseinde.\\\",\\\"resolution_under_b\\\":\\\"Voor de politicus zijn ze functioneel: hij zet twijfel over ouderdom om in een zichtbaar bewijs van ambitie, vitaliteit en aanspraak op politieke regie.\\\"}] }\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde opzet kan eerst een kwetsbare oudere en later een falende computer aanduiden. Menselijke sterfelijkheid en technische afschrijving zijn lokaal onverenigbare lezingen op één dominante as. De gedeelde signalen (traagheid, geheugen, deskundige controle, veiligstellen) dragen beide lezingen, terwijl de menselijke lezing aanvankelijk overheerst. Uitschakelen, openklappen en een harde schijf verwijderen zijn onder A absurd, maar onder B noodzakelijke dataveiligstelling. Daardoor krijgen eerdere termen zoals geheugen, zorg en nalatenschap achteraf een technische functie. Uitschakelen frustreert A's doel van voortbestaan/autonomie, maar ondersteunt B's doel om gegevens te redden.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een scène met een zwakke oudere, familie, witte jas en laatste woorden kan zowel als werkelijk afscheid als als toneelrepetitie worden gelezen. Werkelijk overlijden en gespeelde dood zijn lokaal onverenigbaar op de dominante as werkelijk versus uitgevoerd. De theaterlezing is herkenbaar en blijft vóór de trigger mogelijk via rekwisieten, belichting en rollen. Opstaan na het overlijden en lichtinstructies geven is onder A anomalisch, maar onder B een normale repetitieonderbreking. Daardoor worden familie, medische handelingen en afscheid achteraf theatrale elementen. De gespeelde dood zou A's overlevingsdoel uitsluiten, maar is precies noodzakelijk voor B's doel: een overtuigende sterfscène spelen.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":false,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De gedeelde cues kunnen één tekst eerst als zorg- en overgangssituatie voor een kwetsbare oudere en later als voorbereiding op vrijlating laten dragen. Toenemende zorgafhankelijkheid tegenover het einde van opsluiting en herwonnen vrijheid vormt een lokale, dominante tegenstelling. De gevangenislezing is sociaal herkenbaar en blijft vóór de expliciete poort- en straftrigger mogelijk. De open deur, teruggegeven veters en uitgangspoort zijn onder A ongepast, maar onder B functionele tekenen van vrijlating; eerdere steun, controles en formulieren worden daardoor retrospectief gevangenisbegeleiding. De gedeelde anchor noemt echter expliciet een 'laatste levensfase' en ondersteunt een vrijlating uit detentie niet natuurlijk. Ook is de vrijlatingshandeling niet expliciet een conditie die A's doel blokkeert én B's doel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Dezelfde signalen over gezondheid, familie, documenten, opvolging en regie kunnen eerst een persoonlijke ouderdoms- en zorgsituatie en later een verkiezingscampagne ondersteunen. De politieke lezing is coherent, herkenbaar en blijft vóór de televisiedebattrigger beschikbaar; de private ouderdomslezing ligt aanvankelijk meer voor de hand. Button, spreekgestoelte en debat zijn onder A anomalisch, maar onder B functioneel, waardoor eerdere documenten en opvolgingsgesprekken achteraf campagne- en machtsmateriaal worden. Er is echter geen echte lokale incompatibiliteit tussen de scripts: een ouder wordende politicus kan tegelijk persoonlijke waardigheid en regie nastreven én herverkiezing zoeken. Het debat blokkeert A's doel bovendien niet noodzakelijk, maar kan ook als een vorm van zelfbeschikking of regie gelden.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B2\\\",\\\"rationale\\\":\\\"B2 biedt de sterkste dubbele lezing: kwetsbaarheid, familie, witte jassen, laatste woorden en een plechtige ruimte ondersteunen aanvankelijk overtuigend het script over ouder worden en sterfelijkheid. De omkering is tegelijk scherp en economisch: het commando \\\\\\\"cut\\\\\\\" en het opstaan van de vermeend overledene herinterpreteren alle voorafgaande signalen coherent als een repetitie. De tegenstelling tussen werkelijk afscheid en gespeelde sterfelijkheid is direct relevant voor het onderwerp, behoudt waardigheid in de opzet en heeft een hoog retrospectief payoff-potentieel zonder dat de tweede lezing vroegtijdig wordt verraden.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Mijn vader lag zwak in bed, wij stonden er stil omheen en de man in witte jas controleerde nog één keer zijn pols. Hij fluisterde zijn laatste woorden, stond op en zei: \\\\\\\"Kunnen we bij mijn dood iets meer licht zetten?\\\\\\\"\\\",\\\"angle\\\":\\\"De ernstige sterfscène blijkt een repetitie waarin de hoofdrolspeler technische aanwijzingen geeft.\\\"},{\\\"text\\\":\\\"Oma had ons allemaal rond haar bed geroepen voor afscheid; zelfs de verpleegkundige hield haar hand vast. Na haar laatste zucht ging ze rechtop zitten: \\\\\\\"Mooi, maar wie heeft mijn sterfbed op de tape-markering gezet?\\\\\\\"\\\",\\\"angle\\\":\\\"Een geloofwaardig familie-afscheid kantelt naar een toneelrepetitie met podiummarkeringen.\\\"},{\\\"text\\\":\\\"Mijn oom sprak heel zacht over loslaten, terwijl wij met tranen naast zijn bed zaten in dat gedempte licht. Toen riep iemand achterin: \\\\\\\"En... cut\\\\\\\", en oom vroeg of zijn sterven volgende keer van links gefilmd kon worden.\\\",\\\"angle\\\":\\\"De intieme doodsscène blijkt opnamewerk, waardoor het afscheid een cameravraag krijgt.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een vader ligt zwak in bed, omringd door familie en een man in een witte jas, en spreekt vermoedelijk zijn laatste woorden tijdens een werkelijk afscheid.\\\",\\\"realized_script_b\\\":\\\"Een acteur speelt een sterfscène en onderbreekt die om technische aanwijzingen over de belichting te geven.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke levensbeëindiging versus een gespeelde dood als artistieke uitvoering.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet activeert overtuigend een werkelijk sterfbed met de beoogde gedeelde cues. De late vraag om meer licht bij zijn dood maakt een uitvoeringscontext aannemelijk en herkadert de situatie als een gespeelde scène. De geplande expliciete cue \\\\\\\"cut, terug naar de markering\\\\\\\" ontbreekt, maar de technische lichtaanwijzing vervult functioneel dezelfde switch.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant realiseert de geplande overgang van een echt sterfbed naar een toneelmatige uitvoering. De punch is iets minder expliciet dan de geplande \\\\\\\"cut\\\\\\\"-cue, maar blijft begrijpelijk als technische toneelaanwijzing.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Oma neemt in bed afscheid van haar familie, terwijl een verpleegkundige haar hand vasthoudt tijdens haar laatste momenten.\\\",\\\"realized_script_b\\\":\\\"Een actrice repeteert een sterfscène; na de gespeelde laatste zucht bespreekt zij de positie van het sterfbed ten opzichte van een podiummarkering.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke levensbeëindiging versus een gespeelde dood als artistieke uitvoering.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bouwt eerst het bedoelde geloofwaardige familie-afscheid op met bed, familie, medische figuur en laatste adem. Het rechtop gaan zitten en de verwijzing naar tape-markering vormen een heldere repetitiecue, waardoor de eerdere rouwsituatie retrospectief als toneelscène wordt gelezen.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Dit is een sterke realisatie van het geplande SO: de sterfbedcues domineren de opzet en de tape-markering onthult laat maar ondubbelzinnig de repetitiecontext.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een oom ligt stervend in bed, spreekt over loslaten en wordt door huilende familie omringd in gedempt licht.\\\",\\\"realized_script_b\\\":\\\"Een gefilmde sterfscène wordt onderbroken door een regiecue, waarna de speler bespreekt vanuit welke camerahoek zijn sterven moet worden opgenomen.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijk overlijden versus een opgenomen, gespeelde dood voor filmwerk.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De opzet en de late \\\\\\\"cut\\\\\\\"-cue realiseren wel een overgang van echt afscheid naar geënsceneerde dood, maar Script B is specifiek filmopnamewerk. Het bedoelde Script B was een theatergezelschap dat een slotscène repeteert, met een toneelmatige technische herinterpretatie. De kernas is verwant, maar de gerealiseerde tegenlezing is niet de geplande theaterrepetitie.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De tekst werkt als grap en heeft een duidelijke omslag, maar hij vervangt de geplande theaterrepetitie door een filmopname. Daardoor werkt hij hoofdzakelijk via een niet-geplande variant van de scriptoppositie.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide voldoen aan lengte en vorm en realiseren de vereiste scriptoppositie. V2 heeft de scherpere, ondubbelzinnige switch: de tape-markering herkadert het sterfbed direct als repetitie. V1 is natuurlijker ingetogen, maar de lichtvraag is iets minder specifiek en daardoor minder krachtig als onthulling.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is een passerende variant en moet daarom boven V3 staan. Bovendien blijft V1 trouw aan de bedoelde toneelmatige uitvoering, terwijl V3 de geplande theaterrepetitie vervangt door filmopnamewerk. V3 heeft wel een heldere cut, maar mist daardoor vereiste-resourcefideliteit.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is passerend, heeft een heldere spreekbare opbouw en levert met de tape-markering een sterke late herinterpretatie van alle sterfbedcues. V3 is eveneens compact en performbaar, maar faalt op de specifieke geplande tegenlezing doordat het om film in plaats van theater gaat.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de sterkste passerende variant: de opzet is onmiddellijk herkenbaar als afscheid, de omslag komt laat en precies, en de tape-markering maakt de theaterrepetitie compact, verrassend en retrospectief volledig duidelijk.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een eigenaar probeert een oude computer nog bruikbaar te houden. De machine wordt trager, het geheugen raakt vol, onderdelen vallen uit en vóór definitieve uitval wil de eigenaar de gegevens veiligstellen of het apparaat vervangen.",
+        "candidate_id": "B1",
+        "opposition_axis": "menselijke sterfelijkheid en waardigheid versus technische veroudering en vervanging",
+        "opposed_expectation": "Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.",
+        "roles_b": [
+          "De oude computer: vertoont slijtage, traagheid en geheugenproblemen.",
+          "De eigenaar: wil het apparaat nog gebruiken en belangrijke bestanden behouden.",
+          "De technicus: onderzoekt storingen, vervangt onderdelen en adviseert over back-ups.",
+          "Gebruikers en clouddiensten: leveren bestanden, ondersteuning en een mogelijke nieuwe omgeving."
+        ],
+        "goal_b": "De gegevens veiligstellen en bepalen of de computer nog gerepareerd kan worden voordat hij wordt afgeschreven.",
+        "role_remapping": [
+          "De ouder wordende volwassene wordt de oude computer.",
+          "Dierbaren en familie worden de eigenaar, gebruikers en opgeslagen contacten.",
+          "Artsen en zorgverleners worden de technicus of reparatiedienst.",
+          "Zorg, wonen en praktische voorzieningen worden back-ups, reserveonderdelen, opslag en vervangende hardware."
+        ],
+        "shared_cues": [
+          "Afnemende energie en trager functioneren.",
+          "Geheugen dat minder betrouwbaar wordt.",
+          "Een controle of onderzoek door een deskundige.",
+          "Het ordenen en veiligstellen van belangrijke zaken.",
+          "De vraag hoe lang zelfstandig functioneren nog mogelijk is."
+        ],
+        "switch_trigger": "De deskundige vraagt niet naar een zorgwens, maar zegt: \"Zet hem uit; eerst maken we een volledige back-up.\"",
+        "hinge_event": "De vermeende patiënt wordt opengeklapt, waarna de technicus een harde schijf uit de romp haalt.",
+        "anomaly_under_a": "Bij een mens zou uitschakelen, openklappen en een harde schijf verwijderen een volstrekt ongepaste en onmogelijke reactie op kwetsbaarheid zijn.",
+        "resolution_under_b": "Als het om een computer gaat, is uitschakelen juist noodzakelijk om gegevensverlies te voorkomen; de harde schijf bevat de te redden 'nalatenschap'.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.",
+        "candidate_id": "B2",
+        "opposition_axis": "werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering",
+        "opposed_expectation": "Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.",
+        "roles_b": [
+          "De oudere acteur: speelt de kwetsbare hoofdpersoon.",
+          "Medespelers: spelen familieleden en bieden steun binnen de scène.",
+          "Regisseur en grimeur: sturen de uitvoering en maken ziekte of ouderdom zichtbaar.",
+          "Publiek en toneeltechniek: ontvangen de voorstelling en ondersteunen decor, licht en geluid."
+        ],
+        "goal_b": "Een geloofwaardige en ontroerende sterfscène neerzetten voor de première.",
+        "role_remapping": [
+          "De ouder wordende volwassene wordt de acteur in de hoofdrol.",
+          "Dierbaren en familie worden medespelers die familie vertolken.",
+          "Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.",
+          "Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning."
+        ],
+        "shared_cues": [
+          "Een zwakke oudere in bed.",
+          "Familie die zich rond de persoon verzamelt.",
+          "Gesprekken over afscheid en laatste woorden.",
+          "Een witte jas en ogenschijnlijk medische handelingen.",
+          "Een stille, plechtige ruimte met gedempt licht."
+        ],
+        "switch_trigger": "Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \"En... cut, terug naar de markering.\"",
+        "hinge_event": "De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.",
+        "anomaly_under_a": "Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.",
+        "resolution_under_b": "In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een langdurig gedetineerde bereidt zich voor op vrijlating. Hij heeft een lichamelijke keuring, ontvangt bezoek, regelt papieren, moet wennen aan zelfstandigheid en probeert na jaren van afhankelijkheid opnieuw een plaats buiten de gevangenis te vinden.",
+        "candidate_id": "B3",
+        "opposition_axis": "toenemende afhankelijkheid en zorg versus beëindiging van opsluiting en herwonnen vrijheid",
+        "opposed_expectation": "Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.",
+        "roles_b": [
+          "De gedetineerde: bereidt zich voor op vertrek uit een gecontroleerde omgeving.",
+          "Bezoekers en familie: onderhouden contact en bieden steun bij terugkeer.",
+          "Gevangenisarts, bewakers en reclassering: keuren, begeleiden en controleren.",
+          "Gevangenis en reclasseringsvoorzieningen: bieden huisvesting, regels, administratie en nazorg."
+        ],
+        "goal_b": "De gevangenis verlaten en een zelfstandig bestaan opbouwen zonder opnieuw de fout in te gaan.",
+        "role_remapping": [
+          "De ouder wordende volwassene wordt de gedetineerde.",
+          "Dierbaren en familie blijven bezoekers en een mogelijk opvangnetwerk.",
+          "Artsen en zorgverleners worden gevangenisarts, bewakers en reclasseringsbegeleiders.",
+          "Zorg- en woonvoorzieningen worden de cel, de gevangenisadministratie, opvang en reclassering."
+        ],
+        "shared_cues": [
+          "Medische controles en formulieren.",
+          "Bezoek op vaste tijden.",
+          "Een kleine kamer waarin iemand afhankelijk is van hulp en regels.",
+          "Gesprekken over wonen, geld, steun en toekomstplannen.",
+          "Het inpakken van persoonlijke bezittingen voor een grote overgang."
+        ],
+        "switch_trigger": "De begeleider zegt niet dat er thuiszorg komt, maar: \"Morgenochtend gaat de poort open; uw straf zit erop.\"",
+        "hinge_event": "Een bewaker doet de deur open, geeft de man zijn veters terug en wijst hem naar de uitgangspoort.",
+        "anomaly_under_a": "Een kwetsbare oudere zijn veters teruggeven en hem door een bewaakte poort naar buiten sturen zou geen passende vorm van zorg of voorbereiding op sterven zijn.",
+        "resolution_under_b": "Voor een gedetineerde markeren de veters en de open poort juist het herstel van bewegingsvrijheid en het concrete begin van terugkeer in de samenleving.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een ouder wordende politicus voert een campagne om ondanks vragen over leeftijd, gezondheid en opvolging opnieuw gekozen te worden. Hij mobiliseert familie, adviseurs, artsen en kiezers om zijn publieke geloofwaardigheid en politieke invloed te behouden.",
+        "candidate_id": "B4",
+        "opposition_axis": "persoonlijke waardigheid en aanvaarding van eindigheid versus publieke machtsbehoud en electorale overleving",
+        "opposed_expectation": "Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.",
+        "roles_b": [
+          "De oudere politicus: kandidaat die zijn vitaliteit en ervaring moet bewijzen.",
+          "Familie en partijvrijwilligers: bieden emotionele steun en organiseren campagneactiviteiten.",
+          "Artsen en communicatiestrategen: beoordelen gezondheid en sturen de publieke boodschap.",
+          "Kiezers, media en partijbestuur: bepalen toegang tot steun, middelen en herverkiezing."
+        ],
+        "goal_b": "Herverkozen worden en voorkomen dat een jongere opvolger zijn positie overneemt.",
+        "role_remapping": [
+          "De ouder wordende volwassene wordt de oudere kandidaat.",
+          "Dierbaren en familie worden familieleden, partijvrijwilligers en trouwe achterban.",
+          "Artsen en zorgverleners worden artsen, persadviseurs en communicatiestrategen.",
+          "De samenleving en voorzieningen worden kiezers, media, partijbestuur en campagneorganisatie."
+        ],
+        "shared_cues": [
+          "Vragen over gezondheid, energie en belastbaarheid.",
+          "Familieleden die steunend naast de oudere staan.",
+          "Documenten waarin wensen en toekomstige regelingen worden vastgelegd.",
+          "Gesprekken over opvolging en wat iemand achterlaat.",
+          "Een nadruk op zelfstandigheid, ervaring en waardigheid."
+        ],
+        "switch_trigger": "Na een ernstig gesprek over zijn toekomst fluistert de adviseur: \"Over tien seconden bent u live in het televisiedebat.\"",
+        "hinge_event": "De vermeende patiënt zet een campagnebutton op, loopt naar een spreekgestoelte en begint: \"Beste kiezers, ik ben nog lang niet klaar.\"",
+        "anomaly_under_a": "Een spreekgestoelte, campagnebutton en live debat zouden een ongepaste verschuiving zijn tijdens een intiem gesprek over zorg, kwetsbaarheid en het levenseinde.",
+        "resolution_under_b": "Voor de politicus zijn ze functioneel: hij zet twijfel over ouderdom om in een zichtbaar bewijs van ambitie, vitaliteit en aanspraak op politieke regie.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B2 biedt de sterkste dubbele lezing: kwetsbaarheid, familie, witte jassen, laatste woorden en een plechtige ruimte ondersteunen aanvankelijk overtuigend het script over ouder worden en sterfelijkheid. De omkering is tegelijk scherp en economisch: het commando \"cut\" en het opstaan van de vermeend overledene herinterpreteren alle voorafgaande signalen coherent als een repetitie. De tegenstelling tussen werkelijk afscheid en gespeelde sterfelijkheid is direct relevant voor het onderwerp, behoudt waardigheid in de opzet en heeft een hoog retrospectief payoff-potentieel zonder dat de tweede lezing vroegtijdig wordt verraden.",
+    "variants": [
+      {
+        "text": "Mijn vader lag zwak in bed, wij stonden er stil omheen en de man in witte jas controleerde nog één keer zijn pols. Hij fluisterde zijn laatste woorden, stond op en zei: \"Kunnen we bij mijn dood iets meer licht zetten?\"",
+        "angle": "De ernstige sterfscène blijkt een repetitie waarin de hoofdrolspeler technische aanwijzingen geeft."
+      },
+      {
+        "text": "Oma had ons allemaal rond haar bed geroepen voor afscheid; zelfs de verpleegkundige hield haar hand vast. Na haar laatste zucht ging ze rechtop zitten: \"Mooi, maar wie heeft mijn sterfbed op de tape-markering gezet?\"",
+        "angle": "Een geloofwaardig familie-afscheid kantelt naar een toneelrepetitie met podiummarkeringen."
+      },
+      {
+        "text": "Mijn oom sprak heel zacht over loslaten, terwijl wij met tranen naast zijn bed zaten in dat gedempte licht. Toen riep iemand achterin: \"En... cut\", en oom vroeg of zijn sterven volgende keer van links gefilmd kon worden.",
+        "angle": "De intieme doodsscène blijkt opnamewerk, waardoor het afscheid een cameravraag krijgt."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 13718,
+      "output_tokens": 8536,
+      "total_tokens": 22254
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een volwassene merkt met het ouder worden lichamelijke veranderingen en denkt vooruit over gezondheid, tijd en het levenseinde; die persoon probeert zo lang mogelijk gezond, zelfstandig en verbonden met dierbaren te blijven.",
+          "participants_and_roles": [
+            "Een ouder wordende volwassene: merkt veranderingen op, maakt keuzes en wil regie houden.",
+            "Dierbaren/familie: bieden gezelschap, steun en praktische hulp wanneer dat nodig wordt.",
+            "Artsen en zorgverleners: signaleren gezondheidsproblemen, behandelen en adviseren.",
+            "De samenleving en voorzieningen: bieden pensioen, zorg, wonen en ondersteuning voor latere levensfasen."
+          ],
+          "apparent_goal": "Op een waardige, gezonde en betekenisvolle manier ouder worden, met zo veel mogelijk autonomie en voorbereiding op het onvermijdelijke levenseinde.",
+          "preconditions": [
+            "De persoon heeft genoeg tijd geleefd om veranderingen in energie, uiterlijk, gezondheid of sociale positie te merken.",
+            "Veroudering verloopt geleidelijk, maar verschilt per persoon.",
+            "Gezondheid, financiën, relaties en toegang tot zorg beïnvloeden de mate van zelfstandigheid.",
+            "Sterfelijkheid is onvermijdelijk, ook al is het moment ervan doorgaans onzeker."
+          ],
+          "expected_actions": [
+            "Gezondheidsklachten laten controleren en medische adviezen volgen.",
+            "Praktische zaken regelen, zoals pensioen, wonen, verzekeringen, een testament of wensen rond zorg.",
+            "Contact met familie, vrienden en gemeenschap onderhouden.",
+            "Zich aanpassen aan beperkingen en zo nodig hulp of zorg accepteren.",
+            "Nadenken of praten over nalatenschap, afscheid en wensen voor het levenseinde."
+          ],
+          "expected_outcome": "De persoon leeft zo lang en prettig mogelijk, behoudt waar mogelijk zelfstandigheid, krijgt steun bij toenemende kwetsbaarheid en laat uiteindelijk dierbaren en praktische zaken zo goed mogelijk achter.",
+          "expected_propositions": [
+            "Met de leeftijd nemen lichamelijke beperkingen en gezondheidsrisico's gemiddeld toe.",
+            "Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.",
+            "Ouder worden vraagt vaak om aanpassing, maar hoeft niet te betekenen dat iemands leven geen plezier, betekenis of autonomie meer heeft.",
+            "Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.",
+            "Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven."
+          ],
+          "audience_expectation": "Een opzet over ouder worden en sterfelijkheid activeert de herkenbare verwachting van een volwassene die geleidelijk kwetsbaarder wordt, verantwoordelijkheid neemt voor gezondheid en praktische voorbereiding, steun zoekt of ontvangt, en probeert waardigheid en regie te bewaren terwijl de eindigheid van het leven dichterbij komt."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een eigenaar probeert een oude computer nog bruikbaar te houden. De machine wordt trager, het geheugen raakt vol, onderdelen vallen uit en vóór definitieve uitval wil de eigenaar de gegevens veiligstellen of het apparaat vervangen.",
+            "opposition_axis": "menselijke sterfelijkheid en waardigheid versus technische veroudering en vervanging",
+            "opposed_proposition": "Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.",
+            "shared_anchor": "Voorbereiden op een naderend, onomkeerbaar einde.",
+            "reading_a": "Een ouder wordende volwassene merkt afnemende energie en geheugenproblemen op, raadpleegt zorgverleners en regelt wensen voor het levenseinde.",
+            "reading_b": "Een verouderde computer vertoont prestatie- en geheugenproblemen; een technicus probeert gegevens te redden voordat het apparaat definitief uitvalt.",
+            "roles_b": [
+              "De oude computer: vertoont slijtage, traagheid en geheugenproblemen.",
+              "De eigenaar: wil het apparaat nog gebruiken en belangrijke bestanden behouden.",
+              "De technicus: onderzoekt storingen, vervangt onderdelen en adviseert over back-ups.",
+              "Gebruikers en clouddiensten: leveren bestanden, ondersteuning en een mogelijke nieuwe omgeving."
+            ],
+            "goal_b": "De gegevens veiligstellen en bepalen of de computer nog gerepareerd kan worden voordat hij wordt afgeschreven.",
+            "role_remapping": [
+              "De ouder wordende volwassene wordt de oude computer.",
+              "Dierbaren en familie worden de eigenaar, gebruikers en opgeslagen contacten.",
+              "Artsen en zorgverleners worden de technicus of reparatiedienst.",
+              "Zorg, wonen en praktische voorzieningen worden back-ups, reserveonderdelen, opslag en vervangende hardware."
+            ],
+            "shared_cues": [
+              "Afnemende energie en trager functioneren.",
+              "Geheugen dat minder betrouwbaar wordt.",
+              "Een controle of onderzoek door een deskundige.",
+              "Het ordenen en veiligstellen van belangrijke zaken.",
+              "De vraag hoe lang zelfstandig functioneren nog mogelijk is."
+            ],
+            "switch_trigger": "De deskundige vraagt niet naar een zorgwens, maar zegt: \"Zet hem uit; eerst maken we een volledige back-up.\"",
+            "hinge_event": "De vermeende patiënt wordt opengeklapt, waarna de technicus een harde schijf uit de romp haalt.",
+            "anomaly_under_a": "Bij een mens zou uitschakelen, openklappen en een harde schijf verwijderen een volstrekt ongepaste en onmogelijke reactie op kwetsbaarheid zijn.",
+            "resolution_under_b": "Als het om een computer gaat, is uitschakelen juist noodzakelijk om gegevensverlies te voorkomen; de harde schijf bevat de te redden 'nalatenschap'."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.",
+            "opposition_axis": "werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering",
+            "opposed_proposition": "Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.",
+            "shared_anchor": "Een kwetsbare oudere bereidt een laatste afscheid voor.",
+            "reading_a": "Een oudere persoon bespreekt met naasten en zorgverleners toenemende kwetsbaarheid, laatste wensen en een naderend afscheid.",
+            "reading_b": "Een acteur en gezelschap oefenen zorgvuldig een fictief afscheid, inclusief medische rekwisieten, familieleden op het toneel en een sterfscène.",
+            "roles_b": [
+              "De oudere acteur: speelt de kwetsbare hoofdpersoon.",
+              "Medespelers: spelen familieleden en bieden steun binnen de scène.",
+              "Regisseur en grimeur: sturen de uitvoering en maken ziekte of ouderdom zichtbaar.",
+              "Publiek en toneeltechniek: ontvangen de voorstelling en ondersteunen decor, licht en geluid."
+            ],
+            "goal_b": "Een geloofwaardige en ontroerende sterfscène neerzetten voor de première.",
+            "role_remapping": [
+              "De ouder wordende volwassene wordt de acteur in de hoofdrol.",
+              "Dierbaren en familie worden medespelers die familie vertolken.",
+              "Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.",
+              "Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning."
+            ],
+            "shared_cues": [
+              "Een zwakke oudere in bed.",
+              "Familie die zich rond de persoon verzamelt.",
+              "Gesprekken over afscheid en laatste woorden.",
+              "Een witte jas en ogenschijnlijk medische handelingen.",
+              "Een stille, plechtige ruimte met gedempt licht."
+            ],
+            "switch_trigger": "Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \"En... cut, terug naar de markering.\"",
+            "hinge_event": "De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.",
+            "anomaly_under_a": "Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.",
+            "resolution_under_b": "In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een langdurig gedetineerde bereidt zich voor op vrijlating. Hij heeft een lichamelijke keuring, ontvangt bezoek, regelt papieren, moet wennen aan zelfstandigheid en probeert na jaren van afhankelijkheid opnieuw een plaats buiten de gevangenis te vinden.",
+            "opposition_axis": "toenemende afhankelijkheid en zorg versus beëindiging van opsluiting en herwonnen vrijheid",
+            "opposed_proposition": "Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.",
+            "shared_anchor": "Iemand bereidt met hulp van anderen een ingrijpende overgang naar een onzekere laatste levensfase voor.",
+            "reading_a": "Een ouder wordende volwassene wordt kwetsbaarder, krijgt meer ondersteuning en bereidt met familie en professionals een veilige overgang naar verdere zorg of het levenseinde voor.",
+            "reading_b": "Een gedetineerde nadert het einde van zijn straf, krijgt begeleiding bij terugkeer en moet buiten de instelling opnieuw zelfstandig leren leven.",
+            "roles_b": [
+              "De gedetineerde: bereidt zich voor op vertrek uit een gecontroleerde omgeving.",
+              "Bezoekers en familie: onderhouden contact en bieden steun bij terugkeer.",
+              "Gevangenisarts, bewakers en reclassering: keuren, begeleiden en controleren.",
+              "Gevangenis en reclasseringsvoorzieningen: bieden huisvesting, regels, administratie en nazorg."
+            ],
+            "goal_b": "De gevangenis verlaten en een zelfstandig bestaan opbouwen zonder opnieuw de fout in te gaan.",
+            "role_remapping": [
+              "De ouder wordende volwassene wordt de gedetineerde.",
+              "Dierbaren en familie blijven bezoekers en een mogelijk opvangnetwerk.",
+              "Artsen en zorgverleners worden gevangenisarts, bewakers en reclasseringsbegeleiders.",
+              "Zorg- en woonvoorzieningen worden de cel, de gevangenisadministratie, opvang en reclassering."
+            ],
+            "shared_cues": [
+              "Medische controles en formulieren.",
+              "Bezoek op vaste tijden.",
+              "Een kleine kamer waarin iemand afhankelijk is van hulp en regels.",
+              "Gesprekken over wonen, geld, steun en toekomstplannen.",
+              "Het inpakken van persoonlijke bezittingen voor een grote overgang."
+            ],
+            "switch_trigger": "De begeleider zegt niet dat er thuiszorg komt, maar: \"Morgenochtend gaat de poort open; uw straf zit erop.\"",
+            "hinge_event": "Een bewaker doet de deur open, geeft de man zijn veters terug en wijst hem naar de uitgangspoort.",
+            "anomaly_under_a": "Een kwetsbare oudere zijn veters teruggeven en hem door een bewaakte poort naar buiten sturen zou geen passende vorm van zorg of voorbereiding op sterven zijn.",
+            "resolution_under_b": "Voor een gedetineerde markeren de veters en de open poort juist het herstel van bewegingsvrijheid en het concrete begin van terugkeer in de samenleving."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een ouder wordende politicus voert een campagne om ondanks vragen over leeftijd, gezondheid en opvolging opnieuw gekozen te worden. Hij mobiliseert familie, adviseurs, artsen en kiezers om zijn publieke geloofwaardigheid en politieke invloed te behouden.",
+            "opposition_axis": "persoonlijke waardigheid en aanvaarding van eindigheid versus publieke machtsbehoud en electorale overleving",
+            "opposed_proposition": "Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.",
+            "shared_anchor": "Een oudere persoon probeert onder toenemende druk de regie over de toekomst te behouden.",
+            "reading_a": "Een ouder wordende persoon houdt regie over zorg, wonen, nalatenschap en beslissingen rond een waardig levenseinde.",
+            "reading_b": "Een ervaren politicus probeert de regie over zijn loopbaan en partij te behouden door kiezers ervan te overtuigen dat hij nog een ambtstermijn aankan.",
+            "roles_b": [
+              "De oudere politicus: kandidaat die zijn vitaliteit en ervaring moet bewijzen.",
+              "Familie en partijvrijwilligers: bieden emotionele steun en organiseren campagneactiviteiten.",
+              "Artsen en communicatiestrategen: beoordelen gezondheid en sturen de publieke boodschap.",
+              "Kiezers, media en partijbestuur: bepalen toegang tot steun, middelen en herverkiezing."
+            ],
+            "goal_b": "Herverkozen worden en voorkomen dat een jongere opvolger zijn positie overneemt.",
+            "role_remapping": [
+              "De ouder wordende volwassene wordt de oudere kandidaat.",
+              "Dierbaren en familie worden familieleden, partijvrijwilligers en trouwe achterban.",
+              "Artsen en zorgverleners worden artsen, persadviseurs en communicatiestrategen.",
+              "De samenleving en voorzieningen worden kiezers, media, partijbestuur en campagneorganisatie."
+            ],
+            "shared_cues": [
+              "Vragen over gezondheid, energie en belastbaarheid.",
+              "Familieleden die steunend naast de oudere staan.",
+              "Documenten waarin wensen en toekomstige regelingen worden vastgelegd.",
+              "Gesprekken over opvolging en wat iemand achterlaat.",
+              "Een nadruk op zelfstandigheid, ervaring en waardigheid."
+            ],
+            "switch_trigger": "Na een ernstig gesprek over zijn toekomst fluistert de adviseur: \"Over tien seconden bent u live in het televisiedebat.\"",
+            "hinge_event": "De vermeende patiënt zet een campagnebutton op, loopt naar een spreekgestoelte en begint: \"Beste kiezers, ik ben nog lang niet klaar.\"",
+            "anomaly_under_a": "Een spreekgestoelte, campagnebutton en live debat zouden een ongepaste verschuiving zijn tijdens een intiem gesprek over zorg, kwetsbaarheid en het levenseinde.",
+            "resolution_under_b": "Voor de politicus zijn ze functioneel: hij zet twijfel over ouderdom om in een zichtbaar bewijs van ambitie, vitaliteit en aanspraak op politieke regie."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een eigenaar probeert een oude computer nog bruikbaar te houden. De machine wordt trager, het geheugen raakt vol, onderdelen vallen uit en vóór definitieve uitval wil de eigenaar de gegevens veiligstellen of het apparaat vervangen.",
+              "opposition_axis": "menselijke sterfelijkheid en waardigheid versus technische veroudering en vervanging",
+              "opposed_proposition": "Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.",
+              "shared_anchor": "Voorbereiden op een naderend, onomkeerbaar einde.",
+              "reading_a": "Een ouder wordende volwassene merkt afnemende energie en geheugenproblemen op, raadpleegt zorgverleners en regelt wensen voor het levenseinde.",
+              "reading_b": "Een verouderde computer vertoont prestatie- en geheugenproblemen; een technicus probeert gegevens te redden voordat het apparaat definitief uitvalt.",
+              "roles_b": [
+                "De oude computer: vertoont slijtage, traagheid en geheugenproblemen.",
+                "De eigenaar: wil het apparaat nog gebruiken en belangrijke bestanden behouden.",
+                "De technicus: onderzoekt storingen, vervangt onderdelen en adviseert over back-ups.",
+                "Gebruikers en clouddiensten: leveren bestanden, ondersteuning en een mogelijke nieuwe omgeving."
+              ],
+              "goal_b": "De gegevens veiligstellen en bepalen of de computer nog gerepareerd kan worden voordat hij wordt afgeschreven.",
+              "role_remapping": [
+                "De ouder wordende volwassene wordt de oude computer.",
+                "Dierbaren en familie worden de eigenaar, gebruikers en opgeslagen contacten.",
+                "Artsen en zorgverleners worden de technicus of reparatiedienst.",
+                "Zorg, wonen en praktische voorzieningen worden back-ups, reserveonderdelen, opslag en vervangende hardware."
+              ],
+              "shared_cues": [
+                "Afnemende energie en trager functioneren.",
+                "Geheugen dat minder betrouwbaar wordt.",
+                "Een controle of onderzoek door een deskundige.",
+                "Het ordenen en veiligstellen van belangrijke zaken.",
+                "De vraag hoe lang zelfstandig functioneren nog mogelijk is."
+              ],
+              "switch_trigger": "De deskundige vraagt niet naar een zorgwens, maar zegt: \"Zet hem uit; eerst maken we een volledige back-up.\"",
+              "hinge_event": "De vermeende patiënt wordt opengeklapt, waarna de technicus een harde schijf uit de romp haalt.",
+              "anomaly_under_a": "Bij een mens zou uitschakelen, openklappen en een harde schijf verwijderen een volstrekt ongepaste en onmogelijke reactie op kwetsbaarheid zijn.",
+              "resolution_under_b": "Als het om een computer gaat, is uitschakelen juist noodzakelijk om gegevensverlies te voorkomen; de harde schijf bevat de te redden 'nalatenschap'."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een theatergezelschap repeteert een ernstige slotscène waarin een oude hoofdrolspeler ziek wordt, afscheid neemt en sterft. De groep wil de scène geloofwaardig, waardig en emotioneel overtuigend uitvoeren.",
+              "opposition_axis": "werkelijke levensbeëindiging versus gespeelde dood als artistieke uitvoering",
+              "opposed_proposition": "Niemand kan de dood definitief vermijden; voorbereiding kan wel rust en duidelijkheid geven.",
+              "shared_anchor": "Een kwetsbare oudere bereidt een laatste afscheid voor.",
+              "reading_a": "Een oudere persoon bespreekt met naasten en zorgverleners toenemende kwetsbaarheid, laatste wensen en een naderend afscheid.",
+              "reading_b": "Een acteur en gezelschap oefenen zorgvuldig een fictief afscheid, inclusief medische rekwisieten, familieleden op het toneel en een sterfscène.",
+              "roles_b": [
+                "De oudere acteur: speelt de kwetsbare hoofdpersoon.",
+                "Medespelers: spelen familieleden en bieden steun binnen de scène.",
+                "Regisseur en grimeur: sturen de uitvoering en maken ziekte of ouderdom zichtbaar.",
+                "Publiek en toneeltechniek: ontvangen de voorstelling en ondersteunen decor, licht en geluid."
+              ],
+              "goal_b": "Een geloofwaardige en ontroerende sterfscène neerzetten voor de première.",
+              "role_remapping": [
+                "De ouder wordende volwassene wordt de acteur in de hoofdrol.",
+                "Dierbaren en familie worden medespelers die familie vertolken.",
+                "Artsen en zorgverleners worden acteurs in witte jassen, een grimeur en de regisseur.",
+                "Maatschappelijke voorzieningen worden het theater, de coulissen, rekwisieten en productieplanning."
+              ],
+              "shared_cues": [
+                "Een zwakke oudere in bed.",
+                "Familie die zich rond de persoon verzamelt.",
+                "Gesprekken over afscheid en laatste woorden.",
+                "Een witte jas en ogenschijnlijk medische handelingen.",
+                "Een stille, plechtige ruimte met gedempt licht."
+              ],
+              "switch_trigger": "Net nadat de oudere zijn laatste woorden fluistert, roept iemand vanuit de achtergrond: \"En... cut, terug naar de markering.\"",
+              "hinge_event": "De gestorven persoon staat direct op, buigt naar de zaal en vraagt of de belichting bij de doodsscène sterker kan.",
+              "anomaly_under_a": "Iemand die vlak na een werkelijk overlijden opstaat om lichtinstructies te geven, zou de rouw en de lichamelijke werkelijkheid absurd doorbreken.",
+              "resolution_under_b": "In de repetitie is de opstanding geen herstel van sterfelijkheid, maar een professionele onderbreking: de acteur wil de scène technisch verbeteren."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een langdurig gedetineerde bereidt zich voor op vrijlating. Hij heeft een lichamelijke keuring, ontvangt bezoek, regelt papieren, moet wennen aan zelfstandigheid en probeert na jaren van afhankelijkheid opnieuw een plaats buiten de gevangenis te vinden.",
+              "opposition_axis": "toenemende afhankelijkheid en zorg versus beëindiging van opsluiting en herwonnen vrijheid",
+              "opposed_proposition": "Familie, vrienden en professionele zorg worden doorgaans belangrijker wanneer zelfstandigheid afneemt.",
+              "shared_anchor": "Iemand bereidt met hulp van anderen een ingrijpende overgang naar een onzekere laatste levensfase voor.",
+              "reading_a": "Een ouder wordende volwassene wordt kwetsbaarder, krijgt meer ondersteuning en bereidt met familie en professionals een veilige overgang naar verdere zorg of het levenseinde voor.",
+              "reading_b": "Een gedetineerde nadert het einde van zijn straf, krijgt begeleiding bij terugkeer en moet buiten de instelling opnieuw zelfstandig leren leven.",
+              "roles_b": [
+                "De gedetineerde: bereidt zich voor op vertrek uit een gecontroleerde omgeving.",
+                "Bezoekers en familie: onderhouden contact en bieden steun bij terugkeer.",
+                "Gevangenisarts, bewakers en reclassering: keuren, begeleiden en controleren.",
+                "Gevangenis en reclasseringsvoorzieningen: bieden huisvesting, regels, administratie en nazorg."
+              ],
+              "goal_b": "De gevangenis verlaten en een zelfstandig bestaan opbouwen zonder opnieuw de fout in te gaan.",
+              "role_remapping": [
+                "De ouder wordende volwassene wordt de gedetineerde.",
+                "Dierbaren en familie blijven bezoekers en een mogelijk opvangnetwerk.",
+                "Artsen en zorgverleners worden gevangenisarts, bewakers en reclasseringsbegeleiders.",
+                "Zorg- en woonvoorzieningen worden de cel, de gevangenisadministratie, opvang en reclassering."
+              ],
+              "shared_cues": [
+                "Medische controles en formulieren.",
+                "Bezoek op vaste tijden.",
+                "Een kleine kamer waarin iemand afhankelijk is van hulp en regels.",
+                "Gesprekken over wonen, geld, steun en toekomstplannen.",
+                "Het inpakken van persoonlijke bezittingen voor een grote overgang."
+              ],
+              "switch_trigger": "De begeleider zegt niet dat er thuiszorg komt, maar: \"Morgenochtend gaat de poort open; uw straf zit erop.\"",
+              "hinge_event": "Een bewaker doet de deur open, geeft de man zijn veters terug en wijst hem naar de uitgangspoort.",
+              "anomaly_under_a": "Een kwetsbare oudere zijn veters teruggeven en hem door een bewaakte poort naar buiten sturen zou geen passende vorm van zorg of voorbereiding op sterven zijn.",
+              "resolution_under_b": "Voor een gedetineerde markeren de veters en de open poort juist het herstel van bewegingsvrijheid en het concrete begin van terugkeer in de samenleving."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een ouder wordende politicus voert een campagne om ondanks vragen over leeftijd, gezondheid en opvolging opnieuw gekozen te worden. Hij mobiliseert familie, adviseurs, artsen en kiezers om zijn publieke geloofwaardigheid en politieke invloed te behouden.",
+              "opposition_axis": "persoonlijke waardigheid en aanvaarding van eindigheid versus publieke machtsbehoud en electorale overleving",
+              "opposed_proposition": "Mensen willen meestal waardig behandeld worden en zelf invloed houden op beslissingen over hun latere leven.",
+              "shared_anchor": "Een oudere persoon probeert onder toenemende druk de regie over de toekomst te behouden.",
+              "reading_a": "Een ouder wordende persoon houdt regie over zorg, wonen, nalatenschap en beslissingen rond een waardig levenseinde.",
+              "reading_b": "Een ervaren politicus probeert de regie over zijn loopbaan en partij te behouden door kiezers ervan te overtuigen dat hij nog een ambtstermijn aankan.",
+              "roles_b": [
+                "De oudere politicus: kandidaat die zijn vitaliteit en ervaring moet bewijzen.",
+                "Familie en partijvrijwilligers: bieden emotionele steun en organiseren campagneactiviteiten.",
+                "Artsen en communicatiestrategen: beoordelen gezondheid en sturen de publieke boodschap.",
+                "Kiezers, media en partijbestuur: bepalen toegang tot steun, middelen en herverkiezing."
+              ],
+              "goal_b": "Herverkozen worden en voorkomen dat een jongere opvolger zijn positie overneemt.",
+              "role_remapping": [
+                "De ouder wordende volwassene wordt de oudere kandidaat.",
+                "Dierbaren en familie worden familieleden, partijvrijwilligers en trouwe achterban.",
+                "Artsen en zorgverleners worden artsen, persadviseurs en communicatiestrategen.",
+                "De samenleving en voorzieningen worden kiezers, media, partijbestuur en campagneorganisatie."
+              ],
+              "shared_cues": [
+                "Vragen over gezondheid, energie en belastbaarheid.",
+                "Familieleden die steunend naast de oudere staan.",
+                "Documenten waarin wensen en toekomstige regelingen worden vastgelegd.",
+                "Gesprekken over opvolging en wat iemand achterlaat.",
+                "Een nadruk op zelfstandigheid, ervaring en waardigheid."
+              ],
+              "switch_trigger": "Na een ernstig gesprek over zijn toekomst fluistert de adviseur: \"Over tien seconden bent u live in het televisiedebat.\"",
+              "hinge_event": "De vermeende patiënt zet een campagnebutton op, loopt naar een spreekgestoelte en begint: \"Beste kiezers, ik ben nog lang niet klaar.\"",
+              "anomaly_under_a": "Een spreekgestoelte, campagnebutton en live debat zouden een ongepaste verschuiving zijn tijdens een intiem gesprek over zorg, kwetsbaarheid en het levenseinde.",
+              "resolution_under_b": "Voor de politicus zijn ze functioneel: hij zet twijfel over ouderdom om in een zichtbaar bewijs van ambitie, vitaliteit en aanspraak op politieke regie."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde opzet kan eerst een kwetsbare oudere en later een falende computer aanduiden. Menselijke sterfelijkheid en technische afschrijving zijn lokaal onverenigbare lezingen op één dominante as. De gedeelde signalen (traagheid, geheugen, deskundige controle, veiligstellen) dragen beide lezingen, terwijl de menselijke lezing aanvankelijk overheerst. Uitschakelen, openklappen en een harde schijf verwijderen zijn onder A absurd, maar onder B noodzakelijke dataveiligstelling. Daardoor krijgen eerdere termen zoals geheugen, zorg en nalatenschap achteraf een technische functie. Uitschakelen frustreert A's doel van voortbestaan/autonomie, maar ondersteunt B's doel om gegevens te redden."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een scène met een zwakke oudere, familie, witte jas en laatste woorden kan zowel als werkelijk afscheid als als toneelrepetitie worden gelezen. Werkelijk overlijden en gespeelde dood zijn lokaal onverenigbaar op de dominante as werkelijk versus uitgevoerd. De theaterlezing is herkenbaar en blijft vóór de trigger mogelijk via rekwisieten, belichting en rollen. Opstaan na het overlijden en lichtinstructies geven is onder A anomalisch, maar onder B een normale repetitieonderbreking. Daardoor worden familie, medische handelingen en afscheid achteraf theatrale elementen. De gespeelde dood zou A's overlevingsdoel uitsluiten, maar is precies noodzakelijk voor B's doel: een overtuigende sterfscène spelen."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": false,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De gedeelde cues kunnen één tekst eerst als zorg- en overgangssituatie voor een kwetsbare oudere en later als voorbereiding op vrijlating laten dragen. Toenemende zorgafhankelijkheid tegenover het einde van opsluiting en herwonnen vrijheid vormt een lokale, dominante tegenstelling. De gevangenislezing is sociaal herkenbaar en blijft vóór de expliciete poort- en straftrigger mogelijk. De open deur, teruggegeven veters en uitgangspoort zijn onder A ongepast, maar onder B functionele tekenen van vrijlating; eerdere steun, controles en formulieren worden daardoor retrospectief gevangenisbegeleiding. De gedeelde anchor noemt echter expliciet een 'laatste levensfase' en ondersteunt een vrijlating uit detentie niet natuurlijk. Ook is de vrijlatingshandeling niet expliciet een conditie die A's doel blokkeert én B's doel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Dezelfde signalen over gezondheid, familie, documenten, opvolging en regie kunnen eerst een persoonlijke ouderdoms- en zorgsituatie en later een verkiezingscampagne ondersteunen. De politieke lezing is coherent, herkenbaar en blijft vóór de televisiedebattrigger beschikbaar; de private ouderdomslezing ligt aanvankelijk meer voor de hand. Button, spreekgestoelte en debat zijn onder A anomalisch, maar onder B functioneel, waardoor eerdere documenten en opvolgingsgesprekken achteraf campagne- en machtsmateriaal worden. Er is echter geen echte lokale incompatibiliteit tussen de scripts: een ouder wordende politicus kan tegelijk persoonlijke waardigheid en regie nastreven én herverkiezing zoeken. Het debat blokkeert A's doel bovendien niet noodzakelijk, maar kan ook als een vorm van zelfbeschikking of regie gelden."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde opzet kan eerst een kwetsbare oudere en later een falende computer aanduiden. Menselijke sterfelijkheid en technische afschrijving zijn lokaal onverenigbare lezingen op één dominante as. De gedeelde signalen (traagheid, geheugen, deskundige controle, veiligstellen) dragen beide lezingen, terwijl de menselijke lezing aanvankelijk overheerst. Uitschakelen, openklappen en een harde schijf verwijderen zijn onder A absurd, maar onder B noodzakelijke dataveiligstelling. Daardoor krijgen eerdere termen zoals geheugen, zorg en nalatenschap achteraf een technische functie. Uitschakelen frustreert A's doel van voortbestaan/autonomie, maar ondersteunt B's doel om gegevens te redden."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een scène met een zwakke oudere, familie, witte jas en laatste woorden kan zowel als werkelijk afscheid als als toneelrepetitie worden gelezen. Werkelijk overlijden en gespeelde dood zijn lokaal onverenigbaar op de dominante as werkelijk versus uitgevoerd. De theaterlezing is herkenbaar en blijft vóór de trigger mogelijk via rekwisieten, belichting en rollen. Opstaan na het overlijden en lichtinstructies geven is onder A anomalisch, maar onder B een normale repetitieonderbreking. Daardoor worden familie, medische handelingen en afscheid achteraf theatrale elementen. De gespeelde dood zou A's overlevingsdoel uitsluiten, maar is precies noodzakelijk voor B's doel: een overtuigende sterfscène spelen."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": false,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De gedeelde cues kunnen één tekst eerst als zorg- en overgangssituatie voor een kwetsbare oudere en later als voorbereiding op vrijlating laten dragen. Toenemende zorgafhankelijkheid tegenover het einde van opsluiting en herwonnen vrijheid vormt een lokale, dominante tegenstelling. De gevangenislezing is sociaal herkenbaar en blijft vóór de expliciete poort- en straftrigger mogelijk. De open deur, teruggegeven veters en uitgangspoort zijn onder A ongepast, maar onder B functionele tekenen van vrijlating; eerdere steun, controles en formulieren worden daardoor retrospectief gevangenisbegeleiding. De gedeelde anchor noemt echter expliciet een 'laatste levensfase' en ondersteunt een vrijlating uit detentie niet natuurlijk. Ook is de vrijlatingshandeling niet expliciet een conditie die A's doel blokkeert én B's doel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Dezelfde signalen over gezondheid, familie, documenten, opvolging en regie kunnen eerst een persoonlijke ouderdoms- en zorgsituatie en later een verkiezingscampagne ondersteunen. De politieke lezing is coherent, herkenbaar en blijft vóór de televisiedebattrigger beschikbaar; de private ouderdomslezing ligt aanvankelijk meer voor de hand. Button, spreekgestoelte en debat zijn onder A anomalisch, maar onder B functioneel, waardoor eerdere documenten en opvolgingsgesprekken achteraf campagne- en machtsmateriaal worden. Er is echter geen echte lokale incompatibiliteit tussen de scripts: een ouder wordende politicus kan tegelijk persoonlijke waardigheid en regie nastreven én herverkiezing zoeken. Het debat blokkeert A's doel bovendien niet noodzakelijk, maar kan ook als een vorm van zelfbeschikking of regie gelden."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2"
+        ],
+        "selected_candidate_id": "B2"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een vader ligt zwak in bed, omringd door familie en een man in een witte jas, en spreekt vermoedelijk zijn laatste woorden tijdens een werkelijk afscheid.",
+          "realized_script_b": "Een acteur speelt een sterfscène en onderbreekt die om technische aanwijzingen over de belichting te geven.",
+          "realized_opposition_axis": "Werkelijke levensbeëindiging versus een gespeelde dood als artistieke uitvoering.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De opzet activeert overtuigend een werkelijk sterfbed met de beoogde gedeelde cues. De late vraag om meer licht bij zijn dood maakt een uitvoeringscontext aannemelijk en herkadert de situatie als een gespeelde scène. De geplande expliciete cue \"cut, terug naar de markering\" ontbreekt, maar de technische lichtaanwijzing vervult functioneel dezelfde switch."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant realiseert de geplande overgang van een echt sterfbed naar een toneelmatige uitvoering. De punch is iets minder expliciet dan de geplande \"cut\"-cue, maar blijft begrijpelijk als technische toneelaanwijzing.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Oma neemt in bed afscheid van haar familie, terwijl een verpleegkundige haar hand vasthoudt tijdens haar laatste momenten.",
+          "realized_script_b": "Een actrice repeteert een sterfscène; na de gespeelde laatste zucht bespreekt zij de positie van het sterfbed ten opzichte van een podiummarkering.",
+          "realized_opposition_axis": "Werkelijke levensbeëindiging versus een gespeelde dood als artistieke uitvoering.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De tekst bouwt eerst het bedoelde geloofwaardige familie-afscheid op met bed, familie, medische figuur en laatste adem. Het rechtop gaan zitten en de verwijzing naar tape-markering vormen een heldere repetitiecue, waardoor de eerdere rouwsituatie retrospectief als toneelscène wordt gelezen."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Dit is een sterke realisatie van het geplande SO: de sterfbedcues domineren de opzet en de tape-markering onthult laat maar ondubbelzinnig de repetitiecontext.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een oom ligt stervend in bed, spreekt over loslaten en wordt door huilende familie omringd in gedempt licht.",
+          "realized_script_b": "Een gefilmde sterfscène wordt onderbroken door een regiecue, waarna de speler bespreekt vanuit welke camerahoek zijn sterven moet worden opgenomen.",
+          "realized_opposition_axis": "Werkelijk overlijden versus een opgenomen, gespeelde dood voor filmwerk.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De opzet en de late \"cut\"-cue realiseren wel een overgang van echt afscheid naar geënsceneerde dood, maar Script B is specifiek filmopnamewerk. Het bedoelde Script B was een theatergezelschap dat een slotscène repeteert, met een toneelmatige technische herinterpretatie. De kernas is verwant, maar de gerealiseerde tegenlezing is niet de geplande theaterrepetitie."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De tekst werkt als grap en heeft een duidelijke omslag, maar hij vervangt de geplande theaterrepetitie door een filmopname. Daardoor werkt hij hoofdzakelijk via een niet-geplande variant van de scriptoppositie.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "Beide voldoen aan lengte en vorm en realiseren de vereiste scriptoppositie. V2 heeft de scherpere, ondubbelzinnige switch: de tape-markering herkadert het sterfbed direct als repetitie. V1 is natuurlijker ingetogen, maar de lichtvraag is iets minder specifiek en daardoor minder krachtig als onthulling."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "V1 is een passerende variant en moet daarom boven V3 staan. Bovendien blijft V1 trouw aan de bedoelde toneelmatige uitvoering, terwijl V3 de geplande theaterrepetitie vervangt door filmopnamewerk. V3 heeft wel een heldere cut, maar mist daardoor vereiste-resourcefideliteit."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 is passerend, heeft een heldere spreekbare opbouw en levert met de tape-markering een sterke late herinterpretatie van alle sterfbedcues. V3 is eveneens compact en performbaar, maar faalt op de specifieke geplande tegenlezing doordat het om film in plaats van theater gaat."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 is de sterkste passerende variant: de opzet is onmiddellijk herkenbaar als afscheid, de omslag komt laat en precies, en de tape-markering maakt de theaterrepetitie compact, verrassend en retrospectief volledig duidelijk."
+    }
+  },
+  "result_sha256": "e08d8509680d332afb7478165d0e3efdaa4030ab13a17ee1a6b8afa03eabd1cf"
+}

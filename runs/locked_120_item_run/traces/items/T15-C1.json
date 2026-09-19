@@ -1,0 +1,803 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T15-C1",
+  "topic_id": "T15",
+  "topic": "Corona, afstand en sociaal contact",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T19:07:58.924613+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Corona, afstand en sociaal contact",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Corona, afstand en sociaal contact\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Corona, afstand en sociaal contact\",\n  \"script_a\": {\n    \"script_a\": \"Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.\",\n    \"participants_and_roles\": [\n      \"Twee vrienden, collega’s of familieleden: willen sociaal contact onderhouden.\",\n      \"Eventuele omstanders of gastheer: verwachten dat iedereen de geldende veiligheidsregels respecteert.\",\n      \"De overheid/gezondheidsrichtlijnen: bepalen de gebruikelijke regels rond afstand, hygiëne en contact.\"\n    ],\n    \"apparent_goal\": \"Op een veilige en sociaal aanvaardbare manier contact hebben zonder besmettingsrisico onnodig te vergroten.\",\n    \"preconditions\": [\n      \"Er zijn coronamaatregelen of een breed gedeeld besef dat afstand houden verstandig is.\",\n      \"De deelnemers kennen de basisregels, zoals afstand houden, thuisblijven bij klachten en handen hygiënisch houden.\",\n      \"Er is een plek of communicatiemiddel beschikbaar waarmee contact mogelijk is, bijvoorbeeld buiten, in een ruime kamer of via beeldbellen.\",\n      \"De deelnemers willen elkaar zien of spreken en zijn bereid hun gewone begroetings- en omgangsvormen aan te passen.\"\n    ],\n    \"expected_actions\": [\n      \"Elkaar begroeten zonder hand, kus of knuffel.\",\n      \"Ongeveer anderhalve meter afstand bewaren wanneer men fysiek samen is.\",\n      \"Bij voorkeur buiten afspreken, ventileren of beeldbellen als fysiek contact minder passend is.\",\n      \"Vragen hoe het gaat en een normaal gesprek voeren, met aandacht voor elkaars grenzen.\",\n      \"Bij klachten, twijfel of recent risico het fysieke contact uitstellen.\"\n    ],\n    \"expected_outcome\": \"De deelnemers ervaren alsnog verbondenheid en een prettig gesprek, terwijl zij de kans op besmetting beperken en zich verantwoordelijk gedragen.\",\n    \"expected_propositions\": [\n      \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"Een begroeting kan vriendelijk zijn zonder aanraking.\",\n      \"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\",\n      \"Wie zich niet goed voelt of klachten heeft, ontmoet anderen liever niet fysiek.\",\n      \"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\"\n    ],\n    \"audience_expectation\": \"Een setup over corona, afstand en sociaal contact activeert de herkenbare verwachting dat mensen hun behoefte aan nabijheid netjes proberen te verzoenen met veiligheidsregels: ze willen warm en normaal doen, maar houden bewust fysieke afstand en passen hun gedrag daarop aan.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Corona, afstand en sociaal contact\",\n  \"script_a\": {\n    \"script_a\": \"Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.\",\n    \"participants_and_roles\": [\n      \"Twee vrienden, collega’s of familieleden: willen sociaal contact onderhouden.\",\n      \"Eventuele omstanders of gastheer: verwachten dat iedereen de geldende veiligheidsregels respecteert.\",\n      \"De overheid/gezondheidsrichtlijnen: bepalen de gebruikelijke regels rond afstand, hygiëne en contact.\"\n    ],\n    \"apparent_goal\": \"Op een veilige en sociaal aanvaardbare manier contact hebben zonder besmettingsrisico onnodig te vergroten.\",\n    \"preconditions\": [\n      \"Er zijn coronamaatregelen of een breed gedeeld besef dat afstand houden verstandig is.\",\n      \"De deelnemers kennen de basisregels, zoals afstand houden, thuisblijven bij klachten en handen hygiënisch houden.\",\n      \"Er is een plek of communicatiemiddel beschikbaar waarmee contact mogelijk is, bijvoorbeeld buiten, in een ruime kamer of via beeldbellen.\",\n      \"De deelnemers willen elkaar zien of spreken en zijn bereid hun gewone begroetings- en omgangsvormen aan te passen.\"\n    ],\n    \"expected_actions\": [\n      \"Elkaar begroeten zonder hand, kus of knuffel.\",\n      \"Ongeveer anderhalve meter afstand bewaren wanneer men fysiek samen is.\",\n      \"Bij voorkeur buiten afspreken, ventileren of beeldbellen als fysiek contact minder passend is.\",\n      \"Vragen hoe het gaat en een normaal gesprek voeren, met aandacht voor elkaars grenzen.\",\n      \"Bij klachten, twijfel of recent risico het fysieke contact uitstellen.\"\n    ],\n    \"expected_outcome\": \"De deelnemers ervaren alsnog verbondenheid en een prettig gesprek, terwijl zij de kans op besmetting beperken en zich verantwoordelijk gedragen.\",\n    \"expected_propositions\": [\n      \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"Een begroeting kan vriendelijk zijn zonder aanraking.\",\n      \"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\",\n      \"Wie zich niet goed voelt of klachten heeft, ontmoet anderen liever niet fysiek.\",\n      \"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\"\n    ],\n    \"audience_expectation\": \"Een setup over corona, afstand en sociaal contact activeert de herkenbare verwachting dat mensen hun behoefte aan nabijheid netjes proberen te verzoenen met veiligheidsregels: ze willen warm en normaal doen, maar houden bewust fysieke afstand en passen hun gedrag daarop aan.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee rechercheurs observeren op afstand een vermoedelijke zakkenroller in een drukke winkelstraat. Zij doen alsof zij slechts beleefd met elkaar praten, maar vermijden vooral contact met het doelwit om hun observatie niet te verraden.\",\n      \"opposition_axis\": \"Afstand als zorgzaamheid tegenover afstand als tactische observatie.\",\n      \"opposed_proposition\": \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"shared_anchor\": \"Twee bekenden staan op afstand buiten met mondkapjes op.\",\n      \"reading_a\": \"Twee vrienden houden bewust ruimte tijdens een veilig coronagesprek.\",\n      \"reading_b\": \"Twee rechercheurs bewaren observatieafstand en maskeren hun surveillance als een gewoon praatje.\",\n      \"roles_b\": [\n        \"Rechercheur 1: volgt en beoordeelt het doelwit.\",\n        \"Rechercheur 2: houdt overzicht en onderhoudt contact met de meldkamer.\",\n        \"Vermoedelijke zakkenroller: onwetend doelwit van de observatie.\",\n        \"Meldkamer of arrestatieteam: staat klaar om in te grijpen.\"\n      ],\n      \"goal_b\": \"De verdachte onopvallend volgen totdat er voldoende aanleiding is om in te grijpen.\",\n      \"role_remapping\": [\n        \"De twee sociale bekenden uit Script A worden twee rechercheurs.\",\n        \"Een eventuele voorbijganger of omstander uit Script A wordt het geobserveerde doelwit.\",\n        \"De coronaregels uit Script A worden in lezing B een dekmantel voor afstandelijk gedrag.\"\n      ],\n      \"shared_cues\": [\n        \"Mondkapjes.\",\n        \"Ruimte tussen beide personen.\",\n        \"Een rustig, schijnbaar alledaags gesprek.\",\n        \"Herhaaldelijk om zich heen kijken.\",\n        \"Niet aanraken of dicht bij elkaar komen.\"\n      ],\n      \"switch_trigger\": \"Een van hen fluistert in zijn mouw: \\\"Het doelwit pakt weer een portemonnee.\\\"\",\n      \"hinge_event\": \"De tweede persoon antwoordt: \\\"Arrestatieteam, nu.\\\"\",\n      \"anomaly_under_a\": \"Tijdens een vriendelijk coronagesprek is geheimzinnig spreken over een 'doelwit' en het oproepen van een team ongepast en onverklaarbaar.\",\n      \"resolution_under_b\": \"Als observatiecode is de zin functioneel: de rechercheurs hebben de diefstal gezien en laten het arrestatieteam ingrijpen zonder de verdachte vroegtijdig te waarschuwen.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee familieleden spreken elkaar in een bezoekruimte van een gevangenis. Zij zijn door glas, regels en toezicht van elkaar gescheiden; hun gesprek is warm, maar de afstand is opgelegd en tijdelijk.\",\n      \"opposition_axis\": \"Vrijwillige beschermende afstand tegenover gedwongen institutionele scheiding.\",\n      \"opposed_proposition\": \"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\",\n      \"shared_anchor\": \"Twee mensen praten op afstand en begroeten elkaar zonder aanraking.\",\n      \"reading_a\": \"Twee familieleden kiezen voor een coronaveilige begroeting en proberen toch verbonden te blijven.\",\n      \"reading_b\": \"Een gedetineerde en een bezoeker communiceren onder toezicht aan weerszijden van een afscheiding.\",\n      \"roles_b\": [\n        \"Gedetineerde: ontvangt beperkt bezoek.\",\n        \"Bezoeker: wil contact houden met de gedetineerde.\",\n        \"Bewaarder: ziet toe op tijd, afstand en regels.\",\n        \"Gevangenis: bepaalt de voorwaarden van het bezoek.\"\n      ],\n      \"goal_b\": \"Binnen de beperkte bezoektijd persoonlijk contact onderhouden zonder de gevangenisregels te overtreden.\",\n      \"role_remapping\": [\n        \"De twee bekenden uit Script A worden gedetineerde en bezoeker.\",\n        \"De gastheer of omstander uit Script A wordt een bewaker.\",\n        \"De gezondheidsrichtlijnen uit Script A worden bezoek- en veiligheidsvoorschriften van de gevangenis.\"\n      ],\n      \"shared_cues\": [\n        \"Een begroeting met een handgebaar.\",\n        \"Geen lichamelijk contact.\",\n        \"Een gesprek over hoe het gaat.\",\n        \"Een duidelijke fysieke barrière of grote afstand.\",\n        \"Voorzichtig spreken en goed luisteren.\"\n      ],\n      \"switch_trigger\": \"Een zoemer klinkt en een bewaker zegt: \\\"Nog één minuut bezoekstijd.\\\"\",\n      \"hinge_event\": \"De bewaker schuift een luik dicht terwijl een van de twee zegt: \\\"Ik kom volgende maand weer.\\\"\",\n      \"anomaly_under_a\": \"Een bewaker die een warm gesprek abrupt beëindigt en een luik sluit, past niet bij een vrijwillige coronaveilige ontmoeting tussen bekenden.\",\n      \"resolution_under_b\": \"In de bezoekruimte is dit precies de functie van het moment: de bewaakte bezoektijd is voorbij en de fysieke scheiding wordt opnieuw afgedwongen.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.\",\n      \"opposition_axis\": \"Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.\",\n      \"opposed_proposition\": \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"shared_anchor\": \"Twee vertrouwde mensen blijven opvallend ver van elkaar staan tijdens een persoonlijk gesprek.\",\n      \"reading_a\": \"Twee vrienden zijn vriendelijk maar voorzichtig omdat zij besmetting willen voorkomen.\",\n      \"reading_b\": \"Twee partners vermijden nabijheid omdat een van hen de relatie wil beëindigen en geen dubbelzinnige intimiteit wil oproepen.\",\n      \"roles_b\": [\n        \"Partner die het gesprek heeft aangevraagd: wil de relatie duidelijk beëindigen.\",\n        \"Andere partner: verwacht mogelijk een gewoon gesprek of hoopt op herstel.\",\n        \"Eventuele vriend of familielid op afstand: biedt na afloop steun.\"\n      ],\n      \"goal_b\": \"De relatie eerlijk en ondubbelzinnig beëindigen, zonder een intiem gebaar dat valse hoop wekt.\",\n      \"role_remapping\": [\n        \"De twee bekenden uit Script A worden twee partners.\",\n        \"De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.\",\n        \"De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties.\"\n      ],\n      \"shared_cues\": [\n        \"Afstand bewaren.\",\n        \"Geen hand, kus of knuffel.\",\n        \"Voorzichtig vragen hoe het gaat.\",\n        \"Een rustige buitenlocatie.\",\n        \"Aarzeling voordat iemand iets persoonlijks zegt.\"\n      ],\n      \"switch_trigger\": \"Een van hen legt een sleutelbos op een bankje en zegt: \\\"Deze hoort niet meer bij mij.\\\"\",\n      \"hinge_event\": \"De ander antwoordt: \\\"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\\\"\",\n      \"anomaly_under_a\": \"Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.\",\n      \"resolution_under_b\": \"Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een reiziger staat bij een grenscontrole tegenover een douane- of immigratiebeambte. Mondkapjes, afstand en gezondheidsvragen lijken coronazorg, maar dienen uiteindelijk om toegang tot het land te beoordelen en zo nodig te weigeren.\",\n      \"opposition_axis\": \"Wederkerig sociaal contact tegenover eenzijdige controle en toelatingsmacht.\",\n      \"opposed_proposition\": \"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\",\n      \"shared_anchor\": \"Twee mensen met mondkapjes spreken op afstand terwijl één persoon vragen stelt.\",\n      \"reading_a\": \"Twee bekenden informeren beleefd naar elkaars gezondheid om een ontmoeting veilig te laten verlopen.\",\n      \"reading_b\": \"Een grensbeambte ondervraagt een reiziger over documenten, gezondheid en reisroute voordat toegang wordt verleend.\",\n      \"roles_b\": [\n        \"Reiziger: wil het land of de terminal binnengaan.\",\n        \"Grensbeambte: controleert identiteit, documenten en toelatingsvoorwaarden.\",\n        \"Eventuele collega of supervisor: ondersteunt bij twijfelgevallen.\",\n        \"Grensautoriteit: stelt de toegangs- en quarantaineregels vast.\"\n      ],\n      \"goal_b\": \"Vaststellen of de reiziger aan de voorwaarden voor toegang, quarantaine of verdere controle voldoet.\",\n      \"role_remapping\": [\n        \"Een van de gelijkwaardige bekenden uit Script A wordt de reiziger.\",\n        \"De andere bekende wordt een grensbeambte met beslissingsmacht.\",\n        \"De algemene gezondheidsrichtlijnen uit Script A worden formele grens- en toelatingsregels.\"\n      ],\n      \"shared_cues\": [\n        \"Mondkapjes.\",\n        \"Afstand bij een balie.\",\n        \"Vragen over klachten en recente contacten.\",\n        \"Handen ontsmetten.\",\n        \"Een beleefde maar formele toon.\"\n      ],\n      \"switch_trigger\": \"De beambte draait het paspoort om, zet er een stempel in en zegt: \\\"Uw toegang is geweigerd.\\\"\",\n      \"hinge_event\": \"Hij wijst naar een afgesloten deur en voegt toe: \\\"U gaat met de volgende vlucht terug.\\\"\",\n      \"anomaly_under_a\": \"Iemand de toegang weigeren en terugsturen is disproportioneel en onbegrijpelijk binnen een gelijkwaardig sociaal gesprek over coronaveiligheid.\",\n      \"resolution_under_b\": \"Bij grenscontrole is de weigering het doelgerichte gevolg van de beoordeling: de beambte voert de toelatingsregels uit en voorkomt dat de reiziger verder reist.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Corona, afstand en sociaal contact\",\n  \"script_a\": {\n    \"script_a\": \"Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.\",\n    \"participants_and_roles\": [\n      \"Twee vrienden, collega’s of familieleden: willen sociaal contact onderhouden.\",\n      \"Eventuele omstanders of gastheer: verwachten dat iedereen de geldende veiligheidsregels respecteert.\",\n      \"De overheid/gezondheidsrichtlijnen: bepalen de gebruikelijke regels rond afstand, hygiëne en contact.\"\n    ],\n    \"apparent_goal\": \"Op een veilige en sociaal aanvaardbare manier contact hebben zonder besmettingsrisico onnodig te vergroten.\",\n    \"preconditions\": [\n      \"Er zijn coronamaatregelen of een breed gedeeld besef dat afstand houden verstandig is.\",\n      \"De deelnemers kennen de basisregels, zoals afstand houden, thuisblijven bij klachten en handen hygiënisch houden.\",\n      \"Er is een plek of communicatiemiddel beschikbaar waarmee contact mogelijk is, bijvoorbeeld buiten, in een ruime kamer of via beeldbellen.\",\n      \"De deelnemers willen elkaar zien of spreken en zijn bereid hun gewone begroetings- en omgangsvormen aan te passen.\"\n    ],\n    \"expected_actions\": [\n      \"Elkaar begroeten zonder hand, kus of knuffel.\",\n      \"Ongeveer anderhalve meter afstand bewaren wanneer men fysiek samen is.\",\n      \"Bij voorkeur buiten afspreken, ventileren of beeldbellen als fysiek contact minder passend is.\",\n      \"Vragen hoe het gaat en een normaal gesprek voeren, met aandacht voor elkaars grenzen.\",\n      \"Bij klachten, twijfel of recent risico het fysieke contact uitstellen.\"\n    ],\n    \"expected_outcome\": \"De deelnemers ervaren alsnog verbondenheid en een prettig gesprek, terwijl zij de kans op besmetting beperken en zich verantwoordelijk gedragen.\",\n    \"expected_propositions\": [\n      \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"Een begroeting kan vriendelijk zijn zonder aanraking.\",\n      \"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\",\n      \"Wie zich niet goed voelt of klachten heeft, ontmoet anderen liever niet fysiek.\",\n      \"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\"\n    ],\n    \"audience_expectation\": \"Een setup over corona, afstand en sociaal contact activeert de herkenbare verwachting dat mensen hun behoefte aan nabijheid netjes proberen te verzoenen met veiligheidsregels: ze willen warm en normaal doen, maar houden bewust fysieke afstand en passen hun gedrag daarop aan.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee rechercheurs observeren op afstand een vermoedelijke zakkenroller in een drukke winkelstraat. Zij doen alsof zij slechts beleefd met elkaar praten, maar vermijden vooral contact met het doelwit om hun observatie niet te verraden.\",\n      \"opposition_axis\": \"Afstand als zorgzaamheid tegenover afstand als tactische observatie.\",\n      \"opposed_proposition\": \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"shared_anchor\": \"Twee bekenden staan op afstand buiten met mondkapjes op.\",\n      \"reading_a\": \"Twee vrienden houden bewust ruimte tijdens een veilig coronagesprek.\",\n      \"reading_b\": \"Twee rechercheurs bewaren observatieafstand en maskeren hun surveillance als een gewoon praatje.\",\n      \"roles_b\": [\n        \"Rechercheur 1: volgt en beoordeelt het doelwit.\",\n        \"Rechercheur 2: houdt overzicht en onderhoudt contact met de meldkamer.\",\n        \"Vermoedelijke zakkenroller: onwetend doelwit van de observatie.\",\n        \"Meldkamer of arrestatieteam: staat klaar om in te grijpen.\"\n      ],\n      \"goal_b\": \"De verdachte onopvallend volgen totdat er voldoende aanleiding is om in te grijpen.\",\n      \"role_remapping\": [\n        \"De twee sociale bekenden uit Script A worden twee rechercheurs.\",\n        \"Een eventuele voorbijganger of omstander uit Script A wordt het geobserveerde doelwit.\",\n        \"De coronaregels uit Script A worden in lezing B een dekmantel voor afstandelijk gedrag.\"\n      ],\n      \"shared_cues\": [\n        \"Mondkapjes.\",\n        \"Ruimte tussen beide personen.\",\n        \"Een rustig, schijnbaar alledaags gesprek.\",\n        \"Herhaaldelijk om zich heen kijken.\",\n        \"Niet aanraken of dicht bij elkaar komen.\"\n      ],\n      \"switch_trigger\": \"Een van hen fluistert in zijn mouw: \\\"Het doelwit pakt weer een portemonnee.\\\"\",\n      \"hinge_event\": \"De tweede persoon antwoordt: \\\"Arrestatieteam, nu.\\\"\",\n      \"anomaly_under_a\": \"Tijdens een vriendelijk coronagesprek is geheimzinnig spreken over een 'doelwit' en het oproepen van een team ongepast en onverklaarbaar.\",\n      \"resolution_under_b\": \"Als observatiecode is de zin functioneel: de rechercheurs hebben de diefstal gezien en laten het arrestatieteam ingrijpen zonder de verdachte vroegtijdig te waarschuwen.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee familieleden spreken elkaar in een bezoekruimte van een gevangenis. Zij zijn door glas, regels en toezicht van elkaar gescheiden; hun gesprek is warm, maar de afstand is opgelegd en tijdelijk.\",\n      \"opposition_axis\": \"Vrijwillige beschermende afstand tegenover gedwongen institutionele scheiding.\",\n      \"opposed_proposition\": \"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\",\n      \"shared_anchor\": \"Twee mensen praten op afstand en begroeten elkaar zonder aanraking.\",\n      \"reading_a\": \"Twee familieleden kiezen voor een coronaveilige begroeting en proberen toch verbonden te blijven.\",\n      \"reading_b\": \"Een gedetineerde en een bezoeker communiceren onder toezicht aan weerszijden van een afscheiding.\",\n      \"roles_b\": [\n        \"Gedetineerde: ontvangt beperkt bezoek.\",\n        \"Bezoeker: wil contact houden met de gedetineerde.\",\n        \"Bewaarder: ziet toe op tijd, afstand en regels.\",\n        \"Gevangenis: bepaalt de voorwaarden van het bezoek.\"\n      ],\n      \"goal_b\": \"Binnen de beperkte bezoektijd persoonlijk contact onderhouden zonder de gevangenisregels te overtreden.\",\n      \"role_remapping\": [\n        \"De twee bekenden uit Script A worden gedetineerde en bezoeker.\",\n        \"De gastheer of omstander uit Script A wordt een bewaker.\",\n        \"De gezondheidsrichtlijnen uit Script A worden bezoek- en veiligheidsvoorschriften van de gevangenis.\"\n      ],\n      \"shared_cues\": [\n        \"Een begroeting met een handgebaar.\",\n        \"Geen lichamelijk contact.\",\n        \"Een gesprek over hoe het gaat.\",\n        \"Een duidelijke fysieke barrière of grote afstand.\",\n        \"Voorzichtig spreken en goed luisteren.\"\n      ],\n      \"switch_trigger\": \"Een zoemer klinkt en een bewaker zegt: \\\"Nog één minuut bezoekstijd.\\\"\",\n      \"hinge_event\": \"De bewaker schuift een luik dicht terwijl een van de twee zegt: \\\"Ik kom volgende maand weer.\\\"\",\n      \"anomaly_under_a\": \"Een bewaker die een warm gesprek abrupt beëindigt en een luik sluit, past niet bij een vrijwillige coronaveilige ontmoeting tussen bekenden.\",\n      \"resolution_under_b\": \"In de bezoekruimte is dit precies de functie van het moment: de bewaakte bezoektijd is voorbij en de fysieke scheiding wordt opnieuw afgedwongen.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.\",\n      \"opposition_axis\": \"Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.\",\n      \"opposed_proposition\": \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"shared_anchor\": \"Twee vertrouwde mensen blijven opvallend ver van elkaar staan tijdens een persoonlijk gesprek.\",\n      \"reading_a\": \"Twee vrienden zijn vriendelijk maar voorzichtig omdat zij besmetting willen voorkomen.\",\n      \"reading_b\": \"Twee partners vermijden nabijheid omdat een van hen de relatie wil beëindigen en geen dubbelzinnige intimiteit wil oproepen.\",\n      \"roles_b\": [\n        \"Partner die het gesprek heeft aangevraagd: wil de relatie duidelijk beëindigen.\",\n        \"Andere partner: verwacht mogelijk een gewoon gesprek of hoopt op herstel.\",\n        \"Eventuele vriend of familielid op afstand: biedt na afloop steun.\"\n      ],\n      \"goal_b\": \"De relatie eerlijk en ondubbelzinnig beëindigen, zonder een intiem gebaar dat valse hoop wekt.\",\n      \"role_remapping\": [\n        \"De twee bekenden uit Script A worden twee partners.\",\n        \"De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.\",\n        \"De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties.\"\n      ],\n      \"shared_cues\": [\n        \"Afstand bewaren.\",\n        \"Geen hand, kus of knuffel.\",\n        \"Voorzichtig vragen hoe het gaat.\",\n        \"Een rustige buitenlocatie.\",\n        \"Aarzeling voordat iemand iets persoonlijks zegt.\"\n      ],\n      \"switch_trigger\": \"Een van hen legt een sleutelbos op een bankje en zegt: \\\"Deze hoort niet meer bij mij.\\\"\",\n      \"hinge_event\": \"De ander antwoordt: \\\"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\\\"\",\n      \"anomaly_under_a\": \"Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.\",\n      \"resolution_under_b\": \"Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een reiziger staat bij een grenscontrole tegenover een douane- of immigratiebeambte. Mondkapjes, afstand en gezondheidsvragen lijken coronazorg, maar dienen uiteindelijk om toegang tot het land te beoordelen en zo nodig te weigeren.\",\n      \"opposition_axis\": \"Wederkerig sociaal contact tegenover eenzijdige controle en toelatingsmacht.\",\n      \"opposed_proposition\": \"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\",\n      \"shared_anchor\": \"Twee mensen met mondkapjes spreken op afstand terwijl één persoon vragen stelt.\",\n      \"reading_a\": \"Twee bekenden informeren beleefd naar elkaars gezondheid om een ontmoeting veilig te laten verlopen.\",\n      \"reading_b\": \"Een grensbeambte ondervraagt een reiziger over documenten, gezondheid en reisroute voordat toegang wordt verleend.\",\n      \"roles_b\": [\n        \"Reiziger: wil het land of de terminal binnengaan.\",\n        \"Grensbeambte: controleert identiteit, documenten en toelatingsvoorwaarden.\",\n        \"Eventuele collega of supervisor: ondersteunt bij twijfelgevallen.\",\n        \"Grensautoriteit: stelt de toegangs- en quarantaineregels vast.\"\n      ],\n      \"goal_b\": \"Vaststellen of de reiziger aan de voorwaarden voor toegang, quarantaine of verdere controle voldoet.\",\n      \"role_remapping\": [\n        \"Een van de gelijkwaardige bekenden uit Script A wordt de reiziger.\",\n        \"De andere bekende wordt een grensbeambte met beslissingsmacht.\",\n        \"De algemene gezondheidsrichtlijnen uit Script A worden formele grens- en toelatingsregels.\"\n      ],\n      \"shared_cues\": [\n        \"Mondkapjes.\",\n        \"Afstand bij een balie.\",\n        \"Vragen over klachten en recente contacten.\",\n        \"Handen ontsmetten.\",\n        \"Een beleefde maar formele toon.\"\n      ],\n      \"switch_trigger\": \"De beambte draait het paspoort om, zet er een stempel in en zegt: \\\"Uw toegang is geweigerd.\\\"\",\n      \"hinge_event\": \"Hij wijst naar een afgesloten deur en voegt toe: \\\"U gaat met de volgende vlucht terug.\\\"\",\n      \"anomaly_under_a\": \"Iemand de toegang weigeren en terugsturen is disproportioneel en onbegrijpelijk binnen een gelijkwaardig sociaal gesprek over coronaveiligheid.\",\n      \"resolution_under_b\": \"Bij grenscontrole is de weigering het doelgerichte gevolg van de beoordeling: de beambte voert de toelatingsregels uit en voorkomt dat de reiziger verder reist.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Corona, afstand en sociaal contact\",\n  \"plan\": {\n    \"setup_script\": \"Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.\",\n    \"opposing_script\": \"Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.\",\n    \"opposition_type\": \"Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.\",\n    \"trigger\": \"Een van hen legt een sleutelbos op een bankje en zegt: \\\"Deze hoort niet meer bij mij.\\\"\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Afstand bewaren.\",\n      \"Geen hand, kus of knuffel.\",\n      \"Voorzichtig vragen hoe het gaat.\",\n      \"Een rustige buitenlocatie.\",\n      \"Aarzeling voordat iemand iets persoonlijks zegt.\"\n    ],\n    \"hinge_event\": \"De ander antwoordt: \\\"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\\\"\",\n    \"anomaly_under_a\": \"Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.\",\n    \"resolution_under_b\": \"Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.\",\n    \"role_remapping\": [\n      \"De twee bekenden uit Script A worden twee partners.\",\n      \"De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.\",\n      \"De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Corona, afstand en sociaal contact\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.\",\n      \"participants_and_roles\": [\n        \"Twee vrienden, collega’s of familieleden: willen sociaal contact onderhouden.\",\n        \"Eventuele omstanders of gastheer: verwachten dat iedereen de geldende veiligheidsregels respecteert.\",\n        \"De overheid/gezondheidsrichtlijnen: bepalen de gebruikelijke regels rond afstand, hygiëne en contact.\"\n      ],\n      \"apparent_goal\": \"Op een veilige en sociaal aanvaardbare manier contact hebben zonder besmettingsrisico onnodig te vergroten.\",\n      \"preconditions\": [\n        \"Er zijn coronamaatregelen of een breed gedeeld besef dat afstand houden verstandig is.\",\n        \"De deelnemers kennen de basisregels, zoals afstand houden, thuisblijven bij klachten en handen hygiënisch houden.\",\n        \"Er is een plek of communicatiemiddel beschikbaar waarmee contact mogelijk is, bijvoorbeeld buiten, in een ruime kamer of via beeldbellen.\",\n        \"De deelnemers willen elkaar zien of spreken en zijn bereid hun gewone begroetings- en omgangsvormen aan te passen.\"\n      ],\n      \"expected_actions\": [\n        \"Elkaar begroeten zonder hand, kus of knuffel.\",\n        \"Ongeveer anderhalve meter afstand bewaren wanneer men fysiek samen is.\",\n        \"Bij voorkeur buiten afspreken, ventileren of beeldbellen als fysiek contact minder passend is.\",\n        \"Vragen hoe het gaat en een normaal gesprek voeren, met aandacht voor elkaars grenzen.\",\n        \"Bij klachten, twijfel of recent risico het fysieke contact uitstellen.\"\n      ],\n      \"expected_outcome\": \"De deelnemers ervaren alsnog verbondenheid en een prettig gesprek, terwijl zij de kans op besmetting beperken en zich verantwoordelijk gedragen.\",\n      \"expected_propositions\": [\n        \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n        \"Een begroeting kan vriendelijk zijn zonder aanraking.\",\n        \"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\",\n        \"Wie zich niet goed voelt of klachten heeft, ontmoet anderen liever niet fysiek.\",\n        \"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\"\n      ],\n      \"audience_expectation\": \"Een setup over corona, afstand en sociaal contact activeert de herkenbare verwachting dat mensen hun behoefte aan nabijheid netjes proberen te verzoenen met veiligheidsregels: ze willen warm en normaal doen, maar houden bewust fysieke afstand en passen hun gedrag daarop aan.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.\",\n      \"opposition_axis\": \"Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.\",\n      \"opposed_proposition\": \"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\",\n      \"shared_anchor\": \"Twee vertrouwde mensen blijven opvallend ver van elkaar staan tijdens een persoonlijk gesprek.\",\n      \"reading_a\": \"Twee vrienden zijn vriendelijk maar voorzichtig omdat zij besmetting willen voorkomen.\",\n      \"reading_b\": \"Twee partners vermijden nabijheid omdat een van hen de relatie wil beëindigen en geen dubbelzinnige intimiteit wil oproepen.\",\n      \"roles_b\": [\n        \"Partner die het gesprek heeft aangevraagd: wil de relatie duidelijk beëindigen.\",\n        \"Andere partner: verwacht mogelijk een gewoon gesprek of hoopt op herstel.\",\n        \"Eventuele vriend of familielid op afstand: biedt na afloop steun.\"\n      ],\n      \"goal_b\": \"De relatie eerlijk en ondubbelzinnig beëindigen, zonder een intiem gebaar dat valse hoop wekt.\",\n      \"role_remapping\": [\n        \"De twee bekenden uit Script A worden twee partners.\",\n        \"De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.\",\n        \"De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties.\"\n      ],\n      \"shared_cues\": [\n        \"Afstand bewaren.\",\n        \"Geen hand, kus of knuffel.\",\n        \"Voorzichtig vragen hoe het gaat.\",\n        \"Een rustige buitenlocatie.\",\n        \"Aarzeling voordat iemand iets persoonlijks zegt.\"\n      ],\n      \"switch_trigger\": \"Een van hen legt een sleutelbos op een bankje en zegt: \\\"Deze hoort niet meer bij mij.\\\"\",\n      \"hinge_event\": \"De ander antwoordt: \\\"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\\\"\",\n      \"anomaly_under_a\": \"Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.\",\n      \"resolution_under_b\": \"Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.\",\n      \"opposing_script\": \"Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.\",\n      \"opposition_type\": \"Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.\",\n      \"trigger\": \"Een van hen legt een sleutelbos op een bankje en zegt: \\\"Deze hoort niet meer bij mij.\\\"\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Afstand bewaren.\",\n        \"Geen hand, kus of knuffel.\",\n        \"Voorzichtig vragen hoe het gaat.\",\n        \"Een rustige buitenlocatie.\",\n        \"Aarzeling voordat iemand iets persoonlijks zegt.\"\n      ],\n      \"hinge_event\": \"De ander antwoordt: \\\"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\\\"\",\n      \"anomaly_under_a\": \"Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.\",\n      \"resolution_under_b\": \"Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.\",\n      \"role_remapping\": [\n        \"De twee bekenden uit Script A worden twee partners.\",\n        \"De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.\",\n        \"De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik sprak mijn vriendin buiten af: anderhalve meter afstand, geen kus, geen knuffel. Ik vroeg voorzichtig hoe het ging, zij legde mijn sleutel op het bankje en zei: “Prima, zolang jij thuisblijft.”\",\n      \"angle\": \"Coronaregels blijken een relatiebreuk met huisverbod.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens corona zag ik mijn partner eindelijk weer in het park. We bleven keurig uit elkaar staan, alsof we heel verantwoordelijk waren, tot zij mijn sleutelbos neerlegde: “Niet vanwege besmetting, ik wil gewoon geen bezoek meer.”\",\n      \"angle\": \"Veilige afstand krijgt de betekenis van definitief geen toegang.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Mijn ex en ik ontmoetten elkaar buiten, netjes zonder hand of kus. Ik dacht: wat volwassen, veilig en respectvol. Toen ze mijn sleutel gaf, bleek die anderhalve meter geen maatregel maar mijn nieuwe woonadres.\",\n      \"angle\": \"De fysieke afstand wordt een harde relationele grens.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Corona, afstand en sociaal contact\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik sprak mijn vriendin buiten af: anderhalve meter afstand, geen kus, geen knuffel. Ik vroeg voorzichtig hoe het ging, zij legde mijn sleutel op het bankje en zei: “Prima, zolang jij thuisblijft.”\",\n      \"angle\": \"Coronaregels blijken een relatiebreuk met huisverbod.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens corona zag ik mijn partner eindelijk weer in het park. We bleven keurig uit elkaar staan, alsof we heel verantwoordelijk waren, tot zij mijn sleutelbos neerlegde: “Niet vanwege besmetting, ik wil gewoon geen bezoek meer.”\",\n      \"angle\": \"Veilige afstand krijgt de betekenis van definitief geen toegang.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Mijn ex en ik ontmoetten elkaar buiten, netjes zonder hand of kus. Ik dacht: wat volwassen, veilig en respectvol. Toen ze mijn sleutel gaf, bleek die anderhalve meter geen maatregel maar mijn nieuwe woonadres.\",\n      \"angle\": \"De fysieke afstand wordt een harde relationele grens.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een man spreekt zijn vriendin tijdens corona buiten af en volgt de bekende regels: afstand, geen kus en geen knuffel.\",\n      \"realized_script_b\": \"De vriendin geeft een sleutel terug en sluit hem feitelijk van thuis/toegang uit; dit suggereert relationele afwijzing of een huisverbod.\",\n      \"realized_opposition_axis\": \"Medische/sociale coronadistantie tegenover persoonlijke uitsluiting en relationele afstand.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De coronasetup, afstandscues en sleutel als omslagpunt zijn aanwezig. De punchline maakt echter vooral een huisverbod of mogelijk quarantaine-instructie ('zolang jij thuisblijft') duidelijk, niet ondubbelzinnig een relatiebreuk met het geplande afscheid en de expliciete herinterpretatie van de emotionele grens.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De tekst heeft een goed herkenbare coronasetup en een late sleutelwending, maar de slotzin laat de bedoelde relatiebeëindiging te veel vervangen door een andersoortige uitsluiting: thuisblijven kan zelfs nog als coronavoorschrift worden gelezen.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Iemand ziet tijdens corona zijn partner in het park; beiden blijven verantwoordelijk op afstand staan uit vrees voor besmetting.\",\n      \"realized_script_b\": \"De partner geeft zijn sleutelbos terug en maakt duidelijk dat zij hem niet meer wil ontvangen, waarmee zij de relatie en gedeelde toegang beëindigt.\",\n      \"realized_opposition_axis\": \"Afstand als verantwoordelijke bescherming tegen besmetting tegenover afstand als definitieve relationele afwijzing en afsluiting.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De setup maakt de coronalezing dominant met afstand en verantwoord gedrag. De sleutelbos en de expliciete ontkenning van besmettingsgevaar activeren laat de relatiebreuk-/toegangslezing; de eerdere afstand wordt daardoor functioneel als emotionele grens herlezen.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit realiseert de geplande omslag het best: een normale, verantwoordelijke coronaontmoeting wordt door de teruggegeven sleutel en het verbod op bezoek een relationeel afscheid.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"De verteller ontmoet zijn ex buiten tijdens corona, zonder hand of kus, en leest dat aanvankelijk als veilig en respectvol gedrag.\",\n      \"realized_script_b\": \"De teruggegeven sleutel en de verwijzing naar een 'nieuw woonadres' maken vooral verlies van toegang tot huis of een woon-/uitzettingssituatie zichtbaar.\",\n      \"realized_opposition_axis\": \"Coronadistantie tegenover ruimtelijke uitsluiting of verlies van woon-/huiselijke toegang.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De tekst bevat coronacues en een sleutelwending, maar noemt de ander vanaf het begin een ex. Daardoor is de bedoelde relatiebreuk niet latent en kan die niet als late alternatieve lezing worden geactiveerd. De punchline verschuift bovendien naar woon- of toegangsverlies, niet naar de geplande onthulling dat het gesprek de relatie beëindigt.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": false,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De grapvorm werkt via de sleutel en de onverwachte woonadresformulering, maar de expliciete vermelding van 'mijn ex' geeft de relationele lezing al weg en verhindert de vereiste late omslag van coronabehoedzaamheid naar relatiebeëindiging.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Tijdens corona zag ik mijn partner eindelijk weer in het park. We bleven keurig uit elkaar staan, alsof we heel verantwoordelijk waren, tot zij mijn sleutelbos neerlegde: “Niet vanwege besmetting, ik wil gewoon geen bezoek meer.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.",
+      "opposing_script": "Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.",
+      "opposition_type": "Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.",
+      "trigger": "Een van hen legt een sleutelbos op een bankje en zegt: \"Deze hoort niet meer bij mij.\"",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Afstand bewaren.",
+        "Geen hand, kus of knuffel.",
+        "Voorzichtig vragen hoe het gaat.",
+        "Een rustige buitenlocatie.",
+        "Aarzeling voordat iemand iets persoonlijks zegt."
+      ],
+      "hinge_event": "De ander antwoordt: \"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\"",
+      "anomaly_under_a": "Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.",
+      "resolution_under_b": "Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.",
+      "role_remapping": [
+        "De twee bekenden uit Script A worden twee partners.",
+        "De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.",
+        "De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.\\\",\\\"participants_and_roles\\\":[\\\"Twee vrienden, collega’s of familieleden: willen sociaal contact onderhouden.\\\",\\\"Eventuele omstanders of gastheer: verwachten dat iedereen de geldende veiligheidsregels respecteert.\\\",\\\"De overheid/gezondheidsrichtlijnen: bepalen de gebruikelijke regels rond afstand, hygiëne en contact.\\\"],\\\"apparent_goal\\\":\\\"Op een veilige en sociaal aanvaardbare manier contact hebben zonder besmettingsrisico onnodig te vergroten.\\\",\\\"preconditions\\\":[\\\"Er zijn coronamaatregelen of een breed gedeeld besef dat afstand houden verstandig is.\\\",\\\"De deelnemers kennen de basisregels, zoals afstand houden, thuisblijven bij klachten en handen hygiënisch houden.\\\",\\\"Er is een plek of communicatiemiddel beschikbaar waarmee contact mogelijk is, bijvoorbeeld buiten, in een ruime kamer of via beeldbellen.\\\",\\\"De deelnemers willen elkaar zien of spreken en zijn bereid hun gewone begroetings- en omgangsvormen aan te passen.\\\"],\\\"expected_actions\\\":[\\\"Elkaar begroeten zonder hand, kus of knuffel.\\\",\\\"Ongeveer anderhalve meter afstand bewaren wanneer men fysiek samen is.\\\",\\\"Bij voorkeur buiten afspreken, ventileren of beeldbellen als fysiek contact minder passend is.\\\",\\\"Vragen hoe het gaat en een normaal gesprek voeren, met aandacht voor elkaars grenzen.\\\",\\\"Bij klachten, twijfel of recent risico het fysieke contact uitstellen.\\\"],\\\"expected_outcome\\\":\\\"De deelnemers ervaren alsnog verbondenheid en een prettig gesprek, terwijl zij de kans op besmetting beperken en zich verantwoordelijk gedragen.\\\",\\\"expected_propositions\\\":[\\\"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\\\",\\\"Een begroeting kan vriendelijk zijn zonder aanraking.\\\",\\\"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\\\",\\\"Wie zich niet goed voelt of klachten heeft, ontmoet anderen liever niet fysiek.\\\",\\\"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\\\"],\\\"audience_expectation\\\":\\\"Een setup over corona, afstand en sociaal contact activeert de herkenbare verwachting dat mensen hun behoefte aan nabijheid netjes proberen te verzoenen met veiligheidsregels: ze willen warm en normaal doen, maar houden bewust fysieke afstand en passen hun gedrag daarop aan.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Twee rechercheurs observeren op afstand een vermoedelijke zakkenroller in een drukke winkelstraat. Zij doen alsof zij slechts beleefd met elkaar praten, maar vermijden vooral contact met het doelwit om hun observatie niet te verraden.\\\",\\\"opposition_axis\\\":\\\"Afstand als zorgzaamheid tegenover afstand als tactische observatie.\\\",\\\"opposed_proposition\\\":\\\"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\\\",\\\"shared_anchor\\\":\\\"Twee bekenden staan op afstand buiten met mondkapjes op.\\\",\\\"reading_a\\\":\\\"Twee vrienden houden bewust ruimte tijdens een veilig coronagesprek.\\\",\\\"reading_b\\\":\\\"Twee rechercheurs bewaren observatieafstand en maskeren hun surveillance als een gewoon praatje.\\\",\\\"roles_b\\\":[\\\"Rechercheur 1: volgt en beoordeelt het doelwit.\\\",\\\"Rechercheur 2: houdt overzicht en onderhoudt contact met de meldkamer.\\\",\\\"Vermoedelijke zakkenroller: onwetend doelwit van de observatie.\\\",\\\"Meldkamer of arrestatieteam: staat klaar om in te grijpen.\\\"],\\\"goal_b\\\":\\\"De verdachte onopvallend volgen totdat er voldoende aanleiding is om in te grijpen.\\\",\\\"role_remapping\\\":[\\\"De twee sociale bekenden uit Script A worden twee rechercheurs.\\\",\\\"Een eventuele voorbijganger of omstander uit Script A wordt het geobserveerde doelwit.\\\",\\\"De coronaregels uit Script A worden in lezing B een dekmantel voor afstandelijk gedrag.\\\"],\\\"shared_cues\\\":[\\\"Mondkapjes.\\\",\\\"Ruimte tussen beide personen.\\\",\\\"Een rustig, schijnbaar alledaags gesprek.\\\",\\\"Herhaaldelijk om zich heen kijken.\\\",\\\"Niet aanraken of dicht bij elkaar komen.\\\"],\\\"switch_trigger\\\":\\\"Een van hen fluistert in zijn mouw: \\\\\\\"Het doelwit pakt weer een portemonnee.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De tweede persoon antwoordt: \\\\\\\"Arrestatieteam, nu.\\\\\\\"\\\",\\\"anomaly_under_a\\\":\\\"Tijdens een vriendelijk coronagesprek is geheimzinnig spreken over een 'doelwit' en het oproepen van een team ongepast en onverklaarbaar.\\\",\\\"resolution_under_b\\\":\\\"Als observatiecode is de zin functioneel: de rechercheurs hebben de diefstal gezien en laten het arrestatieteam ingrijpen zonder de verdachte vroegtijdig te waarschuwen.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Twee familieleden spreken elkaar in een bezoekruimte van een gevangenis. Zij zijn door glas, regels en toezicht van elkaar gescheiden; hun gesprek is warm, maar de afstand is opgelegd en tijdelijk.\\\",\\\"opposition_axis\\\":\\\"Vrijwillige beschermende afstand tegenover gedwongen institutionele scheiding.\\\",\\\"opposed_proposition\\\":\\\"Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.\\\",\\\"shared_anchor\\\":\\\"Twee mensen praten op afstand en begroeten elkaar zonder aanraking.\\\",\\\"reading_a\\\":\\\"Twee familieleden kiezen voor een coronaveilige begroeting en proberen toch verbonden te blijven.\\\",\\\"reading_b\\\":\\\"Een gedetineerde en een bezoeker communiceren onder toezicht aan weerszijden van een afscheiding.\\\",\\\"roles_b\\\":[\\\"Gedetineerde: ontvangt beperkt bezoek.\\\",\\\"Bezoeker: wil contact houden met de gedetineerde.\\\",\\\"Bewaarder: ziet toe op tijd, afstand en regels.\\\",\\\"Gevangenis: bepaalt de voorwaarden van het bezoek.\\\"],\\\"goal_b\\\":\\\"Binnen de beperkte bezoektijd persoonlijk contact onderhouden zonder de gevangenisregels te overtreden.\\\",\\\"role_remapping\\\":[\\\"De twee bekenden uit Script A worden gedetineerde en bezoeker.\\\",\\\"De gastheer of omstander uit Script A wordt een bewaker.\\\",\\\"De gezondheidsrichtlijnen uit Script A worden bezoek- en veiligheidsvoorschriften van de gevangenis.\\\"],\\\"shared_cues\\\":[\\\"Een begroeting met een handgebaar.\\\",\\\"Geen lichamelijk contact.\\\",\\\"Een gesprek over hoe het gaat.\\\",\\\"Een duidelijke fysieke barrière of grote afstand.\\\",\\\"Voorzichtig spreken en goed luisteren.\\\"],\\\"switch_trigger\\\":\\\"Een zoemer klinkt en een bewaker zegt: \\\\\\\"Nog één minuut bezoekstijd.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De bewaker schuift een luik dicht terwijl een van de twee zegt: \\\\\\\"Ik kom volgende maand weer.\\\\\\\"\\\",\\\"anomaly_under_a\\\":\\\"Een bewaker die een warm gesprek abrupt beëindigt en een luik sluit, past niet bij een vrijwillige coronaveilige ontmoeting tussen bekenden.\\\",\\\"resolution_under_b\\\":\\\"In de bezoekruimte is dit precies de functie van het moment: de bewaakte bezoektijd is voorbij en de fysieke scheiding wordt opnieuw afgedwongen.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.\\\",\\\"opposition_axis\\\":\\\"Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.\\\",\\\"opposed_proposition\\\":\\\"Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.\\\",\\\"shared_anchor\\\":\\\"Twee vertrouwde mensen blijven opvallend ver van elkaar staan tijdens een persoonlijk gesprek.\\\",\\\"reading_a\\\":\\\"Twee vrienden zijn vriendelijk maar voorzichtig omdat zij besmetting willen voorkomen.\\\",\\\"reading_b\\\":\\\"Twee partners vermijden nabijheid omdat een van hen de relatie wil beëindigen en geen dubbelzinnige intimiteit wil oproepen.\\\",\\\"roles_b\\\":[\\\"Partner die het gesprek heeft aangevraagd: wil de relatie duidelijk beëindigen.\\\",\\\"Andere partner: verwacht mogelijk een gewoon gesprek of hoopt op herstel.\\\",\\\"Eventuele vriend of familielid op afstand: biedt na afloop steun.\\\"],\\\"goal_b\\\":\\\"De relatie eerlijk en ondubbelzinnig beëindigen, zonder een intiem gebaar dat valse hoop wekt.\\\",\\\"role_remapping\\\":[\\\"De twee bekenden uit Script A worden twee partners.\\\",\\\"De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.\\\",\\\"De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties.\\\"],\\\"shared_cues\\\":[\\\"Afstand bewaren.\\\",\\\"Geen hand, kus of knuffel.\\\",\\\"Voorzichtig vragen hoe het gaat.\\\",\\\"Een rustige buitenlocatie.\\\",\\\"Aarzeling voordat iemand iets persoonlijks zegt.\\\"],\\\"switch_trigger\\\":\\\"Een van hen legt een sleutelbos op een bankje en zegt: \\\\\\\"Deze hoort niet meer bij mij.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De ander antwoordt: \\\\\\\"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\\\\\\\"\\\",\\\"anomaly_under_a\\\":\\\"Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.\\\",\\\"resolution_under_b\\\":\\\"Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een reiziger staat bij een grenscontrole tegenover een douane- of immigratiebeambte. Mondkapjes, afstand en gezondheidsvragen lijken coronazorg, maar dienen uiteindelijk om toegang tot het land te beoordelen en zo nodig te weigeren.\\\",\\\"opposition_axis\\\":\\\"Wederkerig sociaal contact tegenover eenzijdige controle en toelatingsmacht.\\\",\\\"opposed_proposition\\\":\\\"Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.\\\",\\\"shared_anchor\\\":\\\"Twee mensen met mondkapjes spreken op afstand terwijl één persoon vragen stelt.\\\",\\\"reading_a\\\":\\\"Twee bekenden informeren beleefd naar elkaars gezondheid om een ontmoeting veilig te laten verlopen.\\\",\\\"reading_b\\\":\\\"Een grensbeambte ondervraagt een reiziger over documenten, gezondheid en reisroute voordat toegang wordt verleend.\\\",\\\"roles_b\\\":[\\\"Reiziger: wil het land of de terminal binnengaan.\\\",\\\"Grensbeambte: controleert identiteit, documenten en toelatingsvoorwaarden.\\\",\\\"Eventuele collega of supervisor: ondersteunt bij twijfelgevallen.\\\",\\\"Grensautoriteit: stelt de toegangs- en quarantaineregels vast.\\\"],\\\"goal_b\\\":\\\"Vaststellen of de reiziger aan de voorwaarden voor toegang, quarantaine of verdere controle voldoet.\\\",\\\"role_remapping\\\":[\\\"Een van de gelijkwaardige bekenden uit Script A wordt de reiziger.\\\",\\\"De andere bekende wordt een grensbeambte met beslissingsmacht.\\\",\\\"De algemene gezondheidsrichtlijnen uit Script A worden formele grens- en toelatingsregels.\\\"],\\\"shared_cues\\\":[\\\"Mondkapjes.\\\",\\\"Afstand bij een balie.\\\",\\\"Vragen over klachten en recente contacten.\\\",\\\"Handen ontsmetten.\\\",\\\"Een beleefde maar formele toon.\\\"],\\\"switch_trigger\\\":\\\"De beambte draait het paspoort om, zet er een stempel in en zegt: \\\\\\\"Uw toegang is geweigerd.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Hij wijst naar een afgesloten deur en voegt toe: \\\\\\\"U gaat met de volgende vlucht terug.\\\\\\\"\\\",\\\"anomaly_under_a\\\":\\\"Iemand de toegang weigeren en terugsturen is disproportioneel en onbegrijpelijk binnen een gelijkwaardig sociaal gesprek over coronaveiligheid.\\\",\\\"resolution_under_b\\\":\\\"Bij grenscontrole is de weigering het doelgerichte gevolg van de beoordeling: de beambte voert de toelatingsregels uit en voorkomt dat de reiziger verder reist.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Dezelfde zichtbare situatie kan zowel een coronaveilig gesprek als een gecamoufleerde observatie tonen. De dominante tegenstelling is de functie van afstand: zorgzaamheid tegenover tactische onopvallendheid. Mondkapjes, afstand, alledaags praten en om zich heen kijken kunnen beide lezingen dragen, terwijl de coronalezing door onderwerp en setup eerst voorligt. De verwijzing naar een doelwit en het arrestatieteam is onder A anomalisch, maar onder B doelgericht. Daardoor krijgen eerdere signalen, vooral het rondkijken en de afstand, achteraf een surveillancefunctie. Er is geen expliciete voorwaarde die A's doel blokkeert en tegelijk B's doel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Eén realiseerbare tekst kan twee mensen zonder aanraking op afstand laten spreken, waarbij die afstand eerst als coronaveilig en later als institutioneel opgelegd verschijnt. De oppositie is helder en enkelvoudig: vrijwillige beschermende afstand tegenover gedwongen scheiding. Een bezoekruimte met toezicht, barrière en beperkte tijd is een sociaal herkenbare tweede lezing; vóór de zoemer kan zij door de afstand en mogelijke afscheiding latent aanwezig blijven. De bewaker, het luik en de vaste eindtijd zijn onder A ongepast, maar onder B precies functioneel. Zij herinterpreteren de eerdere afstand als gevangenschapsscheiding. Er is niet expliciet éénzelfde voorwaarde die A's sociale doel blokkeert en B's doel faciliteert.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De gedeelde scène van twee vertrouwde personen die ver uit elkaar blijven en niet aanraken kan zowel coronaveiligheid als relationele terughoudendheid verbeelden. De centrale oppositie blijft één as: afstand als warme bescherming tegenover afstand als afwijzende afsluiting. Een relatiebreuk met het vermijden van dubbelzinnige intimiteit is coherent en herkenbaar, maar de corona-interpretatie wordt aanvankelijk door het onderwerp en de veilige gedragingen sterker geactiveerd. De sleutelbos is onder A onverklaarbaar, terwijl hij onder B de beëindiging en nieuwe grens concreet maakt. Daardoor verandert de eerdere fysieke afstand achteraf in een emotionele en relationele grens. Er is geen expliciete gedeelde conditie die A's doel verhindert terwijl zij B's doel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De gedeelde aanwijzingen — mondkapjes, afstand, gezondheidsvragen, ontsmetten en een formele toon — kunnen zowel een coronagesprek als een grenscontrole ondersteunen. De relevante, dominante tegenstelling is wederkerig sociaal contact tegenover hiërarchische toelatingscontrole. Grenscontrole met gezondheids- en reisvragen is een coherent en sociaal herkenbaar alternatief en blijft door de formele ondervraging latent beschikbaar, hoewel de coronalezing vanuit het onderwerp eerst wordt verwacht. Toegangsweigering en terugsturen zijn onder A disproportioneel en onverklaarbaar, maar onder B een doelgerichte uitvoering van toelatingsmacht. Daarmee krijgen de eerdere gezondheidsvragen achteraf de functie van selectie in plaats van wederzijdse zorg. Een expliciete conditie die tegelijk A's doel blokkeert en B's doel mogelijk maakt, is niet vastgesteld.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B3\\\",\\\"rationale\\\":\\\"B3 biedt de scherpste oppositie: dezelfde fysieke afstand kan eerst volledig geloofwaardig als coronazorg gelezen worden en wordt vervolgens retrospectief emotionele afwijzing en begrenzing. De buitenlocatie, voorzichtige begroeting en afwezigheid van aanraking domineren de setup zonder de tweede lezing voortijdig weg te geven. De sleutelbos is een economisch, onderwerp-specifiek scharniermoment met hoog payoffpotentieel: hij herkadert niet alleen het gesprek, maar ook alle eerdere afstand als het vermijden van valse intimiteit. De rollen en het doel blijven bovendien menselijk en compatibel met de sociale-contactsetup.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik sprak mijn vriendin buiten af: anderhalve meter afstand, geen kus, geen knuffel. Ik vroeg voorzichtig hoe het ging, zij legde mijn sleutel op het bankje en zei: “Prima, zolang jij thuisblijft.”\\\",\\\"angle\\\":\\\"Coronaregels blijken een relatiebreuk met huisverbod.\\\"},{\\\"text\\\":\\\"Tijdens corona zag ik mijn partner eindelijk weer in het park. We bleven keurig uit elkaar staan, alsof we heel verantwoordelijk waren, tot zij mijn sleutelbos neerlegde: “Niet vanwege besmetting, ik wil gewoon geen bezoek meer.”\\\",\\\"angle\\\":\\\"Veilige afstand krijgt de betekenis van definitief geen toegang.\\\"},{\\\"text\\\":\\\"Mijn ex en ik ontmoetten elkaar buiten, netjes zonder hand of kus. Ik dacht: wat volwassen, veilig en respectvol. Toen ze mijn sleutel gaf, bleek die anderhalve meter geen maatregel maar mijn nieuwe woonadres.\\\",\\\"angle\\\":\\\"De fysieke afstand wordt een harde relationele grens.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een man spreekt zijn vriendin tijdens corona buiten af en volgt de bekende regels: afstand, geen kus en geen knuffel.\\\",\\\"realized_script_b\\\":\\\"De vriendin geeft een sleutel terug en sluit hem feitelijk van thuis/toegang uit; dit suggereert relationele afwijzing of een huisverbod.\\\",\\\"realized_opposition_axis\\\":\\\"Medische/sociale coronadistantie tegenover persoonlijke uitsluiting en relationele afstand.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De coronasetup, afstandscues en sleutel als omslagpunt zijn aanwezig. De punchline maakt echter vooral een huisverbod of mogelijk quarantaine-instructie ('zolang jij thuisblijft') duidelijk, niet ondubbelzinnig een relatiebreuk met het geplande afscheid en de expliciete herinterpretatie van de emotionele grens.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De tekst heeft een goed herkenbare coronasetup en een late sleutelwending, maar de slotzin laat de bedoelde relatiebeëindiging te veel vervangen door een andersoortige uitsluiting: thuisblijven kan zelfs nog als coronavoorschrift worden gelezen.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Iemand ziet tijdens corona zijn partner in het park; beiden blijven verantwoordelijk op afstand staan uit vrees voor besmetting.\\\",\\\"realized_script_b\\\":\\\"De partner geeft zijn sleutelbos terug en maakt duidelijk dat zij hem niet meer wil ontvangen, waarmee zij de relatie en gedeelde toegang beëindigt.\\\",\\\"realized_opposition_axis\\\":\\\"Afstand als verantwoordelijke bescherming tegen besmetting tegenover afstand als definitieve relationele afwijzing en afsluiting.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De setup maakt de coronalezing dominant met afstand en verantwoord gedrag. De sleutelbos en de expliciete ontkenning van besmettingsgevaar activeren laat de relatiebreuk-/toegangslezing; de eerdere afstand wordt daardoor functioneel als emotionele grens herlezen.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Dit realiseert de geplande omslag het best: een normale, verantwoordelijke coronaontmoeting wordt door de teruggegeven sleutel en het verbod op bezoek een relationeel afscheid.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"De verteller ontmoet zijn ex buiten tijdens corona, zonder hand of kus, en leest dat aanvankelijk als veilig en respectvol gedrag.\\\",\\\"realized_script_b\\\":\\\"De teruggegeven sleutel en de verwijzing naar een 'nieuw woonadres' maken vooral verlies van toegang tot huis of een woon-/uitzettingssituatie zichtbaar.\\\",\\\"realized_opposition_axis\\\":\\\"Coronadistantie tegenover ruimtelijke uitsluiting of verlies van woon-/huiselijke toegang.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De tekst bevat coronacues en een sleutelwending, maar noemt de ander vanaf het begin een ex. Daardoor is de bedoelde relatiebreuk niet latent en kan die niet als late alternatieve lezing worden geactiveerd. De punchline verschuift bovendien naar woon- of toegangsverlies, niet naar de geplande onthulling dat het gesprek de relatie beëindigt.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":false,\\\"latent_script_b\\\":false,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De grapvorm werkt via de sleutel en de onverwachte woonadresformulering, maar de expliciete vermelding van 'mijn ex' geeft de relationele lezing al weg en verhindert de vereiste late omslag van coronabehoedzaamheid naar relatiebeëindiging.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 wint omdat het als enige de vereiste script opposition volledig realiseert: de coronaveiligheid wordt pas bij de sleutelbos herlezen als relationele uitsluiting. V1 blijft dubbelzinnig, omdat „thuisblijft” ook een coronamaatregel kan betekenen.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten falen op de vereiste SO, maar V1 behoudt de vriendin als latente relatiecontext en heeft een duidelijkere late omslag. V3 noemt haar vooraf al „mijn ex”, waardoor de relationele onthulling voortijdig is weggegeven.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de passerende variant en moet daarom boven V3 eindigen. De sleutelbos en expliciete afwijzing van besmetting leveren een scherpe, performabele switch op; V3 ondermijnt die door de ex-status direct te benoemen.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de enige variant die de verplichte script opposition helder, laat en retrospectief uitvoert. De compacte coronasetup, sleutelwending en expliciete herinterpretatie maken de grap het sterkst en het best spreekbaar.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Twee rechercheurs observeren op afstand een vermoedelijke zakkenroller in een drukke winkelstraat. Zij doen alsof zij slechts beleefd met elkaar praten, maar vermijden vooral contact met het doelwit om hun observatie niet te verraden.",
+        "candidate_id": "B1",
+        "opposition_axis": "Afstand als zorgzaamheid tegenover afstand als tactische observatie.",
+        "opposed_expectation": "Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.",
+        "roles_b": [
+          "Rechercheur 1: volgt en beoordeelt het doelwit.",
+          "Rechercheur 2: houdt overzicht en onderhoudt contact met de meldkamer.",
+          "Vermoedelijke zakkenroller: onwetend doelwit van de observatie.",
+          "Meldkamer of arrestatieteam: staat klaar om in te grijpen."
+        ],
+        "goal_b": "De verdachte onopvallend volgen totdat er voldoende aanleiding is om in te grijpen.",
+        "role_remapping": [
+          "De twee sociale bekenden uit Script A worden twee rechercheurs.",
+          "Een eventuele voorbijganger of omstander uit Script A wordt het geobserveerde doelwit.",
+          "De coronaregels uit Script A worden in lezing B een dekmantel voor afstandelijk gedrag."
+        ],
+        "shared_cues": [
+          "Mondkapjes.",
+          "Ruimte tussen beide personen.",
+          "Een rustig, schijnbaar alledaags gesprek.",
+          "Herhaaldelijk om zich heen kijken.",
+          "Niet aanraken of dicht bij elkaar komen."
+        ],
+        "switch_trigger": "Een van hen fluistert in zijn mouw: \"Het doelwit pakt weer een portemonnee.\"",
+        "hinge_event": "De tweede persoon antwoordt: \"Arrestatieteam, nu.\"",
+        "anomaly_under_a": "Tijdens een vriendelijk coronagesprek is geheimzinnig spreken over een 'doelwit' en het oproepen van een team ongepast en onverklaarbaar.",
+        "resolution_under_b": "Als observatiecode is de zin functioneel: de rechercheurs hebben de diefstal gezien en laten het arrestatieteam ingrijpen zonder de verdachte vroegtijdig te waarschuwen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee familieleden spreken elkaar in een bezoekruimte van een gevangenis. Zij zijn door glas, regels en toezicht van elkaar gescheiden; hun gesprek is warm, maar de afstand is opgelegd en tijdelijk.",
+        "candidate_id": "B2",
+        "opposition_axis": "Vrijwillige beschermende afstand tegenover gedwongen institutionele scheiding.",
+        "opposed_expectation": "Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.",
+        "roles_b": [
+          "Gedetineerde: ontvangt beperkt bezoek.",
+          "Bezoeker: wil contact houden met de gedetineerde.",
+          "Bewaarder: ziet toe op tijd, afstand en regels.",
+          "Gevangenis: bepaalt de voorwaarden van het bezoek."
+        ],
+        "goal_b": "Binnen de beperkte bezoektijd persoonlijk contact onderhouden zonder de gevangenisregels te overtreden.",
+        "role_remapping": [
+          "De twee bekenden uit Script A worden gedetineerde en bezoeker.",
+          "De gastheer of omstander uit Script A wordt een bewaker.",
+          "De gezondheidsrichtlijnen uit Script A worden bezoek- en veiligheidsvoorschriften van de gevangenis."
+        ],
+        "shared_cues": [
+          "Een begroeting met een handgebaar.",
+          "Geen lichamelijk contact.",
+          "Een gesprek over hoe het gaat.",
+          "Een duidelijke fysieke barrière of grote afstand.",
+          "Voorzichtig spreken en goed luisteren."
+        ],
+        "switch_trigger": "Een zoemer klinkt en een bewaker zegt: \"Nog één minuut bezoekstijd.\"",
+        "hinge_event": "De bewaker schuift een luik dicht terwijl een van de twee zegt: \"Ik kom volgende maand weer.\"",
+        "anomaly_under_a": "Een bewaker die een warm gesprek abrupt beëindigt en een luik sluit, past niet bij een vrijwillige coronaveilige ontmoeting tussen bekenden.",
+        "resolution_under_b": "In de bezoekruimte is dit precies de functie van het moment: de bewaakte bezoektijd is voorbij en de fysieke scheiding wordt opnieuw afgedwongen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.",
+        "candidate_id": "B3",
+        "opposition_axis": "Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.",
+        "opposed_expectation": "Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.",
+        "roles_b": [
+          "Partner die het gesprek heeft aangevraagd: wil de relatie duidelijk beëindigen.",
+          "Andere partner: verwacht mogelijk een gewoon gesprek of hoopt op herstel.",
+          "Eventuele vriend of familielid op afstand: biedt na afloop steun."
+        ],
+        "goal_b": "De relatie eerlijk en ondubbelzinnig beëindigen, zonder een intiem gebaar dat valse hoop wekt.",
+        "role_remapping": [
+          "De twee bekenden uit Script A worden twee partners.",
+          "De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.",
+          "De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties."
+        ],
+        "shared_cues": [
+          "Afstand bewaren.",
+          "Geen hand, kus of knuffel.",
+          "Voorzichtig vragen hoe het gaat.",
+          "Een rustige buitenlocatie.",
+          "Aarzeling voordat iemand iets persoonlijks zegt."
+        ],
+        "switch_trigger": "Een van hen legt een sleutelbos op een bankje en zegt: \"Deze hoort niet meer bij mij.\"",
+        "hinge_event": "De ander antwoordt: \"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\"",
+        "anomaly_under_a": "Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.",
+        "resolution_under_b": "Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een reiziger staat bij een grenscontrole tegenover een douane- of immigratiebeambte. Mondkapjes, afstand en gezondheidsvragen lijken coronazorg, maar dienen uiteindelijk om toegang tot het land te beoordelen en zo nodig te weigeren.",
+        "candidate_id": "B4",
+        "opposition_axis": "Wederkerig sociaal contact tegenover eenzijdige controle en toelatingsmacht.",
+        "opposed_expectation": "Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.",
+        "roles_b": [
+          "Reiziger: wil het land of de terminal binnengaan.",
+          "Grensbeambte: controleert identiteit, documenten en toelatingsvoorwaarden.",
+          "Eventuele collega of supervisor: ondersteunt bij twijfelgevallen.",
+          "Grensautoriteit: stelt de toegangs- en quarantaineregels vast."
+        ],
+        "goal_b": "Vaststellen of de reiziger aan de voorwaarden voor toegang, quarantaine of verdere controle voldoet.",
+        "role_remapping": [
+          "Een van de gelijkwaardige bekenden uit Script A wordt de reiziger.",
+          "De andere bekende wordt een grensbeambte met beslissingsmacht.",
+          "De algemene gezondheidsrichtlijnen uit Script A worden formele grens- en toelatingsregels."
+        ],
+        "shared_cues": [
+          "Mondkapjes.",
+          "Afstand bij een balie.",
+          "Vragen over klachten en recente contacten.",
+          "Handen ontsmetten.",
+          "Een beleefde maar formele toon."
+        ],
+        "switch_trigger": "De beambte draait het paspoort om, zet er een stempel in en zegt: \"Uw toegang is geweigerd.\"",
+        "hinge_event": "Hij wijst naar een afgesloten deur en voegt toe: \"U gaat met de volgende vlucht terug.\"",
+        "anomaly_under_a": "Iemand de toegang weigeren en terugsturen is disproportioneel en onbegrijpelijk binnen een gelijkwaardig sociaal gesprek over coronaveiligheid.",
+        "resolution_under_b": "Bij grenscontrole is de weigering het doelgerichte gevolg van de beoordeling: de beambte voert de toelatingsregels uit en voorkomt dat de reiziger verder reist.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B3 biedt de scherpste oppositie: dezelfde fysieke afstand kan eerst volledig geloofwaardig als coronazorg gelezen worden en wordt vervolgens retrospectief emotionele afwijzing en begrenzing. De buitenlocatie, voorzichtige begroeting en afwezigheid van aanraking domineren de setup zonder de tweede lezing voortijdig weg te geven. De sleutelbos is een economisch, onderwerp-specifiek scharniermoment met hoog payoffpotentieel: hij herkadert niet alleen het gesprek, maar ook alle eerdere afstand als het vermijden van valse intimiteit. De rollen en het doel blijven bovendien menselijk en compatibel met de sociale-contactsetup.",
+    "variants": [
+      {
+        "text": "Ik sprak mijn vriendin buiten af: anderhalve meter afstand, geen kus, geen knuffel. Ik vroeg voorzichtig hoe het ging, zij legde mijn sleutel op het bankje en zei: “Prima, zolang jij thuisblijft.”",
+        "angle": "Coronaregels blijken een relatiebreuk met huisverbod."
+      },
+      {
+        "text": "Tijdens corona zag ik mijn partner eindelijk weer in het park. We bleven keurig uit elkaar staan, alsof we heel verantwoordelijk waren, tot zij mijn sleutelbos neerlegde: “Niet vanwege besmetting, ik wil gewoon geen bezoek meer.”",
+        "angle": "Veilige afstand krijgt de betekenis van definitief geen toegang."
+      },
+      {
+        "text": "Mijn ex en ik ontmoetten elkaar buiten, netjes zonder hand of kus. Ik dacht: wat volwassen, veilig en respectvol. Toen ze mijn sleutel gaf, bleek die anderhalve meter geen maatregel maar mijn nieuwe woonadres.",
+        "angle": "De fysieke afstand wordt een harde relationele grens."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 13817,
+      "output_tokens": 7399,
+      "total_tokens": 21216
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Tijdens een periode van coronamaatregelen spreken twee bekenden veilig af: zij houden afstand, vermijden lichamelijk contact en proberen toch op een gewone, vriendelijke manier bij te praten.",
+          "participants_and_roles": [
+            "Twee vrienden, collega’s of familieleden: willen sociaal contact onderhouden.",
+            "Eventuele omstanders of gastheer: verwachten dat iedereen de geldende veiligheidsregels respecteert.",
+            "De overheid/gezondheidsrichtlijnen: bepalen de gebruikelijke regels rond afstand, hygiëne en contact."
+          ],
+          "apparent_goal": "Op een veilige en sociaal aanvaardbare manier contact hebben zonder besmettingsrisico onnodig te vergroten.",
+          "preconditions": [
+            "Er zijn coronamaatregelen of een breed gedeeld besef dat afstand houden verstandig is.",
+            "De deelnemers kennen de basisregels, zoals afstand houden, thuisblijven bij klachten en handen hygiënisch houden.",
+            "Er is een plek of communicatiemiddel beschikbaar waarmee contact mogelijk is, bijvoorbeeld buiten, in een ruime kamer of via beeldbellen.",
+            "De deelnemers willen elkaar zien of spreken en zijn bereid hun gewone begroetings- en omgangsvormen aan te passen."
+          ],
+          "expected_actions": [
+            "Elkaar begroeten zonder hand, kus of knuffel.",
+            "Ongeveer anderhalve meter afstand bewaren wanneer men fysiek samen is.",
+            "Bij voorkeur buiten afspreken, ventileren of beeldbellen als fysiek contact minder passend is.",
+            "Vragen hoe het gaat en een normaal gesprek voeren, met aandacht voor elkaars grenzen.",
+            "Bij klachten, twijfel of recent risico het fysieke contact uitstellen."
+          ],
+          "expected_outcome": "De deelnemers ervaren alsnog verbondenheid en een prettig gesprek, terwijl zij de kans op besmetting beperken en zich verantwoordelijk gedragen.",
+          "expected_propositions": [
+            "Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.",
+            "Een begroeting kan vriendelijk zijn zonder aanraking.",
+            "Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.",
+            "Wie zich niet goed voelt of klachten heeft, ontmoet anderen liever niet fysiek.",
+            "Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd."
+          ],
+          "audience_expectation": "Een setup over corona, afstand en sociaal contact activeert de herkenbare verwachting dat mensen hun behoefte aan nabijheid netjes proberen te verzoenen met veiligheidsregels: ze willen warm en normaal doen, maar houden bewust fysieke afstand en passen hun gedrag daarop aan."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Twee rechercheurs observeren op afstand een vermoedelijke zakkenroller in een drukke winkelstraat. Zij doen alsof zij slechts beleefd met elkaar praten, maar vermijden vooral contact met het doelwit om hun observatie niet te verraden.",
+            "opposition_axis": "Afstand als zorgzaamheid tegenover afstand als tactische observatie.",
+            "opposed_proposition": "Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.",
+            "shared_anchor": "Twee bekenden staan op afstand buiten met mondkapjes op.",
+            "reading_a": "Twee vrienden houden bewust ruimte tijdens een veilig coronagesprek.",
+            "reading_b": "Twee rechercheurs bewaren observatieafstand en maskeren hun surveillance als een gewoon praatje.",
+            "roles_b": [
+              "Rechercheur 1: volgt en beoordeelt het doelwit.",
+              "Rechercheur 2: houdt overzicht en onderhoudt contact met de meldkamer.",
+              "Vermoedelijke zakkenroller: onwetend doelwit van de observatie.",
+              "Meldkamer of arrestatieteam: staat klaar om in te grijpen."
+            ],
+            "goal_b": "De verdachte onopvallend volgen totdat er voldoende aanleiding is om in te grijpen.",
+            "role_remapping": [
+              "De twee sociale bekenden uit Script A worden twee rechercheurs.",
+              "Een eventuele voorbijganger of omstander uit Script A wordt het geobserveerde doelwit.",
+              "De coronaregels uit Script A worden in lezing B een dekmantel voor afstandelijk gedrag."
+            ],
+            "shared_cues": [
+              "Mondkapjes.",
+              "Ruimte tussen beide personen.",
+              "Een rustig, schijnbaar alledaags gesprek.",
+              "Herhaaldelijk om zich heen kijken.",
+              "Niet aanraken of dicht bij elkaar komen."
+            ],
+            "switch_trigger": "Een van hen fluistert in zijn mouw: \"Het doelwit pakt weer een portemonnee.\"",
+            "hinge_event": "De tweede persoon antwoordt: \"Arrestatieteam, nu.\"",
+            "anomaly_under_a": "Tijdens een vriendelijk coronagesprek is geheimzinnig spreken over een 'doelwit' en het oproepen van een team ongepast en onverklaarbaar.",
+            "resolution_under_b": "Als observatiecode is de zin functioneel: de rechercheurs hebben de diefstal gezien en laten het arrestatieteam ingrijpen zonder de verdachte vroegtijdig te waarschuwen."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Twee familieleden spreken elkaar in een bezoekruimte van een gevangenis. Zij zijn door glas, regels en toezicht van elkaar gescheiden; hun gesprek is warm, maar de afstand is opgelegd en tijdelijk.",
+            "opposition_axis": "Vrijwillige beschermende afstand tegenover gedwongen institutionele scheiding.",
+            "opposed_proposition": "Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.",
+            "shared_anchor": "Twee mensen praten op afstand en begroeten elkaar zonder aanraking.",
+            "reading_a": "Twee familieleden kiezen voor een coronaveilige begroeting en proberen toch verbonden te blijven.",
+            "reading_b": "Een gedetineerde en een bezoeker communiceren onder toezicht aan weerszijden van een afscheiding.",
+            "roles_b": [
+              "Gedetineerde: ontvangt beperkt bezoek.",
+              "Bezoeker: wil contact houden met de gedetineerde.",
+              "Bewaarder: ziet toe op tijd, afstand en regels.",
+              "Gevangenis: bepaalt de voorwaarden van het bezoek."
+            ],
+            "goal_b": "Binnen de beperkte bezoektijd persoonlijk contact onderhouden zonder de gevangenisregels te overtreden.",
+            "role_remapping": [
+              "De twee bekenden uit Script A worden gedetineerde en bezoeker.",
+              "De gastheer of omstander uit Script A wordt een bewaker.",
+              "De gezondheidsrichtlijnen uit Script A worden bezoek- en veiligheidsvoorschriften van de gevangenis."
+            ],
+            "shared_cues": [
+              "Een begroeting met een handgebaar.",
+              "Geen lichamelijk contact.",
+              "Een gesprek over hoe het gaat.",
+              "Een duidelijke fysieke barrière of grote afstand.",
+              "Voorzichtig spreken en goed luisteren."
+            ],
+            "switch_trigger": "Een zoemer klinkt en een bewaker zegt: \"Nog één minuut bezoekstijd.\"",
+            "hinge_event": "De bewaker schuift een luik dicht terwijl een van de twee zegt: \"Ik kom volgende maand weer.\"",
+            "anomaly_under_a": "Een bewaker die een warm gesprek abrupt beëindigt en een luik sluit, past niet bij een vrijwillige coronaveilige ontmoeting tussen bekenden.",
+            "resolution_under_b": "In de bezoekruimte is dit precies de functie van het moment: de bewaakte bezoektijd is voorbij en de fysieke scheiding wordt opnieuw afgedwongen."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.",
+            "opposition_axis": "Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.",
+            "opposed_proposition": "Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.",
+            "shared_anchor": "Twee vertrouwde mensen blijven opvallend ver van elkaar staan tijdens een persoonlijk gesprek.",
+            "reading_a": "Twee vrienden zijn vriendelijk maar voorzichtig omdat zij besmetting willen voorkomen.",
+            "reading_b": "Twee partners vermijden nabijheid omdat een van hen de relatie wil beëindigen en geen dubbelzinnige intimiteit wil oproepen.",
+            "roles_b": [
+              "Partner die het gesprek heeft aangevraagd: wil de relatie duidelijk beëindigen.",
+              "Andere partner: verwacht mogelijk een gewoon gesprek of hoopt op herstel.",
+              "Eventuele vriend of familielid op afstand: biedt na afloop steun."
+            ],
+            "goal_b": "De relatie eerlijk en ondubbelzinnig beëindigen, zonder een intiem gebaar dat valse hoop wekt.",
+            "role_remapping": [
+              "De twee bekenden uit Script A worden twee partners.",
+              "De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.",
+              "De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties."
+            ],
+            "shared_cues": [
+              "Afstand bewaren.",
+              "Geen hand, kus of knuffel.",
+              "Voorzichtig vragen hoe het gaat.",
+              "Een rustige buitenlocatie.",
+              "Aarzeling voordat iemand iets persoonlijks zegt."
+            ],
+            "switch_trigger": "Een van hen legt een sleutelbos op een bankje en zegt: \"Deze hoort niet meer bij mij.\"",
+            "hinge_event": "De ander antwoordt: \"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\"",
+            "anomaly_under_a": "Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.",
+            "resolution_under_b": "Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een reiziger staat bij een grenscontrole tegenover een douane- of immigratiebeambte. Mondkapjes, afstand en gezondheidsvragen lijken coronazorg, maar dienen uiteindelijk om toegang tot het land te beoordelen en zo nodig te weigeren.",
+            "opposition_axis": "Wederkerig sociaal contact tegenover eenzijdige controle en toelatingsmacht.",
+            "opposed_proposition": "Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.",
+            "shared_anchor": "Twee mensen met mondkapjes spreken op afstand terwijl één persoon vragen stelt.",
+            "reading_a": "Twee bekenden informeren beleefd naar elkaars gezondheid om een ontmoeting veilig te laten verlopen.",
+            "reading_b": "Een grensbeambte ondervraagt een reiziger over documenten, gezondheid en reisroute voordat toegang wordt verleend.",
+            "roles_b": [
+              "Reiziger: wil het land of de terminal binnengaan.",
+              "Grensbeambte: controleert identiteit, documenten en toelatingsvoorwaarden.",
+              "Eventuele collega of supervisor: ondersteunt bij twijfelgevallen.",
+              "Grensautoriteit: stelt de toegangs- en quarantaineregels vast."
+            ],
+            "goal_b": "Vaststellen of de reiziger aan de voorwaarden voor toegang, quarantaine of verdere controle voldoet.",
+            "role_remapping": [
+              "Een van de gelijkwaardige bekenden uit Script A wordt de reiziger.",
+              "De andere bekende wordt een grensbeambte met beslissingsmacht.",
+              "De algemene gezondheidsrichtlijnen uit Script A worden formele grens- en toelatingsregels."
+            ],
+            "shared_cues": [
+              "Mondkapjes.",
+              "Afstand bij een balie.",
+              "Vragen over klachten en recente contacten.",
+              "Handen ontsmetten.",
+              "Een beleefde maar formele toon."
+            ],
+            "switch_trigger": "De beambte draait het paspoort om, zet er een stempel in en zegt: \"Uw toegang is geweigerd.\"",
+            "hinge_event": "Hij wijst naar een afgesloten deur en voegt toe: \"U gaat met de volgende vlucht terug.\"",
+            "anomaly_under_a": "Iemand de toegang weigeren en terugsturen is disproportioneel en onbegrijpelijk binnen een gelijkwaardig sociaal gesprek over coronaveiligheid.",
+            "resolution_under_b": "Bij grenscontrole is de weigering het doelgerichte gevolg van de beoordeling: de beambte voert de toelatingsregels uit en voorkomt dat de reiziger verder reist."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Twee rechercheurs observeren op afstand een vermoedelijke zakkenroller in een drukke winkelstraat. Zij doen alsof zij slechts beleefd met elkaar praten, maar vermijden vooral contact met het doelwit om hun observatie niet te verraden.",
+              "opposition_axis": "Afstand als zorgzaamheid tegenover afstand als tactische observatie.",
+              "opposed_proposition": "Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.",
+              "shared_anchor": "Twee bekenden staan op afstand buiten met mondkapjes op.",
+              "reading_a": "Twee vrienden houden bewust ruimte tijdens een veilig coronagesprek.",
+              "reading_b": "Twee rechercheurs bewaren observatieafstand en maskeren hun surveillance als een gewoon praatje.",
+              "roles_b": [
+                "Rechercheur 1: volgt en beoordeelt het doelwit.",
+                "Rechercheur 2: houdt overzicht en onderhoudt contact met de meldkamer.",
+                "Vermoedelijke zakkenroller: onwetend doelwit van de observatie.",
+                "Meldkamer of arrestatieteam: staat klaar om in te grijpen."
+              ],
+              "goal_b": "De verdachte onopvallend volgen totdat er voldoende aanleiding is om in te grijpen.",
+              "role_remapping": [
+                "De twee sociale bekenden uit Script A worden twee rechercheurs.",
+                "Een eventuele voorbijganger of omstander uit Script A wordt het geobserveerde doelwit.",
+                "De coronaregels uit Script A worden in lezing B een dekmantel voor afstandelijk gedrag."
+              ],
+              "shared_cues": [
+                "Mondkapjes.",
+                "Ruimte tussen beide personen.",
+                "Een rustig, schijnbaar alledaags gesprek.",
+                "Herhaaldelijk om zich heen kijken.",
+                "Niet aanraken of dicht bij elkaar komen."
+              ],
+              "switch_trigger": "Een van hen fluistert in zijn mouw: \"Het doelwit pakt weer een portemonnee.\"",
+              "hinge_event": "De tweede persoon antwoordt: \"Arrestatieteam, nu.\"",
+              "anomaly_under_a": "Tijdens een vriendelijk coronagesprek is geheimzinnig spreken over een 'doelwit' en het oproepen van een team ongepast en onverklaarbaar.",
+              "resolution_under_b": "Als observatiecode is de zin functioneel: de rechercheurs hebben de diefstal gezien en laten het arrestatieteam ingrijpen zonder de verdachte vroegtijdig te waarschuwen."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Twee familieleden spreken elkaar in een bezoekruimte van een gevangenis. Zij zijn door glas, regels en toezicht van elkaar gescheiden; hun gesprek is warm, maar de afstand is opgelegd en tijdelijk.",
+              "opposition_axis": "Vrijwillige beschermende afstand tegenover gedwongen institutionele scheiding.",
+              "opposed_proposition": "Sociaal contact blijft mogelijk, maar vraagt tijdens corona om aangepaste gewoonten.",
+              "shared_anchor": "Twee mensen praten op afstand en begroeten elkaar zonder aanraking.",
+              "reading_a": "Twee familieleden kiezen voor een coronaveilige begroeting en proberen toch verbonden te blijven.",
+              "reading_b": "Een gedetineerde en een bezoeker communiceren onder toezicht aan weerszijden van een afscheiding.",
+              "roles_b": [
+                "Gedetineerde: ontvangt beperkt bezoek.",
+                "Bezoeker: wil contact houden met de gedetineerde.",
+                "Bewaarder: ziet toe op tijd, afstand en regels.",
+                "Gevangenis: bepaalt de voorwaarden van het bezoek."
+              ],
+              "goal_b": "Binnen de beperkte bezoektijd persoonlijk contact onderhouden zonder de gevangenisregels te overtreden.",
+              "role_remapping": [
+                "De twee bekenden uit Script A worden gedetineerde en bezoeker.",
+                "De gastheer of omstander uit Script A wordt een bewaker.",
+                "De gezondheidsrichtlijnen uit Script A worden bezoek- en veiligheidsvoorschriften van de gevangenis."
+              ],
+              "shared_cues": [
+                "Een begroeting met een handgebaar.",
+                "Geen lichamelijk contact.",
+                "Een gesprek over hoe het gaat.",
+                "Een duidelijke fysieke barrière of grote afstand.",
+                "Voorzichtig spreken en goed luisteren."
+              ],
+              "switch_trigger": "Een zoemer klinkt en een bewaker zegt: \"Nog één minuut bezoekstijd.\"",
+              "hinge_event": "De bewaker schuift een luik dicht terwijl een van de twee zegt: \"Ik kom volgende maand weer.\"",
+              "anomaly_under_a": "Een bewaker die een warm gesprek abrupt beëindigt en een luik sluit, past niet bij een vrijwillige coronaveilige ontmoeting tussen bekenden.",
+              "resolution_under_b": "In de bezoekruimte is dit precies de functie van het moment: de bewaakte bezoektijd is voorbij en de fysieke scheiding wordt opnieuw afgedwongen."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Twee partners ontmoeten elkaar buiten om hun relatie te beëindigen. De afstand en voorzichtige begroeting lijken aanvankelijk coronagedrag, maar blijken ook een bewuste emotionele grens tijdens een afscheid.",
+              "opposition_axis": "Afstand als warme bescherming tegenover afstand als relationele afwijzing en afsluiting.",
+              "opposed_proposition": "Afstand houden is een vorm van zorg voor de ander, niet per se een teken van kilte of afwijzing.",
+              "shared_anchor": "Twee vertrouwde mensen blijven opvallend ver van elkaar staan tijdens een persoonlijk gesprek.",
+              "reading_a": "Twee vrienden zijn vriendelijk maar voorzichtig omdat zij besmetting willen voorkomen.",
+              "reading_b": "Twee partners vermijden nabijheid omdat een van hen de relatie wil beëindigen en geen dubbelzinnige intimiteit wil oproepen.",
+              "roles_b": [
+                "Partner die het gesprek heeft aangevraagd: wil de relatie duidelijk beëindigen.",
+                "Andere partner: verwacht mogelijk een gewoon gesprek of hoopt op herstel.",
+                "Eventuele vriend of familielid op afstand: biedt na afloop steun."
+              ],
+              "goal_b": "De relatie eerlijk en ondubbelzinnig beëindigen, zonder een intiem gebaar dat valse hoop wekt.",
+              "role_remapping": [
+                "De twee bekenden uit Script A worden twee partners.",
+                "De sociale afstand uit Script A wordt in lezing B een emotionele en praktische grens.",
+                "De verwachte vriendelijke afronding uit Script A wordt een afscheid met duidelijke consequenties."
+              ],
+              "shared_cues": [
+                "Afstand bewaren.",
+                "Geen hand, kus of knuffel.",
+                "Voorzichtig vragen hoe het gaat.",
+                "Een rustige buitenlocatie.",
+                "Aarzeling voordat iemand iets persoonlijks zegt."
+              ],
+              "switch_trigger": "Een van hen legt een sleutelbos op een bankje en zegt: \"Deze hoort niet meer bij mij.\"",
+              "hinge_event": "De ander antwoordt: \"Dus dit is geen voorzichtig coronapraatje; je maakt het echt uit.\"",
+              "anomaly_under_a": "Het teruggeven van huissleutels is tijdens een gewoon veilig gesprek tussen vrienden onverwacht zwaar en niet nodig.",
+              "resolution_under_b": "Bij een relatiebreuk maakt de sleutelbos de nieuwe grens concreet: de afstand is niet alleen tijdelijk of medisch, maar markeert het einde van gedeelde intimiteit en toegang."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een reiziger staat bij een grenscontrole tegenover een douane- of immigratiebeambte. Mondkapjes, afstand en gezondheidsvragen lijken coronazorg, maar dienen uiteindelijk om toegang tot het land te beoordelen en zo nodig te weigeren.",
+              "opposition_axis": "Wederkerig sociaal contact tegenover eenzijdige controle en toelatingsmacht.",
+              "opposed_proposition": "Iedereen begrijpt doorgaans waarom regels rond afstand en hygiëne worden gevolgd.",
+              "shared_anchor": "Twee mensen met mondkapjes spreken op afstand terwijl één persoon vragen stelt.",
+              "reading_a": "Twee bekenden informeren beleefd naar elkaars gezondheid om een ontmoeting veilig te laten verlopen.",
+              "reading_b": "Een grensbeambte ondervraagt een reiziger over documenten, gezondheid en reisroute voordat toegang wordt verleend.",
+              "roles_b": [
+                "Reiziger: wil het land of de terminal binnengaan.",
+                "Grensbeambte: controleert identiteit, documenten en toelatingsvoorwaarden.",
+                "Eventuele collega of supervisor: ondersteunt bij twijfelgevallen.",
+                "Grensautoriteit: stelt de toegangs- en quarantaineregels vast."
+              ],
+              "goal_b": "Vaststellen of de reiziger aan de voorwaarden voor toegang, quarantaine of verdere controle voldoet.",
+              "role_remapping": [
+                "Een van de gelijkwaardige bekenden uit Script A wordt de reiziger.",
+                "De andere bekende wordt een grensbeambte met beslissingsmacht.",
+                "De algemene gezondheidsrichtlijnen uit Script A worden formele grens- en toelatingsregels."
+              ],
+              "shared_cues": [
+                "Mondkapjes.",
+                "Afstand bij een balie.",
+                "Vragen over klachten en recente contacten.",
+                "Handen ontsmetten.",
+                "Een beleefde maar formele toon."
+              ],
+              "switch_trigger": "De beambte draait het paspoort om, zet er een stempel in en zegt: \"Uw toegang is geweigerd.\"",
+              "hinge_event": "Hij wijst naar een afgesloten deur en voegt toe: \"U gaat met de volgende vlucht terug.\"",
+              "anomaly_under_a": "Iemand de toegang weigeren en terugsturen is disproportioneel en onbegrijpelijk binnen een gelijkwaardig sociaal gesprek over coronaveiligheid.",
+              "resolution_under_b": "Bij grenscontrole is de weigering het doelgerichte gevolg van de beoordeling: de beambte voert de toelatingsregels uit en voorkomt dat de reiziger verder reist."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Dezelfde zichtbare situatie kan zowel een coronaveilig gesprek als een gecamoufleerde observatie tonen. De dominante tegenstelling is de functie van afstand: zorgzaamheid tegenover tactische onopvallendheid. Mondkapjes, afstand, alledaags praten en om zich heen kijken kunnen beide lezingen dragen, terwijl de coronalezing door onderwerp en setup eerst voorligt. De verwijzing naar een doelwit en het arrestatieteam is onder A anomalisch, maar onder B doelgericht. Daardoor krijgen eerdere signalen, vooral het rondkijken en de afstand, achteraf een surveillancefunctie. Er is geen expliciete voorwaarde die A's doel blokkeert en tegelijk B's doel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Eén realiseerbare tekst kan twee mensen zonder aanraking op afstand laten spreken, waarbij die afstand eerst als coronaveilig en later als institutioneel opgelegd verschijnt. De oppositie is helder en enkelvoudig: vrijwillige beschermende afstand tegenover gedwongen scheiding. Een bezoekruimte met toezicht, barrière en beperkte tijd is een sociaal herkenbare tweede lezing; vóór de zoemer kan zij door de afstand en mogelijke afscheiding latent aanwezig blijven. De bewaker, het luik en de vaste eindtijd zijn onder A ongepast, maar onder B precies functioneel. Zij herinterpreteren de eerdere afstand als gevangenschapsscheiding. Er is niet expliciet éénzelfde voorwaarde die A's sociale doel blokkeert en B's doel faciliteert."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De gedeelde scène van twee vertrouwde personen die ver uit elkaar blijven en niet aanraken kan zowel coronaveiligheid als relationele terughoudendheid verbeelden. De centrale oppositie blijft één as: afstand als warme bescherming tegenover afstand als afwijzende afsluiting. Een relatiebreuk met het vermijden van dubbelzinnige intimiteit is coherent en herkenbaar, maar de corona-interpretatie wordt aanvankelijk door het onderwerp en de veilige gedragingen sterker geactiveerd. De sleutelbos is onder A onverklaarbaar, terwijl hij onder B de beëindiging en nieuwe grens concreet maakt. Daardoor verandert de eerdere fysieke afstand achteraf in een emotionele en relationele grens. Er is geen expliciete gedeelde conditie die A's doel verhindert terwijl zij B's doel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De gedeelde aanwijzingen — mondkapjes, afstand, gezondheidsvragen, ontsmetten en een formele toon — kunnen zowel een coronagesprek als een grenscontrole ondersteunen. De relevante, dominante tegenstelling is wederkerig sociaal contact tegenover hiërarchische toelatingscontrole. Grenscontrole met gezondheids- en reisvragen is een coherent en sociaal herkenbaar alternatief en blijft door de formele ondervraging latent beschikbaar, hoewel de coronalezing vanuit het onderwerp eerst wordt verwacht. Toegangsweigering en terugsturen zijn onder A disproportioneel en onverklaarbaar, maar onder B een doelgerichte uitvoering van toelatingsmacht. Daarmee krijgen de eerdere gezondheidsvragen achteraf de functie van selectie in plaats van wederzijdse zorg. Een expliciete conditie die tegelijk A's doel blokkeert en B's doel mogelijk maakt, is niet vastgesteld."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Dezelfde zichtbare situatie kan zowel een coronaveilig gesprek als een gecamoufleerde observatie tonen. De dominante tegenstelling is de functie van afstand: zorgzaamheid tegenover tactische onopvallendheid. Mondkapjes, afstand, alledaags praten en om zich heen kijken kunnen beide lezingen dragen, terwijl de coronalezing door onderwerp en setup eerst voorligt. De verwijzing naar een doelwit en het arrestatieteam is onder A anomalisch, maar onder B doelgericht. Daardoor krijgen eerdere signalen, vooral het rondkijken en de afstand, achteraf een surveillancefunctie. Er is geen expliciete voorwaarde die A's doel blokkeert en tegelijk B's doel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Eén realiseerbare tekst kan twee mensen zonder aanraking op afstand laten spreken, waarbij die afstand eerst als coronaveilig en later als institutioneel opgelegd verschijnt. De oppositie is helder en enkelvoudig: vrijwillige beschermende afstand tegenover gedwongen scheiding. Een bezoekruimte met toezicht, barrière en beperkte tijd is een sociaal herkenbare tweede lezing; vóór de zoemer kan zij door de afstand en mogelijke afscheiding latent aanwezig blijven. De bewaker, het luik en de vaste eindtijd zijn onder A ongepast, maar onder B precies functioneel. Zij herinterpreteren de eerdere afstand als gevangenschapsscheiding. Er is niet expliciet éénzelfde voorwaarde die A's sociale doel blokkeert en B's doel faciliteert."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De gedeelde scène van twee vertrouwde personen die ver uit elkaar blijven en niet aanraken kan zowel coronaveiligheid als relationele terughoudendheid verbeelden. De centrale oppositie blijft één as: afstand als warme bescherming tegenover afstand als afwijzende afsluiting. Een relatiebreuk met het vermijden van dubbelzinnige intimiteit is coherent en herkenbaar, maar de corona-interpretatie wordt aanvankelijk door het onderwerp en de veilige gedragingen sterker geactiveerd. De sleutelbos is onder A onverklaarbaar, terwijl hij onder B de beëindiging en nieuwe grens concreet maakt. Daardoor verandert de eerdere fysieke afstand achteraf in een emotionele en relationele grens. Er is geen expliciete gedeelde conditie die A's doel verhindert terwijl zij B's doel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De gedeelde aanwijzingen — mondkapjes, afstand, gezondheidsvragen, ontsmetten en een formele toon — kunnen zowel een coronagesprek als een grenscontrole ondersteunen. De relevante, dominante tegenstelling is wederkerig sociaal contact tegenover hiërarchische toelatingscontrole. Grenscontrole met gezondheids- en reisvragen is een coherent en sociaal herkenbaar alternatief en blijft door de formele ondervraging latent beschikbaar, hoewel de coronalezing vanuit het onderwerp eerst wordt verwacht. Toegangsweigering en terugsturen zijn onder A disproportioneel en onverklaarbaar, maar onder B een doelgerichte uitvoering van toelatingsmacht. Daarmee krijgen de eerdere gezondheidsvragen achteraf de functie van selectie in plaats van wederzijdse zorg. Een expliciete conditie die tegelijk A's doel blokkeert en B's doel mogelijk maakt, is niet vastgesteld."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B3"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een man spreekt zijn vriendin tijdens corona buiten af en volgt de bekende regels: afstand, geen kus en geen knuffel.",
+          "realized_script_b": "De vriendin geeft een sleutel terug en sluit hem feitelijk van thuis/toegang uit; dit suggereert relationele afwijzing of een huisverbod.",
+          "realized_opposition_axis": "Medische/sociale coronadistantie tegenover persoonlijke uitsluiting en relationele afstand.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De coronasetup, afstandscues en sleutel als omslagpunt zijn aanwezig. De punchline maakt echter vooral een huisverbod of mogelijk quarantaine-instructie ('zolang jij thuisblijft') duidelijk, niet ondubbelzinnig een relatiebreuk met het geplande afscheid en de expliciete herinterpretatie van de emotionele grens."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De tekst heeft een goed herkenbare coronasetup en een late sleutelwending, maar de slotzin laat de bedoelde relatiebeëindiging te veel vervangen door een andersoortige uitsluiting: thuisblijven kan zelfs nog als coronavoorschrift worden gelezen.",
+          "passes_required_plan": false
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Iemand ziet tijdens corona zijn partner in het park; beiden blijven verantwoordelijk op afstand staan uit vrees voor besmetting.",
+          "realized_script_b": "De partner geeft zijn sleutelbos terug en maakt duidelijk dat zij hem niet meer wil ontvangen, waarmee zij de relatie en gedeelde toegang beëindigt.",
+          "realized_opposition_axis": "Afstand als verantwoordelijke bescherming tegen besmetting tegenover afstand als definitieve relationele afwijzing en afsluiting.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De setup maakt de coronalezing dominant met afstand en verantwoord gedrag. De sleutelbos en de expliciete ontkenning van besmettingsgevaar activeren laat de relatiebreuk-/toegangslezing; de eerdere afstand wordt daardoor functioneel als emotionele grens herlezen."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Dit realiseert de geplande omslag het best: een normale, verantwoordelijke coronaontmoeting wordt door de teruggegeven sleutel en het verbod op bezoek een relationeel afscheid.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "De verteller ontmoet zijn ex buiten tijdens corona, zonder hand of kus, en leest dat aanvankelijk als veilig en respectvol gedrag.",
+          "realized_script_b": "De teruggegeven sleutel en de verwijzing naar een 'nieuw woonadres' maken vooral verlies van toegang tot huis of een woon-/uitzettingssituatie zichtbaar.",
+          "realized_opposition_axis": "Coronadistantie tegenover ruimtelijke uitsluiting of verlies van woon-/huiselijke toegang.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De tekst bevat coronacues en een sleutelwending, maar noemt de ander vanaf het begin een ex. Daardoor is de bedoelde relatiebreuk niet latent en kan die niet als late alternatieve lezing worden geactiveerd. De punchline verschuift bovendien naar woon- of toegangsverlies, niet naar de geplande onthulling dat het gesprek de relatie beëindigt."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": false,
+          "latent_script_b": false,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De grapvorm werkt via de sleutel en de onverwachte woonadresformulering, maar de expliciete vermelding van 'mijn ex' geeft de relationele lezing al weg en verhindert de vereiste late omslag van coronabehoedzaamheid naar relatiebeëindiging.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V2"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "V2 wint omdat het als enige de vereiste script opposition volledig realiseert: de coronaveiligheid wordt pas bij de sleutelbos herlezen als relationele uitsluiting. V1 blijft dubbelzinnig, omdat „thuisblijft” ook een coronamaatregel kan betekenen."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "Beide varianten falen op de vereiste SO, maar V1 behoudt de vriendin als latente relatiecontext en heeft een duidelijkere late omslag. V3 noemt haar vooraf al „mijn ex”, waardoor de relationele onthulling voortijdig is weggegeven."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 is de passerende variant en moet daarom boven V3 eindigen. De sleutelbos en expliciete afwijzing van besmetting leveren een scherpe, performabele switch op; V3 ondermijnt die door de ex-status direct te benoemen."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 is de enige variant die de verplichte script opposition helder, laat en retrospectief uitvoert. De compacte coronasetup, sleutelwending en expliciete herinterpretatie maken de grap het sterkst en het best spreekbaar."
+    }
+  },
+  "result_sha256": "1f46101005ffe28aeef863ba1956f5fb4a19adce0f11c6d559534774f68f4ff9"
+}

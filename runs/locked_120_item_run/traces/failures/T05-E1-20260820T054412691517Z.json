@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T05:44:12.691477+00:00",
+  "job": {
+    "job_id": "T05-E1",
+    "topic_id": "T05",
+    "topic": "Oorlog, vrede en geweld",
+    "condition_code": "E1"
+  },
+  "attempt": 2,
+  "exception_type": "ValueError",
+  "message": "Variant V3 must contain 20-45 words; received 46."
+}

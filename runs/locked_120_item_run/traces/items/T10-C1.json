@@ -1,0 +1,834 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T10-C1",
+  "topic_id": "T10",
+  "topic": "Werk, geld en economie",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T19:24:40.659962+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Werk, geld en economie",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Werk, geld en economie\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Werk, geld en economie\",\n  \"script_a\": {\n    \"script_a\": \"Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.\",\n    \"participants_and_roles\": [\n      \"Werknemer: voert werk uit, maakt uren en verwacht loon.\",\n      \"Werkgever: biedt werk, betaalt salaris en bewaakt de bedrijfsvoering.\",\n      \"Klant of consument: koopt producten of diensten en levert daarmee omzet.\",\n      \"Overheid en instanties: heffen belasting, stellen regels en bieden publieke voorzieningen.\",\n      \"Bank, verhuurder en leveranciers: ontvangen betalingen voor wonen, krediet en noodzakelijke diensten.\"\n    ],\n    \"apparent_goal\": \"Via stabiel werk voldoende inkomen verdienen om financieel rond te komen en enigszins vooruit te kunnen plannen.\",\n    \"preconditions\": [\n      \"Er is een arbeidscontract of andere duidelijke afspraak over werk en beloning.\",\n      \"De werknemer beschikt over de vereiste tijd, vaardigheden en inzet.\",\n      \"De werkgever heeft werk, omzet of budget om loon te betalen.\",\n      \"Salaris, prijzen, belastingen en vaste lasten zijn in grote lijnen voorspelbaar.\",\n      \"Betalingen verlopen via een betrouwbare bankrekening en administratie.\"\n    ],\n    \"expected_actions\": [\n      \"De werknemer verschijnt op het werk, voert taken uit en registreert zo nodig uren.\",\n      \"De werkgever betaalt op de afgesproken datum salaris uit.\",\n      \"De werknemer betaalt huur of hypotheek, boodschappen, energie, verzekeringen en belastingen.\",\n      \"De consument vergelijkt prijzen en koopt wat binnen het budget past.\",\n      \"Partijen maken een begroting, sparen waar mogelijk en proberen schulden te vermijden.\"\n    ],\n    \"expected_outcome\": \"Werk leidt tot een betrouwbaar inkomen, waarmee noodzakelijke uitgaven kunnen worden betaald en bij verstandig beheer ruimte ontstaat voor sparen, ontspanning of financiële vooruitgang.\",\n    \"expected_propositions\": [\n      \"Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.\",\n      \"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\",\n      \"Een salaris wordt volledig, correct en op tijd uitbetaald.\",\n      \"Prijzen en vaste lasten veranderen niet zo plotseling dat een gewoon budget meteen onbruikbaar wordt.\",\n      \"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\"\n    ],\n    \"audience_expectation\": \"Een herkenbare werkdag of betaaldag activeert de verwachting van een ordelijke ruil: arbeid wordt eerlijk beloond, het loon komt binnen en maakt een stabiel, planbaar dagelijks leven mogelijk.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Werk, geld en economie\",\n  \"script_a\": {\n    \"script_a\": \"Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.\",\n    \"participants_and_roles\": [\n      \"Werknemer: voert werk uit, maakt uren en verwacht loon.\",\n      \"Werkgever: biedt werk, betaalt salaris en bewaakt de bedrijfsvoering.\",\n      \"Klant of consument: koopt producten of diensten en levert daarmee omzet.\",\n      \"Overheid en instanties: heffen belasting, stellen regels en bieden publieke voorzieningen.\",\n      \"Bank, verhuurder en leveranciers: ontvangen betalingen voor wonen, krediet en noodzakelijke diensten.\"\n    ],\n    \"apparent_goal\": \"Via stabiel werk voldoende inkomen verdienen om financieel rond te komen en enigszins vooruit te kunnen plannen.\",\n    \"preconditions\": [\n      \"Er is een arbeidscontract of andere duidelijke afspraak over werk en beloning.\",\n      \"De werknemer beschikt over de vereiste tijd, vaardigheden en inzet.\",\n      \"De werkgever heeft werk, omzet of budget om loon te betalen.\",\n      \"Salaris, prijzen, belastingen en vaste lasten zijn in grote lijnen voorspelbaar.\",\n      \"Betalingen verlopen via een betrouwbare bankrekening en administratie.\"\n    ],\n    \"expected_actions\": [\n      \"De werknemer verschijnt op het werk, voert taken uit en registreert zo nodig uren.\",\n      \"De werkgever betaalt op de afgesproken datum salaris uit.\",\n      \"De werknemer betaalt huur of hypotheek, boodschappen, energie, verzekeringen en belastingen.\",\n      \"De consument vergelijkt prijzen en koopt wat binnen het budget past.\",\n      \"Partijen maken een begroting, sparen waar mogelijk en proberen schulden te vermijden.\"\n    ],\n    \"expected_outcome\": \"Werk leidt tot een betrouwbaar inkomen, waarmee noodzakelijke uitgaven kunnen worden betaald en bij verstandig beheer ruimte ontstaat voor sparen, ontspanning of financiële vooruitgang.\",\n    \"expected_propositions\": [\n      \"Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.\",\n      \"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\",\n      \"Een salaris wordt volledig, correct en op tijd uitbetaald.\",\n      \"Prijzen en vaste lasten veranderen niet zo plotseling dat een gewoon budget meteen onbruikbaar wordt.\",\n      \"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\"\n    ],\n    \"audience_expectation\": \"Een herkenbare werkdag of betaaldag activeert de verwachting van een ordelijke ruil: arbeid wordt eerlijk beloond, het loon komt binnen en maakt een stabiel, planbaar dagelijks leven mogelijk.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een werknemer blijkt geen gewone werknemer maar deelnemer aan een gesimuleerde ontslag- en incassotraining. De werkgever speelt een schuldeiser en de loonstrook is onderdeel van een oefening waarin deelnemers moeten leren onderhandelen over betalingsregelingen.\",\n      \"opposition_axis\": \"echt salaris tegenover oefengeld in een training\",\n      \"opposed_proposition\": \"Een salaris wordt volledig, correct en op tijd uitbetaald.\",\n      \"shared_anchor\": \"De werknemer wacht op de maandelijkse bijschrijving.\",\n      \"reading_a\": \"De bijschrijving is het verwachte salaris waarmee huur, boodschappen en rekeningen worden betaald.\",\n      \"reading_b\": \"De verwachte bijschrijving is een bewust nagemaakte loonbetaling die als oefenmateriaal dient voor een training in financiële weerbaarheid.\",\n      \"roles_b\": [\n        \"Deelnemer: oefent onder druk financiële beslissingen en onderhandelingen.\",\n        \"Trainer: organiseert de simulatie en beoordeelt de reacties.\",\n        \"Acteur als werkgever: brengt geloofwaardig slecht nieuws over de betaling.\",\n        \"Acteur als incassomedewerker: biedt een betalingsregeling aan.\"\n      ],\n      \"goal_b\": \"De deelnemer laten ervaren hoe hij kalm en doeltreffend reageert op een plotseling financieel probleem.\",\n      \"role_remapping\": [\n        \"Werknemer wordt deelnemer aan de training.\",\n        \"Werkgever wordt een acteur die de simulatie uitvoert.\",\n        \"Bankrekening wordt een trainingsomgeving met fictieve transacties.\",\n        \"Schuldeisers worden trainers of acteurs die onderhandelingsgedrag uitlokken.\"\n      ],\n      \"shared_cues\": [\n        \"Een normale werkdag met ingeklokte uren.\",\n        \"Een loonstrook met uren, inhoudingen en een betaaldatum.\",\n        \"Een blik op de bankapp rond de betaaldag.\",\n        \"Een herinnering voor huur en energierekening.\",\n        \"Een telefoontje van iemand die zich als personeelsadministratie meldt.\"\n      ],\n      \"switch_trigger\": \"De vermeende incassomedewerker stopt midden in het gesprek, feliciteert de werknemer met zijn aanpak en de trainer komt de ruimte binnen.\",\n      \"hinge_event\": \"Op de loonstrook staat dat het volledige salaris is ingehouden wegens een verzonnen schuld die dezelfde dag direct moet worden betaald.\",\n      \"anomaly_under_a\": \"Bij regulier werk is een volledige, onverwachte looninhouding zonder voorafgaande uitleg of rechtsgeldige procedure onaanvaardbaar en ontwrichtend.\",\n      \"resolution_under_b\": \"De onredelijke inhouding is doelbewust ontworpen als stressvolle casus; zij geeft de deelnemer aanleiding om bewijs te vragen, niet impulsief te betalen en een regeling te bespreken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een financieel rechercheur werkt undercover in een bedrijf dat personeel via nagemaakte loonbetalingen benadert. De ogenschijnlijk gewone werknemer is de undercoveragent; de werkgever en bankcontacten worden gevolgd om een fraudeconstructie bloot te leggen.\",\n      \"opposition_axis\": \"loon als eerlijke beloning tegenover loon als lokmiddel voor fraude\",\n      \"opposed_proposition\": \"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\",\n      \"shared_anchor\": \"Een salarisbetaling verschijnt in de bankapp.\",\n      \"reading_a\": \"De betaling is verdiend loon dat de werknemer vrij kan besteden aan noodzakelijke kosten.\",\n      \"reading_b\": \"De betaling is een verdachte proeftransactie waarmee fraudeurs willen testen of de rekening en identiteit bruikbaar zijn voor hun constructie.\",\n      \"roles_b\": [\n        \"Undercoverrechercheur: verzamelt bewijs zonder de verdachten te waarschuwen.\",\n        \"Fraudeur als werkgever: werft rekeninghouders en maskeert geldstromen als loon.\",\n        \"Handlanger als personeelsmedewerker: verstuurt contracten en loonstroken.\",\n        \"Bankonderzoeker: signaleert en documenteert verdachte transacties.\"\n      ],\n      \"goal_b\": \"De geldstroom en de betrokken organisatoren bewijzen voordat zij rekeningen kunnen misbruiken of geld kunnen wegsluizen.\",\n      \"role_remapping\": [\n        \"Werknemer wordt undercoverrechercheur.\",\n        \"Werkgever wordt organisator van de fraude.\",\n        \"Salaris wordt een gecontroleerde verdachte transactie.\",\n        \"Bank wordt zowel betalingskanaal als bron van opsporingsinformatie.\",\n        \"Collega's worden mogelijke handlangers of getuigen.\"\n      ],\n      \"shared_cues\": [\n        \"Een vacaturegesprek en een eenvoudig arbeidscontract.\",\n        \"Een verzoek om bankgegevens en identiteitsbewijs.\",\n        \"Een digitale loonstrook.\",\n        \"Een eerste salarisstorting op een vaste datum.\",\n        \"Vragen van collega's over uren en betalingen.\"\n      ],\n      \"switch_trigger\": \"De salarisomschrijving bevat een intern dossiernummer dat de undercoverrechercheur herkent als code uit een lopend witwasonderzoek.\",\n      \"hinge_event\": \"De werkgever vraagt de werknemer direct na ontvangst een groot deel van het 'salaris' naar verschillende onbekende rekeningen terug te sturen.\",\n      \"anomaly_under_a\": \"Een legitieme werkgever laat een werknemer niet meteen loon doorsluizen naar willekeurige derden; dat is strijdig met het doel van loon als vrij besteedbaar inkomen.\",\n      \"resolution_under_b\": \"De terugbetaalopdracht bevestigt juist de vermoedelijke fraude en geeft de rechercheur een concrete, traceerbare handeling waarmee de organisatie kan worden gekoppeld aan de geldstromen.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.\",\n      \"opposition_axis\": \"financiële beloning tegenover symbolische beloning en zichtbaarheid\",\n      \"opposed_proposition\": \"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\",\n      \"shared_anchor\": \"De bezorger neemt extra diensten aan.\",\n      \"reading_a\": \"Extra diensten betekenen meer gewerkte uren en dus een hoger uit te betalen bedrag.\",\n      \"reading_b\": \"Extra diensten worden gebruikt om een opvallend verhaal van inzet te creëren dat het platform kan vermarkten zonder passend extra loon te betalen.\",\n      \"roles_b\": [\n        \"Bezorger: levert diensten en wordt ongewild gezicht van de campagne.\",\n        \"Platformbeheerder: stuurt opdrachten, badges en promotieberichten.\",\n        \"Marketingteam: verzamelt beelden en verhalen voor reclame.\",\n        \"Klanten: geven beoordelingen en ontvangen de bezorgingen.\",\n        \"Volgers: belonen de bezorger met aandacht en online waardering.\"\n      ],\n      \"goal_b\": \"Het platform wil goedkoop positieve publiciteit en klantbinding creëren door de bezorger als inspirerend voorbeeld te presenteren.\",\n      \"role_remapping\": [\n        \"Werknemer wordt bezorger en onbedoeld campagnefiguur.\",\n        \"Werkgever wordt een digitaal platform met marketingbelangen.\",\n        \"Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.\",\n        \"Salarisadministratie wordt een app met punten, badges en promotionele beloningen.\"\n      ],\n      \"shared_cues\": [\n        \"Meldingen over beschikbare diensten.\",\n        \"Een overzicht van gereden uren en afgeronde opdrachten.\",\n        \"Positieve klantbeoordelingen.\",\n        \"Een bericht dat de bezorger tot toppresteerder is uitgeroepen.\",\n        \"Extra drukte tijdens een promotieweek.\"\n      ],\n      \"switch_trigger\": \"Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.\",\n      \"hinge_event\": \"De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.\",\n      \"anomaly_under_a\": \"Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.\",\n      \"resolution_under_b\": \"Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een familie neemt deel aan een televisieprogramma over zuinig leven. De hoofdpersoon speelt voor de camera een werknemer met een krap budget; de werkgever, verhuurder en winkelier zijn medespelers die onverwachte financiële beperkingen opvoeren om creatieve oplossingen zichtbaar te maken.\",\n      \"opposition_axis\": \"financiële stabiliteit als levensdoel tegenover financiële tegenslag als televisie-uitdaging\",\n      \"opposed_proposition\": \"Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.\",\n      \"shared_anchor\": \"Op betaaldag maakt de hoofdpersoon een maandbegroting.\",\n      \"reading_a\": \"De werknemer probeert met werkelijk loon huur, energie, boodschappen en andere normale kosten te betalen.\",\n      \"reading_b\": \"De deelnemer bereidt een televisieronde voor waarin een kunstmatig beperkt budget inventieve keuzes en kijkwaardige spanning moet opleveren.\",\n      \"roles_b\": [\n        \"Deelnemer: voert de budgetuitdaging uit voor het programma.\",\n        \"Presentator: stelt de opdrachten en onthult de spelregels.\",\n        \"Productieteam: regisseert omstandigheden en registreert reacties.\",\n        \"Acteurs als werkgever, verhuurder en winkelier: brengen vooraf geplande verrassingen.\",\n        \"Kijkers: volgen en beoordelen de creatieve oplossingen.\"\n      ],\n      \"goal_b\": \"Een herkenbare, spannende aflevering maken waarin de deelnemer praktische vindingrijkheid toont onder een opgelegde budgetbeperking.\",\n      \"role_remapping\": [\n        \"Werknemer wordt deelnemer aan een televisieprogramma.\",\n        \"Werkgever wordt een acteur die een scripted betaalbericht geeft.\",\n        \"Verhuurder en leveranciers worden medespelers die opdrachten activeren.\",\n        \"Bankapp en begroting worden rekwisieten en spelonderdelen.\",\n        \"Consument wordt deelnemer die voor de camera keuzes toelicht.\"\n      ],\n      \"shared_cues\": [\n        \"Een loonstrook en een bankapp op betaaldag.\",\n        \"Een lijst met huur, energie, verzekeringen en boodschappen.\",\n        \"Prijsvergelijking in de supermarkt.\",\n        \"Een gesprek met de verhuurder over de komende betaling.\",\n        \"Rekenwerk met een maandbudget.\"\n      ],\n      \"switch_trigger\": \"De presentator verschijnt nadat de deelnemer zijn begroting heeft gemaakt en onthult dat de ontbrekende helft van het loon in een verzegelde envelop op de set zit.\",\n      \"hinge_event\": \"De loonbetaling blijkt precies de helft lager, terwijl huur en alle gewone vaste lasten diezelfde dag opeisbaar lijken.\",\n      \"anomaly_under_a\": \"Voor een gewone werknemer zou een halvering van het loon zonder verklaring een ernstige financiële crisis veroorzaken en de veronderstelde voorspelbaarheid van het budget breken.\",\n      \"resolution_under_b\": \"De tekortbetaling is een vooraf afgesproken spelbeperking; de envelop, camera's en presentator maken duidelijk dat de crisis bedoeld is om de budgetuitdaging en de uiteindelijke onthulling te dragen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Werk, geld en economie\",\n  \"script_a\": {\n    \"script_a\": \"Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.\",\n    \"participants_and_roles\": [\n      \"Werknemer: voert werk uit, maakt uren en verwacht loon.\",\n      \"Werkgever: biedt werk, betaalt salaris en bewaakt de bedrijfsvoering.\",\n      \"Klant of consument: koopt producten of diensten en levert daarmee omzet.\",\n      \"Overheid en instanties: heffen belasting, stellen regels en bieden publieke voorzieningen.\",\n      \"Bank, verhuurder en leveranciers: ontvangen betalingen voor wonen, krediet en noodzakelijke diensten.\"\n    ],\n    \"apparent_goal\": \"Via stabiel werk voldoende inkomen verdienen om financieel rond te komen en enigszins vooruit te kunnen plannen.\",\n    \"preconditions\": [\n      \"Er is een arbeidscontract of andere duidelijke afspraak over werk en beloning.\",\n      \"De werknemer beschikt over de vereiste tijd, vaardigheden en inzet.\",\n      \"De werkgever heeft werk, omzet of budget om loon te betalen.\",\n      \"Salaris, prijzen, belastingen en vaste lasten zijn in grote lijnen voorspelbaar.\",\n      \"Betalingen verlopen via een betrouwbare bankrekening en administratie.\"\n    ],\n    \"expected_actions\": [\n      \"De werknemer verschijnt op het werk, voert taken uit en registreert zo nodig uren.\",\n      \"De werkgever betaalt op de afgesproken datum salaris uit.\",\n      \"De werknemer betaalt huur of hypotheek, boodschappen, energie, verzekeringen en belastingen.\",\n      \"De consument vergelijkt prijzen en koopt wat binnen het budget past.\",\n      \"Partijen maken een begroting, sparen waar mogelijk en proberen schulden te vermijden.\"\n    ],\n    \"expected_outcome\": \"Werk leidt tot een betrouwbaar inkomen, waarmee noodzakelijke uitgaven kunnen worden betaald en bij verstandig beheer ruimte ontstaat voor sparen, ontspanning of financiële vooruitgang.\",\n    \"expected_propositions\": [\n      \"Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.\",\n      \"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\",\n      \"Een salaris wordt volledig, correct en op tijd uitbetaald.\",\n      \"Prijzen en vaste lasten veranderen niet zo plotseling dat een gewoon budget meteen onbruikbaar wordt.\",\n      \"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\"\n    ],\n    \"audience_expectation\": \"Een herkenbare werkdag of betaaldag activeert de verwachting van een ordelijke ruil: arbeid wordt eerlijk beloond, het loon komt binnen en maakt een stabiel, planbaar dagelijks leven mogelijk.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een werknemer blijkt geen gewone werknemer maar deelnemer aan een gesimuleerde ontslag- en incassotraining. De werkgever speelt een schuldeiser en de loonstrook is onderdeel van een oefening waarin deelnemers moeten leren onderhandelen over betalingsregelingen.\",\n      \"opposition_axis\": \"echt salaris tegenover oefengeld in een training\",\n      \"opposed_proposition\": \"Een salaris wordt volledig, correct en op tijd uitbetaald.\",\n      \"shared_anchor\": \"De werknemer wacht op de maandelijkse bijschrijving.\",\n      \"reading_a\": \"De bijschrijving is het verwachte salaris waarmee huur, boodschappen en rekeningen worden betaald.\",\n      \"reading_b\": \"De verwachte bijschrijving is een bewust nagemaakte loonbetaling die als oefenmateriaal dient voor een training in financiële weerbaarheid.\",\n      \"roles_b\": [\n        \"Deelnemer: oefent onder druk financiële beslissingen en onderhandelingen.\",\n        \"Trainer: organiseert de simulatie en beoordeelt de reacties.\",\n        \"Acteur als werkgever: brengt geloofwaardig slecht nieuws over de betaling.\",\n        \"Acteur als incassomedewerker: biedt een betalingsregeling aan.\"\n      ],\n      \"goal_b\": \"De deelnemer laten ervaren hoe hij kalm en doeltreffend reageert op een plotseling financieel probleem.\",\n      \"role_remapping\": [\n        \"Werknemer wordt deelnemer aan de training.\",\n        \"Werkgever wordt een acteur die de simulatie uitvoert.\",\n        \"Bankrekening wordt een trainingsomgeving met fictieve transacties.\",\n        \"Schuldeisers worden trainers of acteurs die onderhandelingsgedrag uitlokken.\"\n      ],\n      \"shared_cues\": [\n        \"Een normale werkdag met ingeklokte uren.\",\n        \"Een loonstrook met uren, inhoudingen en een betaaldatum.\",\n        \"Een blik op de bankapp rond de betaaldag.\",\n        \"Een herinnering voor huur en energierekening.\",\n        \"Een telefoontje van iemand die zich als personeelsadministratie meldt.\"\n      ],\n      \"switch_trigger\": \"De vermeende incassomedewerker stopt midden in het gesprek, feliciteert de werknemer met zijn aanpak en de trainer komt de ruimte binnen.\",\n      \"hinge_event\": \"Op de loonstrook staat dat het volledige salaris is ingehouden wegens een verzonnen schuld die dezelfde dag direct moet worden betaald.\",\n      \"anomaly_under_a\": \"Bij regulier werk is een volledige, onverwachte looninhouding zonder voorafgaande uitleg of rechtsgeldige procedure onaanvaardbaar en ontwrichtend.\",\n      \"resolution_under_b\": \"De onredelijke inhouding is doelbewust ontworpen als stressvolle casus; zij geeft de deelnemer aanleiding om bewijs te vragen, niet impulsief te betalen en een regeling te bespreken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een financieel rechercheur werkt undercover in een bedrijf dat personeel via nagemaakte loonbetalingen benadert. De ogenschijnlijk gewone werknemer is de undercoveragent; de werkgever en bankcontacten worden gevolgd om een fraudeconstructie bloot te leggen.\",\n      \"opposition_axis\": \"loon als eerlijke beloning tegenover loon als lokmiddel voor fraude\",\n      \"opposed_proposition\": \"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\",\n      \"shared_anchor\": \"Een salarisbetaling verschijnt in de bankapp.\",\n      \"reading_a\": \"De betaling is verdiend loon dat de werknemer vrij kan besteden aan noodzakelijke kosten.\",\n      \"reading_b\": \"De betaling is een verdachte proeftransactie waarmee fraudeurs willen testen of de rekening en identiteit bruikbaar zijn voor hun constructie.\",\n      \"roles_b\": [\n        \"Undercoverrechercheur: verzamelt bewijs zonder de verdachten te waarschuwen.\",\n        \"Fraudeur als werkgever: werft rekeninghouders en maskeert geldstromen als loon.\",\n        \"Handlanger als personeelsmedewerker: verstuurt contracten en loonstroken.\",\n        \"Bankonderzoeker: signaleert en documenteert verdachte transacties.\"\n      ],\n      \"goal_b\": \"De geldstroom en de betrokken organisatoren bewijzen voordat zij rekeningen kunnen misbruiken of geld kunnen wegsluizen.\",\n      \"role_remapping\": [\n        \"Werknemer wordt undercoverrechercheur.\",\n        \"Werkgever wordt organisator van de fraude.\",\n        \"Salaris wordt een gecontroleerde verdachte transactie.\",\n        \"Bank wordt zowel betalingskanaal als bron van opsporingsinformatie.\",\n        \"Collega's worden mogelijke handlangers of getuigen.\"\n      ],\n      \"shared_cues\": [\n        \"Een vacaturegesprek en een eenvoudig arbeidscontract.\",\n        \"Een verzoek om bankgegevens en identiteitsbewijs.\",\n        \"Een digitale loonstrook.\",\n        \"Een eerste salarisstorting op een vaste datum.\",\n        \"Vragen van collega's over uren en betalingen.\"\n      ],\n      \"switch_trigger\": \"De salarisomschrijving bevat een intern dossiernummer dat de undercoverrechercheur herkent als code uit een lopend witwasonderzoek.\",\n      \"hinge_event\": \"De werkgever vraagt de werknemer direct na ontvangst een groot deel van het 'salaris' naar verschillende onbekende rekeningen terug te sturen.\",\n      \"anomaly_under_a\": \"Een legitieme werkgever laat een werknemer niet meteen loon doorsluizen naar willekeurige derden; dat is strijdig met het doel van loon als vrij besteedbaar inkomen.\",\n      \"resolution_under_b\": \"De terugbetaalopdracht bevestigt juist de vermoedelijke fraude en geeft de rechercheur een concrete, traceerbare handeling waarmee de organisatie kan worden gekoppeld aan de geldstromen.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.\",\n      \"opposition_axis\": \"financiële beloning tegenover symbolische beloning en zichtbaarheid\",\n      \"opposed_proposition\": \"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\",\n      \"shared_anchor\": \"De bezorger neemt extra diensten aan.\",\n      \"reading_a\": \"Extra diensten betekenen meer gewerkte uren en dus een hoger uit te betalen bedrag.\",\n      \"reading_b\": \"Extra diensten worden gebruikt om een opvallend verhaal van inzet te creëren dat het platform kan vermarkten zonder passend extra loon te betalen.\",\n      \"roles_b\": [\n        \"Bezorger: levert diensten en wordt ongewild gezicht van de campagne.\",\n        \"Platformbeheerder: stuurt opdrachten, badges en promotieberichten.\",\n        \"Marketingteam: verzamelt beelden en verhalen voor reclame.\",\n        \"Klanten: geven beoordelingen en ontvangen de bezorgingen.\",\n        \"Volgers: belonen de bezorger met aandacht en online waardering.\"\n      ],\n      \"goal_b\": \"Het platform wil goedkoop positieve publiciteit en klantbinding creëren door de bezorger als inspirerend voorbeeld te presenteren.\",\n      \"role_remapping\": [\n        \"Werknemer wordt bezorger en onbedoeld campagnefiguur.\",\n        \"Werkgever wordt een digitaal platform met marketingbelangen.\",\n        \"Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.\",\n        \"Salarisadministratie wordt een app met punten, badges en promotionele beloningen.\"\n      ],\n      \"shared_cues\": [\n        \"Meldingen over beschikbare diensten.\",\n        \"Een overzicht van gereden uren en afgeronde opdrachten.\",\n        \"Positieve klantbeoordelingen.\",\n        \"Een bericht dat de bezorger tot toppresteerder is uitgeroepen.\",\n        \"Extra drukte tijdens een promotieweek.\"\n      ],\n      \"switch_trigger\": \"Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.\",\n      \"hinge_event\": \"De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.\",\n      \"anomaly_under_a\": \"Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.\",\n      \"resolution_under_b\": \"Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Werk, geld en economie\",\n  \"plan\": {\n    \"setup_script\": \"Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.\",\n    \"opposing_script\": \"Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.\",\n    \"opposition_type\": \"financiële beloning tegenover symbolische beloning en zichtbaarheid\",\n    \"trigger\": \"Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Meldingen over beschikbare diensten.\",\n      \"Een overzicht van gereden uren en afgeronde opdrachten.\",\n      \"Positieve klantbeoordelingen.\",\n      \"Een bericht dat de bezorger tot toppresteerder is uitgeroepen.\",\n      \"Extra drukte tijdens een promotieweek.\"\n    ],\n    \"hinge_event\": \"De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.\",\n    \"anomaly_under_a\": \"Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.\",\n    \"resolution_under_b\": \"Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.\",\n    \"role_remapping\": [\n      \"Werknemer wordt bezorger en onbedoeld campagnefiguur.\",\n      \"Werkgever wordt een digitaal platform met marketingbelangen.\",\n      \"Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.\",\n      \"Salarisadministratie wordt een app met punten, badges en promotionele beloningen.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Werk, geld en economie\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.\",\n      \"participants_and_roles\": [\n        \"Werknemer: voert werk uit, maakt uren en verwacht loon.\",\n        \"Werkgever: biedt werk, betaalt salaris en bewaakt de bedrijfsvoering.\",\n        \"Klant of consument: koopt producten of diensten en levert daarmee omzet.\",\n        \"Overheid en instanties: heffen belasting, stellen regels en bieden publieke voorzieningen.\",\n        \"Bank, verhuurder en leveranciers: ontvangen betalingen voor wonen, krediet en noodzakelijke diensten.\"\n      ],\n      \"apparent_goal\": \"Via stabiel werk voldoende inkomen verdienen om financieel rond te komen en enigszins vooruit te kunnen plannen.\",\n      \"preconditions\": [\n        \"Er is een arbeidscontract of andere duidelijke afspraak over werk en beloning.\",\n        \"De werknemer beschikt over de vereiste tijd, vaardigheden en inzet.\",\n        \"De werkgever heeft werk, omzet of budget om loon te betalen.\",\n        \"Salaris, prijzen, belastingen en vaste lasten zijn in grote lijnen voorspelbaar.\",\n        \"Betalingen verlopen via een betrouwbare bankrekening en administratie.\"\n      ],\n      \"expected_actions\": [\n        \"De werknemer verschijnt op het werk, voert taken uit en registreert zo nodig uren.\",\n        \"De werkgever betaalt op de afgesproken datum salaris uit.\",\n        \"De werknemer betaalt huur of hypotheek, boodschappen, energie, verzekeringen en belastingen.\",\n        \"De consument vergelijkt prijzen en koopt wat binnen het budget past.\",\n        \"Partijen maken een begroting, sparen waar mogelijk en proberen schulden te vermijden.\"\n      ],\n      \"expected_outcome\": \"Werk leidt tot een betrouwbaar inkomen, waarmee noodzakelijke uitgaven kunnen worden betaald en bij verstandig beheer ruimte ontstaat voor sparen, ontspanning of financiële vooruitgang.\",\n      \"expected_propositions\": [\n        \"Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.\",\n        \"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\",\n        \"Een salaris wordt volledig, correct en op tijd uitbetaald.\",\n        \"Prijzen en vaste lasten veranderen niet zo plotseling dat een gewoon budget meteen onbruikbaar wordt.\",\n        \"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\"\n      ],\n      \"audience_expectation\": \"Een herkenbare werkdag of betaaldag activeert de verwachting van een ordelijke ruil: arbeid wordt eerlijk beloond, het loon komt binnen en maakt een stabiel, planbaar dagelijks leven mogelijk.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.\",\n      \"opposition_axis\": \"financiële beloning tegenover symbolische beloning en zichtbaarheid\",\n      \"opposed_proposition\": \"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\",\n      \"shared_anchor\": \"De bezorger neemt extra diensten aan.\",\n      \"reading_a\": \"Extra diensten betekenen meer gewerkte uren en dus een hoger uit te betalen bedrag.\",\n      \"reading_b\": \"Extra diensten worden gebruikt om een opvallend verhaal van inzet te creëren dat het platform kan vermarkten zonder passend extra loon te betalen.\",\n      \"roles_b\": [\n        \"Bezorger: levert diensten en wordt ongewild gezicht van de campagne.\",\n        \"Platformbeheerder: stuurt opdrachten, badges en promotieberichten.\",\n        \"Marketingteam: verzamelt beelden en verhalen voor reclame.\",\n        \"Klanten: geven beoordelingen en ontvangen de bezorgingen.\",\n        \"Volgers: belonen de bezorger met aandacht en online waardering.\"\n      ],\n      \"goal_b\": \"Het platform wil goedkoop positieve publiciteit en klantbinding creëren door de bezorger als inspirerend voorbeeld te presenteren.\",\n      \"role_remapping\": [\n        \"Werknemer wordt bezorger en onbedoeld campagnefiguur.\",\n        \"Werkgever wordt een digitaal platform met marketingbelangen.\",\n        \"Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.\",\n        \"Salarisadministratie wordt een app met punten, badges en promotionele beloningen.\"\n      ],\n      \"shared_cues\": [\n        \"Meldingen over beschikbare diensten.\",\n        \"Een overzicht van gereden uren en afgeronde opdrachten.\",\n        \"Positieve klantbeoordelingen.\",\n        \"Een bericht dat de bezorger tot toppresteerder is uitgeroepen.\",\n        \"Extra drukte tijdens een promotieweek.\"\n      ],\n      \"switch_trigger\": \"Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.\",\n      \"hinge_event\": \"De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.\",\n      \"anomaly_under_a\": \"Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.\",\n      \"resolution_under_b\": \"Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.\",\n      \"opposing_script\": \"Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.\",\n      \"opposition_type\": \"financiële beloning tegenover symbolische beloning en zichtbaarheid\",\n      \"trigger\": \"Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Meldingen over beschikbare diensten.\",\n        \"Een overzicht van gereden uren en afgeronde opdrachten.\",\n        \"Positieve klantbeoordelingen.\",\n        \"Een bericht dat de bezorger tot toppresteerder is uitgeroepen.\",\n        \"Extra drukte tijdens een promotieweek.\"\n      ],\n      \"hinge_event\": \"De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.\",\n      \"anomaly_under_a\": \"Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.\",\n      \"resolution_under_b\": \"Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.\",\n      \"role_remapping\": [\n        \"Werknemer wordt bezorger en onbedoeld campagnefiguur.\",\n        \"Werkgever wordt een digitaal platform met marketingbelangen.\",\n        \"Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.\",\n        \"Salarisadministratie wordt een app met punten, badges en promotionele beloningen.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik reed vorige week extra diensten voor die bezorgapp: uren geregistreerd, opdrachten afgerond, alleen maar vijf sterren. Na mijn recordweek stond er geen geld op mijn rekening, maar een filmploeg met een gouden bezorgtas: blijkbaar betaal ik mijn huur in exposure.\",\n      \"angle\": \"De bezorger verwacht loon voor meetbare inzet, maar blijkt vooral promotiemateriaal voor het platform.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De app stuurde: ‘Gefeliciteerd, jij bent onze toppresteerder!’ Ik dacht: mooi, eindelijk opslag. Toen kreeg ik drie badges, een kortingsbon voor sushi en een uitnodiging om te vertellen hoe leuk ik gratis overwerkte.\",\n      \"angle\": \"De normale felicitatie na hard werk kantelt naar een campagne waarin waardering het loon vervangt.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Tijdens de promotieweek nam ik elke melding aan, want de vaste lasten kennen geen rustige periode. Mijn uitbetaling bleef gelijk, maar mijn gezicht kwam op hun reclame: ik was niet ingehuurd als bezorger, ik was hun menselijke kortingscode.\",\n      \"angle\": \"Extra werk lijkt bedoeld voor inkomen, maar de beloning onthult dat de bezorger als geloofwaardig reclame-uithangbord wordt gebruikt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Werk, geld en economie\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik reed vorige week extra diensten voor die bezorgapp: uren geregistreerd, opdrachten afgerond, alleen maar vijf sterren. Na mijn recordweek stond er geen geld op mijn rekening, maar een filmploeg met een gouden bezorgtas: blijkbaar betaal ik mijn huur in exposure.\",\n      \"angle\": \"De bezorger verwacht loon voor meetbare inzet, maar blijkt vooral promotiemateriaal voor het platform.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De app stuurde: ‘Gefeliciteerd, jij bent onze toppresteerder!’ Ik dacht: mooi, eindelijk opslag. Toen kreeg ik drie badges, een kortingsbon voor sushi en een uitnodiging om te vertellen hoe leuk ik gratis overwerkte.\",\n      \"angle\": \"De normale felicitatie na hard werk kantelt naar een campagne waarin waardering het loon vervangt.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Tijdens de promotieweek nam ik elke melding aan, want de vaste lasten kennen geen rustige periode. Mijn uitbetaling bleef gelijk, maar mijn gezicht kwam op hun reclame: ik was niet ingehuurd als bezorger, ik was hun menselijke kortingscode.\",\n      \"angle\": \"Extra werk lijkt bedoeld voor inkomen, maar de beloning onthult dat de bezorger als geloofwaardig reclame-uithangbord wordt gebruikt.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een bezorger neemt extra diensten aan, registreert uren, rondt opdrachten af en verwacht na een recordweek meer loon om zijn huur te betalen.\",\n      \"realized_script_b\": \"De bezorgapp gebruikt de bezorger als promotiemateriaal en beloont zijn extra inzet met zichtbaarheid, een gouden bezorgtas en een filmploeg in plaats van extra geld.\",\n      \"realized_opposition_axis\": \"financiële beloning voor extra arbeid tegenover symbolische beloning en publicitaire zichtbaarheid\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De extra diensten, geregistreerde uren, afgeronde opdrachten en sterren realiseren de gedeelde werkcues. De filmploeg en gouden bezorgtas vormen een directe late switch van verwacht loon naar promotionele waardering.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en er is geen bedoeld doelwit gespecificeerd.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een volledige realisatie van de geplande loon-versus-exposure-tegenstelling: de concrete filmploeg en gouden tas leveren precies de voorziene omschakeling en herlezen de recordweek als campagne.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een bezorger wordt na goede prestaties tot toppresteerder uitgeroepen en verwacht daarom opslag voor zijn harde werk.\",\n      \"realized_script_b\": \"De app zet de bezorger in voor een positieve campagne en vervangt loon door badges, een kortingsbon en een uitnodiging om gratis overwerk als leuk succesverhaal te presenteren.\",\n      \"realized_opposition_axis\": \"financiële beloning voor extra werk tegenover symbolische waardering, gratis producten en promotionele zichtbaarheid\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De toppresteerdermelding wekt de normale loonverwachting op; badges, sushi-korting en het verzoek om gratis overwerk te promoten realiseren de beoogde alternatieve beloning en campagnefunctie. De filmploeg ontbreekt, maar de functionele hinge is behouden.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en er is geen bedoeld doelwit gespecificeerd.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant volgt de geplande omkering compact: de verwachte opslag wordt vervangen door decoratieve en promotionele beloningen, waarna de uitnodiging voor gratis overwerk de campagnefunctie expliciet maakt.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een bezorger neemt tijdens een drukke promotieweek alle diensten aan omdat hij inkomen nodig heeft voor zijn vaste lasten en verwacht dat extra werk meer uitbetaling oplevert.\",\n      \"realized_script_b\": \"Het platform gebruikt het gezicht van de bezorger in reclame en behandelt hem als een menselijke kortingscode, terwijl zijn uitbetaling gelijk blijft.\",\n      \"realized_opposition_axis\": \"verwachte financiële compensatie voor extra arbeid tegenover commerciële uitbuiting als reclamemiddel\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De werk- en vaste-lastensetup en de promotieweek zijn aanwezig, evenals een late onthulling van reclamegebruik. De geplande tegenstelling is echter niet primair loon tegenover symbolische beloning aan de bezorger: badges, gratis producten of publieke waardering als vervangende beloning ontbreken. De hoofdoppositie verschuift naar onderbetaalde arbeid tegenover instrumenteel reclamegebruik.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en er is geen bedoeld doelwit gespecificeerd.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": false,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De tekst werkt als grap over een platform dat een bezorger commercieel exploiteert, maar realiseert niet de specifieke geplande beloningsomkering waarin extra inzet wordt afgekocht met badges, producten en waardering.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Ik reed vorige week extra diensten voor die bezorgapp: uren geregistreerd, opdrachten afgerond, alleen maar vijf sterren. Na mijn recordweek stond er geen geld op mijn rekening, maar een filmploeg met een gouden bezorgtas: blijkbaar betaal ik mijn huur in exposure.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.",
+      "opposing_script": "Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.",
+      "opposition_type": "financiële beloning tegenover symbolische beloning en zichtbaarheid",
+      "trigger": "Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Meldingen over beschikbare diensten.",
+        "Een overzicht van gereden uren en afgeronde opdrachten.",
+        "Positieve klantbeoordelingen.",
+        "Een bericht dat de bezorger tot toppresteerder is uitgeroepen.",
+        "Extra drukte tijdens een promotieweek."
+      ],
+      "hinge_event": "De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.",
+      "anomaly_under_a": "Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.",
+      "resolution_under_b": "Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.",
+      "role_remapping": [
+        "Werknemer wordt bezorger en onbedoeld campagnefiguur.",
+        "Werkgever wordt een digitaal platform met marketingbelangen.",
+        "Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.",
+        "Salarisadministratie wordt een app met punten, badges en promotionele beloningen."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.\\\",\\\"participants_and_roles\\\":[\\\"Werknemer: voert werk uit, maakt uren en verwacht loon.\\\",\\\"Werkgever: biedt werk, betaalt salaris en bewaakt de bedrijfsvoering.\\\",\\\"Klant of consument: koopt producten of diensten en levert daarmee omzet.\\\",\\\"Overheid en instanties: heffen belasting, stellen regels en bieden publieke voorzieningen.\\\",\\\"Bank, verhuurder en leveranciers: ontvangen betalingen voor wonen, krediet en noodzakelijke diensten.\\\"],\\\"apparent_goal\\\":\\\"Via stabiel werk voldoende inkomen verdienen om financieel rond te komen en enigszins vooruit te kunnen plannen.\\\",\\\"preconditions\\\":[\\\"Er is een arbeidscontract of andere duidelijke afspraak over werk en beloning.\\\",\\\"De werknemer beschikt over de vereiste tijd, vaardigheden en inzet.\\\",\\\"De werkgever heeft werk, omzet of budget om loon te betalen.\\\",\\\"Salaris, prijzen, belastingen en vaste lasten zijn in grote lijnen voorspelbaar.\\\",\\\"Betalingen verlopen via een betrouwbare bankrekening en administratie.\\\"],\\\"expected_actions\\\":[\\\"De werknemer verschijnt op het werk, voert taken uit en registreert zo nodig uren.\\\",\\\"De werkgever betaalt op de afgesproken datum salaris uit.\\\",\\\"De werknemer betaalt huur of hypotheek, boodschappen, energie, verzekeringen en belastingen.\\\",\\\"De consument vergelijkt prijzen en koopt wat binnen het budget past.\\\",\\\"Partijen maken een begroting, sparen waar mogelijk en proberen schulden te vermijden.\\\"],\\\"expected_outcome\\\":\\\"Werk leidt tot een betrouwbaar inkomen, waarmee noodzakelijke uitgaven kunnen worden betaald en bij verstandig beheer ruimte ontstaat voor sparen, ontspanning of financiële vooruitgang.\\\",\\\"expected_propositions\\\":[\\\"Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.\\\",\\\"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\\\",\\\"Een salaris wordt volledig, correct en op tijd uitbetaald.\\\",\\\"Prijzen en vaste lasten veranderen niet zo plotseling dat een gewoon budget meteen onbruikbaar wordt.\\\",\\\"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\\\"],\\\"audience_expectation\\\":\\\"Een herkenbare werkdag of betaaldag activeert de verwachting van een ordelijke ruil: arbeid wordt eerlijk beloond, het loon komt binnen en maakt een stabiel, planbaar dagelijks leven mogelijk.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een werknemer blijkt geen gewone werknemer maar deelnemer aan een gesimuleerde ontslag- en incassotraining. De werkgever speelt een schuldeiser en de loonstrook is onderdeel van een oefening waarin deelnemers moeten leren onderhandelen over betalingsregelingen.\\\",\\\"opposition_axis\\\":\\\"echt salaris tegenover oefengeld in een training\\\",\\\"opposed_proposition\\\":\\\"Een salaris wordt volledig, correct en op tijd uitbetaald.\\\",\\\"shared_anchor\\\":\\\"De werknemer wacht op de maandelijkse bijschrijving.\\\",\\\"reading_a\\\":\\\"De bijschrijving is het verwachte salaris waarmee huur, boodschappen en rekeningen worden betaald.\\\",\\\"reading_b\\\":\\\"De verwachte bijschrijving is een bewust nagemaakte loonbetaling die als oefenmateriaal dient voor een training in financiële weerbaarheid.\\\",\\\"roles_b\\\":[\\\"Deelnemer: oefent onder druk financiële beslissingen en onderhandelingen.\\\",\\\"Trainer: organiseert de simulatie en beoordeelt de reacties.\\\",\\\"Acteur als werkgever: brengt geloofwaardig slecht nieuws over de betaling.\\\",\\\"Acteur als incassomedewerker: biedt een betalingsregeling aan.\\\"],\\\"goal_b\\\":\\\"De deelnemer laten ervaren hoe hij kalm en doeltreffend reageert op een plotseling financieel probleem.\\\",\\\"role_remapping\\\":[\\\"Werknemer wordt deelnemer aan de training.\\\",\\\"Werkgever wordt een acteur die de simulatie uitvoert.\\\",\\\"Bankrekening wordt een trainingsomgeving met fictieve transacties.\\\",\\\"Schuldeisers worden trainers of acteurs die onderhandelingsgedrag uitlokken.\\\"],\\\"shared_cues\\\":[\\\"Een normale werkdag met ingeklokte uren.\\\",\\\"Een loonstrook met uren, inhoudingen en een betaaldatum.\\\",\\\"Een blik op de bankapp rond de betaaldag.\\\",\\\"Een herinnering voor huur en energierekening.\\\",\\\"Een telefoontje van iemand die zich als personeelsadministratie meldt.\\\"],\\\"switch_trigger\\\":\\\"De vermeende incassomedewerker stopt midden in het gesprek, feliciteert de werknemer met zijn aanpak en de trainer komt de ruimte binnen.\\\",\\\"hinge_event\\\":\\\"Op de loonstrook staat dat het volledige salaris is ingehouden wegens een verzonnen schuld die dezelfde dag direct moet worden betaald.\\\",\\\"anomaly_under_a\\\":\\\"Bij regulier werk is een volledige, onverwachte looninhouding zonder voorafgaande uitleg of rechtsgeldige procedure onaanvaardbaar en ontwrichtend.\\\",\\\"resolution_under_b\\\":\\\"De onredelijke inhouding is doelbewust ontworpen als stressvolle casus; zij geeft de deelnemer aanleiding om bewijs te vragen, niet impulsief te betalen en een regeling te bespreken.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een financieel rechercheur werkt undercover in een bedrijf dat personeel via nagemaakte loonbetalingen benadert. De ogenschijnlijk gewone werknemer is de undercoveragent; de werkgever en bankcontacten worden gevolgd om een fraudeconstructie bloot te leggen.\\\",\\\"opposition_axis\\\":\\\"loon als eerlijke beloning tegenover loon als lokmiddel voor fraude\\\",\\\"opposed_proposition\\\":\\\"Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.\\\",\\\"shared_anchor\\\":\\\"Een salarisbetaling verschijnt in de bankapp.\\\",\\\"reading_a\\\":\\\"De betaling is verdiend loon dat de werknemer vrij kan besteden aan noodzakelijke kosten.\\\",\\\"reading_b\\\":\\\"De betaling is een verdachte proeftransactie waarmee fraudeurs willen testen of de rekening en identiteit bruikbaar zijn voor hun constructie.\\\",\\\"roles_b\\\":[\\\"Undercoverrechercheur: verzamelt bewijs zonder de verdachten te waarschuwen.\\\",\\\"Fraudeur als werkgever: werft rekeninghouders en maskeert geldstromen als loon.\\\",\\\"Handlanger als personeelsmedewerker: verstuurt contracten en loonstroken.\\\",\\\"Bankonderzoeker: signaleert en documenteert verdachte transacties.\\\"],\\\"goal_b\\\":\\\"De geldstroom en de betrokken organisatoren bewijzen voordat zij rekeningen kunnen misbruiken of geld kunnen wegsluizen.\\\",\\\"role_remapping\\\":[\\\"Werknemer wordt undercoverrechercheur.\\\",\\\"Werkgever wordt organisator van de fraude.\\\",\\\"Salaris wordt een gecontroleerde verdachte transactie.\\\",\\\"Bank wordt zowel betalingskanaal als bron van opsporingsinformatie.\\\",\\\"Collega's worden mogelijke handlangers of getuigen.\\\"],\\\"shared_cues\\\":[\\\"Een vacaturegesprek en een eenvoudig arbeidscontract.\\\",\\\"Een verzoek om bankgegevens en identiteitsbewijs.\\\",\\\"Een digitale loonstrook.\\\",\\\"Een eerste salarisstorting op een vaste datum.\\\",\\\"Vragen van collega's over uren en betalingen.\\\"],\\\"switch_trigger\\\":\\\"De salarisomschrijving bevat een intern dossiernummer dat de undercoverrechercheur herkent als code uit een lopend witwasonderzoek.\\\",\\\"hinge_event\\\":\\\"De werkgever vraagt de werknemer direct na ontvangst een groot deel van het 'salaris' naar verschillende onbekende rekeningen terug te sturen.\\\",\\\"anomaly_under_a\\\":\\\"Een legitieme werkgever laat een werknemer niet meteen loon doorsluizen naar willekeurige derden; dat is strijdig met het doel van loon als vrij besteedbaar inkomen.\\\",\\\"resolution_under_b\\\":\\\"De terugbetaalopdracht bevestigt juist de vermoedelijke fraude en geeft de rechercheur een concrete, traceerbare handeling waarmee de organisatie kan worden gekoppeld aan de geldstromen.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.\\\",\\\"opposition_axis\\\":\\\"financiële beloning tegenover symbolische beloning en zichtbaarheid\\\",\\\"opposed_proposition\\\":\\\"Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.\\\",\\\"shared_anchor\\\":\\\"De bezorger neemt extra diensten aan.\\\",\\\"reading_a\\\":\\\"Extra diensten betekenen meer gewerkte uren en dus een hoger uit te betalen bedrag.\\\",\\\"reading_b\\\":\\\"Extra diensten worden gebruikt om een opvallend verhaal van inzet te creëren dat het platform kan vermarkten zonder passend extra loon te betalen.\\\",\\\"roles_b\\\":[\\\"Bezorger: levert diensten en wordt ongewild gezicht van de campagne.\\\",\\\"Platformbeheerder: stuurt opdrachten, badges en promotieberichten.\\\",\\\"Marketingteam: verzamelt beelden en verhalen voor reclame.\\\",\\\"Klanten: geven beoordelingen en ontvangen de bezorgingen.\\\",\\\"Volgers: belonen de bezorger met aandacht en online waardering.\\\"],\\\"goal_b\\\":\\\"Het platform wil goedkoop positieve publiciteit en klantbinding creëren door de bezorger als inspirerend voorbeeld te presenteren.\\\",\\\"role_remapping\\\":[\\\"Werknemer wordt bezorger en onbedoeld campagnefiguur.\\\",\\\"Werkgever wordt een digitaal platform met marketingbelangen.\\\",\\\"Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.\\\",\\\"Salarisadministratie wordt een app met punten, badges en promotionele beloningen.\\\"],\\\"shared_cues\\\":[\\\"Meldingen over beschikbare diensten.\\\",\\\"Een overzicht van gereden uren en afgeronde opdrachten.\\\",\\\"Positieve klantbeoordelingen.\\\",\\\"Een bericht dat de bezorger tot toppresteerder is uitgeroepen.\\\",\\\"Extra drukte tijdens een promotieweek.\\\"],\\\"switch_trigger\\\":\\\"Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.\\\",\\\"hinge_event\\\":\\\"De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.\\\",\\\"anomaly_under_a\\\":\\\"Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.\\\",\\\"resolution_under_b\\\":\\\"Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een familie neemt deel aan een televisieprogramma over zuinig leven. De hoofdpersoon speelt voor de camera een werknemer met een krap budget; de werkgever, verhuurder en winkelier zijn medespelers die onverwachte financiële beperkingen opvoeren om creatieve oplossingen zichtbaar te maken.\\\",\\\"opposition_axis\\\":\\\"financiële stabiliteit als levensdoel tegenover financiële tegenslag als televisie-uitdaging\\\",\\\"opposed_proposition\\\":\\\"Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.\\\",\\\"shared_anchor\\\":\\\"Op betaaldag maakt de hoofdpersoon een maandbegroting.\\\",\\\"reading_a\\\":\\\"De werknemer probeert met werkelijk loon huur, energie, boodschappen en andere normale kosten te betalen.\\\",\\\"reading_b\\\":\\\"De deelnemer bereidt een televisieronde voor waarin een kunstmatig beperkt budget inventieve keuzes en kijkwaardige spanning moet opleveren.\\\",\\\"roles_b\\\":[\\\"Deelnemer: voert de budgetuitdaging uit voor het programma.\\\",\\\"Presentator: stelt de opdrachten en onthult de spelregels.\\\",\\\"Productieteam: regisseert omstandigheden en registreert reacties.\\\",\\\"Acteurs als werkgever, verhuurder en winkelier: brengen vooraf geplande verrassingen.\\\",\\\"Kijkers: volgen en beoordelen de creatieve oplossingen.\\\"],\\\"goal_b\\\":\\\"Een herkenbare, spannende aflevering maken waarin de deelnemer praktische vindingrijkheid toont onder een opgelegde budgetbeperking.\\\",\\\"role_remapping\\\":[\\\"Werknemer wordt deelnemer aan een televisieprogramma.\\\",\\\"Werkgever wordt een acteur die een scripted betaalbericht geeft.\\\",\\\"Verhuurder en leveranciers worden medespelers die opdrachten activeren.\\\",\\\"Bankapp en begroting worden rekwisieten en spelonderdelen.\\\",\\\"Consument wordt deelnemer die voor de camera keuzes toelicht.\\\"],\\\"shared_cues\\\":[\\\"Een loonstrook en een bankapp op betaaldag.\\\",\\\"Een lijst met huur, energie, verzekeringen en boodschappen.\\\",\\\"Prijsvergelijking in de supermarkt.\\\",\\\"Een gesprek met de verhuurder over de komende betaling.\\\",\\\"Rekenwerk met een maandbudget.\\\"],\\\"switch_trigger\\\":\\\"De presentator verschijnt nadat de deelnemer zijn begroting heeft gemaakt en onthult dat de ontbrekende helft van het loon in een verzegelde envelop op de set zit.\\\",\\\"hinge_event\\\":\\\"De loonbetaling blijkt precies de helft lager, terwijl huur en alle gewone vaste lasten diezelfde dag opeisbaar lijken.\\\",\\\"anomaly_under_a\\\":\\\"Voor een gewone werknemer zou een halvering van het loon zonder verklaring een ernstige financiële crisis veroorzaken en de veronderstelde voorspelbaarheid van het budget breken.\\\",\\\"resolution_under_b\\\":\\\"De tekortbetaling is een vooraf afgesproken spelbeperking; de envelop, camera's en presentator maken duidelijk dat de crisis bedoeld is om de budgetuitdaging en de uiteindelijke onthulling te dragen.\\\"}] }\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde scène rond een verwachte maandelijkse bijschrijving kan realiseerbaar zowel als gewone loonbetaling als als nagebootste trainingssituatie functioneren. Echt loon en oefengeld zijn lokaal onverenigbaar op de benoemde as, zonder dat een tweede dominante tegenstelling nodig is. De training is een herkenbaar sociaal script en de gewone werk-, loonstrook- en betaalcues laten aanvankelijk Script A domineren, terwijl zij ook als zorgvuldig opgebouwde simulatie kunnen worden herlezen. De volledige inhouding is onder A ontwrichtend, maar onder B een doelbewuste stressprikkel. Daardoor krijgen eerdere loon- en betaalcues achteraf een trainingsfunctie. De inhouding blokkeert bovendien het financiële doel van A, maar maakt juist het leerdoel van B mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een salarisstorting in een bankapp kan zowel werkelijk, vrij besteedbaar loon als een gecontroleerde frauduleuze proeftransactie zijn. Die lezingen zijn lokaal incompatibel op de functie van de betaling: beloning tegenover lokmiddel en bewijsobject. Het undercover- en fraudescenario is herkenbaar; contract, loonstrook en vaste betaaldag bouwen eerst overtuigend de normale arbeidslezing op, maar kunnen achteraf ook passen bij een dekmantelconstructie. De opdracht om geld door te sturen is onder A afwijkend en doelstrijdig, maar onder B precies de traceerbare bevestiging die de rechercheur nodig heeft. De anomalie herkadert dus eerder materiaal, en de blokkade van vrije besteding onder A ondersteunt het bewijsdoel onder B.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Extra diensten kunnen in één realiseerbare tekst eerst als gewone extra uren voor loon gelden en vervolgens als bron van exploiteerbare zichtbaarheid voor het platform. Financiële beloning en louter symbolische beloning zijn op dit punt daadwerkelijk tegengesteld, en deze tegenstelling blijft dominant. Het platform- en promotiescript is sociaal herkenbaar. Meldingen, urenoverzichten, beoordelingen en toppresteerderstaal ondersteunen eerst de loonverwachting, maar laten ook al een latente marketinglezing toe. Dat na veel extra werk badges en publiciteit in plaats van hogere uitbetaling volgen, is onder A een loonafwijking; onder B is het juist het beoogde campagneresultaat. Eerdere waarderingscues worden daarmee retrospectief promotiemiddelen. Het uitblijven van passend loon belemmert het inkomensdoel van de bezorger, terwijl het het goedkope publiciteitsdoel van het platform faciliteert.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":false,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De maandbegroting op betaaldag kan zowel bij een gewone werknemer als bij een deelnemer aan een budgetprogramma voorkomen. Stabiel inkomen als bestaansmiddel en een kunstmatige financiële beperking als televisie-uitdaging zijn lokaal onverenigbare functies van dezelfde betalingssituatie, met één duidelijke oppositieas. Het televisieprogramma is herkenbaar en de normale loon-, huur- en begrotingscues laten Script A aanvankelijk domineren. De tweede lezing is vóór de onthulling echter niet expliciet latent ondersteund: de gedeelde cues bevatten geen camera, productiecontext, spelregel of ander vroeg signaal van een programma. De gehalveerde betaling wordt onder B wel alsnog doelmatig als vooraf afgesproken uitdaging, waardoor de eerdere crisis retrospectief een spelopzet wordt. De beperking blokkeert financiële stabiliteit onder A, maar maakt de kijkwaardige uitdaging van B mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B3\\\",\\\"rationale\\\":\\\"B3 biedt de scherpste en meest onderwerp-specifieke oppositie: extra arbeid die normaal tot hoger loon leidt, wordt herkadert als grondstof voor marketing, symbolische waardering en goedkope zichtbaarheid. De gedeelde signalen — extra diensten, urenoverzicht, toppresteerderstatus en drukte — werken eerst overtuigend als opbouw naar meer inkomen, maar ondersteunen latent ook de tweede lezing van een georkestreerde promotiecampagne. De afwezigheid van hogere uitbetaling en de komst van de filmploeg leveren een economisch, helder omslagpunt op dat eerdere waardering retrospectief verdacht maakt. Het conflict is compact, geloofwaardig binnen platformwerk en heeft direct emotioneel en maatschappelijk payoff-potentieel doordat vaste lasten botsen met badges en publiciteit.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik reed vorige week extra diensten voor die bezorgapp: uren geregistreerd, opdrachten afgerond, alleen maar vijf sterren. Na mijn recordweek stond er geen geld op mijn rekening, maar een filmploeg met een gouden bezorgtas: blijkbaar betaal ik mijn huur in exposure.\\\",\\\"angle\\\":\\\"De bezorger verwacht loon voor meetbare inzet, maar blijkt vooral promotiemateriaal voor het platform.\\\"},{\\\"text\\\":\\\"De app stuurde: ‘Gefeliciteerd, jij bent onze toppresteerder!’ Ik dacht: mooi, eindelijk opslag. Toen kreeg ik drie badges, een kortingsbon voor sushi en een uitnodiging om te vertellen hoe leuk ik gratis overwerkte.\\\",\\\"angle\\\":\\\"De normale felicitatie na hard werk kantelt naar een campagne waarin waardering het loon vervangt.\\\"},{\\\"text\\\":\\\"Tijdens de promotieweek nam ik elke melding aan, want de vaste lasten kennen geen rustige periode. Mijn uitbetaling bleef gelijk, maar mijn gezicht kwam op hun reclame: ik was niet ingehuurd als bezorger, ik was hun menselijke kortingscode.\\\",\\\"angle\\\":\\\"Extra werk lijkt bedoeld voor inkomen, maar de beloning onthult dat de bezorger als geloofwaardig reclame-uithangbord wordt gebruikt.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een bezorger neemt extra diensten aan, registreert uren, rondt opdrachten af en verwacht na een recordweek meer loon om zijn huur te betalen.\\\",\\\"realized_script_b\\\":\\\"De bezorgapp gebruikt de bezorger als promotiemateriaal en beloont zijn extra inzet met zichtbaarheid, een gouden bezorgtas en een filmploeg in plaats van extra geld.\\\",\\\"realized_opposition_axis\\\":\\\"financiële beloning voor extra arbeid tegenover symbolische beloning en publicitaire zichtbaarheid\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De extra diensten, geregistreerde uren, afgeronde opdrachten en sterren realiseren de gedeelde werkcues. De filmploeg en gouden bezorgtas vormen een directe late switch van verwacht loon naar promotionele waardering.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en er is geen bedoeld doelwit gespecificeerd.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een volledige realisatie van de geplande loon-versus-exposure-tegenstelling: de concrete filmploeg en gouden tas leveren precies de voorziene omschakeling en herlezen de recordweek als campagne.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een bezorger wordt na goede prestaties tot toppresteerder uitgeroepen en verwacht daarom opslag voor zijn harde werk.\\\",\\\"realized_script_b\\\":\\\"De app zet de bezorger in voor een positieve campagne en vervangt loon door badges, een kortingsbon en een uitnodiging om gratis overwerk als leuk succesverhaal te presenteren.\\\",\\\"realized_opposition_axis\\\":\\\"financiële beloning voor extra werk tegenover symbolische waardering, gratis producten en promotionele zichtbaarheid\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De toppresteerdermelding wekt de normale loonverwachting op; badges, sushi-korting en het verzoek om gratis overwerk te promoten realiseren de beoogde alternatieve beloning en campagnefunctie. De filmploeg ontbreekt, maar de functionele hinge is behouden.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en er is geen bedoeld doelwit gespecificeerd.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant volgt de geplande omkering compact: de verwachte opslag wordt vervangen door decoratieve en promotionele beloningen, waarna de uitnodiging voor gratis overwerk de campagnefunctie expliciet maakt.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een bezorger neemt tijdens een drukke promotieweek alle diensten aan omdat hij inkomen nodig heeft voor zijn vaste lasten en verwacht dat extra werk meer uitbetaling oplevert.\\\",\\\"realized_script_b\\\":\\\"Het platform gebruikt het gezicht van de bezorger in reclame en behandelt hem als een menselijke kortingscode, terwijl zijn uitbetaling gelijk blijft.\\\",\\\"realized_opposition_axis\\\":\\\"verwachte financiële compensatie voor extra arbeid tegenover commerciële uitbuiting als reclamemiddel\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De werk- en vaste-lastensetup en de promotieweek zijn aanwezig, evenals een late onthulling van reclamegebruik. De geplande tegenstelling is echter niet primair loon tegenover symbolische beloning aan de bezorger: badges, gratis producten of publieke waardering als vervangende beloning ontbreken. De hoofdoppositie verschuift naar onderbetaalde arbeid tegenover instrumenteel reclamegebruik.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en er is geen bedoeld doelwit gespecificeerd.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":false,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De tekst werkt als grap over een platform dat een bezorger commercieel exploiteert, maar realiseert niet de specifieke geplande beloningsomkering waarin extra inzet wordt afgekocht met badges, producten en waardering.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan lengte-eis en realiseren de vereiste SO. V1 heeft de sterkere, concretere omschakeling: de filmploeg en gouden tas maken de vervanging van loon door exposure onmiddellijk zichtbaar en herinterpreteren de recordweek scherp als campagne.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is een passerende variant en V3 niet, dus V1 moet voorrang krijgen. Bovendien realiseert V1 precies de geplande tegenstelling tussen loon en publieke waardering, terwijl V3 vooral verschuift naar commerciële uitbuiting zonder symbolische beloning als vervanger.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is passerend en V3 niet. V2 zet de verwachte opslag compact om in badges, korting en een promotieverzoek, waardoor de loon-tegen-exposure-oppositie helder blijft; V3 mist die specifieke beloningsomkering.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 combineert de meest volledige trouw aan de vereiste scriptoppositie met een heldere setup, een sterk visueel omslagpunt en een goed uitspreekbare punchline. De filmploeg maakt de retrospectieve herinterpretatie van het harde werk als marketing bijzonder scherp.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een werknemer blijkt geen gewone werknemer maar deelnemer aan een gesimuleerde ontslag- en incassotraining. De werkgever speelt een schuldeiser en de loonstrook is onderdeel van een oefening waarin deelnemers moeten leren onderhandelen over betalingsregelingen.",
+        "candidate_id": "B1",
+        "opposition_axis": "echt salaris tegenover oefengeld in een training",
+        "opposed_expectation": "Een salaris wordt volledig, correct en op tijd uitbetaald.",
+        "roles_b": [
+          "Deelnemer: oefent onder druk financiële beslissingen en onderhandelingen.",
+          "Trainer: organiseert de simulatie en beoordeelt de reacties.",
+          "Acteur als werkgever: brengt geloofwaardig slecht nieuws over de betaling.",
+          "Acteur als incassomedewerker: biedt een betalingsregeling aan."
+        ],
+        "goal_b": "De deelnemer laten ervaren hoe hij kalm en doeltreffend reageert op een plotseling financieel probleem.",
+        "role_remapping": [
+          "Werknemer wordt deelnemer aan de training.",
+          "Werkgever wordt een acteur die de simulatie uitvoert.",
+          "Bankrekening wordt een trainingsomgeving met fictieve transacties.",
+          "Schuldeisers worden trainers of acteurs die onderhandelingsgedrag uitlokken."
+        ],
+        "shared_cues": [
+          "Een normale werkdag met ingeklokte uren.",
+          "Een loonstrook met uren, inhoudingen en een betaaldatum.",
+          "Een blik op de bankapp rond de betaaldag.",
+          "Een herinnering voor huur en energierekening.",
+          "Een telefoontje van iemand die zich als personeelsadministratie meldt."
+        ],
+        "switch_trigger": "De vermeende incassomedewerker stopt midden in het gesprek, feliciteert de werknemer met zijn aanpak en de trainer komt de ruimte binnen.",
+        "hinge_event": "Op de loonstrook staat dat het volledige salaris is ingehouden wegens een verzonnen schuld die dezelfde dag direct moet worden betaald.",
+        "anomaly_under_a": "Bij regulier werk is een volledige, onverwachte looninhouding zonder voorafgaande uitleg of rechtsgeldige procedure onaanvaardbaar en ontwrichtend.",
+        "resolution_under_b": "De onredelijke inhouding is doelbewust ontworpen als stressvolle casus; zij geeft de deelnemer aanleiding om bewijs te vragen, niet impulsief te betalen en een regeling te bespreken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een financieel rechercheur werkt undercover in een bedrijf dat personeel via nagemaakte loonbetalingen benadert. De ogenschijnlijk gewone werknemer is de undercoveragent; de werkgever en bankcontacten worden gevolgd om een fraudeconstructie bloot te leggen.",
+        "candidate_id": "B2",
+        "opposition_axis": "loon als eerlijke beloning tegenover loon als lokmiddel voor fraude",
+        "opposed_expectation": "Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.",
+        "roles_b": [
+          "Undercoverrechercheur: verzamelt bewijs zonder de verdachten te waarschuwen.",
+          "Fraudeur als werkgever: werft rekeninghouders en maskeert geldstromen als loon.",
+          "Handlanger als personeelsmedewerker: verstuurt contracten en loonstroken.",
+          "Bankonderzoeker: signaleert en documenteert verdachte transacties."
+        ],
+        "goal_b": "De geldstroom en de betrokken organisatoren bewijzen voordat zij rekeningen kunnen misbruiken of geld kunnen wegsluizen.",
+        "role_remapping": [
+          "Werknemer wordt undercoverrechercheur.",
+          "Werkgever wordt organisator van de fraude.",
+          "Salaris wordt een gecontroleerde verdachte transactie.",
+          "Bank wordt zowel betalingskanaal als bron van opsporingsinformatie.",
+          "Collega's worden mogelijke handlangers of getuigen."
+        ],
+        "shared_cues": [
+          "Een vacaturegesprek en een eenvoudig arbeidscontract.",
+          "Een verzoek om bankgegevens en identiteitsbewijs.",
+          "Een digitale loonstrook.",
+          "Een eerste salarisstorting op een vaste datum.",
+          "Vragen van collega's over uren en betalingen."
+        ],
+        "switch_trigger": "De salarisomschrijving bevat een intern dossiernummer dat de undercoverrechercheur herkent als code uit een lopend witwasonderzoek.",
+        "hinge_event": "De werkgever vraagt de werknemer direct na ontvangst een groot deel van het 'salaris' naar verschillende onbekende rekeningen terug te sturen.",
+        "anomaly_under_a": "Een legitieme werkgever laat een werknemer niet meteen loon doorsluizen naar willekeurige derden; dat is strijdig met het doel van loon als vrij besteedbaar inkomen.",
+        "resolution_under_b": "De terugbetaalopdracht bevestigt juist de vermoedelijke fraude en geeft de rechercheur een concrete, traceerbare handeling waarmee de organisatie kan worden gekoppeld aan de geldstromen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.",
+        "candidate_id": "B3",
+        "opposition_axis": "financiële beloning tegenover symbolische beloning en zichtbaarheid",
+        "opposed_expectation": "Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.",
+        "roles_b": [
+          "Bezorger: levert diensten en wordt ongewild gezicht van de campagne.",
+          "Platformbeheerder: stuurt opdrachten, badges en promotieberichten.",
+          "Marketingteam: verzamelt beelden en verhalen voor reclame.",
+          "Klanten: geven beoordelingen en ontvangen de bezorgingen.",
+          "Volgers: belonen de bezorger met aandacht en online waardering."
+        ],
+        "goal_b": "Het platform wil goedkoop positieve publiciteit en klantbinding creëren door de bezorger als inspirerend voorbeeld te presenteren.",
+        "role_remapping": [
+          "Werknemer wordt bezorger en onbedoeld campagnefiguur.",
+          "Werkgever wordt een digitaal platform met marketingbelangen.",
+          "Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.",
+          "Salarisadministratie wordt een app met punten, badges en promotionele beloningen."
+        ],
+        "shared_cues": [
+          "Meldingen over beschikbare diensten.",
+          "Een overzicht van gereden uren en afgeronde opdrachten.",
+          "Positieve klantbeoordelingen.",
+          "Een bericht dat de bezorger tot toppresteerder is uitgeroepen.",
+          "Extra drukte tijdens een promotieweek."
+        ],
+        "switch_trigger": "Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.",
+        "hinge_event": "De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.",
+        "anomaly_under_a": "Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.",
+        "resolution_under_b": "Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een familie neemt deel aan een televisieprogramma over zuinig leven. De hoofdpersoon speelt voor de camera een werknemer met een krap budget; de werkgever, verhuurder en winkelier zijn medespelers die onverwachte financiële beperkingen opvoeren om creatieve oplossingen zichtbaar te maken.",
+        "candidate_id": "B4",
+        "opposition_axis": "financiële stabiliteit als levensdoel tegenover financiële tegenslag als televisie-uitdaging",
+        "opposed_expectation": "Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.",
+        "roles_b": [
+          "Deelnemer: voert de budgetuitdaging uit voor het programma.",
+          "Presentator: stelt de opdrachten en onthult de spelregels.",
+          "Productieteam: regisseert omstandigheden en registreert reacties.",
+          "Acteurs als werkgever, verhuurder en winkelier: brengen vooraf geplande verrassingen.",
+          "Kijkers: volgen en beoordelen de creatieve oplossingen."
+        ],
+        "goal_b": "Een herkenbare, spannende aflevering maken waarin de deelnemer praktische vindingrijkheid toont onder een opgelegde budgetbeperking.",
+        "role_remapping": [
+          "Werknemer wordt deelnemer aan een televisieprogramma.",
+          "Werkgever wordt een acteur die een scripted betaalbericht geeft.",
+          "Verhuurder en leveranciers worden medespelers die opdrachten activeren.",
+          "Bankapp en begroting worden rekwisieten en spelonderdelen.",
+          "Consument wordt deelnemer die voor de camera keuzes toelicht."
+        ],
+        "shared_cues": [
+          "Een loonstrook en een bankapp op betaaldag.",
+          "Een lijst met huur, energie, verzekeringen en boodschappen.",
+          "Prijsvergelijking in de supermarkt.",
+          "Een gesprek met de verhuurder over de komende betaling.",
+          "Rekenwerk met een maandbudget."
+        ],
+        "switch_trigger": "De presentator verschijnt nadat de deelnemer zijn begroting heeft gemaakt en onthult dat de ontbrekende helft van het loon in een verzegelde envelop op de set zit.",
+        "hinge_event": "De loonbetaling blijkt precies de helft lager, terwijl huur en alle gewone vaste lasten diezelfde dag opeisbaar lijken.",
+        "anomaly_under_a": "Voor een gewone werknemer zou een halvering van het loon zonder verklaring een ernstige financiële crisis veroorzaken en de veronderstelde voorspelbaarheid van het budget breken.",
+        "resolution_under_b": "De tekortbetaling is een vooraf afgesproken spelbeperking; de envelop, camera's en presentator maken duidelijk dat de crisis bedoeld is om de budgetuitdaging en de uiteindelijke onthulling te dragen.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B3 biedt de scherpste en meest onderwerp-specifieke oppositie: extra arbeid die normaal tot hoger loon leidt, wordt herkadert als grondstof voor marketing, symbolische waardering en goedkope zichtbaarheid. De gedeelde signalen — extra diensten, urenoverzicht, toppresteerderstatus en drukte — werken eerst overtuigend als opbouw naar meer inkomen, maar ondersteunen latent ook de tweede lezing van een georkestreerde promotiecampagne. De afwezigheid van hogere uitbetaling en de komst van de filmploeg leveren een economisch, helder omslagpunt op dat eerdere waardering retrospectief verdacht maakt. Het conflict is compact, geloofwaardig binnen platformwerk en heeft direct emotioneel en maatschappelijk payoff-potentieel doordat vaste lasten botsen met badges en publiciteit.",
+    "variants": [
+      {
+        "text": "Ik reed vorige week extra diensten voor die bezorgapp: uren geregistreerd, opdrachten afgerond, alleen maar vijf sterren. Na mijn recordweek stond er geen geld op mijn rekening, maar een filmploeg met een gouden bezorgtas: blijkbaar betaal ik mijn huur in exposure.",
+        "angle": "De bezorger verwacht loon voor meetbare inzet, maar blijkt vooral promotiemateriaal voor het platform."
+      },
+      {
+        "text": "De app stuurde: ‘Gefeliciteerd, jij bent onze toppresteerder!’ Ik dacht: mooi, eindelijk opslag. Toen kreeg ik drie badges, een kortingsbon voor sushi en een uitnodiging om te vertellen hoe leuk ik gratis overwerkte.",
+        "angle": "De normale felicitatie na hard werk kantelt naar een campagne waarin waardering het loon vervangt."
+      },
+      {
+        "text": "Tijdens de promotieweek nam ik elke melding aan, want de vaste lasten kennen geen rustige periode. Mijn uitbetaling bleef gelijk, maar mijn gezicht kwam op hun reclame: ik was niet ingehuurd als bezorger, ik was hun menselijke kortingscode.",
+        "angle": "Extra werk lijkt bedoeld voor inkomen, maar de beloning onthult dat de bezorger als geloofwaardig reclame-uithangbord wordt gebruikt."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 13989,
+      "output_tokens": 6932,
+      "total_tokens": 20921
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een werknemer verricht afgesproken werk voor een werkgever, ontvangt daarvoor op tijd een eerlijk salaris en gebruikt dat inkomen om vaste lasten en dagelijkse aankopen te betalen.",
+          "participants_and_roles": [
+            "Werknemer: voert werk uit, maakt uren en verwacht loon.",
+            "Werkgever: biedt werk, betaalt salaris en bewaakt de bedrijfsvoering.",
+            "Klant of consument: koopt producten of diensten en levert daarmee omzet.",
+            "Overheid en instanties: heffen belasting, stellen regels en bieden publieke voorzieningen.",
+            "Bank, verhuurder en leveranciers: ontvangen betalingen voor wonen, krediet en noodzakelijke diensten."
+          ],
+          "apparent_goal": "Via stabiel werk voldoende inkomen verdienen om financieel rond te komen en enigszins vooruit te kunnen plannen.",
+          "preconditions": [
+            "Er is een arbeidscontract of andere duidelijke afspraak over werk en beloning.",
+            "De werknemer beschikt over de vereiste tijd, vaardigheden en inzet.",
+            "De werkgever heeft werk, omzet of budget om loon te betalen.",
+            "Salaris, prijzen, belastingen en vaste lasten zijn in grote lijnen voorspelbaar.",
+            "Betalingen verlopen via een betrouwbare bankrekening en administratie."
+          ],
+          "expected_actions": [
+            "De werknemer verschijnt op het werk, voert taken uit en registreert zo nodig uren.",
+            "De werkgever betaalt op de afgesproken datum salaris uit.",
+            "De werknemer betaalt huur of hypotheek, boodschappen, energie, verzekeringen en belastingen.",
+            "De consument vergelijkt prijzen en koopt wat binnen het budget past.",
+            "Partijen maken een begroting, sparen waar mogelijk en proberen schulden te vermijden."
+          ],
+          "expected_outcome": "Werk leidt tot een betrouwbaar inkomen, waarmee noodzakelijke uitgaven kunnen worden betaald en bij verstandig beheer ruimte ontstaat voor sparen, ontspanning of financiële vooruitgang.",
+          "expected_propositions": [
+            "Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.",
+            "Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.",
+            "Een salaris wordt volledig, correct en op tijd uitbetaald.",
+            "Prijzen en vaste lasten veranderen niet zo plotseling dat een gewoon budget meteen onbruikbaar wordt.",
+            "Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven."
+          ],
+          "audience_expectation": "Een herkenbare werkdag of betaaldag activeert de verwachting van een ordelijke ruil: arbeid wordt eerlijk beloond, het loon komt binnen en maakt een stabiel, planbaar dagelijks leven mogelijk."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een werknemer blijkt geen gewone werknemer maar deelnemer aan een gesimuleerde ontslag- en incassotraining. De werkgever speelt een schuldeiser en de loonstrook is onderdeel van een oefening waarin deelnemers moeten leren onderhandelen over betalingsregelingen.",
+            "opposition_axis": "echt salaris tegenover oefengeld in een training",
+            "opposed_proposition": "Een salaris wordt volledig, correct en op tijd uitbetaald.",
+            "shared_anchor": "De werknemer wacht op de maandelijkse bijschrijving.",
+            "reading_a": "De bijschrijving is het verwachte salaris waarmee huur, boodschappen en rekeningen worden betaald.",
+            "reading_b": "De verwachte bijschrijving is een bewust nagemaakte loonbetaling die als oefenmateriaal dient voor een training in financiële weerbaarheid.",
+            "roles_b": [
+              "Deelnemer: oefent onder druk financiële beslissingen en onderhandelingen.",
+              "Trainer: organiseert de simulatie en beoordeelt de reacties.",
+              "Acteur als werkgever: brengt geloofwaardig slecht nieuws over de betaling.",
+              "Acteur als incassomedewerker: biedt een betalingsregeling aan."
+            ],
+            "goal_b": "De deelnemer laten ervaren hoe hij kalm en doeltreffend reageert op een plotseling financieel probleem.",
+            "role_remapping": [
+              "Werknemer wordt deelnemer aan de training.",
+              "Werkgever wordt een acteur die de simulatie uitvoert.",
+              "Bankrekening wordt een trainingsomgeving met fictieve transacties.",
+              "Schuldeisers worden trainers of acteurs die onderhandelingsgedrag uitlokken."
+            ],
+            "shared_cues": [
+              "Een normale werkdag met ingeklokte uren.",
+              "Een loonstrook met uren, inhoudingen en een betaaldatum.",
+              "Een blik op de bankapp rond de betaaldag.",
+              "Een herinnering voor huur en energierekening.",
+              "Een telefoontje van iemand die zich als personeelsadministratie meldt."
+            ],
+            "switch_trigger": "De vermeende incassomedewerker stopt midden in het gesprek, feliciteert de werknemer met zijn aanpak en de trainer komt de ruimte binnen.",
+            "hinge_event": "Op de loonstrook staat dat het volledige salaris is ingehouden wegens een verzonnen schuld die dezelfde dag direct moet worden betaald.",
+            "anomaly_under_a": "Bij regulier werk is een volledige, onverwachte looninhouding zonder voorafgaande uitleg of rechtsgeldige procedure onaanvaardbaar en ontwrichtend.",
+            "resolution_under_b": "De onredelijke inhouding is doelbewust ontworpen als stressvolle casus; zij geeft de deelnemer aanleiding om bewijs te vragen, niet impulsief te betalen en een regeling te bespreken."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een financieel rechercheur werkt undercover in een bedrijf dat personeel via nagemaakte loonbetalingen benadert. De ogenschijnlijk gewone werknemer is de undercoveragent; de werkgever en bankcontacten worden gevolgd om een fraudeconstructie bloot te leggen.",
+            "opposition_axis": "loon als eerlijke beloning tegenover loon als lokmiddel voor fraude",
+            "opposed_proposition": "Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.",
+            "shared_anchor": "Een salarisbetaling verschijnt in de bankapp.",
+            "reading_a": "De betaling is verdiend loon dat de werknemer vrij kan besteden aan noodzakelijke kosten.",
+            "reading_b": "De betaling is een verdachte proeftransactie waarmee fraudeurs willen testen of de rekening en identiteit bruikbaar zijn voor hun constructie.",
+            "roles_b": [
+              "Undercoverrechercheur: verzamelt bewijs zonder de verdachten te waarschuwen.",
+              "Fraudeur als werkgever: werft rekeninghouders en maskeert geldstromen als loon.",
+              "Handlanger als personeelsmedewerker: verstuurt contracten en loonstroken.",
+              "Bankonderzoeker: signaleert en documenteert verdachte transacties."
+            ],
+            "goal_b": "De geldstroom en de betrokken organisatoren bewijzen voordat zij rekeningen kunnen misbruiken of geld kunnen wegsluizen.",
+            "role_remapping": [
+              "Werknemer wordt undercoverrechercheur.",
+              "Werkgever wordt organisator van de fraude.",
+              "Salaris wordt een gecontroleerde verdachte transactie.",
+              "Bank wordt zowel betalingskanaal als bron van opsporingsinformatie.",
+              "Collega's worden mogelijke handlangers of getuigen."
+            ],
+            "shared_cues": [
+              "Een vacaturegesprek en een eenvoudig arbeidscontract.",
+              "Een verzoek om bankgegevens en identiteitsbewijs.",
+              "Een digitale loonstrook.",
+              "Een eerste salarisstorting op een vaste datum.",
+              "Vragen van collega's over uren en betalingen."
+            ],
+            "switch_trigger": "De salarisomschrijving bevat een intern dossiernummer dat de undercoverrechercheur herkent als code uit een lopend witwasonderzoek.",
+            "hinge_event": "De werkgever vraagt de werknemer direct na ontvangst een groot deel van het 'salaris' naar verschillende onbekende rekeningen terug te sturen.",
+            "anomaly_under_a": "Een legitieme werkgever laat een werknemer niet meteen loon doorsluizen naar willekeurige derden; dat is strijdig met het doel van loon als vrij besteedbaar inkomen.",
+            "resolution_under_b": "De terugbetaalopdracht bevestigt juist de vermoedelijke fraude en geeft de rechercheur een concrete, traceerbare handeling waarmee de organisatie kan worden gekoppeld aan de geldstromen."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.",
+            "opposition_axis": "financiële beloning tegenover symbolische beloning en zichtbaarheid",
+            "opposed_proposition": "Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.",
+            "shared_anchor": "De bezorger neemt extra diensten aan.",
+            "reading_a": "Extra diensten betekenen meer gewerkte uren en dus een hoger uit te betalen bedrag.",
+            "reading_b": "Extra diensten worden gebruikt om een opvallend verhaal van inzet te creëren dat het platform kan vermarkten zonder passend extra loon te betalen.",
+            "roles_b": [
+              "Bezorger: levert diensten en wordt ongewild gezicht van de campagne.",
+              "Platformbeheerder: stuurt opdrachten, badges en promotieberichten.",
+              "Marketingteam: verzamelt beelden en verhalen voor reclame.",
+              "Klanten: geven beoordelingen en ontvangen de bezorgingen.",
+              "Volgers: belonen de bezorger met aandacht en online waardering."
+            ],
+            "goal_b": "Het platform wil goedkoop positieve publiciteit en klantbinding creëren door de bezorger als inspirerend voorbeeld te presenteren.",
+            "role_remapping": [
+              "Werknemer wordt bezorger en onbedoeld campagnefiguur.",
+              "Werkgever wordt een digitaal platform met marketingbelangen.",
+              "Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.",
+              "Salarisadministratie wordt een app met punten, badges en promotionele beloningen."
+            ],
+            "shared_cues": [
+              "Meldingen over beschikbare diensten.",
+              "Een overzicht van gereden uren en afgeronde opdrachten.",
+              "Positieve klantbeoordelingen.",
+              "Een bericht dat de bezorger tot toppresteerder is uitgeroepen.",
+              "Extra drukte tijdens een promotieweek."
+            ],
+            "switch_trigger": "Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.",
+            "hinge_event": "De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.",
+            "anomaly_under_a": "Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.",
+            "resolution_under_b": "Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een familie neemt deel aan een televisieprogramma over zuinig leven. De hoofdpersoon speelt voor de camera een werknemer met een krap budget; de werkgever, verhuurder en winkelier zijn medespelers die onverwachte financiële beperkingen opvoeren om creatieve oplossingen zichtbaar te maken.",
+            "opposition_axis": "financiële stabiliteit als levensdoel tegenover financiële tegenslag als televisie-uitdaging",
+            "opposed_proposition": "Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.",
+            "shared_anchor": "Op betaaldag maakt de hoofdpersoon een maandbegroting.",
+            "reading_a": "De werknemer probeert met werkelijk loon huur, energie, boodschappen en andere normale kosten te betalen.",
+            "reading_b": "De deelnemer bereidt een televisieronde voor waarin een kunstmatig beperkt budget inventieve keuzes en kijkwaardige spanning moet opleveren.",
+            "roles_b": [
+              "Deelnemer: voert de budgetuitdaging uit voor het programma.",
+              "Presentator: stelt de opdrachten en onthult de spelregels.",
+              "Productieteam: regisseert omstandigheden en registreert reacties.",
+              "Acteurs als werkgever, verhuurder en winkelier: brengen vooraf geplande verrassingen.",
+              "Kijkers: volgen en beoordelen de creatieve oplossingen."
+            ],
+            "goal_b": "Een herkenbare, spannende aflevering maken waarin de deelnemer praktische vindingrijkheid toont onder een opgelegde budgetbeperking.",
+            "role_remapping": [
+              "Werknemer wordt deelnemer aan een televisieprogramma.",
+              "Werkgever wordt een acteur die een scripted betaalbericht geeft.",
+              "Verhuurder en leveranciers worden medespelers die opdrachten activeren.",
+              "Bankapp en begroting worden rekwisieten en spelonderdelen.",
+              "Consument wordt deelnemer die voor de camera keuzes toelicht."
+            ],
+            "shared_cues": [
+              "Een loonstrook en een bankapp op betaaldag.",
+              "Een lijst met huur, energie, verzekeringen en boodschappen.",
+              "Prijsvergelijking in de supermarkt.",
+              "Een gesprek met de verhuurder over de komende betaling.",
+              "Rekenwerk met een maandbudget."
+            ],
+            "switch_trigger": "De presentator verschijnt nadat de deelnemer zijn begroting heeft gemaakt en onthult dat de ontbrekende helft van het loon in een verzegelde envelop op de set zit.",
+            "hinge_event": "De loonbetaling blijkt precies de helft lager, terwijl huur en alle gewone vaste lasten diezelfde dag opeisbaar lijken.",
+            "anomaly_under_a": "Voor een gewone werknemer zou een halvering van het loon zonder verklaring een ernstige financiële crisis veroorzaken en de veronderstelde voorspelbaarheid van het budget breken.",
+            "resolution_under_b": "De tekortbetaling is een vooraf afgesproken spelbeperking; de envelop, camera's en presentator maken duidelijk dat de crisis bedoeld is om de budgetuitdaging en de uiteindelijke onthulling te dragen."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een werknemer blijkt geen gewone werknemer maar deelnemer aan een gesimuleerde ontslag- en incassotraining. De werkgever speelt een schuldeiser en de loonstrook is onderdeel van een oefening waarin deelnemers moeten leren onderhandelen over betalingsregelingen.",
+              "opposition_axis": "echt salaris tegenover oefengeld in een training",
+              "opposed_proposition": "Een salaris wordt volledig, correct en op tijd uitbetaald.",
+              "shared_anchor": "De werknemer wacht op de maandelijkse bijschrijving.",
+              "reading_a": "De bijschrijving is het verwachte salaris waarmee huur, boodschappen en rekeningen worden betaald.",
+              "reading_b": "De verwachte bijschrijving is een bewust nagemaakte loonbetaling die als oefenmateriaal dient voor een training in financiële weerbaarheid.",
+              "roles_b": [
+                "Deelnemer: oefent onder druk financiële beslissingen en onderhandelingen.",
+                "Trainer: organiseert de simulatie en beoordeelt de reacties.",
+                "Acteur als werkgever: brengt geloofwaardig slecht nieuws over de betaling.",
+                "Acteur als incassomedewerker: biedt een betalingsregeling aan."
+              ],
+              "goal_b": "De deelnemer laten ervaren hoe hij kalm en doeltreffend reageert op een plotseling financieel probleem.",
+              "role_remapping": [
+                "Werknemer wordt deelnemer aan de training.",
+                "Werkgever wordt een acteur die de simulatie uitvoert.",
+                "Bankrekening wordt een trainingsomgeving met fictieve transacties.",
+                "Schuldeisers worden trainers of acteurs die onderhandelingsgedrag uitlokken."
+              ],
+              "shared_cues": [
+                "Een normale werkdag met ingeklokte uren.",
+                "Een loonstrook met uren, inhoudingen en een betaaldatum.",
+                "Een blik op de bankapp rond de betaaldag.",
+                "Een herinnering voor huur en energierekening.",
+                "Een telefoontje van iemand die zich als personeelsadministratie meldt."
+              ],
+              "switch_trigger": "De vermeende incassomedewerker stopt midden in het gesprek, feliciteert de werknemer met zijn aanpak en de trainer komt de ruimte binnen.",
+              "hinge_event": "Op de loonstrook staat dat het volledige salaris is ingehouden wegens een verzonnen schuld die dezelfde dag direct moet worden betaald.",
+              "anomaly_under_a": "Bij regulier werk is een volledige, onverwachte looninhouding zonder voorafgaande uitleg of rechtsgeldige procedure onaanvaardbaar en ontwrichtend.",
+              "resolution_under_b": "De onredelijke inhouding is doelbewust ontworpen als stressvolle casus; zij geeft de deelnemer aanleiding om bewijs te vragen, niet impulsief te betalen en een regeling te bespreken."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een financieel rechercheur werkt undercover in een bedrijf dat personeel via nagemaakte loonbetalingen benadert. De ogenschijnlijk gewone werknemer is de undercoveragent; de werkgever en bankcontacten worden gevolgd om een fraudeconstructie bloot te leggen.",
+              "opposition_axis": "loon als eerlijke beloning tegenover loon als lokmiddel voor fraude",
+              "opposed_proposition": "Geld is een praktische beloning voor arbeid en biedt keuzevrijheid in het dagelijks leven.",
+              "shared_anchor": "Een salarisbetaling verschijnt in de bankapp.",
+              "reading_a": "De betaling is verdiend loon dat de werknemer vrij kan besteden aan noodzakelijke kosten.",
+              "reading_b": "De betaling is een verdachte proeftransactie waarmee fraudeurs willen testen of de rekening en identiteit bruikbaar zijn voor hun constructie.",
+              "roles_b": [
+                "Undercoverrechercheur: verzamelt bewijs zonder de verdachten te waarschuwen.",
+                "Fraudeur als werkgever: werft rekeninghouders en maskeert geldstromen als loon.",
+                "Handlanger als personeelsmedewerker: verstuurt contracten en loonstroken.",
+                "Bankonderzoeker: signaleert en documenteert verdachte transacties."
+              ],
+              "goal_b": "De geldstroom en de betrokken organisatoren bewijzen voordat zij rekeningen kunnen misbruiken of geld kunnen wegsluizen.",
+              "role_remapping": [
+                "Werknemer wordt undercoverrechercheur.",
+                "Werkgever wordt organisator van de fraude.",
+                "Salaris wordt een gecontroleerde verdachte transactie.",
+                "Bank wordt zowel betalingskanaal als bron van opsporingsinformatie.",
+                "Collega's worden mogelijke handlangers of getuigen."
+              ],
+              "shared_cues": [
+                "Een vacaturegesprek en een eenvoudig arbeidscontract.",
+                "Een verzoek om bankgegevens en identiteitsbewijs.",
+                "Een digitale loonstrook.",
+                "Een eerste salarisstorting op een vaste datum.",
+                "Vragen van collega's over uren en betalingen."
+              ],
+              "switch_trigger": "De salarisomschrijving bevat een intern dossiernummer dat de undercoverrechercheur herkent als code uit een lopend witwasonderzoek.",
+              "hinge_event": "De werkgever vraagt de werknemer direct na ontvangst een groot deel van het 'salaris' naar verschillende onbekende rekeningen terug te sturen.",
+              "anomaly_under_a": "Een legitieme werkgever laat een werknemer niet meteen loon doorsluizen naar willekeurige derden; dat is strijdig met het doel van loon als vrij besteedbaar inkomen.",
+              "resolution_under_b": "De terugbetaalopdracht bevestigt juist de vermoedelijke fraude en geeft de rechercheur een concrete, traceerbare handeling waarmee de organisatie kan worden gekoppeld aan de geldstromen."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een populaire klusjesapp organiseert een verborgen promotiecampagne waarin een bezorger niet wordt beloond met hoger loon, maar met steeds meer publieke waardering, badges en gratis producten. De bezorger probeert aanvankelijk zijn normale inkomen veilig te stellen, terwijl het platform hem wil inzetten als uithangbord.",
+              "opposition_axis": "financiële beloning tegenover symbolische beloning en zichtbaarheid",
+              "opposed_proposition": "Meer verantwoordelijkheid, ervaring of uren werken leidt doorgaans tot meer inkomen.",
+              "shared_anchor": "De bezorger neemt extra diensten aan.",
+              "reading_a": "Extra diensten betekenen meer gewerkte uren en dus een hoger uit te betalen bedrag.",
+              "reading_b": "Extra diensten worden gebruikt om een opvallend verhaal van inzet te creëren dat het platform kan vermarkten zonder passend extra loon te betalen.",
+              "roles_b": [
+                "Bezorger: levert diensten en wordt ongewild gezicht van de campagne.",
+                "Platformbeheerder: stuurt opdrachten, badges en promotieberichten.",
+                "Marketingteam: verzamelt beelden en verhalen voor reclame.",
+                "Klanten: geven beoordelingen en ontvangen de bezorgingen.",
+                "Volgers: belonen de bezorger met aandacht en online waardering."
+              ],
+              "goal_b": "Het platform wil goedkoop positieve publiciteit en klantbinding creëren door de bezorger als inspirerend voorbeeld te presenteren.",
+              "role_remapping": [
+                "Werknemer wordt bezorger en onbedoeld campagnefiguur.",
+                "Werkgever wordt een digitaal platform met marketingbelangen.",
+                "Klant wordt tegelijk ontvanger van de dienst en bron van beoordelingen.",
+                "Salarisadministratie wordt een app met punten, badges en promotionele beloningen."
+              ],
+              "shared_cues": [
+                "Meldingen over beschikbare diensten.",
+                "Een overzicht van gereden uren en afgeronde opdrachten.",
+                "Positieve klantbeoordelingen.",
+                "Een bericht dat de bezorger tot toppresteerder is uitgeroepen.",
+                "Extra drukte tijdens een promotieweek."
+              ],
+              "switch_trigger": "Na een recordweek verschijnt geen hogere uitbetaling, maar een filmploeg die de bezorger een gouden bezorgtas en een interview aanbiedt.",
+              "hinge_event": "De bezorger krijgt voor tientallen extra opdrachten uitsluitend badges, kortingsbonnen en een uitnodiging voor een publiciteitsvideo.",
+              "anomaly_under_a": "Bij gewone arbeid is het vreemd dat meetbare extra inzet niet in loon maar in decoratieve waardering wordt omgezet, zeker wanneer vaste lasten betaald moeten worden.",
+              "resolution_under_b": "Binnen de promotiecampagne zijn de badges en video juist het beoogde product: het platform koopt zichtbaarheid en geloofwaardigheid, niet primair de extra arbeid tegen een eerlijk tarief."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een familie neemt deel aan een televisieprogramma over zuinig leven. De hoofdpersoon speelt voor de camera een werknemer met een krap budget; de werkgever, verhuurder en winkelier zijn medespelers die onverwachte financiële beperkingen opvoeren om creatieve oplossingen zichtbaar te maken.",
+              "opposition_axis": "financiële stabiliteit als levensdoel tegenover financiële tegenslag als televisie-uitdaging",
+              "opposed_proposition": "Wie fulltime werkt, kan in beginsel de normale maandelijkse kosten betalen.",
+              "shared_anchor": "Op betaaldag maakt de hoofdpersoon een maandbegroting.",
+              "reading_a": "De werknemer probeert met werkelijk loon huur, energie, boodschappen en andere normale kosten te betalen.",
+              "reading_b": "De deelnemer bereidt een televisieronde voor waarin een kunstmatig beperkt budget inventieve keuzes en kijkwaardige spanning moet opleveren.",
+              "roles_b": [
+                "Deelnemer: voert de budgetuitdaging uit voor het programma.",
+                "Presentator: stelt de opdrachten en onthult de spelregels.",
+                "Productieteam: regisseert omstandigheden en registreert reacties.",
+                "Acteurs als werkgever, verhuurder en winkelier: brengen vooraf geplande verrassingen.",
+                "Kijkers: volgen en beoordelen de creatieve oplossingen."
+              ],
+              "goal_b": "Een herkenbare, spannende aflevering maken waarin de deelnemer praktische vindingrijkheid toont onder een opgelegde budgetbeperking.",
+              "role_remapping": [
+                "Werknemer wordt deelnemer aan een televisieprogramma.",
+                "Werkgever wordt een acteur die een scripted betaalbericht geeft.",
+                "Verhuurder en leveranciers worden medespelers die opdrachten activeren.",
+                "Bankapp en begroting worden rekwisieten en spelonderdelen.",
+                "Consument wordt deelnemer die voor de camera keuzes toelicht."
+              ],
+              "shared_cues": [
+                "Een loonstrook en een bankapp op betaaldag.",
+                "Een lijst met huur, energie, verzekeringen en boodschappen.",
+                "Prijsvergelijking in de supermarkt.",
+                "Een gesprek met de verhuurder over de komende betaling.",
+                "Rekenwerk met een maandbudget."
+              ],
+              "switch_trigger": "De presentator verschijnt nadat de deelnemer zijn begroting heeft gemaakt en onthult dat de ontbrekende helft van het loon in een verzegelde envelop op de set zit.",
+              "hinge_event": "De loonbetaling blijkt precies de helft lager, terwijl huur en alle gewone vaste lasten diezelfde dag opeisbaar lijken.",
+              "anomaly_under_a": "Voor een gewone werknemer zou een halvering van het loon zonder verklaring een ernstige financiële crisis veroorzaken en de veronderstelde voorspelbaarheid van het budget breken.",
+              "resolution_under_b": "De tekortbetaling is een vooraf afgesproken spelbeperking; de envelop, camera's en presentator maken duidelijk dat de crisis bedoeld is om de budgetuitdaging en de uiteindelijke onthulling te dragen."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde scène rond een verwachte maandelijkse bijschrijving kan realiseerbaar zowel als gewone loonbetaling als als nagebootste trainingssituatie functioneren. Echt loon en oefengeld zijn lokaal onverenigbaar op de benoemde as, zonder dat een tweede dominante tegenstelling nodig is. De training is een herkenbaar sociaal script en de gewone werk-, loonstrook- en betaalcues laten aanvankelijk Script A domineren, terwijl zij ook als zorgvuldig opgebouwde simulatie kunnen worden herlezen. De volledige inhouding is onder A ontwrichtend, maar onder B een doelbewuste stressprikkel. Daardoor krijgen eerdere loon- en betaalcues achteraf een trainingsfunctie. De inhouding blokkeert bovendien het financiële doel van A, maar maakt juist het leerdoel van B mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een salarisstorting in een bankapp kan zowel werkelijk, vrij besteedbaar loon als een gecontroleerde frauduleuze proeftransactie zijn. Die lezingen zijn lokaal incompatibel op de functie van de betaling: beloning tegenover lokmiddel en bewijsobject. Het undercover- en fraudescenario is herkenbaar; contract, loonstrook en vaste betaaldag bouwen eerst overtuigend de normale arbeidslezing op, maar kunnen achteraf ook passen bij een dekmantelconstructie. De opdracht om geld door te sturen is onder A afwijkend en doelstrijdig, maar onder B precies de traceerbare bevestiging die de rechercheur nodig heeft. De anomalie herkadert dus eerder materiaal, en de blokkade van vrije besteding onder A ondersteunt het bewijsdoel onder B."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Extra diensten kunnen in één realiseerbare tekst eerst als gewone extra uren voor loon gelden en vervolgens als bron van exploiteerbare zichtbaarheid voor het platform. Financiële beloning en louter symbolische beloning zijn op dit punt daadwerkelijk tegengesteld, en deze tegenstelling blijft dominant. Het platform- en promotiescript is sociaal herkenbaar. Meldingen, urenoverzichten, beoordelingen en toppresteerderstaal ondersteunen eerst de loonverwachting, maar laten ook al een latente marketinglezing toe. Dat na veel extra werk badges en publiciteit in plaats van hogere uitbetaling volgen, is onder A een loonafwijking; onder B is het juist het beoogde campagneresultaat. Eerdere waarderingscues worden daarmee retrospectief promotiemiddelen. Het uitblijven van passend loon belemmert het inkomensdoel van de bezorger, terwijl het het goedkope publiciteitsdoel van het platform faciliteert."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": false,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De maandbegroting op betaaldag kan zowel bij een gewone werknemer als bij een deelnemer aan een budgetprogramma voorkomen. Stabiel inkomen als bestaansmiddel en een kunstmatige financiële beperking als televisie-uitdaging zijn lokaal onverenigbare functies van dezelfde betalingssituatie, met één duidelijke oppositieas. Het televisieprogramma is herkenbaar en de normale loon-, huur- en begrotingscues laten Script A aanvankelijk domineren. De tweede lezing is vóór de onthulling echter niet expliciet latent ondersteund: de gedeelde cues bevatten geen camera, productiecontext, spelregel of ander vroeg signaal van een programma. De gehalveerde betaling wordt onder B wel alsnog doelmatig als vooraf afgesproken uitdaging, waardoor de eerdere crisis retrospectief een spelopzet wordt. De beperking blokkeert financiële stabiliteit onder A, maar maakt de kijkwaardige uitdaging van B mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde scène rond een verwachte maandelijkse bijschrijving kan realiseerbaar zowel als gewone loonbetaling als als nagebootste trainingssituatie functioneren. Echt loon en oefengeld zijn lokaal onverenigbaar op de benoemde as, zonder dat een tweede dominante tegenstelling nodig is. De training is een herkenbaar sociaal script en de gewone werk-, loonstrook- en betaalcues laten aanvankelijk Script A domineren, terwijl zij ook als zorgvuldig opgebouwde simulatie kunnen worden herlezen. De volledige inhouding is onder A ontwrichtend, maar onder B een doelbewuste stressprikkel. Daardoor krijgen eerdere loon- en betaalcues achteraf een trainingsfunctie. De inhouding blokkeert bovendien het financiële doel van A, maar maakt juist het leerdoel van B mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een salarisstorting in een bankapp kan zowel werkelijk, vrij besteedbaar loon als een gecontroleerde frauduleuze proeftransactie zijn. Die lezingen zijn lokaal incompatibel op de functie van de betaling: beloning tegenover lokmiddel en bewijsobject. Het undercover- en fraudescenario is herkenbaar; contract, loonstrook en vaste betaaldag bouwen eerst overtuigend de normale arbeidslezing op, maar kunnen achteraf ook passen bij een dekmantelconstructie. De opdracht om geld door te sturen is onder A afwijkend en doelstrijdig, maar onder B precies de traceerbare bevestiging die de rechercheur nodig heeft. De anomalie herkadert dus eerder materiaal, en de blokkade van vrije besteding onder A ondersteunt het bewijsdoel onder B."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Extra diensten kunnen in één realiseerbare tekst eerst als gewone extra uren voor loon gelden en vervolgens als bron van exploiteerbare zichtbaarheid voor het platform. Financiële beloning en louter symbolische beloning zijn op dit punt daadwerkelijk tegengesteld, en deze tegenstelling blijft dominant. Het platform- en promotiescript is sociaal herkenbaar. Meldingen, urenoverzichten, beoordelingen en toppresteerderstaal ondersteunen eerst de loonverwachting, maar laten ook al een latente marketinglezing toe. Dat na veel extra werk badges en publiciteit in plaats van hogere uitbetaling volgen, is onder A een loonafwijking; onder B is het juist het beoogde campagneresultaat. Eerdere waarderingscues worden daarmee retrospectief promotiemiddelen. Het uitblijven van passend loon belemmert het inkomensdoel van de bezorger, terwijl het het goedkope publiciteitsdoel van het platform faciliteert."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": false,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De maandbegroting op betaaldag kan zowel bij een gewone werknemer als bij een deelnemer aan een budgetprogramma voorkomen. Stabiel inkomen als bestaansmiddel en een kunstmatige financiële beperking als televisie-uitdaging zijn lokaal onverenigbare functies van dezelfde betalingssituatie, met één duidelijke oppositieas. Het televisieprogramma is herkenbaar en de normale loon-, huur- en begrotingscues laten Script A aanvankelijk domineren. De tweede lezing is vóór de onthulling echter niet expliciet latent ondersteund: de gedeelde cues bevatten geen camera, productiecontext, spelregel of ander vroeg signaal van een programma. De gehalveerde betaling wordt onder B wel alsnog doelmatig als vooraf afgesproken uitdaging, waardoor de eerdere crisis retrospectief een spelopzet wordt. De beperking blokkeert financiële stabiliteit onder A, maar maakt de kijkwaardige uitdaging van B mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "selected_candidate_id": "B3"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een bezorger neemt extra diensten aan, registreert uren, rondt opdrachten af en verwacht na een recordweek meer loon om zijn huur te betalen.",
+          "realized_script_b": "De bezorgapp gebruikt de bezorger als promotiemateriaal en beloont zijn extra inzet met zichtbaarheid, een gouden bezorgtas en een filmploeg in plaats van extra geld.",
+          "realized_opposition_axis": "financiële beloning voor extra arbeid tegenover symbolische beloning en publicitaire zichtbaarheid",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De extra diensten, geregistreerde uren, afgeronde opdrachten en sterren realiseren de gedeelde werkcues. De filmploeg en gouden bezorgtas vormen een directe late switch van verwacht loon naar promotionele waardering."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist en er is geen bedoeld doelwit gespecificeerd."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een volledige realisatie van de geplande loon-versus-exposure-tegenstelling: de concrete filmploeg en gouden tas leveren precies de voorziene omschakeling en herlezen de recordweek als campagne.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een bezorger wordt na goede prestaties tot toppresteerder uitgeroepen en verwacht daarom opslag voor zijn harde werk.",
+          "realized_script_b": "De app zet de bezorger in voor een positieve campagne en vervangt loon door badges, een kortingsbon en een uitnodiging om gratis overwerk als leuk succesverhaal te presenteren.",
+          "realized_opposition_axis": "financiële beloning voor extra werk tegenover symbolische waardering, gratis producten en promotionele zichtbaarheid",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De toppresteerdermelding wekt de normale loonverwachting op; badges, sushi-korting en het verzoek om gratis overwerk te promoten realiseren de beoogde alternatieve beloning en campagnefunctie. De filmploeg ontbreekt, maar de functionele hinge is behouden."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist en er is geen bedoeld doelwit gespecificeerd."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant volgt de geplande omkering compact: de verwachte opslag wordt vervangen door decoratieve en promotionele beloningen, waarna de uitnodiging voor gratis overwerk de campagnefunctie expliciet maakt.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een bezorger neemt tijdens een drukke promotieweek alle diensten aan omdat hij inkomen nodig heeft voor zijn vaste lasten en verwacht dat extra werk meer uitbetaling oplevert.",
+          "realized_script_b": "Het platform gebruikt het gezicht van de bezorger in reclame en behandelt hem als een menselijke kortingscode, terwijl zijn uitbetaling gelijk blijft.",
+          "realized_opposition_axis": "verwachte financiële compensatie voor extra arbeid tegenover commerciële uitbuiting als reclamemiddel",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De werk- en vaste-lastensetup en de promotieweek zijn aanwezig, evenals een late onthulling van reclamegebruik. De geplande tegenstelling is echter niet primair loon tegenover symbolische beloning aan de bezorger: badges, gratis producten of publieke waardering als vervangende beloning ontbreken. De hoofdoppositie verschuift naar onderbetaalde arbeid tegenover instrumenteel reclamegebruik."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist en er is geen bedoeld doelwit gespecificeerd."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": false,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De tekst werkt als grap over een platform dat een bezorger commercieel exploiteert, maar realiseert niet de specifieke geplande beloningsomkering waarin extra inzet wordt afgekocht met badges, producten en waardering.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "Beide varianten voldoen aan lengte-eis en realiseren de vereiste SO. V1 heeft de sterkere, concretere omschakeling: de filmploeg en gouden tas maken de vervanging van loon door exposure onmiddellijk zichtbaar en herinterpreteren de recordweek scherp als campagne."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "V1 is een passerende variant en V3 niet, dus V1 moet voorrang krijgen. Bovendien realiseert V1 precies de geplande tegenstelling tussen loon en publieke waardering, terwijl V3 vooral verschuift naar commerciële uitbuiting zonder symbolische beloning als vervanger."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 is passerend en V3 niet. V2 zet de verwachte opslag compact om in badges, korting en een promotieverzoek, waardoor de loon-tegen-exposure-oppositie helder blijft; V3 mist die specifieke beloningsomkering."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 combineert de meest volledige trouw aan de vereiste scriptoppositie met een heldere setup, een sterk visueel omslagpunt en een goed uitspreekbare punchline. De filmploeg maakt de retrospectieve herinterpretatie van het harde werk als marketing bijzonder scherp."
+    }
+  },
+  "result_sha256": "1115d8adafa0b1504ab0a24c157afeb41b579ec400b3144c3e8128020b397224"
+}

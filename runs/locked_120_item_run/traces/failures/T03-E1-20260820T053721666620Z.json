@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T05:37:21.666552+00:00",
+  "job": {
+    "job_id": "T03-E1",
+    "topic_id": "T03",
+    "topic": "Religie, kerk en geloof",
+    "condition_code": "E1"
+  },
+  "attempt": 2,
+  "exception_type": "ValueError",
+  "message": "Variant V1 must contain at most 3 sentences; received 4."
+}

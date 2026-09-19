@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T06:07:43.057735+00:00",
+  "job": {
+    "job_id": "T16-E1",
+    "topic_id": "T16",
+    "topic": "Sport, voetbal en supporterscultuur",
+    "condition_code": "E1"
+  },
+  "attempt": 2,
+  "exception_type": "APIConnectionError",
+  "message": "Connection error."
+}

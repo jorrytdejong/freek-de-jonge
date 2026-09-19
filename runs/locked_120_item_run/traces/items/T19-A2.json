@@ -1,0 +1,67 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T19-A2",
+  "topic_id": "T19",
+  "topic": "Recht, politie en criminaliteit",
+  "condition_code": "A2",
+  "pipeline_family": "baseline",
+  "style_mode": "freek",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T16:19:00.851464+00:00",
+  "result": {
+    "pipeline_code": "A2",
+    "pipeline_name": "Baseline Prompt with Freek Style",
+    "request": {
+      "topic": "Recht, politie en criminaliteit",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "You are generating one Dutch cabaret-style joke:\n\nTopic:\nRecht, politie en criminaliteit\n\nStyle examples:\nSimple Freek de Jonge context examples from real categorized segments:\n- En toen zetten mijn ouders mijn wieg in de blijdschap voor het raam met een rood-wit-blauwe vlag eromheen. Dat was natuurlijk onzin om een zwart-geel-rooie vlag eromheen te doen.\n- Dus dan, nou ja. Het afgelopen etmaal zijn 15 nieuwe doden. Nieuwe doden. Zie je dat? Er zijn 15 nieuwe doden. Dus dat was toen wel even een doorbraak hoor. Ja, dat was altijd oude doden. Wat heb je eraan, weet je wel. Maar toen waren er echt vijftien nieuwe doden. Ik weet wel, toen hebben ze in een torentje eventjes met elkaar vijftien nieuwe doden gedaan.\n- Met Jaap van Dissel, waar toen nog een stambeeld van is opgericht, dat weet u nog wel. Want er waren toen heel veel stambeelden in die tijd omgegooid en wat moeten we met al die lege plekken?\n- Ja, mocht het zover komen, dan zetten we haar aan de grens met een paraplu. Nou jongen, die Russen schrikken zich te pletterig. Ze zeggen... Rechtsomkamer, alle drones raken in de war. Het hele zooitje gaat niet door. Mevrouw Faber.\n\nUse these only as lightweight tonal and contextual references. Do not copy wording, names, or specific situations.\n\nGeneration guidance:\nUse only the topic.\n\nOutput requirements:\n- Write exactly one joke in Dutch.\n- Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n- Write for spoken delivery by one comedian: include a recognizable setup, a clear\n  turn or misdirection, and a final punchline that creates the laugh.\n- Do not write an observation, explanation, summary, moral, slogan, or policy statement.\n- Do not end with an abstract conclusion; the final sentence must be the punchline.\n- Read the joke aloud mentally and rewrite it if it does not sound performable.\n- Return the joke in the text field and a concise description in the angle field.\n- Do not include analysis or explanations inside the joke text.",
+    "joke": "De politie heeft nu een app waarmee je anoniem misdaad kunt melden. Ik heb hem gedownload; eindelijk kan ik mijn belastingaangifte doen zonder dat de Belastingdienst weet wie ik ben.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": null,
+      "opposing_script": null,
+      "opposition_type": null,
+      "trigger": null,
+      "setup_goal": null,
+      "punch_goal": null,
+      "shared_cues": [],
+      "hinge_event": null,
+      "anomaly_under_a": null,
+      "resolution_under_b": null,
+      "role_remapping": [],
+      "style_mode": "freek"
+    },
+    "raw_response": "{\"text\":\"De politie heeft nu een app waarmee je anoniem misdaad kunt melden. Ik heb hem gedownload; eindelijk kan ik mijn belastingaangifte doen zonder dat de Belastingdienst weet wie ik ben.\",\"angle\":\"Misdirection van misdaad melden naar belastingontwijking\"}",
+    "warnings": [],
+    "script_b_candidates": [],
+    "script_b_rationale": "",
+    "variants": [
+      {
+        "text": "De politie heeft nu een app waarmee je anoniem misdaad kunt melden. Ik heb hem gedownload; eindelijk kan ik mijn belastingaangifte doen zonder dat de Belastingdienst weet wie ik ben.",
+        "angle": "Misdirection van misdaad melden naar belastingontwijking"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 556,
+      "output_tokens": 196,
+      "total_tokens": 752
+    },
+    "metadata": {
+      "family": "baseline",
+      "style_mode": "freek",
+      "stages": [
+        "direct_generation"
+      ]
+    }
+  },
+  "result_sha256": "1fa391663c6ca7eb57f53d649d8588cdf7cd749c99eb3aa558c135b4ff61cbb9"
+}

@@ -1,0 +1,901 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T14-E1",
+  "topic_id": "T14",
+  "topic": "Klimaat, milieu en natuur",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:45:38.966898+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Klimaat, milieu en natuur",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.\",\n    \"participants_and_roles\": [\n      \"Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.\",\n      \"Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.\",\n      \"Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.\",\n      \"Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen.\"\n    ],\n    \"apparent_goal\": \"De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.\",\n    \"preconditions\": [\n      \"Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.\",\n      \"Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.\",\n      \"Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.\",\n      \"Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.\",\n      \"Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.\",\n      \"Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.\",\n      \"Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.\",\n      \"Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten.\"\n    ],\n    \"expected_outcome\": \"Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.\",\n    \"expected_propositions\": [\n      \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n      \"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\",\n      \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\",\n      \"Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.\",\n    \"participants_and_roles\": [\n      \"Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.\",\n      \"Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.\",\n      \"Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.\",\n      \"Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen.\"\n    ],\n    \"apparent_goal\": \"De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.\",\n    \"preconditions\": [\n      \"Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.\",\n      \"Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.\",\n      \"Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.\",\n      \"Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.\",\n      \"Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.\",\n      \"Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.\",\n      \"Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.\",\n      \"Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten.\"\n    ],\n    \"expected_outcome\": \"Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.\",\n    \"expected_propositions\": [\n      \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n      \"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\",\n      \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\",\n      \"Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een buurtbewoner bereidt geen opruimactie voor, maar een geheime speurtocht voor kinderen waarbij hij aanwijzingen in de wijk verstopt en deelnemers via afvalbakken naar de volgende locatie leidt.\",\n      \"opposition_axis\": \"Milieubescherming versus spelorganisatie\",\n      \"opposed_proposition\": \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n      \"shared_anchor\": \"Een bewoner loopt met zakken en handschoenen door het park.\",\n      \"reading_a\": \"De bewoner raapt zwerfafval op om het park schoon te maken.\",\n      \"reading_b\": \"De bewoner zet spelmateriaal en gecodeerde aanwijzingen klaar voor een speurtocht.\",\n      \"roles_b\": [\n        \"Spelleider: ontwerpt en verstopt de route.\",\n        \"Kinderen: zoeken aanwijzingen en volgen opdrachten.\",\n        \"Ouders: begeleiden de deelnemers.\",\n        \"Parkbeheerder: moet toestemming geven voor het gebruik van het park.\"\n      ],\n      \"goal_b\": \"Een spannende, ordelijke speurtocht organiseren zonder dat deelnemers de route voortijdig ontdekken.\",\n      \"role_remapping\": [\n        \"Burgers/huishoudens worden spelleider, kinderen en begeleidende ouders.\",\n        \"Gemeente wordt parkbeheerder of vergunningverlener.\",\n        \"Afvalbakken en inzamelpunten worden herkenbare routepunten.\",\n        \"De natuur wordt een decor en parcours in plaats van primair een kwetsbaar slachtoffer.\"\n      ],\n      \"shared_cues\": [\n        \"Handschoenen aantrekken.\",\n        \"Met een zak door het gras lopen.\",\n        \"Naar afvalbakken wijzen.\",\n        \"Voorwerpen van de grond oprapen.\",\n        \"Andere buurtbewoners oproepen om mee te doen.\"\n      ],\n      \"switch_trigger\": \"De bewoner haalt uit een zak geen afval, maar genummerde enveloppen en plastic dinosaurusfiguren.\",\n      \"hinge_event\": \"Hij legt bewust een opvallend plastic figuurtje naast een afvalbak als volgende aanwijzing.\",\n      \"anomaly_under_a\": \"Bij een serieuze schoonmaakactie is het onbegrijpelijk en onverantwoord om zelf nieuw rommelachtig materiaal in het park neer te leggen.\",\n      \"resolution_under_b\": \"Het figuurtje is geen achteloos weggegooid afval maar een tijdelijk, gecontroleerd speurelement; de afvalbak markeert de locatie waar kinderen de volgende envelop vinden.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een gezin voert thuis een noodgedwongen plaagdierbestrijding uit: het probeert een hardnekkige muizenplaag te stoppen die voedselvoorraden en bedrading aantast.\",\n      \"opposition_axis\": \"Natuur beschermen versus ongedierte bestrijden\",\n      \"opposed_proposition\": \"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\",\n      \"shared_anchor\": \"Een gezinslid zet kleine bakjes en lokdozen langs de muur van de schuur.\",\n      \"reading_a\": \"Het gezinslid plaatst opvangbakjes voor gescheiden afval of zaadbakjes om dieren veilig te helpen.\",\n      \"reading_b\": \"Het gezinslid zet beveiligde muizenvallen en lokaasdozen neer.\",\n      \"roles_b\": [\n        \"Gezinsleden: beschermen huis, voedsel en bedrading.\",\n        \"Muizen: veroorzaken schade en verspreiden mogelijk ziektekiemen.\",\n        \"Ongediertebestrijder: adviseert over veilige bestrijding.\",\n        \"Huisdieren: moeten tegen lokaas en vallen worden beschermd.\"\n      ],\n      \"goal_b\": \"De muizenplaag doelgericht beëindigen zonder kinderen, huisdieren of andere dieren onnodig in gevaar te brengen.\",\n      \"role_remapping\": [\n        \"Burgers/huishoudens worden bewoners die hun woning verdedigen.\",\n        \"Natuur wordt deels het plaagdier dat een directe bedreiging vormt.\",\n        \"Bedrijven worden leverancier van vallen, afsluitmateriaal en bestrijdingsmiddelen.\",\n        \"De gemeente wordt eventueel toezichthouder op hygiëne en afvalopslag.\"\n      ],\n      \"shared_cues\": [\n        \"Handschoenen dragen.\",\n        \"Kieren inspecteren.\",\n        \"Afval en etensresten opruimen.\",\n        \"Kleine bakjes bij een muur plaatsen.\",\n        \"Praten over dieren en voedselbronnen.\"\n      ],\n      \"switch_trigger\": \"Een kind vraagt waarom er een pindakaasklokje in het bakje ligt, waarna de ouder zegt dat de muizen er vannacht in moeten lopen.\",\n      \"hinge_event\": \"De bewoner klapt een muizenval dicht en controleert hem de volgende ochtend.\",\n      \"anomaly_under_a\": \"Binnen een verhaal over zorg voor natuur oogt het vangen of doden van een dier als een botte aantasting van kwetsbaar leven.\",\n      \"resolution_under_b\": \"De handeling dient hygiëne en veiligheid in huis; door vallen gericht en afgeschermd te gebruiken, voorkomt het gezin grotere schade en vermijdt het ongerichte gifverspreiding.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.\",\n      \"opposition_axis\": \"Minder consumeren versus verkoop maximaliseren\",\n      \"opposed_proposition\": \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"shared_anchor\": \"Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.\",\n      \"reading_a\": \"De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.\",\n      \"reading_b\": \"De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.\",\n      \"roles_b\": [\n        \"Winkelier: wil voorraad snel omzetten in omzet.\",\n        \"Klanten: zoeken koopjes en reageren op tijdsdruk.\",\n        \"Leverancier: wil ruimte maken voor een nieuwe collectie.\",\n        \"Bezorgdienst: verwerkt de extra aankopen en retouren.\"\n      ],\n      \"goal_b\": \"Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.\",\n      \"role_remapping\": [\n        \"Bedrijven worden de actieve verkoper en leverancier.\",\n        \"Burgers/huishoudens worden koopjesjagers.\",\n        \"Energielabels en productinformatie worden verkoopstickers en reclametaal.\",\n        \"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\"\n      ],\n      \"shared_cues\": [\n        \"Producten vergelijken.\",\n        \"Stickers op verpakkingen plakken.\",\n        \"Spreken over besparen.\",\n        \"Tassen vullen.\",\n        \"Dozen en verpakkingen stapelen.\"\n      ],\n      \"switch_trigger\": \"De sticker blijkt niet te zeggen \\\"zuinig\\\", maar \\\"tweede gratis: neem er drie\\\".\",\n      \"hinge_event\": \"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\",\n      \"anomaly_under_a\": \"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\",\n      \"resolution_under_b\": \"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een gemeentelijke inspecteur bereidt een handhavingsactie voor tegen illegale afvaldumping en probeert de dader op heterdaad te betrappen, zonder de observatiepost te verraden.\",\n      \"opposition_axis\": \"Openbare opruimzorg versus geheime opsporing\",\n      \"opposed_proposition\": \"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\",\n      \"shared_anchor\": \"Iemand staat vroeg bij een vuilniscontainer, noteert kentekens en maakt foto's van zakken.\",\n      \"reading_a\": \"Een betrokken buurtbewoner documenteert afvalproblemen om een gezamenlijke schoonmaak- en verbeteractie te starten.\",\n      \"reading_b\": \"Een inspecteur verzamelt bewijs voor een gerichte handhavingsactie tegen een illegale dumper.\",\n      \"roles_b\": [\n        \"Gemeentelijke inspecteur: verzamelt bewijs en handhaaft regels.\",\n        \"Illegale dumper: probeert kosten of moeite van legale afvoer te vermijden.\",\n        \"Gemeente: legt boetes op en organiseert legale inzameling.\",\n        \"Buurtbewoners: kunnen getuigen zijn of onbedoeld de observatie verstoren.\"\n      ],\n      \"goal_b\": \"De verantwoordelijke dumper identificeren en beboeten, zodat verdere illegale dumping stopt.\",\n      \"role_remapping\": [\n        \"Een burger wordt een inspecteur in burgerkleding.\",\n        \"De overheid/gemeente wordt de opsporende en sanctionerende instantie.\",\n        \"Bedrijven of huishoudens worden mogelijke overtreders.\",\n        \"Afval wordt bewijsmateriaal in plaats van uitsluitend iets dat direct moet worden opgeruimd.\"\n      ],\n      \"shared_cues\": [\n        \"Vuilniszakken bekijken.\",\n        \"Foto's maken van vervuiling.\",\n        \"Kentekens noteren.\",\n        \"Bij een container wachten.\",\n        \"Met de gemeente bellen.\"\n      ],\n      \"switch_trigger\": \"De persoon fluistert in een portofoon: \\\"De verdachte bestelbus rijdt nu het terrein op; nog niet ingrijpen.\\\"\",\n      \"hinge_event\": \"De inspecteur laat een duidelijk verkeerd geplaatste afvalzak expres liggen en kijkt er urenlang naar zonder hem op te ruimen.\",\n      \"anomaly_under_a\": \"Voor een verantwoordelijke buurtbewoner is het vreemd om zichtbaar zwerfafval niet meteen weg te halen, zeker wanneer hij er al met handschoenen en een camera naast staat.\",\n      \"resolution_under_b\": \"De zak bevat een verborgen merkteken en werkt als lokaas: door hem te laten liggen kan de inspecteur vastleggen wie er later extra afval bij dumpt en zo de bron van herhaalde vervuiling aanpakken.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.\",\n    \"participants_and_roles\": [\n      \"Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.\",\n      \"Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.\",\n      \"Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.\",\n      \"Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen.\"\n    ],\n    \"apparent_goal\": \"De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.\",\n    \"preconditions\": [\n      \"Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.\",\n      \"Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.\",\n      \"Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.\",\n      \"Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.\",\n      \"Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.\",\n      \"Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.\",\n      \"Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.\",\n      \"Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten.\"\n    ],\n    \"expected_outcome\": \"Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.\",\n    \"expected_propositions\": [\n      \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n      \"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\",\n      \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\",\n      \"Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een buurtbewoner bereidt geen opruimactie voor, maar een geheime speurtocht voor kinderen waarbij hij aanwijzingen in de wijk verstopt en deelnemers via afvalbakken naar de volgende locatie leidt.\",\n      \"opposition_axis\": \"Milieubescherming versus spelorganisatie\",\n      \"opposed_proposition\": \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n      \"shared_anchor\": \"Een bewoner loopt met zakken en handschoenen door het park.\",\n      \"reading_a\": \"De bewoner raapt zwerfafval op om het park schoon te maken.\",\n      \"reading_b\": \"De bewoner zet spelmateriaal en gecodeerde aanwijzingen klaar voor een speurtocht.\",\n      \"roles_b\": [\n        \"Spelleider: ontwerpt en verstopt de route.\",\n        \"Kinderen: zoeken aanwijzingen en volgen opdrachten.\",\n        \"Ouders: begeleiden de deelnemers.\",\n        \"Parkbeheerder: moet toestemming geven voor het gebruik van het park.\"\n      ],\n      \"goal_b\": \"Een spannende, ordelijke speurtocht organiseren zonder dat deelnemers de route voortijdig ontdekken.\",\n      \"role_remapping\": [\n        \"Burgers/huishoudens worden spelleider, kinderen en begeleidende ouders.\",\n        \"Gemeente wordt parkbeheerder of vergunningverlener.\",\n        \"Afvalbakken en inzamelpunten worden herkenbare routepunten.\",\n        \"De natuur wordt een decor en parcours in plaats van primair een kwetsbaar slachtoffer.\"\n      ],\n      \"shared_cues\": [\n        \"Handschoenen aantrekken.\",\n        \"Met een zak door het gras lopen.\",\n        \"Naar afvalbakken wijzen.\",\n        \"Voorwerpen van de grond oprapen.\",\n        \"Andere buurtbewoners oproepen om mee te doen.\"\n      ],\n      \"switch_trigger\": \"De bewoner haalt uit een zak geen afval, maar genummerde enveloppen en plastic dinosaurusfiguren.\",\n      \"hinge_event\": \"Hij legt bewust een opvallend plastic figuurtje naast een afvalbak als volgende aanwijzing.\",\n      \"anomaly_under_a\": \"Bij een serieuze schoonmaakactie is het onbegrijpelijk en onverantwoord om zelf nieuw rommelachtig materiaal in het park neer te leggen.\",\n      \"resolution_under_b\": \"Het figuurtje is geen achteloos weggegooid afval maar een tijdelijk, gecontroleerd speurelement; de afvalbak markeert de locatie waar kinderen de volgende envelop vinden.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.\",\n      \"opposition_axis\": \"Minder consumeren versus verkoop maximaliseren\",\n      \"opposed_proposition\": \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"shared_anchor\": \"Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.\",\n      \"reading_a\": \"De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.\",\n      \"reading_b\": \"De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.\",\n      \"roles_b\": [\n        \"Winkelier: wil voorraad snel omzetten in omzet.\",\n        \"Klanten: zoeken koopjes en reageren op tijdsdruk.\",\n        \"Leverancier: wil ruimte maken voor een nieuwe collectie.\",\n        \"Bezorgdienst: verwerkt de extra aankopen en retouren.\"\n      ],\n      \"goal_b\": \"Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.\",\n      \"role_remapping\": [\n        \"Bedrijven worden de actieve verkoper en leverancier.\",\n        \"Burgers/huishoudens worden koopjesjagers.\",\n        \"Energielabels en productinformatie worden verkoopstickers en reclametaal.\",\n        \"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\"\n      ],\n      \"shared_cues\": [\n        \"Producten vergelijken.\",\n        \"Stickers op verpakkingen plakken.\",\n        \"Spreken over besparen.\",\n        \"Tassen vullen.\",\n        \"Dozen en verpakkingen stapelen.\"\n      ],\n      \"switch_trigger\": \"De sticker blijkt niet te zeggen \\\"zuinig\\\", maar \\\"tweede gratis: neem er drie\\\".\",\n      \"hinge_event\": \"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\",\n      \"anomaly_under_a\": \"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\",\n      \"resolution_under_b\": \"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.\",\n    \"participants_and_roles\": [\n      \"Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.\",\n      \"Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.\",\n      \"Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.\",\n      \"Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen.\"\n    ],\n    \"apparent_goal\": \"De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.\",\n    \"preconditions\": [\n      \"Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.\",\n      \"Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.\",\n      \"Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.\",\n      \"Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.\",\n      \"Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.\",\n      \"Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.\",\n      \"Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.\",\n      \"Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten.\"\n    ],\n    \"expected_outcome\": \"Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.\",\n    \"expected_propositions\": [\n      \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n      \"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\",\n      \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\",\n      \"Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B3\",\n    \"script_b\": \"Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.\",\n    \"opposition_axis\": \"Minder consumeren versus verkoop maximaliseren\",\n    \"opposed_proposition\": \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n    \"shared_anchor\": \"Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.\",\n    \"reading_a\": \"De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.\",\n    \"reading_b\": \"De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.\",\n    \"roles_b\": [\n      \"Winkelier: wil voorraad snel omzetten in omzet.\",\n      \"Klanten: zoeken koopjes en reageren op tijdsdruk.\",\n      \"Leverancier: wil ruimte maken voor een nieuwe collectie.\",\n      \"Bezorgdienst: verwerkt de extra aankopen en retouren.\"\n    ],\n    \"goal_b\": \"Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.\",\n    \"role_remapping\": [\n      \"Bedrijven worden de actieve verkoper en leverancier.\",\n      \"Burgers/huishoudens worden koopjesjagers.\",\n      \"Energielabels en productinformatie worden verkoopstickers en reclametaal.\",\n      \"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\"\n    ],\n    \"shared_cues\": [\n      \"Producten vergelijken.\",\n      \"Stickers op verpakkingen plakken.\",\n      \"Spreken over besparen.\",\n      \"Tassen vullen.\",\n      \"Dozen en verpakkingen stapelen.\"\n    ],\n    \"switch_trigger\": \"De sticker blijkt niet te zeggen \\\"zuinig\\\", maar \\\"tweede gratis: neem er drie\\\".\",\n    \"hinge_event\": \"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\",\n    \"anomaly_under_a\": \"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\",\n    \"resolution_under_b\": \"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.\",\n    \"participants_and_roles\": [\n      \"Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.\",\n      \"Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.\",\n      \"Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.\",\n      \"Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen.\"\n    ],\n    \"apparent_goal\": \"De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.\",\n    \"preconditions\": [\n      \"Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.\",\n      \"Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.\",\n      \"Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.\",\n      \"Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.\",\n      \"Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.\",\n      \"Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.\",\n      \"Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.\",\n      \"Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten.\"\n    ],\n    \"expected_outcome\": \"Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.\",\n    \"expected_propositions\": [\n      \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n      \"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\",\n      \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\",\n      \"Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B3\",\n    \"script_b\": \"Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.\",\n    \"opposition_axis\": \"Minder consumeren versus verkoop maximaliseren\",\n    \"opposed_proposition\": \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n    \"shared_anchor\": \"Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.\",\n    \"reading_a\": \"De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.\",\n    \"reading_b\": \"De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.\",\n    \"roles_b\": [\n      \"Winkelier: wil voorraad snel omzetten in omzet.\",\n      \"Klanten: zoeken koopjes en reageren op tijdsdruk.\",\n      \"Leverancier: wil ruimte maken voor een nieuwe collectie.\",\n      \"Bezorgdienst: verwerkt de extra aankopen en retouren.\"\n    ],\n    \"goal_b\": \"Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.\",\n    \"role_remapping\": [\n      \"Bedrijven worden de actieve verkoper en leverancier.\",\n      \"Burgers/huishoudens worden koopjesjagers.\",\n      \"Energielabels en productinformatie worden verkoopstickers en reclametaal.\",\n      \"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\"\n    ],\n    \"shared_cues\": [\n      \"Producten vergelijken.\",\n      \"Stickers op verpakkingen plakken.\",\n      \"Spreken over besparen.\",\n      \"Tassen vullen.\",\n      \"Dozen en verpakkingen stapelen.\"\n    ],\n    \"switch_trigger\": \"De sticker blijkt niet te zeggen \\\"zuinig\\\", maar \\\"tweede gratis: neem er drie\\\".\",\n    \"hinge_event\": \"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\",\n    \"anomaly_under_a\": \"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\",\n    \"resolution_under_b\": \"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Minder consumeren versus verkoop maximaliseren\",\n    \"logical_mechanism\": \"Herinterpretatie via een lexicale dubbelcue en omkering van doelgerichtheid: termen en handelingen die eerst als duurzaam besparen en productinformatie lezen, worden door de kortingssticker onthuld als verkoopdruk, schaarstemarketing en het maximaliseren van consumptie.\",\n    \"situation\": \"In een winkel met seizoensartikelen plakt een winkelier grote stickers op producten, roept hij voorbijgangers naar binnen en vullen klanten tassen terwijl dozen en verpakkingen zich opstapelen. De winkelier wil oude voorraad snel verkopen voordat een nieuwe collectie arriveert; klanten reageren op koopjes en tijdsdruk, leveranciers willen ruimte maken en de bezorgdienst verwerkt extra aankopen en retouren.\",\n    \"target\": \"Consumptiecultuur en agressieve schaarstemarketing die verkoop boven hergebruik en minder kopen stelt.\",\n    \"narrative_strategy\": \"De opzet presenteert de winkelhandeling aanvankelijk als een verantwoordelijke keuzehulp: producten vergelijken, stickers lezen en besparen. De punchline onthult dat de stickers geen duurzaamheidsinformatie zijn maar een kwantumkorting, waarna het weggooien van een werkend apparaat de commerciële logica scherp zichtbaar maakt.\",\n    \"lexical_anchor\": \"sticker\",\n    \"supporting_dual_cues\": [\n      \"Producten vergelijken.\",\n      \"Stickers op verpakkingen plakken.\",\n      \"Spreken over besparen.\",\n      \"Tassen vullen.\",\n      \"Dozen en verpakkingen stapelen.\"\n    ],\n    \"switch_trigger\": \"De sticker blijkt niet te zeggen \\\"zuinig\\\", maar \\\"tweede gratis: neem er drie\\\".\",\n    \"hinge_event\": \"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\",\n    \"anomaly_under_a\": \"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\",\n    \"resolution_under_b\": \"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\",\n    \"role_remapping\": [\n      \"Bedrijven worden de actieve verkoper en leverancier.\",\n      \"Burgers/huishoudens worden koopjesjagers.\",\n      \"Energielabels en productinformatie worden verkoopstickers en reclametaal.\",\n      \"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\"\n    ],\n    \"setup_goal\": \"Script A dominant maken door stickers, productvergelijking en spreken over besparen te framen als signalen van zuinige, verantwoorde consumptie.\",\n    \"punch_goal\": \"Script B activeren door de sticker als kwantumkorting te onthullen en de winkelier te tonen als iemand die via tijdsdruk en zichtbaar verspillen maximale verkoop nastreeft.\",\n    \"punch_final_word\": \"neem er drie\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.\",\n      \"participants_and_roles\": [\n        \"Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.\",\n        \"Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.\",\n        \"Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.\",\n        \"Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen.\"\n      ],\n      \"apparent_goal\": \"De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.\",\n      \"preconditions\": [\n        \"Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.\",\n        \"Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.\",\n        \"Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.\",\n        \"Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid.\"\n      ],\n      \"expected_actions\": [\n        \"Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.\",\n        \"Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.\",\n        \"Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.\",\n        \"Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.\",\n        \"Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten.\"\n      ],\n      \"expected_outcome\": \"Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.\",\n      \"expected_propositions\": [\n        \"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\",\n        \"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\",\n        \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n        \"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\",\n        \"Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag.\"\n      ],\n      \"audience_expectation\": \"Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.\",\n      \"opposition_axis\": \"Minder consumeren versus verkoop maximaliseren\",\n      \"opposed_proposition\": \"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\",\n      \"shared_anchor\": \"Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.\",\n      \"reading_a\": \"De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.\",\n      \"reading_b\": \"De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.\",\n      \"roles_b\": [\n        \"Winkelier: wil voorraad snel omzetten in omzet.\",\n        \"Klanten: zoeken koopjes en reageren op tijdsdruk.\",\n        \"Leverancier: wil ruimte maken voor een nieuwe collectie.\",\n        \"Bezorgdienst: verwerkt de extra aankopen en retouren.\"\n      ],\n      \"goal_b\": \"Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.\",\n      \"role_remapping\": [\n        \"Bedrijven worden de actieve verkoper en leverancier.\",\n        \"Burgers/huishoudens worden koopjesjagers.\",\n        \"Energielabels en productinformatie worden verkoopstickers en reclametaal.\",\n        \"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\"\n      ],\n      \"shared_cues\": [\n        \"Producten vergelijken.\",\n        \"Stickers op verpakkingen plakken.\",\n        \"Spreken over besparen.\",\n        \"Tassen vullen.\",\n        \"Dozen en verpakkingen stapelen.\"\n      ],\n      \"switch_trigger\": \"De sticker blijkt niet te zeggen \\\"zuinig\\\", maar \\\"tweede gratis: neem er drie\\\".\",\n      \"hinge_event\": \"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\",\n      \"anomaly_under_a\": \"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\",\n      \"resolution_under_b\": \"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Minder consumeren versus verkoop maximaliseren\",\n      \"logical_mechanism\": \"Herinterpretatie via een lexicale dubbelcue en omkering van doelgerichtheid: termen en handelingen die eerst als duurzaam besparen en productinformatie lezen, worden door de kortingssticker onthuld als verkoopdruk, schaarstemarketing en het maximaliseren van consumptie.\",\n      \"situation\": \"In een winkel met seizoensartikelen plakt een winkelier grote stickers op producten, roept hij voorbijgangers naar binnen en vullen klanten tassen terwijl dozen en verpakkingen zich opstapelen. De winkelier wil oude voorraad snel verkopen voordat een nieuwe collectie arriveert; klanten reageren op koopjes en tijdsdruk, leveranciers willen ruimte maken en de bezorgdienst verwerkt extra aankopen en retouren.\",\n      \"target\": \"Consumptiecultuur en agressieve schaarstemarketing die verkoop boven hergebruik en minder kopen stelt.\",\n      \"narrative_strategy\": \"De opzet presenteert de winkelhandeling aanvankelijk als een verantwoordelijke keuzehulp: producten vergelijken, stickers lezen en besparen. De punchline onthult dat de stickers geen duurzaamheidsinformatie zijn maar een kwantumkorting, waarna het weggooien van een werkend apparaat de commerciële logica scherp zichtbaar maakt.\",\n      \"lexical_anchor\": \"sticker\",\n      \"supporting_dual_cues\": [\n        \"Producten vergelijken.\",\n        \"Stickers op verpakkingen plakken.\",\n        \"Spreken over besparen.\",\n        \"Tassen vullen.\",\n        \"Dozen en verpakkingen stapelen.\"\n      ],\n      \"switch_trigger\": \"De sticker blijkt niet te zeggen \\\"zuinig\\\", maar \\\"tweede gratis: neem er drie\\\".\",\n      \"hinge_event\": \"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\",\n      \"anomaly_under_a\": \"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\",\n      \"resolution_under_b\": \"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\",\n      \"role_remapping\": [\n        \"Bedrijven worden de actieve verkoper en leverancier.\",\n        \"Burgers/huishoudens worden koopjesjagers.\",\n        \"Energielabels en productinformatie worden verkoopstickers en reclametaal.\",\n        \"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\"\n      ],\n      \"setup_goal\": \"Script A dominant maken door stickers, productvergelijking en spreken over besparen te framen als signalen van zuinige, verantwoorde consumptie.\",\n      \"punch_goal\": \"Script B activeren door de sticker als kwantumkorting te onthullen en de winkelier te tonen als iemand die via tijdsdruk en zichtbaar verspillen maximale verkoop nastreeft.\",\n      \"punch_final_word\": \"neem er drie\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen. Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.\",\n      \"angle\": \"Duurzaam winkeladvies verandert in een agressieve kwantumkorting.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart. Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.\",\n      \"angle\": \"Milieubewust vergelijken blijkt voorraad wegwerken onder tijdsdruk.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen. Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.\",\n      \"angle\": \"Groene winkelretoriek blijkt een verkooptruc voor een nieuwe collectie.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen. Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.\",\n      \"angle\": \"Duurzaam winkeladvies verandert in een agressieve kwantumkorting.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart. Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.\",\n      \"angle\": \"Milieubewust vergelijken blijkt voorraad wegwerken onder tijdsdruk.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen. Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.\",\n      \"angle\": \"Groene winkelretoriek blijkt een verkooptruc voor een nieuwe collectie.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Duurzaam winkeladvies: klanten vergelijken producten, letten op besparen en nemen tassen mee om verantwoord te consumeren.\",\n      \"realized_script_b\": \"Een winkelier jaagt extra verkoop aan met een kwantumkorting en gooit zelfs een werkende blender weg om consumptie van nieuwe producten te stimuleren.\",\n      \"realized_opposition_axis\": \"Minder/verantwoord consumeren versus verkoop en consumptie maximaliseren.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De duurzame lezing wordt eerst expliciet opgebouwd en schakelt via de sticker precies naar de beoogde verkooplogica. De gedeelde cues (vergelijken, stickers, besparen en tassen) zijn aanwezig.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De woordelijke cue 'besparen' en vooral de sticker worden retrospectief herlezen als kortings- en verkoopdruk; de weggegooide blender maakt de cynische commerciële doelgerichtheid zichtbaar.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De winkelier, klanten, stickers, producten, tassen, afvalcontainer en een werkend apparaat realiseren de centrale winkelsituatie functioneel.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst richt zich functioneel op agressieve consumptieprikkels en verkoop boven hergebruik.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet presenteert duurzaam advies en de slotzin onthult de kwantumkorting, ondersteund door zichtbaar verspillen.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De lexicale spil 'sticker' en de vereiste onthulling 'tweede gratis: neem er drie' zijn behouden.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V1 volgt het beoogde script, de beoogde omkering en de geplande punchline vrijwel volledig; het is een begrijpelijke, spreekbare grap met een duidelijke onthulling.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Milieubewust winkelgedrag: producten zorgvuldig vergelijken en dozen voor hergebruik bewaren om verspilling te beperken.\",\n      \"realized_script_b\": \"Een winkelier ruimt voorraad en oude modellen agressief op, gebruikt een kwantumkorting en stimuleert klanten om meer waterkokers te kopen.\",\n      \"realized_opposition_axis\": \"Minder/verantwoord consumeren versus voorraad snel verkopen en consumptie maximaliseren.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De aanvankelijke milieulezing schakelt naar dezelfde beoogde verkooplogica wanneer de sticker als 'tweede gratis: neem er drie' wordt onthuld. Vergelijken, stickers en hergebruik vormen voldoende gedeelde cues.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De kortingssticker herkadert het eerdere spreken over vergelijken en milieu; het wegsmijten van een werkend oud model ondersteunt de commerciële, verspilling toelatende logica.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De winkelcontext, winkelier, stickers, dozen, waterkokers, oude voorraad en afvalhandeling zijn functioneel aanwezig, hoewel enkele geplande nevenrollen ontbreken.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De grap viseert voorraadwegwerken en verkoopdruk die hergebruik en minder kopen ondergeschikt maken.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Een milieubewuste setup wordt gevolgd door een zichtbare verspilling en de kortingsonthulling als punch.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De sticker is de lexicale schakel en de geplande formulering van de kwantumkorting wordt letterlijk gerealiseerd.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V2 behoudt de geplande duurzame schijn, stickeronthulling en verkoopgerichte herinterpretatie. De situatie is iets minder rijk uitgewerkt dan het plan, maar de vereiste functies blijven intact.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"De verteller ziet de winkelier aanvankelijk als een groene, zuinige winkelier die klanten helpt besparen, stickers lezen en herbruikbare tassen vullen.\",\n      \"realized_script_b\": \"De winkelier blijkt een nieuwe lijn te willen verkopen: hij gooit een werkende airfryer weg en gebruikt de sticker voor een kwantumkorting.\",\n      \"realized_opposition_axis\": \"Minder/verantwoord consumeren versus verkoop en consumptie maximaliseren.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bouwt de groene lezing dominant op en onthult exact de beoogde alternatieve lezing: verkoopdruk rond een nieuwe collectie, met een kwantumkorting als switch.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"'Besparen', stickers en herbruikbare tassen worden door de slottekst herinterpreteerbaar als verkoopretoriek; het weggooien van de werkende airfryer concretiseert de omgekeerde doelgerichtheid.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Winkelier, klanten, herbruikbare tassen, sticker, werkend keukenapparaat en nieuwe productlijn realiseren de kernsituatie.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De winkelier staat voor de beoogde consumptiecultuur en schaarste- of kortingsmarketing die nieuwe verkoop boven hergebruik stelt.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De eerste zin positioneert de winkelier als groene held; de airfryer en de stickeronthulling vormen vervolgens de geplande scherpe omslag.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De sticker fungeert als expliciete lexicale hinge en de slotformule 'tweede gratis: neem er drie' is behouden.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V3 is een directe en functionele realisatie van het plan: groene winkelretoriek wordt via de sticker en het weggooien van een werkend apparaat ontmaskerd als verkoopstrategie.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen. Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.",
+      "opposing_script": "Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.",
+      "opposition_type": "Minder consumeren versus verkoop maximaliseren",
+      "trigger": "De sticker blijkt niet te zeggen \"zuinig\", maar \"tweede gratis: neem er drie\".",
+      "setup_goal": "Script A dominant maken door stickers, productvergelijking en spreken over besparen te framen als signalen van zuinige, verantwoorde consumptie.",
+      "punch_goal": "Script B activeren door de sticker als kwantumkorting te onthullen en de winkelier te tonen als iemand die via tijdsdruk en zichtbaar verspillen maximale verkoop nastreeft.",
+      "shared_cues": [
+        "Producten vergelijken.",
+        "Stickers op verpakkingen plakken.",
+        "Spreken over besparen.",
+        "Tassen vullen.",
+        "Dozen en verpakkingen stapelen."
+      ],
+      "hinge_event": "De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.",
+      "anomaly_under_a": "In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.",
+      "resolution_under_b": "Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.",
+      "role_remapping": [
+        "Bedrijven worden de actieve verkoper en leverancier.",
+        "Burgers/huishoudens worden koopjesjagers.",
+        "Energielabels en productinformatie worden verkoopstickers en reclametaal.",
+        "Afval en verpakking worden een logistiek neveneffect van hoge verkoop."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.\\\",\\\"participants_and_roles\\\":[\\\"Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.\\\",\\\"Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.\\\",\\\"Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.\\\",\\\"Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen.\\\"],\\\"apparent_goal\\\":\\\"De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.\\\",\\\"preconditions\\\":[\\\"Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.\\\",\\\"Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.\\\",\\\"Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.\\\",\\\"Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid.\\\"],\\\"expected_actions\\\":[\\\"Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.\\\",\\\"Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.\\\",\\\"Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.\\\",\\\"Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.\\\",\\\"Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten.\\\"],\\\"expected_outcome\\\":\\\"Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.\\\",\\\"expected_propositions\\\":[\\\"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\\\",\\\"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\\\",\\\"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\\\",\\\"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\\\",\\\"Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag.\\\"],\\\"audience_expectation\\\":\\\"Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een buurtbewoner bereidt geen opruimactie voor, maar een geheime speurtocht voor kinderen waarbij hij aanwijzingen in de wijk verstopt en deelnemers via afvalbakken naar de volgende locatie leidt.\\\",\\\"opposition_axis\\\":\\\"Milieubescherming versus spelorganisatie\\\",\\\"opposed_proposition\\\":\\\"Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.\\\",\\\"shared_anchor\\\":\\\"Een bewoner loopt met zakken en handschoenen door het park.\\\",\\\"reading_a\\\":\\\"De bewoner raapt zwerfafval op om het park schoon te maken.\\\",\\\"reading_b\\\":\\\"De bewoner zet spelmateriaal en gecodeerde aanwijzingen klaar voor een speurtocht.\\\",\\\"roles_b\\\":[\\\"Spelleider: ontwerpt en verstopt de route.\\\",\\\"Kinderen: zoeken aanwijzingen en volgen opdrachten.\\\",\\\"Ouders: begeleiden de deelnemers.\\\",\\\"Parkbeheerder: moet toestemming geven voor het gebruik van het park.\\\"],\\\"goal_b\\\":\\\"Een spannende, ordelijke speurtocht organiseren zonder dat deelnemers de route voortijdig ontdekken.\\\",\\\"role_remapping\\\":[\\\"Burgers/huishoudens worden spelleider, kinderen en begeleidende ouders.\\\",\\\"Gemeente wordt parkbeheerder of vergunningverlener.\\\",\\\"Afvalbakken en inzamelpunten worden herkenbare routepunten.\\\",\\\"De natuur wordt een decor en parcours in plaats van primair een kwetsbaar slachtoffer.\\\"],\\\"shared_cues\\\":[\\\"Handschoenen aantrekken.\\\",\\\"Met een zak door het gras lopen.\\\",\\\"Naar afvalbakken wijzen.\\\",\\\"Voorwerpen van de grond oprapen.\\\",\\\"Andere buurtbewoners oproepen om mee te doen.\\\"],\\\"switch_trigger\\\":\\\"De bewoner haalt uit een zak geen afval, maar genummerde enveloppen en plastic dinosaurusfiguren.\\\",\\\"hinge_event\\\":\\\"Hij legt bewust een opvallend plastic figuurtje naast een afvalbak als volgende aanwijzing.\\\",\\\"anomaly_under_a\\\":\\\"Bij een serieuze schoonmaakactie is het onbegrijpelijk en onverantwoord om zelf nieuw rommelachtig materiaal in het park neer te leggen.\\\",\\\"resolution_under_b\\\":\\\"Het figuurtje is geen achteloos weggegooid afval maar een tijdelijk, gecontroleerd speurelement; de afvalbak markeert de locatie waar kinderen de volgende envelop vinden.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een gezin voert thuis een noodgedwongen plaagdierbestrijding uit: het probeert een hardnekkige muizenplaag te stoppen die voedselvoorraden en bedrading aantast.\\\",\\\"opposition_axis\\\":\\\"Natuur beschermen versus ongedierte bestrijden\\\",\\\"opposed_proposition\\\":\\\"Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.\\\",\\\"shared_anchor\\\":\\\"Een gezinslid zet kleine bakjes en lokdozen langs de muur van de schuur.\\\",\\\"reading_a\\\":\\\"Het gezinslid plaatst opvangbakjes voor gescheiden afval of zaadbakjes om dieren veilig te helpen.\\\",\\\"reading_b\\\":\\\"Het gezinslid zet beveiligde muizenvallen en lokaasdozen neer.\\\",\\\"roles_b\\\":[\\\"Gezinsleden: beschermen huis, voedsel en bedrading.\\\",\\\"Muizen: veroorzaken schade en verspreiden mogelijk ziektekiemen.\\\",\\\"Ongediertebestrijder: adviseert over veilige bestrijding.\\\",\\\"Huisdieren: moeten tegen lokaas en vallen worden beschermd.\\\"],\\\"goal_b\\\":\\\"De muizenplaag doelgericht beëindigen zonder kinderen, huisdieren of andere dieren onnodig in gevaar te brengen.\\\",\\\"role_remapping\\\":[\\\"Burgers/huishoudens worden bewoners die hun woning verdedigen.\\\",\\\"Natuur wordt deels het plaagdier dat een directe bedreiging vormt.\\\",\\\"Bedrijven worden leverancier van vallen, afsluitmateriaal en bestrijdingsmiddelen.\\\",\\\"De gemeente wordt eventueel toezichthouder op hygiëne en afvalopslag.\\\"],\\\"shared_cues\\\":[\\\"Handschoenen dragen.\\\",\\\"Kieren inspecteren.\\\",\\\"Afval en etensresten opruimen.\\\",\\\"Kleine bakjes bij een muur plaatsen.\\\",\\\"Praten over dieren en voedselbronnen.\\\"],\\\"switch_trigger\\\":\\\"Een kind vraagt waarom er een pindakaasklokje in het bakje ligt, waarna de ouder zegt dat de muizen er vannacht in moeten lopen.\\\",\\\"hinge_event\\\":\\\"De bewoner klapt een muizenval dicht en controleert hem de volgende ochtend.\\\",\\\"anomaly_under_a\\\":\\\"Binnen een verhaal over zorg voor natuur oogt het vangen of doden van een dier als een botte aantasting van kwetsbaar leven.\\\",\\\"resolution_under_b\\\":\\\"De handeling dient hygiëne en veiligheid in huis; door vallen gericht en afgeschermd te gebruiken, voorkomt het gezin grotere schade en vermijdt het ongerichte gifverspreiding.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.\\\",\\\"opposition_axis\\\":\\\"Minder consumeren versus verkoop maximaliseren\\\",\\\"opposed_proposition\\\":\\\"Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.\\\",\\\"shared_anchor\\\":\\\"Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.\\\",\\\"reading_a\\\":\\\"De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.\\\",\\\"reading_b\\\":\\\"De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.\\\",\\\"roles_b\\\":[\\\"Winkelier: wil voorraad snel omzetten in omzet.\\\",\\\"Klanten: zoeken koopjes en reageren op tijdsdruk.\\\",\\\"Leverancier: wil ruimte maken voor een nieuwe collectie.\\\",\\\"Bezorgdienst: verwerkt de extra aankopen en retouren.\\\"],\\\"goal_b\\\":\\\"Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.\\\",\\\"role_remapping\\\":[\\\"Bedrijven worden de actieve verkoper en leverancier.\\\",\\\"Burgers/huishoudens worden koopjesjagers.\\\",\\\"Energielabels en productinformatie worden verkoopstickers en reclametaal.\\\",\\\"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\\\"],\\\"shared_cues\\\":[\\\"Producten vergelijken.\\\",\\\"Stickers op verpakkingen plakken.\\\",\\\"Spreken over besparen.\\\",\\\"Tassen vullen.\\\",\\\"Dozen en verpakkingen stapelen.\\\"],\\\"switch_trigger\\\":\\\"De sticker blijkt niet te zeggen \\\\\\\"zuinig\\\\\\\", maar \\\\\\\"tweede gratis: neem er drie\\\\\\\".\\\",\\\"hinge_event\\\":\\\"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\\\",\\\"anomaly_under_a\\\":\\\"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\\\",\\\"resolution_under_b\\\":\\\"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een gemeentelijke inspecteur bereidt een handhavingsactie voor tegen illegale afvaldumping en probeert de dader op heterdaad te betrappen, zonder de observatiepost te verraden.\\\",\\\"opposition_axis\\\":\\\"Openbare opruimzorg versus geheime opsporing\\\",\\\"opposed_proposition\\\":\\\"Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.\\\",\\\"shared_anchor\\\":\\\"Iemand staat vroeg bij een vuilniscontainer, noteert kentekens en maakt foto's van zakken.\\\",\\\"reading_a\\\":\\\"Een betrokken buurtbewoner documenteert afvalproblemen om een gezamenlijke schoonmaak- en verbeteractie te starten.\\\",\\\"reading_b\\\":\\\"Een inspecteur verzamelt bewijs voor een gerichte handhavingsactie tegen een illegale dumper.\\\",\\\"roles_b\\\":[\\\"Gemeentelijke inspecteur: verzamelt bewijs en handhaaft regels.\\\",\\\"Illegale dumper: probeert kosten of moeite van legale afvoer te vermijden.\\\",\\\"Gemeente: legt boetes op en organiseert legale inzameling.\\\",\\\"Buurtbewoners: kunnen getuigen zijn of onbedoeld de observatie verstoren.\\\"],\\\"goal_b\\\":\\\"De verantwoordelijke dumper identificeren en beboeten, zodat verdere illegale dumping stopt.\\\",\\\"role_remapping\\\":[\\\"Een burger wordt een inspecteur in burgerkleding.\\\",\\\"De overheid/gemeente wordt de opsporende en sanctionerende instantie.\\\",\\\"Bedrijven of huishoudens worden mogelijke overtreders.\\\",\\\"Afval wordt bewijsmateriaal in plaats van uitsluitend iets dat direct moet worden opgeruimd.\\\"],\\\"shared_cues\\\":[\\\"Vuilniszakken bekijken.\\\",\\\"Foto's maken van vervuiling.\\\",\\\"Kentekens noteren.\\\",\\\"Bij een container wachten.\\\",\\\"Met de gemeente bellen.\\\"],\\\"switch_trigger\\\":\\\"De persoon fluistert in een portofoon: \\\\\\\"De verdachte bestelbus rijdt nu het terrein op; nog niet ingrijpen.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De inspecteur laat een duidelijk verkeerd geplaatste afvalzak expres liggen en kijkt er urenlang naar zonder hem op te ruimen.\\\",\\\"anomaly_under_a\\\":\\\"Voor een verantwoordelijke buurtbewoner is het vreemd om zichtbaar zwerfafval niet meteen weg te halen, zeker wanneer hij er al met handschoenen en een camera naast staat.\\\",\\\"resolution_under_b\\\":\\\"De zak bevat een verborgen merkteken en werkt als lokaas: door hem te laten liggen kan de inspecteur vastleggen wie er later extra afval bij dumpt en zo de bron van herhaalde vervuiling aanpakken.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde scène kan eerst als opruimactie en later als voorbereiding van een speurtocht worden gelezen. De dominante tegenstelling is het behandelen van voorwerpen als te verwijderen afval versus als bewust geplaatste spelelementen. Handschoenen, zakken, oprapen en afvalbakken ondersteunen beide lezingen, terwijl de milieulezing aanvankelijk het meest voor de hand ligt. Het bewust neerleggen van een plastic figuurtje blokkeert de opruimfunctie, maar maakt de speurtochtfunctie juist mogelijk. De onthulling herkadert de eerdere handelingen als routevoorbereiding.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":false,\\\"anchor_supports_both\\\":false,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":false,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Plaagdierbestrijding is een herkenbare en coherente tweede lezing, en bakjes langs een muur, handschoenen en voedselbronnen kunnen daarop vooruitwijzen. De gedeelde ankerhandeling ondersteunt de milieulezing echter niet natuurlijk genoeg: opvangbakjes voor afvalscheiding of zaadbakjes zijn geen even directe verklaring voor kleine bakjes langs een schuurmuur. Bovendien zijn natuurbescherming en gerichte, veilige plaagdierbestrijding niet noodzakelijk lokaal onverenigbaar; bestrijding kan juist binnen verantwoord natuur- en gezondheidsbeheer passen. Daardoor ontbreekt één heldere, werkelijk tegengestelde as en is A niet duidelijk dominant.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De winkelsscène kan aanvankelijk gaan over het zichtbaar maken van zuinige of herbruikbare keuzes en later over agressieve verkoopbevordering. De centrale tegenstelling is helder: consumptie beperken versus consumptie maximaliseren. Stickers, producten vergelijken, besparen, tassen en verpakkingen dragen beide lezingen. De duurzaamheidslezing is in deze context eerst dominant, maar de kortingsboodschap houdt de verkooplezing latent beschikbaar. Het weggooien van een werkend apparaat is onder A onverklaarbare verspilling, maar onder B een doelbewust cynisch verkoopsignaal. Die verspilling blokkeert A's doel en ondersteunt B's verkoopdoel, terwijl eerdere productinformatie en stickers retrospectief reclame worden.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":false,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De ankerscène ondersteunt zowel een betrokken buurtbewoner die afval documenteert als een inspecteur die bewijs verzamelt. De inspecteurslezing is herkenbaar, blijft vóór de portofoononthulling mogelijk en verklaart waarom de afvalzak als lokaas blijft liggen. De onthulling herinterpreteert foto's, kentekens en wachten als opsporingswerk. Er is ook functionele omkering: de zak opruimen helpt de directe schoonmaakdoelstelling, maar laat liggen maakt observatie en handhaving mogelijk. Toch vormen openbare opruimzorg en geheime opsporing geen werkelijk incompatibele scripts op één as: beide dienen uiteindelijk het terugdringen van illegale dumping en milieuschade. Het betreft daarom vooral een verschil in methode, niet in tegengestelde scriptlogica.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B3\\\",\\\"rationale\\\":\\\"B3 biedt de scherpste, onderwerp-specifieke tegenstelling: de duurzame verwachting van minder en bewuster consumeren wordt rechtstreeks omgekeerd in een doelbewuste strategie van consumptie- en omzetmaximalisatie. De gedeelde winkelcues zijn compact en geloofwaardig onder beide lezingen, terwijl de kortingsformule en vooral het weggooien van een werkend apparaat een sterk scharnier vormen. Daardoor werkt de tweede lezing niet alleen als verrassing, maar herinterpreteert zij eerdere signalen—stickers, besparen, volle tassen en verpakkingen—retrospectief als verkoopdruk in plaats van duurzaamheid. Dit levert een duidelijke setup, sterke payoff en veel ruimte voor een cynische tweede betekenis op.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Minder consumeren versus verkoop maximaliseren\\\",\\\"logical_mechanism\\\":\\\"Herinterpretatie via een lexicale dubbelcue en omkering van doelgerichtheid: termen en handelingen die eerst als duurzaam besparen en productinformatie lezen, worden door de kortingssticker onthuld als verkoopdruk, schaarstemarketing en het maximaliseren van consumptie.\\\",\\\"situation\\\":\\\"In een winkel met seizoensartikelen plakt een winkelier grote stickers op producten, roept hij voorbijgangers naar binnen en vullen klanten tassen terwijl dozen en verpakkingen zich opstapelen. De winkelier wil oude voorraad snel verkopen voordat een nieuwe collectie arriveert; klanten reageren op koopjes en tijdsdruk, leveranciers willen ruimte maken en de bezorgdienst verwerkt extra aankopen en retouren.\\\",\\\"target\\\":\\\"Consumptiecultuur en agressieve schaarstemarketing die verkoop boven hergebruik en minder kopen stelt.\\\",\\\"narrative_strategy\\\":\\\"De opzet presenteert de winkelhandeling aanvankelijk als een verantwoordelijke keuzehulp: producten vergelijken, stickers lezen en besparen. De punchline onthult dat de stickers geen duurzaamheidsinformatie zijn maar een kwantumkorting, waarna het weggooien van een werkend apparaat de commerciële logica scherp zichtbaar maakt.\\\",\\\"lexical_anchor\\\":\\\"sticker\\\",\\\"supporting_dual_cues\\\":[\\\"Producten vergelijken.\\\",\\\"Stickers op verpakkingen plakken.\\\",\\\"Spreken over besparen.\\\",\\\"Tassen vullen.\\\",\\\"Dozen en verpakkingen stapelen.\\\"],\\\"switch_trigger\\\":\\\"De sticker blijkt niet te zeggen \\\\\\\"zuinig\\\\\\\", maar \\\\\\\"tweede gratis: neem er drie\\\\\\\".\\\",\\\"hinge_event\\\":\\\"De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.\\\",\\\"anomaly_under_a\\\":\\\"In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.\\\",\\\"resolution_under_b\\\":\\\"Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.\\\",\\\"role_remapping\\\":[\\\"Bedrijven worden de actieve verkoper en leverancier.\\\",\\\"Burgers/huishoudens worden koopjesjagers.\\\",\\\"Energielabels en productinformatie worden verkoopstickers en reclametaal.\\\",\\\"Afval en verpakking worden een logistiek neveneffect van hoge verkoop.\\\"],\\\"setup_goal\\\":\\\"Script A dominant maken door stickers, productvergelijking en spreken over besparen te framen als signalen van zuinige, verantwoorde consumptie.\\\",\\\"punch_goal\\\":\\\"Script B activeren door de sticker als kwantumkorting te onthullen en de winkelier te tonen als iemand die via tijdsdruk en zichtbaar verspillen maximale verkoop nastreeft.\\\",\\\"punch_final_word\\\":\\\"neem er drie\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen.\\\",\\\"punchline\\\":\\\"Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.\\\",\\\"full_text\\\":\\\"Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen. Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.\\\",\\\"angle\\\":\\\"Duurzaam winkeladvies verandert in een agressieve kwantumkorting.\\\",\\\"anchor_surface_form\\\":\\\"sticker\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart.\\\",\\\"punchline\\\":\\\"Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.\\\",\\\"full_text\\\":\\\"De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart. Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.\\\",\\\"angle\\\":\\\"Milieubewust vergelijken blijkt voorraad wegwerken onder tijdsdruk.\\\",\\\"anchor_surface_form\\\":\\\"sticker\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen.\\\",\\\"punchline\\\":\\\"Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.\\\",\\\"full_text\\\":\\\"Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen. Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.\\\",\\\"angle\\\":\\\"Groene winkelretoriek blijkt een verkooptruc voor een nieuwe collectie.\\\",\\\"anchor_surface_form\\\":\\\"sticker\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Duurzaam winkeladvies: klanten vergelijken producten, letten op besparen en nemen tassen mee om verantwoord te consumeren.\\\",\\\"realized_script_b\\\":\\\"Een winkelier jaagt extra verkoop aan met een kwantumkorting en gooit zelfs een werkende blender weg om consumptie van nieuwe producten te stimuleren.\\\",\\\"realized_opposition_axis\\\":\\\"Minder/verantwoord consumeren versus verkoop en consumptie maximaliseren.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De duurzame lezing wordt eerst expliciet opgebouwd en schakelt via de sticker precies naar de beoogde verkooplogica. De gedeelde cues (vergelijken, stickers, besparen en tassen) zijn aanwezig.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De woordelijke cue 'besparen' en vooral de sticker worden retrospectief herlezen als kortings- en verkoopdruk; de weggegooide blender maakt de cynische commerciële doelgerichtheid zichtbaar.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De winkelier, klanten, stickers, producten, tassen, afvalcontainer en een werkend apparaat realiseren de centrale winkelsituatie functioneel.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst richt zich functioneel op agressieve consumptieprikkels en verkoop boven hergebruik.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet presenteert duurzaam advies en de slotzin onthult de kwantumkorting, ondersteund door zichtbaar verspillen.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De lexicale spil 'sticker' en de vereiste onthulling 'tweede gratis: neem er drie' zijn behouden.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V1 volgt het beoogde script, de beoogde omkering en de geplande punchline vrijwel volledig; het is een begrijpelijke, spreekbare grap met een duidelijke onthulling.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Milieubewust winkelgedrag: producten zorgvuldig vergelijken en dozen voor hergebruik bewaren om verspilling te beperken.\\\",\\\"realized_script_b\\\":\\\"Een winkelier ruimt voorraad en oude modellen agressief op, gebruikt een kwantumkorting en stimuleert klanten om meer waterkokers te kopen.\\\",\\\"realized_opposition_axis\\\":\\\"Minder/verantwoord consumeren versus voorraad snel verkopen en consumptie maximaliseren.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De aanvankelijke milieulezing schakelt naar dezelfde beoogde verkooplogica wanneer de sticker als 'tweede gratis: neem er drie' wordt onthuld. Vergelijken, stickers en hergebruik vormen voldoende gedeelde cues.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De kortingssticker herkadert het eerdere spreken over vergelijken en milieu; het wegsmijten van een werkend oud model ondersteunt de commerciële, verspilling toelatende logica.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De winkelcontext, winkelier, stickers, dozen, waterkokers, oude voorraad en afvalhandeling zijn functioneel aanwezig, hoewel enkele geplande nevenrollen ontbreken.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De grap viseert voorraadwegwerken en verkoopdruk die hergebruik en minder kopen ondergeschikt maken.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Een milieubewuste setup wordt gevolgd door een zichtbare verspilling en de kortingsonthulling als punch.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De sticker is de lexicale schakel en de geplande formulering van de kwantumkorting wordt letterlijk gerealiseerd.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V2 behoudt de geplande duurzame schijn, stickeronthulling en verkoopgerichte herinterpretatie. De situatie is iets minder rijk uitgewerkt dan het plan, maar de vereiste functies blijven intact.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"De verteller ziet de winkelier aanvankelijk als een groene, zuinige winkelier die klanten helpt besparen, stickers lezen en herbruikbare tassen vullen.\\\",\\\"realized_script_b\\\":\\\"De winkelier blijkt een nieuwe lijn te willen verkopen: hij gooit een werkende airfryer weg en gebruikt de sticker voor een kwantumkorting.\\\",\\\"realized_opposition_axis\\\":\\\"Minder/verantwoord consumeren versus verkoop en consumptie maximaliseren.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bouwt de groene lezing dominant op en onthult exact de beoogde alternatieve lezing: verkoopdruk rond een nieuwe collectie, met een kwantumkorting als switch.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"'Besparen', stickers en herbruikbare tassen worden door de slottekst herinterpreteerbaar als verkoopretoriek; het weggooien van de werkende airfryer concretiseert de omgekeerde doelgerichtheid.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Winkelier, klanten, herbruikbare tassen, sticker, werkend keukenapparaat en nieuwe productlijn realiseren de kernsituatie.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De winkelier staat voor de beoogde consumptiecultuur en schaarste- of kortingsmarketing die nieuwe verkoop boven hergebruik stelt.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De eerste zin positioneert de winkelier als groene held; de airfryer en de stickeronthulling vormen vervolgens de geplande scherpe omslag.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De sticker fungeert als expliciete lexicale hinge en de slotformule 'tweede gratis: neem er drie' is behouden.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V3 is een directe en functionele realisatie van het plan: groene winkelretoriek wordt via de sticker en het weggooien van een werkend apparaat ontmaskerd als verkoopstrategie.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengte-eis en realiseren alle vereiste middelen. V1 heeft rijkere, beter verbonden duurzame cues en een scherpere herlezing via „niet zuinig, maar tweede gratis”; V2 bevat de wat minder natuurlijke formulering dat waterkokers „bijna weg zijn”.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide zijn spreekbare grappen met een duidelijke omslag en dezelfde sterke stickeronthulling. V1 bouwt de duurzame winkelrol concreter op met vergelijken, besparen en tassen, waarna de weggegooide blender de commerciële logica sterker en verrassender blootlegt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide behouden de vereiste scripts, situatie en punchline. V3 is bondiger, helderder en natuurlijker performbaar: de groene-heldopzet, de weggegooide werkende airfryer en de nieuwe lijn maken de omslag directer dan V2’s voorraadformulering.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste volledig geslaagde variant: hij benut de meeste duurzame aanknopingspunten, maakt de retrospectieve herinterpretatie het duidelijkst en levert de kwantumkorting als de scherpste gesproken punchline.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een buurtbewoner bereidt geen opruimactie voor, maar een geheime speurtocht voor kinderen waarbij hij aanwijzingen in de wijk verstopt en deelnemers via afvalbakken naar de volgende locatie leidt.",
+        "candidate_id": "B1",
+        "opposition_axis": "Milieubescherming versus spelorganisatie",
+        "opposed_expectation": "Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.",
+        "roles_b": [
+          "Spelleider: ontwerpt en verstopt de route.",
+          "Kinderen: zoeken aanwijzingen en volgen opdrachten.",
+          "Ouders: begeleiden de deelnemers.",
+          "Parkbeheerder: moet toestemming geven voor het gebruik van het park."
+        ],
+        "goal_b": "Een spannende, ordelijke speurtocht organiseren zonder dat deelnemers de route voortijdig ontdekken.",
+        "role_remapping": [
+          "Burgers/huishoudens worden spelleider, kinderen en begeleidende ouders.",
+          "Gemeente wordt parkbeheerder of vergunningverlener.",
+          "Afvalbakken en inzamelpunten worden herkenbare routepunten.",
+          "De natuur wordt een decor en parcours in plaats van primair een kwetsbaar slachtoffer."
+        ],
+        "shared_cues": [
+          "Handschoenen aantrekken.",
+          "Met een zak door het gras lopen.",
+          "Naar afvalbakken wijzen.",
+          "Voorwerpen van de grond oprapen.",
+          "Andere buurtbewoners oproepen om mee te doen."
+        ],
+        "switch_trigger": "De bewoner haalt uit een zak geen afval, maar genummerde enveloppen en plastic dinosaurusfiguren.",
+        "hinge_event": "Hij legt bewust een opvallend plastic figuurtje naast een afvalbak als volgende aanwijzing.",
+        "anomaly_under_a": "Bij een serieuze schoonmaakactie is het onbegrijpelijk en onverantwoord om zelf nieuw rommelachtig materiaal in het park neer te leggen.",
+        "resolution_under_b": "Het figuurtje is geen achteloos weggegooid afval maar een tijdelijk, gecontroleerd speurelement; de afvalbak markeert de locatie waar kinderen de volgende envelop vinden.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een gezin voert thuis een noodgedwongen plaagdierbestrijding uit: het probeert een hardnekkige muizenplaag te stoppen die voedselvoorraden en bedrading aantast.",
+        "candidate_id": "B2",
+        "opposition_axis": "Natuur beschermen versus ongedierte bestrijden",
+        "opposed_expectation": "Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.",
+        "roles_b": [
+          "Gezinsleden: beschermen huis, voedsel en bedrading.",
+          "Muizen: veroorzaken schade en verspreiden mogelijk ziektekiemen.",
+          "Ongediertebestrijder: adviseert over veilige bestrijding.",
+          "Huisdieren: moeten tegen lokaas en vallen worden beschermd."
+        ],
+        "goal_b": "De muizenplaag doelgericht beëindigen zonder kinderen, huisdieren of andere dieren onnodig in gevaar te brengen.",
+        "role_remapping": [
+          "Burgers/huishoudens worden bewoners die hun woning verdedigen.",
+          "Natuur wordt deels het plaagdier dat een directe bedreiging vormt.",
+          "Bedrijven worden leverancier van vallen, afsluitmateriaal en bestrijdingsmiddelen.",
+          "De gemeente wordt eventueel toezichthouder op hygiëne en afvalopslag."
+        ],
+        "shared_cues": [
+          "Handschoenen dragen.",
+          "Kieren inspecteren.",
+          "Afval en etensresten opruimen.",
+          "Kleine bakjes bij een muur plaatsen.",
+          "Praten over dieren en voedselbronnen."
+        ],
+        "switch_trigger": "Een kind vraagt waarom er een pindakaasklokje in het bakje ligt, waarna de ouder zegt dat de muizen er vannacht in moeten lopen.",
+        "hinge_event": "De bewoner klapt een muizenval dicht en controleert hem de volgende ochtend.",
+        "anomaly_under_a": "Binnen een verhaal over zorg voor natuur oogt het vangen of doden van een dier als een botte aantasting van kwetsbaar leven.",
+        "resolution_under_b": "De handeling dient hygiëne en veiligheid in huis; door vallen gericht en afgeschermd te gebruiken, voorkomt het gezin grotere schade en vermijdt het ongerichte gifverspreiding.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.",
+        "candidate_id": "B3",
+        "opposition_axis": "Minder consumeren versus verkoop maximaliseren",
+        "opposed_expectation": "Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.",
+        "roles_b": [
+          "Winkelier: wil voorraad snel omzetten in omzet.",
+          "Klanten: zoeken koopjes en reageren op tijdsdruk.",
+          "Leverancier: wil ruimte maken voor een nieuwe collectie.",
+          "Bezorgdienst: verwerkt de extra aankopen en retouren."
+        ],
+        "goal_b": "Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.",
+        "role_remapping": [
+          "Bedrijven worden de actieve verkoper en leverancier.",
+          "Burgers/huishoudens worden koopjesjagers.",
+          "Energielabels en productinformatie worden verkoopstickers en reclametaal.",
+          "Afval en verpakking worden een logistiek neveneffect van hoge verkoop."
+        ],
+        "shared_cues": [
+          "Producten vergelijken.",
+          "Stickers op verpakkingen plakken.",
+          "Spreken over besparen.",
+          "Tassen vullen.",
+          "Dozen en verpakkingen stapelen."
+        ],
+        "switch_trigger": "De sticker blijkt niet te zeggen \"zuinig\", maar \"tweede gratis: neem er drie\".",
+        "hinge_event": "De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.",
+        "anomaly_under_a": "In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.",
+        "resolution_under_b": "Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een gemeentelijke inspecteur bereidt een handhavingsactie voor tegen illegale afvaldumping en probeert de dader op heterdaad te betrappen, zonder de observatiepost te verraden.",
+        "candidate_id": "B4",
+        "opposition_axis": "Openbare opruimzorg versus geheime opsporing",
+        "opposed_expectation": "Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.",
+        "roles_b": [
+          "Gemeentelijke inspecteur: verzamelt bewijs en handhaaft regels.",
+          "Illegale dumper: probeert kosten of moeite van legale afvoer te vermijden.",
+          "Gemeente: legt boetes op en organiseert legale inzameling.",
+          "Buurtbewoners: kunnen getuigen zijn of onbedoeld de observatie verstoren."
+        ],
+        "goal_b": "De verantwoordelijke dumper identificeren en beboeten, zodat verdere illegale dumping stopt.",
+        "role_remapping": [
+          "Een burger wordt een inspecteur in burgerkleding.",
+          "De overheid/gemeente wordt de opsporende en sanctionerende instantie.",
+          "Bedrijven of huishoudens worden mogelijke overtreders.",
+          "Afval wordt bewijsmateriaal in plaats van uitsluitend iets dat direct moet worden opgeruimd."
+        ],
+        "shared_cues": [
+          "Vuilniszakken bekijken.",
+          "Foto's maken van vervuiling.",
+          "Kentekens noteren.",
+          "Bij een container wachten.",
+          "Met de gemeente bellen."
+        ],
+        "switch_trigger": "De persoon fluistert in een portofoon: \"De verdachte bestelbus rijdt nu het terrein op; nog niet ingrijpen.\"",
+        "hinge_event": "De inspecteur laat een duidelijk verkeerd geplaatste afvalzak expres liggen en kijkt er urenlang naar zonder hem op te ruimen.",
+        "anomaly_under_a": "Voor een verantwoordelijke buurtbewoner is het vreemd om zichtbaar zwerfafval niet meteen weg te halen, zeker wanneer hij er al met handschoenen en een camera naast staat.",
+        "resolution_under_b": "De zak bevat een verborgen merkteken en werkt als lokaas: door hem te laten liggen kan de inspecteur vastleggen wie er later extra afval bij dumpt en zo de bron van herhaalde vervuiling aanpakken.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B3 biedt de scherpste, onderwerp-specifieke tegenstelling: de duurzame verwachting van minder en bewuster consumeren wordt rechtstreeks omgekeerd in een doelbewuste strategie van consumptie- en omzetmaximalisatie. De gedeelde winkelcues zijn compact en geloofwaardig onder beide lezingen, terwijl de kortingsformule en vooral het weggooien van een werkend apparaat een sterk scharnier vormen. Daardoor werkt de tweede lezing niet alleen als verrassing, maar herinterpreteert zij eerdere signalen—stickers, besparen, volle tassen en verpakkingen—retrospectief als verkoopdruk in plaats van duurzaamheid. Dit levert een duidelijke setup, sterke payoff en veel ruimte voor een cynische tweede betekenis op.",
+    "variants": [
+      {
+        "text": "Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen. Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.",
+        "angle": "Duurzaam winkeladvies verandert in een agressieve kwantumkorting."
+      },
+      {
+        "text": "De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart. Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.",
+        "angle": "Milieubewust vergelijken blijkt voorraad wegwerken onder tijdsdruk."
+      },
+      {
+        "text": "Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen. Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.",
+        "angle": "Groene winkelretoriek blijkt een verkooptruc voor een nieuwe collectie."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 16869,
+      "output_tokens": 8464,
+      "total_tokens": 25333
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Een gezin of buurtbewoner wil verantwoord omgaan met klimaat, milieu en natuur door afval te verminderen, energie te besparen en de leefomgeving schoon en groen te houden.",
+          "participants_and_roles": [
+            "Burgers/huishoudens: maken dagelijkse keuzes over energie, vervoer, consumptie en afval.",
+            "Overheid/gemeente: stelt regels, organiseert inzameling en onderhoudt de openbare ruimte.",
+            "Bedrijven: produceren goederen en horen hun uitstoot, verpakkingen en afval te beperken.",
+            "Natuur en toekomstige generaties: ondervinden de gevolgen van menselijk gedrag, maar kunnen niet zelf ingrijpen."
+          ],
+          "apparent_goal": "De schade aan klimaat en milieu beperken en een gezonde, leefbare natuurlijke omgeving behouden.",
+          "preconditions": [
+            "Er is kennis of ten minste een algemeen besef dat uitstoot, afval en overconsumptie schadelijke gevolgen kunnen hebben.",
+            "Er zijn praktische alternatieven beschikbaar, zoals afvalscheiding, hergebruik, openbaar vervoer, isolatie en zuinige apparaten.",
+            "Deelnemers zijn bereid enig gemak, tijd of geld te investeren voor een duurzamere keuze.",
+            "Er bestaan voorzieningen en regels, zoals afvalbakken, recyclingpunten, energielabels en milieubeleid."
+          ],
+          "expected_actions": [
+            "Afval scheiden, minder wegwerpplastic gebruiken en spullen hergebruiken of repareren.",
+            "Energie en water besparen, bijvoorbeeld door korter te douchen, lichten uit te doen en woningen te isoleren.",
+            "Duurzamer reizen, bijvoorbeeld lopen, fietsen, openbaar vervoer gebruiken of ritten combineren.",
+            "Bewust consumeren: minder kopen, lokaal of seizoensgebonden kiezen en verspilling voorkomen.",
+            "Natuur respecteren door geen afval achter te laten en dieren, planten en kwetsbare gebieden met rust te laten."
+          ],
+          "expected_outcome": "Minder uitstoot en vervuiling, minder verspilling van grondstoffen en een schonere, groenere leefomgeving die ook op lange termijn bewoonbaar blijft.",
+          "expected_propositions": [
+            "Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.",
+            "Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.",
+            "Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.",
+            "Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.",
+            "Duurzaam handelen vraagt soms extra moeite, maar geldt als verantwoordelijk en sociaal gedrag."
+          ],
+          "audience_expectation": "Een opzet rond dit onderwerp activeert de herkenbare verwachting dat verstandige mensen hun dagelijkse gedrag aanpassen om vervuiling en klimaatproblemen te beperken, ook wanneer dat minder gemakkelijk of goedkoper is."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een buurtbewoner bereidt geen opruimactie voor, maar een geheime speurtocht voor kinderen waarbij hij aanwijzingen in de wijk verstopt en deelnemers via afvalbakken naar de volgende locatie leidt.",
+            "opposition_axis": "Milieubescherming versus spelorganisatie",
+            "opposed_proposition": "Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.",
+            "shared_anchor": "Een bewoner loopt met zakken en handschoenen door het park.",
+            "reading_a": "De bewoner raapt zwerfafval op om het park schoon te maken.",
+            "reading_b": "De bewoner zet spelmateriaal en gecodeerde aanwijzingen klaar voor een speurtocht.",
+            "roles_b": [
+              "Spelleider: ontwerpt en verstopt de route.",
+              "Kinderen: zoeken aanwijzingen en volgen opdrachten.",
+              "Ouders: begeleiden de deelnemers.",
+              "Parkbeheerder: moet toestemming geven voor het gebruik van het park."
+            ],
+            "goal_b": "Een spannende, ordelijke speurtocht organiseren zonder dat deelnemers de route voortijdig ontdekken.",
+            "role_remapping": [
+              "Burgers/huishoudens worden spelleider, kinderen en begeleidende ouders.",
+              "Gemeente wordt parkbeheerder of vergunningverlener.",
+              "Afvalbakken en inzamelpunten worden herkenbare routepunten.",
+              "De natuur wordt een decor en parcours in plaats van primair een kwetsbaar slachtoffer."
+            ],
+            "shared_cues": [
+              "Handschoenen aantrekken.",
+              "Met een zak door het gras lopen.",
+              "Naar afvalbakken wijzen.",
+              "Voorwerpen van de grond oprapen.",
+              "Andere buurtbewoners oproepen om mee te doen."
+            ],
+            "switch_trigger": "De bewoner haalt uit een zak geen afval, maar genummerde enveloppen en plastic dinosaurusfiguren.",
+            "hinge_event": "Hij legt bewust een opvallend plastic figuurtje naast een afvalbak als volgende aanwijzing.",
+            "anomaly_under_a": "Bij een serieuze schoonmaakactie is het onbegrijpelijk en onverantwoord om zelf nieuw rommelachtig materiaal in het park neer te leggen.",
+            "resolution_under_b": "Het figuurtje is geen achteloos weggegooid afval maar een tijdelijk, gecontroleerd speurelement; de afvalbak markeert de locatie waar kinderen de volgende envelop vinden."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een gezin voert thuis een noodgedwongen plaagdierbestrijding uit: het probeert een hardnekkige muizenplaag te stoppen die voedselvoorraden en bedrading aantast.",
+            "opposition_axis": "Natuur beschermen versus ongedierte bestrijden",
+            "opposed_proposition": "Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.",
+            "shared_anchor": "Een gezinslid zet kleine bakjes en lokdozen langs de muur van de schuur.",
+            "reading_a": "Het gezinslid plaatst opvangbakjes voor gescheiden afval of zaadbakjes om dieren veilig te helpen.",
+            "reading_b": "Het gezinslid zet beveiligde muizenvallen en lokaasdozen neer.",
+            "roles_b": [
+              "Gezinsleden: beschermen huis, voedsel en bedrading.",
+              "Muizen: veroorzaken schade en verspreiden mogelijk ziektekiemen.",
+              "Ongediertebestrijder: adviseert over veilige bestrijding.",
+              "Huisdieren: moeten tegen lokaas en vallen worden beschermd."
+            ],
+            "goal_b": "De muizenplaag doelgericht beëindigen zonder kinderen, huisdieren of andere dieren onnodig in gevaar te brengen.",
+            "role_remapping": [
+              "Burgers/huishoudens worden bewoners die hun woning verdedigen.",
+              "Natuur wordt deels het plaagdier dat een directe bedreiging vormt.",
+              "Bedrijven worden leverancier van vallen, afsluitmateriaal en bestrijdingsmiddelen.",
+              "De gemeente wordt eventueel toezichthouder op hygiëne en afvalopslag."
+            ],
+            "shared_cues": [
+              "Handschoenen dragen.",
+              "Kieren inspecteren.",
+              "Afval en etensresten opruimen.",
+              "Kleine bakjes bij een muur plaatsen.",
+              "Praten over dieren en voedselbronnen."
+            ],
+            "switch_trigger": "Een kind vraagt waarom er een pindakaasklokje in het bakje ligt, waarna de ouder zegt dat de muizen er vannacht in moeten lopen.",
+            "hinge_event": "De bewoner klapt een muizenval dicht en controleert hem de volgende ochtend.",
+            "anomaly_under_a": "Binnen een verhaal over zorg voor natuur oogt het vangen of doden van een dier als een botte aantasting van kwetsbaar leven.",
+            "resolution_under_b": "De handeling dient hygiëne en veiligheid in huis; door vallen gericht en afgeschermd te gebruiken, voorkomt het gezin grotere schade en vermijdt het ongerichte gifverspreiding."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.",
+            "opposition_axis": "Minder consumeren versus verkoop maximaliseren",
+            "opposed_proposition": "Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.",
+            "shared_anchor": "Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.",
+            "reading_a": "De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.",
+            "reading_b": "De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.",
+            "roles_b": [
+              "Winkelier: wil voorraad snel omzetten in omzet.",
+              "Klanten: zoeken koopjes en reageren op tijdsdruk.",
+              "Leverancier: wil ruimte maken voor een nieuwe collectie.",
+              "Bezorgdienst: verwerkt de extra aankopen en retouren."
+            ],
+            "goal_b": "Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.",
+            "role_remapping": [
+              "Bedrijven worden de actieve verkoper en leverancier.",
+              "Burgers/huishoudens worden koopjesjagers.",
+              "Energielabels en productinformatie worden verkoopstickers en reclametaal.",
+              "Afval en verpakking worden een logistiek neveneffect van hoge verkoop."
+            ],
+            "shared_cues": [
+              "Producten vergelijken.",
+              "Stickers op verpakkingen plakken.",
+              "Spreken over besparen.",
+              "Tassen vullen.",
+              "Dozen en verpakkingen stapelen."
+            ],
+            "switch_trigger": "De sticker blijkt niet te zeggen \"zuinig\", maar \"tweede gratis: neem er drie\".",
+            "hinge_event": "De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.",
+            "anomaly_under_a": "In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.",
+            "resolution_under_b": "Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een gemeentelijke inspecteur bereidt een handhavingsactie voor tegen illegale afvaldumping en probeert de dader op heterdaad te betrappen, zonder de observatiepost te verraden.",
+            "opposition_axis": "Openbare opruimzorg versus geheime opsporing",
+            "opposed_proposition": "Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.",
+            "shared_anchor": "Iemand staat vroeg bij een vuilniscontainer, noteert kentekens en maakt foto's van zakken.",
+            "reading_a": "Een betrokken buurtbewoner documenteert afvalproblemen om een gezamenlijke schoonmaak- en verbeteractie te starten.",
+            "reading_b": "Een inspecteur verzamelt bewijs voor een gerichte handhavingsactie tegen een illegale dumper.",
+            "roles_b": [
+              "Gemeentelijke inspecteur: verzamelt bewijs en handhaaft regels.",
+              "Illegale dumper: probeert kosten of moeite van legale afvoer te vermijden.",
+              "Gemeente: legt boetes op en organiseert legale inzameling.",
+              "Buurtbewoners: kunnen getuigen zijn of onbedoeld de observatie verstoren."
+            ],
+            "goal_b": "De verantwoordelijke dumper identificeren en beboeten, zodat verdere illegale dumping stopt.",
+            "role_remapping": [
+              "Een burger wordt een inspecteur in burgerkleding.",
+              "De overheid/gemeente wordt de opsporende en sanctionerende instantie.",
+              "Bedrijven of huishoudens worden mogelijke overtreders.",
+              "Afval wordt bewijsmateriaal in plaats van uitsluitend iets dat direct moet worden opgeruimd."
+            ],
+            "shared_cues": [
+              "Vuilniszakken bekijken.",
+              "Foto's maken van vervuiling.",
+              "Kentekens noteren.",
+              "Bij een container wachten.",
+              "Met de gemeente bellen."
+            ],
+            "switch_trigger": "De persoon fluistert in een portofoon: \"De verdachte bestelbus rijdt nu het terrein op; nog niet ingrijpen.\"",
+            "hinge_event": "De inspecteur laat een duidelijk verkeerd geplaatste afvalzak expres liggen en kijkt er urenlang naar zonder hem op te ruimen.",
+            "anomaly_under_a": "Voor een verantwoordelijke buurtbewoner is het vreemd om zichtbaar zwerfafval niet meteen weg te halen, zeker wanneer hij er al met handschoenen en een camera naast staat.",
+            "resolution_under_b": "De zak bevat een verborgen merkteken en werkt als lokaas: door hem te laten liggen kan de inspecteur vastleggen wie er later extra afval bij dumpt en zo de bron van herhaalde vervuiling aanpakken."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een buurtbewoner bereidt geen opruimactie voor, maar een geheime speurtocht voor kinderen waarbij hij aanwijzingen in de wijk verstopt en deelnemers via afvalbakken naar de volgende locatie leidt.",
+              "opposition_axis": "Milieubescherming versus spelorganisatie",
+              "opposed_proposition": "Afval hoort in de juiste bak of bij een inzamelpunt, niet op straat of in de natuur.",
+              "shared_anchor": "Een bewoner loopt met zakken en handschoenen door het park.",
+              "reading_a": "De bewoner raapt zwerfafval op om het park schoon te maken.",
+              "reading_b": "De bewoner zet spelmateriaal en gecodeerde aanwijzingen klaar voor een speurtocht.",
+              "roles_b": [
+                "Spelleider: ontwerpt en verstopt de route.",
+                "Kinderen: zoeken aanwijzingen en volgen opdrachten.",
+                "Ouders: begeleiden de deelnemers.",
+                "Parkbeheerder: moet toestemming geven voor het gebruik van het park."
+              ],
+              "goal_b": "Een spannende, ordelijke speurtocht organiseren zonder dat deelnemers de route voortijdig ontdekken.",
+              "role_remapping": [
+                "Burgers/huishoudens worden spelleider, kinderen en begeleidende ouders.",
+                "Gemeente wordt parkbeheerder of vergunningverlener.",
+                "Afvalbakken en inzamelpunten worden herkenbare routepunten.",
+                "De natuur wordt een decor en parcours in plaats van primair een kwetsbaar slachtoffer."
+              ],
+              "shared_cues": [
+                "Handschoenen aantrekken.",
+                "Met een zak door het gras lopen.",
+                "Naar afvalbakken wijzen.",
+                "Voorwerpen van de grond oprapen.",
+                "Andere buurtbewoners oproepen om mee te doen."
+              ],
+              "switch_trigger": "De bewoner haalt uit een zak geen afval, maar genummerde enveloppen en plastic dinosaurusfiguren.",
+              "hinge_event": "Hij legt bewust een opvallend plastic figuurtje naast een afvalbak als volgende aanwijzing.",
+              "anomaly_under_a": "Bij een serieuze schoonmaakactie is het onbegrijpelijk en onverantwoord om zelf nieuw rommelachtig materiaal in het park neer te leggen.",
+              "resolution_under_b": "Het figuurtje is geen achteloos weggegooid afval maar een tijdelijk, gecontroleerd speurelement; de afvalbak markeert de locatie waar kinderen de volgende envelop vinden."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een gezin voert thuis een noodgedwongen plaagdierbestrijding uit: het probeert een hardnekkige muizenplaag te stoppen die voedselvoorraden en bedrading aantast.",
+              "opposition_axis": "Natuur beschermen versus ongedierte bestrijden",
+              "opposed_proposition": "Natuur is kwetsbaar en moet worden beschermd tegen vervuiling en aantasting.",
+              "shared_anchor": "Een gezinslid zet kleine bakjes en lokdozen langs de muur van de schuur.",
+              "reading_a": "Het gezinslid plaatst opvangbakjes voor gescheiden afval of zaadbakjes om dieren veilig te helpen.",
+              "reading_b": "Het gezinslid zet beveiligde muizenvallen en lokaasdozen neer.",
+              "roles_b": [
+                "Gezinsleden: beschermen huis, voedsel en bedrading.",
+                "Muizen: veroorzaken schade en verspreiden mogelijk ziektekiemen.",
+                "Ongediertebestrijder: adviseert over veilige bestrijding.",
+                "Huisdieren: moeten tegen lokaas en vallen worden beschermd."
+              ],
+              "goal_b": "De muizenplaag doelgericht beëindigen zonder kinderen, huisdieren of andere dieren onnodig in gevaar te brengen.",
+              "role_remapping": [
+                "Burgers/huishoudens worden bewoners die hun woning verdedigen.",
+                "Natuur wordt deels het plaagdier dat een directe bedreiging vormt.",
+                "Bedrijven worden leverancier van vallen, afsluitmateriaal en bestrijdingsmiddelen.",
+                "De gemeente wordt eventueel toezichthouder op hygiëne en afvalopslag."
+              ],
+              "shared_cues": [
+                "Handschoenen dragen.",
+                "Kieren inspecteren.",
+                "Afval en etensresten opruimen.",
+                "Kleine bakjes bij een muur plaatsen.",
+                "Praten over dieren en voedselbronnen."
+              ],
+              "switch_trigger": "Een kind vraagt waarom er een pindakaasklokje in het bakje ligt, waarna de ouder zegt dat de muizen er vannacht in moeten lopen.",
+              "hinge_event": "De bewoner klapt een muizenval dicht en controleert hem de volgende ochtend.",
+              "anomaly_under_a": "Binnen een verhaal over zorg voor natuur oogt het vangen of doden van een dier als een botte aantasting van kwetsbaar leven.",
+              "resolution_under_b": "De handeling dient hygiëne en veiligheid in huis; door vallen gericht en afgeschermd te gebruiken, voorkomt het gezin grotere schade en vermijdt het ongerichte gifverspreiding."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een winkelier organiseert een uitverkoop en probeert klanten juist tot snelle, extra consumptie te verleiden voordat een partij seizoensartikelen uit het assortiment verdwijnt.",
+              "opposition_axis": "Minder consumeren versus verkoop maximaliseren",
+              "opposed_proposition": "Wie bewust met energie en spullen omgaat, veroorzaakt minder milieuschade.",
+              "shared_anchor": "Een winkelier plakt grote stickers op producten en roept voorbijgangers naar binnen.",
+              "reading_a": "De winkelier markeert zuinige of herbruikbare producten om verantwoorde keuzes zichtbaar te maken.",
+              "reading_b": "De winkelier gebruikt kortingsstickers en schaarsteslogans om een koopgolf te creëren.",
+              "roles_b": [
+                "Winkelier: wil voorraad snel omzetten in omzet.",
+                "Klanten: zoeken koopjes en reageren op tijdsdruk.",
+                "Leverancier: wil ruimte maken voor een nieuwe collectie.",
+                "Bezorgdienst: verwerkt de extra aankopen en retouren."
+              ],
+              "goal_b": "Zo veel mogelijk artikelen verkopen voordat de voorraad moet worden afgeboekt of plaats moet maken voor nieuwe producten.",
+              "role_remapping": [
+                "Bedrijven worden de actieve verkoper en leverancier.",
+                "Burgers/huishoudens worden koopjesjagers.",
+                "Energielabels en productinformatie worden verkoopstickers en reclametaal.",
+                "Afval en verpakking worden een logistiek neveneffect van hoge verkoop."
+              ],
+              "shared_cues": [
+                "Producten vergelijken.",
+                "Stickers op verpakkingen plakken.",
+                "Spreken over besparen.",
+                "Tassen vullen.",
+                "Dozen en verpakkingen stapelen."
+              ],
+              "switch_trigger": "De sticker blijkt niet te zeggen \"zuinig\", maar \"tweede gratis: neem er drie\".",
+              "hinge_event": "De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.",
+              "anomaly_under_a": "In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.",
+              "resolution_under_b": "Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een gemeentelijke inspecteur bereidt een handhavingsactie voor tegen illegale afvaldumping en probeert de dader op heterdaad te betrappen, zonder de observatiepost te verraden.",
+              "opposition_axis": "Openbare opruimzorg versus geheime opsporing",
+              "opposed_proposition": "Kleine duurzame handelingen van veel mensen kunnen samen een merkbaar verschil maken.",
+              "shared_anchor": "Iemand staat vroeg bij een vuilniscontainer, noteert kentekens en maakt foto's van zakken.",
+              "reading_a": "Een betrokken buurtbewoner documenteert afvalproblemen om een gezamenlijke schoonmaak- en verbeteractie te starten.",
+              "reading_b": "Een inspecteur verzamelt bewijs voor een gerichte handhavingsactie tegen een illegale dumper.",
+              "roles_b": [
+                "Gemeentelijke inspecteur: verzamelt bewijs en handhaaft regels.",
+                "Illegale dumper: probeert kosten of moeite van legale afvoer te vermijden.",
+                "Gemeente: legt boetes op en organiseert legale inzameling.",
+                "Buurtbewoners: kunnen getuigen zijn of onbedoeld de observatie verstoren."
+              ],
+              "goal_b": "De verantwoordelijke dumper identificeren en beboeten, zodat verdere illegale dumping stopt.",
+              "role_remapping": [
+                "Een burger wordt een inspecteur in burgerkleding.",
+                "De overheid/gemeente wordt de opsporende en sanctionerende instantie.",
+                "Bedrijven of huishoudens worden mogelijke overtreders.",
+                "Afval wordt bewijsmateriaal in plaats van uitsluitend iets dat direct moet worden opgeruimd."
+              ],
+              "shared_cues": [
+                "Vuilniszakken bekijken.",
+                "Foto's maken van vervuiling.",
+                "Kentekens noteren.",
+                "Bij een container wachten.",
+                "Met de gemeente bellen."
+              ],
+              "switch_trigger": "De persoon fluistert in een portofoon: \"De verdachte bestelbus rijdt nu het terrein op; nog niet ingrijpen.\"",
+              "hinge_event": "De inspecteur laat een duidelijk verkeerd geplaatste afvalzak expres liggen en kijkt er urenlang naar zonder hem op te ruimen.",
+              "anomaly_under_a": "Voor een verantwoordelijke buurtbewoner is het vreemd om zichtbaar zwerfafval niet meteen weg te halen, zeker wanneer hij er al met handschoenen en een camera naast staat.",
+              "resolution_under_b": "De zak bevat een verborgen merkteken en werkt als lokaas: door hem te laten liggen kan de inspecteur vastleggen wie er later extra afval bij dumpt en zo de bron van herhaalde vervuiling aanpakken."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde scène kan eerst als opruimactie en later als voorbereiding van een speurtocht worden gelezen. De dominante tegenstelling is het behandelen van voorwerpen als te verwijderen afval versus als bewust geplaatste spelelementen. Handschoenen, zakken, oprapen en afvalbakken ondersteunen beide lezingen, terwijl de milieulezing aanvankelijk het meest voor de hand ligt. Het bewust neerleggen van een plastic figuurtje blokkeert de opruimfunctie, maar maakt de speurtochtfunctie juist mogelijk. De onthulling herkadert de eerdere handelingen als routevoorbereiding."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": false,
+            "anchor_supports_both": false,
+            "recognizable_second_reading": true,
+            "setup_dominance": false,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Plaagdierbestrijding is een herkenbare en coherente tweede lezing, en bakjes langs een muur, handschoenen en voedselbronnen kunnen daarop vooruitwijzen. De gedeelde ankerhandeling ondersteunt de milieulezing echter niet natuurlijk genoeg: opvangbakjes voor afvalscheiding of zaadbakjes zijn geen even directe verklaring voor kleine bakjes langs een schuurmuur. Bovendien zijn natuurbescherming en gerichte, veilige plaagdierbestrijding niet noodzakelijk lokaal onverenigbaar; bestrijding kan juist binnen verantwoord natuur- en gezondheidsbeheer passen. Daardoor ontbreekt één heldere, werkelijk tegengestelde as en is A niet duidelijk dominant."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De winkelsscène kan aanvankelijk gaan over het zichtbaar maken van zuinige of herbruikbare keuzes en later over agressieve verkoopbevordering. De centrale tegenstelling is helder: consumptie beperken versus consumptie maximaliseren. Stickers, producten vergelijken, besparen, tassen en verpakkingen dragen beide lezingen. De duurzaamheidslezing is in deze context eerst dominant, maar de kortingsboodschap houdt de verkooplezing latent beschikbaar. Het weggooien van een werkend apparaat is onder A onverklaarbare verspilling, maar onder B een doelbewust cynisch verkoopsignaal. Die verspilling blokkeert A's doel en ondersteunt B's verkoopdoel, terwijl eerdere productinformatie en stickers retrospectief reclame worden."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": false,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De ankerscène ondersteunt zowel een betrokken buurtbewoner die afval documenteert als een inspecteur die bewijs verzamelt. De inspecteurslezing is herkenbaar, blijft vóór de portofoononthulling mogelijk en verklaart waarom de afvalzak als lokaas blijft liggen. De onthulling herinterpreteert foto's, kentekens en wachten als opsporingswerk. Er is ook functionele omkering: de zak opruimen helpt de directe schoonmaakdoelstelling, maar laat liggen maakt observatie en handhaving mogelijk. Toch vormen openbare opruimzorg en geheime opsporing geen werkelijk incompatibele scripts op één as: beide dienen uiteindelijk het terugdringen van illegale dumping en milieuschade. Het betreft daarom vooral een verschil in methode, niet in tegengestelde scriptlogica."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde scène kan eerst als opruimactie en later als voorbereiding van een speurtocht worden gelezen. De dominante tegenstelling is het behandelen van voorwerpen als te verwijderen afval versus als bewust geplaatste spelelementen. Handschoenen, zakken, oprapen en afvalbakken ondersteunen beide lezingen, terwijl de milieulezing aanvankelijk het meest voor de hand ligt. Het bewust neerleggen van een plastic figuurtje blokkeert de opruimfunctie, maar maakt de speurtochtfunctie juist mogelijk. De onthulling herkadert de eerdere handelingen als routevoorbereiding."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": false,
+              "anchor_supports_both": false,
+              "recognizable_second_reading": true,
+              "setup_dominance": false,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Plaagdierbestrijding is een herkenbare en coherente tweede lezing, en bakjes langs een muur, handschoenen en voedselbronnen kunnen daarop vooruitwijzen. De gedeelde ankerhandeling ondersteunt de milieulezing echter niet natuurlijk genoeg: opvangbakjes voor afvalscheiding of zaadbakjes zijn geen even directe verklaring voor kleine bakjes langs een schuurmuur. Bovendien zijn natuurbescherming en gerichte, veilige plaagdierbestrijding niet noodzakelijk lokaal onverenigbaar; bestrijding kan juist binnen verantwoord natuur- en gezondheidsbeheer passen. Daardoor ontbreekt één heldere, werkelijk tegengestelde as en is A niet duidelijk dominant."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De winkelsscène kan aanvankelijk gaan over het zichtbaar maken van zuinige of herbruikbare keuzes en later over agressieve verkoopbevordering. De centrale tegenstelling is helder: consumptie beperken versus consumptie maximaliseren. Stickers, producten vergelijken, besparen, tassen en verpakkingen dragen beide lezingen. De duurzaamheidslezing is in deze context eerst dominant, maar de kortingsboodschap houdt de verkooplezing latent beschikbaar. Het weggooien van een werkend apparaat is onder A onverklaarbare verspilling, maar onder B een doelbewust cynisch verkoopsignaal. Die verspilling blokkeert A's doel en ondersteunt B's verkoopdoel, terwijl eerdere productinformatie en stickers retrospectief reclame worden."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": false,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De ankerscène ondersteunt zowel een betrokken buurtbewoner die afval documenteert als een inspecteur die bewijs verzamelt. De inspecteurslezing is herkenbaar, blijft vóór de portofoononthulling mogelijk en verklaart waarom de afvalzak als lokaas blijft liggen. De onthulling herinterpreteert foto's, kentekens en wachten als opsporingswerk. Er is ook functionele omkering: de zak opruimen helpt de directe schoonmaakdoelstelling, maar laat liggen maakt observatie en handhaving mogelijk. Toch vormen openbare opruimzorg en geheime opsporing geen werkelijk incompatibele scripts op één as: beide dienen uiteindelijk het terugdringen van illegale dumping en milieuschade. Het betreft daarom vooral een verschil in methode, niet in tegengestelde scriptlogica."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B3"
+        ],
+        "selected_candidate_id": "B3",
+        "gtvh_plan": {
+          "opposition_type": "Minder consumeren versus verkoop maximaliseren",
+          "logical_mechanism": "Herinterpretatie via een lexicale dubbelcue en omkering van doelgerichtheid: termen en handelingen die eerst als duurzaam besparen en productinformatie lezen, worden door de kortingssticker onthuld als verkoopdruk, schaarstemarketing en het maximaliseren van consumptie.",
+          "situation": "In een winkel met seizoensartikelen plakt een winkelier grote stickers op producten, roept hij voorbijgangers naar binnen en vullen klanten tassen terwijl dozen en verpakkingen zich opstapelen. De winkelier wil oude voorraad snel verkopen voordat een nieuwe collectie arriveert; klanten reageren op koopjes en tijdsdruk, leveranciers willen ruimte maken en de bezorgdienst verwerkt extra aankopen en retouren.",
+          "target": "Consumptiecultuur en agressieve schaarstemarketing die verkoop boven hergebruik en minder kopen stelt.",
+          "narrative_strategy": "De opzet presenteert de winkelhandeling aanvankelijk als een verantwoordelijke keuzehulp: producten vergelijken, stickers lezen en besparen. De punchline onthult dat de stickers geen duurzaamheidsinformatie zijn maar een kwantumkorting, waarna het weggooien van een werkend apparaat de commerciële logica scherp zichtbaar maakt.",
+          "lexical_anchor": "sticker",
+          "supporting_dual_cues": [
+            "Producten vergelijken.",
+            "Stickers op verpakkingen plakken.",
+            "Spreken over besparen.",
+            "Tassen vullen.",
+            "Dozen en verpakkingen stapelen."
+          ],
+          "switch_trigger": "De sticker blijkt niet te zeggen \"zuinig\", maar \"tweede gratis: neem er drie\".",
+          "hinge_event": "De winkelier gooit een nog werkend keukenapparaat demonstratief in een afvalcontainer omdat het oude model plaats moet maken voor de nieuwe lijn.",
+          "anomaly_under_a": "In een duurzaam kader is het weggooien van een functioneel apparaat evident verspilling en strijdig met reparatie of hergebruik.",
+          "resolution_under_b": "Voor de winkelier is het een theatrale, zij het cynische, verkoophandeling: het zichtbare verlies moet klanten het gevoel geven dat zij onmiddellijk het nieuwe model moeten kopen.",
+          "role_remapping": [
+            "Bedrijven worden de actieve verkoper en leverancier.",
+            "Burgers/huishoudens worden koopjesjagers.",
+            "Energielabels en productinformatie worden verkoopstickers en reclametaal.",
+            "Afval en verpakking worden een logistiek neveneffect van hoge verkoop."
+          ],
+          "setup_goal": "Script A dominant maken door stickers, productvergelijking en spreken over besparen te framen als signalen van zuinige, verantwoorde consumptie.",
+          "punch_goal": "Script B activeren door de sticker als kwantumkorting te onthullen en de winkelier te tonen als iemand die via tijdsdruk en zichtbaar verspillen maximale verkoop nastreeft.",
+          "punch_final_word": "neem er drie"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen.",
+            "punchline": "Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.",
+            "full_text": "Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen. Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.",
+            "angle": "Duurzaam winkeladvies verandert in een agressieve kwantumkorting.",
+            "anchor_surface_form": "sticker"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart.",
+            "punchline": "Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.",
+            "full_text": "De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart. Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.",
+            "angle": "Milieubewust vergelijken blijkt voorraad wegwerken onder tijdsdruk.",
+            "anchor_surface_form": "sticker"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen.",
+            "punchline": "Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.",
+            "full_text": "Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen. Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.",
+            "angle": "Groene winkelretoriek blijkt een verkooptruc voor een nieuwe collectie.",
+            "anchor_surface_form": "sticker"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Bij onze duurzame winkel helpt de eigenaar klanten producten vergelijken; hij plakt stickers, praat over besparen en laat ons tassen meenemen. Dan gooit hij een werkende blender in de container: op de sticker staat niet zuinig, maar tweede gratis: neem er drie.",
+            "angle": "Duurzaam winkeladvies verandert in een agressieve kwantumkorting."
+          },
+          {
+            "variant_id": "V2",
+            "text": "De winkelier zegt dat we voor het milieu eerst goed moeten vergelijken, terwijl hij stickers plakt en dozen voor hergebruik bewaart. Zodra de waterkokers bijna weg zijn, smijt hij een werkend oud model weg: op zijn sticker staat tweede gratis: neem er drie.",
+            "angle": "Milieubewust vergelijken blijkt voorraad wegwerken onder tijdsdruk."
+          },
+          {
+            "variant_id": "V3",
+            "text": "Ik dacht dat de winkelier een groene held was: hij liet ons besparen, stickers lezen en herbruikbare tassen vullen. Toen gooide hij een werkende airfryer weg voor de nieuwe lijn; de sticker zei: tweede gratis: neem er drie.",
+            "angle": "Groene winkelretoriek blijkt een verkooptruc voor een nieuwe collectie."
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "TA",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Duurzaam winkeladvies: klanten vergelijken producten, letten op besparen en nemen tassen mee om verantwoord te consumeren.",
+            "realized_script_b": "Een winkelier jaagt extra verkoop aan met een kwantumkorting en gooit zelfs een werkende blender weg om consumptie van nieuwe producten te stimuleren.",
+            "realized_opposition_axis": "Minder/verantwoord consumeren versus verkoop en consumptie maximaliseren.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De duurzame lezing wordt eerst expliciet opgebouwd en schakelt via de sticker precies naar de beoogde verkooplogica. De gedeelde cues (vergelijken, stickers, besparen en tassen) zijn aanwezig."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De woordelijke cue 'besparen' en vooral de sticker worden retrospectief herlezen als kortings- en verkoopdruk; de weggegooide blender maakt de cynische commerciële doelgerichtheid zichtbaar."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De winkelier, klanten, stickers, producten, tassen, afvalcontainer en een werkend apparaat realiseren de centrale winkelsituatie functioneel."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst richt zich functioneel op agressieve consumptieprikkels en verkoop boven hergebruik."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De opzet presenteert duurzaam advies en de slotzin onthult de kwantumkorting, ondersteund door zichtbaar verspillen."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De lexicale spil 'sticker' en de vereiste onthulling 'tweede gratis: neem er drie' zijn behouden."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V1 volgt het beoogde script, de beoogde omkering en de geplande punchline vrijwel volledig; het is een begrijpelijke, spreekbare grap met een duidelijke onthulling.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Milieubewust winkelgedrag: producten zorgvuldig vergelijken en dozen voor hergebruik bewaren om verspilling te beperken.",
+            "realized_script_b": "Een winkelier ruimt voorraad en oude modellen agressief op, gebruikt een kwantumkorting en stimuleert klanten om meer waterkokers te kopen.",
+            "realized_opposition_axis": "Minder/verantwoord consumeren versus voorraad snel verkopen en consumptie maximaliseren.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De aanvankelijke milieulezing schakelt naar dezelfde beoogde verkooplogica wanneer de sticker als 'tweede gratis: neem er drie' wordt onthuld. Vergelijken, stickers en hergebruik vormen voldoende gedeelde cues."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De kortingssticker herkadert het eerdere spreken over vergelijken en milieu; het wegsmijten van een werkend oud model ondersteunt de commerciële, verspilling toelatende logica."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De winkelcontext, winkelier, stickers, dozen, waterkokers, oude voorraad en afvalhandeling zijn functioneel aanwezig, hoewel enkele geplande nevenrollen ontbreken."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De grap viseert voorraadwegwerken en verkoopdruk die hergebruik en minder kopen ondergeschikt maken."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Een milieubewuste setup wordt gevolgd door een zichtbare verspilling en de kortingsonthulling als punch."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De sticker is de lexicale schakel en de geplande formulering van de kwantumkorting wordt letterlijk gerealiseerd."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V2 behoudt de geplande duurzame schijn, stickeronthulling en verkoopgerichte herinterpretatie. De situatie is iets minder rijk uitgewerkt dan het plan, maar de vereiste functies blijven intact.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "De verteller ziet de winkelier aanvankelijk als een groene, zuinige winkelier die klanten helpt besparen, stickers lezen en herbruikbare tassen vullen.",
+            "realized_script_b": "De winkelier blijkt een nieuwe lijn te willen verkopen: hij gooit een werkende airfryer weg en gebruikt de sticker voor een kwantumkorting.",
+            "realized_opposition_axis": "Minder/verantwoord consumeren versus verkoop en consumptie maximaliseren.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst bouwt de groene lezing dominant op en onthult exact de beoogde alternatieve lezing: verkoopdruk rond een nieuwe collectie, met een kwantumkorting als switch."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "'Besparen', stickers en herbruikbare tassen worden door de slottekst herinterpreteerbaar als verkoopretoriek; het weggooien van de werkende airfryer concretiseert de omgekeerde doelgerichtheid."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Winkelier, klanten, herbruikbare tassen, sticker, werkend keukenapparaat en nieuwe productlijn realiseren de kernsituatie."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De winkelier staat voor de beoogde consumptiecultuur en schaarste- of kortingsmarketing die nieuwe verkoop boven hergebruik stelt."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De eerste zin positioneert de winkelier als groene held; de airfryer en de stickeronthulling vormen vervolgens de geplande scherpe omslag."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De sticker fungeert als expliciete lexicale hinge en de slotformule 'tweede gratis: neem er drie' is behouden."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V3 is een directe en functionele realisatie van het plan: groene winkelretoriek wordt via de sticker en het weggooien van een werkend apparaat ontmaskerd als verkoopstrategie.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "Beide varianten voldoen aan de lengte-eis en realiseren alle vereiste middelen. V1 heeft rijkere, beter verbonden duurzame cues en een scherpere herlezing via „niet zuinig, maar tweede gratis”; V2 bevat de wat minder natuurlijke formulering dat waterkokers „bijna weg zijn”."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V1",
+            "rationale": "Beide zijn spreekbare grappen met een duidelijke omslag en dezelfde sterke stickeronthulling. V1 bouwt de duurzame winkelrol concreter op met vergelijken, besparen en tassen, waarna de weggegooide blender de commerciële logica sterker en verrassender blootlegt."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "Beide behouden de vereiste scripts, situatie en punchline. V3 is bondiger, helderder en natuurlijker performbaar: de groene-heldopzet, de weggegooide werkende airfryer en de nieuwe lijn maken de omslag directer dan V2’s voorraadformulering."
+          }
+        ],
+        "selected_variant_id": "V1",
+        "selection_rationale": "V1 is de sterkste volledig geslaagde variant: hij benut de meeste duurzame aanknopingspunten, maakt de retrospectieve herinterpretatie het duidelijkst en levert de kwantumkorting als de scherpste gesproken punchline."
+      }
+    }
+  },
+  "result_sha256": "f9a5814c58d7fed0b756ca34a528d7dafabdd414ad77de3cf29c36350aab7467"
+}

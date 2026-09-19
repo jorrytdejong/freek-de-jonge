@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T06:20:46.451289+00:00",
+  "job": {
+    "job_id": "T20-E2",
+    "topic_id": "T20",
+    "topic": "Macht, gezag en sociale ongelijkheid",
+    "condition_code": "E2"
+  },
+  "attempt": 4,
+  "exception_type": "ValueError",
+  "message": "Variant V2 must contain 20-45 words; received 48."
+}

@@ -1,0 +1,828 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T14-C1",
+  "topic_id": "T14",
+  "topic": "Klimaat, milieu en natuur",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T17:42:56.105304+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Klimaat, milieu en natuur",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.\",\n    \"participants_and_roles\": [\n      \"Een burger of huishouden: maakt keuzes over vervoer, energie, voeding, afval en consumptie.\",\n      \"Overheid: stelt regels, biedt voorzieningen en stimuleert verduurzaming.\",\n      \"Bedrijven: produceren goederen en diensten en verminderen hun milieu-impact.\",\n      \"Natuur en leefomgeving: worden beschermd tegen vervuiling, uitputting en klimaatverandering.\",\n      \"Maatschappelijke organisaties en wetenschappers: informeren, meten effecten en pleiten voor maatregelen.\"\n    ],\n    \"apparent_goal\": \"De uitstoot, vervuiling en verspilling verminderen zodat klimaat, milieu en natuur ook op lange termijn leefbaar en gezond blijven.\",\n    \"preconditions\": [\n      \"Er is breed erkende milieuschade of klimaatdruk, zoals uitstoot, afval, verlies van biodiversiteit of extreem weer.\",\n      \"Deelnemers beschikken over enige keuzevrijheid, informatie en toegang tot duurzamere alternatieven.\",\n      \"Collectieve infrastructuur en beleid, zoals openbaar vervoer, afvalinzameling of energienetten, maken individuele keuzes mede mogelijk.\",\n      \"De baten zijn vaak verspreid en langdurig, terwijl sommige kosten en inspanningen direct voelbaar zijn.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder verspillen en producten hergebruiken of repareren.\",\n      \"Energie besparen en waar mogelijk kiezen voor duurzame energie.\",\n      \"Vaker lopen, fietsen, openbaar vervoer gebruiken of minder vervuilend reizen.\",\n      \"Bewuster consumeren, bijvoorbeeld minder wegwerp, minder vlees of minder nieuwe aankopen.\",\n      \"Regels, investeringen en bedrijfsmaatregelen invoeren die uitstoot en natuurverlies terugdringen.\"\n    ],\n    \"expected_outcome\": \"Door vele consistente individuele en collectieve maatregelen nemen uitstoot en vervuiling af, blijven grondstoffen langer in gebruik en krijgt natuur meer kans om te herstellen.\",\n    \"expected_propositions\": [\n      \"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\",\n      \"Eén individuele keuze lost het probleem niet op, maar veel vergelijkbare keuzes kunnen samen verschil maken.\",\n      \"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\",\n      \"Milieuvriendelijke alternatieven zijn bij voorkeur betrouwbaar, betaalbaar en praktisch beschikbaar.\",\n      \"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond klimaat, milieu en natuur activeert de verwachting van een serieus maar herkenbaar verbetertraject: verantwoord gedrag, kleine dagelijkse offers en samenwerking tussen burger, overheid en bedrijf leiden geleidelijk tot een schonere, duurzamere toekomst.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.\",\n    \"participants_and_roles\": [\n      \"Een burger of huishouden: maakt keuzes over vervoer, energie, voeding, afval en consumptie.\",\n      \"Overheid: stelt regels, biedt voorzieningen en stimuleert verduurzaming.\",\n      \"Bedrijven: produceren goederen en diensten en verminderen hun milieu-impact.\",\n      \"Natuur en leefomgeving: worden beschermd tegen vervuiling, uitputting en klimaatverandering.\",\n      \"Maatschappelijke organisaties en wetenschappers: informeren, meten effecten en pleiten voor maatregelen.\"\n    ],\n    \"apparent_goal\": \"De uitstoot, vervuiling en verspilling verminderen zodat klimaat, milieu en natuur ook op lange termijn leefbaar en gezond blijven.\",\n    \"preconditions\": [\n      \"Er is breed erkende milieuschade of klimaatdruk, zoals uitstoot, afval, verlies van biodiversiteit of extreem weer.\",\n      \"Deelnemers beschikken over enige keuzevrijheid, informatie en toegang tot duurzamere alternatieven.\",\n      \"Collectieve infrastructuur en beleid, zoals openbaar vervoer, afvalinzameling of energienetten, maken individuele keuzes mede mogelijk.\",\n      \"De baten zijn vaak verspreid en langdurig, terwijl sommige kosten en inspanningen direct voelbaar zijn.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder verspillen en producten hergebruiken of repareren.\",\n      \"Energie besparen en waar mogelijk kiezen voor duurzame energie.\",\n      \"Vaker lopen, fietsen, openbaar vervoer gebruiken of minder vervuilend reizen.\",\n      \"Bewuster consumeren, bijvoorbeeld minder wegwerp, minder vlees of minder nieuwe aankopen.\",\n      \"Regels, investeringen en bedrijfsmaatregelen invoeren die uitstoot en natuurverlies terugdringen.\"\n    ],\n    \"expected_outcome\": \"Door vele consistente individuele en collectieve maatregelen nemen uitstoot en vervuiling af, blijven grondstoffen langer in gebruik en krijgt natuur meer kans om te herstellen.\",\n    \"expected_propositions\": [\n      \"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\",\n      \"Eén individuele keuze lost het probleem niet op, maar veel vergelijkbare keuzes kunnen samen verschil maken.\",\n      \"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\",\n      \"Milieuvriendelijke alternatieven zijn bij voorkeur betrouwbaar, betaalbaar en praktisch beschikbaar.\",\n      \"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond klimaat, milieu en natuur activeert de verwachting van een serieus maar herkenbaar verbetertraject: verantwoord gedrag, kleine dagelijkse offers en samenwerking tussen burger, overheid en bedrijf leiden geleidelijk tot een schonere, duurzamere toekomst.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een huishouden voert ogenschijnlijk duurzame handelingen uit omdat het deelneemt aan een commerciële spaaractie: elke geregistreerde groene handeling levert punten, korting en een kans op een prijs op.\",\n      \"opposition_axis\": \"Ecologisch langetermijnbelang versus directe commerciële beloning\",\n      \"opposed_proposition\": \"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\",\n      \"shared_anchor\": \"Het huishouden registreert elke duurzame keuze in een app.\",\n      \"reading_a\": \"De app helpt het huishouden om afvalscheiding, energiebesparing en duurzaam vervoer consequent vol te houden en zo de voetafdruk te verkleinen.\",\n      \"reading_b\": \"De app is vooral een klantenbindingsprogramma: de gezinsleden verzamelen punten en optimaliseren hun gedrag voor korting en prijzen.\",\n      \"roles_b\": [\n        \"Huishouden: deelnemers die punten verzamelen.\",\n        \"Winkelketen of app-aanbieder: organisator van de spaaractie.\",\n        \"Merken: sponsoren beloningen en aanbiedingen.\",\n        \"Kassamedewerker of bezorger: bevestigt geregistreerde aankopen of acties.\"\n      ],\n      \"goal_b\": \"Zo veel mogelijk spaarpunten verzamelen om korting, producten of een hoofdprijs te krijgen.\",\n      \"role_remapping\": [\n        \"De burger of het huishouden wordt van milieubewuste deelnemer een puntenjager.\",\n        \"Bedrijven worden van producenten die hun impact verminderen sponsoren en aanbieders van beloningen.\",\n        \"Maatschappelijke organisaties en wetenschappers worden vervangen door de app en haar puntensysteem als bron van feedback.\",\n        \"De schonere leefomgeving verschuift van hoofddoel naar aantrekkelijk decor van de campagne.\"\n      ],\n      \"shared_cues\": [\n        \"Een app met een dagelijks overzicht.\",\n        \"Gescheiden afvalbakken.\",\n        \"Een fietsrit in plaats van een autorit.\",\n        \"Een energiemeter met dalende cijfers.\",\n        \"Bonnetjes of gescande codes.\"\n      ],\n      \"switch_trigger\": \"Pas nadat alle groene handelingen zijn geteld, verschijnt een melding dat nog één registratie nodig is voor een gratis airfryer.\",\n      \"hinge_event\": \"Het huishouden fietst in de regen terug naar de winkel om een lege verpakking te laten scannen, hoewel die verpakking al correct is weggegooid.\",\n      \"anomaly_under_a\": \"Binnen Script A is een extra rit enkel voor het scannen van afval onnodig en zelfs contraproductief: het gedrag dient dan niet aantoonbaar het milieu.\",\n      \"resolution_under_b\": \"Binnen Script B is de omweg doelgericht: de scan voltooit de puntenkaart en levert de beloofde beloning op.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Vrijwilligers die een stukje natuur afzetten, paden markeren en bezoekers op afstand houden, blijken in werkelijkheid een besloten bruiloft op een schilderachtige locatie voor te bereiden.\",\n      \"opposition_axis\": \"Bescherming van gemeenschappelijke natuur versus tijdelijke privétoe-eigening\",\n      \"opposed_proposition\": \"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\",\n      \"shared_anchor\": \"Een groep zet een kwetsbaar ogend natuurgebied met linten af.\",\n      \"reading_a\": \"De linten, bordjes en aanwijzingen beschermen broedende vogels of kwetsbare planten tegen verstoring door recreanten.\",\n      \"reading_b\": \"De linten, bordjes en aanwijzingen reserveren het terrein en houden toevallige wandelaars weg van een privéceremonie.\",\n      \"roles_b\": [\n        \"Organisator of weddingplanner: regelt de locatie.\",\n        \"Bruidspaar: wil een rustige, fraaie ceremonie.\",\n        \"Gasten: moeten de afgezette plek kunnen bereiken.\",\n        \"Vrijwilligers of terreinmedewerkers: bouwen de tijdelijke aankleding op.\",\n        \"Wandelaars: ongewenste passanten.\"\n      ],\n      \"goal_b\": \"Een ongestoorde, fotogenieke bruiloft laten plaatsvinden zonder passanten in beeld of op de ceremonieplek.\",\n      \"role_remapping\": [\n        \"De natuurbeschermer wordt een locatiecoördinator.\",\n        \"De natuur en leefomgeving worden van te beschermen belanghebbende een decor voor de ceremonie.\",\n        \"Bezoekers worden van medegebruikers van natuur potentiële stoorzenders.\",\n        \"De overheid of terreinbeheerder wordt van beschermer en regelsteller een instantie waarvan toestemming of uitsluiting wordt geregeld.\"\n      ],\n      \"shared_cues\": [\n        \"Rood-wit lint langs een pad.\",\n        \"Bordjes met het verzoek stil te zijn.\",\n        \"Mensen die in hesjes aanwijzingen geven.\",\n        \"Een tijdelijk afgesloten open plek.\",\n        \"Voorzichtig verplaatste takken en stoelen.\"\n      ],\n      \"switch_trigger\": \"De groep blijft als natuurbeschermers leesbaar totdat iemand een boog van bloemen tussen de afzetlinten draagt.\",\n      \"hinge_event\": \"Een medewerker maant een wandelaar streng tot stilte terwijl een violist naast een stapel witte klapstoelen stemt.\",\n      \"anomaly_under_a\": \"Bij bescherming van flora of fauna zijn witte ceremonystoelen en een violist ongepaste, verstorende objecten; zij vergroten juist de menselijke druk op de plek.\",\n      \"resolution_under_b\": \"Bij de bruiloft zijn de stilte, de afzetting en de stoelen precies functioneel: zij creëren een rustige ceremonie en een gecontroleerd decor.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een bewoner volgt nauwgezet het weer, de energiemeter en het tijdstip waarop apparaten mogen draaien, niet primair om energie te besparen maar om te profiteren van dynamische stroomprijzen.\",\n      \"opposition_axis\": \"Energie besparen versus energieverbruik financieel timen\",\n      \"opposed_proposition\": \"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\",\n      \"shared_anchor\": \"De bewoner plant huishoudelijke apparaten rond de energiemeter.\",\n      \"reading_a\": \"De bewoner stelt wassen, laden en verwarmen uit, beperkt onnodig verbruik en kiest zo bewust voor minder energiegebruik.\",\n      \"reading_b\": \"De bewoner verplaatst juist groot verbruik naar uren waarin de stroomprijs zeer laag of negatief is, ongeacht de totale hoeveelheid gebruikte energie.\",\n      \"roles_b\": [\n        \"Bewoner: volgt tarieven en schakelt apparaten in.\",\n        \"Energieleverancier: rekent per tijdvak een dynamisch tarief.\",\n        \"Elektriciteitsnet: kent pieken, dalen en aanbod van wind- of zonnestroom.\",\n        \"Slimme meter of prijsapp: geeft actuele prijzen door.\"\n      ],\n      \"goal_b\": \"De energierekening verlagen of geld ontvangen door elektriciteit op de gunstigste momenten af te nemen.\",\n      \"role_remapping\": [\n        \"De burger wordt van energiebespaarder een tariefstrateeg.\",\n        \"De energiemeter wordt van hulpmiddel voor zuinigheid een handelssignaal.\",\n        \"De overheid en netinfrastructuur worden van voorwaarden voor verduurzaming de bron van prijsprikkels.\",\n        \"Duurzame energie wordt van doel op zichzelf een aanleiding voor goedkope uren.\"\n      ],\n      \"shared_cues\": [\n        \"Een app met stroomgrafieken.\",\n        \"Een slimme meter.\",\n        \"Een uitgestelde vaatwasser.\",\n        \"Een elektrische auto aan de laadpaal.\",\n        \"Aandacht voor wind en zon.\"\n      ],\n      \"switch_trigger\": \"De interpretatie verandert pas wanneer de app een negatieve stroomprijs toont en de bewoner verheugd zegt dat hij nu eindelijk alles tegelijk kan aanzetten.\",\n      \"hinge_event\": \"De bewoner start tegelijk de vaatwasser, wasmachine, droger en autolader, ondanks dat het huishouden niets dringend nodig heeft.\",\n      \"anomaly_under_a\": \"Onder Script A is gelijktijdig maximaal verbruik strijdig met het doel om energie te besparen en verspilling terug te dringen.\",\n      \"resolution_under_b\": \"Onder Script B is het gedrag rationeel: op dat tariefmoment kost extra afname nauwelijks geld of levert die zelfs een financieel voordeel op.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.\",\n      \"opposition_axis\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening\",\n      \"opposed_proposition\": \"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\",\n      \"shared_anchor\": \"Het bedrijf presenteert meetgegevens en zichtbare groene maatregelen.\",\n      \"reading_a\": \"Het bedrijf brengt zijn milieu-impact in kaart, vermindert afval en uitstoot en investeert aantoonbaar in structurele verduurzaming.\",\n      \"reading_b\": \"Het bedrijf selecteert vooral fotogenieke maatregelen en gunstige cijfers om klanten, investeerders en beoordelaars een groen beeld te geven.\",\n      \"roles_b\": [\n        \"Bedrijfsleiding: stuurt de presentatie en reputatie.\",\n        \"Communicatieafdeling: maakt campagnebeelden en persberichten.\",\n        \"Auditeur, investeerder of certificerende instantie: beoordeelt het groene profiel.\",\n        \"Werknemers: voeren zichtbare acties uit.\",\n        \"Klanten: vormen zich een beeld van het merk.\"\n      ],\n      \"goal_b\": \"Een groen imago, gunstige beoordeling of commerciële voorkeur verkrijgen zonder evenredige structurele verandering.\",\n      \"role_remapping\": [\n        \"Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.\",\n        \"Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.\",\n        \"Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.\",\n        \"Natuur wordt van beschermd belang een beeldmerk voor de campagne.\"\n      ],\n      \"shared_cues\": [\n        \"Afvalcontainers met duidelijke labels.\",\n        \"Een dashboard met dalende grafieken.\",\n        \"Medewerkers die jonge bomen planten.\",\n        \"Een rondleiding voor bezoekers.\",\n        \"Een persbericht over nieuwe doelen.\"\n      ],\n      \"switch_trigger\": \"De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.\",\n      \"hinge_event\": \"Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.\",\n      \"anomaly_under_a\": \"Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.\",\n      \"resolution_under_b\": \"Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"script_a\": {\n    \"script_a\": \"Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.\",\n    \"participants_and_roles\": [\n      \"Een burger of huishouden: maakt keuzes over vervoer, energie, voeding, afval en consumptie.\",\n      \"Overheid: stelt regels, biedt voorzieningen en stimuleert verduurzaming.\",\n      \"Bedrijven: produceren goederen en diensten en verminderen hun milieu-impact.\",\n      \"Natuur en leefomgeving: worden beschermd tegen vervuiling, uitputting en klimaatverandering.\",\n      \"Maatschappelijke organisaties en wetenschappers: informeren, meten effecten en pleiten voor maatregelen.\"\n    ],\n    \"apparent_goal\": \"De uitstoot, vervuiling en verspilling verminderen zodat klimaat, milieu en natuur ook op lange termijn leefbaar en gezond blijven.\",\n    \"preconditions\": [\n      \"Er is breed erkende milieuschade of klimaatdruk, zoals uitstoot, afval, verlies van biodiversiteit of extreem weer.\",\n      \"Deelnemers beschikken over enige keuzevrijheid, informatie en toegang tot duurzamere alternatieven.\",\n      \"Collectieve infrastructuur en beleid, zoals openbaar vervoer, afvalinzameling of energienetten, maken individuele keuzes mede mogelijk.\",\n      \"De baten zijn vaak verspreid en langdurig, terwijl sommige kosten en inspanningen direct voelbaar zijn.\"\n    ],\n    \"expected_actions\": [\n      \"Afval scheiden, minder verspillen en producten hergebruiken of repareren.\",\n      \"Energie besparen en waar mogelijk kiezen voor duurzame energie.\",\n      \"Vaker lopen, fietsen, openbaar vervoer gebruiken of minder vervuilend reizen.\",\n      \"Bewuster consumeren, bijvoorbeeld minder wegwerp, minder vlees of minder nieuwe aankopen.\",\n      \"Regels, investeringen en bedrijfsmaatregelen invoeren die uitstoot en natuurverlies terugdringen.\"\n    ],\n    \"expected_outcome\": \"Door vele consistente individuele en collectieve maatregelen nemen uitstoot en vervuiling af, blijven grondstoffen langer in gebruik en krijgt natuur meer kans om te herstellen.\",\n    \"expected_propositions\": [\n      \"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\",\n      \"Eén individuele keuze lost het probleem niet op, maar veel vergelijkbare keuzes kunnen samen verschil maken.\",\n      \"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\",\n      \"Milieuvriendelijke alternatieven zijn bij voorkeur betrouwbaar, betaalbaar en praktisch beschikbaar.\",\n      \"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond klimaat, milieu en natuur activeert de verwachting van een serieus maar herkenbaar verbetertraject: verantwoord gedrag, kleine dagelijkse offers en samenwerking tussen burger, overheid en bedrijf leiden geleidelijk tot een schonere, duurzamere toekomst.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Vrijwilligers die een stukje natuur afzetten, paden markeren en bezoekers op afstand houden, blijken in werkelijkheid een besloten bruiloft op een schilderachtige locatie voor te bereiden.\",\n      \"opposition_axis\": \"Bescherming van gemeenschappelijke natuur versus tijdelijke privétoe-eigening\",\n      \"opposed_proposition\": \"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\",\n      \"shared_anchor\": \"Een groep zet een kwetsbaar ogend natuurgebied met linten af.\",\n      \"reading_a\": \"De linten, bordjes en aanwijzingen beschermen broedende vogels of kwetsbare planten tegen verstoring door recreanten.\",\n      \"reading_b\": \"De linten, bordjes en aanwijzingen reserveren het terrein en houden toevallige wandelaars weg van een privéceremonie.\",\n      \"roles_b\": [\n        \"Organisator of weddingplanner: regelt de locatie.\",\n        \"Bruidspaar: wil een rustige, fraaie ceremonie.\",\n        \"Gasten: moeten de afgezette plek kunnen bereiken.\",\n        \"Vrijwilligers of terreinmedewerkers: bouwen de tijdelijke aankleding op.\",\n        \"Wandelaars: ongewenste passanten.\"\n      ],\n      \"goal_b\": \"Een ongestoorde, fotogenieke bruiloft laten plaatsvinden zonder passanten in beeld of op de ceremonieplek.\",\n      \"role_remapping\": [\n        \"De natuurbeschermer wordt een locatiecoördinator.\",\n        \"De natuur en leefomgeving worden van te beschermen belanghebbende een decor voor de ceremonie.\",\n        \"Bezoekers worden van medegebruikers van natuur potentiële stoorzenders.\",\n        \"De overheid of terreinbeheerder wordt van beschermer en regelsteller een instantie waarvan toestemming of uitsluiting wordt geregeld.\"\n      ],\n      \"shared_cues\": [\n        \"Rood-wit lint langs een pad.\",\n        \"Bordjes met het verzoek stil te zijn.\",\n        \"Mensen die in hesjes aanwijzingen geven.\",\n        \"Een tijdelijk afgesloten open plek.\",\n        \"Voorzichtig verplaatste takken en stoelen.\"\n      ],\n      \"switch_trigger\": \"De groep blijft als natuurbeschermers leesbaar totdat iemand een boog van bloemen tussen de afzetlinten draagt.\",\n      \"hinge_event\": \"Een medewerker maant een wandelaar streng tot stilte terwijl een violist naast een stapel witte klapstoelen stemt.\",\n      \"anomaly_under_a\": \"Bij bescherming van flora of fauna zijn witte ceremonystoelen en een violist ongepaste, verstorende objecten; zij vergroten juist de menselijke druk op de plek.\",\n      \"resolution_under_b\": \"Bij de bruiloft zijn de stilte, de afzetting en de stoelen precies functioneel: zij creëren een rustige ceremonie en een gecontroleerd decor.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een bewoner volgt nauwgezet het weer, de energiemeter en het tijdstip waarop apparaten mogen draaien, niet primair om energie te besparen maar om te profiteren van dynamische stroomprijzen.\",\n      \"opposition_axis\": \"Energie besparen versus energieverbruik financieel timen\",\n      \"opposed_proposition\": \"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\",\n      \"shared_anchor\": \"De bewoner plant huishoudelijke apparaten rond de energiemeter.\",\n      \"reading_a\": \"De bewoner stelt wassen, laden en verwarmen uit, beperkt onnodig verbruik en kiest zo bewust voor minder energiegebruik.\",\n      \"reading_b\": \"De bewoner verplaatst juist groot verbruik naar uren waarin de stroomprijs zeer laag of negatief is, ongeacht de totale hoeveelheid gebruikte energie.\",\n      \"roles_b\": [\n        \"Bewoner: volgt tarieven en schakelt apparaten in.\",\n        \"Energieleverancier: rekent per tijdvak een dynamisch tarief.\",\n        \"Elektriciteitsnet: kent pieken, dalen en aanbod van wind- of zonnestroom.\",\n        \"Slimme meter of prijsapp: geeft actuele prijzen door.\"\n      ],\n      \"goal_b\": \"De energierekening verlagen of geld ontvangen door elektriciteit op de gunstigste momenten af te nemen.\",\n      \"role_remapping\": [\n        \"De burger wordt van energiebespaarder een tariefstrateeg.\",\n        \"De energiemeter wordt van hulpmiddel voor zuinigheid een handelssignaal.\",\n        \"De overheid en netinfrastructuur worden van voorwaarden voor verduurzaming de bron van prijsprikkels.\",\n        \"Duurzame energie wordt van doel op zichzelf een aanleiding voor goedkope uren.\"\n      ],\n      \"shared_cues\": [\n        \"Een app met stroomgrafieken.\",\n        \"Een slimme meter.\",\n        \"Een uitgestelde vaatwasser.\",\n        \"Een elektrische auto aan de laadpaal.\",\n        \"Aandacht voor wind en zon.\"\n      ],\n      \"switch_trigger\": \"De interpretatie verandert pas wanneer de app een negatieve stroomprijs toont en de bewoner verheugd zegt dat hij nu eindelijk alles tegelijk kan aanzetten.\",\n      \"hinge_event\": \"De bewoner start tegelijk de vaatwasser, wasmachine, droger en autolader, ondanks dat het huishouden niets dringend nodig heeft.\",\n      \"anomaly_under_a\": \"Onder Script A is gelijktijdig maximaal verbruik strijdig met het doel om energie te besparen en verspilling terug te dringen.\",\n      \"resolution_under_b\": \"Onder Script B is het gedrag rationeel: op dat tariefmoment kost extra afname nauwelijks geld of levert die zelfs een financieel voordeel op.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.\",\n      \"opposition_axis\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening\",\n      \"opposed_proposition\": \"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\",\n      \"shared_anchor\": \"Het bedrijf presenteert meetgegevens en zichtbare groene maatregelen.\",\n      \"reading_a\": \"Het bedrijf brengt zijn milieu-impact in kaart, vermindert afval en uitstoot en investeert aantoonbaar in structurele verduurzaming.\",\n      \"reading_b\": \"Het bedrijf selecteert vooral fotogenieke maatregelen en gunstige cijfers om klanten, investeerders en beoordelaars een groen beeld te geven.\",\n      \"roles_b\": [\n        \"Bedrijfsleiding: stuurt de presentatie en reputatie.\",\n        \"Communicatieafdeling: maakt campagnebeelden en persberichten.\",\n        \"Auditeur, investeerder of certificerende instantie: beoordeelt het groene profiel.\",\n        \"Werknemers: voeren zichtbare acties uit.\",\n        \"Klanten: vormen zich een beeld van het merk.\"\n      ],\n      \"goal_b\": \"Een groen imago, gunstige beoordeling of commerciële voorkeur verkrijgen zonder evenredige structurele verandering.\",\n      \"role_remapping\": [\n        \"Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.\",\n        \"Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.\",\n        \"Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.\",\n        \"Natuur wordt van beschermd belang een beeldmerk voor de campagne.\"\n      ],\n      \"shared_cues\": [\n        \"Afvalcontainers met duidelijke labels.\",\n        \"Een dashboard met dalende grafieken.\",\n        \"Medewerkers die jonge bomen planten.\",\n        \"Een rondleiding voor bezoekers.\",\n        \"Een persbericht over nieuwe doelen.\"\n      ],\n      \"switch_trigger\": \"De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.\",\n      \"hinge_event\": \"Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.\",\n      \"anomaly_under_a\": \"Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.\",\n      \"resolution_under_b\": \"Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"plan\": {\n    \"setup_script\": \"Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.\",\n    \"opposing_script\": \"Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.\",\n    \"opposition_type\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening\",\n    \"trigger\": \"De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Afvalcontainers met duidelijke labels.\",\n      \"Een dashboard met dalende grafieken.\",\n      \"Medewerkers die jonge bomen planten.\",\n      \"Een rondleiding voor bezoekers.\",\n      \"Een persbericht over nieuwe doelen.\"\n    ],\n    \"hinge_event\": \"Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.\",\n    \"anomaly_under_a\": \"Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.\",\n    \"resolution_under_b\": \"Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.\",\n    \"role_remapping\": [\n      \"Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.\",\n      \"Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.\",\n      \"Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.\",\n      \"Natuur wordt van beschermd belang een beeldmerk voor de campagne.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.\",\n      \"participants_and_roles\": [\n        \"Een burger of huishouden: maakt keuzes over vervoer, energie, voeding, afval en consumptie.\",\n        \"Overheid: stelt regels, biedt voorzieningen en stimuleert verduurzaming.\",\n        \"Bedrijven: produceren goederen en diensten en verminderen hun milieu-impact.\",\n        \"Natuur en leefomgeving: worden beschermd tegen vervuiling, uitputting en klimaatverandering.\",\n        \"Maatschappelijke organisaties en wetenschappers: informeren, meten effecten en pleiten voor maatregelen.\"\n      ],\n      \"apparent_goal\": \"De uitstoot, vervuiling en verspilling verminderen zodat klimaat, milieu en natuur ook op lange termijn leefbaar en gezond blijven.\",\n      \"preconditions\": [\n        \"Er is breed erkende milieuschade of klimaatdruk, zoals uitstoot, afval, verlies van biodiversiteit of extreem weer.\",\n        \"Deelnemers beschikken over enige keuzevrijheid, informatie en toegang tot duurzamere alternatieven.\",\n        \"Collectieve infrastructuur en beleid, zoals openbaar vervoer, afvalinzameling of energienetten, maken individuele keuzes mede mogelijk.\",\n        \"De baten zijn vaak verspreid en langdurig, terwijl sommige kosten en inspanningen direct voelbaar zijn.\"\n      ],\n      \"expected_actions\": [\n        \"Afval scheiden, minder verspillen en producten hergebruiken of repareren.\",\n        \"Energie besparen en waar mogelijk kiezen voor duurzame energie.\",\n        \"Vaker lopen, fietsen, openbaar vervoer gebruiken of minder vervuilend reizen.\",\n        \"Bewuster consumeren, bijvoorbeeld minder wegwerp, minder vlees of minder nieuwe aankopen.\",\n        \"Regels, investeringen en bedrijfsmaatregelen invoeren die uitstoot en natuurverlies terugdringen.\"\n      ],\n      \"expected_outcome\": \"Door vele consistente individuele en collectieve maatregelen nemen uitstoot en vervuiling af, blijven grondstoffen langer in gebruik en krijgt natuur meer kans om te herstellen.\",\n      \"expected_propositions\": [\n        \"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\",\n        \"Eén individuele keuze lost het probleem niet op, maar veel vergelijkbare keuzes kunnen samen verschil maken.\",\n        \"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\",\n        \"Milieuvriendelijke alternatieven zijn bij voorkeur betrouwbaar, betaalbaar en praktisch beschikbaar.\",\n        \"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\"\n      ],\n      \"audience_expectation\": \"Een opzet rond klimaat, milieu en natuur activeert de verwachting van een serieus maar herkenbaar verbetertraject: verantwoord gedrag, kleine dagelijkse offers en samenwerking tussen burger, overheid en bedrijf leiden geleidelijk tot een schonere, duurzamere toekomst.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.\",\n      \"opposition_axis\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening\",\n      \"opposed_proposition\": \"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\",\n      \"shared_anchor\": \"Het bedrijf presenteert meetgegevens en zichtbare groene maatregelen.\",\n      \"reading_a\": \"Het bedrijf brengt zijn milieu-impact in kaart, vermindert afval en uitstoot en investeert aantoonbaar in structurele verduurzaming.\",\n      \"reading_b\": \"Het bedrijf selecteert vooral fotogenieke maatregelen en gunstige cijfers om klanten, investeerders en beoordelaars een groen beeld te geven.\",\n      \"roles_b\": [\n        \"Bedrijfsleiding: stuurt de presentatie en reputatie.\",\n        \"Communicatieafdeling: maakt campagnebeelden en persberichten.\",\n        \"Auditeur, investeerder of certificerende instantie: beoordeelt het groene profiel.\",\n        \"Werknemers: voeren zichtbare acties uit.\",\n        \"Klanten: vormen zich een beeld van het merk.\"\n      ],\n      \"goal_b\": \"Een groen imago, gunstige beoordeling of commerciële voorkeur verkrijgen zonder evenredige structurele verandering.\",\n      \"role_remapping\": [\n        \"Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.\",\n        \"Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.\",\n        \"Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.\",\n        \"Natuur wordt van beschermd belang een beeldmerk voor de campagne.\"\n      ],\n      \"shared_cues\": [\n        \"Afvalcontainers met duidelijke labels.\",\n        \"Een dashboard met dalende grafieken.\",\n        \"Medewerkers die jonge bomen planten.\",\n        \"Een rondleiding voor bezoekers.\",\n        \"Een persbericht over nieuwe doelen.\"\n      ],\n      \"switch_trigger\": \"De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.\",\n      \"hinge_event\": \"Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.\",\n      \"anomaly_under_a\": \"Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.\",\n      \"resolution_under_b\": \"Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.\",\n      \"opposing_script\": \"Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.\",\n      \"opposition_type\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening\",\n      \"trigger\": \"De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Afvalcontainers met duidelijke labels.\",\n        \"Een dashboard met dalende grafieken.\",\n        \"Medewerkers die jonge bomen planten.\",\n        \"Een rondleiding voor bezoekers.\",\n        \"Een persbericht over nieuwe doelen.\"\n      ],\n      \"hinge_event\": \"Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.\",\n      \"anomaly_under_a\": \"Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.\",\n      \"resolution_under_b\": \"Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.\",\n      \"role_remapping\": [\n        \"Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.\",\n        \"Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.\",\n        \"Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.\",\n        \"Natuur wordt van beschermd belang een beeldmerk voor de campagne.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik kreeg een rondleiding bij een bedrijf: keurige afvalbakken, dalende grafieken, medewerkers die boompjes plantten. Net toen de pers kwam, reed iemand een volle restcontainer achter het groene fotodoek. Blijkbaar scheiden ze afval pas ná de fotoshoot.\",\n      \"angle\": \"Bedrijfsrondleiding met afvalscheiding als decor\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Dat bedrijf stuurde een persbericht over minder uitstoot en liet ons trots hun milieudashboard zien. Daarna vroeg de communicatiemanager of we allemaal één stapje naar links wilden: de rookpluim stond niet in het huisstijlhandboek.\",\n      \"angle\": \"Emissiecijfers versus camerastandpunt\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij de open dag plantte iedereen een jong boompje met een naambordje erbij; heel ontroerend. Toen de camera draaide, zei de directeur: \\\"Zorg dat die gemengde container ook een naambordje krijgt: niet in beeld.\\\"\",\n      \"angle\": \"Boomplantactie als zorgvuldig geregisseerde campagne\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Klimaat, milieu en natuur\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik kreeg een rondleiding bij een bedrijf: keurige afvalbakken, dalende grafieken, medewerkers die boompjes plantten. Net toen de pers kwam, reed iemand een volle restcontainer achter het groene fotodoek. Blijkbaar scheiden ze afval pas ná de fotoshoot.\",\n      \"angle\": \"Bedrijfsrondleiding met afvalscheiding als decor\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Dat bedrijf stuurde een persbericht over minder uitstoot en liet ons trots hun milieudashboard zien. Daarna vroeg de communicatiemanager of we allemaal één stapje naar links wilden: de rookpluim stond niet in het huisstijlhandboek.\",\n      \"angle\": \"Emissiecijfers versus camerastandpunt\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij de open dag plantte iedereen een jong boompje met een naambordje erbij; heel ontroerend. Toen de camera draaide, zei de directeur: \\\"Zorg dat die gemengde container ook een naambordje krijgt: niet in beeld.\\\"\",\n      \"angle\": \"Boomplantactie als zorgvuldig geregisseerde campagne\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een bedrijf presenteert zich tijdens een rondleiding als duurzaam, met keurige afvalscheiding, dalende cijfers en boomplantende medewerkers.\",\n      \"realized_script_b\": \"De zichtbare duurzaamheidsmaatregelen zijn decor voor de pers; gemengd afval wordt verborgen om een groen imago te ensceneren.\",\n      \"realized_opposition_axis\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant realiseert de beoogde groene opzet, de gedeelde visuele cues, de verborgen gemengde restcontainer als anomalie en de omslag naar geënsceneerde reputatiemanagement.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een directe, goed opgebouwde realisatie van het geplande greenwashingcontrast; de slotzin herkadert de keurige afvalscheiding als fotoshootdecor.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een bedrijf toont een persbericht over lagere uitstoot en een milieudashboard als bewijs van verduurzaming.\",\n      \"realized_script_b\": \"De communicatieafdeling manipuleert het standpunt van bezoekers en camera's zodat de rookpluim niet zichtbaar is en het merk groen oogt.\",\n      \"realized_opposition_axis\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De perscommunicatie, dalende emissiecijfers en het milieudashboard ondersteunen eerst de duurzame lezing; het verzoek om wegens de rookpluim te verplaatsen realiseert precies de geplande omslag naar imagobeheer.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant volgt vooral de expliciet geplande rookpluim-trigger en herinterpreteert het dashboard en persbericht als onderdelen van een zorgvuldig gekadreerd groen imago.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Tijdens een open dag organiseert een bedrijf een ontroerende boomplantactie, ogenschijnlijk als zichtbare duurzame inzet.\",\n      \"realized_script_b\": \"De directeur behandelt de open dag als geregisseerde campagnebeeldvorming en wil de gemengde afvalcontainer uit het camerabeeld houden.\",\n      \"realized_opposition_axis\": \"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De boomplantactie vormt een geloofwaardige groene opzet, waarna de gemengde container en de regie over wat in beeld komt de bedoelde greenwashinglezing activeren.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant behoudt de bedoelde tegenstelling en het camera-gerichte verbergen van gemengd afval. De formulering met het naambordje is absurdistisch, maar blijft begrijpelijk en functioneert als punchline.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Dat bedrijf stuurde een persbericht over minder uitstoot en liet ons trots hun milieudashboard zien. Daarna vroeg de communicatiemanager of we allemaal één stapje naar links wilden: de rookpluim stond niet in het huisstijlhandboek.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.",
+      "opposing_script": "Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.",
+      "opposition_type": "Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening",
+      "trigger": "De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Afvalcontainers met duidelijke labels.",
+        "Een dashboard met dalende grafieken.",
+        "Medewerkers die jonge bomen planten.",
+        "Een rondleiding voor bezoekers.",
+        "Een persbericht over nieuwe doelen."
+      ],
+      "hinge_event": "Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.",
+      "anomaly_under_a": "Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.",
+      "resolution_under_b": "Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.",
+      "role_remapping": [
+        "Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.",
+        "Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.",
+        "Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.",
+        "Natuur wordt van beschermd belang een beeldmerk voor de campagne."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.\\\",\\\"participants_and_roles\\\":[\\\"Een burger of huishouden: maakt keuzes over vervoer, energie, voeding, afval en consumptie.\\\",\\\"Overheid: stelt regels, biedt voorzieningen en stimuleert verduurzaming.\\\",\\\"Bedrijven: produceren goederen en diensten en verminderen hun milieu-impact.\\\",\\\"Natuur en leefomgeving: worden beschermd tegen vervuiling, uitputting en klimaatverandering.\\\",\\\"Maatschappelijke organisaties en wetenschappers: informeren, meten effecten en pleiten voor maatregelen.\\\"],\\\"apparent_goal\\\":\\\"De uitstoot, vervuiling en verspilling verminderen zodat klimaat, milieu en natuur ook op lange termijn leefbaar en gezond blijven.\\\",\\\"preconditions\\\":[\\\"Er is breed erkende milieuschade of klimaatdruk, zoals uitstoot, afval, verlies van biodiversiteit of extreem weer.\\\",\\\"Deelnemers beschikken over enige keuzevrijheid, informatie en toegang tot duurzamere alternatieven.\\\",\\\"Collectieve infrastructuur en beleid, zoals openbaar vervoer, afvalinzameling of energienetten, maken individuele keuzes mede mogelijk.\\\",\\\"De baten zijn vaak verspreid en langdurig, terwijl sommige kosten en inspanningen direct voelbaar zijn.\\\"],\\\"expected_actions\\\":[\\\"Afval scheiden, minder verspillen en producten hergebruiken of repareren.\\\",\\\"Energie besparen en waar mogelijk kiezen voor duurzame energie.\\\",\\\"Vaker lopen, fietsen, openbaar vervoer gebruiken of minder vervuilend reizen.\\\",\\\"Bewuster consumeren, bijvoorbeeld minder wegwerp, minder vlees of minder nieuwe aankopen.\\\",\\\"Regels, investeringen en bedrijfsmaatregelen invoeren die uitstoot en natuurverlies terugdringen.\\\"],\\\"expected_outcome\\\":\\\"Door vele consistente individuele en collectieve maatregelen nemen uitstoot en vervuiling af, blijven grondstoffen langer in gebruik en krijgt natuur meer kans om te herstellen.\\\",\\\"expected_propositions\\\":[\\\"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\\\",\\\"Eén individuele keuze lost het probleem niet op, maar veel vergelijkbare keuzes kunnen samen verschil maken.\\\",\\\"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\\\",\\\"Milieuvriendelijke alternatieven zijn bij voorkeur betrouwbaar, betaalbaar en praktisch beschikbaar.\\\",\\\"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\\\"],\\\"audience_expectation\\\":\\\"Een opzet rond klimaat, milieu en natuur activeert de verwachting van een serieus maar herkenbaar verbetertraject: verantwoord gedrag, kleine dagelijkse offers en samenwerking tussen burger, overheid en bedrijf leiden geleidelijk tot een schonere, duurzamere toekomst.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een huishouden voert ogenschijnlijk duurzame handelingen uit omdat het deelneemt aan een commerciële spaaractie: elke geregistreerde groene handeling levert punten, korting en een kans op een prijs op.\\\",\\\"opposition_axis\\\":\\\"Ecologisch langetermijnbelang versus directe commerciële beloning\\\",\\\"opposed_proposition\\\":\\\"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\\\",\\\"shared_anchor\\\":\\\"Het huishouden registreert elke duurzame keuze in een app.\\\",\\\"reading_a\\\":\\\"De app helpt het huishouden om afvalscheiding, energiebesparing en duurzaam vervoer consequent vol te houden en zo de voetafdruk te verkleinen.\\\",\\\"reading_b\\\":\\\"De app is vooral een klantenbindingsprogramma: de gezinsleden verzamelen punten en optimaliseren hun gedrag voor korting en prijzen.\\\",\\\"roles_b\\\":[\\\"Huishouden: deelnemers die punten verzamelen.\\\",\\\"Winkelketen of app-aanbieder: organisator van de spaaractie.\\\",\\\"Merken: sponsoren beloningen en aanbiedingen.\\\",\\\"Kassamedewerker of bezorger: bevestigt geregistreerde aankopen of acties.\\\"],\\\"goal_b\\\":\\\"Zo veel mogelijk spaarpunten verzamelen om korting, producten of een hoofdprijs te krijgen.\\\",\\\"role_remapping\\\":[\\\"De burger of het huishouden wordt van milieubewuste deelnemer een puntenjager.\\\",\\\"Bedrijven worden van producenten die hun impact verminderen sponsoren en aanbieders van beloningen.\\\",\\\"Maatschappelijke organisaties en wetenschappers worden vervangen door de app en haar puntensysteem als bron van feedback.\\\",\\\"De schonere leefomgeving verschuift van hoofddoel naar aantrekkelijk decor van de campagne.\\\"],\\\"shared_cues\\\":[\\\"Een app met een dagelijks overzicht.\\\",\\\"Gescheiden afvalbakken.\\\",\\\"Een fietsrit in plaats van een autorit.\\\",\\\"Een energiemeter met dalende cijfers.\\\",\\\"Bonnetjes of gescande codes.\\\"],\\\"switch_trigger\\\":\\\"Pas nadat alle groene handelingen zijn geteld, verschijnt een melding dat nog één registratie nodig is voor een gratis airfryer.\\\",\\\"hinge_event\\\":\\\"Het huishouden fietst in de regen terug naar de winkel om een lege verpakking te laten scannen, hoewel die verpakking al correct is weggegooid.\\\",\\\"anomaly_under_a\\\":\\\"Binnen Script A is een extra rit enkel voor het scannen van afval onnodig en zelfs contraproductief: het gedrag dient dan niet aantoonbaar het milieu.\\\",\\\"resolution_under_b\\\":\\\"Binnen Script B is de omweg doelgericht: de scan voltooit de puntenkaart en levert de beloofde beloning op.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Vrijwilligers die een stukje natuur afzetten, paden markeren en bezoekers op afstand houden, blijken in werkelijkheid een besloten bruiloft op een schilderachtige locatie voor te bereiden.\\\",\\\"opposition_axis\\\":\\\"Bescherming van gemeenschappelijke natuur versus tijdelijke privétoe-eigening\\\",\\\"opposed_proposition\\\":\\\"Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.\\\",\\\"shared_anchor\\\":\\\"Een groep zet een kwetsbaar ogend natuurgebied met linten af.\\\",\\\"reading_a\\\":\\\"De linten, bordjes en aanwijzingen beschermen broedende vogels of kwetsbare planten tegen verstoring door recreanten.\\\",\\\"reading_b\\\":\\\"De linten, bordjes en aanwijzingen reserveren het terrein en houden toevallige wandelaars weg van een privéceremonie.\\\",\\\"roles_b\\\":[\\\"Organisator of weddingplanner: regelt de locatie.\\\",\\\"Bruidspaar: wil een rustige, fraaie ceremonie.\\\",\\\"Gasten: moeten de afgezette plek kunnen bereiken.\\\",\\\"Vrijwilligers of terreinmedewerkers: bouwen de tijdelijke aankleding op.\\\",\\\"Wandelaars: ongewenste passanten.\\\"],\\\"goal_b\\\":\\\"Een ongestoorde, fotogenieke bruiloft laten plaatsvinden zonder passanten in beeld of op de ceremonieplek.\\\",\\\"role_remapping\\\":[\\\"De natuurbeschermer wordt een locatiecoördinator.\\\",\\\"De natuur en leefomgeving worden van te beschermen belanghebbende een decor voor de ceremonie.\\\",\\\"Bezoekers worden van medegebruikers van natuur potentiële stoorzenders.\\\",\\\"De overheid of terreinbeheerder wordt van beschermer en regelsteller een instantie waarvan toestemming of uitsluiting wordt geregeld.\\\"],\\\"shared_cues\\\":[\\\"Rood-wit lint langs een pad.\\\",\\\"Bordjes met het verzoek stil te zijn.\\\",\\\"Mensen die in hesjes aanwijzingen geven.\\\",\\\"Een tijdelijk afgesloten open plek.\\\",\\\"Voorzichtig verplaatste takken en stoelen.\\\"],\\\"switch_trigger\\\":\\\"De groep blijft als natuurbeschermers leesbaar totdat iemand een boog van bloemen tussen de afzetlinten draagt.\\\",\\\"hinge_event\\\":\\\"Een medewerker maant een wandelaar streng tot stilte terwijl een violist naast een stapel witte klapstoelen stemt.\\\",\\\"anomaly_under_a\\\":\\\"Bij bescherming van flora of fauna zijn witte ceremonystoelen en een violist ongepaste, verstorende objecten; zij vergroten juist de menselijke druk op de plek.\\\",\\\"resolution_under_b\\\":\\\"Bij de bruiloft zijn de stilte, de afzetting en de stoelen precies functioneel: zij creëren een rustige ceremonie en een gecontroleerd decor.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een bewoner volgt nauwgezet het weer, de energiemeter en het tijdstip waarop apparaten mogen draaien, niet primair om energie te besparen maar om te profiteren van dynamische stroomprijzen.\\\",\\\"opposition_axis\\\":\\\"Energie besparen versus energieverbruik financieel timen\\\",\\\"opposed_proposition\\\":\\\"Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.\\\",\\\"shared_anchor\\\":\\\"De bewoner plant huishoudelijke apparaten rond de energiemeter.\\\",\\\"reading_a\\\":\\\"De bewoner stelt wassen, laden en verwarmen uit, beperkt onnodig verbruik en kiest zo bewust voor minder energiegebruik.\\\",\\\"reading_b\\\":\\\"De bewoner verplaatst juist groot verbruik naar uren waarin de stroomprijs zeer laag of negatief is, ongeacht de totale hoeveelheid gebruikte energie.\\\",\\\"roles_b\\\":[\\\"Bewoner: volgt tarieven en schakelt apparaten in.\\\",\\\"Energieleverancier: rekent per tijdvak een dynamisch tarief.\\\",\\\"Elektriciteitsnet: kent pieken, dalen en aanbod van wind- of zonnestroom.\\\",\\\"Slimme meter of prijsapp: geeft actuele prijzen door.\\\"],\\\"goal_b\\\":\\\"De energierekening verlagen of geld ontvangen door elektriciteit op de gunstigste momenten af te nemen.\\\",\\\"role_remapping\\\":[\\\"De burger wordt van energiebespaarder een tariefstrateeg.\\\",\\\"De energiemeter wordt van hulpmiddel voor zuinigheid een handelssignaal.\\\",\\\"De overheid en netinfrastructuur worden van voorwaarden voor verduurzaming de bron van prijsprikkels.\\\",\\\"Duurzame energie wordt van doel op zichzelf een aanleiding voor goedkope uren.\\\"],\\\"shared_cues\\\":[\\\"Een app met stroomgrafieken.\\\",\\\"Een slimme meter.\\\",\\\"Een uitgestelde vaatwasser.\\\",\\\"Een elektrische auto aan de laadpaal.\\\",\\\"Aandacht voor wind en zon.\\\"],\\\"switch_trigger\\\":\\\"De interpretatie verandert pas wanneer de app een negatieve stroomprijs toont en de bewoner verheugd zegt dat hij nu eindelijk alles tegelijk kan aanzetten.\\\",\\\"hinge_event\\\":\\\"De bewoner start tegelijk de vaatwasser, wasmachine, droger en autolader, ondanks dat het huishouden niets dringend nodig heeft.\\\",\\\"anomaly_under_a\\\":\\\"Onder Script A is gelijktijdig maximaal verbruik strijdig met het doel om energie te besparen en verspilling terug te dringen.\\\",\\\"resolution_under_b\\\":\\\"Onder Script B is het gedrag rationeel: op dat tariefmoment kost extra afname nauwelijks geld of levert die zelfs een financieel voordeel op.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.\\\",\\\"opposition_axis\\\":\\\"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening\\\",\\\"opposed_proposition\\\":\\\"Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.\\\",\\\"shared_anchor\\\":\\\"Het bedrijf presenteert meetgegevens en zichtbare groene maatregelen.\\\",\\\"reading_a\\\":\\\"Het bedrijf brengt zijn milieu-impact in kaart, vermindert afval en uitstoot en investeert aantoonbaar in structurele verduurzaming.\\\",\\\"reading_b\\\":\\\"Het bedrijf selecteert vooral fotogenieke maatregelen en gunstige cijfers om klanten, investeerders en beoordelaars een groen beeld te geven.\\\",\\\"roles_b\\\":[\\\"Bedrijfsleiding: stuurt de presentatie en reputatie.\\\",\\\"Communicatieafdeling: maakt campagnebeelden en persberichten.\\\",\\\"Auditeur, investeerder of certificerende instantie: beoordeelt het groene profiel.\\\",\\\"Werknemers: voeren zichtbare acties uit.\\\",\\\"Klanten: vormen zich een beeld van het merk.\\\"],\\\"goal_b\\\":\\\"Een groen imago, gunstige beoordeling of commerciële voorkeur verkrijgen zonder evenredige structurele verandering.\\\",\\\"role_remapping\\\":[\\\"Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.\\\",\\\"Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.\\\",\\\"Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.\\\",\\\"Natuur wordt van beschermd belang een beeldmerk voor de campagne.\\\"],\\\"shared_cues\\\":[\\\"Afvalcontainers met duidelijke labels.\\\",\\\"Een dashboard met dalende grafieken.\\\",\\\"Medewerkers die jonge bomen planten.\\\",\\\"Een rondleiding voor bezoekers.\\\",\\\"Een persbericht over nieuwe doelen.\\\"],\\\"switch_trigger\\\":\\\"De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.\\\",\\\"hinge_event\\\":\\\"Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.\\\",\\\"anomaly_under_a\\\":\\\"Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.\\\",\\\"resolution_under_b\\\":\\\"Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.\\\"}] }\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Eén tekst kan zowel een duurzaamheidsapp als een commerciële spaaractie tonen: registratie, afvalscheiding, fietsen, energiemeting en scans passen bij beide lezingen. Script B is herkenbaar en de opzet laat Script A aanvankelijk domineren, terwijl bonnetjes en codes de commerciële lezing al latent mogelijk maken. De onnodige rit voor een scan is onder A afwijkend maar wordt onder B doelgericht door de puntendrempel; eerdere handelingen worden daardoor retrospectief puntenoptimalisatie. De kernscripts zijn echter niet werkelijk incompatibel: commerciële beloning kan duurzaam gedrag stimuleren zonder dat het ecologische langetermijndoel verdwijnt. Ook is geen duidelijke functionele reversering onderbouwd: de scanrit verhindert Script A niet noodzakelijk, maar maakt B wel mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde afzetting, stiltebordjes, aanwijzingen en afgesloten open plek kunnen aanvankelijk natuurlijk worden gelezen als bescherming van kwetsbare natuur en later als afscherming van een bruiloft. De doelen botsen lokaal op één dominante as: gemeenschappelijke natuurbescherming tegenover tijdelijke privébeschikking over die plek. Een besloten ceremonie op een afgezette, fotogenieke locatie is sociaal herkenbaar; de bruiloftslezening blijft vooraf latent via stoelen, inrichting en ongebruikelijk strenge stilte. De violist en witte ceremonystoelen zijn onder A storend en onverklaard, maar onder B functioneel. Daardoor veranderen afzetting en stilte retrospectief van beschermingsmiddelen in middelen om passanten uit de ceremonie te weren. De inrichting die natuurbehoud belemmert, faciliteert tegelijkertijd de private ceremonie.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Planning rond een slimme meter, apparaten uitstellen en aandacht voor wind en zon kan zowel zuinig energiegebruik als tariefsturing dragen. De scripts zijn bij het hinge-event lokaal incompatibel: maximaal gelijktijdig en niet-noodzakelijk verbruik ondermijnt energiebesparing, maar dient financieel profiteren van negatieve prijzen. De lezing van dynamische tarieven is herkenbaar en vooraf latent aanwezig door de prijsapp, meter en tijdgebonden planning, terwijl de duurzame lezing aanvankelijk normaal domineert. De negatieve prijs en het tegelijk inschakelen van alles lossen de anomalie onder B op en herduiden eerdere planning van besparen naar financieel timen. Het extra verbruik blokkeert A's besparingsdoel en maakt B's financiële doel juist mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Meetgegevens, afvalscheiding, boomplanting en zichtbare groene maatregelen kunnen zowel structurele verduurzaming als een geënsceneerde groene presentatie ondersteunen. De scripts botsen op de dominante as van werkelijke milieuwinst tegenover reputatiemanagement zonder evenredige verandering: structureel reduceren en het verbergen van gemengde reststromen zijn lokaal onverenigbaar. Greenwashing via geselecteerde cijfers, perscommunicatie en rondleidingen is een sociaal herkenbare tweede lezing en blijft vooraf latent door de fotogenieke acties en het persbericht, terwijl A eerst de natuurlijke lezing is. Het wegrollen van de gemengde container is onder A strijdig met transparante afvalreductie, maar onder B precies functioneel voor beeldcontrole. Zo krijgen de eerdere groene maatregelen retrospectief de functie van campagnemateriaal. Het verbergen van belastend afval frustreert A's transparantie en structurele milieudoel, maar faciliteert B's reputatiedoel.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B4\\\",\\\"rationale\\\":\\\"B4 biedt de scherpste en meest topicspecifieke oppositie: echte structurele verduurzaming tegenover geënsceneerd reputatiemanagement. Beide lezingen delen overtuigende, dominante milieucues—afvalscheiding, emissiemetingen, bomen planten en dalende grafieken—waardoor de eerste lezing lang geloofwaardig blijft. De verborgen gemengde reststromen vormen vervolgens een compacte, duidelijke anomalie die alle eerdere signalen retrospectief herkadert als selectieve beeldvorming. De rolomkering van verantwoord bedrijf naar imagosturend merk is sterk, de inzet is direct verbonden met de verantwoordelijkheid van bedrijven binnen Script A, en de onthulling heeft substantieel dramatisch en thematisch payoffpotentieel.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik kreeg een rondleiding bij een bedrijf: keurige afvalbakken, dalende grafieken, medewerkers die boompjes plantten. Net toen de pers kwam, reed iemand een volle restcontainer achter het groene fotodoek. Blijkbaar scheiden ze afval pas ná de fotoshoot.\\\",\\\"angle\\\":\\\"Bedrijfsrondleiding met afvalscheiding als decor\\\"},{\\\"text\\\":\\\"Dat bedrijf stuurde een persbericht over minder uitstoot en liet ons trots hun milieudashboard zien. Daarna vroeg de communicatiemanager of we allemaal één stapje naar links wilden: de rookpluim stond niet in het huisstijlhandboek.\\\",\\\"angle\\\":\\\"Emissiecijfers versus camerastandpunt\\\"},{\\\"text\\\":\\\"Bij de open dag plantte iedereen een jong boompje met een naambordje erbij; heel ontroerend. Toen de camera draaide, zei de directeur: \\\\\\\"Zorg dat die gemengde container ook een naambordje krijgt: niet in beeld.\\\\\\\"\\\",\\\"angle\\\":\\\"Boomplantactie als zorgvuldig geregisseerde campagne\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een bedrijf presenteert zich tijdens een rondleiding als duurzaam, met keurige afvalscheiding, dalende cijfers en boomplantende medewerkers.\\\",\\\"realized_script_b\\\":\\\"De zichtbare duurzaamheidsmaatregelen zijn decor voor de pers; gemengd afval wordt verborgen om een groen imago te ensceneren.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant realiseert de beoogde groene opzet, de gedeelde visuele cues, de verborgen gemengde restcontainer als anomalie en de omslag naar geënsceneerde reputatiemanagement.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een directe, goed opgebouwde realisatie van het geplande greenwashingcontrast; de slotzin herkadert de keurige afvalscheiding als fotoshootdecor.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een bedrijf toont een persbericht over lagere uitstoot en een milieudashboard als bewijs van verduurzaming.\\\",\\\"realized_script_b\\\":\\\"De communicatieafdeling manipuleert het standpunt van bezoekers en camera's zodat de rookpluim niet zichtbaar is en het merk groen oogt.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De perscommunicatie, dalende emissiecijfers en het milieudashboard ondersteunen eerst de duurzame lezing; het verzoek om wegens de rookpluim te verplaatsen realiseert precies de geplande omslag naar imagobeheer.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant volgt vooral de expliciet geplande rookpluim-trigger en herinterpreteert het dashboard en persbericht als onderdelen van een zorgvuldig gekadreerd groen imago.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Tijdens een open dag organiseert een bedrijf een ontroerende boomplantactie, ogenschijnlijk als zichtbare duurzame inzet.\\\",\\\"realized_script_b\\\":\\\"De directeur behandelt de open dag als geregisseerde campagnebeeldvorming en wil de gemengde afvalcontainer uit het camerabeeld houden.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De boomplantactie vormt een geloofwaardige groene opzet, waarna de gemengde container en de regie over wat in beeld komt de bedoelde greenwashinglezing activeren.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant behoudt de bedoelde tegenstelling en het camera-gerichte verbergen van gemengd afval. De formulering met het naambordje is absurdistisch, maar blijft begrijpelijk en functioneert als punchline.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide voldoen aan de lengte-eis en realiseren de SO-tegenstelling helder. V2 is compacter, mondelinger en heeft met de rookpluim plus het verzoek om te verplaatsen een directere, visuele omslag. V1 bouwt goed op, maar de slotformulering is iets minder scherp.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide behouden de geplande greenwashingomslag en zijn goed uitvoerbaar. V1 herkadert de hele rondleiding consequent als persdecor en heeft daardoor sterkere retrospectieve reinterpretatie. V3 heeft een aardige absurdistische wending, maar het naambordje bij de container voelt iets geconstrueerder.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 en V3 zijn beide trouw aan de vereiste SO-structuur, maar V2 bereikt de omslag sneller en natuurlijker. De rookpluim maakt de tegenstelling tussen emissiecijfers en beeldregie meteen zichtbaar; V3 heeft meer omweg nodig voor een iets minder krachtige punchline.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de sterkste passerende variant: de duurzame façade is meteen begrijpelijk, de rookpluim vormt een helder omslagpunt en de slotzin herinterpreteert dashboard en persbericht efficiënt als zorgvuldig imagobeheer.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een huishouden voert ogenschijnlijk duurzame handelingen uit omdat het deelneemt aan een commerciële spaaractie: elke geregistreerde groene handeling levert punten, korting en een kans op een prijs op.",
+        "candidate_id": "B1",
+        "opposition_axis": "Ecologisch langetermijnbelang versus directe commerciële beloning",
+        "opposed_expectation": "Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.",
+        "roles_b": [
+          "Huishouden: deelnemers die punten verzamelen.",
+          "Winkelketen of app-aanbieder: organisator van de spaaractie.",
+          "Merken: sponsoren beloningen en aanbiedingen.",
+          "Kassamedewerker of bezorger: bevestigt geregistreerde aankopen of acties."
+        ],
+        "goal_b": "Zo veel mogelijk spaarpunten verzamelen om korting, producten of een hoofdprijs te krijgen.",
+        "role_remapping": [
+          "De burger of het huishouden wordt van milieubewuste deelnemer een puntenjager.",
+          "Bedrijven worden van producenten die hun impact verminderen sponsoren en aanbieders van beloningen.",
+          "Maatschappelijke organisaties en wetenschappers worden vervangen door de app en haar puntensysteem als bron van feedback.",
+          "De schonere leefomgeving verschuift van hoofddoel naar aantrekkelijk decor van de campagne."
+        ],
+        "shared_cues": [
+          "Een app met een dagelijks overzicht.",
+          "Gescheiden afvalbakken.",
+          "Een fietsrit in plaats van een autorit.",
+          "Een energiemeter met dalende cijfers.",
+          "Bonnetjes of gescande codes."
+        ],
+        "switch_trigger": "Pas nadat alle groene handelingen zijn geteld, verschijnt een melding dat nog één registratie nodig is voor een gratis airfryer.",
+        "hinge_event": "Het huishouden fietst in de regen terug naar de winkel om een lege verpakking te laten scannen, hoewel die verpakking al correct is weggegooid.",
+        "anomaly_under_a": "Binnen Script A is een extra rit enkel voor het scannen van afval onnodig en zelfs contraproductief: het gedrag dient dan niet aantoonbaar het milieu.",
+        "resolution_under_b": "Binnen Script B is de omweg doelgericht: de scan voltooit de puntenkaart en levert de beloofde beloning op.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Vrijwilligers die een stukje natuur afzetten, paden markeren en bezoekers op afstand houden, blijken in werkelijkheid een besloten bruiloft op een schilderachtige locatie voor te bereiden.",
+        "candidate_id": "B2",
+        "opposition_axis": "Bescherming van gemeenschappelijke natuur versus tijdelijke privétoe-eigening",
+        "opposed_expectation": "Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.",
+        "roles_b": [
+          "Organisator of weddingplanner: regelt de locatie.",
+          "Bruidspaar: wil een rustige, fraaie ceremonie.",
+          "Gasten: moeten de afgezette plek kunnen bereiken.",
+          "Vrijwilligers of terreinmedewerkers: bouwen de tijdelijke aankleding op.",
+          "Wandelaars: ongewenste passanten."
+        ],
+        "goal_b": "Een ongestoorde, fotogenieke bruiloft laten plaatsvinden zonder passanten in beeld of op de ceremonieplek.",
+        "role_remapping": [
+          "De natuurbeschermer wordt een locatiecoördinator.",
+          "De natuur en leefomgeving worden van te beschermen belanghebbende een decor voor de ceremonie.",
+          "Bezoekers worden van medegebruikers van natuur potentiële stoorzenders.",
+          "De overheid of terreinbeheerder wordt van beschermer en regelsteller een instantie waarvan toestemming of uitsluiting wordt geregeld."
+        ],
+        "shared_cues": [
+          "Rood-wit lint langs een pad.",
+          "Bordjes met het verzoek stil te zijn.",
+          "Mensen die in hesjes aanwijzingen geven.",
+          "Een tijdelijk afgesloten open plek.",
+          "Voorzichtig verplaatste takken en stoelen."
+        ],
+        "switch_trigger": "De groep blijft als natuurbeschermers leesbaar totdat iemand een boog van bloemen tussen de afzetlinten draagt.",
+        "hinge_event": "Een medewerker maant een wandelaar streng tot stilte terwijl een violist naast een stapel witte klapstoelen stemt.",
+        "anomaly_under_a": "Bij bescherming van flora of fauna zijn witte ceremonystoelen en een violist ongepaste, verstorende objecten; zij vergroten juist de menselijke druk op de plek.",
+        "resolution_under_b": "Bij de bruiloft zijn de stilte, de afzetting en de stoelen precies functioneel: zij creëren een rustige ceremonie en een gecontroleerd decor.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bewoner volgt nauwgezet het weer, de energiemeter en het tijdstip waarop apparaten mogen draaien, niet primair om energie te besparen maar om te profiteren van dynamische stroomprijzen.",
+        "candidate_id": "B3",
+        "opposition_axis": "Energie besparen versus energieverbruik financieel timen",
+        "opposed_expectation": "Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.",
+        "roles_b": [
+          "Bewoner: volgt tarieven en schakelt apparaten in.",
+          "Energieleverancier: rekent per tijdvak een dynamisch tarief.",
+          "Elektriciteitsnet: kent pieken, dalen en aanbod van wind- of zonnestroom.",
+          "Slimme meter of prijsapp: geeft actuele prijzen door."
+        ],
+        "goal_b": "De energierekening verlagen of geld ontvangen door elektriciteit op de gunstigste momenten af te nemen.",
+        "role_remapping": [
+          "De burger wordt van energiebespaarder een tariefstrateeg.",
+          "De energiemeter wordt van hulpmiddel voor zuinigheid een handelssignaal.",
+          "De overheid en netinfrastructuur worden van voorwaarden voor verduurzaming de bron van prijsprikkels.",
+          "Duurzame energie wordt van doel op zichzelf een aanleiding voor goedkope uren."
+        ],
+        "shared_cues": [
+          "Een app met stroomgrafieken.",
+          "Een slimme meter.",
+          "Een uitgestelde vaatwasser.",
+          "Een elektrische auto aan de laadpaal.",
+          "Aandacht voor wind en zon."
+        ],
+        "switch_trigger": "De interpretatie verandert pas wanneer de app een negatieve stroomprijs toont en de bewoner verheugd zegt dat hij nu eindelijk alles tegelijk kan aanzetten.",
+        "hinge_event": "De bewoner start tegelijk de vaatwasser, wasmachine, droger en autolader, ondanks dat het huishouden niets dringend nodig heeft.",
+        "anomaly_under_a": "Onder Script A is gelijktijdig maximaal verbruik strijdig met het doel om energie te besparen en verspilling terug te dringen.",
+        "resolution_under_b": "Onder Script B is het gedrag rationeel: op dat tariefmoment kost extra afname nauwelijks geld of levert die zelfs een financieel voordeel op.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.",
+        "candidate_id": "B4",
+        "opposition_axis": "Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening",
+        "opposed_expectation": "Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.",
+        "roles_b": [
+          "Bedrijfsleiding: stuurt de presentatie en reputatie.",
+          "Communicatieafdeling: maakt campagnebeelden en persberichten.",
+          "Auditeur, investeerder of certificerende instantie: beoordeelt het groene profiel.",
+          "Werknemers: voeren zichtbare acties uit.",
+          "Klanten: vormen zich een beeld van het merk."
+        ],
+        "goal_b": "Een groen imago, gunstige beoordeling of commerciële voorkeur verkrijgen zonder evenredige structurele verandering.",
+        "role_remapping": [
+          "Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.",
+          "Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.",
+          "Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.",
+          "Natuur wordt van beschermd belang een beeldmerk voor de campagne."
+        ],
+        "shared_cues": [
+          "Afvalcontainers met duidelijke labels.",
+          "Een dashboard met dalende grafieken.",
+          "Medewerkers die jonge bomen planten.",
+          "Een rondleiding voor bezoekers.",
+          "Een persbericht over nieuwe doelen."
+        ],
+        "switch_trigger": "De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.",
+        "hinge_event": "Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.",
+        "anomaly_under_a": "Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.",
+        "resolution_under_b": "Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B4 biedt de scherpste en meest topicspecifieke oppositie: echte structurele verduurzaming tegenover geënsceneerd reputatiemanagement. Beide lezingen delen overtuigende, dominante milieucues—afvalscheiding, emissiemetingen, bomen planten en dalende grafieken—waardoor de eerste lezing lang geloofwaardig blijft. De verborgen gemengde reststromen vormen vervolgens een compacte, duidelijke anomalie die alle eerdere signalen retrospectief herkadert als selectieve beeldvorming. De rolomkering van verantwoord bedrijf naar imagosturend merk is sterk, de inzet is direct verbonden met de verantwoordelijkheid van bedrijven binnen Script A, en de onthulling heeft substantieel dramatisch en thematisch payoffpotentieel.",
+    "variants": [
+      {
+        "text": "Ik kreeg een rondleiding bij een bedrijf: keurige afvalbakken, dalende grafieken, medewerkers die boompjes plantten. Net toen de pers kwam, reed iemand een volle restcontainer achter het groene fotodoek. Blijkbaar scheiden ze afval pas ná de fotoshoot.",
+        "angle": "Bedrijfsrondleiding met afvalscheiding als decor"
+      },
+      {
+        "text": "Dat bedrijf stuurde een persbericht over minder uitstoot en liet ons trots hun milieudashboard zien. Daarna vroeg de communicatiemanager of we allemaal één stapje naar links wilden: de rookpluim stond niet in het huisstijlhandboek.",
+        "angle": "Emissiecijfers versus camerastandpunt"
+      },
+      {
+        "text": "Bij de open dag plantte iedereen een jong boompje met een naambordje erbij; heel ontroerend. Toen de camera draaide, zei de directeur: \"Zorg dat die gemengde container ook een naambordje krijgt: niet in beeld.\"",
+        "angle": "Boomplantactie als zorgvuldig geregisseerde campagne"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 14072,
+      "output_tokens": 7342,
+      "total_tokens": 21414
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een inwoner probeert met dagelijkse, haalbare keuzes zijn ecologische voetafdruk te verkleinen, terwijl overheid, bedrijven en maatschappelijke organisaties de voorwaarden scheppen voor een schonere leefomgeving.",
+          "participants_and_roles": [
+            "Een burger of huishouden: maakt keuzes over vervoer, energie, voeding, afval en consumptie.",
+            "Overheid: stelt regels, biedt voorzieningen en stimuleert verduurzaming.",
+            "Bedrijven: produceren goederen en diensten en verminderen hun milieu-impact.",
+            "Natuur en leefomgeving: worden beschermd tegen vervuiling, uitputting en klimaatverandering.",
+            "Maatschappelijke organisaties en wetenschappers: informeren, meten effecten en pleiten voor maatregelen."
+          ],
+          "apparent_goal": "De uitstoot, vervuiling en verspilling verminderen zodat klimaat, milieu en natuur ook op lange termijn leefbaar en gezond blijven.",
+          "preconditions": [
+            "Er is breed erkende milieuschade of klimaatdruk, zoals uitstoot, afval, verlies van biodiversiteit of extreem weer.",
+            "Deelnemers beschikken over enige keuzevrijheid, informatie en toegang tot duurzamere alternatieven.",
+            "Collectieve infrastructuur en beleid, zoals openbaar vervoer, afvalinzameling of energienetten, maken individuele keuzes mede mogelijk.",
+            "De baten zijn vaak verspreid en langdurig, terwijl sommige kosten en inspanningen direct voelbaar zijn."
+          ],
+          "expected_actions": [
+            "Afval scheiden, minder verspillen en producten hergebruiken of repareren.",
+            "Energie besparen en waar mogelijk kiezen voor duurzame energie.",
+            "Vaker lopen, fietsen, openbaar vervoer gebruiken of minder vervuilend reizen.",
+            "Bewuster consumeren, bijvoorbeeld minder wegwerp, minder vlees of minder nieuwe aankopen.",
+            "Regels, investeringen en bedrijfsmaatregelen invoeren die uitstoot en natuurverlies terugdringen."
+          ],
+          "expected_outcome": "Door vele consistente individuele en collectieve maatregelen nemen uitstoot en vervuiling af, blijven grondstoffen langer in gebruik en krijgt natuur meer kans om te herstellen.",
+          "expected_propositions": [
+            "Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.",
+            "Eén individuele keuze lost het probleem niet op, maar veel vergelijkbare keuzes kunnen samen verschil maken.",
+            "Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.",
+            "Milieuvriendelijke alternatieven zijn bij voorkeur betrouwbaar, betaalbaar en praktisch beschikbaar.",
+            "Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is."
+          ],
+          "audience_expectation": "Een opzet rond klimaat, milieu en natuur activeert de verwachting van een serieus maar herkenbaar verbetertraject: verantwoord gedrag, kleine dagelijkse offers en samenwerking tussen burger, overheid en bedrijf leiden geleidelijk tot een schonere, duurzamere toekomst."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een huishouden voert ogenschijnlijk duurzame handelingen uit omdat het deelneemt aan een commerciële spaaractie: elke geregistreerde groene handeling levert punten, korting en een kans op een prijs op.",
+            "opposition_axis": "Ecologisch langetermijnbelang versus directe commerciële beloning",
+            "opposed_proposition": "Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.",
+            "shared_anchor": "Het huishouden registreert elke duurzame keuze in een app.",
+            "reading_a": "De app helpt het huishouden om afvalscheiding, energiebesparing en duurzaam vervoer consequent vol te houden en zo de voetafdruk te verkleinen.",
+            "reading_b": "De app is vooral een klantenbindingsprogramma: de gezinsleden verzamelen punten en optimaliseren hun gedrag voor korting en prijzen.",
+            "roles_b": [
+              "Huishouden: deelnemers die punten verzamelen.",
+              "Winkelketen of app-aanbieder: organisator van de spaaractie.",
+              "Merken: sponsoren beloningen en aanbiedingen.",
+              "Kassamedewerker of bezorger: bevestigt geregistreerde aankopen of acties."
+            ],
+            "goal_b": "Zo veel mogelijk spaarpunten verzamelen om korting, producten of een hoofdprijs te krijgen.",
+            "role_remapping": [
+              "De burger of het huishouden wordt van milieubewuste deelnemer een puntenjager.",
+              "Bedrijven worden van producenten die hun impact verminderen sponsoren en aanbieders van beloningen.",
+              "Maatschappelijke organisaties en wetenschappers worden vervangen door de app en haar puntensysteem als bron van feedback.",
+              "De schonere leefomgeving verschuift van hoofddoel naar aantrekkelijk decor van de campagne."
+            ],
+            "shared_cues": [
+              "Een app met een dagelijks overzicht.",
+              "Gescheiden afvalbakken.",
+              "Een fietsrit in plaats van een autorit.",
+              "Een energiemeter met dalende cijfers.",
+              "Bonnetjes of gescande codes."
+            ],
+            "switch_trigger": "Pas nadat alle groene handelingen zijn geteld, verschijnt een melding dat nog één registratie nodig is voor een gratis airfryer.",
+            "hinge_event": "Het huishouden fietst in de regen terug naar de winkel om een lege verpakking te laten scannen, hoewel die verpakking al correct is weggegooid.",
+            "anomaly_under_a": "Binnen Script A is een extra rit enkel voor het scannen van afval onnodig en zelfs contraproductief: het gedrag dient dan niet aantoonbaar het milieu.",
+            "resolution_under_b": "Binnen Script B is de omweg doelgericht: de scan voltooit de puntenkaart en levert de beloofde beloning op."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Vrijwilligers die een stukje natuur afzetten, paden markeren en bezoekers op afstand houden, blijken in werkelijkheid een besloten bruiloft op een schilderachtige locatie voor te bereiden.",
+            "opposition_axis": "Bescherming van gemeenschappelijke natuur versus tijdelijke privétoe-eigening",
+            "opposed_proposition": "Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.",
+            "shared_anchor": "Een groep zet een kwetsbaar ogend natuurgebied met linten af.",
+            "reading_a": "De linten, bordjes en aanwijzingen beschermen broedende vogels of kwetsbare planten tegen verstoring door recreanten.",
+            "reading_b": "De linten, bordjes en aanwijzingen reserveren het terrein en houden toevallige wandelaars weg van een privéceremonie.",
+            "roles_b": [
+              "Organisator of weddingplanner: regelt de locatie.",
+              "Bruidspaar: wil een rustige, fraaie ceremonie.",
+              "Gasten: moeten de afgezette plek kunnen bereiken.",
+              "Vrijwilligers of terreinmedewerkers: bouwen de tijdelijke aankleding op.",
+              "Wandelaars: ongewenste passanten."
+            ],
+            "goal_b": "Een ongestoorde, fotogenieke bruiloft laten plaatsvinden zonder passanten in beeld of op de ceremonieplek.",
+            "role_remapping": [
+              "De natuurbeschermer wordt een locatiecoördinator.",
+              "De natuur en leefomgeving worden van te beschermen belanghebbende een decor voor de ceremonie.",
+              "Bezoekers worden van medegebruikers van natuur potentiële stoorzenders.",
+              "De overheid of terreinbeheerder wordt van beschermer en regelsteller een instantie waarvan toestemming of uitsluiting wordt geregeld."
+            ],
+            "shared_cues": [
+              "Rood-wit lint langs een pad.",
+              "Bordjes met het verzoek stil te zijn.",
+              "Mensen die in hesjes aanwijzingen geven.",
+              "Een tijdelijk afgesloten open plek.",
+              "Voorzichtig verplaatste takken en stoelen."
+            ],
+            "switch_trigger": "De groep blijft als natuurbeschermers leesbaar totdat iemand een boog van bloemen tussen de afzetlinten draagt.",
+            "hinge_event": "Een medewerker maant een wandelaar streng tot stilte terwijl een violist naast een stapel witte klapstoelen stemt.",
+            "anomaly_under_a": "Bij bescherming van flora of fauna zijn witte ceremonystoelen en een violist ongepaste, verstorende objecten; zij vergroten juist de menselijke druk op de plek.",
+            "resolution_under_b": "Bij de bruiloft zijn de stilte, de afzetting en de stoelen precies functioneel: zij creëren een rustige ceremonie en een gecontroleerd decor."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een bewoner volgt nauwgezet het weer, de energiemeter en het tijdstip waarop apparaten mogen draaien, niet primair om energie te besparen maar om te profiteren van dynamische stroomprijzen.",
+            "opposition_axis": "Energie besparen versus energieverbruik financieel timen",
+            "opposed_proposition": "Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.",
+            "shared_anchor": "De bewoner plant huishoudelijke apparaten rond de energiemeter.",
+            "reading_a": "De bewoner stelt wassen, laden en verwarmen uit, beperkt onnodig verbruik en kiest zo bewust voor minder energiegebruik.",
+            "reading_b": "De bewoner verplaatst juist groot verbruik naar uren waarin de stroomprijs zeer laag of negatief is, ongeacht de totale hoeveelheid gebruikte energie.",
+            "roles_b": [
+              "Bewoner: volgt tarieven en schakelt apparaten in.",
+              "Energieleverancier: rekent per tijdvak een dynamisch tarief.",
+              "Elektriciteitsnet: kent pieken, dalen en aanbod van wind- of zonnestroom.",
+              "Slimme meter of prijsapp: geeft actuele prijzen door."
+            ],
+            "goal_b": "De energierekening verlagen of geld ontvangen door elektriciteit op de gunstigste momenten af te nemen.",
+            "role_remapping": [
+              "De burger wordt van energiebespaarder een tariefstrateeg.",
+              "De energiemeter wordt van hulpmiddel voor zuinigheid een handelssignaal.",
+              "De overheid en netinfrastructuur worden van voorwaarden voor verduurzaming de bron van prijsprikkels.",
+              "Duurzame energie wordt van doel op zichzelf een aanleiding voor goedkope uren."
+            ],
+            "shared_cues": [
+              "Een app met stroomgrafieken.",
+              "Een slimme meter.",
+              "Een uitgestelde vaatwasser.",
+              "Een elektrische auto aan de laadpaal.",
+              "Aandacht voor wind en zon."
+            ],
+            "switch_trigger": "De interpretatie verandert pas wanneer de app een negatieve stroomprijs toont en de bewoner verheugd zegt dat hij nu eindelijk alles tegelijk kan aanzetten.",
+            "hinge_event": "De bewoner start tegelijk de vaatwasser, wasmachine, droger en autolader, ondanks dat het huishouden niets dringend nodig heeft.",
+            "anomaly_under_a": "Onder Script A is gelijktijdig maximaal verbruik strijdig met het doel om energie te besparen en verspilling terug te dringen.",
+            "resolution_under_b": "Onder Script B is het gedrag rationeel: op dat tariefmoment kost extra afname nauwelijks geld of levert die zelfs een financieel voordeel op."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.",
+            "opposition_axis": "Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening",
+            "opposed_proposition": "Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.",
+            "shared_anchor": "Het bedrijf presenteert meetgegevens en zichtbare groene maatregelen.",
+            "reading_a": "Het bedrijf brengt zijn milieu-impact in kaart, vermindert afval en uitstoot en investeert aantoonbaar in structurele verduurzaming.",
+            "reading_b": "Het bedrijf selecteert vooral fotogenieke maatregelen en gunstige cijfers om klanten, investeerders en beoordelaars een groen beeld te geven.",
+            "roles_b": [
+              "Bedrijfsleiding: stuurt de presentatie en reputatie.",
+              "Communicatieafdeling: maakt campagnebeelden en persberichten.",
+              "Auditeur, investeerder of certificerende instantie: beoordeelt het groene profiel.",
+              "Werknemers: voeren zichtbare acties uit.",
+              "Klanten: vormen zich een beeld van het merk."
+            ],
+            "goal_b": "Een groen imago, gunstige beoordeling of commerciële voorkeur verkrijgen zonder evenredige structurele verandering.",
+            "role_remapping": [
+              "Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.",
+              "Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.",
+              "Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.",
+              "Natuur wordt van beschermd belang een beeldmerk voor de campagne."
+            ],
+            "shared_cues": [
+              "Afvalcontainers met duidelijke labels.",
+              "Een dashboard met dalende grafieken.",
+              "Medewerkers die jonge bomen planten.",
+              "Een rondleiding voor bezoekers.",
+              "Een persbericht over nieuwe doelen."
+            ],
+            "switch_trigger": "De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.",
+            "hinge_event": "Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.",
+            "anomaly_under_a": "Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.",
+            "resolution_under_b": "Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een huishouden voert ogenschijnlijk duurzame handelingen uit omdat het deelneemt aan een commerciële spaaractie: elke geregistreerde groene handeling levert punten, korting en een kans op een prijs op.",
+              "opposition_axis": "Ecologisch langetermijnbelang versus directe commerciële beloning",
+              "opposed_proposition": "Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.",
+              "shared_anchor": "Het huishouden registreert elke duurzame keuze in een app.",
+              "reading_a": "De app helpt het huishouden om afvalscheiding, energiebesparing en duurzaam vervoer consequent vol te houden en zo de voetafdruk te verkleinen.",
+              "reading_b": "De app is vooral een klantenbindingsprogramma: de gezinsleden verzamelen punten en optimaliseren hun gedrag voor korting en prijzen.",
+              "roles_b": [
+                "Huishouden: deelnemers die punten verzamelen.",
+                "Winkelketen of app-aanbieder: organisator van de spaaractie.",
+                "Merken: sponsoren beloningen en aanbiedingen.",
+                "Kassamedewerker of bezorger: bevestigt geregistreerde aankopen of acties."
+              ],
+              "goal_b": "Zo veel mogelijk spaarpunten verzamelen om korting, producten of een hoofdprijs te krijgen.",
+              "role_remapping": [
+                "De burger of het huishouden wordt van milieubewuste deelnemer een puntenjager.",
+                "Bedrijven worden van producenten die hun impact verminderen sponsoren en aanbieders van beloningen.",
+                "Maatschappelijke organisaties en wetenschappers worden vervangen door de app en haar puntensysteem als bron van feedback.",
+                "De schonere leefomgeving verschuift van hoofddoel naar aantrekkelijk decor van de campagne."
+              ],
+              "shared_cues": [
+                "Een app met een dagelijks overzicht.",
+                "Gescheiden afvalbakken.",
+                "Een fietsrit in plaats van een autorit.",
+                "Een energiemeter met dalende cijfers.",
+                "Bonnetjes of gescande codes."
+              ],
+              "switch_trigger": "Pas nadat alle groene handelingen zijn geteld, verschijnt een melding dat nog één registratie nodig is voor een gratis airfryer.",
+              "hinge_event": "Het huishouden fietst in de regen terug naar de winkel om een lege verpakking te laten scannen, hoewel die verpakking al correct is weggegooid.",
+              "anomaly_under_a": "Binnen Script A is een extra rit enkel voor het scannen van afval onnodig en zelfs contraproductief: het gedrag dient dan niet aantoonbaar het milieu.",
+              "resolution_under_b": "Binnen Script B is de omweg doelgericht: de scan voltooit de puntenkaart en levert de beloofde beloning op."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Vrijwilligers die een stukje natuur afzetten, paden markeren en bezoekers op afstand houden, blijken in werkelijkheid een besloten bruiloft op een schilderachtige locatie voor te bereiden.",
+              "opposition_axis": "Bescherming van gemeenschappelijke natuur versus tijdelijke privétoe-eigening",
+              "opposed_proposition": "Bescherming van natuur en klimaat is een langetermijnbelang, ook als het directe resultaat niet meteen zichtbaar is.",
+              "shared_anchor": "Een groep zet een kwetsbaar ogend natuurgebied met linten af.",
+              "reading_a": "De linten, bordjes en aanwijzingen beschermen broedende vogels of kwetsbare planten tegen verstoring door recreanten.",
+              "reading_b": "De linten, bordjes en aanwijzingen reserveren het terrein en houden toevallige wandelaars weg van een privéceremonie.",
+              "roles_b": [
+                "Organisator of weddingplanner: regelt de locatie.",
+                "Bruidspaar: wil een rustige, fraaie ceremonie.",
+                "Gasten: moeten de afgezette plek kunnen bereiken.",
+                "Vrijwilligers of terreinmedewerkers: bouwen de tijdelijke aankleding op.",
+                "Wandelaars: ongewenste passanten."
+              ],
+              "goal_b": "Een ongestoorde, fotogenieke bruiloft laten plaatsvinden zonder passanten in beeld of op de ceremonieplek.",
+              "role_remapping": [
+                "De natuurbeschermer wordt een locatiecoördinator.",
+                "De natuur en leefomgeving worden van te beschermen belanghebbende een decor voor de ceremonie.",
+                "Bezoekers worden van medegebruikers van natuur potentiële stoorzenders.",
+                "De overheid of terreinbeheerder wordt van beschermer en regelsteller een instantie waarvan toestemming of uitsluiting wordt geregeld."
+              ],
+              "shared_cues": [
+                "Rood-wit lint langs een pad.",
+                "Bordjes met het verzoek stil te zijn.",
+                "Mensen die in hesjes aanwijzingen geven.",
+                "Een tijdelijk afgesloten open plek.",
+                "Voorzichtig verplaatste takken en stoelen."
+              ],
+              "switch_trigger": "De groep blijft als natuurbeschermers leesbaar totdat iemand een boog van bloemen tussen de afzetlinten draagt.",
+              "hinge_event": "Een medewerker maant een wandelaar streng tot stilte terwijl een violist naast een stapel witte klapstoelen stemt.",
+              "anomaly_under_a": "Bij bescherming van flora of fauna zijn witte ceremonystoelen en een violist ongepaste, verstorende objecten; zij vergroten juist de menselijke druk op de plek.",
+              "resolution_under_b": "Bij de bruiloft zijn de stilte, de afzetting en de stoelen precies functioneel: zij creëren een rustige ceremonie en een gecontroleerd decor."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een bewoner volgt nauwgezet het weer, de energiemeter en het tijdstip waarop apparaten mogen draaien, niet primair om energie te besparen maar om te profiteren van dynamische stroomprijzen.",
+              "opposition_axis": "Energie besparen versus energieverbruik financieel timen",
+              "opposed_proposition": "Duurzaam gedrag vraagt meestal om aandacht, planning of een klein offer in gemak, tijd of geld.",
+              "shared_anchor": "De bewoner plant huishoudelijke apparaten rond de energiemeter.",
+              "reading_a": "De bewoner stelt wassen, laden en verwarmen uit, beperkt onnodig verbruik en kiest zo bewust voor minder energiegebruik.",
+              "reading_b": "De bewoner verplaatst juist groot verbruik naar uren waarin de stroomprijs zeer laag of negatief is, ongeacht de totale hoeveelheid gebruikte energie.",
+              "roles_b": [
+                "Bewoner: volgt tarieven en schakelt apparaten in.",
+                "Energieleverancier: rekent per tijdvak een dynamisch tarief.",
+                "Elektriciteitsnet: kent pieken, dalen en aanbod van wind- of zonnestroom.",
+                "Slimme meter of prijsapp: geeft actuele prijzen door."
+              ],
+              "goal_b": "De energierekening verlagen of geld ontvangen door elektriciteit op de gunstigste momenten af te nemen.",
+              "role_remapping": [
+                "De burger wordt van energiebespaarder een tariefstrateeg.",
+                "De energiemeter wordt van hulpmiddel voor zuinigheid een handelssignaal.",
+                "De overheid en netinfrastructuur worden van voorwaarden voor verduurzaming de bron van prijsprikkels.",
+                "Duurzame energie wordt van doel op zichzelf een aanleiding voor goedkope uren."
+              ],
+              "shared_cues": [
+                "Een app met stroomgrafieken.",
+                "Een slimme meter.",
+                "Een uitgestelde vaatwasser.",
+                "Een elektrische auto aan de laadpaal.",
+                "Aandacht voor wind en zon."
+              ],
+              "switch_trigger": "De interpretatie verandert pas wanneer de app een negatieve stroomprijs toont en de bewoner verheugd zegt dat hij nu eindelijk alles tegelijk kan aanzetten.",
+              "hinge_event": "De bewoner start tegelijk de vaatwasser, wasmachine, droger en autolader, ondanks dat het huishouden niets dringend nodig heeft.",
+              "anomaly_under_a": "Onder Script A is gelijktijdig maximaal verbruik strijdig met het doel om energie te besparen en verspilling terug te dringen.",
+              "resolution_under_b": "Onder Script B is het gedrag rationeel: op dat tariefmoment kost extra afname nauwelijks geld of levert die zelfs een financieel voordeel op."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een bedrijf dat afval scheidt, emissies meet en bomen plant, bereidt vooral een publiciteitscampagne en een gunstige duurzaamheidsbeoordeling voor, terwijl de wezenlijke vervuilende bedrijfsvoering buiten beeld blijft.",
+              "opposition_axis": "Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening",
+              "opposed_proposition": "Overheid en bedrijven dragen naast burgers een grote verantwoordelijkheid voor structurele verandering.",
+              "shared_anchor": "Het bedrijf presenteert meetgegevens en zichtbare groene maatregelen.",
+              "reading_a": "Het bedrijf brengt zijn milieu-impact in kaart, vermindert afval en uitstoot en investeert aantoonbaar in structurele verduurzaming.",
+              "reading_b": "Het bedrijf selecteert vooral fotogenieke maatregelen en gunstige cijfers om klanten, investeerders en beoordelaars een groen beeld te geven.",
+              "roles_b": [
+                "Bedrijfsleiding: stuurt de presentatie en reputatie.",
+                "Communicatieafdeling: maakt campagnebeelden en persberichten.",
+                "Auditeur, investeerder of certificerende instantie: beoordeelt het groene profiel.",
+                "Werknemers: voeren zichtbare acties uit.",
+                "Klanten: vormen zich een beeld van het merk."
+              ],
+              "goal_b": "Een groen imago, gunstige beoordeling of commerciële voorkeur verkrijgen zonder evenredige structurele verandering.",
+              "role_remapping": [
+                "Bedrijven worden van structureel verantwoordelijke vervuilers-verlagers een merk dat reputatie beheert.",
+                "Wetenschappers en maatschappelijke organisaties worden van onafhankelijke informanten externe beoordelaars of kritische doelgroepen.",
+                "Meetgegevens worden van bewijs van milieuwinst selectiemateriaal voor communicatie.",
+                "Natuur wordt van beschermd belang een beeldmerk voor de campagne."
+              ],
+              "shared_cues": [
+                "Afvalcontainers met duidelijke labels.",
+                "Een dashboard met dalende grafieken.",
+                "Medewerkers die jonge bomen planten.",
+                "Een rondleiding voor bezoekers.",
+                "Een persbericht over nieuwe doelen."
+              ],
+              "switch_trigger": "De groene lezing blijft overheersen totdat de communicatiemanager vlak voor de rondleiding opdracht geeft een rookpluim buiten het camerabeeld te houden.",
+              "hinge_event": "Een medewerker rijdt een grote container met gemengde reststromen achter een groen fotodoek precies wanneer de camera's arriveren.",
+              "anomaly_under_a": "Als het bedrijf werkelijk transparant afval vermindert en scheidt, is het verbergen van een volle container met gemengde reststromen onverklaarbaar en strijdig met die inzet.",
+              "resolution_under_b": "Als het primaire doel reputatiemanagement is, is het verplaatsen van de container doelmatig: het bewaakt het zorgvuldig geënsceneerde groene beeld voor de bezoekers en camera's."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Eén tekst kan zowel een duurzaamheidsapp als een commerciële spaaractie tonen: registratie, afvalscheiding, fietsen, energiemeting en scans passen bij beide lezingen. Script B is herkenbaar en de opzet laat Script A aanvankelijk domineren, terwijl bonnetjes en codes de commerciële lezing al latent mogelijk maken. De onnodige rit voor een scan is onder A afwijkend maar wordt onder B doelgericht door de puntendrempel; eerdere handelingen worden daardoor retrospectief puntenoptimalisatie. De kernscripts zijn echter niet werkelijk incompatibel: commerciële beloning kan duurzaam gedrag stimuleren zonder dat het ecologische langetermijndoel verdwijnt. Ook is geen duidelijke functionele reversering onderbouwd: de scanrit verhindert Script A niet noodzakelijk, maar maakt B wel mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde afzetting, stiltebordjes, aanwijzingen en afgesloten open plek kunnen aanvankelijk natuurlijk worden gelezen als bescherming van kwetsbare natuur en later als afscherming van een bruiloft. De doelen botsen lokaal op één dominante as: gemeenschappelijke natuurbescherming tegenover tijdelijke privébeschikking over die plek. Een besloten ceremonie op een afgezette, fotogenieke locatie is sociaal herkenbaar; de bruiloftslezening blijft vooraf latent via stoelen, inrichting en ongebruikelijk strenge stilte. De violist en witte ceremonystoelen zijn onder A storend en onverklaard, maar onder B functioneel. Daardoor veranderen afzetting en stilte retrospectief van beschermingsmiddelen in middelen om passanten uit de ceremonie te weren. De inrichting die natuurbehoud belemmert, faciliteert tegelijkertijd de private ceremonie."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Planning rond een slimme meter, apparaten uitstellen en aandacht voor wind en zon kan zowel zuinig energiegebruik als tariefsturing dragen. De scripts zijn bij het hinge-event lokaal incompatibel: maximaal gelijktijdig en niet-noodzakelijk verbruik ondermijnt energiebesparing, maar dient financieel profiteren van negatieve prijzen. De lezing van dynamische tarieven is herkenbaar en vooraf latent aanwezig door de prijsapp, meter en tijdgebonden planning, terwijl de duurzame lezing aanvankelijk normaal domineert. De negatieve prijs en het tegelijk inschakelen van alles lossen de anomalie onder B op en herduiden eerdere planning van besparen naar financieel timen. Het extra verbruik blokkeert A's besparingsdoel en maakt B's financiële doel juist mogelijk."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Meetgegevens, afvalscheiding, boomplanting en zichtbare groene maatregelen kunnen zowel structurele verduurzaming als een geënsceneerde groene presentatie ondersteunen. De scripts botsen op de dominante as van werkelijke milieuwinst tegenover reputatiemanagement zonder evenredige verandering: structureel reduceren en het verbergen van gemengde reststromen zijn lokaal onverenigbaar. Greenwashing via geselecteerde cijfers, perscommunicatie en rondleidingen is een sociaal herkenbare tweede lezing en blijft vooraf latent door de fotogenieke acties en het persbericht, terwijl A eerst de natuurlijke lezing is. Het wegrollen van de gemengde container is onder A strijdig met transparante afvalreductie, maar onder B precies functioneel voor beeldcontrole. Zo krijgen de eerdere groene maatregelen retrospectief de functie van campagnemateriaal. Het verbergen van belastend afval frustreert A's transparantie en structurele milieudoel, maar faciliteert B's reputatiedoel."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Eén tekst kan zowel een duurzaamheidsapp als een commerciële spaaractie tonen: registratie, afvalscheiding, fietsen, energiemeting en scans passen bij beide lezingen. Script B is herkenbaar en de opzet laat Script A aanvankelijk domineren, terwijl bonnetjes en codes de commerciële lezing al latent mogelijk maken. De onnodige rit voor een scan is onder A afwijkend maar wordt onder B doelgericht door de puntendrempel; eerdere handelingen worden daardoor retrospectief puntenoptimalisatie. De kernscripts zijn echter niet werkelijk incompatibel: commerciële beloning kan duurzaam gedrag stimuleren zonder dat het ecologische langetermijndoel verdwijnt. Ook is geen duidelijke functionele reversering onderbouwd: de scanrit verhindert Script A niet noodzakelijk, maar maakt B wel mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde afzetting, stiltebordjes, aanwijzingen en afgesloten open plek kunnen aanvankelijk natuurlijk worden gelezen als bescherming van kwetsbare natuur en later als afscherming van een bruiloft. De doelen botsen lokaal op één dominante as: gemeenschappelijke natuurbescherming tegenover tijdelijke privébeschikking over die plek. Een besloten ceremonie op een afgezette, fotogenieke locatie is sociaal herkenbaar; de bruiloftslezening blijft vooraf latent via stoelen, inrichting en ongebruikelijk strenge stilte. De violist en witte ceremonystoelen zijn onder A storend en onverklaard, maar onder B functioneel. Daardoor veranderen afzetting en stilte retrospectief van beschermingsmiddelen in middelen om passanten uit de ceremonie te weren. De inrichting die natuurbehoud belemmert, faciliteert tegelijkertijd de private ceremonie."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Planning rond een slimme meter, apparaten uitstellen en aandacht voor wind en zon kan zowel zuinig energiegebruik als tariefsturing dragen. De scripts zijn bij het hinge-event lokaal incompatibel: maximaal gelijktijdig en niet-noodzakelijk verbruik ondermijnt energiebesparing, maar dient financieel profiteren van negatieve prijzen. De lezing van dynamische tarieven is herkenbaar en vooraf latent aanwezig door de prijsapp, meter en tijdgebonden planning, terwijl de duurzame lezing aanvankelijk normaal domineert. De negatieve prijs en het tegelijk inschakelen van alles lossen de anomalie onder B op en herduiden eerdere planning van besparen naar financieel timen. Het extra verbruik blokkeert A's besparingsdoel en maakt B's financiële doel juist mogelijk."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Meetgegevens, afvalscheiding, boomplanting en zichtbare groene maatregelen kunnen zowel structurele verduurzaming als een geënsceneerde groene presentatie ondersteunen. De scripts botsen op de dominante as van werkelijke milieuwinst tegenover reputatiemanagement zonder evenredige verandering: structureel reduceren en het verbergen van gemengde reststromen zijn lokaal onverenigbaar. Greenwashing via geselecteerde cijfers, perscommunicatie en rondleidingen is een sociaal herkenbare tweede lezing en blijft vooraf latent door de fotogenieke acties en het persbericht, terwijl A eerst de natuurlijke lezing is. Het wegrollen van de gemengde container is onder A strijdig met transparante afvalreductie, maar onder B precies functioneel voor beeldcontrole. Zo krijgen de eerdere groene maatregelen retrospectief de functie van campagnemateriaal. Het verbergen van belastend afval frustreert A's transparantie en structurele milieudoel, maar faciliteert B's reputatiedoel."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B4"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een bedrijf presenteert zich tijdens een rondleiding als duurzaam, met keurige afvalscheiding, dalende cijfers en boomplantende medewerkers.",
+          "realized_script_b": "De zichtbare duurzaamheidsmaatregelen zijn decor voor de pers; gemengd afval wordt verborgen om een groen imago te ensceneren.",
+          "realized_opposition_axis": "Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De variant realiseert de beoogde groene opzet, de gedeelde visuele cues, de verborgen gemengde restcontainer als anomalie en de omslag naar geënsceneerde reputatiemanagement."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een directe, goed opgebouwde realisatie van het geplande greenwashingcontrast; de slotzin herkadert de keurige afvalscheiding als fotoshootdecor.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een bedrijf toont een persbericht over lagere uitstoot en een milieudashboard als bewijs van verduurzaming.",
+          "realized_script_b": "De communicatieafdeling manipuleert het standpunt van bezoekers en camera's zodat de rookpluim niet zichtbaar is en het merk groen oogt.",
+          "realized_opposition_axis": "Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De perscommunicatie, dalende emissiecijfers en het milieudashboard ondersteunen eerst de duurzame lezing; het verzoek om wegens de rookpluim te verplaatsen realiseert precies de geplande omslag naar imagobeheer."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant volgt vooral de expliciet geplande rookpluim-trigger en herinterpreteert het dashboard en persbericht als onderdelen van een zorgvuldig gekadreerd groen imago.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Tijdens een open dag organiseert een bedrijf een ontroerende boomplantactie, ogenschijnlijk als zichtbare duurzame inzet.",
+          "realized_script_b": "De directeur behandelt de open dag als geregisseerde campagnebeeldvorming en wil de gemengde afvalcontainer uit het camerabeeld houden.",
+          "realized_opposition_axis": "Werkelijke milieuwinst versus reputatiemanagement en schijnvergroening.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De boomplantactie vormt een geloofwaardige groene opzet, waarna de gemengde container en de regie over wat in beeld komt de bedoelde greenwashinglezing activeren."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant behoudt de bedoelde tegenstelling en het camera-gerichte verbergen van gemengd afval. De formulering met het naambordje is absurdistisch, maar blijft begrijpelijk en functioneert als punchline.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "Beide voldoen aan de lengte-eis en realiseren de SO-tegenstelling helder. V2 is compacter, mondelinger en heeft met de rookpluim plus het verzoek om te verplaatsen een directere, visuele omslag. V1 bouwt goed op, maar de slotformulering is iets minder scherp."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "Beide behouden de geplande greenwashingomslag en zijn goed uitvoerbaar. V1 herkadert de hele rondleiding consequent als persdecor en heeft daardoor sterkere retrospectieve reinterpretatie. V3 heeft een aardige absurdistische wending, maar het naambordje bij de container voelt iets geconstrueerder."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 en V3 zijn beide trouw aan de vereiste SO-structuur, maar V2 bereikt de omslag sneller en natuurlijker. De rookpluim maakt de tegenstelling tussen emissiecijfers en beeldregie meteen zichtbaar; V3 heeft meer omweg nodig voor een iets minder krachtige punchline."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 is de sterkste passerende variant: de duurzame façade is meteen begrijpelijk, de rookpluim vormt een helder omslagpunt en de slotzin herinterpreteert dashboard en persbericht efficiënt als zorgvuldig imagobeheer."
+    }
+  },
+  "result_sha256": "4e67aa98cbabb2428ebac85af523915dd672fb6528b157a42699fd903a3f2abb"
+}

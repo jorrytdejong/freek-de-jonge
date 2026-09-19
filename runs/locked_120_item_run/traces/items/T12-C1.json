@@ -1,0 +1,821 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T12-C1",
+  "topic_id": "T12",
+  "topic": "Kunst, theater en cabaret",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:50:13.771633+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Kunst, theater en cabaret",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op en presenteert een ingestudeerd of voorbereid programma.\",\n      \"Regisseur, technicus en theaterpersoneel: maken de voorstelling uitvoerbaar, zichtbaar en hoorbaar.\",\n      \"Publiek: koopt een kaartje, neemt plaats, volgt de voorstelling en reageert met aandacht, applaus of gelach.\",\n      \"Theater of podium: biedt een afgebakende, professionele omgeving met een begin, voorstelling en afloop.\"\n    ],\n    \"apparent_goal\": \"Het publiek een geslaagde culturele avond bieden: ontroeren, vermaken, aan het denken zetten of laten lachen.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, tentoonstelling of optreden met een herkenbare titel, tijd en locatie.\",\n      \"De makers hebben materiaal voorbereid, gerepeteerd of samengesteld.\",\n      \"Het publiek verwacht dat de zaal, techniek en zitplaatsen geregeld zijn.\",\n      \"Er gelden basisafspraken: op tijd komen, tijdens de voorstelling niet storen en na afloop waardering tonen.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers komen binnen, tonen hun kaartje, zoeken hun plaats en wachten tot het begint.\",\n      \"De lichten dimmen en de artiest of acteurs beginnen hun optreden.\",\n      \"De uitvoering volgt een herkenbare vorm, zoals scènes, liedjes, een monoloog, sketches of een expositie-route.\",\n      \"Het publiek reageert op passende momenten met stilte, gelach, applaus of een ovatie.\",\n      \"Na afloop buigen de makers, gaat het zaallicht aan en vertrekken bezoekers of praten zij na.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt professioneel en begrijpelijk genoeg om het publiek een duidelijke culturele of komische ervaring te geven, waarna het publiek tevreden, geraakt of geamuseerd naar huis gaat.\",\n    \"expected_propositions\": [\n      \"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\",\n      \"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\",\n      \"Een cabaretier probeert doelbewust humor te maken, terwijl theater en kunst een betekenisvolle ervaring willen oproepen.\",\n      \"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\",\n      \"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\"\n    ],\n    \"audience_expectation\": \"Een setup over kunst, theater en cabaret activeert de verwachting van een georganiseerde avond uit: competente makers voeren iets voorbereids uit voor een aandachtig publiek, binnen duidelijke podiumregels en met een herkenbare emotionele of komische opbrengst.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op en presenteert een ingestudeerd of voorbereid programma.\",\n      \"Regisseur, technicus en theaterpersoneel: maken de voorstelling uitvoerbaar, zichtbaar en hoorbaar.\",\n      \"Publiek: koopt een kaartje, neemt plaats, volgt de voorstelling en reageert met aandacht, applaus of gelach.\",\n      \"Theater of podium: biedt een afgebakende, professionele omgeving met een begin, voorstelling en afloop.\"\n    ],\n    \"apparent_goal\": \"Het publiek een geslaagde culturele avond bieden: ontroeren, vermaken, aan het denken zetten of laten lachen.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, tentoonstelling of optreden met een herkenbare titel, tijd en locatie.\",\n      \"De makers hebben materiaal voorbereid, gerepeteerd of samengesteld.\",\n      \"Het publiek verwacht dat de zaal, techniek en zitplaatsen geregeld zijn.\",\n      \"Er gelden basisafspraken: op tijd komen, tijdens de voorstelling niet storen en na afloop waardering tonen.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers komen binnen, tonen hun kaartje, zoeken hun plaats en wachten tot het begint.\",\n      \"De lichten dimmen en de artiest of acteurs beginnen hun optreden.\",\n      \"De uitvoering volgt een herkenbare vorm, zoals scènes, liedjes, een monoloog, sketches of een expositie-route.\",\n      \"Het publiek reageert op passende momenten met stilte, gelach, applaus of een ovatie.\",\n      \"Na afloop buigen de makers, gaat het zaallicht aan en vertrekken bezoekers of praten zij na.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt professioneel en begrijpelijk genoeg om het publiek een duidelijke culturele of komische ervaring te geven, waarna het publiek tevreden, geraakt of geamuseerd naar huis gaat.\",\n    \"expected_propositions\": [\n      \"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\",\n      \"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\",\n      \"Een cabaretier probeert doelbewust humor te maken, terwijl theater en kunst een betekenisvolle ervaring willen oproepen.\",\n      \"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\",\n      \"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\"\n    ],\n    \"audience_expectation\": \"Een setup over kunst, theater en cabaret activeert de verwachting van een georganiseerde avond uit: competente makers voeren iets voorbereids uit voor een aandachtig publiek, binnen duidelijke podiumregels en met een herkenbare emotionele of komische opbrengst.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een verplichte veiligheidsinstructie op het werk die per ongeluk in een theaterzaal wordt gehouden: een veiligheidscoördinator moet bezoekers als personeel instrueren over een ontruimingsoefening.\",\n      \"opposition_axis\": \"culturele voorstelling versus functionele veiligheidsbriefing\",\n      \"opposed_proposition\": \"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\",\n      \"shared_anchor\": \"Een man op een podium geeft aanwijzingen terwijl een zaal stil luistert.\",\n      \"reading_a\": \"Een cabaretier opent zijn voorstelling met een droog vertelde, bewust saaie monoloog.\",\n      \"reading_b\": \"Een veiligheidscoördinator probeert een verplichte evacuatie-instructie af te werken voor mensen die hij ten onrechte als werknemers beschouwt.\",\n      \"roles_b\": [\n        \"Veiligheidscoördinator: geeft instructies en wil de ontruimingsprocedure laten slagen.\",\n        \"Bezoekers: worden aangezien voor personeel dat de instructie moet opvolgen.\",\n        \"Theaterpersoneel: probeert de zaal veilig en ordelijk te houden.\",\n        \"Nooduitgang en alarmsysteem: vormen het onderwerp en middel van de oefening.\"\n      ],\n      \"goal_b\": \"Iedere aanwezige vóór de oefening laten weten via welke route hij het gebouw moet verlaten.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt een veiligheidscoördinator.\",\n        \"Het publiek wordt een groep medewerkers in verplichte instructie.\",\n        \"Het podium wordt een briefingplek.\",\n        \"De voorstellingstechniek wordt veiligheids- en alarmapparatuur.\"\n      ],\n      \"shared_cues\": [\n        \"Gedimde zaal en rijen zittende mensen.\",\n        \"Een spreker met microfoon op het podium.\",\n        \"Een ernstig vertelde opening.\",\n        \"Een aanwijzing om goed op te letten.\",\n        \"Een deur aan de zijkant van de zaal.\"\n      ],\n      \"switch_trigger\": \"De spreker zegt dat iedereen nu in stilte achter elkaar naar de dichtstbijzijnde nooduitgang moet lopen en vinkt namen af.\",\n      \"hinge_event\": \"Hij drukt op een alarmknop en laat de zaal daadwerkelijk ontruimen.\",\n      \"anomaly_under_a\": \"Tijdens een cabaretvoorstelling is een echt alarm en een administratieve presentielijst een mislukte, storende onderbreking; het publiek verwacht grappen of spel, geen vertrekbevel.\",\n      \"resolution_under_b\": \"Als veiligheidsbriefing is het alarm precies de geplande oefening: de spreker test de route, telt de deelnemers en wil aantonen dat zij de instructies kunnen uitvoeren.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.\",\n      \"opposition_axis\": \"artistieke waardering versus commerciële verkoop\",\n      \"opposed_proposition\": \"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\",\n      \"shared_anchor\": \"Een persoon op een verhoogd podium toont een object en wacht op reacties uit de zaal.\",\n      \"reading_a\": \"Een performancekunstenaar presenteert een raadselachtig voorwerp en bouwt spanning op voordat het publiek reageert.\",\n      \"reading_b\": \"Een veilingmeester presenteert een kavel en wacht op biedingen voordat hij het verkoopt.\",\n      \"roles_b\": [\n        \"Veilingmeester: beschrijft kavels, vraagt biedingen en sluit verkopen.\",\n        \"Bieders: geven signalen om een prijs te bieden.\",\n        \"Koper: probeert een gewenst object binnen budget te verwerven.\",\n        \"Veilinghuispersoneel: registreert biedingen en overhandigt kavels.\"\n      ],\n      \"goal_b\": \"Kavels voor de hoogst haalbare prijs aan de juiste bieders verkopen.\",\n      \"role_remapping\": [\n        \"De performancekunstenaar wordt een veilingmeester.\",\n        \"Het publiek wordt een groep potentiële kopers.\",\n        \"Applaus of handgebaren worden biedsignalen.\",\n        \"Het decor wordt een presentatieplek voor kavels.\"\n      ],\n      \"shared_cues\": [\n        \"Een belicht podium.\",\n        \"Een voorwerp dat demonstratief wordt getoond.\",\n        \"Genummerde stoelen of kaarten in de zaal.\",\n        \"Korte pauzes waarin iedereen kijkt.\",\n        \"Een persoon die snel en ritmisch spreekt.\"\n      ],\n      \"switch_trigger\": \"De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'\",\n      \"hinge_event\": \"Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.\",\n      \"anomaly_under_a\": \"Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.\",\n      \"resolution_under_b\": \"In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een politieverhoor in een ruimte die door een amateurgezelschap abusievelijk als speelzaal is gebruikt: rechercheurs reconstrueren een incident en behandelen aanwezigen als getuigen.\",\n      \"opposition_axis\": \"fictieve uitvoering versus feitelijke waarheidsvinding\",\n      \"opposed_proposition\": \"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\",\n      \"shared_anchor\": \"Een fel belichte persoon stelt vragen aan iemand die voor een stille groep staat.\",\n      \"reading_a\": \"Een acteur speelt een confronterende scène waarin een personage door een ondervrager wordt aangesproken.\",\n      \"reading_b\": \"Een rechercheur ondervraagt een getuige terwijl andere betrokkenen wachten op hun beurt.\",\n      \"roles_b\": [\n        \"Rechercheur: stelt gerichte vragen en reconstrueert de feiten.\",\n        \"Getuige: geeft een verklaring over wat hij heeft gezien.\",\n        \"Andere aanwezigen: zijn mogelijke getuigen of betrokkenen, geen toeschouwers.\",\n        \"Beveiliger of agent: bewaakt orde en afzondering.\"\n      ],\n      \"goal_b\": \"Een betrouwbare verklaring verkrijgen om een werkelijk incident op te helderen.\",\n      \"role_remapping\": [\n        \"De acteur die antwoordt wordt een getuige.\",\n        \"De tegenspeler wordt een rechercheur.\",\n        \"Het publiek wordt een groep wachtende betrokkenen.\",\n        \"De podiumspot wordt een verhoorlamp.\"\n      ],\n      \"shared_cues\": [\n        \"Een donkere ruimte met één fel licht.\",\n        \"Een persoon die nadrukkelijk vragen stelt.\",\n        \"Lange stiltes na een vraag.\",\n        \"Een stoel in het midden.\",\n        \"Mensen die aandachtig naar een gesprek kijken.\"\n      ],\n      \"switch_trigger\": \"De ondervrager onderbreekt het spel ogenschijnlijk met de woorden: 'Dit wordt opgenomen; noem nu uw volledige naam en waar u om 22.15 uur was.'\",\n      \"hinge_event\": \"Een agent sluit de deur, vraagt aanwezigen hun telefoons in te leveren en roept één bezoeker naar voren voor een verklaring.\",\n      \"anomaly_under_a\": \"Een voorstelling hoort geen echte persoonsgegevens te eisen of bezoekers uit hun passieve rol te halen; het afsluiten van de zaal voelt als een ernstige grensoverschrijding.\",\n      \"resolution_under_b\": \"Bij een verhoor beschermen afzondering en telefooninname de getuigenverklaringen, en moet een opgeroepen aanwezige actief informatie leveren in plaats van kijken.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een medische triagepost tijdens een onverwachte calamiteit, waar zorgverleners de aanwezigen beoordelen en behandelen in plaats van een programma uit te voeren.\",\n      \"opposition_axis\": \"geënsceneerd vermaak versus urgente zorgverlening\",\n      \"opposed_proposition\": \"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\",\n      \"shared_anchor\": \"Medewerkers bewegen snel door een verduisterde zaal, schijnen met lampen en spreken afzonderlijke bezoekers aan.\",\n      \"reading_a\": \"Theatermedewerkers voeren een meeslepende, interactieve openingsscène uit waarin licht en geluid het gevoel van chaos creëren.\",\n      \"reading_b\": \"Hulpverleners zoeken in een stroomuitval naar gewonden en beoordelen wie onmiddellijk medische hulp nodig heeft.\",\n      \"roles_b\": [\n        \"Hulpverlener: beoordeelt klachten, verleent eerste hulp en prioriteert slachtoffers.\",\n        \"Bezoeker: is mogelijk patiënt en moet klachten of letsel melden.\",\n        \"Zaalpersoneel: helpt met routes, verlichting en registratie.\",\n        \"Ambulance- of BHV-team: vervoert of ondersteunt degenen met de hoogste urgentie.\"\n      ],\n      \"goal_b\": \"Mensen met acute medische nood snel herkennen, stabiliseren en naar passende zorg leiden.\",\n      \"role_remapping\": [\n        \"De artiesten en technici worden hulpverleners en BHV'ers.\",\n        \"Het publiek wordt een groep mogelijke patiënten.\",\n        \"Theaterlampen worden noodverlichting en onderzoekslampen.\",\n        \"De zaal wordt een tijdelijke triageplaats.\"\n      ],\n      \"shared_cues\": [\n        \"Plotseling gedimd of uitvallend licht.\",\n        \"Zaklampen die door de zaal bewegen.\",\n        \"Korte, luide aanwijzingen.\",\n        \"Medewerkers die tussen stoelen lopen.\",\n        \"Bezoekers die stil wachten op instructies.\"\n      ],\n      \"switch_trigger\": \"Een medewerker vraagt niet naar een reactie op de scène, maar naar iemands ademhaling, allergieën en pijnscore.\",\n      \"hinge_event\": \"Een hulpverlener knipt een polsbandje met een kleurcode om bij een bezoeker en draagt anderen op ruimte te maken voor een brancard.\",\n      \"anomaly_under_a\": \"Een cabaret- of theateravond verandert niet normaal in lichamelijke beoordeling; een kleurcode en brancard zouden een ontwrichtende technische ramp of ongepaste publieksactie lijken.\",\n      \"resolution_under_b\": \"In triage is de kleurcode een snelle prioritering en is de brancard nodig om een patiënt veilig te verplaatsen; de schijnbare chaos dient direct levensbeschermend handelen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op en presenteert een ingestudeerd of voorbereid programma.\",\n      \"Regisseur, technicus en theaterpersoneel: maken de voorstelling uitvoerbaar, zichtbaar en hoorbaar.\",\n      \"Publiek: koopt een kaartje, neemt plaats, volgt de voorstelling en reageert met aandacht, applaus of gelach.\",\n      \"Theater of podium: biedt een afgebakende, professionele omgeving met een begin, voorstelling en afloop.\"\n    ],\n    \"apparent_goal\": \"Het publiek een geslaagde culturele avond bieden: ontroeren, vermaken, aan het denken zetten of laten lachen.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, tentoonstelling of optreden met een herkenbare titel, tijd en locatie.\",\n      \"De makers hebben materiaal voorbereid, gerepeteerd of samengesteld.\",\n      \"Het publiek verwacht dat de zaal, techniek en zitplaatsen geregeld zijn.\",\n      \"Er gelden basisafspraken: op tijd komen, tijdens de voorstelling niet storen en na afloop waardering tonen.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers komen binnen, tonen hun kaartje, zoeken hun plaats en wachten tot het begint.\",\n      \"De lichten dimmen en de artiest of acteurs beginnen hun optreden.\",\n      \"De uitvoering volgt een herkenbare vorm, zoals scènes, liedjes, een monoloog, sketches of een expositie-route.\",\n      \"Het publiek reageert op passende momenten met stilte, gelach, applaus of een ovatie.\",\n      \"Na afloop buigen de makers, gaat het zaallicht aan en vertrekken bezoekers of praten zij na.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt professioneel en begrijpelijk genoeg om het publiek een duidelijke culturele of komische ervaring te geven, waarna het publiek tevreden, geraakt of geamuseerd naar huis gaat.\",\n    \"expected_propositions\": [\n      \"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\",\n      \"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\",\n      \"Een cabaretier probeert doelbewust humor te maken, terwijl theater en kunst een betekenisvolle ervaring willen oproepen.\",\n      \"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\",\n      \"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\"\n    ],\n    \"audience_expectation\": \"Een setup over kunst, theater en cabaret activeert de verwachting van een georganiseerde avond uit: competente makers voeren iets voorbereids uit voor een aandachtig publiek, binnen duidelijke podiumregels en met een herkenbare emotionele of komische opbrengst.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een verplichte veiligheidsinstructie op het werk die per ongeluk in een theaterzaal wordt gehouden: een veiligheidscoördinator moet bezoekers als personeel instrueren over een ontruimingsoefening.\",\n      \"opposition_axis\": \"culturele voorstelling versus functionele veiligheidsbriefing\",\n      \"opposed_proposition\": \"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\",\n      \"shared_anchor\": \"Een man op een podium geeft aanwijzingen terwijl een zaal stil luistert.\",\n      \"reading_a\": \"Een cabaretier opent zijn voorstelling met een droog vertelde, bewust saaie monoloog.\",\n      \"reading_b\": \"Een veiligheidscoördinator probeert een verplichte evacuatie-instructie af te werken voor mensen die hij ten onrechte als werknemers beschouwt.\",\n      \"roles_b\": [\n        \"Veiligheidscoördinator: geeft instructies en wil de ontruimingsprocedure laten slagen.\",\n        \"Bezoekers: worden aangezien voor personeel dat de instructie moet opvolgen.\",\n        \"Theaterpersoneel: probeert de zaal veilig en ordelijk te houden.\",\n        \"Nooduitgang en alarmsysteem: vormen het onderwerp en middel van de oefening.\"\n      ],\n      \"goal_b\": \"Iedere aanwezige vóór de oefening laten weten via welke route hij het gebouw moet verlaten.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt een veiligheidscoördinator.\",\n        \"Het publiek wordt een groep medewerkers in verplichte instructie.\",\n        \"Het podium wordt een briefingplek.\",\n        \"De voorstellingstechniek wordt veiligheids- en alarmapparatuur.\"\n      ],\n      \"shared_cues\": [\n        \"Gedimde zaal en rijen zittende mensen.\",\n        \"Een spreker met microfoon op het podium.\",\n        \"Een ernstig vertelde opening.\",\n        \"Een aanwijzing om goed op te letten.\",\n        \"Een deur aan de zijkant van de zaal.\"\n      ],\n      \"switch_trigger\": \"De spreker zegt dat iedereen nu in stilte achter elkaar naar de dichtstbijzijnde nooduitgang moet lopen en vinkt namen af.\",\n      \"hinge_event\": \"Hij drukt op een alarmknop en laat de zaal daadwerkelijk ontruimen.\",\n      \"anomaly_under_a\": \"Tijdens een cabaretvoorstelling is een echt alarm en een administratieve presentielijst een mislukte, storende onderbreking; het publiek verwacht grappen of spel, geen vertrekbevel.\",\n      \"resolution_under_b\": \"Als veiligheidsbriefing is het alarm precies de geplande oefening: de spreker test de route, telt de deelnemers en wil aantonen dat zij de instructies kunnen uitvoeren.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.\",\n      \"opposition_axis\": \"artistieke waardering versus commerciële verkoop\",\n      \"opposed_proposition\": \"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\",\n      \"shared_anchor\": \"Een persoon op een verhoogd podium toont een object en wacht op reacties uit de zaal.\",\n      \"reading_a\": \"Een performancekunstenaar presenteert een raadselachtig voorwerp en bouwt spanning op voordat het publiek reageert.\",\n      \"reading_b\": \"Een veilingmeester presenteert een kavel en wacht op biedingen voordat hij het verkoopt.\",\n      \"roles_b\": [\n        \"Veilingmeester: beschrijft kavels, vraagt biedingen en sluit verkopen.\",\n        \"Bieders: geven signalen om een prijs te bieden.\",\n        \"Koper: probeert een gewenst object binnen budget te verwerven.\",\n        \"Veilinghuispersoneel: registreert biedingen en overhandigt kavels.\"\n      ],\n      \"goal_b\": \"Kavels voor de hoogst haalbare prijs aan de juiste bieders verkopen.\",\n      \"role_remapping\": [\n        \"De performancekunstenaar wordt een veilingmeester.\",\n        \"Het publiek wordt een groep potentiële kopers.\",\n        \"Applaus of handgebaren worden biedsignalen.\",\n        \"Het decor wordt een presentatieplek voor kavels.\"\n      ],\n      \"shared_cues\": [\n        \"Een belicht podium.\",\n        \"Een voorwerp dat demonstratief wordt getoond.\",\n        \"Genummerde stoelen of kaarten in de zaal.\",\n        \"Korte pauzes waarin iedereen kijkt.\",\n        \"Een persoon die snel en ritmisch spreekt.\"\n      ],\n      \"switch_trigger\": \"De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'\",\n      \"hinge_event\": \"Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.\",\n      \"anomaly_under_a\": \"Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.\",\n      \"resolution_under_b\": \"In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een politieverhoor in een ruimte die door een amateurgezelschap abusievelijk als speelzaal is gebruikt: rechercheurs reconstrueren een incident en behandelen aanwezigen als getuigen.\",\n      \"opposition_axis\": \"fictieve uitvoering versus feitelijke waarheidsvinding\",\n      \"opposed_proposition\": \"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\",\n      \"shared_anchor\": \"Een fel belichte persoon stelt vragen aan iemand die voor een stille groep staat.\",\n      \"reading_a\": \"Een acteur speelt een confronterende scène waarin een personage door een ondervrager wordt aangesproken.\",\n      \"reading_b\": \"Een rechercheur ondervraagt een getuige terwijl andere betrokkenen wachten op hun beurt.\",\n      \"roles_b\": [\n        \"Rechercheur: stelt gerichte vragen en reconstrueert de feiten.\",\n        \"Getuige: geeft een verklaring over wat hij heeft gezien.\",\n        \"Andere aanwezigen: zijn mogelijke getuigen of betrokkenen, geen toeschouwers.\",\n        \"Beveiliger of agent: bewaakt orde en afzondering.\"\n      ],\n      \"goal_b\": \"Een betrouwbare verklaring verkrijgen om een werkelijk incident op te helderen.\",\n      \"role_remapping\": [\n        \"De acteur die antwoordt wordt een getuige.\",\n        \"De tegenspeler wordt een rechercheur.\",\n        \"Het publiek wordt een groep wachtende betrokkenen.\",\n        \"De podiumspot wordt een verhoorlamp.\"\n      ],\n      \"shared_cues\": [\n        \"Een donkere ruimte met één fel licht.\",\n        \"Een persoon die nadrukkelijk vragen stelt.\",\n        \"Lange stiltes na een vraag.\",\n        \"Een stoel in het midden.\",\n        \"Mensen die aandachtig naar een gesprek kijken.\"\n      ],\n      \"switch_trigger\": \"De ondervrager onderbreekt het spel ogenschijnlijk met de woorden: 'Dit wordt opgenomen; noem nu uw volledige naam en waar u om 22.15 uur was.'\",\n      \"hinge_event\": \"Een agent sluit de deur, vraagt aanwezigen hun telefoons in te leveren en roept één bezoeker naar voren voor een verklaring.\",\n      \"anomaly_under_a\": \"Een voorstelling hoort geen echte persoonsgegevens te eisen of bezoekers uit hun passieve rol te halen; het afsluiten van de zaal voelt als een ernstige grensoverschrijding.\",\n      \"resolution_under_b\": \"Bij een verhoor beschermen afzondering en telefooninname de getuigenverklaringen, en moet een opgeroepen aanwezige actief informatie leveren in plaats van kijken.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een medische triagepost tijdens een onverwachte calamiteit, waar zorgverleners de aanwezigen beoordelen en behandelen in plaats van een programma uit te voeren.\",\n      \"opposition_axis\": \"geënsceneerd vermaak versus urgente zorgverlening\",\n      \"opposed_proposition\": \"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\",\n      \"shared_anchor\": \"Medewerkers bewegen snel door een verduisterde zaal, schijnen met lampen en spreken afzonderlijke bezoekers aan.\",\n      \"reading_a\": \"Theatermedewerkers voeren een meeslepende, interactieve openingsscène uit waarin licht en geluid het gevoel van chaos creëren.\",\n      \"reading_b\": \"Hulpverleners zoeken in een stroomuitval naar gewonden en beoordelen wie onmiddellijk medische hulp nodig heeft.\",\n      \"roles_b\": [\n        \"Hulpverlener: beoordeelt klachten, verleent eerste hulp en prioriteert slachtoffers.\",\n        \"Bezoeker: is mogelijk patiënt en moet klachten of letsel melden.\",\n        \"Zaalpersoneel: helpt met routes, verlichting en registratie.\",\n        \"Ambulance- of BHV-team: vervoert of ondersteunt degenen met de hoogste urgentie.\"\n      ],\n      \"goal_b\": \"Mensen met acute medische nood snel herkennen, stabiliseren en naar passende zorg leiden.\",\n      \"role_remapping\": [\n        \"De artiesten en technici worden hulpverleners en BHV'ers.\",\n        \"Het publiek wordt een groep mogelijke patiënten.\",\n        \"Theaterlampen worden noodverlichting en onderzoekslampen.\",\n        \"De zaal wordt een tijdelijke triageplaats.\"\n      ],\n      \"shared_cues\": [\n        \"Plotseling gedimd of uitvallend licht.\",\n        \"Zaklampen die door de zaal bewegen.\",\n        \"Korte, luide aanwijzingen.\",\n        \"Medewerkers die tussen stoelen lopen.\",\n        \"Bezoekers die stil wachten op instructies.\"\n      ],\n      \"switch_trigger\": \"Een medewerker vraagt niet naar een reactie op de scène, maar naar iemands ademhaling, allergieën en pijnscore.\",\n      \"hinge_event\": \"Een hulpverlener knipt een polsbandje met een kleurcode om bij een bezoeker en draagt anderen op ruimte te maken voor een brancard.\",\n      \"anomaly_under_a\": \"Een cabaret- of theateravond verandert niet normaal in lichamelijke beoordeling; een kleurcode en brancard zouden een ontwrichtende technische ramp of ongepaste publieksactie lijken.\",\n      \"resolution_under_b\": \"In triage is de kleurcode een snelle prioritering en is de brancard nodig om een patiënt veilig te verplaatsen; de schijnbare chaos dient direct levensbeschermend handelen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"plan\": {\n    \"setup_script\": \"Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.\",\n    \"opposing_script\": \"Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.\",\n    \"opposition_type\": \"artistieke waardering versus commerciële verkoop\",\n    \"trigger\": \"De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Een belicht podium.\",\n      \"Een voorwerp dat demonstratief wordt getoond.\",\n      \"Genummerde stoelen of kaarten in de zaal.\",\n      \"Korte pauzes waarin iedereen kijkt.\",\n      \"Een persoon die snel en ritmisch spreekt.\"\n    ],\n    \"hinge_event\": \"Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.\",\n    \"anomaly_under_a\": \"Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.\",\n    \"resolution_under_b\": \"In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.\",\n    \"role_remapping\": [\n      \"De performancekunstenaar wordt een veilingmeester.\",\n      \"Het publiek wordt een groep potentiële kopers.\",\n      \"Applaus of handgebaren worden biedsignalen.\",\n      \"Het decor wordt een presentatieplek voor kavels.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.\",\n      \"participants_and_roles\": [\n        \"Artiest, acteur of cabaretier: treedt op en presenteert een ingestudeerd of voorbereid programma.\",\n        \"Regisseur, technicus en theaterpersoneel: maken de voorstelling uitvoerbaar, zichtbaar en hoorbaar.\",\n        \"Publiek: koopt een kaartje, neemt plaats, volgt de voorstelling en reageert met aandacht, applaus of gelach.\",\n        \"Theater of podium: biedt een afgebakende, professionele omgeving met een begin, voorstelling en afloop.\"\n      ],\n      \"apparent_goal\": \"Het publiek een geslaagde culturele avond bieden: ontroeren, vermaken, aan het denken zetten of laten lachen.\",\n      \"preconditions\": [\n        \"Er is een aangekondigde voorstelling, tentoonstelling of optreden met een herkenbare titel, tijd en locatie.\",\n        \"De makers hebben materiaal voorbereid, gerepeteerd of samengesteld.\",\n        \"Het publiek verwacht dat de zaal, techniek en zitplaatsen geregeld zijn.\",\n        \"Er gelden basisafspraken: op tijd komen, tijdens de voorstelling niet storen en na afloop waardering tonen.\"\n      ],\n      \"expected_actions\": [\n        \"Bezoekers komen binnen, tonen hun kaartje, zoeken hun plaats en wachten tot het begint.\",\n        \"De lichten dimmen en de artiest of acteurs beginnen hun optreden.\",\n        \"De uitvoering volgt een herkenbare vorm, zoals scènes, liedjes, een monoloog, sketches of een expositie-route.\",\n        \"Het publiek reageert op passende momenten met stilte, gelach, applaus of een ovatie.\",\n        \"Na afloop buigen de makers, gaat het zaallicht aan en vertrekken bezoekers of praten zij na.\"\n      ],\n      \"expected_outcome\": \"De voorstelling verloopt professioneel en begrijpelijk genoeg om het publiek een duidelijke culturele of komische ervaring te geven, waarna het publiek tevreden, geraakt of geamuseerd naar huis gaat.\",\n      \"expected_propositions\": [\n        \"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\",\n        \"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\",\n        \"Een cabaretier probeert doelbewust humor te maken, terwijl theater en kunst een betekenisvolle ervaring willen oproepen.\",\n        \"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\",\n        \"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\"\n      ],\n      \"audience_expectation\": \"Een setup over kunst, theater en cabaret activeert de verwachting van een georganiseerde avond uit: competente makers voeren iets voorbereids uit voor een aandachtig publiek, binnen duidelijke podiumregels en met een herkenbare emotionele of komische opbrengst.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.\",\n      \"opposition_axis\": \"artistieke waardering versus commerciële verkoop\",\n      \"opposed_proposition\": \"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\",\n      \"shared_anchor\": \"Een persoon op een verhoogd podium toont een object en wacht op reacties uit de zaal.\",\n      \"reading_a\": \"Een performancekunstenaar presenteert een raadselachtig voorwerp en bouwt spanning op voordat het publiek reageert.\",\n      \"reading_b\": \"Een veilingmeester presenteert een kavel en wacht op biedingen voordat hij het verkoopt.\",\n      \"roles_b\": [\n        \"Veilingmeester: beschrijft kavels, vraagt biedingen en sluit verkopen.\",\n        \"Bieders: geven signalen om een prijs te bieden.\",\n        \"Koper: probeert een gewenst object binnen budget te verwerven.\",\n        \"Veilinghuispersoneel: registreert biedingen en overhandigt kavels.\"\n      ],\n      \"goal_b\": \"Kavels voor de hoogst haalbare prijs aan de juiste bieders verkopen.\",\n      \"role_remapping\": [\n        \"De performancekunstenaar wordt een veilingmeester.\",\n        \"Het publiek wordt een groep potentiële kopers.\",\n        \"Applaus of handgebaren worden biedsignalen.\",\n        \"Het decor wordt een presentatieplek voor kavels.\"\n      ],\n      \"shared_cues\": [\n        \"Een belicht podium.\",\n        \"Een voorwerp dat demonstratief wordt getoond.\",\n        \"Genummerde stoelen of kaarten in de zaal.\",\n        \"Korte pauzes waarin iedereen kijkt.\",\n        \"Een persoon die snel en ritmisch spreekt.\"\n      ],\n      \"switch_trigger\": \"De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'\",\n      \"hinge_event\": \"Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.\",\n      \"anomaly_under_a\": \"Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.\",\n      \"resolution_under_b\": \"In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.\",\n      \"opposing_script\": \"Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.\",\n      \"opposition_type\": \"artistieke waardering versus commerciële verkoop\",\n      \"trigger\": \"De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Een belicht podium.\",\n        \"Een voorwerp dat demonstratief wordt getoond.\",\n        \"Genummerde stoelen of kaarten in de zaal.\",\n        \"Korte pauzes waarin iedereen kijkt.\",\n        \"Een persoon die snel en ritmisch spreekt.\"\n      ],\n      \"hinge_event\": \"Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.\",\n      \"anomaly_under_a\": \"Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.\",\n      \"resolution_under_b\": \"In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.\",\n      \"role_remapping\": [\n        \"De performancekunstenaar wordt een veilingmeester.\",\n        \"Het publiek wordt een groep potentiële kopers.\",\n        \"Applaus of handgebaren worden biedsignalen.\",\n        \"Het decor wordt een presentatieplek voor kavels.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik was bij een experimentele voorstelling: fel podiumlicht, één vaas op een sokkel, en iedereen had een genummerd kaartje. De man sprak razendsnel, iemand stak zijn kaart op. Toen sloeg hij met een hamer: „Verkocht aan nummer 42 voor twaalfhonderd euro.”\",\n      \"angle\": \"Experimenteel theater blijkt een veiling\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"In dat nieuwe cabaret moest je vooral stil kijken naar een schilderij terwijl de artiest nummers en bedragen mompelde. Ik dacht dat mijn buurman enthousiast meedeed toen hij zijn bordje opstak. Blijkt dat hij voor twaalfhonderd euro de voorstelling mee naar huis nam.\",\n      \"angle\": \"Publieksreactie blijkt een bod\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij de première stond er alleen een antieke stoel in de spotlights; gedurfd, vond ik. De presentator ratelde, pauzeerde steeds bij onze genummerde kaarten, en tikte eindelijk met een hamer. De recensent schreef „minimalistisch”; nummer 42 schreef twaalfhonderd euro.\",\n      \"angle\": \"Kunstrecensie tegenover aankoopbewijs\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik was bij een experimentele voorstelling: fel podiumlicht, één vaas op een sokkel, en iedereen had een genummerd kaartje. De man sprak razendsnel, iemand stak zijn kaart op. Toen sloeg hij met een hamer: „Verkocht aan nummer 42 voor twaalfhonderd euro.”\",\n      \"angle\": \"Experimenteel theater blijkt een veiling\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"In dat nieuwe cabaret moest je vooral stil kijken naar een schilderij terwijl de artiest nummers en bedragen mompelde. Ik dacht dat mijn buurman enthousiast meedeed toen hij zijn bordje opstak. Blijkt dat hij voor twaalfhonderd euro de voorstelling mee naar huis nam.\",\n      \"angle\": \"Publieksreactie blijkt een bod\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij de première stond er alleen een antieke stoel in de spotlights; gedurfd, vond ik. De presentator ratelde, pauzeerde steeds bij onze genummerde kaarten, en tikte eindelijk met een hamer. De recensent schreef „minimalistisch”; nummer 42 schreef twaalfhonderd euro.\",\n      \"angle\": \"Kunstrecensie tegenover aankoopbewijs\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een experimentele podiumvoorstelling met belicht podium, een object op een sokkel, een snel sprekende performer en genummerde kaartjes in de zaal.\",\n      \"realized_script_b\": \"Een veiling waarin een veilingmeester een kavel aanbiedt, een genummerd bordje als bod ontvangt en het object met een hamer verkoopt.\",\n      \"realized_opposition_axis\": \"artistieke waardering versus commerciële verkoop\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant bouwt eerst een performancekunstlezing op met vrijwel alle gedeelde cues en schakelt vervolgens expliciet naar een veiling met bordje, hamer, nummer 42, prijs en verkoopformule.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en er is geen bedoeld doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een zeer directe en complete realisatie van de geplande theater-naar-veilingomkering; de slotzin levert de expliciete, retrospectief verklarende switch.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een nieuw cabaret- of kunstoptreden waarin bezoekers stil naar een schilderij kijken en de artiest ogenschijnlijk onbegrijpelijke nummers en bedragen mompelt.\",\n      \"realized_script_b\": \"Een veiling waarin een bezoeker met een bordje biedt en vervolgens voor twaalfhonderd euro het getoonde schilderij koopt.\",\n      \"realized_opposition_axis\": \"artistieke waardering versus commerciële verkoop\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De cabaret-/kunstlezing is dominant in de setup. Het bordje, de nummers en bedragen krijgen in de laatste zin de veilingbetekenis: de vermeende enthousiaste publieksreactie was een bod en het kunstwerk werd gekocht.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en er is geen bedoeld doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De exacte hamerformule ontbreekt, maar de functionele switch is behouden: het opgestoken bordje blijkt een bod en de voorstelling blijkt een gekocht kunstwerk.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een minimalistische première of kunstvoorstelling met een antieke stoel in de spotlights, een ratelende presentator, genummerde kaarten en een recensent.\",\n      \"realized_script_b\": \"Een slechts gedeeltelijk gesuggereerde veiling: nummer 42 lijkt een bedrag van twaalfhonderd euro te noteren nadat de presentator met een hamer tikt.\",\n      \"realized_opposition_axis\": \"beoogd: artistieke waardering versus commerciële verkoop; gerealiseerd slechts zwak en ambigu\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De gedeelde theater-/veilingcues zijn grotendeels aanwezig, maar de tekst bevestigt niet functioneel dat er een kavel is verkocht of dat nummer 42 een bod uitbrengt. De hamer en het bedrag suggereren een veiling, maar de beoogde omslag en herinterpretatie blijven onvoldoende expliciet.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en er is geen bedoeld doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": false,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": false,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": false,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant probeert de geplande veilingonthulling, maar „nummer 42 schreef twaalfhonderd euro” is onnatuurlijk en maakt niet helder dat een bieding of verkoop plaatsvindt. Daardoor blijft de theoretische switch te impliciet, ondanks een herkenbare opzet en slotcontrast.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Ik was bij een experimentele voorstelling: fel podiumlicht, één vaas op een sokkel, en iedereen had een genummerd kaartje. De man sprak razendsnel, iemand stak zijn kaart op. Toen sloeg hij met een hamer: „Verkocht aan nummer 42 voor twaalfhonderd euro.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.",
+      "opposing_script": "Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.",
+      "opposition_type": "artistieke waardering versus commerciële verkoop",
+      "trigger": "De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Een belicht podium.",
+        "Een voorwerp dat demonstratief wordt getoond.",
+        "Genummerde stoelen of kaarten in de zaal.",
+        "Korte pauzes waarin iedereen kijkt.",
+        "Een persoon die snel en ritmisch spreekt."
+      ],
+      "hinge_event": "Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.",
+      "anomaly_under_a": "Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.",
+      "resolution_under_b": "In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.",
+      "role_remapping": [
+        "De performancekunstenaar wordt een veilingmeester.",
+        "Het publiek wordt een groep potentiële kopers.",
+        "Applaus of handgebaren worden biedsignalen.",
+        "Het decor wordt een presentatieplek voor kavels."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.\\\",\\\"participants_and_roles\\\":[\\\"Artiest, acteur of cabaretier: treedt op en presenteert een ingestudeerd of voorbereid programma.\\\",\\\"Regisseur, technicus en theaterpersoneel: maken de voorstelling uitvoerbaar, zichtbaar en hoorbaar.\\\",\\\"Publiek: koopt een kaartje, neemt plaats, volgt de voorstelling en reageert met aandacht, applaus of gelach.\\\",\\\"Theater of podium: biedt een afgebakende, professionele omgeving met een begin, voorstelling en afloop.\\\"],\\\"apparent_goal\\\":\\\"Het publiek een geslaagde culturele avond bieden: ontroeren, vermaken, aan het denken zetten of laten lachen.\\\",\\\"preconditions\\\":[\\\"Er is een aangekondigde voorstelling, tentoonstelling of optreden met een herkenbare titel, tijd en locatie.\\\",\\\"De makers hebben materiaal voorbereid, gerepeteerd of samengesteld.\\\",\\\"Het publiek verwacht dat de zaal, techniek en zitplaatsen geregeld zijn.\\\",\\\"Er gelden basisafspraken: op tijd komen, tijdens de voorstelling niet storen en na afloop waardering tonen.\\\"],\\\"expected_actions\\\":[\\\"Bezoekers komen binnen, tonen hun kaartje, zoeken hun plaats en wachten tot het begint.\\\",\\\"De lichten dimmen en de artiest of acteurs beginnen hun optreden.\\\",\\\"De uitvoering volgt een herkenbare vorm, zoals scènes, liedjes, een monoloog, sketches of een expositie-route.\\\",\\\"Het publiek reageert op passende momenten met stilte, gelach, applaus of een ovatie.\\\",\\\"Na afloop buigen de makers, gaat het zaallicht aan en vertrekken bezoekers of praten zij na.\\\"],\\\"expected_outcome\\\":\\\"De voorstelling verloopt professioneel en begrijpelijk genoeg om het publiek een duidelijke culturele of komische ervaring te geven, waarna het publiek tevreden, geraakt of geamuseerd naar huis gaat.\\\",\\\"expected_propositions\\\":[\\\"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\\\",\\\"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\\\",\\\"Een cabaretier probeert doelbewust humor te maken, terwijl theater en kunst een betekenisvolle ervaring willen oproepen.\\\",\\\"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\\\",\\\"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\\\"],\\\"audience_expectation\\\":\\\"Een setup over kunst, theater en cabaret activeert de verwachting van een georganiseerde avond uit: competente makers voeren iets voorbereids uit voor een aandachtig publiek, binnen duidelijke podiumregels en met een herkenbare emotionele of komische opbrengst.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een verplichte veiligheidsinstructie op het werk die per ongeluk in een theaterzaal wordt gehouden: een veiligheidscoördinator moet bezoekers als personeel instrueren over een ontruimingsoefening.\\\",\\\"opposition_axis\\\":\\\"culturele voorstelling versus functionele veiligheidsbriefing\\\",\\\"opposed_proposition\\\":\\\"Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.\\\",\\\"shared_anchor\\\":\\\"Een man op een podium geeft aanwijzingen terwijl een zaal stil luistert.\\\",\\\"reading_a\\\":\\\"Een cabaretier opent zijn voorstelling met een droog vertelde, bewust saaie monoloog.\\\",\\\"reading_b\\\":\\\"Een veiligheidscoördinator probeert een verplichte evacuatie-instructie af te werken voor mensen die hij ten onrechte als werknemers beschouwt.\\\",\\\"roles_b\\\":[\\\"Veiligheidscoördinator: geeft instructies en wil de ontruimingsprocedure laten slagen.\\\",\\\"Bezoekers: worden aangezien voor personeel dat de instructie moet opvolgen.\\\",\\\"Theaterpersoneel: probeert de zaal veilig en ordelijk te houden.\\\",\\\"Nooduitgang en alarmsysteem: vormen het onderwerp en middel van de oefening.\\\"],\\\"goal_b\\\":\\\"Iedere aanwezige vóór de oefening laten weten via welke route hij het gebouw moet verlaten.\\\",\\\"role_remapping\\\":[\\\"De cabaretier wordt een veiligheidscoördinator.\\\",\\\"Het publiek wordt een groep medewerkers in verplichte instructie.\\\",\\\"Het podium wordt een briefingplek.\\\",\\\"De voorstellingstechniek wordt veiligheids- en alarmapparatuur.\\\"],\\\"shared_cues\\\":[\\\"Gedimde zaal en rijen zittende mensen.\\\",\\\"Een spreker met microfoon op het podium.\\\",\\\"Een ernstig vertelde opening.\\\",\\\"Een aanwijzing om goed op te letten.\\\",\\\"Een deur aan de zijkant van de zaal.\\\"],\\\"switch_trigger\\\":\\\"De spreker zegt dat iedereen nu in stilte achter elkaar naar de dichtstbijzijnde nooduitgang moet lopen en vinkt namen af.\\\",\\\"hinge_event\\\":\\\"Hij drukt op een alarmknop en laat de zaal daadwerkelijk ontruimen.\\\",\\\"anomaly_under_a\\\":\\\"Tijdens een cabaretvoorstelling is een echt alarm en een administratieve presentielijst een mislukte, storende onderbreking; het publiek verwacht grappen of spel, geen vertrekbevel.\\\",\\\"resolution_under_b\\\":\\\"Als veiligheidsbriefing is het alarm precies de geplande oefening: de spreker test de route, telt de deelnemers en wil aantonen dat zij de instructies kunnen uitvoeren.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.\\\",\\\"opposition_axis\\\":\\\"artistieke waardering versus commerciële verkoop\\\",\\\"opposed_proposition\\\":\\\"Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.\\\",\\\"shared_anchor\\\":\\\"Een persoon op een verhoogd podium toont een object en wacht op reacties uit de zaal.\\\",\\\"reading_a\\\":\\\"Een performancekunstenaar presenteert een raadselachtig voorwerp en bouwt spanning op voordat het publiek reageert.\\\",\\\"reading_b\\\":\\\"Een veilingmeester presenteert een kavel en wacht op biedingen voordat hij het verkoopt.\\\",\\\"roles_b\\\":[\\\"Veilingmeester: beschrijft kavels, vraagt biedingen en sluit verkopen.\\\",\\\"Bieders: geven signalen om een prijs te bieden.\\\",\\\"Koper: probeert een gewenst object binnen budget te verwerven.\\\",\\\"Veilinghuispersoneel: registreert biedingen en overhandigt kavels.\\\"],\\\"goal_b\\\":\\\"Kavels voor de hoogst haalbare prijs aan de juiste bieders verkopen.\\\",\\\"role_remapping\\\":[\\\"De performancekunstenaar wordt een veilingmeester.\\\",\\\"Het publiek wordt een groep potentiële kopers.\\\",\\\"Applaus of handgebaren worden biedsignalen.\\\",\\\"Het decor wordt een presentatieplek voor kavels.\\\"],\\\"shared_cues\\\":[\\\"Een belicht podium.\\\",\\\"Een voorwerp dat demonstratief wordt getoond.\\\",\\\"Genummerde stoelen of kaarten in de zaal.\\\",\\\"Korte pauzes waarin iedereen kijkt.\\\",\\\"Een persoon die snel en ritmisch spreekt.\\\"],\\\"switch_trigger\\\":\\\"De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'\\\",\\\"hinge_event\\\":\\\"Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.\\\",\\\"anomaly_under_a\\\":\\\"Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.\\\",\\\"resolution_under_b\\\":\\\"In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een politieverhoor in een ruimte die door een amateurgezelschap abusievelijk als speelzaal is gebruikt: rechercheurs reconstrueren een incident en behandelen aanwezigen als getuigen.\\\",\\\"opposition_axis\\\":\\\"fictieve uitvoering versus feitelijke waarheidsvinding\\\",\\\"opposed_proposition\\\":\\\"De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.\\\",\\\"shared_anchor\\\":\\\"Een fel belichte persoon stelt vragen aan iemand die voor een stille groep staat.\\\",\\\"reading_a\\\":\\\"Een acteur speelt een confronterende scène waarin een personage door een ondervrager wordt aangesproken.\\\",\\\"reading_b\\\":\\\"Een rechercheur ondervraagt een getuige terwijl andere betrokkenen wachten op hun beurt.\\\",\\\"roles_b\\\":[\\\"Rechercheur: stelt gerichte vragen en reconstrueert de feiten.\\\",\\\"Getuige: geeft een verklaring over wat hij heeft gezien.\\\",\\\"Andere aanwezigen: zijn mogelijke getuigen of betrokkenen, geen toeschouwers.\\\",\\\"Beveiliger of agent: bewaakt orde en afzondering.\\\"],\\\"goal_b\\\":\\\"Een betrouwbare verklaring verkrijgen om een werkelijk incident op te helderen.\\\",\\\"role_remapping\\\":[\\\"De acteur die antwoordt wordt een getuige.\\\",\\\"De tegenspeler wordt een rechercheur.\\\",\\\"Het publiek wordt een groep wachtende betrokkenen.\\\",\\\"De podiumspot wordt een verhoorlamp.\\\"],\\\"shared_cues\\\":[\\\"Een donkere ruimte met één fel licht.\\\",\\\"Een persoon die nadrukkelijk vragen stelt.\\\",\\\"Lange stiltes na een vraag.\\\",\\\"Een stoel in het midden.\\\",\\\"Mensen die aandachtig naar een gesprek kijken.\\\"],\\\"switch_trigger\\\":\\\"De ondervrager onderbreekt het spel ogenschijnlijk met de woorden: 'Dit wordt opgenomen; noem nu uw volledige naam en waar u om 22.15 uur was.'\\\",\\\"hinge_event\\\":\\\"Een agent sluit de deur, vraagt aanwezigen hun telefoons in te leveren en roept één bezoeker naar voren voor een verklaring.\\\",\\\"anomaly_under_a\\\":\\\"Een voorstelling hoort geen echte persoonsgegevens te eisen of bezoekers uit hun passieve rol te halen; het afsluiten van de zaal voelt als een ernstige grensoverschrijding.\\\",\\\"resolution_under_b\\\":\\\"Bij een verhoor beschermen afzondering en telefooninname de getuigenverklaringen, en moet een opgeroepen aanwezige actief informatie leveren in plaats van kijken.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een medische triagepost tijdens een onverwachte calamiteit, waar zorgverleners de aanwezigen beoordelen en behandelen in plaats van een programma uit te voeren.\\\",\\\"opposition_axis\\\":\\\"geënsceneerd vermaak versus urgente zorgverlening\\\",\\\"opposed_proposition\\\":\\\"Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.\\\",\\\"shared_anchor\\\":\\\"Medewerkers bewegen snel door een verduisterde zaal, schijnen met lampen en spreken afzonderlijke bezoekers aan.\\\",\\\"reading_a\\\":\\\"Theatermedewerkers voeren een meeslepende, interactieve openingsscène uit waarin licht en geluid het gevoel van chaos creëren.\\\",\\\"reading_b\\\":\\\"Hulpverleners zoeken in een stroomuitval naar gewonden en beoordelen wie onmiddellijk medische hulp nodig heeft.\\\",\\\"roles_b\\\":[\\\"Hulpverlener: beoordeelt klachten, verleent eerste hulp en prioriteert slachtoffers.\\\",\\\"Bezoeker: is mogelijk patiënt en moet klachten of letsel melden.\\\",\\\"Zaalpersoneel: helpt met routes, verlichting en registratie.\\\",\\\"Ambulance- of BHV-team: vervoert of ondersteunt degenen met de hoogste urgentie.\\\"],\\\"goal_b\\\":\\\"Mensen met acute medische nood snel herkennen, stabiliseren en naar passende zorg leiden.\\\",\\\"role_remapping\\\":[\\\"De artiesten en technici worden hulpverleners en BHV'ers.\\\",\\\"Het publiek wordt een groep mogelijke patiënten.\\\",\\\"Theaterlampen worden noodverlichting en onderzoekslampen.\\\",\\\"De zaal wordt een tijdelijke triageplaats.\\\"],\\\"shared_cues\\\":[\\\"Plotseling gedimd of uitvallend licht.\\\",\\\"Zaklampen die door de zaal bewegen.\\\",\\\"Korte, luide aanwijzingen.\\\",\\\"Medewerkers die tussen stoelen lopen.\\\",\\\"Bezoekers die stil wachten op instructies.\\\"],\\\"switch_trigger\\\":\\\"Een medewerker vraagt niet naar een reactie op de scène, maar naar iemands ademhaling, allergieën en pijnscore.\\\",\\\"hinge_event\\\":\\\"Een hulpverlener knipt een polsbandje met een kleurcode om bij een bezoeker en draagt anderen op ruimte te maken voor een brancard.\\\",\\\"anomaly_under_a\\\":\\\"Een cabaret- of theateravond verandert niet normaal in lichamelijke beoordeling; een kleurcode en brancard zouden een ontwrichtende technische ramp of ongepaste publieksactie lijken.\\\",\\\"resolution_under_b\\\":\\\"In triage is de kleurcode een snelle prioritering en is de brancard nodig om een patiënt veilig te verplaatsen; de schijnbare chaos dient direct levensbeschermend handelen.\\\"}] }\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde realiseerbare scène — een ernstige spreker met microfoon voor een stille zaal — kan eerst als droge cabaretopening en daarna als veiligheidsbriefing worden gelezen. De tegenstelling voorstelling versus functionele instructie is lokaal onverenigbaar en dominant. De briefing blijft door de serieuze toon, aandachtseis en zijdeur latent mogelijk, maar de theatercontext laat lezing A aanvankelijk domineren. Alarm, presentielijst en ontruiming verstoren het doel van een voorstelling, maar zijn onder B precies middelen om de evacuatie-instructie uit te voeren. Daardoor krijgen eerdere aanwijzingen achteraf een veiligheidsfunctie.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Een persoon die op een podium een object toont en zaalreacties afwacht, past zowel bij een performancekunstenaar als bij een veilingmeester. Artistieke receptie en commerciële verkoop vormen hier één duidelijke, lokaal incompatibele as. Genummerde kaarten, korte stiltes en ritmisch spreken houden de veilinginterpretatie vooraf beschikbaar, terwijl de kunstcontext de performancelezing eerst waarschijnlijker maakt. Het bod, de prijsverhoging en de hamer maken de eerdere reacties achteraf biedingen en lossen de vreemde beprijzing onder A op. Een bod blokkeert echter niet noodzakelijk het artistieke doel van A; functionele omkering is daarom niet expliciet verzekerd.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De belichte ondervraging voor een stille groep kan realiseerbaar zowel een gespeelde confrontatiescène als een politieverhoor zijn. Fictieve uitvoering en feitelijke waarheidsvinding zijn een duidelijke dominante tegenstelling. De verhoorlezing is vóór de trigger al mogelijk door de stoel, spot, gerichte vragen en stiltes, maar de theatercontext begunstigt aanvankelijk A. Het eisen van echte persoonsgegevens, het afsluiten van de ruimte en het oproepen van aanwezigen zijn onder A ontwrichtend, maar onder B functioneel voor het veilig verkrijgen van verklaringen. Zij keren de eerdere rollen van toeschouwers en spelers retrospectief om.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Snelle medewerkers met lampen in een donkere zaal kunnen zowel een geënsceneerde interactieve opening als noodhulp tijdens een calamiteit vormen. Vermaak tegenover urgente zorg is de enkele dominante, lokaal incompatibele as. Zaklampen, korte bevelen en medewerkers tussen stoelen ondersteunen beide lezingen; binnen de gegeven theatersetup heeft A eerst voorrang, terwijl B door de uitval en noodachtige handelingen latent beschikbaar blijft. Vragen naar ademhaling en pijn, kleurcodes en een brancard verstoren een voorstelling maar zijn in triage doelgerichte middelen voor prioritering en vervoer. Daarmee krijgen licht, beweging en afzonderlijk aanspreken achteraf een medische functie.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B2\\\",\\\"rationale\\\":\\\"B2 biedt de scherpste en meest economische tegenstelling: dezelfde podiumsituatie kan geloofwaardig gelezen worden als een kunstperformance én als een veiling, terwijl de reacties uit de zaal in beide lezingen functioneel blijven maar radicaal van betekenis veranderen. De gedeelde cues—belicht podium, getoond object, ritmische spreker, aandachtige stiltes en genummerde kaarten—domineren de setup zonder de tweede lezing voortijdig weg te geven. Het bieden, de oplopende prijs en vooral de afslag met de hamer vormen een helder omslagpunt dat eerdere publieksreacties retrospectief hercodeert van artistieke waardering naar financiële toezegging. Daarmee is de payoff direct, onderwerp-specifiek voor kunst, en dramaturgisch minder zwaar of grensoverschrijdend dan de calamiteiten- en verhoorscenario's.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik was bij een experimentele voorstelling: fel podiumlicht, één vaas op een sokkel, en iedereen had een genummerd kaartje. De man sprak razendsnel, iemand stak zijn kaart op. Toen sloeg hij met een hamer: „Verkocht aan nummer 42 voor twaalfhonderd euro.”\\\",\\\"angle\\\":\\\"Experimenteel theater blijkt een veiling\\\"},{\\\"text\\\":\\\"In dat nieuwe cabaret moest je vooral stil kijken naar een schilderij terwijl de artiest nummers en bedragen mompelde. Ik dacht dat mijn buurman enthousiast meedeed toen hij zijn bordje opstak. Blijkt dat hij voor twaalfhonderd euro de voorstelling mee naar huis nam.\\\",\\\"angle\\\":\\\"Publieksreactie blijkt een bod\\\"},{\\\"text\\\":\\\"Bij de première stond er alleen een antieke stoel in de spotlights; gedurfd, vond ik. De presentator ratelde, pauzeerde steeds bij onze genummerde kaarten, en tikte eindelijk met een hamer. De recensent schreef „minimalistisch”; nummer 42 schreef twaalfhonderd euro.\\\",\\\"angle\\\":\\\"Kunstrecensie tegenover aankoopbewijs\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een experimentele podiumvoorstelling met belicht podium, een object op een sokkel, een snel sprekende performer en genummerde kaartjes in de zaal.\\\",\\\"realized_script_b\\\":\\\"Een veiling waarin een veilingmeester een kavel aanbiedt, een genummerd bordje als bod ontvangt en het object met een hamer verkoopt.\\\",\\\"realized_opposition_axis\\\":\\\"artistieke waardering versus commerciële verkoop\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant bouwt eerst een performancekunstlezing op met vrijwel alle gedeelde cues en schakelt vervolgens expliciet naar een veiling met bordje, hamer, nummer 42, prijs en verkoopformule.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en er is geen bedoeld doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een zeer directe en complete realisatie van de geplande theater-naar-veilingomkering; de slotzin levert de expliciete, retrospectief verklarende switch.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een nieuw cabaret- of kunstoptreden waarin bezoekers stil naar een schilderij kijken en de artiest ogenschijnlijk onbegrijpelijke nummers en bedragen mompelt.\\\",\\\"realized_script_b\\\":\\\"Een veiling waarin een bezoeker met een bordje biedt en vervolgens voor twaalfhonderd euro het getoonde schilderij koopt.\\\",\\\"realized_opposition_axis\\\":\\\"artistieke waardering versus commerciële verkoop\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De cabaret-/kunstlezing is dominant in de setup. Het bordje, de nummers en bedragen krijgen in de laatste zin de veilingbetekenis: de vermeende enthousiaste publieksreactie was een bod en het kunstwerk werd gekocht.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en er is geen bedoeld doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De exacte hamerformule ontbreekt, maar de functionele switch is behouden: het opgestoken bordje blijkt een bod en de voorstelling blijkt een gekocht kunstwerk.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een minimalistische première of kunstvoorstelling met een antieke stoel in de spotlights, een ratelende presentator, genummerde kaarten en een recensent.\\\",\\\"realized_script_b\\\":\\\"Een slechts gedeeltelijk gesuggereerde veiling: nummer 42 lijkt een bedrag van twaalfhonderd euro te noteren nadat de presentator met een hamer tikt.\\\",\\\"realized_opposition_axis\\\":\\\"beoogd: artistieke waardering versus commerciële verkoop; gerealiseerd slechts zwak en ambigu\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De gedeelde theater-/veilingcues zijn grotendeels aanwezig, maar de tekst bevestigt niet functioneel dat er een kavel is verkocht of dat nummer 42 een bod uitbrengt. De hamer en het bedrag suggereren een veiling, maar de beoogde omslag en herinterpretatie blijven onvoldoende expliciet.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en er is geen bedoeld doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":false,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":false,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":false,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant probeert de geplande veilingonthulling, maar „nummer 42 schreef twaalfhonderd euro” is onnatuurlijk en maakt niet helder dat een bieding of verkoop plaatsvindt. Daardoor blijft de theoretische switch te impliciet, ondanks een herkenbare opzet en slotcontrast.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 maakt de omslag van experimenteel theater naar veiling het helderst en volledigst: sokkel, genummerd kaartje, bod, hamer en verkoopformule vallen precies samen. V2 heeft een aardige publieksreactie-naar-bod-switch, maar „de voorstelling mee naar huis” is minder precies en iets minder natuurlijk.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is een passerende variant en V3 niet, dus V1 moet voorgaan. Bovendien biedt V1 een directe, goed uitspreekbare onthulling die alle eerdere cues herkadert, terwijl V3 door „nummer 42 schreef twaalfhonderd euro” geen duidelijke verkoop of bieding bevestigt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is passerend en V3 niet. V2 laat het opgestoken bordje functioneel veranderen van enthousiaste reactie in een bod, met een begrijpelijke aankoop als gevolg; V3 blijft steken in een onduidelijke formulering en levert daardoor geen stevige retrospectieve veilingonthulling.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 heeft de sterkste vereiste SO-realisatie en de duidelijkste, meest performabele theater-naar-veilingomkering. De slotformule is compact, ondubbelzinnig en herinterpreteert de volledige opzet.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een verplichte veiligheidsinstructie op het werk die per ongeluk in een theaterzaal wordt gehouden: een veiligheidscoördinator moet bezoekers als personeel instrueren over een ontruimingsoefening.",
+        "candidate_id": "B1",
+        "opposition_axis": "culturele voorstelling versus functionele veiligheidsbriefing",
+        "opposed_expectation": "Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.",
+        "roles_b": [
+          "Veiligheidscoördinator: geeft instructies en wil de ontruimingsprocedure laten slagen.",
+          "Bezoekers: worden aangezien voor personeel dat de instructie moet opvolgen.",
+          "Theaterpersoneel: probeert de zaal veilig en ordelijk te houden.",
+          "Nooduitgang en alarmsysteem: vormen het onderwerp en middel van de oefening."
+        ],
+        "goal_b": "Iedere aanwezige vóór de oefening laten weten via welke route hij het gebouw moet verlaten.",
+        "role_remapping": [
+          "De cabaretier wordt een veiligheidscoördinator.",
+          "Het publiek wordt een groep medewerkers in verplichte instructie.",
+          "Het podium wordt een briefingplek.",
+          "De voorstellingstechniek wordt veiligheids- en alarmapparatuur."
+        ],
+        "shared_cues": [
+          "Gedimde zaal en rijen zittende mensen.",
+          "Een spreker met microfoon op het podium.",
+          "Een ernstig vertelde opening.",
+          "Een aanwijzing om goed op te letten.",
+          "Een deur aan de zijkant van de zaal."
+        ],
+        "switch_trigger": "De spreker zegt dat iedereen nu in stilte achter elkaar naar de dichtstbijzijnde nooduitgang moet lopen en vinkt namen af.",
+        "hinge_event": "Hij drukt op een alarmknop en laat de zaal daadwerkelijk ontruimen.",
+        "anomaly_under_a": "Tijdens een cabaretvoorstelling is een echt alarm en een administratieve presentielijst een mislukte, storende onderbreking; het publiek verwacht grappen of spel, geen vertrekbevel.",
+        "resolution_under_b": "Als veiligheidsbriefing is het alarm precies de geplande oefening: de spreker test de route, telt de deelnemers en wil aantonen dat zij de instructies kunnen uitvoeren.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.",
+        "candidate_id": "B2",
+        "opposition_axis": "artistieke waardering versus commerciële verkoop",
+        "opposed_expectation": "Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.",
+        "roles_b": [
+          "Veilingmeester: beschrijft kavels, vraagt biedingen en sluit verkopen.",
+          "Bieders: geven signalen om een prijs te bieden.",
+          "Koper: probeert een gewenst object binnen budget te verwerven.",
+          "Veilinghuispersoneel: registreert biedingen en overhandigt kavels."
+        ],
+        "goal_b": "Kavels voor de hoogst haalbare prijs aan de juiste bieders verkopen.",
+        "role_remapping": [
+          "De performancekunstenaar wordt een veilingmeester.",
+          "Het publiek wordt een groep potentiële kopers.",
+          "Applaus of handgebaren worden biedsignalen.",
+          "Het decor wordt een presentatieplek voor kavels."
+        ],
+        "shared_cues": [
+          "Een belicht podium.",
+          "Een voorwerp dat demonstratief wordt getoond.",
+          "Genummerde stoelen of kaarten in de zaal.",
+          "Korte pauzes waarin iedereen kijkt.",
+          "Een persoon die snel en ritmisch spreekt."
+        ],
+        "switch_trigger": "De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'",
+        "hinge_event": "Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.",
+        "anomaly_under_a": "Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.",
+        "resolution_under_b": "In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een politieverhoor in een ruimte die door een amateurgezelschap abusievelijk als speelzaal is gebruikt: rechercheurs reconstrueren een incident en behandelen aanwezigen als getuigen.",
+        "candidate_id": "B3",
+        "opposition_axis": "fictieve uitvoering versus feitelijke waarheidsvinding",
+        "opposed_expectation": "De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.",
+        "roles_b": [
+          "Rechercheur: stelt gerichte vragen en reconstrueert de feiten.",
+          "Getuige: geeft een verklaring over wat hij heeft gezien.",
+          "Andere aanwezigen: zijn mogelijke getuigen of betrokkenen, geen toeschouwers.",
+          "Beveiliger of agent: bewaakt orde en afzondering."
+        ],
+        "goal_b": "Een betrouwbare verklaring verkrijgen om een werkelijk incident op te helderen.",
+        "role_remapping": [
+          "De acteur die antwoordt wordt een getuige.",
+          "De tegenspeler wordt een rechercheur.",
+          "Het publiek wordt een groep wachtende betrokkenen.",
+          "De podiumspot wordt een verhoorlamp."
+        ],
+        "shared_cues": [
+          "Een donkere ruimte met één fel licht.",
+          "Een persoon die nadrukkelijk vragen stelt.",
+          "Lange stiltes na een vraag.",
+          "Een stoel in het midden.",
+          "Mensen die aandachtig naar een gesprek kijken."
+        ],
+        "switch_trigger": "De ondervrager onderbreekt het spel ogenschijnlijk met de woorden: 'Dit wordt opgenomen; noem nu uw volledige naam en waar u om 22.15 uur was.'",
+        "hinge_event": "Een agent sluit de deur, vraagt aanwezigen hun telefoons in te leveren en roept één bezoeker naar voren voor een verklaring.",
+        "anomaly_under_a": "Een voorstelling hoort geen echte persoonsgegevens te eisen of bezoekers uit hun passieve rol te halen; het afsluiten van de zaal voelt als een ernstige grensoverschrijding.",
+        "resolution_under_b": "Bij een verhoor beschermen afzondering en telefooninname de getuigenverklaringen, en moet een opgeroepen aanwezige actief informatie leveren in plaats van kijken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een medische triagepost tijdens een onverwachte calamiteit, waar zorgverleners de aanwezigen beoordelen en behandelen in plaats van een programma uit te voeren.",
+        "candidate_id": "B4",
+        "opposition_axis": "geënsceneerd vermaak versus urgente zorgverlening",
+        "opposed_expectation": "Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.",
+        "roles_b": [
+          "Hulpverlener: beoordeelt klachten, verleent eerste hulp en prioriteert slachtoffers.",
+          "Bezoeker: is mogelijk patiënt en moet klachten of letsel melden.",
+          "Zaalpersoneel: helpt met routes, verlichting en registratie.",
+          "Ambulance- of BHV-team: vervoert of ondersteunt degenen met de hoogste urgentie."
+        ],
+        "goal_b": "Mensen met acute medische nood snel herkennen, stabiliseren en naar passende zorg leiden.",
+        "role_remapping": [
+          "De artiesten en technici worden hulpverleners en BHV'ers.",
+          "Het publiek wordt een groep mogelijke patiënten.",
+          "Theaterlampen worden noodverlichting en onderzoekslampen.",
+          "De zaal wordt een tijdelijke triageplaats."
+        ],
+        "shared_cues": [
+          "Plotseling gedimd of uitvallend licht.",
+          "Zaklampen die door de zaal bewegen.",
+          "Korte, luide aanwijzingen.",
+          "Medewerkers die tussen stoelen lopen.",
+          "Bezoekers die stil wachten op instructies."
+        ],
+        "switch_trigger": "Een medewerker vraagt niet naar een reactie op de scène, maar naar iemands ademhaling, allergieën en pijnscore.",
+        "hinge_event": "Een hulpverlener knipt een polsbandje met een kleurcode om bij een bezoeker en draagt anderen op ruimte te maken voor een brancard.",
+        "anomaly_under_a": "Een cabaret- of theateravond verandert niet normaal in lichamelijke beoordeling; een kleurcode en brancard zouden een ontwrichtende technische ramp of ongepaste publieksactie lijken.",
+        "resolution_under_b": "In triage is de kleurcode een snelle prioritering en is de brancard nodig om een patiënt veilig te verplaatsen; de schijnbare chaos dient direct levensbeschermend handelen.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B2 biedt de scherpste en meest economische tegenstelling: dezelfde podiumsituatie kan geloofwaardig gelezen worden als een kunstperformance én als een veiling, terwijl de reacties uit de zaal in beide lezingen functioneel blijven maar radicaal van betekenis veranderen. De gedeelde cues—belicht podium, getoond object, ritmische spreker, aandachtige stiltes en genummerde kaarten—domineren de setup zonder de tweede lezing voortijdig weg te geven. Het bieden, de oplopende prijs en vooral de afslag met de hamer vormen een helder omslagpunt dat eerdere publieksreacties retrospectief hercodeert van artistieke waardering naar financiële toezegging. Daarmee is de payoff direct, onderwerp-specifiek voor kunst, en dramaturgisch minder zwaar of grensoverschrijdend dan de calamiteiten- en verhoorscenario's.",
+    "variants": [
+      {
+        "text": "Ik was bij een experimentele voorstelling: fel podiumlicht, één vaas op een sokkel, en iedereen had een genummerd kaartje. De man sprak razendsnel, iemand stak zijn kaart op. Toen sloeg hij met een hamer: „Verkocht aan nummer 42 voor twaalfhonderd euro.”",
+        "angle": "Experimenteel theater blijkt een veiling"
+      },
+      {
+        "text": "In dat nieuwe cabaret moest je vooral stil kijken naar een schilderij terwijl de artiest nummers en bedragen mompelde. Ik dacht dat mijn buurman enthousiast meedeed toen hij zijn bordje opstak. Blijkt dat hij voor twaalfhonderd euro de voorstelling mee naar huis nam.",
+        "angle": "Publieksreactie blijkt een bod"
+      },
+      {
+        "text": "Bij de première stond er alleen een antieke stoel in de spotlights; gedurfd, vond ik. De presentator ratelde, pauzeerde steeds bij onze genummerde kaarten, en tikte eindelijk met een hamer. De recensent schreef „minimalistisch”; nummer 42 schreef twaalfhonderd euro.",
+        "angle": "Kunstrecensie tegenover aankoopbewijs"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 14475,
+      "output_tokens": 6649,
+      "total_tokens": 21124
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een publiek bezoekt een aangekondigde kunst-, theater- of cabaretvoorstelling: makers brengen een voorbereid werk op een podium, en bezoekers kijken, luisteren en reageren volgens de conventies van de zaal.",
+          "participants_and_roles": [
+            "Artiest, acteur of cabaretier: treedt op en presenteert een ingestudeerd of voorbereid programma.",
+            "Regisseur, technicus en theaterpersoneel: maken de voorstelling uitvoerbaar, zichtbaar en hoorbaar.",
+            "Publiek: koopt een kaartje, neemt plaats, volgt de voorstelling en reageert met aandacht, applaus of gelach.",
+            "Theater of podium: biedt een afgebakende, professionele omgeving met een begin, voorstelling en afloop."
+          ],
+          "apparent_goal": "Het publiek een geslaagde culturele avond bieden: ontroeren, vermaken, aan het denken zetten of laten lachen.",
+          "preconditions": [
+            "Er is een aangekondigde voorstelling, tentoonstelling of optreden met een herkenbare titel, tijd en locatie.",
+            "De makers hebben materiaal voorbereid, gerepeteerd of samengesteld.",
+            "Het publiek verwacht dat de zaal, techniek en zitplaatsen geregeld zijn.",
+            "Er gelden basisafspraken: op tijd komen, tijdens de voorstelling niet storen en na afloop waardering tonen."
+          ],
+          "expected_actions": [
+            "Bezoekers komen binnen, tonen hun kaartje, zoeken hun plaats en wachten tot het begint.",
+            "De lichten dimmen en de artiest of acteurs beginnen hun optreden.",
+            "De uitvoering volgt een herkenbare vorm, zoals scènes, liedjes, een monoloog, sketches of een expositie-route.",
+            "Het publiek reageert op passende momenten met stilte, gelach, applaus of een ovatie.",
+            "Na afloop buigen de makers, gaat het zaallicht aan en vertrekken bezoekers of praten zij na."
+          ],
+          "expected_outcome": "De voorstelling verloopt professioneel en begrijpelijk genoeg om het publiek een duidelijke culturele of komische ervaring te geven, waarna het publiek tevreden, geraakt of geamuseerd naar huis gaat.",
+          "expected_propositions": [
+            "Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.",
+            "De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.",
+            "Een cabaretier probeert doelbewust humor te maken, terwijl theater en kunst een betekenisvolle ervaring willen oproepen.",
+            "Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.",
+            "Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt."
+          ],
+          "audience_expectation": "Een setup over kunst, theater en cabaret activeert de verwachting van een georganiseerde avond uit: competente makers voeren iets voorbereids uit voor een aandachtig publiek, binnen duidelijke podiumregels en met een herkenbare emotionele of komische opbrengst."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een verplichte veiligheidsinstructie op het werk die per ongeluk in een theaterzaal wordt gehouden: een veiligheidscoördinator moet bezoekers als personeel instrueren over een ontruimingsoefening.",
+            "opposition_axis": "culturele voorstelling versus functionele veiligheidsbriefing",
+            "opposed_proposition": "Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.",
+            "shared_anchor": "Een man op een podium geeft aanwijzingen terwijl een zaal stil luistert.",
+            "reading_a": "Een cabaretier opent zijn voorstelling met een droog vertelde, bewust saaie monoloog.",
+            "reading_b": "Een veiligheidscoördinator probeert een verplichte evacuatie-instructie af te werken voor mensen die hij ten onrechte als werknemers beschouwt.",
+            "roles_b": [
+              "Veiligheidscoördinator: geeft instructies en wil de ontruimingsprocedure laten slagen.",
+              "Bezoekers: worden aangezien voor personeel dat de instructie moet opvolgen.",
+              "Theaterpersoneel: probeert de zaal veilig en ordelijk te houden.",
+              "Nooduitgang en alarmsysteem: vormen het onderwerp en middel van de oefening."
+            ],
+            "goal_b": "Iedere aanwezige vóór de oefening laten weten via welke route hij het gebouw moet verlaten.",
+            "role_remapping": [
+              "De cabaretier wordt een veiligheidscoördinator.",
+              "Het publiek wordt een groep medewerkers in verplichte instructie.",
+              "Het podium wordt een briefingplek.",
+              "De voorstellingstechniek wordt veiligheids- en alarmapparatuur."
+            ],
+            "shared_cues": [
+              "Gedimde zaal en rijen zittende mensen.",
+              "Een spreker met microfoon op het podium.",
+              "Een ernstig vertelde opening.",
+              "Een aanwijzing om goed op te letten.",
+              "Een deur aan de zijkant van de zaal."
+            ],
+            "switch_trigger": "De spreker zegt dat iedereen nu in stilte achter elkaar naar de dichtstbijzijnde nooduitgang moet lopen en vinkt namen af.",
+            "hinge_event": "Hij drukt op een alarmknop en laat de zaal daadwerkelijk ontruimen.",
+            "anomaly_under_a": "Tijdens een cabaretvoorstelling is een echt alarm en een administratieve presentielijst een mislukte, storende onderbreking; het publiek verwacht grappen of spel, geen vertrekbevel.",
+            "resolution_under_b": "Als veiligheidsbriefing is het alarm precies de geplande oefening: de spreker test de route, telt de deelnemers en wil aantonen dat zij de instructies kunnen uitvoeren."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.",
+            "opposition_axis": "artistieke waardering versus commerciële verkoop",
+            "opposed_proposition": "Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.",
+            "shared_anchor": "Een persoon op een verhoogd podium toont een object en wacht op reacties uit de zaal.",
+            "reading_a": "Een performancekunstenaar presenteert een raadselachtig voorwerp en bouwt spanning op voordat het publiek reageert.",
+            "reading_b": "Een veilingmeester presenteert een kavel en wacht op biedingen voordat hij het verkoopt.",
+            "roles_b": [
+              "Veilingmeester: beschrijft kavels, vraagt biedingen en sluit verkopen.",
+              "Bieders: geven signalen om een prijs te bieden.",
+              "Koper: probeert een gewenst object binnen budget te verwerven.",
+              "Veilinghuispersoneel: registreert biedingen en overhandigt kavels."
+            ],
+            "goal_b": "Kavels voor de hoogst haalbare prijs aan de juiste bieders verkopen.",
+            "role_remapping": [
+              "De performancekunstenaar wordt een veilingmeester.",
+              "Het publiek wordt een groep potentiële kopers.",
+              "Applaus of handgebaren worden biedsignalen.",
+              "Het decor wordt een presentatieplek voor kavels."
+            ],
+            "shared_cues": [
+              "Een belicht podium.",
+              "Een voorwerp dat demonstratief wordt getoond.",
+              "Genummerde stoelen of kaarten in de zaal.",
+              "Korte pauzes waarin iedereen kijkt.",
+              "Een persoon die snel en ritmisch spreekt."
+            ],
+            "switch_trigger": "De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'",
+            "hinge_event": "Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.",
+            "anomaly_under_a": "Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.",
+            "resolution_under_b": "In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een politieverhoor in een ruimte die door een amateurgezelschap abusievelijk als speelzaal is gebruikt: rechercheurs reconstrueren een incident en behandelen aanwezigen als getuigen.",
+            "opposition_axis": "fictieve uitvoering versus feitelijke waarheidsvinding",
+            "opposed_proposition": "De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.",
+            "shared_anchor": "Een fel belichte persoon stelt vragen aan iemand die voor een stille groep staat.",
+            "reading_a": "Een acteur speelt een confronterende scène waarin een personage door een ondervrager wordt aangesproken.",
+            "reading_b": "Een rechercheur ondervraagt een getuige terwijl andere betrokkenen wachten op hun beurt.",
+            "roles_b": [
+              "Rechercheur: stelt gerichte vragen en reconstrueert de feiten.",
+              "Getuige: geeft een verklaring over wat hij heeft gezien.",
+              "Andere aanwezigen: zijn mogelijke getuigen of betrokkenen, geen toeschouwers.",
+              "Beveiliger of agent: bewaakt orde en afzondering."
+            ],
+            "goal_b": "Een betrouwbare verklaring verkrijgen om een werkelijk incident op te helderen.",
+            "role_remapping": [
+              "De acteur die antwoordt wordt een getuige.",
+              "De tegenspeler wordt een rechercheur.",
+              "Het publiek wordt een groep wachtende betrokkenen.",
+              "De podiumspot wordt een verhoorlamp."
+            ],
+            "shared_cues": [
+              "Een donkere ruimte met één fel licht.",
+              "Een persoon die nadrukkelijk vragen stelt.",
+              "Lange stiltes na een vraag.",
+              "Een stoel in het midden.",
+              "Mensen die aandachtig naar een gesprek kijken."
+            ],
+            "switch_trigger": "De ondervrager onderbreekt het spel ogenschijnlijk met de woorden: 'Dit wordt opgenomen; noem nu uw volledige naam en waar u om 22.15 uur was.'",
+            "hinge_event": "Een agent sluit de deur, vraagt aanwezigen hun telefoons in te leveren en roept één bezoeker naar voren voor een verklaring.",
+            "anomaly_under_a": "Een voorstelling hoort geen echte persoonsgegevens te eisen of bezoekers uit hun passieve rol te halen; het afsluiten van de zaal voelt als een ernstige grensoverschrijding.",
+            "resolution_under_b": "Bij een verhoor beschermen afzondering en telefooninname de getuigenverklaringen, en moet een opgeroepen aanwezige actief informatie leveren in plaats van kijken."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een medische triagepost tijdens een onverwachte calamiteit, waar zorgverleners de aanwezigen beoordelen en behandelen in plaats van een programma uit te voeren.",
+            "opposition_axis": "geënsceneerd vermaak versus urgente zorgverlening",
+            "opposed_proposition": "Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.",
+            "shared_anchor": "Medewerkers bewegen snel door een verduisterde zaal, schijnen met lampen en spreken afzonderlijke bezoekers aan.",
+            "reading_a": "Theatermedewerkers voeren een meeslepende, interactieve openingsscène uit waarin licht en geluid het gevoel van chaos creëren.",
+            "reading_b": "Hulpverleners zoeken in een stroomuitval naar gewonden en beoordelen wie onmiddellijk medische hulp nodig heeft.",
+            "roles_b": [
+              "Hulpverlener: beoordeelt klachten, verleent eerste hulp en prioriteert slachtoffers.",
+              "Bezoeker: is mogelijk patiënt en moet klachten of letsel melden.",
+              "Zaalpersoneel: helpt met routes, verlichting en registratie.",
+              "Ambulance- of BHV-team: vervoert of ondersteunt degenen met de hoogste urgentie."
+            ],
+            "goal_b": "Mensen met acute medische nood snel herkennen, stabiliseren en naar passende zorg leiden.",
+            "role_remapping": [
+              "De artiesten en technici worden hulpverleners en BHV'ers.",
+              "Het publiek wordt een groep mogelijke patiënten.",
+              "Theaterlampen worden noodverlichting en onderzoekslampen.",
+              "De zaal wordt een tijdelijke triageplaats."
+            ],
+            "shared_cues": [
+              "Plotseling gedimd of uitvallend licht.",
+              "Zaklampen die door de zaal bewegen.",
+              "Korte, luide aanwijzingen.",
+              "Medewerkers die tussen stoelen lopen.",
+              "Bezoekers die stil wachten op instructies."
+            ],
+            "switch_trigger": "Een medewerker vraagt niet naar een reactie op de scène, maar naar iemands ademhaling, allergieën en pijnscore.",
+            "hinge_event": "Een hulpverlener knipt een polsbandje met een kleurcode om bij een bezoeker en draagt anderen op ruimte te maken voor een brancard.",
+            "anomaly_under_a": "Een cabaret- of theateravond verandert niet normaal in lichamelijke beoordeling; een kleurcode en brancard zouden een ontwrichtende technische ramp of ongepaste publieksactie lijken.",
+            "resolution_under_b": "In triage is de kleurcode een snelle prioritering en is de brancard nodig om een patiënt veilig te verplaatsen; de schijnbare chaos dient direct levensbeschermend handelen."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een verplichte veiligheidsinstructie op het werk die per ongeluk in een theaterzaal wordt gehouden: een veiligheidscoördinator moet bezoekers als personeel instrueren over een ontruimingsoefening.",
+              "opposition_axis": "culturele voorstelling versus functionele veiligheidsbriefing",
+              "opposed_proposition": "Wie een kaartje voor theater of cabaret koopt, verwacht een echte, voorbereide voorstelling en geen willekeurige bijeenkomst.",
+              "shared_anchor": "Een man op een podium geeft aanwijzingen terwijl een zaal stil luistert.",
+              "reading_a": "Een cabaretier opent zijn voorstelling met een droog vertelde, bewust saaie monoloog.",
+              "reading_b": "Een veiligheidscoördinator probeert een verplichte evacuatie-instructie af te werken voor mensen die hij ten onrechte als werknemers beschouwt.",
+              "roles_b": [
+                "Veiligheidscoördinator: geeft instructies en wil de ontruimingsprocedure laten slagen.",
+                "Bezoekers: worden aangezien voor personeel dat de instructie moet opvolgen.",
+                "Theaterpersoneel: probeert de zaal veilig en ordelijk te houden.",
+                "Nooduitgang en alarmsysteem: vormen het onderwerp en middel van de oefening."
+              ],
+              "goal_b": "Iedere aanwezige vóór de oefening laten weten via welke route hij het gebouw moet verlaten.",
+              "role_remapping": [
+                "De cabaretier wordt een veiligheidscoördinator.",
+                "Het publiek wordt een groep medewerkers in verplichte instructie.",
+                "Het podium wordt een briefingplek.",
+                "De voorstellingstechniek wordt veiligheids- en alarmapparatuur."
+              ],
+              "shared_cues": [
+                "Gedimde zaal en rijen zittende mensen.",
+                "Een spreker met microfoon op het podium.",
+                "Een ernstig vertelde opening.",
+                "Een aanwijzing om goed op te letten.",
+                "Een deur aan de zijkant van de zaal."
+              ],
+              "switch_trigger": "De spreker zegt dat iedereen nu in stilte achter elkaar naar de dichtstbijzijnde nooduitgang moet lopen en vinkt namen af.",
+              "hinge_event": "Hij drukt op een alarmknop en laat de zaal daadwerkelijk ontruimen.",
+              "anomaly_under_a": "Tijdens een cabaretvoorstelling is een echt alarm en een administratieve presentielijst een mislukte, storende onderbreking; het publiek verwacht grappen of spel, geen vertrekbevel.",
+              "resolution_under_b": "Als veiligheidsbriefing is het alarm precies de geplande oefening: de spreker test de route, telt de deelnemers en wil aantonen dat zij de instructies kunnen uitvoeren."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een veilingavond waarin een veilingmeester kunstwerken en bezittingen snel verkoopt aan bieders; de zaalreacties zijn biedsignalen in plaats van waardering voor een optreden.",
+              "opposition_axis": "artistieke waardering versus commerciële verkoop",
+              "opposed_proposition": "Applaus, gelach en stilte zijn sociale signalen waarmee het publiek toont dat het de podiumconventies begrijpt.",
+              "shared_anchor": "Een persoon op een verhoogd podium toont een object en wacht op reacties uit de zaal.",
+              "reading_a": "Een performancekunstenaar presenteert een raadselachtig voorwerp en bouwt spanning op voordat het publiek reageert.",
+              "reading_b": "Een veilingmeester presenteert een kavel en wacht op biedingen voordat hij het verkoopt.",
+              "roles_b": [
+                "Veilingmeester: beschrijft kavels, vraagt biedingen en sluit verkopen.",
+                "Bieders: geven signalen om een prijs te bieden.",
+                "Koper: probeert een gewenst object binnen budget te verwerven.",
+                "Veilinghuispersoneel: registreert biedingen en overhandigt kavels."
+              ],
+              "goal_b": "Kavels voor de hoogst haalbare prijs aan de juiste bieders verkopen.",
+              "role_remapping": [
+                "De performancekunstenaar wordt een veilingmeester.",
+                "Het publiek wordt een groep potentiële kopers.",
+                "Applaus of handgebaren worden biedsignalen.",
+                "Het decor wordt een presentatieplek voor kavels."
+              ],
+              "shared_cues": [
+                "Een belicht podium.",
+                "Een voorwerp dat demonstratief wordt getoond.",
+                "Genummerde stoelen of kaarten in de zaal.",
+                "Korte pauzes waarin iedereen kijkt.",
+                "Een persoon die snel en ritmisch spreekt."
+              ],
+              "switch_trigger": "De spreker slaat met een hamer af en roept: 'Verkocht aan nummer 42 voor twaalfhonderd euro.'",
+              "hinge_event": "Een bezoeker steekt een genummerd bordje op, waarna de spreker de prijs hardop verhoogt.",
+              "anomaly_under_a": "Bij een kunstperformance zou het plots beprijzen van het getoonde werk en het behandelen van een handgebaar als financiële toezegging ongepast en verwarrend zijn.",
+              "resolution_under_b": "In een veiling is juist dat gebaar de noodzakelijke bieding; de oplopende bedragen en de hamer markeren de doelgerichte verkoop van het kavel."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een politieverhoor in een ruimte die door een amateurgezelschap abusievelijk als speelzaal is gebruikt: rechercheurs reconstrueren een incident en behandelen aanwezigen als getuigen.",
+              "opposition_axis": "fictieve uitvoering versus feitelijke waarheidsvinding",
+              "opposed_proposition": "De persoon op het podium heeft de leiding over de aandacht; het publiek kijkt in hoofdzaak toe.",
+              "shared_anchor": "Een fel belichte persoon stelt vragen aan iemand die voor een stille groep staat.",
+              "reading_a": "Een acteur speelt een confronterende scène waarin een personage door een ondervrager wordt aangesproken.",
+              "reading_b": "Een rechercheur ondervraagt een getuige terwijl andere betrokkenen wachten op hun beurt.",
+              "roles_b": [
+                "Rechercheur: stelt gerichte vragen en reconstrueert de feiten.",
+                "Getuige: geeft een verklaring over wat hij heeft gezien.",
+                "Andere aanwezigen: zijn mogelijke getuigen of betrokkenen, geen toeschouwers.",
+                "Beveiliger of agent: bewaakt orde en afzondering."
+              ],
+              "goal_b": "Een betrouwbare verklaring verkrijgen om een werkelijk incident op te helderen.",
+              "role_remapping": [
+                "De acteur die antwoordt wordt een getuige.",
+                "De tegenspeler wordt een rechercheur.",
+                "Het publiek wordt een groep wachtende betrokkenen.",
+                "De podiumspot wordt een verhoorlamp."
+              ],
+              "shared_cues": [
+                "Een donkere ruimte met één fel licht.",
+                "Een persoon die nadrukkelijk vragen stelt.",
+                "Lange stiltes na een vraag.",
+                "Een stoel in het midden.",
+                "Mensen die aandachtig naar een gesprek kijken."
+              ],
+              "switch_trigger": "De ondervrager onderbreekt het spel ogenschijnlijk met de woorden: 'Dit wordt opgenomen; noem nu uw volledige naam en waar u om 22.15 uur was.'",
+              "hinge_event": "Een agent sluit de deur, vraagt aanwezigen hun telefoons in te leveren en roept één bezoeker naar voren voor een verklaring.",
+              "anomaly_under_a": "Een voorstelling hoort geen echte persoonsgegevens te eisen of bezoekers uit hun passieve rol te halen; het afsluiten van de zaal voelt als een ernstige grensoverschrijding.",
+              "resolution_under_b": "Bij een verhoor beschermen afzondering en telefooninname de getuigenverklaringen, en moet een opgeroepen aanwezige actief informatie leveren in plaats van kijken."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een medische triagepost tijdens een onverwachte calamiteit, waar zorgverleners de aanwezigen beoordelen en behandelen in plaats van een programma uit te voeren.",
+              "opposition_axis": "geënsceneerd vermaak versus urgente zorgverlening",
+              "opposed_proposition": "Technische elementen zoals licht, geluid en decor ondersteunen de voorstelling en horen niet zelf het probleem te worden.",
+              "shared_anchor": "Medewerkers bewegen snel door een verduisterde zaal, schijnen met lampen en spreken afzonderlijke bezoekers aan.",
+              "reading_a": "Theatermedewerkers voeren een meeslepende, interactieve openingsscène uit waarin licht en geluid het gevoel van chaos creëren.",
+              "reading_b": "Hulpverleners zoeken in een stroomuitval naar gewonden en beoordelen wie onmiddellijk medische hulp nodig heeft.",
+              "roles_b": [
+                "Hulpverlener: beoordeelt klachten, verleent eerste hulp en prioriteert slachtoffers.",
+                "Bezoeker: is mogelijk patiënt en moet klachten of letsel melden.",
+                "Zaalpersoneel: helpt met routes, verlichting en registratie.",
+                "Ambulance- of BHV-team: vervoert of ondersteunt degenen met de hoogste urgentie."
+              ],
+              "goal_b": "Mensen met acute medische nood snel herkennen, stabiliseren en naar passende zorg leiden.",
+              "role_remapping": [
+                "De artiesten en technici worden hulpverleners en BHV'ers.",
+                "Het publiek wordt een groep mogelijke patiënten.",
+                "Theaterlampen worden noodverlichting en onderzoekslampen.",
+                "De zaal wordt een tijdelijke triageplaats."
+              ],
+              "shared_cues": [
+                "Plotseling gedimd of uitvallend licht.",
+                "Zaklampen die door de zaal bewegen.",
+                "Korte, luide aanwijzingen.",
+                "Medewerkers die tussen stoelen lopen.",
+                "Bezoekers die stil wachten op instructies."
+              ],
+              "switch_trigger": "Een medewerker vraagt niet naar een reactie op de scène, maar naar iemands ademhaling, allergieën en pijnscore.",
+              "hinge_event": "Een hulpverlener knipt een polsbandje met een kleurcode om bij een bezoeker en draagt anderen op ruimte te maken voor een brancard.",
+              "anomaly_under_a": "Een cabaret- of theateravond verandert niet normaal in lichamelijke beoordeling; een kleurcode en brancard zouden een ontwrichtende technische ramp of ongepaste publieksactie lijken.",
+              "resolution_under_b": "In triage is de kleurcode een snelle prioritering en is de brancard nodig om een patiënt veilig te verplaatsen; de schijnbare chaos dient direct levensbeschermend handelen."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde realiseerbare scène — een ernstige spreker met microfoon voor een stille zaal — kan eerst als droge cabaretopening en daarna als veiligheidsbriefing worden gelezen. De tegenstelling voorstelling versus functionele instructie is lokaal onverenigbaar en dominant. De briefing blijft door de serieuze toon, aandachtseis en zijdeur latent mogelijk, maar de theatercontext laat lezing A aanvankelijk domineren. Alarm, presentielijst en ontruiming verstoren het doel van een voorstelling, maar zijn onder B precies middelen om de evacuatie-instructie uit te voeren. Daardoor krijgen eerdere aanwijzingen achteraf een veiligheidsfunctie."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Een persoon die op een podium een object toont en zaalreacties afwacht, past zowel bij een performancekunstenaar als bij een veilingmeester. Artistieke receptie en commerciële verkoop vormen hier één duidelijke, lokaal incompatibele as. Genummerde kaarten, korte stiltes en ritmisch spreken houden de veilinginterpretatie vooraf beschikbaar, terwijl de kunstcontext de performancelezing eerst waarschijnlijker maakt. Het bod, de prijsverhoging en de hamer maken de eerdere reacties achteraf biedingen en lossen de vreemde beprijzing onder A op. Een bod blokkeert echter niet noodzakelijk het artistieke doel van A; functionele omkering is daarom niet expliciet verzekerd."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De belichte ondervraging voor een stille groep kan realiseerbaar zowel een gespeelde confrontatiescène als een politieverhoor zijn. Fictieve uitvoering en feitelijke waarheidsvinding zijn een duidelijke dominante tegenstelling. De verhoorlezing is vóór de trigger al mogelijk door de stoel, spot, gerichte vragen en stiltes, maar de theatercontext begunstigt aanvankelijk A. Het eisen van echte persoonsgegevens, het afsluiten van de ruimte en het oproepen van aanwezigen zijn onder A ontwrichtend, maar onder B functioneel voor het veilig verkrijgen van verklaringen. Zij keren de eerdere rollen van toeschouwers en spelers retrospectief om."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Snelle medewerkers met lampen in een donkere zaal kunnen zowel een geënsceneerde interactieve opening als noodhulp tijdens een calamiteit vormen. Vermaak tegenover urgente zorg is de enkele dominante, lokaal incompatibele as. Zaklampen, korte bevelen en medewerkers tussen stoelen ondersteunen beide lezingen; binnen de gegeven theatersetup heeft A eerst voorrang, terwijl B door de uitval en noodachtige handelingen latent beschikbaar blijft. Vragen naar ademhaling en pijn, kleurcodes en een brancard verstoren een voorstelling maar zijn in triage doelgerichte middelen voor prioritering en vervoer. Daarmee krijgen licht, beweging en afzonderlijk aanspreken achteraf een medische functie."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde realiseerbare scène — een ernstige spreker met microfoon voor een stille zaal — kan eerst als droge cabaretopening en daarna als veiligheidsbriefing worden gelezen. De tegenstelling voorstelling versus functionele instructie is lokaal onverenigbaar en dominant. De briefing blijft door de serieuze toon, aandachtseis en zijdeur latent mogelijk, maar de theatercontext laat lezing A aanvankelijk domineren. Alarm, presentielijst en ontruiming verstoren het doel van een voorstelling, maar zijn onder B precies middelen om de evacuatie-instructie uit te voeren. Daardoor krijgen eerdere aanwijzingen achteraf een veiligheidsfunctie."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Een persoon die op een podium een object toont en zaalreacties afwacht, past zowel bij een performancekunstenaar als bij een veilingmeester. Artistieke receptie en commerciële verkoop vormen hier één duidelijke, lokaal incompatibele as. Genummerde kaarten, korte stiltes en ritmisch spreken houden de veilinginterpretatie vooraf beschikbaar, terwijl de kunstcontext de performancelezing eerst waarschijnlijker maakt. Het bod, de prijsverhoging en de hamer maken de eerdere reacties achteraf biedingen en lossen de vreemde beprijzing onder A op. Een bod blokkeert echter niet noodzakelijk het artistieke doel van A; functionele omkering is daarom niet expliciet verzekerd."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De belichte ondervraging voor een stille groep kan realiseerbaar zowel een gespeelde confrontatiescène als een politieverhoor zijn. Fictieve uitvoering en feitelijke waarheidsvinding zijn een duidelijke dominante tegenstelling. De verhoorlezing is vóór de trigger al mogelijk door de stoel, spot, gerichte vragen en stiltes, maar de theatercontext begunstigt aanvankelijk A. Het eisen van echte persoonsgegevens, het afsluiten van de ruimte en het oproepen van aanwezigen zijn onder A ontwrichtend, maar onder B functioneel voor het veilig verkrijgen van verklaringen. Zij keren de eerdere rollen van toeschouwers en spelers retrospectief om."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Snelle medewerkers met lampen in een donkere zaal kunnen zowel een geënsceneerde interactieve opening als noodhulp tijdens een calamiteit vormen. Vermaak tegenover urgente zorg is de enkele dominante, lokaal incompatibele as. Zaklampen, korte bevelen en medewerkers tussen stoelen ondersteunen beide lezingen; binnen de gegeven theatersetup heeft A eerst voorrang, terwijl B door de uitval en noodachtige handelingen latent beschikbaar blijft. Vragen naar ademhaling en pijn, kleurcodes en een brancard verstoren een voorstelling maar zijn in triage doelgerichte middelen voor prioritering en vervoer. Daarmee krijgen licht, beweging en afzonderlijk aanspreken achteraf een medische functie."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B2"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een experimentele podiumvoorstelling met belicht podium, een object op een sokkel, een snel sprekende performer en genummerde kaartjes in de zaal.",
+          "realized_script_b": "Een veiling waarin een veilingmeester een kavel aanbiedt, een genummerd bordje als bod ontvangt en het object met een hamer verkoopt.",
+          "realized_opposition_axis": "artistieke waardering versus commerciële verkoop",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De variant bouwt eerst een performancekunstlezing op met vrijwel alle gedeelde cues en schakelt vervolgens expliciet naar een veiling met bordje, hamer, nummer 42, prijs en verkoopformule."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist en er is geen bedoeld doelwit."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een zeer directe en complete realisatie van de geplande theater-naar-veilingomkering; de slotzin levert de expliciete, retrospectief verklarende switch.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een nieuw cabaret- of kunstoptreden waarin bezoekers stil naar een schilderij kijken en de artiest ogenschijnlijk onbegrijpelijke nummers en bedragen mompelt.",
+          "realized_script_b": "Een veiling waarin een bezoeker met een bordje biedt en vervolgens voor twaalfhonderd euro het getoonde schilderij koopt.",
+          "realized_opposition_axis": "artistieke waardering versus commerciële verkoop",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De cabaret-/kunstlezing is dominant in de setup. Het bordje, de nummers en bedragen krijgen in de laatste zin de veilingbetekenis: de vermeende enthousiaste publieksreactie was een bod en het kunstwerk werd gekocht."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist en er is geen bedoeld doelwit."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De exacte hamerformule ontbreekt, maar de functionele switch is behouden: het opgestoken bordje blijkt een bod en de voorstelling blijkt een gekocht kunstwerk.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een minimalistische première of kunstvoorstelling met een antieke stoel in de spotlights, een ratelende presentator, genummerde kaarten en een recensent.",
+          "realized_script_b": "Een slechts gedeeltelijk gesuggereerde veiling: nummer 42 lijkt een bedrag van twaalfhonderd euro te noteren nadat de presentator met een hamer tikt.",
+          "realized_opposition_axis": "beoogd: artistieke waardering versus commerciële verkoop; gerealiseerd slechts zwak en ambigu",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De gedeelde theater-/veilingcues zijn grotendeels aanwezig, maar de tekst bevestigt niet functioneel dat er een kavel is verkocht of dat nummer 42 een bod uitbrengt. De hamer en het bedrag suggereren een veiling, maar de beoogde omslag en herinterpretatie blijven onvoldoende expliciet."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist en er is geen bedoeld doelwit."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": false,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": false,
+          "has_recognizable_setup": true,
+          "has_clear_turn": false,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant probeert de geplande veilingonthulling, maar „nummer 42 schreef twaalfhonderd euro” is onnatuurlijk en maakt niet helder dat een bieding of verkoop plaatsvindt. Daardoor blijft de theoretische switch te impliciet, ondanks een herkenbare opzet en slotcontrast.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "V1 maakt de omslag van experimenteel theater naar veiling het helderst en volledigst: sokkel, genummerd kaartje, bod, hamer en verkoopformule vallen precies samen. V2 heeft een aardige publieksreactie-naar-bod-switch, maar „de voorstelling mee naar huis” is minder precies en iets minder natuurlijk."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "V1 is een passerende variant en V3 niet, dus V1 moet voorgaan. Bovendien biedt V1 een directe, goed uitspreekbare onthulling die alle eerdere cues herkadert, terwijl V3 door „nummer 42 schreef twaalfhonderd euro” geen duidelijke verkoop of bieding bevestigt."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 is passerend en V3 niet. V2 laat het opgestoken bordje functioneel veranderen van enthousiaste reactie in een bod, met een begrijpelijke aankoop als gevolg; V3 blijft steken in een onduidelijke formulering en levert daardoor geen stevige retrospectieve veilingonthulling."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 heeft de sterkste vereiste SO-realisatie en de duidelijkste, meest performabele theater-naar-veilingomkering. De slotformule is compact, ondubbelzinnig en herinterpreteert de volledige opzet."
+    }
+  },
+  "result_sha256": "e14341320af81c21cb0526979603863efb62d8b3914744da9d269649b9ef5b88"
+}

@@ -1,0 +1,900 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T12-E1",
+  "topic_id": "T12",
+  "topic": "Kunst, theater en cabaret",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T19:27:23.094438+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Kunst, theater en cabaret",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.\",\n      \"Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.\",\n      \"Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.\",\n      \"Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen.\"\n    ],\n    \"apparent_goal\": \"Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.\",\n      \"De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.\",\n      \"Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.\",\n      \"Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.\",\n      \"Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.\",\n      \"De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.\",\n      \"Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.\",\n      \"Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.\",\n    \"expected_propositions\": [\n      \"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\",\n      \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n      \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\",\n      \"Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.\",\n      \"Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.\",\n      \"Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.\",\n      \"Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen.\"\n    ],\n    \"apparent_goal\": \"Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.\",\n      \"De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.\",\n      \"Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.\",\n      \"Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.\",\n      \"Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.\",\n      \"De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.\",\n      \"Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.\",\n      \"Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.\",\n    \"expected_propositions\": [\n      \"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\",\n      \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n      \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\",\n      \"Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.\",\n      \"opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n      \"opposed_proposition\": \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"shared_anchor\": \"Een volle zaal wacht stil tot de persoon op het podium begint.\",\n      \"reading_a\": \"Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.\",\n      \"reading_b\": \"De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.\",\n      \"roles_b\": [\n        \"Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.\",\n        \"Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.\",\n        \"Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.\",\n        \"Technici: regelen alarmsignaal, noodverlichting en communicatie.\"\n      ],\n      \"goal_b\": \"Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt een veiligheidscoördinator.\",\n        \"Het publiek wordt een groep oefendeelnemers.\",\n        \"Theaterpersoneel wordt ontruimingsbegeleiding.\",\n        \"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\"\n      ],\n      \"shared_cues\": [\n        \"Kaartcontrole bij binnenkomst.\",\n        \"Genummerde stoelen en een volle zaal.\",\n        \"Een spreker alleen op een verlicht podium.\",\n        \"Een microfoon, lichtwisselingen en korte instructieve verhalen.\",\n        \"Personeel dat opvallend dicht bij de zijgangen staat.\"\n      ],\n      \"switch_trigger\": \"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\",\n      \"hinge_event\": \"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\",\n      \"anomaly_under_a\": \"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\",\n      \"resolution_under_b\": \"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een theateravond is in werkelijkheid een assessment voor een creatief bedrijf dat nieuw personeel zoekt. De zogenoemde artiest gebruikt sketches en interactie om te observeren wie onder sociale druk luistert, improviseert, samenwerkt en grenzen bewaakt.\",\n      \"opposition_axis\": \"Kunstzinnige waardering versus beoordeling van geschiktheid.\",\n      \"opposed_proposition\": \"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\",\n      \"shared_anchor\": \"Een performer presenteert voorbereide scènes aan aandachtige aanwezigen.\",\n      \"reading_a\": \"De aanwezigen zien een cabaretier die herkenbare scènes speelt en het publiek af en toe bij de voorstelling betrekt.\",\n      \"reading_b\": \"De scènes zijn gestandaardiseerde opdrachten; reacties uit de zaal leveren beoordelaars informatie over gedrag en vaardigheden.\",\n      \"roles_b\": [\n        \"Assessmentleider: presenteert opdrachten onder de vorm van sketches.\",\n        \"Kandidaten: worden geobserveerd op hun reacties en samenwerking.\",\n        \"Observatoren: registreren gedrag vanaf de zaalrand of achter de techniek.\",\n        \"Locatiepersoneel: ontvangt kandidaten en bewaakt het programma.\"\n      ],\n      \"goal_b\": \"Kandidaten selecteren voor functies waarin improvisatie, communicatie en samenwerking belangrijk zijn.\",\n      \"role_remapping\": [\n        \"De artiest wordt een assessmentleider.\",\n        \"Het publiek wordt een groep sollicitatiekandidaten.\",\n        \"Techniek en regie worden observatie- en registratieondersteuning.\",\n        \"Theaterpersoneel wordt ontvangst en procesbegeleiding.\"\n      ],\n      \"shared_cues\": [\n        \"Een vooraf geprogrammeerde aanvang.\",\n        \"Naambadges of gereserveerde plaatsen.\",\n        \"Een podium, microfoon en belichting.\",\n        \"Korte scènes met herkenbare werksituaties.\",\n        \"Medewerkers die achterin notities maken.\"\n      ],\n      \"switch_trigger\": \"Na een scène vraagt de performer niet om applaus, maar deelt hij formulieren uit en roept hij aanwezigen per naam op voor een groepsopdracht.\",\n      \"hinge_event\": \"De performer stopt een sketch halverwege en geeft vier bezoekers de opdracht om ter plekke samen een conflict met een klant op te lossen.\",\n      \"anomaly_under_a\": \"In een gewone voorstelling is het vreemd dat willekeurige bezoekers niet vrijblijvend worden uitgenodigd, maar onder tijdsdruk een beoordeelbare taak moeten uitvoeren.\",\n      \"resolution_under_b\": \"In een assessment is de onderbreking doelgericht: juist de onverwachte taak maakt zichtbaar hoe kandidaten communiceren, initiatief nemen en met spanning omgaan.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een cabaretachtige avond blijkt een openbare hoorzitting over geluidsoverlast en vergunningen rond het theaterdistrict. De schijnbare cabaretier is een voorzitter die luchtige anekdotes gebruikt om betrokkenen op hun gemak te stellen voordat verklaringen en bezwaren formeel worden vastgelegd.\",\n      \"opposition_axis\": \"Lachen om maatschappelijke observaties versus formeel getuigen en belangen afwegen.\",\n      \"opposed_proposition\": \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n      \"shared_anchor\": \"Een spreker vertelt herkenbare ergernissen over het stadsleven aan een zaal.\",\n      \"reading_a\": \"De zaal hoort cabaret over buren, nachtelijk lawaai, verkeer en bureaucratie; de ergernissen zijn materiaal voor humor en herkenning.\",\n      \"reading_b\": \"De voorbeelden brengen concrete geschilpunten in kaart en bereiden bewoners, ondernemers en ambtenaren voor op hun formele inbreng.\",\n      \"roles_b\": [\n        \"Voorzitter: structureert de hoorzitting en geeft deelnemers het woord.\",\n        \"Bewoners en ondernemers: lichten klachten, belangen en voorstellen toe.\",\n        \"Gemeentevertegenwoordigers: verzamelen informatie voor een besluit.\",\n        \"Zaalmedewerkers: regelen spreektijd, registratie en orde.\"\n      ],\n      \"goal_b\": \"Informatie en standpunten verzamelen om een besluit over lokale regels, vergunningen of geluidsnormen voor te bereiden.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt voorzitter van de hoorzitting.\",\n        \"Het publiek wordt een verzameling belanghebbenden en insprekers.\",\n        \"Applaus of geroezemoes wordt een signaal van steun of bezwaar.\",\n        \"Theaterpersoneel wordt administratieve en ordelijke ondersteuning.\"\n      ],\n      \"shared_cues\": [\n        \"Een podiumopstelling met microfoon.\",\n        \"Verhalen over herkenbare lokale irritaties.\",\n        \"Toehoorders die instemmend lachen of murmelen.\",\n        \"Een zichtbaar tijdschema.\",\n        \"Medewerkers met notitieblokken aan de zijkant.\"\n      ],\n      \"switch_trigger\": \"De spreker beëindigt een grap over nachtelijk lawaai, noemt een dossiernummer en vraagt wie namens de bewoners formeel wil inspreken.\",\n      \"hinge_event\": \"Een zaalmedewerker zet een opnameapparaat aan en de eerste bezoeker moet zijn naam, adres en belang voor de microfoon noemen.\",\n      \"anomaly_under_a\": \"Bij cabaret is het ongepast dat een bezoeker zijn persoonlijke gegevens geeft en dat diens reactie officieel wordt opgenomen als verklaring.\",\n      \"resolution_under_b\": \"In een hoorzitting is deze formaliteit noodzakelijk: de grappige aanloop blijkt een toegankelijke opening van een procedure waarin standpunten controleerbaar moeten worden vastgelegd.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een avond met een komische presentator is in werkelijkheid een live veiling en financieringsbijeenkomst voor een lokaal kunstproject. De presentator gebruikt cabaret om de zaal enthousiast te maken, terwijl applaus, biedkaarten en reacties worden gebruikt om steun en toezeggingen te mobiliseren.\",\n      \"opposition_axis\": \"Applaus als waardering versus publieke toezegging of stem.\",\n      \"opposed_proposition\": \"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\",\n      \"shared_anchor\": \"Na een geestige podiumbijdrage reageert de zaal luid en zichtbaar enthousiast.\",\n      \"reading_a\": \"Het applaus beloont een geslaagde grap, een muzikaal nummer of een sterke scène van de artiest.\",\n      \"reading_b\": \"De reactie meet en bekrachtigt steun voor een project; aanwezigen worden voorbereid om ook financieel of publiekelijk commitment te tonen.\",\n      \"roles_b\": [\n        \"Veilingmeester-presentator: vermaakt de zaal en vraagt om biedingen of toezeggingen.\",\n        \"Aanwezigen: potentiële donateurs, bieders of stemmers.\",\n        \"Organisatoren: tonen projecten en registreren bijdragen.\",\n        \"Techniek: projecteert bedragen, biednummers en tussenstanden.\"\n      ],\n      \"goal_b\": \"Geld, steunbetuigingen en zichtbaarheid verzamelen voor een kunstproject of cultureel initiatief.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt een veilingmeester en fondsenwerver.\",\n        \"Het publiek wordt een groep potentiële bieders en donateurs.\",\n        \"Applaus wordt een steunbetuiging met een praktische vervolgactie.\",\n        \"De regie wordt de presentatie van biedstanden en projectinformatie.\"\n      ],\n      \"shared_cues\": [\n        \"Entreebewijzen en een feestelijke zaalopstelling.\",\n        \"Een presentator met microfoon en voorbereide grappen.\",\n        \"Projecties op een scherm.\",\n        \"Genummerde kaartjes op stoelen.\",\n        \"Applaus na korte bijdragen.\"\n      ],\n      \"switch_trigger\": \"Na een bijzonder uitbundig applaus zegt de presentator dat dit enthousiasme als eerste biedronde geldt en vraagt hij de aanwezigen hun genummerde kaarten omhoog te steken.\",\n      \"hinge_event\": \"Op het scherm verschijnt geen volgende act, maar een oplopend bedrag, terwijl medewerkers door de zaal lopen om toezeggingen te registreren.\",\n      \"anomaly_under_a\": \"Tijdens een gewone voorstelling is het vreemd dat applaus plotseling wordt omgezet in een geregistreerde financiële handeling en dat bezoekers om een genummerde kaart worden gevraagd.\",\n      \"resolution_under_b\": \"Binnen een fondsenwerving is de omslag functioneel: de cabaretachtige sfeer verlaagt de drempel, waarna het publieke enthousiasme doelbewust wordt omgezet in biedingen en steun.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.\",\n      \"Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.\",\n      \"Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.\",\n      \"Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen.\"\n    ],\n    \"apparent_goal\": \"Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.\",\n      \"De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.\",\n      \"Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.\",\n      \"Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.\",\n      \"Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.\",\n      \"De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.\",\n      \"Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.\",\n      \"Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.\",\n    \"expected_propositions\": [\n      \"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\",\n      \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n      \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\",\n      \"Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.\",\n      \"opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n      \"opposed_proposition\": \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"shared_anchor\": \"Een volle zaal wacht stil tot de persoon op het podium begint.\",\n      \"reading_a\": \"Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.\",\n      \"reading_b\": \"De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.\",\n      \"roles_b\": [\n        \"Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.\",\n        \"Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.\",\n        \"Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.\",\n        \"Technici: regelen alarmsignaal, noodverlichting en communicatie.\"\n      ],\n      \"goal_b\": \"Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt een veiligheidscoördinator.\",\n        \"Het publiek wordt een groep oefendeelnemers.\",\n        \"Theaterpersoneel wordt ontruimingsbegeleiding.\",\n        \"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\"\n      ],\n      \"shared_cues\": [\n        \"Kaartcontrole bij binnenkomst.\",\n        \"Genummerde stoelen en een volle zaal.\",\n        \"Een spreker alleen op een verlicht podium.\",\n        \"Een microfoon, lichtwisselingen en korte instructieve verhalen.\",\n        \"Personeel dat opvallend dicht bij de zijgangen staat.\"\n      ],\n      \"switch_trigger\": \"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\",\n      \"hinge_event\": \"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\",\n      \"anomaly_under_a\": \"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\",\n      \"resolution_under_b\": \"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een cabaretachtige avond blijkt een openbare hoorzitting over geluidsoverlast en vergunningen rond het theaterdistrict. De schijnbare cabaretier is een voorzitter die luchtige anekdotes gebruikt om betrokkenen op hun gemak te stellen voordat verklaringen en bezwaren formeel worden vastgelegd.\",\n      \"opposition_axis\": \"Lachen om maatschappelijke observaties versus formeel getuigen en belangen afwegen.\",\n      \"opposed_proposition\": \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n      \"shared_anchor\": \"Een spreker vertelt herkenbare ergernissen over het stadsleven aan een zaal.\",\n      \"reading_a\": \"De zaal hoort cabaret over buren, nachtelijk lawaai, verkeer en bureaucratie; de ergernissen zijn materiaal voor humor en herkenning.\",\n      \"reading_b\": \"De voorbeelden brengen concrete geschilpunten in kaart en bereiden bewoners, ondernemers en ambtenaren voor op hun formele inbreng.\",\n      \"roles_b\": [\n        \"Voorzitter: structureert de hoorzitting en geeft deelnemers het woord.\",\n        \"Bewoners en ondernemers: lichten klachten, belangen en voorstellen toe.\",\n        \"Gemeentevertegenwoordigers: verzamelen informatie voor een besluit.\",\n        \"Zaalmedewerkers: regelen spreektijd, registratie en orde.\"\n      ],\n      \"goal_b\": \"Informatie en standpunten verzamelen om een besluit over lokale regels, vergunningen of geluidsnormen voor te bereiden.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt voorzitter van de hoorzitting.\",\n        \"Het publiek wordt een verzameling belanghebbenden en insprekers.\",\n        \"Applaus of geroezemoes wordt een signaal van steun of bezwaar.\",\n        \"Theaterpersoneel wordt administratieve en ordelijke ondersteuning.\"\n      ],\n      \"shared_cues\": [\n        \"Een podiumopstelling met microfoon.\",\n        \"Verhalen over herkenbare lokale irritaties.\",\n        \"Toehoorders die instemmend lachen of murmelen.\",\n        \"Een zichtbaar tijdschema.\",\n        \"Medewerkers met notitieblokken aan de zijkant.\"\n      ],\n      \"switch_trigger\": \"De spreker beëindigt een grap over nachtelijk lawaai, noemt een dossiernummer en vraagt wie namens de bewoners formeel wil inspreken.\",\n      \"hinge_event\": \"Een zaalmedewerker zet een opnameapparaat aan en de eerste bezoeker moet zijn naam, adres en belang voor de microfoon noemen.\",\n      \"anomaly_under_a\": \"Bij cabaret is het ongepast dat een bezoeker zijn persoonlijke gegevens geeft en dat diens reactie officieel wordt opgenomen als verklaring.\",\n      \"resolution_under_b\": \"In een hoorzitting is deze formaliteit noodzakelijk: de grappige aanloop blijkt een toegankelijke opening van een procedure waarin standpunten controleerbaar moeten worden vastgelegd.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.\",\n      \"Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.\",\n      \"Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.\",\n      \"Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen.\"\n    ],\n    \"apparent_goal\": \"Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.\",\n      \"De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.\",\n      \"Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.\",\n      \"Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.\",\n      \"Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.\",\n      \"De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.\",\n      \"Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.\",\n      \"Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.\",\n    \"expected_propositions\": [\n      \"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\",\n      \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n      \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\",\n      \"Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.\",\n    \"opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n    \"opposed_proposition\": \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n    \"shared_anchor\": \"Een volle zaal wacht stil tot de persoon op het podium begint.\",\n    \"reading_a\": \"Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.\",\n    \"reading_b\": \"De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.\",\n    \"roles_b\": [\n      \"Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.\",\n      \"Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.\",\n      \"Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.\",\n      \"Technici: regelen alarmsignaal, noodverlichting en communicatie.\"\n    ],\n    \"goal_b\": \"Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.\",\n    \"role_remapping\": [\n      \"De cabaretier wordt een veiligheidscoördinator.\",\n      \"Het publiek wordt een groep oefendeelnemers.\",\n      \"Theaterpersoneel wordt ontruimingsbegeleiding.\",\n      \"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\"\n    ],\n    \"shared_cues\": [\n      \"Kaartcontrole bij binnenkomst.\",\n      \"Genummerde stoelen en een volle zaal.\",\n      \"Een spreker alleen op een verlicht podium.\",\n      \"Een microfoon, lichtwisselingen en korte instructieve verhalen.\",\n      \"Personeel dat opvallend dicht bij de zijgangen staat.\"\n    ],\n    \"switch_trigger\": \"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\",\n    \"hinge_event\": \"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\",\n    \"anomaly_under_a\": \"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\",\n    \"resolution_under_b\": \"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"script_a\": {\n    \"script_a\": \"Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.\",\n    \"participants_and_roles\": [\n      \"Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.\",\n      \"Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.\",\n      \"Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.\",\n      \"Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen.\"\n    ],\n    \"apparent_goal\": \"Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.\",\n    \"preconditions\": [\n      \"Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.\",\n      \"De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.\",\n      \"Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.\",\n      \"Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren.\"\n    ],\n    \"expected_actions\": [\n      \"Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.\",\n      \"Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.\",\n      \"De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.\",\n      \"Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.\",\n      \"Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift.\"\n    ],\n    \"expected_outcome\": \"De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.\",\n    \"expected_propositions\": [\n      \"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\",\n      \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n      \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\",\n      \"Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.\",\n    \"opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n    \"opposed_proposition\": \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n    \"shared_anchor\": \"Een volle zaal wacht stil tot de persoon op het podium begint.\",\n    \"reading_a\": \"Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.\",\n    \"reading_b\": \"De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.\",\n    \"roles_b\": [\n      \"Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.\",\n      \"Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.\",\n      \"Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.\",\n      \"Technici: regelen alarmsignaal, noodverlichting en communicatie.\"\n    ],\n    \"goal_b\": \"Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.\",\n    \"role_remapping\": [\n      \"De cabaretier wordt een veiligheidscoördinator.\",\n      \"Het publiek wordt een groep oefendeelnemers.\",\n      \"Theaterpersoneel wordt ontruimingsbegeleiding.\",\n      \"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\"\n    ],\n    \"shared_cues\": [\n      \"Kaartcontrole bij binnenkomst.\",\n      \"Genummerde stoelen en een volle zaal.\",\n      \"Een spreker alleen op een verlicht podium.\",\n      \"Een microfoon, lichtwisselingen en korte instructieve verhalen.\",\n      \"Personeel dat opvallend dicht bij de zijgangen staat.\"\n    ],\n    \"switch_trigger\": \"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\",\n    \"hinge_event\": \"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\",\n    \"anomaly_under_a\": \"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\",\n    \"resolution_under_b\": \"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n    \"logical_mechanism\": \"Foutieve interpretatie gevolgd door herinterpretatie: conventionele theater- en cabaretsignalen laten het publiek eerst een voorstelling veronderstellen, waarna het alarm en de concrete evacuatieaanwijzingen onthullen dat die signalen onderdeel zijn van een ontruimingsoefening.\",\n    \"situation\": \"Bezoekers met kaartjes zitten in een volle theaterzaal op genummerde stoelen voor een aangekondigde cabaretavond. Een persoon staat alleen met een microfoon op een verlicht podium, terwijl theaterpersoneel bij de zijgangen staat en technici licht, alarm, noodverlichting en communicatie bedienen. Tijdens korte, ogenschijnlijk komische verhalen klinkt een alarm en moet de zaal via aangewezen uitgangen worden verlaten.\",\n    \"target\": null,\n    \"narrative_strategy\": \"De opzet presenteert herkenbare cabaretconventies en droge observaties, zodat de zaalverwachting van aandachtig blijven zitten dominant wordt. De pointe valt midden in de vermeende grap: het alarm, de gebiedende instructie en de geopende deuren dwingen een onmiddellijke herlezing van spreker, publiek en voorstelling.\",\n    \"lexical_anchor\": \"alarmsignaal\",\n    \"supporting_dual_cues\": [\n      \"Kaartcontrole bij binnenkomst.\",\n      \"Genummerde stoelen en een volle zaal.\",\n      \"Een spreker alleen op een verlicht podium.\",\n      \"Een microfoon, lichtwisselingen en korte instructieve verhalen.\",\n      \"Personeel dat opvallend dicht bij de zijgangen staat.\"\n    ],\n    \"switch_trigger\": \"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\",\n    \"hinge_event\": \"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\",\n    \"anomaly_under_a\": \"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\",\n    \"resolution_under_b\": \"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\",\n    \"role_remapping\": [\n      \"De cabaretier wordt een veiligheidscoördinator.\",\n      \"Het publiek wordt een groep oefendeelnemers.\",\n      \"Theaterpersoneel wordt ontruimingsbegeleiding.\",\n      \"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\"\n    ],\n    \"setup_goal\": \"Het publiek laten aannemen dat het een gewone cabaretvoorstelling bijwoont, waarin het stil blijft zitten en de spreker met aandacht volgt.\",\n    \"punch_goal\": \"Het alarmsignaal en de evacuatieopdracht laten onthullen dat het verwachte blijven zitten geen publieksconventie maar precies de te testen veiligheidsbreuk is.\",\n    \"punch_final_word\": \"ontruimingsoefening\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.\",\n      \"participants_and_roles\": [\n        \"Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.\",\n        \"Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.\",\n        \"Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.\",\n        \"Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen.\"\n      ],\n      \"apparent_goal\": \"Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.\",\n      \"preconditions\": [\n        \"Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.\",\n        \"De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.\",\n        \"Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.\",\n        \"Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren.\"\n      ],\n      \"expected_actions\": [\n        \"Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.\",\n        \"Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.\",\n        \"De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.\",\n        \"Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.\",\n        \"Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift.\"\n      ],\n      \"expected_outcome\": \"De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.\",\n      \"expected_propositions\": [\n        \"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\",\n        \"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\",\n        \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n        \"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\",\n        \"Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act.\"\n      ],\n      \"audience_expectation\": \"Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.\",\n      \"opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n      \"opposed_proposition\": \"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\",\n      \"shared_anchor\": \"Een volle zaal wacht stil tot de persoon op het podium begint.\",\n      \"reading_a\": \"Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.\",\n      \"reading_b\": \"De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.\",\n      \"roles_b\": [\n        \"Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.\",\n        \"Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.\",\n        \"Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.\",\n        \"Technici: regelen alarmsignaal, noodverlichting en communicatie.\"\n      ],\n      \"goal_b\": \"Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt een veiligheidscoördinator.\",\n        \"Het publiek wordt een groep oefendeelnemers.\",\n        \"Theaterpersoneel wordt ontruimingsbegeleiding.\",\n        \"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\"\n      ],\n      \"shared_cues\": [\n        \"Kaartcontrole bij binnenkomst.\",\n        \"Genummerde stoelen en een volle zaal.\",\n        \"Een spreker alleen op een verlicht podium.\",\n        \"Een microfoon, lichtwisselingen en korte instructieve verhalen.\",\n        \"Personeel dat opvallend dicht bij de zijgangen staat.\"\n      ],\n      \"switch_trigger\": \"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\",\n      \"hinge_event\": \"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\",\n      \"anomaly_under_a\": \"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\",\n      \"resolution_under_b\": \"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n      \"logical_mechanism\": \"Foutieve interpretatie gevolgd door herinterpretatie: conventionele theater- en cabaretsignalen laten het publiek eerst een voorstelling veronderstellen, waarna het alarm en de concrete evacuatieaanwijzingen onthullen dat die signalen onderdeel zijn van een ontruimingsoefening.\",\n      \"situation\": \"Bezoekers met kaartjes zitten in een volle theaterzaal op genummerde stoelen voor een aangekondigde cabaretavond. Een persoon staat alleen met een microfoon op een verlicht podium, terwijl theaterpersoneel bij de zijgangen staat en technici licht, alarm, noodverlichting en communicatie bedienen. Tijdens korte, ogenschijnlijk komische verhalen klinkt een alarm en moet de zaal via aangewezen uitgangen worden verlaten.\",\n      \"target\": null,\n      \"narrative_strategy\": \"De opzet presenteert herkenbare cabaretconventies en droge observaties, zodat de zaalverwachting van aandachtig blijven zitten dominant wordt. De pointe valt midden in de vermeende grap: het alarm, de gebiedende instructie en de geopende deuren dwingen een onmiddellijke herlezing van spreker, publiek en voorstelling.\",\n      \"lexical_anchor\": \"alarmsignaal\",\n      \"supporting_dual_cues\": [\n        \"Kaartcontrole bij binnenkomst.\",\n        \"Genummerde stoelen en een volle zaal.\",\n        \"Een spreker alleen op een verlicht podium.\",\n        \"Een microfoon, lichtwisselingen en korte instructieve verhalen.\",\n        \"Personeel dat opvallend dicht bij de zijgangen staat.\"\n      ],\n      \"switch_trigger\": \"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\",\n      \"hinge_event\": \"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\",\n      \"anomaly_under_a\": \"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\",\n      \"resolution_under_b\": \"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\",\n      \"role_remapping\": [\n        \"De cabaretier wordt een veiligheidscoördinator.\",\n        \"Het publiek wordt een groep oefendeelnemers.\",\n        \"Theaterpersoneel wordt ontruimingsbegeleiding.\",\n        \"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\"\n      ],\n      \"setup_goal\": \"Het publiek laten aannemen dat het een gewone cabaretvoorstelling bijwoont, waarin het stil blijft zitten en de spreker met aandacht volgt.\",\n      \"punch_goal\": \"Het alarmsignaal en de evacuatieopdracht laten onthullen dat het verwachte blijven zitten geen publieksconventie maar precies de te testen veiligheidsbreuk is.\",\n      \"punch_final_word\": \"ontruimingsoefening\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen. De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.\",\n      \"angle\": \"Verdacht theaterpersoneel bij de zijgangen\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”\",\n      \"angle\": \"Cabaretverhaal over uitgangen\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden. Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”\",\n      \"angle\": \"Publieksinteractie per zaalvak\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Kunst, theater en cabaret\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen. De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.\",\n      \"angle\": \"Verdacht theaterpersoneel bij de zijgangen\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”\",\n      \"angle\": \"Cabaretverhaal over uitgangen\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden. Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”\",\n      \"angle\": \"Publieksinteractie per zaalvak\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een publiek zit na kaartcontrole op genummerde stoelen bij een cabaretavond en verwacht de komiek te volgen.\",\n      \"realized_script_b\": \"De cabaretavond blijkt een ontruimingsoefening, met personeel bij de zijgangen, een alarm en geopende uitgangen.\",\n      \"realized_opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De cabaretsetting domineert aanvankelijk; het alarmsignaal, de deuren en de expliciete onthulling hercoderen die setting als oefening. De beoogde tegenstelling, overlap en omslag zijn aanwezig.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De aanvankelijke interpretatie als cabaret wordt door alarm en evacuatiesignalen retrospectief vervangen door die van een veiligheidsoefening.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Kaartcontrole, genummerde stoelen, cabaretier, personeel bij zijgangen, alarmsignaal en open deuren realiseren de functionele kern van de geplande situatie.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bouwt eerst een gewone cabaretverwachting op en plaatst de onthulling als slotwending na het alarm.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het vereiste lexicale anker 'alarmsignaal' is aanwezig; 'geen toegift maar een ontruimingsoefening' levert een directe, passende eindformulering.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een compacte, natuurlijke theaterwending die het beoogde cabaret-naar-ontruiming-plan volledig volgt.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een cabaretier vertelt een komisch verhaal over mensen die de uitgang niet kunnen vinden, voor een publiek in een theaterzaal.\",\n      \"realized_script_b\": \"De cabaretier en zijgangmedewerkers blijken een ontruimingsoefening te leiden; het alarm activeert het rij-voor-rij verlaten van de zaal.\",\n      \"realized_opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst gebruikt een ogenschijnlijk cabaretverhaal als eerste lezing en onthult na het alarm expliciet de ontruimingsoefening als tweede lezing.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De uitgangsgrap en medewerkers krijgen na alarm en evacuatiebevel een retrospectief instructieve veiligheidsfunctie.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De cabaretier, zijgangen, aanwezige medewerkers, alarmsignaal en rijgewijze evacuatie behouden de relevante deelnemers, objecten en handelingen.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Een schijnbaar komische observatie vormt de opzet; 'Dan klinkt het alarmsignaal' markeert een duidelijke midden-in-de-act omslag naar de pointe.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het woord 'alarmsignaal' realiseert het lexicale anker en de afsluiting met 'ontruimingsoefening' levert de geplande onthulling.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De uitgangenobservatie werkt eerst als cabaretmateriaal en wordt vervolgens functioneel herlezen als voorbereiding op de oefening.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"De verteller denkt een interactieve cabaretier mee te maken die het publiek per zaalvak vragen stelt.\",\n      \"realized_script_b\": \"De vragen over dichtstbijzijnde deuren en de feller wordende lampen blijken voorbereiding op een ontruimingsoefening; na het alarm moet iedereen lopen.\",\n      \"realized_opposition_axis\": \"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Interactief cabaret is de dominante eerste lezing, waarna alarm, vertrekbevel en expliciete oefenonthulling de beoogde veiligheidslezing activeren.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De eerdere vragen per zaalvak en de verlichting worden achteraf begrijpelijk als evacuatievoorbereiding in plaats van publieksinteractie.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Cabaretier, zaalvakken, deuren, licht, alarmsignaal en een vertrekopdracht realiseren de functioneel benodigde theatersituatie en veiligheidsactie.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De ik-verteller presenteert eerst een plausibele cabaretinterpretatie en laat de pointe die interpretatie met een directe opdracht omkeren.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het lexicale anker 'alarmsignaal' is expliciet aanwezig en de slotformule 'dit was de ontruimingsoefening' maakt de omslag helder.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De voorafgaande zaalvak- en deurvragen vormen goede dubbele aanwijzingen en worden door het alarm effectief als oefenvoorbereiding hergeduid.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.",
+      "opposing_script": "Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.",
+      "opposition_type": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+      "trigger": "Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.",
+      "setup_goal": "Het publiek laten aannemen dat het een gewone cabaretvoorstelling bijwoont, waarin het stil blijft zitten en de spreker met aandacht volgt.",
+      "punch_goal": "Het alarmsignaal en de evacuatieopdracht laten onthullen dat het verwachte blijven zitten geen publieksconventie maar precies de te testen veiligheidsbreuk is.",
+      "shared_cues": [
+        "Kaartcontrole bij binnenkomst.",
+        "Genummerde stoelen en een volle zaal.",
+        "Een spreker alleen op een verlicht podium.",
+        "Een microfoon, lichtwisselingen en korte instructieve verhalen.",
+        "Personeel dat opvallend dicht bij de zijgangen staat."
+      ],
+      "hinge_event": "De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.",
+      "anomaly_under_a": "Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.",
+      "resolution_under_b": "Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.",
+      "role_remapping": [
+        "De cabaretier wordt een veiligheidscoördinator.",
+        "Het publiek wordt een groep oefendeelnemers.",
+        "Theaterpersoneel wordt ontruimingsbegeleiding.",
+        "Licht- en geluidstechniek wordt nood- en alarminfrastructuur."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.\\\",\\\"participants_and_roles\\\":[\\\"Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.\\\",\\\"Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.\\\",\\\"Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.\\\",\\\"Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen.\\\"],\\\"apparent_goal\\\":\\\"Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.\\\",\\\"preconditions\\\":[\\\"Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.\\\",\\\"De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.\\\",\\\"Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.\\\",\\\"Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren.\\\"],\\\"expected_actions\\\":[\\\"Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.\\\",\\\"Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.\\\",\\\"De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.\\\",\\\"Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.\\\",\\\"Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift.\\\"],\\\"expected_outcome\\\":\\\"De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.\\\",\\\"expected_propositions\\\":[\\\"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\\\",\\\"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\\\",\\\"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\\\",\\\"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\\\",\\\"Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act.\\\"],\\\"audience_expectation\\\":\\\"Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.\\\",\\\"opposition_axis\\\":\\\"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\\\",\\\"opposed_proposition\\\":\\\"Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.\\\",\\\"shared_anchor\\\":\\\"Een volle zaal wacht stil tot de persoon op het podium begint.\\\",\\\"reading_a\\\":\\\"Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.\\\",\\\"reading_b\\\":\\\"De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.\\\",\\\"roles_b\\\":[\\\"Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.\\\",\\\"Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.\\\",\\\"Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.\\\",\\\"Technici: regelen alarmsignaal, noodverlichting en communicatie.\\\"],\\\"goal_b\\\":\\\"Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.\\\",\\\"role_remapping\\\":[\\\"De cabaretier wordt een veiligheidscoördinator.\\\",\\\"Het publiek wordt een groep oefendeelnemers.\\\",\\\"Theaterpersoneel wordt ontruimingsbegeleiding.\\\",\\\"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\\\"],\\\"shared_cues\\\":[\\\"Kaartcontrole bij binnenkomst.\\\",\\\"Genummerde stoelen en een volle zaal.\\\",\\\"Een spreker alleen op een verlicht podium.\\\",\\\"Een microfoon, lichtwisselingen en korte instructieve verhalen.\\\",\\\"Personeel dat opvallend dicht bij de zijgangen staat.\\\"],\\\"switch_trigger\\\":\\\"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\\\",\\\"hinge_event\\\":\\\"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\\\",\\\"anomaly_under_a\\\":\\\"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\\\",\\\"resolution_under_b\\\":\\\"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een theateravond is in werkelijkheid een assessment voor een creatief bedrijf dat nieuw personeel zoekt. De zogenoemde artiest gebruikt sketches en interactie om te observeren wie onder sociale druk luistert, improviseert, samenwerkt en grenzen bewaakt.\\\",\\\"opposition_axis\\\":\\\"Kunstzinnige waardering versus beoordeling van geschiktheid.\\\",\\\"opposed_proposition\\\":\\\"Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.\\\",\\\"shared_anchor\\\":\\\"Een performer presenteert voorbereide scènes aan aandachtige aanwezigen.\\\",\\\"reading_a\\\":\\\"De aanwezigen zien een cabaretier die herkenbare scènes speelt en het publiek af en toe bij de voorstelling betrekt.\\\",\\\"reading_b\\\":\\\"De scènes zijn gestandaardiseerde opdrachten; reacties uit de zaal leveren beoordelaars informatie over gedrag en vaardigheden.\\\",\\\"roles_b\\\":[\\\"Assessmentleider: presenteert opdrachten onder de vorm van sketches.\\\",\\\"Kandidaten: worden geobserveerd op hun reacties en samenwerking.\\\",\\\"Observatoren: registreren gedrag vanaf de zaalrand of achter de techniek.\\\",\\\"Locatiepersoneel: ontvangt kandidaten en bewaakt het programma.\\\"],\\\"goal_b\\\":\\\"Kandidaten selecteren voor functies waarin improvisatie, communicatie en samenwerking belangrijk zijn.\\\",\\\"role_remapping\\\":[\\\"De artiest wordt een assessmentleider.\\\",\\\"Het publiek wordt een groep sollicitatiekandidaten.\\\",\\\"Techniek en regie worden observatie- en registratieondersteuning.\\\",\\\"Theaterpersoneel wordt ontvangst en procesbegeleiding.\\\"],\\\"shared_cues\\\":[\\\"Een vooraf geprogrammeerde aanvang.\\\",\\\"Naambadges of gereserveerde plaatsen.\\\",\\\"Een podium, microfoon en belichting.\\\",\\\"Korte scènes met herkenbare werksituaties.\\\",\\\"Medewerkers die achterin notities maken.\\\"],\\\"switch_trigger\\\":\\\"Na een scène vraagt de performer niet om applaus, maar deelt hij formulieren uit en roept hij aanwezigen per naam op voor een groepsopdracht.\\\",\\\"hinge_event\\\":\\\"De performer stopt een sketch halverwege en geeft vier bezoekers de opdracht om ter plekke samen een conflict met een klant op te lossen.\\\",\\\"anomaly_under_a\\\":\\\"In een gewone voorstelling is het vreemd dat willekeurige bezoekers niet vrijblijvend worden uitgenodigd, maar onder tijdsdruk een beoordeelbare taak moeten uitvoeren.\\\",\\\"resolution_under_b\\\":\\\"In een assessment is de onderbreking doelgericht: juist de onverwachte taak maakt zichtbaar hoe kandidaten communiceren, initiatief nemen en met spanning omgaan.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een cabaretachtige avond blijkt een openbare hoorzitting over geluidsoverlast en vergunningen rond het theaterdistrict. De schijnbare cabaretier is een voorzitter die luchtige anekdotes gebruikt om betrokkenen op hun gemak te stellen voordat verklaringen en bezwaren formeel worden vastgelegd.\\\",\\\"opposition_axis\\\":\\\"Lachen om maatschappelijke observaties versus formeel getuigen en belangen afwegen.\\\",\\\"opposed_proposition\\\":\\\"Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.\\\",\\\"shared_anchor\\\":\\\"Een spreker vertelt herkenbare ergernissen over het stadsleven aan een zaal.\\\",\\\"reading_a\\\":\\\"De zaal hoort cabaret over buren, nachtelijk lawaai, verkeer en bureaucratie; de ergernissen zijn materiaal voor humor en herkenning.\\\",\\\"reading_b\\\":\\\"De voorbeelden brengen concrete geschilpunten in kaart en bereiden bewoners, ondernemers en ambtenaren voor op hun formele inbreng.\\\",\\\"roles_b\\\":[\\\"Voorzitter: structureert de hoorzitting en geeft deelnemers het woord.\\\",\\\"Bewoners en ondernemers: lichten klachten, belangen en voorstellen toe.\\\",\\\"Gemeentevertegenwoordigers: verzamelen informatie voor een besluit.\\\",\\\"Zaalmedewerkers: regelen spreektijd, registratie en orde.\\\"],\\\"goal_b\\\":\\\"Informatie en standpunten verzamelen om een besluit over lokale regels, vergunningen of geluidsnormen voor te bereiden.\\\",\\\"role_remapping\\\":[\\\"De cabaretier wordt voorzitter van de hoorzitting.\\\",\\\"Het publiek wordt een verzameling belanghebbenden en insprekers.\\\",\\\"Applaus of geroezemoes wordt een signaal van steun of bezwaar.\\\",\\\"Theaterpersoneel wordt administratieve en ordelijke ondersteuning.\\\"],\\\"shared_cues\\\":[\\\"Een podiumopstelling met microfoon.\\\",\\\"Verhalen over herkenbare lokale irritaties.\\\",\\\"Toehoorders die instemmend lachen of murmelen.\\\",\\\"Een zichtbaar tijdschema.\\\",\\\"Medewerkers met notitieblokken aan de zijkant.\\\"],\\\"switch_trigger\\\":\\\"De spreker beëindigt een grap over nachtelijk lawaai, noemt een dossiernummer en vraagt wie namens de bewoners formeel wil inspreken.\\\",\\\"hinge_event\\\":\\\"Een zaalmedewerker zet een opnameapparaat aan en de eerste bezoeker moet zijn naam, adres en belang voor de microfoon noemen.\\\",\\\"anomaly_under_a\\\":\\\"Bij cabaret is het ongepast dat een bezoeker zijn persoonlijke gegevens geeft en dat diens reactie officieel wordt opgenomen als verklaring.\\\",\\\"resolution_under_b\\\":\\\"In een hoorzitting is deze formaliteit noodzakelijk: de grappige aanloop blijkt een toegankelijke opening van een procedure waarin standpunten controleerbaar moeten worden vastgelegd.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een avond met een komische presentator is in werkelijkheid een live veiling en financieringsbijeenkomst voor een lokaal kunstproject. De presentator gebruikt cabaret om de zaal enthousiast te maken, terwijl applaus, biedkaarten en reacties worden gebruikt om steun en toezeggingen te mobiliseren.\\\",\\\"opposition_axis\\\":\\\"Applaus als waardering versus publieke toezegging of stem.\\\",\\\"opposed_proposition\\\":\\\"Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.\\\",\\\"shared_anchor\\\":\\\"Na een geestige podiumbijdrage reageert de zaal luid en zichtbaar enthousiast.\\\",\\\"reading_a\\\":\\\"Het applaus beloont een geslaagde grap, een muzikaal nummer of een sterke scène van de artiest.\\\",\\\"reading_b\\\":\\\"De reactie meet en bekrachtigt steun voor een project; aanwezigen worden voorbereid om ook financieel of publiekelijk commitment te tonen.\\\",\\\"roles_b\\\":[\\\"Veilingmeester-presentator: vermaakt de zaal en vraagt om biedingen of toezeggingen.\\\",\\\"Aanwezigen: potentiële donateurs, bieders of stemmers.\\\",\\\"Organisatoren: tonen projecten en registreren bijdragen.\\\",\\\"Techniek: projecteert bedragen, biednummers en tussenstanden.\\\"],\\\"goal_b\\\":\\\"Geld, steunbetuigingen en zichtbaarheid verzamelen voor een kunstproject of cultureel initiatief.\\\",\\\"role_remapping\\\":[\\\"De cabaretier wordt een veilingmeester en fondsenwerver.\\\",\\\"Het publiek wordt een groep potentiële bieders en donateurs.\\\",\\\"Applaus wordt een steunbetuiging met een praktische vervolgactie.\\\",\\\"De regie wordt de presentatie van biedstanden en projectinformatie.\\\"],\\\"shared_cues\\\":[\\\"Entreebewijzen en een feestelijke zaalopstelling.\\\",\\\"Een presentator met microfoon en voorbereide grappen.\\\",\\\"Projecties op een scherm.\\\",\\\"Genummerde kaartjes op stoelen.\\\",\\\"Applaus na korte bijdragen.\\\"],\\\"switch_trigger\\\":\\\"Na een bijzonder uitbundig applaus zegt de presentator dat dit enthousiasme als eerste biedronde geldt en vraagt hij de aanwezigen hun genummerde kaarten omhoog te steken.\\\",\\\"hinge_event\\\":\\\"Op het scherm verschijnt geen volgende act, maar een oplopend bedrag, terwijl medewerkers door de zaal lopen om toezeggingen te registreren.\\\",\\\"anomaly_under_a\\\":\\\"Tijdens een gewone voorstelling is het vreemd dat applaus plotseling wordt omgezet in een geregistreerde financiële handeling en dat bezoekers om een genummerde kaart worden gevraagd.\\\",\\\"resolution_under_b\\\":\\\"Binnen een fondsenwerving is de omslag functioneel: de cabaretachtige sfeer verlaagt de drempel, waarna het publieke enthousiasme doelbewust wordt omgezet in biedingen en steun.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde podiumtekst kan aanvankelijk als droog cabaret en later als veiligheidsinstructie functioneren. Zitten en de act niet onderbreken botst lokaal met onmiddellijk, vakgewijs evacueren; dit is één dominante tegenstelling. De zaal, spreker, techniek en personeel bij de uitgangen passen bij beide lezingen, terwijl de voorstelling aanvankelijk de normale lezing is. Het alarm en de concrete uitgangsinstructies zijn onder A een storende anomalie, maar onder B precies het doel van de oefening. Vertrekken verhindert bovendien het voortzetten van de voorstelling, maar maakt de veiligheidstest mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De scènes kunnen zowel als cabaret als als gestandaardiseerde assessmentopdrachten worden gerealiseerd, en de uitnodiging tot een beoordeelbare groepsopdracht verklaart de onderbreking onder B. De tweede lezing is herkenbaar en de observatoren, naambadges en notities houden haar latent beschikbaar. Er is echter geen harde lokale onverenigbaarheid tussen kunstzinnige waardering en beoordeling: een sketch kan tegelijk vermakelijk zijn én gedrag voor een assessment uitlokken. De as waardering versus geschiktheidsbeoordeling is wel duidelijk dominant, maar de twee functies sluiten elkaar niet expliciet uit. De taak onderbreekt wel de normale toeschouwersrol en maakt daarmee de assessmentfunctie mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Verhalen over geluidsoverlast, verkeer en bureaucratie kunnen eerst als cabaretmateriaal en later als inleiding op concrete geschilpunten worden gelezen. De normale cabaretfunctie van lachen om observaties botst lokaal met het formeel vastleggen van namen, belangen en verklaringen voor besluitvorming. De podiumopstelling, microfoon, lokale irritaties, tijdschema en notulisten dragen beide lezingen, terwijl cabaret aanvankelijk de voorkeurslezing blijft. Dossiernummer, opname en formele inspraak zijn onder A ongepast, maar onder B noodzakelijk. De formalisering onderbreekt de cabaretvoorstelling en maakt tegelijk de hoorzitting functioneel mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Een komische podiumbijdrage en enthousiast applaus kunnen zowel bij een voorstelling als bij een fondsenwervende veiling voorkomen. De omslag naar biedkaarten, bedragen en registratie verklaart de financiële handeling onder B en herkadert eerder applaus als gemobiliseerde steun. Er is echter geen expliciete lokale incompatibiliteit tussen waardering en publieke steun: applaus kan tegelijk waardering voor de bijdrage en steun voor een project uitdrukken. De as is wel dominant en de veilinglezing is herkenbaar, maar zij vormt hier vooral een aanvullende functie. Applaus of cabaret hoeft het doel van A bovendien niet te blokkeren om het doel van B mogelijk te maken.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest onmiddellijk speelbare oppositie: de fundamentele theaternorm van stil blijven zitten voor entertainment kantelt naar verplicht, ordelijk handelen voor veiligheid. De gedeelde zaalopzet, podiumspreker, techniek, kaartcontrole en zijgangpersoneel dragen beide lezingen overtuigend, terwijl ze achteraf sterke aanwijzingen blijken voor de oefening. Het alarmsignaal en de concrete uitgangsinstructies vormen een helder, dominant omslagmoment met hoog payoff-potentieel. De herinterpretatie van cabaretier, publiek, personeel en techniek is volledig en thematisch specifiek voor een theatercontext, zonder veel extra uitleg nodig te hebben.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\\\",\\\"logical_mechanism\\\":\\\"Foutieve interpretatie gevolgd door herinterpretatie: conventionele theater- en cabaretsignalen laten het publiek eerst een voorstelling veronderstellen, waarna het alarm en de concrete evacuatieaanwijzingen onthullen dat die signalen onderdeel zijn van een ontruimingsoefening.\\\",\\\"situation\\\":\\\"Bezoekers met kaartjes zitten in een volle theaterzaal op genummerde stoelen voor een aangekondigde cabaretavond. Een persoon staat alleen met een microfoon op een verlicht podium, terwijl theaterpersoneel bij de zijgangen staat en technici licht, alarm, noodverlichting en communicatie bedienen. Tijdens korte, ogenschijnlijk komische verhalen klinkt een alarm en moet de zaal via aangewezen uitgangen worden verlaten.\\\",\\\"target\\\":null,\\\"narrative_strategy\\\":\\\"De opzet presenteert herkenbare cabaretconventies en droge observaties, zodat de zaalverwachting van aandachtig blijven zitten dominant wordt. De pointe valt midden in de vermeende grap: het alarm, de gebiedende instructie en de geopende deuren dwingen een onmiddellijke herlezing van spreker, publiek en voorstelling.\\\",\\\"lexical_anchor\\\":\\\"alarmsignaal\\\",\\\"supporting_dual_cues\\\":[\\\"Kaartcontrole bij binnenkomst.\\\",\\\"Genummerde stoelen en een volle zaal.\\\",\\\"Een spreker alleen op een verlicht podium.\\\",\\\"Een microfoon, lichtwisselingen en korte instructieve verhalen.\\\",\\\"Personeel dat opvallend dicht bij de zijgangen staat.\\\"],\\\"switch_trigger\\\":\\\"Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.\\\",\\\"hinge_event\\\":\\\"De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.\\\",\\\"anomaly_under_a\\\":\\\"Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.\\\",\\\"resolution_under_b\\\":\\\"Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.\\\",\\\"role_remapping\\\":[\\\"De cabaretier wordt een veiligheidscoördinator.\\\",\\\"Het publiek wordt een groep oefendeelnemers.\\\",\\\"Theaterpersoneel wordt ontruimingsbegeleiding.\\\",\\\"Licht- en geluidstechniek wordt nood- en alarminfrastructuur.\\\"],\\\"setup_goal\\\":\\\"Het publiek laten aannemen dat het een gewone cabaretvoorstelling bijwoont, waarin het stil blijft zitten en de spreker met aandacht volgt.\\\",\\\"punch_goal\\\":\\\"Het alarmsignaal en de evacuatieopdracht laten onthullen dat het verwachte blijven zitten geen publieksconventie maar precies de te testen veiligheidsbreuk is.\\\",\\\"punch_final_word\\\":\\\"ontruimingsoefening\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen.\\\",\\\"punchline\\\":\\\"De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.\\\",\\\"full_text\\\":\\\"Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen. De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.\\\",\\\"angle\\\":\\\"Verdacht theaterpersoneel bij de zijgangen\\\",\\\"anchor_surface_form\\\":\\\"alarmsignaal\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen.\\\",\\\"punchline\\\":\\\"Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”\\\",\\\"full_text\\\":\\\"De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”\\\",\\\"angle\\\":\\\"Cabaretverhaal over uitgangen\\\",\\\"anchor_surface_form\\\":\\\"alarmsignaal\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden.\\\",\\\"punchline\\\":\\\"Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”\\\",\\\"full_text\\\":\\\"Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden. Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”\\\",\\\"angle\\\":\\\"Publieksinteractie per zaalvak\\\",\\\"anchor_surface_form\\\":\\\"alarmsignaal\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een publiek zit na kaartcontrole op genummerde stoelen bij een cabaretavond en verwacht de komiek te volgen.\\\",\\\"realized_script_b\\\":\\\"De cabaretavond blijkt een ontruimingsoefening, met personeel bij de zijgangen, een alarm en geopende uitgangen.\\\",\\\"realized_opposition_axis\\\":\\\"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De cabaretsetting domineert aanvankelijk; het alarmsignaal, de deuren en de expliciete onthulling hercoderen die setting als oefening. De beoogde tegenstelling, overlap en omslag zijn aanwezig.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De aanvankelijke interpretatie als cabaret wordt door alarm en evacuatiesignalen retrospectief vervangen door die van een veiligheidsoefening.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Kaartcontrole, genummerde stoelen, cabaretier, personeel bij zijgangen, alarmsignaal en open deuren realiseren de functionele kern van de geplande situatie.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bouwt eerst een gewone cabaretverwachting op en plaatst de onthulling als slotwending na het alarm.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het vereiste lexicale anker 'alarmsignaal' is aanwezig; 'geen toegift maar een ontruimingsoefening' levert een directe, passende eindformulering.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een compacte, natuurlijke theaterwending die het beoogde cabaret-naar-ontruiming-plan volledig volgt.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een cabaretier vertelt een komisch verhaal over mensen die de uitgang niet kunnen vinden, voor een publiek in een theaterzaal.\\\",\\\"realized_script_b\\\":\\\"De cabaretier en zijgangmedewerkers blijken een ontruimingsoefening te leiden; het alarm activeert het rij-voor-rij verlaten van de zaal.\\\",\\\"realized_opposition_axis\\\":\\\"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst gebruikt een ogenschijnlijk cabaretverhaal als eerste lezing en onthult na het alarm expliciet de ontruimingsoefening als tweede lezing.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De uitgangsgrap en medewerkers krijgen na alarm en evacuatiebevel een retrospectief instructieve veiligheidsfunctie.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De cabaretier, zijgangen, aanwezige medewerkers, alarmsignaal en rijgewijze evacuatie behouden de relevante deelnemers, objecten en handelingen.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Een schijnbaar komische observatie vormt de opzet; 'Dan klinkt het alarmsignaal' markeert een duidelijke midden-in-de-act omslag naar de pointe.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het woord 'alarmsignaal' realiseert het lexicale anker en de afsluiting met 'ontruimingsoefening' levert de geplande onthulling.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De uitgangenobservatie werkt eerst als cabaretmateriaal en wordt vervolgens functioneel herlezen als voorbereiding op de oefening.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"De verteller denkt een interactieve cabaretier mee te maken die het publiek per zaalvak vragen stelt.\\\",\\\"realized_script_b\\\":\\\"De vragen over dichtstbijzijnde deuren en de feller wordende lampen blijken voorbereiding op een ontruimingsoefening; na het alarm moet iedereen lopen.\\\",\\\"realized_opposition_axis\\\":\\\"Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Interactief cabaret is de dominante eerste lezing, waarna alarm, vertrekbevel en expliciete oefenonthulling de beoogde veiligheidslezing activeren.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De eerdere vragen per zaalvak en de verlichting worden achteraf begrijpelijk als evacuatievoorbereiding in plaats van publieksinteractie.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Cabaretier, zaalvakken, deuren, licht, alarmsignaal en een vertrekopdracht realiseren de functioneel benodigde theatersituatie en veiligheidsactie.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De ik-verteller presenteert eerst een plausibele cabaretinterpretatie en laat de pointe die interpretatie met een directe opdracht omkeren.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het lexicale anker 'alarmsignaal' is expliciet aanwezig en de slotformule 'dit was de ontruimingsoefening' maakt de omslag helder.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De voorafgaande zaalvak- en deurvragen vormen goede dubbele aanwijzingen en worden door het alarm effectief als oefenvoorbereiding hergeduid.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengte-eis en realiseren alle vereiste middelen. V2 heeft de sterkere retrospectieve herinterpretatie: het verhaal over uitgangen en de glimlachende medewerkers blijken achteraf concreet oefenmateriaal. De omslag komt natuurlijker en de slotzin maakt de zaal zelf geestig tot onderdeel van de oefening.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide zijn plangetrouw, helder en goed uitspreekbaar. V3 benut de dubbele signalen beter: vragen per zaalvak en de dichtstbijzijnde deur lijken eerst publieksinteractie, maar krijgen na het alarmsignaal een duidelijke veiligheidsfunctie. Daardoor is de herduiding sterker dan in V1, waar het verdachte personeel de uitkomst al sneller verraadt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide voldoen aan de vormeisen en hebben een heldere cabaret-naar-ontruimingsswitch. V2 is compacter in opzet en laat het uitgangenthema elegant terugkeren als evacuatie-instructie. De pointe dat het publiek van de ontruimingsoefening was, is verrassender en performbaarder dan de meer expliciete aanwijzingen in V3.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de sterkste volledig geslaagde variant: de cabaretopzet blijft dominant, de aanwijzingen zijn functioneel dubbelzinnig en het alarmsignaal herkadert ze overtuigend als ontruimingsoefening. De slotwending is bondig, spreekbaar en het meest komisch.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.",
+        "candidate_id": "B1",
+        "opposition_axis": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+        "opposed_expectation": "Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.",
+        "roles_b": [
+          "Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.",
+          "Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.",
+          "Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.",
+          "Technici: regelen alarmsignaal, noodverlichting en communicatie."
+        ],
+        "goal_b": "Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.",
+        "role_remapping": [
+          "De cabaretier wordt een veiligheidscoördinator.",
+          "Het publiek wordt een groep oefendeelnemers.",
+          "Theaterpersoneel wordt ontruimingsbegeleiding.",
+          "Licht- en geluidstechniek wordt nood- en alarminfrastructuur."
+        ],
+        "shared_cues": [
+          "Kaartcontrole bij binnenkomst.",
+          "Genummerde stoelen en een volle zaal.",
+          "Een spreker alleen op een verlicht podium.",
+          "Een microfoon, lichtwisselingen en korte instructieve verhalen.",
+          "Personeel dat opvallend dicht bij de zijgangen staat."
+        ],
+        "switch_trigger": "Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.",
+        "hinge_event": "De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.",
+        "anomaly_under_a": "Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.",
+        "resolution_under_b": "Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een theateravond is in werkelijkheid een assessment voor een creatief bedrijf dat nieuw personeel zoekt. De zogenoemde artiest gebruikt sketches en interactie om te observeren wie onder sociale druk luistert, improviseert, samenwerkt en grenzen bewaakt.",
+        "candidate_id": "B2",
+        "opposition_axis": "Kunstzinnige waardering versus beoordeling van geschiktheid.",
+        "opposed_expectation": "Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.",
+        "roles_b": [
+          "Assessmentleider: presenteert opdrachten onder de vorm van sketches.",
+          "Kandidaten: worden geobserveerd op hun reacties en samenwerking.",
+          "Observatoren: registreren gedrag vanaf de zaalrand of achter de techniek.",
+          "Locatiepersoneel: ontvangt kandidaten en bewaakt het programma."
+        ],
+        "goal_b": "Kandidaten selecteren voor functies waarin improvisatie, communicatie en samenwerking belangrijk zijn.",
+        "role_remapping": [
+          "De artiest wordt een assessmentleider.",
+          "Het publiek wordt een groep sollicitatiekandidaten.",
+          "Techniek en regie worden observatie- en registratieondersteuning.",
+          "Theaterpersoneel wordt ontvangst en procesbegeleiding."
+        ],
+        "shared_cues": [
+          "Een vooraf geprogrammeerde aanvang.",
+          "Naambadges of gereserveerde plaatsen.",
+          "Een podium, microfoon en belichting.",
+          "Korte scènes met herkenbare werksituaties.",
+          "Medewerkers die achterin notities maken."
+        ],
+        "switch_trigger": "Na een scène vraagt de performer niet om applaus, maar deelt hij formulieren uit en roept hij aanwezigen per naam op voor een groepsopdracht.",
+        "hinge_event": "De performer stopt een sketch halverwege en geeft vier bezoekers de opdracht om ter plekke samen een conflict met een klant op te lossen.",
+        "anomaly_under_a": "In een gewone voorstelling is het vreemd dat willekeurige bezoekers niet vrijblijvend worden uitgenodigd, maar onder tijdsdruk een beoordeelbare taak moeten uitvoeren.",
+        "resolution_under_b": "In een assessment is de onderbreking doelgericht: juist de onverwachte taak maakt zichtbaar hoe kandidaten communiceren, initiatief nemen en met spanning omgaan.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een cabaretachtige avond blijkt een openbare hoorzitting over geluidsoverlast en vergunningen rond het theaterdistrict. De schijnbare cabaretier is een voorzitter die luchtige anekdotes gebruikt om betrokkenen op hun gemak te stellen voordat verklaringen en bezwaren formeel worden vastgelegd.",
+        "candidate_id": "B3",
+        "opposition_axis": "Lachen om maatschappelijke observaties versus formeel getuigen en belangen afwegen.",
+        "opposed_expectation": "Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.",
+        "roles_b": [
+          "Voorzitter: structureert de hoorzitting en geeft deelnemers het woord.",
+          "Bewoners en ondernemers: lichten klachten, belangen en voorstellen toe.",
+          "Gemeentevertegenwoordigers: verzamelen informatie voor een besluit.",
+          "Zaalmedewerkers: regelen spreektijd, registratie en orde."
+        ],
+        "goal_b": "Informatie en standpunten verzamelen om een besluit over lokale regels, vergunningen of geluidsnormen voor te bereiden.",
+        "role_remapping": [
+          "De cabaretier wordt voorzitter van de hoorzitting.",
+          "Het publiek wordt een verzameling belanghebbenden en insprekers.",
+          "Applaus of geroezemoes wordt een signaal van steun of bezwaar.",
+          "Theaterpersoneel wordt administratieve en ordelijke ondersteuning."
+        ],
+        "shared_cues": [
+          "Een podiumopstelling met microfoon.",
+          "Verhalen over herkenbare lokale irritaties.",
+          "Toehoorders die instemmend lachen of murmelen.",
+          "Een zichtbaar tijdschema.",
+          "Medewerkers met notitieblokken aan de zijkant."
+        ],
+        "switch_trigger": "De spreker beëindigt een grap over nachtelijk lawaai, noemt een dossiernummer en vraagt wie namens de bewoners formeel wil inspreken.",
+        "hinge_event": "Een zaalmedewerker zet een opnameapparaat aan en de eerste bezoeker moet zijn naam, adres en belang voor de microfoon noemen.",
+        "anomaly_under_a": "Bij cabaret is het ongepast dat een bezoeker zijn persoonlijke gegevens geeft en dat diens reactie officieel wordt opgenomen als verklaring.",
+        "resolution_under_b": "In een hoorzitting is deze formaliteit noodzakelijk: de grappige aanloop blijkt een toegankelijke opening van een procedure waarin standpunten controleerbaar moeten worden vastgelegd.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een avond met een komische presentator is in werkelijkheid een live veiling en financieringsbijeenkomst voor een lokaal kunstproject. De presentator gebruikt cabaret om de zaal enthousiast te maken, terwijl applaus, biedkaarten en reacties worden gebruikt om steun en toezeggingen te mobiliseren.",
+        "candidate_id": "B4",
+        "opposition_axis": "Applaus als waardering versus publieke toezegging of stem.",
+        "opposed_expectation": "Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.",
+        "roles_b": [
+          "Veilingmeester-presentator: vermaakt de zaal en vraagt om biedingen of toezeggingen.",
+          "Aanwezigen: potentiële donateurs, bieders of stemmers.",
+          "Organisatoren: tonen projecten en registreren bijdragen.",
+          "Techniek: projecteert bedragen, biednummers en tussenstanden."
+        ],
+        "goal_b": "Geld, steunbetuigingen en zichtbaarheid verzamelen voor een kunstproject of cultureel initiatief.",
+        "role_remapping": [
+          "De cabaretier wordt een veilingmeester en fondsenwerver.",
+          "Het publiek wordt een groep potentiële bieders en donateurs.",
+          "Applaus wordt een steunbetuiging met een praktische vervolgactie.",
+          "De regie wordt de presentatie van biedstanden en projectinformatie."
+        ],
+        "shared_cues": [
+          "Entreebewijzen en een feestelijke zaalopstelling.",
+          "Een presentator met microfoon en voorbereide grappen.",
+          "Projecties op een scherm.",
+          "Genummerde kaartjes op stoelen.",
+          "Applaus na korte bijdragen."
+        ],
+        "switch_trigger": "Na een bijzonder uitbundig applaus zegt de presentator dat dit enthousiasme als eerste biedronde geldt en vraagt hij de aanwezigen hun genummerde kaarten omhoog te steken.",
+        "hinge_event": "Op het scherm verschijnt geen volgende act, maar een oplopend bedrag, terwijl medewerkers door de zaal lopen om toezeggingen te registreren.",
+        "anomaly_under_a": "Tijdens een gewone voorstelling is het vreemd dat applaus plotseling wordt omgezet in een geregistreerde financiële handeling en dat bezoekers om een genummerde kaart worden gevraagd.",
+        "resolution_under_b": "Binnen een fondsenwerving is de omslag functioneel: de cabaretachtige sfeer verlaagt de drempel, waarna het publieke enthousiasme doelbewust wordt omgezet in biedingen en steun.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest onmiddellijk speelbare oppositie: de fundamentele theaternorm van stil blijven zitten voor entertainment kantelt naar verplicht, ordelijk handelen voor veiligheid. De gedeelde zaalopzet, podiumspreker, techniek, kaartcontrole en zijgangpersoneel dragen beide lezingen overtuigend, terwijl ze achteraf sterke aanwijzingen blijken voor de oefening. Het alarmsignaal en de concrete uitgangsinstructies vormen een helder, dominant omslagmoment met hoog payoff-potentieel. De herinterpretatie van cabaretier, publiek, personeel en techniek is volledig en thematisch specifiek voor een theatercontext, zonder veel extra uitleg nodig te hebben.",
+    "variants": [
+      {
+        "text": "Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen. De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.",
+        "angle": "Verdacht theaterpersoneel bij de zijgangen"
+      },
+      {
+        "text": "De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”",
+        "angle": "Cabaretverhaal over uitgangen"
+      },
+      {
+        "text": "Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden. Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”",
+        "angle": "Publieksinteractie per zaalvak"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 17637,
+      "output_tokens": 9518,
+      "total_tokens": 27155
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Een publiek bezoekt een theater of cabaretvoorstelling: artiesten staan voorbereid op het podium en brengen een ingestudeerd programma, terwijl bezoekers aandachtig kijken en aan het einde waardering tonen.",
+          "participants_and_roles": [
+            "Artiest, acteur of cabaretier: treedt op, voert materiaal uit en probeert het publiek te raken, vermaken of aan het lachen te maken.",
+            "Publiek: koopt een kaartje, neemt plaats, kijkt en luistert aandachtig, en reageert met lachen of applaus.",
+            "Theaterpersoneel: ontvangt bezoekers, wijst plaatsen en zorgt dat de voorstelling ordelijk kan doorgaan.",
+            "Techniek en regie: verzorgen licht, geluid, decor en het verloop achter de schermen."
+          ],
+          "apparent_goal": "Een geslaagde culturele voorstelling beleven of uitvoeren: het publiek krijgt een boeiende ervaring en de maker brengt zijn of haar kunst overtuigend over.",
+          "preconditions": [
+            "Er is een aangekondigde voorstelling, met een zaal, podium, speelduur en kaartverkoop.",
+            "De artiest heeft materiaal voorbereid, gerepeteerd of ten minste een duidelijke podiumvorm gekozen.",
+            "Het publiek weet dat het naar een voorstelling gaat en accepteert de basisregels van de zaal, zoals zitten, kijken en niet storend praten.",
+            "Licht, geluid, decor of minimale podiumvoorzieningen zijn beschikbaar en functioneren."
+          ],
+          "expected_actions": [
+            "Bezoekers arriveren, laten hun kaartje controleren en zoeken hun stoel op.",
+            "Bij aanvang wordt het stil en richt het publiek zijn aandacht op het podium.",
+            "De artiest speelt scènes, brengt liedjes, vertelt verhalen of maakt cabaretobservaties.",
+            "Het publiek reageert op herkenbare momenten met stilte, lachen, instemming of applaus.",
+            "Na afloop bedankt de artiest het publiek en volgt applaus, eventueel een buiging of toegift."
+          ],
+          "expected_outcome": "De voorstelling verloopt volgens afspraak, het publiek begrijpt in grote lijnen wat het ziet en verlaat de zaal vermaakt, geraakt, geprikkeld of onder de indruk.",
+          "expected_propositions": [
+            "Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.",
+            "Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.",
+            "Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.",
+            "Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.",
+            "Wat op het podium gebeurt is bewust vormgegeven; ook ogenschijnlijke spontaniteit maakt vaak deel uit van de act."
+          ],
+          "audience_expectation": "Een opzet rond kunst, theater en cabaret activeert de verwachting van een georganiseerde livevoorstelling met een duidelijke scheiding tussen performer en publiek, waarin voorbereiding, aandacht, herkenning en een passende publieksreactie centraal staan."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.",
+            "opposition_axis": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+            "opposed_proposition": "Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.",
+            "shared_anchor": "Een volle zaal wacht stil tot de persoon op het podium begint.",
+            "reading_a": "Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.",
+            "reading_b": "De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.",
+            "roles_b": [
+              "Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.",
+              "Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.",
+              "Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.",
+              "Technici: regelen alarmsignaal, noodverlichting en communicatie."
+            ],
+            "goal_b": "Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.",
+            "role_remapping": [
+              "De cabaretier wordt een veiligheidscoördinator.",
+              "Het publiek wordt een groep oefendeelnemers.",
+              "Theaterpersoneel wordt ontruimingsbegeleiding.",
+              "Licht- en geluidstechniek wordt nood- en alarminfrastructuur."
+            ],
+            "shared_cues": [
+              "Kaartcontrole bij binnenkomst.",
+              "Genummerde stoelen en een volle zaal.",
+              "Een spreker alleen op een verlicht podium.",
+              "Een microfoon, lichtwisselingen en korte instructieve verhalen.",
+              "Personeel dat opvallend dicht bij de zijgangen staat."
+            ],
+            "switch_trigger": "Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.",
+            "hinge_event": "De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.",
+            "anomaly_under_a": "Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.",
+            "resolution_under_b": "Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een theateravond is in werkelijkheid een assessment voor een creatief bedrijf dat nieuw personeel zoekt. De zogenoemde artiest gebruikt sketches en interactie om te observeren wie onder sociale druk luistert, improviseert, samenwerkt en grenzen bewaakt.",
+            "opposition_axis": "Kunstzinnige waardering versus beoordeling van geschiktheid.",
+            "opposed_proposition": "Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.",
+            "shared_anchor": "Een performer presenteert voorbereide scènes aan aandachtige aanwezigen.",
+            "reading_a": "De aanwezigen zien een cabaretier die herkenbare scènes speelt en het publiek af en toe bij de voorstelling betrekt.",
+            "reading_b": "De scènes zijn gestandaardiseerde opdrachten; reacties uit de zaal leveren beoordelaars informatie over gedrag en vaardigheden.",
+            "roles_b": [
+              "Assessmentleider: presenteert opdrachten onder de vorm van sketches.",
+              "Kandidaten: worden geobserveerd op hun reacties en samenwerking.",
+              "Observatoren: registreren gedrag vanaf de zaalrand of achter de techniek.",
+              "Locatiepersoneel: ontvangt kandidaten en bewaakt het programma."
+            ],
+            "goal_b": "Kandidaten selecteren voor functies waarin improvisatie, communicatie en samenwerking belangrijk zijn.",
+            "role_remapping": [
+              "De artiest wordt een assessmentleider.",
+              "Het publiek wordt een groep sollicitatiekandidaten.",
+              "Techniek en regie worden observatie- en registratieondersteuning.",
+              "Theaterpersoneel wordt ontvangst en procesbegeleiding."
+            ],
+            "shared_cues": [
+              "Een vooraf geprogrammeerde aanvang.",
+              "Naambadges of gereserveerde plaatsen.",
+              "Een podium, microfoon en belichting.",
+              "Korte scènes met herkenbare werksituaties.",
+              "Medewerkers die achterin notities maken."
+            ],
+            "switch_trigger": "Na een scène vraagt de performer niet om applaus, maar deelt hij formulieren uit en roept hij aanwezigen per naam op voor een groepsopdracht.",
+            "hinge_event": "De performer stopt een sketch halverwege en geeft vier bezoekers de opdracht om ter plekke samen een conflict met een klant op te lossen.",
+            "anomaly_under_a": "In een gewone voorstelling is het vreemd dat willekeurige bezoekers niet vrijblijvend worden uitgenodigd, maar onder tijdsdruk een beoordeelbare taak moeten uitvoeren.",
+            "resolution_under_b": "In een assessment is de onderbreking doelgericht: juist de onverwachte taak maakt zichtbaar hoe kandidaten communiceren, initiatief nemen en met spanning omgaan."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een cabaretachtige avond blijkt een openbare hoorzitting over geluidsoverlast en vergunningen rond het theaterdistrict. De schijnbare cabaretier is een voorzitter die luchtige anekdotes gebruikt om betrokkenen op hun gemak te stellen voordat verklaringen en bezwaren formeel worden vastgelegd.",
+            "opposition_axis": "Lachen om maatschappelijke observaties versus formeel getuigen en belangen afwegen.",
+            "opposed_proposition": "Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.",
+            "shared_anchor": "Een spreker vertelt herkenbare ergernissen over het stadsleven aan een zaal.",
+            "reading_a": "De zaal hoort cabaret over buren, nachtelijk lawaai, verkeer en bureaucratie; de ergernissen zijn materiaal voor humor en herkenning.",
+            "reading_b": "De voorbeelden brengen concrete geschilpunten in kaart en bereiden bewoners, ondernemers en ambtenaren voor op hun formele inbreng.",
+            "roles_b": [
+              "Voorzitter: structureert de hoorzitting en geeft deelnemers het woord.",
+              "Bewoners en ondernemers: lichten klachten, belangen en voorstellen toe.",
+              "Gemeentevertegenwoordigers: verzamelen informatie voor een besluit.",
+              "Zaalmedewerkers: regelen spreektijd, registratie en orde."
+            ],
+            "goal_b": "Informatie en standpunten verzamelen om een besluit over lokale regels, vergunningen of geluidsnormen voor te bereiden.",
+            "role_remapping": [
+              "De cabaretier wordt voorzitter van de hoorzitting.",
+              "Het publiek wordt een verzameling belanghebbenden en insprekers.",
+              "Applaus of geroezemoes wordt een signaal van steun of bezwaar.",
+              "Theaterpersoneel wordt administratieve en ordelijke ondersteuning."
+            ],
+            "shared_cues": [
+              "Een podiumopstelling met microfoon.",
+              "Verhalen over herkenbare lokale irritaties.",
+              "Toehoorders die instemmend lachen of murmelen.",
+              "Een zichtbaar tijdschema.",
+              "Medewerkers met notitieblokken aan de zijkant."
+            ],
+            "switch_trigger": "De spreker beëindigt een grap over nachtelijk lawaai, noemt een dossiernummer en vraagt wie namens de bewoners formeel wil inspreken.",
+            "hinge_event": "Een zaalmedewerker zet een opnameapparaat aan en de eerste bezoeker moet zijn naam, adres en belang voor de microfoon noemen.",
+            "anomaly_under_a": "Bij cabaret is het ongepast dat een bezoeker zijn persoonlijke gegevens geeft en dat diens reactie officieel wordt opgenomen als verklaring.",
+            "resolution_under_b": "In een hoorzitting is deze formaliteit noodzakelijk: de grappige aanloop blijkt een toegankelijke opening van een procedure waarin standpunten controleerbaar moeten worden vastgelegd."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een avond met een komische presentator is in werkelijkheid een live veiling en financieringsbijeenkomst voor een lokaal kunstproject. De presentator gebruikt cabaret om de zaal enthousiast te maken, terwijl applaus, biedkaarten en reacties worden gebruikt om steun en toezeggingen te mobiliseren.",
+            "opposition_axis": "Applaus als waardering versus publieke toezegging of stem.",
+            "opposed_proposition": "Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.",
+            "shared_anchor": "Na een geestige podiumbijdrage reageert de zaal luid en zichtbaar enthousiast.",
+            "reading_a": "Het applaus beloont een geslaagde grap, een muzikaal nummer of een sterke scène van de artiest.",
+            "reading_b": "De reactie meet en bekrachtigt steun voor een project; aanwezigen worden voorbereid om ook financieel of publiekelijk commitment te tonen.",
+            "roles_b": [
+              "Veilingmeester-presentator: vermaakt de zaal en vraagt om biedingen of toezeggingen.",
+              "Aanwezigen: potentiële donateurs, bieders of stemmers.",
+              "Organisatoren: tonen projecten en registreren bijdragen.",
+              "Techniek: projecteert bedragen, biednummers en tussenstanden."
+            ],
+            "goal_b": "Geld, steunbetuigingen en zichtbaarheid verzamelen voor een kunstproject of cultureel initiatief.",
+            "role_remapping": [
+              "De cabaretier wordt een veilingmeester en fondsenwerver.",
+              "Het publiek wordt een groep potentiële bieders en donateurs.",
+              "Applaus wordt een steunbetuiging met een praktische vervolgactie.",
+              "De regie wordt de presentatie van biedstanden en projectinformatie."
+            ],
+            "shared_cues": [
+              "Entreebewijzen en een feestelijke zaalopstelling.",
+              "Een presentator met microfoon en voorbereide grappen.",
+              "Projecties op een scherm.",
+              "Genummerde kaartjes op stoelen.",
+              "Applaus na korte bijdragen."
+            ],
+            "switch_trigger": "Na een bijzonder uitbundig applaus zegt de presentator dat dit enthousiasme als eerste biedronde geldt en vraagt hij de aanwezigen hun genummerde kaarten omhoog te steken.",
+            "hinge_event": "Op het scherm verschijnt geen volgende act, maar een oplopend bedrag, terwijl medewerkers door de zaal lopen om toezeggingen te registreren.",
+            "anomaly_under_a": "Tijdens een gewone voorstelling is het vreemd dat applaus plotseling wordt omgezet in een geregistreerde financiële handeling en dat bezoekers om een genummerde kaart worden gevraagd.",
+            "resolution_under_b": "Binnen een fondsenwerving is de omslag functioneel: de cabaretachtige sfeer verlaagt de drempel, waarna het publieke enthousiasme doelbewust wordt omgezet in biedingen en steun."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een aangekondigde cabaretavond blijkt het dekkleed voor een verplichte ontruimingsoefening in een groot theater. De schijnbare cabaretier is een veiligheidscoördinator die wil nagaan of bezoekers onder tijdsdruk de juiste uitgangen gebruiken.",
+              "opposition_axis": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+              "opposed_proposition": "Het publiek blijft tijdens de voorstelling meestal op zijn plaats en onderbreekt de artiest niet.",
+              "shared_anchor": "Een volle zaal wacht stil tot de persoon op het podium begint.",
+              "reading_a": "Bezoekers wachten op de opening van een voorstelling en luisteren naar de eerste, misschien wat droge, cabaretobservaties.",
+              "reading_b": "De aanwezigen krijgen feitelijk veiligheidsinstructies; de ogenschijnlijk komische voorbeelden bereiden hen voor op een realistische oefening.",
+              "roles_b": [
+                "Veiligheidscoördinator: leidt de oefening en beoordeelt de ontruiming.",
+                "Bezoekers: fungeren als deelnemers aan de ontruimingsoefening.",
+                "Theaterpersoneel: opent vluchtroutes en begeleidt de groepen.",
+                "Technici: regelen alarmsignaal, noodverlichting en communicatie."
+              ],
+              "goal_b": "Veilig testen of een volle zaal snel, kalm en via de juiste routes kan worden ontruimd.",
+              "role_remapping": [
+                "De cabaretier wordt een veiligheidscoördinator.",
+                "Het publiek wordt een groep oefendeelnemers.",
+                "Theaterpersoneel wordt ontruimingsbegeleiding.",
+                "Licht- en geluidstechniek wordt nood- en alarminfrastructuur."
+              ],
+              "shared_cues": [
+                "Kaartcontrole bij binnenkomst.",
+                "Genummerde stoelen en een volle zaal.",
+                "Een spreker alleen op een verlicht podium.",
+                "Een microfoon, lichtwisselingen en korte instructieve verhalen.",
+                "Personeel dat opvallend dicht bij de zijgangen staat."
+              ],
+              "switch_trigger": "Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.",
+              "hinge_event": "De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.",
+              "anomaly_under_a": "Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.",
+              "resolution_under_b": "Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een theateravond is in werkelijkheid een assessment voor een creatief bedrijf dat nieuw personeel zoekt. De zogenoemde artiest gebruikt sketches en interactie om te observeren wie onder sociale druk luistert, improviseert, samenwerkt en grenzen bewaakt.",
+              "opposition_axis": "Kunstzinnige waardering versus beoordeling van geschiktheid.",
+              "opposed_proposition": "Een artiest op een podium heeft iets voorbereid dat het waard is om aandachtig te bekijken.",
+              "shared_anchor": "Een performer presenteert voorbereide scènes aan aandachtige aanwezigen.",
+              "reading_a": "De aanwezigen zien een cabaretier die herkenbare scènes speelt en het publiek af en toe bij de voorstelling betrekt.",
+              "reading_b": "De scènes zijn gestandaardiseerde opdrachten; reacties uit de zaal leveren beoordelaars informatie over gedrag en vaardigheden.",
+              "roles_b": [
+                "Assessmentleider: presenteert opdrachten onder de vorm van sketches.",
+                "Kandidaten: worden geobserveerd op hun reacties en samenwerking.",
+                "Observatoren: registreren gedrag vanaf de zaalrand of achter de techniek.",
+                "Locatiepersoneel: ontvangt kandidaten en bewaakt het programma."
+              ],
+              "goal_b": "Kandidaten selecteren voor functies waarin improvisatie, communicatie en samenwerking belangrijk zijn.",
+              "role_remapping": [
+                "De artiest wordt een assessmentleider.",
+                "Het publiek wordt een groep sollicitatiekandidaten.",
+                "Techniek en regie worden observatie- en registratieondersteuning.",
+                "Theaterpersoneel wordt ontvangst en procesbegeleiding."
+              ],
+              "shared_cues": [
+                "Een vooraf geprogrammeerde aanvang.",
+                "Naambadges of gereserveerde plaatsen.",
+                "Een podium, microfoon en belichting.",
+                "Korte scènes met herkenbare werksituaties.",
+                "Medewerkers die achterin notities maken."
+              ],
+              "switch_trigger": "Na een scène vraagt de performer niet om applaus, maar deelt hij formulieren uit en roept hij aanwezigen per naam op voor een groepsopdracht.",
+              "hinge_event": "De performer stopt een sketch halverwege en geeft vier bezoekers de opdracht om ter plekke samen een conflict met een klant op te lossen.",
+              "anomaly_under_a": "In een gewone voorstelling is het vreemd dat willekeurige bezoekers niet vrijblijvend worden uitgenodigd, maar onder tijdsdruk een beoordeelbare taak moeten uitvoeren.",
+              "resolution_under_b": "In een assessment is de onderbreking doelgericht: juist de onverwachte taak maakt zichtbaar hoe kandidaten communiceren, initiatief nemen en met spanning omgaan."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een cabaretachtige avond blijkt een openbare hoorzitting over geluidsoverlast en vergunningen rond het theaterdistrict. De schijnbare cabaretier is een voorzitter die luchtige anekdotes gebruikt om betrokkenen op hun gemak te stellen voordat verklaringen en bezwaren formeel worden vastgelegd.",
+              "opposition_axis": "Lachen om maatschappelijke observaties versus formeel getuigen en belangen afwegen.",
+              "opposed_proposition": "Bij cabaret zijn grappen, observaties en herkenbare ergernissen bedoeld om het publiek te laten lachen of nadenken.",
+              "shared_anchor": "Een spreker vertelt herkenbare ergernissen over het stadsleven aan een zaal.",
+              "reading_a": "De zaal hoort cabaret over buren, nachtelijk lawaai, verkeer en bureaucratie; de ergernissen zijn materiaal voor humor en herkenning.",
+              "reading_b": "De voorbeelden brengen concrete geschilpunten in kaart en bereiden bewoners, ondernemers en ambtenaren voor op hun formele inbreng.",
+              "roles_b": [
+                "Voorzitter: structureert de hoorzitting en geeft deelnemers het woord.",
+                "Bewoners en ondernemers: lichten klachten, belangen en voorstellen toe.",
+                "Gemeentevertegenwoordigers: verzamelen informatie voor een besluit.",
+                "Zaalmedewerkers: regelen spreektijd, registratie en orde."
+              ],
+              "goal_b": "Informatie en standpunten verzamelen om een besluit over lokale regels, vergunningen of geluidsnormen voor te bereiden.",
+              "role_remapping": [
+                "De cabaretier wordt voorzitter van de hoorzitting.",
+                "Het publiek wordt een verzameling belanghebbenden en insprekers.",
+                "Applaus of geroezemoes wordt een signaal van steun of bezwaar.",
+                "Theaterpersoneel wordt administratieve en ordelijke ondersteuning."
+              ],
+              "shared_cues": [
+                "Een podiumopstelling met microfoon.",
+                "Verhalen over herkenbare lokale irritaties.",
+                "Toehoorders die instemmend lachen of murmelen.",
+                "Een zichtbaar tijdschema.",
+                "Medewerkers met notitieblokken aan de zijkant."
+              ],
+              "switch_trigger": "De spreker beëindigt een grap over nachtelijk lawaai, noemt een dossiernummer en vraagt wie namens de bewoners formeel wil inspreken.",
+              "hinge_event": "Een zaalmedewerker zet een opnameapparaat aan en de eerste bezoeker moet zijn naam, adres en belang voor de microfoon noemen.",
+              "anomaly_under_a": "Bij cabaret is het ongepast dat een bezoeker zijn persoonlijke gegevens geeft en dat diens reactie officieel wordt opgenomen als verklaring.",
+              "resolution_under_b": "In een hoorzitting is deze formaliteit noodzakelijk: de grappige aanloop blijkt een toegankelijke opening van een procedure waarin standpunten controleerbaar moeten worden vastgelegd."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een avond met een komische presentator is in werkelijkheid een live veiling en financieringsbijeenkomst voor een lokaal kunstproject. De presentator gebruikt cabaret om de zaal enthousiast te maken, terwijl applaus, biedkaarten en reacties worden gebruikt om steun en toezeggingen te mobiliseren.",
+              "opposition_axis": "Applaus als waardering versus publieke toezegging of stem.",
+              "opposed_proposition": "Applaus is een normaal teken van waardering na een scène, nummer of voorstelling.",
+              "shared_anchor": "Na een geestige podiumbijdrage reageert de zaal luid en zichtbaar enthousiast.",
+              "reading_a": "Het applaus beloont een geslaagde grap, een muzikaal nummer of een sterke scène van de artiest.",
+              "reading_b": "De reactie meet en bekrachtigt steun voor een project; aanwezigen worden voorbereid om ook financieel of publiekelijk commitment te tonen.",
+              "roles_b": [
+                "Veilingmeester-presentator: vermaakt de zaal en vraagt om biedingen of toezeggingen.",
+                "Aanwezigen: potentiële donateurs, bieders of stemmers.",
+                "Organisatoren: tonen projecten en registreren bijdragen.",
+                "Techniek: projecteert bedragen, biednummers en tussenstanden."
+              ],
+              "goal_b": "Geld, steunbetuigingen en zichtbaarheid verzamelen voor een kunstproject of cultureel initiatief.",
+              "role_remapping": [
+                "De cabaretier wordt een veilingmeester en fondsenwerver.",
+                "Het publiek wordt een groep potentiële bieders en donateurs.",
+                "Applaus wordt een steunbetuiging met een praktische vervolgactie.",
+                "De regie wordt de presentatie van biedstanden en projectinformatie."
+              ],
+              "shared_cues": [
+                "Entreebewijzen en een feestelijke zaalopstelling.",
+                "Een presentator met microfoon en voorbereide grappen.",
+                "Projecties op een scherm.",
+                "Genummerde kaartjes op stoelen.",
+                "Applaus na korte bijdragen."
+              ],
+              "switch_trigger": "Na een bijzonder uitbundig applaus zegt de presentator dat dit enthousiasme als eerste biedronde geldt en vraagt hij de aanwezigen hun genummerde kaarten omhoog te steken.",
+              "hinge_event": "Op het scherm verschijnt geen volgende act, maar een oplopend bedrag, terwijl medewerkers door de zaal lopen om toezeggingen te registreren.",
+              "anomaly_under_a": "Tijdens een gewone voorstelling is het vreemd dat applaus plotseling wordt omgezet in een geregistreerde financiële handeling en dat bezoekers om een genummerde kaart worden gevraagd.",
+              "resolution_under_b": "Binnen een fondsenwerving is de omslag functioneel: de cabaretachtige sfeer verlaagt de drempel, waarna het publieke enthousiasme doelbewust wordt omgezet in biedingen en steun."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde podiumtekst kan aanvankelijk als droog cabaret en later als veiligheidsinstructie functioneren. Zitten en de act niet onderbreken botst lokaal met onmiddellijk, vakgewijs evacueren; dit is één dominante tegenstelling. De zaal, spreker, techniek en personeel bij de uitgangen passen bij beide lezingen, terwijl de voorstelling aanvankelijk de normale lezing is. Het alarm en de concrete uitgangsinstructies zijn onder A een storende anomalie, maar onder B precies het doel van de oefening. Vertrekken verhindert bovendien het voortzetten van de voorstelling, maar maakt de veiligheidstest mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De scènes kunnen zowel als cabaret als als gestandaardiseerde assessmentopdrachten worden gerealiseerd, en de uitnodiging tot een beoordeelbare groepsopdracht verklaart de onderbreking onder B. De tweede lezing is herkenbaar en de observatoren, naambadges en notities houden haar latent beschikbaar. Er is echter geen harde lokale onverenigbaarheid tussen kunstzinnige waardering en beoordeling: een sketch kan tegelijk vermakelijk zijn én gedrag voor een assessment uitlokken. De as waardering versus geschiktheidsbeoordeling is wel duidelijk dominant, maar de twee functies sluiten elkaar niet expliciet uit. De taak onderbreekt wel de normale toeschouwersrol en maakt daarmee de assessmentfunctie mogelijk."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Verhalen over geluidsoverlast, verkeer en bureaucratie kunnen eerst als cabaretmateriaal en later als inleiding op concrete geschilpunten worden gelezen. De normale cabaretfunctie van lachen om observaties botst lokaal met het formeel vastleggen van namen, belangen en verklaringen voor besluitvorming. De podiumopstelling, microfoon, lokale irritaties, tijdschema en notulisten dragen beide lezingen, terwijl cabaret aanvankelijk de voorkeurslezing blijft. Dossiernummer, opname en formele inspraak zijn onder A ongepast, maar onder B noodzakelijk. De formalisering onderbreekt de cabaretvoorstelling en maakt tegelijk de hoorzitting functioneel mogelijk."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Een komische podiumbijdrage en enthousiast applaus kunnen zowel bij een voorstelling als bij een fondsenwervende veiling voorkomen. De omslag naar biedkaarten, bedragen en registratie verklaart de financiële handeling onder B en herkadert eerder applaus als gemobiliseerde steun. Er is echter geen expliciete lokale incompatibiliteit tussen waardering en publieke steun: applaus kan tegelijk waardering voor de bijdrage en steun voor een project uitdrukken. De as is wel dominant en de veilinglezing is herkenbaar, maar zij vormt hier vooral een aanvullende functie. Applaus of cabaret hoeft het doel van A bovendien niet te blokkeren om het doel van B mogelijk te maken."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde podiumtekst kan aanvankelijk als droog cabaret en later als veiligheidsinstructie functioneren. Zitten en de act niet onderbreken botst lokaal met onmiddellijk, vakgewijs evacueren; dit is één dominante tegenstelling. De zaal, spreker, techniek en personeel bij de uitgangen passen bij beide lezingen, terwijl de voorstelling aanvankelijk de normale lezing is. Het alarm en de concrete uitgangsinstructies zijn onder A een storende anomalie, maar onder B precies het doel van de oefening. Vertrekken verhindert bovendien het voortzetten van de voorstelling, maar maakt de veiligheidstest mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De scènes kunnen zowel als cabaret als als gestandaardiseerde assessmentopdrachten worden gerealiseerd, en de uitnodiging tot een beoordeelbare groepsopdracht verklaart de onderbreking onder B. De tweede lezing is herkenbaar en de observatoren, naambadges en notities houden haar latent beschikbaar. Er is echter geen harde lokale onverenigbaarheid tussen kunstzinnige waardering en beoordeling: een sketch kan tegelijk vermakelijk zijn én gedrag voor een assessment uitlokken. De as waardering versus geschiktheidsbeoordeling is wel duidelijk dominant, maar de twee functies sluiten elkaar niet expliciet uit. De taak onderbreekt wel de normale toeschouwersrol en maakt daarmee de assessmentfunctie mogelijk."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Verhalen over geluidsoverlast, verkeer en bureaucratie kunnen eerst als cabaretmateriaal en later als inleiding op concrete geschilpunten worden gelezen. De normale cabaretfunctie van lachen om observaties botst lokaal met het formeel vastleggen van namen, belangen en verklaringen voor besluitvorming. De podiumopstelling, microfoon, lokale irritaties, tijdschema en notulisten dragen beide lezingen, terwijl cabaret aanvankelijk de voorkeurslezing blijft. Dossiernummer, opname en formele inspraak zijn onder A ongepast, maar onder B noodzakelijk. De formalisering onderbreekt de cabaretvoorstelling en maakt tegelijk de hoorzitting functioneel mogelijk."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Een komische podiumbijdrage en enthousiast applaus kunnen zowel bij een voorstelling als bij een fondsenwervende veiling voorkomen. De omslag naar biedkaarten, bedragen en registratie verklaart de financiële handeling onder B en herkadert eerder applaus als gemobiliseerde steun. Er is echter geen expliciete lokale incompatibiliteit tussen waardering en publieke steun: applaus kan tegelijk waardering voor de bijdrage en steun voor een project uitdrukken. De as is wel dominant en de veilinglezing is herkenbaar, maar zij vormt hier vooral een aanvullende functie. Applaus of cabaret hoeft het doel van A bovendien niet te blokkeren om het doel van B mogelijk te maken."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B3"
+        ],
+        "selected_candidate_id": "B1",
+        "gtvh_plan": {
+          "opposition_type": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+          "logical_mechanism": "Foutieve interpretatie gevolgd door herinterpretatie: conventionele theater- en cabaretsignalen laten het publiek eerst een voorstelling veronderstellen, waarna het alarm en de concrete evacuatieaanwijzingen onthullen dat die signalen onderdeel zijn van een ontruimingsoefening.",
+          "situation": "Bezoekers met kaartjes zitten in een volle theaterzaal op genummerde stoelen voor een aangekondigde cabaretavond. Een persoon staat alleen met een microfoon op een verlicht podium, terwijl theaterpersoneel bij de zijgangen staat en technici licht, alarm, noodverlichting en communicatie bedienen. Tijdens korte, ogenschijnlijk komische verhalen klinkt een alarm en moet de zaal via aangewezen uitgangen worden verlaten.",
+          "target": null,
+          "narrative_strategy": "De opzet presenteert herkenbare cabaretconventies en droge observaties, zodat de zaalverwachting van aandachtig blijven zitten dominant wordt. De pointe valt midden in de vermeende grap: het alarm, de gebiedende instructie en de geopende deuren dwingen een onmiddellijke herlezing van spreker, publiek en voorstelling.",
+          "lexical_anchor": "alarmsignaal",
+          "supporting_dual_cues": [
+            "Kaartcontrole bij binnenkomst.",
+            "Genummerde stoelen en een volle zaal.",
+            "Een spreker alleen op een verlicht podium.",
+            "Een microfoon, lichtwisselingen en korte instructieve verhalen.",
+            "Personeel dat opvallend dicht bij de zijgangen staat."
+          ],
+          "switch_trigger": "Midden in een ogenschijnlijk komisch verhaal klinkt een alarmsignaal en de spreker zegt zonder relativerende toon dat iedereen de zaal direct moet verlaten.",
+          "hinge_event": "De spreker onderbreekt zijn grap, wijst per zaalvak een uitgang aan en laat de deuren tegelijk openen.",
+          "anomaly_under_a": "Bij een cabaretvoorstelling is een serieuze, gedetailleerde opdracht om rij voor rij op te staan en naar nooduitgangen te lopen een ongepaste onderbreking van de act.",
+          "resolution_under_b": "Als ontruimingsoefening is juist die onderbreking het doel: de zaalindeling, de aanwezige medewerkers en de aandacht van het publiek maken een geloofwaardige veiligheidstest mogelijk.",
+          "role_remapping": [
+            "De cabaretier wordt een veiligheidscoördinator.",
+            "Het publiek wordt een groep oefendeelnemers.",
+            "Theaterpersoneel wordt ontruimingsbegeleiding.",
+            "Licht- en geluidstechniek wordt nood- en alarminfrastructuur."
+          ],
+          "setup_goal": "Het publiek laten aannemen dat het een gewone cabaretvoorstelling bijwoont, waarin het stil blijft zitten en de spreker met aandacht volgt.",
+          "punch_goal": "Het alarmsignaal en de evacuatieopdracht laten onthullen dat het verwachte blijven zitten geen publieksconventie maar precies de te testen veiligheidsbreuk is.",
+          "punch_final_word": "ontruimingsoefening"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen.",
+            "punchline": "De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.",
+            "full_text": "Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen. De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.",
+            "angle": "Verdacht theaterpersoneel bij de zijgangen",
+            "anchor_surface_form": "alarmsignaal"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen.",
+            "punchline": "Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”",
+            "full_text": "De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”",
+            "angle": "Cabaretverhaal over uitgangen",
+            "anchor_surface_form": "alarmsignaal"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden.",
+            "punchline": "Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”",
+            "full_text": "Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden. Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”",
+            "angle": "Publieksinteractie per zaalvak",
+            "anchor_surface_form": "alarmsignaal"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Bij de cabaretavond zit iedereen na de kaartcontrole braaf op zijn genummerde stoel; alleen het personeel staat verdacht dicht bij de zijgangen. De komiek zegt: “Blijf vooral rustig,” het alarmsignaal klinkt, deuren vliegen open: dit is geen toegift maar een ontruimingsoefening.",
+            "angle": "Verdacht theaterpersoneel bij de zijgangen"
+          },
+          {
+            "variant_id": "V2",
+            "text": "De cabaretier opent met een verhaal over mensen die nooit weten waar de uitgang is; achter elke zijgang staat al een medewerker te glimlachen. Dan klinkt het alarmsignaal en hij roept: “Mooi, rij voor rij naar buiten—jullie waren het publiek van de ontruimingsoefening.”",
+            "angle": "Cabaretverhaal over uitgangen"
+          },
+          {
+            "variant_id": "V3",
+            "text": "Ik dacht dat die cabaretier heel interactief was: hij vroeg per zaalvak wie de dichtstbijzijnde deur kende, terwijl de lampen steeds feller werden. Toen het alarmsignaal kwam, zei hij: “Geen applaus, gewoon lopen; dit was de ontruimingsoefening.”",
+            "angle": "Publieksinteractie per zaalvak"
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een publiek zit na kaartcontrole op genummerde stoelen bij een cabaretavond en verwacht de komiek te volgen.",
+            "realized_script_b": "De cabaretavond blijkt een ontruimingsoefening, met personeel bij de zijgangen, een alarm en geopende uitgangen.",
+            "realized_opposition_axis": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De cabaretsetting domineert aanvankelijk; het alarmsignaal, de deuren en de expliciete onthulling hercoderen die setting als oefening. De beoogde tegenstelling, overlap en omslag zijn aanwezig."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De aanvankelijke interpretatie als cabaret wordt door alarm en evacuatiesignalen retrospectief vervangen door die van een veiligheidsoefening."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Kaartcontrole, genummerde stoelen, cabaretier, personeel bij zijgangen, alarmsignaal en open deuren realiseren de functionele kern van de geplande situatie."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst bouwt eerst een gewone cabaretverwachting op en plaatst de onthulling als slotwending na het alarm."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het vereiste lexicale anker 'alarmsignaal' is aanwezig; 'geen toegift maar een ontruimingsoefening' levert een directe, passende eindformulering."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Een compacte, natuurlijke theaterwending die het beoogde cabaret-naar-ontruiming-plan volledig volgt.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Een cabaretier vertelt een komisch verhaal over mensen die de uitgang niet kunnen vinden, voor een publiek in een theaterzaal.",
+            "realized_script_b": "De cabaretier en zijgangmedewerkers blijken een ontruimingsoefening te leiden; het alarm activeert het rij-voor-rij verlaten van de zaal.",
+            "realized_opposition_axis": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst gebruikt een ogenschijnlijk cabaretverhaal als eerste lezing en onthult na het alarm expliciet de ontruimingsoefening als tweede lezing."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De uitgangsgrap en medewerkers krijgen na alarm en evacuatiebevel een retrospectief instructieve veiligheidsfunctie."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De cabaretier, zijgangen, aanwezige medewerkers, alarmsignaal en rijgewijze evacuatie behouden de relevante deelnemers, objecten en handelingen."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Een schijnbaar komische observatie vormt de opzet; 'Dan klinkt het alarmsignaal' markeert een duidelijke midden-in-de-act omslag naar de pointe."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het woord 'alarmsignaal' realiseert het lexicale anker en de afsluiting met 'ontruimingsoefening' levert de geplande onthulling."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De uitgangenobservatie werkt eerst als cabaretmateriaal en wordt vervolgens functioneel herlezen als voorbereiding op de oefening.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "De verteller denkt een interactieve cabaretier mee te maken die het publiek per zaalvak vragen stelt.",
+            "realized_script_b": "De vragen over dichtstbijzijnde deuren en de feller wordende lampen blijken voorbereiding op een ontruimingsoefening; na het alarm moet iedereen lopen.",
+            "realized_opposition_axis": "Blijven zitten voor amusement versus ordelijk vertrekken voor veiligheid.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Interactief cabaret is de dominante eerste lezing, waarna alarm, vertrekbevel en expliciete oefenonthulling de beoogde veiligheidslezing activeren."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De eerdere vragen per zaalvak en de verlichting worden achteraf begrijpelijk als evacuatievoorbereiding in plaats van publieksinteractie."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Cabaretier, zaalvakken, deuren, licht, alarmsignaal en een vertrekopdracht realiseren de functioneel benodigde theatersituatie en veiligheidsactie."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De ik-verteller presenteert eerst een plausibele cabaretinterpretatie en laat de pointe die interpretatie met een directe opdracht omkeren."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het lexicale anker 'alarmsignaal' is expliciet aanwezig en de slotformule 'dit was de ontruimingsoefening' maakt de omslag helder."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De voorafgaande zaalvak- en deurvragen vormen goede dubbele aanwijzingen en worden door het alarm effectief als oefenvoorbereiding hergeduid.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V2",
+            "rationale": "Beide varianten voldoen aan de lengte-eis en realiseren alle vereiste middelen. V2 heeft de sterkere retrospectieve herinterpretatie: het verhaal over uitgangen en de glimlachende medewerkers blijken achteraf concreet oefenmateriaal. De omslag komt natuurlijker en de slotzin maakt de zaal zelf geestig tot onderdeel van de oefening."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "Beide zijn plangetrouw, helder en goed uitspreekbaar. V3 benut de dubbele signalen beter: vragen per zaalvak en de dichtstbijzijnde deur lijken eerst publieksinteractie, maar krijgen na het alarmsignaal een duidelijke veiligheidsfunctie. Daardoor is de herduiding sterker dan in V1, waar het verdachte personeel de uitkomst al sneller verraadt."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V2",
+            "rationale": "Beide voldoen aan de vormeisen en hebben een heldere cabaret-naar-ontruimingsswitch. V2 is compacter in opzet en laat het uitgangenthema elegant terugkeren als evacuatie-instructie. De pointe dat het publiek van de ontruimingsoefening was, is verrassender en performbaarder dan de meer expliciete aanwijzingen in V3."
+          }
+        ],
+        "selected_variant_id": "V2",
+        "selection_rationale": "V2 is de sterkste volledig geslaagde variant: de cabaretopzet blijft dominant, de aanwijzingen zijn functioneel dubbelzinnig en het alarmsignaal herkadert ze overtuigend als ontruimingsoefening. De slotwending is bondig, spreekbaar en het meest komisch."
+      }
+    }
+  },
+  "result_sha256": "edb3a6ef7b9ff390f271ab5ef57de2f5cd55bc58c16bf1f9c30c63fe47740869"
+}

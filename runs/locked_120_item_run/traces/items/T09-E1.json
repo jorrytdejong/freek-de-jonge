@@ -1,0 +1,904 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T09-E1",
+  "topic_id": "T09",
+  "topic": "Nederlandse identiteit en volksaard",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T17:38:48.415504+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Nederlandse identiteit en volksaard",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.\",\n    \"participants_and_roles\": [\n      \"Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.\",\n      \"Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.\",\n      \"Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.\",\n    \"preconditions\": [\n      \"De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.\",\n      \"De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.\",\n      \"Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.\",\n      \"De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken.\"\n    ],\n    \"expected_actions\": [\n      \"De Nederlander communiceert duidelijk en betrekkelijk direct.\",\n      \"Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.\",\n      \"Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.\",\n      \"Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.\",\n      \"De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan.\"\n    ],\n    \"expected_outcome\": \"De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.\",\n      \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\",\n      \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n      \"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.\",\n    \"participants_and_roles\": [\n      \"Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.\",\n      \"Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.\",\n      \"Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.\",\n    \"preconditions\": [\n      \"De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.\",\n      \"De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.\",\n      \"Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.\",\n      \"De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken.\"\n    ],\n    \"expected_actions\": [\n      \"De Nederlander communiceert duidelijk en betrekkelijk direct.\",\n      \"Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.\",\n      \"Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.\",\n      \"Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.\",\n      \"De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan.\"\n    ],\n    \"expected_outcome\": \"De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.\",\n      \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\",\n      \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n      \"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.\",\n      \"opposition_axis\": \"gelijkwaardig overleg versus eenzijdige beoordeling\",\n      \"opposed_proposition\": \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"shared_anchor\": \"Het gesprek aan tafel\",\n      \"reading_a\": \"Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.\",\n      \"reading_b\": \"Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.\",\n      \"roles_b\": [\n        \"Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.\",\n        \"Recruiter of leidinggevende: beoordeelt de kandidaat.\",\n        \"Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit.\"\n      ],\n      \"goal_b\": \"Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.\",\n      \"role_remapping\": [\n        \"De buitenlander of nieuwkomer wordt de sollicitant.\",\n        \"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\",\n        \"Collega’s of vrienden worden commissieleden.\",\n        \"Het gezamenlijke overleg wordt een selectieprocedure.\"\n      ],\n      \"shared_cues\": [\n        \"Koffie aan tafel.\",\n        \"Een voorstelronde.\",\n        \"Vragen over werk en planning.\",\n        \"Rechtstreekse opmerkingen.\",\n        \"Notities maken.\",\n        \"Een afspraak in de agenda.\"\n      ],\n      \"switch_trigger\": \"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\",\n      \"hinge_event\": \"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\",\n      \"anomaly_under_a\": \"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\",\n      \"resolution_under_b\": \"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een bewoner ontvangt een officiële waarschuwing omdat hij structureel te laat huur betaalt; het gesprek met de woningcorporatie blijkt geen sociale afstemming maar incasso en handhaving.\",\n      \"opposition_axis\": \"flexibele sociale afspraak versus afdwingbare verplichting\",\n      \"opposed_proposition\": \"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\",\n      \"shared_anchor\": \"De afspraak op dinsdagochtend\",\n      \"reading_a\": \"Een nieuwkomer leert dat een afspraak om negen uur ook werkelijk om negen uur begint en probeert netjes op tijd te verschijnen.\",\n      \"reading_b\": \"Een huurder is opgeroepen om betalingsachterstanden te verklaren en moet aantonen dat hij een harde betaaltermijn kan nakomen.\",\n      \"roles_b\": [\n        \"Huurder: wil zijn woning behouden en verdere sancties vermijden.\",\n        \"Medewerker incasso: licht achterstanden en termijnen toe.\",\n        \"Wijkbeheerder: bewaakt de naleving van de huurovereenkomst.\"\n      ],\n      \"goal_b\": \"Een betalingsregeling treffen of voorkomen dat de huurovereenkomst wordt beëindigd.\",\n      \"role_remapping\": [\n        \"De nieuwkomer wordt de huurder die zich moet verantwoorden.\",\n        \"De Nederlander die gewoonten uitlegt wordt de incassomedewerker.\",\n        \"De sociale omgeving wordt de woningcorporatie en wijkbeheerder.\",\n        \"De agenda-afspraak wordt een formele oproep met een deadline.\"\n      ],\n      \"shared_cues\": [\n        \"Een precies tijdstip.\",\n        \"Een agenda of kalender.\",\n        \"Een herinneringsbericht.\",\n        \"Praten over betrouwbaarheid.\",\n        \"Een praktische oplossing voorstellen.\",\n        \"Een kop koffie in een kantoorruimte.\"\n      ],\n      \"switch_trigger\": \"De medewerker legt een dossier met drie rode betalingsherinneringen op tafel en noemt de datum waarop ontruiming kan worden aangevraagd.\",\n      \"hinge_event\": \"De medewerker vraagt niet hoe de huurder beter kan meedoen, maar laat hem direct een betalingsregeling met sanctieclausule ondertekenen.\",\n      \"anomaly_under_a\": \"Bij een alledaagse uitleg over op tijd komen zou een juridisch bindend formulier en de dreiging van woningverlies buiten proportie zijn.\",\n      \"resolution_under_b\": \"Bij huurincasso is die clausule doelgericht: zij legt betaaldata vast en maakt handhaving mogelijk wanneer de achterstand voortduurt.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een buurtbewoner meldt zich bij een gemeentelijk loket om een vergunning voor een straatfeest te krijgen, maar ontdekt dat overleg niet tot een gezamenlijk besluit leidt: de overheid toetst het plan aan regels en kan het verbieden.\",\n      \"opposition_axis\": \"participatief overleg versus bestuurlijke toestemming\",\n      \"opposed_proposition\": \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n      \"shared_anchor\": \"Het overleg over de straat\",\n      \"reading_a\": \"Een nieuwkomer woont een buurtgesprek bij waarin bewoners ideeën uitwisselen, praktische taken verdelen en samen een haalbaar plan maken.\",\n      \"reading_b\": \"Een aanvrager verdedigt een vergunningaanvraag tegenover ambtenaren die toetsen of het evenement juridisch en veiligheidsmatig toegestaan is.\",\n      \"roles_b\": [\n        \"Aanvrager: wil toestemming voor het straatfeest verkrijgen.\",\n        \"Vergunningverlener: toetst de aanvraag aan regels.\",\n        \"Handhaver of veiligheidsadviseur: beoordeelt risico’s en voorwaarden.\",\n        \"Omwonenden: kunnen bezwaar maken of als belanghebbenden worden gehoord.\"\n      ],\n      \"goal_b\": \"Een geldige evenementenvergunning met uitvoerbare voorwaarden verkrijgen.\",\n      \"role_remapping\": [\n        \"De bezoeker die sociale codes leert wordt de vergunningaanvrager.\",\n        \"De Nederlander die informeel overlegt wordt de vergunningverlener.\",\n        \"Buren en vrienden worden belanghebbenden of bezwaarmakers.\",\n        \"Het gezamenlijke plan wordt een formele aanvraag.\"\n      ],\n      \"shared_cues\": [\n        \"Buren rond een tafel.\",\n        \"Een plattegrond.\",\n        \"Afspraken over tijdstippen.\",\n        \"Praktische vragen over geluid en afval.\",\n        \"Meningen van aanwezigen.\",\n        \"Een lijst met taken.\"\n      ],\n      \"switch_trigger\": \"De ambtenaar stempelt het plan niet als afspraak af, maar als aanvraag en meldt dat bezwaar en een veiligheidsadvies de uitkomst kunnen blokkeren.\",\n      \"hinge_event\": \"Een buur die eerst vriendelijk meedenkt, overhandigt plotseling een formeel bezwaarschrift tegen het feest.\",\n      \"anomaly_under_a\": \"In een buurtgesprek dat gericht is op samen een praktische oplossing vinden, lijkt een formeel bezwaar een onnodig vijandige breuk met het overleg.\",\n      \"resolution_under_b\": \"In de vergunningsprocedure is het bezwaarschrift precies het bedoelde middel waarmee een belanghebbende zijn belangen formeel laat meewegen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een buitenlandse toerist denkt dat hij een sobere Nederlandse maaltijd bij vrienden bijwoont, maar belandt in een onderhandeling over een gezamenlijke rekening waarin elke consumptie exact wordt verrekend.\",\n      \"opposition_axis\": \"gastvrij delen versus individuele financiële afrekening\",\n      \"opposed_proposition\": \"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\",\n      \"shared_anchor\": \"De rekening na het eten\",\n      \"reading_a\": \"Een nieuwkomer ziet dat mensen eenvoudig eten, geen overdaad tonen en nuchter omgaan met kosten zonder dat dit de vriendschappelijke sfeer schaadt.\",\n      \"reading_b\": \"Een deelnemer aan een etentje moet zijn exacte aandeel betalen; de groep gebruikt de rekening om ieders financiële verplichting vast te stellen.\",\n      \"roles_b\": [\n        \"Gast of deelnemer: wil weten wat hij verschuldigd is en geen conflict over geld krijgen.\",\n        \"Betalende organisator: heeft voorgeschoten en wil de kosten terug.\",\n        \"Andere eters: controleren hun eigen bestellingen en delen van de rekening.\"\n      ],\n      \"goal_b\": \"De kosten per persoon vaststellen en alle bedragen innen.\",\n      \"role_remapping\": [\n        \"De bezoeker wordt een eter die moet afrekenen.\",\n        \"De uitleggevende Nederlander wordt de organisator die heeft voorgeschoten.\",\n        \"Vrienden of gezinsleden worden medebetalers.\",\n        \"De praktische zuinigheid wordt een exacte schuldverdeling.\"\n      ],\n      \"shared_cues\": [\n        \"Een eenvoudige maaltijd.\",\n        \"Opmerkingen over prijs.\",\n        \"Een telefoon op tafel.\",\n        \"Rekenen met bedragen.\",\n        \"Een directe vraag.\",\n        \"Lachen over zuinigheid.\"\n      ],\n      \"switch_trigger\": \"De organisator opent een betaalverzoek waarin niet alleen het eten, maar ook ieders afzonderlijke drankjes en fooi zijn uitgesplitst.\",\n      \"hinge_event\": \"De organisator corrigeert de gast publiekelijk omdat hij één drankje op de rekening heeft gemist.\",\n      \"anomaly_under_a\": \"Tijdens een ontspannen cultuurles over nuchterheid voelt publieke correctie over een klein bedrag onnodig precies en weinig gastvrij.\",\n      \"resolution_under_b\": \"Bij het vereffenen van een gezamenlijke rekening is de correctie functioneel: zij voorkomt dat de voorschietende organisator voor andermans consumptie betaalt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.\",\n    \"participants_and_roles\": [\n      \"Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.\",\n      \"Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.\",\n      \"Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.\",\n    \"preconditions\": [\n      \"De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.\",\n      \"De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.\",\n      \"Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.\",\n      \"De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken.\"\n    ],\n    \"expected_actions\": [\n      \"De Nederlander communiceert duidelijk en betrekkelijk direct.\",\n      \"Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.\",\n      \"Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.\",\n      \"Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.\",\n      \"De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan.\"\n    ],\n    \"expected_outcome\": \"De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.\",\n      \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\",\n      \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n      \"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.\",\n      \"opposition_axis\": \"gelijkwaardig overleg versus eenzijdige beoordeling\",\n      \"opposed_proposition\": \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"shared_anchor\": \"Het gesprek aan tafel\",\n      \"reading_a\": \"Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.\",\n      \"reading_b\": \"Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.\",\n      \"roles_b\": [\n        \"Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.\",\n        \"Recruiter of leidinggevende: beoordeelt de kandidaat.\",\n        \"Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit.\"\n      ],\n      \"goal_b\": \"Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.\",\n      \"role_remapping\": [\n        \"De buitenlander of nieuwkomer wordt de sollicitant.\",\n        \"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\",\n        \"Collega’s of vrienden worden commissieleden.\",\n        \"Het gezamenlijke overleg wordt een selectieprocedure.\"\n      ],\n      \"shared_cues\": [\n        \"Koffie aan tafel.\",\n        \"Een voorstelronde.\",\n        \"Vragen over werk en planning.\",\n        \"Rechtstreekse opmerkingen.\",\n        \"Notities maken.\",\n        \"Een afspraak in de agenda.\"\n      ],\n      \"switch_trigger\": \"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\",\n      \"hinge_event\": \"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\",\n      \"anomaly_under_a\": \"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\",\n      \"resolution_under_b\": \"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een buurtbewoner meldt zich bij een gemeentelijk loket om een vergunning voor een straatfeest te krijgen, maar ontdekt dat overleg niet tot een gezamenlijk besluit leidt: de overheid toetst het plan aan regels en kan het verbieden.\",\n      \"opposition_axis\": \"participatief overleg versus bestuurlijke toestemming\",\n      \"opposed_proposition\": \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n      \"shared_anchor\": \"Het overleg over de straat\",\n      \"reading_a\": \"Een nieuwkomer woont een buurtgesprek bij waarin bewoners ideeën uitwisselen, praktische taken verdelen en samen een haalbaar plan maken.\",\n      \"reading_b\": \"Een aanvrager verdedigt een vergunningaanvraag tegenover ambtenaren die toetsen of het evenement juridisch en veiligheidsmatig toegestaan is.\",\n      \"roles_b\": [\n        \"Aanvrager: wil toestemming voor het straatfeest verkrijgen.\",\n        \"Vergunningverlener: toetst de aanvraag aan regels.\",\n        \"Handhaver of veiligheidsadviseur: beoordeelt risico’s en voorwaarden.\",\n        \"Omwonenden: kunnen bezwaar maken of als belanghebbenden worden gehoord.\"\n      ],\n      \"goal_b\": \"Een geldige evenementenvergunning met uitvoerbare voorwaarden verkrijgen.\",\n      \"role_remapping\": [\n        \"De bezoeker die sociale codes leert wordt de vergunningaanvrager.\",\n        \"De Nederlander die informeel overlegt wordt de vergunningverlener.\",\n        \"Buren en vrienden worden belanghebbenden of bezwaarmakers.\",\n        \"Het gezamenlijke plan wordt een formele aanvraag.\"\n      ],\n      \"shared_cues\": [\n        \"Buren rond een tafel.\",\n        \"Een plattegrond.\",\n        \"Afspraken over tijdstippen.\",\n        \"Praktische vragen over geluid en afval.\",\n        \"Meningen van aanwezigen.\",\n        \"Een lijst met taken.\"\n      ],\n      \"switch_trigger\": \"De ambtenaar stempelt het plan niet als afspraak af, maar als aanvraag en meldt dat bezwaar en een veiligheidsadvies de uitkomst kunnen blokkeren.\",\n      \"hinge_event\": \"Een buur die eerst vriendelijk meedenkt, overhandigt plotseling een formeel bezwaarschrift tegen het feest.\",\n      \"anomaly_under_a\": \"In een buurtgesprek dat gericht is op samen een praktische oplossing vinden, lijkt een formeel bezwaar een onnodig vijandige breuk met het overleg.\",\n      \"resolution_under_b\": \"In de vergunningsprocedure is het bezwaarschrift precies het bedoelde middel waarmee een belanghebbende zijn belangen formeel laat meewegen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.\",\n    \"participants_and_roles\": [\n      \"Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.\",\n      \"Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.\",\n      \"Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.\",\n    \"preconditions\": [\n      \"De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.\",\n      \"De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.\",\n      \"Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.\",\n      \"De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken.\"\n    ],\n    \"expected_actions\": [\n      \"De Nederlander communiceert duidelijk en betrekkelijk direct.\",\n      \"Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.\",\n      \"Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.\",\n      \"Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.\",\n      \"De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan.\"\n    ],\n    \"expected_outcome\": \"De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.\",\n      \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\",\n      \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n      \"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.\",\n    \"opposition_axis\": \"gelijkwaardig overleg versus eenzijdige beoordeling\",\n    \"opposed_proposition\": \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n    \"shared_anchor\": \"Het gesprek aan tafel\",\n    \"reading_a\": \"Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.\",\n    \"reading_b\": \"Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.\",\n    \"roles_b\": [\n      \"Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.\",\n      \"Recruiter of leidinggevende: beoordeelt de kandidaat.\",\n      \"Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit.\"\n    ],\n    \"goal_b\": \"Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.\",\n    \"role_remapping\": [\n      \"De buitenlander of nieuwkomer wordt de sollicitant.\",\n      \"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\",\n      \"Collega’s of vrienden worden commissieleden.\",\n      \"Het gezamenlijke overleg wordt een selectieprocedure.\"\n    ],\n    \"shared_cues\": [\n      \"Koffie aan tafel.\",\n      \"Een voorstelronde.\",\n      \"Vragen over werk en planning.\",\n      \"Rechtstreekse opmerkingen.\",\n      \"Notities maken.\",\n      \"Een afspraak in de agenda.\"\n    ],\n    \"switch_trigger\": \"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\",\n    \"hinge_event\": \"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\",\n    \"anomaly_under_a\": \"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\",\n    \"resolution_under_b\": \"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"script_a\": {\n    \"script_a\": \"Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.\",\n    \"participants_and_roles\": [\n      \"Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.\",\n      \"Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.\",\n      \"Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden.\"\n    ],\n    \"apparent_goal\": \"Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.\",\n    \"preconditions\": [\n      \"De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.\",\n      \"De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.\",\n      \"Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.\",\n      \"De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken.\"\n    ],\n    \"expected_actions\": [\n      \"De Nederlander communiceert duidelijk en betrekkelijk direct.\",\n      \"Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.\",\n      \"Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.\",\n      \"Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.\",\n      \"De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan.\"\n    ],\n    \"expected_outcome\": \"De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.\",\n    \"expected_propositions\": [\n      \"Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.\",\n      \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\",\n      \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n      \"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\"\n    ],\n    \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.\",\n    \"opposition_axis\": \"gelijkwaardig overleg versus eenzijdige beoordeling\",\n    \"opposed_proposition\": \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n    \"shared_anchor\": \"Het gesprek aan tafel\",\n    \"reading_a\": \"Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.\",\n    \"reading_b\": \"Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.\",\n    \"roles_b\": [\n      \"Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.\",\n      \"Recruiter of leidinggevende: beoordeelt de kandidaat.\",\n      \"Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit.\"\n    ],\n    \"goal_b\": \"Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.\",\n    \"role_remapping\": [\n      \"De buitenlander of nieuwkomer wordt de sollicitant.\",\n      \"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\",\n      \"Collega’s of vrienden worden commissieleden.\",\n      \"Het gezamenlijke overleg wordt een selectieprocedure.\"\n    ],\n    \"shared_cues\": [\n      \"Koffie aan tafel.\",\n      \"Een voorstelronde.\",\n      \"Vragen over werk en planning.\",\n      \"Rechtstreekse opmerkingen.\",\n      \"Notities maken.\",\n      \"Een afspraak in de agenda.\"\n    ],\n    \"switch_trigger\": \"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\",\n    \"hinge_event\": \"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\",\n    \"anomaly_under_a\": \"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\",\n    \"resolution_under_b\": \"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"gelijkwaardig overleg versus eenzijdige beoordeling\",\n    \"logical_mechanism\": \"Figuur-grondomkering en rolomkering: signalen van een informeel, gelijkwaardig gesprek blijken achteraf onderdelen van een formele selectieprocedure, waarin de gesprekspartners beoordelaars zijn en de nieuwkomer de beoordeelde kandidaat.\",\n    \"situation\": \"Een buitenlandse sollicitant zit met een recruiter, een leidinggevende en commissieleden aan een tafel in een Nederlands kantoor. Er zijn koffie, een voorstelronde, vragen over werk en planning, notities en een agenda-afspraak. Het gesprek lijkt eerst een open, informeel overleg over Nederlandse omgangsvormen, maar speelt in de setting van een sollicitatiegesprek.\",\n    \"target\": \"De spanning tussen het ideaal van informele gelijkwaardigheid en de feitelijke beoordelingsmacht van selectieprocedures.\",\n    \"narrative_strategy\": \"De opzet presenteert het tafereel als een vrijblijvende cultuurles waarin een nieuwkomer gelijkwaardig mag meepraten. De punchline onthult via procedurele handelingen dat het gesprek altijd al een selectiegesprek was; de ogenschijnlijke gesprekspartners worden beoordelaars en de deelnemer wordt kandidaat.\",\n    \"lexical_anchor\": \"Het gesprek aan tafel\",\n    \"supporting_dual_cues\": [\n      \"Koffie aan tafel.\",\n      \"Een voorstelronde.\",\n      \"Vragen over werk en planning.\",\n      \"Rechtstreekse opmerkingen.\",\n      \"Notities maken.\",\n      \"Een afspraak in de agenda.\"\n    ],\n    \"switch_trigger\": \"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\",\n    \"hinge_event\": \"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\",\n    \"anomaly_under_a\": \"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\",\n    \"resolution_under_b\": \"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\",\n    \"role_remapping\": [\n      \"De buitenlander of nieuwkomer wordt de sollicitant.\",\n      \"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\",\n      \"Collega’s of vrienden worden commissieleden.\",\n      \"Het gezamenlijke overleg wordt een selectieprocedure.\"\n    ],\n    \"setup_goal\": \"Script A dominant maken door koffie, een voorstelronde, directe vragen en een informele tafelsetting te framen als gelijkwaardig overleg waarin een nieuwkomer Nederlandse omgangsvormen leert.\",\n    \"punch_goal\": \"Script B activeren door de beoordelingsformulieren, puntengrens en tijdelijke uitsluiting te laten onthullen dat het gesprek een selectieprocedure is met eenzijdige beslissingsmacht.\",\n    \"punch_final_word\": \"score\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.\",\n      \"participants_and_roles\": [\n        \"Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.\",\n        \"Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.\",\n        \"Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden.\"\n      ],\n      \"apparent_goal\": \"Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.\",\n      \"preconditions\": [\n        \"De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.\",\n        \"De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.\",\n        \"Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.\",\n        \"De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken.\"\n      ],\n      \"expected_actions\": [\n        \"De Nederlander communiceert duidelijk en betrekkelijk direct.\",\n        \"Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.\",\n        \"Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.\",\n        \"Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.\",\n        \"De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan.\"\n      ],\n      \"expected_outcome\": \"De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.\",\n      \"expected_propositions\": [\n        \"Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.\",\n        \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n        \"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\",\n        \"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\",\n        \"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\"\n      ],\n      \"audience_expectation\": \"Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.\",\n      \"opposition_axis\": \"gelijkwaardig overleg versus eenzijdige beoordeling\",\n      \"opposed_proposition\": \"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\",\n      \"shared_anchor\": \"Het gesprek aan tafel\",\n      \"reading_a\": \"Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.\",\n      \"reading_b\": \"Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.\",\n      \"roles_b\": [\n        \"Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.\",\n        \"Recruiter of leidinggevende: beoordeelt de kandidaat.\",\n        \"Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit.\"\n      ],\n      \"goal_b\": \"Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.\",\n      \"role_remapping\": [\n        \"De buitenlander of nieuwkomer wordt de sollicitant.\",\n        \"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\",\n        \"Collega’s of vrienden worden commissieleden.\",\n        \"Het gezamenlijke overleg wordt een selectieprocedure.\"\n      ],\n      \"shared_cues\": [\n        \"Koffie aan tafel.\",\n        \"Een voorstelronde.\",\n        \"Vragen over werk en planning.\",\n        \"Rechtstreekse opmerkingen.\",\n        \"Notities maken.\",\n        \"Een afspraak in de agenda.\"\n      ],\n      \"switch_trigger\": \"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\",\n      \"hinge_event\": \"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\",\n      \"anomaly_under_a\": \"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\",\n      \"resolution_under_b\": \"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"gelijkwaardig overleg versus eenzijdige beoordeling\",\n      \"logical_mechanism\": \"Figuur-grondomkering en rolomkering: signalen van een informeel, gelijkwaardig gesprek blijken achteraf onderdelen van een formele selectieprocedure, waarin de gesprekspartners beoordelaars zijn en de nieuwkomer de beoordeelde kandidaat.\",\n      \"situation\": \"Een buitenlandse sollicitant zit met een recruiter, een leidinggevende en commissieleden aan een tafel in een Nederlands kantoor. Er zijn koffie, een voorstelronde, vragen over werk en planning, notities en een agenda-afspraak. Het gesprek lijkt eerst een open, informeel overleg over Nederlandse omgangsvormen, maar speelt in de setting van een sollicitatiegesprek.\",\n      \"target\": \"De spanning tussen het ideaal van informele gelijkwaardigheid en de feitelijke beoordelingsmacht van selectieprocedures.\",\n      \"narrative_strategy\": \"De opzet presenteert het tafereel als een vrijblijvende cultuurles waarin een nieuwkomer gelijkwaardig mag meepraten. De punchline onthult via procedurele handelingen dat het gesprek altijd al een selectiegesprek was; de ogenschijnlijke gesprekspartners worden beoordelaars en de deelnemer wordt kandidaat.\",\n      \"lexical_anchor\": \"Het gesprek aan tafel\",\n      \"supporting_dual_cues\": [\n        \"Koffie aan tafel.\",\n        \"Een voorstelronde.\",\n        \"Vragen over werk en planning.\",\n        \"Rechtstreekse opmerkingen.\",\n        \"Notities maken.\",\n        \"Een afspraak in de agenda.\"\n      ],\n      \"switch_trigger\": \"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\",\n      \"hinge_event\": \"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\",\n      \"anomaly_under_a\": \"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\",\n      \"resolution_under_b\": \"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\",\n      \"role_remapping\": [\n        \"De buitenlander of nieuwkomer wordt de sollicitant.\",\n        \"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\",\n        \"Collega’s of vrienden worden commissieleden.\",\n        \"Het gezamenlijke overleg wordt een selectieprocedure.\"\n      ],\n      \"setup_goal\": \"Script A dominant maken door koffie, een voorstelronde, directe vragen en een informele tafelsetting te framen als gelijkwaardig overleg waarin een nieuwkomer Nederlandse omgangsvormen leert.\",\n      \"punch_goal\": \"Script B activeren door de beoordelingsformulieren, puntengrens en tijdelijke uitsluiting te laten onthullen dat het gesprek een selectieprocedure is met eenzijdige beslissingsmacht.\",\n      \"punch_final_word\": \"score\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning. Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”\",\n      \"angle\": \"Cultuurles blijkt selectiegesprek\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken. Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”\",\n      \"angle\": \"Informeel meedenken wordt beoordeeld\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.” Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.\",\n      \"angle\": \"Gelijkheid eindigt bij de beoordeling\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Nederlandse identiteit en volksaard\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning. Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”\",\n      \"angle\": \"Cultuurles blijkt selectiegesprek\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken. Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”\",\n      \"angle\": \"Informeel meedenken wordt beoordeeld\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.” Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.\",\n      \"angle\": \"Gelijkheid eindigt bij de beoordeling\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een buitenlandse nieuwkomer neemt aan een tafelgesprek deel dat lijkt op een informele Nederlandse cultuurles, met koffie, kennismaking en directe vragen over planning.\",\n      \"realized_script_b\": \"Het gesprek blijkt een beoordelingsmoment waarin de nieuwkomer als kandidaat buiten moet wachten terwijl een voorzitter zijn score bespreekt.\",\n      \"realized_opposition_axis\": \"gelijkwaardig meepraten versus eenzijdig beoordeeld en uitgesloten worden\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De informele cultuurles wordt via het buiten wachten en het bespreken van de score herlezen als selectie. De gelijkwaardigheids- versus beoordelingsas, het tafelgesprek en de rolverschuiving zijn functioneel aanwezig.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De procedurele handeling keert de betekenis van de eerdere gesprekssignalen om: deelnemers blijken beoordelaars en de nieuwkomer wordt beoordeeld.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Nieuwkomer, tafelgesprek, koffie, voorstelronde, planningsvragen en een voorzitter zijn aanwezig; de selectiecontext wordt in de turn voldoende opgeroepen.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst zet de belofte dat iedereen mag meepraten af tegen de feitelijke uitsluiting en scorebeoordeling.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De setup framet het expliciet als open meedoen, waarna de voorzitter de selectieprocedure onthult.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De ankerformulering \\\"Het gesprek aan tafel\\\" en het geplande eindwoord \\\"score\\\" zijn behouden; de gedeelde cues ondersteunen beide lezingen.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een compacte en plangetrouwe cultuurles-die-selectiegesprek-blijkt-twist; de score en tijdelijke uitsluiting leveren de beoogde herinterpretatie op.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Drie collega’s lijken een bezoeker in een informele setting Nederlandse directheid uit te leggen, met notities en aandacht voor zijn agenda.\",\n      \"realized_script_b\": \"De bezoeker blijkt een kandidaat: een recruiter en anderen sturen hem weg om zijn score als onderdeel van een selectie te beoordelen.\",\n      \"realized_opposition_axis\": \"informeel gelijkwaardig meedenken versus eenzijdige selectie en beoordeling\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De cultuur-uitleg wordt bij de recruiter, het formulier en de score omgezet in een sollicitatie- of selectiegesprek. De beoogde scripts, rolomkering en beoordelingsas blijven intact.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De aanvankelijk sociale signalen van uitleg, notities en agendakijken blijken achteraf registrerende beoordelingshandelingen.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Bezoeker, collega’s, recruiter, werkgerelateerde administratieve cues en de uitsluiting voor scorebespreking realiseren de functionele selectie- en gesprekssituatie.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant confronteert informele uitleg over directheid met de asymmetrische macht om de bezoeker te laten vertrekken en te beoordelen.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst begint als cultuurles en reserveert de recruiter, het formulier en de scorebeslissing voor de turn.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"\\\"Het gesprek aan tafel\\\" en \\\"score\\\" zijn behouden, evenals meerdere duale procedurele cues. De formulering \\\"uw score tellen\\\" is licht stroef, maar niet disfunctioneel.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant volgt het bedoelde misleidende cultuurlesframe en maakt met recruiter, formulier en score een duidelijke selectieonthulling.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een manager presenteert een gesprek met een buitenlandse collega als Nederlands gelijkwaardig overleg waarin deze eerlijk over zijn beschikbaarheid mag spreken.\",\n      \"realized_script_b\": \"De buitenlandse collega blijkt feitelijk een beoordeelde kandidaat die de kamer moet verlaten terwijl een commissie zijn score bespreekt.\",\n      \"realized_opposition_axis\": \"verklaarde gelijkwaardigheid versus feitelijke eenzijdige beoordelingsmacht\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De expliciete gelijkheidsclaim wordt scherp tegengesproken door verwijdering van de betrokkene en commissieoverleg over zijn score. Dat realiseert precies de geplande oppositie.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De manager en het gesprek worden retrospectief heringedeeld als onderdelen van een selectieproces; de collega wordt kandidaat en de anderen worden beoordelaars.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Een buitenlandse gesprekspartner, manager, commissie, kamer, vraag over beschikbaarheid en scorebespreking vormen een functionele, zij het sobere, versie van de bedoelde selectiecontext.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst viseert de spanning tussen het ideaal dat iedereen gelijk is en de reële hiërarchie van een beoordelingsprocedure.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De gelijkheidsverklaring domineert de korte setup; het verzoek de kamer te verlaten onthult in de punchline de andere lezing.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De ankerformulering en het eindwoord \\\"score\\\" zijn aanwezig. Er zijn minder ondersteunende duale cues dan gepland, maar de kernwoorden gelijk, werken, commissie en score dragen de omslag.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": false,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De kernoppositie en rolomkering zijn zeer helder, maar de geplande gedeelde tafelcues—zoals koffie, voorstelronde, notities en agenda—zijn grotendeels weggelaten.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning. Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.",
+      "opposing_script": "Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.",
+      "opposition_type": "gelijkwaardig overleg versus eenzijdige beoordeling",
+      "trigger": "De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.",
+      "setup_goal": "Script A dominant maken door koffie, een voorstelronde, directe vragen en een informele tafelsetting te framen als gelijkwaardig overleg waarin een nieuwkomer Nederlandse omgangsvormen leert.",
+      "punch_goal": "Script B activeren door de beoordelingsformulieren, puntengrens en tijdelijke uitsluiting te laten onthullen dat het gesprek een selectieprocedure is met eenzijdige beslissingsmacht.",
+      "shared_cues": [
+        "Koffie aan tafel.",
+        "Een voorstelronde.",
+        "Vragen over werk en planning.",
+        "Rechtstreekse opmerkingen.",
+        "Notities maken.",
+        "Een afspraak in de agenda."
+      ],
+      "hinge_event": "Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.",
+      "anomaly_under_a": "In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.",
+      "resolution_under_b": "In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.",
+      "role_remapping": [
+        "De buitenlander of nieuwkomer wordt de sollicitant.",
+        "De uitleggevende Nederlander wordt de recruiter of leidinggevende.",
+        "Collega’s of vrienden worden commissieleden.",
+        "Het gezamenlijke overleg wordt een selectieprocedure."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.\\\",\\\"participants_and_roles\\\":[\\\"Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.\\\",\\\"Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.\\\",\\\"Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden.\\\"],\\\"apparent_goal\\\":\\\"Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.\\\",\\\"preconditions\\\":[\\\"De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.\\\",\\\"De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.\\\",\\\"Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.\\\",\\\"De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken.\\\"],\\\"expected_actions\\\":[\\\"De Nederlander communiceert duidelijk en betrekkelijk direct.\\\",\\\"Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.\\\",\\\"Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.\\\",\\\"Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.\\\",\\\"De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan.\\\"],\\\"expected_outcome\\\":\\\"De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.\\\",\\\"expected_propositions\\\":[\\\"Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.\\\",\\\"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\\\",\\\"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\\\",\\\"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\\\",\\\"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.\\\",\\\"opposition_axis\\\":\\\"gelijkwaardig overleg versus eenzijdige beoordeling\\\",\\\"opposed_proposition\\\":\\\"Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.\\\",\\\"shared_anchor\\\":\\\"Het gesprek aan tafel\\\",\\\"reading_a\\\":\\\"Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.\\\",\\\"reading_b\\\":\\\"Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.\\\",\\\"roles_b\\\":[\\\"Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.\\\",\\\"Recruiter of leidinggevende: beoordeelt de kandidaat.\\\",\\\"Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit.\\\"],\\\"goal_b\\\":\\\"Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.\\\",\\\"role_remapping\\\":[\\\"De buitenlander of nieuwkomer wordt de sollicitant.\\\",\\\"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\\\",\\\"Collega’s of vrienden worden commissieleden.\\\",\\\"Het gezamenlijke overleg wordt een selectieprocedure.\\\"],\\\"shared_cues\\\":[\\\"Koffie aan tafel.\\\",\\\"Een voorstelronde.\\\",\\\"Vragen over werk en planning.\\\",\\\"Rechtstreekse opmerkingen.\\\",\\\"Notities maken.\\\",\\\"Een afspraak in de agenda.\\\"],\\\"switch_trigger\\\":\\\"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\\\",\\\"hinge_event\\\":\\\"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\\\",\\\"anomaly_under_a\\\":\\\"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\\\",\\\"resolution_under_b\\\":\\\"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een bewoner ontvangt een officiële waarschuwing omdat hij structureel te laat huur betaalt; het gesprek met de woningcorporatie blijkt geen sociale afstemming maar incasso en handhaving.\\\",\\\"opposition_axis\\\":\\\"flexibele sociale afspraak versus afdwingbare verplichting\\\",\\\"opposed_proposition\\\":\\\"Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.\\\",\\\"shared_anchor\\\":\\\"De afspraak op dinsdagochtend\\\",\\\"reading_a\\\":\\\"Een nieuwkomer leert dat een afspraak om negen uur ook werkelijk om negen uur begint en probeert netjes op tijd te verschijnen.\\\",\\\"reading_b\\\":\\\"Een huurder is opgeroepen om betalingsachterstanden te verklaren en moet aantonen dat hij een harde betaaltermijn kan nakomen.\\\",\\\"roles_b\\\":[\\\"Huurder: wil zijn woning behouden en verdere sancties vermijden.\\\",\\\"Medewerker incasso: licht achterstanden en termijnen toe.\\\",\\\"Wijkbeheerder: bewaakt de naleving van de huurovereenkomst.\\\"],\\\"goal_b\\\":\\\"Een betalingsregeling treffen of voorkomen dat de huurovereenkomst wordt beëindigd.\\\",\\\"role_remapping\\\":[\\\"De nieuwkomer wordt de huurder die zich moet verantwoorden.\\\",\\\"De Nederlander die gewoonten uitlegt wordt de incassomedewerker.\\\",\\\"De sociale omgeving wordt de woningcorporatie en wijkbeheerder.\\\",\\\"De agenda-afspraak wordt een formele oproep met een deadline.\\\"],\\\"shared_cues\\\":[\\\"Een precies tijdstip.\\\",\\\"Een agenda of kalender.\\\",\\\"Een herinneringsbericht.\\\",\\\"Praten over betrouwbaarheid.\\\",\\\"Een praktische oplossing voorstellen.\\\",\\\"Een kop koffie in een kantoorruimte.\\\"],\\\"switch_trigger\\\":\\\"De medewerker legt een dossier met drie rode betalingsherinneringen op tafel en noemt de datum waarop ontruiming kan worden aangevraagd.\\\",\\\"hinge_event\\\":\\\"De medewerker vraagt niet hoe de huurder beter kan meedoen, maar laat hem direct een betalingsregeling met sanctieclausule ondertekenen.\\\",\\\"anomaly_under_a\\\":\\\"Bij een alledaagse uitleg over op tijd komen zou een juridisch bindend formulier en de dreiging van woningverlies buiten proportie zijn.\\\",\\\"resolution_under_b\\\":\\\"Bij huurincasso is die clausule doelgericht: zij legt betaaldata vast en maakt handhaving mogelijk wanneer de achterstand voortduurt.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een buurtbewoner meldt zich bij een gemeentelijk loket om een vergunning voor een straatfeest te krijgen, maar ontdekt dat overleg niet tot een gezamenlijk besluit leidt: de overheid toetst het plan aan regels en kan het verbieden.\\\",\\\"opposition_axis\\\":\\\"participatief overleg versus bestuurlijke toestemming\\\",\\\"opposed_proposition\\\":\\\"Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.\\\",\\\"shared_anchor\\\":\\\"Het overleg over de straat\\\",\\\"reading_a\\\":\\\"Een nieuwkomer woont een buurtgesprek bij waarin bewoners ideeën uitwisselen, praktische taken verdelen en samen een haalbaar plan maken.\\\",\\\"reading_b\\\":\\\"Een aanvrager verdedigt een vergunningaanvraag tegenover ambtenaren die toetsen of het evenement juridisch en veiligheidsmatig toegestaan is.\\\",\\\"roles_b\\\":[\\\"Aanvrager: wil toestemming voor het straatfeest verkrijgen.\\\",\\\"Vergunningverlener: toetst de aanvraag aan regels.\\\",\\\"Handhaver of veiligheidsadviseur: beoordeelt risico’s en voorwaarden.\\\",\\\"Omwonenden: kunnen bezwaar maken of als belanghebbenden worden gehoord.\\\"],\\\"goal_b\\\":\\\"Een geldige evenementenvergunning met uitvoerbare voorwaarden verkrijgen.\\\",\\\"role_remapping\\\":[\\\"De bezoeker die sociale codes leert wordt de vergunningaanvrager.\\\",\\\"De Nederlander die informeel overlegt wordt de vergunningverlener.\\\",\\\"Buren en vrienden worden belanghebbenden of bezwaarmakers.\\\",\\\"Het gezamenlijke plan wordt een formele aanvraag.\\\"],\\\"shared_cues\\\":[\\\"Buren rond een tafel.\\\",\\\"Een plattegrond.\\\",\\\"Afspraken over tijdstippen.\\\",\\\"Praktische vragen over geluid en afval.\\\",\\\"Meningen van aanwezigen.\\\",\\\"Een lijst met taken.\\\"],\\\"switch_trigger\\\":\\\"De ambtenaar stempelt het plan niet als afspraak af, maar als aanvraag en meldt dat bezwaar en een veiligheidsadvies de uitkomst kunnen blokkeren.\\\",\\\"hinge_event\\\":\\\"Een buur die eerst vriendelijk meedenkt, overhandigt plotseling een formeel bezwaarschrift tegen het feest.\\\",\\\"anomaly_under_a\\\":\\\"In een buurtgesprek dat gericht is op samen een praktische oplossing vinden, lijkt een formeel bezwaar een onnodig vijandige breuk met het overleg.\\\",\\\"resolution_under_b\\\":\\\"In de vergunningsprocedure is het bezwaarschrift precies het bedoelde middel waarmee een belanghebbende zijn belangen formeel laat meewegen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een buitenlandse toerist denkt dat hij een sobere Nederlandse maaltijd bij vrienden bijwoont, maar belandt in een onderhandeling over een gezamenlijke rekening waarin elke consumptie exact wordt verrekend.\\\",\\\"opposition_axis\\\":\\\"gastvrij delen versus individuele financiële afrekening\\\",\\\"opposed_proposition\\\":\\\"Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.\\\",\\\"shared_anchor\\\":\\\"De rekening na het eten\\\",\\\"reading_a\\\":\\\"Een nieuwkomer ziet dat mensen eenvoudig eten, geen overdaad tonen en nuchter omgaan met kosten zonder dat dit de vriendschappelijke sfeer schaadt.\\\",\\\"reading_b\\\":\\\"Een deelnemer aan een etentje moet zijn exacte aandeel betalen; de groep gebruikt de rekening om ieders financiële verplichting vast te stellen.\\\",\\\"roles_b\\\":[\\\"Gast of deelnemer: wil weten wat hij verschuldigd is en geen conflict over geld krijgen.\\\",\\\"Betalende organisator: heeft voorgeschoten en wil de kosten terug.\\\",\\\"Andere eters: controleren hun eigen bestellingen en delen van de rekening.\\\"],\\\"goal_b\\\":\\\"De kosten per persoon vaststellen en alle bedragen innen.\\\",\\\"role_remapping\\\":[\\\"De bezoeker wordt een eter die moet afrekenen.\\\",\\\"De uitleggevende Nederlander wordt de organisator die heeft voorgeschoten.\\\",\\\"Vrienden of gezinsleden worden medebetalers.\\\",\\\"De praktische zuinigheid wordt een exacte schuldverdeling.\\\"],\\\"shared_cues\\\":[\\\"Een eenvoudige maaltijd.\\\",\\\"Opmerkingen over prijs.\\\",\\\"Een telefoon op tafel.\\\",\\\"Rekenen met bedragen.\\\",\\\"Een directe vraag.\\\",\\\"Lachen over zuinigheid.\\\"],\\\"switch_trigger\\\":\\\"De organisator opent een betaalverzoek waarin niet alleen het eten, maar ook ieders afzonderlijke drankjes en fooi zijn uitgesplitst.\\\",\\\"hinge_event\\\":\\\"De organisator corrigeert de gast publiekelijk omdat hij één drankje op de rekening heeft gemist.\\\",\\\"anomaly_under_a\\\":\\\"Tijdens een ontspannen cultuurles over nuchterheid voelt publieke correctie over een klein bedrag onnodig precies en weinig gastvrij.\\\",\\\"resolution_under_b\\\":\\\"Bij het vereffenen van een gezamenlijke rekening is de correctie functioneel: zij voorkomt dat de voorschietende organisator voor andermans consumptie betaalt.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Hetzelfde gesprek aan tafel kan aanvankelijk zowel als informeel, gelijkwaardig cultuurgesprek als selectiegesprek worden gelezen. De tegenstelling tussen deelname aan overleg en eenzijdige beoordeling is lokaal onverenigbaar en dominant. Koffie, voorstelronde, directe vragen, notities en een agenda passen natuurlijk in beide lezingen; de sollicitatielezing is bovendien sociaal herkenbaar en blijft vóór de expliciete beoordelingsinformatie mogelijk. Het formulier, de puntengrens en het buitensluiten van de kandidaat zijn onder A afwijkend, maar onder B procedureel noodzakelijk. Zij herinterpreteren de eerdere vragen en notities als beoordeling. De afzondering blokkeert tevens A's doel van gelijkwaardig meedoen en maakt B's doel, vergelijking en selectie, mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":false,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Een afspraak op een precies tijdstip, herinneringen en taal over betrouwbaarheid kunnen zowel bij een cultuurles als bij een incassogesprek voorkomen, en de incassolezing is herkenbaar. De opzet over Nederlandse omgangsvormen maakt A aanvankelijk waarschijnlijker, terwijl B vóór de expliciete dossierinformatie mogelijk blijft. De rode herinneringen, sanctieclausule en dreiging van ontruiming verklaren de afwijking en maken eerdere tijds- en betrouwbaarheidscues achteraf incasso-informatie. De opgegeven tegenstelling is echter niet geldig genoeg: A stelt juist dat op tijd komen een teken van betrouwbaarheid en respect is; een harde betaaltermijn spreekt dat niet lokaal tegen maar intensiveert en juridiseert het. Daarnaast verschuift B tegelijk naar huurachterstand, sanctie en huisvesting, zodat niet één oppositie dominant blijft. De sanctieclausule blokkeert ook niet rechtstreeks A's doel om punctualiteitsnormen te begrijpen.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een overleg over een straatfeest met buren, plattegrond, tijdstippen, geluid, afval en taken kan zowel een informeel buurtgesprek als een vergunningbehandeling dragen. De kerntegenstelling is helder: in A leidt overleg tot een gezamenlijk werkbaar plan, terwijl in B dat overleg geen beslissende toestemming geeft omdat een bevoegde instantie juridisch toetst. De vergunningslezing is sociaal herkenbaar en kan vóór de trigger latent blijven. Het formele bezwaarschrift is onder A een storende breuk met gezamenlijk overleg, maar onder B een normaal instrument voor een belanghebbende. Daardoor krijgen eerdere bijdragen en praktische vragen achteraf de functie van procedurele informatie. De formele toets blokkeert dat gezamenlijk overleg op zichzelf voldoende is voor A's uitkomst en maakt B's besluit over vergunningverlening mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De rekening na een eenvoudige maaltijd, prijsopmerkingen, rekenen en directe vragen kunnen zowel een observatie over nuchtere zuinigheid als een afrekening na gezamenlijk eten ondersteunen. De tweede lezing is herkenbaar en blijft vóór de uitgesplitste betaalverzoekinformatie beschikbaar; de opzet over Nederlandse volksaard geeft A aanvankelijk voorrang. De publieke correctie is onder A onnodig precies, maar onder B functioneel voor volledige kostenverdeling. De uitsplitsing herkadert eerdere prijs- en rekencues als elementen van schuldvaststelling. Toch is de opgegeven oppositie niet echt lokaal incompatibel: exact individueel afrekenen kan juist een vorm van zuinig, nuchter en als niet-onvriendelijk opgevat gedrag zijn. B ontkent A's propositie dus niet noodzakelijk. Ook verhindert de afrekening A's doel niet rechtstreeks, al faciliteert zij wel B's inningsdoel.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest economische oppositie: het ogenschijnlijk gelijkwaardige, informele gesprek uit Script A blijkt een asymmetrische selectieprocedure waarin één partij beoordeelt en de andere toegang moet verdienen. De gedeelde signalen — koffie, voorstelronde, directe vragen, agenda en notities — ondersteunen beide lezingen zonder de tweede te vroeg weg te geven. Het beoordelingsformulier en het verzoek om de kamer te verlaten vormen een heldere omslag die eerdere details retrospectief als selectiecriteria herkadert. Daarmee heeft B1 een sterke setup-dominantie, een direct contrast met het thema gelijkwaardigheid en een duidelijk dramatisch payoff-potentieel.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"gelijkwaardig overleg versus eenzijdige beoordeling\\\",\\\"logical_mechanism\\\":\\\"Figuur-grondomkering en rolomkering: signalen van een informeel, gelijkwaardig gesprek blijken achteraf onderdelen van een formele selectieprocedure, waarin de gesprekspartners beoordelaars zijn en de nieuwkomer de beoordeelde kandidaat.\\\",\\\"situation\\\":\\\"Een buitenlandse sollicitant zit met een recruiter, een leidinggevende en commissieleden aan een tafel in een Nederlands kantoor. Er zijn koffie, een voorstelronde, vragen over werk en planning, notities en een agenda-afspraak. Het gesprek lijkt eerst een open, informeel overleg over Nederlandse omgangsvormen, maar speelt in de setting van een sollicitatiegesprek.\\\",\\\"target\\\":\\\"De spanning tussen het ideaal van informele gelijkwaardigheid en de feitelijke beoordelingsmacht van selectieprocedures.\\\",\\\"narrative_strategy\\\":\\\"De opzet presenteert het tafereel als een vrijblijvende cultuurles waarin een nieuwkomer gelijkwaardig mag meepraten. De punchline onthult via procedurele handelingen dat het gesprek altijd al een selectiegesprek was; de ogenschijnlijke gesprekspartners worden beoordelaars en de deelnemer wordt kandidaat.\\\",\\\"lexical_anchor\\\":\\\"Het gesprek aan tafel\\\",\\\"supporting_dual_cues\\\":[\\\"Koffie aan tafel.\\\",\\\"Een voorstelronde.\\\",\\\"Vragen over werk en planning.\\\",\\\"Rechtstreekse opmerkingen.\\\",\\\"Notities maken.\\\",\\\"Een afspraak in de agenda.\\\"],\\\"switch_trigger\\\":\\\"De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.\\\",\\\"hinge_event\\\":\\\"Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.\\\",\\\"anomaly_under_a\\\":\\\"In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.\\\",\\\"resolution_under_b\\\":\\\"In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.\\\",\\\"role_remapping\\\":[\\\"De buitenlander of nieuwkomer wordt de sollicitant.\\\",\\\"De uitleggevende Nederlander wordt de recruiter of leidinggevende.\\\",\\\"Collega’s of vrienden worden commissieleden.\\\",\\\"Het gezamenlijke overleg wordt een selectieprocedure.\\\"],\\\"setup_goal\\\":\\\"Script A dominant maken door koffie, een voorstelronde, directe vragen en een informele tafelsetting te framen als gelijkwaardig overleg waarin een nieuwkomer Nederlandse omgangsvormen leert.\\\",\\\"punch_goal\\\":\\\"Script B activeren door de beoordelingsformulieren, puntengrens en tijdelijke uitsluiting te laten onthullen dat het gesprek een selectieprocedure is met eenzijdige beslissingsmacht.\\\",\\\"punch_final_word\\\":\\\"score\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning.\\\",\\\"punchline\\\":\\\"Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”\\\",\\\"full_text\\\":\\\"Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning. Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”\\\",\\\"angle\\\":\\\"Cultuurles blijkt selectiegesprek\\\",\\\"anchor_surface_form\\\":\\\"Het gesprek aan tafel\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken.\\\",\\\"punchline\\\":\\\"Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”\\\",\\\"full_text\\\":\\\"Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken. Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”\\\",\\\"angle\\\":\\\"Informeel meedenken wordt beoordeeld\\\",\\\"anchor_surface_form\\\":\\\"Het gesprek aan tafel\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.”\\\",\\\"punchline\\\":\\\"Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.\\\",\\\"full_text\\\":\\\"Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.” Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.\\\",\\\"angle\\\":\\\"Gelijkheid eindigt bij de beoordeling\\\",\\\"anchor_surface_form\\\":\\\"Het gesprek aan tafel\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een buitenlandse nieuwkomer neemt aan een tafelgesprek deel dat lijkt op een informele Nederlandse cultuurles, met koffie, kennismaking en directe vragen over planning.\\\",\\\"realized_script_b\\\":\\\"Het gesprek blijkt een beoordelingsmoment waarin de nieuwkomer als kandidaat buiten moet wachten terwijl een voorzitter zijn score bespreekt.\\\",\\\"realized_opposition_axis\\\":\\\"gelijkwaardig meepraten versus eenzijdig beoordeeld en uitgesloten worden\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De informele cultuurles wordt via het buiten wachten en het bespreken van de score herlezen als selectie. De gelijkwaardigheids- versus beoordelingsas, het tafelgesprek en de rolverschuiving zijn functioneel aanwezig.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De procedurele handeling keert de betekenis van de eerdere gesprekssignalen om: deelnemers blijken beoordelaars en de nieuwkomer wordt beoordeeld.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Nieuwkomer, tafelgesprek, koffie, voorstelronde, planningsvragen en een voorzitter zijn aanwezig; de selectiecontext wordt in de turn voldoende opgeroepen.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst zet de belofte dat iedereen mag meepraten af tegen de feitelijke uitsluiting en scorebeoordeling.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De setup framet het expliciet als open meedoen, waarna de voorzitter de selectieprocedure onthult.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De ankerformulering \\\\\\\"Het gesprek aan tafel\\\\\\\" en het geplande eindwoord \\\\\\\"score\\\\\\\" zijn behouden; de gedeelde cues ondersteunen beide lezingen.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een compacte en plangetrouwe cultuurles-die-selectiegesprek-blijkt-twist; de score en tijdelijke uitsluiting leveren de beoogde herinterpretatie op.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Drie collega’s lijken een bezoeker in een informele setting Nederlandse directheid uit te leggen, met notities en aandacht voor zijn agenda.\\\",\\\"realized_script_b\\\":\\\"De bezoeker blijkt een kandidaat: een recruiter en anderen sturen hem weg om zijn score als onderdeel van een selectie te beoordelen.\\\",\\\"realized_opposition_axis\\\":\\\"informeel gelijkwaardig meedenken versus eenzijdige selectie en beoordeling\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De cultuur-uitleg wordt bij de recruiter, het formulier en de score omgezet in een sollicitatie- of selectiegesprek. De beoogde scripts, rolomkering en beoordelingsas blijven intact.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De aanvankelijk sociale signalen van uitleg, notities en agendakijken blijken achteraf registrerende beoordelingshandelingen.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Bezoeker, collega’s, recruiter, werkgerelateerde administratieve cues en de uitsluiting voor scorebespreking realiseren de functionele selectie- en gesprekssituatie.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant confronteert informele uitleg over directheid met de asymmetrische macht om de bezoeker te laten vertrekken en te beoordelen.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst begint als cultuurles en reserveert de recruiter, het formulier en de scorebeslissing voor de turn.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"\\\\\\\"Het gesprek aan tafel\\\\\\\" en \\\\\\\"score\\\\\\\" zijn behouden, evenals meerdere duale procedurele cues. De formulering \\\\\\\"uw score tellen\\\\\\\" is licht stroef, maar niet disfunctioneel.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant volgt het bedoelde misleidende cultuurlesframe en maakt met recruiter, formulier en score een duidelijke selectieonthulling.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een manager presenteert een gesprek met een buitenlandse collega als Nederlands gelijkwaardig overleg waarin deze eerlijk over zijn beschikbaarheid mag spreken.\\\",\\\"realized_script_b\\\":\\\"De buitenlandse collega blijkt feitelijk een beoordeelde kandidaat die de kamer moet verlaten terwijl een commissie zijn score bespreekt.\\\",\\\"realized_opposition_axis\\\":\\\"verklaarde gelijkwaardigheid versus feitelijke eenzijdige beoordelingsmacht\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De expliciete gelijkheidsclaim wordt scherp tegengesproken door verwijdering van de betrokkene en commissieoverleg over zijn score. Dat realiseert precies de geplande oppositie.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De manager en het gesprek worden retrospectief heringedeeld als onderdelen van een selectieproces; de collega wordt kandidaat en de anderen worden beoordelaars.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Een buitenlandse gesprekspartner, manager, commissie, kamer, vraag over beschikbaarheid en scorebespreking vormen een functionele, zij het sobere, versie van de bedoelde selectiecontext.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst viseert de spanning tussen het ideaal dat iedereen gelijk is en de reële hiërarchie van een beoordelingsprocedure.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De gelijkheidsverklaring domineert de korte setup; het verzoek de kamer te verlaten onthult in de punchline de andere lezing.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De ankerformulering en het eindwoord \\\\\\\"score\\\\\\\" zijn aanwezig. Er zijn minder ondersteunende duale cues dan gepland, maar de kernwoorden gelijk, werken, commissie en score dragen de omslag.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":false,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De kernoppositie en rolomkering zijn zeer helder, maar de geplande gedeelde tafelcues—zoals koffie, voorstelronde, notities en agenda—zijn grotendeels weggelaten.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten slagen voor de vereiste middelen en lengte-eisen, maar V1 klinkt natuurlijker en compacter. De koffie, voorstelronde en planningsvragen bouwen geloofwaardig een gelijkwaardig tafelgesprek op; „score” en buiten wachten herinterpreteren dat helder als selectie. V2 heeft eveneens een sterke omslag, maar „uw score tellen” is stroever en de recruiter verraadt de selectiecontext iets eerder.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 gaat voor op V3 omdat V1 een passerende variant is en V3 niet. Bovendien realiseert V1 meer van de geplande gedeelde cues rond het tafelgesprek, waardoor de omslag naar beoordeling sterker retrospectief werkt. V3 heeft een scherpe gelijkheidsiron ie, maar mist te veel van de vereiste situationele aankleding.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 gaat voor op V3 omdat V2 de vereiste middelen volledig realiseert en als passerend is beoordeeld, terwijl V3 de gedeelde cues onvoldoende uitvoert. De recruiter, notities, agenda en score maken in V2 de herlezing als selectie duidelijk; ondanks de licht stroeve slotformulering is de structuur plantrouwer dan V3.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste passerende variant: het levert de volledige cultuurles-naar-selectieherinterpretatie, gebruikt de vereiste tafelcues efficiënt en heeft een natuurlijke, spreekbare punchline. De uitsluiting bij „we bespreken uw score” maakt de machtsomslag direct en komisch helder.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.",
+        "candidate_id": "B1",
+        "opposition_axis": "gelijkwaardig overleg versus eenzijdige beoordeling",
+        "opposed_expectation": "Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.",
+        "roles_b": [
+          "Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.",
+          "Recruiter of leidinggevende: beoordeelt de kandidaat.",
+          "Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit."
+        ],
+        "goal_b": "Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.",
+        "role_remapping": [
+          "De buitenlander of nieuwkomer wordt de sollicitant.",
+          "De uitleggevende Nederlander wordt de recruiter of leidinggevende.",
+          "Collega’s of vrienden worden commissieleden.",
+          "Het gezamenlijke overleg wordt een selectieprocedure."
+        ],
+        "shared_cues": [
+          "Koffie aan tafel.",
+          "Een voorstelronde.",
+          "Vragen over werk en planning.",
+          "Rechtstreekse opmerkingen.",
+          "Notities maken.",
+          "Een afspraak in de agenda."
+        ],
+        "switch_trigger": "De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.",
+        "hinge_event": "Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.",
+        "anomaly_under_a": "In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.",
+        "resolution_under_b": "In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bewoner ontvangt een officiële waarschuwing omdat hij structureel te laat huur betaalt; het gesprek met de woningcorporatie blijkt geen sociale afstemming maar incasso en handhaving.",
+        "candidate_id": "B2",
+        "opposition_axis": "flexibele sociale afspraak versus afdwingbare verplichting",
+        "opposed_expectation": "Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.",
+        "roles_b": [
+          "Huurder: wil zijn woning behouden en verdere sancties vermijden.",
+          "Medewerker incasso: licht achterstanden en termijnen toe.",
+          "Wijkbeheerder: bewaakt de naleving van de huurovereenkomst."
+        ],
+        "goal_b": "Een betalingsregeling treffen of voorkomen dat de huurovereenkomst wordt beëindigd.",
+        "role_remapping": [
+          "De nieuwkomer wordt de huurder die zich moet verantwoorden.",
+          "De Nederlander die gewoonten uitlegt wordt de incassomedewerker.",
+          "De sociale omgeving wordt de woningcorporatie en wijkbeheerder.",
+          "De agenda-afspraak wordt een formele oproep met een deadline."
+        ],
+        "shared_cues": [
+          "Een precies tijdstip.",
+          "Een agenda of kalender.",
+          "Een herinneringsbericht.",
+          "Praten over betrouwbaarheid.",
+          "Een praktische oplossing voorstellen.",
+          "Een kop koffie in een kantoorruimte."
+        ],
+        "switch_trigger": "De medewerker legt een dossier met drie rode betalingsherinneringen op tafel en noemt de datum waarop ontruiming kan worden aangevraagd.",
+        "hinge_event": "De medewerker vraagt niet hoe de huurder beter kan meedoen, maar laat hem direct een betalingsregeling met sanctieclausule ondertekenen.",
+        "anomaly_under_a": "Bij een alledaagse uitleg over op tijd komen zou een juridisch bindend formulier en de dreiging van woningverlies buiten proportie zijn.",
+        "resolution_under_b": "Bij huurincasso is die clausule doelgericht: zij legt betaaldata vast en maakt handhaving mogelijk wanneer de achterstand voortduurt.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een buurtbewoner meldt zich bij een gemeentelijk loket om een vergunning voor een straatfeest te krijgen, maar ontdekt dat overleg niet tot een gezamenlijk besluit leidt: de overheid toetst het plan aan regels en kan het verbieden.",
+        "candidate_id": "B3",
+        "opposition_axis": "participatief overleg versus bestuurlijke toestemming",
+        "opposed_expectation": "Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.",
+        "roles_b": [
+          "Aanvrager: wil toestemming voor het straatfeest verkrijgen.",
+          "Vergunningverlener: toetst de aanvraag aan regels.",
+          "Handhaver of veiligheidsadviseur: beoordeelt risico’s en voorwaarden.",
+          "Omwonenden: kunnen bezwaar maken of als belanghebbenden worden gehoord."
+        ],
+        "goal_b": "Een geldige evenementenvergunning met uitvoerbare voorwaarden verkrijgen.",
+        "role_remapping": [
+          "De bezoeker die sociale codes leert wordt de vergunningaanvrager.",
+          "De Nederlander die informeel overlegt wordt de vergunningverlener.",
+          "Buren en vrienden worden belanghebbenden of bezwaarmakers.",
+          "Het gezamenlijke plan wordt een formele aanvraag."
+        ],
+        "shared_cues": [
+          "Buren rond een tafel.",
+          "Een plattegrond.",
+          "Afspraken over tijdstippen.",
+          "Praktische vragen over geluid en afval.",
+          "Meningen van aanwezigen.",
+          "Een lijst met taken."
+        ],
+        "switch_trigger": "De ambtenaar stempelt het plan niet als afspraak af, maar als aanvraag en meldt dat bezwaar en een veiligheidsadvies de uitkomst kunnen blokkeren.",
+        "hinge_event": "Een buur die eerst vriendelijk meedenkt, overhandigt plotseling een formeel bezwaarschrift tegen het feest.",
+        "anomaly_under_a": "In een buurtgesprek dat gericht is op samen een praktische oplossing vinden, lijkt een formeel bezwaar een onnodig vijandige breuk met het overleg.",
+        "resolution_under_b": "In de vergunningsprocedure is het bezwaarschrift precies het bedoelde middel waarmee een belanghebbende zijn belangen formeel laat meewegen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een buitenlandse toerist denkt dat hij een sobere Nederlandse maaltijd bij vrienden bijwoont, maar belandt in een onderhandeling over een gezamenlijke rekening waarin elke consumptie exact wordt verrekend.",
+        "candidate_id": "B4",
+        "opposition_axis": "gastvrij delen versus individuele financiële afrekening",
+        "opposed_expectation": "Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.",
+        "roles_b": [
+          "Gast of deelnemer: wil weten wat hij verschuldigd is en geen conflict over geld krijgen.",
+          "Betalende organisator: heeft voorgeschoten en wil de kosten terug.",
+          "Andere eters: controleren hun eigen bestellingen en delen van de rekening."
+        ],
+        "goal_b": "De kosten per persoon vaststellen en alle bedragen innen.",
+        "role_remapping": [
+          "De bezoeker wordt een eter die moet afrekenen.",
+          "De uitleggevende Nederlander wordt de organisator die heeft voorgeschoten.",
+          "Vrienden of gezinsleden worden medebetalers.",
+          "De praktische zuinigheid wordt een exacte schuldverdeling."
+        ],
+        "shared_cues": [
+          "Een eenvoudige maaltijd.",
+          "Opmerkingen over prijs.",
+          "Een telefoon op tafel.",
+          "Rekenen met bedragen.",
+          "Een directe vraag.",
+          "Lachen over zuinigheid."
+        ],
+        "switch_trigger": "De organisator opent een betaalverzoek waarin niet alleen het eten, maar ook ieders afzonderlijke drankjes en fooi zijn uitgesplitst.",
+        "hinge_event": "De organisator corrigeert de gast publiekelijk omdat hij één drankje op de rekening heeft gemist.",
+        "anomaly_under_a": "Tijdens een ontspannen cultuurles over nuchterheid voelt publieke correctie over een klein bedrag onnodig precies en weinig gastvrij.",
+        "resolution_under_b": "Bij het vereffenen van een gezamenlijke rekening is de correctie functioneel: zij voorkomt dat de voorschietende organisator voor andermans consumptie betaalt.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest economische oppositie: het ogenschijnlijk gelijkwaardige, informele gesprek uit Script A blijkt een asymmetrische selectieprocedure waarin één partij beoordeelt en de andere toegang moet verdienen. De gedeelde signalen — koffie, voorstelronde, directe vragen, agenda en notities — ondersteunen beide lezingen zonder de tweede te vroeg weg te geven. Het beoordelingsformulier en het verzoek om de kamer te verlaten vormen een heldere omslag die eerdere details retrospectief als selectiecriteria herkadert. Daarmee heeft B1 een sterke setup-dominantie, een direct contrast met het thema gelijkwaardigheid en een duidelijk dramatisch payoff-potentieel.",
+    "variants": [
+      {
+        "text": "Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning. Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”",
+        "angle": "Cultuurles blijkt selectiegesprek"
+      },
+      {
+        "text": "Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken. Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”",
+        "angle": "Informeel meedenken wordt beoordeeld"
+      },
+      {
+        "text": "Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.” Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.",
+        "angle": "Gelijkheid eindigt bij de beoordeling"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 16281,
+      "output_tokens": 9242,
+      "total_tokens": 25523
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Een buitenlander of nieuwkomer probeert te begrijpen hoe Nederlanders met elkaar omgaan en wordt wegwijs gemaakt via herkenbare dagelijkse situaties: direct communiceren, afspraken plannen, samen overleggen en praktische regels volgen.",
+          "participants_and_roles": [
+            "Een Nederlander: legt impliciete sociale gewoonten uit of brengt die vanzelfsprekend in praktijk.",
+            "Een buitenlander, nieuwkomer of bezoeker: observeert de gewoonten en probeert ze correct te duiden.",
+            "Eventuele collega's, buren, vrienden of gezinsleden: vormen de alledaagse sociale omgeving waarin die gewoonten zichtbaar worden."
+          ],
+          "apparent_goal": "Begrijpen wat als typisch Nederlands gedrag geldt en hoe iemand daar soepel aan kan deelnemen.",
+          "preconditions": [
+            "De situatie speelt in een gewone sociale context, zoals werk, een buurt, een verjaardag, een afspraak of een overleg.",
+            "De deelnemers delen de aanname dat er herkenbare, breed gedragen omgangsvormen bestaan.",
+            "Er is ruimte om gewoonten te benoemen zonder dat één persoon alle Nederlanders hoeft te vertegenwoordigen.",
+            "De nieuwkomer of bezoeker wil zich aanpassen, of de Nederlander wil de eigen cultuur begrijpelijk maken."
+          ],
+          "expected_actions": [
+            "De Nederlander communiceert duidelijk en betrekkelijk direct.",
+            "Afspraken worden vooraf gemaakt, vaak met aandacht voor tijd, agenda en praktische haalbaarheid.",
+            "Deelnemers overleggen, geven hun mening en zoeken een werkbare gezamenlijke beslissing.",
+            "Alledaagse regels, zuinigheid en gelijkwaardigheid worden als vanzelfsprekende praktische uitgangspunten behandeld.",
+            "De bezoeker stelt vragen, herkent patronen en past zijn gedrag geleidelijk aan."
+          ],
+          "expected_outcome": "De bezoeker begrijpt de sociale codes beter en kan zonder veel misverstanden deelnemen aan het dagelijkse Nederlandse verkeer.",
+          "expected_propositions": [
+            "Nederlanders zeggen relatief rechtstreeks wat zij vinden, ook wanneer dat kritisch of ongemakkelijk kan klinken.",
+            "Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.",
+            "Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.",
+            "Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.",
+            "Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien."
+          ],
+          "audience_expectation": "Een opzet over Nederlandse identiteit activeert de herkenbare verwachting van een alledaagse cultuurles: directe maar praktische mensen proberen via overleg, planning en gelijkwaardigheid het samenleven efficiënt en overzichtelijk te laten verlopen."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.",
+            "opposition_axis": "gelijkwaardig overleg versus eenzijdige beoordeling",
+            "opposed_proposition": "Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.",
+            "shared_anchor": "Het gesprek aan tafel",
+            "reading_a": "Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.",
+            "reading_b": "Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.",
+            "roles_b": [
+              "Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.",
+              "Recruiter of leidinggevende: beoordeelt de kandidaat.",
+              "Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit."
+            ],
+            "goal_b": "Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.",
+            "role_remapping": [
+              "De buitenlander of nieuwkomer wordt de sollicitant.",
+              "De uitleggevende Nederlander wordt de recruiter of leidinggevende.",
+              "Collega’s of vrienden worden commissieleden.",
+              "Het gezamenlijke overleg wordt een selectieprocedure."
+            ],
+            "shared_cues": [
+              "Koffie aan tafel.",
+              "Een voorstelronde.",
+              "Vragen over werk en planning.",
+              "Rechtstreekse opmerkingen.",
+              "Notities maken.",
+              "Een afspraak in de agenda."
+            ],
+            "switch_trigger": "De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.",
+            "hinge_event": "Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.",
+            "anomaly_under_a": "In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.",
+            "resolution_under_b": "In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een bewoner ontvangt een officiële waarschuwing omdat hij structureel te laat huur betaalt; het gesprek met de woningcorporatie blijkt geen sociale afstemming maar incasso en handhaving.",
+            "opposition_axis": "flexibele sociale afspraak versus afdwingbare verplichting",
+            "opposed_proposition": "Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.",
+            "shared_anchor": "De afspraak op dinsdagochtend",
+            "reading_a": "Een nieuwkomer leert dat een afspraak om negen uur ook werkelijk om negen uur begint en probeert netjes op tijd te verschijnen.",
+            "reading_b": "Een huurder is opgeroepen om betalingsachterstanden te verklaren en moet aantonen dat hij een harde betaaltermijn kan nakomen.",
+            "roles_b": [
+              "Huurder: wil zijn woning behouden en verdere sancties vermijden.",
+              "Medewerker incasso: licht achterstanden en termijnen toe.",
+              "Wijkbeheerder: bewaakt de naleving van de huurovereenkomst."
+            ],
+            "goal_b": "Een betalingsregeling treffen of voorkomen dat de huurovereenkomst wordt beëindigd.",
+            "role_remapping": [
+              "De nieuwkomer wordt de huurder die zich moet verantwoorden.",
+              "De Nederlander die gewoonten uitlegt wordt de incassomedewerker.",
+              "De sociale omgeving wordt de woningcorporatie en wijkbeheerder.",
+              "De agenda-afspraak wordt een formele oproep met een deadline."
+            ],
+            "shared_cues": [
+              "Een precies tijdstip.",
+              "Een agenda of kalender.",
+              "Een herinneringsbericht.",
+              "Praten over betrouwbaarheid.",
+              "Een praktische oplossing voorstellen.",
+              "Een kop koffie in een kantoorruimte."
+            ],
+            "switch_trigger": "De medewerker legt een dossier met drie rode betalingsherinneringen op tafel en noemt de datum waarop ontruiming kan worden aangevraagd.",
+            "hinge_event": "De medewerker vraagt niet hoe de huurder beter kan meedoen, maar laat hem direct een betalingsregeling met sanctieclausule ondertekenen.",
+            "anomaly_under_a": "Bij een alledaagse uitleg over op tijd komen zou een juridisch bindend formulier en de dreiging van woningverlies buiten proportie zijn.",
+            "resolution_under_b": "Bij huurincasso is die clausule doelgericht: zij legt betaaldata vast en maakt handhaving mogelijk wanneer de achterstand voortduurt."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een buurtbewoner meldt zich bij een gemeentelijk loket om een vergunning voor een straatfeest te krijgen, maar ontdekt dat overleg niet tot een gezamenlijk besluit leidt: de overheid toetst het plan aan regels en kan het verbieden.",
+            "opposition_axis": "participatief overleg versus bestuurlijke toestemming",
+            "opposed_proposition": "Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.",
+            "shared_anchor": "Het overleg over de straat",
+            "reading_a": "Een nieuwkomer woont een buurtgesprek bij waarin bewoners ideeën uitwisselen, praktische taken verdelen en samen een haalbaar plan maken.",
+            "reading_b": "Een aanvrager verdedigt een vergunningaanvraag tegenover ambtenaren die toetsen of het evenement juridisch en veiligheidsmatig toegestaan is.",
+            "roles_b": [
+              "Aanvrager: wil toestemming voor het straatfeest verkrijgen.",
+              "Vergunningverlener: toetst de aanvraag aan regels.",
+              "Handhaver of veiligheidsadviseur: beoordeelt risico’s en voorwaarden.",
+              "Omwonenden: kunnen bezwaar maken of als belanghebbenden worden gehoord."
+            ],
+            "goal_b": "Een geldige evenementenvergunning met uitvoerbare voorwaarden verkrijgen.",
+            "role_remapping": [
+              "De bezoeker die sociale codes leert wordt de vergunningaanvrager.",
+              "De Nederlander die informeel overlegt wordt de vergunningverlener.",
+              "Buren en vrienden worden belanghebbenden of bezwaarmakers.",
+              "Het gezamenlijke plan wordt een formele aanvraag."
+            ],
+            "shared_cues": [
+              "Buren rond een tafel.",
+              "Een plattegrond.",
+              "Afspraken over tijdstippen.",
+              "Praktische vragen over geluid en afval.",
+              "Meningen van aanwezigen.",
+              "Een lijst met taken."
+            ],
+            "switch_trigger": "De ambtenaar stempelt het plan niet als afspraak af, maar als aanvraag en meldt dat bezwaar en een veiligheidsadvies de uitkomst kunnen blokkeren.",
+            "hinge_event": "Een buur die eerst vriendelijk meedenkt, overhandigt plotseling een formeel bezwaarschrift tegen het feest.",
+            "anomaly_under_a": "In een buurtgesprek dat gericht is op samen een praktische oplossing vinden, lijkt een formeel bezwaar een onnodig vijandige breuk met het overleg.",
+            "resolution_under_b": "In de vergunningsprocedure is het bezwaarschrift precies het bedoelde middel waarmee een belanghebbende zijn belangen formeel laat meewegen."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een buitenlandse toerist denkt dat hij een sobere Nederlandse maaltijd bij vrienden bijwoont, maar belandt in een onderhandeling over een gezamenlijke rekening waarin elke consumptie exact wordt verrekend.",
+            "opposition_axis": "gastvrij delen versus individuele financiële afrekening",
+            "opposed_proposition": "Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.",
+            "shared_anchor": "De rekening na het eten",
+            "reading_a": "Een nieuwkomer ziet dat mensen eenvoudig eten, geen overdaad tonen en nuchter omgaan met kosten zonder dat dit de vriendschappelijke sfeer schaadt.",
+            "reading_b": "Een deelnemer aan een etentje moet zijn exacte aandeel betalen; de groep gebruikt de rekening om ieders financiële verplichting vast te stellen.",
+            "roles_b": [
+              "Gast of deelnemer: wil weten wat hij verschuldigd is en geen conflict over geld krijgen.",
+              "Betalende organisator: heeft voorgeschoten en wil de kosten terug.",
+              "Andere eters: controleren hun eigen bestellingen en delen van de rekening."
+            ],
+            "goal_b": "De kosten per persoon vaststellen en alle bedragen innen.",
+            "role_remapping": [
+              "De bezoeker wordt een eter die moet afrekenen.",
+              "De uitleggevende Nederlander wordt de organisator die heeft voorgeschoten.",
+              "Vrienden of gezinsleden worden medebetalers.",
+              "De praktische zuinigheid wordt een exacte schuldverdeling."
+            ],
+            "shared_cues": [
+              "Een eenvoudige maaltijd.",
+              "Opmerkingen over prijs.",
+              "Een telefoon op tafel.",
+              "Rekenen met bedragen.",
+              "Een directe vraag.",
+              "Lachen over zuinigheid."
+            ],
+            "switch_trigger": "De organisator opent een betaalverzoek waarin niet alleen het eten, maar ook ieders afzonderlijke drankjes en fooi zijn uitgesplitst.",
+            "hinge_event": "De organisator corrigeert de gast publiekelijk omdat hij één drankje op de rekening heeft gemist.",
+            "anomaly_under_a": "Tijdens een ontspannen cultuurles over nuchterheid voelt publieke correctie over een klein bedrag onnodig precies en weinig gastvrij.",
+            "resolution_under_b": "Bij het vereffenen van een gezamenlijke rekening is de correctie functioneel: zij voorkomt dat de voorschietende organisator voor andermans consumptie betaalt."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een buitenlandse sollicitant krijgt geen informele cultuurles, maar een strak selectiegesprek waarin een Nederlandse werkgever de kandidaat op geschiktheid, beschikbaarheid en culturele aansluiting test.",
+              "opposition_axis": "gelijkwaardig overleg versus eenzijdige beoordeling",
+              "opposed_proposition": "Gelijkheid is belangrijk: hiërarchie wordt vaak informeel benaderd en iedereen mag een mening geven.",
+              "shared_anchor": "Het gesprek aan tafel",
+              "reading_a": "Een nieuwkomer zit met Nederlandse collega’s aan tafel om vrijuit mee te praten, vragen te stellen en de ongeschreven omgangsvormen te leren.",
+              "reading_b": "Een sollicitant zit tegenover een selectiecommissie die zijn antwoorden registreert en bepaalt of hij wel of niet wordt toegelaten.",
+              "roles_b": [
+                "Sollicitant: probeert een baan en toegang tot de organisatie te krijgen.",
+                "Recruiter of leidinggevende: beoordeelt de kandidaat.",
+                "Commissieleden: stellen vragen, vergelijken kandidaten en nemen een besluit."
+              ],
+              "goal_b": "Aantonen dat de sollicitant geschikt is en een aanstelling verkrijgen.",
+              "role_remapping": [
+                "De buitenlander of nieuwkomer wordt de sollicitant.",
+                "De uitleggevende Nederlander wordt de recruiter of leidinggevende.",
+                "Collega’s of vrienden worden commissieleden.",
+                "Het gezamenlijke overleg wordt een selectieprocedure."
+              ],
+              "shared_cues": [
+                "Koffie aan tafel.",
+                "Een voorstelronde.",
+                "Vragen over werk en planning.",
+                "Rechtstreekse opmerkingen.",
+                "Notities maken.",
+                "Een afspraak in de agenda."
+              ],
+              "switch_trigger": "De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.",
+              "hinge_event": "Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.",
+              "anomaly_under_a": "In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.",
+              "resolution_under_b": "In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een bewoner ontvangt een officiële waarschuwing omdat hij structureel te laat huur betaalt; het gesprek met de woningcorporatie blijkt geen sociale afstemming maar incasso en handhaving.",
+              "opposition_axis": "flexibele sociale afspraak versus afdwingbare verplichting",
+              "opposed_proposition": "Plannen en op tijd komen gelden als tekenen van betrouwbaarheid en respect.",
+              "shared_anchor": "De afspraak op dinsdagochtend",
+              "reading_a": "Een nieuwkomer leert dat een afspraak om negen uur ook werkelijk om negen uur begint en probeert netjes op tijd te verschijnen.",
+              "reading_b": "Een huurder is opgeroepen om betalingsachterstanden te verklaren en moet aantonen dat hij een harde betaaltermijn kan nakomen.",
+              "roles_b": [
+                "Huurder: wil zijn woning behouden en verdere sancties vermijden.",
+                "Medewerker incasso: licht achterstanden en termijnen toe.",
+                "Wijkbeheerder: bewaakt de naleving van de huurovereenkomst."
+              ],
+              "goal_b": "Een betalingsregeling treffen of voorkomen dat de huurovereenkomst wordt beëindigd.",
+              "role_remapping": [
+                "De nieuwkomer wordt de huurder die zich moet verantwoorden.",
+                "De Nederlander die gewoonten uitlegt wordt de incassomedewerker.",
+                "De sociale omgeving wordt de woningcorporatie en wijkbeheerder.",
+                "De agenda-afspraak wordt een formele oproep met een deadline."
+              ],
+              "shared_cues": [
+                "Een precies tijdstip.",
+                "Een agenda of kalender.",
+                "Een herinneringsbericht.",
+                "Praten over betrouwbaarheid.",
+                "Een praktische oplossing voorstellen.",
+                "Een kop koffie in een kantoorruimte."
+              ],
+              "switch_trigger": "De medewerker legt een dossier met drie rode betalingsherinneringen op tafel en noemt de datum waarop ontruiming kan worden aangevraagd.",
+              "hinge_event": "De medewerker vraagt niet hoe de huurder beter kan meedoen, maar laat hem direct een betalingsregeling met sanctieclausule ondertekenen.",
+              "anomaly_under_a": "Bij een alledaagse uitleg over op tijd komen zou een juridisch bindend formulier en de dreiging van woningverlies buiten proportie zijn.",
+              "resolution_under_b": "Bij huurincasso is die clausule doelgericht: zij legt betaaldata vast en maakt handhaving mogelijk wanneer de achterstand voortduurt."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een buurtbewoner meldt zich bij een gemeentelijk loket om een vergunning voor een straatfeest te krijgen, maar ontdekt dat overleg niet tot een gezamenlijk besluit leidt: de overheid toetst het plan aan regels en kan het verbieden.",
+              "opposition_axis": "participatief overleg versus bestuurlijke toestemming",
+              "opposed_proposition": "Praktische oplossingen, overleg en duidelijke afspraken krijgen vaak voorrang boven veel ceremonie.",
+              "shared_anchor": "Het overleg over de straat",
+              "reading_a": "Een nieuwkomer woont een buurtgesprek bij waarin bewoners ideeën uitwisselen, praktische taken verdelen en samen een haalbaar plan maken.",
+              "reading_b": "Een aanvrager verdedigt een vergunningaanvraag tegenover ambtenaren die toetsen of het evenement juridisch en veiligheidsmatig toegestaan is.",
+              "roles_b": [
+                "Aanvrager: wil toestemming voor het straatfeest verkrijgen.",
+                "Vergunningverlener: toetst de aanvraag aan regels.",
+                "Handhaver of veiligheidsadviseur: beoordeelt risico’s en voorwaarden.",
+                "Omwonenden: kunnen bezwaar maken of als belanghebbenden worden gehoord."
+              ],
+              "goal_b": "Een geldige evenementenvergunning met uitvoerbare voorwaarden verkrijgen.",
+              "role_remapping": [
+                "De bezoeker die sociale codes leert wordt de vergunningaanvrager.",
+                "De Nederlander die informeel overlegt wordt de vergunningverlener.",
+                "Buren en vrienden worden belanghebbenden of bezwaarmakers.",
+                "Het gezamenlijke plan wordt een formele aanvraag."
+              ],
+              "shared_cues": [
+                "Buren rond een tafel.",
+                "Een plattegrond.",
+                "Afspraken over tijdstippen.",
+                "Praktische vragen over geluid en afval.",
+                "Meningen van aanwezigen.",
+                "Een lijst met taken."
+              ],
+              "switch_trigger": "De ambtenaar stempelt het plan niet als afspraak af, maar als aanvraag en meldt dat bezwaar en een veiligheidsadvies de uitkomst kunnen blokkeren.",
+              "hinge_event": "Een buur die eerst vriendelijk meedenkt, overhandigt plotseling een formeel bezwaarschrift tegen het feest.",
+              "anomaly_under_a": "In een buurtgesprek dat gericht is op samen een praktische oplossing vinden, lijkt een formeel bezwaar een onnodig vijandige breuk met het overleg.",
+              "resolution_under_b": "In de vergunningsprocedure is het bezwaarschrift precies het bedoelde middel waarmee een belanghebbende zijn belangen formeel laat meewegen."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een buitenlandse toerist denkt dat hij een sobere Nederlandse maaltijd bij vrienden bijwoont, maar belandt in een onderhandeling over een gezamenlijke rekening waarin elke consumptie exact wordt verrekend.",
+              "opposition_axis": "gastvrij delen versus individuele financiële afrekening",
+              "opposed_proposition": "Zuinig of nuchter handelen wordt eerder als verstandig dan als onvriendelijk gezien.",
+              "shared_anchor": "De rekening na het eten",
+              "reading_a": "Een nieuwkomer ziet dat mensen eenvoudig eten, geen overdaad tonen en nuchter omgaan met kosten zonder dat dit de vriendschappelijke sfeer schaadt.",
+              "reading_b": "Een deelnemer aan een etentje moet zijn exacte aandeel betalen; de groep gebruikt de rekening om ieders financiële verplichting vast te stellen.",
+              "roles_b": [
+                "Gast of deelnemer: wil weten wat hij verschuldigd is en geen conflict over geld krijgen.",
+                "Betalende organisator: heeft voorgeschoten en wil de kosten terug.",
+                "Andere eters: controleren hun eigen bestellingen en delen van de rekening."
+              ],
+              "goal_b": "De kosten per persoon vaststellen en alle bedragen innen.",
+              "role_remapping": [
+                "De bezoeker wordt een eter die moet afrekenen.",
+                "De uitleggevende Nederlander wordt de organisator die heeft voorgeschoten.",
+                "Vrienden of gezinsleden worden medebetalers.",
+                "De praktische zuinigheid wordt een exacte schuldverdeling."
+              ],
+              "shared_cues": [
+                "Een eenvoudige maaltijd.",
+                "Opmerkingen over prijs.",
+                "Een telefoon op tafel.",
+                "Rekenen met bedragen.",
+                "Een directe vraag.",
+                "Lachen over zuinigheid."
+              ],
+              "switch_trigger": "De organisator opent een betaalverzoek waarin niet alleen het eten, maar ook ieders afzonderlijke drankjes en fooi zijn uitgesplitst.",
+              "hinge_event": "De organisator corrigeert de gast publiekelijk omdat hij één drankje op de rekening heeft gemist.",
+              "anomaly_under_a": "Tijdens een ontspannen cultuurles over nuchterheid voelt publieke correctie over een klein bedrag onnodig precies en weinig gastvrij.",
+              "resolution_under_b": "Bij het vereffenen van een gezamenlijke rekening is de correctie functioneel: zij voorkomt dat de voorschietende organisator voor andermans consumptie betaalt."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Hetzelfde gesprek aan tafel kan aanvankelijk zowel als informeel, gelijkwaardig cultuurgesprek als selectiegesprek worden gelezen. De tegenstelling tussen deelname aan overleg en eenzijdige beoordeling is lokaal onverenigbaar en dominant. Koffie, voorstelronde, directe vragen, notities en een agenda passen natuurlijk in beide lezingen; de sollicitatielezing is bovendien sociaal herkenbaar en blijft vóór de expliciete beoordelingsinformatie mogelijk. Het formulier, de puntengrens en het buitensluiten van de kandidaat zijn onder A afwijkend, maar onder B procedureel noodzakelijk. Zij herinterpreteren de eerdere vragen en notities als beoordeling. De afzondering blokkeert tevens A's doel van gelijkwaardig meedoen en maakt B's doel, vergelijking en selectie, mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": false,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Een afspraak op een precies tijdstip, herinneringen en taal over betrouwbaarheid kunnen zowel bij een cultuurles als bij een incassogesprek voorkomen, en de incassolezing is herkenbaar. De opzet over Nederlandse omgangsvormen maakt A aanvankelijk waarschijnlijker, terwijl B vóór de expliciete dossierinformatie mogelijk blijft. De rode herinneringen, sanctieclausule en dreiging van ontruiming verklaren de afwijking en maken eerdere tijds- en betrouwbaarheidscues achteraf incasso-informatie. De opgegeven tegenstelling is echter niet geldig genoeg: A stelt juist dat op tijd komen een teken van betrouwbaarheid en respect is; een harde betaaltermijn spreekt dat niet lokaal tegen maar intensiveert en juridiseert het. Daarnaast verschuift B tegelijk naar huurachterstand, sanctie en huisvesting, zodat niet één oppositie dominant blijft. De sanctieclausule blokkeert ook niet rechtstreeks A's doel om punctualiteitsnormen te begrijpen."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een overleg over een straatfeest met buren, plattegrond, tijdstippen, geluid, afval en taken kan zowel een informeel buurtgesprek als een vergunningbehandeling dragen. De kerntegenstelling is helder: in A leidt overleg tot een gezamenlijk werkbaar plan, terwijl in B dat overleg geen beslissende toestemming geeft omdat een bevoegde instantie juridisch toetst. De vergunningslezing is sociaal herkenbaar en kan vóór de trigger latent blijven. Het formele bezwaarschrift is onder A een storende breuk met gezamenlijk overleg, maar onder B een normaal instrument voor een belanghebbende. Daardoor krijgen eerdere bijdragen en praktische vragen achteraf de functie van procedurele informatie. De formele toets blokkeert dat gezamenlijk overleg op zichzelf voldoende is voor A's uitkomst en maakt B's besluit over vergunningverlening mogelijk."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De rekening na een eenvoudige maaltijd, prijsopmerkingen, rekenen en directe vragen kunnen zowel een observatie over nuchtere zuinigheid als een afrekening na gezamenlijk eten ondersteunen. De tweede lezing is herkenbaar en blijft vóór de uitgesplitste betaalverzoekinformatie beschikbaar; de opzet over Nederlandse volksaard geeft A aanvankelijk voorrang. De publieke correctie is onder A onnodig precies, maar onder B functioneel voor volledige kostenverdeling. De uitsplitsing herkadert eerdere prijs- en rekencues als elementen van schuldvaststelling. Toch is de opgegeven oppositie niet echt lokaal incompatibel: exact individueel afrekenen kan juist een vorm van zuinig, nuchter en als niet-onvriendelijk opgevat gedrag zijn. B ontkent A's propositie dus niet noodzakelijk. Ook verhindert de afrekening A's doel niet rechtstreeks, al faciliteert zij wel B's inningsdoel."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Hetzelfde gesprek aan tafel kan aanvankelijk zowel als informeel, gelijkwaardig cultuurgesprek als selectiegesprek worden gelezen. De tegenstelling tussen deelname aan overleg en eenzijdige beoordeling is lokaal onverenigbaar en dominant. Koffie, voorstelronde, directe vragen, notities en een agenda passen natuurlijk in beide lezingen; de sollicitatielezing is bovendien sociaal herkenbaar en blijft vóór de expliciete beoordelingsinformatie mogelijk. Het formulier, de puntengrens en het buitensluiten van de kandidaat zijn onder A afwijkend, maar onder B procedureel noodzakelijk. Zij herinterpreteren de eerdere vragen en notities als beoordeling. De afzondering blokkeert tevens A's doel van gelijkwaardig meedoen en maakt B's doel, vergelijking en selectie, mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": false,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Een afspraak op een precies tijdstip, herinneringen en taal over betrouwbaarheid kunnen zowel bij een cultuurles als bij een incassogesprek voorkomen, en de incassolezing is herkenbaar. De opzet over Nederlandse omgangsvormen maakt A aanvankelijk waarschijnlijker, terwijl B vóór de expliciete dossierinformatie mogelijk blijft. De rode herinneringen, sanctieclausule en dreiging van ontruiming verklaren de afwijking en maken eerdere tijds- en betrouwbaarheidscues achteraf incasso-informatie. De opgegeven tegenstelling is echter niet geldig genoeg: A stelt juist dat op tijd komen een teken van betrouwbaarheid en respect is; een harde betaaltermijn spreekt dat niet lokaal tegen maar intensiveert en juridiseert het. Daarnaast verschuift B tegelijk naar huurachterstand, sanctie en huisvesting, zodat niet één oppositie dominant blijft. De sanctieclausule blokkeert ook niet rechtstreeks A's doel om punctualiteitsnormen te begrijpen."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een overleg over een straatfeest met buren, plattegrond, tijdstippen, geluid, afval en taken kan zowel een informeel buurtgesprek als een vergunningbehandeling dragen. De kerntegenstelling is helder: in A leidt overleg tot een gezamenlijk werkbaar plan, terwijl in B dat overleg geen beslissende toestemming geeft omdat een bevoegde instantie juridisch toetst. De vergunningslezing is sociaal herkenbaar en kan vóór de trigger latent blijven. Het formele bezwaarschrift is onder A een storende breuk met gezamenlijk overleg, maar onder B een normaal instrument voor een belanghebbende. Daardoor krijgen eerdere bijdragen en praktische vragen achteraf de functie van procedurele informatie. De formele toets blokkeert dat gezamenlijk overleg op zichzelf voldoende is voor A's uitkomst en maakt B's besluit over vergunningverlening mogelijk."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De rekening na een eenvoudige maaltijd, prijsopmerkingen, rekenen en directe vragen kunnen zowel een observatie over nuchtere zuinigheid als een afrekening na gezamenlijk eten ondersteunen. De tweede lezing is herkenbaar en blijft vóór de uitgesplitste betaalverzoekinformatie beschikbaar; de opzet over Nederlandse volksaard geeft A aanvankelijk voorrang. De publieke correctie is onder A onnodig precies, maar onder B functioneel voor volledige kostenverdeling. De uitsplitsing herkadert eerdere prijs- en rekencues als elementen van schuldvaststelling. Toch is de opgegeven oppositie niet echt lokaal incompatibel: exact individueel afrekenen kan juist een vorm van zuinig, nuchter en als niet-onvriendelijk opgevat gedrag zijn. B ontkent A's propositie dus niet noodzakelijk. Ook verhindert de afrekening A's doel niet rechtstreeks, al faciliteert zij wel B's inningsdoel."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B3"
+        ],
+        "selected_candidate_id": "B1",
+        "gtvh_plan": {
+          "opposition_type": "gelijkwaardig overleg versus eenzijdige beoordeling",
+          "logical_mechanism": "Figuur-grondomkering en rolomkering: signalen van een informeel, gelijkwaardig gesprek blijken achteraf onderdelen van een formele selectieprocedure, waarin de gesprekspartners beoordelaars zijn en de nieuwkomer de beoordeelde kandidaat.",
+          "situation": "Een buitenlandse sollicitant zit met een recruiter, een leidinggevende en commissieleden aan een tafel in een Nederlands kantoor. Er zijn koffie, een voorstelronde, vragen over werk en planning, notities en een agenda-afspraak. Het gesprek lijkt eerst een open, informeel overleg over Nederlandse omgangsvormen, maar speelt in de setting van een sollicitatiegesprek.",
+          "target": "De spanning tussen het ideaal van informele gelijkwaardigheid en de feitelijke beoordelingsmacht van selectieprocedures.",
+          "narrative_strategy": "De opzet presenteert het tafereel als een vrijblijvende cultuurles waarin een nieuwkomer gelijkwaardig mag meepraten. De punchline onthult via procedurele handelingen dat het gesprek altijd al een selectiegesprek was; de ogenschijnlijke gesprekspartners worden beoordelaars en de deelnemer wordt kandidaat.",
+          "lexical_anchor": "Het gesprek aan tafel",
+          "supporting_dual_cues": [
+            "Koffie aan tafel.",
+            "Een voorstelronde.",
+            "Vragen over werk en planning.",
+            "Rechtstreekse opmerkingen.",
+            "Notities maken.",
+            "Een afspraak in de agenda."
+          ],
+          "switch_trigger": "De recruiter schuift een beoordelingsformulier naar voren en zegt dat alleen kandidaten met voldoende punten door mogen.",
+          "hinge_event": "Na een ogenschijnlijk gelijkwaardig gesprek vraagt de voorzitter de sollicitant de kamer te verlaten terwijl de anderen zijn score bespreken.",
+          "anomaly_under_a": "In een cultuurles over gelijkwaardig meedoen is het vreemd dat de nieuwkomer plotseling wordt buitengesloten en gerangschikt.",
+          "resolution_under_b": "In een sollicitatieprocedure is afzondering juist functioneel: de commissie kan de kandidaat vergelijken en een aanstellingsbesluit nemen.",
+          "role_remapping": [
+            "De buitenlander of nieuwkomer wordt de sollicitant.",
+            "De uitleggevende Nederlander wordt de recruiter of leidinggevende.",
+            "Collega’s of vrienden worden commissieleden.",
+            "Het gezamenlijke overleg wordt een selectieprocedure."
+          ],
+          "setup_goal": "Script A dominant maken door koffie, een voorstelronde, directe vragen en een informele tafelsetting te framen als gelijkwaardig overleg waarin een nieuwkomer Nederlandse omgangsvormen leert.",
+          "punch_goal": "Script B activeren door de beoordelingsformulieren, puntengrens en tijdelijke uitsluiting te laten onthullen dat het gesprek een selectieprocedure is met eenzijdige beslissingsmacht.",
+          "punch_final_word": "score"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning.",
+            "punchline": "Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”",
+            "full_text": "Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning. Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”",
+            "angle": "Cultuurles blijkt selectiegesprek",
+            "anchor_surface_form": "Het gesprek aan tafel"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken.",
+            "punchline": "Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”",
+            "full_text": "Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken. Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”",
+            "angle": "Informeel meedenken wordt beoordeeld",
+            "anchor_surface_form": "Het gesprek aan tafel"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.”",
+            "punchline": "Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.",
+            "full_text": "Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.” Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.",
+            "angle": "Gelijkheid eindigt bij de beoordeling",
+            "anchor_surface_form": "Het gesprek aan tafel"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Bij Het gesprek aan tafel kreeg een buitenlandse nieuwkomer koffie, een voorstelronde en directe vragen over planning. Ik dacht: mooi, iedereen mag meepraten—tot de voorzitter zei: “Even buiten wachten, we bespreken uw score.”",
+            "angle": "Cultuurles blijkt selectiegesprek"
+          },
+          {
+            "variant_id": "V2",
+            "text": "Tijdens Het gesprek aan tafel legden drie collega’s een bezoeker Nederlandse directheid uit, terwijl ze netjes notities maakten en zijn agenda bekeken. Daarna schoof de recruiter een formulier opzij: “U mag gaan; wij tellen eerst uw score.”",
+            "angle": "Informeel meedenken wordt beoordeeld"
+          },
+          {
+            "variant_id": "V3",
+            "text": "Bij Het gesprek aan tafel zei de manager tegen een buitenlandse collega: “Hier is iedereen gelijk, dus vertel vooral eerlijk wanneer je kunt werken.” Toen vroeg hij hem de kamer uit, omdat de commissie eerst zijn score besprak.",
+            "angle": "Gelijkheid eindigt bij de beoordeling"
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "TA",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een buitenlandse nieuwkomer neemt aan een tafelgesprek deel dat lijkt op een informele Nederlandse cultuurles, met koffie, kennismaking en directe vragen over planning.",
+            "realized_script_b": "Het gesprek blijkt een beoordelingsmoment waarin de nieuwkomer als kandidaat buiten moet wachten terwijl een voorzitter zijn score bespreekt.",
+            "realized_opposition_axis": "gelijkwaardig meepraten versus eenzijdig beoordeeld en uitgesloten worden",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De informele cultuurles wordt via het buiten wachten en het bespreken van de score herlezen als selectie. De gelijkwaardigheids- versus beoordelingsas, het tafelgesprek en de rolverschuiving zijn functioneel aanwezig."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De procedurele handeling keert de betekenis van de eerdere gesprekssignalen om: deelnemers blijken beoordelaars en de nieuwkomer wordt beoordeeld."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Nieuwkomer, tafelgesprek, koffie, voorstelronde, planningsvragen en een voorzitter zijn aanwezig; de selectiecontext wordt in de turn voldoende opgeroepen."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst zet de belofte dat iedereen mag meepraten af tegen de feitelijke uitsluiting en scorebeoordeling."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De setup framet het expliciet als open meedoen, waarna de voorzitter de selectieprocedure onthult."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De ankerformulering \"Het gesprek aan tafel\" en het geplande eindwoord \"score\" zijn behouden; de gedeelde cues ondersteunen beide lezingen."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Een compacte en plangetrouwe cultuurles-die-selectiegesprek-blijkt-twist; de score en tijdelijke uitsluiting leveren de beoogde herinterpretatie op.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Drie collega’s lijken een bezoeker in een informele setting Nederlandse directheid uit te leggen, met notities en aandacht voor zijn agenda.",
+            "realized_script_b": "De bezoeker blijkt een kandidaat: een recruiter en anderen sturen hem weg om zijn score als onderdeel van een selectie te beoordelen.",
+            "realized_opposition_axis": "informeel gelijkwaardig meedenken versus eenzijdige selectie en beoordeling",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De cultuur-uitleg wordt bij de recruiter, het formulier en de score omgezet in een sollicitatie- of selectiegesprek. De beoogde scripts, rolomkering en beoordelingsas blijven intact."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De aanvankelijk sociale signalen van uitleg, notities en agendakijken blijken achteraf registrerende beoordelingshandelingen."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Bezoeker, collega’s, recruiter, werkgerelateerde administratieve cues en de uitsluiting voor scorebespreking realiseren de functionele selectie- en gesprekssituatie."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant confronteert informele uitleg over directheid met de asymmetrische macht om de bezoeker te laten vertrekken en te beoordelen."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst begint als cultuurles en reserveert de recruiter, het formulier en de scorebeslissing voor de turn."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "\"Het gesprek aan tafel\" en \"score\" zijn behouden, evenals meerdere duale procedurele cues. De formulering \"uw score tellen\" is licht stroef, maar niet disfunctioneel."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De variant volgt het bedoelde misleidende cultuurlesframe en maakt met recruiter, formulier en score een duidelijke selectieonthulling.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Een manager presenteert een gesprek met een buitenlandse collega als Nederlands gelijkwaardig overleg waarin deze eerlijk over zijn beschikbaarheid mag spreken.",
+            "realized_script_b": "De buitenlandse collega blijkt feitelijk een beoordeelde kandidaat die de kamer moet verlaten terwijl een commissie zijn score bespreekt.",
+            "realized_opposition_axis": "verklaarde gelijkwaardigheid versus feitelijke eenzijdige beoordelingsmacht",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De expliciete gelijkheidsclaim wordt scherp tegengesproken door verwijdering van de betrokkene en commissieoverleg over zijn score. Dat realiseert precies de geplande oppositie."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De manager en het gesprek worden retrospectief heringedeeld als onderdelen van een selectieproces; de collega wordt kandidaat en de anderen worden beoordelaars."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Een buitenlandse gesprekspartner, manager, commissie, kamer, vraag over beschikbaarheid en scorebespreking vormen een functionele, zij het sobere, versie van de bedoelde selectiecontext."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst viseert de spanning tussen het ideaal dat iedereen gelijk is en de reële hiërarchie van een beoordelingsprocedure."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De gelijkheidsverklaring domineert de korte setup; het verzoek de kamer te verlaten onthult in de punchline de andere lezing."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De ankerformulering en het eindwoord \"score\" zijn aanwezig. Er zijn minder ondersteunende duale cues dan gepland, maar de kernwoorden gelijk, werken, commissie en score dragen de omslag."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": false,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De kernoppositie en rolomkering zijn zeer helder, maar de geplande gedeelde tafelcues—zoals koffie, voorstelronde, notities en agenda—zijn grotendeels weggelaten.",
+            "passes_required_plan": false
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V2"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "Beide varianten slagen voor de vereiste middelen en lengte-eisen, maar V1 klinkt natuurlijker en compacter. De koffie, voorstelronde en planningsvragen bouwen geloofwaardig een gelijkwaardig tafelgesprek op; „score” en buiten wachten herinterpreteren dat helder als selectie. V2 heeft eveneens een sterke omslag, maar „uw score tellen” is stroever en de recruiter verraadt de selectiecontext iets eerder."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V1",
+            "rationale": "V1 gaat voor op V3 omdat V1 een passerende variant is en V3 niet. Bovendien realiseert V1 meer van de geplande gedeelde cues rond het tafelgesprek, waardoor de omslag naar beoordeling sterker retrospectief werkt. V3 heeft een scherpe gelijkheidsiron ie, maar mist te veel van de vereiste situationele aankleding."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V2",
+            "rationale": "V2 gaat voor op V3 omdat V2 de vereiste middelen volledig realiseert en als passerend is beoordeeld, terwijl V3 de gedeelde cues onvoldoende uitvoert. De recruiter, notities, agenda en score maken in V2 de herlezing als selectie duidelijk; ondanks de licht stroeve slotformulering is de structuur plantrouwer dan V3."
+          }
+        ],
+        "selected_variant_id": "V1",
+        "selection_rationale": "V1 is de sterkste passerende variant: het levert de volledige cultuurles-naar-selectieherinterpretatie, gebruikt de vereiste tafelcues efficiënt en heeft een natuurlijke, spreekbare punchline. De uitsluiting bij „we bespreken uw score” maakt de machtsomslag direct en komisch helder."
+      }
+    }
+  },
+  "result_sha256": "09f5eb2363d5db0ae405513cf2ca8a38db96b2736e6f7cec95a2942b45fab807"
+}

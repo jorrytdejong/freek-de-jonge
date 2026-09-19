@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T17:13:23.416828+00:00",
+  "job": {
+    "job_id": "T17-E1",
+    "topic_id": "T17",
+    "topic": "Reizen, verkeer en mobiliteit",
+    "condition_code": "E1"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V1 must contain 20-45 words; received 48."
+}

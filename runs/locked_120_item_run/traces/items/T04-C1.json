@@ -1,0 +1,837 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T04-C1",
+  "topic_id": "T04",
+  "topic": "Nederlandse politiek en bestuur",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "ddf7cc148e05b41f2611ea93518f4ccd9b2b33e3cea6c52ad536e2c458f73fb1",
+  "dry_run": false,
+  "attempt": 4,
+  "generated_at": "2026-08-20T06:13:52.968346+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Nederlandse politiek en bestuur",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Nederlandse politiek en bestuur\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Nederlandse politiek en bestuur\",\n  \"script_a\": {\n    \"script_a\": \"Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.\",\n    \"participants_and_roles\": [\n      \"Kiezers: kiezen volksvertegenwoordigers en beoordelen politici bij volgende verkiezingen.\",\n      \"Politieke partijen en fracties: vertegenwoordigen standpunten, onderhandelen en controleren het kabinet.\",\n      \"Kabinetsleden en ministers: besturen, maken beleid en voeren wetten uit.\",\n      \"Tweede Kamer: debatteert, wijzigt wetsvoorstellen en controleert ministers.\",\n      \"Ambtenaren en uitvoeringsorganisaties: werken beleid uit en voeren besluiten praktisch uit.\",\n      \"Koning: heeft een formele, constitutionele rol bij de regeringsvorming en wetten.\"\n    ],\n    \"apparent_goal\": \"Een stabiel en democratisch gelegitimeerd bestuur vormen dat maatschappelijke problemen aanpakt en het land volgens wet en begroting bestuurt.\",\n    \"preconditions\": [\n      \"Er zijn verkiezingsuitslagen en zetelverdelingen bekend.\",\n      \"Partijen beschikken over programma's, fracties en onderhandelingsmandaten.\",\n      \"De Grondwet, parlementaire regels en begrotingsprocedures gelden.\",\n      \"Voor belangrijke besluiten is politieke en vaak parlementaire steun nodig.\",\n      \"Er bestaan urgente dossiers, zoals wonen, zorg, economie, veiligheid, migratie en klimaat.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen verkennen coalities en onderhandelen over een regeerakkoord.\",\n      \"Een formateur en kandidaat-ministers worden gezocht en gescreend.\",\n      \"Het kabinet presenteert beleid, wetsvoorstellen en een begroting.\",\n      \"De Tweede Kamer stelt vragen, debatteert, dient moties en amendementen in en stemt.\",\n      \"Ministers lichten besluiten toe, voeren beleid uit en leggen verantwoording af.\",\n      \"Partijen communiceren hun keuzes aan kiezers en bereiden zich voor op volgende verkiezingen.\"\n    ],\n    \"expected_outcome\": \"Er ontstaat een werkbaar kabinet met voldoende parlementaire steun, dat voorspelbaar beleid uitvoert, problemen afweegt en publiek verantwoording aflegt.\",\n    \"expected_propositions\": [\n      \"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\",\n      \"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\",\n      \"Ministers zijn verantwoordelijk voor hun portefeuille en moeten fouten of problemen uitleggen aan de Kamer.\",\n      \"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\",\n      \"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\"\n    ],\n    \"audience_expectation\": \"Een setup over Nederlandse politiek en bestuur activeert de verwachting van een formeel, soms traag maar ordelijk democratisch proces waarin vertegenwoordigers onderhandelen, besluiten nemen en controle uitoefenen om het land bestuurbaar te houden.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Nederlandse politiek en bestuur\",\n  \"script_a\": {\n    \"script_a\": \"Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.\",\n    \"participants_and_roles\": [\n      \"Kiezers: kiezen volksvertegenwoordigers en beoordelen politici bij volgende verkiezingen.\",\n      \"Politieke partijen en fracties: vertegenwoordigen standpunten, onderhandelen en controleren het kabinet.\",\n      \"Kabinetsleden en ministers: besturen, maken beleid en voeren wetten uit.\",\n      \"Tweede Kamer: debatteert, wijzigt wetsvoorstellen en controleert ministers.\",\n      \"Ambtenaren en uitvoeringsorganisaties: werken beleid uit en voeren besluiten praktisch uit.\",\n      \"Koning: heeft een formele, constitutionele rol bij de regeringsvorming en wetten.\"\n    ],\n    \"apparent_goal\": \"Een stabiel en democratisch gelegitimeerd bestuur vormen dat maatschappelijke problemen aanpakt en het land volgens wet en begroting bestuurt.\",\n    \"preconditions\": [\n      \"Er zijn verkiezingsuitslagen en zetelverdelingen bekend.\",\n      \"Partijen beschikken over programma's, fracties en onderhandelingsmandaten.\",\n      \"De Grondwet, parlementaire regels en begrotingsprocedures gelden.\",\n      \"Voor belangrijke besluiten is politieke en vaak parlementaire steun nodig.\",\n      \"Er bestaan urgente dossiers, zoals wonen, zorg, economie, veiligheid, migratie en klimaat.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen verkennen coalities en onderhandelen over een regeerakkoord.\",\n      \"Een formateur en kandidaat-ministers worden gezocht en gescreend.\",\n      \"Het kabinet presenteert beleid, wetsvoorstellen en een begroting.\",\n      \"De Tweede Kamer stelt vragen, debatteert, dient moties en amendementen in en stemt.\",\n      \"Ministers lichten besluiten toe, voeren beleid uit en leggen verantwoording af.\",\n      \"Partijen communiceren hun keuzes aan kiezers en bereiden zich voor op volgende verkiezingen.\"\n    ],\n    \"expected_outcome\": \"Er ontstaat een werkbaar kabinet met voldoende parlementaire steun, dat voorspelbaar beleid uitvoert, problemen afweegt en publiek verantwoording aflegt.\",\n    \"expected_propositions\": [\n      \"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\",\n      \"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\",\n      \"Ministers zijn verantwoordelijk voor hun portefeuille en moeten fouten of problemen uitleggen aan de Kamer.\",\n      \"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\",\n      \"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\"\n    ],\n    \"audience_expectation\": \"Een setup over Nederlandse politiek en bestuur activeert de verwachting van een formeel, soms traag maar ordelijk democratisch proces waarin vertegenwoordigers onderhandelen, besluiten nemen en controle uitoefenen om het land bestuurbaar te houden.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.\",\n      \"opposition_axis\": \"algemeen belang versus interne verdeling van privileges\",\n      \"opposed_proposition\": \"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\",\n      \"shared_anchor\": \"De verdeling van ministersposten\",\n      \"reading_a\": \"Partijen verdelen portefeuilles om deskundigheid, politieke verhoudingen en bestuurlijke verantwoordelijkheid in een coalitie werkbaar te organiseren.\",\n      \"reading_b\": \"Afdelingshoofden verdelen aantrekkelijke functies, budgetten en voordelen alsof zij na een reorganisatie de beste etages mogen uitkiezen.\",\n      \"roles_b\": [\n        \"Partijleiders: afdelingshoofden die hun eigen team beschermen.\",\n        \"Ministers: nieuw benoemde managers met een eigen kostenplaats.\",\n        \"Tweede Kamer: ondernemingsraad die kritische vragen mag stellen.\",\n        \"Ambtenaren: medewerkers die de besluiten uitvoerbaar moeten maken.\",\n        \"Kiezers: klanten die pas achteraf merken wat de reorganisatie kost.\"\n      ],\n      \"goal_b\": \"Zo veel mogelijk middelen, invloed en veilige functies voor de eigen afdeling veiligstellen, zonder dat de organisatie uiteenvalt.\",\n      \"role_remapping\": [\n        \"Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.\",\n        \"Partijleiders worden afdelingshoofden.\",\n        \"Ministeries worden kostenplaatsen of bedrijfsonderdelen.\",\n        \"De Tweede Kamer wordt de ondernemingsraad.\",\n        \"Kiezers worden klanten of aandeelhouders op afstand.\"\n      ],\n      \"shared_cues\": [\n        \"Er wordt langdurig onderhandeld achter gesloten deuren.\",\n        \"Er verschijnen lijstjes met gewenste portefeuilles.\",\n        \"Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.\",\n        \"Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen.\"\n      ],\n      \"switch_trigger\": \"Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.\",\n      \"hinge_event\": \"Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.\",\n      \"anomaly_under_a\": \"Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.\",\n      \"resolution_under_b\": \"Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"De coalitievorming is eigenlijk een datingprogramma: partijen ontmoeten elkaar onder felle studiolampen, beloven exclusiviteit, wantrouwen elkaars berichten en proberen een relatie aan te gaan die ten minste tot de volgende aflevering standhoudt.\",\n      \"opposition_axis\": \"duurzame publieke samenwerking versus opportunistische romantische koppeling\",\n      \"opposed_proposition\": \"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\",\n      \"shared_anchor\": \"Het coalitieakkoord\",\n      \"reading_a\": \"Een coalitieakkoord is een politiek document waarin partijen gezamenlijke beleidskeuzes en onderlinge afspraken vastleggen.\",\n      \"reading_b\": \"Een relatiecontract waarin partners beloven niet openlijk met andere kandidaten te flirten, al houden zij discreet een nooduitgang open.\",\n      \"roles_b\": [\n        \"Partijleiders: kandidaten in een datingprogramma.\",\n        \"Informateur en formateur: presentatoren en relatiecoaches.\",\n        \"Coalitiepartijen: koppels die exclusiviteit overwegen.\",\n        \"Oppositiepartijen: afgewezen kandidaten die vanaf de zijlijn commentaar geven.\",\n        \"Kiezers: televisiepubliek dat stemt wie geloofwaardig overkomt.\"\n      ],\n      \"goal_b\": \"Een aantrekkelijk koppel vormen dat publieke ruzies overleeft en niet als eerste uit het programma wordt gestemd.\",\n      \"role_remapping\": [\n        \"Partijleiders worden romantische kandidaten.\",\n        \"Coalitieonderhandelingen worden dates en relatietherapie.\",\n        \"Het coalitieakkoord wordt een exclusiviteitsverklaring.\",\n        \"Een kabinetscrisis wordt een publieke relatiebreuk.\",\n        \"De Tweede Kamer wordt studio-publiek met stemkastjes.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn verkennende gesprekken met verschillende partners.\",\n        \"Deelnemers benadrukken vertrouwen en chemie.\",\n        \"Er wordt gesproken over grenzen, afspraken en gezamenlijke toekomstplannen.\",\n        \"Afgewezen partijen reageren gekwetst of sceptisch.\"\n      ],\n      \"switch_trigger\": \"Tijdens de ondertekening vraagt de formateur of de partijleiders elkaar nu een roos willen geven en bevestigen dat zij de andere kandidaten verwijderen uit hun telefoon.\",\n      \"hinge_event\": \"Een coalitiepartner dient bij een Kamerdebat een motie in met de mededeling dat zij 'even ruimte nodig heeft om zichzelf terug te vinden'.\",\n      \"anomaly_under_a\": \"Een coalitiepartij hoort een inhoudelijk conflict via overleg, debat of een formele motie toe te lichten; relationele zelfontplooiing is geen bestuurlijke reden.\",\n      \"resolution_under_b\": \"In een datingprogramma is de formulering precies de gebruikelijke aankondiging van een relatiepauze en maakt zij de afwijkende taal doelgericht.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Het parlementaire besluitvormingsproces blijkt een escaperoom voor bestuurders: ministers en fracties moeten onder tijdsdruk codes, sleutels en aanwijzingen vinden om vóór middernacht uit de vergaderzaal te komen.\",\n      \"opposition_axis\": \"inhoudelijke democratische besluitvorming versus spelmatige ontsnapping onder tijdsdruk\",\n      \"opposed_proposition\": \"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\",\n      \"shared_anchor\": \"De stemming over een wetsvoorstel\",\n      \"reading_a\": \"De Kamer stemt formeel over een wetsvoorstel nadat fracties het hebben besproken, gewijzigd en gewogen.\",\n      \"reading_b\": \"Spelers drukken gezamenlijk op de juiste knoppen om een slot te openen en de volgende kamer te bereiken.\",\n      \"roles_b\": [\n        \"Ministers: spelers die aanwijzingen moeten uitleggen.\",\n        \"Kamerleden: teamleden die puzzelstukken verzamelen.\",\n        \"Griffiers: spelbegeleiders die regels bewaken.\",\n        \"Ambtenaren: ontwerpers van raadsels en verborgen aanwijzingen.\",\n        \"De koning: ceremoniële figuur die aan het einde een enveloppe mag openen.\"\n      ],\n      \"goal_b\": \"Alle codes op tijd oplossen, de deur openen en voorkomen dat het team wegens tijdsoverschrijding in de kamer opgesloten blijft.\",\n      \"role_remapping\": [\n        \"De Tweede Kamer wordt een escaperoomteam.\",\n        \"Kamerstukken worden aanwijzingen en puzzelbriefjes.\",\n        \"Amendementen worden aanpassingen aan een code.\",\n        \"Een stemming wordt het indrukken van een ontgrendelingsmechanisme.\",\n        \"De griffier wordt spelbegeleider.\"\n      ],\n      \"shared_cues\": [\n        \"Er liggen dikke dossiers en schema's op tafel.\",\n        \"Er klinken vragen om verduidelijking.\",\n        \"Er is een strakke agenda en een naderende deadline.\",\n        \"Leden overleggen in kleine groepen en tellen steun.\"\n      ],\n      \"switch_trigger\": \"De voorzitter zegt vlak voor de stemming: 'Als 76 handen tegelijk omhooggaan, gaat het slot van de deur open.'\",\n      \"hinge_event\": \"Een minister schuift een wetsartikel onder een schilderij vandaan en roept dat de Romeinse cijfers de code voor de uitgang vormen.\",\n      \"anomaly_under_a\": \"Een minister hoort wetsartikelen te presenteren en inhoudelijk te verdedigen; ze als fysieke verborgen code behandelen is onverenigbaar met een serieus debat.\",\n      \"resolution_under_b\": \"In de escaperoomlezing is het artikel een bewust verstopt puzzelonderdeel, en de code is noodzakelijk om het gezamenlijke doel te halen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"De jaarlijkse begrotingsbehandeling is eigenlijk een grote rommelmarkt waarop bewindslieden en fracties met prijskaartjes langs kraampjes lopen. Wie genoeg ruilt, krijgt een zichtbaar project; wie te weinig biedt, moet met een tweedehands belofte naar huis.\",\n      \"opposition_axis\": \"begrotingsafweging op publieke merites versus ruilhandel om zichtbare buit\",\n      \"opposed_proposition\": \"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\",\n      \"shared_anchor\": \"De zoektocht naar steun voor de begroting\",\n      \"reading_a\": \"Een kabinet zoekt voldoende Kamersteun door beleidsprioriteiten, financiële dekking en politieke bezwaren tegen elkaar af te wegen.\",\n      \"reading_b\": \"Een verkoper probeert genoeg kopers en ruilpartners te verzamelen om zijn spullen kwijt te raken en met de beste koopjes te vertrekken.\",\n      \"roles_b\": [\n        \"Ministers: verkopers met overvolle marktkramen.\",\n        \"Kamerfracties: kopers en ruilhandelaren.\",\n        \"Ambtenaren: personen die prijskaartjes en bonnetjes uitschrijven.\",\n        \"Kiezers: bezoekers die hopen dat de beloofde koopjes echt bestaan.\",\n        \"De voorzitter: marktmeester die sluitingstijd aankondigt.\"\n      ],\n      \"goal_b\": \"Met zo weinig mogelijk waardevolle toezeggingen voldoende ruilpartners vinden om de eigen kraam vóór sluitingstijd leeg te krijgen.\",\n      \"role_remapping\": [\n        \"Ministers worden marktverkopers.\",\n        \"Kamerfracties worden kopers of ruilhandelaren.\",\n        \"Begrotingsposten worden koopwaar met prijskaartjes.\",\n        \"Amendementen worden tegenbiedingen.\",\n        \"De Kamervoorzitter wordt marktmeester.\"\n      ],\n      \"shared_cues\": [\n        \"Er wordt gerekend aan bedragen en dekking.\",\n        \"Fracties stellen voorwaarden voor hun steun.\",\n        \"Er worden toezeggingen gedaan over specifieke dossiers.\",\n        \"De tijd tot de stemming wordt nadrukkelijk genoemd.\"\n      ],\n      \"switch_trigger\": \"De minister van Financiën draait zijn kraam om en roept door een megafoon: 'Wie vandaag vóór stemt, krijgt er twee miljard voor regionale zwembaden bij!'\",\n      \"hinge_event\": \"Een fractie accepteert een belastingmaatregel pas nadat zij er een set pannen en gratis bezorging bij heeft bedongen.\",\n      \"anomaly_under_a\": \"Pannen en bezorging zijn volstrekt irrelevante tegenprestaties binnen een parlementaire afweging over belastingwetgeving en begrotingsdekking.\",\n      \"resolution_under_b\": \"Op een rommelmarkt is een extra product een normale manier om een deal te sluiten; de vreemde eis onthult daarom dat steun als ruilwaar wordt behandeld.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Nederlandse politiek en bestuur\",\n  \"script_a\": {\n    \"script_a\": \"Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.\",\n    \"participants_and_roles\": [\n      \"Kiezers: kiezen volksvertegenwoordigers en beoordelen politici bij volgende verkiezingen.\",\n      \"Politieke partijen en fracties: vertegenwoordigen standpunten, onderhandelen en controleren het kabinet.\",\n      \"Kabinetsleden en ministers: besturen, maken beleid en voeren wetten uit.\",\n      \"Tweede Kamer: debatteert, wijzigt wetsvoorstellen en controleert ministers.\",\n      \"Ambtenaren en uitvoeringsorganisaties: werken beleid uit en voeren besluiten praktisch uit.\",\n      \"Koning: heeft een formele, constitutionele rol bij de regeringsvorming en wetten.\"\n    ],\n    \"apparent_goal\": \"Een stabiel en democratisch gelegitimeerd bestuur vormen dat maatschappelijke problemen aanpakt en het land volgens wet en begroting bestuurt.\",\n    \"preconditions\": [\n      \"Er zijn verkiezingsuitslagen en zetelverdelingen bekend.\",\n      \"Partijen beschikken over programma's, fracties en onderhandelingsmandaten.\",\n      \"De Grondwet, parlementaire regels en begrotingsprocedures gelden.\",\n      \"Voor belangrijke besluiten is politieke en vaak parlementaire steun nodig.\",\n      \"Er bestaan urgente dossiers, zoals wonen, zorg, economie, veiligheid, migratie en klimaat.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen verkennen coalities en onderhandelen over een regeerakkoord.\",\n      \"Een formateur en kandidaat-ministers worden gezocht en gescreend.\",\n      \"Het kabinet presenteert beleid, wetsvoorstellen en een begroting.\",\n      \"De Tweede Kamer stelt vragen, debatteert, dient moties en amendementen in en stemt.\",\n      \"Ministers lichten besluiten toe, voeren beleid uit en leggen verantwoording af.\",\n      \"Partijen communiceren hun keuzes aan kiezers en bereiden zich voor op volgende verkiezingen.\"\n    ],\n    \"expected_outcome\": \"Er ontstaat een werkbaar kabinet met voldoende parlementaire steun, dat voorspelbaar beleid uitvoert, problemen afweegt en publiek verantwoording aflegt.\",\n    \"expected_propositions\": [\n      \"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\",\n      \"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\",\n      \"Ministers zijn verantwoordelijk voor hun portefeuille en moeten fouten of problemen uitleggen aan de Kamer.\",\n      \"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\",\n      \"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\"\n    ],\n    \"audience_expectation\": \"Een setup over Nederlandse politiek en bestuur activeert de verwachting van een formeel, soms traag maar ordelijk democratisch proces waarin vertegenwoordigers onderhandelen, besluiten nemen en controle uitoefenen om het land bestuurbaar te houden.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.\",\n      \"opposition_axis\": \"algemeen belang versus interne verdeling van privileges\",\n      \"opposed_proposition\": \"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\",\n      \"shared_anchor\": \"De verdeling van ministersposten\",\n      \"reading_a\": \"Partijen verdelen portefeuilles om deskundigheid, politieke verhoudingen en bestuurlijke verantwoordelijkheid in een coalitie werkbaar te organiseren.\",\n      \"reading_b\": \"Afdelingshoofden verdelen aantrekkelijke functies, budgetten en voordelen alsof zij na een reorganisatie de beste etages mogen uitkiezen.\",\n      \"roles_b\": [\n        \"Partijleiders: afdelingshoofden die hun eigen team beschermen.\",\n        \"Ministers: nieuw benoemde managers met een eigen kostenplaats.\",\n        \"Tweede Kamer: ondernemingsraad die kritische vragen mag stellen.\",\n        \"Ambtenaren: medewerkers die de besluiten uitvoerbaar moeten maken.\",\n        \"Kiezers: klanten die pas achteraf merken wat de reorganisatie kost.\"\n      ],\n      \"goal_b\": \"Zo veel mogelijk middelen, invloed en veilige functies voor de eigen afdeling veiligstellen, zonder dat de organisatie uiteenvalt.\",\n      \"role_remapping\": [\n        \"Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.\",\n        \"Partijleiders worden afdelingshoofden.\",\n        \"Ministeries worden kostenplaatsen of bedrijfsonderdelen.\",\n        \"De Tweede Kamer wordt de ondernemingsraad.\",\n        \"Kiezers worden klanten of aandeelhouders op afstand.\"\n      ],\n      \"shared_cues\": [\n        \"Er wordt langdurig onderhandeld achter gesloten deuren.\",\n        \"Er verschijnen lijstjes met gewenste portefeuilles.\",\n        \"Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.\",\n        \"Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen.\"\n      ],\n      \"switch_trigger\": \"Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.\",\n      \"hinge_event\": \"Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.\",\n      \"anomaly_under_a\": \"Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.\",\n      \"resolution_under_b\": \"Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"De coalitievorming is eigenlijk een datingprogramma: partijen ontmoeten elkaar onder felle studiolampen, beloven exclusiviteit, wantrouwen elkaars berichten en proberen een relatie aan te gaan die ten minste tot de volgende aflevering standhoudt.\",\n      \"opposition_axis\": \"duurzame publieke samenwerking versus opportunistische romantische koppeling\",\n      \"opposed_proposition\": \"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\",\n      \"shared_anchor\": \"Het coalitieakkoord\",\n      \"reading_a\": \"Een coalitieakkoord is een politiek document waarin partijen gezamenlijke beleidskeuzes en onderlinge afspraken vastleggen.\",\n      \"reading_b\": \"Een relatiecontract waarin partners beloven niet openlijk met andere kandidaten te flirten, al houden zij discreet een nooduitgang open.\",\n      \"roles_b\": [\n        \"Partijleiders: kandidaten in een datingprogramma.\",\n        \"Informateur en formateur: presentatoren en relatiecoaches.\",\n        \"Coalitiepartijen: koppels die exclusiviteit overwegen.\",\n        \"Oppositiepartijen: afgewezen kandidaten die vanaf de zijlijn commentaar geven.\",\n        \"Kiezers: televisiepubliek dat stemt wie geloofwaardig overkomt.\"\n      ],\n      \"goal_b\": \"Een aantrekkelijk koppel vormen dat publieke ruzies overleeft en niet als eerste uit het programma wordt gestemd.\",\n      \"role_remapping\": [\n        \"Partijleiders worden romantische kandidaten.\",\n        \"Coalitieonderhandelingen worden dates en relatietherapie.\",\n        \"Het coalitieakkoord wordt een exclusiviteitsverklaring.\",\n        \"Een kabinetscrisis wordt een publieke relatiebreuk.\",\n        \"De Tweede Kamer wordt studio-publiek met stemkastjes.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn verkennende gesprekken met verschillende partners.\",\n        \"Deelnemers benadrukken vertrouwen en chemie.\",\n        \"Er wordt gesproken over grenzen, afspraken en gezamenlijke toekomstplannen.\",\n        \"Afgewezen partijen reageren gekwetst of sceptisch.\"\n      ],\n      \"switch_trigger\": \"Tijdens de ondertekening vraagt de formateur of de partijleiders elkaar nu een roos willen geven en bevestigen dat zij de andere kandidaten verwijderen uit hun telefoon.\",\n      \"hinge_event\": \"Een coalitiepartner dient bij een Kamerdebat een motie in met de mededeling dat zij 'even ruimte nodig heeft om zichzelf terug te vinden'.\",\n      \"anomaly_under_a\": \"Een coalitiepartij hoort een inhoudelijk conflict via overleg, debat of een formele motie toe te lichten; relationele zelfontplooiing is geen bestuurlijke reden.\",\n      \"resolution_under_b\": \"In een datingprogramma is de formulering precies de gebruikelijke aankondiging van een relatiepauze en maakt zij de afwijkende taal doelgericht.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Het parlementaire besluitvormingsproces blijkt een escaperoom voor bestuurders: ministers en fracties moeten onder tijdsdruk codes, sleutels en aanwijzingen vinden om vóór middernacht uit de vergaderzaal te komen.\",\n      \"opposition_axis\": \"inhoudelijke democratische besluitvorming versus spelmatige ontsnapping onder tijdsdruk\",\n      \"opposed_proposition\": \"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\",\n      \"shared_anchor\": \"De stemming over een wetsvoorstel\",\n      \"reading_a\": \"De Kamer stemt formeel over een wetsvoorstel nadat fracties het hebben besproken, gewijzigd en gewogen.\",\n      \"reading_b\": \"Spelers drukken gezamenlijk op de juiste knoppen om een slot te openen en de volgende kamer te bereiken.\",\n      \"roles_b\": [\n        \"Ministers: spelers die aanwijzingen moeten uitleggen.\",\n        \"Kamerleden: teamleden die puzzelstukken verzamelen.\",\n        \"Griffiers: spelbegeleiders die regels bewaken.\",\n        \"Ambtenaren: ontwerpers van raadsels en verborgen aanwijzingen.\",\n        \"De koning: ceremoniële figuur die aan het einde een enveloppe mag openen.\"\n      ],\n      \"goal_b\": \"Alle codes op tijd oplossen, de deur openen en voorkomen dat het team wegens tijdsoverschrijding in de kamer opgesloten blijft.\",\n      \"role_remapping\": [\n        \"De Tweede Kamer wordt een escaperoomteam.\",\n        \"Kamerstukken worden aanwijzingen en puzzelbriefjes.\",\n        \"Amendementen worden aanpassingen aan een code.\",\n        \"Een stemming wordt het indrukken van een ontgrendelingsmechanisme.\",\n        \"De griffier wordt spelbegeleider.\"\n      ],\n      \"shared_cues\": [\n        \"Er liggen dikke dossiers en schema's op tafel.\",\n        \"Er klinken vragen om verduidelijking.\",\n        \"Er is een strakke agenda en een naderende deadline.\",\n        \"Leden overleggen in kleine groepen en tellen steun.\"\n      ],\n      \"switch_trigger\": \"De voorzitter zegt vlak voor de stemming: 'Als 76 handen tegelijk omhooggaan, gaat het slot van de deur open.'\",\n      \"hinge_event\": \"Een minister schuift een wetsartikel onder een schilderij vandaan en roept dat de Romeinse cijfers de code voor de uitgang vormen.\",\n      \"anomaly_under_a\": \"Een minister hoort wetsartikelen te presenteren en inhoudelijk te verdedigen; ze als fysieke verborgen code behandelen is onverenigbaar met een serieus debat.\",\n      \"resolution_under_b\": \"In de escaperoomlezing is het artikel een bewust verstopt puzzelonderdeel, en de code is noodzakelijk om het gezamenlijke doel te halen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"De jaarlijkse begrotingsbehandeling is eigenlijk een grote rommelmarkt waarop bewindslieden en fracties met prijskaartjes langs kraampjes lopen. Wie genoeg ruilt, krijgt een zichtbaar project; wie te weinig biedt, moet met een tweedehands belofte naar huis.\",\n      \"opposition_axis\": \"begrotingsafweging op publieke merites versus ruilhandel om zichtbare buit\",\n      \"opposed_proposition\": \"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\",\n      \"shared_anchor\": \"De zoektocht naar steun voor de begroting\",\n      \"reading_a\": \"Een kabinet zoekt voldoende Kamersteun door beleidsprioriteiten, financiële dekking en politieke bezwaren tegen elkaar af te wegen.\",\n      \"reading_b\": \"Een verkoper probeert genoeg kopers en ruilpartners te verzamelen om zijn spullen kwijt te raken en met de beste koopjes te vertrekken.\",\n      \"roles_b\": [\n        \"Ministers: verkopers met overvolle marktkramen.\",\n        \"Kamerfracties: kopers en ruilhandelaren.\",\n        \"Ambtenaren: personen die prijskaartjes en bonnetjes uitschrijven.\",\n        \"Kiezers: bezoekers die hopen dat de beloofde koopjes echt bestaan.\",\n        \"De voorzitter: marktmeester die sluitingstijd aankondigt.\"\n      ],\n      \"goal_b\": \"Met zo weinig mogelijk waardevolle toezeggingen voldoende ruilpartners vinden om de eigen kraam vóór sluitingstijd leeg te krijgen.\",\n      \"role_remapping\": [\n        \"Ministers worden marktverkopers.\",\n        \"Kamerfracties worden kopers of ruilhandelaren.\",\n        \"Begrotingsposten worden koopwaar met prijskaartjes.\",\n        \"Amendementen worden tegenbiedingen.\",\n        \"De Kamervoorzitter wordt marktmeester.\"\n      ],\n      \"shared_cues\": [\n        \"Er wordt gerekend aan bedragen en dekking.\",\n        \"Fracties stellen voorwaarden voor hun steun.\",\n        \"Er worden toezeggingen gedaan over specifieke dossiers.\",\n        \"De tijd tot de stemming wordt nadrukkelijk genoemd.\"\n      ],\n      \"switch_trigger\": \"De minister van Financiën draait zijn kraam om en roept door een megafoon: 'Wie vandaag vóór stemt, krijgt er twee miljard voor regionale zwembaden bij!'\",\n      \"hinge_event\": \"Een fractie accepteert een belastingmaatregel pas nadat zij er een set pannen en gratis bezorging bij heeft bedongen.\",\n      \"anomaly_under_a\": \"Pannen en bezorging zijn volstrekt irrelevante tegenprestaties binnen een parlementaire afweging over belastingwetgeving en begrotingsdekking.\",\n      \"resolution_under_b\": \"Op een rommelmarkt is een extra product een normale manier om een deal te sluiten; de vreemde eis onthult daarom dat steun als ruilwaar wordt behandeld.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Nederlandse politiek en bestuur\",\n  \"plan\": {\n    \"setup_script\": \"Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.\",\n    \"opposing_script\": \"Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.\",\n    \"opposition_type\": \"algemeen belang versus interne verdeling van privileges\",\n    \"trigger\": \"Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Er wordt langdurig onderhandeld achter gesloten deuren.\",\n      \"Er verschijnen lijstjes met gewenste portefeuilles.\",\n      \"Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.\",\n      \"Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen.\"\n    ],\n    \"hinge_event\": \"Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.\",\n    \"anomaly_under_a\": \"Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.\",\n    \"resolution_under_b\": \"Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.\",\n    \"role_remapping\": [\n      \"Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.\",\n      \"Partijleiders worden afdelingshoofden.\",\n      \"Ministeries worden kostenplaatsen of bedrijfsonderdelen.\",\n      \"De Tweede Kamer wordt de ondernemingsraad.\",\n      \"Kiezers worden klanten of aandeelhouders op afstand.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Nederlandse politiek en bestuur\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.\",\n      \"participants_and_roles\": [\n        \"Kiezers: kiezen volksvertegenwoordigers en beoordelen politici bij volgende verkiezingen.\",\n        \"Politieke partijen en fracties: vertegenwoordigen standpunten, onderhandelen en controleren het kabinet.\",\n        \"Kabinetsleden en ministers: besturen, maken beleid en voeren wetten uit.\",\n        \"Tweede Kamer: debatteert, wijzigt wetsvoorstellen en controleert ministers.\",\n        \"Ambtenaren en uitvoeringsorganisaties: werken beleid uit en voeren besluiten praktisch uit.\",\n        \"Koning: heeft een formele, constitutionele rol bij de regeringsvorming en wetten.\"\n      ],\n      \"apparent_goal\": \"Een stabiel en democratisch gelegitimeerd bestuur vormen dat maatschappelijke problemen aanpakt en het land volgens wet en begroting bestuurt.\",\n      \"preconditions\": [\n        \"Er zijn verkiezingsuitslagen en zetelverdelingen bekend.\",\n        \"Partijen beschikken over programma's, fracties en onderhandelingsmandaten.\",\n        \"De Grondwet, parlementaire regels en begrotingsprocedures gelden.\",\n        \"Voor belangrijke besluiten is politieke en vaak parlementaire steun nodig.\",\n        \"Er bestaan urgente dossiers, zoals wonen, zorg, economie, veiligheid, migratie en klimaat.\"\n      ],\n      \"expected_actions\": [\n        \"Partijen verkennen coalities en onderhandelen over een regeerakkoord.\",\n        \"Een formateur en kandidaat-ministers worden gezocht en gescreend.\",\n        \"Het kabinet presenteert beleid, wetsvoorstellen en een begroting.\",\n        \"De Tweede Kamer stelt vragen, debatteert, dient moties en amendementen in en stemt.\",\n        \"Ministers lichten besluiten toe, voeren beleid uit en leggen verantwoording af.\",\n        \"Partijen communiceren hun keuzes aan kiezers en bereiden zich voor op volgende verkiezingen.\"\n      ],\n      \"expected_outcome\": \"Er ontstaat een werkbaar kabinet met voldoende parlementaire steun, dat voorspelbaar beleid uitvoert, problemen afweegt en publiek verantwoording aflegt.\",\n      \"expected_propositions\": [\n        \"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\",\n        \"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\",\n        \"Ministers zijn verantwoordelijk voor hun portefeuille en moeten fouten of problemen uitleggen aan de Kamer.\",\n        \"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\",\n        \"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\"\n      ],\n      \"audience_expectation\": \"Een setup over Nederlandse politiek en bestuur activeert de verwachting van een formeel, soms traag maar ordelijk democratisch proces waarin vertegenwoordigers onderhandelen, besluiten nemen en controle uitoefenen om het land bestuurbaar te houden.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.\",\n      \"opposition_axis\": \"algemeen belang versus interne verdeling van privileges\",\n      \"opposed_proposition\": \"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\",\n      \"shared_anchor\": \"De verdeling van ministersposten\",\n      \"reading_a\": \"Partijen verdelen portefeuilles om deskundigheid, politieke verhoudingen en bestuurlijke verantwoordelijkheid in een coalitie werkbaar te organiseren.\",\n      \"reading_b\": \"Afdelingshoofden verdelen aantrekkelijke functies, budgetten en voordelen alsof zij na een reorganisatie de beste etages mogen uitkiezen.\",\n      \"roles_b\": [\n        \"Partijleiders: afdelingshoofden die hun eigen team beschermen.\",\n        \"Ministers: nieuw benoemde managers met een eigen kostenplaats.\",\n        \"Tweede Kamer: ondernemingsraad die kritische vragen mag stellen.\",\n        \"Ambtenaren: medewerkers die de besluiten uitvoerbaar moeten maken.\",\n        \"Kiezers: klanten die pas achteraf merken wat de reorganisatie kost.\"\n      ],\n      \"goal_b\": \"Zo veel mogelijk middelen, invloed en veilige functies voor de eigen afdeling veiligstellen, zonder dat de organisatie uiteenvalt.\",\n      \"role_remapping\": [\n        \"Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.\",\n        \"Partijleiders worden afdelingshoofden.\",\n        \"Ministeries worden kostenplaatsen of bedrijfsonderdelen.\",\n        \"De Tweede Kamer wordt de ondernemingsraad.\",\n        \"Kiezers worden klanten of aandeelhouders op afstand.\"\n      ],\n      \"shared_cues\": [\n        \"Er wordt langdurig onderhandeld achter gesloten deuren.\",\n        \"Er verschijnen lijstjes met gewenste portefeuilles.\",\n        \"Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.\",\n        \"Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen.\"\n      ],\n      \"switch_trigger\": \"Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.\",\n      \"hinge_event\": \"Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.\",\n      \"anomaly_under_a\": \"Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.\",\n      \"resolution_under_b\": \"Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.\",\n      \"opposing_script\": \"Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.\",\n      \"opposition_type\": \"algemeen belang versus interne verdeling van privileges\",\n      \"trigger\": \"Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Er wordt langdurig onderhandeld achter gesloten deuren.\",\n        \"Er verschijnen lijstjes met gewenste portefeuilles.\",\n        \"Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.\",\n        \"Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen.\"\n      ],\n      \"hinge_event\": \"Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.\",\n      \"anomaly_under_a\": \"Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.\",\n      \"resolution_under_b\": \"Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.\",\n      \"role_remapping\": [\n        \"Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.\",\n        \"Partijleiders worden afdelingshoofden.\",\n        \"Ministeries worden kostenplaatsen of bedrijfsonderdelen.\",\n        \"De Tweede Kamer wordt de ondernemingsraad.\",\n        \"Kiezers worden klanten of aandeelhouders op afstand.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Na weken onderhandelen sprak iedereen over draagvlak, verantwoordelijkheid en moeilijke keuzes. Toen een partijleider Volksgezondheid weigerde omdat daar geen eigen parkeergarage bij zat, snapte ik eindelijk waarom het regeerakkoord een leaseplan heet.\",\n      \"angle\": \"De formatie als directievergadering met arbeidsvoorwaarden.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij de kabinetsformatie zeggen ze steeds dat niemand voor zichzelf onderhandelt. Toch liep een partijleider weg bij Volksgezondheid: prachtig ministerie, maar de minister moest blijkbaar gewoon buiten parkeren.\",\n      \"angle\": \"Een publieke portefeuille blijkt een statussymbool op kantoor.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ze noemen het een regeerakkoord, want er is maandenlang overleg, vertrouwen en een eerlijke verdeling nodig. Tot je hoort dat de ruzie over Volksgezondheid ging omdat Financiën wél een hoekkamer met eigen garage kreeg.\",\n      \"angle\": \"Politieke verdeling wordt onthuld als interne kantoorpolitiek.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Nederlandse politiek en bestuur\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Na weken onderhandelen sprak iedereen over draagvlak, verantwoordelijkheid en moeilijke keuzes. Toen een partijleider Volksgezondheid weigerde omdat daar geen eigen parkeergarage bij zat, snapte ik eindelijk waarom het regeerakkoord een leaseplan heet.\",\n      \"angle\": \"De formatie als directievergadering met arbeidsvoorwaarden.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij de kabinetsformatie zeggen ze steeds dat niemand voor zichzelf onderhandelt. Toch liep een partijleider weg bij Volksgezondheid: prachtig ministerie, maar de minister moest blijkbaar gewoon buiten parkeren.\",\n      \"angle\": \"Een publieke portefeuille blijkt een statussymbool op kantoor.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ze noemen het een regeerakkoord, want er is maandenlang overleg, vertrouwen en een eerlijke verdeling nodig. Tot je hoort dat de ruzie over Volksgezondheid ging omdat Financiën wél een hoekkamer met eigen garage kreeg.\",\n      \"angle\": \"Politieke verdeling wordt onthuld als interne kantoorpolitiek.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een normale kabinetsformatie waarin partijen na langdurige onderhandelingen draagvlak, verantwoordelijkheid en moeilijke keuzes bespreken.\",\n      \"realized_script_b\": \"De formatie is feitelijk een directieoverleg waarin partijleiders portefeuilles beoordelen als arbeidsvoorwaardenpakketten met parkeerprivileges en leasevoordelen.\",\n      \"realized_opposition_axis\": \"publiek algemeen belang versus interne verdeling van zakelijke privileges\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De politieke setup is dominant via de geplande formatiecues. De weigering van Volksgezondheid wegens ontbrekende parkeergarage activeert functioneel de bedrijfs-/privilegelezing; het leaseplan herkadert het regeerakkoord als arbeidsvoorwaardenregeling.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een compacte, natuurlijk klinkende formatiegrap die de beoogde publieke-verantwoordelijkheidlezing laat omslaan naar een directievergadering over secundaire arbeidsvoorwaarden.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een kabinetsformatie waarin partijleiders volgens de publieke norm niet voor zichzelf maar voor het landsbelang onderhandelen.\",\n      \"realized_script_b\": \"Een portefeuille wordt behandeld als een persoonlijke kantoorstatusvoorziening, waarbij buiten moeten parkeren reden is om een ministerie af te wijzen.\",\n      \"realized_opposition_axis\": \"publieke verantwoordelijkheid versus persoonlijke status/comfort\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De parkeergarage-hinge is aanwezig, maar de beoogde bedrijfsvergadering met afdelingen die functies, budgetten en privileges onderling verdelen wordt niet voldoende geactiveerd. De gerealiseerde tegenstelling is smaller: zelfzucht versus publieke taak.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": false,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": false,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De tekst vormt wel een geldige grap over politieke zelfzucht en parkeerstatus, maar realiseert vooral een andere, beperktere oppositie dan de geplande afdelingenstrijd om interne privileges.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een kabinetsformatie waarin partijen via langdurig overleg, vertrouwen en eerlijke verdeling tot een regeerakkoord komen.\",\n      \"realized_script_b\": \"De formatie is interne kantoorpolitiek: ministeries zijn gewilde afdelingen of functies die worden beoordeeld op hoekkamers en eigen garages.\",\n      \"realized_opposition_axis\": \"algemeen belang versus interne verdeling van privileges\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst gebruikt de geplande overleg- en verdelingscues, waarna de ruzie over Volksgezondheid versus Financiën wegens een hoekkamer met eigen garage de formatie functioneel als bedrijfsinterne privilegeverdeling herleest.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De aanvankelijk democratische verdelingsretoriek wordt bij de slotinformatie duidelijk en functioneel omgezet in de geplande lezing van kantoorpolitiek en statusprivileges.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Na weken onderhandelen sprak iedereen over draagvlak, verantwoordelijkheid en moeilijke keuzes. Toen een partijleider Volksgezondheid weigerde omdat daar geen eigen parkeergarage bij zat, snapte ik eindelijk waarom het regeerakkoord een leaseplan heet.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.",
+      "opposing_script": "Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.",
+      "opposition_type": "algemeen belang versus interne verdeling van privileges",
+      "trigger": "Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Er wordt langdurig onderhandeld achter gesloten deuren.",
+        "Er verschijnen lijstjes met gewenste portefeuilles.",
+        "Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.",
+        "Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen."
+      ],
+      "hinge_event": "Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.",
+      "anomaly_under_a": "Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.",
+      "resolution_under_b": "Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.",
+      "role_remapping": [
+        "Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.",
+        "Partijleiders worden afdelingshoofden.",
+        "Ministeries worden kostenplaatsen of bedrijfsonderdelen.",
+        "De Tweede Kamer wordt de ondernemingsraad.",
+        "Kiezers worden klanten of aandeelhouders op afstand."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.\\\",\\\"participants_and_roles\\\":[\\\"Kiezers: kiezen volksvertegenwoordigers en beoordelen politici bij volgende verkiezingen.\\\",\\\"Politieke partijen en fracties: vertegenwoordigen standpunten, onderhandelen en controleren het kabinet.\\\",\\\"Kabinetsleden en ministers: besturen, maken beleid en voeren wetten uit.\\\",\\\"Tweede Kamer: debatteert, wijzigt wetsvoorstellen en controleert ministers.\\\",\\\"Ambtenaren en uitvoeringsorganisaties: werken beleid uit en voeren besluiten praktisch uit.\\\",\\\"Koning: heeft een formele, constitutionele rol bij de regeringsvorming en wetten.\\\"],\\\"apparent_goal\\\":\\\"Een stabiel en democratisch gelegitimeerd bestuur vormen dat maatschappelijke problemen aanpakt en het land volgens wet en begroting bestuurt.\\\",\\\"preconditions\\\":[\\\"Er zijn verkiezingsuitslagen en zetelverdelingen bekend.\\\",\\\"Partijen beschikken over programma's, fracties en onderhandelingsmandaten.\\\",\\\"De Grondwet, parlementaire regels en begrotingsprocedures gelden.\\\",\\\"Voor belangrijke besluiten is politieke en vaak parlementaire steun nodig.\\\",\\\"Er bestaan urgente dossiers, zoals wonen, zorg, economie, veiligheid, migratie en klimaat.\\\"],\\\"expected_actions\\\":[\\\"Partijen verkennen coalities en onderhandelen over een regeerakkoord.\\\",\\\"Een formateur en kandidaat-ministers worden gezocht en gescreend.\\\",\\\"Het kabinet presenteert beleid, wetsvoorstellen en een begroting.\\\",\\\"De Tweede Kamer stelt vragen, debatteert, dient moties en amendementen in en stemt.\\\",\\\"Ministers lichten besluiten toe, voeren beleid uit en leggen verantwoording af.\\\",\\\"Partijen communiceren hun keuzes aan kiezers en bereiden zich voor op volgende verkiezingen.\\\"],\\\"expected_outcome\\\":\\\"Er ontstaat een werkbaar kabinet met voldoende parlementaire steun, dat voorspelbaar beleid uitvoert, problemen afweegt en publiek verantwoording aflegt.\\\",\\\"expected_propositions\\\":[\\\"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\\\",\\\"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\\\",\\\"Ministers zijn verantwoordelijk voor hun portefeuille en moeten fouten of problemen uitleggen aan de Kamer.\\\",\\\"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\\\",\\\"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\\\"],\\\"audience_expectation\\\":\\\"Een setup over Nederlandse politiek en bestuur activeert de verwachting van een formeel, soms traag maar ordelijk democratisch proces waarin vertegenwoordigers onderhandelen, besluiten nemen en controle uitoefenen om het land bestuurbaar te houden.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.\\\",\\\"opposition_axis\\\":\\\"algemeen belang versus interne verdeling van privileges\\\",\\\"opposed_proposition\\\":\\\"Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.\\\",\\\"shared_anchor\\\":\\\"De verdeling van ministersposten\\\",\\\"reading_a\\\":\\\"Partijen verdelen portefeuilles om deskundigheid, politieke verhoudingen en bestuurlijke verantwoordelijkheid in een coalitie werkbaar te organiseren.\\\",\\\"reading_b\\\":\\\"Afdelingshoofden verdelen aantrekkelijke functies, budgetten en voordelen alsof zij na een reorganisatie de beste etages mogen uitkiezen.\\\",\\\"roles_b\\\":[\\\"Partijleiders: afdelingshoofden die hun eigen team beschermen.\\\",\\\"Ministers: nieuw benoemde managers met een eigen kostenplaats.\\\",\\\"Tweede Kamer: ondernemingsraad die kritische vragen mag stellen.\\\",\\\"Ambtenaren: medewerkers die de besluiten uitvoerbaar moeten maken.\\\",\\\"Kiezers: klanten die pas achteraf merken wat de reorganisatie kost.\\\"],\\\"goal_b\\\":\\\"Zo veel mogelijk middelen, invloed en veilige functies voor de eigen afdeling veiligstellen, zonder dat de organisatie uiteenvalt.\\\",\\\"role_remapping\\\":[\\\"Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.\\\",\\\"Partijleiders worden afdelingshoofden.\\\",\\\"Ministeries worden kostenplaatsen of bedrijfsonderdelen.\\\",\\\"De Tweede Kamer wordt de ondernemingsraad.\\\",\\\"Kiezers worden klanten of aandeelhouders op afstand.\\\"],\\\"shared_cues\\\":[\\\"Er wordt langdurig onderhandeld achter gesloten deuren.\\\",\\\"Er verschijnen lijstjes met gewenste portefeuilles.\\\",\\\"Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.\\\",\\\"Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen.\\\"],\\\"switch_trigger\\\":\\\"Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.\\\",\\\"hinge_event\\\":\\\"Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.\\\",\\\"anomaly_under_a\\\":\\\"Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.\\\",\\\"resolution_under_b\\\":\\\"Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"De coalitievorming is eigenlijk een datingprogramma: partijen ontmoeten elkaar onder felle studiolampen, beloven exclusiviteit, wantrouwen elkaars berichten en proberen een relatie aan te gaan die ten minste tot de volgende aflevering standhoudt.\\\",\\\"opposition_axis\\\":\\\"duurzame publieke samenwerking versus opportunistische romantische koppeling\\\",\\\"opposed_proposition\\\":\\\"Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.\\\",\\\"shared_anchor\\\":\\\"Het coalitieakkoord\\\",\\\"reading_a\\\":\\\"Een coalitieakkoord is een politiek document waarin partijen gezamenlijke beleidskeuzes en onderlinge afspraken vastleggen.\\\",\\\"reading_b\\\":\\\"Een relatiecontract waarin partners beloven niet openlijk met andere kandidaten te flirten, al houden zij discreet een nooduitgang open.\\\",\\\"roles_b\\\":[\\\"Partijleiders: kandidaten in een datingprogramma.\\\",\\\"Informateur en formateur: presentatoren en relatiecoaches.\\\",\\\"Coalitiepartijen: koppels die exclusiviteit overwegen.\\\",\\\"Oppositiepartijen: afgewezen kandidaten die vanaf de zijlijn commentaar geven.\\\",\\\"Kiezers: televisiepubliek dat stemt wie geloofwaardig overkomt.\\\"],\\\"goal_b\\\":\\\"Een aantrekkelijk koppel vormen dat publieke ruzies overleeft en niet als eerste uit het programma wordt gestemd.\\\",\\\"role_remapping\\\":[\\\"Partijleiders worden romantische kandidaten.\\\",\\\"Coalitieonderhandelingen worden dates en relatietherapie.\\\",\\\"Het coalitieakkoord wordt een exclusiviteitsverklaring.\\\",\\\"Een kabinetscrisis wordt een publieke relatiebreuk.\\\",\\\"De Tweede Kamer wordt studio-publiek met stemkastjes.\\\"],\\\"shared_cues\\\":[\\\"Er zijn verkennende gesprekken met verschillende partners.\\\",\\\"Deelnemers benadrukken vertrouwen en chemie.\\\",\\\"Er wordt gesproken over grenzen, afspraken en gezamenlijke toekomstplannen.\\\",\\\"Afgewezen partijen reageren gekwetst of sceptisch.\\\"],\\\"switch_trigger\\\":\\\"Tijdens de ondertekening vraagt de formateur of de partijleiders elkaar nu een roos willen geven en bevestigen dat zij de andere kandidaten verwijderen uit hun telefoon.\\\",\\\"hinge_event\\\":\\\"Een coalitiepartner dient bij een Kamerdebat een motie in met de mededeling dat zij 'even ruimte nodig heeft om zichzelf terug te vinden'.\\\",\\\"anomaly_under_a\\\":\\\"Een coalitiepartij hoort een inhoudelijk conflict via overleg, debat of een formele motie toe te lichten; relationele zelfontplooiing is geen bestuurlijke reden.\\\",\\\"resolution_under_b\\\":\\\"In een datingprogramma is de formulering precies de gebruikelijke aankondiging van een relatiepauze en maakt zij de afwijkende taal doelgericht.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Het parlementaire besluitvormingsproces blijkt een escaperoom voor bestuurders: ministers en fracties moeten onder tijdsdruk codes, sleutels en aanwijzingen vinden om vóór middernacht uit de vergaderzaal te komen.\\\",\\\"opposition_axis\\\":\\\"inhoudelijke democratische besluitvorming versus spelmatige ontsnapping onder tijdsdruk\\\",\\\"opposed_proposition\\\":\\\"Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.\\\",\\\"shared_anchor\\\":\\\"De stemming over een wetsvoorstel\\\",\\\"reading_a\\\":\\\"De Kamer stemt formeel over een wetsvoorstel nadat fracties het hebben besproken, gewijzigd en gewogen.\\\",\\\"reading_b\\\":\\\"Spelers drukken gezamenlijk op de juiste knoppen om een slot te openen en de volgende kamer te bereiken.\\\",\\\"roles_b\\\":[\\\"Ministers: spelers die aanwijzingen moeten uitleggen.\\\",\\\"Kamerleden: teamleden die puzzelstukken verzamelen.\\\",\\\"Griffiers: spelbegeleiders die regels bewaken.\\\",\\\"Ambtenaren: ontwerpers van raadsels en verborgen aanwijzingen.\\\",\\\"De koning: ceremoniële figuur die aan het einde een enveloppe mag openen.\\\"],\\\"goal_b\\\":\\\"Alle codes op tijd oplossen, de deur openen en voorkomen dat het team wegens tijdsoverschrijding in de kamer opgesloten blijft.\\\",\\\"role_remapping\\\":[\\\"De Tweede Kamer wordt een escaperoomteam.\\\",\\\"Kamerstukken worden aanwijzingen en puzzelbriefjes.\\\",\\\"Amendementen worden aanpassingen aan een code.\\\",\\\"Een stemming wordt het indrukken van een ontgrendelingsmechanisme.\\\",\\\"De griffier wordt spelbegeleider.\\\"],\\\"shared_cues\\\":[\\\"Er liggen dikke dossiers en schema's op tafel.\\\",\\\"Er klinken vragen om verduidelijking.\\\",\\\"Er is een strakke agenda en een naderende deadline.\\\",\\\"Leden overleggen in kleine groepen en tellen steun.\\\"],\\\"switch_trigger\\\":\\\"De voorzitter zegt vlak voor de stemming: 'Als 76 handen tegelijk omhooggaan, gaat het slot van de deur open.'\\\",\\\"hinge_event\\\":\\\"Een minister schuift een wetsartikel onder een schilderij vandaan en roept dat de Romeinse cijfers de code voor de uitgang vormen.\\\",\\\"anomaly_under_a\\\":\\\"Een minister hoort wetsartikelen te presenteren en inhoudelijk te verdedigen; ze als fysieke verborgen code behandelen is onverenigbaar met een serieus debat.\\\",\\\"resolution_under_b\\\":\\\"In de escaperoomlezing is het artikel een bewust verstopt puzzelonderdeel, en de code is noodzakelijk om het gezamenlijke doel te halen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"De jaarlijkse begrotingsbehandeling is eigenlijk een grote rommelmarkt waarop bewindslieden en fracties met prijskaartjes langs kraampjes lopen. Wie genoeg ruilt, krijgt een zichtbaar project; wie te weinig biedt, moet met een tweedehands belofte naar huis.\\\",\\\"opposition_axis\\\":\\\"begrotingsafweging op publieke merites versus ruilhandel om zichtbare buit\\\",\\\"opposed_proposition\\\":\\\"Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.\\\",\\\"shared_anchor\\\":\\\"De zoektocht naar steun voor de begroting\\\",\\\"reading_a\\\":\\\"Een kabinet zoekt voldoende Kamersteun door beleidsprioriteiten, financiële dekking en politieke bezwaren tegen elkaar af te wegen.\\\",\\\"reading_b\\\":\\\"Een verkoper probeert genoeg kopers en ruilpartners te verzamelen om zijn spullen kwijt te raken en met de beste koopjes te vertrekken.\\\",\\\"roles_b\\\":[\\\"Ministers: verkopers met overvolle marktkramen.\\\",\\\"Kamerfracties: kopers en ruilhandelaren.\\\",\\\"Ambtenaren: personen die prijskaartjes en bonnetjes uitschrijven.\\\",\\\"Kiezers: bezoekers die hopen dat de beloofde koopjes echt bestaan.\\\",\\\"De voorzitter: marktmeester die sluitingstijd aankondigt.\\\"],\\\"goal_b\\\":\\\"Met zo weinig mogelijk waardevolle toezeggingen voldoende ruilpartners vinden om de eigen kraam vóór sluitingstijd leeg te krijgen.\\\",\\\"role_remapping\\\":[\\\"Ministers worden marktverkopers.\\\",\\\"Kamerfracties worden kopers of ruilhandelaren.\\\",\\\"Begrotingsposten worden koopwaar met prijskaartjes.\\\",\\\"Amendementen worden tegenbiedingen.\\\",\\\"De Kamervoorzitter wordt marktmeester.\\\"],\\\"shared_cues\\\":[\\\"Er wordt gerekend aan bedragen en dekking.\\\",\\\"Fracties stellen voorwaarden voor hun steun.\\\",\\\"Er worden toezeggingen gedaan over specifieke dossiers.\\\",\\\"De tijd tot de stemming wordt nadrukkelijk genoemd.\\\"],\\\"switch_trigger\\\":\\\"De minister van Financiën draait zijn kraam om en roept door een megafoon: 'Wie vandaag vóór stemt, krijgt er twee miljard voor regionale zwembaden bij!'\\\",\\\"hinge_event\\\":\\\"Een fractie accepteert een belastingmaatregel pas nadat zij er een set pannen en gratis bezorging bij heeft bedongen.\\\",\\\"anomaly_under_a\\\":\\\"Pannen en bezorging zijn volstrekt irrelevante tegenprestaties binnen een parlementaire afweging over belastingwetgeving en begrotingsdekking.\\\",\\\"resolution_under_b\\\":\\\"Op een rommelmarkt is een extra product een normale manier om een deal te sluiten; de vreemde eis onthult daarom dat steun als ruilwaar wordt behandeld.\\\" }]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde formatietekst en verdeling van ministersposten kunnen eerst als bestuurlijke coalitievorming en daarna als interne bedrijfsverdeling worden gelezen. Het dominante contrast is publieke verantwoordelijkheid tegenover het veiligstellen van interne privileges. De parkeergarage is onder Script A een ongepaste reden voor portefeuillekeuze, maar onder Script B een functioneel statussymbool. Het ontbreken ervan belemmert de publieke verdelingslogica niet alleen, maar blokkeert in B ook het privilege-doel van de partijleider.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Coalitiegesprekken, vertrouwen, afspraken en een akkoord kunnen aanvankelijk als normale politieke samenwerking functioneren en vervolgens als datingprogramma worden herlezen. De centrale tegenstelling is een publiek beleidsverband tegenover een romantisch-exclusieve koppeling. De uitspraak over ruimte nodig hebben is bestuurlijk afwijkend, maar is herkenbare relatietaal binnen Script B. Zij herkadert eerdere afspraken als relatieafspraken. De gebeurtenis ondersteunt echter niet duidelijk het B-doel om als aantrekkelijk en stabiel koppel in het programma te blijven; een publieke relatiepauze kan dat doel juist schaden.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dossiers, overleg, verduidelijkingsvragen, deadlines en het tellen van steun kunnen zowel een parlementaire stemming als een escaperoom-opzet dragen. De dominante tegenstelling is inhoudelijke democratische besluitvorming tegenover het oplossen van spelpuzzels om te ontsnappen. Het verstopte wetsartikel is binnen Script A onverenigbaar met serieus wetgevingswerk, maar wordt binnen Script B een noodzakelijk puzzelonderdeel. De puzzelmatige behandeling blokkeert het inhoudelijke bestuurlijke doel van A en maakt juist het ontsnappingsdoel van B mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Rekenen aan bedragen, voorwaarden stellen, toezeggingen doen en steun zoeken kunnen eerst als begrotingsonderhandeling en daarna als marktgeruil worden gelezen. Het dominante contrast is publieke begrotingsafweging tegenover ruilhandel om zichtbare buit. De eis van pannen en gratis bezorging is onder Script A irrelevant voor belastingwetgeving, maar onder Script B een normale dealvoorwaarde op een markt. Daardoor worden eerdere toezeggingen herlezen als koopwaar en tegenbiedingen. De irrelevante extra tegenprestatie ondermijnt een afweging op publieke merites, maar helpt binnen B een ruildeal en dus steun tot stand te brengen.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest structurele oppositie: de democratische formatie als publiek compromisproces wordt consequent herlezen als interne verdeling van status, middelen en posities. De gedeelde ankerpunten—portefeuilleverdeling, gesloten onderhandelingen, draagvlak en vertrouwen—passen vanzelf in beide lezingen, waardoor de tweede lezing al latent aanwezig is. De parkeergarage als scharniergebeurtenis is economisch, concreet en retrospectief herinterpreterend: wat eerst principiële onderhandeling lijkt, blijkt statusstrijd. Bovendien is de kandidaat specifiek voor kabinetsvorming en bestuurlijke machtsverdeling, met sterk payoff-potentieel zonder Script A te verlaten.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Na weken onderhandelen sprak iedereen over draagvlak, verantwoordelijkheid en moeilijke keuzes. Toen een partijleider Volksgezondheid weigerde omdat daar geen eigen parkeergarage bij zat, snapte ik eindelijk waarom het regeerakkoord een leaseplan heet.\\\",\\\"angle\\\":\\\"De formatie als directievergadering met arbeidsvoorwaarden.\\\"},{\\\"text\\\":\\\"Bij de kabinetsformatie zeggen ze steeds dat niemand voor zichzelf onderhandelt. Toch liep een partijleider weg bij Volksgezondheid: prachtig ministerie, maar de minister moest blijkbaar gewoon buiten parkeren.\\\",\\\"angle\\\":\\\"Een publieke portefeuille blijkt een statussymbool op kantoor.\\\"},{\\\"text\\\":\\\"Ze noemen het een regeerakkoord, want er is maandenlang overleg, vertrouwen en een eerlijke verdeling nodig. Tot je hoort dat de ruzie over Volksgezondheid ging omdat Financiën wél een hoekkamer met eigen garage kreeg.\\\",\\\"angle\\\":\\\"Politieke verdeling wordt onthuld als interne kantoorpolitiek.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een normale kabinetsformatie waarin partijen na langdurige onderhandelingen draagvlak, verantwoordelijkheid en moeilijke keuzes bespreken.\\\",\\\"realized_script_b\\\":\\\"De formatie is feitelijk een directieoverleg waarin partijleiders portefeuilles beoordelen als arbeidsvoorwaardenpakketten met parkeerprivileges en leasevoordelen.\\\",\\\"realized_opposition_axis\\\":\\\"publiek algemeen belang versus interne verdeling van zakelijke privileges\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De politieke setup is dominant via de geplande formatiecues. De weigering van Volksgezondheid wegens ontbrekende parkeergarage activeert functioneel de bedrijfs-/privilegelezing; het leaseplan herkadert het regeerakkoord als arbeidsvoorwaardenregeling.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een compacte, natuurlijk klinkende formatiegrap die de beoogde publieke-verantwoordelijkheidlezing laat omslaan naar een directievergadering over secundaire arbeidsvoorwaarden.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een kabinetsformatie waarin partijleiders volgens de publieke norm niet voor zichzelf maar voor het landsbelang onderhandelen.\\\",\\\"realized_script_b\\\":\\\"Een portefeuille wordt behandeld als een persoonlijke kantoorstatusvoorziening, waarbij buiten moeten parkeren reden is om een ministerie af te wijzen.\\\",\\\"realized_opposition_axis\\\":\\\"publieke verantwoordelijkheid versus persoonlijke status/comfort\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De parkeergarage-hinge is aanwezig, maar de beoogde bedrijfsvergadering met afdelingen die functies, budgetten en privileges onderling verdelen wordt niet voldoende geactiveerd. De gerealiseerde tegenstelling is smaller: zelfzucht versus publieke taak.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":false,\\\"shared_cues_realized\\\":false,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":false,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De tekst vormt wel een geldige grap over politieke zelfzucht en parkeerstatus, maar realiseert vooral een andere, beperktere oppositie dan de geplande afdelingenstrijd om interne privileges.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een kabinetsformatie waarin partijen via langdurig overleg, vertrouwen en eerlijke verdeling tot een regeerakkoord komen.\\\",\\\"realized_script_b\\\":\\\"De formatie is interne kantoorpolitiek: ministeries zijn gewilde afdelingen of functies die worden beoordeeld op hoekkamers en eigen garages.\\\",\\\"realized_opposition_axis\\\":\\\"algemeen belang versus interne verdeling van privileges\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst gebruikt de geplande overleg- en verdelingscues, waarna de ruzie over Volksgezondheid versus Financiën wegens een hoekkamer met eigen garage de formatie functioneel als bedrijfsinterne privilegeverdeling herleest.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De aanvankelijk democratische verdelingsretoriek wordt bij de slotinformatie duidelijk en functioneel omgezet in de geplande lezing van kantoorpolitiek en statusprivileges.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 wint omdat beide teksten binnen de lengte-eis vallen, maar V1 wel de vereiste SO volledig realiseert. De parkeergarage en het leaseplan herinterpreteren de formatie duidelijk als een directieoverleg over arbeidsvoorwaarden; V2 blijft vooral bij individuele ijdelheid.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide passerende varianten hebben een heldere scriptomslag naar kantoorpolitiek en voldoen aan de vormeis. V1 is compacter, natuurlijker uitspreekbaar en eindigt sterker met het leaseplan, dat het hele regeerakkoord retrospectief herkadert.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 wint als passerende variant van V2, dat de vereiste SO slechts gedeeltelijk haalt. De hoekkamer en eigen garage maken in V3 de verdeling van ministeries overtuigend tot interne privilegepolitiek, met een bredere en duidelijkere herinterpretatie.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste passerende variant: de politieke ernst wordt efficiënt omgezet in een directievergadering over secundaire arbeidsvoorwaarden, met een heldere switch en een bondige, performabele slotclou.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.",
+        "candidate_id": "B1",
+        "opposition_axis": "algemeen belang versus interne verdeling van privileges",
+        "opposed_expectation": "Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.",
+        "roles_b": [
+          "Partijleiders: afdelingshoofden die hun eigen team beschermen.",
+          "Ministers: nieuw benoemde managers met een eigen kostenplaats.",
+          "Tweede Kamer: ondernemingsraad die kritische vragen mag stellen.",
+          "Ambtenaren: medewerkers die de besluiten uitvoerbaar moeten maken.",
+          "Kiezers: klanten die pas achteraf merken wat de reorganisatie kost."
+        ],
+        "goal_b": "Zo veel mogelijk middelen, invloed en veilige functies voor de eigen afdeling veiligstellen, zonder dat de organisatie uiteenvalt.",
+        "role_remapping": [
+          "Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.",
+          "Partijleiders worden afdelingshoofden.",
+          "Ministeries worden kostenplaatsen of bedrijfsonderdelen.",
+          "De Tweede Kamer wordt de ondernemingsraad.",
+          "Kiezers worden klanten of aandeelhouders op afstand."
+        ],
+        "shared_cues": [
+          "Er wordt langdurig onderhandeld achter gesloten deuren.",
+          "Er verschijnen lijstjes met gewenste portefeuilles.",
+          "Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.",
+          "Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen."
+        ],
+        "switch_trigger": "Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.",
+        "hinge_event": "Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.",
+        "anomaly_under_a": "Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.",
+        "resolution_under_b": "Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "De coalitievorming is eigenlijk een datingprogramma: partijen ontmoeten elkaar onder felle studiolampen, beloven exclusiviteit, wantrouwen elkaars berichten en proberen een relatie aan te gaan die ten minste tot de volgende aflevering standhoudt.",
+        "candidate_id": "B2",
+        "opposition_axis": "duurzame publieke samenwerking versus opportunistische romantische koppeling",
+        "opposed_expectation": "Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.",
+        "roles_b": [
+          "Partijleiders: kandidaten in een datingprogramma.",
+          "Informateur en formateur: presentatoren en relatiecoaches.",
+          "Coalitiepartijen: koppels die exclusiviteit overwegen.",
+          "Oppositiepartijen: afgewezen kandidaten die vanaf de zijlijn commentaar geven.",
+          "Kiezers: televisiepubliek dat stemt wie geloofwaardig overkomt."
+        ],
+        "goal_b": "Een aantrekkelijk koppel vormen dat publieke ruzies overleeft en niet als eerste uit het programma wordt gestemd.",
+        "role_remapping": [
+          "Partijleiders worden romantische kandidaten.",
+          "Coalitieonderhandelingen worden dates en relatietherapie.",
+          "Het coalitieakkoord wordt een exclusiviteitsverklaring.",
+          "Een kabinetscrisis wordt een publieke relatiebreuk.",
+          "De Tweede Kamer wordt studio-publiek met stemkastjes."
+        ],
+        "shared_cues": [
+          "Er zijn verkennende gesprekken met verschillende partners.",
+          "Deelnemers benadrukken vertrouwen en chemie.",
+          "Er wordt gesproken over grenzen, afspraken en gezamenlijke toekomstplannen.",
+          "Afgewezen partijen reageren gekwetst of sceptisch."
+        ],
+        "switch_trigger": "Tijdens de ondertekening vraagt de formateur of de partijleiders elkaar nu een roos willen geven en bevestigen dat zij de andere kandidaten verwijderen uit hun telefoon.",
+        "hinge_event": "Een coalitiepartner dient bij een Kamerdebat een motie in met de mededeling dat zij 'even ruimte nodig heeft om zichzelf terug te vinden'.",
+        "anomaly_under_a": "Een coalitiepartij hoort een inhoudelijk conflict via overleg, debat of een formele motie toe te lichten; relationele zelfontplooiing is geen bestuurlijke reden.",
+        "resolution_under_b": "In een datingprogramma is de formulering precies de gebruikelijke aankondiging van een relatiepauze en maakt zij de afwijkende taal doelgericht.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Het parlementaire besluitvormingsproces blijkt een escaperoom voor bestuurders: ministers en fracties moeten onder tijdsdruk codes, sleutels en aanwijzingen vinden om vóór middernacht uit de vergaderzaal te komen.",
+        "candidate_id": "B3",
+        "opposition_axis": "inhoudelijke democratische besluitvorming versus spelmatige ontsnapping onder tijdsdruk",
+        "opposed_expectation": "Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.",
+        "roles_b": [
+          "Ministers: spelers die aanwijzingen moeten uitleggen.",
+          "Kamerleden: teamleden die puzzelstukken verzamelen.",
+          "Griffiers: spelbegeleiders die regels bewaken.",
+          "Ambtenaren: ontwerpers van raadsels en verborgen aanwijzingen.",
+          "De koning: ceremoniële figuur die aan het einde een enveloppe mag openen."
+        ],
+        "goal_b": "Alle codes op tijd oplossen, de deur openen en voorkomen dat het team wegens tijdsoverschrijding in de kamer opgesloten blijft.",
+        "role_remapping": [
+          "De Tweede Kamer wordt een escaperoomteam.",
+          "Kamerstukken worden aanwijzingen en puzzelbriefjes.",
+          "Amendementen worden aanpassingen aan een code.",
+          "Een stemming wordt het indrukken van een ontgrendelingsmechanisme.",
+          "De griffier wordt spelbegeleider."
+        ],
+        "shared_cues": [
+          "Er liggen dikke dossiers en schema's op tafel.",
+          "Er klinken vragen om verduidelijking.",
+          "Er is een strakke agenda en een naderende deadline.",
+          "Leden overleggen in kleine groepen en tellen steun."
+        ],
+        "switch_trigger": "De voorzitter zegt vlak voor de stemming: 'Als 76 handen tegelijk omhooggaan, gaat het slot van de deur open.'",
+        "hinge_event": "Een minister schuift een wetsartikel onder een schilderij vandaan en roept dat de Romeinse cijfers de code voor de uitgang vormen.",
+        "anomaly_under_a": "Een minister hoort wetsartikelen te presenteren en inhoudelijk te verdedigen; ze als fysieke verborgen code behandelen is onverenigbaar met een serieus debat.",
+        "resolution_under_b": "In de escaperoomlezing is het artikel een bewust verstopt puzzelonderdeel, en de code is noodzakelijk om het gezamenlijke doel te halen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "De jaarlijkse begrotingsbehandeling is eigenlijk een grote rommelmarkt waarop bewindslieden en fracties met prijskaartjes langs kraampjes lopen. Wie genoeg ruilt, krijgt een zichtbaar project; wie te weinig biedt, moet met een tweedehands belofte naar huis.",
+        "candidate_id": "B4",
+        "opposition_axis": "begrotingsafweging op publieke merites versus ruilhandel om zichtbare buit",
+        "opposed_expectation": "Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.",
+        "roles_b": [
+          "Ministers: verkopers met overvolle marktkramen.",
+          "Kamerfracties: kopers en ruilhandelaren.",
+          "Ambtenaren: personen die prijskaartjes en bonnetjes uitschrijven.",
+          "Kiezers: bezoekers die hopen dat de beloofde koopjes echt bestaan.",
+          "De voorzitter: marktmeester die sluitingstijd aankondigt."
+        ],
+        "goal_b": "Met zo weinig mogelijk waardevolle toezeggingen voldoende ruilpartners vinden om de eigen kraam vóór sluitingstijd leeg te krijgen.",
+        "role_remapping": [
+          "Ministers worden marktverkopers.",
+          "Kamerfracties worden kopers of ruilhandelaren.",
+          "Begrotingsposten worden koopwaar met prijskaartjes.",
+          "Amendementen worden tegenbiedingen.",
+          "De Kamervoorzitter wordt marktmeester."
+        ],
+        "shared_cues": [
+          "Er wordt gerekend aan bedragen en dekking.",
+          "Fracties stellen voorwaarden voor hun steun.",
+          "Er worden toezeggingen gedaan over specifieke dossiers.",
+          "De tijd tot de stemming wordt nadrukkelijk genoemd."
+        ],
+        "switch_trigger": "De minister van Financiën draait zijn kraam om en roept door een megafoon: 'Wie vandaag vóór stemt, krijgt er twee miljard voor regionale zwembaden bij!'",
+        "hinge_event": "Een fractie accepteert een belastingmaatregel pas nadat zij er een set pannen en gratis bezorging bij heeft bedongen.",
+        "anomaly_under_a": "Pannen en bezorging zijn volstrekt irrelevante tegenprestaties binnen een parlementaire afweging over belastingwetgeving en begrotingsdekking.",
+        "resolution_under_b": "Op een rommelmarkt is een extra product een normale manier om een deal te sluiten; de vreemde eis onthult daarom dat steun als ruilwaar wordt behandeld.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest structurele oppositie: de democratische formatie als publiek compromisproces wordt consequent herlezen als interne verdeling van status, middelen en posities. De gedeelde ankerpunten—portefeuilleverdeling, gesloten onderhandelingen, draagvlak en vertrouwen—passen vanzelf in beide lezingen, waardoor de tweede lezing al latent aanwezig is. De parkeergarage als scharniergebeurtenis is economisch, concreet en retrospectief herinterpreterend: wat eerst principiële onderhandeling lijkt, blijkt statusstrijd. Bovendien is de kandidaat specifiek voor kabinetsvorming en bestuurlijke machtsverdeling, met sterk payoff-potentieel zonder Script A te verlaten.",
+    "variants": [
+      {
+        "text": "Na weken onderhandelen sprak iedereen over draagvlak, verantwoordelijkheid en moeilijke keuzes. Toen een partijleider Volksgezondheid weigerde omdat daar geen eigen parkeergarage bij zat, snapte ik eindelijk waarom het regeerakkoord een leaseplan heet.",
+        "angle": "De formatie als directievergadering met arbeidsvoorwaarden."
+      },
+      {
+        "text": "Bij de kabinetsformatie zeggen ze steeds dat niemand voor zichzelf onderhandelt. Toch liep een partijleider weg bij Volksgezondheid: prachtig ministerie, maar de minister moest blijkbaar gewoon buiten parkeren.",
+        "angle": "Een publieke portefeuille blijkt een statussymbool op kantoor."
+      },
+      {
+        "text": "Ze noemen het een regeerakkoord, want er is maandenlang overleg, vertrouwen en een eerlijke verdeling nodig. Tot je hoort dat de ruzie over Volksgezondheid ging omdat Financiën wél een hoekkamer met eigen garage kreeg.",
+        "angle": "Politieke verdeling wordt onthuld als interne kantoorpolitiek."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 14744,
+      "output_tokens": 6470,
+      "total_tokens": 21214
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Na verkiezingen vormen politieke partijen binnen de democratische spelregels een kabinet dat Nederland bestuurt, plannen uitvoert en daarover verantwoording aflegt aan de Tweede Kamer en de kiezers.",
+          "participants_and_roles": [
+            "Kiezers: kiezen volksvertegenwoordigers en beoordelen politici bij volgende verkiezingen.",
+            "Politieke partijen en fracties: vertegenwoordigen standpunten, onderhandelen en controleren het kabinet.",
+            "Kabinetsleden en ministers: besturen, maken beleid en voeren wetten uit.",
+            "Tweede Kamer: debatteert, wijzigt wetsvoorstellen en controleert ministers.",
+            "Ambtenaren en uitvoeringsorganisaties: werken beleid uit en voeren besluiten praktisch uit.",
+            "Koning: heeft een formele, constitutionele rol bij de regeringsvorming en wetten."
+          ],
+          "apparent_goal": "Een stabiel en democratisch gelegitimeerd bestuur vormen dat maatschappelijke problemen aanpakt en het land volgens wet en begroting bestuurt.",
+          "preconditions": [
+            "Er zijn verkiezingsuitslagen en zetelverdelingen bekend.",
+            "Partijen beschikken over programma's, fracties en onderhandelingsmandaten.",
+            "De Grondwet, parlementaire regels en begrotingsprocedures gelden.",
+            "Voor belangrijke besluiten is politieke en vaak parlementaire steun nodig.",
+            "Er bestaan urgente dossiers, zoals wonen, zorg, economie, veiligheid, migratie en klimaat."
+          ],
+          "expected_actions": [
+            "Partijen verkennen coalities en onderhandelen over een regeerakkoord.",
+            "Een formateur en kandidaat-ministers worden gezocht en gescreend.",
+            "Het kabinet presenteert beleid, wetsvoorstellen en een begroting.",
+            "De Tweede Kamer stelt vragen, debatteert, dient moties en amendementen in en stemt.",
+            "Ministers lichten besluiten toe, voeren beleid uit en leggen verantwoording af.",
+            "Partijen communiceren hun keuzes aan kiezers en bereiden zich voor op volgende verkiezingen."
+          ],
+          "expected_outcome": "Er ontstaat een werkbaar kabinet met voldoende parlementaire steun, dat voorspelbaar beleid uitvoert, problemen afweegt en publiek verantwoording aflegt.",
+          "expected_propositions": [
+            "Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.",
+            "Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.",
+            "Ministers zijn verantwoordelijk voor hun portefeuille en moeten fouten of problemen uitleggen aan de Kamer.",
+            "Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.",
+            "Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming."
+          ],
+          "audience_expectation": "Een setup over Nederlandse politiek en bestuur activeert de verwachting van een formeel, soms traag maar ordelijk democratisch proces waarin vertegenwoordigers onderhandelen, besluiten nemen en controle uitoefenen om het land bestuurbaar te houden."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.",
+            "opposition_axis": "algemeen belang versus interne verdeling van privileges",
+            "opposed_proposition": "Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.",
+            "shared_anchor": "De verdeling van ministersposten",
+            "reading_a": "Partijen verdelen portefeuilles om deskundigheid, politieke verhoudingen en bestuurlijke verantwoordelijkheid in een coalitie werkbaar te organiseren.",
+            "reading_b": "Afdelingshoofden verdelen aantrekkelijke functies, budgetten en voordelen alsof zij na een reorganisatie de beste etages mogen uitkiezen.",
+            "roles_b": [
+              "Partijleiders: afdelingshoofden die hun eigen team beschermen.",
+              "Ministers: nieuw benoemde managers met een eigen kostenplaats.",
+              "Tweede Kamer: ondernemingsraad die kritische vragen mag stellen.",
+              "Ambtenaren: medewerkers die de besluiten uitvoerbaar moeten maken.",
+              "Kiezers: klanten die pas achteraf merken wat de reorganisatie kost."
+            ],
+            "goal_b": "Zo veel mogelijk middelen, invloed en veilige functies voor de eigen afdeling veiligstellen, zonder dat de organisatie uiteenvalt.",
+            "role_remapping": [
+              "Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.",
+              "Partijleiders worden afdelingshoofden.",
+              "Ministeries worden kostenplaatsen of bedrijfsonderdelen.",
+              "De Tweede Kamer wordt de ondernemingsraad.",
+              "Kiezers worden klanten of aandeelhouders op afstand."
+            ],
+            "shared_cues": [
+              "Er wordt langdurig onderhandeld achter gesloten deuren.",
+              "Er verschijnen lijstjes met gewenste portefeuilles.",
+              "Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.",
+              "Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen."
+            ],
+            "switch_trigger": "Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.",
+            "hinge_event": "Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.",
+            "anomaly_under_a": "Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.",
+            "resolution_under_b": "Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "De coalitievorming is eigenlijk een datingprogramma: partijen ontmoeten elkaar onder felle studiolampen, beloven exclusiviteit, wantrouwen elkaars berichten en proberen een relatie aan te gaan die ten minste tot de volgende aflevering standhoudt.",
+            "opposition_axis": "duurzame publieke samenwerking versus opportunistische romantische koppeling",
+            "opposed_proposition": "Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.",
+            "shared_anchor": "Het coalitieakkoord",
+            "reading_a": "Een coalitieakkoord is een politiek document waarin partijen gezamenlijke beleidskeuzes en onderlinge afspraken vastleggen.",
+            "reading_b": "Een relatiecontract waarin partners beloven niet openlijk met andere kandidaten te flirten, al houden zij discreet een nooduitgang open.",
+            "roles_b": [
+              "Partijleiders: kandidaten in een datingprogramma.",
+              "Informateur en formateur: presentatoren en relatiecoaches.",
+              "Coalitiepartijen: koppels die exclusiviteit overwegen.",
+              "Oppositiepartijen: afgewezen kandidaten die vanaf de zijlijn commentaar geven.",
+              "Kiezers: televisiepubliek dat stemt wie geloofwaardig overkomt."
+            ],
+            "goal_b": "Een aantrekkelijk koppel vormen dat publieke ruzies overleeft en niet als eerste uit het programma wordt gestemd.",
+            "role_remapping": [
+              "Partijleiders worden romantische kandidaten.",
+              "Coalitieonderhandelingen worden dates en relatietherapie.",
+              "Het coalitieakkoord wordt een exclusiviteitsverklaring.",
+              "Een kabinetscrisis wordt een publieke relatiebreuk.",
+              "De Tweede Kamer wordt studio-publiek met stemkastjes."
+            ],
+            "shared_cues": [
+              "Er zijn verkennende gesprekken met verschillende partners.",
+              "Deelnemers benadrukken vertrouwen en chemie.",
+              "Er wordt gesproken over grenzen, afspraken en gezamenlijke toekomstplannen.",
+              "Afgewezen partijen reageren gekwetst of sceptisch."
+            ],
+            "switch_trigger": "Tijdens de ondertekening vraagt de formateur of de partijleiders elkaar nu een roos willen geven en bevestigen dat zij de andere kandidaten verwijderen uit hun telefoon.",
+            "hinge_event": "Een coalitiepartner dient bij een Kamerdebat een motie in met de mededeling dat zij 'even ruimte nodig heeft om zichzelf terug te vinden'.",
+            "anomaly_under_a": "Een coalitiepartij hoort een inhoudelijk conflict via overleg, debat of een formele motie toe te lichten; relationele zelfontplooiing is geen bestuurlijke reden.",
+            "resolution_under_b": "In een datingprogramma is de formulering precies de gebruikelijke aankondiging van een relatiepauze en maakt zij de afwijkende taal doelgericht."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Het parlementaire besluitvormingsproces blijkt een escaperoom voor bestuurders: ministers en fracties moeten onder tijdsdruk codes, sleutels en aanwijzingen vinden om vóór middernacht uit de vergaderzaal te komen.",
+            "opposition_axis": "inhoudelijke democratische besluitvorming versus spelmatige ontsnapping onder tijdsdruk",
+            "opposed_proposition": "Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.",
+            "shared_anchor": "De stemming over een wetsvoorstel",
+            "reading_a": "De Kamer stemt formeel over een wetsvoorstel nadat fracties het hebben besproken, gewijzigd en gewogen.",
+            "reading_b": "Spelers drukken gezamenlijk op de juiste knoppen om een slot te openen en de volgende kamer te bereiken.",
+            "roles_b": [
+              "Ministers: spelers die aanwijzingen moeten uitleggen.",
+              "Kamerleden: teamleden die puzzelstukken verzamelen.",
+              "Griffiers: spelbegeleiders die regels bewaken.",
+              "Ambtenaren: ontwerpers van raadsels en verborgen aanwijzingen.",
+              "De koning: ceremoniële figuur die aan het einde een enveloppe mag openen."
+            ],
+            "goal_b": "Alle codes op tijd oplossen, de deur openen en voorkomen dat het team wegens tijdsoverschrijding in de kamer opgesloten blijft.",
+            "role_remapping": [
+              "De Tweede Kamer wordt een escaperoomteam.",
+              "Kamerstukken worden aanwijzingen en puzzelbriefjes.",
+              "Amendementen worden aanpassingen aan een code.",
+              "Een stemming wordt het indrukken van een ontgrendelingsmechanisme.",
+              "De griffier wordt spelbegeleider."
+            ],
+            "shared_cues": [
+              "Er liggen dikke dossiers en schema's op tafel.",
+              "Er klinken vragen om verduidelijking.",
+              "Er is een strakke agenda en een naderende deadline.",
+              "Leden overleggen in kleine groepen en tellen steun."
+            ],
+            "switch_trigger": "De voorzitter zegt vlak voor de stemming: 'Als 76 handen tegelijk omhooggaan, gaat het slot van de deur open.'",
+            "hinge_event": "Een minister schuift een wetsartikel onder een schilderij vandaan en roept dat de Romeinse cijfers de code voor de uitgang vormen.",
+            "anomaly_under_a": "Een minister hoort wetsartikelen te presenteren en inhoudelijk te verdedigen; ze als fysieke verborgen code behandelen is onverenigbaar met een serieus debat.",
+            "resolution_under_b": "In de escaperoomlezing is het artikel een bewust verstopt puzzelonderdeel, en de code is noodzakelijk om het gezamenlijke doel te halen."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "De jaarlijkse begrotingsbehandeling is eigenlijk een grote rommelmarkt waarop bewindslieden en fracties met prijskaartjes langs kraampjes lopen. Wie genoeg ruilt, krijgt een zichtbaar project; wie te weinig biedt, moet met een tweedehands belofte naar huis.",
+            "opposition_axis": "begrotingsafweging op publieke merites versus ruilhandel om zichtbare buit",
+            "opposed_proposition": "Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.",
+            "shared_anchor": "De zoektocht naar steun voor de begroting",
+            "reading_a": "Een kabinet zoekt voldoende Kamersteun door beleidsprioriteiten, financiële dekking en politieke bezwaren tegen elkaar af te wegen.",
+            "reading_b": "Een verkoper probeert genoeg kopers en ruilpartners te verzamelen om zijn spullen kwijt te raken en met de beste koopjes te vertrekken.",
+            "roles_b": [
+              "Ministers: verkopers met overvolle marktkramen.",
+              "Kamerfracties: kopers en ruilhandelaren.",
+              "Ambtenaren: personen die prijskaartjes en bonnetjes uitschrijven.",
+              "Kiezers: bezoekers die hopen dat de beloofde koopjes echt bestaan.",
+              "De voorzitter: marktmeester die sluitingstijd aankondigt."
+            ],
+            "goal_b": "Met zo weinig mogelijk waardevolle toezeggingen voldoende ruilpartners vinden om de eigen kraam vóór sluitingstijd leeg te krijgen.",
+            "role_remapping": [
+              "Ministers worden marktverkopers.",
+              "Kamerfracties worden kopers of ruilhandelaren.",
+              "Begrotingsposten worden koopwaar met prijskaartjes.",
+              "Amendementen worden tegenbiedingen.",
+              "De Kamervoorzitter wordt marktmeester."
+            ],
+            "shared_cues": [
+              "Er wordt gerekend aan bedragen en dekking.",
+              "Fracties stellen voorwaarden voor hun steun.",
+              "Er worden toezeggingen gedaan over specifieke dossiers.",
+              "De tijd tot de stemming wordt nadrukkelijk genoemd."
+            ],
+            "switch_trigger": "De minister van Financiën draait zijn kraam om en roept door een megafoon: 'Wie vandaag vóór stemt, krijgt er twee miljard voor regionale zwembaden bij!'",
+            "hinge_event": "Een fractie accepteert een belastingmaatregel pas nadat zij er een set pannen en gratis bezorging bij heeft bedongen.",
+            "anomaly_under_a": "Pannen en bezorging zijn volstrekt irrelevante tegenprestaties binnen een parlementaire afweging over belastingwetgeving en begrotingsdekking.",
+            "resolution_under_b": "Op een rommelmarkt is een extra product een normale manier om een deal te sluiten; de vreemde eis onthult daarom dat steun als ruilwaar wordt behandeld."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Na de verkiezingen blijkt de kabinetsformatie in feite een bedrijfsvergadering waarin afdelingen vooral hun eigen budget, parkeerplaatsen en zichtbaarheid bevechten. Het kabinet wordt samengesteld als een directieteam dat elkaar in stand houdt zolang iedere afdeling iets krijgt.",
+              "opposition_axis": "algemeen belang versus interne verdeling van privileges",
+              "opposed_proposition": "Politici proberen, ondanks verschillen, compromissen te sluiten in het algemeen belang.",
+              "shared_anchor": "De verdeling van ministersposten",
+              "reading_a": "Partijen verdelen portefeuilles om deskundigheid, politieke verhoudingen en bestuurlijke verantwoordelijkheid in een coalitie werkbaar te organiseren.",
+              "reading_b": "Afdelingshoofden verdelen aantrekkelijke functies, budgetten en voordelen alsof zij na een reorganisatie de beste etages mogen uitkiezen.",
+              "roles_b": [
+                "Partijleiders: afdelingshoofden die hun eigen team beschermen.",
+                "Ministers: nieuw benoemde managers met een eigen kostenplaats.",
+                "Tweede Kamer: ondernemingsraad die kritische vragen mag stellen.",
+                "Ambtenaren: medewerkers die de besluiten uitvoerbaar moeten maken.",
+                "Kiezers: klanten die pas achteraf merken wat de reorganisatie kost."
+              ],
+              "goal_b": "Zo veel mogelijk middelen, invloed en veilige functies voor de eigen afdeling veiligstellen, zonder dat de organisatie uiteenvalt.",
+              "role_remapping": [
+                "Politieke partijen en fracties worden afdelingen binnen één groot bedrijf.",
+                "Partijleiders worden afdelingshoofden.",
+                "Ministeries worden kostenplaatsen of bedrijfsonderdelen.",
+                "De Tweede Kamer wordt de ondernemingsraad.",
+                "Kiezers worden klanten of aandeelhouders op afstand."
+              ],
+              "shared_cues": [
+                "Er wordt langdurig onderhandeld achter gesloten deuren.",
+                "Er verschijnen lijstjes met gewenste portefeuilles.",
+                "Woorden als draagvlak, verdeling, verantwoordelijkheid en akkoord vallen regelmatig.",
+                "Deelnemers spreken over moeilijke keuzes en wederzijds vertrouwen."
+              ],
+              "switch_trigger": "Bij de presentatie van het regeerakkoord hangt naast elke ministerspost een plattegrond met de bijbehorende hoekkamer, leaseauto en bonusregeling.",
+              "hinge_event": "Een partijleider weigert het ministerie van Volksgezondheid niet wegens inhoudelijke bezwaren, maar omdat de minister daar geen eigen parkeergarage krijgt.",
+              "anomaly_under_a": "Binnen democratische kabinetsvorming is een portefeuille een publieke verantwoordelijkheid; een privéparkeergarage is daarvoor een ongepaste maatstaf.",
+              "resolution_under_b": "Als de formatie een strijd tussen bedrijfsafdelingen is, is de parkeergarage een herkenbaar statussymbool en verklaart zij meteen de ogenschijnlijk principiële weigering."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "De coalitievorming is eigenlijk een datingprogramma: partijen ontmoeten elkaar onder felle studiolampen, beloven exclusiviteit, wantrouwen elkaars berichten en proberen een relatie aan te gaan die ten minste tot de volgende aflevering standhoudt.",
+              "opposition_axis": "duurzame publieke samenwerking versus opportunistische romantische koppeling",
+              "opposed_proposition": "Coalitiepartijen steunen meestal de hoofdlijnen van het kabinetsbeleid dat zij hebben afgesproken.",
+              "shared_anchor": "Het coalitieakkoord",
+              "reading_a": "Een coalitieakkoord is een politiek document waarin partijen gezamenlijke beleidskeuzes en onderlinge afspraken vastleggen.",
+              "reading_b": "Een relatiecontract waarin partners beloven niet openlijk met andere kandidaten te flirten, al houden zij discreet een nooduitgang open.",
+              "roles_b": [
+                "Partijleiders: kandidaten in een datingprogramma.",
+                "Informateur en formateur: presentatoren en relatiecoaches.",
+                "Coalitiepartijen: koppels die exclusiviteit overwegen.",
+                "Oppositiepartijen: afgewezen kandidaten die vanaf de zijlijn commentaar geven.",
+                "Kiezers: televisiepubliek dat stemt wie geloofwaardig overkomt."
+              ],
+              "goal_b": "Een aantrekkelijk koppel vormen dat publieke ruzies overleeft en niet als eerste uit het programma wordt gestemd.",
+              "role_remapping": [
+                "Partijleiders worden romantische kandidaten.",
+                "Coalitieonderhandelingen worden dates en relatietherapie.",
+                "Het coalitieakkoord wordt een exclusiviteitsverklaring.",
+                "Een kabinetscrisis wordt een publieke relatiebreuk.",
+                "De Tweede Kamer wordt studio-publiek met stemkastjes."
+              ],
+              "shared_cues": [
+                "Er zijn verkennende gesprekken met verschillende partners.",
+                "Deelnemers benadrukken vertrouwen en chemie.",
+                "Er wordt gesproken over grenzen, afspraken en gezamenlijke toekomstplannen.",
+                "Afgewezen partijen reageren gekwetst of sceptisch."
+              ],
+              "switch_trigger": "Tijdens de ondertekening vraagt de formateur of de partijleiders elkaar nu een roos willen geven en bevestigen dat zij de andere kandidaten verwijderen uit hun telefoon.",
+              "hinge_event": "Een coalitiepartner dient bij een Kamerdebat een motie in met de mededeling dat zij 'even ruimte nodig heeft om zichzelf terug te vinden'.",
+              "anomaly_under_a": "Een coalitiepartij hoort een inhoudelijk conflict via overleg, debat of een formele motie toe te lichten; relationele zelfontplooiing is geen bestuurlijke reden.",
+              "resolution_under_b": "In een datingprogramma is de formulering precies de gebruikelijke aankondiging van een relatiepauze en maakt zij de afwijkende taal doelgericht."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Het parlementaire besluitvormingsproces blijkt een escaperoom voor bestuurders: ministers en fracties moeten onder tijdsdruk codes, sleutels en aanwijzingen vinden om vóór middernacht uit de vergaderzaal te komen.",
+              "opposition_axis": "inhoudelijke democratische besluitvorming versus spelmatige ontsnapping onder tijdsdruk",
+              "opposed_proposition": "Bestuurlijke besluiten verlopen via procedures, overleg, debat en formele stemming.",
+              "shared_anchor": "De stemming over een wetsvoorstel",
+              "reading_a": "De Kamer stemt formeel over een wetsvoorstel nadat fracties het hebben besproken, gewijzigd en gewogen.",
+              "reading_b": "Spelers drukken gezamenlijk op de juiste knoppen om een slot te openen en de volgende kamer te bereiken.",
+              "roles_b": [
+                "Ministers: spelers die aanwijzingen moeten uitleggen.",
+                "Kamerleden: teamleden die puzzelstukken verzamelen.",
+                "Griffiers: spelbegeleiders die regels bewaken.",
+                "Ambtenaren: ontwerpers van raadsels en verborgen aanwijzingen.",
+                "De koning: ceremoniële figuur die aan het einde een enveloppe mag openen."
+              ],
+              "goal_b": "Alle codes op tijd oplossen, de deur openen en voorkomen dat het team wegens tijdsoverschrijding in de kamer opgesloten blijft.",
+              "role_remapping": [
+                "De Tweede Kamer wordt een escaperoomteam.",
+                "Kamerstukken worden aanwijzingen en puzzelbriefjes.",
+                "Amendementen worden aanpassingen aan een code.",
+                "Een stemming wordt het indrukken van een ontgrendelingsmechanisme.",
+                "De griffier wordt spelbegeleider."
+              ],
+              "shared_cues": [
+                "Er liggen dikke dossiers en schema's op tafel.",
+                "Er klinken vragen om verduidelijking.",
+                "Er is een strakke agenda en een naderende deadline.",
+                "Leden overleggen in kleine groepen en tellen steun."
+              ],
+              "switch_trigger": "De voorzitter zegt vlak voor de stemming: 'Als 76 handen tegelijk omhooggaan, gaat het slot van de deur open.'",
+              "hinge_event": "Een minister schuift een wetsartikel onder een schilderij vandaan en roept dat de Romeinse cijfers de code voor de uitgang vormen.",
+              "anomaly_under_a": "Een minister hoort wetsartikelen te presenteren en inhoudelijk te verdedigen; ze als fysieke verborgen code behandelen is onverenigbaar met een serieus debat.",
+              "resolution_under_b": "In de escaperoomlezing is het artikel een bewust verstopt puzzelonderdeel, en de code is noodzakelijk om het gezamenlijke doel te halen."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "De jaarlijkse begrotingsbehandeling is eigenlijk een grote rommelmarkt waarop bewindslieden en fracties met prijskaartjes langs kraampjes lopen. Wie genoeg ruilt, krijgt een zichtbaar project; wie te weinig biedt, moet met een tweedehands belofte naar huis.",
+              "opposition_axis": "begrotingsafweging op publieke merites versus ruilhandel om zichtbare buit",
+              "opposed_proposition": "Een meerderheid in de Tweede Kamer is doorgaans nodig om wetgeving en begrotingen door te voeren.",
+              "shared_anchor": "De zoektocht naar steun voor de begroting",
+              "reading_a": "Een kabinet zoekt voldoende Kamersteun door beleidsprioriteiten, financiële dekking en politieke bezwaren tegen elkaar af te wegen.",
+              "reading_b": "Een verkoper probeert genoeg kopers en ruilpartners te verzamelen om zijn spullen kwijt te raken en met de beste koopjes te vertrekken.",
+              "roles_b": [
+                "Ministers: verkopers met overvolle marktkramen.",
+                "Kamerfracties: kopers en ruilhandelaren.",
+                "Ambtenaren: personen die prijskaartjes en bonnetjes uitschrijven.",
+                "Kiezers: bezoekers die hopen dat de beloofde koopjes echt bestaan.",
+                "De voorzitter: marktmeester die sluitingstijd aankondigt."
+              ],
+              "goal_b": "Met zo weinig mogelijk waardevolle toezeggingen voldoende ruilpartners vinden om de eigen kraam vóór sluitingstijd leeg te krijgen.",
+              "role_remapping": [
+                "Ministers worden marktverkopers.",
+                "Kamerfracties worden kopers of ruilhandelaren.",
+                "Begrotingsposten worden koopwaar met prijskaartjes.",
+                "Amendementen worden tegenbiedingen.",
+                "De Kamervoorzitter wordt marktmeester."
+              ],
+              "shared_cues": [
+                "Er wordt gerekend aan bedragen en dekking.",
+                "Fracties stellen voorwaarden voor hun steun.",
+                "Er worden toezeggingen gedaan over specifieke dossiers.",
+                "De tijd tot de stemming wordt nadrukkelijk genoemd."
+              ],
+              "switch_trigger": "De minister van Financiën draait zijn kraam om en roept door een megafoon: 'Wie vandaag vóór stemt, krijgt er twee miljard voor regionale zwembaden bij!'",
+              "hinge_event": "Een fractie accepteert een belastingmaatregel pas nadat zij er een set pannen en gratis bezorging bij heeft bedongen.",
+              "anomaly_under_a": "Pannen en bezorging zijn volstrekt irrelevante tegenprestaties binnen een parlementaire afweging over belastingwetgeving en begrotingsdekking.",
+              "resolution_under_b": "Op een rommelmarkt is een extra product een normale manier om een deal te sluiten; de vreemde eis onthult daarom dat steun als ruilwaar wordt behandeld."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde formatietekst en verdeling van ministersposten kunnen eerst als bestuurlijke coalitievorming en daarna als interne bedrijfsverdeling worden gelezen. Het dominante contrast is publieke verantwoordelijkheid tegenover het veiligstellen van interne privileges. De parkeergarage is onder Script A een ongepaste reden voor portefeuillekeuze, maar onder Script B een functioneel statussymbool. Het ontbreken ervan belemmert de publieke verdelingslogica niet alleen, maar blokkeert in B ook het privilege-doel van de partijleider."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Coalitiegesprekken, vertrouwen, afspraken en een akkoord kunnen aanvankelijk als normale politieke samenwerking functioneren en vervolgens als datingprogramma worden herlezen. De centrale tegenstelling is een publiek beleidsverband tegenover een romantisch-exclusieve koppeling. De uitspraak over ruimte nodig hebben is bestuurlijk afwijkend, maar is herkenbare relatietaal binnen Script B. Zij herkadert eerdere afspraken als relatieafspraken. De gebeurtenis ondersteunt echter niet duidelijk het B-doel om als aantrekkelijk en stabiel koppel in het programma te blijven; een publieke relatiepauze kan dat doel juist schaden."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dossiers, overleg, verduidelijkingsvragen, deadlines en het tellen van steun kunnen zowel een parlementaire stemming als een escaperoom-opzet dragen. De dominante tegenstelling is inhoudelijke democratische besluitvorming tegenover het oplossen van spelpuzzels om te ontsnappen. Het verstopte wetsartikel is binnen Script A onverenigbaar met serieus wetgevingswerk, maar wordt binnen Script B een noodzakelijk puzzelonderdeel. De puzzelmatige behandeling blokkeert het inhoudelijke bestuurlijke doel van A en maakt juist het ontsnappingsdoel van B mogelijk."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Rekenen aan bedragen, voorwaarden stellen, toezeggingen doen en steun zoeken kunnen eerst als begrotingsonderhandeling en daarna als marktgeruil worden gelezen. Het dominante contrast is publieke begrotingsafweging tegenover ruilhandel om zichtbare buit. De eis van pannen en gratis bezorging is onder Script A irrelevant voor belastingwetgeving, maar onder Script B een normale dealvoorwaarde op een markt. Daardoor worden eerdere toezeggingen herlezen als koopwaar en tegenbiedingen. De irrelevante extra tegenprestatie ondermijnt een afweging op publieke merites, maar helpt binnen B een ruildeal en dus steun tot stand te brengen."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde formatietekst en verdeling van ministersposten kunnen eerst als bestuurlijke coalitievorming en daarna als interne bedrijfsverdeling worden gelezen. Het dominante contrast is publieke verantwoordelijkheid tegenover het veiligstellen van interne privileges. De parkeergarage is onder Script A een ongepaste reden voor portefeuillekeuze, maar onder Script B een functioneel statussymbool. Het ontbreken ervan belemmert de publieke verdelingslogica niet alleen, maar blokkeert in B ook het privilege-doel van de partijleider."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Coalitiegesprekken, vertrouwen, afspraken en een akkoord kunnen aanvankelijk als normale politieke samenwerking functioneren en vervolgens als datingprogramma worden herlezen. De centrale tegenstelling is een publiek beleidsverband tegenover een romantisch-exclusieve koppeling. De uitspraak over ruimte nodig hebben is bestuurlijk afwijkend, maar is herkenbare relatietaal binnen Script B. Zij herkadert eerdere afspraken als relatieafspraken. De gebeurtenis ondersteunt echter niet duidelijk het B-doel om als aantrekkelijk en stabiel koppel in het programma te blijven; een publieke relatiepauze kan dat doel juist schaden."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dossiers, overleg, verduidelijkingsvragen, deadlines en het tellen van steun kunnen zowel een parlementaire stemming als een escaperoom-opzet dragen. De dominante tegenstelling is inhoudelijke democratische besluitvorming tegenover het oplossen van spelpuzzels om te ontsnappen. Het verstopte wetsartikel is binnen Script A onverenigbaar met serieus wetgevingswerk, maar wordt binnen Script B een noodzakelijk puzzelonderdeel. De puzzelmatige behandeling blokkeert het inhoudelijke bestuurlijke doel van A en maakt juist het ontsnappingsdoel van B mogelijk."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Rekenen aan bedragen, voorwaarden stellen, toezeggingen doen en steun zoeken kunnen eerst als begrotingsonderhandeling en daarna als marktgeruil worden gelezen. Het dominante contrast is publieke begrotingsafweging tegenover ruilhandel om zichtbare buit. De eis van pannen en gratis bezorging is onder Script A irrelevant voor belastingwetgeving, maar onder Script B een normale dealvoorwaarde op een markt. Daardoor worden eerdere toezeggingen herlezen als koopwaar en tegenbiedingen. De irrelevante extra tegenprestatie ondermijnt een afweging op publieke merites, maar helpt binnen B een ruildeal en dus steun tot stand te brengen."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B1"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een normale kabinetsformatie waarin partijen na langdurige onderhandelingen draagvlak, verantwoordelijkheid en moeilijke keuzes bespreken.",
+          "realized_script_b": "De formatie is feitelijk een directieoverleg waarin partijleiders portefeuilles beoordelen als arbeidsvoorwaardenpakketten met parkeerprivileges en leasevoordelen.",
+          "realized_opposition_axis": "publiek algemeen belang versus interne verdeling van zakelijke privileges",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De politieke setup is dominant via de geplande formatiecues. De weigering van Volksgezondheid wegens ontbrekende parkeergarage activeert functioneel de bedrijfs-/privilegelezing; het leaseplan herkadert het regeerakkoord als arbeidsvoorwaardenregeling."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een compacte, natuurlijk klinkende formatiegrap die de beoogde publieke-verantwoordelijkheidlezing laat omslaan naar een directievergadering over secundaire arbeidsvoorwaarden.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een kabinetsformatie waarin partijleiders volgens de publieke norm niet voor zichzelf maar voor het landsbelang onderhandelen.",
+          "realized_script_b": "Een portefeuille wordt behandeld als een persoonlijke kantoorstatusvoorziening, waarbij buiten moeten parkeren reden is om een ministerie af te wijzen.",
+          "realized_opposition_axis": "publieke verantwoordelijkheid versus persoonlijke status/comfort",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De parkeergarage-hinge is aanwezig, maar de beoogde bedrijfsvergadering met afdelingen die functies, budgetten en privileges onderling verdelen wordt niet voldoende geactiveerd. De gerealiseerde tegenstelling is smaller: zelfzucht versus publieke taak."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": false,
+          "shared_cues_realized": false,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": false,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De tekst vormt wel een geldige grap over politieke zelfzucht en parkeerstatus, maar realiseert vooral een andere, beperktere oppositie dan de geplande afdelingenstrijd om interne privileges.",
+          "passes_required_plan": false
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een kabinetsformatie waarin partijen via langdurig overleg, vertrouwen en eerlijke verdeling tot een regeerakkoord komen.",
+          "realized_script_b": "De formatie is interne kantoorpolitiek: ministeries zijn gewilde afdelingen of functies die worden beoordeeld op hoekkamers en eigen garages.",
+          "realized_opposition_axis": "algemeen belang versus interne verdeling van privileges",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De tekst gebruikt de geplande overleg- en verdelingscues, waarna de ruzie over Volksgezondheid versus Financiën wegens een hoekkamer met eigen garage de formatie functioneel als bedrijfsinterne privilegeverdeling herleest."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De aanvankelijk democratische verdelingsretoriek wordt bij de slotinformatie duidelijk en functioneel omgezet in de geplande lezing van kantoorpolitiek en statusprivileges.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "V1 wint omdat beide teksten binnen de lengte-eis vallen, maar V1 wel de vereiste SO volledig realiseert. De parkeergarage en het leaseplan herinterpreteren de formatie duidelijk als een directieoverleg over arbeidsvoorwaarden; V2 blijft vooral bij individuele ijdelheid."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "Beide passerende varianten hebben een heldere scriptomslag naar kantoorpolitiek en voldoen aan de vormeis. V1 is compacter, natuurlijker uitspreekbaar en eindigt sterker met het leaseplan, dat het hele regeerakkoord retrospectief herkadert."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V3",
+          "rationale": "V3 wint als passerende variant van V2, dat de vereiste SO slechts gedeeltelijk haalt. De hoekkamer en eigen garage maken in V3 de verdeling van ministeries overtuigend tot interne privilegepolitiek, met een bredere en duidelijkere herinterpretatie."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 is de sterkste passerende variant: de politieke ernst wordt efficiënt omgezet in een directievergadering over secundaire arbeidsvoorwaarden, met een heldere switch en een bondige, performabele slotclou."
+    }
+  },
+  "result_sha256": "88084635cf7029587921dae13ae8252b2e8621151f9208ac4258a1bfc82ea313"
+}

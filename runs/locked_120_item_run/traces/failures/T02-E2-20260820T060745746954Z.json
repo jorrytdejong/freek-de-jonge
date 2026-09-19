@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T06:07:45.746932+00:00",
+  "job": {
+    "job_id": "T02-E2",
+    "topic_id": "T02",
+    "topic": "Jeugd, school en de Zeeuwse jaren",
+    "condition_code": "E2"
+  },
+  "attempt": 2,
+  "exception_type": "APIConnectionError",
+  "message": "Connection error."
+}

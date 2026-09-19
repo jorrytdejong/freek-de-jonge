@@ -1,0 +1,823 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T07-C1",
+  "topic_id": "T07",
+  "topic": "Gezondheid, ziekte en zorg",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "ddf7cc148e05b41f2611ea93518f4ccd9b2b33e3cea6c52ad536e2c458f73fb1",
+  "dry_run": false,
+  "attempt": 4,
+  "generated_at": "2026-08-20T06:15:43.559418+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Gezondheid, ziekte en zorg",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, geeft die eerlijk door en volgt passend medisch advies.\",\n      \"Huisarts of zorgverlener: luistert, onderzoekt, stelt een waarschijnlijke diagnose en verwijst of behandelt.\",\n      \"Eventuele specialist, apotheker of verpleegkundige: levert aanvullende deskundigheid, zorg of medicatie.\",\n      \"Naasten: bieden praktische en emotionele steun tijdens ziekte en herstel.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig laten herstellen of de aandoening beheersbaar maken.\",\n    \"preconditions\": [\n      \"De patiënt ervaart klachten, zorgen over de gezondheid of heeft preventieve zorg nodig.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis of andere zorgvoorziening.\",\n      \"De patiënt kan relevante symptomen, duur, medicatie en medische voorgeschiedenis zo goed mogelijk beschrijven.\",\n      \"De zorgverlener beschikt over tijd, basisinformatie, professionele deskundigheid en zo nodig diagnostische middelen.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt maakt een afspraak of zoekt, bij spoed, direct medische hulp.\",\n      \"De zorgverlener stelt vragen, verricht onderzoek en beoordeelt de ernst van de situatie.\",\n      \"Er volgt een diagnose, werkdiagnose of plan voor aanvullend onderzoek.\",\n      \"De zorgverlener geeft uitleg, leefstijladvies, medicatie, behandeling of een verwijzing.\",\n      \"De patiënt gebruikt voorgeschreven zorg verantwoord, volgt instructies op en neemt contact op als klachten verergeren of niet verbeteren.\"\n    ],\n    \"expected_outcome\": \"De patiënt krijgt duidelijkheid en passende zorg, waarna de klachten verminderen, herstel optreedt of er een realistisch behandel- en vervolgplan is.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\",\n      \"Medische vragen worden beantwoord met deskundig onderzoek en begrijpelijke uitleg.\",\n      \"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\",\n      \"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\",\n      \"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie roept de herkenbare verwachting op van een hulpzoekende patiënt en een deskundige, zorgzame professional die via onderzoek en behandeling orde schept in lichamelijke onzekerheid.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, geeft die eerlijk door en volgt passend medisch advies.\",\n      \"Huisarts of zorgverlener: luistert, onderzoekt, stelt een waarschijnlijke diagnose en verwijst of behandelt.\",\n      \"Eventuele specialist, apotheker of verpleegkundige: levert aanvullende deskundigheid, zorg of medicatie.\",\n      \"Naasten: bieden praktische en emotionele steun tijdens ziekte en herstel.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig laten herstellen of de aandoening beheersbaar maken.\",\n    \"preconditions\": [\n      \"De patiënt ervaart klachten, zorgen over de gezondheid of heeft preventieve zorg nodig.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis of andere zorgvoorziening.\",\n      \"De patiënt kan relevante symptomen, duur, medicatie en medische voorgeschiedenis zo goed mogelijk beschrijven.\",\n      \"De zorgverlener beschikt over tijd, basisinformatie, professionele deskundigheid en zo nodig diagnostische middelen.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt maakt een afspraak of zoekt, bij spoed, direct medische hulp.\",\n      \"De zorgverlener stelt vragen, verricht onderzoek en beoordeelt de ernst van de situatie.\",\n      \"Er volgt een diagnose, werkdiagnose of plan voor aanvullend onderzoek.\",\n      \"De zorgverlener geeft uitleg, leefstijladvies, medicatie, behandeling of een verwijzing.\",\n      \"De patiënt gebruikt voorgeschreven zorg verantwoord, volgt instructies op en neemt contact op als klachten verergeren of niet verbeteren.\"\n    ],\n    \"expected_outcome\": \"De patiënt krijgt duidelijkheid en passende zorg, waarna de klachten verminderen, herstel optreedt of er een realistisch behandel- en vervolgplan is.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\",\n      \"Medische vragen worden beantwoord met deskundig onderzoek en begrijpelijke uitleg.\",\n      \"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\",\n      \"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\",\n      \"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie roept de herkenbare verwachting op van een hulpzoekende patiënt en een deskundige, zorgzame professional die via onderzoek en behandeling orde schept in lichamelijke onzekerheid.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een werknemer doet zich bij de huisarts ziek voor om een overtuigende ziekmelding of verklaring te krijgen waarmee hij een ongewenste werkdag, toets of verplichting kan ontlopen.\",\n      \"opposition_axis\": \"Oprechte hulpvraag tegenover strategische misleiding\",\n      \"opposed_proposition\": \"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\",\n      \"shared_anchor\": \"Een consult over plotselinge rugpijn vóór een belangrijke werkdag.\",\n      \"reading_a\": \"De patiënt heeft acute rugklachten, zoekt tijdig medische hulp en hoopt op onderzoek, pijnverlichting en een verantwoord hersteladvies.\",\n      \"reading_b\": \"De werknemer ensceneert of overdrijft rugpijn om afwezigheid geloofwaardig te maken en een formele rechtvaardiging te verkrijgen.\",\n      \"roles_b\": [\n        \"Werknemer: speelt de zieke en probeert geloofwaardig te klinken.\",\n        \"Huisarts: fungeert onbedoeld als bron van een legitimatie of verklaring.\",\n        \"Werkgever of school: controleert de afwezigheid en verlangt een aannemelijke reden.\",\n        \"Collega: moet mogelijk het werk overnemen en vormt sociale druk.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige reden voor afwezigheid verkrijgen zonder dat de misleiding wordt ontdekt.\",\n      \"role_remapping\": [\n        \"Patiënt → werknemer die een rol speelt.\",\n        \"Zorgverlener → onbedoelde beoordelaar van een excuus.\",\n        \"Naasten → collega's die de gevolgen van de afwezigheid opvangen.\",\n        \"Behandeling of advies → bruikbaar bewijs voor de ziekmelding.\"\n      ],\n      \"shared_cues\": [\n        \"Een afspraak in de ochtend.\",\n        \"Een beschrijving van stekende rugpijn.\",\n        \"Vragen over wanneer de pijn begon.\",\n        \"Een onderzoek van houding en beweging.\",\n        \"Advies om rust te nemen.\"\n      ],\n      \"switch_trigger\": \"De patiënt vraagt niet naar behandeling of herstel, maar uitsluitend of de arts expliciet kan opschrijven dat hij morgen niet kan werken.\",\n      \"hinge_event\": \"Hij oefent buiten de spreekkamer alvast een pijnlijke manier van lopen en loopt daarna soepel weg zodra hij de verklaring heeft.\",\n      \"anomaly_under_a\": \"Een werkelijk bezorgde patiënt zou vooral duidelijkheid, verlichting en veilig herstel zoeken; het repeteren van klachten en de exclusieve belangstelling voor een verklaring zijn ongepast.\",\n      \"resolution_under_b\": \"Als hij een ziektebeeld opvoert, zijn de ingestudeerde mankheid en de verklaring precies functioneel: zij moeten zijn afwezigheid tegenover werkgever of school geloofwaardig maken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een persoon bezoekt een arts vooral om toegang te krijgen tot gewilde receptmedicatie, die hij zelf wil misbruiken of doorverkopen, en stemt zijn klachtenverhaal daarop af.\",\n      \"opposition_axis\": \"Therapeutisch gebruik tegenover instrumentele verwerving\",\n      \"opposed_proposition\": \"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\",\n      \"shared_anchor\": \"Een consult wegens hevige pijn en een verzoek om sterke medicatie.\",\n      \"reading_a\": \"De patiënt lijdt aan ernstige pijn, geeft zijn klachten eerlijk door en vraagt om veilige verlichting binnen een medisch behandelplan.\",\n      \"reading_b\": \"De bezoeker gebruikt pijnklachten als aannemelijk voorwendsel om een specifiek, verhandelbaar of verslavend middel te bemachtigen.\",\n      \"roles_b\": [\n        \"Bezoeker: formuleert doelgericht een klachtenverhaal.\",\n        \"Arts: bewaakt voorschrijfveiligheid en wordt als toegangspoort benaderd.\",\n        \"Apotheker: verstrekt of signaleert een ongebruikelijk recept.\",\n        \"Afnemer of medegebruiker: kan buiten beeld wachten op de medicatie.\"\n      ],\n      \"goal_b\": \"Een recept voor een gewenst middel verkrijgen, niet een medische oorzaak laten behandelen.\",\n      \"role_remapping\": [\n        \"Patiënt → doelgerichte verkrijger van medicatie.\",\n        \"Zorgverlener → poortwachter voor een gewild product.\",\n        \"Apotheker → laatste schakel in de verkrijging.\",\n        \"Behandeling → handelswaar of middel voor misbruik.\"\n      ],\n      \"shared_cues\": [\n        \"Een pijnscore noemen.\",\n        \"Eerdere medicatie bespreken.\",\n        \"Vragen naar allergieën.\",\n        \"Onderzoek van de pijnlijke plek.\",\n        \"Een recept als mogelijke uitkomst.\"\n      ],\n      \"switch_trigger\": \"Na een voorstel voor onderzoek, fysiotherapie of een minder risicovol middel wijst de bezoeker alles af en noemt hij alleen merk, sterkte en exacte hoeveelheid van één zwaar middel.\",\n      \"hinge_event\": \"Zijn telefoon toont tijdens het consult een bericht: „Kun je er nog drie regelen voor vanavond?”\",\n      \"anomaly_under_a\": \"Bij een reguliere pijnhulpvraag is het vreemd om alle diagnostiek en alternatieven af te wijzen en uitsluitend op voorraad, dosering en hoeveelheid te sturen.\",\n      \"resolution_under_b\": \"Onder de lezing van verwerving is die uitzonderlijke precisie doelmatig: hij probeert precies het middel en de hoeveelheid te krijgen die hij wil gebruiken of doorgeven.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.\",\n      \"opposition_axis\": \"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang\",\n      \"opposed_proposition\": \"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\",\n      \"shared_anchor\": \"Een gezondheidsvragenlijst en lichamelijke keuring voorafgaand aan een onderzoek.\",\n      \"reading_a\": \"Een patiënt of kandidaat verstrekt correcte informatie zodat een zorgverlener gezondheidsrisico's kan beoordelen en passend kan handelen.\",\n      \"reading_b\": \"Een betaalde proefpersoon minimaliseert klachten, medicijngebruik of eerdere deelname om toch tot het onderzoek te worden toegelaten.\",\n      \"roles_b\": [\n        \"Proefpersoon: wil door de selectie komen voor vergoeding.\",\n        \"Onderzoeksarts: beoordeelt veiligheid en geschiktheid.\",\n        \"Onderzoekscoördinator: verwerkt vragenlijsten en plant deelname.\",\n        \"Onderzoeksponsor: betaalt voor betrouwbare en veilige onderzoeksdeelname.\"\n      ],\n      \"goal_b\": \"Toelating tot het betaalde onderzoek krijgen, ook als uitsluiting medisch verstandiger zou zijn.\",\n      \"role_remapping\": [\n        \"Patiënt → proefpersoon die informatie doseert.\",\n        \"Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.\",\n        \"Behandeling → onderzoeksinterventie of vergoedingstraject.\",\n        \"Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden.\"\n      ],\n      \"shared_cues\": [\n        \"Een vragenlijst over eerdere ziekten.\",\n        \"Bloeddruk en hartslag meten.\",\n        \"Vragen naar medicatie.\",\n        \"Bloed afnemen.\",\n        \"Uitleg over mogelijke risico's.\"\n      ],\n      \"switch_trigger\": \"Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.\",\n      \"hinge_event\": \"In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.\",\n      \"anomaly_under_a\": \"Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.\",\n      \"resolution_under_b\": \"Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een familie organiseert een ziekenhuisbezoek aan een vermogende oudere vooral als toneel van een erfrechtelijk conflict: zij willen invloed tonen, getuigen verzamelen en een testamentaire beslissing sturen.\",\n      \"opposition_axis\": \"Zorgzame nabijheid tegenover berekende belangenstrijd\",\n      \"opposed_proposition\": \"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\",\n      \"shared_anchor\": \"Familieleden verzamelen zich rond een oudere patiënt na een ziekenhuisopname.\",\n      \"reading_a\": \"Naasten komen op bezoek om de patiënt te steunen, informatie over herstel te ontvangen en samen passende vervolgzorg te regelen.\",\n      \"reading_b\": \"Verwanten gebruiken de opname als gelegenheid om toegang, beslissingsmacht en financiële aanspraken rond de patiënt veilig te stellen.\",\n      \"roles_b\": [\n        \"Oudere patiënt: kwetsbare persoon met vermogen en beperkte regie.\",\n        \"Familielid: presenteert zich als bezorgde bezoeker maar zoekt invloed.\",\n        \"Arts of verpleegkundige: verstrekt medische informatie binnen privacygrenzen.\",\n        \"Notaris of advocaat: wordt opgeroepen voor een juridisch doel.\",\n        \"Andere verwant: fungeert als rivaal of mogelijke getuige.\"\n      ],\n      \"goal_b\": \"Een gunstige positie rond testament, volmacht of nalatenschap verwerven.\",\n      \"role_remapping\": [\n        \"Patiënt → kwetsbare testamentgever of bron van beslissingsmacht.\",\n        \"Naasten → rivaliserende belanghebbenden.\",\n        \"Zorgverlener → onbedoelde getuige van wilsbekwaamheid of afhankelijkheid.\",\n        \"Vervolgzorg → aanleiding om zeggenschap over de patiënt te claimen.\"\n      ],\n      \"shared_cues\": [\n        \"Bezoek aan het ziekenhuisbed.\",\n        \"Vragen naar de conditie.\",\n        \"Overleg over wie thuis kan helpen.\",\n        \"Een gesprek over ontslag en vervolgzorg.\",\n        \"Emotionele woorden over bezorgdheid.\"\n      ],\n      \"switch_trigger\": \"Zodra de verpleegkundige meldt dat de patiënt weer helder en stabiel is, vraagt één familielid direct of er vandaag nog een notaris naar de kamer mag komen.\",\n      \"hinge_event\": \"Het familielid haalt een vooraf ingevulde volmacht uit zijn tas en vraagt de patiënt die meteen te tekenen.\",\n      \"anomaly_under_a\": \"Tijdens een herstelgesprek is een kant-en-klare juridische volmacht ongepast; de verwachte aandacht ligt bij comfort, behandeling en veilige nazorg.\",\n      \"resolution_under_b\": \"In de erfrechtelijke lezing is het document doelgericht voorbereid: het bezoek is niet primair steun, maar een kans om formele invloed te verkrijgen terwijl de patiënt kwetsbaar is.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, geeft die eerlijk door en volgt passend medisch advies.\",\n      \"Huisarts of zorgverlener: luistert, onderzoekt, stelt een waarschijnlijke diagnose en verwijst of behandelt.\",\n      \"Eventuele specialist, apotheker of verpleegkundige: levert aanvullende deskundigheid, zorg of medicatie.\",\n      \"Naasten: bieden praktische en emotionele steun tijdens ziekte en herstel.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig laten herstellen of de aandoening beheersbaar maken.\",\n    \"preconditions\": [\n      \"De patiënt ervaart klachten, zorgen over de gezondheid of heeft preventieve zorg nodig.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis of andere zorgvoorziening.\",\n      \"De patiënt kan relevante symptomen, duur, medicatie en medische voorgeschiedenis zo goed mogelijk beschrijven.\",\n      \"De zorgverlener beschikt over tijd, basisinformatie, professionele deskundigheid en zo nodig diagnostische middelen.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt maakt een afspraak of zoekt, bij spoed, direct medische hulp.\",\n      \"De zorgverlener stelt vragen, verricht onderzoek en beoordeelt de ernst van de situatie.\",\n      \"Er volgt een diagnose, werkdiagnose of plan voor aanvullend onderzoek.\",\n      \"De zorgverlener geeft uitleg, leefstijladvies, medicatie, behandeling of een verwijzing.\",\n      \"De patiënt gebruikt voorgeschreven zorg verantwoord, volgt instructies op en neemt contact op als klachten verergeren of niet verbeteren.\"\n    ],\n    \"expected_outcome\": \"De patiënt krijgt duidelijkheid en passende zorg, waarna de klachten verminderen, herstel optreedt of er een realistisch behandel- en vervolgplan is.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\",\n      \"Medische vragen worden beantwoord met deskundig onderzoek en begrijpelijke uitleg.\",\n      \"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\",\n      \"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\",\n      \"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie roept de herkenbare verwachting op van een hulpzoekende patiënt en een deskundige, zorgzame professional die via onderzoek en behandeling orde schept in lichamelijke onzekerheid.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een werknemer doet zich bij de huisarts ziek voor om een overtuigende ziekmelding of verklaring te krijgen waarmee hij een ongewenste werkdag, toets of verplichting kan ontlopen.\",\n      \"opposition_axis\": \"Oprechte hulpvraag tegenover strategische misleiding\",\n      \"opposed_proposition\": \"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\",\n      \"shared_anchor\": \"Een consult over plotselinge rugpijn vóór een belangrijke werkdag.\",\n      \"reading_a\": \"De patiënt heeft acute rugklachten, zoekt tijdig medische hulp en hoopt op onderzoek, pijnverlichting en een verantwoord hersteladvies.\",\n      \"reading_b\": \"De werknemer ensceneert of overdrijft rugpijn om afwezigheid geloofwaardig te maken en een formele rechtvaardiging te verkrijgen.\",\n      \"roles_b\": [\n        \"Werknemer: speelt de zieke en probeert geloofwaardig te klinken.\",\n        \"Huisarts: fungeert onbedoeld als bron van een legitimatie of verklaring.\",\n        \"Werkgever of school: controleert de afwezigheid en verlangt een aannemelijke reden.\",\n        \"Collega: moet mogelijk het werk overnemen en vormt sociale druk.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige reden voor afwezigheid verkrijgen zonder dat de misleiding wordt ontdekt.\",\n      \"role_remapping\": [\n        \"Patiënt → werknemer die een rol speelt.\",\n        \"Zorgverlener → onbedoelde beoordelaar van een excuus.\",\n        \"Naasten → collega's die de gevolgen van de afwezigheid opvangen.\",\n        \"Behandeling of advies → bruikbaar bewijs voor de ziekmelding.\"\n      ],\n      \"shared_cues\": [\n        \"Een afspraak in de ochtend.\",\n        \"Een beschrijving van stekende rugpijn.\",\n        \"Vragen over wanneer de pijn begon.\",\n        \"Een onderzoek van houding en beweging.\",\n        \"Advies om rust te nemen.\"\n      ],\n      \"switch_trigger\": \"De patiënt vraagt niet naar behandeling of herstel, maar uitsluitend of de arts expliciet kan opschrijven dat hij morgen niet kan werken.\",\n      \"hinge_event\": \"Hij oefent buiten de spreekkamer alvast een pijnlijke manier van lopen en loopt daarna soepel weg zodra hij de verklaring heeft.\",\n      \"anomaly_under_a\": \"Een werkelijk bezorgde patiënt zou vooral duidelijkheid, verlichting en veilig herstel zoeken; het repeteren van klachten en de exclusieve belangstelling voor een verklaring zijn ongepast.\",\n      \"resolution_under_b\": \"Als hij een ziektebeeld opvoert, zijn de ingestudeerde mankheid en de verklaring precies functioneel: zij moeten zijn afwezigheid tegenover werkgever of school geloofwaardig maken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een persoon bezoekt een arts vooral om toegang te krijgen tot gewilde receptmedicatie, die hij zelf wil misbruiken of doorverkopen, en stemt zijn klachtenverhaal daarop af.\",\n      \"opposition_axis\": \"Therapeutisch gebruik tegenover instrumentele verwerving\",\n      \"opposed_proposition\": \"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\",\n      \"shared_anchor\": \"Een consult wegens hevige pijn en een verzoek om sterke medicatie.\",\n      \"reading_a\": \"De patiënt lijdt aan ernstige pijn, geeft zijn klachten eerlijk door en vraagt om veilige verlichting binnen een medisch behandelplan.\",\n      \"reading_b\": \"De bezoeker gebruikt pijnklachten als aannemelijk voorwendsel om een specifiek, verhandelbaar of verslavend middel te bemachtigen.\",\n      \"roles_b\": [\n        \"Bezoeker: formuleert doelgericht een klachtenverhaal.\",\n        \"Arts: bewaakt voorschrijfveiligheid en wordt als toegangspoort benaderd.\",\n        \"Apotheker: verstrekt of signaleert een ongebruikelijk recept.\",\n        \"Afnemer of medegebruiker: kan buiten beeld wachten op de medicatie.\"\n      ],\n      \"goal_b\": \"Een recept voor een gewenst middel verkrijgen, niet een medische oorzaak laten behandelen.\",\n      \"role_remapping\": [\n        \"Patiënt → doelgerichte verkrijger van medicatie.\",\n        \"Zorgverlener → poortwachter voor een gewild product.\",\n        \"Apotheker → laatste schakel in de verkrijging.\",\n        \"Behandeling → handelswaar of middel voor misbruik.\"\n      ],\n      \"shared_cues\": [\n        \"Een pijnscore noemen.\",\n        \"Eerdere medicatie bespreken.\",\n        \"Vragen naar allergieën.\",\n        \"Onderzoek van de pijnlijke plek.\",\n        \"Een recept als mogelijke uitkomst.\"\n      ],\n      \"switch_trigger\": \"Na een voorstel voor onderzoek, fysiotherapie of een minder risicovol middel wijst de bezoeker alles af en noemt hij alleen merk, sterkte en exacte hoeveelheid van één zwaar middel.\",\n      \"hinge_event\": \"Zijn telefoon toont tijdens het consult een bericht: „Kun je er nog drie regelen voor vanavond?”\",\n      \"anomaly_under_a\": \"Bij een reguliere pijnhulpvraag is het vreemd om alle diagnostiek en alternatieven af te wijzen en uitsluitend op voorraad, dosering en hoeveelheid te sturen.\",\n      \"resolution_under_b\": \"Onder de lezing van verwerving is die uitzonderlijke precisie doelmatig: hij probeert precies het middel en de hoeveelheid te krijgen die hij wil gebruiken of doorgeven.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.\",\n      \"opposition_axis\": \"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang\",\n      \"opposed_proposition\": \"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\",\n      \"shared_anchor\": \"Een gezondheidsvragenlijst en lichamelijke keuring voorafgaand aan een onderzoek.\",\n      \"reading_a\": \"Een patiënt of kandidaat verstrekt correcte informatie zodat een zorgverlener gezondheidsrisico's kan beoordelen en passend kan handelen.\",\n      \"reading_b\": \"Een betaalde proefpersoon minimaliseert klachten, medicijngebruik of eerdere deelname om toch tot het onderzoek te worden toegelaten.\",\n      \"roles_b\": [\n        \"Proefpersoon: wil door de selectie komen voor vergoeding.\",\n        \"Onderzoeksarts: beoordeelt veiligheid en geschiktheid.\",\n        \"Onderzoekscoördinator: verwerkt vragenlijsten en plant deelname.\",\n        \"Onderzoeksponsor: betaalt voor betrouwbare en veilige onderzoeksdeelname.\"\n      ],\n      \"goal_b\": \"Toelating tot het betaalde onderzoek krijgen, ook als uitsluiting medisch verstandiger zou zijn.\",\n      \"role_remapping\": [\n        \"Patiënt → proefpersoon die informatie doseert.\",\n        \"Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.\",\n        \"Behandeling → onderzoeksinterventie of vergoedingstraject.\",\n        \"Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden.\"\n      ],\n      \"shared_cues\": [\n        \"Een vragenlijst over eerdere ziekten.\",\n        \"Bloeddruk en hartslag meten.\",\n        \"Vragen naar medicatie.\",\n        \"Bloed afnemen.\",\n        \"Uitleg over mogelijke risico's.\"\n      ],\n      \"switch_trigger\": \"Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.\",\n      \"hinge_event\": \"In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.\",\n      \"anomaly_under_a\": \"Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.\",\n      \"resolution_under_b\": \"Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een familie organiseert een ziekenhuisbezoek aan een vermogende oudere vooral als toneel van een erfrechtelijk conflict: zij willen invloed tonen, getuigen verzamelen en een testamentaire beslissing sturen.\",\n      \"opposition_axis\": \"Zorgzame nabijheid tegenover berekende belangenstrijd\",\n      \"opposed_proposition\": \"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\",\n      \"shared_anchor\": \"Familieleden verzamelen zich rond een oudere patiënt na een ziekenhuisopname.\",\n      \"reading_a\": \"Naasten komen op bezoek om de patiënt te steunen, informatie over herstel te ontvangen en samen passende vervolgzorg te regelen.\",\n      \"reading_b\": \"Verwanten gebruiken de opname als gelegenheid om toegang, beslissingsmacht en financiële aanspraken rond de patiënt veilig te stellen.\",\n      \"roles_b\": [\n        \"Oudere patiënt: kwetsbare persoon met vermogen en beperkte regie.\",\n        \"Familielid: presenteert zich als bezorgde bezoeker maar zoekt invloed.\",\n        \"Arts of verpleegkundige: verstrekt medische informatie binnen privacygrenzen.\",\n        \"Notaris of advocaat: wordt opgeroepen voor een juridisch doel.\",\n        \"Andere verwant: fungeert als rivaal of mogelijke getuige.\"\n      ],\n      \"goal_b\": \"Een gunstige positie rond testament, volmacht of nalatenschap verwerven.\",\n      \"role_remapping\": [\n        \"Patiënt → kwetsbare testamentgever of bron van beslissingsmacht.\",\n        \"Naasten → rivaliserende belanghebbenden.\",\n        \"Zorgverlener → onbedoelde getuige van wilsbekwaamheid of afhankelijkheid.\",\n        \"Vervolgzorg → aanleiding om zeggenschap over de patiënt te claimen.\"\n      ],\n      \"shared_cues\": [\n        \"Bezoek aan het ziekenhuisbed.\",\n        \"Vragen naar de conditie.\",\n        \"Overleg over wie thuis kan helpen.\",\n        \"Een gesprek over ontslag en vervolgzorg.\",\n        \"Emotionele woorden over bezorgdheid.\"\n      ],\n      \"switch_trigger\": \"Zodra de verpleegkundige meldt dat de patiënt weer helder en stabiel is, vraagt één familielid direct of er vandaag nog een notaris naar de kamer mag komen.\",\n      \"hinge_event\": \"Het familielid haalt een vooraf ingevulde volmacht uit zijn tas en vraagt de patiënt die meteen te tekenen.\",\n      \"anomaly_under_a\": \"Tijdens een herstelgesprek is een kant-en-klare juridische volmacht ongepast; de verwachte aandacht ligt bij comfort, behandeling en veilige nazorg.\",\n      \"resolution_under_b\": \"In de erfrechtelijke lezing is het document doelgericht voorbereid: het bezoek is niet primair steun, maar een kans om formele invloed te verkrijgen terwijl de patiënt kwetsbaar is.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"plan\": {\n    \"setup_script\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.\",\n    \"opposing_script\": \"Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.\",\n    \"opposition_type\": \"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang\",\n    \"trigger\": \"Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Een vragenlijst over eerdere ziekten.\",\n      \"Bloeddruk en hartslag meten.\",\n      \"Vragen naar medicatie.\",\n      \"Bloed afnemen.\",\n      \"Uitleg over mogelijke risico's.\"\n    ],\n    \"hinge_event\": \"In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.\",\n    \"anomaly_under_a\": \"Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.\",\n    \"resolution_under_b\": \"Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.\",\n    \"role_remapping\": [\n      \"Patiënt → proefpersoon die informatie doseert.\",\n      \"Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.\",\n      \"Behandeling → onderzoeksinterventie of vergoedingstraject.\",\n      \"Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.\",\n      \"participants_and_roles\": [\n        \"Patiënt: merkt klachten op, geeft die eerlijk door en volgt passend medisch advies.\",\n        \"Huisarts of zorgverlener: luistert, onderzoekt, stelt een waarschijnlijke diagnose en verwijst of behandelt.\",\n        \"Eventuele specialist, apotheker of verpleegkundige: levert aanvullende deskundigheid, zorg of medicatie.\",\n        \"Naasten: bieden praktische en emotionele steun tijdens ziekte en herstel.\"\n      ],\n      \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig laten herstellen of de aandoening beheersbaar maken.\",\n      \"preconditions\": [\n        \"De patiënt ervaart klachten, zorgen over de gezondheid of heeft preventieve zorg nodig.\",\n        \"Er is toegang tot een huisarts, praktijk, ziekenhuis of andere zorgvoorziening.\",\n        \"De patiënt kan relevante symptomen, duur, medicatie en medische voorgeschiedenis zo goed mogelijk beschrijven.\",\n        \"De zorgverlener beschikt over tijd, basisinformatie, professionele deskundigheid en zo nodig diagnostische middelen.\"\n      ],\n      \"expected_actions\": [\n        \"De patiënt maakt een afspraak of zoekt, bij spoed, direct medische hulp.\",\n        \"De zorgverlener stelt vragen, verricht onderzoek en beoordeelt de ernst van de situatie.\",\n        \"Er volgt een diagnose, werkdiagnose of plan voor aanvullend onderzoek.\",\n        \"De zorgverlener geeft uitleg, leefstijladvies, medicatie, behandeling of een verwijzing.\",\n        \"De patiënt gebruikt voorgeschreven zorg verantwoord, volgt instructies op en neemt contact op als klachten verergeren of niet verbeteren.\"\n      ],\n      \"expected_outcome\": \"De patiënt krijgt duidelijkheid en passende zorg, waarna de klachten verminderen, herstel optreedt of er een realistisch behandel- en vervolgplan is.\",\n      \"expected_propositions\": [\n        \"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\",\n        \"Medische vragen worden beantwoord met deskundig onderzoek en begrijpelijke uitleg.\",\n        \"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\",\n        \"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\",\n        \"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\"\n      ],\n      \"audience_expectation\": \"Een zorgsituatie roept de herkenbare verwachting op van een hulpzoekende patiënt en een deskundige, zorgzame professional die via onderzoek en behandeling orde schept in lichamelijke onzekerheid.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.\",\n      \"opposition_axis\": \"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang\",\n      \"opposed_proposition\": \"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\",\n      \"shared_anchor\": \"Een gezondheidsvragenlijst en lichamelijke keuring voorafgaand aan een onderzoek.\",\n      \"reading_a\": \"Een patiënt of kandidaat verstrekt correcte informatie zodat een zorgverlener gezondheidsrisico's kan beoordelen en passend kan handelen.\",\n      \"reading_b\": \"Een betaalde proefpersoon minimaliseert klachten, medicijngebruik of eerdere deelname om toch tot het onderzoek te worden toegelaten.\",\n      \"roles_b\": [\n        \"Proefpersoon: wil door de selectie komen voor vergoeding.\",\n        \"Onderzoeksarts: beoordeelt veiligheid en geschiktheid.\",\n        \"Onderzoekscoördinator: verwerkt vragenlijsten en plant deelname.\",\n        \"Onderzoeksponsor: betaalt voor betrouwbare en veilige onderzoeksdeelname.\"\n      ],\n      \"goal_b\": \"Toelating tot het betaalde onderzoek krijgen, ook als uitsluiting medisch verstandiger zou zijn.\",\n      \"role_remapping\": [\n        \"Patiënt → proefpersoon die informatie doseert.\",\n        \"Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.\",\n        \"Behandeling → onderzoeksinterventie of vergoedingstraject.\",\n        \"Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden.\"\n      ],\n      \"shared_cues\": [\n        \"Een vragenlijst over eerdere ziekten.\",\n        \"Bloeddruk en hartslag meten.\",\n        \"Vragen naar medicatie.\",\n        \"Bloed afnemen.\",\n        \"Uitleg over mogelijke risico's.\"\n      ],\n      \"switch_trigger\": \"Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.\",\n      \"hinge_event\": \"In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.\",\n      \"anomaly_under_a\": \"Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.\",\n      \"resolution_under_b\": \"Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.\",\n      \"opposing_script\": \"Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.\",\n      \"opposition_type\": \"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang\",\n      \"trigger\": \"Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Een vragenlijst over eerdere ziekten.\",\n        \"Bloeddruk en hartslag meten.\",\n        \"Vragen naar medicatie.\",\n        \"Bloed afnemen.\",\n        \"Uitleg over mogelijke risico's.\"\n      ],\n      \"hinge_event\": \"In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.\",\n      \"anomaly_under_a\": \"Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.\",\n      \"resolution_under_b\": \"Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.\",\n      \"role_remapping\": [\n        \"Patiënt → proefpersoon die informatie doseert.\",\n        \"Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.\",\n        \"Behandeling → onderzoeksinterventie of vergoedingstraject.\",\n        \"Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik deed mee aan een medisch onderzoek. Ze maten mijn bloeddruk, namen bloed af en vroegen of ik vorige week ergens anders proefpersoon was geweest. Toen viel mijn oude polsbandje uit mijn tas, dus ik zei: „Nee hoor, ik verzamel gewoon festivalherinneringen.”\",\n      \"angle\": \"Polsbandje als onbedoeld bewijs van recente onderzoeksdeelname.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij de intake vroegen ze welke medicijnen ik gebruikte en legden ze alle risico’s rustig uit. Daarna vroegen ze of ik recent aan ander onderzoek had meegedaan; ik keek eerst naar de vergoeding en zei: „Alleen emotioneel.”\",\n      \"angle\": \"De vergoeding onthult dat toelating belangrijker is dan volledige medische eerlijkheid.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De verpleegkundige zei: „Uw hartslag is opvallend hoog, bent u zenuwachtig?” Ik zei: „Nee, ik hoop alleen dat jullie niet vragen naar die bloedafname van vorige week.” Toen zei ze: „Dat was precies mijn volgende vraag.”\",\n      \"angle\": \"Een normale meting krijgt een tweede betekenis door de angst voor uitsluiting.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik deed mee aan een medisch onderzoek. Ze maten mijn bloeddruk, namen bloed af en vroegen of ik vorige week ergens anders proefpersoon was geweest. Toen viel mijn oude polsbandje uit mijn tas, dus ik zei: „Nee hoor, ik verzamel gewoon festivalherinneringen.”\",\n      \"angle\": \"Polsbandje als onbedoeld bewijs van recente onderzoeksdeelname.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij de intake vroegen ze welke medicijnen ik gebruikte en legden ze alle risico’s rustig uit. Daarna vroegen ze of ik recent aan ander onderzoek had meegedaan; ik keek eerst naar de vergoeding en zei: „Alleen emotioneel.”\",\n      \"angle\": \"De vergoeding onthult dat toelating belangrijker is dan volledige medische eerlijkheid.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De verpleegkundige zei: „Uw hartslag is opvallend hoog, bent u zenuwachtig?” Ik zei: „Nee, ik hoop alleen dat jullie niet vragen naar die bloedafname van vorige week.” Toen zei ze: „Dat was precies mijn volgende vraag.”\",\n      \"angle\": \"Een normale meting krijgt een tweede betekenis door de angst voor uitsluiting.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een kandidaat ondergaat een medische keuring met bloeddrukmeting, bloedafname en vragen over eerdere deelname.\",\n      \"realized_script_b\": \"Een proefpersoon probeert recente deelname aan ander onderzoek te verbergen om niet te worden uitgesloten.\",\n      \"realized_opposition_axis\": \"Open en veilige medische screening tegenover het verbergen van uitsluitingsrelevante informatie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De verborgen-deelnamekant en het polsbandje als bewijs zijn aanwezig, maar de tekst maakt deelname aan een medisch onderzoek al meteen expliciet. Daardoor domineert het beoogde gewone patiënt-zorgscript niet en is Script B niet latent; ook ontbreekt de geplande vergoeding-blik als schakelaar.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": false,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een herkenbare grap over ontmaskering, maar de geplande A-naar-B-verschuiving is verzwakt doordat de onderzoekscontext en proefpersoonrol vanaf de eerste zin openlijk worden gegeven.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een persoon doorloopt een ogenschijnlijk gewone medische intake, met vragen over medicatie en uitleg over risico's.\",\n      \"realized_script_b\": \"Een betaalde proefpersoon wil toelating tot onderzoek behouden en antwoordt daarom ontwijkend over recente deelname.\",\n      \"realized_opposition_axis\": \"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang voor vergoeding en toelating.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De medische intake vormt een dominante eerlijke-screeninglezing; vragen over medicijnen en risico's zijn gedeelde cues. De blik naar de vergoeding en het ontwijkende antwoord activeren laat het beoogde proefpersoonscript en herinterpreteren de intake.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Deze variant realiseert de geplande tegenstelling: de aanvankelijk zorgvuldige intake blijkt voor de spreker vooral een toegangspoort tot een vergoeding.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een patiënt krijgt een verpleegkundige meting en wordt bevraagd over een opvallend hoge hartslag.\",\n      \"realized_script_b\": \"De patiënt verraadt uit angst zelf dat hij een eerdere bloedafname wil verzwijgen.\",\n      \"realized_opposition_axis\": \"Normale medische openheid tegenover nerveus en onhandig verbergen van relevante medische informatie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"Er is wel verborgen medische informatie, maar geen klinisch onderzoek, vergoeding, toelatingsbelang of recente onderzoeksdeelname. De gerealiseerde tegenstelling is algemene patiëntenzenuwachtigheid versus openheid, niet de geplande betaalde-proefpersoontegenstelling.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": false,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De dialoog heeft een bruikbare ironische wending, maar werkt voornamelijk via een andere tegenstelling: de patiënt maakt zijn eigen geheim onhandig zichtbaar, zonder het beoogde financiële selectiebelang.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij de intake vroegen ze welke medicijnen ik gebruikte en legden ze alle risico’s rustig uit. Daarna vroegen ze of ik recent aan ander onderzoek had meegedaan; ik keek eerst naar de vergoeding en zei: „Alleen emotioneel.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.",
+      "opposing_script": "Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.",
+      "opposition_type": "Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang",
+      "trigger": "Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Een vragenlijst over eerdere ziekten.",
+        "Bloeddruk en hartslag meten.",
+        "Vragen naar medicatie.",
+        "Bloed afnemen.",
+        "Uitleg over mogelijke risico's."
+      ],
+      "hinge_event": "In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.",
+      "anomaly_under_a": "Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.",
+      "resolution_under_b": "Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.",
+      "role_remapping": [
+        "Patiënt → proefpersoon die informatie doseert.",
+        "Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.",
+        "Behandeling → onderzoeksinterventie of vergoedingstraject.",
+        "Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.\\\",\\\"participants_and_roles\\\":[\\\"Patiënt: merkt klachten op, geeft die eerlijk door en volgt passend medisch advies.\\\",\\\"Huisarts of zorgverlener: luistert, onderzoekt, stelt een waarschijnlijke diagnose en verwijst of behandelt.\\\",\\\"Eventuele specialist, apotheker of verpleegkundige: levert aanvullende deskundigheid, zorg of medicatie.\\\",\\\"Naasten: bieden praktische en emotionele steun tijdens ziekte en herstel.\\\"],\\\"apparent_goal\\\":\\\"De oorzaak van de klachten vaststellen en de patiënt veilig laten herstellen of de aandoening beheersbaar maken.\\\",\\\"preconditions\\\":[\\\"De patiënt ervaart klachten, zorgen over de gezondheid of heeft preventieve zorg nodig.\\\",\\\"Er is toegang tot een huisarts, praktijk, ziekenhuis of andere zorgvoorziening.\\\",\\\"De patiënt kan relevante symptomen, duur, medicatie en medische voorgeschiedenis zo goed mogelijk beschrijven.\\\",\\\"De zorgverlener beschikt over tijd, basisinformatie, professionele deskundigheid en zo nodig diagnostische middelen.\\\"],\\\"expected_actions\\\":[\\\"De patiënt maakt een afspraak of zoekt, bij spoed, direct medische hulp.\\\",\\\"De zorgverlener stelt vragen, verricht onderzoek en beoordeelt de ernst van de situatie.\\\",\\\"Er volgt een diagnose, werkdiagnose of plan voor aanvullend onderzoek.\\\",\\\"De zorgverlener geeft uitleg, leefstijladvies, medicatie, behandeling of een verwijzing.\\\",\\\"De patiënt gebruikt voorgeschreven zorg verantwoord, volgt instructies op en neemt contact op als klachten verergeren of niet verbeteren.\\\"],\\\"expected_outcome\\\":\\\"De patiënt krijgt duidelijkheid en passende zorg, waarna de klachten verminderen, herstel optreedt of er een realistisch behandel- en vervolgplan is.\\\",\\\"expected_propositions\\\":[\\\"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\\\",\\\"Medische vragen worden beantwoord met deskundig onderzoek en begrijpelijke uitleg.\\\",\\\"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\\\",\\\"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\\\",\\\"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\\\"],\\\"audience_expectation\\\":\\\"Een zorgsituatie roept de herkenbare verwachting op van een hulpzoekende patiënt en een deskundige, zorgzame professional die via onderzoek en behandeling orde schept in lichamelijke onzekerheid.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een werknemer doet zich bij de huisarts ziek voor om een overtuigende ziekmelding of verklaring te krijgen waarmee hij een ongewenste werkdag, toets of verplichting kan ontlopen.\\\",\\\"opposition_axis\\\":\\\"Oprechte hulpvraag tegenover strategische misleiding\\\",\\\"opposed_proposition\\\":\\\"Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.\\\",\\\"shared_anchor\\\":\\\"Een consult over plotselinge rugpijn vóór een belangrijke werkdag.\\\",\\\"reading_a\\\":\\\"De patiënt heeft acute rugklachten, zoekt tijdig medische hulp en hoopt op onderzoek, pijnverlichting en een verantwoord hersteladvies.\\\",\\\"reading_b\\\":\\\"De werknemer ensceneert of overdrijft rugpijn om afwezigheid geloofwaardig te maken en een formele rechtvaardiging te verkrijgen.\\\",\\\"roles_b\\\":[\\\"Werknemer: speelt de zieke en probeert geloofwaardig te klinken.\\\",\\\"Huisarts: fungeert onbedoeld als bron van een legitimatie of verklaring.\\\",\\\"Werkgever of school: controleert de afwezigheid en verlangt een aannemelijke reden.\\\",\\\"Collega: moet mogelijk het werk overnemen en vormt sociale druk.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige reden voor afwezigheid verkrijgen zonder dat de misleiding wordt ontdekt.\\\",\\\"role_remapping\\\":[\\\"Patiënt → werknemer die een rol speelt.\\\",\\\"Zorgverlener → onbedoelde beoordelaar van een excuus.\\\",\\\"Naasten → collega's die de gevolgen van de afwezigheid opvangen.\\\",\\\"Behandeling of advies → bruikbaar bewijs voor de ziekmelding.\\\"],\\\"shared_cues\\\":[\\\"Een afspraak in de ochtend.\\\",\\\"Een beschrijving van stekende rugpijn.\\\",\\\"Vragen over wanneer de pijn begon.\\\",\\\"Een onderzoek van houding en beweging.\\\",\\\"Advies om rust te nemen.\\\"],\\\"switch_trigger\\\":\\\"De patiënt vraagt niet naar behandeling of herstel, maar uitsluitend of de arts expliciet kan opschrijven dat hij morgen niet kan werken.\\\",\\\"hinge_event\\\":\\\"Hij oefent buiten de spreekkamer alvast een pijnlijke manier van lopen en loopt daarna soepel weg zodra hij de verklaring heeft.\\\",\\\"anomaly_under_a\\\":\\\"Een werkelijk bezorgde patiënt zou vooral duidelijkheid, verlichting en veilig herstel zoeken; het repeteren van klachten en de exclusieve belangstelling voor een verklaring zijn ongepast.\\\",\\\"resolution_under_b\\\":\\\"Als hij een ziektebeeld opvoert, zijn de ingestudeerde mankheid en de verklaring precies functioneel: zij moeten zijn afwezigheid tegenover werkgever of school geloofwaardig maken.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een persoon bezoekt een arts vooral om toegang te krijgen tot gewilde receptmedicatie, die hij zelf wil misbruiken of doorverkopen, en stemt zijn klachtenverhaal daarop af.\\\",\\\"opposition_axis\\\":\\\"Therapeutisch gebruik tegenover instrumentele verwerving\\\",\\\"opposed_proposition\\\":\\\"Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.\\\",\\\"shared_anchor\\\":\\\"Een consult wegens hevige pijn en een verzoek om sterke medicatie.\\\",\\\"reading_a\\\":\\\"De patiënt lijdt aan ernstige pijn, geeft zijn klachten eerlijk door en vraagt om veilige verlichting binnen een medisch behandelplan.\\\",\\\"reading_b\\\":\\\"De bezoeker gebruikt pijnklachten als aannemelijk voorwendsel om een specifiek, verhandelbaar of verslavend middel te bemachtigen.\\\",\\\"roles_b\\\":[\\\"Bezoeker: formuleert doelgericht een klachtenverhaal.\\\",\\\"Arts: bewaakt voorschrijfveiligheid en wordt als toegangspoort benaderd.\\\",\\\"Apotheker: verstrekt of signaleert een ongebruikelijk recept.\\\",\\\"Afnemer of medegebruiker: kan buiten beeld wachten op de medicatie.\\\"],\\\"goal_b\\\":\\\"Een recept voor een gewenst middel verkrijgen, niet een medische oorzaak laten behandelen.\\\",\\\"role_remapping\\\":[\\\"Patiënt → doelgerichte verkrijger van medicatie.\\\",\\\"Zorgverlener → poortwachter voor een gewild product.\\\",\\\"Apotheker → laatste schakel in de verkrijging.\\\",\\\"Behandeling → handelswaar of middel voor misbruik.\\\"],\\\"shared_cues\\\":[\\\"Een pijnscore noemen.\\\",\\\"Eerdere medicatie bespreken.\\\",\\\"Vragen naar allergieën.\\\",\\\"Onderzoek van de pijnlijke plek.\\\",\\\"Een recept als mogelijke uitkomst.\\\"],\\\"switch_trigger\\\":\\\"Na een voorstel voor onderzoek, fysiotherapie of een minder risicovol middel wijst de bezoeker alles af en noemt hij alleen merk, sterkte en exacte hoeveelheid van één zwaar middel.\\\",\\\"hinge_event\\\":\\\"Zijn telefoon toont tijdens het consult een bericht: „Kun je er nog drie regelen voor vanavond?”\\\",\\\"anomaly_under_a\\\":\\\"Bij een reguliere pijnhulpvraag is het vreemd om alle diagnostiek en alternatieven af te wijzen en uitsluitend op voorraad, dosering en hoeveelheid te sturen.\\\",\\\"resolution_under_b\\\":\\\"Onder de lezing van verwerving is die uitzonderlijke precisie doelmatig: hij probeert precies het middel en de hoeveelheid te krijgen die hij wil gebruiken of doorgeven.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.\\\",\\\"opposition_axis\\\":\\\"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang\\\",\\\"opposed_proposition\\\":\\\"Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.\\\",\\\"shared_anchor\\\":\\\"Een gezondheidsvragenlijst en lichamelijke keuring voorafgaand aan een onderzoek.\\\",\\\"reading_a\\\":\\\"Een patiënt of kandidaat verstrekt correcte informatie zodat een zorgverlener gezondheidsrisico's kan beoordelen en passend kan handelen.\\\",\\\"reading_b\\\":\\\"Een betaalde proefpersoon minimaliseert klachten, medicijngebruik of eerdere deelname om toch tot het onderzoek te worden toegelaten.\\\",\\\"roles_b\\\":[\\\"Proefpersoon: wil door de selectie komen voor vergoeding.\\\",\\\"Onderzoeksarts: beoordeelt veiligheid en geschiktheid.\\\",\\\"Onderzoekscoördinator: verwerkt vragenlijsten en plant deelname.\\\",\\\"Onderzoeksponsor: betaalt voor betrouwbare en veilige onderzoeksdeelname.\\\"],\\\"goal_b\\\":\\\"Toelating tot het betaalde onderzoek krijgen, ook als uitsluiting medisch verstandiger zou zijn.\\\",\\\"role_remapping\\\":[\\\"Patiënt → proefpersoon die informatie doseert.\\\",\\\"Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.\\\",\\\"Behandeling → onderzoeksinterventie of vergoedingstraject.\\\",\\\"Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden.\\\"],\\\"shared_cues\\\":[\\\"Een vragenlijst over eerdere ziekten.\\\",\\\"Bloeddruk en hartslag meten.\\\",\\\"Vragen naar medicatie.\\\",\\\"Bloed afnemen.\\\",\\\"Uitleg over mogelijke risico's.\\\"],\\\"switch_trigger\\\":\\\"Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.\\\",\\\"hinge_event\\\":\\\"In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.\\\",\\\"anomaly_under_a\\\":\\\"Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.\\\",\\\"resolution_under_b\\\":\\\"Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een familie organiseert een ziekenhuisbezoek aan een vermogende oudere vooral als toneel van een erfrechtelijk conflict: zij willen invloed tonen, getuigen verzamelen en een testamentaire beslissing sturen.\\\",\\\"opposition_axis\\\":\\\"Zorgzame nabijheid tegenover berekende belangenstrijd\\\",\\\"opposed_proposition\\\":\\\"Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.\\\",\\\"shared_anchor\\\":\\\"Familieleden verzamelen zich rond een oudere patiënt na een ziekenhuisopname.\\\",\\\"reading_a\\\":\\\"Naasten komen op bezoek om de patiënt te steunen, informatie over herstel te ontvangen en samen passende vervolgzorg te regelen.\\\",\\\"reading_b\\\":\\\"Verwanten gebruiken de opname als gelegenheid om toegang, beslissingsmacht en financiële aanspraken rond de patiënt veilig te stellen.\\\",\\\"roles_b\\\":[\\\"Oudere patiënt: kwetsbare persoon met vermogen en beperkte regie.\\\",\\\"Familielid: presenteert zich als bezorgde bezoeker maar zoekt invloed.\\\",\\\"Arts of verpleegkundige: verstrekt medische informatie binnen privacygrenzen.\\\",\\\"Notaris of advocaat: wordt opgeroepen voor een juridisch doel.\\\",\\\"Andere verwant: fungeert als rivaal of mogelijke getuige.\\\"],\\\"goal_b\\\":\\\"Een gunstige positie rond testament, volmacht of nalatenschap verwerven.\\\",\\\"role_remapping\\\":[\\\"Patiënt → kwetsbare testamentgever of bron van beslissingsmacht.\\\",\\\"Naasten → rivaliserende belanghebbenden.\\\",\\\"Zorgverlener → onbedoelde getuige van wilsbekwaamheid of afhankelijkheid.\\\",\\\"Vervolgzorg → aanleiding om zeggenschap over de patiënt te claimen.\\\"],\\\"shared_cues\\\":[\\\"Bezoek aan het ziekenhuisbed.\\\",\\\"Vragen naar de conditie.\\\",\\\"Overleg over wie thuis kan helpen.\\\",\\\"Een gesprek over ontslag en vervolgzorg.\\\",\\\"Emotionele woorden over bezorgdheid.\\\"],\\\"switch_trigger\\\":\\\"Zodra de verpleegkundige meldt dat de patiënt weer helder en stabiel is, vraagt één familielid direct of er vandaag nog een notaris naar de kamer mag komen.\\\",\\\"hinge_event\\\":\\\"Het familielid haalt een vooraf ingevulde volmacht uit zijn tas en vraagt de patiënt die meteen te tekenen.\\\",\\\"anomaly_under_a\\\":\\\"Tijdens een herstelgesprek is een kant-en-klare juridische volmacht ongepast; de verwachte aandacht ligt bij comfort, behandeling en veilige nazorg.\\\",\\\"resolution_under_b\\\":\\\"In de erfrechtelijke lezing is het document doelgericht voorbereid: het bezoek is niet primair steun, maar een kans om formele invloed te verkrijgen terwijl de patiënt kwetsbaar is.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Hetzelfde consult over rugpijn kan zowel een gewone hulpvraag als een geënsceneerde ziekmelding dragen. De dominante tegenstelling is oprechtheid tegenover misleiding. De werksituatie houdt de tweede lezing al latent beschikbaar, maar de medische lezing is aanvankelijk normaler. De verklaringfocus, geoefende mankheid en het soepele weglopen zijn onder A anomalieën en worden onder B doelgericht. Het ontbreken van een oprechte medische klacht ondermijnt A's herstelfunctie, maar maakt het opvoeren van klachten voor B juist mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eenzelfde pijnconsult met een medicatieverzoek kan passen bij legitieme pijnbehandeling én bij doelgerichte verkrijging van middelen. De oppositie therapeutisch herstel tegenover instrumentele verwerving is lokaal incompatibel en dominant. Medicatie, pijnscore en onderzoek ondersteunen beide lezingen; de tweede is herkenbaar maar aanvankelijk niet leidend. De afwijzing van diagnostiek en alternatieven, plus de precieze vraag naar één middel, wordt onder B functioneel. Wat behandeling onder A belemmert, namelijk het afwijzen van passend onderzoek en veiliger zorg, ondersteunt onder B het verkrijgen van het gewenste middel.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De keuring kan één realiseerbare scène vormen voor zowel eerlijke veiligheidsbeoordeling als verhulling om betaald te worden toegelaten. De dominante tegenstelling is waarheidsgetrouwe risicoinformatie tegenover verborgen financieel eigenbelang. De standaardkeuring ondersteunt beide lezingen, terwijl A aanvankelijk de normale lezing blijft. De blik op de vergoeding, het ontwijkende antwoord en het polsbandje zijn onder A afwijkend en worden onder B verklaard als uitsluitingsvermijding. Er is echter geen expliciete functionele omkering waarbij dezelfde voorwaarde A's doel blokkeert en B's doel mogelijk maakt; recente deelname is vooral veiligheidsrelevant onder A en een uitsluitingsrisico onder B.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Het ziekenhuisbezoek kan zowel als zorgzame familieondersteuning als als strategisch erfrechtelijk optreden worden gelezen. Zorgzame nabijheid tegenover berekend eigenbelang vormt één dominante, lokaal incompatibele as. De bezoek-, herstel- en nazorgcues passen natuurlijk bij beide lezingen, maar A is de gebruikelijke eerste interpretatie. De notarisvraag en vooraf ingevulde volmacht maken de belangenlezing al latent en verklaren achteraf waarom vragen naar conditie en vervolgzorg gesteld werden. De volmacht is onder A ongepast maar onder B doelgericht. Herstel en helderheid blokkeren A's zorgdoel niet en maken B's doel niet via een tegengestelde functie mogelijk, dus functionele omkering is niet expliciet aanwezig.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B3\\\",\\\"rationale\\\":\\\"B3 biedt de sterkste, meest topic-specifieke oppositie binnen zorg: dezelfde anamnese en keuring blijven volledig geloofwaardig als veiligheidsbeoordeling, maar krijgen retrospectief een tegengesteld doel door het verborgen financiële belang. De dubbele lezing is economisch opgebouwd uit natuurlijke medische cues, terwijl het polsbandje en het ontwijkende antwoord als helder scharnier fungeren. De onthulling herinterpreteert vooral het selectieve informeren van de proefpersoon zonder de zorgsetting of de professionele rol van de arts ongeloofwaardig te maken. Daardoor heeft de kandidaat sterke setup-dominantie, een zuivere tweede lezing en een overtuigende payoff.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik deed mee aan een medisch onderzoek. Ze maten mijn bloeddruk, namen bloed af en vroegen of ik vorige week ergens anders proefpersoon was geweest. Toen viel mijn oude polsbandje uit mijn tas, dus ik zei: „Nee hoor, ik verzamel gewoon festivalherinneringen.”\\\",\\\"angle\\\":\\\"Polsbandje als onbedoeld bewijs van recente onderzoeksdeelname.\\\"},{\\\"text\\\":\\\"Bij de intake vroegen ze welke medicijnen ik gebruikte en legden ze alle risico’s rustig uit. Daarna vroegen ze of ik recent aan ander onderzoek had meegedaan; ik keek eerst naar de vergoeding en zei: „Alleen emotioneel.”\\\",\\\"angle\\\":\\\"De vergoeding onthult dat toelating belangrijker is dan volledige medische eerlijkheid.\\\"},{\\\"text\\\":\\\"De verpleegkundige zei: „Uw hartslag is opvallend hoog, bent u zenuwachtig?” Ik zei: „Nee, ik hoop alleen dat jullie niet vragen naar die bloedafname van vorige week.” Toen zei ze: „Dat was precies mijn volgende vraag.”\\\",\\\"angle\\\":\\\"Een normale meting krijgt een tweede betekenis door de angst voor uitsluiting.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een kandidaat ondergaat een medische keuring met bloeddrukmeting, bloedafname en vragen over eerdere deelname.\\\",\\\"realized_script_b\\\":\\\"Een proefpersoon probeert recente deelname aan ander onderzoek te verbergen om niet te worden uitgesloten.\\\",\\\"realized_opposition_axis\\\":\\\"Open en veilige medische screening tegenover het verbergen van uitsluitingsrelevante informatie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De verborgen-deelnamekant en het polsbandje als bewijs zijn aanwezig, maar de tekst maakt deelname aan een medisch onderzoek al meteen expliciet. Daardoor domineert het beoogde gewone patiënt-zorgscript niet en is Script B niet latent; ook ontbreekt de geplande vergoeding-blik als schakelaar.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":false,\\\"latent_script_b\\\":false,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een herkenbare grap over ontmaskering, maar de geplande A-naar-B-verschuiving is verzwakt doordat de onderzoekscontext en proefpersoonrol vanaf de eerste zin openlijk worden gegeven.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een persoon doorloopt een ogenschijnlijk gewone medische intake, met vragen over medicatie en uitleg over risico's.\\\",\\\"realized_script_b\\\":\\\"Een betaalde proefpersoon wil toelating tot onderzoek behouden en antwoordt daarom ontwijkend over recente deelname.\\\",\\\"realized_opposition_axis\\\":\\\"Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang voor vergoeding en toelating.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De medische intake vormt een dominante eerlijke-screeninglezing; vragen over medicijnen en risico's zijn gedeelde cues. De blik naar de vergoeding en het ontwijkende antwoord activeren laat het beoogde proefpersoonscript en herinterpreteren de intake.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Deze variant realiseert de geplande tegenstelling: de aanvankelijk zorgvuldige intake blijkt voor de spreker vooral een toegangspoort tot een vergoeding.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een patiënt krijgt een verpleegkundige meting en wordt bevraagd over een opvallend hoge hartslag.\\\",\\\"realized_script_b\\\":\\\"De patiënt verraadt uit angst zelf dat hij een eerdere bloedafname wil verzwijgen.\\\",\\\"realized_opposition_axis\\\":\\\"Normale medische openheid tegenover nerveus en onhandig verbergen van relevante medische informatie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"Er is wel verborgen medische informatie, maar geen klinisch onderzoek, vergoeding, toelatingsbelang of recente onderzoeksdeelname. De gerealiseerde tegenstelling is algemene patiëntenzenuwachtigheid versus openheid, niet de geplande betaalde-proefpersoontegenstelling.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":false,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De dialoog heeft een bruikbare ironische wending, maar werkt voornamelijk via een andere tegenstelling: de patiënt maakt zijn eigen geheim onhandig zichtbaar, zonder het beoogde financiële selectiebelang.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de enige voldoende variant en wint daarom verplicht. De gewone intake blijft eerst dominant, waarna de blik op de vergoeding de proefpersoonlogica scherp activeert en de eerdere vragen herkadert. V1 maakt de onderzoekscontext te vroeg expliciet.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten falen op de volledige geplande SO-structuur, maar V1 blijft dichter bij de vereiste onderzoeks- en uitsluitingscontext. Het polsbandje levert bovendien een concreet, visueel ontmaskeringsmoment op; V3 mist het toelatings- en vergoedingsbelang.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is voldoende en V3 niet, dus V2 wint verplicht. Ook inhoudelijk heeft V2 de betere late omslag: de vergoeding maakt het ontwijkende antwoord betekenisvol en herinterpreteert de intake. V3 werkt als ironische verspreking, maar realiseert niet het vereiste proefpersoonsscript.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 realiseert als enige de vereiste SO-tegenstelling volledig: een geloofwaardige medische intake kantelt laat naar een kandidaat die toelating en vergoeding belangrijker vindt dan openheid. De omslag is compact, goed spreekbaar en herkadert de voorafgaande zorgvuldigheid.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een werknemer doet zich bij de huisarts ziek voor om een overtuigende ziekmelding of verklaring te krijgen waarmee hij een ongewenste werkdag, toets of verplichting kan ontlopen.",
+        "candidate_id": "B1",
+        "opposition_axis": "Oprechte hulpvraag tegenover strategische misleiding",
+        "opposed_expectation": "Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.",
+        "roles_b": [
+          "Werknemer: speelt de zieke en probeert geloofwaardig te klinken.",
+          "Huisarts: fungeert onbedoeld als bron van een legitimatie of verklaring.",
+          "Werkgever of school: controleert de afwezigheid en verlangt een aannemelijke reden.",
+          "Collega: moet mogelijk het werk overnemen en vormt sociale druk."
+        ],
+        "goal_b": "Een geloofwaardige reden voor afwezigheid verkrijgen zonder dat de misleiding wordt ontdekt.",
+        "role_remapping": [
+          "Patiënt → werknemer die een rol speelt.",
+          "Zorgverlener → onbedoelde beoordelaar van een excuus.",
+          "Naasten → collega's die de gevolgen van de afwezigheid opvangen.",
+          "Behandeling of advies → bruikbaar bewijs voor de ziekmelding."
+        ],
+        "shared_cues": [
+          "Een afspraak in de ochtend.",
+          "Een beschrijving van stekende rugpijn.",
+          "Vragen over wanneer de pijn begon.",
+          "Een onderzoek van houding en beweging.",
+          "Advies om rust te nemen."
+        ],
+        "switch_trigger": "De patiënt vraagt niet naar behandeling of herstel, maar uitsluitend of de arts expliciet kan opschrijven dat hij morgen niet kan werken.",
+        "hinge_event": "Hij oefent buiten de spreekkamer alvast een pijnlijke manier van lopen en loopt daarna soepel weg zodra hij de verklaring heeft.",
+        "anomaly_under_a": "Een werkelijk bezorgde patiënt zou vooral duidelijkheid, verlichting en veilig herstel zoeken; het repeteren van klachten en de exclusieve belangstelling voor een verklaring zijn ongepast.",
+        "resolution_under_b": "Als hij een ziektebeeld opvoert, zijn de ingestudeerde mankheid en de verklaring precies functioneel: zij moeten zijn afwezigheid tegenover werkgever of school geloofwaardig maken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een persoon bezoekt een arts vooral om toegang te krijgen tot gewilde receptmedicatie, die hij zelf wil misbruiken of doorverkopen, en stemt zijn klachtenverhaal daarop af.",
+        "candidate_id": "B2",
+        "opposition_axis": "Therapeutisch gebruik tegenover instrumentele verwerving",
+        "opposed_expectation": "Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.",
+        "roles_b": [
+          "Bezoeker: formuleert doelgericht een klachtenverhaal.",
+          "Arts: bewaakt voorschrijfveiligheid en wordt als toegangspoort benaderd.",
+          "Apotheker: verstrekt of signaleert een ongebruikelijk recept.",
+          "Afnemer of medegebruiker: kan buiten beeld wachten op de medicatie."
+        ],
+        "goal_b": "Een recept voor een gewenst middel verkrijgen, niet een medische oorzaak laten behandelen.",
+        "role_remapping": [
+          "Patiënt → doelgerichte verkrijger van medicatie.",
+          "Zorgverlener → poortwachter voor een gewild product.",
+          "Apotheker → laatste schakel in de verkrijging.",
+          "Behandeling → handelswaar of middel voor misbruik."
+        ],
+        "shared_cues": [
+          "Een pijnscore noemen.",
+          "Eerdere medicatie bespreken.",
+          "Vragen naar allergieën.",
+          "Onderzoek van de pijnlijke plek.",
+          "Een recept als mogelijke uitkomst."
+        ],
+        "switch_trigger": "Na een voorstel voor onderzoek, fysiotherapie of een minder risicovol middel wijst de bezoeker alles af en noemt hij alleen merk, sterkte en exacte hoeveelheid van één zwaar middel.",
+        "hinge_event": "Zijn telefoon toont tijdens het consult een bericht: „Kun je er nog drie regelen voor vanavond?”",
+        "anomaly_under_a": "Bij een reguliere pijnhulpvraag is het vreemd om alle diagnostiek en alternatieven af te wijzen en uitsluitend op voorraad, dosering en hoeveelheid te sturen.",
+        "resolution_under_b": "Onder de lezing van verwerving is die uitzonderlijke precisie doelmatig: hij probeert precies het middel en de hoeveelheid te krijgen die hij wil gebruiken of doorgeven.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.",
+        "candidate_id": "B3",
+        "opposition_axis": "Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang",
+        "opposed_expectation": "Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.",
+        "roles_b": [
+          "Proefpersoon: wil door de selectie komen voor vergoeding.",
+          "Onderzoeksarts: beoordeelt veiligheid en geschiktheid.",
+          "Onderzoekscoördinator: verwerkt vragenlijsten en plant deelname.",
+          "Onderzoeksponsor: betaalt voor betrouwbare en veilige onderzoeksdeelname."
+        ],
+        "goal_b": "Toelating tot het betaalde onderzoek krijgen, ook als uitsluiting medisch verstandiger zou zijn.",
+        "role_remapping": [
+          "Patiënt → proefpersoon die informatie doseert.",
+          "Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.",
+          "Behandeling → onderzoeksinterventie of vergoedingstraject.",
+          "Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden."
+        ],
+        "shared_cues": [
+          "Een vragenlijst over eerdere ziekten.",
+          "Bloeddruk en hartslag meten.",
+          "Vragen naar medicatie.",
+          "Bloed afnemen.",
+          "Uitleg over mogelijke risico's."
+        ],
+        "switch_trigger": "Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.",
+        "hinge_event": "In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.",
+        "anomaly_under_a": "Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.",
+        "resolution_under_b": "Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een familie organiseert een ziekenhuisbezoek aan een vermogende oudere vooral als toneel van een erfrechtelijk conflict: zij willen invloed tonen, getuigen verzamelen en een testamentaire beslissing sturen.",
+        "candidate_id": "B4",
+        "opposition_axis": "Zorgzame nabijheid tegenover berekende belangenstrijd",
+        "opposed_expectation": "Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.",
+        "roles_b": [
+          "Oudere patiënt: kwetsbare persoon met vermogen en beperkte regie.",
+          "Familielid: presenteert zich als bezorgde bezoeker maar zoekt invloed.",
+          "Arts of verpleegkundige: verstrekt medische informatie binnen privacygrenzen.",
+          "Notaris of advocaat: wordt opgeroepen voor een juridisch doel.",
+          "Andere verwant: fungeert als rivaal of mogelijke getuige."
+        ],
+        "goal_b": "Een gunstige positie rond testament, volmacht of nalatenschap verwerven.",
+        "role_remapping": [
+          "Patiënt → kwetsbare testamentgever of bron van beslissingsmacht.",
+          "Naasten → rivaliserende belanghebbenden.",
+          "Zorgverlener → onbedoelde getuige van wilsbekwaamheid of afhankelijkheid.",
+          "Vervolgzorg → aanleiding om zeggenschap over de patiënt te claimen."
+        ],
+        "shared_cues": [
+          "Bezoek aan het ziekenhuisbed.",
+          "Vragen naar de conditie.",
+          "Overleg over wie thuis kan helpen.",
+          "Een gesprek over ontslag en vervolgzorg.",
+          "Emotionele woorden over bezorgdheid."
+        ],
+        "switch_trigger": "Zodra de verpleegkundige meldt dat de patiënt weer helder en stabiel is, vraagt één familielid direct of er vandaag nog een notaris naar de kamer mag komen.",
+        "hinge_event": "Het familielid haalt een vooraf ingevulde volmacht uit zijn tas en vraagt de patiënt die meteen te tekenen.",
+        "anomaly_under_a": "Tijdens een herstelgesprek is een kant-en-klare juridische volmacht ongepast; de verwachte aandacht ligt bij comfort, behandeling en veilige nazorg.",
+        "resolution_under_b": "In de erfrechtelijke lezing is het document doelgericht voorbereid: het bezoek is niet primair steun, maar een kans om formele invloed te verkrijgen terwijl de patiënt kwetsbaar is.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B3 biedt de sterkste, meest topic-specifieke oppositie binnen zorg: dezelfde anamnese en keuring blijven volledig geloofwaardig als veiligheidsbeoordeling, maar krijgen retrospectief een tegengesteld doel door het verborgen financiële belang. De dubbele lezing is economisch opgebouwd uit natuurlijke medische cues, terwijl het polsbandje en het ontwijkende antwoord als helder scharnier fungeren. De onthulling herinterpreteert vooral het selectieve informeren van de proefpersoon zonder de zorgsetting of de professionele rol van de arts ongeloofwaardig te maken. Daardoor heeft de kandidaat sterke setup-dominantie, een zuivere tweede lezing en een overtuigende payoff.",
+    "variants": [
+      {
+        "text": "Ik deed mee aan een medisch onderzoek. Ze maten mijn bloeddruk, namen bloed af en vroegen of ik vorige week ergens anders proefpersoon was geweest. Toen viel mijn oude polsbandje uit mijn tas, dus ik zei: „Nee hoor, ik verzamel gewoon festivalherinneringen.”",
+        "angle": "Polsbandje als onbedoeld bewijs van recente onderzoeksdeelname."
+      },
+      {
+        "text": "Bij de intake vroegen ze welke medicijnen ik gebruikte en legden ze alle risico’s rustig uit. Daarna vroegen ze of ik recent aan ander onderzoek had meegedaan; ik keek eerst naar de vergoeding en zei: „Alleen emotioneel.”",
+        "angle": "De vergoeding onthult dat toelating belangrijker is dan volledige medische eerlijkheid."
+      },
+      {
+        "text": "De verpleegkundige zei: „Uw hartslag is opvallend hoog, bent u zenuwachtig?” Ik zei: „Nee, ik hoop alleen dat jullie niet vragen naar die bloedafname van vorige week.” Toen zei ze: „Dat was precies mijn volgende vraag.”",
+        "angle": "Een normale meting krijgt een tweede betekenis door de angst voor uitsluiting."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 14072,
+      "output_tokens": 6523,
+      "total_tokens": 20595
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, krijgt onderzoek en advies of behandeling, en werkt mee aan herstel.",
+          "participants_and_roles": [
+            "Patiënt: merkt klachten op, geeft die eerlijk door en volgt passend medisch advies.",
+            "Huisarts of zorgverlener: luistert, onderzoekt, stelt een waarschijnlijke diagnose en verwijst of behandelt.",
+            "Eventuele specialist, apotheker of verpleegkundige: levert aanvullende deskundigheid, zorg of medicatie.",
+            "Naasten: bieden praktische en emotionele steun tijdens ziekte en herstel."
+          ],
+          "apparent_goal": "De oorzaak van de klachten vaststellen en de patiënt veilig laten herstellen of de aandoening beheersbaar maken.",
+          "preconditions": [
+            "De patiënt ervaart klachten, zorgen over de gezondheid of heeft preventieve zorg nodig.",
+            "Er is toegang tot een huisarts, praktijk, ziekenhuis of andere zorgvoorziening.",
+            "De patiënt kan relevante symptomen, duur, medicatie en medische voorgeschiedenis zo goed mogelijk beschrijven.",
+            "De zorgverlener beschikt over tijd, basisinformatie, professionele deskundigheid en zo nodig diagnostische middelen."
+          ],
+          "expected_actions": [
+            "De patiënt maakt een afspraak of zoekt, bij spoed, direct medische hulp.",
+            "De zorgverlener stelt vragen, verricht onderzoek en beoordeelt de ernst van de situatie.",
+            "Er volgt een diagnose, werkdiagnose of plan voor aanvullend onderzoek.",
+            "De zorgverlener geeft uitleg, leefstijladvies, medicatie, behandeling of een verwijzing.",
+            "De patiënt gebruikt voorgeschreven zorg verantwoord, volgt instructies op en neemt contact op als klachten verergeren of niet verbeteren."
+          ],
+          "expected_outcome": "De patiënt krijgt duidelijkheid en passende zorg, waarna de klachten verminderen, herstel optreedt of er een realistisch behandel- en vervolgplan is.",
+          "expected_propositions": [
+            "Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.",
+            "Medische vragen worden beantwoord met deskundig onderzoek en begrijpelijke uitleg.",
+            "Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.",
+            "Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.",
+            "Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal."
+          ],
+          "audience_expectation": "Een zorgsituatie roept de herkenbare verwachting op van een hulpzoekende patiënt en een deskundige, zorgzame professional die via onderzoek en behandeling orde schept in lichamelijke onzekerheid."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een werknemer doet zich bij de huisarts ziek voor om een overtuigende ziekmelding of verklaring te krijgen waarmee hij een ongewenste werkdag, toets of verplichting kan ontlopen.",
+            "opposition_axis": "Oprechte hulpvraag tegenover strategische misleiding",
+            "opposed_proposition": "Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.",
+            "shared_anchor": "Een consult over plotselinge rugpijn vóór een belangrijke werkdag.",
+            "reading_a": "De patiënt heeft acute rugklachten, zoekt tijdig medische hulp en hoopt op onderzoek, pijnverlichting en een verantwoord hersteladvies.",
+            "reading_b": "De werknemer ensceneert of overdrijft rugpijn om afwezigheid geloofwaardig te maken en een formele rechtvaardiging te verkrijgen.",
+            "roles_b": [
+              "Werknemer: speelt de zieke en probeert geloofwaardig te klinken.",
+              "Huisarts: fungeert onbedoeld als bron van een legitimatie of verklaring.",
+              "Werkgever of school: controleert de afwezigheid en verlangt een aannemelijke reden.",
+              "Collega: moet mogelijk het werk overnemen en vormt sociale druk."
+            ],
+            "goal_b": "Een geloofwaardige reden voor afwezigheid verkrijgen zonder dat de misleiding wordt ontdekt.",
+            "role_remapping": [
+              "Patiënt → werknemer die een rol speelt.",
+              "Zorgverlener → onbedoelde beoordelaar van een excuus.",
+              "Naasten → collega's die de gevolgen van de afwezigheid opvangen.",
+              "Behandeling of advies → bruikbaar bewijs voor de ziekmelding."
+            ],
+            "shared_cues": [
+              "Een afspraak in de ochtend.",
+              "Een beschrijving van stekende rugpijn.",
+              "Vragen over wanneer de pijn begon.",
+              "Een onderzoek van houding en beweging.",
+              "Advies om rust te nemen."
+            ],
+            "switch_trigger": "De patiënt vraagt niet naar behandeling of herstel, maar uitsluitend of de arts expliciet kan opschrijven dat hij morgen niet kan werken.",
+            "hinge_event": "Hij oefent buiten de spreekkamer alvast een pijnlijke manier van lopen en loopt daarna soepel weg zodra hij de verklaring heeft.",
+            "anomaly_under_a": "Een werkelijk bezorgde patiënt zou vooral duidelijkheid, verlichting en veilig herstel zoeken; het repeteren van klachten en de exclusieve belangstelling voor een verklaring zijn ongepast.",
+            "resolution_under_b": "Als hij een ziektebeeld opvoert, zijn de ingestudeerde mankheid en de verklaring precies functioneel: zij moeten zijn afwezigheid tegenover werkgever of school geloofwaardig maken."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een persoon bezoekt een arts vooral om toegang te krijgen tot gewilde receptmedicatie, die hij zelf wil misbruiken of doorverkopen, en stemt zijn klachtenverhaal daarop af.",
+            "opposition_axis": "Therapeutisch gebruik tegenover instrumentele verwerving",
+            "opposed_proposition": "Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.",
+            "shared_anchor": "Een consult wegens hevige pijn en een verzoek om sterke medicatie.",
+            "reading_a": "De patiënt lijdt aan ernstige pijn, geeft zijn klachten eerlijk door en vraagt om veilige verlichting binnen een medisch behandelplan.",
+            "reading_b": "De bezoeker gebruikt pijnklachten als aannemelijk voorwendsel om een specifiek, verhandelbaar of verslavend middel te bemachtigen.",
+            "roles_b": [
+              "Bezoeker: formuleert doelgericht een klachtenverhaal.",
+              "Arts: bewaakt voorschrijfveiligheid en wordt als toegangspoort benaderd.",
+              "Apotheker: verstrekt of signaleert een ongebruikelijk recept.",
+              "Afnemer of medegebruiker: kan buiten beeld wachten op de medicatie."
+            ],
+            "goal_b": "Een recept voor een gewenst middel verkrijgen, niet een medische oorzaak laten behandelen.",
+            "role_remapping": [
+              "Patiënt → doelgerichte verkrijger van medicatie.",
+              "Zorgverlener → poortwachter voor een gewild product.",
+              "Apotheker → laatste schakel in de verkrijging.",
+              "Behandeling → handelswaar of middel voor misbruik."
+            ],
+            "shared_cues": [
+              "Een pijnscore noemen.",
+              "Eerdere medicatie bespreken.",
+              "Vragen naar allergieën.",
+              "Onderzoek van de pijnlijke plek.",
+              "Een recept als mogelijke uitkomst."
+            ],
+            "switch_trigger": "Na een voorstel voor onderzoek, fysiotherapie of een minder risicovol middel wijst de bezoeker alles af en noemt hij alleen merk, sterkte en exacte hoeveelheid van één zwaar middel.",
+            "hinge_event": "Zijn telefoon toont tijdens het consult een bericht: „Kun je er nog drie regelen voor vanavond?”",
+            "anomaly_under_a": "Bij een reguliere pijnhulpvraag is het vreemd om alle diagnostiek en alternatieven af te wijzen en uitsluitend op voorraad, dosering en hoeveelheid te sturen.",
+            "resolution_under_b": "Onder de lezing van verwerving is die uitzonderlijke precisie doelmatig: hij probeert precies het middel en de hoeveelheid te krijgen die hij wil gebruiken of doorgeven."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.",
+            "opposition_axis": "Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang",
+            "opposed_proposition": "Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.",
+            "shared_anchor": "Een gezondheidsvragenlijst en lichamelijke keuring voorafgaand aan een onderzoek.",
+            "reading_a": "Een patiënt of kandidaat verstrekt correcte informatie zodat een zorgverlener gezondheidsrisico's kan beoordelen en passend kan handelen.",
+            "reading_b": "Een betaalde proefpersoon minimaliseert klachten, medicijngebruik of eerdere deelname om toch tot het onderzoek te worden toegelaten.",
+            "roles_b": [
+              "Proefpersoon: wil door de selectie komen voor vergoeding.",
+              "Onderzoeksarts: beoordeelt veiligheid en geschiktheid.",
+              "Onderzoekscoördinator: verwerkt vragenlijsten en plant deelname.",
+              "Onderzoeksponsor: betaalt voor betrouwbare en veilige onderzoeksdeelname."
+            ],
+            "goal_b": "Toelating tot het betaalde onderzoek krijgen, ook als uitsluiting medisch verstandiger zou zijn.",
+            "role_remapping": [
+              "Patiënt → proefpersoon die informatie doseert.",
+              "Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.",
+              "Behandeling → onderzoeksinterventie of vergoedingstraject.",
+              "Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden."
+            ],
+            "shared_cues": [
+              "Een vragenlijst over eerdere ziekten.",
+              "Bloeddruk en hartslag meten.",
+              "Vragen naar medicatie.",
+              "Bloed afnemen.",
+              "Uitleg over mogelijke risico's."
+            ],
+            "switch_trigger": "Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.",
+            "hinge_event": "In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.",
+            "anomaly_under_a": "Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.",
+            "resolution_under_b": "Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een familie organiseert een ziekenhuisbezoek aan een vermogende oudere vooral als toneel van een erfrechtelijk conflict: zij willen invloed tonen, getuigen verzamelen en een testamentaire beslissing sturen.",
+            "opposition_axis": "Zorgzame nabijheid tegenover berekende belangenstrijd",
+            "opposed_proposition": "Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.",
+            "shared_anchor": "Familieleden verzamelen zich rond een oudere patiënt na een ziekenhuisopname.",
+            "reading_a": "Naasten komen op bezoek om de patiënt te steunen, informatie over herstel te ontvangen en samen passende vervolgzorg te regelen.",
+            "reading_b": "Verwanten gebruiken de opname als gelegenheid om toegang, beslissingsmacht en financiële aanspraken rond de patiënt veilig te stellen.",
+            "roles_b": [
+              "Oudere patiënt: kwetsbare persoon met vermogen en beperkte regie.",
+              "Familielid: presenteert zich als bezorgde bezoeker maar zoekt invloed.",
+              "Arts of verpleegkundige: verstrekt medische informatie binnen privacygrenzen.",
+              "Notaris of advocaat: wordt opgeroepen voor een juridisch doel.",
+              "Andere verwant: fungeert als rivaal of mogelijke getuige."
+            ],
+            "goal_b": "Een gunstige positie rond testament, volmacht of nalatenschap verwerven.",
+            "role_remapping": [
+              "Patiënt → kwetsbare testamentgever of bron van beslissingsmacht.",
+              "Naasten → rivaliserende belanghebbenden.",
+              "Zorgverlener → onbedoelde getuige van wilsbekwaamheid of afhankelijkheid.",
+              "Vervolgzorg → aanleiding om zeggenschap over de patiënt te claimen."
+            ],
+            "shared_cues": [
+              "Bezoek aan het ziekenhuisbed.",
+              "Vragen naar de conditie.",
+              "Overleg over wie thuis kan helpen.",
+              "Een gesprek over ontslag en vervolgzorg.",
+              "Emotionele woorden over bezorgdheid."
+            ],
+            "switch_trigger": "Zodra de verpleegkundige meldt dat de patiënt weer helder en stabiel is, vraagt één familielid direct of er vandaag nog een notaris naar de kamer mag komen.",
+            "hinge_event": "Het familielid haalt een vooraf ingevulde volmacht uit zijn tas en vraagt de patiënt die meteen te tekenen.",
+            "anomaly_under_a": "Tijdens een herstelgesprek is een kant-en-klare juridische volmacht ongepast; de verwachte aandacht ligt bij comfort, behandeling en veilige nazorg.",
+            "resolution_under_b": "In de erfrechtelijke lezing is het document doelgericht voorbereid: het bezoek is niet primair steun, maar een kans om formele invloed te verkrijgen terwijl de patiënt kwetsbaar is."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een werknemer doet zich bij de huisarts ziek voor om een overtuigende ziekmelding of verklaring te krijgen waarmee hij een ongewenste werkdag, toets of verplichting kan ontlopen.",
+              "opposition_axis": "Oprechte hulpvraag tegenover strategische misleiding",
+              "opposed_proposition": "Een arts of andere zorgverlener probeert de patiënt te helpen en neemt klachten serieus.",
+              "shared_anchor": "Een consult over plotselinge rugpijn vóór een belangrijke werkdag.",
+              "reading_a": "De patiënt heeft acute rugklachten, zoekt tijdig medische hulp en hoopt op onderzoek, pijnverlichting en een verantwoord hersteladvies.",
+              "reading_b": "De werknemer ensceneert of overdrijft rugpijn om afwezigheid geloofwaardig te maken en een formele rechtvaardiging te verkrijgen.",
+              "roles_b": [
+                "Werknemer: speelt de zieke en probeert geloofwaardig te klinken.",
+                "Huisarts: fungeert onbedoeld als bron van een legitimatie of verklaring.",
+                "Werkgever of school: controleert de afwezigheid en verlangt een aannemelijke reden.",
+                "Collega: moet mogelijk het werk overnemen en vormt sociale druk."
+              ],
+              "goal_b": "Een geloofwaardige reden voor afwezigheid verkrijgen zonder dat de misleiding wordt ontdekt.",
+              "role_remapping": [
+                "Patiënt → werknemer die een rol speelt.",
+                "Zorgverlener → onbedoelde beoordelaar van een excuus.",
+                "Naasten → collega's die de gevolgen van de afwezigheid opvangen.",
+                "Behandeling of advies → bruikbaar bewijs voor de ziekmelding."
+              ],
+              "shared_cues": [
+                "Een afspraak in de ochtend.",
+                "Een beschrijving van stekende rugpijn.",
+                "Vragen over wanneer de pijn begon.",
+                "Een onderzoek van houding en beweging.",
+                "Advies om rust te nemen."
+              ],
+              "switch_trigger": "De patiënt vraagt niet naar behandeling of herstel, maar uitsluitend of de arts expliciet kan opschrijven dat hij morgen niet kan werken.",
+              "hinge_event": "Hij oefent buiten de spreekkamer alvast een pijnlijke manier van lopen en loopt daarna soepel weg zodra hij de verklaring heeft.",
+              "anomaly_under_a": "Een werkelijk bezorgde patiënt zou vooral duidelijkheid, verlichting en veilig herstel zoeken; het repeteren van klachten en de exclusieve belangstelling voor een verklaring zijn ongepast.",
+              "resolution_under_b": "Als hij een ziektebeeld opvoert, zijn de ingestudeerde mankheid en de verklaring precies functioneel: zij moeten zijn afwezigheid tegenover werkgever of school geloofwaardig maken."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een persoon bezoekt een arts vooral om toegang te krijgen tot gewilde receptmedicatie, die hij zelf wil misbruiken of doorverkopen, en stemt zijn klachtenverhaal daarop af.",
+              "opposition_axis": "Therapeutisch gebruik tegenover instrumentele verwerving",
+              "opposed_proposition": "Medicatie en behandelingen zijn bedoeld om herstel te bevorderen of risico's te beperken.",
+              "shared_anchor": "Een consult wegens hevige pijn en een verzoek om sterke medicatie.",
+              "reading_a": "De patiënt lijdt aan ernstige pijn, geeft zijn klachten eerlijk door en vraagt om veilige verlichting binnen een medisch behandelplan.",
+              "reading_b": "De bezoeker gebruikt pijnklachten als aannemelijk voorwendsel om een specifiek, verhandelbaar of verslavend middel te bemachtigen.",
+              "roles_b": [
+                "Bezoeker: formuleert doelgericht een klachtenverhaal.",
+                "Arts: bewaakt voorschrijfveiligheid en wordt als toegangspoort benaderd.",
+                "Apotheker: verstrekt of signaleert een ongebruikelijk recept.",
+                "Afnemer of medegebruiker: kan buiten beeld wachten op de medicatie."
+              ],
+              "goal_b": "Een recept voor een gewenst middel verkrijgen, niet een medische oorzaak laten behandelen.",
+              "role_remapping": [
+                "Patiënt → doelgerichte verkrijger van medicatie.",
+                "Zorgverlener → poortwachter voor een gewild product.",
+                "Apotheker → laatste schakel in de verkrijging.",
+                "Behandeling → handelswaar of middel voor misbruik."
+              ],
+              "shared_cues": [
+                "Een pijnscore noemen.",
+                "Eerdere medicatie bespreken.",
+                "Vragen naar allergieën.",
+                "Onderzoek van de pijnlijke plek.",
+                "Een recept als mogelijke uitkomst."
+              ],
+              "switch_trigger": "Na een voorstel voor onderzoek, fysiotherapie of een minder risicovol middel wijst de bezoeker alles af en noemt hij alleen merk, sterkte en exacte hoeveelheid van één zwaar middel.",
+              "hinge_event": "Zijn telefoon toont tijdens het consult een bericht: „Kun je er nog drie regelen voor vanavond?”",
+              "anomaly_under_a": "Bij een reguliere pijnhulpvraag is het vreemd om alle diagnostiek en alternatieven af te wijzen en uitsluitend op voorraad, dosering en hoeveelheid te sturen.",
+              "resolution_under_b": "Onder de lezing van verwerving is die uitzonderlijke precisie doelmatig: hij probeert precies het middel en de hoeveelheid te krijgen die hij wil gebruiken of doorgeven."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een deelnemer aan een klinisch onderzoek ondergaat een keuring niet om medische zorg te ontvangen, maar om een financiële vergoeding te verdienen en eventuele uitsluiting te verbergen.",
+              "opposition_axis": "Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang",
+              "opposed_proposition": "Een diagnose of behandeladvies is gebaseerd op symptomen, onderzoek en professionele kennis.",
+              "shared_anchor": "Een gezondheidsvragenlijst en lichamelijke keuring voorafgaand aan een onderzoek.",
+              "reading_a": "Een patiënt of kandidaat verstrekt correcte informatie zodat een zorgverlener gezondheidsrisico's kan beoordelen en passend kan handelen.",
+              "reading_b": "Een betaalde proefpersoon minimaliseert klachten, medicijngebruik of eerdere deelname om toch tot het onderzoek te worden toegelaten.",
+              "roles_b": [
+                "Proefpersoon: wil door de selectie komen voor vergoeding.",
+                "Onderzoeksarts: beoordeelt veiligheid en geschiktheid.",
+                "Onderzoekscoördinator: verwerkt vragenlijsten en plant deelname.",
+                "Onderzoeksponsor: betaalt voor betrouwbare en veilige onderzoeksdeelname."
+              ],
+              "goal_b": "Toelating tot het betaalde onderzoek krijgen, ook als uitsluiting medisch verstandiger zou zijn.",
+              "role_remapping": [
+                "Patiënt → proefpersoon die informatie doseert.",
+                "Zorgverlener → veiligheidsbeoordelaar voor een onderzoek.",
+                "Behandeling → onderzoeksinterventie of vergoedingstraject.",
+                "Naasten → personen die de deelnemer eventueel helpen informatie verborgen te houden."
+              ],
+              "shared_cues": [
+                "Een vragenlijst over eerdere ziekten.",
+                "Bloeddruk en hartslag meten.",
+                "Vragen naar medicatie.",
+                "Bloed afnemen.",
+                "Uitleg over mogelijke risico's."
+              ],
+              "switch_trigger": "Wanneer de coördinator vraagt naar recente deelname aan ander onderzoek, kijkt de proefpersoon eerst naar de vergoeding op het formulier en antwoordt daarna ontwijkend.",
+              "hinge_event": "In zijn tas valt een polsbandje van een ander onderzoekscentrum met de datum van vorige week op de grond.",
+              "anomaly_under_a": "Wie veilig medisch beoordeeld wil worden, heeft geen reden om zeer recente onderzoeksdeelname te verbergen; die informatie is juist relevant voor risico-inschatting.",
+              "resolution_under_b": "Als toelating en betaling het werkelijke doel zijn, is het verzwijgen logisch: recente deelname kan leiden tot uitsluiting en verlies van de vergoeding."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een familie organiseert een ziekenhuisbezoek aan een vermogende oudere vooral als toneel van een erfrechtelijk conflict: zij willen invloed tonen, getuigen verzamelen en een testamentaire beslissing sturen.",
+              "opposition_axis": "Zorgzame nabijheid tegenover berekende belangenstrijd",
+              "opposed_proposition": "Bij ernstige, aanhoudende of verslechterende klachten is opschalen naar verdere zorg normaal.",
+              "shared_anchor": "Familieleden verzamelen zich rond een oudere patiënt na een ziekenhuisopname.",
+              "reading_a": "Naasten komen op bezoek om de patiënt te steunen, informatie over herstel te ontvangen en samen passende vervolgzorg te regelen.",
+              "reading_b": "Verwanten gebruiken de opname als gelegenheid om toegang, beslissingsmacht en financiële aanspraken rond de patiënt veilig te stellen.",
+              "roles_b": [
+                "Oudere patiënt: kwetsbare persoon met vermogen en beperkte regie.",
+                "Familielid: presenteert zich als bezorgde bezoeker maar zoekt invloed.",
+                "Arts of verpleegkundige: verstrekt medische informatie binnen privacygrenzen.",
+                "Notaris of advocaat: wordt opgeroepen voor een juridisch doel.",
+                "Andere verwant: fungeert als rivaal of mogelijke getuige."
+              ],
+              "goal_b": "Een gunstige positie rond testament, volmacht of nalatenschap verwerven.",
+              "role_remapping": [
+                "Patiënt → kwetsbare testamentgever of bron van beslissingsmacht.",
+                "Naasten → rivaliserende belanghebbenden.",
+                "Zorgverlener → onbedoelde getuige van wilsbekwaamheid of afhankelijkheid.",
+                "Vervolgzorg → aanleiding om zeggenschap over de patiënt te claimen."
+              ],
+              "shared_cues": [
+                "Bezoek aan het ziekenhuisbed.",
+                "Vragen naar de conditie.",
+                "Overleg over wie thuis kan helpen.",
+                "Een gesprek over ontslag en vervolgzorg.",
+                "Emotionele woorden over bezorgdheid."
+              ],
+              "switch_trigger": "Zodra de verpleegkundige meldt dat de patiënt weer helder en stabiel is, vraagt één familielid direct of er vandaag nog een notaris naar de kamer mag komen.",
+              "hinge_event": "Het familielid haalt een vooraf ingevulde volmacht uit zijn tas en vraagt de patiënt die meteen te tekenen.",
+              "anomaly_under_a": "Tijdens een herstelgesprek is een kant-en-klare juridische volmacht ongepast; de verwachte aandacht ligt bij comfort, behandeling en veilige nazorg.",
+              "resolution_under_b": "In de erfrechtelijke lezing is het document doelgericht voorbereid: het bezoek is niet primair steun, maar een kans om formele invloed te verkrijgen terwijl de patiënt kwetsbaar is."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Hetzelfde consult over rugpijn kan zowel een gewone hulpvraag als een geënsceneerde ziekmelding dragen. De dominante tegenstelling is oprechtheid tegenover misleiding. De werksituatie houdt de tweede lezing al latent beschikbaar, maar de medische lezing is aanvankelijk normaler. De verklaringfocus, geoefende mankheid en het soepele weglopen zijn onder A anomalieën en worden onder B doelgericht. Het ontbreken van een oprechte medische klacht ondermijnt A's herstelfunctie, maar maakt het opvoeren van klachten voor B juist mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eenzelfde pijnconsult met een medicatieverzoek kan passen bij legitieme pijnbehandeling én bij doelgerichte verkrijging van middelen. De oppositie therapeutisch herstel tegenover instrumentele verwerving is lokaal incompatibel en dominant. Medicatie, pijnscore en onderzoek ondersteunen beide lezingen; de tweede is herkenbaar maar aanvankelijk niet leidend. De afwijzing van diagnostiek en alternatieven, plus de precieze vraag naar één middel, wordt onder B functioneel. Wat behandeling onder A belemmert, namelijk het afwijzen van passend onderzoek en veiliger zorg, ondersteunt onder B het verkrijgen van het gewenste middel."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De keuring kan één realiseerbare scène vormen voor zowel eerlijke veiligheidsbeoordeling als verhulling om betaald te worden toegelaten. De dominante tegenstelling is waarheidsgetrouwe risicoinformatie tegenover verborgen financieel eigenbelang. De standaardkeuring ondersteunt beide lezingen, terwijl A aanvankelijk de normale lezing blijft. De blik op de vergoeding, het ontwijkende antwoord en het polsbandje zijn onder A afwijkend en worden onder B verklaard als uitsluitingsvermijding. Er is echter geen expliciete functionele omkering waarbij dezelfde voorwaarde A's doel blokkeert en B's doel mogelijk maakt; recente deelname is vooral veiligheidsrelevant onder A en een uitsluitingsrisico onder B."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Het ziekenhuisbezoek kan zowel als zorgzame familieondersteuning als als strategisch erfrechtelijk optreden worden gelezen. Zorgzame nabijheid tegenover berekend eigenbelang vormt één dominante, lokaal incompatibele as. De bezoek-, herstel- en nazorgcues passen natuurlijk bij beide lezingen, maar A is de gebruikelijke eerste interpretatie. De notarisvraag en vooraf ingevulde volmacht maken de belangenlezing al latent en verklaren achteraf waarom vragen naar conditie en vervolgzorg gesteld werden. De volmacht is onder A ongepast maar onder B doelgericht. Herstel en helderheid blokkeren A's zorgdoel niet en maken B's doel niet via een tegengestelde functie mogelijk, dus functionele omkering is niet expliciet aanwezig."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Hetzelfde consult over rugpijn kan zowel een gewone hulpvraag als een geënsceneerde ziekmelding dragen. De dominante tegenstelling is oprechtheid tegenover misleiding. De werksituatie houdt de tweede lezing al latent beschikbaar, maar de medische lezing is aanvankelijk normaler. De verklaringfocus, geoefende mankheid en het soepele weglopen zijn onder A anomalieën en worden onder B doelgericht. Het ontbreken van een oprechte medische klacht ondermijnt A's herstelfunctie, maar maakt het opvoeren van klachten voor B juist mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eenzelfde pijnconsult met een medicatieverzoek kan passen bij legitieme pijnbehandeling én bij doelgerichte verkrijging van middelen. De oppositie therapeutisch herstel tegenover instrumentele verwerving is lokaal incompatibel en dominant. Medicatie, pijnscore en onderzoek ondersteunen beide lezingen; de tweede is herkenbaar maar aanvankelijk niet leidend. De afwijzing van diagnostiek en alternatieven, plus de precieze vraag naar één middel, wordt onder B functioneel. Wat behandeling onder A belemmert, namelijk het afwijzen van passend onderzoek en veiliger zorg, ondersteunt onder B het verkrijgen van het gewenste middel."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De keuring kan één realiseerbare scène vormen voor zowel eerlijke veiligheidsbeoordeling als verhulling om betaald te worden toegelaten. De dominante tegenstelling is waarheidsgetrouwe risicoinformatie tegenover verborgen financieel eigenbelang. De standaardkeuring ondersteunt beide lezingen, terwijl A aanvankelijk de normale lezing blijft. De blik op de vergoeding, het ontwijkende antwoord en het polsbandje zijn onder A afwijkend en worden onder B verklaard als uitsluitingsvermijding. Er is echter geen expliciete functionele omkering waarbij dezelfde voorwaarde A's doel blokkeert en B's doel mogelijk maakt; recente deelname is vooral veiligheidsrelevant onder A en een uitsluitingsrisico onder B."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Het ziekenhuisbezoek kan zowel als zorgzame familieondersteuning als als strategisch erfrechtelijk optreden worden gelezen. Zorgzame nabijheid tegenover berekend eigenbelang vormt één dominante, lokaal incompatibele as. De bezoek-, herstel- en nazorgcues passen natuurlijk bij beide lezingen, maar A is de gebruikelijke eerste interpretatie. De notarisvraag en vooraf ingevulde volmacht maken de belangenlezing al latent en verklaren achteraf waarom vragen naar conditie en vervolgzorg gesteld werden. De volmacht is onder A ongepast maar onder B doelgericht. Herstel en helderheid blokkeren A's zorgdoel niet en maken B's doel niet via een tegengestelde functie mogelijk, dus functionele omkering is niet expliciet aanwezig."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B3"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een kandidaat ondergaat een medische keuring met bloeddrukmeting, bloedafname en vragen over eerdere deelname.",
+          "realized_script_b": "Een proefpersoon probeert recente deelname aan ander onderzoek te verbergen om niet te worden uitgesloten.",
+          "realized_opposition_axis": "Open en veilige medische screening tegenover het verbergen van uitsluitingsrelevante informatie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De verborgen-deelnamekant en het polsbandje als bewijs zijn aanwezig, maar de tekst maakt deelname aan een medisch onderzoek al meteen expliciet. Daardoor domineert het beoogde gewone patiënt-zorgscript niet en is Script B niet latent; ook ontbreekt de geplande vergoeding-blik als schakelaar."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": false,
+          "latent_script_b": false,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een herkenbare grap over ontmaskering, maar de geplande A-naar-B-verschuiving is verzwakt doordat de onderzoekscontext en proefpersoonrol vanaf de eerste zin openlijk worden gegeven.",
+          "passes_required_plan": false
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een persoon doorloopt een ogenschijnlijk gewone medische intake, met vragen over medicatie en uitleg over risico's.",
+          "realized_script_b": "Een betaalde proefpersoon wil toelating tot onderzoek behouden en antwoordt daarom ontwijkend over recente deelname.",
+          "realized_opposition_axis": "Eerlijke medische risicobeoordeling tegenover verborgen eigenbelang voor vergoeding en toelating.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De medische intake vormt een dominante eerlijke-screeninglezing; vragen over medicijnen en risico's zijn gedeelde cues. De blik naar de vergoeding en het ontwijkende antwoord activeren laat het beoogde proefpersoonscript en herinterpreteren de intake."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Deze variant realiseert de geplande tegenstelling: de aanvankelijk zorgvuldige intake blijkt voor de spreker vooral een toegangspoort tot een vergoeding.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een patiënt krijgt een verpleegkundige meting en wordt bevraagd over een opvallend hoge hartslag.",
+          "realized_script_b": "De patiënt verraadt uit angst zelf dat hij een eerdere bloedafname wil verzwijgen.",
+          "realized_opposition_axis": "Normale medische openheid tegenover nerveus en onhandig verbergen van relevante medische informatie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "Er is wel verborgen medische informatie, maar geen klinisch onderzoek, vergoeding, toelatingsbelang of recente onderzoeksdeelname. De gerealiseerde tegenstelling is algemene patiëntenzenuwachtigheid versus openheid, niet de geplande betaalde-proefpersoontegenstelling."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": false,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De dialoog heeft een bruikbare ironische wending, maar werkt voornamelijk via een andere tegenstelling: de patiënt maakt zijn eigen geheim onhandig zichtbaar, zonder het beoogde financiële selectiebelang.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V2"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "V2 is de enige voldoende variant en wint daarom verplicht. De gewone intake blijft eerst dominant, waarna de blik op de vergoeding de proefpersoonlogica scherp activeert en de eerdere vragen herkadert. V1 maakt de onderzoekscontext te vroeg expliciet."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "Beide varianten falen op de volledige geplande SO-structuur, maar V1 blijft dichter bij de vereiste onderzoeks- en uitsluitingscontext. Het polsbandje levert bovendien een concreet, visueel ontmaskeringsmoment op; V3 mist het toelatings- en vergoedingsbelang."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 is voldoende en V3 niet, dus V2 wint verplicht. Ook inhoudelijk heeft V2 de betere late omslag: de vergoeding maakt het ontwijkende antwoord betekenisvol en herinterpreteert de intake. V3 werkt als ironische verspreking, maar realiseert niet het vereiste proefpersoonsscript."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 realiseert als enige de vereiste SO-tegenstelling volledig: een geloofwaardige medische intake kantelt laat naar een kandidaat die toelating en vergoeding belangrijker vindt dan openheid. De omslag is compact, goed spreekbaar en herkadert de voorafgaande zorgvuldigheid."
+    }
+  },
+  "result_sha256": "ddeda528cfd2a2165cba42ac4301b51234ebe16b9bdf8f17c98c98c826ab882f"
+}

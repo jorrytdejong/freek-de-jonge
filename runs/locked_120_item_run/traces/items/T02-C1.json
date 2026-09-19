@@ -1,0 +1,844 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T02-C1",
+  "topic_id": "T02",
+  "topic": "Jeugd, school en de Zeeuwse jaren",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "ddf7cc148e05b41f2611ea93518f4ccd9b2b33e3cea6c52ad536e2c458f73fb1",
+  "dry_run": false,
+  "attempt": 3,
+  "generated_at": "2026-08-20T07:18:42.792461+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Jeugd, school en de Zeeuwse jaren",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.\",\n    \"participants_and_roles\": [\n      \"Een leerling: volgt onderwijs, zoekt aansluiting en ontwikkelt een eigen identiteit.\",\n      \"Docenten: geven les, stellen regels en beoordelen prestaties.\",\n      \"Klasgenoten en vrienden: vormen de dagelijkse sociale kring.\",\n      \"Ouders of verzorgers: bieden thuis structuur en ondersteuning.\",\n      \"De Zeeuwse omgeving: bepaalt het decor met dorpen, afstanden, wind, dijken en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren goed doorkomen, een diploma halen en met herkenbare herinneringen en groei naar volwassenheid terugkijken.\",\n    \"preconditions\": [\n      \"De leerling woont in Zeeland of brengt daar de schooljaren door.\",\n      \"Er is een vaste schoolroutine met lessen, huiswerk, toetsen en roosters.\",\n      \"De sociale wereld is relatief klein en herhaaldelijk: dezelfde klasgenoten, docenten en ontmoetingsplekken.\",\n      \"Vervoer, vaak de fiets of bus, is nodig om tussen huis, school en vrienden te reizen.\",\n      \"De terugblik vindt plaats vanuit later perspectief, waardoor gewone gebeurtenissen betekenisvol kunnen lijken.\"\n    ],\n    \"expected_actions\": [\n      \"Opstaan, naar school reizen en lessen volgen.\",\n      \"Huiswerk maken, toetsen voorbereiden en proberen goede cijfers te halen.\",\n      \"Pauzes, fietsen naar huis en afspreken met vrienden.\",\n      \"Omgaan met schoolregels, docenten, onzekerheden en kleine conflicten.\",\n      \"Later herinneringen ophalen aan kenmerkende plekken, routines en vriendschappen uit die periode.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt uiteindelijk de schoolperiode af en houdt een mengeling over van nostalgische, soms ongemakkelijke maar vormende herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\",\n      \"In een Zeeuwse omgeving kennen mensen elkaar vaak via school, familie, sport of het dorp.\",\n      \"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\",\n      \"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\",\n      \"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en Zeeuwse jaren activeert het beeld van een nuchtere, herkenbare coming-of-age-terugblik: dagelijkse schoolroutines en vriendschappen tegen een winderig, kleinschalig Zeeuws decor, eindigend in volwassenwording en nostalgie.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.\",\n    \"participants_and_roles\": [\n      \"Een leerling: volgt onderwijs, zoekt aansluiting en ontwikkelt een eigen identiteit.\",\n      \"Docenten: geven les, stellen regels en beoordelen prestaties.\",\n      \"Klasgenoten en vrienden: vormen de dagelijkse sociale kring.\",\n      \"Ouders of verzorgers: bieden thuis structuur en ondersteuning.\",\n      \"De Zeeuwse omgeving: bepaalt het decor met dorpen, afstanden, wind, dijken en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren goed doorkomen, een diploma halen en met herkenbare herinneringen en groei naar volwassenheid terugkijken.\",\n    \"preconditions\": [\n      \"De leerling woont in Zeeland of brengt daar de schooljaren door.\",\n      \"Er is een vaste schoolroutine met lessen, huiswerk, toetsen en roosters.\",\n      \"De sociale wereld is relatief klein en herhaaldelijk: dezelfde klasgenoten, docenten en ontmoetingsplekken.\",\n      \"Vervoer, vaak de fiets of bus, is nodig om tussen huis, school en vrienden te reizen.\",\n      \"De terugblik vindt plaats vanuit later perspectief, waardoor gewone gebeurtenissen betekenisvol kunnen lijken.\"\n    ],\n    \"expected_actions\": [\n      \"Opstaan, naar school reizen en lessen volgen.\",\n      \"Huiswerk maken, toetsen voorbereiden en proberen goede cijfers te halen.\",\n      \"Pauzes, fietsen naar huis en afspreken met vrienden.\",\n      \"Omgaan met schoolregels, docenten, onzekerheden en kleine conflicten.\",\n      \"Later herinneringen ophalen aan kenmerkende plekken, routines en vriendschappen uit die periode.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt uiteindelijk de schoolperiode af en houdt een mengeling over van nostalgische, soms ongemakkelijke maar vormende herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\",\n      \"In een Zeeuwse omgeving kennen mensen elkaar vaak via school, familie, sport of het dorp.\",\n      \"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\",\n      \"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\",\n      \"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en Zeeuwse jaren activeert het beeld van een nuchtere, herkenbare coming-of-age-terugblik: dagelijkse schoolroutines en vriendschappen tegen een winderig, kleinschalig Zeeuws decor, eindigend in volwassenwording en nostalgie.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een Zeeuwse middelbare scholier draait naast school mee als jonge vrijwilliger bij de dijkbewaking tijdens een zware storm. De ogenschijnlijk gewone schooldag is voor hem vooral een periode van paraat staan, waterstanden doorgeven en helpen voorkomen dat een dorpsdeel overstroomt.\",\n      \"opposition_axis\": \"alledaagse schoolroutine versus noodparaatheid en crisiszorg\",\n      \"opposed_proposition\": \"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\",\n      \"shared_anchor\": \"De schoolbel op een stormachtige middag.\",\n      \"reading_a\": \"De bel luidt het einde van een les; leerlingen pakken hun tassen, bespreken huiswerk en fietsen door de regen naar huis.\",\n      \"reading_b\": \"De bel valt samen met een afgesproken alarmering: de leerling moet onmiddellijk naar het steunpunt voor dijkbewaking.\",\n      \"roles_b\": [\n        \"De scholier: jonge vrijwilliger en koerier van meldingen.\",\n        \"Docenten: volwassenen die aanvankelijk de gewone lesorde bewaken, maar later leerlingen opvangen.\",\n        \"Klasgenoten: medeleerlingen die niet weten waarom hij plotseling vertrekt.\",\n        \"Ouders: leden van een lokaal noodnetwerk.\",\n        \"De Zeeuwse omgeving: kwetsbaar dijken- en polderlandschap dat bewaakt moet worden.\"\n      ],\n      \"goal_b\": \"Op tijd betrouwbare meldingen over water en dijken afleveren, zodat volwassenen de juiste noodmaatregelen kunnen nemen.\",\n      \"role_remapping\": [\n        \"De leerling uit Script A wordt een jonge vrijwilliger met een geheime paraatheidstaak.\",\n        \"De fiets uit Script A wordt een snel vervoermiddel voor berichten tussen school, huis en dijkpost.\",\n        \"De Zeeuwse wind en regen worden van dagelijks ongemak een mogelijk veiligheidsrisico.\",\n        \"De schoolroutine wordt een dekmantel waarbinnen de vrijwilliger op oproep wacht.\"\n      ],\n      \"shared_cues\": [\n        \"Een nat fietspad langs een dijk.\",\n        \"Een docent die op de klok kijkt.\",\n        \"Een tas met schriften.\",\n        \"Klasgenoten die naar buiten rennen zodra de bel gaat.\",\n        \"Harde wind tegen de ramen.\"\n      ],\n      \"switch_trigger\": \"De conrector zegt vlak na de bel niet dat de lessen uitvallen, maar: \\\"Wie het wachtwoord Waterkering kent, meldt zich bij de fietsenstalling.\\\"\",\n      \"hinge_event\": \"De scholier laat zijn tas met proefwerkbriefjes in het lokaal liggen en fietst niet naar huis, maar rechtstreeks naar een dijkpost met een portofoon.\",\n      \"anomaly_under_a\": \"Binnen een gewone coming-of-age-terugblik is het vreemd dat een leerling na school zonder uitleg lesmateriaal achterlaat en doelgericht naar een afgesloten dijk rijdt.\",\n      \"resolution_under_b\": \"Als jonge dijkwacht moet hij juist onmiddellijk vertrekken; de achtergelaten tas toont dat de crisis tijdelijk zwaarder weegt dan cijfers en schoolplicht.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een volwassene vertelt schijnbaar over zijn Zeeuwse schooljeugd, maar blijkt als tiener een hoofdrol te hebben gespeeld in een televisieserie die zich op een Zeeuwse middelbare school afspeelt. De lessen, vriendschappen en fietstochten zijn grotendeels scènes die hij moest spelen.\",\n      \"opposition_axis\": \"beleefde jeugdherinnering versus geënsceneerde rol en productie\",\n      \"opposed_proposition\": \"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\",\n      \"shared_anchor\": \"Een klaslokaal met leerlingen die vlak voor de les hun plaatsen innemen.\",\n      \"reading_a\": \"Een leerling herinnert zich de nerveuze, vertrouwde minuten voordat een docent binnenkomt en de les begint.\",\n      \"reading_b\": \"Een jonge acteur wacht met de figuranten op het startsignaal voor een opgenomen klasscène.\",\n      \"roles_b\": [\n        \"De ogenschijnlijke leerling: jonge acteur met een terugkerende hoofdrol.\",\n        \"Docenten: acteurs of productieleden in docentenkostuum.\",\n        \"Klasgenoten: medespelers en figuranten.\",\n        \"Ouders: begeleiders die contracten, vervoer en schoolwerk combineren.\",\n        \"De Zeeuwse omgeving: filmlocatie die een geloofwaardige jeugdwereld moet oproepen.\"\n      ],\n      \"goal_b\": \"De draaidagen geloofwaardig voltooien en een personage neerzetten dat voor kijkers als een echte Zeeuwse scholier voelt.\",\n      \"role_remapping\": [\n        \"De leerling uit Script A wordt een acteur die een leerling vertolkt.\",\n        \"Docenten worden acteurs of regiefiguren.\",\n        \"Klasgenoten en vrienden worden medespelers, figuranten en mogelijk echte vrienden buiten beeld.\",\n        \"De terugblik wordt geen nostalgie naar een schooltijd, maar naar een intensieve productieperiode.\",\n        \"De fietsritten worden zorgvuldig geplande locatiemomenten.\"\n      ],\n      \"shared_cues\": [\n        \"Een rooster aan de muur.\",\n        \"Een docent die de klas tot stilte maant.\",\n        \"Een fiets tegen een schoolhek.\",\n        \"Een pauze op het plein.\",\n        \"Een vriend die een tekstje herhaalt.\"\n      ],\n      \"switch_trigger\": \"Net wanneer de verteller beschrijft dat de rector de aula binnenloopt, klinkt buiten beeld: \\\"Stilte graag — en actie.\\\"\",\n      \"hinge_event\": \"De rector herhaalt zijn welkomstwoord vier keer, terwijl iemand steeds opnieuw het krijtbord en de positie van de fietsen corrigeert.\",\n      \"anomaly_under_a\": \"In een echte schoolherinnering is het onverklaarbaar dat een rector dezelfde toespraak identiek herhaalt en dat volwassenen zich druk maken over de precieze stand van fietsen.\",\n      \"resolution_under_b\": \"Bij een opname moeten tekst, beeld en continuïteit kloppen; de herhaling en de verplaatste fietsen zijn noodzakelijk om dezelfde scène opnieuw te draaien.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"De terugblik lijkt over een gewone scholier die zich door Zeeland heen fietst, maar gaat eigenlijk over een leerling die door een maritieme opleiding wordt getest. Zijn schoolroute is een selectieparcours waarin hij wind, kaarten, getijden en oriëntatiepunten moet lezen.\",\n      \"opposition_axis\": \"vertrouwde verplaatsing naar school versus getoetste navigatie en selectie\",\n      \"opposed_proposition\": \"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\",\n      \"shared_anchor\": \"Een leerling fietst alleen tegen een harde Zeeuwse tegenwind in.\",\n      \"reading_a\": \"Hij fietst omdat de bus niet handig rijdt en hij op tijd op school wil komen, zoals zoveel leeftijdgenoten.\",\n      \"reading_b\": \"Hij volgt onder tijdsdruk een geheime navigatieopdracht waarbij de route, zijn keuzes en zijn observaties worden beoordeeld.\",\n      \"roles_b\": [\n        \"De scholier: kandidaat voor een maritieme jeugdopleiding.\",\n        \"Docenten: beoordelaars die zich voordoen als gewone leraren.\",\n        \"Klasgenoten: mede-kandidaten met eigen routes en opdrachten.\",\n        \"Ouders: mensen die denken dat hij alleen een normale schooldag heeft.\",\n        \"De Zeeuwse omgeving: oefenterrein met dijken, windrichtingen, sluizen en herkenbare vaartekens.\"\n      ],\n      \"goal_b\": \"Aantonen dat hij onder onzekere weersomstandigheden zelfstandig kan navigeren en verantwoord kan handelen.\",\n      \"role_remapping\": [\n        \"De leerling uit Script A wordt een kandidaat in een selectieprocedure.\",\n        \"De schoolreis wordt een routeproef.\",\n        \"De docent wordt een verborgen beoordelaar.\",\n        \"De klasgenoten worden concurrenten of mede-kandidaten.\",\n        \"Dijken, wind en dorpen worden navigatiegegevens in plaats van achtergronddecor.\"\n      ],\n      \"shared_cues\": [\n        \"Een fiets met natte jas over het stuur.\",\n        \"Een kaart in een schooltas.\",\n        \"Een docent die vraagt hoe laat iemand vertrok.\",\n        \"Een pauze waarin leerlingen hun routes vergelijken.\",\n        \"Een dijk waar nauwelijks beschutting is tegen de wind.\"\n      ],\n      \"switch_trigger\": \"De docent geeft zijn gecorrigeerde aardrijkskundetoets terug; in de kantlijn staat geen cijfer maar: \\\"Punt 4 gemist — keer terug naar de sluis.\\\"\",\n      \"hinge_event\": \"De leerling verlaat tijdens de pauze zonder lunch het schoolplein, meet de windrichting met een natte vinger en noteert een nummer van een boei in zijn schrift.\",\n      \"anomaly_under_a\": \"Voor een gewone scholier is het vreemd en onverstandig om in de pauze zonder verklaring weg te gaan en boeinummers te noteren in plaats van huiswerk of afspraken.\",\n      \"resolution_under_b\": \"De pauze is een gepland tijdvenster in de navigatieproef; de boei en windrichting vormen bewijs dat hij de maritieme route correct leest.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.\",\n      \"opposition_axis\": \"nostalgische persoonlijke herinnering versus forensische reconstructie\",\n      \"opposed_proposition\": \"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\",\n      \"shared_anchor\": \"Een groep klasgenoten staat na school bij de fietsenstalling te praten.\",\n      \"reading_a\": \"De verteller herinnert zich een alledaags afscheid: plagerijen, plannen voor het weekend en het gevoel erbij te horen.\",\n      \"reading_b\": \"De onderzoeker reconstrueert wie als laatste bij de verdwenen klasgenoot stond, welke fiets vertrok en wie een afwijkend verhaal vertelde.\",\n      \"roles_b\": [\n        \"De vroegere leerling: onderzoeker en voormalig klasgenoot.\",\n        \"Docenten: getuigen die het laatste lesuur en gedrag van leerlingen herinneren.\",\n        \"Klasgenoten en vrienden: mogelijke getuigen, bronnen of verdachten.\",\n        \"Ouders: familieleden met oude agenda's, foto's en herinneringen.\",\n        \"De Zeeuwse omgeving: een klein netwerk van dijken, dorpen en routes waarin verplaatsingen te herleiden zijn.\"\n      ],\n      \"goal_b\": \"Vaststellen wat er op een specifieke middag met de verdwenen klasgenoot is gebeurd en een jarenlang raadsel oplossen.\",\n      \"role_remapping\": [\n        \"De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.\",\n        \"Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.\",\n        \"Een docent wordt een bron voor tijdstippen en aanwezigheid.\",\n        \"De fietsroute wordt een te reconstrueren verplaatsing.\",\n        \"De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt.\"\n      ],\n      \"shared_cues\": [\n        \"Een vergeelde klassenfoto.\",\n        \"Een regenachtige fietstocht.\",\n        \"Een docent die absenties noteert.\",\n        \"Een afspraak bij de snackbar na school.\",\n        \"Een oude schoolagenda met huiswerk en namen.\"\n      ],\n      \"switch_trigger\": \"De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.\",\n      \"hinge_event\": \"Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.\",\n      \"anomaly_under_a\": \"In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.\",\n      \"resolution_under_b\": \"De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.\",\n    \"participants_and_roles\": [\n      \"Een leerling: volgt onderwijs, zoekt aansluiting en ontwikkelt een eigen identiteit.\",\n      \"Docenten: geven les, stellen regels en beoordelen prestaties.\",\n      \"Klasgenoten en vrienden: vormen de dagelijkse sociale kring.\",\n      \"Ouders of verzorgers: bieden thuis structuur en ondersteuning.\",\n      \"De Zeeuwse omgeving: bepaalt het decor met dorpen, afstanden, wind, dijken en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren goed doorkomen, een diploma halen en met herkenbare herinneringen en groei naar volwassenheid terugkijken.\",\n    \"preconditions\": [\n      \"De leerling woont in Zeeland of brengt daar de schooljaren door.\",\n      \"Er is een vaste schoolroutine met lessen, huiswerk, toetsen en roosters.\",\n      \"De sociale wereld is relatief klein en herhaaldelijk: dezelfde klasgenoten, docenten en ontmoetingsplekken.\",\n      \"Vervoer, vaak de fiets of bus, is nodig om tussen huis, school en vrienden te reizen.\",\n      \"De terugblik vindt plaats vanuit later perspectief, waardoor gewone gebeurtenissen betekenisvol kunnen lijken.\"\n    ],\n    \"expected_actions\": [\n      \"Opstaan, naar school reizen en lessen volgen.\",\n      \"Huiswerk maken, toetsen voorbereiden en proberen goede cijfers te halen.\",\n      \"Pauzes, fietsen naar huis en afspreken met vrienden.\",\n      \"Omgaan met schoolregels, docenten, onzekerheden en kleine conflicten.\",\n      \"Later herinneringen ophalen aan kenmerkende plekken, routines en vriendschappen uit die periode.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt uiteindelijk de schoolperiode af en houdt een mengeling over van nostalgische, soms ongemakkelijke maar vormende herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\",\n      \"In een Zeeuwse omgeving kennen mensen elkaar vaak via school, familie, sport of het dorp.\",\n      \"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\",\n      \"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\",\n      \"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en Zeeuwse jaren activeert het beeld van een nuchtere, herkenbare coming-of-age-terugblik: dagelijkse schoolroutines en vriendschappen tegen een winderig, kleinschalig Zeeuws decor, eindigend in volwassenwording en nostalgie.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een Zeeuwse middelbare scholier draait naast school mee als jonge vrijwilliger bij de dijkbewaking tijdens een zware storm. De ogenschijnlijk gewone schooldag is voor hem vooral een periode van paraat staan, waterstanden doorgeven en helpen voorkomen dat een dorpsdeel overstroomt.\",\n      \"opposition_axis\": \"alledaagse schoolroutine versus noodparaatheid en crisiszorg\",\n      \"opposed_proposition\": \"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\",\n      \"shared_anchor\": \"De schoolbel op een stormachtige middag.\",\n      \"reading_a\": \"De bel luidt het einde van een les; leerlingen pakken hun tassen, bespreken huiswerk en fietsen door de regen naar huis.\",\n      \"reading_b\": \"De bel valt samen met een afgesproken alarmering: de leerling moet onmiddellijk naar het steunpunt voor dijkbewaking.\",\n      \"roles_b\": [\n        \"De scholier: jonge vrijwilliger en koerier van meldingen.\",\n        \"Docenten: volwassenen die aanvankelijk de gewone lesorde bewaken, maar later leerlingen opvangen.\",\n        \"Klasgenoten: medeleerlingen die niet weten waarom hij plotseling vertrekt.\",\n        \"Ouders: leden van een lokaal noodnetwerk.\",\n        \"De Zeeuwse omgeving: kwetsbaar dijken- en polderlandschap dat bewaakt moet worden.\"\n      ],\n      \"goal_b\": \"Op tijd betrouwbare meldingen over water en dijken afleveren, zodat volwassenen de juiste noodmaatregelen kunnen nemen.\",\n      \"role_remapping\": [\n        \"De leerling uit Script A wordt een jonge vrijwilliger met een geheime paraatheidstaak.\",\n        \"De fiets uit Script A wordt een snel vervoermiddel voor berichten tussen school, huis en dijkpost.\",\n        \"De Zeeuwse wind en regen worden van dagelijks ongemak een mogelijk veiligheidsrisico.\",\n        \"De schoolroutine wordt een dekmantel waarbinnen de vrijwilliger op oproep wacht.\"\n      ],\n      \"shared_cues\": [\n        \"Een nat fietspad langs een dijk.\",\n        \"Een docent die op de klok kijkt.\",\n        \"Een tas met schriften.\",\n        \"Klasgenoten die naar buiten rennen zodra de bel gaat.\",\n        \"Harde wind tegen de ramen.\"\n      ],\n      \"switch_trigger\": \"De conrector zegt vlak na de bel niet dat de lessen uitvallen, maar: \\\"Wie het wachtwoord Waterkering kent, meldt zich bij de fietsenstalling.\\\"\",\n      \"hinge_event\": \"De scholier laat zijn tas met proefwerkbriefjes in het lokaal liggen en fietst niet naar huis, maar rechtstreeks naar een dijkpost met een portofoon.\",\n      \"anomaly_under_a\": \"Binnen een gewone coming-of-age-terugblik is het vreemd dat een leerling na school zonder uitleg lesmateriaal achterlaat en doelgericht naar een afgesloten dijk rijdt.\",\n      \"resolution_under_b\": \"Als jonge dijkwacht moet hij juist onmiddellijk vertrekken; de achtergelaten tas toont dat de crisis tijdelijk zwaarder weegt dan cijfers en schoolplicht.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een volwassene vertelt schijnbaar over zijn Zeeuwse schooljeugd, maar blijkt als tiener een hoofdrol te hebben gespeeld in een televisieserie die zich op een Zeeuwse middelbare school afspeelt. De lessen, vriendschappen en fietstochten zijn grotendeels scènes die hij moest spelen.\",\n      \"opposition_axis\": \"beleefde jeugdherinnering versus geënsceneerde rol en productie\",\n      \"opposed_proposition\": \"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\",\n      \"shared_anchor\": \"Een klaslokaal met leerlingen die vlak voor de les hun plaatsen innemen.\",\n      \"reading_a\": \"Een leerling herinnert zich de nerveuze, vertrouwde minuten voordat een docent binnenkomt en de les begint.\",\n      \"reading_b\": \"Een jonge acteur wacht met de figuranten op het startsignaal voor een opgenomen klasscène.\",\n      \"roles_b\": [\n        \"De ogenschijnlijke leerling: jonge acteur met een terugkerende hoofdrol.\",\n        \"Docenten: acteurs of productieleden in docentenkostuum.\",\n        \"Klasgenoten: medespelers en figuranten.\",\n        \"Ouders: begeleiders die contracten, vervoer en schoolwerk combineren.\",\n        \"De Zeeuwse omgeving: filmlocatie die een geloofwaardige jeugdwereld moet oproepen.\"\n      ],\n      \"goal_b\": \"De draaidagen geloofwaardig voltooien en een personage neerzetten dat voor kijkers als een echte Zeeuwse scholier voelt.\",\n      \"role_remapping\": [\n        \"De leerling uit Script A wordt een acteur die een leerling vertolkt.\",\n        \"Docenten worden acteurs of regiefiguren.\",\n        \"Klasgenoten en vrienden worden medespelers, figuranten en mogelijk echte vrienden buiten beeld.\",\n        \"De terugblik wordt geen nostalgie naar een schooltijd, maar naar een intensieve productieperiode.\",\n        \"De fietsritten worden zorgvuldig geplande locatiemomenten.\"\n      ],\n      \"shared_cues\": [\n        \"Een rooster aan de muur.\",\n        \"Een docent die de klas tot stilte maant.\",\n        \"Een fiets tegen een schoolhek.\",\n        \"Een pauze op het plein.\",\n        \"Een vriend die een tekstje herhaalt.\"\n      ],\n      \"switch_trigger\": \"Net wanneer de verteller beschrijft dat de rector de aula binnenloopt, klinkt buiten beeld: \\\"Stilte graag — en actie.\\\"\",\n      \"hinge_event\": \"De rector herhaalt zijn welkomstwoord vier keer, terwijl iemand steeds opnieuw het krijtbord en de positie van de fietsen corrigeert.\",\n      \"anomaly_under_a\": \"In een echte schoolherinnering is het onverklaarbaar dat een rector dezelfde toespraak identiek herhaalt en dat volwassenen zich druk maken over de precieze stand van fietsen.\",\n      \"resolution_under_b\": \"Bij een opname moeten tekst, beeld en continuïteit kloppen; de herhaling en de verplaatste fietsen zijn noodzakelijk om dezelfde scène opnieuw te draaien.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"De terugblik lijkt over een gewone scholier die zich door Zeeland heen fietst, maar gaat eigenlijk over een leerling die door een maritieme opleiding wordt getest. Zijn schoolroute is een selectieparcours waarin hij wind, kaarten, getijden en oriëntatiepunten moet lezen.\",\n      \"opposition_axis\": \"vertrouwde verplaatsing naar school versus getoetste navigatie en selectie\",\n      \"opposed_proposition\": \"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\",\n      \"shared_anchor\": \"Een leerling fietst alleen tegen een harde Zeeuwse tegenwind in.\",\n      \"reading_a\": \"Hij fietst omdat de bus niet handig rijdt en hij op tijd op school wil komen, zoals zoveel leeftijdgenoten.\",\n      \"reading_b\": \"Hij volgt onder tijdsdruk een geheime navigatieopdracht waarbij de route, zijn keuzes en zijn observaties worden beoordeeld.\",\n      \"roles_b\": [\n        \"De scholier: kandidaat voor een maritieme jeugdopleiding.\",\n        \"Docenten: beoordelaars die zich voordoen als gewone leraren.\",\n        \"Klasgenoten: mede-kandidaten met eigen routes en opdrachten.\",\n        \"Ouders: mensen die denken dat hij alleen een normale schooldag heeft.\",\n        \"De Zeeuwse omgeving: oefenterrein met dijken, windrichtingen, sluizen en herkenbare vaartekens.\"\n      ],\n      \"goal_b\": \"Aantonen dat hij onder onzekere weersomstandigheden zelfstandig kan navigeren en verantwoord kan handelen.\",\n      \"role_remapping\": [\n        \"De leerling uit Script A wordt een kandidaat in een selectieprocedure.\",\n        \"De schoolreis wordt een routeproef.\",\n        \"De docent wordt een verborgen beoordelaar.\",\n        \"De klasgenoten worden concurrenten of mede-kandidaten.\",\n        \"Dijken, wind en dorpen worden navigatiegegevens in plaats van achtergronddecor.\"\n      ],\n      \"shared_cues\": [\n        \"Een fiets met natte jas over het stuur.\",\n        \"Een kaart in een schooltas.\",\n        \"Een docent die vraagt hoe laat iemand vertrok.\",\n        \"Een pauze waarin leerlingen hun routes vergelijken.\",\n        \"Een dijk waar nauwelijks beschutting is tegen de wind.\"\n      ],\n      \"switch_trigger\": \"De docent geeft zijn gecorrigeerde aardrijkskundetoets terug; in de kantlijn staat geen cijfer maar: \\\"Punt 4 gemist — keer terug naar de sluis.\\\"\",\n      \"hinge_event\": \"De leerling verlaat tijdens de pauze zonder lunch het schoolplein, meet de windrichting met een natte vinger en noteert een nummer van een boei in zijn schrift.\",\n      \"anomaly_under_a\": \"Voor een gewone scholier is het vreemd en onverstandig om in de pauze zonder verklaring weg te gaan en boeinummers te noteren in plaats van huiswerk of afspraken.\",\n      \"resolution_under_b\": \"De pauze is een gepland tijdvenster in de navigatieproef; de boei en windrichting vormen bewijs dat hij de maritieme route correct leest.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.\",\n      \"opposition_axis\": \"nostalgische persoonlijke herinnering versus forensische reconstructie\",\n      \"opposed_proposition\": \"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\",\n      \"shared_anchor\": \"Een groep klasgenoten staat na school bij de fietsenstalling te praten.\",\n      \"reading_a\": \"De verteller herinnert zich een alledaags afscheid: plagerijen, plannen voor het weekend en het gevoel erbij te horen.\",\n      \"reading_b\": \"De onderzoeker reconstrueert wie als laatste bij de verdwenen klasgenoot stond, welke fiets vertrok en wie een afwijkend verhaal vertelde.\",\n      \"roles_b\": [\n        \"De vroegere leerling: onderzoeker en voormalig klasgenoot.\",\n        \"Docenten: getuigen die het laatste lesuur en gedrag van leerlingen herinneren.\",\n        \"Klasgenoten en vrienden: mogelijke getuigen, bronnen of verdachten.\",\n        \"Ouders: familieleden met oude agenda's, foto's en herinneringen.\",\n        \"De Zeeuwse omgeving: een klein netwerk van dijken, dorpen en routes waarin verplaatsingen te herleiden zijn.\"\n      ],\n      \"goal_b\": \"Vaststellen wat er op een specifieke middag met de verdwenen klasgenoot is gebeurd en een jarenlang raadsel oplossen.\",\n      \"role_remapping\": [\n        \"De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.\",\n        \"Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.\",\n        \"Een docent wordt een bron voor tijdstippen en aanwezigheid.\",\n        \"De fietsroute wordt een te reconstrueren verplaatsing.\",\n        \"De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt.\"\n      ],\n      \"shared_cues\": [\n        \"Een vergeelde klassenfoto.\",\n        \"Een regenachtige fietstocht.\",\n        \"Een docent die absenties noteert.\",\n        \"Een afspraak bij de snackbar na school.\",\n        \"Een oude schoolagenda met huiswerk en namen.\"\n      ],\n      \"switch_trigger\": \"De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.\",\n      \"hinge_event\": \"Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.\",\n      \"anomaly_under_a\": \"In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.\",\n      \"resolution_under_b\": \"De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"plan\": {\n    \"setup_script\": \"Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.\",\n    \"opposing_script\": \"Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.\",\n    \"opposition_type\": \"nostalgische persoonlijke herinnering versus forensische reconstructie\",\n    \"trigger\": \"De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Een vergeelde klassenfoto.\",\n      \"Een regenachtige fietstocht.\",\n      \"Een docent die absenties noteert.\",\n      \"Een afspraak bij de snackbar na school.\",\n      \"Een oude schoolagenda met huiswerk en namen.\"\n    ],\n    \"hinge_event\": \"Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.\",\n    \"anomaly_under_a\": \"In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.\",\n    \"resolution_under_b\": \"De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.\",\n    \"role_remapping\": [\n      \"De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.\",\n      \"Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.\",\n      \"Een docent wordt een bron voor tijdstippen en aanwezigheid.\",\n      \"De fietsroute wordt een te reconstrueren verplaatsing.\",\n      \"De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.\",\n      \"participants_and_roles\": [\n        \"Een leerling: volgt onderwijs, zoekt aansluiting en ontwikkelt een eigen identiteit.\",\n        \"Docenten: geven les, stellen regels en beoordelen prestaties.\",\n        \"Klasgenoten en vrienden: vormen de dagelijkse sociale kring.\",\n        \"Ouders of verzorgers: bieden thuis structuur en ondersteuning.\",\n        \"De Zeeuwse omgeving: bepaalt het decor met dorpen, afstanden, wind, dijken en een overzichtelijke gemeenschap.\"\n      ],\n      \"apparent_goal\": \"De jeugdjaren goed doorkomen, een diploma halen en met herkenbare herinneringen en groei naar volwassenheid terugkijken.\",\n      \"preconditions\": [\n        \"De leerling woont in Zeeland of brengt daar de schooljaren door.\",\n        \"Er is een vaste schoolroutine met lessen, huiswerk, toetsen en roosters.\",\n        \"De sociale wereld is relatief klein en herhaaldelijk: dezelfde klasgenoten, docenten en ontmoetingsplekken.\",\n        \"Vervoer, vaak de fiets of bus, is nodig om tussen huis, school en vrienden te reizen.\",\n        \"De terugblik vindt plaats vanuit later perspectief, waardoor gewone gebeurtenissen betekenisvol kunnen lijken.\"\n      ],\n      \"expected_actions\": [\n        \"Opstaan, naar school reizen en lessen volgen.\",\n        \"Huiswerk maken, toetsen voorbereiden en proberen goede cijfers te halen.\",\n        \"Pauzes, fietsen naar huis en afspreken met vrienden.\",\n        \"Omgaan met schoolregels, docenten, onzekerheden en kleine conflicten.\",\n        \"Later herinneringen ophalen aan kenmerkende plekken, routines en vriendschappen uit die periode.\"\n      ],\n      \"expected_outcome\": \"De leerling rondt uiteindelijk de schoolperiode af en houdt een mengeling over van nostalgische, soms ongemakkelijke maar vormende herinneringen aan opgroeien in Zeeland.\",\n      \"expected_propositions\": [\n        \"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\",\n        \"In een Zeeuwse omgeving kennen mensen elkaar vaak via school, familie, sport of het dorp.\",\n        \"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\",\n        \"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\",\n        \"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\"\n      ],\n      \"audience_expectation\": \"Een opzet over jeugd, school en Zeeuwse jaren activeert het beeld van een nuchtere, herkenbare coming-of-age-terugblik: dagelijkse schoolroutines en vriendschappen tegen een winderig, kleinschalig Zeeuws decor, eindigend in volwassenwording en nostalgie.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.\",\n      \"opposition_axis\": \"nostalgische persoonlijke herinnering versus forensische reconstructie\",\n      \"opposed_proposition\": \"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\",\n      \"shared_anchor\": \"Een groep klasgenoten staat na school bij de fietsenstalling te praten.\",\n      \"reading_a\": \"De verteller herinnert zich een alledaags afscheid: plagerijen, plannen voor het weekend en het gevoel erbij te horen.\",\n      \"reading_b\": \"De onderzoeker reconstrueert wie als laatste bij de verdwenen klasgenoot stond, welke fiets vertrok en wie een afwijkend verhaal vertelde.\",\n      \"roles_b\": [\n        \"De vroegere leerling: onderzoeker en voormalig klasgenoot.\",\n        \"Docenten: getuigen die het laatste lesuur en gedrag van leerlingen herinneren.\",\n        \"Klasgenoten en vrienden: mogelijke getuigen, bronnen of verdachten.\",\n        \"Ouders: familieleden met oude agenda's, foto's en herinneringen.\",\n        \"De Zeeuwse omgeving: een klein netwerk van dijken, dorpen en routes waarin verplaatsingen te herleiden zijn.\"\n      ],\n      \"goal_b\": \"Vaststellen wat er op een specifieke middag met de verdwenen klasgenoot is gebeurd en een jarenlang raadsel oplossen.\",\n      \"role_remapping\": [\n        \"De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.\",\n        \"Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.\",\n        \"Een docent wordt een bron voor tijdstippen en aanwezigheid.\",\n        \"De fietsroute wordt een te reconstrueren verplaatsing.\",\n        \"De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt.\"\n      ],\n      \"shared_cues\": [\n        \"Een vergeelde klassenfoto.\",\n        \"Een regenachtige fietstocht.\",\n        \"Een docent die absenties noteert.\",\n        \"Een afspraak bij de snackbar na school.\",\n        \"Een oude schoolagenda met huiswerk en namen.\"\n      ],\n      \"switch_trigger\": \"De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.\",\n      \"hinge_event\": \"Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.\",\n      \"anomaly_under_a\": \"In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.\",\n      \"resolution_under_b\": \"De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.\",\n      \"opposing_script\": \"Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.\",\n      \"opposition_type\": \"nostalgische persoonlijke herinnering versus forensische reconstructie\",\n      \"trigger\": \"De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Een vergeelde klassenfoto.\",\n        \"Een regenachtige fietstocht.\",\n        \"Een docent die absenties noteert.\",\n        \"Een afspraak bij de snackbar na school.\",\n        \"Een oude schoolagenda met huiswerk en namen.\"\n      ],\n      \"hinge_event\": \"Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.\",\n      \"anomaly_under_a\": \"In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.\",\n      \"resolution_under_b\": \"De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.\",\n      \"role_remapping\": [\n        \"De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.\",\n        \"Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.\",\n        \"Een docent wordt een bron voor tijdstippen en aanwezigheid.\",\n        \"De fietsroute wordt een te reconstrueren verplaatsing.\",\n        \"De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik kijk graag naar onze vergeelde klassenfoto uit Zeeland: iedereen natgeregend, klaar voor friet na school. Grappig hoe precies iedereen nog weet dat Bas zijn regenjas pas die avond kocht. Behalve de foto: Bas draagt hem al naast de vermiste leerling.\",\n      \"angle\": \"Nostalgische klassenherinnering kantelt naar een belastend detail op de foto.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Onze docent noteerde absenties alsof het proefwerken waren, maar wij vonden dat toen gewoon streng. In mijn oude agenda staat: ‘vrijdag: fietsen, snackbar, Bas gezien’. Alleen Bas zegt al twintig jaar dat hij die middag niet van huis kwam.\",\n      \"angle\": \"Een gewone schoolagenda verandert in een alibi dat niet klopt.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"In Zeeland fietsten we door elke storm heen; je kende elkaars route zelfs zonder mee te rijden. Daarom vind ik die vrijdagmiddag zo warm herinnerd: samen naar de snackbar, iedereen aanwezig. Nou ja, volgens de docent was één jongen al drie dagen weg.\",\n      \"angle\": \"Gezellige dorpsroutine wordt ondermijnd door de absentieregistratie.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Ik kijk graag naar onze vergeelde klassenfoto uit Zeeland: iedereen natgeregend, klaar voor friet na school. Grappig hoe precies iedereen nog weet dat Bas zijn regenjas pas die avond kocht. Behalve de foto: Bas draagt hem al naast de vermiste leerling.\",\n      \"angle\": \"Nostalgische klassenherinnering kantelt naar een belastend detail op de foto.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Onze docent noteerde absenties alsof het proefwerken waren, maar wij vonden dat toen gewoon streng. In mijn oude agenda staat: ‘vrijdag: fietsen, snackbar, Bas gezien’. Alleen Bas zegt al twintig jaar dat hij die middag niet van huis kwam.\",\n      \"angle\": \"Een gewone schoolagenda verandert in een alibi dat niet klopt.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"In Zeeland fietsten we door elke storm heen; je kende elkaars route zelfs zonder mee te rijden. Daarom vind ik die vrijdagmiddag zo warm herinnerd: samen naar de snackbar, iedereen aanwezig. Nou ja, volgens de docent was één jongen al drie dagen weg.\",\n      \"angle\": \"Gezellige dorpsroutine wordt ondermijnd door de absentieregistratie.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een verteller haalt warm een Zeeuwse schoolherinnering op aan een natgeregende klas, een vergeelde klassenfoto en friet na school.\",\n      \"realized_script_b\": \"De foto functioneert als bewijs in de reconstructie van de verdwijning van een oud-klasgenoot: Bas' regenjas plaatst hem aantoonbaar naast de vermiste leerling op een onmogelijk tijdstip.\",\n      \"realized_opposition_axis\": \"nostalgische persoonlijke herinnering versus forensische reconstructie\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De nostalgische schoolterugblik is dominant in de opzet, terwijl de foto, de regenjas en de vermiste leerling laat een forensische lezing activeren. De jas vormt functioneel de geplande tijdlijnbreuk en herwaardeert de eerdere herinnering als bewijsmateriaal.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit is een compacte, goed gerealiseerde versie van het beoogde contrast. Niet alle geplande cues of het politienummer worden letterlijk gebruikt, maar foto, regen, schoolroutine, regenjas en vermissing leveren gezamenlijk de geplande forensische omslag op.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een oud-leerling blikt terug op een gewone schoolvrijdag met een strenge docent, fietsen, snackbarbezoek en een oude agenda.\",\n      \"realized_script_b\": \"De oude agenda wordt gebruikt om Bas' twintig jaar oude bewering dat hij thuisbleef tegen te spreken; de herinnering verandert in een alibiconflict.\",\n      \"realized_opposition_axis\": \"nostalgische schoolherinnering versus bewijs van een inconsistent alibi\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De tekst gebruikt wel meerdere gedeelde schoolcues en een laat bewijsdetail, maar activeert geen duidelijke reconstructie van de verdwijning van een klasgenoot. De omslag is naar een algemeen alibiconflict rond Bas, niet naar de beoogde forensische reconstructie met foto, verdwenen leerling en tijdlijnbreuk.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De agenda en Bas' ontkenning geven de tekst een werkende donkere twist, maar die twist berust vooral op herinnering versus een ontkracht alibi. De vereiste verdwenen klasgenoot en de specifieke forensische foto-reconstructie blijven uit.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een verteller herinnert zich een warme, hechte Zeeuwse schoolroutine: door storm fietsen en met iedereen naar de snackbar gaan.\",\n      \"realized_script_b\": \"Een absentienotitie van de docent spreekt de warme herinnering tegen: een jongen was volgens de administratie al drie dagen weg.\",\n      \"realized_opposition_axis\": \"gezellige collectieve herinnering versus administratieve tegenspraak over aanwezigheid\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De tekst start in de beoogde nostalgische schoolwereld en gebruikt fiets-, snackbar- en docentcues, maar de draai activeert slechts een registratieconflict. Er ontstaat geen herkenbare onderzoeker, bewijsreconstructie of foto-gebaseerde tijdlijnbreuk rond de verdwijning.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": true,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De slotzin herkadert de gezellige herinnering effectief als onbetrouwbaar, maar realiseert hoofdzakelijk een herinnering-versus-administratiecontrast. Dat is een andere, minder specifieke oppositie dan nostalgie versus forensische reconstructie van een vermissing.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Ik kijk graag naar onze vergeelde klassenfoto uit Zeeland: iedereen natgeregend, klaar voor friet na school. Grappig hoe precies iedereen nog weet dat Bas zijn regenjas pas die avond kocht. Behalve de foto: Bas draagt hem al naast de vermiste leerling.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.",
+      "opposing_script": "Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.",
+      "opposition_type": "nostalgische persoonlijke herinnering versus forensische reconstructie",
+      "trigger": "De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Een vergeelde klassenfoto.",
+        "Een regenachtige fietstocht.",
+        "Een docent die absenties noteert.",
+        "Een afspraak bij de snackbar na school.",
+        "Een oude schoolagenda met huiswerk en namen."
+      ],
+      "hinge_event": "Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.",
+      "anomaly_under_a": "In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.",
+      "resolution_under_b": "De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.",
+      "role_remapping": [
+        "De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.",
+        "Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.",
+        "Een docent wordt een bron voor tijdstippen en aanwezigheid.",
+        "De fietsroute wordt een te reconstrueren verplaatsing.",
+        "De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.\\\",\\\"participants_and_roles\\\":[\\\"Een leerling: volgt onderwijs, zoekt aansluiting en ontwikkelt een eigen identiteit.\\\",\\\"Docenten: geven les, stellen regels en beoordelen prestaties.\\\",\\\"Klasgenoten en vrienden: vormen de dagelijkse sociale kring.\\\",\\\"Ouders of verzorgers: bieden thuis structuur en ondersteuning.\\\",\\\"De Zeeuwse omgeving: bepaalt het decor met dorpen, afstanden, wind, dijken en een overzichtelijke gemeenschap.\\\"],\\\"apparent_goal\\\":\\\"De jeugdjaren goed doorkomen, een diploma halen en met herkenbare herinneringen en groei naar volwassenheid terugkijken.\\\",\\\"preconditions\\\":[\\\"De leerling woont in Zeeland of brengt daar de schooljaren door.\\\",\\\"Er is een vaste schoolroutine met lessen, huiswerk, toetsen en roosters.\\\",\\\"De sociale wereld is relatief klein en herhaaldelijk: dezelfde klasgenoten, docenten en ontmoetingsplekken.\\\",\\\"Vervoer, vaak de fiets of bus, is nodig om tussen huis, school en vrienden te reizen.\\\",\\\"De terugblik vindt plaats vanuit later perspectief, waardoor gewone gebeurtenissen betekenisvol kunnen lijken.\\\"],\\\"expected_actions\\\":[\\\"Opstaan, naar school reizen en lessen volgen.\\\",\\\"Huiswerk maken, toetsen voorbereiden en proberen goede cijfers te halen.\\\",\\\"Pauzes, fietsen naar huis en afspreken met vrienden.\\\",\\\"Omgaan met schoolregels, docenten, onzekerheden en kleine conflicten.\\\",\\\"Later herinneringen ophalen aan kenmerkende plekken, routines en vriendschappen uit die periode.\\\"],\\\"expected_outcome\\\":\\\"De leerling rondt uiteindelijk de schoolperiode af en houdt een mengeling over van nostalgische, soms ongemakkelijke maar vormende herinneringen aan opgroeien in Zeeland.\\\",\\\"expected_propositions\\\":[\\\"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\\\",\\\"In een Zeeuwse omgeving kennen mensen elkaar vaak via school, familie, sport of het dorp.\\\",\\\"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\\\",\\\"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\\\",\\\"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over jeugd, school en Zeeuwse jaren activeert het beeld van een nuchtere, herkenbare coming-of-age-terugblik: dagelijkse schoolroutines en vriendschappen tegen een winderig, kleinschalig Zeeuws decor, eindigend in volwassenwording en nostalgie.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een Zeeuwse middelbare scholier draait naast school mee als jonge vrijwilliger bij de dijkbewaking tijdens een zware storm. De ogenschijnlijk gewone schooldag is voor hem vooral een periode van paraat staan, waterstanden doorgeven en helpen voorkomen dat een dorpsdeel overstroomt.\\\",\\\"opposition_axis\\\":\\\"alledaagse schoolroutine versus noodparaatheid en crisiszorg\\\",\\\"opposed_proposition\\\":\\\"Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.\\\",\\\"shared_anchor\\\":\\\"De schoolbel op een stormachtige middag.\\\",\\\"reading_a\\\":\\\"De bel luidt het einde van een les; leerlingen pakken hun tassen, bespreken huiswerk en fietsen door de regen naar huis.\\\",\\\"reading_b\\\":\\\"De bel valt samen met een afgesproken alarmering: de leerling moet onmiddellijk naar het steunpunt voor dijkbewaking.\\\",\\\"roles_b\\\":[\\\"De scholier: jonge vrijwilliger en koerier van meldingen.\\\",\\\"Docenten: volwassenen die aanvankelijk de gewone lesorde bewaken, maar later leerlingen opvangen.\\\",\\\"Klasgenoten: medeleerlingen die niet weten waarom hij plotseling vertrekt.\\\",\\\"Ouders: leden van een lokaal noodnetwerk.\\\",\\\"De Zeeuwse omgeving: kwetsbaar dijken- en polderlandschap dat bewaakt moet worden.\\\"],\\\"goal_b\\\":\\\"Op tijd betrouwbare meldingen over water en dijken afleveren, zodat volwassenen de juiste noodmaatregelen kunnen nemen.\\\",\\\"role_remapping\\\":[\\\"De leerling uit Script A wordt een jonge vrijwilliger met een geheime paraatheidstaak.\\\",\\\"De fiets uit Script A wordt een snel vervoermiddel voor berichten tussen school, huis en dijkpost.\\\",\\\"De Zeeuwse wind en regen worden van dagelijks ongemak een mogelijk veiligheidsrisico.\\\",\\\"De schoolroutine wordt een dekmantel waarbinnen de vrijwilliger op oproep wacht.\\\"],\\\"shared_cues\\\":[\\\"Een nat fietspad langs een dijk.\\\",\\\"Een docent die op de klok kijkt.\\\",\\\"Een tas met schriften.\\\",\\\"Klasgenoten die naar buiten rennen zodra de bel gaat.\\\",\\\"Harde wind tegen de ramen.\\\"],\\\"switch_trigger\\\":\\\"De conrector zegt vlak na de bel niet dat de lessen uitvallen, maar: \\\\\\\"Wie het wachtwoord Waterkering kent, meldt zich bij de fietsenstalling.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De scholier laat zijn tas met proefwerkbriefjes in het lokaal liggen en fietst niet naar huis, maar rechtstreeks naar een dijkpost met een portofoon.\\\",\\\"anomaly_under_a\\\":\\\"Binnen een gewone coming-of-age-terugblik is het vreemd dat een leerling na school zonder uitleg lesmateriaal achterlaat en doelgericht naar een afgesloten dijk rijdt.\\\",\\\"resolution_under_b\\\":\\\"Als jonge dijkwacht moet hij juist onmiddellijk vertrekken; de achtergelaten tas toont dat de crisis tijdelijk zwaarder weegt dan cijfers en schoolplicht.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een volwassene vertelt schijnbaar over zijn Zeeuwse schooljeugd, maar blijkt als tiener een hoofdrol te hebben gespeeld in een televisieserie die zich op een Zeeuwse middelbare school afspeelt. De lessen, vriendschappen en fietstochten zijn grotendeels scènes die hij moest spelen.\\\",\\\"opposition_axis\\\":\\\"beleefde jeugdherinnering versus geënsceneerde rol en productie\\\",\\\"opposed_proposition\\\":\\\"De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.\\\",\\\"shared_anchor\\\":\\\"Een klaslokaal met leerlingen die vlak voor de les hun plaatsen innemen.\\\",\\\"reading_a\\\":\\\"Een leerling herinnert zich de nerveuze, vertrouwde minuten voordat een docent binnenkomt en de les begint.\\\",\\\"reading_b\\\":\\\"Een jonge acteur wacht met de figuranten op het startsignaal voor een opgenomen klasscène.\\\",\\\"roles_b\\\":[\\\"De ogenschijnlijke leerling: jonge acteur met een terugkerende hoofdrol.\\\",\\\"Docenten: acteurs of productieleden in docentenkostuum.\\\",\\\"Klasgenoten: medespelers en figuranten.\\\",\\\"Ouders: begeleiders die contracten, vervoer en schoolwerk combineren.\\\",\\\"De Zeeuwse omgeving: filmlocatie die een geloofwaardige jeugdwereld moet oproepen.\\\"],\\\"goal_b\\\":\\\"De draaidagen geloofwaardig voltooien en een personage neerzetten dat voor kijkers als een echte Zeeuwse scholier voelt.\\\",\\\"role_remapping\\\":[\\\"De leerling uit Script A wordt een acteur die een leerling vertolkt.\\\",\\\"Docenten worden acteurs of regiefiguren.\\\",\\\"Klasgenoten en vrienden worden medespelers, figuranten en mogelijk echte vrienden buiten beeld.\\\",\\\"De terugblik wordt geen nostalgie naar een schooltijd, maar naar een intensieve productieperiode.\\\",\\\"De fietsritten worden zorgvuldig geplande locatiemomenten.\\\"],\\\"shared_cues\\\":[\\\"Een rooster aan de muur.\\\",\\\"Een docent die de klas tot stilte maant.\\\",\\\"Een fiets tegen een schoolhek.\\\",\\\"Een pauze op het plein.\\\",\\\"Een vriend die een tekstje herhaalt.\\\"],\\\"switch_trigger\\\":\\\"Net wanneer de verteller beschrijft dat de rector de aula binnenloopt, klinkt buiten beeld: \\\\\\\"Stilte graag — en actie.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De rector herhaalt zijn welkomstwoord vier keer, terwijl iemand steeds opnieuw het krijtbord en de positie van de fietsen corrigeert.\\\",\\\"anomaly_under_a\\\":\\\"In een echte schoolherinnering is het onverklaarbaar dat een rector dezelfde toespraak identiek herhaalt en dat volwassenen zich druk maken over de precieze stand van fietsen.\\\",\\\"resolution_under_b\\\":\\\"Bij een opname moeten tekst, beeld en continuïteit kloppen; de herhaling en de verplaatste fietsen zijn noodzakelijk om dezelfde scène opnieuw te draaien.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"De terugblik lijkt over een gewone scholier die zich door Zeeland heen fietst, maar gaat eigenlijk over een leerling die door een maritieme opleiding wordt getest. Zijn schoolroute is een selectieparcours waarin hij wind, kaarten, getijden en oriëntatiepunten moet lezen.\\\",\\\"opposition_axis\\\":\\\"vertrouwde verplaatsing naar school versus getoetste navigatie en selectie\\\",\\\"opposed_proposition\\\":\\\"Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.\\\",\\\"shared_anchor\\\":\\\"Een leerling fietst alleen tegen een harde Zeeuwse tegenwind in.\\\",\\\"reading_a\\\":\\\"Hij fietst omdat de bus niet handig rijdt en hij op tijd op school wil komen, zoals zoveel leeftijdgenoten.\\\",\\\"reading_b\\\":\\\"Hij volgt onder tijdsdruk een geheime navigatieopdracht waarbij de route, zijn keuzes en zijn observaties worden beoordeeld.\\\",\\\"roles_b\\\":[\\\"De scholier: kandidaat voor een maritieme jeugdopleiding.\\\",\\\"Docenten: beoordelaars die zich voordoen als gewone leraren.\\\",\\\"Klasgenoten: mede-kandidaten met eigen routes en opdrachten.\\\",\\\"Ouders: mensen die denken dat hij alleen een normale schooldag heeft.\\\",\\\"De Zeeuwse omgeving: oefenterrein met dijken, windrichtingen, sluizen en herkenbare vaartekens.\\\"],\\\"goal_b\\\":\\\"Aantonen dat hij onder onzekere weersomstandigheden zelfstandig kan navigeren en verantwoord kan handelen.\\\",\\\"role_remapping\\\":[\\\"De leerling uit Script A wordt een kandidaat in een selectieprocedure.\\\",\\\"De schoolreis wordt een routeproef.\\\",\\\"De docent wordt een verborgen beoordelaar.\\\",\\\"De klasgenoten worden concurrenten of mede-kandidaten.\\\",\\\"Dijken, wind en dorpen worden navigatiegegevens in plaats van achtergronddecor.\\\"],\\\"shared_cues\\\":[\\\"Een fiets met natte jas over het stuur.\\\",\\\"Een kaart in een schooltas.\\\",\\\"Een docent die vraagt hoe laat iemand vertrok.\\\",\\\"Een pauze waarin leerlingen hun routes vergelijken.\\\",\\\"Een dijk waar nauwelijks beschutting is tegen de wind.\\\"],\\\"switch_trigger\\\":\\\"De docent geeft zijn gecorrigeerde aardrijkskundetoets terug; in de kantlijn staat geen cijfer maar: \\\\\\\"Punt 4 gemist — keer terug naar de sluis.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De leerling verlaat tijdens de pauze zonder lunch het schoolplein, meet de windrichting met een natte vinger en noteert een nummer van een boei in zijn schrift.\\\",\\\"anomaly_under_a\\\":\\\"Voor een gewone scholier is het vreemd en onverstandig om in de pauze zonder verklaring weg te gaan en boeinummers te noteren in plaats van huiswerk of afspraken.\\\",\\\"resolution_under_b\\\":\\\"De pauze is een gepland tijdvenster in de navigatieproef; de boei en windrichting vormen bewijs dat hij de maritieme route correct leest.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.\\\",\\\"opposition_axis\\\":\\\"nostalgische persoonlijke herinnering versus forensische reconstructie\\\",\\\"opposed_proposition\\\":\\\"Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.\\\",\\\"shared_anchor\\\":\\\"Een groep klasgenoten staat na school bij de fietsenstalling te praten.\\\",\\\"reading_a\\\":\\\"De verteller herinnert zich een alledaags afscheid: plagerijen, plannen voor het weekend en het gevoel erbij te horen.\\\",\\\"reading_b\\\":\\\"De onderzoeker reconstrueert wie als laatste bij de verdwenen klasgenoot stond, welke fiets vertrok en wie een afwijkend verhaal vertelde.\\\",\\\"roles_b\\\":[\\\"De vroegere leerling: onderzoeker en voormalig klasgenoot.\\\",\\\"Docenten: getuigen die het laatste lesuur en gedrag van leerlingen herinneren.\\\",\\\"Klasgenoten en vrienden: mogelijke getuigen, bronnen of verdachten.\\\",\\\"Ouders: familieleden met oude agenda's, foto's en herinneringen.\\\",\\\"De Zeeuwse omgeving: een klein netwerk van dijken, dorpen en routes waarin verplaatsingen te herleiden zijn.\\\"],\\\"goal_b\\\":\\\"Vaststellen wat er op een specifieke middag met de verdwenen klasgenoot is gebeurd en een jarenlang raadsel oplossen.\\\",\\\"role_remapping\\\":[\\\"De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.\\\",\\\"Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.\\\",\\\"Een docent wordt een bron voor tijdstippen en aanwezigheid.\\\",\\\"De fietsroute wordt een te reconstrueren verplaatsing.\\\",\\\"De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt.\\\"],\\\"shared_cues\\\":[\\\"Een vergeelde klassenfoto.\\\",\\\"Een regenachtige fietstocht.\\\",\\\"Een docent die absenties noteert.\\\",\\\"Een afspraak bij de snackbar na school.\\\",\\\"Een oude schoolagenda met huiswerk en namen.\\\"],\\\"switch_trigger\\\":\\\"De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.\\\",\\\"hinge_event\\\":\\\"Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.\\\",\\\"anomaly_under_a\\\":\\\"In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.\\\",\\\"resolution_under_b\\\":\\\"De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén tekst kan eerst een gewone, stormachtige schoolmiddag tonen en daarna dezelfde bel als noodoproep herduiden. De dominante tegenstelling is gewone schoolroutine tegenover crisisparaatheid. Bel, fiets, regen, dijk en achtergelaten tas werken in beide lezingen; de storm en Zeeuwse dijken houden de tweede lezing bovendien plausibel latent. De doelgerichte vlucht naar de dijkpost is anomalisch als schoolgedrag, maar functioneel als onmiddellijke dijkwachtplicht. Het verlaten van school belemmert Script A's schooldoel en maakt tegelijk Script B's nooddoel mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een klaslokaal, een docent, een rooster, fietsen en een pauze kunnen eerst als echte schooljeugd en vervolgens als set, rekwisieten en opnamecontext worden gelezen. De tegenstelling tussen beleefde herinnering en geënsceneerde productie is duidelijk en dominant. De opnamelezing is sociaal herkenbaar en kan vóór de trigger latent blijven door onder meer het herhalen van tekst. De identieke herhaling van de rector en de aandacht voor fietsposities zijn onder Script A vreemd, maar onder Script B noodzakelijke continuïteits- en opnamehandelingen. Wat een spontane schoolervaring verhindert, maakt een reproduceerbare filmscène mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde fietstocht tegen de wind kan worden gerealiseerd als gewone reis naar school of als beoordeelde navigatieopdracht. De dominante as betreft de functie van de verplaatsing: alledaags vervoer tegenover selectie en toetsing. Kaart, dijk, wind en docent ondersteunen beide lezingen en maken een maritieme selectie vooraf al mogelijk zonder die expliciet te maken. Het tijdens de pauze vertrekken, wind meten en een boeinummer noteren is onder de schoollezing afwijkend, maar vormt onder de proeflezing precies het vereiste bewijs van navigatievaardigheid. De zware omstandigheden hinderen de normale schoolreis, maar leveren juist de omstandigheden waarop Script B wil testen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een tekst over klasgenoten bij de fietsenstalling kan aanvankelijk als nostalgische herinnering functioneren en achteraf als reconstructie van een verdwijning. De oppositie tussen emotionele jeugdherinnering en forensisch onderzoek is lokaal duidelijk en de onderzoeksfunctie is sociaal herkenbaar. Foto, absenties, agenda, routes en regenachtige fietstocht dragen beide lezingen; zij kunnen vóór de politieverwijzing als herinneringsmateriaal worden opgevat. De ongebruikelijk precieze aandacht voor datum, jas en positie op de foto is onder Script A onverklaard, maar onder Script B bewijsgericht en betekenisvol. Die precisie ondermijnt nostalgisch herinneren als hoofddoel en maakt tegelijk het vaststellen van de tijdlijn en betrokkenheid mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B4\\\",\\\"rationale\\\":\\\"B4 biedt de scherpste en meest productieve oppositie: een warme, nostalgische terugblik op schoolvrienden verandert geloofwaardig in een forensische reconstructie. Beide lezingen delen vrijwel alle basiselementen van Script A — klasgenoten, docenten, fietsroutes, een kleine Zeeuwse gemeenschap en herinneringen vanuit volwassen perspectief — maar kennen daaraan radicaal andere functies toe. De setting domineert de opzet zonder het onderwerp los te laten: juist de kleinschaligheid van Zeeland maakt routes, getuigenissen en onderlinge stiltes betekenisvol. De klassenfoto, datum en regenjas zijn zuinige, retrospectief sterke aanwijzingen die in de eerste lezing licht ongemakkelijk maar verklaarbaar zijn, en in de tweede lezing bewijswaarde krijgen. Daardoor heeft de kandidaat een heldere switch, sterke tweede lezing en aanzienlijk dramatisch payoffpotentieel.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Ik kijk graag naar onze vergeelde klassenfoto uit Zeeland: iedereen natgeregend, klaar voor friet na school. Grappig hoe precies iedereen nog weet dat Bas zijn regenjas pas die avond kocht. Behalve de foto: Bas draagt hem al naast de vermiste leerling.\\\",\\\"angle\\\":\\\"Nostalgische klassenherinnering kantelt naar een belastend detail op de foto.\\\"},{\\\"text\\\":\\\"Onze docent noteerde absenties alsof het proefwerken waren, maar wij vonden dat toen gewoon streng. In mijn oude agenda staat: ‘vrijdag: fietsen, snackbar, Bas gezien’. Alleen Bas zegt al twintig jaar dat hij die middag niet van huis kwam.\\\",\\\"angle\\\":\\\"Een gewone schoolagenda verandert in een alibi dat niet klopt.\\\"},{\\\"text\\\":\\\"In Zeeland fietsten we door elke storm heen; je kende elkaars route zelfs zonder mee te rijden. Daarom vind ik die vrijdagmiddag zo warm herinnerd: samen naar de snackbar, iedereen aanwezig. Nou ja, volgens de docent was één jongen al drie dagen weg.\\\",\\\"angle\\\":\\\"Gezellige dorpsroutine wordt ondermijnd door de absentieregistratie.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een verteller haalt warm een Zeeuwse schoolherinnering op aan een natgeregende klas, een vergeelde klassenfoto en friet na school.\\\",\\\"realized_script_b\\\":\\\"De foto functioneert als bewijs in de reconstructie van de verdwijning van een oud-klasgenoot: Bas' regenjas plaatst hem aantoonbaar naast de vermiste leerling op een onmogelijk tijdstip.\\\",\\\"realized_opposition_axis\\\":\\\"nostalgische persoonlijke herinnering versus forensische reconstructie\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De nostalgische schoolterugblik is dominant in de opzet, terwijl de foto, de regenjas en de vermiste leerling laat een forensische lezing activeren. De jas vormt functioneel de geplande tijdlijnbreuk en herwaardeert de eerdere herinnering als bewijsmateriaal.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Dit is een compacte, goed gerealiseerde versie van het beoogde contrast. Niet alle geplande cues of het politienummer worden letterlijk gebruikt, maar foto, regen, schoolroutine, regenjas en vermissing leveren gezamenlijk de geplande forensische omslag op.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een oud-leerling blikt terug op een gewone schoolvrijdag met een strenge docent, fietsen, snackbarbezoek en een oude agenda.\\\",\\\"realized_script_b\\\":\\\"De oude agenda wordt gebruikt om Bas' twintig jaar oude bewering dat hij thuisbleef tegen te spreken; de herinnering verandert in een alibiconflict.\\\",\\\"realized_opposition_axis\\\":\\\"nostalgische schoolherinnering versus bewijs van een inconsistent alibi\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De tekst gebruikt wel meerdere gedeelde schoolcues en een laat bewijsdetail, maar activeert geen duidelijke reconstructie van de verdwijning van een klasgenoot. De omslag is naar een algemeen alibiconflict rond Bas, niet naar de beoogde forensische reconstructie met foto, verdwenen leerling en tijdlijnbreuk.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De agenda en Bas' ontkenning geven de tekst een werkende donkere twist, maar die twist berust vooral op herinnering versus een ontkracht alibi. De vereiste verdwenen klasgenoot en de specifieke forensische foto-reconstructie blijven uit.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een verteller herinnert zich een warme, hechte Zeeuwse schoolroutine: door storm fietsen en met iedereen naar de snackbar gaan.\\\",\\\"realized_script_b\\\":\\\"Een absentienotitie van de docent spreekt de warme herinnering tegen: een jongen was volgens de administratie al drie dagen weg.\\\",\\\"realized_opposition_axis\\\":\\\"gezellige collectieve herinnering versus administratieve tegenspraak over aanwezigheid\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De tekst start in de beoogde nostalgische schoolwereld en gebruikt fiets-, snackbar- en docentcues, maar de draai activeert slechts een registratieconflict. Er ontstaat geen herkenbare onderzoeker, bewijsreconstructie of foto-gebaseerde tijdlijnbreuk rond de verdwijning.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":true,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De slotzin herkadert de gezellige herinnering effectief als onbetrouwbaar, maar realiseert hoofdzakelijk een herinnering-versus-administratiecontrast. Dat is een andere, minder specifieke oppositie dan nostalgie versus forensische reconstructie van een vermissing.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de enige voldoende variant en moet daarom voorgaan. De foto, regenjas en vermiste leerling leveren een duidelijke forensische herinterpretatie; V2 blijft bij een minder specifieke alibitegenstrijdigheid.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 voldoet als enige aan de vereiste SO-uitwerking. De slotwending maakt de nostalgische foto overtuigend tot bewijsmateriaal, terwijl V3 vooral een administratieve absentietegenstrijdigheid biedt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide varianten falen op de vereiste specifieke forensische reconstructie. V3 heeft echter een helderder collectieve herinnering die door de absentie direct wordt ondermijnd; daardoor is de retrospectieve omslag compacter en sterker dan V2's algemene alibiconflict.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de enige passerende variant en realiseert het vereiste scriptcontrast het best: een warme Zeeuwse schoolherinnering kantelt via de foto en regenjas naar een forensische reconstructie rond een vermiste leerling.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een Zeeuwse middelbare scholier draait naast school mee als jonge vrijwilliger bij de dijkbewaking tijdens een zware storm. De ogenschijnlijk gewone schooldag is voor hem vooral een periode van paraat staan, waterstanden doorgeven en helpen voorkomen dat een dorpsdeel overstroomt.",
+        "candidate_id": "B1",
+        "opposition_axis": "alledaagse schoolroutine versus noodparaatheid en crisiszorg",
+        "opposed_expectation": "Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.",
+        "roles_b": [
+          "De scholier: jonge vrijwilliger en koerier van meldingen.",
+          "Docenten: volwassenen die aanvankelijk de gewone lesorde bewaken, maar later leerlingen opvangen.",
+          "Klasgenoten: medeleerlingen die niet weten waarom hij plotseling vertrekt.",
+          "Ouders: leden van een lokaal noodnetwerk.",
+          "De Zeeuwse omgeving: kwetsbaar dijken- en polderlandschap dat bewaakt moet worden."
+        ],
+        "goal_b": "Op tijd betrouwbare meldingen over water en dijken afleveren, zodat volwassenen de juiste noodmaatregelen kunnen nemen.",
+        "role_remapping": [
+          "De leerling uit Script A wordt een jonge vrijwilliger met een geheime paraatheidstaak.",
+          "De fiets uit Script A wordt een snel vervoermiddel voor berichten tussen school, huis en dijkpost.",
+          "De Zeeuwse wind en regen worden van dagelijks ongemak een mogelijk veiligheidsrisico.",
+          "De schoolroutine wordt een dekmantel waarbinnen de vrijwilliger op oproep wacht."
+        ],
+        "shared_cues": [
+          "Een nat fietspad langs een dijk.",
+          "Een docent die op de klok kijkt.",
+          "Een tas met schriften.",
+          "Klasgenoten die naar buiten rennen zodra de bel gaat.",
+          "Harde wind tegen de ramen."
+        ],
+        "switch_trigger": "De conrector zegt vlak na de bel niet dat de lessen uitvallen, maar: \"Wie het wachtwoord Waterkering kent, meldt zich bij de fietsenstalling.\"",
+        "hinge_event": "De scholier laat zijn tas met proefwerkbriefjes in het lokaal liggen en fietst niet naar huis, maar rechtstreeks naar een dijkpost met een portofoon.",
+        "anomaly_under_a": "Binnen een gewone coming-of-age-terugblik is het vreemd dat een leerling na school zonder uitleg lesmateriaal achterlaat en doelgericht naar een afgesloten dijk rijdt.",
+        "resolution_under_b": "Als jonge dijkwacht moet hij juist onmiddellijk vertrekken; de achtergelaten tas toont dat de crisis tijdelijk zwaarder weegt dan cijfers en schoolplicht.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een volwassene vertelt schijnbaar over zijn Zeeuwse schooljeugd, maar blijkt als tiener een hoofdrol te hebben gespeeld in een televisieserie die zich op een Zeeuwse middelbare school afspeelt. De lessen, vriendschappen en fietstochten zijn grotendeels scènes die hij moest spelen.",
+        "candidate_id": "B2",
+        "opposition_axis": "beleefde jeugdherinnering versus geënsceneerde rol en productie",
+        "opposed_expectation": "De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.",
+        "roles_b": [
+          "De ogenschijnlijke leerling: jonge acteur met een terugkerende hoofdrol.",
+          "Docenten: acteurs of productieleden in docentenkostuum.",
+          "Klasgenoten: medespelers en figuranten.",
+          "Ouders: begeleiders die contracten, vervoer en schoolwerk combineren.",
+          "De Zeeuwse omgeving: filmlocatie die een geloofwaardige jeugdwereld moet oproepen."
+        ],
+        "goal_b": "De draaidagen geloofwaardig voltooien en een personage neerzetten dat voor kijkers als een echte Zeeuwse scholier voelt.",
+        "role_remapping": [
+          "De leerling uit Script A wordt een acteur die een leerling vertolkt.",
+          "Docenten worden acteurs of regiefiguren.",
+          "Klasgenoten en vrienden worden medespelers, figuranten en mogelijk echte vrienden buiten beeld.",
+          "De terugblik wordt geen nostalgie naar een schooltijd, maar naar een intensieve productieperiode.",
+          "De fietsritten worden zorgvuldig geplande locatiemomenten."
+        ],
+        "shared_cues": [
+          "Een rooster aan de muur.",
+          "Een docent die de klas tot stilte maant.",
+          "Een fiets tegen een schoolhek.",
+          "Een pauze op het plein.",
+          "Een vriend die een tekstje herhaalt."
+        ],
+        "switch_trigger": "Net wanneer de verteller beschrijft dat de rector de aula binnenloopt, klinkt buiten beeld: \"Stilte graag — en actie.\"",
+        "hinge_event": "De rector herhaalt zijn welkomstwoord vier keer, terwijl iemand steeds opnieuw het krijtbord en de positie van de fietsen corrigeert.",
+        "anomaly_under_a": "In een echte schoolherinnering is het onverklaarbaar dat een rector dezelfde toespraak identiek herhaalt en dat volwassenen zich druk maken over de precieze stand van fietsen.",
+        "resolution_under_b": "Bij een opname moeten tekst, beeld en continuïteit kloppen; de herhaling en de verplaatste fietsen zijn noodzakelijk om dezelfde scène opnieuw te draaien.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "De terugblik lijkt over een gewone scholier die zich door Zeeland heen fietst, maar gaat eigenlijk over een leerling die door een maritieme opleiding wordt getest. Zijn schoolroute is een selectieparcours waarin hij wind, kaarten, getijden en oriëntatiepunten moet lezen.",
+        "candidate_id": "B3",
+        "opposition_axis": "vertrouwde verplaatsing naar school versus getoetste navigatie en selectie",
+        "opposed_expectation": "Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.",
+        "roles_b": [
+          "De scholier: kandidaat voor een maritieme jeugdopleiding.",
+          "Docenten: beoordelaars die zich voordoen als gewone leraren.",
+          "Klasgenoten: mede-kandidaten met eigen routes en opdrachten.",
+          "Ouders: mensen die denken dat hij alleen een normale schooldag heeft.",
+          "De Zeeuwse omgeving: oefenterrein met dijken, windrichtingen, sluizen en herkenbare vaartekens."
+        ],
+        "goal_b": "Aantonen dat hij onder onzekere weersomstandigheden zelfstandig kan navigeren en verantwoord kan handelen.",
+        "role_remapping": [
+          "De leerling uit Script A wordt een kandidaat in een selectieprocedure.",
+          "De schoolreis wordt een routeproef.",
+          "De docent wordt een verborgen beoordelaar.",
+          "De klasgenoten worden concurrenten of mede-kandidaten.",
+          "Dijken, wind en dorpen worden navigatiegegevens in plaats van achtergronddecor."
+        ],
+        "shared_cues": [
+          "Een fiets met natte jas over het stuur.",
+          "Een kaart in een schooltas.",
+          "Een docent die vraagt hoe laat iemand vertrok.",
+          "Een pauze waarin leerlingen hun routes vergelijken.",
+          "Een dijk waar nauwelijks beschutting is tegen de wind."
+        ],
+        "switch_trigger": "De docent geeft zijn gecorrigeerde aardrijkskundetoets terug; in de kantlijn staat geen cijfer maar: \"Punt 4 gemist — keer terug naar de sluis.\"",
+        "hinge_event": "De leerling verlaat tijdens de pauze zonder lunch het schoolplein, meet de windrichting met een natte vinger en noteert een nummer van een boei in zijn schrift.",
+        "anomaly_under_a": "Voor een gewone scholier is het vreemd en onverstandig om in de pauze zonder verklaring weg te gaan en boeinummers te noteren in plaats van huiswerk of afspraken.",
+        "resolution_under_b": "De pauze is een gepland tijdvenster in de navigatieproef; de boei en windrichting vormen bewijs dat hij de maritieme route correct leest.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.",
+        "candidate_id": "B4",
+        "opposition_axis": "nostalgische persoonlijke herinnering versus forensische reconstructie",
+        "opposed_expectation": "Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.",
+        "roles_b": [
+          "De vroegere leerling: onderzoeker en voormalig klasgenoot.",
+          "Docenten: getuigen die het laatste lesuur en gedrag van leerlingen herinneren.",
+          "Klasgenoten en vrienden: mogelijke getuigen, bronnen of verdachten.",
+          "Ouders: familieleden met oude agenda's, foto's en herinneringen.",
+          "De Zeeuwse omgeving: een klein netwerk van dijken, dorpen en routes waarin verplaatsingen te herleiden zijn."
+        ],
+        "goal_b": "Vaststellen wat er op een specifieke middag met de verdwenen klasgenoot is gebeurd en een jarenlang raadsel oplossen.",
+        "role_remapping": [
+          "De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.",
+          "Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.",
+          "Een docent wordt een bron voor tijdstippen en aanwezigheid.",
+          "De fietsroute wordt een te reconstrueren verplaatsing.",
+          "De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt."
+        ],
+        "shared_cues": [
+          "Een vergeelde klassenfoto.",
+          "Een regenachtige fietstocht.",
+          "Een docent die absenties noteert.",
+          "Een afspraak bij de snackbar na school.",
+          "Een oude schoolagenda met huiswerk en namen."
+        ],
+        "switch_trigger": "De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.",
+        "hinge_event": "Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.",
+        "anomaly_under_a": "In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.",
+        "resolution_under_b": "De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B4 biedt de scherpste en meest productieve oppositie: een warme, nostalgische terugblik op schoolvrienden verandert geloofwaardig in een forensische reconstructie. Beide lezingen delen vrijwel alle basiselementen van Script A — klasgenoten, docenten, fietsroutes, een kleine Zeeuwse gemeenschap en herinneringen vanuit volwassen perspectief — maar kennen daaraan radicaal andere functies toe. De setting domineert de opzet zonder het onderwerp los te laten: juist de kleinschaligheid van Zeeland maakt routes, getuigenissen en onderlinge stiltes betekenisvol. De klassenfoto, datum en regenjas zijn zuinige, retrospectief sterke aanwijzingen die in de eerste lezing licht ongemakkelijk maar verklaarbaar zijn, en in de tweede lezing bewijswaarde krijgen. Daardoor heeft de kandidaat een heldere switch, sterke tweede lezing en aanzienlijk dramatisch payoffpotentieel.",
+    "variants": [
+      {
+        "text": "Ik kijk graag naar onze vergeelde klassenfoto uit Zeeland: iedereen natgeregend, klaar voor friet na school. Grappig hoe precies iedereen nog weet dat Bas zijn regenjas pas die avond kocht. Behalve de foto: Bas draagt hem al naast de vermiste leerling.",
+        "angle": "Nostalgische klassenherinnering kantelt naar een belastend detail op de foto."
+      },
+      {
+        "text": "Onze docent noteerde absenties alsof het proefwerken waren, maar wij vonden dat toen gewoon streng. In mijn oude agenda staat: ‘vrijdag: fietsen, snackbar, Bas gezien’. Alleen Bas zegt al twintig jaar dat hij die middag niet van huis kwam.",
+        "angle": "Een gewone schoolagenda verandert in een alibi dat niet klopt."
+      },
+      {
+        "text": "In Zeeland fietsten we door elke storm heen; je kende elkaars route zelfs zonder mee te rijden. Daarom vind ik die vrijdagmiddag zo warm herinnerd: samen naar de snackbar, iedereen aanwezig. Nou ja, volgens de docent was één jongen al drie dagen weg.",
+        "angle": "Gezellige dorpsroutine wordt ondermijnd door de absentieregistratie."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 15468,
+      "output_tokens": 7924,
+      "total_tokens": 23392
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Een volwassene blikt terug op zijn middelbareschooltijd in Zeeland: lessen volgen, vrienden maken, fietsen door weer en wind en langzaam ontdekken wie hij is.",
+          "participants_and_roles": [
+            "Een leerling: volgt onderwijs, zoekt aansluiting en ontwikkelt een eigen identiteit.",
+            "Docenten: geven les, stellen regels en beoordelen prestaties.",
+            "Klasgenoten en vrienden: vormen de dagelijkse sociale kring.",
+            "Ouders of verzorgers: bieden thuis structuur en ondersteuning.",
+            "De Zeeuwse omgeving: bepaalt het decor met dorpen, afstanden, wind, dijken en een overzichtelijke gemeenschap."
+          ],
+          "apparent_goal": "De jeugdjaren goed doorkomen, een diploma halen en met herkenbare herinneringen en groei naar volwassenheid terugkijken.",
+          "preconditions": [
+            "De leerling woont in Zeeland of brengt daar de schooljaren door.",
+            "Er is een vaste schoolroutine met lessen, huiswerk, toetsen en roosters.",
+            "De sociale wereld is relatief klein en herhaaldelijk: dezelfde klasgenoten, docenten en ontmoetingsplekken.",
+            "Vervoer, vaak de fiets of bus, is nodig om tussen huis, school en vrienden te reizen.",
+            "De terugblik vindt plaats vanuit later perspectief, waardoor gewone gebeurtenissen betekenisvol kunnen lijken."
+          ],
+          "expected_actions": [
+            "Opstaan, naar school reizen en lessen volgen.",
+            "Huiswerk maken, toetsen voorbereiden en proberen goede cijfers te halen.",
+            "Pauzes, fietsen naar huis en afspreken met vrienden.",
+            "Omgaan met schoolregels, docenten, onzekerheden en kleine conflicten.",
+            "Later herinneringen ophalen aan kenmerkende plekken, routines en vriendschappen uit die periode."
+          ],
+          "expected_outcome": "De leerling rondt uiteindelijk de schoolperiode af en houdt een mengeling over van nostalgische, soms ongemakkelijke maar vormende herinneringen aan opgroeien in Zeeland.",
+          "expected_propositions": [
+            "Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.",
+            "In een Zeeuwse omgeving kennen mensen elkaar vaak via school, familie, sport of het dorp.",
+            "Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.",
+            "De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.",
+            "Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten."
+          ],
+          "audience_expectation": "Een opzet over jeugd, school en Zeeuwse jaren activeert het beeld van een nuchtere, herkenbare coming-of-age-terugblik: dagelijkse schoolroutines en vriendschappen tegen een winderig, kleinschalig Zeeuws decor, eindigend in volwassenwording en nostalgie."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een Zeeuwse middelbare scholier draait naast school mee als jonge vrijwilliger bij de dijkbewaking tijdens een zware storm. De ogenschijnlijk gewone schooldag is voor hem vooral een periode van paraat staan, waterstanden doorgeven en helpen voorkomen dat een dorpsdeel overstroomt.",
+            "opposition_axis": "alledaagse schoolroutine versus noodparaatheid en crisiszorg",
+            "opposed_proposition": "Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.",
+            "shared_anchor": "De schoolbel op een stormachtige middag.",
+            "reading_a": "De bel luidt het einde van een les; leerlingen pakken hun tassen, bespreken huiswerk en fietsen door de regen naar huis.",
+            "reading_b": "De bel valt samen met een afgesproken alarmering: de leerling moet onmiddellijk naar het steunpunt voor dijkbewaking.",
+            "roles_b": [
+              "De scholier: jonge vrijwilliger en koerier van meldingen.",
+              "Docenten: volwassenen die aanvankelijk de gewone lesorde bewaken, maar later leerlingen opvangen.",
+              "Klasgenoten: medeleerlingen die niet weten waarom hij plotseling vertrekt.",
+              "Ouders: leden van een lokaal noodnetwerk.",
+              "De Zeeuwse omgeving: kwetsbaar dijken- en polderlandschap dat bewaakt moet worden."
+            ],
+            "goal_b": "Op tijd betrouwbare meldingen over water en dijken afleveren, zodat volwassenen de juiste noodmaatregelen kunnen nemen.",
+            "role_remapping": [
+              "De leerling uit Script A wordt een jonge vrijwilliger met een geheime paraatheidstaak.",
+              "De fiets uit Script A wordt een snel vervoermiddel voor berichten tussen school, huis en dijkpost.",
+              "De Zeeuwse wind en regen worden van dagelijks ongemak een mogelijk veiligheidsrisico.",
+              "De schoolroutine wordt een dekmantel waarbinnen de vrijwilliger op oproep wacht."
+            ],
+            "shared_cues": [
+              "Een nat fietspad langs een dijk.",
+              "Een docent die op de klok kijkt.",
+              "Een tas met schriften.",
+              "Klasgenoten die naar buiten rennen zodra de bel gaat.",
+              "Harde wind tegen de ramen."
+            ],
+            "switch_trigger": "De conrector zegt vlak na de bel niet dat de lessen uitvallen, maar: \"Wie het wachtwoord Waterkering kent, meldt zich bij de fietsenstalling.\"",
+            "hinge_event": "De scholier laat zijn tas met proefwerkbriefjes in het lokaal liggen en fietst niet naar huis, maar rechtstreeks naar een dijkpost met een portofoon.",
+            "anomaly_under_a": "Binnen een gewone coming-of-age-terugblik is het vreemd dat een leerling na school zonder uitleg lesmateriaal achterlaat en doelgericht naar een afgesloten dijk rijdt.",
+            "resolution_under_b": "Als jonge dijkwacht moet hij juist onmiddellijk vertrekken; de achtergelaten tas toont dat de crisis tijdelijk zwaarder weegt dan cijfers en schoolplicht."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een volwassene vertelt schijnbaar over zijn Zeeuwse schooljeugd, maar blijkt als tiener een hoofdrol te hebben gespeeld in een televisieserie die zich op een Zeeuwse middelbare school afspeelt. De lessen, vriendschappen en fietstochten zijn grotendeels scènes die hij moest spelen.",
+            "opposition_axis": "beleefde jeugdherinnering versus geënsceneerde rol en productie",
+            "opposed_proposition": "De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.",
+            "shared_anchor": "Een klaslokaal met leerlingen die vlak voor de les hun plaatsen innemen.",
+            "reading_a": "Een leerling herinnert zich de nerveuze, vertrouwde minuten voordat een docent binnenkomt en de les begint.",
+            "reading_b": "Een jonge acteur wacht met de figuranten op het startsignaal voor een opgenomen klasscène.",
+            "roles_b": [
+              "De ogenschijnlijke leerling: jonge acteur met een terugkerende hoofdrol.",
+              "Docenten: acteurs of productieleden in docentenkostuum.",
+              "Klasgenoten: medespelers en figuranten.",
+              "Ouders: begeleiders die contracten, vervoer en schoolwerk combineren.",
+              "De Zeeuwse omgeving: filmlocatie die een geloofwaardige jeugdwereld moet oproepen."
+            ],
+            "goal_b": "De draaidagen geloofwaardig voltooien en een personage neerzetten dat voor kijkers als een echte Zeeuwse scholier voelt.",
+            "role_remapping": [
+              "De leerling uit Script A wordt een acteur die een leerling vertolkt.",
+              "Docenten worden acteurs of regiefiguren.",
+              "Klasgenoten en vrienden worden medespelers, figuranten en mogelijk echte vrienden buiten beeld.",
+              "De terugblik wordt geen nostalgie naar een schooltijd, maar naar een intensieve productieperiode.",
+              "De fietsritten worden zorgvuldig geplande locatiemomenten."
+            ],
+            "shared_cues": [
+              "Een rooster aan de muur.",
+              "Een docent die de klas tot stilte maant.",
+              "Een fiets tegen een schoolhek.",
+              "Een pauze op het plein.",
+              "Een vriend die een tekstje herhaalt."
+            ],
+            "switch_trigger": "Net wanneer de verteller beschrijft dat de rector de aula binnenloopt, klinkt buiten beeld: \"Stilte graag — en actie.\"",
+            "hinge_event": "De rector herhaalt zijn welkomstwoord vier keer, terwijl iemand steeds opnieuw het krijtbord en de positie van de fietsen corrigeert.",
+            "anomaly_under_a": "In een echte schoolherinnering is het onverklaarbaar dat een rector dezelfde toespraak identiek herhaalt en dat volwassenen zich druk maken over de precieze stand van fietsen.",
+            "resolution_under_b": "Bij een opname moeten tekst, beeld en continuïteit kloppen; de herhaling en de verplaatste fietsen zijn noodzakelijk om dezelfde scène opnieuw te draaien."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "De terugblik lijkt over een gewone scholier die zich door Zeeland heen fietst, maar gaat eigenlijk over een leerling die door een maritieme opleiding wordt getest. Zijn schoolroute is een selectieparcours waarin hij wind, kaarten, getijden en oriëntatiepunten moet lezen.",
+            "opposition_axis": "vertrouwde verplaatsing naar school versus getoetste navigatie en selectie",
+            "opposed_proposition": "Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.",
+            "shared_anchor": "Een leerling fietst alleen tegen een harde Zeeuwse tegenwind in.",
+            "reading_a": "Hij fietst omdat de bus niet handig rijdt en hij op tijd op school wil komen, zoals zoveel leeftijdgenoten.",
+            "reading_b": "Hij volgt onder tijdsdruk een geheime navigatieopdracht waarbij de route, zijn keuzes en zijn observaties worden beoordeeld.",
+            "roles_b": [
+              "De scholier: kandidaat voor een maritieme jeugdopleiding.",
+              "Docenten: beoordelaars die zich voordoen als gewone leraren.",
+              "Klasgenoten: mede-kandidaten met eigen routes en opdrachten.",
+              "Ouders: mensen die denken dat hij alleen een normale schooldag heeft.",
+              "De Zeeuwse omgeving: oefenterrein met dijken, windrichtingen, sluizen en herkenbare vaartekens."
+            ],
+            "goal_b": "Aantonen dat hij onder onzekere weersomstandigheden zelfstandig kan navigeren en verantwoord kan handelen.",
+            "role_remapping": [
+              "De leerling uit Script A wordt een kandidaat in een selectieprocedure.",
+              "De schoolreis wordt een routeproef.",
+              "De docent wordt een verborgen beoordelaar.",
+              "De klasgenoten worden concurrenten of mede-kandidaten.",
+              "Dijken, wind en dorpen worden navigatiegegevens in plaats van achtergronddecor."
+            ],
+            "shared_cues": [
+              "Een fiets met natte jas over het stuur.",
+              "Een kaart in een schooltas.",
+              "Een docent die vraagt hoe laat iemand vertrok.",
+              "Een pauze waarin leerlingen hun routes vergelijken.",
+              "Een dijk waar nauwelijks beschutting is tegen de wind."
+            ],
+            "switch_trigger": "De docent geeft zijn gecorrigeerde aardrijkskundetoets terug; in de kantlijn staat geen cijfer maar: \"Punt 4 gemist — keer terug naar de sluis.\"",
+            "hinge_event": "De leerling verlaat tijdens de pauze zonder lunch het schoolplein, meet de windrichting met een natte vinger en noteert een nummer van een boei in zijn schrift.",
+            "anomaly_under_a": "Voor een gewone scholier is het vreemd en onverstandig om in de pauze zonder verklaring weg te gaan en boeinummers te noteren in plaats van huiswerk of afspraken.",
+            "resolution_under_b": "De pauze is een gepland tijdvenster in de navigatieproef; de boei en windrichting vormen bewijs dat hij de maritieme route correct leest."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.",
+            "opposition_axis": "nostalgische persoonlijke herinnering versus forensische reconstructie",
+            "opposed_proposition": "Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.",
+            "shared_anchor": "Een groep klasgenoten staat na school bij de fietsenstalling te praten.",
+            "reading_a": "De verteller herinnert zich een alledaags afscheid: plagerijen, plannen voor het weekend en het gevoel erbij te horen.",
+            "reading_b": "De onderzoeker reconstrueert wie als laatste bij de verdwenen klasgenoot stond, welke fiets vertrok en wie een afwijkend verhaal vertelde.",
+            "roles_b": [
+              "De vroegere leerling: onderzoeker en voormalig klasgenoot.",
+              "Docenten: getuigen die het laatste lesuur en gedrag van leerlingen herinneren.",
+              "Klasgenoten en vrienden: mogelijke getuigen, bronnen of verdachten.",
+              "Ouders: familieleden met oude agenda's, foto's en herinneringen.",
+              "De Zeeuwse omgeving: een klein netwerk van dijken, dorpen en routes waarin verplaatsingen te herleiden zijn."
+            ],
+            "goal_b": "Vaststellen wat er op een specifieke middag met de verdwenen klasgenoot is gebeurd en een jarenlang raadsel oplossen.",
+            "role_remapping": [
+              "De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.",
+              "Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.",
+              "Een docent wordt een bron voor tijdstippen en aanwezigheid.",
+              "De fietsroute wordt een te reconstrueren verplaatsing.",
+              "De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt."
+            ],
+            "shared_cues": [
+              "Een vergeelde klassenfoto.",
+              "Een regenachtige fietstocht.",
+              "Een docent die absenties noteert.",
+              "Een afspraak bij de snackbar na school.",
+              "Een oude schoolagenda met huiswerk en namen."
+            ],
+            "switch_trigger": "De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.",
+            "hinge_event": "Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.",
+            "anomaly_under_a": "In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.",
+            "resolution_under_b": "De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een Zeeuwse middelbare scholier draait naast school mee als jonge vrijwilliger bij de dijkbewaking tijdens een zware storm. De ogenschijnlijk gewone schooldag is voor hem vooral een periode van paraat staan, waterstanden doorgeven en helpen voorkomen dat een dorpsdeel overstroomt.",
+              "opposition_axis": "alledaagse schoolroutine versus noodparaatheid en crisiszorg",
+              "opposed_proposition": "Schooldagen worden bepaald door een herkenbaar ritme van lesuren, pauzes, huiswerk en toetsen.",
+              "shared_anchor": "De schoolbel op een stormachtige middag.",
+              "reading_a": "De bel luidt het einde van een les; leerlingen pakken hun tassen, bespreken huiswerk en fietsen door de regen naar huis.",
+              "reading_b": "De bel valt samen met een afgesproken alarmering: de leerling moet onmiddellijk naar het steunpunt voor dijkbewaking.",
+              "roles_b": [
+                "De scholier: jonge vrijwilliger en koerier van meldingen.",
+                "Docenten: volwassenen die aanvankelijk de gewone lesorde bewaken, maar later leerlingen opvangen.",
+                "Klasgenoten: medeleerlingen die niet weten waarom hij plotseling vertrekt.",
+                "Ouders: leden van een lokaal noodnetwerk.",
+                "De Zeeuwse omgeving: kwetsbaar dijken- en polderlandschap dat bewaakt moet worden."
+              ],
+              "goal_b": "Op tijd betrouwbare meldingen over water en dijken afleveren, zodat volwassenen de juiste noodmaatregelen kunnen nemen.",
+              "role_remapping": [
+                "De leerling uit Script A wordt een jonge vrijwilliger met een geheime paraatheidstaak.",
+                "De fiets uit Script A wordt een snel vervoermiddel voor berichten tussen school, huis en dijkpost.",
+                "De Zeeuwse wind en regen worden van dagelijks ongemak een mogelijk veiligheidsrisico.",
+                "De schoolroutine wordt een dekmantel waarbinnen de vrijwilliger op oproep wacht."
+              ],
+              "shared_cues": [
+                "Een nat fietspad langs een dijk.",
+                "Een docent die op de klok kijkt.",
+                "Een tas met schriften.",
+                "Klasgenoten die naar buiten rennen zodra de bel gaat.",
+                "Harde wind tegen de ramen."
+              ],
+              "switch_trigger": "De conrector zegt vlak na de bel niet dat de lessen uitvallen, maar: \"Wie het wachtwoord Waterkering kent, meldt zich bij de fietsenstalling.\"",
+              "hinge_event": "De scholier laat zijn tas met proefwerkbriefjes in het lokaal liggen en fietst niet naar huis, maar rechtstreeks naar een dijkpost met een portofoon.",
+              "anomaly_under_a": "Binnen een gewone coming-of-age-terugblik is het vreemd dat een leerling na school zonder uitleg lesmateriaal achterlaat en doelgericht naar een afgesloten dijk rijdt.",
+              "resolution_under_b": "Als jonge dijkwacht moet hij juist onmiddellijk vertrekken; de achtergelaten tas toont dat de crisis tijdelijk zwaarder weegt dan cijfers en schoolplicht."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een volwassene vertelt schijnbaar over zijn Zeeuwse schooljeugd, maar blijkt als tiener een hoofdrol te hebben gespeeld in een televisieserie die zich op een Zeeuwse middelbare school afspeelt. De lessen, vriendschappen en fietstochten zijn grotendeels scènes die hij moest spelen.",
+              "opposition_axis": "beleefde jeugdherinnering versus geënsceneerde rol en productie",
+              "opposed_proposition": "De middelbareschooltijd voelt op het moment zelf gewoon of lastig, maar krijgt achteraf vaak een nostalgische kleur.",
+              "shared_anchor": "Een klaslokaal met leerlingen die vlak voor de les hun plaatsen innemen.",
+              "reading_a": "Een leerling herinnert zich de nerveuze, vertrouwde minuten voordat een docent binnenkomt en de les begint.",
+              "reading_b": "Een jonge acteur wacht met de figuranten op het startsignaal voor een opgenomen klasscène.",
+              "roles_b": [
+                "De ogenschijnlijke leerling: jonge acteur met een terugkerende hoofdrol.",
+                "Docenten: acteurs of productieleden in docentenkostuum.",
+                "Klasgenoten: medespelers en figuranten.",
+                "Ouders: begeleiders die contracten, vervoer en schoolwerk combineren.",
+                "De Zeeuwse omgeving: filmlocatie die een geloofwaardige jeugdwereld moet oproepen."
+              ],
+              "goal_b": "De draaidagen geloofwaardig voltooien en een personage neerzetten dat voor kijkers als een echte Zeeuwse scholier voelt.",
+              "role_remapping": [
+                "De leerling uit Script A wordt een acteur die een leerling vertolkt.",
+                "Docenten worden acteurs of regiefiguren.",
+                "Klasgenoten en vrienden worden medespelers, figuranten en mogelijk echte vrienden buiten beeld.",
+                "De terugblik wordt geen nostalgie naar een schooltijd, maar naar een intensieve productieperiode.",
+                "De fietsritten worden zorgvuldig geplande locatiemomenten."
+              ],
+              "shared_cues": [
+                "Een rooster aan de muur.",
+                "Een docent die de klas tot stilte maant.",
+                "Een fiets tegen een schoolhek.",
+                "Een pauze op het plein.",
+                "Een vriend die een tekstje herhaalt."
+              ],
+              "switch_trigger": "Net wanneer de verteller beschrijft dat de rector de aula binnenloopt, klinkt buiten beeld: \"Stilte graag — en actie.\"",
+              "hinge_event": "De rector herhaalt zijn welkomstwoord vier keer, terwijl iemand steeds opnieuw het krijtbord en de positie van de fietsen corrigeert.",
+              "anomaly_under_a": "In een echte schoolherinnering is het onverklaarbaar dat een rector dezelfde toespraak identiek herhaalt en dat volwassenen zich druk maken over de precieze stand van fietsen.",
+              "resolution_under_b": "Bij een opname moeten tekst, beeld en continuïteit kloppen; de herhaling en de verplaatste fietsen zijn noodzakelijk om dezelfde scène opnieuw te draaien."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "De terugblik lijkt over een gewone scholier die zich door Zeeland heen fietst, maar gaat eigenlijk over een leerling die door een maritieme opleiding wordt getest. Zijn schoolroute is een selectieparcours waarin hij wind, kaarten, getijden en oriëntatiepunten moet lezen.",
+              "opposition_axis": "vertrouwde verplaatsing naar school versus getoetste navigatie en selectie",
+              "opposed_proposition": "Fietsen door wind, regen en open landschap is een alledaags onderdeel van het leven.",
+              "shared_anchor": "Een leerling fietst alleen tegen een harde Zeeuwse tegenwind in.",
+              "reading_a": "Hij fietst omdat de bus niet handig rijdt en hij op tijd op school wil komen, zoals zoveel leeftijdgenoten.",
+              "reading_b": "Hij volgt onder tijdsdruk een geheime navigatieopdracht waarbij de route, zijn keuzes en zijn observaties worden beoordeeld.",
+              "roles_b": [
+                "De scholier: kandidaat voor een maritieme jeugdopleiding.",
+                "Docenten: beoordelaars die zich voordoen als gewone leraren.",
+                "Klasgenoten: mede-kandidaten met eigen routes en opdrachten.",
+                "Ouders: mensen die denken dat hij alleen een normale schooldag heeft.",
+                "De Zeeuwse omgeving: oefenterrein met dijken, windrichtingen, sluizen en herkenbare vaartekens."
+              ],
+              "goal_b": "Aantonen dat hij onder onzekere weersomstandigheden zelfstandig kan navigeren en verantwoord kan handelen.",
+              "role_remapping": [
+                "De leerling uit Script A wordt een kandidaat in een selectieprocedure.",
+                "De schoolreis wordt een routeproef.",
+                "De docent wordt een verborgen beoordelaar.",
+                "De klasgenoten worden concurrenten of mede-kandidaten.",
+                "Dijken, wind en dorpen worden navigatiegegevens in plaats van achtergronddecor."
+              ],
+              "shared_cues": [
+                "Een fiets met natte jas over het stuur.",
+                "Een kaart in een schooltas.",
+                "Een docent die vraagt hoe laat iemand vertrok.",
+                "Een pauze waarin leerlingen hun routes vergelijken.",
+                "Een dijk waar nauwelijks beschutting is tegen de wind."
+              ],
+              "switch_trigger": "De docent geeft zijn gecorrigeerde aardrijkskundetoets terug; in de kantlijn staat geen cijfer maar: \"Punt 4 gemist — keer terug naar de sluis.\"",
+              "hinge_event": "De leerling verlaat tijdens de pauze zonder lunch het schoolplein, meet de windrichting met een natte vinger en noteert een nummer van een boei in zijn schrift.",
+              "anomaly_under_a": "Voor een gewone scholier is het vreemd en onverstandig om in de pauze zonder verklaring weg te gaan en boeinummers te noteren in plaats van huiswerk of afspraken.",
+              "resolution_under_b": "De pauze is een gepland tijdvenster in de navigatieproef; de boei en windrichting vormen bewijs dat hij de maritieme route correct leest."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een volwassene lijkt liefdevol terug te kijken op schoolvrienden en dorpsroutines, maar reconstrueert in werkelijkheid als onderzoeker de verdwijning van een voormalige klasgenoot. De herinneringen aan lessen, fietsroutes en kleine sociale incidenten zijn aanwijzingen in een oud onderzoek.",
+              "opposition_axis": "nostalgische persoonlijke herinnering versus forensische reconstructie",
+              "opposed_proposition": "Vriendschappen en kleine sociale gebeurtenissen wegen tijdens de jeugd vaak zwaarder dan volwassenen later verwachten.",
+              "shared_anchor": "Een groep klasgenoten staat na school bij de fietsenstalling te praten.",
+              "reading_a": "De verteller herinnert zich een alledaags afscheid: plagerijen, plannen voor het weekend en het gevoel erbij te horen.",
+              "reading_b": "De onderzoeker reconstrueert wie als laatste bij de verdwenen klasgenoot stond, welke fiets vertrok en wie een afwijkend verhaal vertelde.",
+              "roles_b": [
+                "De vroegere leerling: onderzoeker en voormalig klasgenoot.",
+                "Docenten: getuigen die het laatste lesuur en gedrag van leerlingen herinneren.",
+                "Klasgenoten en vrienden: mogelijke getuigen, bronnen of verdachten.",
+                "Ouders: familieleden met oude agenda's, foto's en herinneringen.",
+                "De Zeeuwse omgeving: een klein netwerk van dijken, dorpen en routes waarin verplaatsingen te herleiden zijn."
+              ],
+              "goal_b": "Vaststellen wat er op een specifieke middag met de verdwenen klasgenoot is gebeurd en een jarenlang raadsel oplossen.",
+              "role_remapping": [
+                "De terugblikkende leerling uit Script A wordt een onderzoeker die zijn eigen herinneringen kritisch moet toetsen.",
+                "Vrienden worden getuigen met mogelijk onbetrouwbare herinneringen.",
+                "Een docent wordt een bron voor tijdstippen en aanwezigheid.",
+                "De fietsroute wordt een te reconstrueren verplaatsing.",
+                "De kleinschalige Zeeuwse gemeenschap wordt een gesloten netwerk waarin iedereen elkaar kent en informatie achterhoudt."
+              ],
+              "shared_cues": [
+                "Een vergeelde klassenfoto.",
+                "Een regenachtige fietstocht.",
+                "Een docent die absenties noteert.",
+                "Een afspraak bij de snackbar na school.",
+                "Een oude schoolagenda met huiswerk en namen."
+              ],
+              "switch_trigger": "De verteller zegt dat iedereen zich de gezellige vrijdagmiddag herinnert, draait de klassenfoto om en leest hardop de datum plus een politienummer.",
+              "hinge_event": "Op de foto draagt één klasgenoot een regenjas die volgens alle herinneringen pas die avond is gekocht, terwijl hij er die middag al mee naast de verdwenen leerling staat.",
+              "anomaly_under_a": "In een warme jeugdherinnering is de overdreven aandacht voor een jas, een datum en iemands exacte plaats op een foto ongepast en zonder emotionele reden.",
+              "resolution_under_b": "De foto levert een tijdlijnbreuk op: de jas weerlegt een alibi en maakt duidelijk dat de klasgenoot eerder betrokken was bij de middag waarop de ander verdween."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén tekst kan eerst een gewone, stormachtige schoolmiddag tonen en daarna dezelfde bel als noodoproep herduiden. De dominante tegenstelling is gewone schoolroutine tegenover crisisparaatheid. Bel, fiets, regen, dijk en achtergelaten tas werken in beide lezingen; de storm en Zeeuwse dijken houden de tweede lezing bovendien plausibel latent. De doelgerichte vlucht naar de dijkpost is anomalisch als schoolgedrag, maar functioneel als onmiddellijke dijkwachtplicht. Het verlaten van school belemmert Script A's schooldoel en maakt tegelijk Script B's nooddoel mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een klaslokaal, een docent, een rooster, fietsen en een pauze kunnen eerst als echte schooljeugd en vervolgens als set, rekwisieten en opnamecontext worden gelezen. De tegenstelling tussen beleefde herinnering en geënsceneerde productie is duidelijk en dominant. De opnamelezing is sociaal herkenbaar en kan vóór de trigger latent blijven door onder meer het herhalen van tekst. De identieke herhaling van de rector en de aandacht voor fietsposities zijn onder Script A vreemd, maar onder Script B noodzakelijke continuïteits- en opnamehandelingen. Wat een spontane schoolervaring verhindert, maakt een reproduceerbare filmscène mogelijk."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde fietstocht tegen de wind kan worden gerealiseerd als gewone reis naar school of als beoordeelde navigatieopdracht. De dominante as betreft de functie van de verplaatsing: alledaags vervoer tegenover selectie en toetsing. Kaart, dijk, wind en docent ondersteunen beide lezingen en maken een maritieme selectie vooraf al mogelijk zonder die expliciet te maken. Het tijdens de pauze vertrekken, wind meten en een boeinummer noteren is onder de schoollezing afwijkend, maar vormt onder de proeflezing precies het vereiste bewijs van navigatievaardigheid. De zware omstandigheden hinderen de normale schoolreis, maar leveren juist de omstandigheden waarop Script B wil testen."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een tekst over klasgenoten bij de fietsenstalling kan aanvankelijk als nostalgische herinnering functioneren en achteraf als reconstructie van een verdwijning. De oppositie tussen emotionele jeugdherinnering en forensisch onderzoek is lokaal duidelijk en de onderzoeksfunctie is sociaal herkenbaar. Foto, absenties, agenda, routes en regenachtige fietstocht dragen beide lezingen; zij kunnen vóór de politieverwijzing als herinneringsmateriaal worden opgevat. De ongebruikelijk precieze aandacht voor datum, jas en positie op de foto is onder Script A onverklaard, maar onder Script B bewijsgericht en betekenisvol. Die precisie ondermijnt nostalgisch herinneren als hoofddoel en maakt tegelijk het vaststellen van de tijdlijn en betrokkenheid mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén tekst kan eerst een gewone, stormachtige schoolmiddag tonen en daarna dezelfde bel als noodoproep herduiden. De dominante tegenstelling is gewone schoolroutine tegenover crisisparaatheid. Bel, fiets, regen, dijk en achtergelaten tas werken in beide lezingen; de storm en Zeeuwse dijken houden de tweede lezing bovendien plausibel latent. De doelgerichte vlucht naar de dijkpost is anomalisch als schoolgedrag, maar functioneel als onmiddellijke dijkwachtplicht. Het verlaten van school belemmert Script A's schooldoel en maakt tegelijk Script B's nooddoel mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een klaslokaal, een docent, een rooster, fietsen en een pauze kunnen eerst als echte schooljeugd en vervolgens als set, rekwisieten en opnamecontext worden gelezen. De tegenstelling tussen beleefde herinnering en geënsceneerde productie is duidelijk en dominant. De opnamelezing is sociaal herkenbaar en kan vóór de trigger latent blijven door onder meer het herhalen van tekst. De identieke herhaling van de rector en de aandacht voor fietsposities zijn onder Script A vreemd, maar onder Script B noodzakelijke continuïteits- en opnamehandelingen. Wat een spontane schoolervaring verhindert, maakt een reproduceerbare filmscène mogelijk."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde fietstocht tegen de wind kan worden gerealiseerd als gewone reis naar school of als beoordeelde navigatieopdracht. De dominante as betreft de functie van de verplaatsing: alledaags vervoer tegenover selectie en toetsing. Kaart, dijk, wind en docent ondersteunen beide lezingen en maken een maritieme selectie vooraf al mogelijk zonder die expliciet te maken. Het tijdens de pauze vertrekken, wind meten en een boeinummer noteren is onder de schoollezing afwijkend, maar vormt onder de proeflezing precies het vereiste bewijs van navigatievaardigheid. De zware omstandigheden hinderen de normale schoolreis, maar leveren juist de omstandigheden waarop Script B wil testen."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een tekst over klasgenoten bij de fietsenstalling kan aanvankelijk als nostalgische herinnering functioneren en achteraf als reconstructie van een verdwijning. De oppositie tussen emotionele jeugdherinnering en forensisch onderzoek is lokaal duidelijk en de onderzoeksfunctie is sociaal herkenbaar. Foto, absenties, agenda, routes en regenachtige fietstocht dragen beide lezingen; zij kunnen vóór de politieverwijzing als herinneringsmateriaal worden opgevat. De ongebruikelijk precieze aandacht voor datum, jas en positie op de foto is onder Script A onverklaard, maar onder Script B bewijsgericht en betekenisvol. Die precisie ondermijnt nostalgisch herinneren als hoofddoel en maakt tegelijk het vaststellen van de tijdlijn en betrokkenheid mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B4"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een verteller haalt warm een Zeeuwse schoolherinnering op aan een natgeregende klas, een vergeelde klassenfoto en friet na school.",
+          "realized_script_b": "De foto functioneert als bewijs in de reconstructie van de verdwijning van een oud-klasgenoot: Bas' regenjas plaatst hem aantoonbaar naast de vermiste leerling op een onmogelijk tijdstip.",
+          "realized_opposition_axis": "nostalgische persoonlijke herinnering versus forensische reconstructie",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De nostalgische schoolterugblik is dominant in de opzet, terwijl de foto, de regenjas en de vermiste leerling laat een forensische lezing activeren. De jas vormt functioneel de geplande tijdlijnbreuk en herwaardeert de eerdere herinnering als bewijsmateriaal."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Dit is een compacte, goed gerealiseerde versie van het beoogde contrast. Niet alle geplande cues of het politienummer worden letterlijk gebruikt, maar foto, regen, schoolroutine, regenjas en vermissing leveren gezamenlijk de geplande forensische omslag op.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een oud-leerling blikt terug op een gewone schoolvrijdag met een strenge docent, fietsen, snackbarbezoek en een oude agenda.",
+          "realized_script_b": "De oude agenda wordt gebruikt om Bas' twintig jaar oude bewering dat hij thuisbleef tegen te spreken; de herinnering verandert in een alibiconflict.",
+          "realized_opposition_axis": "nostalgische schoolherinnering versus bewijs van een inconsistent alibi",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De tekst gebruikt wel meerdere gedeelde schoolcues en een laat bewijsdetail, maar activeert geen duidelijke reconstructie van de verdwijning van een klasgenoot. De omslag is naar een algemeen alibiconflict rond Bas, niet naar de beoogde forensische reconstructie met foto, verdwenen leerling en tijdlijnbreuk."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De agenda en Bas' ontkenning geven de tekst een werkende donkere twist, maar die twist berust vooral op herinnering versus een ontkracht alibi. De vereiste verdwenen klasgenoot en de specifieke forensische foto-reconstructie blijven uit.",
+          "passes_required_plan": false
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een verteller herinnert zich een warme, hechte Zeeuwse schoolroutine: door storm fietsen en met iedereen naar de snackbar gaan.",
+          "realized_script_b": "Een absentienotitie van de docent spreekt de warme herinnering tegen: een jongen was volgens de administratie al drie dagen weg.",
+          "realized_opposition_axis": "gezellige collectieve herinnering versus administratieve tegenspraak over aanwezigheid",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De tekst start in de beoogde nostalgische schoolwereld en gebruikt fiets-, snackbar- en docentcues, maar de draai activeert slechts een registratieconflict. Er ontstaat geen herkenbare onderzoeker, bewijsreconstructie of foto-gebaseerde tijdlijnbreuk rond de verdwijning."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": true,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De slotzin herkadert de gezellige herinnering effectief als onbetrouwbaar, maar realiseert hoofdzakelijk een herinnering-versus-administratiecontrast. Dat is een andere, minder specifieke oppositie dan nostalgie versus forensische reconstructie van een vermissing.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V1"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "V1 is de enige voldoende variant en moet daarom voorgaan. De foto, regenjas en vermiste leerling leveren een duidelijke forensische herinterpretatie; V2 blijft bij een minder specifieke alibitegenstrijdigheid."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "V1 voldoet als enige aan de vereiste SO-uitwerking. De slotwending maakt de nostalgische foto overtuigend tot bewijsmateriaal, terwijl V3 vooral een administratieve absentietegenstrijdigheid biedt."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V3",
+          "rationale": "Beide varianten falen op de vereiste specifieke forensische reconstructie. V3 heeft echter een helderder collectieve herinnering die door de absentie direct wordt ondermijnd; daardoor is de retrospectieve omslag compacter en sterker dan V2's algemene alibiconflict."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 is de enige passerende variant en realiseert het vereiste scriptcontrast het best: een warme Zeeuwse schoolherinnering kantelt via de foto en regenjas naar een forensische reconstructie rond een vermiste leerling."
+    }
+  },
+  "result_sha256": "5fb150a6db5ca7813609a96c27866604724a1b9cb64cf4068183f993eea9b1b7"
+}

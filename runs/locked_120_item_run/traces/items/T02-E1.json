@@ -1,0 +1,973 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T02-E1",
+  "topic_id": "T02",
+  "topic": "Jeugd, school en de Zeeuwse jaren",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:58:13.786567+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Jeugd, school en de Zeeuwse jaren",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.\",\n    \"participants_and_roles\": [\n      \"De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.\",\n      \"Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.\",\n      \"Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.\",\n      \"Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.\",\n      \"De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.\",\n      \"De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.\",\n    \"preconditions\": [\n      \"De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.\",\n      \"Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.\",\n      \"De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.\",\n      \"School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld.\"\n    ],\n    \"expected_actions\": [\n      \"Op tijd naar school fietsen, reizen of worden gebracht.\",\n      \"Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.\",\n      \"Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.\",\n      \"Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.\",\n      \"Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n      \"De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.\",\n      \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n      \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.\",\n    \"participants_and_roles\": [\n      \"De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.\",\n      \"Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.\",\n      \"Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.\",\n      \"Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.\",\n      \"De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.\",\n      \"De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.\",\n    \"preconditions\": [\n      \"De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.\",\n      \"Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.\",\n      \"De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.\",\n      \"School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld.\"\n    ],\n    \"expected_actions\": [\n      \"Op tijd naar school fietsen, reizen of worden gebracht.\",\n      \"Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.\",\n      \"Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.\",\n      \"Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.\",\n      \"Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n      \"De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.\",\n      \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n      \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een groep Zeeuwse jongeren volgt geen gewone schooldag, maar neemt deel aan een grootschalige oefening voor hoogwater en evacuatie. De ogenschijnlijke lessen, groepsindelingen en fietsroutes zijn onderdelen van de voorbereiding op een crisissituatie.\",\n      \"opposition_axis\": \"alledaagse schoolvorming versus civiele noodvoorbereiding\",\n      \"opposed_proposition\": \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n      \"shared_anchor\": \"Fietsen tegen de wind naar een vast verzamelpunt.\",\n      \"reading_a\": \"Een leerling fietst naar school voor lessen, pauze en een toetsdag.\",\n      \"reading_b\": \"Een jonge vrijwilliger fietst naar een aangewezen post voor een evacuatieoefening.\",\n      \"roles_b\": [\n        \"Jongeren: oefenen als evacuatievrijwilligers en volgen veiligheidsinstructies.\",\n        \"Instructeurs: leiden groepen en beoordelen de uitvoering van de oefening.\",\n        \"Mededeelnemers: vormen teams die elkaar bij routes en taken helpen.\",\n        \"Ouders/verzorgers: zijn contactpersonen of spelen evacuees.\",\n        \"De schoollocatie: fungeert als tijdelijk crisis- en opvangcentrum.\",\n        \"De Zeeuwse omgeving: levert de dijken, wind en waterdreiging waarvoor wordt geoefend.\"\n      ],\n      \"goal_b\": \"Deelnemers veilig leren handelen bij een overstroming, inclusief verzamelen, registreren en evacueren.\",\n      \"role_remapping\": [\n        \"De leerling wordt een jonge evacuatievrijwilliger.\",\n        \"Docenten en mentor worden crisisinstructeurs.\",\n        \"Klasgenoten worden oefenteams.\",\n        \"Ouders/verzorgers worden contactpersonen of figuranten als evacuees.\",\n        \"De school wordt een crisispost.\",\n        \"De Zeeuwse omgeving verandert van decor in de concrete reden voor de oefening.\"\n      ],\n      \"shared_cues\": [\n        \"Een vroeg vertrek in de wind.\",\n        \"Groepen die een lokaal of aula binnengaan.\",\n        \"Een aanwezigheidslijst.\",\n        \"Instructies op een bord.\",\n        \"Korte pauzes met bekenden.\",\n        \"Een route die vooraf moet worden gevolgd.\"\n      ],\n      \"switch_trigger\": \"Een coördinator zegt via een portofoon dat de waterstand kritiek is en activeert het evacuatieprotocol.\",\n      \"hinge_event\": \"Iedereen krijgt een reddingsvest en moet onder begeleiding naar gereedstaande bussen lopen.\",\n      \"anomaly_under_a\": \"Reddingsvesten en een verplichte busontruiming zijn buiten proportie voor een normale schooldag of toets.\",\n      \"resolution_under_b\": \"Binnen een evacuatieoefening zijn de vesten, registratie en bussen precies de vaardigheden die deelnemers moeten oefenen voordat een echte watersnood hen daartoe dwingt.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een filmploeg draait in Zeeland een speelfilm over middelbare-schooljaren. Wat eerst oogt als echte lessen, vriendschappen en puberale routines blijkt een zorgvuldig geënsceneerde opname van een jeugdverhaal.\",\n      \"opposition_axis\": \"beleefde schooljeugd versus gespeelde schooljeugd\",\n      \"opposed_proposition\": \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n      \"shared_anchor\": \"Een ongemakkelijk moment in een klaslokaal.\",\n      \"reading_a\": \"Een echte leerling bloost wanneer een docent hem onverwacht een vraag stelt terwijl zijn vrienden toekijken.\",\n      \"reading_b\": \"Een jonge acteur speelt die verlegenheid opnieuw voor de camera, onder aanwijzing van een regisseur.\",\n      \"roles_b\": [\n        \"Jonge acteurs: spelen leerlingen en beleven de scènes volgens een script.\",\n        \"Regisseur en opnameleiding: sturen spel, tempo en herhalingen aan.\",\n        \"Figuranten: spelen klasgenoten en vrienden.\",\n        \"Productieassistenten: regelen kleding, tijdschema en toestemming.\",\n        \"De school: is een gehuurde opnamelocatie.\",\n        \"De Zeeuwse omgeving: levert herkenbare straten, dijken en fietspaden als filmdecor.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige film maken waarin een Zeeuwse schooltijd nostalgisch en herkenbaar wordt verbeeld.\",\n      \"role_remapping\": [\n        \"De leerling wordt een acteur in de hoofdrol.\",\n        \"Docenten en mentor worden acteurs of regieaanwijzingen in de scène.\",\n        \"Klasgenoten en vrienden worden medespelers en figuranten.\",\n        \"Ouders/verzorgers worden productiemedewerkers of acteurs als ouders.\",\n        \"De school wordt een filmlocatie.\",\n        \"De Zeeuwse omgeving wordt een gekozen visueel decor.\"\n      ],\n      \"shared_cues\": [\n        \"Fietsen naar het schoolgebouw.\",\n        \"Een docent die voor de klas staat.\",\n        \"Fluisterende vrienden in de pauze.\",\n        \"Schriften en tassen op tafels.\",\n        \"Een ongemakkelijke vraag in de les.\",\n        \"Een groep die na de bel het lokaal verlaat.\"\n      ],\n      \"switch_trigger\": \"Na de ogenschijnlijke les roept iemand buiten beeld: \\\"Stop, deze scène doen we nog een keer.\\\"\",\n      \"hinge_event\": \"Een medewerker loopt het lokaal binnen met een klapperbord, waarna de leerlingen hun posities opnieuw innemen.\",\n      \"anomaly_under_a\": \"Een klapperbord, herhaalde identieke reacties en leerlingen die na een bel terug op exact dezelfde plek gaan staan, passen niet bij een echte les.\",\n      \"resolution_under_b\": \"Voor een filmopname zijn juist meerdere takes, vaste markeringen en een klapperbord nodig om beeld en geluid te synchroniseren.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een Zeeuws woonzorgcentrum organiseert een herinneringsprogramma waarin oudere bewoners een schooldag uit hun jeugd herbeleven. De lessen, pauzegesprekken en diploma-herinneringen zijn geen actuele adolescentie, maar begeleide reminiscentiezorg.\",\n      \"opposition_axis\": \"toekomstgerichte adolescentie versus terugblikkende ouderenzorg\",\n      \"opposed_proposition\": \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\",\n      \"shared_anchor\": \"Een klasfoto uit Zeeland.\",\n      \"reading_a\": \"Leerlingen maken aan het eind van hun schooltijd een foto voordat zij uit elkaar gaan en een onbekende toekomst ingaan.\",\n      \"reading_b\": \"Bewoners bekijken of maken een foto als ingang naar gedeelde herinneringen aan hun vroegere schooltijd.\",\n      \"roles_b\": [\n        \"Bewoners: halen herinneringen op en nemen deel aan activiteiten.\",\n        \"Activiteitenbegeleiders: leiden gesprekken en maken herkenbare schoolmomenten na.\",\n        \"Medebewoners: vormen gespreksgroepen en herinneren elkaar aan plaatsen en gebeurtenissen.\",\n        \"Familieleden: leveren foto's, verhalen en geruststelling.\",\n        \"Het woonzorgcentrum: biedt een veilige, gestructureerde dagbesteding.\",\n        \"De Zeeuwse omgeving: biedt lokale aanknopingspunten zoals dorpen, scholen, dialect en fietsroutes.\"\n      ],\n      \"goal_b\": \"Welbevinden, contact en geheugenstimulatie bevorderen door bewoners via herkenbare schoolherinneringen te activeren.\",\n      \"role_remapping\": [\n        \"De leerling wordt een bewoner.\",\n        \"Docenten en mentor worden activiteitenbegeleiders of zorgmedewerkers.\",\n        \"Klasgenoten en vrienden worden medebewoners in een gespreksgroep.\",\n        \"Ouders/verzorgers worden familieleden en mantelzorgers.\",\n        \"De school wordt een ingericht activiteitenlokaal in het woonzorgcentrum.\",\n        \"De Zeeuwse omgeving wordt een gedeeld geheugenlandschap.\"\n      ],\n      \"shared_cues\": [\n        \"Een lokaalachtige ruimte met tafels.\",\n        \"Schriften, oude foto's en namenlijstjes.\",\n        \"Gesprekken over een strenge docent.\",\n        \"Een bel als begin van een activiteit.\",\n        \"Herinneringen aan fietsen in de wind.\",\n        \"Koffie tijdens een pauzemoment.\"\n      ],\n      \"switch_trigger\": \"Een zorgmedewerker onderbreekt het gesprek om bewoners hun middagmedicatie te geven.\",\n      \"hinge_event\": \"Na de fictieve schoolbel deelt een verpleegkundige medicijnbakjes uit en begeleidt zij enkele deelnemers terug naar hun kamers.\",\n      \"anomaly_under_a\": \"Medicatie-uitdeling en terugkeer naar kamers zijn niet passend als leerlingen midden in een gewone schooldag zitten.\",\n      \"resolution_under_b\": \"In een woonzorgcentrum zijn deze handelingen noodzakelijke zorg; het schoolthema is een doelbewust middel om herinneringen, rust en onderling contact op te roepen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.\",\n      \"opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n      \"opposed_proposition\": \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"shared_anchor\": \"Een lesrooster dat de hele dag ordent.\",\n      \"reading_a\": \"Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.\",\n      \"reading_b\": \"Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.\",\n      \"roles_b\": [\n        \"Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.\",\n        \"Docenten: geven onderwijs in afstemming met veiligheidsregels.\",\n        \"Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.\",\n        \"Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.\",\n        \"Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.\",\n        \"De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.\",\n        \"De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren.\"\n      ],\n      \"goal_b\": \"Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.\",\n      \"role_remapping\": [\n        \"De leerling wordt een jonge gedetineerde.\",\n        \"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\",\n        \"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\",\n        \"Ouders/verzorgers worden bezoekers volgens vaste regels.\",\n        \"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\",\n        \"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\"\n      ],\n      \"shared_cues\": [\n        \"Een vast rooster.\",\n        \"Lessen en werkbladen.\",\n        \"Een mentoroverleg.\",\n        \"Pauzes in een afgebakende ruimte.\",\n        \"Huiswerk en voortgangsgesprekken.\",\n        \"Een fietsroute of dijk zichtbaar door een raam.\"\n      ],\n      \"switch_trigger\": \"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\",\n      \"hinge_event\": \"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\",\n      \"anomaly_under_a\": \"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\",\n      \"resolution_under_b\": \"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.\",\n    \"participants_and_roles\": [\n      \"De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.\",\n      \"Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.\",\n      \"Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.\",\n      \"Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.\",\n      \"De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.\",\n      \"De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.\",\n    \"preconditions\": [\n      \"De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.\",\n      \"Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.\",\n      \"De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.\",\n      \"School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld.\"\n    ],\n    \"expected_actions\": [\n      \"Op tijd naar school fietsen, reizen of worden gebracht.\",\n      \"Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.\",\n      \"Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.\",\n      \"Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.\",\n      \"Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n      \"De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.\",\n      \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n      \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een groep Zeeuwse jongeren volgt geen gewone schooldag, maar neemt deel aan een grootschalige oefening voor hoogwater en evacuatie. De ogenschijnlijke lessen, groepsindelingen en fietsroutes zijn onderdelen van de voorbereiding op een crisissituatie.\",\n      \"opposition_axis\": \"alledaagse schoolvorming versus civiele noodvoorbereiding\",\n      \"opposed_proposition\": \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n      \"shared_anchor\": \"Fietsen tegen de wind naar een vast verzamelpunt.\",\n      \"reading_a\": \"Een leerling fietst naar school voor lessen, pauze en een toetsdag.\",\n      \"reading_b\": \"Een jonge vrijwilliger fietst naar een aangewezen post voor een evacuatieoefening.\",\n      \"roles_b\": [\n        \"Jongeren: oefenen als evacuatievrijwilligers en volgen veiligheidsinstructies.\",\n        \"Instructeurs: leiden groepen en beoordelen de uitvoering van de oefening.\",\n        \"Mededeelnemers: vormen teams die elkaar bij routes en taken helpen.\",\n        \"Ouders/verzorgers: zijn contactpersonen of spelen evacuees.\",\n        \"De schoollocatie: fungeert als tijdelijk crisis- en opvangcentrum.\",\n        \"De Zeeuwse omgeving: levert de dijken, wind en waterdreiging waarvoor wordt geoefend.\"\n      ],\n      \"goal_b\": \"Deelnemers veilig leren handelen bij een overstroming, inclusief verzamelen, registreren en evacueren.\",\n      \"role_remapping\": [\n        \"De leerling wordt een jonge evacuatievrijwilliger.\",\n        \"Docenten en mentor worden crisisinstructeurs.\",\n        \"Klasgenoten worden oefenteams.\",\n        \"Ouders/verzorgers worden contactpersonen of figuranten als evacuees.\",\n        \"De school wordt een crisispost.\",\n        \"De Zeeuwse omgeving verandert van decor in de concrete reden voor de oefening.\"\n      ],\n      \"shared_cues\": [\n        \"Een vroeg vertrek in de wind.\",\n        \"Groepen die een lokaal of aula binnengaan.\",\n        \"Een aanwezigheidslijst.\",\n        \"Instructies op een bord.\",\n        \"Korte pauzes met bekenden.\",\n        \"Een route die vooraf moet worden gevolgd.\"\n      ],\n      \"switch_trigger\": \"Een coördinator zegt via een portofoon dat de waterstand kritiek is en activeert het evacuatieprotocol.\",\n      \"hinge_event\": \"Iedereen krijgt een reddingsvest en moet onder begeleiding naar gereedstaande bussen lopen.\",\n      \"anomaly_under_a\": \"Reddingsvesten en een verplichte busontruiming zijn buiten proportie voor een normale schooldag of toets.\",\n      \"resolution_under_b\": \"Binnen een evacuatieoefening zijn de vesten, registratie en bussen precies de vaardigheden die deelnemers moeten oefenen voordat een echte watersnood hen daartoe dwingt.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een filmploeg draait in Zeeland een speelfilm over middelbare-schooljaren. Wat eerst oogt als echte lessen, vriendschappen en puberale routines blijkt een zorgvuldig geënsceneerde opname van een jeugdverhaal.\",\n      \"opposition_axis\": \"beleefde schooljeugd versus gespeelde schooljeugd\",\n      \"opposed_proposition\": \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n      \"shared_anchor\": \"Een ongemakkelijk moment in een klaslokaal.\",\n      \"reading_a\": \"Een echte leerling bloost wanneer een docent hem onverwacht een vraag stelt terwijl zijn vrienden toekijken.\",\n      \"reading_b\": \"Een jonge acteur speelt die verlegenheid opnieuw voor de camera, onder aanwijzing van een regisseur.\",\n      \"roles_b\": [\n        \"Jonge acteurs: spelen leerlingen en beleven de scènes volgens een script.\",\n        \"Regisseur en opnameleiding: sturen spel, tempo en herhalingen aan.\",\n        \"Figuranten: spelen klasgenoten en vrienden.\",\n        \"Productieassistenten: regelen kleding, tijdschema en toestemming.\",\n        \"De school: is een gehuurde opnamelocatie.\",\n        \"De Zeeuwse omgeving: levert herkenbare straten, dijken en fietspaden als filmdecor.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige film maken waarin een Zeeuwse schooltijd nostalgisch en herkenbaar wordt verbeeld.\",\n      \"role_remapping\": [\n        \"De leerling wordt een acteur in de hoofdrol.\",\n        \"Docenten en mentor worden acteurs of regieaanwijzingen in de scène.\",\n        \"Klasgenoten en vrienden worden medespelers en figuranten.\",\n        \"Ouders/verzorgers worden productiemedewerkers of acteurs als ouders.\",\n        \"De school wordt een filmlocatie.\",\n        \"De Zeeuwse omgeving wordt een gekozen visueel decor.\"\n      ],\n      \"shared_cues\": [\n        \"Fietsen naar het schoolgebouw.\",\n        \"Een docent die voor de klas staat.\",\n        \"Fluisterende vrienden in de pauze.\",\n        \"Schriften en tassen op tafels.\",\n        \"Een ongemakkelijke vraag in de les.\",\n        \"Een groep die na de bel het lokaal verlaat.\"\n      ],\n      \"switch_trigger\": \"Na de ogenschijnlijke les roept iemand buiten beeld: \\\"Stop, deze scène doen we nog een keer.\\\"\",\n      \"hinge_event\": \"Een medewerker loopt het lokaal binnen met een klapperbord, waarna de leerlingen hun posities opnieuw innemen.\",\n      \"anomaly_under_a\": \"Een klapperbord, herhaalde identieke reacties en leerlingen die na een bel terug op exact dezelfde plek gaan staan, passen niet bij een echte les.\",\n      \"resolution_under_b\": \"Voor een filmopname zijn juist meerdere takes, vaste markeringen en een klapperbord nodig om beeld en geluid te synchroniseren.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een Zeeuws woonzorgcentrum organiseert een herinneringsprogramma waarin oudere bewoners een schooldag uit hun jeugd herbeleven. De lessen, pauzegesprekken en diploma-herinneringen zijn geen actuele adolescentie, maar begeleide reminiscentiezorg.\",\n      \"opposition_axis\": \"toekomstgerichte adolescentie versus terugblikkende ouderenzorg\",\n      \"opposed_proposition\": \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\",\n      \"shared_anchor\": \"Een klasfoto uit Zeeland.\",\n      \"reading_a\": \"Leerlingen maken aan het eind van hun schooltijd een foto voordat zij uit elkaar gaan en een onbekende toekomst ingaan.\",\n      \"reading_b\": \"Bewoners bekijken of maken een foto als ingang naar gedeelde herinneringen aan hun vroegere schooltijd.\",\n      \"roles_b\": [\n        \"Bewoners: halen herinneringen op en nemen deel aan activiteiten.\",\n        \"Activiteitenbegeleiders: leiden gesprekken en maken herkenbare schoolmomenten na.\",\n        \"Medebewoners: vormen gespreksgroepen en herinneren elkaar aan plaatsen en gebeurtenissen.\",\n        \"Familieleden: leveren foto's, verhalen en geruststelling.\",\n        \"Het woonzorgcentrum: biedt een veilige, gestructureerde dagbesteding.\",\n        \"De Zeeuwse omgeving: biedt lokale aanknopingspunten zoals dorpen, scholen, dialect en fietsroutes.\"\n      ],\n      \"goal_b\": \"Welbevinden, contact en geheugenstimulatie bevorderen door bewoners via herkenbare schoolherinneringen te activeren.\",\n      \"role_remapping\": [\n        \"De leerling wordt een bewoner.\",\n        \"Docenten en mentor worden activiteitenbegeleiders of zorgmedewerkers.\",\n        \"Klasgenoten en vrienden worden medebewoners in een gespreksgroep.\",\n        \"Ouders/verzorgers worden familieleden en mantelzorgers.\",\n        \"De school wordt een ingericht activiteitenlokaal in het woonzorgcentrum.\",\n        \"De Zeeuwse omgeving wordt een gedeeld geheugenlandschap.\"\n      ],\n      \"shared_cues\": [\n        \"Een lokaalachtige ruimte met tafels.\",\n        \"Schriften, oude foto's en namenlijstjes.\",\n        \"Gesprekken over een strenge docent.\",\n        \"Een bel als begin van een activiteit.\",\n        \"Herinneringen aan fietsen in de wind.\",\n        \"Koffie tijdens een pauzemoment.\"\n      ],\n      \"switch_trigger\": \"Een zorgmedewerker onderbreekt het gesprek om bewoners hun middagmedicatie te geven.\",\n      \"hinge_event\": \"Na de fictieve schoolbel deelt een verpleegkundige medicijnbakjes uit en begeleidt zij enkele deelnemers terug naar hun kamers.\",\n      \"anomaly_under_a\": \"Medicatie-uitdeling en terugkeer naar kamers zijn niet passend als leerlingen midden in een gewone schooldag zitten.\",\n      \"resolution_under_b\": \"In een woonzorgcentrum zijn deze handelingen noodzakelijke zorg; het schoolthema is een doelbewust middel om herinneringen, rust en onderling contact op te roepen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.\",\n      \"opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n      \"opposed_proposition\": \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"shared_anchor\": \"Een lesrooster dat de hele dag ordent.\",\n      \"reading_a\": \"Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.\",\n      \"reading_b\": \"Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.\",\n      \"roles_b\": [\n        \"Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.\",\n        \"Docenten: geven onderwijs in afstemming met veiligheidsregels.\",\n        \"Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.\",\n        \"Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.\",\n        \"Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.\",\n        \"De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.\",\n        \"De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren.\"\n      ],\n      \"goal_b\": \"Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.\",\n      \"role_remapping\": [\n        \"De leerling wordt een jonge gedetineerde.\",\n        \"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\",\n        \"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\",\n        \"Ouders/verzorgers worden bezoekers volgens vaste regels.\",\n        \"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\",\n        \"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\"\n      ],\n      \"shared_cues\": [\n        \"Een vast rooster.\",\n        \"Lessen en werkbladen.\",\n        \"Een mentoroverleg.\",\n        \"Pauzes in een afgebakende ruimte.\",\n        \"Huiswerk en voortgangsgesprekken.\",\n        \"Een fietsroute of dijk zichtbaar door een raam.\"\n      ],\n      \"switch_trigger\": \"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\",\n      \"hinge_event\": \"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\",\n      \"anomaly_under_a\": \"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\",\n      \"resolution_under_b\": \"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.\",\n    \"participants_and_roles\": [\n      \"De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.\",\n      \"Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.\",\n      \"Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.\",\n      \"Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.\",\n      \"De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.\",\n      \"De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.\",\n    \"preconditions\": [\n      \"De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.\",\n      \"Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.\",\n      \"De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.\",\n      \"School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld.\"\n    ],\n    \"expected_actions\": [\n      \"Op tijd naar school fietsen, reizen of worden gebracht.\",\n      \"Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.\",\n      \"Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.\",\n      \"Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.\",\n      \"Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n      \"De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.\",\n      \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n      \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B4\",\n    \"script_b\": \"Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.\",\n    \"opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n    \"opposed_proposition\": \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n    \"shared_anchor\": \"Een lesrooster dat de hele dag ordent.\",\n    \"reading_a\": \"Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.\",\n    \"reading_b\": \"Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.\",\n    \"roles_b\": [\n      \"Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.\",\n      \"Docenten: geven onderwijs in afstemming met veiligheidsregels.\",\n      \"Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.\",\n      \"Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.\",\n      \"Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.\",\n      \"De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.\",\n      \"De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren.\"\n    ],\n    \"goal_b\": \"Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.\",\n    \"role_remapping\": [\n      \"De leerling wordt een jonge gedetineerde.\",\n      \"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\",\n      \"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\",\n      \"Ouders/verzorgers worden bezoekers volgens vaste regels.\",\n      \"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\",\n      \"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\"\n    ],\n    \"shared_cues\": [\n      \"Een vast rooster.\",\n      \"Lessen en werkbladen.\",\n      \"Een mentoroverleg.\",\n      \"Pauzes in een afgebakende ruimte.\",\n      \"Huiswerk en voortgangsgesprekken.\",\n      \"Een fietsroute of dijk zichtbaar door een raam.\"\n    ],\n    \"switch_trigger\": \"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\",\n    \"hinge_event\": \"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\",\n    \"anomaly_under_a\": \"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\",\n    \"resolution_under_b\": \"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"script_a\": {\n    \"script_a\": \"Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.\",\n    \"participants_and_roles\": [\n      \"De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.\",\n      \"Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.\",\n      \"Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.\",\n      \"Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.\",\n      \"De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.\",\n      \"De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap.\"\n    ],\n    \"apparent_goal\": \"De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.\",\n    \"preconditions\": [\n      \"De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.\",\n      \"Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.\",\n      \"De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.\",\n      \"School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld.\"\n    ],\n    \"expected_actions\": [\n      \"Op tijd naar school fietsen, reizen of worden gebracht.\",\n      \"Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.\",\n      \"Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.\",\n      \"Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.\",\n      \"Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio.\"\n    ],\n    \"expected_outcome\": \"De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.\",\n    \"expected_propositions\": [\n      \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n      \"De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.\",\n      \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n      \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\"\n    ],\n    \"audience_expectation\": \"Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B4\",\n    \"script_b\": \"Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.\",\n    \"opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n    \"opposed_proposition\": \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n    \"shared_anchor\": \"Een lesrooster dat de hele dag ordent.\",\n    \"reading_a\": \"Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.\",\n    \"reading_b\": \"Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.\",\n    \"roles_b\": [\n      \"Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.\",\n      \"Docenten: geven onderwijs in afstemming met veiligheidsregels.\",\n      \"Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.\",\n      \"Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.\",\n      \"Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.\",\n      \"De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.\",\n      \"De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren.\"\n    ],\n    \"goal_b\": \"Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.\",\n    \"role_remapping\": [\n      \"De leerling wordt een jonge gedetineerde.\",\n      \"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\",\n      \"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\",\n      \"Ouders/verzorgers worden bezoekers volgens vaste regels.\",\n      \"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\",\n      \"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\"\n    ],\n    \"shared_cues\": [\n      \"Een vast rooster.\",\n      \"Lessen en werkbladen.\",\n      \"Een mentoroverleg.\",\n      \"Pauzes in een afgebakende ruimte.\",\n      \"Huiswerk en voortgangsgesprekken.\",\n      \"Een fietsroute of dijk zichtbaar door een raam.\"\n    ],\n    \"switch_trigger\": \"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\",\n    \"hinge_event\": \"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\",\n    \"anomaly_under_a\": \"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\",\n    \"resolution_under_b\": \"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n    \"logical_mechanism\": \"Herinterpretatie door scriptwisseling: vertrouwde schoolcues zoals een rooster, lessen, een mentor en pauzes worden eerst als regulier schoolleven gelezen. De telling, groepsleider en elektronisch vergrendelde deuren dwingen vervolgens de lezer dezelfde cues te begrijpen als onderdelen van onderwijs binnen detentie.\",\n    \"situation\": \"Een jongere volgt lessen op een onderwijsafdeling binnen een justitiële jeugdinrichting in Zeeland. De jonge gedetineerde, docenten, groepsleiders, beveiligers en medegedetineerden bewegen zich volgens een vast lesrooster tussen lokaal, afgebakende pauzeruimte en leefgroep. Werkbladen, voortgangsgesprekken, deuren met elektronische vergrendeling en een door het raam zichtbare fietsroute of dijk bepalen de setting.\",\n    \"target\": null,\n    \"narrative_strategy\": \"De opzet presenteert een herkenbare schooldag met alledaagse onderwijsdetails en laat daardoor Script A domineren. De slothandeling na de les introduceert een groepsleider, een telling en gecontroleerde deuren, waarna de eerdere schoolroutine retrospectief als onderwijs onder vrijheidsbeneming wordt gelezen.\",\n    \"lexical_anchor\": \"lesrooster\",\n    \"supporting_dual_cues\": [\n      \"Een vast rooster.\",\n      \"Lessen en werkbladen.\",\n      \"Een mentoroverleg.\",\n      \"Pauzes in een afgebakende ruimte.\",\n      \"Huiswerk en voortgangsgesprekken.\",\n      \"Een fietsroute of dijk zichtbaar door een raam.\"\n    ],\n    \"switch_trigger\": \"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\",\n    \"hinge_event\": \"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\",\n    \"anomaly_under_a\": \"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\",\n    \"resolution_under_b\": \"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\",\n    \"role_remapping\": [\n      \"De leerling wordt een jonge gedetineerde.\",\n      \"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\",\n      \"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\",\n      \"Ouders/verzorgers worden bezoekers volgens vaste regels.\",\n      \"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\",\n      \"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\"\n    ],\n    \"setup_goal\": \"Script A wordt dominant door de jongere te presenteren via gewone schoolsignalen: een rooster, lessen, werkbladen, mentoroverleg, pauzes, huiswerk en zicht op een Zeeuwse dijk of fietsroute.\",\n    \"punch_goal\": \"Script B herinterpreteert alle schoolsignalen als onderdelen van een beveiligde detentieroutine, waarin verplaatsingen, contact en terugkeer naar de afdeling onder toezicht staan.\",\n    \"punch_final_word\": \"geteld\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.\",\n      \"participants_and_roles\": [\n        \"De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.\",\n        \"Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.\",\n        \"Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.\",\n        \"Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.\",\n        \"De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.\",\n        \"De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap.\"\n      ],\n      \"apparent_goal\": \"De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.\",\n      \"preconditions\": [\n        \"De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.\",\n        \"Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.\",\n        \"De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.\",\n        \"School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld.\"\n      ],\n      \"expected_actions\": [\n        \"Op tijd naar school fietsen, reizen of worden gebracht.\",\n        \"Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.\",\n        \"Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.\",\n        \"Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.\",\n        \"Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio.\"\n      ],\n      \"expected_outcome\": \"De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.\",\n      \"expected_propositions\": [\n        \"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\",\n        \"De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.\",\n        \"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\",\n        \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n        \"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\"\n      ],\n      \"audience_expectation\": \"Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.\",\n      \"opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n      \"opposed_proposition\": \"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\",\n      \"shared_anchor\": \"Een lesrooster dat de hele dag ordent.\",\n      \"reading_a\": \"Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.\",\n      \"reading_b\": \"Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.\",\n      \"roles_b\": [\n        \"Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.\",\n        \"Docenten: geven onderwijs in afstemming met veiligheidsregels.\",\n        \"Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.\",\n        \"Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.\",\n        \"Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.\",\n        \"De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.\",\n        \"De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren.\"\n      ],\n      \"goal_b\": \"Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.\",\n      \"role_remapping\": [\n        \"De leerling wordt een jonge gedetineerde.\",\n        \"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\",\n        \"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\",\n        \"Ouders/verzorgers worden bezoekers volgens vaste regels.\",\n        \"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\",\n        \"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\"\n      ],\n      \"shared_cues\": [\n        \"Een vast rooster.\",\n        \"Lessen en werkbladen.\",\n        \"Een mentoroverleg.\",\n        \"Pauzes in een afgebakende ruimte.\",\n        \"Huiswerk en voortgangsgesprekken.\",\n        \"Een fietsroute of dijk zichtbaar door een raam.\"\n      ],\n      \"switch_trigger\": \"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\",\n      \"hinge_event\": \"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\",\n      \"anomaly_under_a\": \"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\",\n      \"resolution_under_b\": \"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n      \"logical_mechanism\": \"Herinterpretatie door scriptwisseling: vertrouwde schoolcues zoals een rooster, lessen, een mentor en pauzes worden eerst als regulier schoolleven gelezen. De telling, groepsleider en elektronisch vergrendelde deuren dwingen vervolgens de lezer dezelfde cues te begrijpen als onderdelen van onderwijs binnen detentie.\",\n      \"situation\": \"Een jongere volgt lessen op een onderwijsafdeling binnen een justitiële jeugdinrichting in Zeeland. De jonge gedetineerde, docenten, groepsleiders, beveiligers en medegedetineerden bewegen zich volgens een vast lesrooster tussen lokaal, afgebakende pauzeruimte en leefgroep. Werkbladen, voortgangsgesprekken, deuren met elektronische vergrendeling en een door het raam zichtbare fietsroute of dijk bepalen de setting.\",\n      \"target\": null,\n      \"narrative_strategy\": \"De opzet presenteert een herkenbare schooldag met alledaagse onderwijsdetails en laat daardoor Script A domineren. De slothandeling na de les introduceert een groepsleider, een telling en gecontroleerde deuren, waarna de eerdere schoolroutine retrospectief als onderwijs onder vrijheidsbeneming wordt gelezen.\",\n      \"lexical_anchor\": \"lesrooster\",\n      \"supporting_dual_cues\": [\n        \"Een vast rooster.\",\n        \"Lessen en werkbladen.\",\n        \"Een mentoroverleg.\",\n        \"Pauzes in een afgebakende ruimte.\",\n        \"Huiswerk en voortgangsgesprekken.\",\n        \"Een fietsroute of dijk zichtbaar door een raam.\"\n      ],\n      \"switch_trigger\": \"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\",\n      \"hinge_event\": \"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\",\n      \"anomaly_under_a\": \"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\",\n      \"resolution_under_b\": \"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\",\n      \"role_remapping\": [\n        \"De leerling wordt een jonge gedetineerde.\",\n        \"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\",\n        \"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\",\n        \"Ouders/verzorgers worden bezoekers volgens vaste regels.\",\n        \"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\",\n        \"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\"\n      ],\n      \"setup_goal\": \"Script A wordt dominant door de jongere te presenteren via gewone schoolsignalen: een rooster, lessen, werkbladen, mentoroverleg, pauzes, huiswerk en zicht op een Zeeuwse dijk of fietsroute.\",\n      \"punch_goal\": \"Script B herinterpreteert alle schoolsignalen als onderdelen van een beveiligde detentieroutine, waarin verplaatsingen, contact en terugkeer naar de afdeling onder toezicht staan.\",\n      \"punch_final_word\": \"geteld\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk. Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”\",\n      \"angle\": \"Een gewone Zeeuwse schooldag kantelt door de groepsleider en de telling.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen. De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”\",\n      \"angle\": \"Een toekomstig fietstochtje krijgt een onverwachte voorwaarde.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk. Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”\",\n      \"angle\": \"Huiswerk en pauze blijven schoolachtig, maar de terugkeer blijkt gecontroleerd.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Jeugd, school en de Zeeuwse jaren\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk. Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”\",\n      \"angle\": \"Een gewone Zeeuwse schooldag kantelt door de groepsleider en de telling.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen. De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”\",\n      \"angle\": \"Een toekomstig fietstochtje krijgt een onverwachte voorwaarde.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk. Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”\",\n      \"angle\": \"Huiswerk en pauze blijven schoolachtig, maar de terugkeer blijkt gecontroleerd.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een leerling beleeft een gewone Zeeuwse middelbare-schooldag met een lesrooster, werkbladen, pauze en uitzicht op de dijk.\",\n      \"realized_script_b\": \"De leerling blijkt onderwijs te volgen binnen een beveiligde justitiële jeugdinrichting, waar een groepsleider de afdeling laat tellen.\",\n      \"realized_opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De schoolse opzet, gedeelde rooster- en lescues, en de slotmelding over de groepsleider en de telling realiseren precies de beoogde scriptwisseling.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De telling van de afdeling herkadert de eerdere gewone schoolroutine retrospectief als een gecontroleerde detentieroutine.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bevat een Zeeuwse onderwijssetting, lesrooster, werkbladen, afgebakende pauze, dijkzicht, groepsleider en afdeling.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Script A domineert de eerste zin; de tweede zin plaatst de groepsleider en telling als duidelijke late omslag.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het lexicale anker \\\"lesrooster\\\" is aanwezig en de tekst eindigt functioneel op \\\"geteld\\\".\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V1 volgt het plan zeer direct: een herkenbare schooldag wordt aan het einde door de telling van de afdeling als detentieonderwijs onthuld.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een scholier bespreekt tijdens een mentoroverleg het plan om na school langs de Zeeuwse dijk te fietsen.\",\n      \"realized_script_b\": \"De scholier bevindt zich in een gecontroleerde instelling waar verplaatsingen afhangen van afgesloten deuren en een telling.\",\n      \"realized_opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het gewone school- en fietsscenario wordt door groepsleider, gesloten deuren en telling omgebogen naar de beoogde vrijheidsbenemende setting.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De voorwaarden voor het fietstochtje maken de eerder vanzelfsprekend vrije naschoolse verplaatsing retrospectief ongewoon gecontroleerd.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Mentoroverleg, lesrooster, Zeeuwse dijk, groepsleider, deuren en telling realiseren de functionele kern van de bedoelde situatie.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst begint met een alledaags toekomstplan en bewaart de institutionele aanwijzingen voor de repliek aan het einde.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"\\\"Lesrooster\\\" is behouden als anker en \\\"geteld\\\" fungeert als eindwoord van de omslag.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V2 realiseert dezelfde geplande omslag via een schijnbaar vrij naschools fietstochtje dat afhankelijk blijkt van detentieprocedures.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Leerlingen krijgen huiswerk, volgen een lesrooster, hebben pauze en zien vanaf school fietsers op een Zeeuwse dijk.\",\n      \"realized_script_b\": \"De leerlingen zijn jonge gedetineerden die na een gecontroleerde telling naar hun afdeling terugkeren.\",\n      \"realized_opposition_axis\": \"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Huiswerk, pauze, lokaal en dijkzicht vormen de schoolse overlap; groepsleider, afdeling en telling leveren de geplande detentieherinterpretatie.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De instructie om na telling naar de afdeling terug te gaan verklaart waarom de schoolroutine in werkelijkheid door toezicht en controle wordt bepaald.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant noemt docent, lesrooster, huiswerk, pauze, lokaal, groepsleider, afdeling, telling en het Zeeuwse dijkzicht.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Een schoolse beschrijving domineert aanvankelijk; de groepsleider introduceert pas aan het slot de gecontroleerde terugkeer naar de afdeling.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het anker \\\"lesrooster\\\" en het geplande punch-eindwoord \\\"geteld\\\" zijn beide behouden.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V3 behoudt de bedoelde schoolse misleiding en maakt via de afdeling en telling duidelijk dat het om onderwijs binnen detentie gaat.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk. Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.",
+      "opposing_script": "Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.",
+      "opposition_type": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+      "trigger": "Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.",
+      "setup_goal": "Script A wordt dominant door de jongere te presenteren via gewone schoolsignalen: een rooster, lessen, werkbladen, mentoroverleg, pauzes, huiswerk en zicht op een Zeeuwse dijk of fietsroute.",
+      "punch_goal": "Script B herinterpreteert alle schoolsignalen als onderdelen van een beveiligde detentieroutine, waarin verplaatsingen, contact en terugkeer naar de afdeling onder toezicht staan.",
+      "shared_cues": [
+        "Een vast rooster.",
+        "Lessen en werkbladen.",
+        "Een mentoroverleg.",
+        "Pauzes in een afgebakende ruimte.",
+        "Huiswerk en voortgangsgesprekken.",
+        "Een fietsroute of dijk zichtbaar door een raam."
+      ],
+      "hinge_event": "De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.",
+      "anomaly_under_a": "Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.",
+      "resolution_under_b": "In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.",
+      "role_remapping": [
+        "De leerling wordt een jonge gedetineerde.",
+        "Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.",
+        "Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.",
+        "Ouders/verzorgers worden bezoekers volgens vaste regels.",
+        "De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.",
+        "De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.\\\",\\\"participants_and_roles\\\":[\\\"De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.\\\",\\\"Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.\\\",\\\"Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.\\\",\\\"Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.\\\",\\\"De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.\\\",\\\"De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap.\\\"],\\\"apparent_goal\\\":\\\"De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.\\\",\\\"preconditions\\\":[\\\"De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.\\\",\\\"Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.\\\",\\\"De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.\\\",\\\"School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld.\\\"],\\\"expected_actions\\\":[\\\"Op tijd naar school fietsen, reizen of worden gebracht.\\\",\\\"Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.\\\",\\\"Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.\\\",\\\"Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.\\\",\\\"Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio.\\\"],\\\"expected_outcome\\\":\\\"De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.\\\",\\\"expected_propositions\\\":[\\\"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\\\",\\\"De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.\\\",\\\"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\\\",\\\"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\\\",\\\"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een groep Zeeuwse jongeren volgt geen gewone schooldag, maar neemt deel aan een grootschalige oefening voor hoogwater en evacuatie. De ogenschijnlijke lessen, groepsindelingen en fietsroutes zijn onderdelen van de voorbereiding op een crisissituatie.\\\",\\\"opposition_axis\\\":\\\"alledaagse schoolvorming versus civiele noodvoorbereiding\\\",\\\"opposed_proposition\\\":\\\"Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.\\\",\\\"shared_anchor\\\":\\\"Fietsen tegen de wind naar een vast verzamelpunt.\\\",\\\"reading_a\\\":\\\"Een leerling fietst naar school voor lessen, pauze en een toetsdag.\\\",\\\"reading_b\\\":\\\"Een jonge vrijwilliger fietst naar een aangewezen post voor een evacuatieoefening.\\\",\\\"roles_b\\\":[\\\"Jongeren: oefenen als evacuatievrijwilligers en volgen veiligheidsinstructies.\\\",\\\"Instructeurs: leiden groepen en beoordelen de uitvoering van de oefening.\\\",\\\"Mededeelnemers: vormen teams die elkaar bij routes en taken helpen.\\\",\\\"Ouders/verzorgers: zijn contactpersonen of spelen evacuees.\\\",\\\"De schoollocatie: fungeert als tijdelijk crisis- en opvangcentrum.\\\",\\\"De Zeeuwse omgeving: levert de dijken, wind en waterdreiging waarvoor wordt geoefend.\\\"],\\\"goal_b\\\":\\\"Deelnemers veilig leren handelen bij een overstroming, inclusief verzamelen, registreren en evacueren.\\\",\\\"role_remapping\\\":[\\\"De leerling wordt een jonge evacuatievrijwilliger.\\\",\\\"Docenten en mentor worden crisisinstructeurs.\\\",\\\"Klasgenoten worden oefenteams.\\\",\\\"Ouders/verzorgers worden contactpersonen of figuranten als evacuees.\\\",\\\"De school wordt een crisispost.\\\",\\\"De Zeeuwse omgeving verandert van decor in de concrete reden voor de oefening.\\\"],\\\"shared_cues\\\":[\\\"Een vroeg vertrek in de wind.\\\",\\\"Groepen die een lokaal of aula binnengaan.\\\",\\\"Een aanwezigheidslijst.\\\",\\\"Instructies op een bord.\\\",\\\"Korte pauzes met bekenden.\\\",\\\"Een route die vooraf moet worden gevolgd.\\\"],\\\"switch_trigger\\\":\\\"Een coördinator zegt via een portofoon dat de waterstand kritiek is en activeert het evacuatieprotocol.\\\",\\\"hinge_event\\\":\\\"Iedereen krijgt een reddingsvest en moet onder begeleiding naar gereedstaande bussen lopen.\\\",\\\"anomaly_under_a\\\":\\\"Reddingsvesten en een verplichte busontruiming zijn buiten proportie voor een normale schooldag of toets.\\\",\\\"resolution_under_b\\\":\\\"Binnen een evacuatieoefening zijn de vesten, registratie en bussen precies de vaardigheden die deelnemers moeten oefenen voordat een echte watersnood hen daartoe dwingt.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een filmploeg draait in Zeeland een speelfilm over middelbare-schooljaren. Wat eerst oogt als echte lessen, vriendschappen en puberale routines blijkt een zorgvuldig geënsceneerde opname van een jeugdverhaal.\\\",\\\"opposition_axis\\\":\\\"beleefde schooljeugd versus gespeelde schooljeugd\\\",\\\"opposed_proposition\\\":\\\"Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.\\\",\\\"shared_anchor\\\":\\\"Een ongemakkelijk moment in een klaslokaal.\\\",\\\"reading_a\\\":\\\"Een echte leerling bloost wanneer een docent hem onverwacht een vraag stelt terwijl zijn vrienden toekijken.\\\",\\\"reading_b\\\":\\\"Een jonge acteur speelt die verlegenheid opnieuw voor de camera, onder aanwijzing van een regisseur.\\\",\\\"roles_b\\\":[\\\"Jonge acteurs: spelen leerlingen en beleven de scènes volgens een script.\\\",\\\"Regisseur en opnameleiding: sturen spel, tempo en herhalingen aan.\\\",\\\"Figuranten: spelen klasgenoten en vrienden.\\\",\\\"Productieassistenten: regelen kleding, tijdschema en toestemming.\\\",\\\"De school: is een gehuurde opnamelocatie.\\\",\\\"De Zeeuwse omgeving: levert herkenbare straten, dijken en fietspaden als filmdecor.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige film maken waarin een Zeeuwse schooltijd nostalgisch en herkenbaar wordt verbeeld.\\\",\\\"role_remapping\\\":[\\\"De leerling wordt een acteur in de hoofdrol.\\\",\\\"Docenten en mentor worden acteurs of regieaanwijzingen in de scène.\\\",\\\"Klasgenoten en vrienden worden medespelers en figuranten.\\\",\\\"Ouders/verzorgers worden productiemedewerkers of acteurs als ouders.\\\",\\\"De school wordt een filmlocatie.\\\",\\\"De Zeeuwse omgeving wordt een gekozen visueel decor.\\\"],\\\"shared_cues\\\":[\\\"Fietsen naar het schoolgebouw.\\\",\\\"Een docent die voor de klas staat.\\\",\\\"Fluisterende vrienden in de pauze.\\\",\\\"Schriften en tassen op tafels.\\\",\\\"Een ongemakkelijke vraag in de les.\\\",\\\"Een groep die na de bel het lokaal verlaat.\\\"],\\\"switch_trigger\\\":\\\"Na de ogenschijnlijke les roept iemand buiten beeld: \\\\\\\"Stop, deze scène doen we nog een keer.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Een medewerker loopt het lokaal binnen met een klapperbord, waarna de leerlingen hun posities opnieuw innemen.\\\",\\\"anomaly_under_a\\\":\\\"Een klapperbord, herhaalde identieke reacties en leerlingen die na een bel terug op exact dezelfde plek gaan staan, passen niet bij een echte les.\\\",\\\"resolution_under_b\\\":\\\"Voor een filmopname zijn juist meerdere takes, vaste markeringen en een klapperbord nodig om beeld en geluid te synchroniseren.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een Zeeuws woonzorgcentrum organiseert een herinneringsprogramma waarin oudere bewoners een schooldag uit hun jeugd herbeleven. De lessen, pauzegesprekken en diploma-herinneringen zijn geen actuele adolescentie, maar begeleide reminiscentiezorg.\\\",\\\"opposition_axis\\\":\\\"toekomstgerichte adolescentie versus terugblikkende ouderenzorg\\\",\\\"opposed_proposition\\\":\\\"Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.\\\",\\\"shared_anchor\\\":\\\"Een klasfoto uit Zeeland.\\\",\\\"reading_a\\\":\\\"Leerlingen maken aan het eind van hun schooltijd een foto voordat zij uit elkaar gaan en een onbekende toekomst ingaan.\\\",\\\"reading_b\\\":\\\"Bewoners bekijken of maken een foto als ingang naar gedeelde herinneringen aan hun vroegere schooltijd.\\\",\\\"roles_b\\\":[\\\"Bewoners: halen herinneringen op en nemen deel aan activiteiten.\\\",\\\"Activiteitenbegeleiders: leiden gesprekken en maken herkenbare schoolmomenten na.\\\",\\\"Medebewoners: vormen gespreksgroepen en herinneren elkaar aan plaatsen en gebeurtenissen.\\\",\\\"Familieleden: leveren foto's, verhalen en geruststelling.\\\",\\\"Het woonzorgcentrum: biedt een veilige, gestructureerde dagbesteding.\\\",\\\"De Zeeuwse omgeving: biedt lokale aanknopingspunten zoals dorpen, scholen, dialect en fietsroutes.\\\"],\\\"goal_b\\\":\\\"Welbevinden, contact en geheugenstimulatie bevorderen door bewoners via herkenbare schoolherinneringen te activeren.\\\",\\\"role_remapping\\\":[\\\"De leerling wordt een bewoner.\\\",\\\"Docenten en mentor worden activiteitenbegeleiders of zorgmedewerkers.\\\",\\\"Klasgenoten en vrienden worden medebewoners in een gespreksgroep.\\\",\\\"Ouders/verzorgers worden familieleden en mantelzorgers.\\\",\\\"De school wordt een ingericht activiteitenlokaal in het woonzorgcentrum.\\\",\\\"De Zeeuwse omgeving wordt een gedeeld geheugenlandschap.\\\"],\\\"shared_cues\\\":[\\\"Een lokaalachtige ruimte met tafels.\\\",\\\"Schriften, oude foto's en namenlijstjes.\\\",\\\"Gesprekken over een strenge docent.\\\",\\\"Een bel als begin van een activiteit.\\\",\\\"Herinneringen aan fietsen in de wind.\\\",\\\"Koffie tijdens een pauzemoment.\\\"],\\\"switch_trigger\\\":\\\"Een zorgmedewerker onderbreekt het gesprek om bewoners hun middagmedicatie te geven.\\\",\\\"hinge_event\\\":\\\"Na de fictieve schoolbel deelt een verpleegkundige medicijnbakjes uit en begeleidt zij enkele deelnemers terug naar hun kamers.\\\",\\\"anomaly_under_a\\\":\\\"Medicatie-uitdeling en terugkeer naar kamers zijn niet passend als leerlingen midden in een gewone schooldag zitten.\\\",\\\"resolution_under_b\\\":\\\"In een woonzorgcentrum zijn deze handelingen noodzakelijke zorg; het schoolthema is een doelbewust middel om herinneringen, rust en onderling contact op te roepen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.\\\",\\\"opposition_axis\\\":\\\"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\\\",\\\"opposed_proposition\\\":\\\"Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.\\\",\\\"shared_anchor\\\":\\\"Een lesrooster dat de hele dag ordent.\\\",\\\"reading_a\\\":\\\"Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.\\\",\\\"reading_b\\\":\\\"Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.\\\",\\\"roles_b\\\":[\\\"Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.\\\",\\\"Docenten: geven onderwijs in afstemming met veiligheidsregels.\\\",\\\"Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.\\\",\\\"Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.\\\",\\\"Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.\\\",\\\"De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.\\\",\\\"De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren.\\\"],\\\"goal_b\\\":\\\"Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.\\\",\\\"role_remapping\\\":[\\\"De leerling wordt een jonge gedetineerde.\\\",\\\"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\\\",\\\"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\\\",\\\"Ouders/verzorgers worden bezoekers volgens vaste regels.\\\",\\\"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\\\",\\\"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\\\"],\\\"shared_cues\\\":[\\\"Een vast rooster.\\\",\\\"Lessen en werkbladen.\\\",\\\"Een mentoroverleg.\\\",\\\"Pauzes in een afgebakende ruimte.\\\",\\\"Huiswerk en voortgangsgesprekken.\\\",\\\"Een fietsroute of dijk zichtbaar door een raam.\\\"],\\\"switch_trigger\\\":\\\"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\\\",\\\"hinge_event\\\":\\\"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\\\",\\\"anomaly_under_a\\\":\\\"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\\\",\\\"resolution_under_b\\\":\\\"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde realiseerbare scène met fietsen, groepsindelingen, presentielijst, bord en pauzes kan eerst als schooldag en vervolgens als evacuatieoefening worden gelezen. De tegenstelling tussen gewone schoolvorming en civiele noodvoorbereiding is lokaal onverenigbaar en dominant. De schoollezing ligt aanvankelijk voor de hand, terwijl de oefenlezing via de gedeelde signalen al mogelijk blijft. Reddingsvesten en begeleid vervoer zijn anomalieën onder de schoollezing, maar functionele oefenonderdelen onder de tweede lezing. De waterdreiging verhindert de normale schoolfunctie en maakt juist het evacuatie-doel relevant.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén scène met een lokaal, docent, vrienden, tassen en een gênante vraag kan zowel een echte les als een gefilmde les voorstellen. De dominante tegenstelling is daadwerkelijk beleefde schooljeugd tegenover geacteerde schooljeugd. De ankerhandeling, een ongemakkelijk moment in het lokaal, werkt natuurlijk in beide scripts. De gewone-schoollezing domineert vóór de trigger, terwijl een filmopname latent verenigbaar blijft met de zichtbare schoolcues. Klapperbord, herhaalde reacties en identieke posities zijn onverklaarbaar in een gewone les, maar noodzakelijk bij een opname. De enscenering ontneemt de gebeurtenissen hun functie als echte jeugdbeleving en geeft hun de functie van filmmateriaal.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde lokaalachtige setting, schoolbel, foto, namen en gesprekken over docenten kan eerst als actuele schooltijd en daarna als reminiscentieactiviteit worden gelezen. De tegenstelling tussen toekomstgerichte adolescentie en terugblikkende ouderenzorg is duidelijk en dominant. Een klasfoto ondersteunt zowel een afscheid aan het einde van een schoolfase als het ophalen van herinneringen. De schoollezing is aanvankelijk de normale lezing; de zorglezing blijft vóór de onthulling mogelijk door de nadruk op oude foto's en herinneringen. Medicatie en begeleiding naar kamers zijn anomalieën onder een schooldag, maar normale en doelgerichte zorg onder Script B. De zorgsituatie blokkeert de adolescentiële toekomstfunctie en maakt herinneringsactivering en welbevinden tot het relevante doel.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een rooster, lessen, werkbladen, mentoroverleg en pauzes kunnen in één tekst zowel een reguliere schooldag als onderwijs in een justitiële jeugdinrichting dragen. De kerntegenstelling is vrijheid binnen gewone schoolregels tegenover onderwijs onder vrijheidsbeneming; die as is lokaal onverenigbaar en dominant. Het dagrooster ondersteunt beide lezingen natuurlijk. De reguliere schoollezing wordt eerst het sterkst geactiveerd, terwijl toezicht en afgebakende pauzes de tweede lezing latent mogelijk maken. Tellingen en elektronisch vergrendelde deuren zijn disproportioneel voor gewone school, maar functioneel in detentie. De detentie beperkt de vrijheid die Script A veronderstelt en maakt beveiligd onderwijs en terugkeerbegeleiding tot het doel van Script B.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B4\\\",\\\"rationale\\\":\\\"B4 biedt de scherpste en meest structurele oppositie: dezelfde schoolse routine blijft volledig herkenbaar, maar de betekenis ervan kantelt van relatieve vrijheid en ontwikkeling naar onderwijs binnen vrijheidsbeneming en toezicht. De roltoewijzing is coherent, de setting domineert zonder het schoolanker te verliezen, en het rooster, de pauzes, mentorcontacten en lessen krijgen retrospectief een tweede lezing. De telling en elektronisch vergrendelde deuren vormen een economisch, onmiskenbaar omslagpunt met sterk herinterpretatie- en payoffpotentieel. Bovendien is de Zeeuwse locatie functioneel aanwezig als voelbare maar ontoegankelijke buitenwereld.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\\\",\\\"logical_mechanism\\\":\\\"Herinterpretatie door scriptwisseling: vertrouwde schoolcues zoals een rooster, lessen, een mentor en pauzes worden eerst als regulier schoolleven gelezen. De telling, groepsleider en elektronisch vergrendelde deuren dwingen vervolgens de lezer dezelfde cues te begrijpen als onderdelen van onderwijs binnen detentie.\\\",\\\"situation\\\":\\\"Een jongere volgt lessen op een onderwijsafdeling binnen een justitiële jeugdinrichting in Zeeland. De jonge gedetineerde, docenten, groepsleiders, beveiligers en medegedetineerden bewegen zich volgens een vast lesrooster tussen lokaal, afgebakende pauzeruimte en leefgroep. Werkbladen, voortgangsgesprekken, deuren met elektronische vergrendeling en een door het raam zichtbare fietsroute of dijk bepalen de setting.\\\",\\\"target\\\":null,\\\"narrative_strategy\\\":\\\"De opzet presenteert een herkenbare schooldag met alledaagse onderwijsdetails en laat daardoor Script A domineren. De slothandeling na de les introduceert een groepsleider, een telling en gecontroleerde deuren, waarna de eerdere schoolroutine retrospectief als onderwijs onder vrijheidsbeneming wordt gelezen.\\\",\\\"lexical_anchor\\\":\\\"lesrooster\\\",\\\"supporting_dual_cues\\\":[\\\"Een vast rooster.\\\",\\\"Lessen en werkbladen.\\\",\\\"Een mentoroverleg.\\\",\\\"Pauzes in een afgebakende ruimte.\\\",\\\"Huiswerk en voortgangsgesprekken.\\\",\\\"Een fietsroute of dijk zichtbaar door een raam.\\\"],\\\"switch_trigger\\\":\\\"Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.\\\",\\\"hinge_event\\\":\\\"De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.\\\",\\\"anomaly_under_a\\\":\\\"Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.\\\",\\\"resolution_under_b\\\":\\\"In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.\\\",\\\"role_remapping\\\":[\\\"De leerling wordt een jonge gedetineerde.\\\",\\\"Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.\\\",\\\"Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.\\\",\\\"Ouders/verzorgers worden bezoekers volgens vaste regels.\\\",\\\"De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.\\\",\\\"De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld.\\\"],\\\"setup_goal\\\":\\\"Script A wordt dominant door de jongere te presenteren via gewone schoolsignalen: een rooster, lessen, werkbladen, mentoroverleg, pauzes, huiswerk en zicht op een Zeeuwse dijk of fietsroute.\\\",\\\"punch_goal\\\":\\\"Script B herinterpreteert alle schoolsignalen als onderdelen van een beveiligde detentieroutine, waarin verplaatsingen, contact en terugkeer naar de afdeling onder toezicht staan.\\\",\\\"punch_final_word\\\":\\\"geteld\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk.\\\",\\\"punchline\\\":\\\"Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”\\\",\\\"full_text\\\":\\\"Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk. Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”\\\",\\\"angle\\\":\\\"Een gewone Zeeuwse schooldag kantelt door de groepsleider en de telling.\\\",\\\"anchor_surface_form\\\":\\\"lesrooster\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen.\\\",\\\"punchline\\\":\\\"De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”\\\",\\\"full_text\\\":\\\"Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen. De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”\\\",\\\"angle\\\":\\\"Een toekomstig fietstochtje krijgt een onverwachte voorwaarde.\\\",\\\"anchor_surface_form\\\":\\\"lesrooster\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk.\\\",\\\"punchline\\\":\\\"Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”\\\",\\\"full_text\\\":\\\"Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk. Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”\\\",\\\"angle\\\":\\\"Huiswerk en pauze blijven schoolachtig, maar de terugkeer blijkt gecontroleerd.\\\",\\\"anchor_surface_form\\\":\\\"lesrooster\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een leerling beleeft een gewone Zeeuwse middelbare-schooldag met een lesrooster, werkbladen, pauze en uitzicht op de dijk.\\\",\\\"realized_script_b\\\":\\\"De leerling blijkt onderwijs te volgen binnen een beveiligde justitiële jeugdinrichting, waar een groepsleider de afdeling laat tellen.\\\",\\\"realized_opposition_axis\\\":\\\"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De schoolse opzet, gedeelde rooster- en lescues, en de slotmelding over de groepsleider en de telling realiseren precies de beoogde scriptwisseling.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De telling van de afdeling herkadert de eerdere gewone schoolroutine retrospectief als een gecontroleerde detentieroutine.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bevat een Zeeuwse onderwijssetting, lesrooster, werkbladen, afgebakende pauze, dijkzicht, groepsleider en afdeling.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Script A domineert de eerste zin; de tweede zin plaatst de groepsleider en telling als duidelijke late omslag.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het lexicale anker \\\\\\\"lesrooster\\\\\\\" is aanwezig en de tekst eindigt functioneel op \\\\\\\"geteld\\\\\\\".\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V1 volgt het plan zeer direct: een herkenbare schooldag wordt aan het einde door de telling van de afdeling als detentieonderwijs onthuld.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een scholier bespreekt tijdens een mentoroverleg het plan om na school langs de Zeeuwse dijk te fietsen.\\\",\\\"realized_script_b\\\":\\\"De scholier bevindt zich in een gecontroleerde instelling waar verplaatsingen afhangen van afgesloten deuren en een telling.\\\",\\\"realized_opposition_axis\\\":\\\"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het gewone school- en fietsscenario wordt door groepsleider, gesloten deuren en telling omgebogen naar de beoogde vrijheidsbenemende setting.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De voorwaarden voor het fietstochtje maken de eerder vanzelfsprekend vrije naschoolse verplaatsing retrospectief ongewoon gecontroleerd.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Mentoroverleg, lesrooster, Zeeuwse dijk, groepsleider, deuren en telling realiseren de functionele kern van de bedoelde situatie.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst begint met een alledaags toekomstplan en bewaart de institutionele aanwijzingen voor de repliek aan het einde.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"\\\\\\\"Lesrooster\\\\\\\" is behouden als anker en \\\\\\\"geteld\\\\\\\" fungeert als eindwoord van de omslag.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V2 realiseert dezelfde geplande omslag via een schijnbaar vrij naschools fietstochtje dat afhankelijk blijkt van detentieprocedures.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Leerlingen krijgen huiswerk, volgen een lesrooster, hebben pauze en zien vanaf school fietsers op een Zeeuwse dijk.\\\",\\\"realized_script_b\\\":\\\"De leerlingen zijn jonge gedetineerden die na een gecontroleerde telling naar hun afdeling terugkeren.\\\",\\\"realized_opposition_axis\\\":\\\"vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Huiswerk, pauze, lokaal en dijkzicht vormen de schoolse overlap; groepsleider, afdeling en telling leveren de geplande detentieherinterpretatie.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De instructie om na telling naar de afdeling terug te gaan verklaart waarom de schoolroutine in werkelijkheid door toezicht en controle wordt bepaald.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant noemt docent, lesrooster, huiswerk, pauze, lokaal, groepsleider, afdeling, telling en het Zeeuwse dijkzicht.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Een schoolse beschrijving domineert aanvankelijk; de groepsleider introduceert pas aan het slot de gecontroleerde terugkeer naar de afdeling.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het anker \\\\\\\"lesrooster\\\\\\\" en het geplande punch-eindwoord \\\\\\\"geteld\\\\\\\" zijn beide behouden.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V3 behoudt de bedoelde schoolse misleiding en maakt via de afdeling en telling duidelijk dat het om onderwijs binnen detentie gaat.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 heeft de zuiverste opbouw: de gewone schooldag domineert, waarna „groepsleider”, „afdeling” en „geteld” in één korte slotzin de herinterpretatie leveren. V2 is eveneens helder, maar de gesloten deuren maken de instelling eerder zichtbaar en verzwakken de verrassing.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten realiseren alle vereiste middelen en eindigen met een duidelijke telling. V1 is echter compacter, beter mondeling vertelbaar en laat de omslag scherper landen; V3 stapelt huiswerk, pauze, lokaal en dijkzicht, waardoor de pointe minder direct wordt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 gebruikt het vrije plan om langs de dijk te fietsen als sterke tegenhanger van de latere controle. Daardoor is de vrijheidsbeneming sneller en grappiger voelbaar dan in V3, waarvan de lange, procedurele terugkeer naar de afdeling de timing afremt.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste passer: het behoudt alle verplichte schoolse en institutionele ankers, voert een heldere late scriptwissel uit en herkadert de schoolroutine efficiënt als onderwijs onder vrijheidsbeneming. De korte slotrepliek is bovendien het best performbaar als gesproken joke.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een groep Zeeuwse jongeren volgt geen gewone schooldag, maar neemt deel aan een grootschalige oefening voor hoogwater en evacuatie. De ogenschijnlijke lessen, groepsindelingen en fietsroutes zijn onderdelen van de voorbereiding op een crisissituatie.",
+        "candidate_id": "B1",
+        "opposition_axis": "alledaagse schoolvorming versus civiele noodvoorbereiding",
+        "opposed_expectation": "Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.",
+        "roles_b": [
+          "Jongeren: oefenen als evacuatievrijwilligers en volgen veiligheidsinstructies.",
+          "Instructeurs: leiden groepen en beoordelen de uitvoering van de oefening.",
+          "Mededeelnemers: vormen teams die elkaar bij routes en taken helpen.",
+          "Ouders/verzorgers: zijn contactpersonen of spelen evacuees.",
+          "De schoollocatie: fungeert als tijdelijk crisis- en opvangcentrum.",
+          "De Zeeuwse omgeving: levert de dijken, wind en waterdreiging waarvoor wordt geoefend."
+        ],
+        "goal_b": "Deelnemers veilig leren handelen bij een overstroming, inclusief verzamelen, registreren en evacueren.",
+        "role_remapping": [
+          "De leerling wordt een jonge evacuatievrijwilliger.",
+          "Docenten en mentor worden crisisinstructeurs.",
+          "Klasgenoten worden oefenteams.",
+          "Ouders/verzorgers worden contactpersonen of figuranten als evacuees.",
+          "De school wordt een crisispost.",
+          "De Zeeuwse omgeving verandert van decor in de concrete reden voor de oefening."
+        ],
+        "shared_cues": [
+          "Een vroeg vertrek in de wind.",
+          "Groepen die een lokaal of aula binnengaan.",
+          "Een aanwezigheidslijst.",
+          "Instructies op een bord.",
+          "Korte pauzes met bekenden.",
+          "Een route die vooraf moet worden gevolgd."
+        ],
+        "switch_trigger": "Een coördinator zegt via een portofoon dat de waterstand kritiek is en activeert het evacuatieprotocol.",
+        "hinge_event": "Iedereen krijgt een reddingsvest en moet onder begeleiding naar gereedstaande bussen lopen.",
+        "anomaly_under_a": "Reddingsvesten en een verplichte busontruiming zijn buiten proportie voor een normale schooldag of toets.",
+        "resolution_under_b": "Binnen een evacuatieoefening zijn de vesten, registratie en bussen precies de vaardigheden die deelnemers moeten oefenen voordat een echte watersnood hen daartoe dwingt.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een filmploeg draait in Zeeland een speelfilm over middelbare-schooljaren. Wat eerst oogt als echte lessen, vriendschappen en puberale routines blijkt een zorgvuldig geënsceneerde opname van een jeugdverhaal.",
+        "candidate_id": "B2",
+        "opposition_axis": "beleefde schooljeugd versus gespeelde schooljeugd",
+        "opposed_expectation": "Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.",
+        "roles_b": [
+          "Jonge acteurs: spelen leerlingen en beleven de scènes volgens een script.",
+          "Regisseur en opnameleiding: sturen spel, tempo en herhalingen aan.",
+          "Figuranten: spelen klasgenoten en vrienden.",
+          "Productieassistenten: regelen kleding, tijdschema en toestemming.",
+          "De school: is een gehuurde opnamelocatie.",
+          "De Zeeuwse omgeving: levert herkenbare straten, dijken en fietspaden als filmdecor."
+        ],
+        "goal_b": "Een geloofwaardige film maken waarin een Zeeuwse schooltijd nostalgisch en herkenbaar wordt verbeeld.",
+        "role_remapping": [
+          "De leerling wordt een acteur in de hoofdrol.",
+          "Docenten en mentor worden acteurs of regieaanwijzingen in de scène.",
+          "Klasgenoten en vrienden worden medespelers en figuranten.",
+          "Ouders/verzorgers worden productiemedewerkers of acteurs als ouders.",
+          "De school wordt een filmlocatie.",
+          "De Zeeuwse omgeving wordt een gekozen visueel decor."
+        ],
+        "shared_cues": [
+          "Fietsen naar het schoolgebouw.",
+          "Een docent die voor de klas staat.",
+          "Fluisterende vrienden in de pauze.",
+          "Schriften en tassen op tafels.",
+          "Een ongemakkelijke vraag in de les.",
+          "Een groep die na de bel het lokaal verlaat."
+        ],
+        "switch_trigger": "Na de ogenschijnlijke les roept iemand buiten beeld: \"Stop, deze scène doen we nog een keer.\"",
+        "hinge_event": "Een medewerker loopt het lokaal binnen met een klapperbord, waarna de leerlingen hun posities opnieuw innemen.",
+        "anomaly_under_a": "Een klapperbord, herhaalde identieke reacties en leerlingen die na een bel terug op exact dezelfde plek gaan staan, passen niet bij een echte les.",
+        "resolution_under_b": "Voor een filmopname zijn juist meerdere takes, vaste markeringen en een klapperbord nodig om beeld en geluid te synchroniseren.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een Zeeuws woonzorgcentrum organiseert een herinneringsprogramma waarin oudere bewoners een schooldag uit hun jeugd herbeleven. De lessen, pauzegesprekken en diploma-herinneringen zijn geen actuele adolescentie, maar begeleide reminiscentiezorg.",
+        "candidate_id": "B3",
+        "opposition_axis": "toekomstgerichte adolescentie versus terugblikkende ouderenzorg",
+        "opposed_expectation": "Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.",
+        "roles_b": [
+          "Bewoners: halen herinneringen op en nemen deel aan activiteiten.",
+          "Activiteitenbegeleiders: leiden gesprekken en maken herkenbare schoolmomenten na.",
+          "Medebewoners: vormen gespreksgroepen en herinneren elkaar aan plaatsen en gebeurtenissen.",
+          "Familieleden: leveren foto's, verhalen en geruststelling.",
+          "Het woonzorgcentrum: biedt een veilige, gestructureerde dagbesteding.",
+          "De Zeeuwse omgeving: biedt lokale aanknopingspunten zoals dorpen, scholen, dialect en fietsroutes."
+        ],
+        "goal_b": "Welbevinden, contact en geheugenstimulatie bevorderen door bewoners via herkenbare schoolherinneringen te activeren.",
+        "role_remapping": [
+          "De leerling wordt een bewoner.",
+          "Docenten en mentor worden activiteitenbegeleiders of zorgmedewerkers.",
+          "Klasgenoten en vrienden worden medebewoners in een gespreksgroep.",
+          "Ouders/verzorgers worden familieleden en mantelzorgers.",
+          "De school wordt een ingericht activiteitenlokaal in het woonzorgcentrum.",
+          "De Zeeuwse omgeving wordt een gedeeld geheugenlandschap."
+        ],
+        "shared_cues": [
+          "Een lokaalachtige ruimte met tafels.",
+          "Schriften, oude foto's en namenlijstjes.",
+          "Gesprekken over een strenge docent.",
+          "Een bel als begin van een activiteit.",
+          "Herinneringen aan fietsen in de wind.",
+          "Koffie tijdens een pauzemoment."
+        ],
+        "switch_trigger": "Een zorgmedewerker onderbreekt het gesprek om bewoners hun middagmedicatie te geven.",
+        "hinge_event": "Na de fictieve schoolbel deelt een verpleegkundige medicijnbakjes uit en begeleidt zij enkele deelnemers terug naar hun kamers.",
+        "anomaly_under_a": "Medicatie-uitdeling en terugkeer naar kamers zijn niet passend als leerlingen midden in een gewone schooldag zitten.",
+        "resolution_under_b": "In een woonzorgcentrum zijn deze handelingen noodzakelijke zorg; het schoolthema is een doelbewust middel om herinneringen, rust en onderling contact op te roepen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.",
+        "candidate_id": "B4",
+        "opposition_axis": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+        "opposed_expectation": "Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.",
+        "roles_b": [
+          "Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.",
+          "Docenten: geven onderwijs in afstemming met veiligheidsregels.",
+          "Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.",
+          "Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.",
+          "Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.",
+          "De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.",
+          "De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren."
+        ],
+        "goal_b": "Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.",
+        "role_remapping": [
+          "De leerling wordt een jonge gedetineerde.",
+          "Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.",
+          "Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.",
+          "Ouders/verzorgers worden bezoekers volgens vaste regels.",
+          "De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.",
+          "De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld."
+        ],
+        "shared_cues": [
+          "Een vast rooster.",
+          "Lessen en werkbladen.",
+          "Een mentoroverleg.",
+          "Pauzes in een afgebakende ruimte.",
+          "Huiswerk en voortgangsgesprekken.",
+          "Een fietsroute of dijk zichtbaar door een raam."
+        ],
+        "switch_trigger": "Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.",
+        "hinge_event": "De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.",
+        "anomaly_under_a": "Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.",
+        "resolution_under_b": "In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B4 biedt de scherpste en meest structurele oppositie: dezelfde schoolse routine blijft volledig herkenbaar, maar de betekenis ervan kantelt van relatieve vrijheid en ontwikkeling naar onderwijs binnen vrijheidsbeneming en toezicht. De roltoewijzing is coherent, de setting domineert zonder het schoolanker te verliezen, en het rooster, de pauzes, mentorcontacten en lessen krijgen retrospectief een tweede lezing. De telling en elektronisch vergrendelde deuren vormen een economisch, onmiskenbaar omslagpunt met sterk herinterpretatie- en payoffpotentieel. Bovendien is de Zeeuwse locatie functioneel aanwezig als voelbare maar ontoegankelijke buitenwereld.",
+    "variants": [
+      {
+        "text": "Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk. Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”",
+        "angle": "Een gewone Zeeuwse schooldag kantelt door de groepsleider en de telling."
+      },
+      {
+        "text": "Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen. De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”",
+        "angle": "Een toekomstig fietstochtje krijgt een onverwachte voorwaarde."
+      },
+      {
+        "text": "Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk. Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”",
+        "angle": "Huiswerk en pauze blijven schoolachtig, maar de terugkeer blijkt gecontroleerd."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 19324,
+      "output_tokens": 9873,
+      "total_tokens": 29197
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Een leerling brengt zijn middelbare-schooljaren door in Zeeland, gaat dagelijks naar school, leert, maakt vrienden en werkt toe naar een diploma als voorbereiding op de volwassenheid.",
+          "participants_and_roles": [
+            "De leerling: bezoekt lessen, ontwikkelt zich sociaal en werkt aan goede resultaten.",
+            "Docenten en mentor: geven les, beoordelen werk en begeleiden de leerling.",
+            "Klasgenoten en vrienden: vormen de sociale omgeving van pauzes, lessen, uitgaan en gedeelde herinneringen.",
+            "Ouders/verzorgers: bieden thuis structuur, steun en praktische begeleiding.",
+            "De school: organiseert onderwijs, regels, toetsen en diploma-uitreiking.",
+            "De Zeeuwse omgeving: is het decor van dorpen of steden, fietsroutes, wind, ruimte en een overzichtelijke gemeenschap."
+          ],
+          "apparent_goal": "De jeugdjaren op school goed doorlopen, een diploma behalen en er vormende, meestal dierbare herinneringen aan overhouden.",
+          "preconditions": [
+            "De leerling woont gedurende deze periode in Zeeland of gaat daar naar school.",
+            "Er is een vaste schoolroutine met roosters, lokalen, huiswerk, toetsen en vakanties.",
+            "De leerling bevindt zich in een levensfase waarin identiteit, vriendschappen en toekomstkeuzes belangrijk worden.",
+            "School, gezin en lokale omgeving vormen samen een relatief herkenbare en terugkerende wereld."
+          ],
+          "expected_actions": [
+            "Op tijd naar school fietsen, reizen of worden gebracht.",
+            "Lessen volgen, aantekeningen maken, huiswerk doen en toetsen afleggen.",
+            "Vriendschappen sluiten en onderhouden in de pauzes, op het schoolplein en buiten school.",
+            "Deelnemen aan schoolactiviteiten zoals werkweken, sportdagen, feesten of diploma-evenementen.",
+            "Nadenken over profielkeuze, vervolgopleiding, werk en vertrek of blijven in de eigen regio."
+          ],
+          "expected_outcome": "De leerling rondt een schoolfase af met een diploma, een hechter of veranderd sociaal netwerk en nostalgische herinneringen aan opgroeien in Zeeland.",
+          "expected_propositions": [
+            "Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.",
+            "De Zeeuwse jaren roepen beelden op van fietsen tegen de wind, ruimte, kleine gemeenschappen en bekende gezichten.",
+            "Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.",
+            "Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.",
+            "Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst."
+          ],
+          "audience_expectation": "Een opzet over jeugd, school en de Zeeuwse jaren activeert een herkenbaar coming-of-age-verhaal: alledaagse schoolroutines in een regionale omgeving, vriendschappen en puberale ervaringen, gevolgd door het behalen van een diploma en het afscheid van een vertrouwde periode."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een groep Zeeuwse jongeren volgt geen gewone schooldag, maar neemt deel aan een grootschalige oefening voor hoogwater en evacuatie. De ogenschijnlijke lessen, groepsindelingen en fietsroutes zijn onderdelen van de voorbereiding op een crisissituatie.",
+            "opposition_axis": "alledaagse schoolvorming versus civiele noodvoorbereiding",
+            "opposed_proposition": "Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.",
+            "shared_anchor": "Fietsen tegen de wind naar een vast verzamelpunt.",
+            "reading_a": "Een leerling fietst naar school voor lessen, pauze en een toetsdag.",
+            "reading_b": "Een jonge vrijwilliger fietst naar een aangewezen post voor een evacuatieoefening.",
+            "roles_b": [
+              "Jongeren: oefenen als evacuatievrijwilligers en volgen veiligheidsinstructies.",
+              "Instructeurs: leiden groepen en beoordelen de uitvoering van de oefening.",
+              "Mededeelnemers: vormen teams die elkaar bij routes en taken helpen.",
+              "Ouders/verzorgers: zijn contactpersonen of spelen evacuees.",
+              "De schoollocatie: fungeert als tijdelijk crisis- en opvangcentrum.",
+              "De Zeeuwse omgeving: levert de dijken, wind en waterdreiging waarvoor wordt geoefend."
+            ],
+            "goal_b": "Deelnemers veilig leren handelen bij een overstroming, inclusief verzamelen, registreren en evacueren.",
+            "role_remapping": [
+              "De leerling wordt een jonge evacuatievrijwilliger.",
+              "Docenten en mentor worden crisisinstructeurs.",
+              "Klasgenoten worden oefenteams.",
+              "Ouders/verzorgers worden contactpersonen of figuranten als evacuees.",
+              "De school wordt een crisispost.",
+              "De Zeeuwse omgeving verandert van decor in de concrete reden voor de oefening."
+            ],
+            "shared_cues": [
+              "Een vroeg vertrek in de wind.",
+              "Groepen die een lokaal of aula binnengaan.",
+              "Een aanwezigheidslijst.",
+              "Instructies op een bord.",
+              "Korte pauzes met bekenden.",
+              "Een route die vooraf moet worden gevolgd."
+            ],
+            "switch_trigger": "Een coördinator zegt via een portofoon dat de waterstand kritiek is en activeert het evacuatieprotocol.",
+            "hinge_event": "Iedereen krijgt een reddingsvest en moet onder begeleiding naar gereedstaande bussen lopen.",
+            "anomaly_under_a": "Reddingsvesten en een verplichte busontruiming zijn buiten proportie voor een normale schooldag of toets.",
+            "resolution_under_b": "Binnen een evacuatieoefening zijn de vesten, registratie en bussen precies de vaardigheden die deelnemers moeten oefenen voordat een echte watersnood hen daartoe dwingt."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een filmploeg draait in Zeeland een speelfilm over middelbare-schooljaren. Wat eerst oogt als echte lessen, vriendschappen en puberale routines blijkt een zorgvuldig geënsceneerde opname van een jeugdverhaal.",
+            "opposition_axis": "beleefde schooljeugd versus gespeelde schooljeugd",
+            "opposed_proposition": "Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.",
+            "shared_anchor": "Een ongemakkelijk moment in een klaslokaal.",
+            "reading_a": "Een echte leerling bloost wanneer een docent hem onverwacht een vraag stelt terwijl zijn vrienden toekijken.",
+            "reading_b": "Een jonge acteur speelt die verlegenheid opnieuw voor de camera, onder aanwijzing van een regisseur.",
+            "roles_b": [
+              "Jonge acteurs: spelen leerlingen en beleven de scènes volgens een script.",
+              "Regisseur en opnameleiding: sturen spel, tempo en herhalingen aan.",
+              "Figuranten: spelen klasgenoten en vrienden.",
+              "Productieassistenten: regelen kleding, tijdschema en toestemming.",
+              "De school: is een gehuurde opnamelocatie.",
+              "De Zeeuwse omgeving: levert herkenbare straten, dijken en fietspaden als filmdecor."
+            ],
+            "goal_b": "Een geloofwaardige film maken waarin een Zeeuwse schooltijd nostalgisch en herkenbaar wordt verbeeld.",
+            "role_remapping": [
+              "De leerling wordt een acteur in de hoofdrol.",
+              "Docenten en mentor worden acteurs of regieaanwijzingen in de scène.",
+              "Klasgenoten en vrienden worden medespelers en figuranten.",
+              "Ouders/verzorgers worden productiemedewerkers of acteurs als ouders.",
+              "De school wordt een filmlocatie.",
+              "De Zeeuwse omgeving wordt een gekozen visueel decor."
+            ],
+            "shared_cues": [
+              "Fietsen naar het schoolgebouw.",
+              "Een docent die voor de klas staat.",
+              "Fluisterende vrienden in de pauze.",
+              "Schriften en tassen op tafels.",
+              "Een ongemakkelijke vraag in de les.",
+              "Een groep die na de bel het lokaal verlaat."
+            ],
+            "switch_trigger": "Na de ogenschijnlijke les roept iemand buiten beeld: \"Stop, deze scène doen we nog een keer.\"",
+            "hinge_event": "Een medewerker loopt het lokaal binnen met een klapperbord, waarna de leerlingen hun posities opnieuw innemen.",
+            "anomaly_under_a": "Een klapperbord, herhaalde identieke reacties en leerlingen die na een bel terug op exact dezelfde plek gaan staan, passen niet bij een echte les.",
+            "resolution_under_b": "Voor een filmopname zijn juist meerdere takes, vaste markeringen en een klapperbord nodig om beeld en geluid te synchroniseren."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een Zeeuws woonzorgcentrum organiseert een herinneringsprogramma waarin oudere bewoners een schooldag uit hun jeugd herbeleven. De lessen, pauzegesprekken en diploma-herinneringen zijn geen actuele adolescentie, maar begeleide reminiscentiezorg.",
+            "opposition_axis": "toekomstgerichte adolescentie versus terugblikkende ouderenzorg",
+            "opposed_proposition": "Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.",
+            "shared_anchor": "Een klasfoto uit Zeeland.",
+            "reading_a": "Leerlingen maken aan het eind van hun schooltijd een foto voordat zij uit elkaar gaan en een onbekende toekomst ingaan.",
+            "reading_b": "Bewoners bekijken of maken een foto als ingang naar gedeelde herinneringen aan hun vroegere schooltijd.",
+            "roles_b": [
+              "Bewoners: halen herinneringen op en nemen deel aan activiteiten.",
+              "Activiteitenbegeleiders: leiden gesprekken en maken herkenbare schoolmomenten na.",
+              "Medebewoners: vormen gespreksgroepen en herinneren elkaar aan plaatsen en gebeurtenissen.",
+              "Familieleden: leveren foto's, verhalen en geruststelling.",
+              "Het woonzorgcentrum: biedt een veilige, gestructureerde dagbesteding.",
+              "De Zeeuwse omgeving: biedt lokale aanknopingspunten zoals dorpen, scholen, dialect en fietsroutes."
+            ],
+            "goal_b": "Welbevinden, contact en geheugenstimulatie bevorderen door bewoners via herkenbare schoolherinneringen te activeren.",
+            "role_remapping": [
+              "De leerling wordt een bewoner.",
+              "Docenten en mentor worden activiteitenbegeleiders of zorgmedewerkers.",
+              "Klasgenoten en vrienden worden medebewoners in een gespreksgroep.",
+              "Ouders/verzorgers worden familieleden en mantelzorgers.",
+              "De school wordt een ingericht activiteitenlokaal in het woonzorgcentrum.",
+              "De Zeeuwse omgeving wordt een gedeeld geheugenlandschap."
+            ],
+            "shared_cues": [
+              "Een lokaalachtige ruimte met tafels.",
+              "Schriften, oude foto's en namenlijstjes.",
+              "Gesprekken over een strenge docent.",
+              "Een bel als begin van een activiteit.",
+              "Herinneringen aan fietsen in de wind.",
+              "Koffie tijdens een pauzemoment."
+            ],
+            "switch_trigger": "Een zorgmedewerker onderbreekt het gesprek om bewoners hun middagmedicatie te geven.",
+            "hinge_event": "Na de fictieve schoolbel deelt een verpleegkundige medicijnbakjes uit en begeleidt zij enkele deelnemers terug naar hun kamers.",
+            "anomaly_under_a": "Medicatie-uitdeling en terugkeer naar kamers zijn niet passend als leerlingen midden in een gewone schooldag zitten.",
+            "resolution_under_b": "In een woonzorgcentrum zijn deze handelingen noodzakelijke zorg; het schoolthema is een doelbewust middel om herinneringen, rust en onderling contact op te roepen."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.",
+            "opposition_axis": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+            "opposed_proposition": "Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.",
+            "shared_anchor": "Een lesrooster dat de hele dag ordent.",
+            "reading_a": "Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.",
+            "reading_b": "Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.",
+            "roles_b": [
+              "Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.",
+              "Docenten: geven onderwijs in afstemming met veiligheidsregels.",
+              "Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.",
+              "Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.",
+              "Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.",
+              "De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.",
+              "De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren."
+            ],
+            "goal_b": "Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.",
+            "role_remapping": [
+              "De leerling wordt een jonge gedetineerde.",
+              "Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.",
+              "Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.",
+              "Ouders/verzorgers worden bezoekers volgens vaste regels.",
+              "De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.",
+              "De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld."
+            ],
+            "shared_cues": [
+              "Een vast rooster.",
+              "Lessen en werkbladen.",
+              "Een mentoroverleg.",
+              "Pauzes in een afgebakende ruimte.",
+              "Huiswerk en voortgangsgesprekken.",
+              "Een fietsroute of dijk zichtbaar door een raam."
+            ],
+            "switch_trigger": "Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.",
+            "hinge_event": "De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.",
+            "anomaly_under_a": "Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.",
+            "resolution_under_b": "In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een groep Zeeuwse jongeren volgt geen gewone schooldag, maar neemt deel aan een grootschalige oefening voor hoogwater en evacuatie. De ogenschijnlijke lessen, groepsindelingen en fietsroutes zijn onderdelen van de voorbereiding op een crisissituatie.",
+              "opposition_axis": "alledaagse schoolvorming versus civiele noodvoorbereiding",
+              "opposed_proposition": "Schooldagen worden bepaald door een herkenbaar ritme van lessen, pauzes, huiswerk en toetsen.",
+              "shared_anchor": "Fietsen tegen de wind naar een vast verzamelpunt.",
+              "reading_a": "Een leerling fietst naar school voor lessen, pauze en een toetsdag.",
+              "reading_b": "Een jonge vrijwilliger fietst naar een aangewezen post voor een evacuatieoefening.",
+              "roles_b": [
+                "Jongeren: oefenen als evacuatievrijwilligers en volgen veiligheidsinstructies.",
+                "Instructeurs: leiden groepen en beoordelen de uitvoering van de oefening.",
+                "Mededeelnemers: vormen teams die elkaar bij routes en taken helpen.",
+                "Ouders/verzorgers: zijn contactpersonen of spelen evacuees.",
+                "De schoollocatie: fungeert als tijdelijk crisis- en opvangcentrum.",
+                "De Zeeuwse omgeving: levert de dijken, wind en waterdreiging waarvoor wordt geoefend."
+              ],
+              "goal_b": "Deelnemers veilig leren handelen bij een overstroming, inclusief verzamelen, registreren en evacueren.",
+              "role_remapping": [
+                "De leerling wordt een jonge evacuatievrijwilliger.",
+                "Docenten en mentor worden crisisinstructeurs.",
+                "Klasgenoten worden oefenteams.",
+                "Ouders/verzorgers worden contactpersonen of figuranten als evacuees.",
+                "De school wordt een crisispost.",
+                "De Zeeuwse omgeving verandert van decor in de concrete reden voor de oefening."
+              ],
+              "shared_cues": [
+                "Een vroeg vertrek in de wind.",
+                "Groepen die een lokaal of aula binnengaan.",
+                "Een aanwezigheidslijst.",
+                "Instructies op een bord.",
+                "Korte pauzes met bekenden.",
+                "Een route die vooraf moet worden gevolgd."
+              ],
+              "switch_trigger": "Een coördinator zegt via een portofoon dat de waterstand kritiek is en activeert het evacuatieprotocol.",
+              "hinge_event": "Iedereen krijgt een reddingsvest en moet onder begeleiding naar gereedstaande bussen lopen.",
+              "anomaly_under_a": "Reddingsvesten en een verplichte busontruiming zijn buiten proportie voor een normale schooldag of toets.",
+              "resolution_under_b": "Binnen een evacuatieoefening zijn de vesten, registratie en bussen precies de vaardigheden die deelnemers moeten oefenen voordat een echte watersnood hen daartoe dwingt."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een filmploeg draait in Zeeland een speelfilm over middelbare-schooljaren. Wat eerst oogt als echte lessen, vriendschappen en puberale routines blijkt een zorgvuldig geënsceneerde opname van een jeugdverhaal.",
+              "opposition_axis": "beleefde schooljeugd versus gespeelde schooljeugd",
+              "opposed_proposition": "Jeugdherinneringen aan school draaien vaak evenveel om vrienden en ongemakkelijke momenten als om leren.",
+              "shared_anchor": "Een ongemakkelijk moment in een klaslokaal.",
+              "reading_a": "Een echte leerling bloost wanneer een docent hem onverwacht een vraag stelt terwijl zijn vrienden toekijken.",
+              "reading_b": "Een jonge acteur speelt die verlegenheid opnieuw voor de camera, onder aanwijzing van een regisseur.",
+              "roles_b": [
+                "Jonge acteurs: spelen leerlingen en beleven de scènes volgens een script.",
+                "Regisseur en opnameleiding: sturen spel, tempo en herhalingen aan.",
+                "Figuranten: spelen klasgenoten en vrienden.",
+                "Productieassistenten: regelen kleding, tijdschema en toestemming.",
+                "De school: is een gehuurde opnamelocatie.",
+                "De Zeeuwse omgeving: levert herkenbare straten, dijken en fietspaden als filmdecor."
+              ],
+              "goal_b": "Een geloofwaardige film maken waarin een Zeeuwse schooltijd nostalgisch en herkenbaar wordt verbeeld.",
+              "role_remapping": [
+                "De leerling wordt een acteur in de hoofdrol.",
+                "Docenten en mentor worden acteurs of regieaanwijzingen in de scène.",
+                "Klasgenoten en vrienden worden medespelers en figuranten.",
+                "Ouders/verzorgers worden productiemedewerkers of acteurs als ouders.",
+                "De school wordt een filmlocatie.",
+                "De Zeeuwse omgeving wordt een gekozen visueel decor."
+              ],
+              "shared_cues": [
+                "Fietsen naar het schoolgebouw.",
+                "Een docent die voor de klas staat.",
+                "Fluisterende vrienden in de pauze.",
+                "Schriften en tassen op tafels.",
+                "Een ongemakkelijke vraag in de les.",
+                "Een groep die na de bel het lokaal verlaat."
+              ],
+              "switch_trigger": "Na de ogenschijnlijke les roept iemand buiten beeld: \"Stop, deze scène doen we nog een keer.\"",
+              "hinge_event": "Een medewerker loopt het lokaal binnen met een klapperbord, waarna de leerlingen hun posities opnieuw innemen.",
+              "anomaly_under_a": "Een klapperbord, herhaalde identieke reacties en leerlingen die na een bel terug op exact dezelfde plek gaan staan, passen niet bij een echte les.",
+              "resolution_under_b": "Voor een filmopname zijn juist meerdere takes, vaste markeringen en een klapperbord nodig om beeld en geluid te synchroniseren."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een Zeeuws woonzorgcentrum organiseert een herinneringsprogramma waarin oudere bewoners een schooldag uit hun jeugd herbeleven. De lessen, pauzegesprekken en diploma-herinneringen zijn geen actuele adolescentie, maar begeleide reminiscentiezorg.",
+              "opposition_axis": "toekomstgerichte adolescentie versus terugblikkende ouderenzorg",
+              "opposed_proposition": "Het einde van de schooltijd markeert een overgang van een vertrouwde jeugdwereld naar een onzekerdere volwassen toekomst.",
+              "shared_anchor": "Een klasfoto uit Zeeland.",
+              "reading_a": "Leerlingen maken aan het eind van hun schooltijd een foto voordat zij uit elkaar gaan en een onbekende toekomst ingaan.",
+              "reading_b": "Bewoners bekijken of maken een foto als ingang naar gedeelde herinneringen aan hun vroegere schooltijd.",
+              "roles_b": [
+                "Bewoners: halen herinneringen op en nemen deel aan activiteiten.",
+                "Activiteitenbegeleiders: leiden gesprekken en maken herkenbare schoolmomenten na.",
+                "Medebewoners: vormen gespreksgroepen en herinneren elkaar aan plaatsen en gebeurtenissen.",
+                "Familieleden: leveren foto's, verhalen en geruststelling.",
+                "Het woonzorgcentrum: biedt een veilige, gestructureerde dagbesteding.",
+                "De Zeeuwse omgeving: biedt lokale aanknopingspunten zoals dorpen, scholen, dialect en fietsroutes."
+              ],
+              "goal_b": "Welbevinden, contact en geheugenstimulatie bevorderen door bewoners via herkenbare schoolherinneringen te activeren.",
+              "role_remapping": [
+                "De leerling wordt een bewoner.",
+                "Docenten en mentor worden activiteitenbegeleiders of zorgmedewerkers.",
+                "Klasgenoten en vrienden worden medebewoners in een gespreksgroep.",
+                "Ouders/verzorgers worden familieleden en mantelzorgers.",
+                "De school wordt een ingericht activiteitenlokaal in het woonzorgcentrum.",
+                "De Zeeuwse omgeving wordt een gedeeld geheugenlandschap."
+              ],
+              "shared_cues": [
+                "Een lokaalachtige ruimte met tafels.",
+                "Schriften, oude foto's en namenlijstjes.",
+                "Gesprekken over een strenge docent.",
+                "Een bel als begin van een activiteit.",
+                "Herinneringen aan fietsen in de wind.",
+                "Koffie tijdens een pauzemoment."
+              ],
+              "switch_trigger": "Een zorgmedewerker onderbreekt het gesprek om bewoners hun middagmedicatie te geven.",
+              "hinge_event": "Na de fictieve schoolbel deelt een verpleegkundige medicijnbakjes uit en begeleidt zij enkele deelnemers terug naar hun kamers.",
+              "anomaly_under_a": "Medicatie-uitdeling en terugkeer naar kamers zijn niet passend als leerlingen midden in een gewone schooldag zitten.",
+              "resolution_under_b": "In een woonzorgcentrum zijn deze handelingen noodzakelijke zorg; het schoolthema is een doelbewust middel om herinneringen, rust en onderling contact op te roepen."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een jongere verblijft in een justitiële jeugdinrichting in Zeeland en volgt daar onderwijs. De lessen en contacten lijken aanvankelijk op een gewone middelbare school, maar staan in dienst van detentie, toezicht en voorbereiding op terugkeer.",
+              "opposition_axis": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+              "opposed_proposition": "Docenten hebben gezag en leerlingen proberen binnen de schoolregels hun eigen vrijheid te vinden.",
+              "shared_anchor": "Een lesrooster dat de hele dag ordent.",
+              "reading_a": "Een leerling volgt het rooster om lessen, pauzes en huiswerk te plannen, met ruimte om na school vrienden te zien.",
+              "reading_b": "Een gedetineerde jongere volgt het rooster omdat ieder moment, elke verplaatsing en ieder contact onder toezicht staat.",
+              "roles_b": [
+                "Jonge gedetineerde: volgt onderwijs binnen een beveiligd verblijf en werkt aan terugkeer.",
+                "Docenten: geven onderwijs in afstemming met veiligheidsregels.",
+                "Groepsleiders en beveiligers: begeleiden verplaatsingen en handhaven orde.",
+                "Medegedetineerden: zijn klasgenoten maar ook mede-inwoners van de leefgroep.",
+                "Ouders/verzorgers: onderhouden gereguleerd bezoek en contact.",
+                "De inrichting: combineert schoolvoorziening, verblijf, behandeling en beveiliging.",
+                "De Zeeuwse omgeving: is de locatie buiten de muren die de jongere slechts beperkt kan ervaren."
+              ],
+              "goal_b": "Onderwijs, gedragsontwikkeling en een haalbare terugkeer naar school, werk of samenleving ondersteunen binnen een beveiligde setting.",
+              "role_remapping": [
+                "De leerling wordt een jonge gedetineerde.",
+                "Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.",
+                "Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.",
+                "Ouders/verzorgers worden bezoekers volgens vaste regels.",
+                "De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.",
+                "De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld."
+              ],
+              "shared_cues": [
+                "Een vast rooster.",
+                "Lessen en werkbladen.",
+                "Een mentoroverleg.",
+                "Pauzes in een afgebakende ruimte.",
+                "Huiswerk en voortgangsgesprekken.",
+                "Een fietsroute of dijk zichtbaar door een raam."
+              ],
+              "switch_trigger": "Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.",
+              "hinge_event": "De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.",
+              "anomaly_under_a": "Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.",
+              "resolution_under_b": "In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde realiseerbare scène met fietsen, groepsindelingen, presentielijst, bord en pauzes kan eerst als schooldag en vervolgens als evacuatieoefening worden gelezen. De tegenstelling tussen gewone schoolvorming en civiele noodvoorbereiding is lokaal onverenigbaar en dominant. De schoollezing ligt aanvankelijk voor de hand, terwijl de oefenlezing via de gedeelde signalen al mogelijk blijft. Reddingsvesten en begeleid vervoer zijn anomalieën onder de schoollezing, maar functionele oefenonderdelen onder de tweede lezing. De waterdreiging verhindert de normale schoolfunctie en maakt juist het evacuatie-doel relevant."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén scène met een lokaal, docent, vrienden, tassen en een gênante vraag kan zowel een echte les als een gefilmde les voorstellen. De dominante tegenstelling is daadwerkelijk beleefde schooljeugd tegenover geacteerde schooljeugd. De ankerhandeling, een ongemakkelijk moment in het lokaal, werkt natuurlijk in beide scripts. De gewone-schoollezing domineert vóór de trigger, terwijl een filmopname latent verenigbaar blijft met de zichtbare schoolcues. Klapperbord, herhaalde reacties en identieke posities zijn onverklaarbaar in een gewone les, maar noodzakelijk bij een opname. De enscenering ontneemt de gebeurtenissen hun functie als echte jeugdbeleving en geeft hun de functie van filmmateriaal."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde lokaalachtige setting, schoolbel, foto, namen en gesprekken over docenten kan eerst als actuele schooltijd en daarna als reminiscentieactiviteit worden gelezen. De tegenstelling tussen toekomstgerichte adolescentie en terugblikkende ouderenzorg is duidelijk en dominant. Een klasfoto ondersteunt zowel een afscheid aan het einde van een schoolfase als het ophalen van herinneringen. De schoollezing is aanvankelijk de normale lezing; de zorglezing blijft vóór de onthulling mogelijk door de nadruk op oude foto's en herinneringen. Medicatie en begeleiding naar kamers zijn anomalieën onder een schooldag, maar normale en doelgerichte zorg onder Script B. De zorgsituatie blokkeert de adolescentiële toekomstfunctie en maakt herinneringsactivering en welbevinden tot het relevante doel."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een rooster, lessen, werkbladen, mentoroverleg en pauzes kunnen in één tekst zowel een reguliere schooldag als onderwijs in een justitiële jeugdinrichting dragen. De kerntegenstelling is vrijheid binnen gewone schoolregels tegenover onderwijs onder vrijheidsbeneming; die as is lokaal onverenigbaar en dominant. Het dagrooster ondersteunt beide lezingen natuurlijk. De reguliere schoollezing wordt eerst het sterkst geactiveerd, terwijl toezicht en afgebakende pauzes de tweede lezing latent mogelijk maken. Tellingen en elektronisch vergrendelde deuren zijn disproportioneel voor gewone school, maar functioneel in detentie. De detentie beperkt de vrijheid die Script A veronderstelt en maakt beveiligd onderwijs en terugkeerbegeleiding tot het doel van Script B."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde realiseerbare scène met fietsen, groepsindelingen, presentielijst, bord en pauzes kan eerst als schooldag en vervolgens als evacuatieoefening worden gelezen. De tegenstelling tussen gewone schoolvorming en civiele noodvoorbereiding is lokaal onverenigbaar en dominant. De schoollezing ligt aanvankelijk voor de hand, terwijl de oefenlezing via de gedeelde signalen al mogelijk blijft. Reddingsvesten en begeleid vervoer zijn anomalieën onder de schoollezing, maar functionele oefenonderdelen onder de tweede lezing. De waterdreiging verhindert de normale schoolfunctie en maakt juist het evacuatie-doel relevant."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén scène met een lokaal, docent, vrienden, tassen en een gênante vraag kan zowel een echte les als een gefilmde les voorstellen. De dominante tegenstelling is daadwerkelijk beleefde schooljeugd tegenover geacteerde schooljeugd. De ankerhandeling, een ongemakkelijk moment in het lokaal, werkt natuurlijk in beide scripts. De gewone-schoollezing domineert vóór de trigger, terwijl een filmopname latent verenigbaar blijft met de zichtbare schoolcues. Klapperbord, herhaalde reacties en identieke posities zijn onverklaarbaar in een gewone les, maar noodzakelijk bij een opname. De enscenering ontneemt de gebeurtenissen hun functie als echte jeugdbeleving en geeft hun de functie van filmmateriaal."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde lokaalachtige setting, schoolbel, foto, namen en gesprekken over docenten kan eerst als actuele schooltijd en daarna als reminiscentieactiviteit worden gelezen. De tegenstelling tussen toekomstgerichte adolescentie en terugblikkende ouderenzorg is duidelijk en dominant. Een klasfoto ondersteunt zowel een afscheid aan het einde van een schoolfase als het ophalen van herinneringen. De schoollezing is aanvankelijk de normale lezing; de zorglezing blijft vóór de onthulling mogelijk door de nadruk op oude foto's en herinneringen. Medicatie en begeleiding naar kamers zijn anomalieën onder een schooldag, maar normale en doelgerichte zorg onder Script B. De zorgsituatie blokkeert de adolescentiële toekomstfunctie en maakt herinneringsactivering en welbevinden tot het relevante doel."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een rooster, lessen, werkbladen, mentoroverleg en pauzes kunnen in één tekst zowel een reguliere schooldag als onderwijs in een justitiële jeugdinrichting dragen. De kerntegenstelling is vrijheid binnen gewone schoolregels tegenover onderwijs onder vrijheidsbeneming; die as is lokaal onverenigbaar en dominant. Het dagrooster ondersteunt beide lezingen natuurlijk. De reguliere schoollezing wordt eerst het sterkst geactiveerd, terwijl toezicht en afgebakende pauzes de tweede lezing latent mogelijk maken. Tellingen en elektronisch vergrendelde deuren zijn disproportioneel voor gewone school, maar functioneel in detentie. De detentie beperkt de vrijheid die Script A veronderstelt en maakt beveiligd onderwijs en terugkeerbegeleiding tot het doel van Script B."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B4",
+        "gtvh_plan": {
+          "opposition_type": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+          "logical_mechanism": "Herinterpretatie door scriptwisseling: vertrouwde schoolcues zoals een rooster, lessen, een mentor en pauzes worden eerst als regulier schoolleven gelezen. De telling, groepsleider en elektronisch vergrendelde deuren dwingen vervolgens de lezer dezelfde cues te begrijpen als onderdelen van onderwijs binnen detentie.",
+          "situation": "Een jongere volgt lessen op een onderwijsafdeling binnen een justitiële jeugdinrichting in Zeeland. De jonge gedetineerde, docenten, groepsleiders, beveiligers en medegedetineerden bewegen zich volgens een vast lesrooster tussen lokaal, afgebakende pauzeruimte en leefgroep. Werkbladen, voortgangsgesprekken, deuren met elektronische vergrendeling en een door het raam zichtbare fietsroute of dijk bepalen de setting.",
+          "target": null,
+          "narrative_strategy": "De opzet presenteert een herkenbare schooldag met alledaagse onderwijsdetails en laat daardoor Script A domineren. De slothandeling na de les introduceert een groepsleider, een telling en gecontroleerde deuren, waarna de eerdere schoolroutine retrospectief als onderwijs onder vrijheidsbeneming wordt gelezen.",
+          "lexical_anchor": "lesrooster",
+          "supporting_dual_cues": [
+            "Een vast rooster.",
+            "Lessen en werkbladen.",
+            "Een mentoroverleg.",
+            "Pauzes in een afgebakende ruimte.",
+            "Huiswerk en voortgangsgesprekken.",
+            "Een fietsroute of dijk zichtbaar door een raam."
+          ],
+          "switch_trigger": "Aan het einde van de les meldt een groepsleider dat de afdeling wordt geteld voordat iedereen teruggaat.",
+          "hinge_event": "De groep wacht zwijgend terwijl deuren met elektronische vergrendeling één voor één openen en weer sluiten.",
+          "anomaly_under_a": "Een telling en elektronisch vergrendelde deuren na de les zijn onverklaarbaar streng voor een reguliere school.",
+          "resolution_under_b": "In een justitiële jeugdinrichting maken tellingen en gecontroleerde deuren veilig onderwijs binnen detentie mogelijk; de schoolachtige routine ondersteunt daar juist stabiliteit en terugkeer.",
+          "role_remapping": [
+            "De leerling wordt een jonge gedetineerde.",
+            "Docenten en mentor blijven onderwijsgevenden, maar werken naast groepsleiders en beveiligers.",
+            "Klasgenoten en vrienden worden medegedetineerden met beperkt en begeleid contact.",
+            "Ouders/verzorgers worden bezoekers volgens vaste regels.",
+            "De school wordt een onderwijsafdeling binnen een justitiële jeugdinrichting.",
+            "De Zeeuwse omgeving wordt een zichtbare maar niet vrij toegankelijke buitenwereld."
+          ],
+          "setup_goal": "Script A wordt dominant door de jongere te presenteren via gewone schoolsignalen: een rooster, lessen, werkbladen, mentoroverleg, pauzes, huiswerk en zicht op een Zeeuwse dijk of fietsroute.",
+          "punch_goal": "Script B herinterpreteert alle schoolsignalen als onderdelen van een beveiligde detentieroutine, waarin verplaatsingen, contact en terugkeer naar de afdeling onder toezicht staan.",
+          "punch_final_word": "geteld"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk.",
+            "punchline": "Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”",
+            "full_text": "Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk. Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”",
+            "angle": "Een gewone Zeeuwse schooldag kantelt door de groepsleider en de telling.",
+            "anchor_surface_form": "lesrooster"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen.",
+            "punchline": "De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”",
+            "full_text": "Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen. De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”",
+            "angle": "Een toekomstig fietstochtje krijgt een onverwachte voorwaarde.",
+            "anchor_surface_form": "lesrooster"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk.",
+            "punchline": "Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”",
+            "full_text": "Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk. Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”",
+            "angle": "Huiswerk en pauze blijven schoolachtig, maar de terugkeer blijkt gecontroleerd.",
+            "anchor_surface_form": "lesrooster"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Op mijn Zeeuwse middelbare school bepaalde het lesrooster alles: wiskunde, werkbladen, pauze in een afgebakende ruimte en uitzicht op de dijk. Na de bel zei de groepsleider: “Blijven zitten, eerst wordt de afdeling geteld.”",
+            "angle": "Een gewone Zeeuwse schooldag kantelt door de groepsleider en de telling."
+          },
+          {
+            "variant_id": "V2",
+            "text": "Tijdens het mentoroverleg zei ik dat ik volgens het lesrooster na school langs de Zeeuwse dijk wilde fietsen. De groepsleider knikte: “Prima, zodra alle deuren dicht zijn en iedereen is geteld.”",
+            "angle": "Een toekomstig fietstochtje krijgt een onverwachte voorwaarde."
+          },
+          {
+            "variant_id": "V3",
+            "text": "Onze docent gaf huiswerk mee en zei dat we volgens het lesrooster na de pauze terug naar het lokaal mochten; door het raam zagen we fietsers op de Zeeuwse dijk. Toen riep de groepsleider: “Eerst terug naar de afdeling, nadat jullie zijn geteld.”",
+            "angle": "Huiswerk en pauze blijven schoolachtig, maar de terugkeer blijkt gecontroleerd."
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een leerling beleeft een gewone Zeeuwse middelbare-schooldag met een lesrooster, werkbladen, pauze en uitzicht op de dijk.",
+            "realized_script_b": "De leerling blijkt onderwijs te volgen binnen een beveiligde justitiële jeugdinrichting, waar een groepsleider de afdeling laat tellen.",
+            "realized_opposition_axis": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De schoolse opzet, gedeelde rooster- en lescues, en de slotmelding over de groepsleider en de telling realiseren precies de beoogde scriptwisseling."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De telling van de afdeling herkadert de eerdere gewone schoolroutine retrospectief als een gecontroleerde detentieroutine."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst bevat een Zeeuwse onderwijssetting, lesrooster, werkbladen, afgebakende pauze, dijkzicht, groepsleider en afdeling."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Script A domineert de eerste zin; de tweede zin plaatst de groepsleider en telling als duidelijke late omslag."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het lexicale anker \"lesrooster\" is aanwezig en de tekst eindigt functioneel op \"geteld\"."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V1 volgt het plan zeer direct: een herkenbare schooldag wordt aan het einde door de telling van de afdeling als detentieonderwijs onthuld.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Een scholier bespreekt tijdens een mentoroverleg het plan om na school langs de Zeeuwse dijk te fietsen.",
+            "realized_script_b": "De scholier bevindt zich in een gecontroleerde instelling waar verplaatsingen afhangen van afgesloten deuren en een telling.",
+            "realized_opposition_axis": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het gewone school- en fietsscenario wordt door groepsleider, gesloten deuren en telling omgebogen naar de beoogde vrijheidsbenemende setting."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De voorwaarden voor het fietstochtje maken de eerder vanzelfsprekend vrije naschoolse verplaatsing retrospectief ongewoon gecontroleerd."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Mentoroverleg, lesrooster, Zeeuwse dijk, groepsleider, deuren en telling realiseren de functionele kern van de bedoelde situatie."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst begint met een alledaags toekomstplan en bewaart de institutionele aanwijzingen voor de repliek aan het einde."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "\"Lesrooster\" is behouden als anker en \"geteld\" fungeert als eindwoord van de omslag."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V2 realiseert dezelfde geplande omslag via een schijnbaar vrij naschools fietstochtje dat afhankelijk blijkt van detentieprocedures.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Leerlingen krijgen huiswerk, volgen een lesrooster, hebben pauze en zien vanaf school fietsers op een Zeeuwse dijk.",
+            "realized_script_b": "De leerlingen zijn jonge gedetineerden die na een gecontroleerde telling naar hun afdeling terugkeren.",
+            "realized_opposition_axis": "vrijheid binnen schoolregels versus onderwijs onder vrijheidsbeneming",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Huiswerk, pauze, lokaal en dijkzicht vormen de schoolse overlap; groepsleider, afdeling en telling leveren de geplande detentieherinterpretatie."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De instructie om na telling naar de afdeling terug te gaan verklaart waarom de schoolroutine in werkelijkheid door toezicht en controle wordt bepaald."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant noemt docent, lesrooster, huiswerk, pauze, lokaal, groepsleider, afdeling, telling en het Zeeuwse dijkzicht."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Een schoolse beschrijving domineert aanvankelijk; de groepsleider introduceert pas aan het slot de gecontroleerde terugkeer naar de afdeling."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het anker \"lesrooster\" en het geplande punch-eindwoord \"geteld\" zijn beide behouden."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V3 behoudt de bedoelde schoolse misleiding en maakt via de afdeling en telling duidelijk dat het om onderwijs binnen detentie gaat.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "V1 heeft de zuiverste opbouw: de gewone schooldag domineert, waarna „groepsleider”, „afdeling” en „geteld” in één korte slotzin de herinterpretatie leveren. V2 is eveneens helder, maar de gesloten deuren maken de instelling eerder zichtbaar en verzwakken de verrassing."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V1",
+            "rationale": "Beide varianten realiseren alle vereiste middelen en eindigen met een duidelijke telling. V1 is echter compacter, beter mondeling vertelbaar en laat de omslag scherper landen; V3 stapelt huiswerk, pauze, lokaal en dijkzicht, waardoor de pointe minder direct wordt."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V2",
+            "rationale": "V2 gebruikt het vrije plan om langs de dijk te fietsen als sterke tegenhanger van de latere controle. Daardoor is de vrijheidsbeneming sneller en grappiger voelbaar dan in V3, waarvan de lange, procedurele terugkeer naar de afdeling de timing afremt."
+          }
+        ],
+        "selected_variant_id": "V1",
+        "selection_rationale": "V1 is de sterkste passer: het behoudt alle verplichte schoolse en institutionele ankers, voert een heldere late scriptwissel uit en herkadert de schoolroutine efficiënt als onderwijs onder vrijheidsbeneming. De korte slotrepliek is bovendien het best performbaar als gesproken joke."
+      }
+    }
+  },
+  "result_sha256": "b5a91ef0f13f17d01d381a9b9ffa4ee1be837719ac8eda4062f5db5a959431f3"
+}

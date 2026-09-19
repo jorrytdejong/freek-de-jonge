@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-20T07:13:58.504889+00:00",
+  "job": {
+    "job_id": "T01-E2",
+    "topic_id": "T01",
+    "topic": "Familie en opvoeding",
+    "condition_code": "E2"
+  },
+  "attempt": 3,
+  "exception_type": "ValueError",
+  "message": "Variant V1 full_text must contain its exact setup and punchline."
+}

@@ -1,0 +1,888 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T07-E1",
+  "topic_id": "T07",
+  "topic": "Gezondheid, ziekte en zorg",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T16:29:25.251863+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Gezondheid, ziekte en zorg",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.\",\n      \"Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.\",\n      \"Eventueel naaste: biedt praktische of emotionele steun.\",\n      \"Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.\",\n    \"preconditions\": [\n      \"De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.\",\n      \"De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.\",\n      \"Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.\",\n      \"Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt plant een consult of meldt zich bij de zorginstelling.\",\n      \"De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.\",\n      \"De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.\",\n      \"De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.\",\n      \"De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.\",\n      \"De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren.\"\n    ],\n    \"expected_outcome\": \"De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n      \"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\",\n      \"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\",\n      \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.\",\n      \"Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.\",\n      \"Eventueel naaste: biedt praktische of emotionele steun.\",\n      \"Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.\",\n    \"preconditions\": [\n      \"De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.\",\n      \"De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.\",\n      \"Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.\",\n      \"Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt plant een consult of meldt zich bij de zorginstelling.\",\n      \"De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.\",\n      \"De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.\",\n      \"De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.\",\n      \"De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.\",\n      \"De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren.\"\n    ],\n    \"expected_outcome\": \"De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n      \"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\",\n      \"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\",\n      \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een eigenaar brengt zijn zieke huisdier naar de dierenarts. De dierenarts onderzoekt het dier, stelt vragen over gedrag, voeding en ontlasting en schrijft een behandeling voor om het dier beter te maken.\",\n      \"opposition_axis\": \"Menselijke patiëntenzorg versus diergeneeskundige zorg voor een dier.\",\n      \"opposed_proposition\": \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n      \"shared_anchor\": \"Een consult met onderzoek en behandeladvies.\",\n      \"reading_a\": \"Een menselijke patiënt vertelt een arts over pijn, vermoeidheid en andere klachten.\",\n      \"reading_b\": \"Een eigenaar beschrijft namens een dier veranderingen in eetlust, gedrag en lichamelijke toestand aan een dierenarts.\",\n      \"roles_b\": [\n        \"Huisdiereigenaar: observeert klachten en wil dat het dier herstelt.\",\n        \"Dier: feitelijke patiënt die niet zelf kan uitleggen wat er mis is.\",\n        \"Dierenarts: onderzoekt het dier en bepaalt de behandeling.\",\n        \"Dierenartsassistent: houdt het dier vast, registreert gegevens of verstrekt medicatie.\"\n      ],\n      \"goal_b\": \"De aandoening van het huisdier vaststellen en het dier veilig laten herstellen.\",\n      \"role_remapping\": [\n        \"De ogenschijnlijke patiënt uit Script A wordt in Script B de huisdiereigenaar die de klachten rapporteert.\",\n        \"De zorgverlener blijft onderzoeker en behandelaar, maar wordt een dierenarts.\",\n        \"De feitelijke patiënt in Script B is het aanvankelijk ongenoemde huisdier.\",\n        \"Een eventuele naaste uit Script A kan worden herlezen als dierenartsassistent.\"\n      ],\n      \"shared_cues\": [\n        \"Een wachtruimte met balie en afspraakgegevens.\",\n        \"Vragen over wanneer de klachten begonnen.\",\n        \"Een onderzoekstafel, thermometer en dossier.\",\n        \"Advies over medicatie, rust en een controle-afspraak.\"\n      ],\n      \"switch_trigger\": \"De zorgverlener vraagt plotseling hoeveel brokjes de patiënt per dag eet.\",\n      \"hinge_event\": \"De assistent tilt een mand met een miauwende kat op de onderzoekstafel.\",\n      \"anomaly_under_a\": \"Onder Script A is het ongepast en onbegrijpelijk dat een volwassen menselijke patiënt in een reismand arriveert en dat diens dieet in brokjes wordt uitgedrukt.\",\n      \"resolution_under_b\": \"Onder Script B blijkt de reismand noodzakelijk: de kat is de patiënt, terwijl de eigenaar alleen diens symptomen heeft verwoord. De vraag over brokjes is daardoor precies de relevante anamnese.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een medewerker met langdurig verzuim heeft een gesprek met een bedrijfsarts en casemanager. Het gesprek richt zich niet primair op genezing, maar op belastbaarheid, werkhervatting, aanpassingen en de administratieve verplichtingen van werkgever en werknemer.\",\n      \"opposition_axis\": \"Zorg gericht op herstel versus beoordeling gericht op inzetbaarheid en re-integratie.\",\n      \"opposed_proposition\": \"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\",\n      \"shared_anchor\": \"Een professioneel gesprek over klachten en een vervolgplan.\",\n      \"reading_a\": \"Een patiënt legt medische klachten uit aan een behandelaar die een diagnose en therapie voorbereidt.\",\n      \"reading_b\": \"Een werknemer bespreekt beperkingen met een bedrijfsarts die adviseert welke werkzaamheden en uren voorlopig verantwoord zijn.\",\n      \"roles_b\": [\n        \"Werknemer: meldt beperkingen en wil een haalbare terugkeer naar werk.\",\n        \"Bedrijfsarts: beoordeelt belastbaarheid en adviseert onafhankelijk over werkhervatting.\",\n        \"Casemanager of werkgever: organiseert passende aanpassingen en bewaakt het traject.\",\n        \"Behandelend arts: kan, op afstand, medische informatie leveren met toestemming van de werknemer.\"\n      ],\n      \"goal_b\": \"Een juridisch en praktisch verantwoord plan maken voor werkhervatting zonder de werknemer te overbelasten.\",\n      \"role_remapping\": [\n        \"De patiënt uit Script A wordt de werknemer met gezondheidsbeperkingen.\",\n        \"De zorgverlener wordt de bedrijfsarts, die adviseert over functionele mogelijkheden in plaats van behandeling te geven.\",\n        \"De naaste of aanvullende zorgpartij uit Script A wordt de casemanager of werkgever.\",\n        \"Het behandelplan wordt een re-integratieplan met werkafspraken.\"\n      ],\n      \"shared_cues\": [\n        \"Een afspraak in een spreekkamer.\",\n        \"Vragen over klachten, slaap, energie en dagelijkse activiteiten.\",\n        \"Aantekeningen in een dossier.\",\n        \"Een vervolgafspraak en schriftelijk advies.\"\n      ],\n      \"switch_trigger\": \"De arts vraagt niet welke medicatie moet worden aangepast, maar of de werknemer volgende week twee uur achter een scherm kan werken.\",\n      \"hinge_event\": \"De casemanager schuift een rooster met aangepaste uren en taken over tafel.\",\n      \"anomaly_under_a\": \"Binnen Script A is een werkrooster een vreemd antwoord op een medische hulpvraag: het behandelt de klacht niet en lijkt de aandacht van gezondheid af te leiden.\",\n      \"resolution_under_b\": \"Binnen Script B is het rooster juist het doel van het consult. De klachten worden vertaald naar belastbaarheid, zodat terugkeer naar werk veilig en stapsgewijs kan gebeuren.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een klant bezoekt een opticien omdat hij slecht ziet en hoofdpijn krijgt bij het lezen. De opticien meet de ogen, laat glazen vergelijken en adviseert een bril of contactlenzen die het zicht corrigeren.\",\n      \"opposition_axis\": \"Medische diagnose en behandeling versus commerciële optische correctie en productkeuze.\",\n      \"opposed_proposition\": \"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\",\n      \"shared_anchor\": \"Onderzoek van een klacht gevolgd door een advies.\",\n      \"reading_a\": \"Een patiënt ondergaat medisch onderzoek omdat wazig zien een symptoom kan zijn van een aandoening die een arts moet vaststellen.\",\n      \"reading_b\": \"Een klant laat zijn gezichtsscherpte meten om de juiste sterkte en het passende montuur te kiezen.\",\n      \"roles_b\": [\n        \"Klant: ervaart slecht zicht en zoekt visuele correctie.\",\n        \"Opticien: meet gezichtsscherpte, vergelijkt sterktes en adviseert glazen.\",\n        \"Verkoopmedewerker: helpt bij montuur, prijs en bestelling.\",\n        \"Optometrist, indien aanwezig: voert aanvullende oogscreening uit en verwijst zo nodig door.\"\n      ],\n      \"goal_b\": \"De klant scherp en comfortabel laten zien met passende glazen of lenzen.\",\n      \"role_remapping\": [\n        \"De patiënt uit Script A wordt de klant met een zichtprobleem.\",\n        \"De zorgverlener wordt een opticien of optometrist.\",\n        \"De behandeling uit Script A wordt een bril, lensaanpassing of eventuele verwijzing.\",\n        \"De aanvullende zorgpartij wordt een verkoopmedewerker of brillenglazenleverancier.\"\n      ],\n      \"shared_cues\": [\n        \"Vragen over hoofdpijn, lezen en autorijden.\",\n        \"Een test met letters op afstand.\",\n        \"Het afdekken van één oog en vergelijken van opties.\",\n        \"Een advies dat de klacht moet verminderen.\"\n      ],\n      \"switch_trigger\": \"Na de oogmeting vraagt de onderzoeker welke kleur montuur het beste bij de jas van de klant past.\",\n      \"hinge_event\": \"De onderzoeker zet vijf brillen op een spiegeltafel en noemt een aanbieding voor dunne glazen.\",\n      \"anomaly_under_a\": \"Onder Script A is het vreemd dat een medische beoordeling overgaat in kleuradvies, montuurpassen en een prijsaanbieding; dat lijkt geen veilige behandeling.\",\n      \"resolution_under_b\": \"Onder Script B is de overgang logisch: de meting dient om corrigerende glazen te verkopen en passend te maken. Het montuur en de glazen zijn de praktische oplossing voor het zichtprobleem.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.\",\n      \"opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n      \"opposed_proposition\": \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"shared_anchor\": \"Een arts bespreekt klachten, onderzoek en een diagnose.\",\n      \"reading_a\": \"Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.\",\n      \"reading_b\": \"Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.\",\n      \"roles_b\": [\n        \"Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.\",\n        \"Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.\",\n        \"Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.\",\n        \"Filmcrew: bedient camera, geluid, licht, grime en rekwisieten.\"\n      ],\n      \"goal_b\": \"Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.\",\n      \"role_remapping\": [\n        \"De patiënt uit Script A wordt een acteur met een roltekst.\",\n        \"De zorgverlener uit Script A wordt een acteur die een arts speelt.\",\n        \"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\",\n        \"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\"\n      ],\n      \"shared_cues\": [\n        \"Een witte jas, onderzoekstafel en medisch dossier.\",\n        \"Vragen naar pijn, duur van klachten en medicatie.\",\n        \"Een stethoscoop en een voorgedragen diagnose.\",\n        \"Geruststellende instructies over een vervolgbehandeling.\"\n      ],\n      \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\"\",\n      \"hinge_event\": \"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\",\n      \"anomaly_under_a\": \"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\",\n      \"resolution_under_b\": \"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.\",\n      \"Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.\",\n      \"Eventueel naaste: biedt praktische of emotionele steun.\",\n      \"Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.\",\n    \"preconditions\": [\n      \"De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.\",\n      \"De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.\",\n      \"Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.\",\n      \"Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt plant een consult of meldt zich bij de zorginstelling.\",\n      \"De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.\",\n      \"De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.\",\n      \"De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.\",\n      \"De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.\",\n      \"De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren.\"\n    ],\n    \"expected_outcome\": \"De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n      \"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\",\n      \"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\",\n      \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een eigenaar brengt zijn zieke huisdier naar de dierenarts. De dierenarts onderzoekt het dier, stelt vragen over gedrag, voeding en ontlasting en schrijft een behandeling voor om het dier beter te maken.\",\n      \"opposition_axis\": \"Menselijke patiëntenzorg versus diergeneeskundige zorg voor een dier.\",\n      \"opposed_proposition\": \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n      \"shared_anchor\": \"Een consult met onderzoek en behandeladvies.\",\n      \"reading_a\": \"Een menselijke patiënt vertelt een arts over pijn, vermoeidheid en andere klachten.\",\n      \"reading_b\": \"Een eigenaar beschrijft namens een dier veranderingen in eetlust, gedrag en lichamelijke toestand aan een dierenarts.\",\n      \"roles_b\": [\n        \"Huisdiereigenaar: observeert klachten en wil dat het dier herstelt.\",\n        \"Dier: feitelijke patiënt die niet zelf kan uitleggen wat er mis is.\",\n        \"Dierenarts: onderzoekt het dier en bepaalt de behandeling.\",\n        \"Dierenartsassistent: houdt het dier vast, registreert gegevens of verstrekt medicatie.\"\n      ],\n      \"goal_b\": \"De aandoening van het huisdier vaststellen en het dier veilig laten herstellen.\",\n      \"role_remapping\": [\n        \"De ogenschijnlijke patiënt uit Script A wordt in Script B de huisdiereigenaar die de klachten rapporteert.\",\n        \"De zorgverlener blijft onderzoeker en behandelaar, maar wordt een dierenarts.\",\n        \"De feitelijke patiënt in Script B is het aanvankelijk ongenoemde huisdier.\",\n        \"Een eventuele naaste uit Script A kan worden herlezen als dierenartsassistent.\"\n      ],\n      \"shared_cues\": [\n        \"Een wachtruimte met balie en afspraakgegevens.\",\n        \"Vragen over wanneer de klachten begonnen.\",\n        \"Een onderzoekstafel, thermometer en dossier.\",\n        \"Advies over medicatie, rust en een controle-afspraak.\"\n      ],\n      \"switch_trigger\": \"De zorgverlener vraagt plotseling hoeveel brokjes de patiënt per dag eet.\",\n      \"hinge_event\": \"De assistent tilt een mand met een miauwende kat op de onderzoekstafel.\",\n      \"anomaly_under_a\": \"Onder Script A is het ongepast en onbegrijpelijk dat een volwassen menselijke patiënt in een reismand arriveert en dat diens dieet in brokjes wordt uitgedrukt.\",\n      \"resolution_under_b\": \"Onder Script B blijkt de reismand noodzakelijk: de kat is de patiënt, terwijl de eigenaar alleen diens symptomen heeft verwoord. De vraag over brokjes is daardoor precies de relevante anamnese.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.\",\n      \"opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n      \"opposed_proposition\": \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"shared_anchor\": \"Een arts bespreekt klachten, onderzoek en een diagnose.\",\n      \"reading_a\": \"Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.\",\n      \"reading_b\": \"Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.\",\n      \"roles_b\": [\n        \"Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.\",\n        \"Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.\",\n        \"Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.\",\n        \"Filmcrew: bedient camera, geluid, licht, grime en rekwisieten.\"\n      ],\n      \"goal_b\": \"Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.\",\n      \"role_remapping\": [\n        \"De patiënt uit Script A wordt een acteur met een roltekst.\",\n        \"De zorgverlener uit Script A wordt een acteur die een arts speelt.\",\n        \"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\",\n        \"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\"\n      ],\n      \"shared_cues\": [\n        \"Een witte jas, onderzoekstafel en medisch dossier.\",\n        \"Vragen naar pijn, duur van klachten en medicatie.\",\n        \"Een stethoscoop en een voorgedragen diagnose.\",\n        \"Geruststellende instructies over een vervolgbehandeling.\"\n      ],\n      \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\"\",\n      \"hinge_event\": \"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\",\n      \"anomaly_under_a\": \"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\",\n      \"resolution_under_b\": \"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.\",\n      \"Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.\",\n      \"Eventueel naaste: biedt praktische of emotionele steun.\",\n      \"Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.\",\n    \"preconditions\": [\n      \"De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.\",\n      \"De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.\",\n      \"Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.\",\n      \"Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt plant een consult of meldt zich bij de zorginstelling.\",\n      \"De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.\",\n      \"De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.\",\n      \"De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.\",\n      \"De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.\",\n      \"De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren.\"\n    ],\n    \"expected_outcome\": \"De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n      \"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\",\n      \"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\",\n      \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B4\",\n    \"script_b\": \"Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.\",\n    \"opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n    \"opposed_proposition\": \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n    \"shared_anchor\": \"Een arts bespreekt klachten, onderzoek en een diagnose.\",\n    \"reading_a\": \"Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.\",\n    \"reading_b\": \"Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.\",\n    \"roles_b\": [\n      \"Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.\",\n      \"Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.\",\n      \"Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.\",\n      \"Filmcrew: bedient camera, geluid, licht, grime en rekwisieten.\"\n    ],\n    \"goal_b\": \"Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.\",\n    \"role_remapping\": [\n      \"De patiënt uit Script A wordt een acteur met een roltekst.\",\n      \"De zorgverlener uit Script A wordt een acteur die een arts speelt.\",\n      \"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\",\n      \"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\"\n    ],\n    \"shared_cues\": [\n      \"Een witte jas, onderzoekstafel en medisch dossier.\",\n      \"Vragen naar pijn, duur van klachten en medicatie.\",\n      \"Een stethoscoop en een voorgedragen diagnose.\",\n      \"Geruststellende instructies over een vervolgbehandeling.\"\n    ],\n    \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\"\",\n    \"hinge_event\": \"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\",\n    \"anomaly_under_a\": \"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\",\n    \"resolution_under_b\": \"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"script_a\": {\n    \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.\",\n    \"participants_and_roles\": [\n      \"Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.\",\n      \"Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.\",\n      \"Eventueel naaste: biedt praktische of emotionele steun.\",\n      \"Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan.\"\n    ],\n    \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.\",\n    \"preconditions\": [\n      \"De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.\",\n      \"Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.\",\n      \"De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.\",\n      \"Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.\",\n      \"Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid.\"\n    ],\n    \"expected_actions\": [\n      \"De patiënt plant een consult of meldt zich bij de zorginstelling.\",\n      \"De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.\",\n      \"De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.\",\n      \"De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.\",\n      \"De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.\",\n      \"De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren.\"\n    ],\n    \"expected_outcome\": \"De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.\",\n    \"expected_propositions\": [\n      \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n      \"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\",\n      \"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\",\n      \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting.\"\n    ],\n    \"audience_expectation\": \"Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B4\",\n    \"script_b\": \"Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.\",\n    \"opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n    \"opposed_proposition\": \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n    \"shared_anchor\": \"Een arts bespreekt klachten, onderzoek en een diagnose.\",\n    \"reading_a\": \"Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.\",\n    \"reading_b\": \"Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.\",\n    \"roles_b\": [\n      \"Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.\",\n      \"Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.\",\n      \"Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.\",\n      \"Filmcrew: bedient camera, geluid, licht, grime en rekwisieten.\"\n    ],\n    \"goal_b\": \"Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.\",\n    \"role_remapping\": [\n      \"De patiënt uit Script A wordt een acteur met een roltekst.\",\n      \"De zorgverlener uit Script A wordt een acteur die een arts speelt.\",\n      \"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\",\n      \"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\"\n    ],\n    \"shared_cues\": [\n      \"Een witte jas, onderzoekstafel en medisch dossier.\",\n      \"Vragen naar pijn, duur van klachten en medicatie.\",\n      \"Een stethoscoop en een voorgedragen diagnose.\",\n      \"Geruststellende instructies over een vervolgbehandeling.\"\n    ],\n    \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\"\",\n    \"hinge_event\": \"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\",\n    \"anomaly_under_a\": \"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\",\n    \"resolution_under_b\": \"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n    \"logical_mechanism\": \"Scriptomschakeling door onthulling: een ogenschijnlijk echt medisch consult wordt via een metanarratieve onderbreking herkend als een geënsceneerde televisieopname.\",\n    \"situation\": \"Een acteur in de patiëntrol en een acteur in de artsrol spelen in een ziekenhuisdecor een consult met klachten, onderzoek, diagnose en behandeladvies. Een regisseur en filmcrew zijn aanwezig met camera, geluid, licht, grime, rekwisieten, een witte jas, onderzoekstafel, medisch dossier en stethoscoop.\",\n    \"target\": \"De conventie dat medische scènes op televisie vanzelfsprekend authentiek en ernstig aanvoelen.\",\n    \"narrative_strategy\": \"De opbouw presenteert eerst een geloofwaardig, besloten medisch consult met herkenbare zorgsignalen. De punchline onderbreekt dit consult met een aanwijzing voor camera en tekst, waardoor alle eerdere medische handelingen retrospectief een repetitie of opname blijken.\",\n    \"lexical_anchor\": \"diagnose\",\n    \"supporting_dual_cues\": [\n      \"Een witte jas, onderzoekstafel en medisch dossier.\",\n      \"Vragen naar pijn, duur van klachten en medicatie.\",\n      \"Een stethoscoop en een voorgedragen diagnose.\",\n      \"Geruststellende instructies over een vervolgbehandeling.\"\n    ],\n    \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\"\",\n    \"hinge_event\": \"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\",\n    \"anomaly_under_a\": \"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\",\n    \"resolution_under_b\": \"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\",\n    \"role_remapping\": [\n      \"De patiënt uit Script A wordt een acteur met een roltekst.\",\n      \"De zorgverlener uit Script A wordt een acteur die een arts speelt.\",\n      \"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\",\n      \"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\"\n    ],\n    \"setup_goal\": \"Script A dominant maken door de scène te laten beginnen als een serieus en herkenbaar consult, met medische vragen, onderzoek, diagnose en geruststellend behandeladvies.\",\n    \"punch_goal\": \"Script B activeren door de consultlogica te breken met de zichtbare camera en de vraag om tekst, zodat de patiënt en arts worden herlezen als acteurs in een opname.\",\n    \"punch_final_word\": \"tekst\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.\",\n      \"participants_and_roles\": [\n        \"Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.\",\n        \"Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.\",\n        \"Eventueel naaste: biedt praktische of emotionele steun.\",\n        \"Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan.\"\n      ],\n      \"apparent_goal\": \"De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.\",\n      \"preconditions\": [\n        \"De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.\",\n        \"Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.\",\n        \"De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.\",\n        \"Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.\",\n        \"Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid.\"\n      ],\n      \"expected_actions\": [\n        \"De patiënt plant een consult of meldt zich bij de zorginstelling.\",\n        \"De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.\",\n        \"De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.\",\n        \"De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.\",\n        \"De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.\",\n        \"De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren.\"\n      ],\n      \"expected_outcome\": \"De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.\",\n      \"expected_propositions\": [\n        \"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\",\n        \"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\",\n        \"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\",\n        \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n        \"Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting.\"\n      ],\n      \"audience_expectation\": \"Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.\",\n      \"opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n      \"opposed_proposition\": \"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\",\n      \"shared_anchor\": \"Een arts bespreekt klachten, onderzoek en een diagnose.\",\n      \"reading_a\": \"Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.\",\n      \"reading_b\": \"Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.\",\n      \"roles_b\": [\n        \"Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.\",\n        \"Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.\",\n        \"Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.\",\n        \"Filmcrew: bedient camera, geluid, licht, grime en rekwisieten.\"\n      ],\n      \"goal_b\": \"Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.\",\n      \"role_remapping\": [\n        \"De patiënt uit Script A wordt een acteur met een roltekst.\",\n        \"De zorgverlener uit Script A wordt een acteur die een arts speelt.\",\n        \"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\",\n        \"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\"\n      ],\n      \"shared_cues\": [\n        \"Een witte jas, onderzoekstafel en medisch dossier.\",\n        \"Vragen naar pijn, duur van klachten en medicatie.\",\n        \"Een stethoscoop en een voorgedragen diagnose.\",\n        \"Geruststellende instructies over een vervolgbehandeling.\"\n      ],\n      \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\"\",\n      \"hinge_event\": \"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\",\n      \"anomaly_under_a\": \"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\",\n      \"resolution_under_b\": \"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n      \"logical_mechanism\": \"Scriptomschakeling door onthulling: een ogenschijnlijk echt medisch consult wordt via een metanarratieve onderbreking herkend als een geënsceneerde televisieopname.\",\n      \"situation\": \"Een acteur in de patiëntrol en een acteur in de artsrol spelen in een ziekenhuisdecor een consult met klachten, onderzoek, diagnose en behandeladvies. Een regisseur en filmcrew zijn aanwezig met camera, geluid, licht, grime, rekwisieten, een witte jas, onderzoekstafel, medisch dossier en stethoscoop.\",\n      \"target\": \"De conventie dat medische scènes op televisie vanzelfsprekend authentiek en ernstig aanvoelen.\",\n      \"narrative_strategy\": \"De opbouw presenteert eerst een geloofwaardig, besloten medisch consult met herkenbare zorgsignalen. De punchline onderbreekt dit consult met een aanwijzing voor camera en tekst, waardoor alle eerdere medische handelingen retrospectief een repetitie of opname blijken.\",\n      \"lexical_anchor\": \"diagnose\",\n      \"supporting_dual_cues\": [\n        \"Een witte jas, onderzoekstafel en medisch dossier.\",\n        \"Vragen naar pijn, duur van klachten en medicatie.\",\n        \"Een stethoscoop en een voorgedragen diagnose.\",\n        \"Geruststellende instructies over een vervolgbehandeling.\"\n      ],\n      \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\"\",\n      \"hinge_event\": \"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\",\n      \"anomaly_under_a\": \"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\",\n      \"resolution_under_b\": \"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\",\n      \"role_remapping\": [\n        \"De patiënt uit Script A wordt een acteur met een roltekst.\",\n        \"De zorgverlener uit Script A wordt een acteur die een arts speelt.\",\n        \"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\",\n        \"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\"\n      ],\n      \"setup_goal\": \"Script A dominant maken door de scène te laten beginnen als een serieus en herkenbaar consult, met medische vragen, onderzoek, diagnose en geruststellend behandeladvies.\",\n      \"punch_goal\": \"Script B activeren door de consultlogica te breken met de zichtbare camera en de vraag om tekst, zodat de patiënt en arts worden herlezen als acteurs in een opname.\",\n      \"punch_final_word\": \"tekst\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is. Dan kijkt hij naar de camera: \\\"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\\\"\",\n      \"angle\": \"Een geloofwaardig consult kantelt wanneer de arts zijn dialoog kwijt blijkt.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor. Hij trekt de stethoscoop af, knikt naar de camera en roept: \\\"Regisseur, grotere tekst!\\\"\",\n      \"angle\": \"De medische uitleg blijkt een opname waarin de arts zijn roltekst nodig heeft.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt. Net voor het advies kijkt de arts naar de camera: \\\"Wacht, ik mis mijn tekst.\\\"\",\n      \"angle\": \"De zorgvuldig opgebouwde diagnose wordt onderbroken door een acteur die zijn tekst zoekt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Gezondheid, ziekte en zorg\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is. Dan kijkt hij naar de camera: \\\"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\\\"\",\n      \"angle\": \"Een geloofwaardig consult kantelt wanneer de arts zijn dialoog kwijt blijkt.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor. Hij trekt de stethoscoop af, knikt naar de camera en roept: \\\"Regisseur, grotere tekst!\\\"\",\n      \"angle\": \"De medische uitleg blijkt een opname waarin de arts zijn roltekst nodig heeft.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt. Net voor het advies kijkt de arts naar de camera: \\\"Wacht, ik mis mijn tekst.\\\"\",\n      \"angle\": \"De zorgvuldig opgebouwde diagnose wordt onderbroken door een acteur die zijn tekst zoekt.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een ogenschijnlijk serieus medisch consult: een arts vraagt naar pijn, onderzoekt met een stethoscoop en geeft een behandelbare diagnose.\",\n      \"realized_script_b\": \"Een opname of repetitie van een ziekenhuisserie, waarin de arts een acteur is die zijn dialoog kwijt is.\",\n      \"realized_opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De medische consultlezing wordt dominant opgebouwd met witte jas, klachtenvraag, stethoscoop en diagnose. De camera plus de vraag naar zijn tekst dwingen een herlezing als gespeelde scène; de beoogde as en omschakeling blijven functioneel intact.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De onverwachte blik naar de camera en het zoeken naar tekst onthullen retrospectief dat de arts geen echte zorgverlener in consult is, maar een acteur.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De kernsituatie van patiënt, arts, medisch onderzoek en een filmcamera is gerealiseerd, ook al worden regisseur en verdere crew niet expliciet genoemd.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant gebruikt de vanzelfsprekend ernstig en authentiek aandoende televisiemedische scène als het object dat door de onthulling wordt ondergraven.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Eerst staat een geloofwaardig consult centraal; de slotzin breekt dat consult met camera- en tekstsignalen en veroorzaakt retrospectieve herinterpretatie.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De lexicale ankers 'diagnose' en 'tekst' zijn aanwezig; de formulering is natuurlijk en het eindigt functioneel op de tekst-onthulling.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V1 realiseert de geplande consult-naar-opnameomslag helder en compact; de exacte offscreen-stopzin ontbreekt, maar camera en vergeten tekst vervullen dezelfde omschakelfunctie.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een arts voert een regulier consult uit met vragen over medicatie en slaap, onderzoek aan een onderzoekstafel, een geruststellende diagnose en vervolgbehandeling.\",\n      \"realized_script_b\": \"Een gefilmde ziekenhuisscène waarin de arts een acteur is en de regisseur om een aanpassing van de tekstweergave wordt gevraagd.\",\n      \"realized_opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De setup bevat duidelijke zorgsignalen en de combinatie van camera en aangesproken regisseur onthult een productiecontext. De specifieke vraag om 'grotere tekst' is minder rechtstreeks een vergeten roltekst, maar behoudt de beoogde opnamelezing.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De consultlogica wordt achteraf verklaarbaar als opname doordat de arts naar de camera knikt en de regisseur aanspreekt.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Arts, patiëntcontext, onderzoekstafel, medische handelingen, camera en regisseur realiseren functioneel de geplande ziekenhuisproductiesituatie.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De schijnbare ernst en authenticiteit van een medische televisiescène wordt via de productieverwijzing doorgeprikt.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bouwt eerst een volledig consult op en plaatst de productieonthulling aan het einde.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De ankers 'diagnose' en 'tekst' zijn aanwezig, maar 'Regisseur, grotere tekst!' is geen natuurlijke of precieze Nederlandse manier om een ontbrekende of beter leesbare roltekst te vragen.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": false,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V2 volgt de bedoelde opname-onthulling inhoudelijk goed, maar de punchformulering 'grotere tekst' klinkt onnatuurlijk en maakt de beoogde roltekst-hinge minder scherp.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een patiënt beschrijft duizeligheid aan een arts, die dossier en hartonderzoek gebruikt en een ernstige diagnose met advies lijkt voor te bereiden.\",\n      \"realized_script_b\": \"Een opname of repetitie waarin de arts een acteur is die vlak voor zijn volgende repliek zijn tekst mist.\",\n      \"realized_opposition_axis\": \"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Patiënt, witte jas, dossier, hartonderzoek en diagnose bouwen een echte zorglezing op. De camera en ontbrekende tekst zetten die lezing om naar een gespeelde medische scène.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekstvraag is binnen een echt consult ongepast, maar wordt logisch zodra de arts als acteur in een opname wordt herlezen.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bevat de functionele kern van de geplande situatie: patiëntrol, artsrol, medische rekwisieten/handelingen en een camera als productiesignaal.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant laat de ogenschijnlijke ernst en authenticiteit van een medische scène omslaan in zichtbare fictie.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Een geloofwaardig consult wordt tot vlak voor het advies opgebouwd; de slotwending naar de camera activeert de tweede lezing op de punchpositie.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"'Diagnose' en het finale 'tekst' realiseren de vereiste lexicale ankers, en de formulering klinkt natuurlijk.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"V3 realiseert de beoogde omschakeling duidelijk. De diagnose en het behandeladvies worden niet volledig uitgesproken, maar de opgebouwde consultcontext is sterk genoeg voor de opname-onthulling.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is. Dan kijkt hij naar de camera: \"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\"",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.",
+      "opposing_script": "Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.",
+      "opposition_type": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+      "trigger": "Een stem buiten beeld roept: \"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\"",
+      "setup_goal": "Script A dominant maken door de scène te laten beginnen als een serieus en herkenbaar consult, met medische vragen, onderzoek, diagnose en geruststellend behandeladvies.",
+      "punch_goal": "Script B activeren door de consultlogica te breken met de zichtbare camera en de vraag om tekst, zodat de patiënt en arts worden herlezen als acteurs in een opname.",
+      "shared_cues": [
+        "Een witte jas, onderzoekstafel en medisch dossier.",
+        "Vragen naar pijn, duur van klachten en medicatie.",
+        "Een stethoscoop en een voorgedragen diagnose.",
+        "Geruststellende instructies over een vervolgbehandeling."
+      ],
+      "hinge_event": "De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.",
+      "anomaly_under_a": "Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.",
+      "resolution_under_b": "Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.",
+      "role_remapping": [
+        "De patiënt uit Script A wordt een acteur met een roltekst.",
+        "De zorgverlener uit Script A wordt een acteur die een arts speelt.",
+        "De eventuele naaste wordt een tegenspeler, figurant of grimeur.",
+        "Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.\\\",\\\"participants_and_roles\\\":[\\\"Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.\\\",\\\"Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.\\\",\\\"Eventueel naaste: biedt praktische of emotionele steun.\\\",\\\"Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan.\\\"],\\\"apparent_goal\\\":\\\"De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.\\\",\\\"preconditions\\\":[\\\"De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.\\\",\\\"Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.\\\",\\\"De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.\\\",\\\"Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.\\\",\\\"Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid.\\\"],\\\"expected_actions\\\":[\\\"De patiënt plant een consult of meldt zich bij de zorginstelling.\\\",\\\"De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.\\\",\\\"De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.\\\",\\\"De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.\\\",\\\"De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.\\\",\\\"De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren.\\\"],\\\"expected_outcome\\\":\\\"De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.\\\",\\\"expected_propositions\\\":[\\\"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\\\",\\\"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\\\",\\\"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\\\",\\\"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\\\",\\\"Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting.\\\"],\\\"audience_expectation\\\":\\\"Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een eigenaar brengt zijn zieke huisdier naar de dierenarts. De dierenarts onderzoekt het dier, stelt vragen over gedrag, voeding en ontlasting en schrijft een behandeling voor om het dier beter te maken.\\\",\\\"opposition_axis\\\":\\\"Menselijke patiëntenzorg versus diergeneeskundige zorg voor een dier.\\\",\\\"opposed_proposition\\\":\\\"Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.\\\",\\\"shared_anchor\\\":\\\"Een consult met onderzoek en behandeladvies.\\\",\\\"reading_a\\\":\\\"Een menselijke patiënt vertelt een arts over pijn, vermoeidheid en andere klachten.\\\",\\\"reading_b\\\":\\\"Een eigenaar beschrijft namens een dier veranderingen in eetlust, gedrag en lichamelijke toestand aan een dierenarts.\\\",\\\"roles_b\\\":[\\\"Huisdiereigenaar: observeert klachten en wil dat het dier herstelt.\\\",\\\"Dier: feitelijke patiënt die niet zelf kan uitleggen wat er mis is.\\\",\\\"Dierenarts: onderzoekt het dier en bepaalt de behandeling.\\\",\\\"Dierenartsassistent: houdt het dier vast, registreert gegevens of verstrekt medicatie.\\\"],\\\"goal_b\\\":\\\"De aandoening van het huisdier vaststellen en het dier veilig laten herstellen.\\\",\\\"role_remapping\\\":[\\\"De ogenschijnlijke patiënt uit Script A wordt in Script B de huisdiereigenaar die de klachten rapporteert.\\\",\\\"De zorgverlener blijft onderzoeker en behandelaar, maar wordt een dierenarts.\\\",\\\"De feitelijke patiënt in Script B is het aanvankelijk ongenoemde huisdier.\\\",\\\"Een eventuele naaste uit Script A kan worden herlezen als dierenartsassistent.\\\"],\\\"shared_cues\\\":[\\\"Een wachtruimte met balie en afspraakgegevens.\\\",\\\"Vragen over wanneer de klachten begonnen.\\\",\\\"Een onderzoekstafel, thermometer en dossier.\\\",\\\"Advies over medicatie, rust en een controle-afspraak.\\\"],\\\"switch_trigger\\\":\\\"De zorgverlener vraagt plotseling hoeveel brokjes de patiënt per dag eet.\\\",\\\"hinge_event\\\":\\\"De assistent tilt een mand met een miauwende kat op de onderzoekstafel.\\\",\\\"anomaly_under_a\\\":\\\"Onder Script A is het ongepast en onbegrijpelijk dat een volwassen menselijke patiënt in een reismand arriveert en dat diens dieet in brokjes wordt uitgedrukt.\\\",\\\"resolution_under_b\\\":\\\"Onder Script B blijkt de reismand noodzakelijk: de kat is de patiënt, terwijl de eigenaar alleen diens symptomen heeft verwoord. De vraag over brokjes is daardoor precies de relevante anamnese.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een medewerker met langdurig verzuim heeft een gesprek met een bedrijfsarts en casemanager. Het gesprek richt zich niet primair op genezing, maar op belastbaarheid, werkhervatting, aanpassingen en de administratieve verplichtingen van werkgever en werknemer.\\\",\\\"opposition_axis\\\":\\\"Zorg gericht op herstel versus beoordeling gericht op inzetbaarheid en re-integratie.\\\",\\\"opposed_proposition\\\":\\\"Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.\\\",\\\"shared_anchor\\\":\\\"Een professioneel gesprek over klachten en een vervolgplan.\\\",\\\"reading_a\\\":\\\"Een patiënt legt medische klachten uit aan een behandelaar die een diagnose en therapie voorbereidt.\\\",\\\"reading_b\\\":\\\"Een werknemer bespreekt beperkingen met een bedrijfsarts die adviseert welke werkzaamheden en uren voorlopig verantwoord zijn.\\\",\\\"roles_b\\\":[\\\"Werknemer: meldt beperkingen en wil een haalbare terugkeer naar werk.\\\",\\\"Bedrijfsarts: beoordeelt belastbaarheid en adviseert onafhankelijk over werkhervatting.\\\",\\\"Casemanager of werkgever: organiseert passende aanpassingen en bewaakt het traject.\\\",\\\"Behandelend arts: kan, op afstand, medische informatie leveren met toestemming van de werknemer.\\\"],\\\"goal_b\\\":\\\"Een juridisch en praktisch verantwoord plan maken voor werkhervatting zonder de werknemer te overbelasten.\\\",\\\"role_remapping\\\":[\\\"De patiënt uit Script A wordt de werknemer met gezondheidsbeperkingen.\\\",\\\"De zorgverlener wordt de bedrijfsarts, die adviseert over functionele mogelijkheden in plaats van behandeling te geven.\\\",\\\"De naaste of aanvullende zorgpartij uit Script A wordt de casemanager of werkgever.\\\",\\\"Het behandelplan wordt een re-integratieplan met werkafspraken.\\\"],\\\"shared_cues\\\":[\\\"Een afspraak in een spreekkamer.\\\",\\\"Vragen over klachten, slaap, energie en dagelijkse activiteiten.\\\",\\\"Aantekeningen in een dossier.\\\",\\\"Een vervolgafspraak en schriftelijk advies.\\\"],\\\"switch_trigger\\\":\\\"De arts vraagt niet welke medicatie moet worden aangepast, maar of de werknemer volgende week twee uur achter een scherm kan werken.\\\",\\\"hinge_event\\\":\\\"De casemanager schuift een rooster met aangepaste uren en taken over tafel.\\\",\\\"anomaly_under_a\\\":\\\"Binnen Script A is een werkrooster een vreemd antwoord op een medische hulpvraag: het behandelt de klacht niet en lijkt de aandacht van gezondheid af te leiden.\\\",\\\"resolution_under_b\\\":\\\"Binnen Script B is het rooster juist het doel van het consult. De klachten worden vertaald naar belastbaarheid, zodat terugkeer naar werk veilig en stapsgewijs kan gebeuren.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een klant bezoekt een opticien omdat hij slecht ziet en hoofdpijn krijgt bij het lezen. De opticien meet de ogen, laat glazen vergelijken en adviseert een bril of contactlenzen die het zicht corrigeren.\\\",\\\"opposition_axis\\\":\\\"Medische diagnose en behandeling versus commerciële optische correctie en productkeuze.\\\",\\\"opposed_proposition\\\":\\\"Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.\\\",\\\"shared_anchor\\\":\\\"Onderzoek van een klacht gevolgd door een advies.\\\",\\\"reading_a\\\":\\\"Een patiënt ondergaat medisch onderzoek omdat wazig zien een symptoom kan zijn van een aandoening die een arts moet vaststellen.\\\",\\\"reading_b\\\":\\\"Een klant laat zijn gezichtsscherpte meten om de juiste sterkte en het passende montuur te kiezen.\\\",\\\"roles_b\\\":[\\\"Klant: ervaart slecht zicht en zoekt visuele correctie.\\\",\\\"Opticien: meet gezichtsscherpte, vergelijkt sterktes en adviseert glazen.\\\",\\\"Verkoopmedewerker: helpt bij montuur, prijs en bestelling.\\\",\\\"Optometrist, indien aanwezig: voert aanvullende oogscreening uit en verwijst zo nodig door.\\\"],\\\"goal_b\\\":\\\"De klant scherp en comfortabel laten zien met passende glazen of lenzen.\\\",\\\"role_remapping\\\":[\\\"De patiënt uit Script A wordt de klant met een zichtprobleem.\\\",\\\"De zorgverlener wordt een opticien of optometrist.\\\",\\\"De behandeling uit Script A wordt een bril, lensaanpassing of eventuele verwijzing.\\\",\\\"De aanvullende zorgpartij wordt een verkoopmedewerker of brillenglazenleverancier.\\\"],\\\"shared_cues\\\":[\\\"Vragen over hoofdpijn, lezen en autorijden.\\\",\\\"Een test met letters op afstand.\\\",\\\"Het afdekken van één oog en vergelijken van opties.\\\",\\\"Een advies dat de klacht moet verminderen.\\\"],\\\"switch_trigger\\\":\\\"Na de oogmeting vraagt de onderzoeker welke kleur montuur het beste bij de jas van de klant past.\\\",\\\"hinge_event\\\":\\\"De onderzoeker zet vijf brillen op een spiegeltafel en noemt een aanbieding voor dunne glazen.\\\",\\\"anomaly_under_a\\\":\\\"Onder Script A is het vreemd dat een medische beoordeling overgaat in kleuradvies, montuurpassen en een prijsaanbieding; dat lijkt geen veilige behandeling.\\\",\\\"resolution_under_b\\\":\\\"Onder Script B is de overgang logisch: de meting dient om corrigerende glazen te verkopen en passend te maken. Het montuur en de glazen zijn de praktische oplossing voor het zichtprobleem.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.\\\",\\\"opposition_axis\\\":\\\"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\\\",\\\"opposed_proposition\\\":\\\"Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.\\\",\\\"shared_anchor\\\":\\\"Een arts bespreekt klachten, onderzoek en een diagnose.\\\",\\\"reading_a\\\":\\\"Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.\\\",\\\"reading_b\\\":\\\"Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.\\\",\\\"roles_b\\\":[\\\"Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.\\\",\\\"Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.\\\",\\\"Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.\\\",\\\"Filmcrew: bedient camera, geluid, licht, grime en rekwisieten.\\\"],\\\"goal_b\\\":\\\"Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.\\\",\\\"role_remapping\\\":[\\\"De patiënt uit Script A wordt een acteur met een roltekst.\\\",\\\"De zorgverlener uit Script A wordt een acteur die een arts speelt.\\\",\\\"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\\\",\\\"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\\\"],\\\"shared_cues\\\":[\\\"Een witte jas, onderzoekstafel en medisch dossier.\\\",\\\"Vragen naar pijn, duur van klachten en medicatie.\\\",\\\"Een stethoscoop en een voorgedragen diagnose.\\\",\\\"Geruststellende instructies over een vervolgbehandeling.\\\"],\\\"switch_trigger\\\":\\\"Een stem buiten beeld roept: \\\\\\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\\\",\\\"anomaly_under_a\\\":\\\"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\\\",\\\"resolution_under_b\\\":\\\"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eenzelfde consulttekst kan eerst als menselijke patiëntenzorg en daarna als dierenartsconsult worden gelezen. De centrale tegenstelling is eenduidig: de patiënt is een mens versus een dier dat via een eigenaar wordt vertegenwoordigd. De algemene consultcues passen natuurlijk bij beide lezingen, terwijl de vraag naar brokjes en vooral de miauwende kat de menselijke lezing onmogelijk maken. Achteraf krijgen de symptoombeschrijving door de vermeende patiënt en de reismand een andere functie: de eigenaar is informant en de kat is patiënt. Dat het dier niet zelf kan rapporteren blokkeert de menselijke-patiëntrol, maar maakt juist de eigenaar-als-rapporteur in Script B functioneel.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Een professioneel gesprek over klachten met dossier en vervolgafspraak kan als behandelconsult én als bedrijfsartsconsult worden gerealiseerd. Script B is sociaal herkenbaar en het rooster lost de afwijking onder de initiële medische lezing op; eerdere klachtvragen worden achteraf vragen naar belastbaarheid. De gestelde tegenstelling is echter niet strikt lokaal incompatibel: een bedrijfsartsconsult kan tegelijk medische klachten bespreken en op herstel of veilige inzetbaarheid zijn gericht. Behandeling en re-integratie sluiten elkaar dus niet wederzijds uit. Er is ook geen duidelijk omschreven voorwaarde die het doel van Script A blokkeert en dat van Script B mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De gedeelde tekst kan zowel een medisch onderzoek naar wazig zien als een optiekmeting ondersteunen. De opticienlezing is herkenbaar, blijft vóór de trigger beschikbaar en verklaart achteraf waarom de meting overgaat in monturen, glazen en prijs. Die overgang herinterpreteert de eerdere test als voorbereiding op productselectie. De tegenstelling medische zorg versus commerciële correctie is echter niet werkelijk incompatibel: een bril of lenzen kunnen een passende, veilige correctie zijn en een opticien of optometrist kan tevens screenen en verwijzen. De commerciële laag sluit de medische/corrigerende functie niet noodzakelijk uit. Ook is geen expliciete voorwaarde aanwezig die Script A blokkeert terwijl zij Script B mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een tekst met klachten, onderzoek, diagnose en behandeladvies kan aanvankelijk overtuigend als werkelijk consult functioneren en tegelijk als ziekenhuisdrama worden gerealiseerd. De tegenstelling werkelijk behandelen versus medisch handelen spelen is lokaal incompatibel en domineert duidelijk. De medische attributen en dialoog dragen beide lezingen; de opname-instructie en het naar de camera kijken maken de echte-zorglezing afwijkend en bevestigen de repetitie/opnamelezing. Daardoor worden eerdere privacygevoelige en medische elementen achteraf rekwisiet en roltekst. De aanwezigheid van camera en crew verhindert de beslotenheid en zorgfunctie van Script A, maar is juist noodzakelijk voor het entertainmentdoel van Script B.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B4\\\",\\\"rationale\\\":\\\"B4 vormt de scherpste scriptoppositie: dezelfde consultcues blijven lang volledig compatibel met echte zorg, maar krijgen na de onthulling een fundamenteel andere functie als geënsceneerde televisieproductie. De setup domineert overtuigend via medische taal, witte jas, onderzoek en diagnose, terwijl camera- en regiecues een compacte, duidelijke omslag en sterke retrospectieve herlezing mogelijk maken. De tegenstelling tussen vertrouwelijke, professionele zorg en gespeelde zorg voor entertainment is specifieker en dramaturgisch productiever dan de verschuiving naar diergeneeskunde in B1.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\\\",\\\"logical_mechanism\\\":\\\"Scriptomschakeling door onthulling: een ogenschijnlijk echt medisch consult wordt via een metanarratieve onderbreking herkend als een geënsceneerde televisieopname.\\\",\\\"situation\\\":\\\"Een acteur in de patiëntrol en een acteur in de artsrol spelen in een ziekenhuisdecor een consult met klachten, onderzoek, diagnose en behandeladvies. Een regisseur en filmcrew zijn aanwezig met camera, geluid, licht, grime, rekwisieten, een witte jas, onderzoekstafel, medisch dossier en stethoscoop.\\\",\\\"target\\\":\\\"De conventie dat medische scènes op televisie vanzelfsprekend authentiek en ernstig aanvoelen.\\\",\\\"narrative_strategy\\\":\\\"De opbouw presenteert eerst een geloofwaardig, besloten medisch consult met herkenbare zorgsignalen. De punchline onderbreekt dit consult met een aanwijzing voor camera en tekst, waardoor alle eerdere medische handelingen retrospectief een repetitie of opname blijken.\\\",\\\"lexical_anchor\\\":\\\"diagnose\\\",\\\"supporting_dual_cues\\\":[\\\"Een witte jas, onderzoekstafel en medisch dossier.\\\",\\\"Vragen naar pijn, duur van klachten en medicatie.\\\",\\\"Een stethoscoop en een voorgedragen diagnose.\\\",\\\"Geruststellende instructies over een vervolgbehandeling.\\\"],\\\"switch_trigger\\\":\\\"Een stem buiten beeld roept: \\\\\\\"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.\\\",\\\"anomaly_under_a\\\":\\\"Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.\\\",\\\"resolution_under_b\\\":\\\"Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.\\\",\\\"role_remapping\\\":[\\\"De patiënt uit Script A wordt een acteur met een roltekst.\\\",\\\"De zorgverlener uit Script A wordt een acteur die een arts speelt.\\\",\\\"De eventuele naaste wordt een tegenspeler, figurant of grimeur.\\\",\\\"Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor.\\\"],\\\"setup_goal\\\":\\\"Script A dominant maken door de scène te laten beginnen als een serieus en herkenbaar consult, met medische vragen, onderzoek, diagnose en geruststellend behandeladvies.\\\",\\\"punch_goal\\\":\\\"Script B activeren door de consultlogica te breken met de zichtbare camera en de vraag om tekst, zodat de patiënt en arts worden herlezen als acteurs in een opname.\\\",\\\"punch_final_word\\\":\\\"tekst\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is.\\\",\\\"punchline\\\":\\\"Dan kijkt hij naar de camera: \\\\\\\"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\\\\\\\"\\\",\\\"full_text\\\":\\\"De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is. Dan kijkt hij naar de camera: \\\\\\\"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\\\\\\\"\\\",\\\"angle\\\":\\\"Een geloofwaardig consult kantelt wanneer de arts zijn dialoog kwijt blijkt.\\\",\\\"anchor_surface_form\\\":\\\"diagnose\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor.\\\",\\\"punchline\\\":\\\"Hij trekt de stethoscoop af, knikt naar de camera en roept: \\\\\\\"Regisseur, grotere tekst!\\\\\\\"\\\",\\\"full_text\\\":\\\"Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor. Hij trekt de stethoscoop af, knikt naar de camera en roept: \\\\\\\"Regisseur, grotere tekst!\\\\\\\"\\\",\\\"angle\\\":\\\"De medische uitleg blijkt een opname waarin de arts zijn roltekst nodig heeft.\\\",\\\"anchor_surface_form\\\":\\\"diagnose\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt.\\\",\\\"punchline\\\":\\\"Net voor het advies kijkt de arts naar de camera: \\\\\\\"Wacht, ik mis mijn tekst.\\\\\\\"\\\",\\\"full_text\\\":\\\"De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt. Net voor het advies kijkt de arts naar de camera: \\\\\\\"Wacht, ik mis mijn tekst.\\\\\\\"\\\",\\\"angle\\\":\\\"De zorgvuldig opgebouwde diagnose wordt onderbroken door een acteur die zijn tekst zoekt.\\\",\\\"anchor_surface_form\\\":\\\"diagnose\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een ogenschijnlijk serieus medisch consult: een arts vraagt naar pijn, onderzoekt met een stethoscoop en geeft een behandelbare diagnose.\\\",\\\"realized_script_b\\\":\\\"Een opname of repetitie van een ziekenhuisserie, waarin de arts een acteur is die zijn dialoog kwijt is.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De medische consultlezing wordt dominant opgebouwd met witte jas, klachtenvraag, stethoscoop en diagnose. De camera plus de vraag naar zijn tekst dwingen een herlezing als gespeelde scène; de beoogde as en omschakeling blijven functioneel intact.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De onverwachte blik naar de camera en het zoeken naar tekst onthullen retrospectief dat de arts geen echte zorgverlener in consult is, maar een acteur.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De kernsituatie van patiënt, arts, medisch onderzoek en een filmcamera is gerealiseerd, ook al worden regisseur en verdere crew niet expliciet genoemd.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant gebruikt de vanzelfsprekend ernstig en authentiek aandoende televisiemedische scène als het object dat door de onthulling wordt ondergraven.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Eerst staat een geloofwaardig consult centraal; de slotzin breekt dat consult met camera- en tekstsignalen en veroorzaakt retrospectieve herinterpretatie.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De lexicale ankers 'diagnose' en 'tekst' zijn aanwezig; de formulering is natuurlijk en het eindigt functioneel op de tekst-onthulling.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V1 realiseert de geplande consult-naar-opnameomslag helder en compact; de exacte offscreen-stopzin ontbreekt, maar camera en vergeten tekst vervullen dezelfde omschakelfunctie.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een arts voert een regulier consult uit met vragen over medicatie en slaap, onderzoek aan een onderzoekstafel, een geruststellende diagnose en vervolgbehandeling.\\\",\\\"realized_script_b\\\":\\\"Een gefilmde ziekenhuisscène waarin de arts een acteur is en de regisseur om een aanpassing van de tekstweergave wordt gevraagd.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De setup bevat duidelijke zorgsignalen en de combinatie van camera en aangesproken regisseur onthult een productiecontext. De specifieke vraag om 'grotere tekst' is minder rechtstreeks een vergeten roltekst, maar behoudt de beoogde opnamelezing.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De consultlogica wordt achteraf verklaarbaar als opname doordat de arts naar de camera knikt en de regisseur aanspreekt.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Arts, patiëntcontext, onderzoekstafel, medische handelingen, camera en regisseur realiseren functioneel de geplande ziekenhuisproductiesituatie.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De schijnbare ernst en authenticiteit van een medische televisiescène wordt via de productieverwijzing doorgeprikt.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bouwt eerst een volledig consult op en plaatst de productieonthulling aan het einde.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De ankers 'diagnose' en 'tekst' zijn aanwezig, maar 'Regisseur, grotere tekst!' is geen natuurlijke of precieze Nederlandse manier om een ontbrekende of beter leesbare roltekst te vragen.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":false,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V2 volgt de bedoelde opname-onthulling inhoudelijk goed, maar de punchformulering 'grotere tekst' klinkt onnatuurlijk en maakt de beoogde roltekst-hinge minder scherp.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een patiënt beschrijft duizeligheid aan een arts, die dossier en hartonderzoek gebruikt en een ernstige diagnose met advies lijkt voor te bereiden.\\\",\\\"realized_script_b\\\":\\\"Een opname of repetitie waarin de arts een acteur is die vlak voor zijn volgende repliek zijn tekst mist.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke zorgverlening versus gespeelde zorg voor entertainment.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Patiënt, witte jas, dossier, hartonderzoek en diagnose bouwen een echte zorglezing op. De camera en ontbrekende tekst zetten die lezing om naar een gespeelde medische scène.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekstvraag is binnen een echt consult ongepast, maar wordt logisch zodra de arts als acteur in een opname wordt herlezen.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bevat de functionele kern van de geplande situatie: patiëntrol, artsrol, medische rekwisieten/handelingen en een camera als productiesignaal.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant laat de ogenschijnlijke ernst en authenticiteit van een medische scène omslaan in zichtbare fictie.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Een geloofwaardig consult wordt tot vlak voor het advies opgebouwd; de slotwending naar de camera activeert de tweede lezing op de punchpositie.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"'Diagnose' en het finale 'tekst' realiseren de vereiste lexicale ankers, en de formulering klinkt natuurlijk.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"V3 realiseert de beoogde omschakeling duidelijk. De diagnose en het behandeladvies worden niet volledig uitgesproken, maar de opgebouwde consultcontext is sterk genoeg voor de opname-onthulling.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 wint, omdat beide varianten de consult-naar-opnameomslag realiseren, maar V1 natuurlijker klinkt en de tekstzoekende arts directer als acteur positioneert. V2 verliest bovendien op taal: de vraag om „grotere tekst” is onhelder en verzwakt de punchline.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 wint nipt door de completere medische opbouw: klacht, onderzoek, diagnose en behandelbaarheid maken het eerste script overtuigender. Daardoor krijgt de cameraonthulling meer retrospectieve kracht. V3 heeft een heldere, natuurlijke wending, maar blijft vlak vóór de diagnose iets minder afgerond.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 wint ook los van de pass-status door een natuurlijke, goed spreekbare slotwending en een duidelijke herinterpretatie van de consultscène als opname. V2 heeft inhoudelijk dezelfde structuur, maar de onnatuurlijke formulering van de punchline maakt de omschakeling minder scherp.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste passerende variant: hij combineert een compacte, geloofwaardige zorgsetting met alle essentiële ankers en een duidelijke productieonthulling. De slotwending herkadert het consult effectief als gespeelde scène en is beter uitgewerkt dan bij V3.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een eigenaar brengt zijn zieke huisdier naar de dierenarts. De dierenarts onderzoekt het dier, stelt vragen over gedrag, voeding en ontlasting en schrijft een behandeling voor om het dier beter te maken.",
+        "candidate_id": "B1",
+        "opposition_axis": "Menselijke patiëntenzorg versus diergeneeskundige zorg voor een dier.",
+        "opposed_expectation": "Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.",
+        "roles_b": [
+          "Huisdiereigenaar: observeert klachten en wil dat het dier herstelt.",
+          "Dier: feitelijke patiënt die niet zelf kan uitleggen wat er mis is.",
+          "Dierenarts: onderzoekt het dier en bepaalt de behandeling.",
+          "Dierenartsassistent: houdt het dier vast, registreert gegevens of verstrekt medicatie."
+        ],
+        "goal_b": "De aandoening van het huisdier vaststellen en het dier veilig laten herstellen.",
+        "role_remapping": [
+          "De ogenschijnlijke patiënt uit Script A wordt in Script B de huisdiereigenaar die de klachten rapporteert.",
+          "De zorgverlener blijft onderzoeker en behandelaar, maar wordt een dierenarts.",
+          "De feitelijke patiënt in Script B is het aanvankelijk ongenoemde huisdier.",
+          "Een eventuele naaste uit Script A kan worden herlezen als dierenartsassistent."
+        ],
+        "shared_cues": [
+          "Een wachtruimte met balie en afspraakgegevens.",
+          "Vragen over wanneer de klachten begonnen.",
+          "Een onderzoekstafel, thermometer en dossier.",
+          "Advies over medicatie, rust en een controle-afspraak."
+        ],
+        "switch_trigger": "De zorgverlener vraagt plotseling hoeveel brokjes de patiënt per dag eet.",
+        "hinge_event": "De assistent tilt een mand met een miauwende kat op de onderzoekstafel.",
+        "anomaly_under_a": "Onder Script A is het ongepast en onbegrijpelijk dat een volwassen menselijke patiënt in een reismand arriveert en dat diens dieet in brokjes wordt uitgedrukt.",
+        "resolution_under_b": "Onder Script B blijkt de reismand noodzakelijk: de kat is de patiënt, terwijl de eigenaar alleen diens symptomen heeft verwoord. De vraag over brokjes is daardoor precies de relevante anamnese.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een medewerker met langdurig verzuim heeft een gesprek met een bedrijfsarts en casemanager. Het gesprek richt zich niet primair op genezing, maar op belastbaarheid, werkhervatting, aanpassingen en de administratieve verplichtingen van werkgever en werknemer.",
+        "candidate_id": "B2",
+        "opposition_axis": "Zorg gericht op herstel versus beoordeling gericht op inzetbaarheid en re-integratie.",
+        "opposed_expectation": "Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.",
+        "roles_b": [
+          "Werknemer: meldt beperkingen en wil een haalbare terugkeer naar werk.",
+          "Bedrijfsarts: beoordeelt belastbaarheid en adviseert onafhankelijk over werkhervatting.",
+          "Casemanager of werkgever: organiseert passende aanpassingen en bewaakt het traject.",
+          "Behandelend arts: kan, op afstand, medische informatie leveren met toestemming van de werknemer."
+        ],
+        "goal_b": "Een juridisch en praktisch verantwoord plan maken voor werkhervatting zonder de werknemer te overbelasten.",
+        "role_remapping": [
+          "De patiënt uit Script A wordt de werknemer met gezondheidsbeperkingen.",
+          "De zorgverlener wordt de bedrijfsarts, die adviseert over functionele mogelijkheden in plaats van behandeling te geven.",
+          "De naaste of aanvullende zorgpartij uit Script A wordt de casemanager of werkgever.",
+          "Het behandelplan wordt een re-integratieplan met werkafspraken."
+        ],
+        "shared_cues": [
+          "Een afspraak in een spreekkamer.",
+          "Vragen over klachten, slaap, energie en dagelijkse activiteiten.",
+          "Aantekeningen in een dossier.",
+          "Een vervolgafspraak en schriftelijk advies."
+        ],
+        "switch_trigger": "De arts vraagt niet welke medicatie moet worden aangepast, maar of de werknemer volgende week twee uur achter een scherm kan werken.",
+        "hinge_event": "De casemanager schuift een rooster met aangepaste uren en taken over tafel.",
+        "anomaly_under_a": "Binnen Script A is een werkrooster een vreemd antwoord op een medische hulpvraag: het behandelt de klacht niet en lijkt de aandacht van gezondheid af te leiden.",
+        "resolution_under_b": "Binnen Script B is het rooster juist het doel van het consult. De klachten worden vertaald naar belastbaarheid, zodat terugkeer naar werk veilig en stapsgewijs kan gebeuren.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een klant bezoekt een opticien omdat hij slecht ziet en hoofdpijn krijgt bij het lezen. De opticien meet de ogen, laat glazen vergelijken en adviseert een bril of contactlenzen die het zicht corrigeren.",
+        "candidate_id": "B3",
+        "opposition_axis": "Medische diagnose en behandeling versus commerciële optische correctie en productkeuze.",
+        "opposed_expectation": "Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.",
+        "roles_b": [
+          "Klant: ervaart slecht zicht en zoekt visuele correctie.",
+          "Opticien: meet gezichtsscherpte, vergelijkt sterktes en adviseert glazen.",
+          "Verkoopmedewerker: helpt bij montuur, prijs en bestelling.",
+          "Optometrist, indien aanwezig: voert aanvullende oogscreening uit en verwijst zo nodig door."
+        ],
+        "goal_b": "De klant scherp en comfortabel laten zien met passende glazen of lenzen.",
+        "role_remapping": [
+          "De patiënt uit Script A wordt de klant met een zichtprobleem.",
+          "De zorgverlener wordt een opticien of optometrist.",
+          "De behandeling uit Script A wordt een bril, lensaanpassing of eventuele verwijzing.",
+          "De aanvullende zorgpartij wordt een verkoopmedewerker of brillenglazenleverancier."
+        ],
+        "shared_cues": [
+          "Vragen over hoofdpijn, lezen en autorijden.",
+          "Een test met letters op afstand.",
+          "Het afdekken van één oog en vergelijken van opties.",
+          "Een advies dat de klacht moet verminderen."
+        ],
+        "switch_trigger": "Na de oogmeting vraagt de onderzoeker welke kleur montuur het beste bij de jas van de klant past.",
+        "hinge_event": "De onderzoeker zet vijf brillen op een spiegeltafel en noemt een aanbieding voor dunne glazen.",
+        "anomaly_under_a": "Onder Script A is het vreemd dat een medische beoordeling overgaat in kleuradvies, montuurpassen en een prijsaanbieding; dat lijkt geen veilige behandeling.",
+        "resolution_under_b": "Onder Script B is de overgang logisch: de meting dient om corrigerende glazen te verkopen en passend te maken. Het montuur en de glazen zijn de praktische oplossing voor het zichtprobleem.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.",
+        "candidate_id": "B4",
+        "opposition_axis": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+        "opposed_expectation": "Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.",
+        "roles_b": [
+          "Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.",
+          "Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.",
+          "Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.",
+          "Filmcrew: bedient camera, geluid, licht, grime en rekwisieten."
+        ],
+        "goal_b": "Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.",
+        "role_remapping": [
+          "De patiënt uit Script A wordt een acteur met een roltekst.",
+          "De zorgverlener uit Script A wordt een acteur die een arts speelt.",
+          "De eventuele naaste wordt een tegenspeler, figurant of grimeur.",
+          "Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor."
+        ],
+        "shared_cues": [
+          "Een witte jas, onderzoekstafel en medisch dossier.",
+          "Vragen naar pijn, duur van klachten en medicatie.",
+          "Een stethoscoop en een voorgedragen diagnose.",
+          "Geruststellende instructies over een vervolgbehandeling."
+        ],
+        "switch_trigger": "Een stem buiten beeld roept: \"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\"",
+        "hinge_event": "De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.",
+        "anomaly_under_a": "Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.",
+        "resolution_under_b": "Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B4 vormt de scherpste scriptoppositie: dezelfde consultcues blijven lang volledig compatibel met echte zorg, maar krijgen na de onthulling een fundamenteel andere functie als geënsceneerde televisieproductie. De setup domineert overtuigend via medische taal, witte jas, onderzoek en diagnose, terwijl camera- en regiecues een compacte, duidelijke omslag en sterke retrospectieve herlezing mogelijk maken. De tegenstelling tussen vertrouwelijke, professionele zorg en gespeelde zorg voor entertainment is specifieker en dramaturgisch productiever dan de verschuiving naar diergeneeskunde in B1.",
+    "variants": [
+      {
+        "text": "De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is. Dan kijkt hij naar de camera: \"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\"",
+        "angle": "Een geloofwaardig consult kantelt wanneer de arts zijn dialoog kwijt blijkt."
+      },
+      {
+        "text": "Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor. Hij trekt de stethoscoop af, knikt naar de camera en roept: \"Regisseur, grotere tekst!\"",
+        "angle": "De medische uitleg blijkt een opname waarin de arts zijn roltekst nodig heeft."
+      },
+      {
+        "text": "De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt. Net voor het advies kijkt de arts naar de camera: \"Wacht, ik mis mijn tekst.\"",
+        "angle": "De zorgvuldig opgebouwde diagnose wordt onderbroken door een acteur die zijn tekst zoekt."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 16872,
+      "output_tokens": 9135,
+      "total_tokens": 26007
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Een patiënt met gezondheidsklachten maakt een afspraak bij een zorgverlener, wordt onderzocht, krijgt een begrijpelijke diagnose en volgt een behandeling die herstel of verlichting moet brengen.",
+          "participants_and_roles": [
+            "Patiënt: merkt klachten op, beschrijft deze eerlijk en wil beter worden.",
+            "Zorgverlener: luistert, onderzoekt, stelt een diagnose en adviseert of behandelt professioneel.",
+            "Eventueel naaste: biedt praktische of emotionele steun.",
+            "Apotheek, verpleegkundige of specialist: levert aanvullende zorg volgens het behandelplan."
+          ],
+          "apparent_goal": "De oorzaak van de klachten vaststellen en de patiënt veilig, deskundig en zo goed mogelijk helpen herstellen.",
+          "preconditions": [
+            "De patiënt heeft lichamelijke of psychische klachten, zorgen of een medische hulpvraag.",
+            "Er is toegang tot een huisarts, praktijk, ziekenhuis, apotheek of andere zorgvoorziening.",
+            "De zorgverlener beschikt over medische kennis, relevante informatie en onderzoeksmiddelen.",
+            "Beide partijen communiceren voldoende duidelijk en behandelen elkaar respectvol.",
+            "Behandeling en advies zijn gericht op gezondheid, veiligheid en haalbaarheid."
+          ],
+          "expected_actions": [
+            "De patiënt plant een consult of meldt zich bij de zorginstelling.",
+            "De patiënt beschrijft symptomen, voorgeschiedenis en eventuele medicatie.",
+            "De zorgverlener stelt vragen, verricht zo nodig onderzoek en beoordeelt de situatie.",
+            "De zorgverlener legt een diagnose, waarschijnlijkheid of vervolgstap uit.",
+            "De patiënt krijgt advies, medicijnen, een behandeling, een verwijzing of geruststelling.",
+            "De patiënt volgt de instructies op en neemt contact op als de klachten veranderen of verergeren."
+          ],
+          "expected_outcome": "De patiënt begrijpt wat er aan de hand is, ontvangt passende zorg en ervaart herstel, vermindering van klachten of een duidelijk vervolgplan.",
+          "expected_propositions": [
+            "Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.",
+            "Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.",
+            "Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.",
+            "Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.",
+            "Als volledige genezing niet direct mogelijk is, volgt er een realistisch plan voor controle, verwijzing of symptoomverlichting."
+          ],
+          "audience_expectation": "Een zorgsituatie activeert de verwachting van een serieuze, ordelijke ontmoeting waarin deskundige hulp leidt tot duidelijkheid en passende behandeling."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een eigenaar brengt zijn zieke huisdier naar de dierenarts. De dierenarts onderzoekt het dier, stelt vragen over gedrag, voeding en ontlasting en schrijft een behandeling voor om het dier beter te maken.",
+            "opposition_axis": "Menselijke patiëntenzorg versus diergeneeskundige zorg voor een dier.",
+            "opposed_proposition": "Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.",
+            "shared_anchor": "Een consult met onderzoek en behandeladvies.",
+            "reading_a": "Een menselijke patiënt vertelt een arts over pijn, vermoeidheid en andere klachten.",
+            "reading_b": "Een eigenaar beschrijft namens een dier veranderingen in eetlust, gedrag en lichamelijke toestand aan een dierenarts.",
+            "roles_b": [
+              "Huisdiereigenaar: observeert klachten en wil dat het dier herstelt.",
+              "Dier: feitelijke patiënt die niet zelf kan uitleggen wat er mis is.",
+              "Dierenarts: onderzoekt het dier en bepaalt de behandeling.",
+              "Dierenartsassistent: houdt het dier vast, registreert gegevens of verstrekt medicatie."
+            ],
+            "goal_b": "De aandoening van het huisdier vaststellen en het dier veilig laten herstellen.",
+            "role_remapping": [
+              "De ogenschijnlijke patiënt uit Script A wordt in Script B de huisdiereigenaar die de klachten rapporteert.",
+              "De zorgverlener blijft onderzoeker en behandelaar, maar wordt een dierenarts.",
+              "De feitelijke patiënt in Script B is het aanvankelijk ongenoemde huisdier.",
+              "Een eventuele naaste uit Script A kan worden herlezen als dierenartsassistent."
+            ],
+            "shared_cues": [
+              "Een wachtruimte met balie en afspraakgegevens.",
+              "Vragen over wanneer de klachten begonnen.",
+              "Een onderzoekstafel, thermometer en dossier.",
+              "Advies over medicatie, rust en een controle-afspraak."
+            ],
+            "switch_trigger": "De zorgverlener vraagt plotseling hoeveel brokjes de patiënt per dag eet.",
+            "hinge_event": "De assistent tilt een mand met een miauwende kat op de onderzoekstafel.",
+            "anomaly_under_a": "Onder Script A is het ongepast en onbegrijpelijk dat een volwassen menselijke patiënt in een reismand arriveert en dat diens dieet in brokjes wordt uitgedrukt.",
+            "resolution_under_b": "Onder Script B blijkt de reismand noodzakelijk: de kat is de patiënt, terwijl de eigenaar alleen diens symptomen heeft verwoord. De vraag over brokjes is daardoor precies de relevante anamnese."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een medewerker met langdurig verzuim heeft een gesprek met een bedrijfsarts en casemanager. Het gesprek richt zich niet primair op genezing, maar op belastbaarheid, werkhervatting, aanpassingen en de administratieve verplichtingen van werkgever en werknemer.",
+            "opposition_axis": "Zorg gericht op herstel versus beoordeling gericht op inzetbaarheid en re-integratie.",
+            "opposed_proposition": "Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.",
+            "shared_anchor": "Een professioneel gesprek over klachten en een vervolgplan.",
+            "reading_a": "Een patiënt legt medische klachten uit aan een behandelaar die een diagnose en therapie voorbereidt.",
+            "reading_b": "Een werknemer bespreekt beperkingen met een bedrijfsarts die adviseert welke werkzaamheden en uren voorlopig verantwoord zijn.",
+            "roles_b": [
+              "Werknemer: meldt beperkingen en wil een haalbare terugkeer naar werk.",
+              "Bedrijfsarts: beoordeelt belastbaarheid en adviseert onafhankelijk over werkhervatting.",
+              "Casemanager of werkgever: organiseert passende aanpassingen en bewaakt het traject.",
+              "Behandelend arts: kan, op afstand, medische informatie leveren met toestemming van de werknemer."
+            ],
+            "goal_b": "Een juridisch en praktisch verantwoord plan maken voor werkhervatting zonder de werknemer te overbelasten.",
+            "role_remapping": [
+              "De patiënt uit Script A wordt de werknemer met gezondheidsbeperkingen.",
+              "De zorgverlener wordt de bedrijfsarts, die adviseert over functionele mogelijkheden in plaats van behandeling te geven.",
+              "De naaste of aanvullende zorgpartij uit Script A wordt de casemanager of werkgever.",
+              "Het behandelplan wordt een re-integratieplan met werkafspraken."
+            ],
+            "shared_cues": [
+              "Een afspraak in een spreekkamer.",
+              "Vragen over klachten, slaap, energie en dagelijkse activiteiten.",
+              "Aantekeningen in een dossier.",
+              "Een vervolgafspraak en schriftelijk advies."
+            ],
+            "switch_trigger": "De arts vraagt niet welke medicatie moet worden aangepast, maar of de werknemer volgende week twee uur achter een scherm kan werken.",
+            "hinge_event": "De casemanager schuift een rooster met aangepaste uren en taken over tafel.",
+            "anomaly_under_a": "Binnen Script A is een werkrooster een vreemd antwoord op een medische hulpvraag: het behandelt de klacht niet en lijkt de aandacht van gezondheid af te leiden.",
+            "resolution_under_b": "Binnen Script B is het rooster juist het doel van het consult. De klachten worden vertaald naar belastbaarheid, zodat terugkeer naar werk veilig en stapsgewijs kan gebeuren."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een klant bezoekt een opticien omdat hij slecht ziet en hoofdpijn krijgt bij het lezen. De opticien meet de ogen, laat glazen vergelijken en adviseert een bril of contactlenzen die het zicht corrigeren.",
+            "opposition_axis": "Medische diagnose en behandeling versus commerciële optische correctie en productkeuze.",
+            "opposed_proposition": "Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.",
+            "shared_anchor": "Onderzoek van een klacht gevolgd door een advies.",
+            "reading_a": "Een patiënt ondergaat medisch onderzoek omdat wazig zien een symptoom kan zijn van een aandoening die een arts moet vaststellen.",
+            "reading_b": "Een klant laat zijn gezichtsscherpte meten om de juiste sterkte en het passende montuur te kiezen.",
+            "roles_b": [
+              "Klant: ervaart slecht zicht en zoekt visuele correctie.",
+              "Opticien: meet gezichtsscherpte, vergelijkt sterktes en adviseert glazen.",
+              "Verkoopmedewerker: helpt bij montuur, prijs en bestelling.",
+              "Optometrist, indien aanwezig: voert aanvullende oogscreening uit en verwijst zo nodig door."
+            ],
+            "goal_b": "De klant scherp en comfortabel laten zien met passende glazen of lenzen.",
+            "role_remapping": [
+              "De patiënt uit Script A wordt de klant met een zichtprobleem.",
+              "De zorgverlener wordt een opticien of optometrist.",
+              "De behandeling uit Script A wordt een bril, lensaanpassing of eventuele verwijzing.",
+              "De aanvullende zorgpartij wordt een verkoopmedewerker of brillenglazenleverancier."
+            ],
+            "shared_cues": [
+              "Vragen over hoofdpijn, lezen en autorijden.",
+              "Een test met letters op afstand.",
+              "Het afdekken van één oog en vergelijken van opties.",
+              "Een advies dat de klacht moet verminderen."
+            ],
+            "switch_trigger": "Na de oogmeting vraagt de onderzoeker welke kleur montuur het beste bij de jas van de klant past.",
+            "hinge_event": "De onderzoeker zet vijf brillen op een spiegeltafel en noemt een aanbieding voor dunne glazen.",
+            "anomaly_under_a": "Onder Script A is het vreemd dat een medische beoordeling overgaat in kleuradvies, montuurpassen en een prijsaanbieding; dat lijkt geen veilige behandeling.",
+            "resolution_under_b": "Onder Script B is de overgang logisch: de meting dient om corrigerende glazen te verkopen en passend te maken. Het montuur en de glazen zijn de praktische oplossing voor het zichtprobleem."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.",
+            "opposition_axis": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+            "opposed_proposition": "Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.",
+            "shared_anchor": "Een arts bespreekt klachten, onderzoek en een diagnose.",
+            "reading_a": "Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.",
+            "reading_b": "Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.",
+            "roles_b": [
+              "Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.",
+              "Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.",
+              "Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.",
+              "Filmcrew: bedient camera, geluid, licht, grime en rekwisieten."
+            ],
+            "goal_b": "Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.",
+            "role_remapping": [
+              "De patiënt uit Script A wordt een acteur met een roltekst.",
+              "De zorgverlener uit Script A wordt een acteur die een arts speelt.",
+              "De eventuele naaste wordt een tegenspeler, figurant of grimeur.",
+              "Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor."
+            ],
+            "shared_cues": [
+              "Een witte jas, onderzoekstafel en medisch dossier.",
+              "Vragen naar pijn, duur van klachten en medicatie.",
+              "Een stethoscoop en een voorgedragen diagnose.",
+              "Geruststellende instructies over een vervolgbehandeling."
+            ],
+            "switch_trigger": "Een stem buiten beeld roept: \"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\"",
+            "hinge_event": "De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.",
+            "anomaly_under_a": "Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.",
+            "resolution_under_b": "Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een eigenaar brengt zijn zieke huisdier naar de dierenarts. De dierenarts onderzoekt het dier, stelt vragen over gedrag, voeding en ontlasting en schrijft een behandeling voor om het dier beter te maken.",
+              "opposition_axis": "Menselijke patiëntenzorg versus diergeneeskundige zorg voor een dier.",
+              "opposed_proposition": "Een arts of andere zorgverlener luistert serieus naar klachten en neemt medische beslissingen op basis van deskundigheid.",
+              "shared_anchor": "Een consult met onderzoek en behandeladvies.",
+              "reading_a": "Een menselijke patiënt vertelt een arts over pijn, vermoeidheid en andere klachten.",
+              "reading_b": "Een eigenaar beschrijft namens een dier veranderingen in eetlust, gedrag en lichamelijke toestand aan een dierenarts.",
+              "roles_b": [
+                "Huisdiereigenaar: observeert klachten en wil dat het dier herstelt.",
+                "Dier: feitelijke patiënt die niet zelf kan uitleggen wat er mis is.",
+                "Dierenarts: onderzoekt het dier en bepaalt de behandeling.",
+                "Dierenartsassistent: houdt het dier vast, registreert gegevens of verstrekt medicatie."
+              ],
+              "goal_b": "De aandoening van het huisdier vaststellen en het dier veilig laten herstellen.",
+              "role_remapping": [
+                "De ogenschijnlijke patiënt uit Script A wordt in Script B de huisdiereigenaar die de klachten rapporteert.",
+                "De zorgverlener blijft onderzoeker en behandelaar, maar wordt een dierenarts.",
+                "De feitelijke patiënt in Script B is het aanvankelijk ongenoemde huisdier.",
+                "Een eventuele naaste uit Script A kan worden herlezen als dierenartsassistent."
+              ],
+              "shared_cues": [
+                "Een wachtruimte met balie en afspraakgegevens.",
+                "Vragen over wanneer de klachten begonnen.",
+                "Een onderzoekstafel, thermometer en dossier.",
+                "Advies over medicatie, rust en een controle-afspraak."
+              ],
+              "switch_trigger": "De zorgverlener vraagt plotseling hoeveel brokjes de patiënt per dag eet.",
+              "hinge_event": "De assistent tilt een mand met een miauwende kat op de onderzoekstafel.",
+              "anomaly_under_a": "Onder Script A is het ongepast en onbegrijpelijk dat een volwassen menselijke patiënt in een reismand arriveert en dat diens dieet in brokjes wordt uitgedrukt.",
+              "resolution_under_b": "Onder Script B blijkt de reismand noodzakelijk: de kat is de patiënt, terwijl de eigenaar alleen diens symptomen heeft verwoord. De vraag over brokjes is daardoor precies de relevante anamnese."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een medewerker met langdurig verzuim heeft een gesprek met een bedrijfsarts en casemanager. Het gesprek richt zich niet primair op genezing, maar op belastbaarheid, werkhervatting, aanpassingen en de administratieve verplichtingen van werkgever en werknemer.",
+              "opposition_axis": "Zorg gericht op herstel versus beoordeling gericht op inzetbaarheid en re-integratie.",
+              "opposed_proposition": "Onderzoek en behandeling hebben een logisch verband met de gemelde klacht.",
+              "shared_anchor": "Een professioneel gesprek over klachten en een vervolgplan.",
+              "reading_a": "Een patiënt legt medische klachten uit aan een behandelaar die een diagnose en therapie voorbereidt.",
+              "reading_b": "Een werknemer bespreekt beperkingen met een bedrijfsarts die adviseert welke werkzaamheden en uren voorlopig verantwoord zijn.",
+              "roles_b": [
+                "Werknemer: meldt beperkingen en wil een haalbare terugkeer naar werk.",
+                "Bedrijfsarts: beoordeelt belastbaarheid en adviseert onafhankelijk over werkhervatting.",
+                "Casemanager of werkgever: organiseert passende aanpassingen en bewaakt het traject.",
+                "Behandelend arts: kan, op afstand, medische informatie leveren met toestemming van de werknemer."
+              ],
+              "goal_b": "Een juridisch en praktisch verantwoord plan maken voor werkhervatting zonder de werknemer te overbelasten.",
+              "role_remapping": [
+                "De patiënt uit Script A wordt de werknemer met gezondheidsbeperkingen.",
+                "De zorgverlener wordt de bedrijfsarts, die adviseert over functionele mogelijkheden in plaats van behandeling te geven.",
+                "De naaste of aanvullende zorgpartij uit Script A wordt de casemanager of werkgever.",
+                "Het behandelplan wordt een re-integratieplan met werkafspraken."
+              ],
+              "shared_cues": [
+                "Een afspraak in een spreekkamer.",
+                "Vragen over klachten, slaap, energie en dagelijkse activiteiten.",
+                "Aantekeningen in een dossier.",
+                "Een vervolgafspraak en schriftelijk advies."
+              ],
+              "switch_trigger": "De arts vraagt niet welke medicatie moet worden aangepast, maar of de werknemer volgende week twee uur achter een scherm kan werken.",
+              "hinge_event": "De casemanager schuift een rooster met aangepaste uren en taken over tafel.",
+              "anomaly_under_a": "Binnen Script A is een werkrooster een vreemd antwoord op een medische hulpvraag: het behandelt de klacht niet en lijkt de aandacht van gezondheid af te leiden.",
+              "resolution_under_b": "Binnen Script B is het rooster juist het doel van het consult. De klachten worden vertaald naar belastbaarheid, zodat terugkeer naar werk veilig en stapsgewijs kan gebeuren."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een klant bezoekt een opticien omdat hij slecht ziet en hoofdpijn krijgt bij het lezen. De opticien meet de ogen, laat glazen vergelijken en adviseert een bril of contactlenzen die het zicht corrigeren.",
+              "opposition_axis": "Medische diagnose en behandeling versus commerciële optische correctie en productkeuze.",
+              "opposed_proposition": "Medische vragen worden beantwoord met begrijpelijke uitleg en concrete, veilige adviezen.",
+              "shared_anchor": "Onderzoek van een klacht gevolgd door een advies.",
+              "reading_a": "Een patiënt ondergaat medisch onderzoek omdat wazig zien een symptoom kan zijn van een aandoening die een arts moet vaststellen.",
+              "reading_b": "Een klant laat zijn gezichtsscherpte meten om de juiste sterkte en het passende montuur te kiezen.",
+              "roles_b": [
+                "Klant: ervaart slecht zicht en zoekt visuele correctie.",
+                "Opticien: meet gezichtsscherpte, vergelijkt sterktes en adviseert glazen.",
+                "Verkoopmedewerker: helpt bij montuur, prijs en bestelling.",
+                "Optometrist, indien aanwezig: voert aanvullende oogscreening uit en verwijst zo nodig door."
+              ],
+              "goal_b": "De klant scherp en comfortabel laten zien met passende glazen of lenzen.",
+              "role_remapping": [
+                "De patiënt uit Script A wordt de klant met een zichtprobleem.",
+                "De zorgverlener wordt een opticien of optometrist.",
+                "De behandeling uit Script A wordt een bril, lensaanpassing of eventuele verwijzing.",
+                "De aanvullende zorgpartij wordt een verkoopmedewerker of brillenglazenleverancier."
+              ],
+              "shared_cues": [
+                "Vragen over hoofdpijn, lezen en autorijden.",
+                "Een test met letters op afstand.",
+                "Het afdekken van één oog en vergelijken van opties.",
+                "Een advies dat de klacht moet verminderen."
+              ],
+              "switch_trigger": "Na de oogmeting vraagt de onderzoeker welke kleur montuur het beste bij de jas van de klant past.",
+              "hinge_event": "De onderzoeker zet vijf brillen op een spiegeltafel en noemt een aanbieding voor dunne glazen.",
+              "anomaly_under_a": "Onder Script A is het vreemd dat een medische beoordeling overgaat in kleuradvies, montuurpassen en een prijsaanbieding; dat lijkt geen veilige behandeling.",
+              "resolution_under_b": "Onder Script B is de overgang logisch: de meting dient om corrigerende glazen te verkopen en passend te maken. Het montuur en de glazen zijn de praktische oplossing voor het zichtprobleem."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een acteur en een regisseur repeteren een scène voor een ziekenhuisserie. De acteur speelt een patiënt, een tweede acteur speelt de arts en de medische taal, onderzoeken en behandeladviezen dienen om de scène geloofwaardig te laten lijken.",
+              "opposition_axis": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+              "opposed_proposition": "Zorgverleners bewaken privacy, waardigheid en veiligheid van de patiënt.",
+              "shared_anchor": "Een arts bespreekt klachten, onderzoek en een diagnose.",
+              "reading_a": "Een echte patiënt deelt vertrouwelijke medische informatie met een arts in een besloten consult.",
+              "reading_b": "Een acteur spreekt geschreven dialoog uit terwijl cast en crew een geloofwaardige ziekenhuisscène opnemen.",
+              "roles_b": [
+                "Acteur in de patiëntrol: speelt klachten en reageert op de diagnose.",
+                "Acteur in de artsrol: spreekt de medische uitleg en voert geënsceneerd onderzoek uit.",
+                "Regisseur: bewaakt tempo, emotie en geloofwaardigheid van de scène.",
+                "Filmcrew: bedient camera, geluid, licht, grime en rekwisieten."
+              ],
+              "goal_b": "Een overtuigende medische scène opnemen of repeteren voor een televisieprogramma.",
+              "role_remapping": [
+                "De patiënt uit Script A wordt een acteur met een roltekst.",
+                "De zorgverlener uit Script A wordt een acteur die een arts speelt.",
+                "De eventuele naaste wordt een tegenspeler, figurant of grimeur.",
+                "Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor."
+              ],
+              "shared_cues": [
+                "Een witte jas, onderzoekstafel en medisch dossier.",
+                "Vragen naar pijn, duur van klachten en medicatie.",
+                "Een stethoscoop en een voorgedragen diagnose.",
+                "Geruststellende instructies over een vervolgbehandeling."
+              ],
+              "switch_trigger": "Een stem buiten beeld roept: \"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\"",
+              "hinge_event": "De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.",
+              "anomaly_under_a": "Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.",
+              "resolution_under_b": "Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eenzelfde consulttekst kan eerst als menselijke patiëntenzorg en daarna als dierenartsconsult worden gelezen. De centrale tegenstelling is eenduidig: de patiënt is een mens versus een dier dat via een eigenaar wordt vertegenwoordigd. De algemene consultcues passen natuurlijk bij beide lezingen, terwijl de vraag naar brokjes en vooral de miauwende kat de menselijke lezing onmogelijk maken. Achteraf krijgen de symptoombeschrijving door de vermeende patiënt en de reismand een andere functie: de eigenaar is informant en de kat is patiënt. Dat het dier niet zelf kan rapporteren blokkeert de menselijke-patiëntrol, maar maakt juist de eigenaar-als-rapporteur in Script B functioneel."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Een professioneel gesprek over klachten met dossier en vervolgafspraak kan als behandelconsult én als bedrijfsartsconsult worden gerealiseerd. Script B is sociaal herkenbaar en het rooster lost de afwijking onder de initiële medische lezing op; eerdere klachtvragen worden achteraf vragen naar belastbaarheid. De gestelde tegenstelling is echter niet strikt lokaal incompatibel: een bedrijfsartsconsult kan tegelijk medische klachten bespreken en op herstel of veilige inzetbaarheid zijn gericht. Behandeling en re-integratie sluiten elkaar dus niet wederzijds uit. Er is ook geen duidelijk omschreven voorwaarde die het doel van Script A blokkeert en dat van Script B mogelijk maakt."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De gedeelde tekst kan zowel een medisch onderzoek naar wazig zien als een optiekmeting ondersteunen. De opticienlezing is herkenbaar, blijft vóór de trigger beschikbaar en verklaart achteraf waarom de meting overgaat in monturen, glazen en prijs. Die overgang herinterpreteert de eerdere test als voorbereiding op productselectie. De tegenstelling medische zorg versus commerciële correctie is echter niet werkelijk incompatibel: een bril of lenzen kunnen een passende, veilige correctie zijn en een opticien of optometrist kan tevens screenen en verwijzen. De commerciële laag sluit de medische/corrigerende functie niet noodzakelijk uit. Ook is geen expliciete voorwaarde aanwezig die Script A blokkeert terwijl zij Script B mogelijk maakt."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een tekst met klachten, onderzoek, diagnose en behandeladvies kan aanvankelijk overtuigend als werkelijk consult functioneren en tegelijk als ziekenhuisdrama worden gerealiseerd. De tegenstelling werkelijk behandelen versus medisch handelen spelen is lokaal incompatibel en domineert duidelijk. De medische attributen en dialoog dragen beide lezingen; de opname-instructie en het naar de camera kijken maken de echte-zorglezing afwijkend en bevestigen de repetitie/opnamelezing. Daardoor worden eerdere privacygevoelige en medische elementen achteraf rekwisiet en roltekst. De aanwezigheid van camera en crew verhindert de beslotenheid en zorgfunctie van Script A, maar is juist noodzakelijk voor het entertainmentdoel van Script B."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eenzelfde consulttekst kan eerst als menselijke patiëntenzorg en daarna als dierenartsconsult worden gelezen. De centrale tegenstelling is eenduidig: de patiënt is een mens versus een dier dat via een eigenaar wordt vertegenwoordigd. De algemene consultcues passen natuurlijk bij beide lezingen, terwijl de vraag naar brokjes en vooral de miauwende kat de menselijke lezing onmogelijk maken. Achteraf krijgen de symptoombeschrijving door de vermeende patiënt en de reismand een andere functie: de eigenaar is informant en de kat is patiënt. Dat het dier niet zelf kan rapporteren blokkeert de menselijke-patiëntrol, maar maakt juist de eigenaar-als-rapporteur in Script B functioneel."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Een professioneel gesprek over klachten met dossier en vervolgafspraak kan als behandelconsult én als bedrijfsartsconsult worden gerealiseerd. Script B is sociaal herkenbaar en het rooster lost de afwijking onder de initiële medische lezing op; eerdere klachtvragen worden achteraf vragen naar belastbaarheid. De gestelde tegenstelling is echter niet strikt lokaal incompatibel: een bedrijfsartsconsult kan tegelijk medische klachten bespreken en op herstel of veilige inzetbaarheid zijn gericht. Behandeling en re-integratie sluiten elkaar dus niet wederzijds uit. Er is ook geen duidelijk omschreven voorwaarde die het doel van Script A blokkeert en dat van Script B mogelijk maakt."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De gedeelde tekst kan zowel een medisch onderzoek naar wazig zien als een optiekmeting ondersteunen. De opticienlezing is herkenbaar, blijft vóór de trigger beschikbaar en verklaart achteraf waarom de meting overgaat in monturen, glazen en prijs. Die overgang herinterpreteert de eerdere test als voorbereiding op productselectie. De tegenstelling medische zorg versus commerciële correctie is echter niet werkelijk incompatibel: een bril of lenzen kunnen een passende, veilige correctie zijn en een opticien of optometrist kan tevens screenen en verwijzen. De commerciële laag sluit de medische/corrigerende functie niet noodzakelijk uit. Ook is geen expliciete voorwaarde aanwezig die Script A blokkeert terwijl zij Script B mogelijk maakt."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een tekst met klachten, onderzoek, diagnose en behandeladvies kan aanvankelijk overtuigend als werkelijk consult functioneren en tegelijk als ziekenhuisdrama worden gerealiseerd. De tegenstelling werkelijk behandelen versus medisch handelen spelen is lokaal incompatibel en domineert duidelijk. De medische attributen en dialoog dragen beide lezingen; de opname-instructie en het naar de camera kijken maken de echte-zorglezing afwijkend en bevestigen de repetitie/opnamelezing. Daardoor worden eerdere privacygevoelige en medische elementen achteraf rekwisiet en roltekst. De aanwezigheid van camera en crew verhindert de beslotenheid en zorgfunctie van Script A, maar is juist noodzakelijk voor het entertainmentdoel van Script B."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B4"
+        ],
+        "selected_candidate_id": "B4",
+        "gtvh_plan": {
+          "opposition_type": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+          "logical_mechanism": "Scriptomschakeling door onthulling: een ogenschijnlijk echt medisch consult wordt via een metanarratieve onderbreking herkend als een geënsceneerde televisieopname.",
+          "situation": "Een acteur in de patiëntrol en een acteur in de artsrol spelen in een ziekenhuisdecor een consult met klachten, onderzoek, diagnose en behandeladvies. Een regisseur en filmcrew zijn aanwezig met camera, geluid, licht, grime, rekwisieten, een witte jas, onderzoekstafel, medisch dossier en stethoscoop.",
+          "target": "De conventie dat medische scènes op televisie vanzelfsprekend authentiek en ernstig aanvoelen.",
+          "narrative_strategy": "De opbouw presenteert eerst een geloofwaardig, besloten medisch consult met herkenbare zorgsignalen. De punchline onderbreekt dit consult met een aanwijzing voor camera en tekst, waardoor alle eerdere medische handelingen retrospectief een repetitie of opname blijken.",
+          "lexical_anchor": "diagnose",
+          "supporting_dual_cues": [
+            "Een witte jas, onderzoekstafel en medisch dossier.",
+            "Vragen naar pijn, duur van klachten en medicatie.",
+            "Een stethoscoop en een voorgedragen diagnose.",
+            "Geruststellende instructies over een vervolgbehandeling."
+          ],
+          "switch_trigger": "Een stem buiten beeld roept: \"Stop, opnieuw vanaf de diagnose, maar nu minder emotie.\"",
+          "hinge_event": "De arts trekt zijn stethoscoop af, kijkt naar de camera en vraagt of zijn tekst op het scherm mag worden gezet.",
+          "anomaly_under_a": "Onder Script A is het onprofessioneel en schadelijk dat een arts het onderzoek onderbreekt om naar een camera te kijken en aanwijzingen over zijn tekst te vragen.",
+          "resolution_under_b": "Onder Script B is dit precies wat nodig is: de medische ontmoeting is een opname. De onderbreking en tekstvraag maken het mogelijk de scène opnieuw en geloofwaardiger te spelen.",
+          "role_remapping": [
+            "De patiënt uit Script A wordt een acteur met een roltekst.",
+            "De zorgverlener uit Script A wordt een acteur die een arts speelt.",
+            "De eventuele naaste wordt een tegenspeler, figurant of grimeur.",
+            "Aanvullende zorgvoorzieningen worden camera, microfoon, rekwisieten en decor."
+          ],
+          "setup_goal": "Script A dominant maken door de scène te laten beginnen als een serieus en herkenbaar consult, met medische vragen, onderzoek, diagnose en geruststellend behandeladvies.",
+          "punch_goal": "Script B activeren door de consultlogica te breken met de zichtbare camera en de vraag om tekst, zodat de patiënt en arts worden herlezen als acteurs in een opname.",
+          "punch_final_word": "tekst"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is.",
+            "punchline": "Dan kijkt hij naar de camera: \"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\"",
+            "full_text": "De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is. Dan kijkt hij naar de camera: \"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\"",
+            "angle": "Een geloofwaardig consult kantelt wanneer de arts zijn dialoog kwijt blijkt.",
+            "anchor_surface_form": "diagnose"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor.",
+            "punchline": "Hij trekt de stethoscoop af, knikt naar de camera en roept: \"Regisseur, grotere tekst!\"",
+            "full_text": "Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor. Hij trekt de stethoscoop af, knikt naar de camera en roept: \"Regisseur, grotere tekst!\"",
+            "angle": "De medische uitleg blijkt een opname waarin de arts zijn roltekst nodig heeft.",
+            "anchor_surface_form": "diagnose"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt.",
+            "punchline": "Net voor het advies kijkt de arts naar de camera: \"Wacht, ik mis mijn tekst.\"",
+            "full_text": "De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt. Net voor het advies kijkt de arts naar de camera: \"Wacht, ik mis mijn tekst.\"",
+            "angle": "De zorgvuldig opgebouwde diagnose wordt onderbroken door een acteur die zijn tekst zoekt.",
+            "anchor_surface_form": "diagnose"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "De arts in zijn witte jas vraagt hoe lang de pijn duurt, luistert met zijn stethoscoop en zegt rustig dat de diagnose behandelbaar is. Dan kijkt hij naar de camera: \"Ik ben mijn diagnose kwijt—wie heeft mijn tekst?\"",
+            "angle": "Een geloofwaardig consult kantelt wanneer de arts zijn dialoog kwijt blijkt."
+          },
+          {
+            "variant_id": "V2",
+            "text": "Na vragen over medicatie en slapeloze nachten legt de arts aan de onderzoekstafel uit dat de diagnose geruststellend is en schrijft hij een vervolgbehandeling voor. Hij trekt de stethoscoop af, knikt naar de camera en roept: \"Regisseur, grotere tekst!\"",
+            "angle": "De medische uitleg blijkt een opname waarin de arts zijn roltekst nodig heeft."
+          },
+          {
+            "variant_id": "V3",
+            "text": "De patiënt vertelt eerlijk over duizeligheid, terwijl de arts in witte jas zijn dossier raadpleegt, zijn hart beluistert en een ernstige diagnose zorgvuldig voorbereidt. Net voor het advies kijkt de arts naar de camera: \"Wacht, ik mis mijn tekst.\"",
+            "angle": "De zorgvuldig opgebouwde diagnose wordt onderbroken door een acteur die zijn tekst zoekt."
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "TA",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een ogenschijnlijk serieus medisch consult: een arts vraagt naar pijn, onderzoekt met een stethoscoop en geeft een behandelbare diagnose.",
+            "realized_script_b": "Een opname of repetitie van een ziekenhuisserie, waarin de arts een acteur is die zijn dialoog kwijt is.",
+            "realized_opposition_axis": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De medische consultlezing wordt dominant opgebouwd met witte jas, klachtenvraag, stethoscoop en diagnose. De camera plus de vraag naar zijn tekst dwingen een herlezing als gespeelde scène; de beoogde as en omschakeling blijven functioneel intact."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De onverwachte blik naar de camera en het zoeken naar tekst onthullen retrospectief dat de arts geen echte zorgverlener in consult is, maar een acteur."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De kernsituatie van patiënt, arts, medisch onderzoek en een filmcamera is gerealiseerd, ook al worden regisseur en verdere crew niet expliciet genoemd."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant gebruikt de vanzelfsprekend ernstig en authentiek aandoende televisiemedische scène als het object dat door de onthulling wordt ondergraven."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Eerst staat een geloofwaardig consult centraal; de slotzin breekt dat consult met camera- en tekstsignalen en veroorzaakt retrospectieve herinterpretatie."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De lexicale ankers 'diagnose' en 'tekst' zijn aanwezig; de formulering is natuurlijk en het eindigt functioneel op de tekst-onthulling."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V1 realiseert de geplande consult-naar-opnameomslag helder en compact; de exacte offscreen-stopzin ontbreekt, maar camera en vergeten tekst vervullen dezelfde omschakelfunctie.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Een arts voert een regulier consult uit met vragen over medicatie en slaap, onderzoek aan een onderzoekstafel, een geruststellende diagnose en vervolgbehandeling.",
+            "realized_script_b": "Een gefilmde ziekenhuisscène waarin de arts een acteur is en de regisseur om een aanpassing van de tekstweergave wordt gevraagd.",
+            "realized_opposition_axis": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De setup bevat duidelijke zorgsignalen en de combinatie van camera en aangesproken regisseur onthult een productiecontext. De specifieke vraag om 'grotere tekst' is minder rechtstreeks een vergeten roltekst, maar behoudt de beoogde opnamelezing."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De consultlogica wordt achteraf verklaarbaar als opname doordat de arts naar de camera knikt en de regisseur aanspreekt."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Arts, patiëntcontext, onderzoekstafel, medische handelingen, camera en regisseur realiseren functioneel de geplande ziekenhuisproductiesituatie."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De schijnbare ernst en authenticiteit van een medische televisiescène wordt via de productieverwijzing doorgeprikt."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst bouwt eerst een volledig consult op en plaatst de productieonthulling aan het einde."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": false,
+              "rationale": "De ankers 'diagnose' en 'tekst' zijn aanwezig, maar 'Regisseur, grotere tekst!' is geen natuurlijke of precieze Nederlandse manier om een ontbrekende of beter leesbare roltekst te vragen."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": false,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V2 volgt de bedoelde opname-onthulling inhoudelijk goed, maar de punchformulering 'grotere tekst' klinkt onnatuurlijk en maakt de beoogde roltekst-hinge minder scherp.",
+            "passes_required_plan": false
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Een patiënt beschrijft duizeligheid aan een arts, die dossier en hartonderzoek gebruikt en een ernstige diagnose met advies lijkt voor te bereiden.",
+            "realized_script_b": "Een opname of repetitie waarin de arts een acteur is die vlak voor zijn volgende repliek zijn tekst mist.",
+            "realized_opposition_axis": "Werkelijke zorgverlening versus gespeelde zorg voor entertainment.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Patiënt, witte jas, dossier, hartonderzoek en diagnose bouwen een echte zorglezing op. De camera en ontbrekende tekst zetten die lezing om naar een gespeelde medische scène."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekstvraag is binnen een echt consult ongepast, maar wordt logisch zodra de arts als acteur in een opname wordt herlezen."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst bevat de functionele kern van de geplande situatie: patiëntrol, artsrol, medische rekwisieten/handelingen en een camera als productiesignaal."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant laat de ogenschijnlijke ernst en authenticiteit van een medische scène omslaan in zichtbare fictie."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Een geloofwaardig consult wordt tot vlak voor het advies opgebouwd; de slotwending naar de camera activeert de tweede lezing op de punchpositie."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "'Diagnose' en het finale 'tekst' realiseren de vereiste lexicale ankers, en de formulering klinkt natuurlijk."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "V3 realiseert de beoogde omschakeling duidelijk. De diagnose en het behandeladvies worden niet volledig uitgesproken, maar de opgebouwde consultcontext is sterk genoeg voor de opname-onthulling.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "V1 wint, omdat beide varianten de consult-naar-opnameomslag realiseren, maar V1 natuurlijker klinkt en de tekstzoekende arts directer als acteur positioneert. V2 verliest bovendien op taal: de vraag om „grotere tekst” is onhelder en verzwakt de punchline."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V1",
+            "rationale": "V1 wint nipt door de completere medische opbouw: klacht, onderzoek, diagnose en behandelbaarheid maken het eerste script overtuigender. Daardoor krijgt de cameraonthulling meer retrospectieve kracht. V3 heeft een heldere, natuurlijke wending, maar blijft vlak vóór de diagnose iets minder afgerond."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "V3 wint ook los van de pass-status door een natuurlijke, goed spreekbare slotwending en een duidelijke herinterpretatie van de consultscène als opname. V2 heeft inhoudelijk dezelfde structuur, maar de onnatuurlijke formulering van de punchline maakt de omschakeling minder scherp."
+          }
+        ],
+        "selected_variant_id": "V1",
+        "selection_rationale": "V1 is de sterkste passerende variant: hij combineert een compacte, geloofwaardige zorgsetting met alle essentiële ankers en een duidelijke productieonthulling. De slotwending herkadert het consult effectief als gespeelde scène en is beter uitgewerkt dan bij V3."
+      }
+    }
+  },
+  "result_sha256": "cce1f41b03923c20ae630d0457561925986967669563ddd1f0a027124d9b38db"
+}

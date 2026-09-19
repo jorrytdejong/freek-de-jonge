@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T19:05:37.095020+00:00",
+  "job": {
+    "job_id": "T01-E2",
+    "topic_id": "T01",
+    "topic": "Familie en opvoeding",
+    "condition_code": "E2"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V3 must contain at most 3 sentences; received 4."
+}

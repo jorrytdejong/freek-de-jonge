@@ -1,0 +1,826 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T08-C1",
+  "topic_id": "T08",
+  "topic": "Liefde, huwelijk en seksualiteit",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T16:55:48.859617+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Liefde, huwelijk en seksualiteit",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.\",\n    \"participants_and_roles\": [\n      \"Twee romantische partners: geliefden die elkaar leren kennen, affectie tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel een huwelijkspartner/verloofde: iemand die zich publiekelijk en juridisch aan de ander verbindt.\",\n      \"Familie, vrienden en ceremoniële betrokkenen: sociale kring die de relatie en het huwelijk erkent of viert.\"\n    ],\n    \"apparent_goal\": \"Een liefdevolle, duurzame en gelijkwaardige relatie vormen, eventueel bekrachtigd door een huwelijk, met een bevredigend en respectvol intiem leven.\",\n    \"preconditions\": [\n      \"Er is wederzijdse aantrekkingskracht of genegenheid.\",\n      \"Beide partners kunnen vrij en geïnformeerd instemmen met relatie-, huwelijks- en seksuele keuzes.\",\n      \"Er bestaat voldoende vertrouwen, communicatie en emotionele veiligheid.\",\n      \"Bij een huwelijk zijn praktische, juridische en sociale voorbereidingen getroffen.\",\n      \"Grenzen, verwachtingen en exclusiviteitsafspraken zijn besproken of kunnen bespreekbaar worden gemaakt.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, communiceren en onderzoeken of zij bij elkaar passen.\",\n      \"Zij spreken liefde, toewijding en toekomstverwachtingen uit.\",\n      \"Als zij willen trouwen, plannen zij een ceremonie en leggen zij wederzijdse beloften af.\",\n      \"Zij verdelen verantwoordelijkheden en nemen gezamenlijke beslissingen over hun leven.\",\n      \"Zij benaderen seksualiteit als vrijwillige, private intimiteit met aandacht voor wederzijds plezier, grenzen en veiligheid.\"\n    ],\n    \"expected_outcome\": \"Een erkende, stabiele partnerrelatie waarin beide mensen zich geliefd, gerespecteerd en veilig voelen, en waarin huwelijk en intimiteit hun gezamenlijke verbondenheid ondersteunen.\",\n    \"expected_propositions\": [\n      \"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\",\n      \"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\",\n      \"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\",\n      \"Goede relaties vragen om open communicatie, vertrouwen en respect voor grenzen.\",\n      \"Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.\"\n    ],\n    \"audience_expectation\": \"Een setup over liefde, huwelijk en seksualiteit activeert meestal het beeld van twee instemmende partners die via romantiek, beloften en respectvolle intimiteit een duurzame gezamenlijke toekomst opbouwen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.\",\n    \"participants_and_roles\": [\n      \"Twee romantische partners: geliefden die elkaar leren kennen, affectie tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel een huwelijkspartner/verloofde: iemand die zich publiekelijk en juridisch aan de ander verbindt.\",\n      \"Familie, vrienden en ceremoniële betrokkenen: sociale kring die de relatie en het huwelijk erkent of viert.\"\n    ],\n    \"apparent_goal\": \"Een liefdevolle, duurzame en gelijkwaardige relatie vormen, eventueel bekrachtigd door een huwelijk, met een bevredigend en respectvol intiem leven.\",\n    \"preconditions\": [\n      \"Er is wederzijdse aantrekkingskracht of genegenheid.\",\n      \"Beide partners kunnen vrij en geïnformeerd instemmen met relatie-, huwelijks- en seksuele keuzes.\",\n      \"Er bestaat voldoende vertrouwen, communicatie en emotionele veiligheid.\",\n      \"Bij een huwelijk zijn praktische, juridische en sociale voorbereidingen getroffen.\",\n      \"Grenzen, verwachtingen en exclusiviteitsafspraken zijn besproken of kunnen bespreekbaar worden gemaakt.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, communiceren en onderzoeken of zij bij elkaar passen.\",\n      \"Zij spreken liefde, toewijding en toekomstverwachtingen uit.\",\n      \"Als zij willen trouwen, plannen zij een ceremonie en leggen zij wederzijdse beloften af.\",\n      \"Zij verdelen verantwoordelijkheden en nemen gezamenlijke beslissingen over hun leven.\",\n      \"Zij benaderen seksualiteit als vrijwillige, private intimiteit met aandacht voor wederzijds plezier, grenzen en veiligheid.\"\n    ],\n    \"expected_outcome\": \"Een erkende, stabiele partnerrelatie waarin beide mensen zich geliefd, gerespecteerd en veilig voelen, en waarin huwelijk en intimiteit hun gezamenlijke verbondenheid ondersteunen.\",\n    \"expected_propositions\": [\n      \"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\",\n      \"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\",\n      \"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\",\n      \"Goede relaties vragen om open communicatie, vertrouwen en respect voor grenzen.\",\n      \"Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.\"\n    ],\n    \"audience_expectation\": \"Een setup over liefde, huwelijk en seksualiteit activeert meestal het beeld van twee instemmende partners die via romantiek, beloften en respectvolle intimiteit een duurzame gezamenlijke toekomst opbouwen.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.\",\n      \"opposition_axis\": \"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\",\n      \"opposed_proposition\": \"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\",\n      \"shared_anchor\": \"Een aanzoek met ring en emotionele beloften.\",\n      \"reading_a\": \"Twee geliefden gebruiken de ring en de beloften om hun eigen wederzijdse verbintenis te bevestigen.\",\n      \"reading_b\": \"Twee acteurs gebruiken ring en beloften als rekwisieten om een geloofwaardige romantische scène te verkopen.\",\n      \"roles_b\": [\n        \"Acteur 1: vertolkt de aanzoekende partner.\",\n        \"Acteur 2: vertolkt de ontroerde partner.\",\n        \"Regisseur en filmploeg: sturen de uitvoering en leggen de scène vast.\",\n        \"Juwelier/opdrachtgever: wil een aantrekkelijk reclamebeeld creëren.\"\n      ],\n      \"goal_b\": \"Een overtuigende reclame-opname maken die een ring en het merk aantrekkelijk presenteert.\",\n      \"role_remapping\": [\n        \"De romantische partners uit Script A worden acteurs die die partners spelen.\",\n        \"De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.\",\n        \"De huwelijksbelofte wordt een tekst uit een draaiboek.\",\n        \"De ring wordt naast liefdessymbool ook een product en rekwisiet.\"\n      ],\n      \"shared_cues\": [\n        \"Een etentje bij kaarslicht.\",\n        \"Een klein doosje met een ring.\",\n        \"Nerveuze stiltes en emotionele woorden.\",\n        \"Een knielende partner.\",\n        \"Gasten of omstanders die applaudisseren.\"\n      ],\n      \"switch_trigger\": \"Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \\\"En... cut, neem twee.\\\"\",\n      \"hinge_event\": \"Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.\",\n      \"anomaly_under_a\": \"In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee medewerkers van een trouwlocatie demonstreren op een bruidsbeurs een voorbeeldceremonie. Zij spelen een overtuigend bruidspaar om bezoekers te laten zien hoe de locatie, de ceremonie en de leveranciers samenwerken.\",\n      \"opposition_axis\": \"Persoonlijke huwelijksverbintenis versus commerciële demonstratie.\",\n      \"opposed_proposition\": \"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\",\n      \"shared_anchor\": \"Een ceremonie met geloften, ringen en een ondertekening.\",\n      \"reading_a\": \"Een echt paar legt openbare en juridische beloften af om een gezamenlijk leven te beginnen.\",\n      \"reading_b\": \"Presentatiemedewerkers voeren een voorbeeldhuwelijk op om diensten van de locatie en leveranciers te tonen.\",\n      \"roles_b\": [\n        \"Demonstratiebruid: medewerker of model dat de rol van bruid speelt.\",\n        \"Demonstratiebruidegom: medewerker of model dat de rol van bruidegom speelt.\",\n        \"Ceremonieel begeleider: presenteert de voorbeeldplechtigheid.\",\n        \"Beursbezoekers: potentiële klanten.\",\n        \"Leveranciers: tonen bloemen, catering, fotografie en kleding.\"\n      ],\n      \"goal_b\": \"Bezoekers overtuigen om de trouwlocatie en aangesloten leveranciers te boeken.\",\n      \"role_remapping\": [\n        \"De verloofden uit Script A worden demonstratiemodellen.\",\n        \"Familie en vrienden worden beursbezoekers en potentiële klanten.\",\n        \"De ceremoniële betrokkenen worden presentatoren en leveranciers.\",\n        \"De huwelijksakte wordt een ongeldige voorbeeldkaart of contractdemonstratie.\"\n      ],\n      \"shared_cues\": [\n        \"Bloemdecoratie en feestelijke muziek.\",\n        \"Een witte outfit en formeel pak.\",\n        \"Ringen die worden aangereikt.\",\n        \"Een ceremonieel welkom.\",\n        \"Applaus na de geloften.\"\n      ],\n      \"switch_trigger\": \"Na het applaus pakt de ceremoniemeester een microfoon en zegt: \\\"Dank u, straks demonstreren we het dessertbuffet in zaal twee.\\\"\",\n      \"hinge_event\": \"Het zogenoemde bruidspaar loopt rechtstreeks naar een stand, zet naamkaartjes met functietitels op en bespreekt boekingspakketten met bezoekers.\",\n      \"anomaly_under_a\": \"Wanneer pasgetrouwden onmiddellijk hun rollen afleggen en verkoopgesprekken beginnen, botst dat met de verwachte persoonlijke betekenis van de ceremonie.\",\n      \"resolution_under_b\": \"Op een bruidsbeurs is de snelle overgang naar productinformatie precies het doel: de ceremonie was een aantrekkelijke, verkoopbare demonstratie.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee acteurs nemen onder begeleiding van een intimiteitscoördinator een romantische scène op voor een dramaserie. De nabijheid lijkt spontaan en persoonlijk, maar iedere beweging, grens en pauze is vooraf professioneel afgestemd.\",\n      \"opposition_axis\": \"Private spontane intimiteit versus geregisseerde en technisch afgestemde scène-uitvoering.\",\n      \"opposed_proposition\": \"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\",\n      \"shared_anchor\": \"Een stil moment van lichamelijke toenadering en wederzijdse bevestiging.\",\n      \"reading_a\": \"Twee geliefden zoeken in beslotenheid vrijwillig fysieke intimiteit en stemmen op elkaar af vanuit hun relatie.\",\n      \"reading_b\": \"Twee acteurs verbeelden intimiteit voor een camera en voeren vooraf overeengekomen handelingen uit binnen een productieprotocol.\",\n      \"roles_b\": [\n        \"Acteur 1 en acteur 2: vertolken de romantische personages.\",\n        \"Intimiteitscoördinator: bewaakt afspraken, grenzen en veilige uitvoering.\",\n        \"Regisseur: bepaalt het dramatische beeld en de opname.\",\n        \"Camera- en geluidsploeg: registreren de scène.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige dramascène opnemen zonder de professionele grenzen en veiligheid van de acteurs te schenden.\",\n      \"role_remapping\": [\n        \"De romantische partners uit Script A worden acteurs en hun personages.\",\n        \"Open communicatie tussen geliefden wordt een voorafgaande professionele afstemming.\",\n        \"Privacy wordt vervangen door een gecontroleerde set met beperkte ploeg.\",\n        \"Wederzijdse bevestiging wordt zowel acteersignaal als veiligheidsafspraak.\"\n      ],\n      \"shared_cues\": [\n        \"Zachte verlichting.\",\n        \"Een gesloten kamer.\",\n        \"Voorzichtige toenadering.\",\n        \"Een vraag of alles goed gaat.\",\n        \"Korte bevestigende antwoorden en aandacht voor grenzen.\"\n      ],\n      \"switch_trigger\": \"Vlak na het ogenschijnlijk intieme moment zegt iemand buiten beeld: \\\"Pauze; we controleren eerst de afdekking en de camerahoek.\\\"\",\n      \"hinge_event\": \"De acteurs stappen uit elkaar, trekken badjassen aan en bespreken met de coördinator of de vooraf afgesproken choreografie nog comfortabel is.\",\n      \"anomaly_under_a\": \"Een technische onderbreking, badjassen en een derde persoon die bewegingen controleert zouden midden in private partnerintimiteit vreemd en storend zijn.\",\n      \"resolution_under_b\": \"Bij een gefilmde scène maken precies deze onderbreking en controle de opname professioneel, veilig en gebaseerd op expliciete werkafspraken.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Twee deelnemers aan een reality-datingsprogramma bouwen voor de camera een ogenschijnlijk serieuze relatie op. Hun ontmoetingen, toekomstgesprekken en ceremonieel moment zijn tegelijk onderdelen van een televisieformat waarin zij zichtbaar willen blijven en een finaleplaats willen bereiken.\",\n      \"opposition_axis\": \"Duurzame persoonlijke toewijding versus strategische deelname aan een spel- en mediaformat.\",\n      \"opposed_proposition\": \"Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.\",\n      \"shared_anchor\": \"Een emotioneel gesprek over exclusiviteit en een gezamenlijke toekomst.\",\n      \"reading_a\": \"Een partner bespreekt exclusiviteit en toekomstplannen om de ander zekerheid, erkenning en emotionele veiligheid te geven.\",\n      \"reading_b\": \"Een deelnemer voert een formatgesprek dat zowel persoonlijke gevoelens als kansen op schermtijd, publiekssteun en voortgang in het programma beïnvloedt.\",\n      \"roles_b\": [\n        \"Deelnemer 1: presenteert zich als romantische partner binnen het programma.\",\n        \"Deelnemer 2: reageert als potentiële partner en mededeelnemer.\",\n        \"Presentator: kadert de momenten als afleveringrediënt.\",\n        \"Producenten en crew: organiseren opdrachten, opnamen en montages.\",\n        \"Publiek: beoordeelt of volgt de deelnemers.\"\n      ],\n      \"goal_b\": \"In het programma geloofwaardig en aantrekkelijk overkomen, een gunstige positie behouden en eventueel de finale of prijs bereiken.\",\n      \"role_remapping\": [\n        \"De geliefden uit Script A worden deelnemers én publieke personages.\",\n        \"Vrienden en familie worden deels vervangen door presentator, crew en kijkers.\",\n        \"Een privé-toekomstgesprek wordt een opgenomen formatmoment.\",\n        \"Relatie-erkenning wordt mede afhankelijk van montage, publieksreactie en spelregels.\"\n      ],\n      \"shared_cues\": [\n        \"Een romantische date op een afgezonderde locatie.\",\n        \"Persoonlijke bekentenissen.\",\n        \"Een gesprek over exclusiviteit.\",\n        \"Een symbolisch geschenk.\",\n        \"Tranen, omhelzingen en een toast op de toekomst.\"\n      ],\n      \"switch_trigger\": \"Nadat één deelnemer exclusiviteit heeft beloofd, komt de presentator in beeld met de mededeling dat de andere deelnemers nu mogen stemmen over wie naar de volgende ronde gaat.\",\n      \"hinge_event\": \"De deelnemer die net over een gezamenlijke toekomst sprak, vraagt direct of de belofte goed in beeld is gekomen en informeert naar de publieksreacties.\",\n      \"anomaly_under_a\": \"In een oprechte, kwetsbare relatie zou de onmiddellijke zorg om camerabeeld en stemmen de persoonlijke belofte instrumenteel en ongevoelig maken.\",\n      \"resolution_under_b\": \"Binnen een realityformat is aandacht voor beeldvorming en stemmen functioneel: de romantische scène is tegelijk een persoonlijke interactie en een beslissend spelelement.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"script_a\": {\n    \"script_a\": \"Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.\",\n    \"participants_and_roles\": [\n      \"Twee romantische partners: geliefden die elkaar leren kennen, affectie tonen en gezamenlijke keuzes maken.\",\n      \"Eventueel een huwelijkspartner/verloofde: iemand die zich publiekelijk en juridisch aan de ander verbindt.\",\n      \"Familie, vrienden en ceremoniële betrokkenen: sociale kring die de relatie en het huwelijk erkent of viert.\"\n    ],\n    \"apparent_goal\": \"Een liefdevolle, duurzame en gelijkwaardige relatie vormen, eventueel bekrachtigd door een huwelijk, met een bevredigend en respectvol intiem leven.\",\n    \"preconditions\": [\n      \"Er is wederzijdse aantrekkingskracht of genegenheid.\",\n      \"Beide partners kunnen vrij en geïnformeerd instemmen met relatie-, huwelijks- en seksuele keuzes.\",\n      \"Er bestaat voldoende vertrouwen, communicatie en emotionele veiligheid.\",\n      \"Bij een huwelijk zijn praktische, juridische en sociale voorbereidingen getroffen.\",\n      \"Grenzen, verwachtingen en exclusiviteitsafspraken zijn besproken of kunnen bespreekbaar worden gemaakt.\"\n    ],\n    \"expected_actions\": [\n      \"De partners daten, communiceren en onderzoeken of zij bij elkaar passen.\",\n      \"Zij spreken liefde, toewijding en toekomstverwachtingen uit.\",\n      \"Als zij willen trouwen, plannen zij een ceremonie en leggen zij wederzijdse beloften af.\",\n      \"Zij verdelen verantwoordelijkheden en nemen gezamenlijke beslissingen over hun leven.\",\n      \"Zij benaderen seksualiteit als vrijwillige, private intimiteit met aandacht voor wederzijds plezier, grenzen en veiligheid.\"\n    ],\n    \"expected_outcome\": \"Een erkende, stabiele partnerrelatie waarin beide mensen zich geliefd, gerespecteerd en veilig voelen, en waarin huwelijk en intimiteit hun gezamenlijke verbondenheid ondersteunen.\",\n    \"expected_propositions\": [\n      \"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\",\n      \"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\",\n      \"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\",\n      \"Goede relaties vragen om open communicatie, vertrouwen en respect voor grenzen.\",\n      \"Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.\"\n    ],\n    \"audience_expectation\": \"Een setup over liefde, huwelijk en seksualiteit activeert meestal het beeld van twee instemmende partners die via romantiek, beloften en respectvolle intimiteit een duurzame gezamenlijke toekomst opbouwen.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.\",\n      \"opposition_axis\": \"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\",\n      \"opposed_proposition\": \"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\",\n      \"shared_anchor\": \"Een aanzoek met ring en emotionele beloften.\",\n      \"reading_a\": \"Twee geliefden gebruiken de ring en de beloften om hun eigen wederzijdse verbintenis te bevestigen.\",\n      \"reading_b\": \"Twee acteurs gebruiken ring en beloften als rekwisieten om een geloofwaardige romantische scène te verkopen.\",\n      \"roles_b\": [\n        \"Acteur 1: vertolkt de aanzoekende partner.\",\n        \"Acteur 2: vertolkt de ontroerde partner.\",\n        \"Regisseur en filmploeg: sturen de uitvoering en leggen de scène vast.\",\n        \"Juwelier/opdrachtgever: wil een aantrekkelijk reclamebeeld creëren.\"\n      ],\n      \"goal_b\": \"Een overtuigende reclame-opname maken die een ring en het merk aantrekkelijk presenteert.\",\n      \"role_remapping\": [\n        \"De romantische partners uit Script A worden acteurs die die partners spelen.\",\n        \"De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.\",\n        \"De huwelijksbelofte wordt een tekst uit een draaiboek.\",\n        \"De ring wordt naast liefdessymbool ook een product en rekwisiet.\"\n      ],\n      \"shared_cues\": [\n        \"Een etentje bij kaarslicht.\",\n        \"Een klein doosje met een ring.\",\n        \"Nerveuze stiltes en emotionele woorden.\",\n        \"Een knielende partner.\",\n        \"Gasten of omstanders die applaudisseren.\"\n      ],\n      \"switch_trigger\": \"Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \\\"En... cut, neem twee.\\\"\",\n      \"hinge_event\": \"Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.\",\n      \"anomaly_under_a\": \"In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee medewerkers van een trouwlocatie demonstreren op een bruidsbeurs een voorbeeldceremonie. Zij spelen een overtuigend bruidspaar om bezoekers te laten zien hoe de locatie, de ceremonie en de leveranciers samenwerken.\",\n      \"opposition_axis\": \"Persoonlijke huwelijksverbintenis versus commerciële demonstratie.\",\n      \"opposed_proposition\": \"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\",\n      \"shared_anchor\": \"Een ceremonie met geloften, ringen en een ondertekening.\",\n      \"reading_a\": \"Een echt paar legt openbare en juridische beloften af om een gezamenlijk leven te beginnen.\",\n      \"reading_b\": \"Presentatiemedewerkers voeren een voorbeeldhuwelijk op om diensten van de locatie en leveranciers te tonen.\",\n      \"roles_b\": [\n        \"Demonstratiebruid: medewerker of model dat de rol van bruid speelt.\",\n        \"Demonstratiebruidegom: medewerker of model dat de rol van bruidegom speelt.\",\n        \"Ceremonieel begeleider: presenteert de voorbeeldplechtigheid.\",\n        \"Beursbezoekers: potentiële klanten.\",\n        \"Leveranciers: tonen bloemen, catering, fotografie en kleding.\"\n      ],\n      \"goal_b\": \"Bezoekers overtuigen om de trouwlocatie en aangesloten leveranciers te boeken.\",\n      \"role_remapping\": [\n        \"De verloofden uit Script A worden demonstratiemodellen.\",\n        \"Familie en vrienden worden beursbezoekers en potentiële klanten.\",\n        \"De ceremoniële betrokkenen worden presentatoren en leveranciers.\",\n        \"De huwelijksakte wordt een ongeldige voorbeeldkaart of contractdemonstratie.\"\n      ],\n      \"shared_cues\": [\n        \"Bloemdecoratie en feestelijke muziek.\",\n        \"Een witte outfit en formeel pak.\",\n        \"Ringen die worden aangereikt.\",\n        \"Een ceremonieel welkom.\",\n        \"Applaus na de geloften.\"\n      ],\n      \"switch_trigger\": \"Na het applaus pakt de ceremoniemeester een microfoon en zegt: \\\"Dank u, straks demonstreren we het dessertbuffet in zaal twee.\\\"\",\n      \"hinge_event\": \"Het zogenoemde bruidspaar loopt rechtstreeks naar een stand, zet naamkaartjes met functietitels op en bespreekt boekingspakketten met bezoekers.\",\n      \"anomaly_under_a\": \"Wanneer pasgetrouwden onmiddellijk hun rollen afleggen en verkoopgesprekken beginnen, botst dat met de verwachte persoonlijke betekenis van de ceremonie.\",\n      \"resolution_under_b\": \"Op een bruidsbeurs is de snelle overgang naar productinformatie precies het doel: de ceremonie was een aantrekkelijke, verkoopbare demonstratie.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee acteurs nemen onder begeleiding van een intimiteitscoördinator een romantische scène op voor een dramaserie. De nabijheid lijkt spontaan en persoonlijk, maar iedere beweging, grens en pauze is vooraf professioneel afgestemd.\",\n      \"opposition_axis\": \"Private spontane intimiteit versus geregisseerde en technisch afgestemde scène-uitvoering.\",\n      \"opposed_proposition\": \"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\",\n      \"shared_anchor\": \"Een stil moment van lichamelijke toenadering en wederzijdse bevestiging.\",\n      \"reading_a\": \"Twee geliefden zoeken in beslotenheid vrijwillig fysieke intimiteit en stemmen op elkaar af vanuit hun relatie.\",\n      \"reading_b\": \"Twee acteurs verbeelden intimiteit voor een camera en voeren vooraf overeengekomen handelingen uit binnen een productieprotocol.\",\n      \"roles_b\": [\n        \"Acteur 1 en acteur 2: vertolken de romantische personages.\",\n        \"Intimiteitscoördinator: bewaakt afspraken, grenzen en veilige uitvoering.\",\n        \"Regisseur: bepaalt het dramatische beeld en de opname.\",\n        \"Camera- en geluidsploeg: registreren de scène.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige dramascène opnemen zonder de professionele grenzen en veiligheid van de acteurs te schenden.\",\n      \"role_remapping\": [\n        \"De romantische partners uit Script A worden acteurs en hun personages.\",\n        \"Open communicatie tussen geliefden wordt een voorafgaande professionele afstemming.\",\n        \"Privacy wordt vervangen door een gecontroleerde set met beperkte ploeg.\",\n        \"Wederzijdse bevestiging wordt zowel acteersignaal als veiligheidsafspraak.\"\n      ],\n      \"shared_cues\": [\n        \"Zachte verlichting.\",\n        \"Een gesloten kamer.\",\n        \"Voorzichtige toenadering.\",\n        \"Een vraag of alles goed gaat.\",\n        \"Korte bevestigende antwoorden en aandacht voor grenzen.\"\n      ],\n      \"switch_trigger\": \"Vlak na het ogenschijnlijk intieme moment zegt iemand buiten beeld: \\\"Pauze; we controleren eerst de afdekking en de camerahoek.\\\"\",\n      \"hinge_event\": \"De acteurs stappen uit elkaar, trekken badjassen aan en bespreken met de coördinator of de vooraf afgesproken choreografie nog comfortabel is.\",\n      \"anomaly_under_a\": \"Een technische onderbreking, badjassen en een derde persoon die bewegingen controleert zouden midden in private partnerintimiteit vreemd en storend zijn.\",\n      \"resolution_under_b\": \"Bij een gefilmde scène maken precies deze onderbreking en controle de opname professioneel, veilig en gebaseerd op expliciete werkafspraken.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"plan\": {\n    \"setup_script\": \"Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.\",\n    \"opposing_script\": \"Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.\",\n    \"opposition_type\": \"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\",\n    \"trigger\": \"Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \\\"En... cut, neem twee.\\\"\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Een etentje bij kaarslicht.\",\n      \"Een klein doosje met een ring.\",\n      \"Nerveuze stiltes en emotionele woorden.\",\n      \"Een knielende partner.\",\n      \"Gasten of omstanders die applaudisseren.\"\n    ],\n    \"hinge_event\": \"Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.\",\n    \"anomaly_under_a\": \"In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.\",\n    \"resolution_under_b\": \"Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.\",\n    \"role_remapping\": [\n      \"De romantische partners uit Script A worden acteurs die die partners spelen.\",\n      \"De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.\",\n      \"De huwelijksbelofte wordt een tekst uit een draaiboek.\",\n      \"De ring wordt naast liefdessymbool ook een product en rekwisiet.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.\",\n      \"participants_and_roles\": [\n        \"Twee romantische partners: geliefden die elkaar leren kennen, affectie tonen en gezamenlijke keuzes maken.\",\n        \"Eventueel een huwelijkspartner/verloofde: iemand die zich publiekelijk en juridisch aan de ander verbindt.\",\n        \"Familie, vrienden en ceremoniële betrokkenen: sociale kring die de relatie en het huwelijk erkent of viert.\"\n      ],\n      \"apparent_goal\": \"Een liefdevolle, duurzame en gelijkwaardige relatie vormen, eventueel bekrachtigd door een huwelijk, met een bevredigend en respectvol intiem leven.\",\n      \"preconditions\": [\n        \"Er is wederzijdse aantrekkingskracht of genegenheid.\",\n        \"Beide partners kunnen vrij en geïnformeerd instemmen met relatie-, huwelijks- en seksuele keuzes.\",\n        \"Er bestaat voldoende vertrouwen, communicatie en emotionele veiligheid.\",\n        \"Bij een huwelijk zijn praktische, juridische en sociale voorbereidingen getroffen.\",\n        \"Grenzen, verwachtingen en exclusiviteitsafspraken zijn besproken of kunnen bespreekbaar worden gemaakt.\"\n      ],\n      \"expected_actions\": [\n        \"De partners daten, communiceren en onderzoeken of zij bij elkaar passen.\",\n        \"Zij spreken liefde, toewijding en toekomstverwachtingen uit.\",\n        \"Als zij willen trouwen, plannen zij een ceremonie en leggen zij wederzijdse beloften af.\",\n        \"Zij verdelen verantwoordelijkheden en nemen gezamenlijke beslissingen over hun leven.\",\n        \"Zij benaderen seksualiteit als vrijwillige, private intimiteit met aandacht voor wederzijds plezier, grenzen en veiligheid.\"\n      ],\n      \"expected_outcome\": \"Een erkende, stabiele partnerrelatie waarin beide mensen zich geliefd, gerespecteerd en veilig voelen, en waarin huwelijk en intimiteit hun gezamenlijke verbondenheid ondersteunen.\",\n      \"expected_propositions\": [\n        \"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\",\n        \"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\",\n        \"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\",\n        \"Goede relaties vragen om open communicatie, vertrouwen en respect voor grenzen.\",\n        \"Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.\"\n      ],\n      \"audience_expectation\": \"Een setup over liefde, huwelijk en seksualiteit activeert meestal het beeld van twee instemmende partners die via romantiek, beloften en respectvolle intimiteit een duurzame gezamenlijke toekomst opbouwen.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.\",\n      \"opposition_axis\": \"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\",\n      \"opposed_proposition\": \"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\",\n      \"shared_anchor\": \"Een aanzoek met ring en emotionele beloften.\",\n      \"reading_a\": \"Twee geliefden gebruiken de ring en de beloften om hun eigen wederzijdse verbintenis te bevestigen.\",\n      \"reading_b\": \"Twee acteurs gebruiken ring en beloften als rekwisieten om een geloofwaardige romantische scène te verkopen.\",\n      \"roles_b\": [\n        \"Acteur 1: vertolkt de aanzoekende partner.\",\n        \"Acteur 2: vertolkt de ontroerde partner.\",\n        \"Regisseur en filmploeg: sturen de uitvoering en leggen de scène vast.\",\n        \"Juwelier/opdrachtgever: wil een aantrekkelijk reclamebeeld creëren.\"\n      ],\n      \"goal_b\": \"Een overtuigende reclame-opname maken die een ring en het merk aantrekkelijk presenteert.\",\n      \"role_remapping\": [\n        \"De romantische partners uit Script A worden acteurs die die partners spelen.\",\n        \"De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.\",\n        \"De huwelijksbelofte wordt een tekst uit een draaiboek.\",\n        \"De ring wordt naast liefdessymbool ook een product en rekwisiet.\"\n      ],\n      \"shared_cues\": [\n        \"Een etentje bij kaarslicht.\",\n        \"Een klein doosje met een ring.\",\n        \"Nerveuze stiltes en emotionele woorden.\",\n        \"Een knielende partner.\",\n        \"Gasten of omstanders die applaudisseren.\"\n      ],\n      \"switch_trigger\": \"Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \\\"En... cut, neem twee.\\\"\",\n      \"hinge_event\": \"Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.\",\n      \"anomaly_under_a\": \"In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.\",\n      \"opposing_script\": \"Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.\",\n      \"opposition_type\": \"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\",\n      \"trigger\": \"Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \\\"En... cut, neem twee.\\\"\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Een etentje bij kaarslicht.\",\n        \"Een klein doosje met een ring.\",\n        \"Nerveuze stiltes en emotionele woorden.\",\n        \"Een knielende partner.\",\n        \"Gasten of omstanders die applaudisseren.\"\n      ],\n      \"hinge_event\": \"Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.\",\n      \"anomaly_under_a\": \"In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.\",\n      \"resolution_under_b\": \"Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.\",\n      \"role_remapping\": [\n        \"De romantische partners uit Script A worden acteurs die die partners spelen.\",\n        \"De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.\",\n        \"De huwelijksbelofte wordt een tekst uit een draaiboek.\",\n        \"De ring wordt naast liefdessymbool ook een product en rekwisiet.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Mijn vriend nam me mee uit eten, knielde met een ring en zei trillend dat hij voor altijd van me hield. Ik zei ja, tot de ober mijn ring omwisselde en de regisseur riep: „Kus op je markering, neem twee.”\",\n      \"angle\": \"Romantisch aanzoek verandert laat in een reclameopname.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Op onze trouwdag stonden zelfs onbekenden te applaudisseren toen we onze geloften uitspraken. Ontroerend, totdat iemand mijn sluier rechtzette en zei: „Perfect, maar deze keer graag minder emotie voor de juwelier.”\",\n      \"angle\": \"Huwelijksceremonie blijkt een commercieel gedirigeerde set.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ze keek me bij kaarslicht aan, ik opende het doosje en we vielen precies op tijd stil. Na de kus vroeg een man met een koptelefoon of we de ring konden teruggeven: hij moest nog glimmen in de close-up.\",\n      \"angle\": \"Intieme stilte en kus worden herkadert als productcontinuïteit.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Liefde, huwelijk en seksualiteit\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Mijn vriend nam me mee uit eten, knielde met een ring en zei trillend dat hij voor altijd van me hield. Ik zei ja, tot de ober mijn ring omwisselde en de regisseur riep: „Kus op je markering, neem twee.”\",\n      \"angle\": \"Romantisch aanzoek verandert laat in een reclameopname.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Op onze trouwdag stonden zelfs onbekenden te applaudisseren toen we onze geloften uitspraken. Ontroerend, totdat iemand mijn sluier rechtzette en zei: „Perfect, maar deze keer graag minder emotie voor de juwelier.”\",\n      \"angle\": \"Huwelijksceremonie blijkt een commercieel gedirigeerde set.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ze keek me bij kaarslicht aan, ik opende het doosje en we vielen precies op tijd stil. Na de kus vroeg een man met een koptelefoon of we de ring konden teruggeven: hij moest nog glimmen in de close-up.\",\n      \"angle\": \"Intieme stilte en kus worden herkadert als productcontinuïteit.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een vrouw beleeft ogenschijnlijk een oprecht, emotioneel huwelijksaanzoek van haar vriend tijdens een diner.\",\n      \"realized_script_b\": \"Twee acteurs voeren voor een juweliersreclame een geënsceneerd aanzoek en kus uit onder leiding van een regisseur, met verwisselbare rekwisieten en vaste markeringen.\",\n      \"realized_opposition_axis\": \"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De dominante aanzoeklezing gebruikt de geplande romantische cues; de ober die de ring wisselt en de regisseur die een tweede take vraagt activeren expliciet de reclamefilmlezing en herinterpreteren die cues.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een duidelijke, natuurlijk vertelde setup leidt van een persoonlijk aanzoek naar precies de bedoelde filmset- en reclameonthulling.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een stel beleeft ogenschijnlijk zijn eigen trouwdag en spreekt oprecht geloften uit voor een publiek.\",\n      \"realized_script_b\": \"Een geënsceneerde, door een juwelier gebruikte trouwscène wordt geregisseerd en moet met een andere emotionele uitvoering opnieuw worden gedaan.\",\n      \"realized_opposition_axis\": \"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Geloften en applaus dragen eerst een echte huwelijksceremonie. De technische correctie en de verwijzing naar de juwelier maken vervolgens functioneel duidelijk dat de ceremonie een commercieel gedirigeerde opname is, ook al noemt de tekst geen expliciete 'cut' of acteurs.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant behoudt de beoogde omslag van ontroerende geloften naar een door commerciële opname-eisen gestuurde scène.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een persoon doet bij kaarslicht ogenschijnlijk een oprecht aanzoek met ring, gevolgd door een kus.\",\n      \"realized_script_b\": \"De romantische scène wordt gefilmd als een productopname waarin de ring voor een close-up moet worden teruggegeven.\",\n      \"realized_opposition_axis\": \"Oprecht romantisch aanzoek versus gefilmde productpresentatie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De tekst activeert wel een film- of productiesituatie, maar maakt onvoldoende duidelijk dat de twee personen professionele acteurs zijn die een geënsceneerd aanzoek voor een juweliersreclame uitvoeren. Het kan ook een echt aanzoek zijn dat slechts commercieel wordt gefilmd; daardoor is de bedoelde professionele-vertolking-script B niet functioneel volledig gevestigd.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De grap werkt als omslag naar een filmopname met productcontinuïteit, maar realiseert de specifieke bedoelde tegenstelling met acteren en een juweliersreclame slechts gedeeltelijk.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Mijn vriend nam me mee uit eten, knielde met een ring en zei trillend dat hij voor altijd van me hield. Ik zei ja, tot de ober mijn ring omwisselde en de regisseur riep: „Kus op je markering, neem twee.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.",
+      "opposing_script": "Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.",
+      "opposition_type": "Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.",
+      "trigger": "Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \"En... cut, neem twee.\"",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Een etentje bij kaarslicht.",
+        "Een klein doosje met een ring.",
+        "Nerveuze stiltes en emotionele woorden.",
+        "Een knielende partner.",
+        "Gasten of omstanders die applaudisseren."
+      ],
+      "hinge_event": "Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.",
+      "anomaly_under_a": "In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.",
+      "resolution_under_b": "Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.",
+      "role_remapping": [
+        "De romantische partners uit Script A worden acteurs die die partners spelen.",
+        "De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.",
+        "De huwelijksbelofte wordt een tekst uit een draaiboek.",
+        "De ring wordt naast liefdessymbool ook een product en rekwisiet."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.\\\",\\\"participants_and_roles\\\":[\\\"Twee romantische partners: geliefden die elkaar leren kennen, affectie tonen en gezamenlijke keuzes maken.\\\",\\\"Eventueel een huwelijkspartner/verloofde: iemand die zich publiekelijk en juridisch aan de ander verbindt.\\\",\\\"Familie, vrienden en ceremoniële betrokkenen: sociale kring die de relatie en het huwelijk erkent of viert.\\\"],\\\"apparent_goal\\\":\\\"Een liefdevolle, duurzame en gelijkwaardige relatie vormen, eventueel bekrachtigd door een huwelijk, met een bevredigend en respectvol intiem leven.\\\",\\\"preconditions\\\":[\\\"Er is wederzijdse aantrekkingskracht of genegenheid.\\\",\\\"Beide partners kunnen vrij en geïnformeerd instemmen met relatie-, huwelijks- en seksuele keuzes.\\\",\\\"Er bestaat voldoende vertrouwen, communicatie en emotionele veiligheid.\\\",\\\"Bij een huwelijk zijn praktische, juridische en sociale voorbereidingen getroffen.\\\",\\\"Grenzen, verwachtingen en exclusiviteitsafspraken zijn besproken of kunnen bespreekbaar worden gemaakt.\\\"],\\\"expected_actions\\\":[\\\"De partners daten, communiceren en onderzoeken of zij bij elkaar passen.\\\",\\\"Zij spreken liefde, toewijding en toekomstverwachtingen uit.\\\",\\\"Als zij willen trouwen, plannen zij een ceremonie en leggen zij wederzijdse beloften af.\\\",\\\"Zij verdelen verantwoordelijkheden en nemen gezamenlijke beslissingen over hun leven.\\\",\\\"Zij benaderen seksualiteit als vrijwillige, private intimiteit met aandacht voor wederzijds plezier, grenzen en veiligheid.\\\"],\\\"expected_outcome\\\":\\\"Een erkende, stabiele partnerrelatie waarin beide mensen zich geliefd, gerespecteerd en veilig voelen, en waarin huwelijk en intimiteit hun gezamenlijke verbondenheid ondersteunen.\\\",\\\"expected_propositions\\\":[\\\"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\\\",\\\"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\\\",\\\"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\\\",\\\"Goede relaties vragen om open communicatie, vertrouwen en respect voor grenzen.\\\",\\\"Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.\\\"],\\\"audience_expectation\\\":\\\"Een setup over liefde, huwelijk en seksualiteit activeert meestal het beeld van twee instemmende partners die via romantiek, beloften en respectvolle intimiteit een duurzame gezamenlijke toekomst opbouwen.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.\\\",\\\"opposition_axis\\\":\\\"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\\\",\\\"opposed_proposition\\\":\\\"Liefde veronderstelt wederkerigheid: beide partners willen de relatie.\\\",\\\"shared_anchor\\\":\\\"Een aanzoek met ring en emotionele beloften.\\\",\\\"reading_a\\\":\\\"Twee geliefden gebruiken de ring en de beloften om hun eigen wederzijdse verbintenis te bevestigen.\\\",\\\"reading_b\\\":\\\"Twee acteurs gebruiken ring en beloften als rekwisieten om een geloofwaardige romantische scène te verkopen.\\\",\\\"roles_b\\\":[\\\"Acteur 1: vertolkt de aanzoekende partner.\\\",\\\"Acteur 2: vertolkt de ontroerde partner.\\\",\\\"Regisseur en filmploeg: sturen de uitvoering en leggen de scène vast.\\\",\\\"Juwelier/opdrachtgever: wil een aantrekkelijk reclamebeeld creëren.\\\"],\\\"goal_b\\\":\\\"Een overtuigende reclame-opname maken die een ring en het merk aantrekkelijk presenteert.\\\",\\\"role_remapping\\\":[\\\"De romantische partners uit Script A worden acteurs die die partners spelen.\\\",\\\"De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.\\\",\\\"De huwelijksbelofte wordt een tekst uit een draaiboek.\\\",\\\"De ring wordt naast liefdessymbool ook een product en rekwisiet.\\\"],\\\"shared_cues\\\":[\\\"Een etentje bij kaarslicht.\\\",\\\"Een klein doosje met een ring.\\\",\\\"Nerveuze stiltes en emotionele woorden.\\\",\\\"Een knielende partner.\\\",\\\"Gasten of omstanders die applaudisseren.\\\"],\\\"switch_trigger\\\":\\\"Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \\\\\\\"En... cut, neem twee.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.\\\",\\\"anomaly_under_a\\\":\\\"In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.\\\",\\\"resolution_under_b\\\":\\\"Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Twee medewerkers van een trouwlocatie demonstreren op een bruidsbeurs een voorbeeldceremonie. Zij spelen een overtuigend bruidspaar om bezoekers te laten zien hoe de locatie, de ceremonie en de leveranciers samenwerken.\\\",\\\"opposition_axis\\\":\\\"Persoonlijke huwelijksverbintenis versus commerciële demonstratie.\\\",\\\"opposed_proposition\\\":\\\"Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.\\\",\\\"shared_anchor\\\":\\\"Een ceremonie met geloften, ringen en een ondertekening.\\\",\\\"reading_a\\\":\\\"Een echt paar legt openbare en juridische beloften af om een gezamenlijk leven te beginnen.\\\",\\\"reading_b\\\":\\\"Presentatiemedewerkers voeren een voorbeeldhuwelijk op om diensten van de locatie en leveranciers te tonen.\\\",\\\"roles_b\\\":[\\\"Demonstratiebruid: medewerker of model dat de rol van bruid speelt.\\\",\\\"Demonstratiebruidegom: medewerker of model dat de rol van bruidegom speelt.\\\",\\\"Ceremonieel begeleider: presenteert de voorbeeldplechtigheid.\\\",\\\"Beursbezoekers: potentiële klanten.\\\",\\\"Leveranciers: tonen bloemen, catering, fotografie en kleding.\\\"],\\\"goal_b\\\":\\\"Bezoekers overtuigen om de trouwlocatie en aangesloten leveranciers te boeken.\\\",\\\"role_remapping\\\":[\\\"De verloofden uit Script A worden demonstratiemodellen.\\\",\\\"Familie en vrienden worden beursbezoekers en potentiële klanten.\\\",\\\"De ceremoniële betrokkenen worden presentatoren en leveranciers.\\\",\\\"De huwelijksakte wordt een ongeldige voorbeeldkaart of contractdemonstratie.\\\"],\\\"shared_cues\\\":[\\\"Bloemdecoratie en feestelijke muziek.\\\",\\\"Een witte outfit en formeel pak.\\\",\\\"Ringen die worden aangereikt.\\\",\\\"Een ceremonieel welkom.\\\",\\\"Applaus na de geloften.\\\"],\\\"switch_trigger\\\":\\\"Na het applaus pakt de ceremoniemeester een microfoon en zegt: \\\\\\\"Dank u, straks demonstreren we het dessertbuffet in zaal twee.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Het zogenoemde bruidspaar loopt rechtstreeks naar een stand, zet naamkaartjes met functietitels op en bespreekt boekingspakketten met bezoekers.\\\",\\\"anomaly_under_a\\\":\\\"Wanneer pasgetrouwden onmiddellijk hun rollen afleggen en verkoopgesprekken beginnen, botst dat met de verwachte persoonlijke betekenis van de ceremonie.\\\",\\\"resolution_under_b\\\":\\\"Op een bruidsbeurs is de snelle overgang naar productinformatie precies het doel: de ceremonie was een aantrekkelijke, verkoopbare demonstratie.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Twee acteurs nemen onder begeleiding van een intimiteitscoördinator een romantische scène op voor een dramaserie. De nabijheid lijkt spontaan en persoonlijk, maar iedere beweging, grens en pauze is vooraf professioneel afgestemd.\\\",\\\"opposition_axis\\\":\\\"Private spontane intimiteit versus geregisseerde en technisch afgestemde scène-uitvoering.\\\",\\\"opposed_proposition\\\":\\\"Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.\\\",\\\"shared_anchor\\\":\\\"Een stil moment van lichamelijke toenadering en wederzijdse bevestiging.\\\",\\\"reading_a\\\":\\\"Twee geliefden zoeken in beslotenheid vrijwillig fysieke intimiteit en stemmen op elkaar af vanuit hun relatie.\\\",\\\"reading_b\\\":\\\"Twee acteurs verbeelden intimiteit voor een camera en voeren vooraf overeengekomen handelingen uit binnen een productieprotocol.\\\",\\\"roles_b\\\":[\\\"Acteur 1 en acteur 2: vertolken de romantische personages.\\\",\\\"Intimiteitscoördinator: bewaakt afspraken, grenzen en veilige uitvoering.\\\",\\\"Regisseur: bepaalt het dramatische beeld en de opname.\\\",\\\"Camera- en geluidsploeg: registreren de scène.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige dramascène opnemen zonder de professionele grenzen en veiligheid van de acteurs te schenden.\\\",\\\"role_remapping\\\":[\\\"De romantische partners uit Script A worden acteurs en hun personages.\\\",\\\"Open communicatie tussen geliefden wordt een voorafgaande professionele afstemming.\\\",\\\"Privacy wordt vervangen door een gecontroleerde set met beperkte ploeg.\\\",\\\"Wederzijdse bevestiging wordt zowel acteersignaal als veiligheidsafspraak.\\\"],\\\"shared_cues\\\":[\\\"Zachte verlichting.\\\",\\\"Een gesloten kamer.\\\",\\\"Voorzichtige toenadering.\\\",\\\"Een vraag of alles goed gaat.\\\",\\\"Korte bevestigende antwoorden en aandacht voor grenzen.\\\"],\\\"switch_trigger\\\":\\\"Vlak na het ogenschijnlijk intieme moment zegt iemand buiten beeld: \\\\\\\"Pauze; we controleren eerst de afdekking en de camerahoek.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De acteurs stappen uit elkaar, trekken badjassen aan en bespreken met de coördinator of de vooraf afgesproken choreografie nog comfortabel is.\\\",\\\"anomaly_under_a\\\":\\\"Een technische onderbreking, badjassen en een derde persoon die bewegingen controleert zouden midden in private partnerintimiteit vreemd en storend zijn.\\\",\\\"resolution_under_b\\\":\\\"Bij een gefilmde scène maken precies deze onderbreking en controle de opname professioneel, veilig en gebaseerd op expliciete werkafspraken.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Twee deelnemers aan een reality-datingsprogramma bouwen voor de camera een ogenschijnlijk serieuze relatie op. Hun ontmoetingen, toekomstgesprekken en ceremonieel moment zijn tegelijk onderdelen van een televisieformat waarin zij zichtbaar willen blijven en een finaleplaats willen bereiken.\\\",\\\"opposition_axis\\\":\\\"Duurzame persoonlijke toewijding versus strategische deelname aan een spel- en mediaformat.\\\",\\\"opposed_proposition\\\":\\\"Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.\\\",\\\"shared_anchor\\\":\\\"Een emotioneel gesprek over exclusiviteit en een gezamenlijke toekomst.\\\",\\\"reading_a\\\":\\\"Een partner bespreekt exclusiviteit en toekomstplannen om de ander zekerheid, erkenning en emotionele veiligheid te geven.\\\",\\\"reading_b\\\":\\\"Een deelnemer voert een formatgesprek dat zowel persoonlijke gevoelens als kansen op schermtijd, publiekssteun en voortgang in het programma beïnvloedt.\\\",\\\"roles_b\\\":[\\\"Deelnemer 1: presenteert zich als romantische partner binnen het programma.\\\",\\\"Deelnemer 2: reageert als potentiële partner en mededeelnemer.\\\",\\\"Presentator: kadert de momenten als afleveringrediënt.\\\",\\\"Producenten en crew: organiseren opdrachten, opnamen en montages.\\\",\\\"Publiek: beoordeelt of volgt de deelnemers.\\\"],\\\"goal_b\\\":\\\"In het programma geloofwaardig en aantrekkelijk overkomen, een gunstige positie behouden en eventueel de finale of prijs bereiken.\\\",\\\"role_remapping\\\":[\\\"De geliefden uit Script A worden deelnemers én publieke personages.\\\",\\\"Vrienden en familie worden deels vervangen door presentator, crew en kijkers.\\\",\\\"Een privé-toekomstgesprek wordt een opgenomen formatmoment.\\\",\\\"Relatie-erkenning wordt mede afhankelijk van montage, publieksreactie en spelregels.\\\"],\\\"shared_cues\\\":[\\\"Een romantische date op een afgezonderde locatie.\\\",\\\"Persoonlijke bekentenissen.\\\",\\\"Een gesprek over exclusiviteit.\\\",\\\"Een symbolisch geschenk.\\\",\\\"Tranen, omhelzingen en een toast op de toekomst.\\\"],\\\"switch_trigger\\\":\\\"Nadat één deelnemer exclusiviteit heeft beloofd, komt de presentator in beeld met de mededeling dat de andere deelnemers nu mogen stemmen over wie naar de volgende ronde gaat.\\\",\\\"hinge_event\\\":\\\"De deelnemer die net over een gezamenlijke toekomst sprak, vraagt direct of de belofte goed in beeld is gekomen en informeert naar de publieksreacties.\\\",\\\"anomaly_under_a\\\":\\\"In een oprechte, kwetsbare relatie zou de onmiddellijke zorg om camerabeeld en stemmen de persoonlijke belofte instrumenteel en ongevoelig maken.\\\",\\\"resolution_under_b\\\":\\\"Binnen een realityformat is aandacht voor beeldvorming en stemmen functioneel: de romantische scène is tegelijk een persoonlijke interactie en een beslissend spelelement.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Hetzelfde aanzoek met ring en beloften kan geloofwaardig eerst als wederzijdse romantische verbintenis en vervolgens als reclameopname worden gelezen. De dominante tegenstelling is oprechte relatie versus professionele enscenering. De cues passen bij beide lezingen, terwijl de setcontext aanvankelijk verborgen kan blijven. De cut, vervangring, markering en herhaalde kus zijn onder A ongepast maar onder B functionele productiehandelingen. Zij blokkeren de persoonlijke betekenis van het aanzoek en maken tegelijk het reclamedoel mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een ceremonie met geloften, ringen en ondertekening kan zowel een werkelijk huwelijk als een beursdemonstratie voorstellen. De lokale tegenstelling is persoonlijk-juridische verbintenis versus commerciële voorbeeldopvoering, en die is dominant. De verkoopovergang is aanvankelijk anomalisch onder A, maar doelmatig onder B. Daardoor worden de eerdere geloften en symbolen retrospectief demonstratiemateriaal. Het direct afleggen van de rollen verhindert de normale huwelijksfunctie, maar faciliteert het verkoopdoel.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde voorzichtige toenadering en bevestiging kan een privaat intiem moment of een professioneel opgenomen scène zijn. De dominante tegenstelling betreft private, relationele intimiteit tegenover geregisseerde scène-uitvoering. De tweede lezing is sociaal herkenbaar en de gedeelde cues blijven ermee verenigbaar. De technische pauze, badjassen en choreografiebespreking verstoren A, maar zijn onder B veiligheids- en productievereisten. Zij onderbreken de private intimiteitsfunctie en maken tegelijk veilige, controleerbare opname mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":false,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Het emotionele exclusiviteitsgesprek kan zowel als oprechte relatiebelofte als als realityformatmoment functioneren, en de realitylezing is herkenbaar. De scripts vormen echter geen strikte lokale oppositie: Script B stelt expliciet dat persoonlijke gevoelens naast strategische belangen kunnen bestaan. Strategische deelname sluit duurzame persoonlijke toewijding dus niet noodzakelijk uit. Daardoor is ook geen enkele oppositie ondubbelzinnig dominant. De camera- en stemzorg is wel anomalisch onder een louter private lezing en functioneel onder B; zij herkadert de eerdere belofte als mede-instrumenteel en ondersteunt het programmadoel.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest direct herkenbare tegenstelling: een oprechte wederzijdse verbintenis tegenover een professioneel geënsceneerde vertolking. De romantische signalen domineren aanvankelijk overtuigend, terwijl het late set-signaal en vooral de ringwissel de eerdere handelingen efficiënt hercoderen als opname-elementen. Daardoor is de tweede lezing retrospectief sterk onderbouwd zonder de setup voortijdig weg te geven. De kandidaat is economisch, sluit duidelijk aan op liefde en huwelijk, en heeft een heldere payoff doordat precies de meest emotioneel geladen symbolen—geloften, kus en ring—functioneel blijken voor reclameproductie in plaats van persoonlijke toewijding.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Mijn vriend nam me mee uit eten, knielde met een ring en zei trillend dat hij voor altijd van me hield. Ik zei ja, tot de ober mijn ring omwisselde en de regisseur riep: „Kus op je markering, neem twee.”\\\",\\\"angle\\\":\\\"Romantisch aanzoek verandert laat in een reclameopname.\\\"},{\\\"text\\\":\\\"Op onze trouwdag stonden zelfs onbekenden te applaudisseren toen we onze geloften uitspraken. Ontroerend, totdat iemand mijn sluier rechtzette en zei: „Perfect, maar deze keer graag minder emotie voor de juwelier.”\\\",\\\"angle\\\":\\\"Huwelijksceremonie blijkt een commercieel gedirigeerde set.\\\"},{\\\"text\\\":\\\"Ze keek me bij kaarslicht aan, ik opende het doosje en we vielen precies op tijd stil. Na de kus vroeg een man met een koptelefoon of we de ring konden teruggeven: hij moest nog glimmen in de close-up.\\\",\\\"angle\\\":\\\"Intieme stilte en kus worden herkadert als productcontinuïteit.\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een vrouw beleeft ogenschijnlijk een oprecht, emotioneel huwelijksaanzoek van haar vriend tijdens een diner.\\\",\\\"realized_script_b\\\":\\\"Twee acteurs voeren voor een juweliersreclame een geënsceneerd aanzoek en kus uit onder leiding van een regisseur, met verwisselbare rekwisieten en vaste markeringen.\\\",\\\"realized_opposition_axis\\\":\\\"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De dominante aanzoeklezing gebruikt de geplande romantische cues; de ober die de ring wisselt en de regisseur die een tweede take vraagt activeren expliciet de reclamefilmlezing en herinterpreteren die cues.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een duidelijke, natuurlijk vertelde setup leidt van een persoonlijk aanzoek naar precies de bedoelde filmset- en reclameonthulling.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een stel beleeft ogenschijnlijk zijn eigen trouwdag en spreekt oprecht geloften uit voor een publiek.\\\",\\\"realized_script_b\\\":\\\"Een geënsceneerde, door een juwelier gebruikte trouwscène wordt geregisseerd en moet met een andere emotionele uitvoering opnieuw worden gedaan.\\\",\\\"realized_opposition_axis\\\":\\\"Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Geloften en applaus dragen eerst een echte huwelijksceremonie. De technische correctie en de verwijzing naar de juwelier maken vervolgens functioneel duidelijk dat de ceremonie een commercieel gedirigeerde opname is, ook al noemt de tekst geen expliciete 'cut' of acteurs.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant behoudt de beoogde omslag van ontroerende geloften naar een door commerciële opname-eisen gestuurde scène.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een persoon doet bij kaarslicht ogenschijnlijk een oprecht aanzoek met ring, gevolgd door een kus.\\\",\\\"realized_script_b\\\":\\\"De romantische scène wordt gefilmd als een productopname waarin de ring voor een close-up moet worden teruggegeven.\\\",\\\"realized_opposition_axis\\\":\\\"Oprecht romantisch aanzoek versus gefilmde productpresentatie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De tekst activeert wel een film- of productiesituatie, maar maakt onvoldoende duidelijk dat de twee personen professionele acteurs zijn die een geënsceneerd aanzoek voor een juweliersreclame uitvoeren. Het kan ook een echt aanzoek zijn dat slechts commercieel wordt gefilmd; daardoor is de bedoelde professionele-vertolking-script B niet functioneel volledig gevestigd.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De grap werkt als omslag naar een filmopname met productcontinuïteit, maar realiseert de specifieke bedoelde tegenstelling met acteren en een juweliersreclame slechts gedeeltelijk.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 maakt de geënsceneerde reclamewereld explicieter met de ringwissel, de regisseur en „neem twee”. Daardoor is de scriptswitch scherper en wordt het oorspronkelijke aanzoek sterker achteraf herlezen dan in V2.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is een passerende variant en V3 niet. Bovendien bevestigen de regisseur en de tweede take ondubbelzinnig dat het aanzoek gespeeld is, terwijl V3 ook een echt aanzoek kan zijn dat alleen gefilmd wordt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is een passerende variant en V3 niet. De aanwijzing van de juwelier en de regie op emotie herkadert de geloften duidelijk als commerciële opname; V3 vestigt de acteurs- en reclamelezen onvoldoende volledig.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 combineert de sterkste vereiste scripttegenstelling met een heldere, goed uitvoerbare omslag. De expliciete regie-aanwijzing maakt de herinterpretatie van alle romantische signalen onmiddellijk en volledig.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.",
+        "candidate_id": "B1",
+        "opposition_axis": "Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.",
+        "opposed_expectation": "Liefde veronderstelt wederkerigheid: beide partners willen de relatie.",
+        "roles_b": [
+          "Acteur 1: vertolkt de aanzoekende partner.",
+          "Acteur 2: vertolkt de ontroerde partner.",
+          "Regisseur en filmploeg: sturen de uitvoering en leggen de scène vast.",
+          "Juwelier/opdrachtgever: wil een aantrekkelijk reclamebeeld creëren."
+        ],
+        "goal_b": "Een overtuigende reclame-opname maken die een ring en het merk aantrekkelijk presenteert.",
+        "role_remapping": [
+          "De romantische partners uit Script A worden acteurs die die partners spelen.",
+          "De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.",
+          "De huwelijksbelofte wordt een tekst uit een draaiboek.",
+          "De ring wordt naast liefdessymbool ook een product en rekwisiet."
+        ],
+        "shared_cues": [
+          "Een etentje bij kaarslicht.",
+          "Een klein doosje met een ring.",
+          "Nerveuze stiltes en emotionele woorden.",
+          "Een knielende partner.",
+          "Gasten of omstanders die applaudisseren."
+        ],
+        "switch_trigger": "Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \"En... cut, neem twee.\"",
+        "hinge_event": "Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.",
+        "anomaly_under_a": "In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.",
+        "resolution_under_b": "Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee medewerkers van een trouwlocatie demonstreren op een bruidsbeurs een voorbeeldceremonie. Zij spelen een overtuigend bruidspaar om bezoekers te laten zien hoe de locatie, de ceremonie en de leveranciers samenwerken.",
+        "candidate_id": "B2",
+        "opposition_axis": "Persoonlijke huwelijksverbintenis versus commerciële demonstratie.",
+        "opposed_expectation": "Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.",
+        "roles_b": [
+          "Demonstratiebruid: medewerker of model dat de rol van bruid speelt.",
+          "Demonstratiebruidegom: medewerker of model dat de rol van bruidegom speelt.",
+          "Ceremonieel begeleider: presenteert de voorbeeldplechtigheid.",
+          "Beursbezoekers: potentiële klanten.",
+          "Leveranciers: tonen bloemen, catering, fotografie en kleding."
+        ],
+        "goal_b": "Bezoekers overtuigen om de trouwlocatie en aangesloten leveranciers te boeken.",
+        "role_remapping": [
+          "De verloofden uit Script A worden demonstratiemodellen.",
+          "Familie en vrienden worden beursbezoekers en potentiële klanten.",
+          "De ceremoniële betrokkenen worden presentatoren en leveranciers.",
+          "De huwelijksakte wordt een ongeldige voorbeeldkaart of contractdemonstratie."
+        ],
+        "shared_cues": [
+          "Bloemdecoratie en feestelijke muziek.",
+          "Een witte outfit en formeel pak.",
+          "Ringen die worden aangereikt.",
+          "Een ceremonieel welkom.",
+          "Applaus na de geloften."
+        ],
+        "switch_trigger": "Na het applaus pakt de ceremoniemeester een microfoon en zegt: \"Dank u, straks demonstreren we het dessertbuffet in zaal twee.\"",
+        "hinge_event": "Het zogenoemde bruidspaar loopt rechtstreeks naar een stand, zet naamkaartjes met functietitels op en bespreekt boekingspakketten met bezoekers.",
+        "anomaly_under_a": "Wanneer pasgetrouwden onmiddellijk hun rollen afleggen en verkoopgesprekken beginnen, botst dat met de verwachte persoonlijke betekenis van de ceremonie.",
+        "resolution_under_b": "Op een bruidsbeurs is de snelle overgang naar productinformatie precies het doel: de ceremonie was een aantrekkelijke, verkoopbare demonstratie.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee acteurs nemen onder begeleiding van een intimiteitscoördinator een romantische scène op voor een dramaserie. De nabijheid lijkt spontaan en persoonlijk, maar iedere beweging, grens en pauze is vooraf professioneel afgestemd.",
+        "candidate_id": "B3",
+        "opposition_axis": "Private spontane intimiteit versus geregisseerde en technisch afgestemde scène-uitvoering.",
+        "opposed_expectation": "Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.",
+        "roles_b": [
+          "Acteur 1 en acteur 2: vertolken de romantische personages.",
+          "Intimiteitscoördinator: bewaakt afspraken, grenzen en veilige uitvoering.",
+          "Regisseur: bepaalt het dramatische beeld en de opname.",
+          "Camera- en geluidsploeg: registreren de scène."
+        ],
+        "goal_b": "Een geloofwaardige dramascène opnemen zonder de professionele grenzen en veiligheid van de acteurs te schenden.",
+        "role_remapping": [
+          "De romantische partners uit Script A worden acteurs en hun personages.",
+          "Open communicatie tussen geliefden wordt een voorafgaande professionele afstemming.",
+          "Privacy wordt vervangen door een gecontroleerde set met beperkte ploeg.",
+          "Wederzijdse bevestiging wordt zowel acteersignaal als veiligheidsafspraak."
+        ],
+        "shared_cues": [
+          "Zachte verlichting.",
+          "Een gesloten kamer.",
+          "Voorzichtige toenadering.",
+          "Een vraag of alles goed gaat.",
+          "Korte bevestigende antwoorden en aandacht voor grenzen."
+        ],
+        "switch_trigger": "Vlak na het ogenschijnlijk intieme moment zegt iemand buiten beeld: \"Pauze; we controleren eerst de afdekking en de camerahoek.\"",
+        "hinge_event": "De acteurs stappen uit elkaar, trekken badjassen aan en bespreken met de coördinator of de vooraf afgesproken choreografie nog comfortabel is.",
+        "anomaly_under_a": "Een technische onderbreking, badjassen en een derde persoon die bewegingen controleert zouden midden in private partnerintimiteit vreemd en storend zijn.",
+        "resolution_under_b": "Bij een gefilmde scène maken precies deze onderbreking en controle de opname professioneel, veilig en gebaseerd op expliciete werkafspraken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee deelnemers aan een reality-datingsprogramma bouwen voor de camera een ogenschijnlijk serieuze relatie op. Hun ontmoetingen, toekomstgesprekken en ceremonieel moment zijn tegelijk onderdelen van een televisieformat waarin zij zichtbaar willen blijven en een finaleplaats willen bereiken.",
+        "candidate_id": "B4",
+        "opposition_axis": "Duurzame persoonlijke toewijding versus strategische deelname aan een spel- en mediaformat.",
+        "opposed_expectation": "Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.",
+        "roles_b": [
+          "Deelnemer 1: presenteert zich als romantische partner binnen het programma.",
+          "Deelnemer 2: reageert als potentiële partner en mededeelnemer.",
+          "Presentator: kadert de momenten als afleveringrediënt.",
+          "Producenten en crew: organiseren opdrachten, opnamen en montages.",
+          "Publiek: beoordeelt of volgt de deelnemers."
+        ],
+        "goal_b": "In het programma geloofwaardig en aantrekkelijk overkomen, een gunstige positie behouden en eventueel de finale of prijs bereiken.",
+        "role_remapping": [
+          "De geliefden uit Script A worden deelnemers én publieke personages.",
+          "Vrienden en familie worden deels vervangen door presentator, crew en kijkers.",
+          "Een privé-toekomstgesprek wordt een opgenomen formatmoment.",
+          "Relatie-erkenning wordt mede afhankelijk van montage, publieksreactie en spelregels."
+        ],
+        "shared_cues": [
+          "Een romantische date op een afgezonderde locatie.",
+          "Persoonlijke bekentenissen.",
+          "Een gesprek over exclusiviteit.",
+          "Een symbolisch geschenk.",
+          "Tranen, omhelzingen en een toast op de toekomst."
+        ],
+        "switch_trigger": "Nadat één deelnemer exclusiviteit heeft beloofd, komt de presentator in beeld met de mededeling dat de andere deelnemers nu mogen stemmen over wie naar de volgende ronde gaat.",
+        "hinge_event": "De deelnemer die net over een gezamenlijke toekomst sprak, vraagt direct of de belofte goed in beeld is gekomen en informeert naar de publieksreacties.",
+        "anomaly_under_a": "In een oprechte, kwetsbare relatie zou de onmiddellijke zorg om camerabeeld en stemmen de persoonlijke belofte instrumenteel en ongevoelig maken.",
+        "resolution_under_b": "Binnen een realityformat is aandacht voor beeldvorming en stemmen functioneel: de romantische scène is tegelijk een persoonlijke interactie en een beslissend spelelement.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest direct herkenbare tegenstelling: een oprechte wederzijdse verbintenis tegenover een professioneel geënsceneerde vertolking. De romantische signalen domineren aanvankelijk overtuigend, terwijl het late set-signaal en vooral de ringwissel de eerdere handelingen efficiënt hercoderen als opname-elementen. Daardoor is de tweede lezing retrospectief sterk onderbouwd zonder de setup voortijdig weg te geven. De kandidaat is economisch, sluit duidelijk aan op liefde en huwelijk, en heeft een heldere payoff doordat precies de meest emotioneel geladen symbolen—geloften, kus en ring—functioneel blijken voor reclameproductie in plaats van persoonlijke toewijding.",
+    "variants": [
+      {
+        "text": "Mijn vriend nam me mee uit eten, knielde met een ring en zei trillend dat hij voor altijd van me hield. Ik zei ja, tot de ober mijn ring omwisselde en de regisseur riep: „Kus op je markering, neem twee.”",
+        "angle": "Romantisch aanzoek verandert laat in een reclameopname."
+      },
+      {
+        "text": "Op onze trouwdag stonden zelfs onbekenden te applaudisseren toen we onze geloften uitspraken. Ontroerend, totdat iemand mijn sluier rechtzette en zei: „Perfect, maar deze keer graag minder emotie voor de juwelier.”",
+        "angle": "Huwelijksceremonie blijkt een commercieel gedirigeerde set."
+      },
+      {
+        "text": "Ze keek me bij kaarslicht aan, ik opende het doosje en we vielen precies op tijd stil. Na de kus vroeg een man met een koptelefoon of we de ring konden teruggeven: hij moest nog glimmen in de close-up.",
+        "angle": "Intieme stilte en kus worden herkadert als productcontinuïteit."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 13756,
+      "output_tokens": 7651,
+      "total_tokens": 21407
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Twee partners bouwen een liefdesrelatie op, kiezen vrijwillig voor een huwelijk en stemmen hun seksuele intimiteit af op wederzijds verlangen, vertrouwen en afspraken.",
+          "participants_and_roles": [
+            "Twee romantische partners: geliefden die elkaar leren kennen, affectie tonen en gezamenlijke keuzes maken.",
+            "Eventueel een huwelijkspartner/verloofde: iemand die zich publiekelijk en juridisch aan de ander verbindt.",
+            "Familie, vrienden en ceremoniële betrokkenen: sociale kring die de relatie en het huwelijk erkent of viert."
+          ],
+          "apparent_goal": "Een liefdevolle, duurzame en gelijkwaardige relatie vormen, eventueel bekrachtigd door een huwelijk, met een bevredigend en respectvol intiem leven.",
+          "preconditions": [
+            "Er is wederzijdse aantrekkingskracht of genegenheid.",
+            "Beide partners kunnen vrij en geïnformeerd instemmen met relatie-, huwelijks- en seksuele keuzes.",
+            "Er bestaat voldoende vertrouwen, communicatie en emotionele veiligheid.",
+            "Bij een huwelijk zijn praktische, juridische en sociale voorbereidingen getroffen.",
+            "Grenzen, verwachtingen en exclusiviteitsafspraken zijn besproken of kunnen bespreekbaar worden gemaakt."
+          ],
+          "expected_actions": [
+            "De partners daten, communiceren en onderzoeken of zij bij elkaar passen.",
+            "Zij spreken liefde, toewijding en toekomstverwachtingen uit.",
+            "Als zij willen trouwen, plannen zij een ceremonie en leggen zij wederzijdse beloften af.",
+            "Zij verdelen verantwoordelijkheden en nemen gezamenlijke beslissingen over hun leven.",
+            "Zij benaderen seksualiteit als vrijwillige, private intimiteit met aandacht voor wederzijds plezier, grenzen en veiligheid."
+          ],
+          "expected_outcome": "Een erkende, stabiele partnerrelatie waarin beide mensen zich geliefd, gerespecteerd en veilig voelen, en waarin huwelijk en intimiteit hun gezamenlijke verbondenheid ondersteunen.",
+          "expected_propositions": [
+            "Liefde veronderstelt wederkerigheid: beide partners willen de relatie.",
+            "Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.",
+            "Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.",
+            "Goede relaties vragen om open communicatie, vertrouwen en respect voor grenzen.",
+            "Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen."
+          ],
+          "audience_expectation": "Een setup over liefde, huwelijk en seksualiteit activeert meestal het beeld van twee instemmende partners die via romantiek, beloften en respectvolle intimiteit een duurzame gezamenlijke toekomst opbouwen."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.",
+            "opposition_axis": "Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.",
+            "opposed_proposition": "Liefde veronderstelt wederkerigheid: beide partners willen de relatie.",
+            "shared_anchor": "Een aanzoek met ring en emotionele beloften.",
+            "reading_a": "Twee geliefden gebruiken de ring en de beloften om hun eigen wederzijdse verbintenis te bevestigen.",
+            "reading_b": "Twee acteurs gebruiken ring en beloften als rekwisieten om een geloofwaardige romantische scène te verkopen.",
+            "roles_b": [
+              "Acteur 1: vertolkt de aanzoekende partner.",
+              "Acteur 2: vertolkt de ontroerde partner.",
+              "Regisseur en filmploeg: sturen de uitvoering en leggen de scène vast.",
+              "Juwelier/opdrachtgever: wil een aantrekkelijk reclamebeeld creëren."
+            ],
+            "goal_b": "Een overtuigende reclame-opname maken die een ring en het merk aantrekkelijk presenteert.",
+            "role_remapping": [
+              "De romantische partners uit Script A worden acteurs die die partners spelen.",
+              "De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.",
+              "De huwelijksbelofte wordt een tekst uit een draaiboek.",
+              "De ring wordt naast liefdessymbool ook een product en rekwisiet."
+            ],
+            "shared_cues": [
+              "Een etentje bij kaarslicht.",
+              "Een klein doosje met een ring.",
+              "Nerveuze stiltes en emotionele woorden.",
+              "Een knielende partner.",
+              "Gasten of omstanders die applaudisseren."
+            ],
+            "switch_trigger": "Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \"En... cut, neem twee.\"",
+            "hinge_event": "Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.",
+            "anomaly_under_a": "In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.",
+            "resolution_under_b": "Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Twee medewerkers van een trouwlocatie demonstreren op een bruidsbeurs een voorbeeldceremonie. Zij spelen een overtuigend bruidspaar om bezoekers te laten zien hoe de locatie, de ceremonie en de leveranciers samenwerken.",
+            "opposition_axis": "Persoonlijke huwelijksverbintenis versus commerciële demonstratie.",
+            "opposed_proposition": "Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.",
+            "shared_anchor": "Een ceremonie met geloften, ringen en een ondertekening.",
+            "reading_a": "Een echt paar legt openbare en juridische beloften af om een gezamenlijk leven te beginnen.",
+            "reading_b": "Presentatiemedewerkers voeren een voorbeeldhuwelijk op om diensten van de locatie en leveranciers te tonen.",
+            "roles_b": [
+              "Demonstratiebruid: medewerker of model dat de rol van bruid speelt.",
+              "Demonstratiebruidegom: medewerker of model dat de rol van bruidegom speelt.",
+              "Ceremonieel begeleider: presenteert de voorbeeldplechtigheid.",
+              "Beursbezoekers: potentiële klanten.",
+              "Leveranciers: tonen bloemen, catering, fotografie en kleding."
+            ],
+            "goal_b": "Bezoekers overtuigen om de trouwlocatie en aangesloten leveranciers te boeken.",
+            "role_remapping": [
+              "De verloofden uit Script A worden demonstratiemodellen.",
+              "Familie en vrienden worden beursbezoekers en potentiële klanten.",
+              "De ceremoniële betrokkenen worden presentatoren en leveranciers.",
+              "De huwelijksakte wordt een ongeldige voorbeeldkaart of contractdemonstratie."
+            ],
+            "shared_cues": [
+              "Bloemdecoratie en feestelijke muziek.",
+              "Een witte outfit en formeel pak.",
+              "Ringen die worden aangereikt.",
+              "Een ceremonieel welkom.",
+              "Applaus na de geloften."
+            ],
+            "switch_trigger": "Na het applaus pakt de ceremoniemeester een microfoon en zegt: \"Dank u, straks demonstreren we het dessertbuffet in zaal twee.\"",
+            "hinge_event": "Het zogenoemde bruidspaar loopt rechtstreeks naar een stand, zet naamkaartjes met functietitels op en bespreekt boekingspakketten met bezoekers.",
+            "anomaly_under_a": "Wanneer pasgetrouwden onmiddellijk hun rollen afleggen en verkoopgesprekken beginnen, botst dat met de verwachte persoonlijke betekenis van de ceremonie.",
+            "resolution_under_b": "Op een bruidsbeurs is de snelle overgang naar productinformatie precies het doel: de ceremonie was een aantrekkelijke, verkoopbare demonstratie."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Twee acteurs nemen onder begeleiding van een intimiteitscoördinator een romantische scène op voor een dramaserie. De nabijheid lijkt spontaan en persoonlijk, maar iedere beweging, grens en pauze is vooraf professioneel afgestemd.",
+            "opposition_axis": "Private spontane intimiteit versus geregisseerde en technisch afgestemde scène-uitvoering.",
+            "opposed_proposition": "Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.",
+            "shared_anchor": "Een stil moment van lichamelijke toenadering en wederzijdse bevestiging.",
+            "reading_a": "Twee geliefden zoeken in beslotenheid vrijwillig fysieke intimiteit en stemmen op elkaar af vanuit hun relatie.",
+            "reading_b": "Twee acteurs verbeelden intimiteit voor een camera en voeren vooraf overeengekomen handelingen uit binnen een productieprotocol.",
+            "roles_b": [
+              "Acteur 1 en acteur 2: vertolken de romantische personages.",
+              "Intimiteitscoördinator: bewaakt afspraken, grenzen en veilige uitvoering.",
+              "Regisseur: bepaalt het dramatische beeld en de opname.",
+              "Camera- en geluidsploeg: registreren de scène."
+            ],
+            "goal_b": "Een geloofwaardige dramascène opnemen zonder de professionele grenzen en veiligheid van de acteurs te schenden.",
+            "role_remapping": [
+              "De romantische partners uit Script A worden acteurs en hun personages.",
+              "Open communicatie tussen geliefden wordt een voorafgaande professionele afstemming.",
+              "Privacy wordt vervangen door een gecontroleerde set met beperkte ploeg.",
+              "Wederzijdse bevestiging wordt zowel acteersignaal als veiligheidsafspraak."
+            ],
+            "shared_cues": [
+              "Zachte verlichting.",
+              "Een gesloten kamer.",
+              "Voorzichtige toenadering.",
+              "Een vraag of alles goed gaat.",
+              "Korte bevestigende antwoorden en aandacht voor grenzen."
+            ],
+            "switch_trigger": "Vlak na het ogenschijnlijk intieme moment zegt iemand buiten beeld: \"Pauze; we controleren eerst de afdekking en de camerahoek.\"",
+            "hinge_event": "De acteurs stappen uit elkaar, trekken badjassen aan en bespreken met de coördinator of de vooraf afgesproken choreografie nog comfortabel is.",
+            "anomaly_under_a": "Een technische onderbreking, badjassen en een derde persoon die bewegingen controleert zouden midden in private partnerintimiteit vreemd en storend zijn.",
+            "resolution_under_b": "Bij een gefilmde scène maken precies deze onderbreking en controle de opname professioneel, veilig en gebaseerd op expliciete werkafspraken."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Twee deelnemers aan een reality-datingsprogramma bouwen voor de camera een ogenschijnlijk serieuze relatie op. Hun ontmoetingen, toekomstgesprekken en ceremonieel moment zijn tegelijk onderdelen van een televisieformat waarin zij zichtbaar willen blijven en een finaleplaats willen bereiken.",
+            "opposition_axis": "Duurzame persoonlijke toewijding versus strategische deelname aan een spel- en mediaformat.",
+            "opposed_proposition": "Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.",
+            "shared_anchor": "Een emotioneel gesprek over exclusiviteit en een gezamenlijke toekomst.",
+            "reading_a": "Een partner bespreekt exclusiviteit en toekomstplannen om de ander zekerheid, erkenning en emotionele veiligheid te geven.",
+            "reading_b": "Een deelnemer voert een formatgesprek dat zowel persoonlijke gevoelens als kansen op schermtijd, publiekssteun en voortgang in het programma beïnvloedt.",
+            "roles_b": [
+              "Deelnemer 1: presenteert zich als romantische partner binnen het programma.",
+              "Deelnemer 2: reageert als potentiële partner en mededeelnemer.",
+              "Presentator: kadert de momenten als afleveringrediënt.",
+              "Producenten en crew: organiseren opdrachten, opnamen en montages.",
+              "Publiek: beoordeelt of volgt de deelnemers."
+            ],
+            "goal_b": "In het programma geloofwaardig en aantrekkelijk overkomen, een gunstige positie behouden en eventueel de finale of prijs bereiken.",
+            "role_remapping": [
+              "De geliefden uit Script A worden deelnemers én publieke personages.",
+              "Vrienden en familie worden deels vervangen door presentator, crew en kijkers.",
+              "Een privé-toekomstgesprek wordt een opgenomen formatmoment.",
+              "Relatie-erkenning wordt mede afhankelijk van montage, publieksreactie en spelregels."
+            ],
+            "shared_cues": [
+              "Een romantische date op een afgezonderde locatie.",
+              "Persoonlijke bekentenissen.",
+              "Een gesprek over exclusiviteit.",
+              "Een symbolisch geschenk.",
+              "Tranen, omhelzingen en een toast op de toekomst."
+            ],
+            "switch_trigger": "Nadat één deelnemer exclusiviteit heeft beloofd, komt de presentator in beeld met de mededeling dat de andere deelnemers nu mogen stemmen over wie naar de volgende ronde gaat.",
+            "hinge_event": "De deelnemer die net over een gezamenlijke toekomst sprak, vraagt direct of de belofte goed in beeld is gekomen en informeert naar de publieksreacties.",
+            "anomaly_under_a": "In een oprechte, kwetsbare relatie zou de onmiddellijke zorg om camerabeeld en stemmen de persoonlijke belofte instrumenteel en ongevoelig maken.",
+            "resolution_under_b": "Binnen een realityformat is aandacht voor beeldvorming en stemmen functioneel: de romantische scène is tegelijk een persoonlijke interactie en een beslissend spelelement."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Twee professionele acteurs spelen een verliefd stel in een reclamefilm voor een juwelier. Zij voeren een aanzoek, geloften en tedere gebaren uit volgens een draaiboek, terwijl een filmploeg de scène opneemt.",
+              "opposition_axis": "Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.",
+              "opposed_proposition": "Liefde veronderstelt wederkerigheid: beide partners willen de relatie.",
+              "shared_anchor": "Een aanzoek met ring en emotionele beloften.",
+              "reading_a": "Twee geliefden gebruiken de ring en de beloften om hun eigen wederzijdse verbintenis te bevestigen.",
+              "reading_b": "Twee acteurs gebruiken ring en beloften als rekwisieten om een geloofwaardige romantische scène te verkopen.",
+              "roles_b": [
+                "Acteur 1: vertolkt de aanzoekende partner.",
+                "Acteur 2: vertolkt de ontroerde partner.",
+                "Regisseur en filmploeg: sturen de uitvoering en leggen de scène vast.",
+                "Juwelier/opdrachtgever: wil een aantrekkelijk reclamebeeld creëren."
+              ],
+              "goal_b": "Een overtuigende reclame-opname maken die een ring en het merk aantrekkelijk presenteert.",
+              "role_remapping": [
+                "De romantische partners uit Script A worden acteurs die die partners spelen.",
+                "De sociale kring en ceremoniële betrokkenen worden filmploeg, regisseur en opdrachtgever.",
+                "De huwelijksbelofte wordt een tekst uit een draaiboek.",
+                "De ring wordt naast liefdessymbool ook een product en rekwisiet."
+              ],
+              "shared_cues": [
+                "Een etentje bij kaarslicht.",
+                "Een klein doosje met een ring.",
+                "Nerveuze stiltes en emotionele woorden.",
+                "Een knielende partner.",
+                "Gasten of omstanders die applaudisseren."
+              ],
+              "switch_trigger": "Pas nadat de beloften volledig zijn uitgesproken, klinkt buiten beeld: \"En... cut, neem twee.\"",
+              "hinge_event": "Een medewerker verwisselt de ring meteen voor een identiek exemplaar en de regisseur vraagt de acteurs hun kus op dezelfde markering te herhalen.",
+              "anomaly_under_a": "In een echte huwelijksaanzoek zou het verwisselen van de ring en het technisch herhalen van een kus kil, ongepast en onbegrijpelijk zijn.",
+              "resolution_under_b": "Op een filmset zijn de vervangring, vaste posities en herhaling noodzakelijk voor continuïteit, belichting en een bruikbare reclame-opname."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Twee medewerkers van een trouwlocatie demonstreren op een bruidsbeurs een voorbeeldceremonie. Zij spelen een overtuigend bruidspaar om bezoekers te laten zien hoe de locatie, de ceremonie en de leveranciers samenwerken.",
+              "opposition_axis": "Persoonlijke huwelijksverbintenis versus commerciële demonstratie.",
+              "opposed_proposition": "Een huwelijk is normaal gesproken een vrijwillige verbintenis met gedeelde beloften en verantwoordelijkheden.",
+              "shared_anchor": "Een ceremonie met geloften, ringen en een ondertekening.",
+              "reading_a": "Een echt paar legt openbare en juridische beloften af om een gezamenlijk leven te beginnen.",
+              "reading_b": "Presentatiemedewerkers voeren een voorbeeldhuwelijk op om diensten van de locatie en leveranciers te tonen.",
+              "roles_b": [
+                "Demonstratiebruid: medewerker of model dat de rol van bruid speelt.",
+                "Demonstratiebruidegom: medewerker of model dat de rol van bruidegom speelt.",
+                "Ceremonieel begeleider: presenteert de voorbeeldplechtigheid.",
+                "Beursbezoekers: potentiële klanten.",
+                "Leveranciers: tonen bloemen, catering, fotografie en kleding."
+              ],
+              "goal_b": "Bezoekers overtuigen om de trouwlocatie en aangesloten leveranciers te boeken.",
+              "role_remapping": [
+                "De verloofden uit Script A worden demonstratiemodellen.",
+                "Familie en vrienden worden beursbezoekers en potentiële klanten.",
+                "De ceremoniële betrokkenen worden presentatoren en leveranciers.",
+                "De huwelijksakte wordt een ongeldige voorbeeldkaart of contractdemonstratie."
+              ],
+              "shared_cues": [
+                "Bloemdecoratie en feestelijke muziek.",
+                "Een witte outfit en formeel pak.",
+                "Ringen die worden aangereikt.",
+                "Een ceremonieel welkom.",
+                "Applaus na de geloften."
+              ],
+              "switch_trigger": "Na het applaus pakt de ceremoniemeester een microfoon en zegt: \"Dank u, straks demonstreren we het dessertbuffet in zaal twee.\"",
+              "hinge_event": "Het zogenoemde bruidspaar loopt rechtstreeks naar een stand, zet naamkaartjes met functietitels op en bespreekt boekingspakketten met bezoekers.",
+              "anomaly_under_a": "Wanneer pasgetrouwden onmiddellijk hun rollen afleggen en verkoopgesprekken beginnen, botst dat met de verwachte persoonlijke betekenis van de ceremonie.",
+              "resolution_under_b": "Op een bruidsbeurs is de snelle overgang naar productinformatie precies het doel: de ceremonie was een aantrekkelijke, verkoopbare demonstratie."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Twee acteurs nemen onder begeleiding van een intimiteitscoördinator een romantische scène op voor een dramaserie. De nabijheid lijkt spontaan en persoonlijk, maar iedere beweging, grens en pauze is vooraf professioneel afgestemd.",
+              "opposition_axis": "Private spontane intimiteit versus geregisseerde en technisch afgestemde scène-uitvoering.",
+              "opposed_proposition": "Seksuele intimiteit vereist duidelijke, doorlopende wederzijdse instemming.",
+              "shared_anchor": "Een stil moment van lichamelijke toenadering en wederzijdse bevestiging.",
+              "reading_a": "Twee geliefden zoeken in beslotenheid vrijwillig fysieke intimiteit en stemmen op elkaar af vanuit hun relatie.",
+              "reading_b": "Twee acteurs verbeelden intimiteit voor een camera en voeren vooraf overeengekomen handelingen uit binnen een productieprotocol.",
+              "roles_b": [
+                "Acteur 1 en acteur 2: vertolken de romantische personages.",
+                "Intimiteitscoördinator: bewaakt afspraken, grenzen en veilige uitvoering.",
+                "Regisseur: bepaalt het dramatische beeld en de opname.",
+                "Camera- en geluidsploeg: registreren de scène."
+              ],
+              "goal_b": "Een geloofwaardige dramascène opnemen zonder de professionele grenzen en veiligheid van de acteurs te schenden.",
+              "role_remapping": [
+                "De romantische partners uit Script A worden acteurs en hun personages.",
+                "Open communicatie tussen geliefden wordt een voorafgaande professionele afstemming.",
+                "Privacy wordt vervangen door een gecontroleerde set met beperkte ploeg.",
+                "Wederzijdse bevestiging wordt zowel acteersignaal als veiligheidsafspraak."
+              ],
+              "shared_cues": [
+                "Zachte verlichting.",
+                "Een gesloten kamer.",
+                "Voorzichtige toenadering.",
+                "Een vraag of alles goed gaat.",
+                "Korte bevestigende antwoorden en aandacht voor grenzen."
+              ],
+              "switch_trigger": "Vlak na het ogenschijnlijk intieme moment zegt iemand buiten beeld: \"Pauze; we controleren eerst de afdekking en de camerahoek.\"",
+              "hinge_event": "De acteurs stappen uit elkaar, trekken badjassen aan en bespreken met de coördinator of de vooraf afgesproken choreografie nog comfortabel is.",
+              "anomaly_under_a": "Een technische onderbreking, badjassen en een derde persoon die bewegingen controleert zouden midden in private partnerintimiteit vreemd en storend zijn.",
+              "resolution_under_b": "Bij een gefilmde scène maken precies deze onderbreking en controle de opname professioneel, veilig en gebaseerd op expliciete werkafspraken."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Twee deelnemers aan een reality-datingsprogramma bouwen voor de camera een ogenschijnlijk serieuze relatie op. Hun ontmoetingen, toekomstgesprekken en ceremonieel moment zijn tegelijk onderdelen van een televisieformat waarin zij zichtbaar willen blijven en een finaleplaats willen bereiken.",
+              "opposition_axis": "Duurzame persoonlijke toewijding versus strategische deelname aan een spel- en mediaformat.",
+              "opposed_proposition": "Een romantische partner wordt geacht het welzijn en de autonomie van de ander serieus te nemen.",
+              "shared_anchor": "Een emotioneel gesprek over exclusiviteit en een gezamenlijke toekomst.",
+              "reading_a": "Een partner bespreekt exclusiviteit en toekomstplannen om de ander zekerheid, erkenning en emotionele veiligheid te geven.",
+              "reading_b": "Een deelnemer voert een formatgesprek dat zowel persoonlijke gevoelens als kansen op schermtijd, publiekssteun en voortgang in het programma beïnvloedt.",
+              "roles_b": [
+                "Deelnemer 1: presenteert zich als romantische partner binnen het programma.",
+                "Deelnemer 2: reageert als potentiële partner en mededeelnemer.",
+                "Presentator: kadert de momenten als afleveringrediënt.",
+                "Producenten en crew: organiseren opdrachten, opnamen en montages.",
+                "Publiek: beoordeelt of volgt de deelnemers."
+              ],
+              "goal_b": "In het programma geloofwaardig en aantrekkelijk overkomen, een gunstige positie behouden en eventueel de finale of prijs bereiken.",
+              "role_remapping": [
+                "De geliefden uit Script A worden deelnemers én publieke personages.",
+                "Vrienden en familie worden deels vervangen door presentator, crew en kijkers.",
+                "Een privé-toekomstgesprek wordt een opgenomen formatmoment.",
+                "Relatie-erkenning wordt mede afhankelijk van montage, publieksreactie en spelregels."
+              ],
+              "shared_cues": [
+                "Een romantische date op een afgezonderde locatie.",
+                "Persoonlijke bekentenissen.",
+                "Een gesprek over exclusiviteit.",
+                "Een symbolisch geschenk.",
+                "Tranen, omhelzingen en een toast op de toekomst."
+              ],
+              "switch_trigger": "Nadat één deelnemer exclusiviteit heeft beloofd, komt de presentator in beeld met de mededeling dat de andere deelnemers nu mogen stemmen over wie naar de volgende ronde gaat.",
+              "hinge_event": "De deelnemer die net over een gezamenlijke toekomst sprak, vraagt direct of de belofte goed in beeld is gekomen en informeert naar de publieksreacties.",
+              "anomaly_under_a": "In een oprechte, kwetsbare relatie zou de onmiddellijke zorg om camerabeeld en stemmen de persoonlijke belofte instrumenteel en ongevoelig maken.",
+              "resolution_under_b": "Binnen een realityformat is aandacht voor beeldvorming en stemmen functioneel: de romantische scène is tegelijk een persoonlijke interactie en een beslissend spelelement."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Hetzelfde aanzoek met ring en beloften kan geloofwaardig eerst als wederzijdse romantische verbintenis en vervolgens als reclameopname worden gelezen. De dominante tegenstelling is oprechte relatie versus professionele enscenering. De cues passen bij beide lezingen, terwijl de setcontext aanvankelijk verborgen kan blijven. De cut, vervangring, markering en herhaalde kus zijn onder A ongepast maar onder B functionele productiehandelingen. Zij blokkeren de persoonlijke betekenis van het aanzoek en maken tegelijk het reclamedoel mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een ceremonie met geloften, ringen en ondertekening kan zowel een werkelijk huwelijk als een beursdemonstratie voorstellen. De lokale tegenstelling is persoonlijk-juridische verbintenis versus commerciële voorbeeldopvoering, en die is dominant. De verkoopovergang is aanvankelijk anomalisch onder A, maar doelmatig onder B. Daardoor worden de eerdere geloften en symbolen retrospectief demonstratiemateriaal. Het direct afleggen van de rollen verhindert de normale huwelijksfunctie, maar faciliteert het verkoopdoel."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde voorzichtige toenadering en bevestiging kan een privaat intiem moment of een professioneel opgenomen scène zijn. De dominante tegenstelling betreft private, relationele intimiteit tegenover geregisseerde scène-uitvoering. De tweede lezing is sociaal herkenbaar en de gedeelde cues blijven ermee verenigbaar. De technische pauze, badjassen en choreografiebespreking verstoren A, maar zijn onder B veiligheids- en productievereisten. Zij onderbreken de private intimiteitsfunctie en maken tegelijk veilige, controleerbare opname mogelijk."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": false,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Het emotionele exclusiviteitsgesprek kan zowel als oprechte relatiebelofte als als realityformatmoment functioneren, en de realitylezing is herkenbaar. De scripts vormen echter geen strikte lokale oppositie: Script B stelt expliciet dat persoonlijke gevoelens naast strategische belangen kunnen bestaan. Strategische deelname sluit duurzame persoonlijke toewijding dus niet noodzakelijk uit. Daardoor is ook geen enkele oppositie ondubbelzinnig dominant. De camera- en stemzorg is wel anomalisch onder een louter private lezing en functioneel onder B; zij herkadert de eerdere belofte als mede-instrumenteel en ondersteunt het programmadoel."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Hetzelfde aanzoek met ring en beloften kan geloofwaardig eerst als wederzijdse romantische verbintenis en vervolgens als reclameopname worden gelezen. De dominante tegenstelling is oprechte relatie versus professionele enscenering. De cues passen bij beide lezingen, terwijl de setcontext aanvankelijk verborgen kan blijven. De cut, vervangring, markering en herhaalde kus zijn onder A ongepast maar onder B functionele productiehandelingen. Zij blokkeren de persoonlijke betekenis van het aanzoek en maken tegelijk het reclamedoel mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een ceremonie met geloften, ringen en ondertekening kan zowel een werkelijk huwelijk als een beursdemonstratie voorstellen. De lokale tegenstelling is persoonlijk-juridische verbintenis versus commerciële voorbeeldopvoering, en die is dominant. De verkoopovergang is aanvankelijk anomalisch onder A, maar doelmatig onder B. Daardoor worden de eerdere geloften en symbolen retrospectief demonstratiemateriaal. Het direct afleggen van de rollen verhindert de normale huwelijksfunctie, maar faciliteert het verkoopdoel."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde voorzichtige toenadering en bevestiging kan een privaat intiem moment of een professioneel opgenomen scène zijn. De dominante tegenstelling betreft private, relationele intimiteit tegenover geregisseerde scène-uitvoering. De tweede lezing is sociaal herkenbaar en de gedeelde cues blijven ermee verenigbaar. De technische pauze, badjassen en choreografiebespreking verstoren A, maar zijn onder B veiligheids- en productievereisten. Zij onderbreken de private intimiteitsfunctie en maken tegelijk veilige, controleerbare opname mogelijk."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": false,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Het emotionele exclusiviteitsgesprek kan zowel als oprechte relatiebelofte als als realityformatmoment functioneren, en de realitylezing is herkenbaar. De scripts vormen echter geen strikte lokale oppositie: Script B stelt expliciet dat persoonlijke gevoelens naast strategische belangen kunnen bestaan. Strategische deelname sluit duurzame persoonlijke toewijding dus niet noodzakelijk uit. Daardoor is ook geen enkele oppositie ondubbelzinnig dominant. De camera- en stemzorg is wel anomalisch onder een louter private lezing en functioneel onder B; zij herkadert de eerdere belofte als mede-instrumenteel en ondersteunt het programmadoel."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "selected_candidate_id": "B1"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een vrouw beleeft ogenschijnlijk een oprecht, emotioneel huwelijksaanzoek van haar vriend tijdens een diner.",
+          "realized_script_b": "Twee acteurs voeren voor een juweliersreclame een geënsceneerd aanzoek en kus uit onder leiding van een regisseur, met verwisselbare rekwisieten en vaste markeringen.",
+          "realized_opposition_axis": "Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De dominante aanzoeklezing gebruikt de geplande romantische cues; de ober die de ring wisselt en de regisseur die een tweede take vraagt activeren expliciet de reclamefilmlezing en herinterpreteren die cues."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een duidelijke, natuurlijk vertelde setup leidt van een persoonlijk aanzoek naar precies de bedoelde filmset- en reclameonthulling.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een stel beleeft ogenschijnlijk zijn eigen trouwdag en spreekt oprecht geloften uit voor een publiek.",
+          "realized_script_b": "Een geënsceneerde, door een juwelier gebruikte trouwscène wordt geregisseerd en moet met een andere emotionele uitvoering opnieuw worden gedaan.",
+          "realized_opposition_axis": "Oprechte wederzijdse romantiek versus geënsceneerde professionele vertolking.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "Geloften en applaus dragen eerst een echte huwelijksceremonie. De technische correctie en de verwijzing naar de juwelier maken vervolgens functioneel duidelijk dat de ceremonie een commercieel gedirigeerde opname is, ook al noemt de tekst geen expliciete 'cut' of acteurs."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant behoudt de beoogde omslag van ontroerende geloften naar een door commerciële opname-eisen gestuurde scène.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een persoon doet bij kaarslicht ogenschijnlijk een oprecht aanzoek met ring, gevolgd door een kus.",
+          "realized_script_b": "De romantische scène wordt gefilmd als een productopname waarin de ring voor een close-up moet worden teruggegeven.",
+          "realized_opposition_axis": "Oprecht romantisch aanzoek versus gefilmde productpresentatie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De tekst activeert wel een film- of productiesituatie, maar maakt onvoldoende duidelijk dat de twee personen professionele acteurs zijn die een geënsceneerd aanzoek voor een juweliersreclame uitvoeren. Het kan ook een echt aanzoek zijn dat slechts commercieel wordt gefilmd; daardoor is de bedoelde professionele-vertolking-script B niet functioneel volledig gevestigd."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De grap werkt als omslag naar een filmopname met productcontinuïteit, maar realiseert de specifieke bedoelde tegenstelling met acteren en een juweliersreclame slechts gedeeltelijk.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "V1 maakt de geënsceneerde reclamewereld explicieter met de ringwissel, de regisseur en „neem twee”. Daardoor is de scriptswitch scherper en wordt het oorspronkelijke aanzoek sterker achteraf herlezen dan in V2."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "V1 is een passerende variant en V3 niet. Bovendien bevestigen de regisseur en de tweede take ondubbelzinnig dat het aanzoek gespeeld is, terwijl V3 ook een echt aanzoek kan zijn dat alleen gefilmd wordt."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "V2 is een passerende variant en V3 niet. De aanwijzing van de juwelier en de regie op emotie herkadert de geloften duidelijk als commerciële opname; V3 vestigt de acteurs- en reclamelezen onvoldoende volledig."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 combineert de sterkste vereiste scripttegenstelling met een heldere, goed uitvoerbare omslag. De expliciete regie-aanwijzing maakt de herinterpretatie van alle romantische signalen onmiddellijk en volledig."
+    }
+  },
+  "result_sha256": "22c2d2834d22cc68af5de0296dcffa884a8d4d98c98d9a486cd74386964977f9"
+}

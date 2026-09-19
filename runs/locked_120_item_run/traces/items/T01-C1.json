@@ -1,0 +1,799 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T01-C1",
+  "topic_id": "T01",
+  "topic": "Familie en opvoeding",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:09:35.209683+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Familie en opvoeding",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\",\n  \"script_a\": {\n    \"script_a\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n    \"participants_and_roles\": [\n      \"Ouder(s)/verzorger(s): bieden veiligheid, zorg, grenzen en uitleg.\",\n      \"Kind: leert regels, vaardigheden en omgangsvormen; test soms grenzen.\",\n      \"Eventuele broers, zussen of andere familieleden: maken deel uit van het dagelijks gezinsleven en beïnvloeden de sfeer en gewoonten.\"\n    ],\n    \"apparent_goal\": \"Het kind gezond, veilig en met goede normen en vaardigheden laten opgroeien.\",\n    \"preconditions\": [\n      \"Er is een gezin of vaste verzorgingssituatie waarin volwassenen verantwoordelijkheid dragen voor een kind.\",\n      \"De volwassenen hebben afspraken, waarden of regels die zij willen overbrengen.\",\n      \"Het kind is afhankelijk van de verzorgers, maar ontwikkelt geleidelijk meer eigen wil en zelfstandigheid.\",\n      \"Er zijn terugkerende dagelijkse momenten, zoals eten, bedtijd, school, spelen en opruimen.\"\n    ],\n    \"expected_actions\": [\n      \"Ouders leggen huisregels uit en handhaven die consequent.\",\n      \"Ouders zorgen voor eten, slaap, hygiëne, schoolspullen en emotionele steun.\",\n      \"Het kind krijgt aanwijzingen, oefent gewenst gedrag en krijgt waar nodig correctie of beloning.\",\n      \"Gezinsleden overleggen, lossen kleine conflicten op en verdelen taken.\",\n      \"Ouders passen verantwoordelijkheden en vrijheden aan naarmate het kind ouder wordt.\"\n    ],\n    \"expected_outcome\": \"Een kind dat zich veilig voelt, basisregels begrijpt, verantwoordelijkheid leert nemen en steeds zelfstandiger functioneert.\",\n    \"expected_propositions\": [\n      \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n      \"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\",\n      \"Opvoeden vraagt herhaling, geduld en een zekere consequentie.\",\n      \"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\",\n      \"Familieleden helpen elkaar in principe, ook als dat soms tot irritaties leidt.\"\n    ],\n    \"audience_expectation\": \"Een opzet over familie en opvoeding activeert de herkenbare verwachting van een alledaags gezin waarin verantwoordelijke volwassenen met geduld, regels en zorg een kind richting volwassen zelfstandigheid begeleiden.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\",\n  \"script_a\": {\n    \"script_a\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n    \"participants_and_roles\": [\n      \"Ouder(s)/verzorger(s): bieden veiligheid, zorg, grenzen en uitleg.\",\n      \"Kind: leert regels, vaardigheden en omgangsvormen; test soms grenzen.\",\n      \"Eventuele broers, zussen of andere familieleden: maken deel uit van het dagelijks gezinsleven en beïnvloeden de sfeer en gewoonten.\"\n    ],\n    \"apparent_goal\": \"Het kind gezond, veilig en met goede normen en vaardigheden laten opgroeien.\",\n    \"preconditions\": [\n      \"Er is een gezin of vaste verzorgingssituatie waarin volwassenen verantwoordelijkheid dragen voor een kind.\",\n      \"De volwassenen hebben afspraken, waarden of regels die zij willen overbrengen.\",\n      \"Het kind is afhankelijk van de verzorgers, maar ontwikkelt geleidelijk meer eigen wil en zelfstandigheid.\",\n      \"Er zijn terugkerende dagelijkse momenten, zoals eten, bedtijd, school, spelen en opruimen.\"\n    ],\n    \"expected_actions\": [\n      \"Ouders leggen huisregels uit en handhaven die consequent.\",\n      \"Ouders zorgen voor eten, slaap, hygiëne, schoolspullen en emotionele steun.\",\n      \"Het kind krijgt aanwijzingen, oefent gewenst gedrag en krijgt waar nodig correctie of beloning.\",\n      \"Gezinsleden overleggen, lossen kleine conflicten op en verdelen taken.\",\n      \"Ouders passen verantwoordelijkheden en vrijheden aan naarmate het kind ouder wordt.\"\n    ],\n    \"expected_outcome\": \"Een kind dat zich veilig voelt, basisregels begrijpt, verantwoordelijkheid leert nemen en steeds zelfstandiger functioneert.\",\n    \"expected_propositions\": [\n      \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n      \"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\",\n      \"Opvoeden vraagt herhaling, geduld en een zekere consequentie.\",\n      \"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\",\n      \"Familieleden helpen elkaar in principe, ook als dat soms tot irritaties leidt.\"\n    ],\n    \"audience_expectation\": \"Een opzet over familie en opvoeding activeert de herkenbare verwachting van een alledaags gezin waarin verantwoordelijke volwassenen met geduld, regels en zorg een kind richting volwassen zelfstandigheid begeleiden.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een beginnende toneelgroep repeteert een familiedrama. De regisseur laat de jonge hoofdrolspeler telkens opnieuw regels, routines en emotionele reacties oefenen totdat hij geloofwaardig een kind uit het stuk kan spelen.\",\n      \"opposition_axis\": \"opvoeden versus regisseren\",\n      \"opposed_proposition\": \"Ouders leggen huisregels uit en handhaven die consequent.\",\n      \"shared_anchor\": \"Steeds opnieuw wordt uitgelegd hoe iemand zich aan tafel moet gedragen.\",\n      \"reading_a\": \"Een ouder corrigeert een kind tijdens een gewone gezinsmaaltijd en leert het tafelmanieren.\",\n      \"reading_b\": \"Een regisseur instrueert een jonge acteur tijdens de repetitie van een scène aan de eettafel.\",\n      \"roles_b\": [\n        \"Regisseur: geeft speel- en gedragsaanwijzingen.\",\n        \"Jonge acteur: oefent een kinderrol en volgt of test instructies.\",\n        \"Medespelers: spelen gezinsleden en helpen de scène geloofwaardig te maken.\"\n      ],\n      \"goal_b\": \"Een overtuigende familiescène opvoeren waarin de jonge acteur de gewenste houding en reacties beheerst.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → regisseur.\",\n        \"Kind → jonge acteur.\",\n        \"Broers, zussen of familieleden → medespelers die gezinsleden vertolken.\",\n        \"Huisregels → regieaanwijzingen en tekst- of spelafspraken.\"\n      ],\n      \"shared_cues\": [\n        \"Een volwassene spreekt rustig maar beslist.\",\n        \"Er wordt gecorrigeerd na ongepast gedrag aan tafel.\",\n        \"Dezelfde handeling wordt herhaald tot zij goed gaat.\",\n        \"Andere aanwezigen kijken toe en wachten op hun beurt.\"\n      ],\n      \"switch_trigger\": \"De volwassene onderbreekt de correctie met de woorden: \\\"En nu vanaf pagina twaalf, maar probeer deze keer te huilen.\\\"\",\n      \"hinge_event\": \"De jongen vraagt niet om toestemming om van tafel te gaan, maar of hij na de pauze nog steeds een blauw oog moet opplakken.\",\n      \"anomaly_under_a\": \"In een werkelijk gezin is een blauw oog opplakken als voorbereiding op het eten ongepast en onverklaarbaar; de ouderlijke correctie lijkt daardoor vreemd overdreven.\",\n      \"resolution_under_b\": \"Als repetitiehandeling is de vraag functioneel: het blauwe oog is grime voor de volgende scène en de strenge tafelcorrectie helpt de acteur zijn rol en timing te oefenen.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een gezin neemt deel aan een televisiequiz waarin ouders en kinderen voor de camera een voorbeeldige huishoudelijke routine moeten naspelen. De presentator en productieploeg sturen de deelnemers met opdrachten, scores en herhaalde takes.\",\n      \"opposition_axis\": \"gezinsopvoeding versus televisiespel\",\n      \"opposed_proposition\": \"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\",\n      \"shared_anchor\": \"Een kind krijgt punten voor het opruimen van zijn speelgoed.\",\n      \"reading_a\": \"Ouders gebruiken een beloningssysteem om hun kind verantwoordelijkheid en orde te leren.\",\n      \"reading_b\": \"Een quizdeelnemer verdient spelpunten door een door de productie opgegeven huishoudelijke opdracht uit te voeren.\",\n      \"roles_b\": [\n        \"Presentator: geeft opdrachten en kondigt scores aan.\",\n        \"Gezinsleden: zijn deelnemers die een herkenbaar gezin uitbeelden.\",\n        \"Productieassistent: bewaakt takes, tijd en spelregels.\",\n        \"Publiek: reageert op de prestaties.\"\n      ],\n      \"goal_b\": \"Een onderhoudende spelronde winnen en een overtuigend, herkenbaar gezinsbeeld voor de uitzending leveren.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → deelnemers die de ouderrol spelen.\",\n        \"Kind → jonge quizdeelnemer.\",\n        \"Familieleden → mededeelnemers in hetzelfde team.\",\n        \"Huisregels en beloningen → spelopdrachten, puntentelling en prijzen.\"\n      ],\n      \"shared_cues\": [\n        \"Speelgoed ligt op de vloer.\",\n        \"Een volwassene herinnert het kind aan een afspraak.\",\n        \"Er wordt een beloning beloofd voor goed gedrag.\",\n        \"Iemand telt af terwijl het kind opruimt.\"\n      ],\n      \"switch_trigger\": \"Een stem buiten beeld roept: \\\"Nog tien seconden voor de bonusronde!\\\"\",\n      \"hinge_event\": \"Nadat het kind zijn kamer heeft opgeruimd, drukt de moeder op een grote rode zoemer en springt er confetti uit de kast.\",\n      \"anomaly_under_a\": \"Een rode zoemer en confetti zijn een bizarre en weinig pedagogische reactie op een gewone opruimtaak; zij zouden de huisregel willekeurig maken.\",\n      \"resolution_under_b\": \"In de quiz markeert de zoemer het behalen van punten en de confetti de gewonnen bonusronde; opruimen is niet primair opvoeding maar een zichtbare spelprestatie.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een dierenopvang bereidt een jonge hulphond voor op plaatsing. De trainer zorgt voor voer, rust en veiligheid, leert het dier routines en beloont gewenst gedrag zodat het zelfstandig en sociaal betrouwbaar kan functioneren.\",\n      \"opposition_axis\": \"menselijk kind opvoeden versus dier trainen\",\n      \"opposed_proposition\": \"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\",\n      \"shared_anchor\": \"De jonge leerling test telkens of hij zonder toestemming naar buiten mag.\",\n      \"reading_a\": \"Een kind probeert een huisregel uit en kijkt hoe de ouder reageert.\",\n      \"reading_b\": \"Een jonge hond probeert een grens van zijn training of verblijf uit en wordt teruggeroepen.\",\n      \"roles_b\": [\n        \"Trainer/verzorger: biedt verzorging, structuur en trainingssignalen.\",\n        \"Jonge hond: leert routines, grenzen en sociaal gedrag.\",\n        \"Andere honden en opvangmedewerkers: vormen de dagelijkse sociale omgeving.\"\n      ],\n      \"goal_b\": \"De jonge hond voorbereiden op een veilige plaatsing als stabiele huishond of hulphond.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → hondentrainer en opvangverzorger.\",\n        \"Kind → jonge hond.\",\n        \"Broers, zussen of familieleden → andere honden en opvangmedewerkers.\",\n        \"Huisregels → trainingscommando's, veiligheidsroutines en verblijfgrenzen.\"\n      ],\n      \"shared_cues\": [\n        \"Vaste tijden voor eten en rust.\",\n        \"Een verzorger spreekt bemoedigend en consequent.\",\n        \"Ongewenst gedrag wordt direct onderbroken.\",\n        \"Voor goed gedrag volgt een kleine beloning.\"\n      ],\n      \"switch_trigger\": \"De verzorger haalt geen jas of schooltas, maar een riem, clicker en zakje brokjes tevoorschijn.\",\n      \"hinge_event\": \"Na een geslaagde oefening geeft de verzorger de leerling een brokje en noteert zij dat hij vandaag niet meer tegen de schutting plast.\",\n      \"anomaly_under_a\": \"Een ouder die een kind met brokjes beloont en plasgedrag tegen een schutting registreert, zou vernederend en buiten elke normale opvoedingssituatie handelen.\",\n      \"resolution_under_b\": \"Bij een jonge hond zijn brokjes en gedragsregistratie doelmatige trainingsmiddelen; de gegevens helpen de trainer bepalen of het dier klaar is voor plaatsing.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\",\n      \"opposition_axis\": \"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\",\n      \"opposed_proposition\": \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n      \"shared_anchor\": \"De verzorger legt uit waarom iemand niet alleen de straat op mag.\",\n      \"reading_a\": \"Een ouder legt een jong kind een veiligheidsregel uit voordat het buiten gaat spelen.\",\n      \"reading_b\": \"Een volwassen kind voorkomt dat zijn herstellende ouder zonder begeleiding wegloopt en zichzelf in gevaar brengt.\",\n      \"roles_b\": [\n        \"Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.\",\n        \"Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.\",\n        \"Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten.\"\n      ],\n      \"goal_b\": \"De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\",\n        \"Kind → herstellende, oudere ouder.\",\n        \"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\",\n        \"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn vaste tijden voor eten en medicijnen.\",\n        \"Een volwassene herhaalt rustig een afspraak.\",\n        \"Iemand protesteert tegen een beperking.\",\n        \"Familieleden bespreken wie welke taak overneemt.\"\n      ],\n      \"switch_trigger\": \"De vermeende ouder zegt tegen de ander: \\\"Pap, je rollator staat naast de voordeur.\\\"\",\n      \"hinge_event\": \"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\",\n      \"anomaly_under_a\": \"Als dit over een jong kind ging, zou de aanspreekvorm \\\"pap\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\",\n      \"resolution_under_b\": \"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\",\n  \"script_a\": {\n    \"script_a\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n    \"participants_and_roles\": [\n      \"Ouder(s)/verzorger(s): bieden veiligheid, zorg, grenzen en uitleg.\",\n      \"Kind: leert regels, vaardigheden en omgangsvormen; test soms grenzen.\",\n      \"Eventuele broers, zussen of andere familieleden: maken deel uit van het dagelijks gezinsleven en beïnvloeden de sfeer en gewoonten.\"\n    ],\n    \"apparent_goal\": \"Het kind gezond, veilig en met goede normen en vaardigheden laten opgroeien.\",\n    \"preconditions\": [\n      \"Er is een gezin of vaste verzorgingssituatie waarin volwassenen verantwoordelijkheid dragen voor een kind.\",\n      \"De volwassenen hebben afspraken, waarden of regels die zij willen overbrengen.\",\n      \"Het kind is afhankelijk van de verzorgers, maar ontwikkelt geleidelijk meer eigen wil en zelfstandigheid.\",\n      \"Er zijn terugkerende dagelijkse momenten, zoals eten, bedtijd, school, spelen en opruimen.\"\n    ],\n    \"expected_actions\": [\n      \"Ouders leggen huisregels uit en handhaven die consequent.\",\n      \"Ouders zorgen voor eten, slaap, hygiëne, schoolspullen en emotionele steun.\",\n      \"Het kind krijgt aanwijzingen, oefent gewenst gedrag en krijgt waar nodig correctie of beloning.\",\n      \"Gezinsleden overleggen, lossen kleine conflicten op en verdelen taken.\",\n      \"Ouders passen verantwoordelijkheden en vrijheden aan naarmate het kind ouder wordt.\"\n    ],\n    \"expected_outcome\": \"Een kind dat zich veilig voelt, basisregels begrijpt, verantwoordelijkheid leert nemen en steeds zelfstandiger functioneert.\",\n    \"expected_propositions\": [\n      \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n      \"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\",\n      \"Opvoeden vraagt herhaling, geduld en een zekere consequentie.\",\n      \"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\",\n      \"Familieleden helpen elkaar in principe, ook als dat soms tot irritaties leidt.\"\n    ],\n    \"audience_expectation\": \"Een opzet over familie en opvoeding activeert de herkenbare verwachting van een alledaags gezin waarin verantwoordelijke volwassenen met geduld, regels en zorg een kind richting volwassen zelfstandigheid begeleiden.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een beginnende toneelgroep repeteert een familiedrama. De regisseur laat de jonge hoofdrolspeler telkens opnieuw regels, routines en emotionele reacties oefenen totdat hij geloofwaardig een kind uit het stuk kan spelen.\",\n      \"opposition_axis\": \"opvoeden versus regisseren\",\n      \"opposed_proposition\": \"Ouders leggen huisregels uit en handhaven die consequent.\",\n      \"shared_anchor\": \"Steeds opnieuw wordt uitgelegd hoe iemand zich aan tafel moet gedragen.\",\n      \"reading_a\": \"Een ouder corrigeert een kind tijdens een gewone gezinsmaaltijd en leert het tafelmanieren.\",\n      \"reading_b\": \"Een regisseur instrueert een jonge acteur tijdens de repetitie van een scène aan de eettafel.\",\n      \"roles_b\": [\n        \"Regisseur: geeft speel- en gedragsaanwijzingen.\",\n        \"Jonge acteur: oefent een kinderrol en volgt of test instructies.\",\n        \"Medespelers: spelen gezinsleden en helpen de scène geloofwaardig te maken.\"\n      ],\n      \"goal_b\": \"Een overtuigende familiescène opvoeren waarin de jonge acteur de gewenste houding en reacties beheerst.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → regisseur.\",\n        \"Kind → jonge acteur.\",\n        \"Broers, zussen of familieleden → medespelers die gezinsleden vertolken.\",\n        \"Huisregels → regieaanwijzingen en tekst- of spelafspraken.\"\n      ],\n      \"shared_cues\": [\n        \"Een volwassene spreekt rustig maar beslist.\",\n        \"Er wordt gecorrigeerd na ongepast gedrag aan tafel.\",\n        \"Dezelfde handeling wordt herhaald tot zij goed gaat.\",\n        \"Andere aanwezigen kijken toe en wachten op hun beurt.\"\n      ],\n      \"switch_trigger\": \"De volwassene onderbreekt de correctie met de woorden: \\\"En nu vanaf pagina twaalf, maar probeer deze keer te huilen.\\\"\",\n      \"hinge_event\": \"De jongen vraagt niet om toestemming om van tafel te gaan, maar of hij na de pauze nog steeds een blauw oog moet opplakken.\",\n      \"anomaly_under_a\": \"In een werkelijk gezin is een blauw oog opplakken als voorbereiding op het eten ongepast en onverklaarbaar; de ouderlijke correctie lijkt daardoor vreemd overdreven.\",\n      \"resolution_under_b\": \"Als repetitiehandeling is de vraag functioneel: het blauwe oog is grime voor de volgende scène en de strenge tafelcorrectie helpt de acteur zijn rol en timing te oefenen.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een dierenopvang bereidt een jonge hulphond voor op plaatsing. De trainer zorgt voor voer, rust en veiligheid, leert het dier routines en beloont gewenst gedrag zodat het zelfstandig en sociaal betrouwbaar kan functioneren.\",\n      \"opposition_axis\": \"menselijk kind opvoeden versus dier trainen\",\n      \"opposed_proposition\": \"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\",\n      \"shared_anchor\": \"De jonge leerling test telkens of hij zonder toestemming naar buiten mag.\",\n      \"reading_a\": \"Een kind probeert een huisregel uit en kijkt hoe de ouder reageert.\",\n      \"reading_b\": \"Een jonge hond probeert een grens van zijn training of verblijf uit en wordt teruggeroepen.\",\n      \"roles_b\": [\n        \"Trainer/verzorger: biedt verzorging, structuur en trainingssignalen.\",\n        \"Jonge hond: leert routines, grenzen en sociaal gedrag.\",\n        \"Andere honden en opvangmedewerkers: vormen de dagelijkse sociale omgeving.\"\n      ],\n      \"goal_b\": \"De jonge hond voorbereiden op een veilige plaatsing als stabiele huishond of hulphond.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → hondentrainer en opvangverzorger.\",\n        \"Kind → jonge hond.\",\n        \"Broers, zussen of familieleden → andere honden en opvangmedewerkers.\",\n        \"Huisregels → trainingscommando's, veiligheidsroutines en verblijfgrenzen.\"\n      ],\n      \"shared_cues\": [\n        \"Vaste tijden voor eten en rust.\",\n        \"Een verzorger spreekt bemoedigend en consequent.\",\n        \"Ongewenst gedrag wordt direct onderbroken.\",\n        \"Voor goed gedrag volgt een kleine beloning.\"\n      ],\n      \"switch_trigger\": \"De verzorger haalt geen jas of schooltas, maar een riem, clicker en zakje brokjes tevoorschijn.\",\n      \"hinge_event\": \"Na een geslaagde oefening geeft de verzorger de leerling een brokje en noteert zij dat hij vandaag niet meer tegen de schutting plast.\",\n      \"anomaly_under_a\": \"Een ouder die een kind met brokjes beloont en plasgedrag tegen een schutting registreert, zou vernederend en buiten elke normale opvoedingssituatie handelen.\",\n      \"resolution_under_b\": \"Bij een jonge hond zijn brokjes en gedragsregistratie doelmatige trainingsmiddelen; de gegevens helpen de trainer bepalen of het dier klaar is voor plaatsing.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\",\n      \"opposition_axis\": \"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\",\n      \"opposed_proposition\": \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n      \"shared_anchor\": \"De verzorger legt uit waarom iemand niet alleen de straat op mag.\",\n      \"reading_a\": \"Een ouder legt een jong kind een veiligheidsregel uit voordat het buiten gaat spelen.\",\n      \"reading_b\": \"Een volwassen kind voorkomt dat zijn herstellende ouder zonder begeleiding wegloopt en zichzelf in gevaar brengt.\",\n      \"roles_b\": [\n        \"Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.\",\n        \"Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.\",\n        \"Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten.\"\n      ],\n      \"goal_b\": \"De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\",\n        \"Kind → herstellende, oudere ouder.\",\n        \"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\",\n        \"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn vaste tijden voor eten en medicijnen.\",\n        \"Een volwassene herhaalt rustig een afspraak.\",\n        \"Iemand protesteert tegen een beperking.\",\n        \"Familieleden bespreken wie welke taak overneemt.\"\n      ],\n      \"switch_trigger\": \"De vermeende ouder zegt tegen de ander: \\\"Pap, je rollator staat naast de voordeur.\\\"\",\n      \"hinge_event\": \"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\",\n      \"anomaly_under_a\": \"Als dit over een jong kind ging, zou de aanspreekvorm \\\"pap\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\",\n      \"resolution_under_b\": \"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\",\n  \"plan\": {\n    \"setup_script\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n    \"opposing_script\": \"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\",\n    \"opposition_type\": \"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\",\n    \"trigger\": \"De vermeende ouder zegt tegen de ander: \\\"Pap, je rollator staat naast de voordeur.\\\"\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Er zijn vaste tijden voor eten en medicijnen.\",\n      \"Een volwassene herhaalt rustig een afspraak.\",\n      \"Iemand protesteert tegen een beperking.\",\n      \"Familieleden bespreken wie welke taak overneemt.\"\n    ],\n    \"hinge_event\": \"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\",\n    \"anomaly_under_a\": \"Als dit over een jong kind ging, zou de aanspreekvorm \\\"pap\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\",\n    \"resolution_under_b\": \"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\",\n    \"role_remapping\": [\n      \"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\",\n      \"Kind → herstellende, oudere ouder.\",\n      \"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\",\n      \"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## joke_repair\nThe supplied variants preserve some of a semantic plan but failed the joke-validity gate.\nRewrite all three as actual Dutch jokes intended to be spoken aloud by one comedian.\n\nEach repaired variant must contain:\n- a recognizable spoken setup\n- a clear turn or misdirection\n- a final punchline that creates the laugh\n\nDo not write an explanation, summary, moral, slogan, policy statement, or description\nof a joke. Do not end with an abstract conclusion. Preserve the intended Script\nOpposition and required resources. Keep each variant within Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits..\nReturn exactly three repaired variants with variant_id V1, V2, and V3, text, and angle.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\",\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n      \"participants_and_roles\": [\n        \"Ouder(s)/verzorger(s): bieden veiligheid, zorg, grenzen en uitleg.\",\n        \"Kind: leert regels, vaardigheden en omgangsvormen; test soms grenzen.\",\n        \"Eventuele broers, zussen of andere familieleden: maken deel uit van het dagelijks gezinsleven en beïnvloeden de sfeer en gewoonten.\"\n      ],\n      \"apparent_goal\": \"Het kind gezond, veilig en met goede normen en vaardigheden laten opgroeien.\",\n      \"preconditions\": [\n        \"Er is een gezin of vaste verzorgingssituatie waarin volwassenen verantwoordelijkheid dragen voor een kind.\",\n        \"De volwassenen hebben afspraken, waarden of regels die zij willen overbrengen.\",\n        \"Het kind is afhankelijk van de verzorgers, maar ontwikkelt geleidelijk meer eigen wil en zelfstandigheid.\",\n        \"Er zijn terugkerende dagelijkse momenten, zoals eten, bedtijd, school, spelen en opruimen.\"\n      ],\n      \"expected_actions\": [\n        \"Ouders leggen huisregels uit en handhaven die consequent.\",\n        \"Ouders zorgen voor eten, slaap, hygiëne, schoolspullen en emotionele steun.\",\n        \"Het kind krijgt aanwijzingen, oefent gewenst gedrag en krijgt waar nodig correctie of beloning.\",\n        \"Gezinsleden overleggen, lossen kleine conflicten op en verdelen taken.\",\n        \"Ouders passen verantwoordelijkheden en vrijheden aan naarmate het kind ouder wordt.\"\n      ],\n      \"expected_outcome\": \"Een kind dat zich veilig voelt, basisregels begrijpt, verantwoordelijkheid leert nemen en steeds zelfstandiger functioneert.\",\n      \"expected_propositions\": [\n        \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n        \"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\",\n        \"Opvoeden vraagt herhaling, geduld en een zekere consequentie.\",\n        \"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\",\n        \"Familieleden helpen elkaar in principe, ook als dat soms tot irritaties leidt.\"\n      ],\n      \"audience_expectation\": \"Een opzet over familie en opvoeding activeert de herkenbare verwachting van een alledaags gezin waarin verantwoordelijke volwassenen met geduld, regels en zorg een kind richting volwassen zelfstandigheid begeleiden.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\",\n      \"opposition_axis\": \"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\",\n      \"opposed_proposition\": \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n      \"shared_anchor\": \"De verzorger legt uit waarom iemand niet alleen de straat op mag.\",\n      \"reading_a\": \"Een ouder legt een jong kind een veiligheidsregel uit voordat het buiten gaat spelen.\",\n      \"reading_b\": \"Een volwassen kind voorkomt dat zijn herstellende ouder zonder begeleiding wegloopt en zichzelf in gevaar brengt.\",\n      \"roles_b\": [\n        \"Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.\",\n        \"Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.\",\n        \"Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten.\"\n      ],\n      \"goal_b\": \"De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\",\n        \"Kind → herstellende, oudere ouder.\",\n        \"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\",\n        \"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn vaste tijden voor eten en medicijnen.\",\n        \"Een volwassene herhaalt rustig een afspraak.\",\n        \"Iemand protesteert tegen een beperking.\",\n        \"Familieleden bespreken wie welke taak overneemt.\"\n      ],\n      \"switch_trigger\": \"De vermeende ouder zegt tegen de ander: \\\"Pap, je rollator staat naast de voordeur.\\\"\",\n      \"hinge_event\": \"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\",\n      \"anomaly_under_a\": \"Als dit over een jong kind ging, zou de aanspreekvorm \\\"pap\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\",\n      \"resolution_under_b\": \"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n      \"opposing_script\": \"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\",\n      \"opposition_type\": \"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\",\n      \"trigger\": \"De vermeende ouder zegt tegen de ander: \\\"Pap, je rollator staat naast de voordeur.\\\"\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Er zijn vaste tijden voor eten en medicijnen.\",\n        \"Een volwassene herhaalt rustig een afspraak.\",\n        \"Iemand protesteert tegen een beperking.\",\n        \"Familieleden bespreken wie welke taak overneemt.\"\n      ],\n      \"hinge_event\": \"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\",\n      \"anomaly_under_a\": \"Als dit over een jong kind ging, zou de aanspreekvorm \\\"pap\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\",\n      \"resolution_under_b\": \"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\",\n        \"Kind → herstellende, oudere ouder.\",\n        \"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\",\n        \"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Thuis zijn we streng met regels: eten om zes uur, pillen erna, en als iemand naar buiten gaat krijgt hij een briefje met ons nummer in zijn jas. Mijn vader vond dat kinderachtig. Ik zei: „Pap, je rollator staat naast de voordeur.”\",\n      \"angle\": \"Strenge gezinsroutine kantelt naar een zoon die zijn herstellende vader begeleidt.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Mijn broer en ik verdelen de opvoedingstaken eerlijk: hij kookt, ik herinner hem rustig aan zijn medicijnen, en we prijzen goed gedrag. Gisteren had hij alle pillen ingenomen zonder discussie. Dus zei ik: „Braaf, pap — nu nog even oefenen met de rollator.”\",\n      \"angle\": \"Belonen en opvoeden blijken tijdelijke mantelzorg voor een ouder.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Je merkt dat iemand zelfstandiger wordt als hij eindelijk zonder hulp zijn jas aantrekt. Daarom plak ik altijd eerst ons telefoonnummer erin; je weet maar nooit. Mijn vader zei dat ik overdrijf, tot ik antwoordde: „Pap, na de operatie verdwaal jij zelfs in de gang.”\",\n      \"angle\": \"Een herkenbaar opvoedmoment wordt herlezen als veiligheidstoezicht op een vergeetachtige vader.\"\n    }\n  ],\n  \"failed_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een ogenschijnlijk strenge gezins- of opvoedroutine met vaste regels, toezicht en een briefje in de jas.\",\n      \"realized_script_b\": \"Een volwassen zoon verzorgt en begrenst zijn herstellende vader, met medicatie, een telefoonnummer en een rollator.\",\n      \"realized_opposition_axis\": \"Schijnbare opvoeding van een afhankelijk kind versus tijdelijke zorg van een afhankelijke ouder door diens volwassen kind.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De beoogde rolomkering en de late aanspreekvorm \\\"Pap\\\" zijn aanwezig, maar Script B wordt al vroeg sterk verraden door pillen en het telefoonbriefje. Daardoor is de kinderopvoedingslezing niet voldoende dominant en blijft B niet latent tot de switch.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": false,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De tekst vormt een werkende rolomkeringsgrap, maar lekt de mantelzorglezing te vroeg; daardoor realiseert hij de geplande A-naar-B-misdirectie slechts gedeeltelijk.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een expliciet als opvoeding gepresenteerde taakverdeling tussen de verteller en zijn broer, inclusief medicatieherinnering en beloning van goed gedrag.\",\n      \"realized_script_b\": \"Een vermoedelijke mantelzorgsituatie waarin de verteller een vader met medicatie en een rollator begeleidt.\",\n      \"realized_opposition_axis\": \"Onstabiele verschuiving van opvoeding naar zorg voor een ouder; de beoogde kind-ouderrolomkering is niet coherent uitgewerkt.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De tekst noemt eerst de broer als degene die medicijnen inneemt, maar spreekt vervolgens zonder overgang \\\"pap\\\" aan. Daardoor zijn de rollen en de twee scripts niet consistent genoeg om de bedoelde ouder-kindomkering te dragen.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": false,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": false,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": false,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": false,\n      \"has_punchline\": false,\n      \"sounds_like_a_joke\": false,\n      \"rationale\": \"Medicatie, beloning en rollator wijzen wel richting mantelzorg, maar de broer-vaderwisseling maakt de tekst referentieel incoherent. De slotzin herinterpreteert de opzet daarom niet helder.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een ouder volgt de ontwikkeling van een kind dat steeds zelfstandiger wordt, helpt bij het aantrekken van een jas en voorziet die jas uit voorzorg van contactinformatie.\",\n      \"realized_script_b\": \"Een volwassen kind houdt na een operatie toezicht op een vergeetachtige vader die kan verdwalen, en stopt daarom een telefoonnummer in zijn jas.\",\n      \"realized_opposition_axis\": \"Opvoedkundige begeleiding van een afhankelijk kind versus veiligheidszorg voor een tijdelijk afhankelijke ouder.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De eerste zinnen ondersteunen overtuigend de kinderopvoedingslezing. De aanspreekvorm \\\"Pap\\\" en de operatie/verdwaalcontext zetten vervolgens de verzorgingsrol om en maken het telefoonnummer achteraf logisch als mantelzorg.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": false,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit realiseert de geplande ouder-kindrolomkering functioneel en met een duidelijke late herlezing. Niet alle geplande gedeelde routines komen terug, maar het telefoonnummer-in-de-jas-motief vervult wel de centrale veiligheidsbrug.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n      \"participants_and_roles\": [\n        \"Ouder(s)/verzorger(s): bieden veiligheid, zorg, grenzen en uitleg.\",\n        \"Kind: leert regels, vaardigheden en omgangsvormen; test soms grenzen.\",\n        \"Eventuele broers, zussen of andere familieleden: maken deel uit van het dagelijks gezinsleven en beïnvloeden de sfeer en gewoonten.\"\n      ],\n      \"apparent_goal\": \"Het kind gezond, veilig en met goede normen en vaardigheden laten opgroeien.\",\n      \"preconditions\": [\n        \"Er is een gezin of vaste verzorgingssituatie waarin volwassenen verantwoordelijkheid dragen voor een kind.\",\n        \"De volwassenen hebben afspraken, waarden of regels die zij willen overbrengen.\",\n        \"Het kind is afhankelijk van de verzorgers, maar ontwikkelt geleidelijk meer eigen wil en zelfstandigheid.\",\n        \"Er zijn terugkerende dagelijkse momenten, zoals eten, bedtijd, school, spelen en opruimen.\"\n      ],\n      \"expected_actions\": [\n        \"Ouders leggen huisregels uit en handhaven die consequent.\",\n        \"Ouders zorgen voor eten, slaap, hygiëne, schoolspullen en emotionele steun.\",\n        \"Het kind krijgt aanwijzingen, oefent gewenst gedrag en krijgt waar nodig correctie of beloning.\",\n        \"Gezinsleden overleggen, lossen kleine conflicten op en verdelen taken.\",\n        \"Ouders passen verantwoordelijkheden en vrijheden aan naarmate het kind ouder wordt.\"\n      ],\n      \"expected_outcome\": \"Een kind dat zich veilig voelt, basisregels begrijpt, verantwoordelijkheid leert nemen en steeds zelfstandiger functioneert.\",\n      \"expected_propositions\": [\n        \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n        \"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\",\n        \"Opvoeden vraagt herhaling, geduld en een zekere consequentie.\",\n        \"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\",\n        \"Familieleden helpen elkaar in principe, ook als dat soms tot irritaties leidt.\"\n      ],\n      \"audience_expectation\": \"Een opzet over familie en opvoeding activeert de herkenbare verwachting van een alledaags gezin waarin verantwoordelijke volwassenen met geduld, regels en zorg een kind richting volwassen zelfstandigheid begeleiden.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\",\n      \"opposition_axis\": \"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\",\n      \"opposed_proposition\": \"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\",\n      \"shared_anchor\": \"De verzorger legt uit waarom iemand niet alleen de straat op mag.\",\n      \"reading_a\": \"Een ouder legt een jong kind een veiligheidsregel uit voordat het buiten gaat spelen.\",\n      \"reading_b\": \"Een volwassen kind voorkomt dat zijn herstellende ouder zonder begeleiding wegloopt en zichzelf in gevaar brengt.\",\n      \"roles_b\": [\n        \"Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.\",\n        \"Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.\",\n        \"Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten.\"\n      ],\n      \"goal_b\": \"De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\",\n        \"Kind → herstellende, oudere ouder.\",\n        \"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\",\n        \"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn vaste tijden voor eten en medicijnen.\",\n        \"Een volwassene herhaalt rustig een afspraak.\",\n        \"Iemand protesteert tegen een beperking.\",\n        \"Familieleden bespreken wie welke taak overneemt.\"\n      ],\n      \"switch_trigger\": \"De vermeende ouder zegt tegen de ander: \\\"Pap, je rollator staat naast de voordeur.\\\"\",\n      \"hinge_event\": \"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\",\n      \"anomaly_under_a\": \"Als dit over een jong kind ging, zou de aanspreekvorm \\\"pap\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\",\n      \"resolution_under_b\": \"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\",\n      \"opposing_script\": \"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\",\n      \"opposition_type\": \"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\",\n      \"trigger\": \"De vermeende ouder zegt tegen de ander: \\\"Pap, je rollator staat naast de voordeur.\\\"\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Er zijn vaste tijden voor eten en medicijnen.\",\n        \"Een volwassene herhaalt rustig een afspraak.\",\n        \"Iemand protesteert tegen een beperking.\",\n        \"Familieleden bespreken wie welke taak overneemt.\"\n      ],\n      \"hinge_event\": \"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\",\n      \"anomaly_under_a\": \"Als dit over een jong kind ging, zou de aanspreekvorm \\\"pap\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\",\n      \"resolution_under_b\": \"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\",\n      \"role_remapping\": [\n        \"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\",\n        \"Kind → herstellende, oudere ouder.\",\n        \"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\",\n        \"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij ons thuis gelden vaste regels: eerst avondeten, daarna tandenpoetsen, en niemand gaat alleen naar buiten zonder briefje met ons nummer. Mijn vader moppert altijd dat ik te streng ben. Ik zeg: „Pap, dan parkeer ik je rollator voortaan binnen.”\",\n      \"angle\": \"Strenge opvoedregels blijken mantelzorg door een zoon voor zijn herstellende vader.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Mijn zus en ik zijn heel consequent in de opvoeding: wie netjes meewerkt, krijgt een complimentje. Gisteren hoorde ik: „Goed zo, alle pilletjes op!” Daarna zei ik tegen mijn vader: „En nu braaf met de rollator naar bed.”\",\n      \"angle\": \"Belonen van goed gedrag kantelt naar volwassen kinderen die hun vader verzorgen.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Je ziet een kind echt zelfstandig worden wanneer het zelf zijn jas aantrekt en zonder hulp naar buiten wil. Daarom stop ik altijd een briefje met mijn nummer in die jas. Mijn vader noemt me overbezorgd, maar na zijn operatie verdwaalde hij in de gang.\",\n      \"angle\": \"Een klassiek opvoedmoment blijkt veiligheidstoezicht op een vergeetachtige vader.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Familie en opvoeding\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij ons thuis gelden vaste regels: eerst avondeten, daarna tandenpoetsen, en niemand gaat alleen naar buiten zonder briefje met ons nummer. Mijn vader moppert altijd dat ik te streng ben. Ik zeg: „Pap, dan parkeer ik je rollator voortaan binnen.”\",\n      \"angle\": \"Strenge opvoedregels blijken mantelzorg door een zoon voor zijn herstellende vader.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Mijn zus en ik zijn heel consequent in de opvoeding: wie netjes meewerkt, krijgt een complimentje. Gisteren hoorde ik: „Goed zo, alle pilletjes op!” Daarna zei ik tegen mijn vader: „En nu braaf met de rollator naar bed.”\",\n      \"angle\": \"Belonen van goed gedrag kantelt naar volwassen kinderen die hun vader verzorgen.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Je ziet een kind echt zelfstandig worden wanneer het zelf zijn jas aantrekt en zonder hulp naar buiten wil. Daarom stop ik altijd een briefje met mijn nummer in die jas. Mijn vader noemt me overbezorgd, maar na zijn operatie verdwaalde hij in de gang.\",\n      \"angle\": \"Een klassiek opvoedmoment blijkt veiligheidstoezicht op een vergeetachtige vader.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een ogenschijnlijk strenge opvoeder hanteert vaste huisregels rond eten, tandenpoetsen en veilig naar buiten gaan.\",\n      \"realized_script_b\": \"Een volwassen kind stelt veiligheidsregels voor zijn herstellende vader, inclusief een telefoonbriefje en het parkeren van diens rollator.\",\n      \"realized_opposition_axis\": \"schijnbare ouderzorg voor een afhankelijk kind versus daadwerkelijke kindzorg voor een afhankelijke ouder\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst realiseert de bedoelde omkering van opvoeding naar mantelzorg. De huisregels en het briefje met telefoonnummer functioneren als gedeelde opvoed-/zorgcues, waarna \\\"Pap\\\" en de rollator de rolwisseling expliciet maken.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een functionele, compacte realisatie van de geplande ouder-kindrolomkering. De vader wordt al vóór de slotzin genoemd, maar zijn rol blijft eerst voldoende dubbelzinnig; \\\"Pap\\\" plus \\\"rollator\\\" levert alsnog een duidelijke late herlezing op.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"De verteller en diens zus lijken consequent een kind op te voeden door gewenst gedrag te belonen.\",\n      \"realized_script_b\": \"De verteller en diens zus verzorgen hun vader, belonen hem voor het innemen van pillen en sturen hem met een rollator naar bed.\",\n      \"realized_opposition_axis\": \"schijnbare opvoeding van een kind versus zorg door volwassen kinderen voor hun vader\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De bedoelde rolomkering is aanwezig, maar de pillen maken mantelzorg al vóór de geplande late trigger waarschijnlijk. Ook wordt de vader al expliciet geïntroduceerd voordat de rollatorregel de omkering als punch kan activeren.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": false,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": false,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De grapvorm en de beoogde verzorgingsomkering zijn herkenbaar, maar de informatie \\\"alle pilletjes op\\\" onthult Script B te vroeg. Daardoor werkt de slotzin meer als bevestiging dan als de geplande retrospectieve omslag.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"De verteller lijkt een kind te begeleiden naar zelfstandigheid en stopt uit voorzorg een telefoonbriefje in diens jas.\",\n      \"realized_script_b\": \"De verteller houdt na een operatie toezicht op een vergeetachtige vader die kan verdwalen.\",\n      \"realized_opposition_axis\": \"schijnbare ouderlijke veiligheidsbegeleiding van een kind versus veiligheidszorg door een volwassen kind voor zijn vader\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De bedoelde scripts en zorgomkering komen voor, maar \\\"Mijn vader noemt me overbezorgd\\\" onthult de centrale rolverdeling vóór de laatste zin. De operatie en het verdwalen vormen vervolgens uitleg, geen late switch met de geplande \\\"Pap, ... rollator\\\"-trigger.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": false,\n      \"latent_script_b\": false,\n      \"shared_cues_realized\": false,\n      \"switch_trigger_realized\": false,\n      \"retrospective_reinterpretation\": false,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": false,\n      \"sounds_like_a_joke\": false,\n      \"rationale\": \"De tekst is begrijpelijk en de omkering is aanwezig, maar hij geeft de vaderrol voortijdig weg en eindigt met een verklarende mededeling over de operatie in plaats van een punchline. Daardoor realiseert hij de geplande late herinterpretatie niet als volwaardige grap.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij ons thuis gelden vaste regels: eerst avondeten, daarna tandenpoetsen, en niemand gaat alleen naar buiten zonder briefje met ons nummer. Mijn vader moppert altijd dat ik te streng ben. Ik zeg: „Pap, dan parkeer ik je rollator voortaan binnen.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.",
+      "opposing_script": "Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.",
+      "opposition_type": "kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg",
+      "trigger": "De vermeende ouder zegt tegen de ander: \"Pap, je rollator staat naast de voordeur.\"",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Er zijn vaste tijden voor eten en medicijnen.",
+        "Een volwassene herhaalt rustig een afspraak.",
+        "Iemand protesteert tegen een beperking.",
+        "Familieleden bespreken wie welke taak overneemt."
+      ],
+      "hinge_event": "De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.",
+      "anomaly_under_a": "Als dit over een jong kind ging, zou de aanspreekvorm \"pap\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.",
+      "resolution_under_b": "De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.",
+      "role_remapping": [
+        "Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.",
+        "Kind → herstellende, oudere ouder.",
+        "Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.",
+        "Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.\\\",\\\"participants_and_roles\\\":[\\\"Ouder(s)/verzorger(s): bieden veiligheid, zorg, grenzen en uitleg.\\\",\\\"Kind: leert regels, vaardigheden en omgangsvormen; test soms grenzen.\\\",\\\"Eventuele broers, zussen of andere familieleden: maken deel uit van het dagelijks gezinsleven en beïnvloeden de sfeer en gewoonten.\\\"],\\\"apparent_goal\\\":\\\"Het kind gezond, veilig en met goede normen en vaardigheden laten opgroeien.\\\",\\\"preconditions\\\":[\\\"Er is een gezin of vaste verzorgingssituatie waarin volwassenen verantwoordelijkheid dragen voor een kind.\\\",\\\"De volwassenen hebben afspraken, waarden of regels die zij willen overbrengen.\\\",\\\"Het kind is afhankelijk van de verzorgers, maar ontwikkelt geleidelijk meer eigen wil en zelfstandigheid.\\\",\\\"Er zijn terugkerende dagelijkse momenten, zoals eten, bedtijd, school, spelen en opruimen.\\\"],\\\"expected_actions\\\":[\\\"Ouders leggen huisregels uit en handhaven die consequent.\\\",\\\"Ouders zorgen voor eten, slaap, hygiëne, schoolspullen en emotionele steun.\\\",\\\"Het kind krijgt aanwijzingen, oefent gewenst gedrag en krijgt waar nodig correctie of beloning.\\\",\\\"Gezinsleden overleggen, lossen kleine conflicten op en verdelen taken.\\\",\\\"Ouders passen verantwoordelijkheden en vrijheden aan naarmate het kind ouder wordt.\\\"],\\\"expected_outcome\\\":\\\"Een kind dat zich veilig voelt, basisregels begrijpt, verantwoordelijkheid leert nemen en steeds zelfstandiger functioneert.\\\",\\\"expected_propositions\\\":[\\\"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\\\",\\\"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\\\",\\\"Opvoeden vraagt herhaling, geduld en een zekere consequentie.\\\",\\\"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\\\",\\\"Familieleden helpen elkaar in principe, ook als dat soms tot irritaties leidt.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over familie en opvoeding activeert de herkenbare verwachting van een alledaags gezin waarin verantwoordelijke volwassenen met geduld, regels en zorg een kind richting volwassen zelfstandigheid begeleiden.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een beginnende toneelgroep repeteert een familiedrama. De regisseur laat de jonge hoofdrolspeler telkens opnieuw regels, routines en emotionele reacties oefenen totdat hij geloofwaardig een kind uit het stuk kan spelen.\\\",\\\"opposition_axis\\\":\\\"opvoeden versus regisseren\\\",\\\"opposed_proposition\\\":\\\"Ouders leggen huisregels uit en handhaven die consequent.\\\",\\\"shared_anchor\\\":\\\"Steeds opnieuw wordt uitgelegd hoe iemand zich aan tafel moet gedragen.\\\",\\\"reading_a\\\":\\\"Een ouder corrigeert een kind tijdens een gewone gezinsmaaltijd en leert het tafelmanieren.\\\",\\\"reading_b\\\":\\\"Een regisseur instrueert een jonge acteur tijdens de repetitie van een scène aan de eettafel.\\\",\\\"roles_b\\\":[\\\"Regisseur: geeft speel- en gedragsaanwijzingen.\\\",\\\"Jonge acteur: oefent een kinderrol en volgt of test instructies.\\\",\\\"Medespelers: spelen gezinsleden en helpen de scène geloofwaardig te maken.\\\"],\\\"goal_b\\\":\\\"Een overtuigende familiescène opvoeren waarin de jonge acteur de gewenste houding en reacties beheerst.\\\",\\\"role_remapping\\\":[\\\"Ouder(s)/verzorger(s) → regisseur.\\\",\\\"Kind → jonge acteur.\\\",\\\"Broers, zussen of familieleden → medespelers die gezinsleden vertolken.\\\",\\\"Huisregels → regieaanwijzingen en tekst- of spelafspraken.\\\"],\\\"shared_cues\\\":[\\\"Een volwassene spreekt rustig maar beslist.\\\",\\\"Er wordt gecorrigeerd na ongepast gedrag aan tafel.\\\",\\\"Dezelfde handeling wordt herhaald tot zij goed gaat.\\\",\\\"Andere aanwezigen kijken toe en wachten op hun beurt.\\\"],\\\"switch_trigger\\\":\\\"De volwassene onderbreekt de correctie met de woorden: \\\\\\\"En nu vanaf pagina twaalf, maar probeer deze keer te huilen.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De jongen vraagt niet om toestemming om van tafel te gaan, maar of hij na de pauze nog steeds een blauw oog moet opplakken.\\\",\\\"anomaly_under_a\\\":\\\"In een werkelijk gezin is een blauw oog opplakken als voorbereiding op het eten ongepast en onverklaarbaar; de ouderlijke correctie lijkt daardoor vreemd overdreven.\\\",\\\"resolution_under_b\\\":\\\"Als repetitiehandeling is de vraag functioneel: het blauwe oog is grime voor de volgende scène en de strenge tafelcorrectie helpt de acteur zijn rol en timing te oefenen.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een gezin neemt deel aan een televisiequiz waarin ouders en kinderen voor de camera een voorbeeldige huishoudelijke routine moeten naspelen. De presentator en productieploeg sturen de deelnemers met opdrachten, scores en herhaalde takes.\\\",\\\"opposition_axis\\\":\\\"gezinsopvoeding versus televisiespel\\\",\\\"opposed_proposition\\\":\\\"Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.\\\",\\\"shared_anchor\\\":\\\"Een kind krijgt punten voor het opruimen van zijn speelgoed.\\\",\\\"reading_a\\\":\\\"Ouders gebruiken een beloningssysteem om hun kind verantwoordelijkheid en orde te leren.\\\",\\\"reading_b\\\":\\\"Een quizdeelnemer verdient spelpunten door een door de productie opgegeven huishoudelijke opdracht uit te voeren.\\\",\\\"roles_b\\\":[\\\"Presentator: geeft opdrachten en kondigt scores aan.\\\",\\\"Gezinsleden: zijn deelnemers die een herkenbaar gezin uitbeelden.\\\",\\\"Productieassistent: bewaakt takes, tijd en spelregels.\\\",\\\"Publiek: reageert op de prestaties.\\\"],\\\"goal_b\\\":\\\"Een onderhoudende spelronde winnen en een overtuigend, herkenbaar gezinsbeeld voor de uitzending leveren.\\\",\\\"role_remapping\\\":[\\\"Ouder(s)/verzorger(s) → deelnemers die de ouderrol spelen.\\\",\\\"Kind → jonge quizdeelnemer.\\\",\\\"Familieleden → mededeelnemers in hetzelfde team.\\\",\\\"Huisregels en beloningen → spelopdrachten, puntentelling en prijzen.\\\"],\\\"shared_cues\\\":[\\\"Speelgoed ligt op de vloer.\\\",\\\"Een volwassene herinnert het kind aan een afspraak.\\\",\\\"Er wordt een beloning beloofd voor goed gedrag.\\\",\\\"Iemand telt af terwijl het kind opruimt.\\\"],\\\"switch_trigger\\\":\\\"Een stem buiten beeld roept: \\\\\\\"Nog tien seconden voor de bonusronde!\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Nadat het kind zijn kamer heeft opgeruimd, drukt de moeder op een grote rode zoemer en springt er confetti uit de kast.\\\",\\\"anomaly_under_a\\\":\\\"Een rode zoemer en confetti zijn een bizarre en weinig pedagogische reactie op een gewone opruimtaak; zij zouden de huisregel willekeurig maken.\\\",\\\"resolution_under_b\\\":\\\"In de quiz markeert de zoemer het behalen van punten en de confetti de gewonnen bonusronde; opruimen is niet primair opvoeding maar een zichtbare spelprestatie.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een dierenopvang bereidt een jonge hulphond voor op plaatsing. De trainer zorgt voor voer, rust en veiligheid, leert het dier routines en beloont gewenst gedrag zodat het zelfstandig en sociaal betrouwbaar kan functioneren.\\\",\\\"opposition_axis\\\":\\\"menselijk kind opvoeden versus dier trainen\\\",\\\"opposed_proposition\\\":\\\"Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.\\\",\\\"shared_anchor\\\":\\\"De jonge leerling test telkens of hij zonder toestemming naar buiten mag.\\\",\\\"reading_a\\\":\\\"Een kind probeert een huisregel uit en kijkt hoe de ouder reageert.\\\",\\\"reading_b\\\":\\\"Een jonge hond probeert een grens van zijn training of verblijf uit en wordt teruggeroepen.\\\",\\\"roles_b\\\":[\\\"Trainer/verzorger: biedt verzorging, structuur en trainingssignalen.\\\",\\\"Jonge hond: leert routines, grenzen en sociaal gedrag.\\\",\\\"Andere honden en opvangmedewerkers: vormen de dagelijkse sociale omgeving.\\\"],\\\"goal_b\\\":\\\"De jonge hond voorbereiden op een veilige plaatsing als stabiele huishond of hulphond.\\\",\\\"role_remapping\\\":[\\\"Ouder(s)/verzorger(s) → hondentrainer en opvangverzorger.\\\",\\\"Kind → jonge hond.\\\",\\\"Broers, zussen of familieleden → andere honden en opvangmedewerkers.\\\",\\\"Huisregels → trainingscommando's, veiligheidsroutines en verblijfgrenzen.\\\"],\\\"shared_cues\\\":[\\\"Vaste tijden voor eten en rust.\\\",\\\"Een verzorger spreekt bemoedigend en consequent.\\\",\\\"Ongewenst gedrag wordt direct onderbroken.\\\",\\\"Voor goed gedrag volgt een kleine beloning.\\\"],\\\"switch_trigger\\\":\\\"De verzorger haalt geen jas of schooltas, maar een riem, clicker en zakje brokjes tevoorschijn.\\\",\\\"hinge_event\\\":\\\"Na een geslaagde oefening geeft de verzorger de leerling een brokje en noteert zij dat hij vandaag niet meer tegen de schutting plast.\\\",\\\"anomaly_under_a\\\":\\\"Een ouder die een kind met brokjes beloont en plasgedrag tegen een schutting registreert, zou vernederend en buiten elke normale opvoedingssituatie handelen.\\\",\\\"resolution_under_b\\\":\\\"Bij een jonge hond zijn brokjes en gedragsregistratie doelmatige trainingsmiddelen; de gegevens helpen de trainer bepalen of het dier klaar is voor plaatsing.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.\\\",\\\"opposition_axis\\\":\\\"kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg\\\",\\\"opposed_proposition\\\":\\\"Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.\\\",\\\"shared_anchor\\\":\\\"De verzorger legt uit waarom iemand niet alleen de straat op mag.\\\",\\\"reading_a\\\":\\\"Een ouder legt een jong kind een veiligheidsregel uit voordat het buiten gaat spelen.\\\",\\\"reading_b\\\":\\\"Een volwassen kind voorkomt dat zijn herstellende ouder zonder begeleiding wegloopt en zichzelf in gevaar brengt.\\\",\\\"roles_b\\\":[\\\"Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.\\\",\\\"Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.\\\",\\\"Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten.\\\"],\\\"goal_b\\\":\\\"De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.\\\",\\\"role_remapping\\\":[\\\"Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.\\\",\\\"Kind → herstellende, oudere ouder.\\\",\\\"Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.\\\",\\\"Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines.\\\"],\\\"shared_cues\\\":[\\\"Er zijn vaste tijden voor eten en medicijnen.\\\",\\\"Een volwassene herhaalt rustig een afspraak.\\\",\\\"Iemand protesteert tegen een beperking.\\\",\\\"Familieleden bespreken wie welke taak overneemt.\\\"],\\\"switch_trigger\\\":\\\"De vermeende ouder zegt tegen de ander: \\\\\\\"Pap, je rollator staat naast de voordeur.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.\\\",\\\"anomaly_under_a\\\":\\\"Als dit over een jong kind ging, zou de aanspreekvorm \\\\\\\"pap\\\\\\\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.\\\",\\\"resolution_under_b\\\":\\\"De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde realiseerbare tekst over herhaald corrigeren van tafelgedrag past zowel bij opvoeding als bij een repetitie. De dominante tegenstelling is opvoeden tegenover regisseren: in de tweede lezing zijn regels geen gezinsnormen maar spelinstructies. Een toneelrepetitie met een jonge acteur is een herkenbaar script en blijft vóór de onthulling mogelijk. De verwijzing naar pagina twaalf, huilen en een opgeplakt blauw oog is onder lezing A anomalisch, maar wordt onder lezing B doelmatige regie en grime. Daardoor krijgen eerdere correcties achteraf de functie van repetitie. De theatrale vereisten sluiten feitelijke opvoeding als primaire activiteit uit en maken de repetitiefunctie juist mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De ankerhandeling kan zowel een pedagogisch beloningssysteem als een spelopdracht zijn, en de quizlezing is sociaal herkenbaar. De opzet activeert aanvankelijk duidelijk gezinsopvoeding; de spelshow blijft als latente alternatieve context mogelijk. Zoemer en confetti zijn onder lezing A opvallend en worden onder lezing B functioneel als score- en bonusmarkering, waardoor het eerdere opruimen retrospectief een spelprestatie wordt. De scripts zijn echter niet lokaal werkelijk onverenigbaar: ouders kunnen hun eigen kind in een televisiequiz laten opruimen en daarbij tegelijk opvoedkundig belonen. Ook blokkeert puntentelling of confetti het opvoeddoel niet noodzakelijk; het kan, hoe overdreven ook, als beloning naast opvoeding functioneren.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De gedeelde beschrijving van een jonge leerling die grenzen test en wordt teruggeroepen kan realiseerbaar zowel een kind als een jonge hond betreffen. De dominante tegenstelling is menselijk opvoeden tegenover diertraining; de rol van het kind is daarbij onverenigbaar met die van de hond. Hondentraining in een opvang is een herkenbaar tweede script en de algemene cues over routines, correctie en beloning laten die lezing vóór de trigger toe. Riem, clicker, brokjes en registratie van plassen zijn onder lezing A ongepast, maar onder lezing B normale trainings- en observatiemiddelen. Zij herdefiniëren eerdere zorg en correctie als voorbereiding op plaatsing. Wat bij een kind het opvoedkundige doel zou ondermijnen, is bij een hond juist functioneel voor het trainingsdoel.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De uitleg dat iemand niet alleen naar buiten mag, kan zowel een ouderlijke veiligheidsregel voor een kind als mantelzorg voor een herstellende ouder dragen. De oppositie is duidelijk en enkelvoudig: de zorg- en afhankelijkheidsrollen van ouder en kind zijn omgekeerd. Tijdelijke mantelzorg door een volwassen kind is een coherent, herkenbaar script en de eerdere cues over routines, protest en taakverdeling zijn daarmee verenigbaar. De familietopic maakt lezing A aanvankelijk waarschijnlijker, terwijl lezing B beschikbaar blijft. De aanspreekvorm \\\\\\\"pap\\\\\\\", de rollator, medicijnen en het naamkaartje zijn onder A rolmatig anomalisch, maar worden onder B begrijpelijke veiligheidszorg. Zij veranderen de eerdere regels retrospectief van opvoeding in herstelzorg. De tijdelijke kwetsbaarheid verhindert de normale zelfstandigheidsontwikkeling van lezing A, maar rechtvaardigt en faciliteert precies de beschermende zorg van lezing B.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B4\\\",\\\"rationale\\\":\\\"B4 biedt de sterkste oppositionele spiegeling: vrijwel alle gezins- en opvoedingscues blijven intact, maar de afhankelijkheids- en autoriteitsrichting draait om. Daardoor kan de eerste lezing lang overtuigend functioneren als gewone opvoeding, terwijl de onthulling van de volwassen zoon als mantelzorger retrospectief regels, herhaling, toezicht en beloning opnieuw betekenis geeft. De switch is helder maar organisch, de rolremapping is compact en thematisch specifiek voor familie, en de emotionele inzet rond autonomie, waardigheid en zorg geeft aanzienlijk payoffpotentieel. B1 is duidelijk maar verschuift naar een extern toneelkader; B3 is economisch, maar de dierlijke aanwijzingen maken de tweede lezing sneller voorspelbaar en minder subtiel.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Thuis zijn we streng met regels: eten om zes uur, pillen erna, en als iemand naar buiten gaat krijgt hij een briefje met ons nummer in zijn jas. Mijn vader vond dat kinderachtig. Ik zei: „Pap, je rollator staat naast de voordeur.”\\\",\\\"angle\\\":\\\"Strenge gezinsroutine kantelt naar een zoon die zijn herstellende vader begeleidt.\\\"},{\\\"text\\\":\\\"Mijn broer en ik verdelen de opvoedingstaken eerlijk: hij kookt, ik herinner hem rustig aan zijn medicijnen, en we prijzen goed gedrag. Gisteren had hij alle pillen ingenomen zonder discussie. Dus zei ik: „Braaf, pap — nu nog even oefenen met de rollator.”\\\",\\\"angle\\\":\\\"Belonen en opvoeden blijken tijdelijke mantelzorg voor een ouder.\\\"},{\\\"text\\\":\\\"Je merkt dat iemand zelfstandiger wordt als hij eindelijk zonder hulp zijn jas aantrekt. Daarom plak ik altijd eerst ons telefoonnummer erin; je weet maar nooit. Mijn vader zei dat ik overdrijf, tot ik antwoordde: „Pap, na de operatie verdwaal jij zelfs in de gang.”\\\",\\\"angle\\\":\\\"Een herkenbaar opvoedmoment wordt herlezen als veiligheidstoezicht op een vergeetachtige vader.\\\"}]}\",\n  \"joke_repair\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"text\\\":\\\"Bij ons thuis gelden vaste regels: eerst avondeten, daarna tandenpoetsen, en niemand gaat alleen naar buiten zonder briefje met ons nummer. Mijn vader moppert altijd dat ik te streng ben. Ik zeg: „Pap, dan parkeer ik je rollator voortaan binnen.”\\\",\\\"angle\\\":\\\"Strenge opvoedregels blijken mantelzorg door een zoon voor zijn herstellende vader.\\\",\\\"setup\\\":\\\"Bij ons thuis gelden vaste regels: eerst avondeten, daarna tandenpoetsen, en niemand gaat alleen naar buiten zonder briefje met ons nummer.\\\",\\\"punchline\\\":\\\"Ik zeg: „Pap, dan parkeer ik je rollator voortaan binnen.”\\\",\\\"anchor_surface_form\\\":\\\"niemand gaat alleen naar buiten zonder briefje met ons nummer\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"text\\\":\\\"Mijn zus en ik zijn heel consequent in de opvoeding: wie netjes meewerkt, krijgt een complimentje. Gisteren hoorde ik: „Goed zo, alle pilletjes op!” Daarna zei ik tegen mijn vader: „En nu braaf met de rollator naar bed.”\\\",\\\"angle\\\":\\\"Belonen van goed gedrag kantelt naar volwassen kinderen die hun vader verzorgen.\\\",\\\"setup\\\":\\\"Mijn zus en ik zijn heel consequent in de opvoeding: wie netjes meewerkt, krijgt een complimentje.\\\",\\\"punchline\\\":\\\"Daarna zei ik tegen mijn vader: „En nu braaf met de rollator naar bed.”\\\",\\\"anchor_surface_form\\\":\\\"wie netjes meewerkt, krijgt een complimentje\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"text\\\":\\\"Je ziet een kind echt zelfstandig worden wanneer het zelf zijn jas aantrekt en zonder hulp naar buiten wil. Daarom stop ik altijd een briefje met mijn nummer in die jas. Mijn vader noemt me overbezorgd, maar na zijn operatie verdwaalde hij in de gang.\\\",\\\"angle\\\":\\\"Een klassiek opvoedmoment blijkt veiligheidstoezicht op een vergeetachtige vader.\\\",\\\"setup\\\":\\\"Je ziet een kind echt zelfstandig worden wanneer het zelf zijn jas aantrekt en zonder hulp naar buiten wil.\\\",\\\"punchline\\\":\\\"Mijn vader noemt me overbezorgd, maar na zijn operatie verdwaalde hij in de gang.\\\",\\\"anchor_surface_form\\\":\\\"een briefje met mijn nummer in die jas\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een ogenschijnlijk strenge opvoeder hanteert vaste huisregels rond eten, tandenpoetsen en veilig naar buiten gaan.\\\",\\\"realized_script_b\\\":\\\"Een volwassen kind stelt veiligheidsregels voor zijn herstellende vader, inclusief een telefoonbriefje en het parkeren van diens rollator.\\\",\\\"realized_opposition_axis\\\":\\\"schijnbare ouderzorg voor een afhankelijk kind versus daadwerkelijke kindzorg voor een afhankelijke ouder\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst realiseert de bedoelde omkering van opvoeding naar mantelzorg. De huisregels en het briefje met telefoonnummer functioneren als gedeelde opvoed-/zorgcues, waarna \\\\\\\"Pap\\\\\\\" en de rollator de rolwisseling expliciet maken.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een functionele, compacte realisatie van de geplande ouder-kindrolomkering. De vader wordt al vóór de slotzin genoemd, maar zijn rol blijft eerst voldoende dubbelzinnig; \\\\\\\"Pap\\\\\\\" plus \\\\\\\"rollator\\\\\\\" levert alsnog een duidelijke late herlezing op.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"De verteller en diens zus lijken consequent een kind op te voeden door gewenst gedrag te belonen.\\\",\\\"realized_script_b\\\":\\\"De verteller en diens zus verzorgen hun vader, belonen hem voor het innemen van pillen en sturen hem met een rollator naar bed.\\\",\\\"realized_opposition_axis\\\":\\\"schijnbare opvoeding van een kind versus zorg door volwassen kinderen voor hun vader\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De bedoelde rolomkering is aanwezig, maar de pillen maken mantelzorg al vóór de geplande late trigger waarschijnlijk. Ook wordt de vader al expliciet geïntroduceerd voordat de rollatorregel de omkering als punch kan activeren.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":false,\\\"latent_script_b\\\":false,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":false,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De grapvorm en de beoogde verzorgingsomkering zijn herkenbaar, maar de informatie \\\\\\\"alle pilletjes op\\\\\\\" onthult Script B te vroeg. Daardoor werkt de slotzin meer als bevestiging dan als de geplande retrospectieve omslag.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"De verteller lijkt een kind te begeleiden naar zelfstandigheid en stopt uit voorzorg een telefoonbriefje in diens jas.\\\",\\\"realized_script_b\\\":\\\"De verteller houdt na een operatie toezicht op een vergeetachtige vader die kan verdwalen.\\\",\\\"realized_opposition_axis\\\":\\\"schijnbare ouderlijke veiligheidsbegeleiding van een kind versus veiligheidszorg door een volwassen kind voor zijn vader\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De bedoelde scripts en zorgomkering komen voor, maar \\\\\\\"Mijn vader noemt me overbezorgd\\\\\\\" onthult de centrale rolverdeling vóór de laatste zin. De operatie en het verdwalen vormen vervolgens uitleg, geen late switch met de geplande \\\\\\\"Pap, ... rollator\\\\\\\"-trigger.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":false,\\\"latent_script_b\\\":false,\\\"shared_cues_realized\\\":false,\\\"switch_trigger_realized\\\":false,\\\"retrospective_reinterpretation\\\":false,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":false,\\\"sounds_like_a_joke\\\":false,\\\"rationale\\\":\\\"De tekst is begrijpelijk en de omkering is aanwezig, maar hij geeft de vaderrol voortijdig weg en eindigt met een verklarende mededeling over de operatie in plaats van een punchline. Daardoor realiseert hij de geplande late herinterpretatie niet als volwaardige grap.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 voldoet als enige aan de vereiste SO-realisatie: de vaderrol blijft lang genoeg verborgen en „Pap” met de rollator veroorzaakt een echte herlezing. V2 verraadt met de pillen en de expliciete vader de mantelzorg te vroeg, waardoor de slotregel slechts bevestigt.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 heeft een helder, spreekbaar opvoedingsdecor en een late, compacte rolomkering met punchline. V3 noemt de vader al vóór het einde en sluit af met uitleg over operatie en verdwalen; de retrospectieve switch en komische klap blijven daardoor uit.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide varianten falen de vereiste late SO-switch, maar V2 blijft duidelijker als gesproken grap en eindigt nog met een concrete, komische rollatorregel. V3 is vooral een verklarende observatie: de vaderrol wordt vroeg weggegeven en de laatste zin is geen punchline.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de enige passerende variant en wint daarom van alle falende varianten. Hij realiseert de vereiste scriptoppositie het trouwst: alledaagse opvoedregels worden pas bij „Pap” en de rollator retrospectief mantelzorg, in een bondige en performabele punchline.\\\"}\"\n}",
+    "warnings": [
+      "Initial variants failed the joke-validity gate and were rewritten by a repair pass."
+    ],
+    "script_b_candidates": [
+      {
+        "script_b": "Een beginnende toneelgroep repeteert een familiedrama. De regisseur laat de jonge hoofdrolspeler telkens opnieuw regels, routines en emotionele reacties oefenen totdat hij geloofwaardig een kind uit het stuk kan spelen.",
+        "candidate_id": "B1",
+        "opposition_axis": "opvoeden versus regisseren",
+        "opposed_expectation": "Ouders leggen huisregels uit en handhaven die consequent.",
+        "roles_b": [
+          "Regisseur: geeft speel- en gedragsaanwijzingen.",
+          "Jonge acteur: oefent een kinderrol en volgt of test instructies.",
+          "Medespelers: spelen gezinsleden en helpen de scène geloofwaardig te maken."
+        ],
+        "goal_b": "Een overtuigende familiescène opvoeren waarin de jonge acteur de gewenste houding en reacties beheerst.",
+        "role_remapping": [
+          "Ouder(s)/verzorger(s) → regisseur.",
+          "Kind → jonge acteur.",
+          "Broers, zussen of familieleden → medespelers die gezinsleden vertolken.",
+          "Huisregels → regieaanwijzingen en tekst- of spelafspraken."
+        ],
+        "shared_cues": [
+          "Een volwassene spreekt rustig maar beslist.",
+          "Er wordt gecorrigeerd na ongepast gedrag aan tafel.",
+          "Dezelfde handeling wordt herhaald tot zij goed gaat.",
+          "Andere aanwezigen kijken toe en wachten op hun beurt."
+        ],
+        "switch_trigger": "De volwassene onderbreekt de correctie met de woorden: \"En nu vanaf pagina twaalf, maar probeer deze keer te huilen.\"",
+        "hinge_event": "De jongen vraagt niet om toestemming om van tafel te gaan, maar of hij na de pauze nog steeds een blauw oog moet opplakken.",
+        "anomaly_under_a": "In een werkelijk gezin is een blauw oog opplakken als voorbereiding op het eten ongepast en onverklaarbaar; de ouderlijke correctie lijkt daardoor vreemd overdreven.",
+        "resolution_under_b": "Als repetitiehandeling is de vraag functioneel: het blauwe oog is grime voor de volgende scène en de strenge tafelcorrectie helpt de acteur zijn rol en timing te oefenen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een gezin neemt deel aan een televisiequiz waarin ouders en kinderen voor de camera een voorbeeldige huishoudelijke routine moeten naspelen. De presentator en productieploeg sturen de deelnemers met opdrachten, scores en herhaalde takes.",
+        "candidate_id": "B2",
+        "opposition_axis": "gezinsopvoeding versus televisiespel",
+        "opposed_expectation": "Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.",
+        "roles_b": [
+          "Presentator: geeft opdrachten en kondigt scores aan.",
+          "Gezinsleden: zijn deelnemers die een herkenbaar gezin uitbeelden.",
+          "Productieassistent: bewaakt takes, tijd en spelregels.",
+          "Publiek: reageert op de prestaties."
+        ],
+        "goal_b": "Een onderhoudende spelronde winnen en een overtuigend, herkenbaar gezinsbeeld voor de uitzending leveren.",
+        "role_remapping": [
+          "Ouder(s)/verzorger(s) → deelnemers die de ouderrol spelen.",
+          "Kind → jonge quizdeelnemer.",
+          "Familieleden → mededeelnemers in hetzelfde team.",
+          "Huisregels en beloningen → spelopdrachten, puntentelling en prijzen."
+        ],
+        "shared_cues": [
+          "Speelgoed ligt op de vloer.",
+          "Een volwassene herinnert het kind aan een afspraak.",
+          "Er wordt een beloning beloofd voor goed gedrag.",
+          "Iemand telt af terwijl het kind opruimt."
+        ],
+        "switch_trigger": "Een stem buiten beeld roept: \"Nog tien seconden voor de bonusronde!\"",
+        "hinge_event": "Nadat het kind zijn kamer heeft opgeruimd, drukt de moeder op een grote rode zoemer en springt er confetti uit de kast.",
+        "anomaly_under_a": "Een rode zoemer en confetti zijn een bizarre en weinig pedagogische reactie op een gewone opruimtaak; zij zouden de huisregel willekeurig maken.",
+        "resolution_under_b": "In de quiz markeert de zoemer het behalen van punten en de confetti de gewonnen bonusronde; opruimen is niet primair opvoeding maar een zichtbare spelprestatie.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een dierenopvang bereidt een jonge hulphond voor op plaatsing. De trainer zorgt voor voer, rust en veiligheid, leert het dier routines en beloont gewenst gedrag zodat het zelfstandig en sociaal betrouwbaar kan functioneren.",
+        "candidate_id": "B3",
+        "opposition_axis": "menselijk kind opvoeden versus dier trainen",
+        "opposed_expectation": "Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.",
+        "roles_b": [
+          "Trainer/verzorger: biedt verzorging, structuur en trainingssignalen.",
+          "Jonge hond: leert routines, grenzen en sociaal gedrag.",
+          "Andere honden en opvangmedewerkers: vormen de dagelijkse sociale omgeving."
+        ],
+        "goal_b": "De jonge hond voorbereiden op een veilige plaatsing als stabiele huishond of hulphond.",
+        "role_remapping": [
+          "Ouder(s)/verzorger(s) → hondentrainer en opvangverzorger.",
+          "Kind → jonge hond.",
+          "Broers, zussen of familieleden → andere honden en opvangmedewerkers.",
+          "Huisregels → trainingscommando's, veiligheidsroutines en verblijfgrenzen."
+        ],
+        "shared_cues": [
+          "Vaste tijden voor eten en rust.",
+          "Een verzorger spreekt bemoedigend en consequent.",
+          "Ongewenst gedrag wordt direct onderbroken.",
+          "Voor goed gedrag volgt een kleine beloning."
+        ],
+        "switch_trigger": "De verzorger haalt geen jas of schooltas, maar een riem, clicker en zakje brokjes tevoorschijn.",
+        "hinge_event": "Na een geslaagde oefening geeft de verzorger de leerling een brokje en noteert zij dat hij vandaag niet meer tegen de schutting plast.",
+        "anomaly_under_a": "Een ouder die een kind met brokjes beloont en plasgedrag tegen een schutting registreert, zou vernederend en buiten elke normale opvoedingssituatie handelen.",
+        "resolution_under_b": "Bij een jonge hond zijn brokjes en gedragsregistratie doelmatige trainingsmiddelen; de gegevens helpen de trainer bepalen of het dier klaar is voor plaatsing.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.",
+        "candidate_id": "B4",
+        "opposition_axis": "kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg",
+        "opposed_expectation": "Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.",
+        "roles_b": [
+          "Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.",
+          "Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.",
+          "Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten."
+        ],
+        "goal_b": "De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.",
+        "role_remapping": [
+          "Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.",
+          "Kind → herstellende, oudere ouder.",
+          "Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.",
+          "Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines."
+        ],
+        "shared_cues": [
+          "Er zijn vaste tijden voor eten en medicijnen.",
+          "Een volwassene herhaalt rustig een afspraak.",
+          "Iemand protesteert tegen een beperking.",
+          "Familieleden bespreken wie welke taak overneemt."
+        ],
+        "switch_trigger": "De vermeende ouder zegt tegen de ander: \"Pap, je rollator staat naast de voordeur.\"",
+        "hinge_event": "De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.",
+        "anomaly_under_a": "Als dit over een jong kind ging, zou de aanspreekvorm \"pap\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.",
+        "resolution_under_b": "De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B4 biedt de sterkste oppositionele spiegeling: vrijwel alle gezins- en opvoedingscues blijven intact, maar de afhankelijkheids- en autoriteitsrichting draait om. Daardoor kan de eerste lezing lang overtuigend functioneren als gewone opvoeding, terwijl de onthulling van de volwassen zoon als mantelzorger retrospectief regels, herhaling, toezicht en beloning opnieuw betekenis geeft. De switch is helder maar organisch, de rolremapping is compact en thematisch specifiek voor familie, en de emotionele inzet rond autonomie, waardigheid en zorg geeft aanzienlijk payoffpotentieel. B1 is duidelijk maar verschuift naar een extern toneelkader; B3 is economisch, maar de dierlijke aanwijzingen maken de tweede lezing sneller voorspelbaar en minder subtiel.",
+    "variants": [
+      {
+        "text": "Bij ons thuis gelden vaste regels: eerst avondeten, daarna tandenpoetsen, en niemand gaat alleen naar buiten zonder briefje met ons nummer. Mijn vader moppert altijd dat ik te streng ben. Ik zeg: „Pap, dan parkeer ik je rollator voortaan binnen.”",
+        "angle": "Strenge opvoedregels blijken mantelzorg door een zoon voor zijn herstellende vader."
+      },
+      {
+        "text": "Mijn zus en ik zijn heel consequent in de opvoeding: wie netjes meewerkt, krijgt een complimentje. Gisteren hoorde ik: „Goed zo, alle pilletjes op!” Daarna zei ik tegen mijn vader: „En nu braaf met de rollator naar bed.”",
+        "angle": "Belonen van goed gedrag kantelt naar volwassen kinderen die hun vader verzorgen."
+      },
+      {
+        "text": "Je ziet een kind echt zelfstandig worden wanneer het zelf zijn jas aantrekt en zonder hulp naar buiten wil. Daarom stop ik altijd een briefje met mijn nummer in die jas. Mijn vader noemt me overbezorgd, maar na zijn operatie verdwaalde hij in de gang.",
+        "angle": "Een klassiek opvoedmoment blijkt veiligheidstoezicht op een vergeetachtige vader."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 17118,
+      "output_tokens": 7210,
+      "total_tokens": 24328
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "joke_repair",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Ouders voeden hun kind op binnen een gezin: zij stellen regels, geven zorg en begeleiding, en het kind leert stap voor stap zelfstandigheid en sociaal gedrag.",
+          "participants_and_roles": [
+            "Ouder(s)/verzorger(s): bieden veiligheid, zorg, grenzen en uitleg.",
+            "Kind: leert regels, vaardigheden en omgangsvormen; test soms grenzen.",
+            "Eventuele broers, zussen of andere familieleden: maken deel uit van het dagelijks gezinsleven en beïnvloeden de sfeer en gewoonten."
+          ],
+          "apparent_goal": "Het kind gezond, veilig en met goede normen en vaardigheden laten opgroeien.",
+          "preconditions": [
+            "Er is een gezin of vaste verzorgingssituatie waarin volwassenen verantwoordelijkheid dragen voor een kind.",
+            "De volwassenen hebben afspraken, waarden of regels die zij willen overbrengen.",
+            "Het kind is afhankelijk van de verzorgers, maar ontwikkelt geleidelijk meer eigen wil en zelfstandigheid.",
+            "Er zijn terugkerende dagelijkse momenten, zoals eten, bedtijd, school, spelen en opruimen."
+          ],
+          "expected_actions": [
+            "Ouders leggen huisregels uit en handhaven die consequent.",
+            "Ouders zorgen voor eten, slaap, hygiëne, schoolspullen en emotionele steun.",
+            "Het kind krijgt aanwijzingen, oefent gewenst gedrag en krijgt waar nodig correctie of beloning.",
+            "Gezinsleden overleggen, lossen kleine conflicten op en verdelen taken.",
+            "Ouders passen verantwoordelijkheden en vrijheden aan naarmate het kind ouder wordt."
+          ],
+          "expected_outcome": "Een kind dat zich veilig voelt, basisregels begrijpt, verantwoordelijkheid leert nemen en steeds zelfstandiger functioneert.",
+          "expected_propositions": [
+            "Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.",
+            "Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.",
+            "Opvoeden vraagt herhaling, geduld en een zekere consequentie.",
+            "Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.",
+            "Familieleden helpen elkaar in principe, ook als dat soms tot irritaties leidt."
+          ],
+          "audience_expectation": "Een opzet over familie en opvoeding activeert de herkenbare verwachting van een alledaags gezin waarin verantwoordelijke volwassenen met geduld, regels en zorg een kind richting volwassen zelfstandigheid begeleiden."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een beginnende toneelgroep repeteert een familiedrama. De regisseur laat de jonge hoofdrolspeler telkens opnieuw regels, routines en emotionele reacties oefenen totdat hij geloofwaardig een kind uit het stuk kan spelen.",
+            "opposition_axis": "opvoeden versus regisseren",
+            "opposed_proposition": "Ouders leggen huisregels uit en handhaven die consequent.",
+            "shared_anchor": "Steeds opnieuw wordt uitgelegd hoe iemand zich aan tafel moet gedragen.",
+            "reading_a": "Een ouder corrigeert een kind tijdens een gewone gezinsmaaltijd en leert het tafelmanieren.",
+            "reading_b": "Een regisseur instrueert een jonge acteur tijdens de repetitie van een scène aan de eettafel.",
+            "roles_b": [
+              "Regisseur: geeft speel- en gedragsaanwijzingen.",
+              "Jonge acteur: oefent een kinderrol en volgt of test instructies.",
+              "Medespelers: spelen gezinsleden en helpen de scène geloofwaardig te maken."
+            ],
+            "goal_b": "Een overtuigende familiescène opvoeren waarin de jonge acteur de gewenste houding en reacties beheerst.",
+            "role_remapping": [
+              "Ouder(s)/verzorger(s) → regisseur.",
+              "Kind → jonge acteur.",
+              "Broers, zussen of familieleden → medespelers die gezinsleden vertolken.",
+              "Huisregels → regieaanwijzingen en tekst- of spelafspraken."
+            ],
+            "shared_cues": [
+              "Een volwassene spreekt rustig maar beslist.",
+              "Er wordt gecorrigeerd na ongepast gedrag aan tafel.",
+              "Dezelfde handeling wordt herhaald tot zij goed gaat.",
+              "Andere aanwezigen kijken toe en wachten op hun beurt."
+            ],
+            "switch_trigger": "De volwassene onderbreekt de correctie met de woorden: \"En nu vanaf pagina twaalf, maar probeer deze keer te huilen.\"",
+            "hinge_event": "De jongen vraagt niet om toestemming om van tafel te gaan, maar of hij na de pauze nog steeds een blauw oog moet opplakken.",
+            "anomaly_under_a": "In een werkelijk gezin is een blauw oog opplakken als voorbereiding op het eten ongepast en onverklaarbaar; de ouderlijke correctie lijkt daardoor vreemd overdreven.",
+            "resolution_under_b": "Als repetitiehandeling is de vraag functioneel: het blauwe oog is grime voor de volgende scène en de strenge tafelcorrectie helpt de acteur zijn rol en timing te oefenen."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een gezin neemt deel aan een televisiequiz waarin ouders en kinderen voor de camera een voorbeeldige huishoudelijke routine moeten naspelen. De presentator en productieploeg sturen de deelnemers met opdrachten, scores en herhaalde takes.",
+            "opposition_axis": "gezinsopvoeding versus televisiespel",
+            "opposed_proposition": "Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.",
+            "shared_anchor": "Een kind krijgt punten voor het opruimen van zijn speelgoed.",
+            "reading_a": "Ouders gebruiken een beloningssysteem om hun kind verantwoordelijkheid en orde te leren.",
+            "reading_b": "Een quizdeelnemer verdient spelpunten door een door de productie opgegeven huishoudelijke opdracht uit te voeren.",
+            "roles_b": [
+              "Presentator: geeft opdrachten en kondigt scores aan.",
+              "Gezinsleden: zijn deelnemers die een herkenbaar gezin uitbeelden.",
+              "Productieassistent: bewaakt takes, tijd en spelregels.",
+              "Publiek: reageert op de prestaties."
+            ],
+            "goal_b": "Een onderhoudende spelronde winnen en een overtuigend, herkenbaar gezinsbeeld voor de uitzending leveren.",
+            "role_remapping": [
+              "Ouder(s)/verzorger(s) → deelnemers die de ouderrol spelen.",
+              "Kind → jonge quizdeelnemer.",
+              "Familieleden → mededeelnemers in hetzelfde team.",
+              "Huisregels en beloningen → spelopdrachten, puntentelling en prijzen."
+            ],
+            "shared_cues": [
+              "Speelgoed ligt op de vloer.",
+              "Een volwassene herinnert het kind aan een afspraak.",
+              "Er wordt een beloning beloofd voor goed gedrag.",
+              "Iemand telt af terwijl het kind opruimt."
+            ],
+            "switch_trigger": "Een stem buiten beeld roept: \"Nog tien seconden voor de bonusronde!\"",
+            "hinge_event": "Nadat het kind zijn kamer heeft opgeruimd, drukt de moeder op een grote rode zoemer en springt er confetti uit de kast.",
+            "anomaly_under_a": "Een rode zoemer en confetti zijn een bizarre en weinig pedagogische reactie op een gewone opruimtaak; zij zouden de huisregel willekeurig maken.",
+            "resolution_under_b": "In de quiz markeert de zoemer het behalen van punten en de confetti de gewonnen bonusronde; opruimen is niet primair opvoeding maar een zichtbare spelprestatie."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een dierenopvang bereidt een jonge hulphond voor op plaatsing. De trainer zorgt voor voer, rust en veiligheid, leert het dier routines en beloont gewenst gedrag zodat het zelfstandig en sociaal betrouwbaar kan functioneren.",
+            "opposition_axis": "menselijk kind opvoeden versus dier trainen",
+            "opposed_proposition": "Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.",
+            "shared_anchor": "De jonge leerling test telkens of hij zonder toestemming naar buiten mag.",
+            "reading_a": "Een kind probeert een huisregel uit en kijkt hoe de ouder reageert.",
+            "reading_b": "Een jonge hond probeert een grens van zijn training of verblijf uit en wordt teruggeroepen.",
+            "roles_b": [
+              "Trainer/verzorger: biedt verzorging, structuur en trainingssignalen.",
+              "Jonge hond: leert routines, grenzen en sociaal gedrag.",
+              "Andere honden en opvangmedewerkers: vormen de dagelijkse sociale omgeving."
+            ],
+            "goal_b": "De jonge hond voorbereiden op een veilige plaatsing als stabiele huishond of hulphond.",
+            "role_remapping": [
+              "Ouder(s)/verzorger(s) → hondentrainer en opvangverzorger.",
+              "Kind → jonge hond.",
+              "Broers, zussen of familieleden → andere honden en opvangmedewerkers.",
+              "Huisregels → trainingscommando's, veiligheidsroutines en verblijfgrenzen."
+            ],
+            "shared_cues": [
+              "Vaste tijden voor eten en rust.",
+              "Een verzorger spreekt bemoedigend en consequent.",
+              "Ongewenst gedrag wordt direct onderbroken.",
+              "Voor goed gedrag volgt een kleine beloning."
+            ],
+            "switch_trigger": "De verzorger haalt geen jas of schooltas, maar een riem, clicker en zakje brokjes tevoorschijn.",
+            "hinge_event": "Na een geslaagde oefening geeft de verzorger de leerling een brokje en noteert zij dat hij vandaag niet meer tegen de schutting plast.",
+            "anomaly_under_a": "Een ouder die een kind met brokjes beloont en plasgedrag tegen een schutting registreert, zou vernederend en buiten elke normale opvoedingssituatie handelen.",
+            "resolution_under_b": "Bij een jonge hond zijn brokjes en gedragsregistratie doelmatige trainingsmiddelen; de gegevens helpen de trainer bepalen of het dier klaar is voor plaatsing."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.",
+            "opposition_axis": "kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg",
+            "opposed_proposition": "Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.",
+            "shared_anchor": "De verzorger legt uit waarom iemand niet alleen de straat op mag.",
+            "reading_a": "Een ouder legt een jong kind een veiligheidsregel uit voordat het buiten gaat spelen.",
+            "reading_b": "Een volwassen kind voorkomt dat zijn herstellende ouder zonder begeleiding wegloopt en zichzelf in gevaar brengt.",
+            "roles_b": [
+              "Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.",
+              "Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.",
+              "Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten."
+            ],
+            "goal_b": "De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.",
+            "role_remapping": [
+              "Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.",
+              "Kind → herstellende, oudere ouder.",
+              "Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.",
+              "Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines."
+            ],
+            "shared_cues": [
+              "Er zijn vaste tijden voor eten en medicijnen.",
+              "Een volwassene herhaalt rustig een afspraak.",
+              "Iemand protesteert tegen een beperking.",
+              "Familieleden bespreken wie welke taak overneemt."
+            ],
+            "switch_trigger": "De vermeende ouder zegt tegen de ander: \"Pap, je rollator staat naast de voordeur.\"",
+            "hinge_event": "De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.",
+            "anomaly_under_a": "Als dit over een jong kind ging, zou de aanspreekvorm \"pap\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.",
+            "resolution_under_b": "De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een beginnende toneelgroep repeteert een familiedrama. De regisseur laat de jonge hoofdrolspeler telkens opnieuw regels, routines en emotionele reacties oefenen totdat hij geloofwaardig een kind uit het stuk kan spelen.",
+              "opposition_axis": "opvoeden versus regisseren",
+              "opposed_proposition": "Ouders leggen huisregels uit en handhaven die consequent.",
+              "shared_anchor": "Steeds opnieuw wordt uitgelegd hoe iemand zich aan tafel moet gedragen.",
+              "reading_a": "Een ouder corrigeert een kind tijdens een gewone gezinsmaaltijd en leert het tafelmanieren.",
+              "reading_b": "Een regisseur instrueert een jonge acteur tijdens de repetitie van een scène aan de eettafel.",
+              "roles_b": [
+                "Regisseur: geeft speel- en gedragsaanwijzingen.",
+                "Jonge acteur: oefent een kinderrol en volgt of test instructies.",
+                "Medespelers: spelen gezinsleden en helpen de scène geloofwaardig te maken."
+              ],
+              "goal_b": "Een overtuigende familiescène opvoeren waarin de jonge acteur de gewenste houding en reacties beheerst.",
+              "role_remapping": [
+                "Ouder(s)/verzorger(s) → regisseur.",
+                "Kind → jonge acteur.",
+                "Broers, zussen of familieleden → medespelers die gezinsleden vertolken.",
+                "Huisregels → regieaanwijzingen en tekst- of spelafspraken."
+              ],
+              "shared_cues": [
+                "Een volwassene spreekt rustig maar beslist.",
+                "Er wordt gecorrigeerd na ongepast gedrag aan tafel.",
+                "Dezelfde handeling wordt herhaald tot zij goed gaat.",
+                "Andere aanwezigen kijken toe en wachten op hun beurt."
+              ],
+              "switch_trigger": "De volwassene onderbreekt de correctie met de woorden: \"En nu vanaf pagina twaalf, maar probeer deze keer te huilen.\"",
+              "hinge_event": "De jongen vraagt niet om toestemming om van tafel te gaan, maar of hij na de pauze nog steeds een blauw oog moet opplakken.",
+              "anomaly_under_a": "In een werkelijk gezin is een blauw oog opplakken als voorbereiding op het eten ongepast en onverklaarbaar; de ouderlijke correctie lijkt daardoor vreemd overdreven.",
+              "resolution_under_b": "Als repetitiehandeling is de vraag functioneel: het blauwe oog is grime voor de volgende scène en de strenge tafelcorrectie helpt de acteur zijn rol en timing te oefenen."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een gezin neemt deel aan een televisiequiz waarin ouders en kinderen voor de camera een voorbeeldige huishoudelijke routine moeten naspelen. De presentator en productieploeg sturen de deelnemers met opdrachten, scores en herhaalde takes.",
+              "opposition_axis": "gezinsopvoeding versus televisiespel",
+              "opposed_proposition": "Regels in huis zijn bedoeld om orde, veiligheid en respect te bevorderen.",
+              "shared_anchor": "Een kind krijgt punten voor het opruimen van zijn speelgoed.",
+              "reading_a": "Ouders gebruiken een beloningssysteem om hun kind verantwoordelijkheid en orde te leren.",
+              "reading_b": "Een quizdeelnemer verdient spelpunten door een door de productie opgegeven huishoudelijke opdracht uit te voeren.",
+              "roles_b": [
+                "Presentator: geeft opdrachten en kondigt scores aan.",
+                "Gezinsleden: zijn deelnemers die een herkenbaar gezin uitbeelden.",
+                "Productieassistent: bewaakt takes, tijd en spelregels.",
+                "Publiek: reageert op de prestaties."
+              ],
+              "goal_b": "Een onderhoudende spelronde winnen en een overtuigend, herkenbaar gezinsbeeld voor de uitzending leveren.",
+              "role_remapping": [
+                "Ouder(s)/verzorger(s) → deelnemers die de ouderrol spelen.",
+                "Kind → jonge quizdeelnemer.",
+                "Familieleden → mededeelnemers in hetzelfde team.",
+                "Huisregels en beloningen → spelopdrachten, puntentelling en prijzen."
+              ],
+              "shared_cues": [
+                "Speelgoed ligt op de vloer.",
+                "Een volwassene herinnert het kind aan een afspraak.",
+                "Er wordt een beloning beloofd voor goed gedrag.",
+                "Iemand telt af terwijl het kind opruimt."
+              ],
+              "switch_trigger": "Een stem buiten beeld roept: \"Nog tien seconden voor de bonusronde!\"",
+              "hinge_event": "Nadat het kind zijn kamer heeft opgeruimd, drukt de moeder op een grote rode zoemer en springt er confetti uit de kast.",
+              "anomaly_under_a": "Een rode zoemer en confetti zijn een bizarre en weinig pedagogische reactie op een gewone opruimtaak; zij zouden de huisregel willekeurig maken.",
+              "resolution_under_b": "In de quiz markeert de zoemer het behalen van punten en de confetti de gewonnen bonusronde; opruimen is niet primair opvoeding maar een zichtbare spelprestatie."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een dierenopvang bereidt een jonge hulphond voor op plaatsing. De trainer zorgt voor voer, rust en veiligheid, leert het dier routines en beloont gewenst gedrag zodat het zelfstandig en sociaal betrouwbaar kan functioneren.",
+              "opposition_axis": "menselijk kind opvoeden versus dier trainen",
+              "opposed_proposition": "Kinderen proberen grenzen uit; dat hoort bij hun ontwikkeling.",
+              "shared_anchor": "De jonge leerling test telkens of hij zonder toestemming naar buiten mag.",
+              "reading_a": "Een kind probeert een huisregel uit en kijkt hoe de ouder reageert.",
+              "reading_b": "Een jonge hond probeert een grens van zijn training of verblijf uit en wordt teruggeroepen.",
+              "roles_b": [
+                "Trainer/verzorger: biedt verzorging, structuur en trainingssignalen.",
+                "Jonge hond: leert routines, grenzen en sociaal gedrag.",
+                "Andere honden en opvangmedewerkers: vormen de dagelijkse sociale omgeving."
+              ],
+              "goal_b": "De jonge hond voorbereiden op een veilige plaatsing als stabiele huishond of hulphond.",
+              "role_remapping": [
+                "Ouder(s)/verzorger(s) → hondentrainer en opvangverzorger.",
+                "Kind → jonge hond.",
+                "Broers, zussen of familieleden → andere honden en opvangmedewerkers.",
+                "Huisregels → trainingscommando's, veiligheidsroutines en verblijfgrenzen."
+              ],
+              "shared_cues": [
+                "Vaste tijden voor eten en rust.",
+                "Een verzorger spreekt bemoedigend en consequent.",
+                "Ongewenst gedrag wordt direct onderbroken.",
+                "Voor goed gedrag volgt een kleine beloning."
+              ],
+              "switch_trigger": "De verzorger haalt geen jas of schooltas, maar een riem, clicker en zakje brokjes tevoorschijn.",
+              "hinge_event": "Na een geslaagde oefening geeft de verzorger de leerling een brokje en noteert zij dat hij vandaag niet meer tegen de schutting plast.",
+              "anomaly_under_a": "Een ouder die een kind met brokjes beloont en plasgedrag tegen een schutting registreert, zou vernederend en buiten elke normale opvoedingssituatie handelen.",
+              "resolution_under_b": "Bij een jonge hond zijn brokjes en gedragsregistratie doelmatige trainingsmiddelen; de gegevens helpen de trainer bepalen of het dier klaar is voor plaatsing."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een volwassen zoon probeert zijn vergeetachtige vader na een operatie tijdelijk veilig thuis te laten herstellen. Hij stelt routines in, herhaalt afspraken en neemt huishoudelijke taken over, terwijl de vader zich verzet tegen het verlies van zelfstandigheid.",
+              "opposition_axis": "kind afhankelijk maken van ouderzorg versus ouder afhankelijk van kindzorg",
+              "opposed_proposition": "Ouders weten doorgaans beter dan jonge kinderen wat veilig en verstandig is.",
+              "shared_anchor": "De verzorger legt uit waarom iemand niet alleen de straat op mag.",
+              "reading_a": "Een ouder legt een jong kind een veiligheidsregel uit voordat het buiten gaat spelen.",
+              "reading_b": "Een volwassen kind voorkomt dat zijn herstellende ouder zonder begeleiding wegloopt en zichzelf in gevaar brengt.",
+              "roles_b": [
+                "Volwassen zoon of dochter: organiseert zorg, grenzen en praktische hulp.",
+                "Herstellende ouder: wil autonomie behouden maar heeft tijdelijk toezicht nodig.",
+                "Andere familieleden of thuiszorg: ondersteunen, overleggen of ontlasten."
+              ],
+              "goal_b": "De ouder veilig laten herstellen zonder diens waardigheid en resterende zelfstandigheid onnodig af te nemen.",
+              "role_remapping": [
+                "Ouder(s)/verzorger(s) → volwassen kind als mantelzorger.",
+                "Kind → herstellende, oudere ouder.",
+                "Broers, zussen of familieleden → andere volwassen familieleden en zorgverleners.",
+                "Opvoedregels → tijdelijke veiligheidsafspraken en zorgroutines."
+              ],
+              "shared_cues": [
+                "Er zijn vaste tijden voor eten en medicijnen.",
+                "Een volwassene herhaalt rustig een afspraak.",
+                "Iemand protesteert tegen een beperking.",
+                "Familieleden bespreken wie welke taak overneemt."
+              ],
+              "switch_trigger": "De vermeende ouder zegt tegen de ander: \"Pap, je rollator staat naast de voordeur.\"",
+              "hinge_event": "De jongere man plakt een naamkaartje met telefoonnummer in de jas van de oudere man en beloont hem omdat hij zijn medicijnen heeft ingenomen.",
+              "anomaly_under_a": "Als dit over een jong kind ging, zou de aanspreekvorm \"pap\" de rollen plotseling tegenspreken en zou de combinatie van rollator, medicijnen en naamkaartje een ongewoon zware context voor gewone opvoeding creëren.",
+              "resolution_under_b": "De details zijn logisch bij tijdelijke mantelzorg: de volwassen zoon beschermt zijn vader tegen verdwalen en medicatiefouten, terwijl het compliment diens medewerking en waardigheid ondersteunt."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde realiseerbare tekst over herhaald corrigeren van tafelgedrag past zowel bij opvoeding als bij een repetitie. De dominante tegenstelling is opvoeden tegenover regisseren: in de tweede lezing zijn regels geen gezinsnormen maar spelinstructies. Een toneelrepetitie met een jonge acteur is een herkenbaar script en blijft vóór de onthulling mogelijk. De verwijzing naar pagina twaalf, huilen en een opgeplakt blauw oog is onder lezing A anomalisch, maar wordt onder lezing B doelmatige regie en grime. Daardoor krijgen eerdere correcties achteraf de functie van repetitie. De theatrale vereisten sluiten feitelijke opvoeding als primaire activiteit uit en maken de repetitiefunctie juist mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": false,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De ankerhandeling kan zowel een pedagogisch beloningssysteem als een spelopdracht zijn, en de quizlezing is sociaal herkenbaar. De opzet activeert aanvankelijk duidelijk gezinsopvoeding; de spelshow blijft als latente alternatieve context mogelijk. Zoemer en confetti zijn onder lezing A opvallend en worden onder lezing B functioneel als score- en bonusmarkering, waardoor het eerdere opruimen retrospectief een spelprestatie wordt. De scripts zijn echter niet lokaal werkelijk onverenigbaar: ouders kunnen hun eigen kind in een televisiequiz laten opruimen en daarbij tegelijk opvoedkundig belonen. Ook blokkeert puntentelling of confetti het opvoeddoel niet noodzakelijk; het kan, hoe overdreven ook, als beloning naast opvoeding functioneren."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De gedeelde beschrijving van een jonge leerling die grenzen test en wordt teruggeroepen kan realiseerbaar zowel een kind als een jonge hond betreffen. De dominante tegenstelling is menselijk opvoeden tegenover diertraining; de rol van het kind is daarbij onverenigbaar met die van de hond. Hondentraining in een opvang is een herkenbaar tweede script en de algemene cues over routines, correctie en beloning laten die lezing vóór de trigger toe. Riem, clicker, brokjes en registratie van plassen zijn onder lezing A ongepast, maar onder lezing B normale trainings- en observatiemiddelen. Zij herdefiniëren eerdere zorg en correctie als voorbereiding op plaatsing. Wat bij een kind het opvoedkundige doel zou ondermijnen, is bij een hond juist functioneel voor het trainingsdoel."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De uitleg dat iemand niet alleen naar buiten mag, kan zowel een ouderlijke veiligheidsregel voor een kind als mantelzorg voor een herstellende ouder dragen. De oppositie is duidelijk en enkelvoudig: de zorg- en afhankelijkheidsrollen van ouder en kind zijn omgekeerd. Tijdelijke mantelzorg door een volwassen kind is een coherent, herkenbaar script en de eerdere cues over routines, protest en taakverdeling zijn daarmee verenigbaar. De familietopic maakt lezing A aanvankelijk waarschijnlijker, terwijl lezing B beschikbaar blijft. De aanspreekvorm \"pap\", de rollator, medicijnen en het naamkaartje zijn onder A rolmatig anomalisch, maar worden onder B begrijpelijke veiligheidszorg. Zij veranderen de eerdere regels retrospectief van opvoeding in herstelzorg. De tijdelijke kwetsbaarheid verhindert de normale zelfstandigheidsontwikkeling van lezing A, maar rechtvaardigt en faciliteert precies de beschermende zorg van lezing B."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde realiseerbare tekst over herhaald corrigeren van tafelgedrag past zowel bij opvoeding als bij een repetitie. De dominante tegenstelling is opvoeden tegenover regisseren: in de tweede lezing zijn regels geen gezinsnormen maar spelinstructies. Een toneelrepetitie met een jonge acteur is een herkenbaar script en blijft vóór de onthulling mogelijk. De verwijzing naar pagina twaalf, huilen en een opgeplakt blauw oog is onder lezing A anomalisch, maar wordt onder lezing B doelmatige regie en grime. Daardoor krijgen eerdere correcties achteraf de functie van repetitie. De theatrale vereisten sluiten feitelijke opvoeding als primaire activiteit uit en maken de repetitiefunctie juist mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": false,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De ankerhandeling kan zowel een pedagogisch beloningssysteem als een spelopdracht zijn, en de quizlezing is sociaal herkenbaar. De opzet activeert aanvankelijk duidelijk gezinsopvoeding; de spelshow blijft als latente alternatieve context mogelijk. Zoemer en confetti zijn onder lezing A opvallend en worden onder lezing B functioneel als score- en bonusmarkering, waardoor het eerdere opruimen retrospectief een spelprestatie wordt. De scripts zijn echter niet lokaal werkelijk onverenigbaar: ouders kunnen hun eigen kind in een televisiequiz laten opruimen en daarbij tegelijk opvoedkundig belonen. Ook blokkeert puntentelling of confetti het opvoeddoel niet noodzakelijk; het kan, hoe overdreven ook, als beloning naast opvoeding functioneren."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De gedeelde beschrijving van een jonge leerling die grenzen test en wordt teruggeroepen kan realiseerbaar zowel een kind als een jonge hond betreffen. De dominante tegenstelling is menselijk opvoeden tegenover diertraining; de rol van het kind is daarbij onverenigbaar met die van de hond. Hondentraining in een opvang is een herkenbaar tweede script en de algemene cues over routines, correctie en beloning laten die lezing vóór de trigger toe. Riem, clicker, brokjes en registratie van plassen zijn onder lezing A ongepast, maar onder lezing B normale trainings- en observatiemiddelen. Zij herdefiniëren eerdere zorg en correctie als voorbereiding op plaatsing. Wat bij een kind het opvoedkundige doel zou ondermijnen, is bij een hond juist functioneel voor het trainingsdoel."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De uitleg dat iemand niet alleen naar buiten mag, kan zowel een ouderlijke veiligheidsregel voor een kind als mantelzorg voor een herstellende ouder dragen. De oppositie is duidelijk en enkelvoudig: de zorg- en afhankelijkheidsrollen van ouder en kind zijn omgekeerd. Tijdelijke mantelzorg door een volwassen kind is een coherent, herkenbaar script en de eerdere cues over routines, protest en taakverdeling zijn daarmee verenigbaar. De familietopic maakt lezing A aanvankelijk waarschijnlijker, terwijl lezing B beschikbaar blijft. De aanspreekvorm \"pap\", de rollator, medicijnen en het naamkaartje zijn onder A rolmatig anomalisch, maar worden onder B begrijpelijke veiligheidszorg. Zij veranderen de eerdere regels retrospectief van opvoeding in herstelzorg. De tijdelijke kwetsbaarheid verhindert de normale zelfstandigheidsontwikkeling van lezing A, maar rechtvaardigt en faciliteert precies de beschermende zorg van lezing B."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B4"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een ogenschijnlijk strenge opvoeder hanteert vaste huisregels rond eten, tandenpoetsen en veilig naar buiten gaan.",
+          "realized_script_b": "Een volwassen kind stelt veiligheidsregels voor zijn herstellende vader, inclusief een telefoonbriefje en het parkeren van diens rollator.",
+          "realized_opposition_axis": "schijnbare ouderzorg voor een afhankelijk kind versus daadwerkelijke kindzorg voor een afhankelijke ouder",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De tekst realiseert de bedoelde omkering van opvoeding naar mantelzorg. De huisregels en het briefje met telefoonnummer functioneren als gedeelde opvoed-/zorgcues, waarna \"Pap\" en de rollator de rolwisseling expliciet maken."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Een functionele, compacte realisatie van de geplande ouder-kindrolomkering. De vader wordt al vóór de slotzin genoemd, maar zijn rol blijft eerst voldoende dubbelzinnig; \"Pap\" plus \"rollator\" levert alsnog een duidelijke late herlezing op.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "De verteller en diens zus lijken consequent een kind op te voeden door gewenst gedrag te belonen.",
+          "realized_script_b": "De verteller en diens zus verzorgen hun vader, belonen hem voor het innemen van pillen en sturen hem met een rollator naar bed.",
+          "realized_opposition_axis": "schijnbare opvoeding van een kind versus zorg door volwassen kinderen voor hun vader",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De bedoelde rolomkering is aanwezig, maar de pillen maken mantelzorg al vóór de geplande late trigger waarschijnlijk. Ook wordt de vader al expliciet geïntroduceerd voordat de rollatorregel de omkering als punch kan activeren."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": false,
+          "latent_script_b": false,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": false,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De grapvorm en de beoogde verzorgingsomkering zijn herkenbaar, maar de informatie \"alle pilletjes op\" onthult Script B te vroeg. Daardoor werkt de slotzin meer als bevestiging dan als de geplande retrospectieve omslag.",
+          "passes_required_plan": false
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "De verteller lijkt een kind te begeleiden naar zelfstandigheid en stopt uit voorzorg een telefoonbriefje in diens jas.",
+          "realized_script_b": "De verteller houdt na een operatie toezicht op een vergeetachtige vader die kan verdwalen.",
+          "realized_opposition_axis": "schijnbare ouderlijke veiligheidsbegeleiding van een kind versus veiligheidszorg door een volwassen kind voor zijn vader",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": false,
+            "rationale": "De bedoelde scripts en zorgomkering komen voor, maar \"Mijn vader noemt me overbezorgd\" onthult de centrale rolverdeling vóór de laatste zin. De operatie en het verdwalen vormen vervolgens uitleg, geen late switch met de geplande \"Pap, ... rollator\"-trigger."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": false,
+          "latent_script_b": false,
+          "shared_cues_realized": false,
+          "switch_trigger_realized": false,
+          "retrospective_reinterpretation": false,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": false,
+          "sounds_like_a_joke": false,
+          "rationale": "De tekst is begrijpelijk en de omkering is aanwezig, maar hij geeft de vaderrol voortijdig weg en eindigt met een verklarende mededeling over de operatie in plaats van een punchline. Daardoor realiseert hij de geplande late herinterpretatie niet als volwaardige grap.",
+          "passes_required_plan": false
+        }
+      ],
+      "passing_variant_ids": [
+        "V1"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "V1 voldoet als enige aan de vereiste SO-realisatie: de vaderrol blijft lang genoeg verborgen en „Pap” met de rollator veroorzaakt een echte herlezing. V2 verraadt met de pillen en de expliciete vader de mantelzorg te vroeg, waardoor de slotregel slechts bevestigt."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "V1 heeft een helder, spreekbaar opvoedingsdecor en een late, compacte rolomkering met punchline. V3 noemt de vader al vóór het einde en sluit af met uitleg over operatie en verdwalen; de retrospectieve switch en komische klap blijven daardoor uit."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "Beide varianten falen de vereiste late SO-switch, maar V2 blijft duidelijker als gesproken grap en eindigt nog met een concrete, komische rollatorregel. V3 is vooral een verklarende observatie: de vaderrol wordt vroeg weggegeven en de laatste zin is geen punchline."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 is de enige passerende variant en wint daarom van alle falende varianten. Hij realiseert de vereiste scriptoppositie het trouwst: alledaagse opvoedregels worden pas bij „Pap” en de rollator retrospectief mantelzorg, in een bondige en performabele punchline."
+    }
+  },
+  "result_sha256": "91fa18582dfd43976f55a582524a4fa72e3b24ea4d0629762e3328c626ae378b"
+}

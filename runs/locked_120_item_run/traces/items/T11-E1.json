@@ -1,0 +1,888 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T11-E1",
+  "topic_id": "T11",
+  "topic": "Media, technologie en mobiele telefoons",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "ddf7cc148e05b41f2611ea93518f4ccd9b2b33e3cea6c52ad536e2c458f73fb1",
+  "dry_run": false,
+  "attempt": 3,
+  "generated_at": "2026-08-20T06:58:11.792998+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Media, technologie en mobiele telefoons",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\",\n  \"script_a\": {\n    \"script_a\": \"Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.\",\n    \"participants_and_roles\": [\n      \"Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.\",\n      \"Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.\",\n      \"Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.\",\n      \"Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt.\"\n    ],\n    \"apparent_goal\": \"Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.\",\n    \"preconditions\": [\n      \"De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.\",\n      \"De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.\",\n      \"De gebruikte app, website of dienst is beschikbaar.\",\n      \"Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is.\"\n    ],\n    \"expected_actions\": [\n      \"De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.\",\n      \"De gebruiker typt, belt, zoekt, kijkt of luistert.\",\n      \"De technologie verzendt of ontvangt de gevraagde informatie.\",\n      \"De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is.\"\n    ],\n    \"expected_outcome\": \"De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.\",\n    \"expected_propositions\": [\n      \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n      \"Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.\",\n      \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n      \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\",\n  \"script_a\": {\n    \"script_a\": \"Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.\",\n    \"participants_and_roles\": [\n      \"Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.\",\n      \"Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.\",\n      \"Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.\",\n      \"Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt.\"\n    ],\n    \"apparent_goal\": \"Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.\",\n    \"preconditions\": [\n      \"De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.\",\n      \"De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.\",\n      \"De gebruikte app, website of dienst is beschikbaar.\",\n      \"Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is.\"\n    ],\n    \"expected_actions\": [\n      \"De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.\",\n      \"De gebruiker typt, belt, zoekt, kijkt of luistert.\",\n      \"De technologie verzendt of ontvangt de gevraagde informatie.\",\n      \"De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is.\"\n    ],\n    \"expected_outcome\": \"De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.\",\n    \"expected_propositions\": [\n      \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n      \"Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.\",\n      \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n      \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een rouwende gast gebruikt zijn telefoon tijdens een uitvaart niet om bereikbaar te zijn, maar om de plechtigheid als live-uitzending te produceren en kijkcijfers te trekken.\",\n      \"opposition_axis\": \"respectvolle privécommunicatie versus publieke exploitatie\",\n      \"opposed_proposition\": \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\",\n      \"shared_anchor\": \"De gebruiker kijkt herhaaldelijk op zijn telefoon tijdens een plechtigheid.\",\n      \"reading_a\": \"Hij wacht discreet op een belangrijk bericht van familie of werk en controleert daarom af en toe zijn scherm.\",\n      \"reading_b\": \"Hij bewaakt een livestream van de uitvaart, leest reacties van kijkers en probeert het bereik op te voeren.\",\n      \"roles_b\": [\n        \"Streamer: wil aandacht, bereik en online betrokkenheid genereren.\",\n        \"Overledene/nabestaanden: worden ongewild onderwerp van de uitzending.\",\n        \"Online publiek: kijkt mee en reageert op de stream.\",\n        \"Uitvaartleider: probeert de plechtigheid waardig te laten verlopen.\"\n      ],\n      \"goal_b\": \"Van een intieme uitvaart een goed bekeken online evenement maken.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt streamer.\",\n        \"Contactpersoon wordt online publiek.\",\n        \"Telefoon/app/provider wordt livestreamplatform.\",\n        \"Omstanders worden nabestaanden en uitvaartleider die de opname moeten verdragen.\"\n      ],\n      \"shared_cues\": [\n        \"Hij ontgrendelt de telefoon zonder geluid.\",\n        \"Hij kijkt geregeld naar binnenkomende meldingen.\",\n        \"Hij houdt het toestel laag voor zich.\",\n        \"Hij fluistert dat hij 'even iets moet checken'.\"\n      ],\n      \"switch_trigger\": \"Hij draait de telefoon naar de kist en zegt zacht: 'We zijn live, vergeet niet te liken.'\",\n      \"hinge_event\": \"De telefoon wordt op een kleine standaard gericht op de kist gezet.\",\n      \"anomaly_under_a\": \"Bij een gewone noodzakelijke berichtcontrole is het onverklaarbaar en respectloos om de telefoon doelbewust op de ceremonie te richten.\",\n      \"resolution_under_b\": \"Als livestreamopstelling is de handeling juist functioneel: de streamer heeft beeld nodig om de uitvaart aan zijn publiek uit te zenden.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Iemand doet alsof hij onderweg navigeert, maar gebruikt de telefoon als hulpmiddel om een verrassingsfeestje te organiseren zonder dat de jarige het merkt.\",\n      \"opposition_axis\": \"open informatievoorziening versus geheime misleiding\",\n      \"opposed_proposition\": \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n      \"shared_anchor\": \"Een passagier volgt aandachtig een route op een telefoon terwijl hij met de jarige in de auto zit.\",\n      \"reading_a\": \"Hij zoekt de snelste route naar een afspraak en probeert vertraging te vermijden.\",\n      \"reading_b\": \"Hij stuurt de bestuurder langs een omweg zodat de voorbereiders tijd krijgen voor het verrassingsfeest.\",\n      \"roles_b\": [\n        \"Organisator: wil de verrassing geheimhouden en tijd winnen.\",\n        \"Jarige: denkt dat hij naar een gewone bestemming reist.\",\n        \"Medeplichtige bestuurder: volgt de aanwijzingen en rekt de rit.\",\n        \"Feestgangers: wachten tot de jarige arriveert.\"\n      ],\n      \"goal_b\": \"De jarige op het juiste moment nietsvermoedend bij het verrassingsfeest afleveren.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt organisator van de verrassing.\",\n        \"Contactpersoon wordt de groep feestgangers in een geheime chat.\",\n        \"Telefoon/app wordt een coördinatiemiddel voor locatie en timing.\",\n        \"Omstanders worden medeplichtigen of de onwetende jarige.\"\n      ],\n      \"shared_cues\": [\n        \"Hij opent een kaartapp.\",\n        \"Hij zegt dat er verderop file staat.\",\n        \"Hij ontvangt korte berichten.\",\n        \"Hij controleert steeds de aankomsttijd.\"\n      ],\n      \"switch_trigger\": \"Een melding verschijnt groot in beeld: 'Iedereen verstopt, rek nog vijf minuten!'\",\n      \"hinge_event\": \"Hij laat de chauffeur doelbewust drie keer om hetzelfde huizenblok rijden.\",\n      \"anomaly_under_a\": \"Voor efficiënte navigatie is herhaaldelijk rondrijden strijdig met het doel om snel op de bestemming te komen.\",\n      \"resolution_under_b\": \"De omweg is precies nuttig omdat de feestgangers daarmee extra tijd krijgen om zich te verstoppen en de verrassing voor te bereiden.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een restauranthouder gebruikt de telefoon niet om een bestelling aan de keuken door te geven, maar om klanten via een bezorgapp te laten geloven dat hun maaltijd nog onderweg is terwijl hij die zelf opeet.\",\n      \"opposition_axis\": \"dienstverlening versus bedrog en toe-eigening\",\n      \"opposed_proposition\": \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n      \"shared_anchor\": \"Een restauranthouder kijkt op zijn telefoon terwijl een klant naar een vertraagde bestelling vraagt.\",\n      \"reading_a\": \"Hij controleert de bezorgstatus en probeert de klant nauwkeurig te informeren over een vertraging.\",\n      \"reading_b\": \"Hij verstuurt misleidende statusupdates terwijl de bestelde maaltijd al in zijn eigen keuken of op zijn bureau ligt.\",\n      \"roles_b\": [\n        \"Restauranthouder: wil gratis van bestellingen eten zonder directe confrontatie.\",\n        \"Bestellende klant: verwacht de betaalde maaltijd te ontvangen.\",\n        \"Bezorgapp: toont statusmeldingen die geloofwaardig moeten lijken.\",\n        \"Bezorger: bestaat alleen als excuus voor de vertraging.\"\n      ],\n      \"goal_b\": \"De klant aan het wachten houden totdat het te laat of te lastig wordt om de bestelling op te eisen.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt frauderende restauranthouder.\",\n        \"Contactpersoon wordt de wachtende klant.\",\n        \"Telefoon/app wordt een instrument voor valse bezorgstatussen.\",\n        \"Omstanders worden keukenpersoneel of vermeende bezorgers die als excuus dienen.\"\n      ],\n      \"shared_cues\": [\n        \"Hij tikt in een bezorgapp.\",\n        \"Hij zegt dat de bestelling 'bijna onderweg' is.\",\n        \"Hij leest een melding voordat hij antwoord geeft.\",\n        \"Hij verontschuldigt zich voor drukte.\"\n      ],\n      \"switch_trigger\": \"Op zijn scherm verschijnt niet de routekaart maar de knop: 'Bestelling als bezorgd markeren'.\",\n      \"hinge_event\": \"Hij veegt saus van zijn mond terwijl hij de bestelling als bezorgd markeert.\",\n      \"anomaly_under_a\": \"Bij een normale statuscontrole is het vreemd dat hij zichtbaar hetzelfde gerecht eet als de klant die nog op levering wacht.\",\n      \"resolution_under_b\": \"Onder de bedrogscript is dat juist het bewijs van zijn doel: hij heeft de bestelling zelf opgegeten en gebruikt de app om de klant af te wimpelen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.\",\n      \"opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n      \"opposed_proposition\": \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"shared_anchor\": \"Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.\",\n      \"reading_a\": \"Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.\",\n      \"reading_b\": \"Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.\",\n      \"roles_b\": [\n        \"Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.\",\n        \"Docent: verwacht een werkelijk aanwezige deelnemer.\",\n        \"Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.\",\n        \"Klasgenoten: zien een geloofwaardige maar passieve leerling.\"\n      ],\n      \"goal_b\": \"Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\",\n        \"Contactpersoon wordt de docent die aanwezigheid controleert.\",\n        \"Telefoon/app wordt afstandsbediening en videobeltechniek.\",\n        \"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\"\n      ],\n      \"shared_cues\": [\n        \"Hij kijkt omlaag naar zijn telefoon.\",\n        \"Hij knikt af en toe naar het scherm.\",\n        \"Hij stuurt korte reacties in de chat.\",\n        \"Zijn camera toont een stilzittend gezicht.\"\n      ],\n      \"switch_trigger\": \"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\",\n      \"hinge_event\": \"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\",\n      \"anomaly_under_a\": \"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\",\n      \"resolution_under_b\": \"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\",\n  \"script_a\": {\n    \"script_a\": \"Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.\",\n    \"participants_and_roles\": [\n      \"Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.\",\n      \"Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.\",\n      \"Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.\",\n      \"Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt.\"\n    ],\n    \"apparent_goal\": \"Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.\",\n    \"preconditions\": [\n      \"De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.\",\n      \"De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.\",\n      \"De gebruikte app, website of dienst is beschikbaar.\",\n      \"Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is.\"\n    ],\n    \"expected_actions\": [\n      \"De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.\",\n      \"De gebruiker typt, belt, zoekt, kijkt of luistert.\",\n      \"De technologie verzendt of ontvangt de gevraagde informatie.\",\n      \"De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is.\"\n    ],\n    \"expected_outcome\": \"De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.\",\n    \"expected_propositions\": [\n      \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n      \"Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.\",\n      \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n      \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een rouwende gast gebruikt zijn telefoon tijdens een uitvaart niet om bereikbaar te zijn, maar om de plechtigheid als live-uitzending te produceren en kijkcijfers te trekken.\",\n      \"opposition_axis\": \"respectvolle privécommunicatie versus publieke exploitatie\",\n      \"opposed_proposition\": \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\",\n      \"shared_anchor\": \"De gebruiker kijkt herhaaldelijk op zijn telefoon tijdens een plechtigheid.\",\n      \"reading_a\": \"Hij wacht discreet op een belangrijk bericht van familie of werk en controleert daarom af en toe zijn scherm.\",\n      \"reading_b\": \"Hij bewaakt een livestream van de uitvaart, leest reacties van kijkers en probeert het bereik op te voeren.\",\n      \"roles_b\": [\n        \"Streamer: wil aandacht, bereik en online betrokkenheid genereren.\",\n        \"Overledene/nabestaanden: worden ongewild onderwerp van de uitzending.\",\n        \"Online publiek: kijkt mee en reageert op de stream.\",\n        \"Uitvaartleider: probeert de plechtigheid waardig te laten verlopen.\"\n      ],\n      \"goal_b\": \"Van een intieme uitvaart een goed bekeken online evenement maken.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt streamer.\",\n        \"Contactpersoon wordt online publiek.\",\n        \"Telefoon/app/provider wordt livestreamplatform.\",\n        \"Omstanders worden nabestaanden en uitvaartleider die de opname moeten verdragen.\"\n      ],\n      \"shared_cues\": [\n        \"Hij ontgrendelt de telefoon zonder geluid.\",\n        \"Hij kijkt geregeld naar binnenkomende meldingen.\",\n        \"Hij houdt het toestel laag voor zich.\",\n        \"Hij fluistert dat hij 'even iets moet checken'.\"\n      ],\n      \"switch_trigger\": \"Hij draait de telefoon naar de kist en zegt zacht: 'We zijn live, vergeet niet te liken.'\",\n      \"hinge_event\": \"De telefoon wordt op een kleine standaard gericht op de kist gezet.\",\n      \"anomaly_under_a\": \"Bij een gewone noodzakelijke berichtcontrole is het onverklaarbaar en respectloos om de telefoon doelbewust op de ceremonie te richten.\",\n      \"resolution_under_b\": \"Als livestreamopstelling is de handeling juist functioneel: de streamer heeft beeld nodig om de uitvaart aan zijn publiek uit te zenden.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Iemand doet alsof hij onderweg navigeert, maar gebruikt de telefoon als hulpmiddel om een verrassingsfeestje te organiseren zonder dat de jarige het merkt.\",\n      \"opposition_axis\": \"open informatievoorziening versus geheime misleiding\",\n      \"opposed_proposition\": \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n      \"shared_anchor\": \"Een passagier volgt aandachtig een route op een telefoon terwijl hij met de jarige in de auto zit.\",\n      \"reading_a\": \"Hij zoekt de snelste route naar een afspraak en probeert vertraging te vermijden.\",\n      \"reading_b\": \"Hij stuurt de bestuurder langs een omweg zodat de voorbereiders tijd krijgen voor het verrassingsfeest.\",\n      \"roles_b\": [\n        \"Organisator: wil de verrassing geheimhouden en tijd winnen.\",\n        \"Jarige: denkt dat hij naar een gewone bestemming reist.\",\n        \"Medeplichtige bestuurder: volgt de aanwijzingen en rekt de rit.\",\n        \"Feestgangers: wachten tot de jarige arriveert.\"\n      ],\n      \"goal_b\": \"De jarige op het juiste moment nietsvermoedend bij het verrassingsfeest afleveren.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt organisator van de verrassing.\",\n        \"Contactpersoon wordt de groep feestgangers in een geheime chat.\",\n        \"Telefoon/app wordt een coördinatiemiddel voor locatie en timing.\",\n        \"Omstanders worden medeplichtigen of de onwetende jarige.\"\n      ],\n      \"shared_cues\": [\n        \"Hij opent een kaartapp.\",\n        \"Hij zegt dat er verderop file staat.\",\n        \"Hij ontvangt korte berichten.\",\n        \"Hij controleert steeds de aankomsttijd.\"\n      ],\n      \"switch_trigger\": \"Een melding verschijnt groot in beeld: 'Iedereen verstopt, rek nog vijf minuten!'\",\n      \"hinge_event\": \"Hij laat de chauffeur doelbewust drie keer om hetzelfde huizenblok rijden.\",\n      \"anomaly_under_a\": \"Voor efficiënte navigatie is herhaaldelijk rondrijden strijdig met het doel om snel op de bestemming te komen.\",\n      \"resolution_under_b\": \"De omweg is precies nuttig omdat de feestgangers daarmee extra tijd krijgen om zich te verstoppen en de verrassing voor te bereiden.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een restauranthouder gebruikt de telefoon niet om een bestelling aan de keuken door te geven, maar om klanten via een bezorgapp te laten geloven dat hun maaltijd nog onderweg is terwijl hij die zelf opeet.\",\n      \"opposition_axis\": \"dienstverlening versus bedrog en toe-eigening\",\n      \"opposed_proposition\": \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n      \"shared_anchor\": \"Een restauranthouder kijkt op zijn telefoon terwijl een klant naar een vertraagde bestelling vraagt.\",\n      \"reading_a\": \"Hij controleert de bezorgstatus en probeert de klant nauwkeurig te informeren over een vertraging.\",\n      \"reading_b\": \"Hij verstuurt misleidende statusupdates terwijl de bestelde maaltijd al in zijn eigen keuken of op zijn bureau ligt.\",\n      \"roles_b\": [\n        \"Restauranthouder: wil gratis van bestellingen eten zonder directe confrontatie.\",\n        \"Bestellende klant: verwacht de betaalde maaltijd te ontvangen.\",\n        \"Bezorgapp: toont statusmeldingen die geloofwaardig moeten lijken.\",\n        \"Bezorger: bestaat alleen als excuus voor de vertraging.\"\n      ],\n      \"goal_b\": \"De klant aan het wachten houden totdat het te laat of te lastig wordt om de bestelling op te eisen.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt frauderende restauranthouder.\",\n        \"Contactpersoon wordt de wachtende klant.\",\n        \"Telefoon/app wordt een instrument voor valse bezorgstatussen.\",\n        \"Omstanders worden keukenpersoneel of vermeende bezorgers die als excuus dienen.\"\n      ],\n      \"shared_cues\": [\n        \"Hij tikt in een bezorgapp.\",\n        \"Hij zegt dat de bestelling 'bijna onderweg' is.\",\n        \"Hij leest een melding voordat hij antwoord geeft.\",\n        \"Hij verontschuldigt zich voor drukte.\"\n      ],\n      \"switch_trigger\": \"Op zijn scherm verschijnt niet de routekaart maar de knop: 'Bestelling als bezorgd markeren'.\",\n      \"hinge_event\": \"Hij veegt saus van zijn mond terwijl hij de bestelling als bezorgd markeert.\",\n      \"anomaly_under_a\": \"Bij een normale statuscontrole is het vreemd dat hij zichtbaar hetzelfde gerecht eet als de klant die nog op levering wacht.\",\n      \"resolution_under_b\": \"Onder de bedrogscript is dat juist het bewijs van zijn doel: hij heeft de bestelling zelf opgegeten en gebruikt de app om de klant af te wimpelen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.\",\n      \"opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n      \"opposed_proposition\": \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"shared_anchor\": \"Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.\",\n      \"reading_a\": \"Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.\",\n      \"reading_b\": \"Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.\",\n      \"roles_b\": [\n        \"Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.\",\n        \"Docent: verwacht een werkelijk aanwezige deelnemer.\",\n        \"Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.\",\n        \"Klasgenoten: zien een geloofwaardige maar passieve leerling.\"\n      ],\n      \"goal_b\": \"Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\",\n        \"Contactpersoon wordt de docent die aanwezigheid controleert.\",\n        \"Telefoon/app wordt afstandsbediening en videobeltechniek.\",\n        \"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\"\n      ],\n      \"shared_cues\": [\n        \"Hij kijkt omlaag naar zijn telefoon.\",\n        \"Hij knikt af en toe naar het scherm.\",\n        \"Hij stuurt korte reacties in de chat.\",\n        \"Zijn camera toont een stilzittend gezicht.\"\n      ],\n      \"switch_trigger\": \"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\",\n      \"hinge_event\": \"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\",\n      \"anomaly_under_a\": \"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\",\n      \"resolution_under_b\": \"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\",\n  \"script_a\": {\n    \"script_a\": \"Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.\",\n    \"participants_and_roles\": [\n      \"Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.\",\n      \"Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.\",\n      \"Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.\",\n      \"Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt.\"\n    ],\n    \"apparent_goal\": \"Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.\",\n    \"preconditions\": [\n      \"De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.\",\n      \"De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.\",\n      \"De gebruikte app, website of dienst is beschikbaar.\",\n      \"Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is.\"\n    ],\n    \"expected_actions\": [\n      \"De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.\",\n      \"De gebruiker typt, belt, zoekt, kijkt of luistert.\",\n      \"De technologie verzendt of ontvangt de gevraagde informatie.\",\n      \"De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is.\"\n    ],\n    \"expected_outcome\": \"De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.\",\n    \"expected_propositions\": [\n      \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n      \"Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.\",\n      \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n      \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B4\",\n    \"script_b\": \"Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.\",\n    \"opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n    \"opposed_proposition\": \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n    \"shared_anchor\": \"Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.\",\n    \"reading_a\": \"Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.\",\n    \"reading_b\": \"Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.\",\n    \"roles_b\": [\n      \"Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.\",\n      \"Docent: verwacht een werkelijk aanwezige deelnemer.\",\n      \"Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.\",\n      \"Klasgenoten: zien een geloofwaardige maar passieve leerling.\"\n    ],\n    \"goal_b\": \"Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.\",\n    \"role_remapping\": [\n      \"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\",\n      \"Contactpersoon wordt de docent die aanwezigheid controleert.\",\n      \"Telefoon/app wordt afstandsbediening en videobeltechniek.\",\n      \"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\"\n    ],\n    \"shared_cues\": [\n      \"Hij kijkt omlaag naar zijn telefoon.\",\n      \"Hij knikt af en toe naar het scherm.\",\n      \"Hij stuurt korte reacties in de chat.\",\n      \"Zijn camera toont een stilzittend gezicht.\"\n    ],\n    \"switch_trigger\": \"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\",\n    \"hinge_event\": \"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\",\n    \"anomaly_under_a\": \"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\",\n    \"resolution_under_b\": \"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\",\n  \"script_a\": {\n    \"script_a\": \"Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.\",\n    \"participants_and_roles\": [\n      \"Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.\",\n      \"Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.\",\n      \"Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.\",\n      \"Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt.\"\n    ],\n    \"apparent_goal\": \"Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.\",\n    \"preconditions\": [\n      \"De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.\",\n      \"De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.\",\n      \"De gebruikte app, website of dienst is beschikbaar.\",\n      \"Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is.\"\n    ],\n    \"expected_actions\": [\n      \"De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.\",\n      \"De gebruiker typt, belt, zoekt, kijkt of luistert.\",\n      \"De technologie verzendt of ontvangt de gevraagde informatie.\",\n      \"De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is.\"\n    ],\n    \"expected_outcome\": \"De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.\",\n    \"expected_propositions\": [\n      \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n      \"Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.\",\n      \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n      \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B4\",\n    \"script_b\": \"Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.\",\n    \"opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n    \"opposed_proposition\": \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n    \"shared_anchor\": \"Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.\",\n    \"reading_a\": \"Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.\",\n    \"reading_b\": \"Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.\",\n    \"roles_b\": [\n      \"Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.\",\n      \"Docent: verwacht een werkelijk aanwezige deelnemer.\",\n      \"Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.\",\n      \"Klasgenoten: zien een geloofwaardige maar passieve leerling.\"\n    ],\n    \"goal_b\": \"Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.\",\n    \"role_remapping\": [\n      \"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\",\n      \"Contactpersoon wordt de docent die aanwezigheid controleert.\",\n      \"Telefoon/app wordt afstandsbediening en videobeltechniek.\",\n      \"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\"\n    ],\n    \"shared_cues\": [\n      \"Hij kijkt omlaag naar zijn telefoon.\",\n      \"Hij knikt af en toe naar het scherm.\",\n      \"Hij stuurt korte reacties in de chat.\",\n      \"Zijn camera toont een stilzittend gezicht.\"\n    ],\n    \"switch_trigger\": \"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\",\n    \"hinge_event\": \"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\",\n    \"anomaly_under_a\": \"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\",\n    \"resolution_under_b\": \"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n    \"logical_mechanism\": \"Ontmaskering door een visuele incongruentie: een onverwachte opdracht maakt zichtbaar dat het ogenschijnlijk live videobeeld een herhalende opname is, terwijl de telefoon als bedieningsmiddel fungeert.\",\n    \"situation\": \"Tijdens een online les kijkt een leerling zwijgend naar zijn telefoon, knikt af en toe naar het scherm en stuurt korte chatreacties. De docent controleert de deelnemers via het videobelplatform, terwijl klasgenoten een passieve, ogenschijnlijk aanwezige leerling zien. Wanneer de docent vraagt om een schrift voor de camera te houden, toont het beeld hetzelfde knikje opnieuw en is op de telefoon een afspeelbalk zichtbaar.\",\n    \"target\": \"De conventie dat zichtbare deelname aan een online les gelijkstaat aan daadwerkelijke aanwezigheid.\",\n    \"narrative_strategy\": \"De opzet presenteert herkenbaar, discreet telefoongebruik tijdens een online les als verklaring voor korte reacties en passieve deelname. De punchline volgt op een onverwachte controleopdracht: het herhaalde knikje en de afspeelbalk dwingen een herinterpretatie af, van een aanwezige leerling naar een leerling die zijn alibi regisseert.\",\n    \"lexical_anchor\": \"afspeelbalk\",\n    \"supporting_dual_cues\": [\n      \"Hij kijkt omlaag naar zijn telefoon.\",\n      \"Hij knikt af en toe naar het scherm.\",\n      \"Hij stuurt korte reacties in de chat.\",\n      \"Zijn camera toont een stilzittend gezicht.\"\n    ],\n    \"switch_trigger\": \"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\",\n    \"hinge_event\": \"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\",\n    \"anomaly_under_a\": \"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\",\n    \"resolution_under_b\": \"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\",\n    \"role_remapping\": [\n      \"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\",\n      \"Contactpersoon wordt de docent die aanwezigheid controleert.\",\n      \"Telefoon/app wordt afstandsbediening en videobeltechniek.\",\n      \"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\"\n    ],\n    \"setup_goal\": \"De leerling wordt eerst gelezen als een werkelijk aanwezige deelnemer die de les op zijn laptop volgt en slechts discreet een dringend bericht op zijn telefoon beantwoordt.\",\n    \"punch_goal\": \"De onverwachte vraag en het zich herhalende videobeeld onthullen dat zijn zichtbare aanwezigheid geënsceneerd is en dat hij fysiek afwezig blijft.\",\n    \"punch_final_word\": \"afspeelbalk\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.\",\n      \"participants_and_roles\": [\n        \"Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.\",\n        \"Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.\",\n        \"Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.\",\n        \"Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt.\"\n      ],\n      \"apparent_goal\": \"Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.\",\n      \"preconditions\": [\n        \"De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.\",\n        \"De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.\",\n        \"De gebruikte app, website of dienst is beschikbaar.\",\n        \"Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is.\"\n      ],\n      \"expected_actions\": [\n        \"De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.\",\n        \"De gebruiker typt, belt, zoekt, kijkt of luistert.\",\n        \"De technologie verzendt of ontvangt de gevraagde informatie.\",\n        \"De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is.\"\n      ],\n      \"expected_outcome\": \"De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.\",\n      \"expected_propositions\": [\n        \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n        \"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\",\n        \"Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.\",\n        \"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\",\n        \"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\"\n      ],\n      \"audience_expectation\": \"Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.\",\n      \"opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n      \"opposed_proposition\": \"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\",\n      \"shared_anchor\": \"Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.\",\n      \"reading_a\": \"Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.\",\n      \"reading_b\": \"Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.\",\n      \"roles_b\": [\n        \"Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.\",\n        \"Docent: verwacht een werkelijk aanwezige deelnemer.\",\n        \"Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.\",\n        \"Klasgenoten: zien een geloofwaardige maar passieve leerling.\"\n      ],\n      \"goal_b\": \"Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\",\n        \"Contactpersoon wordt de docent die aanwezigheid controleert.\",\n        \"Telefoon/app wordt afstandsbediening en videobeltechniek.\",\n        \"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\"\n      ],\n      \"shared_cues\": [\n        \"Hij kijkt omlaag naar zijn telefoon.\",\n        \"Hij knikt af en toe naar het scherm.\",\n        \"Hij stuurt korte reacties in de chat.\",\n        \"Zijn camera toont een stilzittend gezicht.\"\n      ],\n      \"switch_trigger\": \"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\",\n      \"hinge_event\": \"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\",\n      \"anomaly_under_a\": \"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\",\n      \"resolution_under_b\": \"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n      \"logical_mechanism\": \"Ontmaskering door een visuele incongruentie: een onverwachte opdracht maakt zichtbaar dat het ogenschijnlijk live videobeeld een herhalende opname is, terwijl de telefoon als bedieningsmiddel fungeert.\",\n      \"situation\": \"Tijdens een online les kijkt een leerling zwijgend naar zijn telefoon, knikt af en toe naar het scherm en stuurt korte chatreacties. De docent controleert de deelnemers via het videobelplatform, terwijl klasgenoten een passieve, ogenschijnlijk aanwezige leerling zien. Wanneer de docent vraagt om een schrift voor de camera te houden, toont het beeld hetzelfde knikje opnieuw en is op de telefoon een afspeelbalk zichtbaar.\",\n      \"target\": \"De conventie dat zichtbare deelname aan een online les gelijkstaat aan daadwerkelijke aanwezigheid.\",\n      \"narrative_strategy\": \"De opzet presenteert herkenbaar, discreet telefoongebruik tijdens een online les als verklaring voor korte reacties en passieve deelname. De punchline volgt op een onverwachte controleopdracht: het herhaalde knikje en de afspeelbalk dwingen een herinterpretatie af, van een aanwezige leerling naar een leerling die zijn alibi regisseert.\",\n      \"lexical_anchor\": \"afspeelbalk\",\n      \"supporting_dual_cues\": [\n        \"Hij kijkt omlaag naar zijn telefoon.\",\n        \"Hij knikt af en toe naar het scherm.\",\n        \"Hij stuurt korte reacties in de chat.\",\n        \"Zijn camera toont een stilzittend gezicht.\"\n      ],\n      \"switch_trigger\": \"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\",\n      \"hinge_event\": \"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\",\n      \"anomaly_under_a\": \"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\",\n      \"resolution_under_b\": \"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\",\n      \"role_remapping\": [\n        \"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\",\n        \"Contactpersoon wordt de docent die aanwezigheid controleert.\",\n        \"Telefoon/app wordt afstandsbediening en videobeltechniek.\",\n        \"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\"\n      ],\n      \"setup_goal\": \"De leerling wordt eerst gelezen als een werkelijk aanwezige deelnemer die de les op zijn laptop volgt en slechts discreet een dringend bericht op zijn telefoon beantwoordt.\",\n      \"punch_goal\": \"De onverwachte vraag en het zich herhalende videobeeld onthullen dat zijn zichtbare aanwezigheid geënsceneerd is en dat hij fysiek afwezig blijft.\",\n      \"punch_final_word\": \"afspeelbalk\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden. Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.\",\n      \"angle\": \"De onverwachte schriftcontrole laat de opgenomen aanwezigheid vastlopen.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes. Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.\",\n      \"angle\": \"Een passieve leerling blijkt haar videobeeld te bedienen.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties. Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.\",\n      \"angle\": \"De keurige deelnemer regisseert zijn aanwezigheid op afstand.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Media, technologie en mobiele telefoons\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"TA\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden. Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.\",\n      \"angle\": \"De onverwachte schriftcontrole laat de opgenomen aanwezigheid vastlopen.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes. Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.\",\n      \"angle\": \"Een passieve leerling blijkt haar videobeeld te bedienen.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties. Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.\",\n      \"angle\": \"De keurige deelnemer regisseert zijn aanwezigheid op afstand.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Tim lijkt werkelijk aanwezig in een online les, volgt het scherm en gebruikt zijn telefoon discreet voor korte chatantwoorden.\",\n      \"realized_script_b\": \"Tim is fysiek afwezig en bedient op zijn telefoon een opgenomen videolus die hem als aanwezige leerling moet laten lijken.\",\n      \"realized_opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst realiseert beide beoogde lezingen, de gedeelde signalen (omlaag kijken, knikken, korte chatantwoorden) en de omslag via de schriftcontrole, het identieke knikje en de afspeelbalk.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De onverwachte opdracht ontmaskert de opname: een herhaald identiek knikje en een zichtbare afspeelbalk maken de eerdere lezing retrospectief onmogelijk.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Online les, leerling, docent, telefoon, chatreacties, camera en schriftcontrole zijn functioneel aanwezig.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De grap richt zich op de aanname dat een zichtbaar, passief videobeeld daadwerkelijke lesaanwezigheid bewijst.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet normaliseert eerst discreet telefoongebruik en passieve deelname; de docentenvraag levert vervolgens de onthullende punch.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De vereiste lexicale hinge 'afspeelbalk' staat als slotwoord en functioneert als concreet bewijs van de videolus.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een compacte, natuurlijke grap die de geplande schijn-aanwezigheid volledig opbouwt en via de afspeelbalk ontmaskert.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Noor lijkt stil maar daadwerkelijk aanwezig in een online les en gebruikt haar telefoon alleen voor korte berichten.\",\n      \"realized_script_b\": \"Noor is niet werkelijk aanwezig; haar stilzittende camerabeeld is een opgenomen lus die zij met haar telefoon bedient.\",\n      \"realized_opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De bedoelde aanwezigheidsschijn, de passieve gedeelde signalen, de schriftvraag en de onthulling van de videolus zijn alle aanwezig.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De schriftcontrole botst met het opnieuw identieke knikje; de afspeelbalk verklaart dit als een opgenomen beeld.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De kernsituatie van online les, passieve leerling in beeld, docentcontrole, telefoon en schrift is behouden.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst bespot de gelijkstelling van een zichtbaar videobeeld met daadwerkelijke deelname.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst houdt de bedrogscriptie aanvankelijk impliciet en laat de onthulling volgen op een onverwacht verzoek van de docent.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"'Afspeelbalk' is behouden, maar niet als absoluut laatste woord doordat de zin eindigt op een punt; functioneel vormt het wel de punch-hinge.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant volgt het beoogde ontmaskeringspatroon nauwgezet; de afspeelbalk maakt de schijnbare aanwezigheid helder retrospectief.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Sem lijkt voorbeeldig en daadwerkelijk aanwezig in de online les: hij zit stil, knikt en stuurt keurige reacties vanaf zijn telefoon.\",\n      \"realized_script_b\": \"Sem is elders en regisseert met zijn telefoon een opgenomen videobeeld om als aanwezige leerling geregistreerd te blijven.\",\n      \"realized_opposition_axis\": \"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst behoudt de geplande scripts, de aanwezigheidsschijn, het verzoek om het schrift, het terugkerende knikje en de bediening van een videolus.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De vraag om het schrift legt bloot dat het beeld niet live reageert; Sems bediening van de afspeelbalk verklaart de herhaling.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De online-lescontext en de relevante rollen, handelingen en voorwerpen zijn aanwezig, inclusief Sems fysieke afwezigheid.\"\n      },\n      \"target\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant maakt de kwetsbaarheid van zichtbare online aanwezigheid als bewijs van echte deelname tot mikpunt.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Eerst wordt Sem als keurige deelnemer neergezet; na de docentenvraag keert 'ergens anders' de lezing expliciet om.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De lexicale hinge 'afspeelbalk' is aanwezig en draagt de onthulling, maar is niet het geplande finale woord omdat de tekst eindigt op 'afspeelbalk' gevolgd door een punt, wat functioneel geen afwijking vormt.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Sems fysieke afwezigheid en de afspeelbalk realiseren de geplande tegenstelling en ontmaskering volledig, in een goed spreekbare grapvorm.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties. Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.",
+      "opposing_script": "Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.",
+      "opposition_type": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+      "trigger": "De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'",
+      "setup_goal": "De leerling wordt eerst gelezen als een werkelijk aanwezige deelnemer die de les op zijn laptop volgt en slechts discreet een dringend bericht op zijn telefoon beantwoordt.",
+      "punch_goal": "De onverwachte vraag en het zich herhalende videobeeld onthullen dat zijn zichtbare aanwezigheid geënsceneerd is en dat hij fysiek afwezig blijft.",
+      "shared_cues": [
+        "Hij kijkt omlaag naar zijn telefoon.",
+        "Hij knikt af en toe naar het scherm.",
+        "Hij stuurt korte reacties in de chat.",
+        "Zijn camera toont een stilzittend gezicht."
+      ],
+      "hinge_event": "Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.",
+      "anomaly_under_a": "Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.",
+      "resolution_under_b": "De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.",
+      "role_remapping": [
+        "Telefoongebruiker wordt spijbelende regisseur van zijn alibi.",
+        "Contactpersoon wordt de docent die aanwezigheid controleert.",
+        "Telefoon/app wordt afstandsbediening en videobeltechniek.",
+        "Omstanders worden klasgenoten die de schijnbare deelname waarnemen."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.\\\",\\\"participants_and_roles\\\":[\\\"Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.\\\",\\\"Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.\\\",\\\"Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.\\\",\\\"Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt.\\\"],\\\"apparent_goal\\\":\\\"Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.\\\",\\\"preconditions\\\":[\\\"De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.\\\",\\\"De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.\\\",\\\"De gebruikte app, website of dienst is beschikbaar.\\\",\\\"Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is.\\\"],\\\"expected_actions\\\":[\\\"De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.\\\",\\\"De gebruiker typt, belt, zoekt, kijkt of luistert.\\\",\\\"De technologie verzendt of ontvangt de gevraagde informatie.\\\",\\\"De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is.\\\"],\\\"expected_outcome\\\":\\\"De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.\\\",\\\"expected_propositions\\\":[\\\"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\\\",\\\"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\\\",\\\"Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.\\\",\\\"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\\\",\\\"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\\\"],\\\"audience_expectation\\\":\\\"Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een rouwende gast gebruikt zijn telefoon tijdens een uitvaart niet om bereikbaar te zijn, maar om de plechtigheid als live-uitzending te produceren en kijkcijfers te trekken.\\\",\\\"opposition_axis\\\":\\\"respectvolle privécommunicatie versus publieke exploitatie\\\",\\\"opposed_proposition\\\":\\\"Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.\\\",\\\"shared_anchor\\\":\\\"De gebruiker kijkt herhaaldelijk op zijn telefoon tijdens een plechtigheid.\\\",\\\"reading_a\\\":\\\"Hij wacht discreet op een belangrijk bericht van familie of werk en controleert daarom af en toe zijn scherm.\\\",\\\"reading_b\\\":\\\"Hij bewaakt een livestream van de uitvaart, leest reacties van kijkers en probeert het bereik op te voeren.\\\",\\\"roles_b\\\":[\\\"Streamer: wil aandacht, bereik en online betrokkenheid genereren.\\\",\\\"Overledene/nabestaanden: worden ongewild onderwerp van de uitzending.\\\",\\\"Online publiek: kijkt mee en reageert op de stream.\\\",\\\"Uitvaartleider: probeert de plechtigheid waardig te laten verlopen.\\\"],\\\"goal_b\\\":\\\"Van een intieme uitvaart een goed bekeken online evenement maken.\\\",\\\"role_remapping\\\":[\\\"Telefoongebruiker wordt streamer.\\\",\\\"Contactpersoon wordt online publiek.\\\",\\\"Telefoon/app/provider wordt livestreamplatform.\\\",\\\"Omstanders worden nabestaanden en uitvaartleider die de opname moeten verdragen.\\\"],\\\"shared_cues\\\":[\\\"Hij ontgrendelt de telefoon zonder geluid.\\\",\\\"Hij kijkt geregeld naar binnenkomende meldingen.\\\",\\\"Hij houdt het toestel laag voor zich.\\\",\\\"Hij fluistert dat hij 'even iets moet checken'.\\\"],\\\"switch_trigger\\\":\\\"Hij draait de telefoon naar de kist en zegt zacht: 'We zijn live, vergeet niet te liken.'\\\",\\\"hinge_event\\\":\\\"De telefoon wordt op een kleine standaard gericht op de kist gezet.\\\",\\\"anomaly_under_a\\\":\\\"Bij een gewone noodzakelijke berichtcontrole is het onverklaarbaar en respectloos om de telefoon doelbewust op de ceremonie te richten.\\\",\\\"resolution_under_b\\\":\\\"Als livestreamopstelling is de handeling juist functioneel: de streamer heeft beeld nodig om de uitvaart aan zijn publiek uit te zenden.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Iemand doet alsof hij onderweg navigeert, maar gebruikt de telefoon als hulpmiddel om een verrassingsfeestje te organiseren zonder dat de jarige het merkt.\\\",\\\"opposition_axis\\\":\\\"open informatievoorziening versus geheime misleiding\\\",\\\"opposed_proposition\\\":\\\"De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.\\\",\\\"shared_anchor\\\":\\\"Een passagier volgt aandachtig een route op een telefoon terwijl hij met de jarige in de auto zit.\\\",\\\"reading_a\\\":\\\"Hij zoekt de snelste route naar een afspraak en probeert vertraging te vermijden.\\\",\\\"reading_b\\\":\\\"Hij stuurt de bestuurder langs een omweg zodat de voorbereiders tijd krijgen voor het verrassingsfeest.\\\",\\\"roles_b\\\":[\\\"Organisator: wil de verrassing geheimhouden en tijd winnen.\\\",\\\"Jarige: denkt dat hij naar een gewone bestemming reist.\\\",\\\"Medeplichtige bestuurder: volgt de aanwijzingen en rekt de rit.\\\",\\\"Feestgangers: wachten tot de jarige arriveert.\\\"],\\\"goal_b\\\":\\\"De jarige op het juiste moment nietsvermoedend bij het verrassingsfeest afleveren.\\\",\\\"role_remapping\\\":[\\\"Telefoongebruiker wordt organisator van de verrassing.\\\",\\\"Contactpersoon wordt de groep feestgangers in een geheime chat.\\\",\\\"Telefoon/app wordt een coördinatiemiddel voor locatie en timing.\\\",\\\"Omstanders worden medeplichtigen of de onwetende jarige.\\\"],\\\"shared_cues\\\":[\\\"Hij opent een kaartapp.\\\",\\\"Hij zegt dat er verderop file staat.\\\",\\\"Hij ontvangt korte berichten.\\\",\\\"Hij controleert steeds de aankomsttijd.\\\"],\\\"switch_trigger\\\":\\\"Een melding verschijnt groot in beeld: 'Iedereen verstopt, rek nog vijf minuten!'\\\",\\\"hinge_event\\\":\\\"Hij laat de chauffeur doelbewust drie keer om hetzelfde huizenblok rijden.\\\",\\\"anomaly_under_a\\\":\\\"Voor efficiënte navigatie is herhaaldelijk rondrijden strijdig met het doel om snel op de bestemming te komen.\\\",\\\"resolution_under_b\\\":\\\"De omweg is precies nuttig omdat de feestgangers daarmee extra tijd krijgen om zich te verstoppen en de verrassing voor te bereiden.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een restauranthouder gebruikt de telefoon niet om een bestelling aan de keuken door te geven, maar om klanten via een bezorgapp te laten geloven dat hun maaltijd nog onderweg is terwijl hij die zelf opeet.\\\",\\\"opposition_axis\\\":\\\"dienstverlening versus bedrog en toe-eigening\\\",\\\"opposed_proposition\\\":\\\"Een verzonden bericht komt bij de bedoelde ontvanger terecht.\\\",\\\"shared_anchor\\\":\\\"Een restauranthouder kijkt op zijn telefoon terwijl een klant naar een vertraagde bestelling vraagt.\\\",\\\"reading_a\\\":\\\"Hij controleert de bezorgstatus en probeert de klant nauwkeurig te informeren over een vertraging.\\\",\\\"reading_b\\\":\\\"Hij verstuurt misleidende statusupdates terwijl de bestelde maaltijd al in zijn eigen keuken of op zijn bureau ligt.\\\",\\\"roles_b\\\":[\\\"Restauranthouder: wil gratis van bestellingen eten zonder directe confrontatie.\\\",\\\"Bestellende klant: verwacht de betaalde maaltijd te ontvangen.\\\",\\\"Bezorgapp: toont statusmeldingen die geloofwaardig moeten lijken.\\\",\\\"Bezorger: bestaat alleen als excuus voor de vertraging.\\\"],\\\"goal_b\\\":\\\"De klant aan het wachten houden totdat het te laat of te lastig wordt om de bestelling op te eisen.\\\",\\\"role_remapping\\\":[\\\"Telefoongebruiker wordt frauderende restauranthouder.\\\",\\\"Contactpersoon wordt de wachtende klant.\\\",\\\"Telefoon/app wordt een instrument voor valse bezorgstatussen.\\\",\\\"Omstanders worden keukenpersoneel of vermeende bezorgers die als excuus dienen.\\\"],\\\"shared_cues\\\":[\\\"Hij tikt in een bezorgapp.\\\",\\\"Hij zegt dat de bestelling 'bijna onderweg' is.\\\",\\\"Hij leest een melding voordat hij antwoord geeft.\\\",\\\"Hij verontschuldigt zich voor drukte.\\\"],\\\"switch_trigger\\\":\\\"Op zijn scherm verschijnt niet de routekaart maar de knop: 'Bestelling als bezorgd markeren'.\\\",\\\"hinge_event\\\":\\\"Hij veegt saus van zijn mond terwijl hij de bestelling als bezorgd markeert.\\\",\\\"anomaly_under_a\\\":\\\"Bij een normale statuscontrole is het vreemd dat hij zichtbaar hetzelfde gerecht eet als de klant die nog op levering wacht.\\\",\\\"resolution_under_b\\\":\\\"Onder de bedrogscript is dat juist het bewijs van zijn doel: hij heeft de bestelling zelf opgegeten en gebruikt de app om de klant af te wimpelen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.\\\",\\\"opposition_axis\\\":\\\"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\\\",\\\"opposed_proposition\\\":\\\"Een mobiele telefoon maakt communicatie directer en gemakkelijker.\\\",\\\"shared_anchor\\\":\\\"Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.\\\",\\\"reading_a\\\":\\\"Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.\\\",\\\"reading_b\\\":\\\"Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.\\\",\\\"roles_b\\\":[\\\"Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.\\\",\\\"Docent: verwacht een werkelijk aanwezige deelnemer.\\\",\\\"Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.\\\",\\\"Klasgenoten: zien een geloofwaardige maar passieve leerling.\\\"],\\\"goal_b\\\":\\\"Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.\\\",\\\"role_remapping\\\":[\\\"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\\\",\\\"Contactpersoon wordt de docent die aanwezigheid controleert.\\\",\\\"Telefoon/app wordt afstandsbediening en videobeltechniek.\\\",\\\"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\\\"],\\\"shared_cues\\\":[\\\"Hij kijkt omlaag naar zijn telefoon.\\\",\\\"Hij knikt af en toe naar het scherm.\\\",\\\"Hij stuurt korte reacties in de chat.\\\",\\\"Zijn camera toont een stilzittend gezicht.\\\"],\\\"switch_trigger\\\":\\\"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\\\",\\\"hinge_event\\\":\\\"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\\\",\\\"anomaly_under_a\\\":\\\"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\\\",\\\"resolution_under_b\\\":\\\"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde opzet—herhaaldelijk discreet op een telefoon kijken tijdens een plechtigheid—kan zowel noodzakelijke privécommunicatie als het monitoren van een livestream dragen. De lezingen botsen primair op de as respectvolle, beperkte communicatie tegenover publieke exploitatie. De standaardlezing domineert aanvankelijk, terwijl de tweede lezing herkenbaar en latent mogelijk blijft. Het richten van de telefoon op de kist is onder A ongepast en onverklaarbaar, maar onder B noodzakelijk voor het uitzenden. Daardoor verandert eerder discreet gedrag achteraf in publieks- en bereikbeheer. De handeling blokkeert bovendien A's doel van onopvallend passend gebruik, maar faciliteert B's doel van livestreamen.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Het volgen van een route, verkeersinformatie noemen en aankomsttijd controleren past zowel bij gewone navigatie als bij geheime coördinatie van een verrassingsfeest. De dominante tegenstelling is efficiënt open routegebruik tegenover doelbewuste geheime sturing. De navigatielezing is eerst normaal, terwijl korte berichten en aandacht voor tijd de tweede lezing mogelijk houden. Drie keer rond hetzelfde blok rijden ondermijnt A's doel van snel aankomen, maar is onder B functioneel omdat het voorbereidingstijd koopt. De trigger herkadert de eerdere routecontrole en verkeersmededelingen als misleidende timingstactiek.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De restauranthouder die in een bezorgapp kijkt, een melding leest en een vertraging uitlegt, kan aanvankelijk plausibel de status controleren of de klant misleiden. Dienstverlening tegenover bedrog en toe-eigening vormt één dominante oppositie. De normale servicelezing heeft in de opzet voorrang, maar de vage statuscommunicatie laat fraude als tweede lezing beschikbaar. Het eten van hetzelfde gerecht terwijl hij de bestelling als bezorgd markeert is onder A anomalisch, maar onder B precies doelmatig: hij heeft de maaltijd zelf genomen en gebruikt de app om de klant af te houden. Eerdere statusupdates krijgen daardoor retrospectief de functie van misleiding. Het markeren als bezorgd verhindert A's correcte levering en helpt B's fraudedoel.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Zwijgend naar de telefoon kijken, af en toe knikken, korte chatreacties sturen en een passief videobeeld tonen kan zowel bij een aanwezige leerling met een dringend bericht als bij iemand die een nepaanwezigheid controleert passen. De centrale oppositie is werkelijke aanwezigheid tegenover geënsceneerde aanwezigheid. De gewone lezing domineert eerst en de tweede is als herkenbare digitale vorm van spijbelen latent beschikbaar. Het identiek herhalende knikje en de afspeelbalk zijn onder A niet verklaarbaar, maar onder B functioneel als bewijs en bediening van de videolus. Hierdoor krijgen eerdere reacties en het passieve camerabeeld achteraf de betekenis van een alibi. De lus verhindert echte deelname onder A en maakt schijnbare aanwezigheid onder B mogelijk.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B4\\\",\\\"rationale\\\":\\\"B4 biedt de scherpste en meest samenhangende scripttegenstelling: ogenschijnlijk normaal, discreet telefoongebruik tijdens een online les kantelt naar geënsceneerde aanwezigheid en doelbewust spijbelen. Beide lezingen passen aanvankelijk bij dezelfde cues — omlaag kijken, korte chatreacties, af en toe knikken en een passief camerabeeld — waardoor de tweede lezing latent maar goed voorbereid is. De herhalende beweging en afspeelbalk vormen vervolgens een zuiver scharniermoment dat eerdere details retrospectief herinterpreteert. De telefoon blijft daarbij centraal en topic-specifiek als bedieningsmiddel voor videotechnologie, terwijl het bedrog een helder doel, sterke payoff en duidelijke rolomkering oplevert.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\\\",\\\"logical_mechanism\\\":\\\"Ontmaskering door een visuele incongruentie: een onverwachte opdracht maakt zichtbaar dat het ogenschijnlijk live videobeeld een herhalende opname is, terwijl de telefoon als bedieningsmiddel fungeert.\\\",\\\"situation\\\":\\\"Tijdens een online les kijkt een leerling zwijgend naar zijn telefoon, knikt af en toe naar het scherm en stuurt korte chatreacties. De docent controleert de deelnemers via het videobelplatform, terwijl klasgenoten een passieve, ogenschijnlijk aanwezige leerling zien. Wanneer de docent vraagt om een schrift voor de camera te houden, toont het beeld hetzelfde knikje opnieuw en is op de telefoon een afspeelbalk zichtbaar.\\\",\\\"target\\\":\\\"De conventie dat zichtbare deelname aan een online les gelijkstaat aan daadwerkelijke aanwezigheid.\\\",\\\"narrative_strategy\\\":\\\"De opzet presenteert herkenbaar, discreet telefoongebruik tijdens een online les als verklaring voor korte reacties en passieve deelname. De punchline volgt op een onverwachte controleopdracht: het herhaalde knikje en de afspeelbalk dwingen een herinterpretatie af, van een aanwezige leerling naar een leerling die zijn alibi regisseert.\\\",\\\"lexical_anchor\\\":\\\"afspeelbalk\\\",\\\"supporting_dual_cues\\\":[\\\"Hij kijkt omlaag naar zijn telefoon.\\\",\\\"Hij knikt af en toe naar het scherm.\\\",\\\"Hij stuurt korte reacties in de chat.\\\",\\\"Zijn camera toont een stilzittend gezicht.\\\"],\\\"switch_trigger\\\":\\\"De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'\\\",\\\"hinge_event\\\":\\\"Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.\\\",\\\"anomaly_under_a\\\":\\\"Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.\\\",\\\"resolution_under_b\\\":\\\"De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.\\\",\\\"role_remapping\\\":[\\\"Telefoongebruiker wordt spijbelende regisseur van zijn alibi.\\\",\\\"Contactpersoon wordt de docent die aanwezigheid controleert.\\\",\\\"Telefoon/app wordt afstandsbediening en videobeltechniek.\\\",\\\"Omstanders worden klasgenoten die de schijnbare deelname waarnemen.\\\"],\\\"setup_goal\\\":\\\"De leerling wordt eerst gelezen als een werkelijk aanwezige deelnemer die de les op zijn laptop volgt en slechts discreet een dringend bericht op zijn telefoon beantwoordt.\\\",\\\"punch_goal\\\":\\\"De onverwachte vraag en het zich herhalende videobeeld onthullen dat zijn zichtbare aanwezigheid geënsceneerd is en dat hij fysiek afwezig blijft.\\\",\\\"punch_final_word\\\":\\\"afspeelbalk\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden.\\\",\\\"punchline\\\":\\\"Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.\\\",\\\"full_text\\\":\\\"In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden. Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.\\\",\\\"angle\\\":\\\"De onverwachte schriftcontrole laat de opgenomen aanwezigheid vastlopen.\\\",\\\"anchor_surface_form\\\":\\\"afspeelbalk\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes.\\\",\\\"punchline\\\":\\\"Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.\\\",\\\"full_text\\\":\\\"Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes. Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.\\\",\\\"angle\\\":\\\"Een passieve leerling blijkt haar videobeeld te bedienen.\\\",\\\"anchor_surface_form\\\":\\\"afspeelbalk\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties.\\\",\\\"punchline\\\":\\\"Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.\\\",\\\"full_text\\\":\\\"Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties. Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.\\\",\\\"angle\\\":\\\"De keurige deelnemer regisseert zijn aanwezigheid op afstand.\\\",\\\"anchor_surface_form\\\":\\\"afspeelbalk\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Tim lijkt werkelijk aanwezig in een online les, volgt het scherm en gebruikt zijn telefoon discreet voor korte chatantwoorden.\\\",\\\"realized_script_b\\\":\\\"Tim is fysiek afwezig en bedient op zijn telefoon een opgenomen videolus die hem als aanwezige leerling moet laten lijken.\\\",\\\"realized_opposition_axis\\\":\\\"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst realiseert beide beoogde lezingen, de gedeelde signalen (omlaag kijken, knikken, korte chatantwoorden) en de omslag via de schriftcontrole, het identieke knikje en de afspeelbalk.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De onverwachte opdracht ontmaskert de opname: een herhaald identiek knikje en een zichtbare afspeelbalk maken de eerdere lezing retrospectief onmogelijk.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Online les, leerling, docent, telefoon, chatreacties, camera en schriftcontrole zijn functioneel aanwezig.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De grap richt zich op de aanname dat een zichtbaar, passief videobeeld daadwerkelijke lesaanwezigheid bewijst.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet normaliseert eerst discreet telefoongebruik en passieve deelname; de docentenvraag levert vervolgens de onthullende punch.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De vereiste lexicale hinge 'afspeelbalk' staat als slotwoord en functioneert als concreet bewijs van de videolus.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een compacte, natuurlijke grap die de geplande schijn-aanwezigheid volledig opbouwt en via de afspeelbalk ontmaskert.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Noor lijkt stil maar daadwerkelijk aanwezig in een online les en gebruikt haar telefoon alleen voor korte berichten.\\\",\\\"realized_script_b\\\":\\\"Noor is niet werkelijk aanwezig; haar stilzittende camerabeeld is een opgenomen lus die zij met haar telefoon bedient.\\\",\\\"realized_opposition_axis\\\":\\\"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De bedoelde aanwezigheidsschijn, de passieve gedeelde signalen, de schriftvraag en de onthulling van de videolus zijn alle aanwezig.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De schriftcontrole botst met het opnieuw identieke knikje; de afspeelbalk verklaart dit als een opgenomen beeld.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De kernsituatie van online les, passieve leerling in beeld, docentcontrole, telefoon en schrift is behouden.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst bespot de gelijkstelling van een zichtbaar videobeeld met daadwerkelijke deelname.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst houdt de bedrogscriptie aanvankelijk impliciet en laat de onthulling volgen op een onverwacht verzoek van de docent.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"'Afspeelbalk' is behouden, maar niet als absoluut laatste woord doordat de zin eindigt op een punt; functioneel vormt het wel de punch-hinge.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant volgt het beoogde ontmaskeringspatroon nauwgezet; de afspeelbalk maakt de schijnbare aanwezigheid helder retrospectief.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Sem lijkt voorbeeldig en daadwerkelijk aanwezig in de online les: hij zit stil, knikt en stuurt keurige reacties vanaf zijn telefoon.\\\",\\\"realized_script_b\\\":\\\"Sem is elders en regisseert met zijn telefoon een opgenomen videobeeld om als aanwezige leerling geregistreerd te blijven.\\\",\\\"realized_opposition_axis\\\":\\\"daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst behoudt de geplande scripts, de aanwezigheidsschijn, het verzoek om het schrift, het terugkerende knikje en de bediening van een videolus.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De vraag om het schrift legt bloot dat het beeld niet live reageert; Sems bediening van de afspeelbalk verklaart de herhaling.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De online-lescontext en de relevante rollen, handelingen en voorwerpen zijn aanwezig, inclusief Sems fysieke afwezigheid.\\\"},\\\"target\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant maakt de kwetsbaarheid van zichtbare online aanwezigheid als bewijs van echte deelname tot mikpunt.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Eerst wordt Sem als keurige deelnemer neergezet; na de docentenvraag keert 'ergens anders' de lezing expliciet om.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De lexicale hinge 'afspeelbalk' is aanwezig en draagt de onthulling, maar is niet het geplande finale woord omdat de tekst eindigt op 'afspeelbalk' gevolgd door een punt, wat functioneel geen afwijking vormt.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Sems fysieke afwezigheid en de afspeelbalk realiseren de geplande tegenstelling en ontmaskering volledig, in een goed spreekbare grapvorm.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten voldoen en realiseren de geplande ontmaskering. V1 heeft een scherpere, concretere punch door de afspeelbalk als slotbeeld; V2 is iets vlakker doordat het herhaalde knikje minder nadrukkelijk is voorbereid.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide zijn trouw aan alle vereiste middelen, maar V3 maakt de tegenstelling tussen live aanwezigheid en een bediende videolus het helderst. Het eerdere ‘knikt af en toe’ bereidt het identieke knikje logisch voor, waardoor de retrospectieve omslag sterker werkt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 heeft de duidelijkere opzet en de beter gemotiveerde switch: Sems eerdere knikken krijgen bij de schriftvraag een nieuwe betekenis. V2 is compact en spreekbaar, maar de herhaling van Noors knikje voelt minder zorgvuldig opgebouwd.\\\"}],\\\"selected_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 is de sterkste passerende variant: de online-lessituatie is direct herkenbaar, de schriftcontrole veroorzaakt een heldere breuk en de afspeelbalk herinterpreteert Sems keurige deelname als geënsceneerde aanwezigheid.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een rouwende gast gebruikt zijn telefoon tijdens een uitvaart niet om bereikbaar te zijn, maar om de plechtigheid als live-uitzending te produceren en kijkcijfers te trekken.",
+        "candidate_id": "B1",
+        "opposition_axis": "respectvolle privécommunicatie versus publieke exploitatie",
+        "opposed_expectation": "Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.",
+        "roles_b": [
+          "Streamer: wil aandacht, bereik en online betrokkenheid genereren.",
+          "Overledene/nabestaanden: worden ongewild onderwerp van de uitzending.",
+          "Online publiek: kijkt mee en reageert op de stream.",
+          "Uitvaartleider: probeert de plechtigheid waardig te laten verlopen."
+        ],
+        "goal_b": "Van een intieme uitvaart een goed bekeken online evenement maken.",
+        "role_remapping": [
+          "Telefoongebruiker wordt streamer.",
+          "Contactpersoon wordt online publiek.",
+          "Telefoon/app/provider wordt livestreamplatform.",
+          "Omstanders worden nabestaanden en uitvaartleider die de opname moeten verdragen."
+        ],
+        "shared_cues": [
+          "Hij ontgrendelt de telefoon zonder geluid.",
+          "Hij kijkt geregeld naar binnenkomende meldingen.",
+          "Hij houdt het toestel laag voor zich.",
+          "Hij fluistert dat hij 'even iets moet checken'."
+        ],
+        "switch_trigger": "Hij draait de telefoon naar de kist en zegt zacht: 'We zijn live, vergeet niet te liken.'",
+        "hinge_event": "De telefoon wordt op een kleine standaard gericht op de kist gezet.",
+        "anomaly_under_a": "Bij een gewone noodzakelijke berichtcontrole is het onverklaarbaar en respectloos om de telefoon doelbewust op de ceremonie te richten.",
+        "resolution_under_b": "Als livestreamopstelling is de handeling juist functioneel: de streamer heeft beeld nodig om de uitvaart aan zijn publiek uit te zenden.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Iemand doet alsof hij onderweg navigeert, maar gebruikt de telefoon als hulpmiddel om een verrassingsfeestje te organiseren zonder dat de jarige het merkt.",
+        "candidate_id": "B2",
+        "opposition_axis": "open informatievoorziening versus geheime misleiding",
+        "opposed_expectation": "De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.",
+        "roles_b": [
+          "Organisator: wil de verrassing geheimhouden en tijd winnen.",
+          "Jarige: denkt dat hij naar een gewone bestemming reist.",
+          "Medeplichtige bestuurder: volgt de aanwijzingen en rekt de rit.",
+          "Feestgangers: wachten tot de jarige arriveert."
+        ],
+        "goal_b": "De jarige op het juiste moment nietsvermoedend bij het verrassingsfeest afleveren.",
+        "role_remapping": [
+          "Telefoongebruiker wordt organisator van de verrassing.",
+          "Contactpersoon wordt de groep feestgangers in een geheime chat.",
+          "Telefoon/app wordt een coördinatiemiddel voor locatie en timing.",
+          "Omstanders worden medeplichtigen of de onwetende jarige."
+        ],
+        "shared_cues": [
+          "Hij opent een kaartapp.",
+          "Hij zegt dat er verderop file staat.",
+          "Hij ontvangt korte berichten.",
+          "Hij controleert steeds de aankomsttijd."
+        ],
+        "switch_trigger": "Een melding verschijnt groot in beeld: 'Iedereen verstopt, rek nog vijf minuten!'",
+        "hinge_event": "Hij laat de chauffeur doelbewust drie keer om hetzelfde huizenblok rijden.",
+        "anomaly_under_a": "Voor efficiënte navigatie is herhaaldelijk rondrijden strijdig met het doel om snel op de bestemming te komen.",
+        "resolution_under_b": "De omweg is precies nuttig omdat de feestgangers daarmee extra tijd krijgen om zich te verstoppen en de verrassing voor te bereiden.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een restauranthouder gebruikt de telefoon niet om een bestelling aan de keuken door te geven, maar om klanten via een bezorgapp te laten geloven dat hun maaltijd nog onderweg is terwijl hij die zelf opeet.",
+        "candidate_id": "B3",
+        "opposition_axis": "dienstverlening versus bedrog en toe-eigening",
+        "opposed_expectation": "Een verzonden bericht komt bij de bedoelde ontvanger terecht.",
+        "roles_b": [
+          "Restauranthouder: wil gratis van bestellingen eten zonder directe confrontatie.",
+          "Bestellende klant: verwacht de betaalde maaltijd te ontvangen.",
+          "Bezorgapp: toont statusmeldingen die geloofwaardig moeten lijken.",
+          "Bezorger: bestaat alleen als excuus voor de vertraging."
+        ],
+        "goal_b": "De klant aan het wachten houden totdat het te laat of te lastig wordt om de bestelling op te eisen.",
+        "role_remapping": [
+          "Telefoongebruiker wordt frauderende restauranthouder.",
+          "Contactpersoon wordt de wachtende klant.",
+          "Telefoon/app wordt een instrument voor valse bezorgstatussen.",
+          "Omstanders worden keukenpersoneel of vermeende bezorgers die als excuus dienen."
+        ],
+        "shared_cues": [
+          "Hij tikt in een bezorgapp.",
+          "Hij zegt dat de bestelling 'bijna onderweg' is.",
+          "Hij leest een melding voordat hij antwoord geeft.",
+          "Hij verontschuldigt zich voor drukte."
+        ],
+        "switch_trigger": "Op zijn scherm verschijnt niet de routekaart maar de knop: 'Bestelling als bezorgd markeren'.",
+        "hinge_event": "Hij veegt saus van zijn mond terwijl hij de bestelling als bezorgd markeert.",
+        "anomaly_under_a": "Bij een normale statuscontrole is het vreemd dat hij zichtbaar hetzelfde gerecht eet als de klant die nog op levering wacht.",
+        "resolution_under_b": "Onder de bedrogscript is dat juist het bewijs van zijn doel: hij heeft de bestelling zelf opgegeten en gebruikt de app om de klant af te wimpelen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.",
+        "candidate_id": "B4",
+        "opposition_axis": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+        "opposed_expectation": "Een mobiele telefoon maakt communicatie directer en gemakkelijker.",
+        "roles_b": [
+          "Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.",
+          "Docent: verwacht een werkelijk aanwezige deelnemer.",
+          "Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.",
+          "Klasgenoten: zien een geloofwaardige maar passieve leerling."
+        ],
+        "goal_b": "Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.",
+        "role_remapping": [
+          "Telefoongebruiker wordt spijbelende regisseur van zijn alibi.",
+          "Contactpersoon wordt de docent die aanwezigheid controleert.",
+          "Telefoon/app wordt afstandsbediening en videobeltechniek.",
+          "Omstanders worden klasgenoten die de schijnbare deelname waarnemen."
+        ],
+        "shared_cues": [
+          "Hij kijkt omlaag naar zijn telefoon.",
+          "Hij knikt af en toe naar het scherm.",
+          "Hij stuurt korte reacties in de chat.",
+          "Zijn camera toont een stilzittend gezicht."
+        ],
+        "switch_trigger": "De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'",
+        "hinge_event": "Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.",
+        "anomaly_under_a": "Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.",
+        "resolution_under_b": "De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B4 biedt de scherpste en meest samenhangende scripttegenstelling: ogenschijnlijk normaal, discreet telefoongebruik tijdens een online les kantelt naar geënsceneerde aanwezigheid en doelbewust spijbelen. Beide lezingen passen aanvankelijk bij dezelfde cues — omlaag kijken, korte chatreacties, af en toe knikken en een passief camerabeeld — waardoor de tweede lezing latent maar goed voorbereid is. De herhalende beweging en afspeelbalk vormen vervolgens een zuiver scharniermoment dat eerdere details retrospectief herinterpreteert. De telefoon blijft daarbij centraal en topic-specifiek als bedieningsmiddel voor videotechnologie, terwijl het bedrog een helder doel, sterke payoff en duidelijke rolomkering oplevert.",
+    "variants": [
+      {
+        "text": "In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden. Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.",
+        "angle": "De onverwachte schriftcontrole laat de opgenomen aanwezigheid vastlopen."
+      },
+      {
+        "text": "Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes. Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.",
+        "angle": "Een passieve leerling blijkt haar videobeeld te bedienen."
+      },
+      {
+        "text": "Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties. Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.",
+        "angle": "De keurige deelnemer regisseert zijn aanwezigheid op afstand."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 17101,
+      "output_tokens": 7825,
+      "total_tokens": 24926
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Iemand gebruikt een mobiele telefoon om snel informatie te krijgen, te communiceren of media te bekijken; de technologie werkt onopvallend en ondersteunt het dagelijkse contact.",
+          "participants_and_roles": [
+            "Telefoongebruiker: wil bereikbaar zijn, iets regelen of zich informeren.",
+            "Contactpersoon: verwacht een bericht, oproep of reactie te kunnen ontvangen.",
+            "Telefoon/app/provider: levert een stabiel kanaal voor communicatie en media.",
+            "Omstanders: verwachten doorgaans dat de gebruiker de telefoon passend en met enige aandacht voor de omgeving gebruikt."
+          ],
+          "apparent_goal": "Efficiënt communiceren, informatie of entertainment consumeren, en praktische zaken onderweg regelen.",
+          "preconditions": [
+            "De telefoon is opgeladen, verbonden met internet of mobiel netwerk en functioneert normaal.",
+            "De gebruiker heeft een reden om te bellen, berichten te sturen, navigatie te gebruiken of media te bekijken.",
+            "De gebruikte app, website of dienst is beschikbaar.",
+            "Er gelden herkenbare sociale normen over wanneer telefoongebruik gepast is."
+          ],
+          "expected_actions": [
+            "De gebruiker ontgrendelt de telefoon en opent de relevante app of functie.",
+            "De gebruiker typt, belt, zoekt, kijkt of luistert.",
+            "De technologie verzendt of ontvangt de gevraagde informatie.",
+            "De gebruiker reageert op berichten of legt de telefoon weer weg wanneer de taak klaar is."
+          ],
+          "expected_outcome": "De gebruiker bereikt de juiste persoon of informatie snel en zonder noemenswaardige problemen, terwijl het sociale contact en de omgeving beheersbaar blijven.",
+          "expected_propositions": [
+            "Een mobiele telefoon maakt communicatie directer en gemakkelijker.",
+            "Een verzonden bericht komt bij de bedoelde ontvanger terecht.",
+            "Apps en meldingen helpen de gebruiker relevante informatie te vinden of bij te houden.",
+            "De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.",
+            "Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren."
+          ],
+          "audience_expectation": "Een opzet rond media, technologie en mobiele telefoons activeert de herkenbare verwachting van soepel, doelgericht en sociaal aanvaardbaar gebruik: iemand pakt de telefoon om iets eenvoudigs te regelen, waarna verbinding, informatie en reactie normaal gesproken volgen."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een rouwende gast gebruikt zijn telefoon tijdens een uitvaart niet om bereikbaar te zijn, maar om de plechtigheid als live-uitzending te produceren en kijkcijfers te trekken.",
+            "opposition_axis": "respectvolle privécommunicatie versus publieke exploitatie",
+            "opposed_proposition": "Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.",
+            "shared_anchor": "De gebruiker kijkt herhaaldelijk op zijn telefoon tijdens een plechtigheid.",
+            "reading_a": "Hij wacht discreet op een belangrijk bericht van familie of werk en controleert daarom af en toe zijn scherm.",
+            "reading_b": "Hij bewaakt een livestream van de uitvaart, leest reacties van kijkers en probeert het bereik op te voeren.",
+            "roles_b": [
+              "Streamer: wil aandacht, bereik en online betrokkenheid genereren.",
+              "Overledene/nabestaanden: worden ongewild onderwerp van de uitzending.",
+              "Online publiek: kijkt mee en reageert op de stream.",
+              "Uitvaartleider: probeert de plechtigheid waardig te laten verlopen."
+            ],
+            "goal_b": "Van een intieme uitvaart een goed bekeken online evenement maken.",
+            "role_remapping": [
+              "Telefoongebruiker wordt streamer.",
+              "Contactpersoon wordt online publiek.",
+              "Telefoon/app/provider wordt livestreamplatform.",
+              "Omstanders worden nabestaanden en uitvaartleider die de opname moeten verdragen."
+            ],
+            "shared_cues": [
+              "Hij ontgrendelt de telefoon zonder geluid.",
+              "Hij kijkt geregeld naar binnenkomende meldingen.",
+              "Hij houdt het toestel laag voor zich.",
+              "Hij fluistert dat hij 'even iets moet checken'."
+            ],
+            "switch_trigger": "Hij draait de telefoon naar de kist en zegt zacht: 'We zijn live, vergeet niet te liken.'",
+            "hinge_event": "De telefoon wordt op een kleine standaard gericht op de kist gezet.",
+            "anomaly_under_a": "Bij een gewone noodzakelijke berichtcontrole is het onverklaarbaar en respectloos om de telefoon doelbewust op de ceremonie te richten.",
+            "resolution_under_b": "Als livestreamopstelling is de handeling juist functioneel: de streamer heeft beeld nodig om de uitvaart aan zijn publiek uit te zenden."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Iemand doet alsof hij onderweg navigeert, maar gebruikt de telefoon als hulpmiddel om een verrassingsfeestje te organiseren zonder dat de jarige het merkt.",
+            "opposition_axis": "open informatievoorziening versus geheime misleiding",
+            "opposed_proposition": "De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.",
+            "shared_anchor": "Een passagier volgt aandachtig een route op een telefoon terwijl hij met de jarige in de auto zit.",
+            "reading_a": "Hij zoekt de snelste route naar een afspraak en probeert vertraging te vermijden.",
+            "reading_b": "Hij stuurt de bestuurder langs een omweg zodat de voorbereiders tijd krijgen voor het verrassingsfeest.",
+            "roles_b": [
+              "Organisator: wil de verrassing geheimhouden en tijd winnen.",
+              "Jarige: denkt dat hij naar een gewone bestemming reist.",
+              "Medeplichtige bestuurder: volgt de aanwijzingen en rekt de rit.",
+              "Feestgangers: wachten tot de jarige arriveert."
+            ],
+            "goal_b": "De jarige op het juiste moment nietsvermoedend bij het verrassingsfeest afleveren.",
+            "role_remapping": [
+              "Telefoongebruiker wordt organisator van de verrassing.",
+              "Contactpersoon wordt de groep feestgangers in een geheime chat.",
+              "Telefoon/app wordt een coördinatiemiddel voor locatie en timing.",
+              "Omstanders worden medeplichtigen of de onwetende jarige."
+            ],
+            "shared_cues": [
+              "Hij opent een kaartapp.",
+              "Hij zegt dat er verderop file staat.",
+              "Hij ontvangt korte berichten.",
+              "Hij controleert steeds de aankomsttijd."
+            ],
+            "switch_trigger": "Een melding verschijnt groot in beeld: 'Iedereen verstopt, rek nog vijf minuten!'",
+            "hinge_event": "Hij laat de chauffeur doelbewust drie keer om hetzelfde huizenblok rijden.",
+            "anomaly_under_a": "Voor efficiënte navigatie is herhaaldelijk rondrijden strijdig met het doel om snel op de bestemming te komen.",
+            "resolution_under_b": "De omweg is precies nuttig omdat de feestgangers daarmee extra tijd krijgen om zich te verstoppen en de verrassing voor te bereiden."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een restauranthouder gebruikt de telefoon niet om een bestelling aan de keuken door te geven, maar om klanten via een bezorgapp te laten geloven dat hun maaltijd nog onderweg is terwijl hij die zelf opeet.",
+            "opposition_axis": "dienstverlening versus bedrog en toe-eigening",
+            "opposed_proposition": "Een verzonden bericht komt bij de bedoelde ontvanger terecht.",
+            "shared_anchor": "Een restauranthouder kijkt op zijn telefoon terwijl een klant naar een vertraagde bestelling vraagt.",
+            "reading_a": "Hij controleert de bezorgstatus en probeert de klant nauwkeurig te informeren over een vertraging.",
+            "reading_b": "Hij verstuurt misleidende statusupdates terwijl de bestelde maaltijd al in zijn eigen keuken of op zijn bureau ligt.",
+            "roles_b": [
+              "Restauranthouder: wil gratis van bestellingen eten zonder directe confrontatie.",
+              "Bestellende klant: verwacht de betaalde maaltijd te ontvangen.",
+              "Bezorgapp: toont statusmeldingen die geloofwaardig moeten lijken.",
+              "Bezorger: bestaat alleen als excuus voor de vertraging."
+            ],
+            "goal_b": "De klant aan het wachten houden totdat het te laat of te lastig wordt om de bestelling op te eisen.",
+            "role_remapping": [
+              "Telefoongebruiker wordt frauderende restauranthouder.",
+              "Contactpersoon wordt de wachtende klant.",
+              "Telefoon/app wordt een instrument voor valse bezorgstatussen.",
+              "Omstanders worden keukenpersoneel of vermeende bezorgers die als excuus dienen."
+            ],
+            "shared_cues": [
+              "Hij tikt in een bezorgapp.",
+              "Hij zegt dat de bestelling 'bijna onderweg' is.",
+              "Hij leest een melding voordat hij antwoord geeft.",
+              "Hij verontschuldigt zich voor drukte."
+            ],
+            "switch_trigger": "Op zijn scherm verschijnt niet de routekaart maar de knop: 'Bestelling als bezorgd markeren'.",
+            "hinge_event": "Hij veegt saus van zijn mond terwijl hij de bestelling als bezorgd markeert.",
+            "anomaly_under_a": "Bij een normale statuscontrole is het vreemd dat hij zichtbaar hetzelfde gerecht eet als de klant die nog op levering wacht.",
+            "resolution_under_b": "Onder de bedrogscript is dat juist het bewijs van zijn doel: hij heeft de bestelling zelf opgegeten en gebruikt de app om de klant af te wimpelen."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.",
+            "opposition_axis": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+            "opposed_proposition": "Een mobiele telefoon maakt communicatie directer en gemakkelijker.",
+            "shared_anchor": "Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.",
+            "reading_a": "Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.",
+            "reading_b": "Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.",
+            "roles_b": [
+              "Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.",
+              "Docent: verwacht een werkelijk aanwezige deelnemer.",
+              "Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.",
+              "Klasgenoten: zien een geloofwaardige maar passieve leerling."
+            ],
+            "goal_b": "Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.",
+            "role_remapping": [
+              "Telefoongebruiker wordt spijbelende regisseur van zijn alibi.",
+              "Contactpersoon wordt de docent die aanwezigheid controleert.",
+              "Telefoon/app wordt afstandsbediening en videobeltechniek.",
+              "Omstanders worden klasgenoten die de schijnbare deelname waarnemen."
+            ],
+            "shared_cues": [
+              "Hij kijkt omlaag naar zijn telefoon.",
+              "Hij knikt af en toe naar het scherm.",
+              "Hij stuurt korte reacties in de chat.",
+              "Zijn camera toont een stilzittend gezicht."
+            ],
+            "switch_trigger": "De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'",
+            "hinge_event": "Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.",
+            "anomaly_under_a": "Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.",
+            "resolution_under_b": "De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een rouwende gast gebruikt zijn telefoon tijdens een uitvaart niet om bereikbaar te zijn, maar om de plechtigheid als live-uitzending te produceren en kijkcijfers te trekken.",
+              "opposition_axis": "respectvolle privécommunicatie versus publieke exploitatie",
+              "opposed_proposition": "Telefoongebruik is een hulpmiddel en hoort een gesprek of dagelijkse handeling niet volledig te verstoren.",
+              "shared_anchor": "De gebruiker kijkt herhaaldelijk op zijn telefoon tijdens een plechtigheid.",
+              "reading_a": "Hij wacht discreet op een belangrijk bericht van familie of werk en controleert daarom af en toe zijn scherm.",
+              "reading_b": "Hij bewaakt een livestream van de uitvaart, leest reacties van kijkers en probeert het bereik op te voeren.",
+              "roles_b": [
+                "Streamer: wil aandacht, bereik en online betrokkenheid genereren.",
+                "Overledene/nabestaanden: worden ongewild onderwerp van de uitzending.",
+                "Online publiek: kijkt mee en reageert op de stream.",
+                "Uitvaartleider: probeert de plechtigheid waardig te laten verlopen."
+              ],
+              "goal_b": "Van een intieme uitvaart een goed bekeken online evenement maken.",
+              "role_remapping": [
+                "Telefoongebruiker wordt streamer.",
+                "Contactpersoon wordt online publiek.",
+                "Telefoon/app/provider wordt livestreamplatform.",
+                "Omstanders worden nabestaanden en uitvaartleider die de opname moeten verdragen."
+              ],
+              "shared_cues": [
+                "Hij ontgrendelt de telefoon zonder geluid.",
+                "Hij kijkt geregeld naar binnenkomende meldingen.",
+                "Hij houdt het toestel laag voor zich.",
+                "Hij fluistert dat hij 'even iets moet checken'."
+              ],
+              "switch_trigger": "Hij draait de telefoon naar de kist en zegt zacht: 'We zijn live, vergeet niet te liken.'",
+              "hinge_event": "De telefoon wordt op een kleine standaard gericht op de kist gezet.",
+              "anomaly_under_a": "Bij een gewone noodzakelijke berichtcontrole is het onverklaarbaar en respectloos om de telefoon doelbewust op de ceremonie te richten.",
+              "resolution_under_b": "Als livestreamopstelling is de handeling juist functioneel: de streamer heeft beeld nodig om de uitvaart aan zijn publiek uit te zenden."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Iemand doet alsof hij onderweg navigeert, maar gebruikt de telefoon als hulpmiddel om een verrassingsfeestje te organiseren zonder dat de jarige het merkt.",
+              "opposition_axis": "open informatievoorziening versus geheime misleiding",
+              "opposed_proposition": "De gebruiker heeft in beginsel controle over wat er op het scherm gebeurt en wie toegang krijgt tot de telefoon.",
+              "shared_anchor": "Een passagier volgt aandachtig een route op een telefoon terwijl hij met de jarige in de auto zit.",
+              "reading_a": "Hij zoekt de snelste route naar een afspraak en probeert vertraging te vermijden.",
+              "reading_b": "Hij stuurt de bestuurder langs een omweg zodat de voorbereiders tijd krijgen voor het verrassingsfeest.",
+              "roles_b": [
+                "Organisator: wil de verrassing geheimhouden en tijd winnen.",
+                "Jarige: denkt dat hij naar een gewone bestemming reist.",
+                "Medeplichtige bestuurder: volgt de aanwijzingen en rekt de rit.",
+                "Feestgangers: wachten tot de jarige arriveert."
+              ],
+              "goal_b": "De jarige op het juiste moment nietsvermoedend bij het verrassingsfeest afleveren.",
+              "role_remapping": [
+                "Telefoongebruiker wordt organisator van de verrassing.",
+                "Contactpersoon wordt de groep feestgangers in een geheime chat.",
+                "Telefoon/app wordt een coördinatiemiddel voor locatie en timing.",
+                "Omstanders worden medeplichtigen of de onwetende jarige."
+              ],
+              "shared_cues": [
+                "Hij opent een kaartapp.",
+                "Hij zegt dat er verderop file staat.",
+                "Hij ontvangt korte berichten.",
+                "Hij controleert steeds de aankomsttijd."
+              ],
+              "switch_trigger": "Een melding verschijnt groot in beeld: 'Iedereen verstopt, rek nog vijf minuten!'",
+              "hinge_event": "Hij laat de chauffeur doelbewust drie keer om hetzelfde huizenblok rijden.",
+              "anomaly_under_a": "Voor efficiënte navigatie is herhaaldelijk rondrijden strijdig met het doel om snel op de bestemming te komen.",
+              "resolution_under_b": "De omweg is precies nuttig omdat de feestgangers daarmee extra tijd krijgen om zich te verstoppen en de verrassing voor te bereiden."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een restauranthouder gebruikt de telefoon niet om een bestelling aan de keuken door te geven, maar om klanten via een bezorgapp te laten geloven dat hun maaltijd nog onderweg is terwijl hij die zelf opeet.",
+              "opposition_axis": "dienstverlening versus bedrog en toe-eigening",
+              "opposed_proposition": "Een verzonden bericht komt bij de bedoelde ontvanger terecht.",
+              "shared_anchor": "Een restauranthouder kijkt op zijn telefoon terwijl een klant naar een vertraagde bestelling vraagt.",
+              "reading_a": "Hij controleert de bezorgstatus en probeert de klant nauwkeurig te informeren over een vertraging.",
+              "reading_b": "Hij verstuurt misleidende statusupdates terwijl de bestelde maaltijd al in zijn eigen keuken of op zijn bureau ligt.",
+              "roles_b": [
+                "Restauranthouder: wil gratis van bestellingen eten zonder directe confrontatie.",
+                "Bestellende klant: verwacht de betaalde maaltijd te ontvangen.",
+                "Bezorgapp: toont statusmeldingen die geloofwaardig moeten lijken.",
+                "Bezorger: bestaat alleen als excuus voor de vertraging."
+              ],
+              "goal_b": "De klant aan het wachten houden totdat het te laat of te lastig wordt om de bestelling op te eisen.",
+              "role_remapping": [
+                "Telefoongebruiker wordt frauderende restauranthouder.",
+                "Contactpersoon wordt de wachtende klant.",
+                "Telefoon/app wordt een instrument voor valse bezorgstatussen.",
+                "Omstanders worden keukenpersoneel of vermeende bezorgers die als excuus dienen."
+              ],
+              "shared_cues": [
+                "Hij tikt in een bezorgapp.",
+                "Hij zegt dat de bestelling 'bijna onderweg' is.",
+                "Hij leest een melding voordat hij antwoord geeft.",
+                "Hij verontschuldigt zich voor drukte."
+              ],
+              "switch_trigger": "Op zijn scherm verschijnt niet de routekaart maar de knop: 'Bestelling als bezorgd markeren'.",
+              "hinge_event": "Hij veegt saus van zijn mond terwijl hij de bestelling als bezorgd markeert.",
+              "anomaly_under_a": "Bij een normale statuscontrole is het vreemd dat hij zichtbaar hetzelfde gerecht eet als de klant die nog op levering wacht.",
+              "resolution_under_b": "Onder de bedrogscript is dat juist het bewijs van zijn doel: hij heeft de bestelling zelf opgegeten en gebruikt de app om de klant af te wimpelen."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een leerling lijkt tijdens een les een bericht te beantwoorden, maar gebruikt zijn telefoon als afstandsbediening om een vooraf opgenomen versie van zichzelf in een videogesprek af te spelen en zo spijbelen te verbergen.",
+              "opposition_axis": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+              "opposed_proposition": "Een mobiele telefoon maakt communicatie directer en gemakkelijker.",
+              "shared_anchor": "Een leerling kijkt tijdens een online les zwijgend naar zijn telefoon en reageert slechts met korte bevestigingen.",
+              "reading_a": "Hij volgt de les op zijn laptop en gebruikt de telefoon discreet om een dringend bericht te beantwoorden.",
+              "reading_b": "Hij controleert of zijn opgenomen videolus overtuigend afspeelt, terwijl hij fysiek ergens anders ontspant.",
+              "roles_b": [
+                "Spijbelende leerling: wil als aanwezig geregistreerd blijven zonder de les te volgen.",
+                "Docent: verwacht een werkelijk aanwezige deelnemer.",
+                "Videobelplatform: verspreidt de opgenomen lus als ogenschijnlijk livebeeld.",
+                "Klasgenoten: zien een geloofwaardige maar passieve leerling."
+              ],
+              "goal_b": "Afwezig zijn zonder dat docent of school de afwezigheid opmerkt.",
+              "role_remapping": [
+                "Telefoongebruiker wordt spijbelende regisseur van zijn alibi.",
+                "Contactpersoon wordt de docent die aanwezigheid controleert.",
+                "Telefoon/app wordt afstandsbediening en videobeltechniek.",
+                "Omstanders worden klasgenoten die de schijnbare deelname waarnemen."
+              ],
+              "shared_cues": [
+                "Hij kijkt omlaag naar zijn telefoon.",
+                "Hij knikt af en toe naar het scherm.",
+                "Hij stuurt korte reacties in de chat.",
+                "Zijn camera toont een stilzittend gezicht."
+              ],
+              "switch_trigger": "De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'",
+              "hinge_event": "Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.",
+              "anomaly_under_a": "Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.",
+              "resolution_under_b": "De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde opzet—herhaaldelijk discreet op een telefoon kijken tijdens een plechtigheid—kan zowel noodzakelijke privécommunicatie als het monitoren van een livestream dragen. De lezingen botsen primair op de as respectvolle, beperkte communicatie tegenover publieke exploitatie. De standaardlezing domineert aanvankelijk, terwijl de tweede lezing herkenbaar en latent mogelijk blijft. Het richten van de telefoon op de kist is onder A ongepast en onverklaarbaar, maar onder B noodzakelijk voor het uitzenden. Daardoor verandert eerder discreet gedrag achteraf in publieks- en bereikbeheer. De handeling blokkeert bovendien A's doel van onopvallend passend gebruik, maar faciliteert B's doel van livestreamen."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Het volgen van een route, verkeersinformatie noemen en aankomsttijd controleren past zowel bij gewone navigatie als bij geheime coördinatie van een verrassingsfeest. De dominante tegenstelling is efficiënt open routegebruik tegenover doelbewuste geheime sturing. De navigatielezing is eerst normaal, terwijl korte berichten en aandacht voor tijd de tweede lezing mogelijk houden. Drie keer rond hetzelfde blok rijden ondermijnt A's doel van snel aankomen, maar is onder B functioneel omdat het voorbereidingstijd koopt. De trigger herkadert de eerdere routecontrole en verkeersmededelingen als misleidende timingstactiek."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De restauranthouder die in een bezorgapp kijkt, een melding leest en een vertraging uitlegt, kan aanvankelijk plausibel de status controleren of de klant misleiden. Dienstverlening tegenover bedrog en toe-eigening vormt één dominante oppositie. De normale servicelezing heeft in de opzet voorrang, maar de vage statuscommunicatie laat fraude als tweede lezing beschikbaar. Het eten van hetzelfde gerecht terwijl hij de bestelling als bezorgd markeert is onder A anomalisch, maar onder B precies doelmatig: hij heeft de maaltijd zelf genomen en gebruikt de app om de klant af te houden. Eerdere statusupdates krijgen daardoor retrospectief de functie van misleiding. Het markeren als bezorgd verhindert A's correcte levering en helpt B's fraudedoel."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Zwijgend naar de telefoon kijken, af en toe knikken, korte chatreacties sturen en een passief videobeeld tonen kan zowel bij een aanwezige leerling met een dringend bericht als bij iemand die een nepaanwezigheid controleert passen. De centrale oppositie is werkelijke aanwezigheid tegenover geënsceneerde aanwezigheid. De gewone lezing domineert eerst en de tweede is als herkenbare digitale vorm van spijbelen latent beschikbaar. Het identiek herhalende knikje en de afspeelbalk zijn onder A niet verklaarbaar, maar onder B functioneel als bewijs en bediening van de videolus. Hierdoor krijgen eerdere reacties en het passieve camerabeeld achteraf de betekenis van een alibi. De lus verhindert echte deelname onder A en maakt schijnbare aanwezigheid onder B mogelijk."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde opzet—herhaaldelijk discreet op een telefoon kijken tijdens een plechtigheid—kan zowel noodzakelijke privécommunicatie als het monitoren van een livestream dragen. De lezingen botsen primair op de as respectvolle, beperkte communicatie tegenover publieke exploitatie. De standaardlezing domineert aanvankelijk, terwijl de tweede lezing herkenbaar en latent mogelijk blijft. Het richten van de telefoon op de kist is onder A ongepast en onverklaarbaar, maar onder B noodzakelijk voor het uitzenden. Daardoor verandert eerder discreet gedrag achteraf in publieks- en bereikbeheer. De handeling blokkeert bovendien A's doel van onopvallend passend gebruik, maar faciliteert B's doel van livestreamen."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Het volgen van een route, verkeersinformatie noemen en aankomsttijd controleren past zowel bij gewone navigatie als bij geheime coördinatie van een verrassingsfeest. De dominante tegenstelling is efficiënt open routegebruik tegenover doelbewuste geheime sturing. De navigatielezing is eerst normaal, terwijl korte berichten en aandacht voor tijd de tweede lezing mogelijk houden. Drie keer rond hetzelfde blok rijden ondermijnt A's doel van snel aankomen, maar is onder B functioneel omdat het voorbereidingstijd koopt. De trigger herkadert de eerdere routecontrole en verkeersmededelingen als misleidende timingstactiek."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De restauranthouder die in een bezorgapp kijkt, een melding leest en een vertraging uitlegt, kan aanvankelijk plausibel de status controleren of de klant misleiden. Dienstverlening tegenover bedrog en toe-eigening vormt één dominante oppositie. De normale servicelezing heeft in de opzet voorrang, maar de vage statuscommunicatie laat fraude als tweede lezing beschikbaar. Het eten van hetzelfde gerecht terwijl hij de bestelling als bezorgd markeert is onder A anomalisch, maar onder B precies doelmatig: hij heeft de maaltijd zelf genomen en gebruikt de app om de klant af te houden. Eerdere statusupdates krijgen daardoor retrospectief de functie van misleiding. Het markeren als bezorgd verhindert A's correcte levering en helpt B's fraudedoel."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Zwijgend naar de telefoon kijken, af en toe knikken, korte chatreacties sturen en een passief videobeeld tonen kan zowel bij een aanwezige leerling met een dringend bericht als bij iemand die een nepaanwezigheid controleert passen. De centrale oppositie is werkelijke aanwezigheid tegenover geënsceneerde aanwezigheid. De gewone lezing domineert eerst en de tweede is als herkenbare digitale vorm van spijbelen latent beschikbaar. Het identiek herhalende knikje en de afspeelbalk zijn onder A niet verklaarbaar, maar onder B functioneel als bewijs en bediening van de videolus. Hierdoor krijgen eerdere reacties en het passieve camerabeeld achteraf de betekenis van een alibi. De lus verhindert echte deelname onder A en maakt schijnbare aanwezigheid onder B mogelijk."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B4",
+        "gtvh_plan": {
+          "opposition_type": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+          "logical_mechanism": "Ontmaskering door een visuele incongruentie: een onverwachte opdracht maakt zichtbaar dat het ogenschijnlijk live videobeeld een herhalende opname is, terwijl de telefoon als bedieningsmiddel fungeert.",
+          "situation": "Tijdens een online les kijkt een leerling zwijgend naar zijn telefoon, knikt af en toe naar het scherm en stuurt korte chatreacties. De docent controleert de deelnemers via het videobelplatform, terwijl klasgenoten een passieve, ogenschijnlijk aanwezige leerling zien. Wanneer de docent vraagt om een schrift voor de camera te houden, toont het beeld hetzelfde knikje opnieuw en is op de telefoon een afspeelbalk zichtbaar.",
+          "target": "De conventie dat zichtbare deelname aan een online les gelijkstaat aan daadwerkelijke aanwezigheid.",
+          "narrative_strategy": "De opzet presenteert herkenbaar, discreet telefoongebruik tijdens een online les als verklaring voor korte reacties en passieve deelname. De punchline volgt op een onverwachte controleopdracht: het herhaalde knikje en de afspeelbalk dwingen een herinterpretatie af, van een aanwezige leerling naar een leerling die zijn alibi regisseert.",
+          "lexical_anchor": "afspeelbalk",
+          "supporting_dual_cues": [
+            "Hij kijkt omlaag naar zijn telefoon.",
+            "Hij knikt af en toe naar het scherm.",
+            "Hij stuurt korte reacties in de chat.",
+            "Zijn camera toont een stilzittend gezicht."
+          ],
+          "switch_trigger": "De docent vraagt onverwacht: 'Kun je je schrift nu even voor de camera houden?'",
+          "hinge_event": "Op het videobeeld blijft de leerling exact hetzelfde knikje herhalen terwijl zijn telefoon een afspeelbalk toont.",
+          "anomaly_under_a": "Een aanwezige leerling die gewoon een bericht beantwoordt, kan niet geloofwaardig in een identieke beweging vastlopen en tegelijk een videolus bedienen.",
+          "resolution_under_b": "De herhaling is doelmatig omdat het een vooraf opgenomen aanwezigheidsbeeld is; de telefoon dient om die nepdeelname te controleren totdat de onverwachte vraag het bedrog blootlegt.",
+          "role_remapping": [
+            "Telefoongebruiker wordt spijbelende regisseur van zijn alibi.",
+            "Contactpersoon wordt de docent die aanwezigheid controleert.",
+            "Telefoon/app wordt afstandsbediening en videobeltechniek.",
+            "Omstanders worden klasgenoten die de schijnbare deelname waarnemen."
+          ],
+          "setup_goal": "De leerling wordt eerst gelezen als een werkelijk aanwezige deelnemer die de les op zijn laptop volgt en slechts discreet een dringend bericht op zijn telefoon beantwoordt.",
+          "punch_goal": "De onverwachte vraag en het zich herhalende videobeeld onthullen dat zijn zichtbare aanwezigheid geënsceneerd is en dat hij fysiek afwezig blijft.",
+          "punch_final_word": "afspeelbalk"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden.",
+            "punchline": "Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.",
+            "full_text": "In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden. Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.",
+            "angle": "De onverwachte schriftcontrole laat de opgenomen aanwezigheid vastlopen.",
+            "anchor_surface_form": "afspeelbalk"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes.",
+            "punchline": "Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.",
+            "full_text": "Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes. Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.",
+            "angle": "Een passieve leerling blijkt haar videobeeld te bedienen.",
+            "anchor_surface_form": "afspeelbalk"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties.",
+            "punchline": "Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.",
+            "full_text": "Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties. Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.",
+            "angle": "De keurige deelnemer regisseert zijn aanwezigheid op afstand.",
+            "anchor_surface_form": "afspeelbalk"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "In de online les kijkt Tim op zijn telefoon, knikt naar zijn scherm en typt korte chatantwoorden. Dan zegt de docent: „Tim, houd je schrift voor de camera”; Tim knikt voor de derde keer identiek, en op zijn telefoon loopt een afspeelbalk.",
+            "angle": "De onverwachte schriftcontrole laat de opgenomen aanwezigheid vastlopen."
+          },
+          {
+            "variant_id": "V2",
+            "text": "Noor zit stil in beeld tijdens de online les, kijkt omlaag en antwoordt alleen met korte berichtjes. Als de docent vraagt haar schrift te tonen, herhaalt haar gezicht precies hetzelfde knikje; alleen haar telefoon verraadt de afspeelbalk.",
+            "angle": "Een passieve leerling blijkt haar videobeeld te bedienen."
+          },
+          {
+            "variant_id": "V3",
+            "text": "Bij de online les lijkt Sem voorbeeldig aanwezig: hij zit stil, knikt af en toe en stuurt vanaf zijn telefoon keurige reacties. Tot de docent om zijn schrift vraagt; Sems gezicht doet weer hetzelfde knikje, terwijl hij ergens anders tikt op de afspeelbalk.",
+            "angle": "De keurige deelnemer regisseert zijn aanwezigheid op afstand."
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "TA",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Tim lijkt werkelijk aanwezig in een online les, volgt het scherm en gebruikt zijn telefoon discreet voor korte chatantwoorden.",
+            "realized_script_b": "Tim is fysiek afwezig en bedient op zijn telefoon een opgenomen videolus die hem als aanwezige leerling moet laten lijken.",
+            "realized_opposition_axis": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst realiseert beide beoogde lezingen, de gedeelde signalen (omlaag kijken, knikken, korte chatantwoorden) en de omslag via de schriftcontrole, het identieke knikje en de afspeelbalk."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De onverwachte opdracht ontmaskert de opname: een herhaald identiek knikje en een zichtbare afspeelbalk maken de eerdere lezing retrospectief onmogelijk."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Online les, leerling, docent, telefoon, chatreacties, camera en schriftcontrole zijn functioneel aanwezig."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De grap richt zich op de aanname dat een zichtbaar, passief videobeeld daadwerkelijke lesaanwezigheid bewijst."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De opzet normaliseert eerst discreet telefoongebruik en passieve deelname; de docentenvraag levert vervolgens de onthullende punch."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De vereiste lexicale hinge 'afspeelbalk' staat als slotwoord en functioneert als concreet bewijs van de videolus."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Een compacte, natuurlijke grap die de geplande schijn-aanwezigheid volledig opbouwt en via de afspeelbalk ontmaskert.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Noor lijkt stil maar daadwerkelijk aanwezig in een online les en gebruikt haar telefoon alleen voor korte berichten.",
+            "realized_script_b": "Noor is niet werkelijk aanwezig; haar stilzittende camerabeeld is een opgenomen lus die zij met haar telefoon bedient.",
+            "realized_opposition_axis": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De bedoelde aanwezigheidsschijn, de passieve gedeelde signalen, de schriftvraag en de onthulling van de videolus zijn alle aanwezig."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De schriftcontrole botst met het opnieuw identieke knikje; de afspeelbalk verklaart dit als een opgenomen beeld."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De kernsituatie van online les, passieve leerling in beeld, docentcontrole, telefoon en schrift is behouden."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst bespot de gelijkstelling van een zichtbaar videobeeld met daadwerkelijke deelname."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst houdt de bedrogscriptie aanvankelijk impliciet en laat de onthulling volgen op een onverwacht verzoek van de docent."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "'Afspeelbalk' is behouden, maar niet als absoluut laatste woord doordat de zin eindigt op een punt; functioneel vormt het wel de punch-hinge."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De variant volgt het beoogde ontmaskeringspatroon nauwgezet; de afspeelbalk maakt de schijnbare aanwezigheid helder retrospectief.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Sem lijkt voorbeeldig en daadwerkelijk aanwezig in de online les: hij zit stil, knikt en stuurt keurige reacties vanaf zijn telefoon.",
+            "realized_script_b": "Sem is elders en regisseert met zijn telefoon een opgenomen videobeeld om als aanwezige leerling geregistreerd te blijven.",
+            "realized_opposition_axis": "daadwerkelijke aanwezigheid versus geënsceneerde aanwezigheid",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst behoudt de geplande scripts, de aanwezigheidsschijn, het verzoek om het schrift, het terugkerende knikje en de bediening van een videolus."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De vraag om het schrift legt bloot dat het beeld niet live reageert; Sems bediening van de afspeelbalk verklaart de herhaling."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De online-lescontext en de relevante rollen, handelingen en voorwerpen zijn aanwezig, inclusief Sems fysieke afwezigheid."
+            },
+            "target": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant maakt de kwetsbaarheid van zichtbare online aanwezigheid als bewijs van echte deelname tot mikpunt."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Eerst wordt Sem als keurige deelnemer neergezet; na de docentenvraag keert 'ergens anders' de lezing expliciet om."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De lexicale hinge 'afspeelbalk' is aanwezig en draagt de onthulling, maar is niet het geplande finale woord omdat de tekst eindigt op 'afspeelbalk' gevolgd door een punt, wat functioneel geen afwijking vormt."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Sems fysieke afwezigheid en de afspeelbalk realiseren de geplande tegenstelling en ontmaskering volledig, in een goed spreekbare grapvorm.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "Beide varianten voldoen en realiseren de geplande ontmaskering. V1 heeft een scherpere, concretere punch door de afspeelbalk als slotbeeld; V2 is iets vlakker doordat het herhaalde knikje minder nadrukkelijk is voorbereid."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "Beide zijn trouw aan alle vereiste middelen, maar V3 maakt de tegenstelling tussen live aanwezigheid en een bediende videolus het helderst. Het eerdere ‘knikt af en toe’ bereidt het identieke knikje logisch voor, waardoor de retrospectieve omslag sterker werkt."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "V3 heeft de duidelijkere opzet en de beter gemotiveerde switch: Sems eerdere knikken krijgen bij de schriftvraag een nieuwe betekenis. V2 is compact en spreekbaar, maar de herhaling van Noors knikje voelt minder zorgvuldig opgebouwd."
+          }
+        ],
+        "selected_variant_id": "V3",
+        "selection_rationale": "V3 is de sterkste passerende variant: de online-lessituatie is direct herkenbaar, de schriftcontrole veroorzaakt een heldere breuk en de afspeelbalk herinterpreteert Sems keurige deelname als geënsceneerde aanwezigheid."
+      }
+    }
+  },
+  "result_sha256": "3edd6f9a584d2eb2735c0bb67e0d9c9752c847850ff111bc571fcb7738e89c26"
+}

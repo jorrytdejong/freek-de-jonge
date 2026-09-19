@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T18:17:36.557242+00:00",
+  "job": {
+    "job_id": "T01-E1",
+    "topic_id": "T01",
+    "topic": "Familie en opvoeding",
+    "condition_code": "E1"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V1 must contain 20-45 words; received 46."
+}

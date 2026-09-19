@@ -1,0 +1,67 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T04-A1",
+  "topic_id": "T04",
+  "topic": "Nederlandse politiek en bestuur",
+  "condition_code": "A1",
+  "pipeline_family": "baseline",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T16:40:45.545968+00:00",
+  "result": {
+    "pipeline_code": "A1",
+    "pipeline_name": "Baseline Prompt with Neutral Style",
+    "request": {
+      "topic": "Nederlandse politiek en bestuur",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "You are generating one Dutch cabaret-style joke:\n\nTopic:\nNederlandse politiek en bestuur\n\nGeneration guidance:\nUse only the topic.\n\nOutput requirements:\n- Write exactly one joke in Dutch.\n- Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n- Write for spoken delivery by one comedian: include a recognizable setup, a clear\n  turn or misdirection, and a final punchline that creates the laugh.\n- Do not write an observation, explanation, summary, moral, slogan, or policy statement.\n- Do not end with an abstract conclusion; the final sentence must be the punchline.\n- Read the joke aloud mentally and rewrite it if it does not sound performable.\n- Return the joke in the text field and a concise description in the angle field.\n- Do not include analysis or explanations inside the joke text.",
+    "joke": "In Den Haag zeggen ze dat het kabinet eindelijk daadkracht toont. Klopt: ze hebben unaniem besloten een commissie op te richten die onderzoekt waarom niemand ooit iets besluit.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": null,
+      "opposing_script": null,
+      "opposition_type": null,
+      "trigger": null,
+      "setup_goal": null,
+      "punch_goal": null,
+      "shared_cues": [],
+      "hinge_event": null,
+      "anomaly_under_a": null,
+      "resolution_under_b": null,
+      "role_remapping": [],
+      "style_mode": "none"
+    },
+    "raw_response": "{\"text\":\"In Den Haag zeggen ze dat het kabinet eindelijk daadkracht toont. Klopt: ze hebben unaniem besloten een commissie op te richten die onderzoekt waarom niemand ooit iets besluit.\",\"angle\":\"Bureaucratische besluiteloosheid\"}",
+    "warnings": [],
+    "script_b_candidates": [],
+    "script_b_rationale": "",
+    "variants": [
+      {
+        "text": "In Den Haag zeggen ze dat het kabinet eindelijk daadkracht toont. Klopt: ze hebben unaniem besloten een commissie op te richten die onderzoekt waarom niemand ooit iets besluit.",
+        "angle": "Bureaucratische besluiteloosheid"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 256,
+      "output_tokens": 204,
+      "total_tokens": 460
+    },
+    "metadata": {
+      "family": "baseline",
+      "style_mode": "none",
+      "stages": [
+        "direct_generation"
+      ]
+    }
+  },
+  "result_sha256": "75d306b0c993a7bda19a2546632fdb104866c7f939e2bdbfb8e1b81b1049337d"
+}

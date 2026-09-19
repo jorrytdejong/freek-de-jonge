@@ -1,0 +1,916 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T13-E1",
+  "topic_id": "T13",
+  "topic": "Migratie en de multiculturele samenleving",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:25:05.920659+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Migratie en de multiculturele samenleving",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\",\n  \"script_a\": {\n    \"script_a\": \"Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.\",\n    \"participants_and_roles\": [\n      \"Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.\",\n      \"Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.\",\n      \"Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.\",\n      \"Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.\",\n      \"Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken.\"\n    ],\n    \"apparent_goal\": \"Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.\",\n    \"preconditions\": [\n      \"Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.\",\n      \"Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.\",\n      \"Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.\",\n      \"Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde.\"\n    ],\n    \"expected_actions\": [\n      \"Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.\",\n      \"Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.\",\n      \"Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.\",\n      \"Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.\",\n      \"Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken.\"\n    ],\n    \"expected_outcome\": \"Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.\",\n    \"expected_propositions\": [\n      \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n      \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.\",\n      \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n      \"Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect.\"\n    ],\n    \"audience_expectation\": \"Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\",\n  \"script_a\": {\n    \"script_a\": \"Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.\",\n    \"participants_and_roles\": [\n      \"Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.\",\n      \"Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.\",\n      \"Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.\",\n      \"Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.\",\n      \"Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken.\"\n    ],\n    \"apparent_goal\": \"Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.\",\n    \"preconditions\": [\n      \"Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.\",\n      \"Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.\",\n      \"Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.\",\n      \"Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde.\"\n    ],\n    \"expected_actions\": [\n      \"Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.\",\n      \"Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.\",\n      \"Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.\",\n      \"Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.\",\n      \"Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken.\"\n    ],\n    \"expected_outcome\": \"Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.\",\n    \"expected_propositions\": [\n      \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n      \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.\",\n      \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n      \"Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect.\"\n    ],\n    \"audience_expectation\": \"Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.\",\n      \"opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n      \"opposed_proposition\": \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"shared_anchor\": \"Een groep oefent zinnen in een buurthuis.\",\n      \"reading_a\": \"Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.\",\n      \"reading_b\": \"Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.\",\n      \"roles_b\": [\n        \"Regisseur: leidt de repetitie en verdeelt scènes.\",\n        \"Spelers: oefenen tekst, uitspraak en samenspel.\",\n        \"Technicus: regelt licht, geluid en het moment van opkomen.\",\n        \"Publiek: komt later naar de voorstelling kijken.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.\",\n      \"role_remapping\": [\n        \"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\",\n        \"Nieuwe inwoners worden spelers.\",\n        \"De klasruimte wordt een repetitielokaal.\",\n        \"Taalopdrachten worden toneelteksten en regieaanwijzingen.\",\n        \"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\"\n      ],\n      \"shared_cues\": [\n        \"Naamstickers bij binnenkomst.\",\n        \"Stoelen in een kring.\",\n        \"Een begeleider die zinnen laat herhalen.\",\n        \"Een whiteboard met woorden in meerdere talen.\",\n        \"Koffie en korte kennismakingsgesprekken.\"\n      ],\n      \"switch_trigger\": \"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\",\n      \"hinge_event\": \"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\",\n      \"anomaly_under_a\": \"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\",\n      \"resolution_under_b\": \"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een gemeentelijke bijeenkomst over nieuwe bewoners en gedeelde buurtregels blijkt in werkelijkheid de introductieavond van een coöperatieve buurt-speurtocht.\",\n      \"opposition_axis\": \"Werkelijk burgerlijk overleg versus speelse wedstrijdorganisatie.\",\n      \"opposed_proposition\": \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n      \"shared_anchor\": \"Bewoners krijgen regels en een kaart van de wijk.\",\n      \"reading_a\": \"De gemeente licht regels over afval, parkeren, veiligheid en gebruik van de openbare ruimte toe aan nieuwe en bestaande bewoners.\",\n      \"reading_b\": \"De spelleider legt de spelregels uit en geeft teams een kaart met locaties, opdrachten en verboden zones.\",\n      \"roles_b\": [\n        \"Spelleider: legt de opdrachten en puntentelling uit.\",\n        \"Teams: zoeken locaties en lossen gezamenlijke opdrachten op.\",\n        \"Vrijwillige posten: controleren antwoorden en delen aanwijzingen uit.\",\n        \"Buurtwinkels: fungeren als spelpunten.\"\n      ],\n      \"goal_b\": \"Teams via samenwerking de wijk laten ontdekken en als eerste de eindopdracht oplossen.\",\n      \"role_remapping\": [\n        \"De gemeentelijke voorlichter uit Script A wordt de spelleider.\",\n        \"Nieuwe en bestaande inwoners worden gemengde teams.\",\n        \"Buurtorganisaties worden controleposten.\",\n        \"Een wijkplattegrond wordt een spelkaart.\",\n        \"Regels voor samenleven worden spelregels en veiligheidsinstructies.\"\n      ],\n      \"shared_cues\": [\n        \"Een zaaltje in het buurthuis.\",\n        \"Een welkomstwoord over de wijk.\",\n        \"Plattegronden op tafel.\",\n        \"Groepjes met verschillende leeftijden en achtergronden.\",\n        \"Een lijst met regels en tijden.\"\n      ],\n      \"switch_trigger\": \"De voorlichter deelt gekleurde polsbandjes uit, start een aftelklok en zegt dat het eerste team bij de fontein een code moet vinden.\",\n      \"hinge_event\": \"Een bewoner die een vraag stelt over parkeerregels krijgt geen gemeentelijk antwoord maar een verzegelde envelop met een raadsel.\",\n      \"anomaly_under_a\": \"Bij een serieus informatiegesprek over openbare regels is een raadsel-envelop ontwijkend en ongeschikt als antwoord op een praktische vraag.\",\n      \"resolution_under_b\": \"In de speurtocht is de envelop juist de volgende opdracht; de parkeerregel was een aanwijzing waarmee het team de juiste locatie kan afleiden.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een werkgever ontvangt een groep mensen voor een ogenschijnlijk arbeids- en taaloriëntatieprogramma, maar organiseert eigenlijk een auditie voor een reclamecampagne van een uitzendbureau.\",\n      \"opposition_axis\": \"Gelijke toegang tot werk versus selectie voor een commerciële presentatie.\",\n      \"opposed_proposition\": \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"shared_anchor\": \"Kandidaten stellen zich voor en voeren korte gesprekken.\",\n      \"reading_a\": \"Werkzoekenden oefenen een sollicitatiegesprek, leggen hun ervaring uit en krijgen aanwijzingen over taal en werkcultuur.\",\n      \"reading_b\": \"Modellen en figuranten doen camera-audities waarin natuurlijke introducties en korte gesprekken worden opgenomen.\",\n      \"roles_b\": [\n        \"Castingdirector: beoordeelt uitstraling en spreekstijl voor de campagne.\",\n        \"Kandidaten: doen een korte camera-auditie.\",\n        \"Cameraploeg: filmt introducties en reacties.\",\n        \"Creatief team: kiest bruikbaar beeldmateriaal en slogans.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige reclamecampagne maken die een breed publiek laat zien samenwerken op de arbeidsmarkt.\",\n      \"role_remapping\": [\n        \"De werkgever of loopbaanbegeleider uit Script A wordt de castingdirector.\",\n        \"Werkzoekenden worden auditiekandidaten.\",\n        \"Het intakegesprek wordt een opgenomen screentest.\",\n        \"Het cv wordt een achtergrondprofiel voor casting.\",\n        \"Een werkplek wordt een filmset die als kantoor is ingericht.\"\n      ],\n      \"shared_cues\": [\n        \"Een ontvangstbalie met aanmeldlijst.\",\n        \"Korte wachttijden in een hal.\",\n        \"Badges met voornamen.\",\n        \"Vragen over ervaring en talen.\",\n        \"Een tafel met formulieren en pennen.\"\n      ],\n      \"switch_trigger\": \"Na een antwoord op de vraag naar werkervaring vraagt iemand buiten beeld om de zin nog eens te zeggen, ditmaal recht in de camera.\",\n      \"hinge_event\": \"Een medewerker schuift een reflectiescherm naast de kandidaat en telt luid af voordat het gesprek verdergaat.\",\n      \"anomaly_under_a\": \"Bij een regulier sollicitatie- of taaltraject is een reflectiescherm en een harde camera-aftelling ongepast en leidt het af van een eerlijk gesprek.\",\n      \"resolution_under_b\": \"Bij een auditie is dit precies nodig om licht, geluid en een bruikbare opname voor de campagne te verkrijgen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bijeenkomst die eruitziet als een gemeentelijke ontvangst voor nieuwe bewoners blijkt de start van een verrassingsfeest voor een buurtvrijwilliger die jarenlang nieuwkomers heeft geholpen.\",\n      \"opposition_axis\": \"Institutionele toelating en begeleiding versus persoonlijke erkenning en viering.\",\n      \"opposed_proposition\": \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n      \"shared_anchor\": \"Mensen verzamelen zich in een zaal en wachten op één persoon.\",\n      \"reading_a\": \"Nieuwe bewoners wachten met begeleiders op hun beurt voor registratie, uitleg over voorzieningen en een eerste praktische afspraak.\",\n      \"reading_b\": \"Buurtgenoten verbergen zich met versiering om de nietsvermoedende vrijwilliger feestelijk te verrassen.\",\n      \"roles_b\": [\n        \"Buurtvrijwilliger: de eregast die zonder voorkennis binnenkomt.\",\n        \"Buurtgenoten: organiseren de verrassing.\",\n        \"Ceremoniemeester: coördineert stilte, timing en toespraak.\",\n        \"Cateraars en muzikanten: verzorgen eten, muziek en feeststemming.\"\n      ],\n      \"goal_b\": \"De vrijwilliger bedanken en zichtbaar maken hoeveel mensen door diens inzet met elkaar verbonden zijn geraakt.\",\n      \"role_remapping\": [\n        \"De gemeentelijke ontvangstmedewerker uit Script A wordt de ceremoniemeester.\",\n        \"Nieuwe inwoners en buurtorganisaties worden feestgasten.\",\n        \"De registratietafel wordt een tafel voor kaarten en cadeaus.\",\n        \"Wachtnummers worden een excuus om de eregast op tijd binnen te laten komen.\",\n        \"Praktische uitleg wordt een danktoespraak.\"\n      ],\n      \"shared_cues\": [\n        \"Een gemeentelijke of buurtzaal.\",\n        \"Stoelen in rijen.\",\n        \"Een tafel bij de ingang.\",\n        \"Mensen die zacht praten en op hun telefoon kijken.\",\n        \"Een aangekondigd welkomsmoment.\"\n      ],\n      \"switch_trigger\": \"Wanneer de verwachte bezoeker binnenkomt, springt de hele zaal op en roept tegelijk: 'Gefeliciteerd!'\",\n      \"hinge_event\": \"In plaats van een formulier krijgt de binnenkomende persoon een enorme ingepakte doos en een luid applaus.\",\n      \"anomaly_under_a\": \"Tijdens een formele ontvangst of registratie is een cadeau en collectief applaus onverklaarbaar; het belemmert de rustige, ordelijke afhandeling.\",\n      \"resolution_under_b\": \"Als verrassingsfeest is het cadeau de geplande blijk van waardering en het applaus het moment waarop de verborgen feestgangers hun bedoeling onthullen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\",\n  \"script_a\": {\n    \"script_a\": \"Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.\",\n    \"participants_and_roles\": [\n      \"Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.\",\n      \"Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.\",\n      \"Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.\",\n      \"Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.\",\n      \"Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken.\"\n    ],\n    \"apparent_goal\": \"Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.\",\n    \"preconditions\": [\n      \"Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.\",\n      \"Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.\",\n      \"Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.\",\n      \"Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde.\"\n    ],\n    \"expected_actions\": [\n      \"Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.\",\n      \"Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.\",\n      \"Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.\",\n      \"Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.\",\n      \"Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken.\"\n    ],\n    \"expected_outcome\": \"Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.\",\n    \"expected_propositions\": [\n      \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n      \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.\",\n      \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n      \"Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect.\"\n    ],\n    \"audience_expectation\": \"Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.\",\n      \"opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n      \"opposed_proposition\": \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"shared_anchor\": \"Een groep oefent zinnen in een buurthuis.\",\n      \"reading_a\": \"Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.\",\n      \"reading_b\": \"Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.\",\n      \"roles_b\": [\n        \"Regisseur: leidt de repetitie en verdeelt scènes.\",\n        \"Spelers: oefenen tekst, uitspraak en samenspel.\",\n        \"Technicus: regelt licht, geluid en het moment van opkomen.\",\n        \"Publiek: komt later naar de voorstelling kijken.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.\",\n      \"role_remapping\": [\n        \"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\",\n        \"Nieuwe inwoners worden spelers.\",\n        \"De klasruimte wordt een repetitielokaal.\",\n        \"Taalopdrachten worden toneelteksten en regieaanwijzingen.\",\n        \"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\"\n      ],\n      \"shared_cues\": [\n        \"Naamstickers bij binnenkomst.\",\n        \"Stoelen in een kring.\",\n        \"Een begeleider die zinnen laat herhalen.\",\n        \"Een whiteboard met woorden in meerdere talen.\",\n        \"Koffie en korte kennismakingsgesprekken.\"\n      ],\n      \"switch_trigger\": \"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\",\n      \"hinge_event\": \"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\",\n      \"anomaly_under_a\": \"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\",\n      \"resolution_under_b\": \"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een gemeentelijke bijeenkomst over nieuwe bewoners en gedeelde buurtregels blijkt in werkelijkheid de introductieavond van een coöperatieve buurt-speurtocht.\",\n      \"opposition_axis\": \"Werkelijk burgerlijk overleg versus speelse wedstrijdorganisatie.\",\n      \"opposed_proposition\": \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n      \"shared_anchor\": \"Bewoners krijgen regels en een kaart van de wijk.\",\n      \"reading_a\": \"De gemeente licht regels over afval, parkeren, veiligheid en gebruik van de openbare ruimte toe aan nieuwe en bestaande bewoners.\",\n      \"reading_b\": \"De spelleider legt de spelregels uit en geeft teams een kaart met locaties, opdrachten en verboden zones.\",\n      \"roles_b\": [\n        \"Spelleider: legt de opdrachten en puntentelling uit.\",\n        \"Teams: zoeken locaties en lossen gezamenlijke opdrachten op.\",\n        \"Vrijwillige posten: controleren antwoorden en delen aanwijzingen uit.\",\n        \"Buurtwinkels: fungeren als spelpunten.\"\n      ],\n      \"goal_b\": \"Teams via samenwerking de wijk laten ontdekken en als eerste de eindopdracht oplossen.\",\n      \"role_remapping\": [\n        \"De gemeentelijke voorlichter uit Script A wordt de spelleider.\",\n        \"Nieuwe en bestaande inwoners worden gemengde teams.\",\n        \"Buurtorganisaties worden controleposten.\",\n        \"Een wijkplattegrond wordt een spelkaart.\",\n        \"Regels voor samenleven worden spelregels en veiligheidsinstructies.\"\n      ],\n      \"shared_cues\": [\n        \"Een zaaltje in het buurthuis.\",\n        \"Een welkomstwoord over de wijk.\",\n        \"Plattegronden op tafel.\",\n        \"Groepjes met verschillende leeftijden en achtergronden.\",\n        \"Een lijst met regels en tijden.\"\n      ],\n      \"switch_trigger\": \"De voorlichter deelt gekleurde polsbandjes uit, start een aftelklok en zegt dat het eerste team bij de fontein een code moet vinden.\",\n      \"hinge_event\": \"Een bewoner die een vraag stelt over parkeerregels krijgt geen gemeentelijk antwoord maar een verzegelde envelop met een raadsel.\",\n      \"anomaly_under_a\": \"Bij een serieus informatiegesprek over openbare regels is een raadsel-envelop ontwijkend en ongeschikt als antwoord op een praktische vraag.\",\n      \"resolution_under_b\": \"In de speurtocht is de envelop juist de volgende opdracht; de parkeerregel was een aanwijzing waarmee het team de juiste locatie kan afleiden.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een werkgever ontvangt een groep mensen voor een ogenschijnlijk arbeids- en taaloriëntatieprogramma, maar organiseert eigenlijk een auditie voor een reclamecampagne van een uitzendbureau.\",\n      \"opposition_axis\": \"Gelijke toegang tot werk versus selectie voor een commerciële presentatie.\",\n      \"opposed_proposition\": \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"shared_anchor\": \"Kandidaten stellen zich voor en voeren korte gesprekken.\",\n      \"reading_a\": \"Werkzoekenden oefenen een sollicitatiegesprek, leggen hun ervaring uit en krijgen aanwijzingen over taal en werkcultuur.\",\n      \"reading_b\": \"Modellen en figuranten doen camera-audities waarin natuurlijke introducties en korte gesprekken worden opgenomen.\",\n      \"roles_b\": [\n        \"Castingdirector: beoordeelt uitstraling en spreekstijl voor de campagne.\",\n        \"Kandidaten: doen een korte camera-auditie.\",\n        \"Cameraploeg: filmt introducties en reacties.\",\n        \"Creatief team: kiest bruikbaar beeldmateriaal en slogans.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige reclamecampagne maken die een breed publiek laat zien samenwerken op de arbeidsmarkt.\",\n      \"role_remapping\": [\n        \"De werkgever of loopbaanbegeleider uit Script A wordt de castingdirector.\",\n        \"Werkzoekenden worden auditiekandidaten.\",\n        \"Het intakegesprek wordt een opgenomen screentest.\",\n        \"Het cv wordt een achtergrondprofiel voor casting.\",\n        \"Een werkplek wordt een filmset die als kantoor is ingericht.\"\n      ],\n      \"shared_cues\": [\n        \"Een ontvangstbalie met aanmeldlijst.\",\n        \"Korte wachttijden in een hal.\",\n        \"Badges met voornamen.\",\n        \"Vragen over ervaring en talen.\",\n        \"Een tafel met formulieren en pennen.\"\n      ],\n      \"switch_trigger\": \"Na een antwoord op de vraag naar werkervaring vraagt iemand buiten beeld om de zin nog eens te zeggen, ditmaal recht in de camera.\",\n      \"hinge_event\": \"Een medewerker schuift een reflectiescherm naast de kandidaat en telt luid af voordat het gesprek verdergaat.\",\n      \"anomaly_under_a\": \"Bij een regulier sollicitatie- of taaltraject is een reflectiescherm en een harde camera-aftelling ongepast en leidt het af van een eerlijk gesprek.\",\n      \"resolution_under_b\": \"Bij een auditie is dit precies nodig om licht, geluid en een bruikbare opname voor de campagne te verkrijgen.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bijeenkomst die eruitziet als een gemeentelijke ontvangst voor nieuwe bewoners blijkt de start van een verrassingsfeest voor een buurtvrijwilliger die jarenlang nieuwkomers heeft geholpen.\",\n      \"opposition_axis\": \"Institutionele toelating en begeleiding versus persoonlijke erkenning en viering.\",\n      \"opposed_proposition\": \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n      \"shared_anchor\": \"Mensen verzamelen zich in een zaal en wachten op één persoon.\",\n      \"reading_a\": \"Nieuwe bewoners wachten met begeleiders op hun beurt voor registratie, uitleg over voorzieningen en een eerste praktische afspraak.\",\n      \"reading_b\": \"Buurtgenoten verbergen zich met versiering om de nietsvermoedende vrijwilliger feestelijk te verrassen.\",\n      \"roles_b\": [\n        \"Buurtvrijwilliger: de eregast die zonder voorkennis binnenkomt.\",\n        \"Buurtgenoten: organiseren de verrassing.\",\n        \"Ceremoniemeester: coördineert stilte, timing en toespraak.\",\n        \"Cateraars en muzikanten: verzorgen eten, muziek en feeststemming.\"\n      ],\n      \"goal_b\": \"De vrijwilliger bedanken en zichtbaar maken hoeveel mensen door diens inzet met elkaar verbonden zijn geraakt.\",\n      \"role_remapping\": [\n        \"De gemeentelijke ontvangstmedewerker uit Script A wordt de ceremoniemeester.\",\n        \"Nieuwe inwoners en buurtorganisaties worden feestgasten.\",\n        \"De registratietafel wordt een tafel voor kaarten en cadeaus.\",\n        \"Wachtnummers worden een excuus om de eregast op tijd binnen te laten komen.\",\n        \"Praktische uitleg wordt een danktoespraak.\"\n      ],\n      \"shared_cues\": [\n        \"Een gemeentelijke of buurtzaal.\",\n        \"Stoelen in rijen.\",\n        \"Een tafel bij de ingang.\",\n        \"Mensen die zacht praten en op hun telefoon kijken.\",\n        \"Een aangekondigd welkomsmoment.\"\n      ],\n      \"switch_trigger\": \"Wanneer de verwachte bezoeker binnenkomt, springt de hele zaal op en roept tegelijk: 'Gefeliciteerd!'\",\n      \"hinge_event\": \"In plaats van een formulier krijgt de binnenkomende persoon een enorme ingepakte doos en een luid applaus.\",\n      \"anomaly_under_a\": \"Tijdens een formele ontvangst of registratie is een cadeau en collectief applaus onverklaarbaar; het belemmert de rustige, ordelijke afhandeling.\",\n      \"resolution_under_b\": \"Als verrassingsfeest is het cadeau de geplande blijk van waardering en het applaus het moment waarop de verborgen feestgangers hun bedoeling onthullen.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\",\n  \"script_a\": {\n    \"script_a\": \"Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.\",\n    \"participants_and_roles\": [\n      \"Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.\",\n      \"Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.\",\n      \"Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.\",\n      \"Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.\",\n      \"Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken.\"\n    ],\n    \"apparent_goal\": \"Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.\",\n    \"preconditions\": [\n      \"Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.\",\n      \"Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.\",\n      \"Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.\",\n      \"Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde.\"\n    ],\n    \"expected_actions\": [\n      \"Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.\",\n      \"Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.\",\n      \"Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.\",\n      \"Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.\",\n      \"Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken.\"\n    ],\n    \"expected_outcome\": \"Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.\",\n    \"expected_propositions\": [\n      \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n      \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.\",\n      \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n      \"Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect.\"\n    ],\n    \"audience_expectation\": \"Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.\",\n    \"opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n    \"opposed_proposition\": \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n    \"shared_anchor\": \"Een groep oefent zinnen in een buurthuis.\",\n    \"reading_a\": \"Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.\",\n    \"reading_b\": \"Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.\",\n    \"roles_b\": [\n      \"Regisseur: leidt de repetitie en verdeelt scènes.\",\n      \"Spelers: oefenen tekst, uitspraak en samenspel.\",\n      \"Technicus: regelt licht, geluid en het moment van opkomen.\",\n      \"Publiek: komt later naar de voorstelling kijken.\"\n    ],\n    \"goal_b\": \"Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.\",\n    \"role_remapping\": [\n      \"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\",\n      \"Nieuwe inwoners worden spelers.\",\n      \"De klasruimte wordt een repetitielokaal.\",\n      \"Taalopdrachten worden toneelteksten en regieaanwijzingen.\",\n      \"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\"\n    ],\n    \"shared_cues\": [\n      \"Naamstickers bij binnenkomst.\",\n      \"Stoelen in een kring.\",\n      \"Een begeleider die zinnen laat herhalen.\",\n      \"Een whiteboard met woorden in meerdere talen.\",\n      \"Koffie en korte kennismakingsgesprekken.\"\n    ],\n    \"switch_trigger\": \"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\",\n    \"hinge_event\": \"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\",\n    \"anomaly_under_a\": \"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\",\n    \"resolution_under_b\": \"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\",\n  \"script_a\": {\n    \"script_a\": \"Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.\",\n    \"participants_and_roles\": [\n      \"Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.\",\n      \"Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.\",\n      \"Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.\",\n      \"Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.\",\n      \"Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken.\"\n    ],\n    \"apparent_goal\": \"Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.\",\n    \"preconditions\": [\n      \"Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.\",\n      \"Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.\",\n      \"Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.\",\n      \"Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde.\"\n    ],\n    \"expected_actions\": [\n      \"Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.\",\n      \"Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.\",\n      \"Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.\",\n      \"Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.\",\n      \"Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken.\"\n    ],\n    \"expected_outcome\": \"Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.\",\n    \"expected_propositions\": [\n      \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n      \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.\",\n      \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n      \"Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect.\"\n    ],\n    \"audience_expectation\": \"Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.\",\n    \"opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n    \"opposed_proposition\": \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n    \"shared_anchor\": \"Een groep oefent zinnen in een buurthuis.\",\n    \"reading_a\": \"Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.\",\n    \"reading_b\": \"Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.\",\n    \"roles_b\": [\n      \"Regisseur: leidt de repetitie en verdeelt scènes.\",\n      \"Spelers: oefenen tekst, uitspraak en samenspel.\",\n      \"Technicus: regelt licht, geluid en het moment van opkomen.\",\n      \"Publiek: komt later naar de voorstelling kijken.\"\n    ],\n    \"goal_b\": \"Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.\",\n    \"role_remapping\": [\n      \"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\",\n      \"Nieuwe inwoners worden spelers.\",\n      \"De klasruimte wordt een repetitielokaal.\",\n      \"Taalopdrachten worden toneelteksten en regieaanwijzingen.\",\n      \"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\"\n    ],\n    \"shared_cues\": [\n      \"Naamstickers bij binnenkomst.\",\n      \"Stoelen in een kring.\",\n      \"Een begeleider die zinnen laat herhalen.\",\n      \"Een whiteboard met woorden in meerdere talen.\",\n      \"Koffie en korte kennismakingsgesprekken.\"\n    ],\n    \"switch_trigger\": \"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\",\n    \"hinge_event\": \"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\",\n    \"anomaly_under_a\": \"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\",\n    \"resolution_under_b\": \"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n    \"logical_mechanism\": \"Foute interpretatie met rolverwisseling: aanwijzingen die eerst als taalles en inburgering worden gelezen, blijken retrospectief conventies van een theaterrepetitie.\",\n    \"situation\": \"Een groep nieuwe inwoners en buurtbewoners komt bijeen in een buurthuis of cultureel centrum. Zij zitten met naamstickers en koffie in een kring, herhalen zinnen in meerdere talen vanaf een whiteboard en volgen een begeleider. De ruimte bevat echter ook vloermarkeringen, podiumlicht en technische aanwijzingen voor een aanstaande buurtvoorstelling.\",\n    \"target\": null,\n    \"narrative_strategy\": \"De opzet stapelt alledaagse signalen van een taal- en inburgeringsles op, zodat praktische maatschappelijke inpassing de dominante lezing wordt. De punchline activeert via het lichtteken en het opkomen voor publiek de repetitielezing, waarna alle eerdere signalen als theatrale voorbereiding worden herordend.\",\n    \"lexical_anchor\": \"op\",\n    \"supporting_dual_cues\": [\n      \"Naamstickers bij binnenkomst.\",\n      \"Stoelen in een kring.\",\n      \"Een begeleider die zinnen laat herhalen.\",\n      \"Een whiteboard met woorden in meerdere talen.\",\n      \"Koffie en korte kennismakingsgesprekken.\"\n    ],\n    \"switch_trigger\": \"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\",\n    \"hinge_event\": \"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\",\n    \"anomaly_under_a\": \"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\",\n    \"resolution_under_b\": \"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\",\n    \"role_remapping\": [\n      \"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\",\n      \"Nieuwe inwoners worden spelers.\",\n      \"De klasruimte wordt een repetitielokaal.\",\n      \"Taalopdrachten worden toneelteksten en regieaanwijzingen.\",\n      \"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\"\n    ],\n    \"setup_goal\": \"De aanwezigen, zinnenoefeningen, naamstickers, meertalige woorden en kringopstelling laten doorgaan voor een taal- en inburgeringsles waarin nieuwe inwoners leren deelnemen aan het dagelijkse leven.\",\n    \"punch_goal\": \"Het bevel om op te gaan voor publiek, gevolgd door het lichtteken en het stilvallen op de vloermarkering, onthult dat de groep geen les volgt maar een voorstelling repeteert.\",\n    \"punch_final_word\": \"publiek\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.\",\n      \"participants_and_roles\": [\n        \"Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.\",\n        \"Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.\",\n        \"Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.\",\n        \"Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.\",\n        \"Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken.\"\n      ],\n      \"apparent_goal\": \"Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.\",\n      \"preconditions\": [\n        \"Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.\",\n        \"Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.\",\n        \"Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.\",\n        \"Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde.\"\n      ],\n      \"expected_actions\": [\n        \"Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.\",\n        \"Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.\",\n        \"Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.\",\n        \"Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.\",\n        \"Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken.\"\n      ],\n      \"expected_outcome\": \"Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.\",\n      \"expected_propositions\": [\n        \"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\",\n        \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n        \"Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.\",\n        \"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\",\n        \"Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect.\"\n      ],\n      \"audience_expectation\": \"Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.\",\n      \"opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n      \"opposed_proposition\": \"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\",\n      \"shared_anchor\": \"Een groep oefent zinnen in een buurthuis.\",\n      \"reading_a\": \"Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.\",\n      \"reading_b\": \"Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.\",\n      \"roles_b\": [\n        \"Regisseur: leidt de repetitie en verdeelt scènes.\",\n        \"Spelers: oefenen tekst, uitspraak en samenspel.\",\n        \"Technicus: regelt licht, geluid en het moment van opkomen.\",\n        \"Publiek: komt later naar de voorstelling kijken.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.\",\n      \"role_remapping\": [\n        \"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\",\n        \"Nieuwe inwoners worden spelers.\",\n        \"De klasruimte wordt een repetitielokaal.\",\n        \"Taalopdrachten worden toneelteksten en regieaanwijzingen.\",\n        \"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\"\n      ],\n      \"shared_cues\": [\n        \"Naamstickers bij binnenkomst.\",\n        \"Stoelen in een kring.\",\n        \"Een begeleider die zinnen laat herhalen.\",\n        \"Een whiteboard met woorden in meerdere talen.\",\n        \"Koffie en korte kennismakingsgesprekken.\"\n      ],\n      \"switch_trigger\": \"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\",\n      \"hinge_event\": \"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\",\n      \"anomaly_under_a\": \"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\",\n      \"resolution_under_b\": \"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n      \"logical_mechanism\": \"Foute interpretatie met rolverwisseling: aanwijzingen die eerst als taalles en inburgering worden gelezen, blijken retrospectief conventies van een theaterrepetitie.\",\n      \"situation\": \"Een groep nieuwe inwoners en buurtbewoners komt bijeen in een buurthuis of cultureel centrum. Zij zitten met naamstickers en koffie in een kring, herhalen zinnen in meerdere talen vanaf een whiteboard en volgen een begeleider. De ruimte bevat echter ook vloermarkeringen, podiumlicht en technische aanwijzingen voor een aanstaande buurtvoorstelling.\",\n      \"target\": null,\n      \"narrative_strategy\": \"De opzet stapelt alledaagse signalen van een taal- en inburgeringsles op, zodat praktische maatschappelijke inpassing de dominante lezing wordt. De punchline activeert via het lichtteken en het opkomen voor publiek de repetitielezing, waarna alle eerdere signalen als theatrale voorbereiding worden herordend.\",\n      \"lexical_anchor\": \"op\",\n      \"supporting_dual_cues\": [\n        \"Naamstickers bij binnenkomst.\",\n        \"Stoelen in een kring.\",\n        \"Een begeleider die zinnen laat herhalen.\",\n        \"Een whiteboard met woorden in meerdere talen.\",\n        \"Koffie en korte kennismakingsgesprekken.\"\n      ],\n      \"switch_trigger\": \"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\",\n      \"hinge_event\": \"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\",\n      \"anomaly_under_a\": \"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\",\n      \"resolution_under_b\": \"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\",\n      \"role_remapping\": [\n        \"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\",\n        \"Nieuwe inwoners worden spelers.\",\n        \"De klasruimte wordt een repetitielokaal.\",\n        \"Taalopdrachten worden toneelteksten en regieaanwijzingen.\",\n        \"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\"\n      ],\n      \"setup_goal\": \"De aanwezigen, zinnenoefeningen, naamstickers, meertalige woorden en kringopstelling laten doorgaan voor een taal- en inburgeringsles waarin nieuwe inwoners leren deelnemen aan het dagelijkse leven.\",\n      \"punch_goal\": \"Het bevel om op te gaan voor publiek, gevolgd door het lichtteken en het stilvallen op de vloermarkering, onthult dat de groep geen les volgt maar een voorstelling repeteert.\",\n      \"punch_final_word\": \"publiek\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard. De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”\",\n      \"angle\": \"Naamstickers, kring en zinnen oefenen lijken een inburgeringsles, tot het lichtteken de repetitie onthult.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek. Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.\",\n      \"angle\": \"De vloermarkering lijkt een vreemde lesafspraak, maar wordt logisch zodra de groep het podium op moet.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan. Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”\",\n      \"angle\": \"De uitspraakcorrectie en vaste plek blijken regie voor een buurtvoorstelling.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Migratie en de multiculturele samenleving\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard. De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”\",\n      \"angle\": \"Naamstickers, kring en zinnen oefenen lijken een inburgeringsles, tot het lichtteken de repetitie onthult.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek. Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.\",\n      \"angle\": \"De vloermarkering lijkt een vreemde lesafspraak, maar wordt logisch zodra de groep het podium op moet.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan. Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”\",\n      \"angle\": \"De uitspraakcorrectie en vaste plek blijken regie voor een buurtvoorstelling.\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een inburgeringsles waarin nieuwe buren begroetingen en taal voor het dagelijks leven oefenen.\",\n      \"realized_script_b\": \"Een repetitie voor een meertalige buurtvoorstelling.\",\n      \"realized_opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De leslezing wordt dominant opgebouwd met nieuwe buren, naamstickers, kring en begroetingen; 'op voor het publiek' plus het lichtteken activeert de repetitielezing en herkadert de begeleider als regisseur.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst gebruikt de bedoelde foutieve eerste interpretatie en rolverwisseling: lesinstructies blijken theatrale repetitie-instructies.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het buurthuisachtige leskader, de naamstickers, kring, meertalige woorden, begeleider en lampen zijn functioneel aanwezig.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet stapelt lescues op en bewaart de expliciete theatrale onthulling voor de slotzin.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Het scharnier 'op' in 'op voor het publiek' en de eindplaatsing van 'publiek' realiseren de beoogde lexicale en slotconstraint.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een compacte, natuurlijke variant die de geplande les-naar-repetitieomslag en de beoogde punchline vrijwel volledig uitvoert.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een door de gemeente georganiseerde taalavond waarin deelnemers zinnen oefenen.\",\n      \"realized_script_b\": \"Een podiumrepetitie voor een voorstelling voor publiek.\",\n      \"realized_opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De taalavond met koffie, kring en zinnen oefenen activeert Script A; het kruis op de vloer, 'op voor het publiek' en de spots maken Script B retrospectief passend.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De aanvankelijk vreemde vloermarkering wordt door de podium- en publieksinformatie retrospectief verklaard als repetitieconventie.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Gemeente, taalavond, koffie, kring, zinnenoefeningen, vloerkruis en spots realiseren de kernsituatie functioneel.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant begint in een geloofwaardig taalavondkader, introduceert een anomalie en onthult pas daarna de theaterlezing.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": false,\n        \"rationale\": \"De relevante formulering 'op voor het publiek' is aanwezig, maar de geplande slotconstraint met 'publiek' als laatste woord is niet behouden: de tekst eindigt met 'spots aan'.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De geplande oppositionele structuur en verklaring van het vloerkruis werken goed, maar de specifieke beoogde lexicale eindplaatsing is niet gerealiseerd.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een inburgeringsgroep in het buurthuis waar deelnemers 'goedemorgen' en hun plaats in de les oefenen.\",\n      \"realized_script_b\": \"Een theaterrepetitie waarin spelers tekst, positie en lichtcues oefenen voor een optreden.\",\n      \"realized_opposition_axis\": \"Praktische maatschappelijke inpassing versus artistieke uitvoering.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De inburgeringsgroep en uitspraakcorrectie leveren de dominante leslezing; het zwijgen op een vloerkruis, lichtteken en optreden voor publiek schakelen helder naar repetitie.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Dezelfde handelingen worden retrospectief herlezen: corrigeren waar men staat is regie, het kruis is een speelmarkering en het lichtteken is een technische cue.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Buurthuis, inburgeringsgroep, begeleider, herhaalde begroeting, positieaanwijzingen, vloerkruis en lichtcue behouden de functionele situatie.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De ik-verteller houdt de eerste lezing aan tot de laatste zin, waar meerdere theatercues gezamenlijk de herinterpretatie afdwingen.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De formulering 'op voor het publiek' gebruikt het bedoelde scharnier 'op' en eindigt met het vereiste woord 'publiek'.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Deze variant voert de geplande misinterpretatie bijzonder expliciet uit: de vreemde plaatscorrectie en het vloerkruis krijgen bij de punchline een noodzakelijke theaterfunctie.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan. Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.",
+      "opposing_script": "Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.",
+      "opposition_type": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+      "trigger": "De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.",
+      "setup_goal": "De aanwezigen, zinnenoefeningen, naamstickers, meertalige woorden en kringopstelling laten doorgaan voor een taal- en inburgeringsles waarin nieuwe inwoners leren deelnemen aan het dagelijkse leven.",
+      "punch_goal": "Het bevel om op te gaan voor publiek, gevolgd door het lichtteken en het stilvallen op de vloermarkering, onthult dat de groep geen les volgt maar een voorstelling repeteert.",
+      "shared_cues": [
+        "Naamstickers bij binnenkomst.",
+        "Stoelen in een kring.",
+        "Een begeleider die zinnen laat herhalen.",
+        "Een whiteboard met woorden in meerdere talen.",
+        "Koffie en korte kennismakingsgesprekken."
+      ],
+      "hinge_event": "Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.",
+      "anomaly_under_a": "In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.",
+      "resolution_under_b": "Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.",
+      "role_remapping": [
+        "De docent of inburgeringsbegeleider uit Script A wordt de regisseur.",
+        "Nieuwe inwoners worden spelers.",
+        "De klasruimte wordt een repetitielokaal.",
+        "Taalopdrachten worden toneelteksten en regieaanwijzingen.",
+        "Deelnemen aan de samenleving wordt deelnemen aan een voorstelling."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.\\\",\\\"participants_and_roles\\\":[\\\"Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.\\\",\\\"Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.\\\",\\\"Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.\\\",\\\"Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.\\\",\\\"Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken.\\\"],\\\"apparent_goal\\\":\\\"Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.\\\",\\\"preconditions\\\":[\\\"Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.\\\",\\\"Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.\\\",\\\"Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.\\\",\\\"Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde.\\\"],\\\"expected_actions\\\":[\\\"Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.\\\",\\\"Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.\\\",\\\"Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.\\\",\\\"Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.\\\",\\\"Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken.\\\"],\\\"expected_outcome\\\":\\\"Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.\\\",\\\"expected_propositions\\\":[\\\"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\\\",\\\"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\\\",\\\"Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.\\\",\\\"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\\\",\\\"Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.\\\",\\\"opposition_axis\\\":\\\"Praktische maatschappelijke inpassing versus artistieke uitvoering.\\\",\\\"opposed_proposition\\\":\\\"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\\\",\\\"shared_anchor\\\":\\\"Een groep oefent zinnen in een buurthuis.\\\",\\\"reading_a\\\":\\\"Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.\\\",\\\"reading_b\\\":\\\"Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.\\\",\\\"roles_b\\\":[\\\"Regisseur: leidt de repetitie en verdeelt scènes.\\\",\\\"Spelers: oefenen tekst, uitspraak en samenspel.\\\",\\\"Technicus: regelt licht, geluid en het moment van opkomen.\\\",\\\"Publiek: komt later naar de voorstelling kijken.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.\\\",\\\"role_remapping\\\":[\\\"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\\\",\\\"Nieuwe inwoners worden spelers.\\\",\\\"De klasruimte wordt een repetitielokaal.\\\",\\\"Taalopdrachten worden toneelteksten en regieaanwijzingen.\\\",\\\"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\\\"],\\\"shared_cues\\\":[\\\"Naamstickers bij binnenkomst.\\\",\\\"Stoelen in een kring.\\\",\\\"Een begeleider die zinnen laat herhalen.\\\",\\\"Een whiteboard met woorden in meerdere talen.\\\",\\\"Koffie en korte kennismakingsgesprekken.\\\"],\\\"switch_trigger\\\":\\\"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\\\",\\\"hinge_event\\\":\\\"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\\\",\\\"anomaly_under_a\\\":\\\"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\\\",\\\"resolution_under_b\\\":\\\"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een gemeentelijke bijeenkomst over nieuwe bewoners en gedeelde buurtregels blijkt in werkelijkheid de introductieavond van een coöperatieve buurt-speurtocht.\\\",\\\"opposition_axis\\\":\\\"Werkelijk burgerlijk overleg versus speelse wedstrijdorganisatie.\\\",\\\"opposed_proposition\\\":\\\"Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.\\\",\\\"shared_anchor\\\":\\\"Bewoners krijgen regels en een kaart van de wijk.\\\",\\\"reading_a\\\":\\\"De gemeente licht regels over afval, parkeren, veiligheid en gebruik van de openbare ruimte toe aan nieuwe en bestaande bewoners.\\\",\\\"reading_b\\\":\\\"De spelleider legt de spelregels uit en geeft teams een kaart met locaties, opdrachten en verboden zones.\\\",\\\"roles_b\\\":[\\\"Spelleider: legt de opdrachten en puntentelling uit.\\\",\\\"Teams: zoeken locaties en lossen gezamenlijke opdrachten op.\\\",\\\"Vrijwillige posten: controleren antwoorden en delen aanwijzingen uit.\\\",\\\"Buurtwinkels: fungeren als spelpunten.\\\"],\\\"goal_b\\\":\\\"Teams via samenwerking de wijk laten ontdekken en als eerste de eindopdracht oplossen.\\\",\\\"role_remapping\\\":[\\\"De gemeentelijke voorlichter uit Script A wordt de spelleider.\\\",\\\"Nieuwe en bestaande inwoners worden gemengde teams.\\\",\\\"Buurtorganisaties worden controleposten.\\\",\\\"Een wijkplattegrond wordt een spelkaart.\\\",\\\"Regels voor samenleven worden spelregels en veiligheidsinstructies.\\\"],\\\"shared_cues\\\":[\\\"Een zaaltje in het buurthuis.\\\",\\\"Een welkomstwoord over de wijk.\\\",\\\"Plattegronden op tafel.\\\",\\\"Groepjes met verschillende leeftijden en achtergronden.\\\",\\\"Een lijst met regels en tijden.\\\"],\\\"switch_trigger\\\":\\\"De voorlichter deelt gekleurde polsbandjes uit, start een aftelklok en zegt dat het eerste team bij de fontein een code moet vinden.\\\",\\\"hinge_event\\\":\\\"Een bewoner die een vraag stelt over parkeerregels krijgt geen gemeentelijk antwoord maar een verzegelde envelop met een raadsel.\\\",\\\"anomaly_under_a\\\":\\\"Bij een serieus informatiegesprek over openbare regels is een raadsel-envelop ontwijkend en ongeschikt als antwoord op een praktische vraag.\\\",\\\"resolution_under_b\\\":\\\"In de speurtocht is de envelop juist de volgende opdracht; de parkeerregel was een aanwijzing waarmee het team de juiste locatie kan afleiden.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een werkgever ontvangt een groep mensen voor een ogenschijnlijk arbeids- en taaloriëntatieprogramma, maar organiseert eigenlijk een auditie voor een reclamecampagne van een uitzendbureau.\\\",\\\"opposition_axis\\\":\\\"Gelijke toegang tot werk versus selectie voor een commerciële presentatie.\\\",\\\"opposed_proposition\\\":\\\"Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.\\\",\\\"shared_anchor\\\":\\\"Kandidaten stellen zich voor en voeren korte gesprekken.\\\",\\\"reading_a\\\":\\\"Werkzoekenden oefenen een sollicitatiegesprek, leggen hun ervaring uit en krijgen aanwijzingen over taal en werkcultuur.\\\",\\\"reading_b\\\":\\\"Modellen en figuranten doen camera-audities waarin natuurlijke introducties en korte gesprekken worden opgenomen.\\\",\\\"roles_b\\\":[\\\"Castingdirector: beoordeelt uitstraling en spreekstijl voor de campagne.\\\",\\\"Kandidaten: doen een korte camera-auditie.\\\",\\\"Cameraploeg: filmt introducties en reacties.\\\",\\\"Creatief team: kiest bruikbaar beeldmateriaal en slogans.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige reclamecampagne maken die een breed publiek laat zien samenwerken op de arbeidsmarkt.\\\",\\\"role_remapping\\\":[\\\"De werkgever of loopbaanbegeleider uit Script A wordt de castingdirector.\\\",\\\"Werkzoekenden worden auditiekandidaten.\\\",\\\"Het intakegesprek wordt een opgenomen screentest.\\\",\\\"Het cv wordt een achtergrondprofiel voor casting.\\\",\\\"Een werkplek wordt een filmset die als kantoor is ingericht.\\\"],\\\"shared_cues\\\":[\\\"Een ontvangstbalie met aanmeldlijst.\\\",\\\"Korte wachttijden in een hal.\\\",\\\"Badges met voornamen.\\\",\\\"Vragen over ervaring en talen.\\\",\\\"Een tafel met formulieren en pennen.\\\"],\\\"switch_trigger\\\":\\\"Na een antwoord op de vraag naar werkervaring vraagt iemand buiten beeld om de zin nog eens te zeggen, ditmaal recht in de camera.\\\",\\\"hinge_event\\\":\\\"Een medewerker schuift een reflectiescherm naast de kandidaat en telt luid af voordat het gesprek verdergaat.\\\",\\\"anomaly_under_a\\\":\\\"Bij een regulier sollicitatie- of taaltraject is een reflectiescherm en een harde camera-aftelling ongepast en leidt het af van een eerlijk gesprek.\\\",\\\"resolution_under_b\\\":\\\"Bij een auditie is dit precies nodig om licht, geluid en een bruikbare opname voor de campagne te verkrijgen.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een bijeenkomst die eruitziet als een gemeentelijke ontvangst voor nieuwe bewoners blijkt de start van een verrassingsfeest voor een buurtvrijwilliger die jarenlang nieuwkomers heeft geholpen.\\\",\\\"opposition_axis\\\":\\\"Institutionele toelating en begeleiding versus persoonlijke erkenning en viering.\\\",\\\"opposed_proposition\\\":\\\"De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.\\\",\\\"shared_anchor\\\":\\\"Mensen verzamelen zich in een zaal en wachten op één persoon.\\\",\\\"reading_a\\\":\\\"Nieuwe bewoners wachten met begeleiders op hun beurt voor registratie, uitleg over voorzieningen en een eerste praktische afspraak.\\\",\\\"reading_b\\\":\\\"Buurtgenoten verbergen zich met versiering om de nietsvermoedende vrijwilliger feestelijk te verrassen.\\\",\\\"roles_b\\\":[\\\"Buurtvrijwilliger: de eregast die zonder voorkennis binnenkomt.\\\",\\\"Buurtgenoten: organiseren de verrassing.\\\",\\\"Ceremoniemeester: coördineert stilte, timing en toespraak.\\\",\\\"Cateraars en muzikanten: verzorgen eten, muziek en feeststemming.\\\"],\\\"goal_b\\\":\\\"De vrijwilliger bedanken en zichtbaar maken hoeveel mensen door diens inzet met elkaar verbonden zijn geraakt.\\\",\\\"role_remapping\\\":[\\\"De gemeentelijke ontvangstmedewerker uit Script A wordt de ceremoniemeester.\\\",\\\"Nieuwe inwoners en buurtorganisaties worden feestgasten.\\\",\\\"De registratietafel wordt een tafel voor kaarten en cadeaus.\\\",\\\"Wachtnummers worden een excuus om de eregast op tijd binnen te laten komen.\\\",\\\"Praktische uitleg wordt een danktoespraak.\\\"],\\\"shared_cues\\\":[\\\"Een gemeentelijke of buurtzaal.\\\",\\\"Stoelen in rijen.\\\",\\\"Een tafel bij de ingang.\\\",\\\"Mensen die zacht praten en op hun telefoon kijken.\\\",\\\"Een aangekondigd welkomsmoment.\\\"],\\\"switch_trigger\\\":\\\"Wanneer de verwachte bezoeker binnenkomt, springt de hele zaal op en roept tegelijk: 'Gefeliciteerd!'\\\",\\\"hinge_event\\\":\\\"In plaats van een formulier krijgt de binnenkomende persoon een enorme ingepakte doos en een luid applaus.\\\",\\\"anomaly_under_a\\\":\\\"Tijdens een formele ontvangst of registratie is een cadeau en collectief applaus onverklaarbaar; het belemmert de rustige, ordelijke afhandeling.\\\",\\\"resolution_under_b\\\":\\\"Als verrassingsfeest is het cadeau de geplande blijk van waardering en het applaus het moment waarop de verborgen feestgangers hun bedoeling onthullen.\\\"}] }\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Eén realiseerbare scène met een kring stoelen, meertalige zinnen, herhaling en een begeleider kan aanvankelijk geloofwaardig als taalles/inburgering functioneren én achteraf als toneelrepetitie. De dominante tegenstelling is praktische taalverwerving voor maatschappelijke deelname tegenover het repeteren voor artistieke uitvoering; beide zijn in deze scène niet tegelijk de primaire functie. De repetitielezing is sociaal herkenbaar en blijft vóór de onthulling mogelijk, maar de opzet laat een gewone lezer eerst de inburgeringslezing kiezen. Markering op de vloer, podiumlicht en stilvallen op commando verstoren het doel van een taalles, maar zijn functioneel noodzakelijk voor mise-en-scène en lichtwissel. Daardoor veranderen eerdere taaloefeningen retrospectief in toneeltekst en regie. Wat taalverwerving belemmert, maakt de voorstelling juist mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde bijeenkomst, wijkkaart en regeluitleg kunnen realiseerbaar worden gelezen als gemeentelijke voorlichting of als briefing voor een buurtspeurtocht. De dominante as is werkelijk burgerlijk overleg over buurtregels tegenover spelorganisatie met regels, teams en opdrachten; die functies zijn lokaal onverenigbaar als primaire verklaring van de bijeenkomst. De speluitleg is herkenbaar en wordt door kaarten, groepjes en tijdschema's al mogelijk gehouden, terwijl de migratie- en buurtcontext de voorlichtingslezing eerst het sterkst maakt. De verzegelde raadsel-envelop is als antwoord op parkeerregels disfunctioneel in een serieus overleg, maar is als spelopdracht precies passend. Eerdere regels en de kaart worden daardoor retrospectief spelinstructies en aanwijzingen. Het ontwijken van het gemeentelijke informatiedoel maakt de speurtocht juist operationeel.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Aanmelden, wachten, voornaambadges, formulieren en vragen over ervaring en talen kunnen in één scène zowel een arbeids- en taaloriëntatie als een camera-auditie dragen. De duidelijke dominante tegenstelling is ondersteuning van werkzoekenden richting deelname tegenover commerciële selectie voor een campagne; het gesprek kan niet tegelijk primair een eerlijk begeleidingsgesprek en een castingopname zijn. Een reclame-auditie is een coherente, sociaal herkenbare tweede lezing en de cues laten haar vooraf mogelijk, maar het onderwerp en de arbeidscontext maken Script A aanvankelijk dominant. Reflectiescherm en luid aftellen zijn storend en ongepast voor een regulier sollicitatie- of taaltraject, maar noodzakelijk voor belichting en opname bij casting. Daardoor worden eerdere intakevragen retrospectief screentests en wordt de werkplek een set. De opnameprocedure belemmert het doel van gewone begeleiding, terwijl zij het castingdoel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Een zaal met rijen stoelen, een ingangstafel, zacht pratende aanwezigen en wachten op een welkomsmoment kan als formele ontvangst voor nieuwe bewoners én als voorbereide verrassingsbijeenkomst worden gerealiseerd. De dominante tegenstelling is institutionele ontvangst en begeleiding tegenover persoonlijke viering van één eregast; de verzamelde groep kan in deze scène niet tegelijk primair registranten en verborgen feestgangers zijn. Een verrassingsfeest is sociaal zeer herkenbaar en blijft vóór de onthulling beschikbaar via het wachten, de stilte en de coördinatie, maar de gemeentelijke setting en het onderwerp maken de formele ontvangst aanvankelijk waarschijnlijker. Een groot cadeau en collectief applaus verhinderen de ordelijke registratie onder Script A, maar vormen onder Script B het geplande onthullingsmoment. Daarmee veranderen tafel, wachttijd en aangekondigd welkom retrospectief in feestvoorbereiding. Wat de institutionele afhandeling blokkeert, verwezenlijkt het feestdoel.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest productieve tegenstelling: maatschappelijke taal- en inburgeringsdeelname tegenover een artistieke repetitie. Beide lezingen delen zeer natuurlijke, onderwerp-specifieke signalen—meertalige zinnen, een buurthuis, kringopstelling, begeleiding en kennismaking—waardoor de eerste lezing dominant blijft. Het podiumlicht, de vloerpositie en het zwijgen op commando vormen vervolgens een helder scharnier dat onder Script A anomalistisch is, maar onder Script B noodzakelijk wordt. De herinterpretatie werkt retrospectief ook economisch: docent, klas, taalopdracht en deelname verschuiven consequent naar regisseur, repetitieruimte, toneeltekst en voorstelling. Daarmee heeft B1 sterke duale compatibiliteit, een duidelijke payoff en voldoende ruimte voor een tweede lezing zonder Script A vroegtijdig te ondermijnen.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Praktische maatschappelijke inpassing versus artistieke uitvoering.\\\",\\\"logical_mechanism\\\":\\\"Foute interpretatie met rolverwisseling: aanwijzingen die eerst als taalles en inburgering worden gelezen, blijken retrospectief conventies van een theaterrepetitie.\\\",\\\"situation\\\":\\\"Een groep nieuwe inwoners en buurtbewoners komt bijeen in een buurthuis of cultureel centrum. Zij zitten met naamstickers en koffie in een kring, herhalen zinnen in meerdere talen vanaf een whiteboard en volgen een begeleider. De ruimte bevat echter ook vloermarkeringen, podiumlicht en technische aanwijzingen voor een aanstaande buurtvoorstelling.\\\",\\\"target\\\":null,\\\"narrative_strategy\\\":\\\"De opzet stapelt alledaagse signalen van een taal- en inburgeringsles op, zodat praktische maatschappelijke inpassing de dominante lezing wordt. De punchline activeert via het lichtteken en het opkomen voor publiek de repetitielezing, waarna alle eerdere signalen als theatrale voorbereiding worden herordend.\\\",\\\"lexical_anchor\\\":\\\"op\\\",\\\"supporting_dual_cues\\\":[\\\"Naamstickers bij binnenkomst.\\\",\\\"Stoelen in een kring.\\\",\\\"Een begeleider die zinnen laat herhalen.\\\",\\\"Een whiteboard met woorden in meerdere talen.\\\",\\\"Koffie en korte kennismakingsgesprekken.\\\"],\\\"switch_trigger\\\":\\\"De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.\\\",\\\"hinge_event\\\":\\\"Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.\\\",\\\"anomaly_under_a\\\":\\\"In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.\\\",\\\"resolution_under_b\\\":\\\"Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.\\\",\\\"role_remapping\\\":[\\\"De docent of inburgeringsbegeleider uit Script A wordt de regisseur.\\\",\\\"Nieuwe inwoners worden spelers.\\\",\\\"De klasruimte wordt een repetitielokaal.\\\",\\\"Taalopdrachten worden toneelteksten en regieaanwijzingen.\\\",\\\"Deelnemen aan de samenleving wordt deelnemen aan een voorstelling.\\\"],\\\"setup_goal\\\":\\\"De aanwezigen, zinnenoefeningen, naamstickers, meertalige woorden en kringopstelling laten doorgaan voor een taal- en inburgeringsles waarin nieuwe inwoners leren deelnemen aan het dagelijkse leven.\\\",\\\"punch_goal\\\":\\\"Het bevel om op te gaan voor publiek, gevolgd door het lichtteken en het stilvallen op de vloermarkering, onthult dat de groep geen les volgt maar een voorstelling repeteert.\\\",\\\"punch_final_word\\\":\\\"publiek\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard.\\\",\\\"punchline\\\":\\\"De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”\\\",\\\"full_text\\\":\\\"Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard. De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”\\\",\\\"angle\\\":\\\"Naamstickers, kring en zinnen oefenen lijken een inburgeringsles, tot het lichtteken de repetitie onthult.\\\",\\\"anchor_surface_form\\\":\\\"op\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek.\\\",\\\"punchline\\\":\\\"Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.\\\",\\\"full_text\\\":\\\"De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek. Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.\\\",\\\"angle\\\":\\\"De vloermarkering lijkt een vreemde lesafspraak, maar wordt logisch zodra de groep het podium op moet.\\\",\\\"anchor_surface_form\\\":\\\"op\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan.\\\",\\\"punchline\\\":\\\"Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”\\\",\\\"full_text\\\":\\\"Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan. Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”\\\",\\\"angle\\\":\\\"De uitspraakcorrectie en vaste plek blijken regie voor een buurtvoorstelling.\\\",\\\"anchor_surface_form\\\":\\\"op\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een inburgeringsles waarin nieuwe buren begroetingen en taal voor het dagelijks leven oefenen.\\\",\\\"realized_script_b\\\":\\\"Een repetitie voor een meertalige buurtvoorstelling.\\\",\\\"realized_opposition_axis\\\":\\\"Praktische maatschappelijke inpassing versus artistieke uitvoering.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De leslezing wordt dominant opgebouwd met nieuwe buren, naamstickers, kring en begroetingen; 'op voor het publiek' plus het lichtteken activeert de repetitielezing en herkadert de begeleider als regisseur.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst gebruikt de bedoelde foutieve eerste interpretatie en rolverwisseling: lesinstructies blijken theatrale repetitie-instructies.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het buurthuisachtige leskader, de naamstickers, kring, meertalige woorden, begeleider en lampen zijn functioneel aanwezig.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet stapelt lescues op en bewaart de expliciete theatrale onthulling voor de slotzin.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Het scharnier 'op' in 'op voor het publiek' en de eindplaatsing van 'publiek' realiseren de beoogde lexicale en slotconstraint.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een compacte, natuurlijke variant die de geplande les-naar-repetitieomslag en de beoogde punchline vrijwel volledig uitvoert.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een door de gemeente georganiseerde taalavond waarin deelnemers zinnen oefenen.\\\",\\\"realized_script_b\\\":\\\"Een podiumrepetitie voor een voorstelling voor publiek.\\\",\\\"realized_opposition_axis\\\":\\\"Praktische maatschappelijke inpassing versus artistieke uitvoering.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De taalavond met koffie, kring en zinnen oefenen activeert Script A; het kruis op de vloer, 'op voor het publiek' en de spots maken Script B retrospectief passend.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De aanvankelijk vreemde vloermarkering wordt door de podium- en publieksinformatie retrospectief verklaard als repetitieconventie.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Gemeente, taalavond, koffie, kring, zinnenoefeningen, vloerkruis en spots realiseren de kernsituatie functioneel.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant begint in een geloofwaardig taalavondkader, introduceert een anomalie en onthult pas daarna de theaterlezing.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":false,\\\"rationale\\\":\\\"De relevante formulering 'op voor het publiek' is aanwezig, maar de geplande slotconstraint met 'publiek' als laatste woord is niet behouden: de tekst eindigt met 'spots aan'.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De geplande oppositionele structuur en verklaring van het vloerkruis werken goed, maar de specifieke beoogde lexicale eindplaatsing is niet gerealiseerd.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een inburgeringsgroep in het buurthuis waar deelnemers 'goedemorgen' en hun plaats in de les oefenen.\\\",\\\"realized_script_b\\\":\\\"Een theaterrepetitie waarin spelers tekst, positie en lichtcues oefenen voor een optreden.\\\",\\\"realized_opposition_axis\\\":\\\"Praktische maatschappelijke inpassing versus artistieke uitvoering.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De inburgeringsgroep en uitspraakcorrectie leveren de dominante leslezing; het zwijgen op een vloerkruis, lichtteken en optreden voor publiek schakelen helder naar repetitie.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Dezelfde handelingen worden retrospectief herlezen: corrigeren waar men staat is regie, het kruis is een speelmarkering en het lichtteken is een technische cue.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Buurthuis, inburgeringsgroep, begeleider, herhaalde begroeting, positieaanwijzingen, vloerkruis en lichtcue behouden de functionele situatie.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De ik-verteller houdt de eerste lezing aan tot de laatste zin, waar meerdere theatercues gezamenlijk de herinterpretatie afdwingen.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De formulering 'op voor het publiek' gebruikt het bedoelde scharnier 'op' en eindigt met het vereiste woord 'publiek'.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Deze variant voert de geplande misinterpretatie bijzonder expliciet uit: de vreemde plaatscorrectie en het vloerkruis krijgen bij de punchline een noodzakelijke theaterfunctie.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 wint omdat het een passerende variant is en V2 niet: V2 mist de vereiste eindplaatsing van „publiek”. Bovendien houdt V1 de leslezing helder vast en maakt de lichtcue de repetitieomslag compact en goed spreekbaar.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de vereiste middelen en lengte. V3 heeft de krachtigste retrospectieve herinterpretatie: uitspraak, vaste positie, vloerkruis en lichtteken krijgen tegelijk een duidelijke theatrale functie, waardoor de switch sterker landt.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 wint als passerende variant van V2, dat de verplichte lexicale slotconstraint niet realiseert. Daarnaast bouwt V3 met het vloerkruis, zwijgen en lichtteken een concretere en grappigere overgang van inburgeringsles naar repetitie.\\\"}],\\\"selected_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 combineert volledige vereiste-resourcefideliteit met de duidelijkste misleiding en de sterkste herlezing van eerdere details. De theateronthulling verklaart meerdere ogenschijnlijk didactische handelingen tegelijk en blijft als gesproken grap herkenbaar.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.",
+        "candidate_id": "B1",
+        "opposition_axis": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+        "opposed_expectation": "Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.",
+        "roles_b": [
+          "Regisseur: leidt de repetitie en verdeelt scènes.",
+          "Spelers: oefenen tekst, uitspraak en samenspel.",
+          "Technicus: regelt licht, geluid en het moment van opkomen.",
+          "Publiek: komt later naar de voorstelling kijken."
+        ],
+        "goal_b": "Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.",
+        "role_remapping": [
+          "De docent of inburgeringsbegeleider uit Script A wordt de regisseur.",
+          "Nieuwe inwoners worden spelers.",
+          "De klasruimte wordt een repetitielokaal.",
+          "Taalopdrachten worden toneelteksten en regieaanwijzingen.",
+          "Deelnemen aan de samenleving wordt deelnemen aan een voorstelling."
+        ],
+        "shared_cues": [
+          "Naamstickers bij binnenkomst.",
+          "Stoelen in een kring.",
+          "Een begeleider die zinnen laat herhalen.",
+          "Een whiteboard met woorden in meerdere talen.",
+          "Koffie en korte kennismakingsgesprekken."
+        ],
+        "switch_trigger": "De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.",
+        "hinge_event": "Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.",
+        "anomaly_under_a": "In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.",
+        "resolution_under_b": "Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een gemeentelijke bijeenkomst over nieuwe bewoners en gedeelde buurtregels blijkt in werkelijkheid de introductieavond van een coöperatieve buurt-speurtocht.",
+        "candidate_id": "B2",
+        "opposition_axis": "Werkelijk burgerlijk overleg versus speelse wedstrijdorganisatie.",
+        "opposed_expectation": "Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.",
+        "roles_b": [
+          "Spelleider: legt de opdrachten en puntentelling uit.",
+          "Teams: zoeken locaties en lossen gezamenlijke opdrachten op.",
+          "Vrijwillige posten: controleren antwoorden en delen aanwijzingen uit.",
+          "Buurtwinkels: fungeren als spelpunten."
+        ],
+        "goal_b": "Teams via samenwerking de wijk laten ontdekken en als eerste de eindopdracht oplossen.",
+        "role_remapping": [
+          "De gemeentelijke voorlichter uit Script A wordt de spelleider.",
+          "Nieuwe en bestaande inwoners worden gemengde teams.",
+          "Buurtorganisaties worden controleposten.",
+          "Een wijkplattegrond wordt een spelkaart.",
+          "Regels voor samenleven worden spelregels en veiligheidsinstructies."
+        ],
+        "shared_cues": [
+          "Een zaaltje in het buurthuis.",
+          "Een welkomstwoord over de wijk.",
+          "Plattegronden op tafel.",
+          "Groepjes met verschillende leeftijden en achtergronden.",
+          "Een lijst met regels en tijden."
+        ],
+        "switch_trigger": "De voorlichter deelt gekleurde polsbandjes uit, start een aftelklok en zegt dat het eerste team bij de fontein een code moet vinden.",
+        "hinge_event": "Een bewoner die een vraag stelt over parkeerregels krijgt geen gemeentelijk antwoord maar een verzegelde envelop met een raadsel.",
+        "anomaly_under_a": "Bij een serieus informatiegesprek over openbare regels is een raadsel-envelop ontwijkend en ongeschikt als antwoord op een praktische vraag.",
+        "resolution_under_b": "In de speurtocht is de envelop juist de volgende opdracht; de parkeerregel was een aanwijzing waarmee het team de juiste locatie kan afleiden.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een werkgever ontvangt een groep mensen voor een ogenschijnlijk arbeids- en taaloriëntatieprogramma, maar organiseert eigenlijk een auditie voor een reclamecampagne van een uitzendbureau.",
+        "candidate_id": "B3",
+        "opposition_axis": "Gelijke toegang tot werk versus selectie voor een commerciële presentatie.",
+        "opposed_expectation": "Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.",
+        "roles_b": [
+          "Castingdirector: beoordeelt uitstraling en spreekstijl voor de campagne.",
+          "Kandidaten: doen een korte camera-auditie.",
+          "Cameraploeg: filmt introducties en reacties.",
+          "Creatief team: kiest bruikbaar beeldmateriaal en slogans."
+        ],
+        "goal_b": "Een geloofwaardige reclamecampagne maken die een breed publiek laat zien samenwerken op de arbeidsmarkt.",
+        "role_remapping": [
+          "De werkgever of loopbaanbegeleider uit Script A wordt de castingdirector.",
+          "Werkzoekenden worden auditiekandidaten.",
+          "Het intakegesprek wordt een opgenomen screentest.",
+          "Het cv wordt een achtergrondprofiel voor casting.",
+          "Een werkplek wordt een filmset die als kantoor is ingericht."
+        ],
+        "shared_cues": [
+          "Een ontvangstbalie met aanmeldlijst.",
+          "Korte wachttijden in een hal.",
+          "Badges met voornamen.",
+          "Vragen over ervaring en talen.",
+          "Een tafel met formulieren en pennen."
+        ],
+        "switch_trigger": "Na een antwoord op de vraag naar werkervaring vraagt iemand buiten beeld om de zin nog eens te zeggen, ditmaal recht in de camera.",
+        "hinge_event": "Een medewerker schuift een reflectiescherm naast de kandidaat en telt luid af voordat het gesprek verdergaat.",
+        "anomaly_under_a": "Bij een regulier sollicitatie- of taaltraject is een reflectiescherm en een harde camera-aftelling ongepast en leidt het af van een eerlijk gesprek.",
+        "resolution_under_b": "Bij een auditie is dit precies nodig om licht, geluid en een bruikbare opname voor de campagne te verkrijgen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bijeenkomst die eruitziet als een gemeentelijke ontvangst voor nieuwe bewoners blijkt de start van een verrassingsfeest voor een buurtvrijwilliger die jarenlang nieuwkomers heeft geholpen.",
+        "candidate_id": "B4",
+        "opposition_axis": "Institutionele toelating en begeleiding versus persoonlijke erkenning en viering.",
+        "opposed_expectation": "De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.",
+        "roles_b": [
+          "Buurtvrijwilliger: de eregast die zonder voorkennis binnenkomt.",
+          "Buurtgenoten: organiseren de verrassing.",
+          "Ceremoniemeester: coördineert stilte, timing en toespraak.",
+          "Cateraars en muzikanten: verzorgen eten, muziek en feeststemming."
+        ],
+        "goal_b": "De vrijwilliger bedanken en zichtbaar maken hoeveel mensen door diens inzet met elkaar verbonden zijn geraakt.",
+        "role_remapping": [
+          "De gemeentelijke ontvangstmedewerker uit Script A wordt de ceremoniemeester.",
+          "Nieuwe inwoners en buurtorganisaties worden feestgasten.",
+          "De registratietafel wordt een tafel voor kaarten en cadeaus.",
+          "Wachtnummers worden een excuus om de eregast op tijd binnen te laten komen.",
+          "Praktische uitleg wordt een danktoespraak."
+        ],
+        "shared_cues": [
+          "Een gemeentelijke of buurtzaal.",
+          "Stoelen in rijen.",
+          "Een tafel bij de ingang.",
+          "Mensen die zacht praten en op hun telefoon kijken.",
+          "Een aangekondigd welkomsmoment."
+        ],
+        "switch_trigger": "Wanneer de verwachte bezoeker binnenkomt, springt de hele zaal op en roept tegelijk: 'Gefeliciteerd!'",
+        "hinge_event": "In plaats van een formulier krijgt de binnenkomende persoon een enorme ingepakte doos en een luid applaus.",
+        "anomaly_under_a": "Tijdens een formele ontvangst of registratie is een cadeau en collectief applaus onverklaarbaar; het belemmert de rustige, ordelijke afhandeling.",
+        "resolution_under_b": "Als verrassingsfeest is het cadeau de geplande blijk van waardering en het applaus het moment waarop de verborgen feestgangers hun bedoeling onthullen.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest productieve tegenstelling: maatschappelijke taal- en inburgeringsdeelname tegenover een artistieke repetitie. Beide lezingen delen zeer natuurlijke, onderwerp-specifieke signalen—meertalige zinnen, een buurthuis, kringopstelling, begeleiding en kennismaking—waardoor de eerste lezing dominant blijft. Het podiumlicht, de vloerpositie en het zwijgen op commando vormen vervolgens een helder scharnier dat onder Script A anomalistisch is, maar onder Script B noodzakelijk wordt. De herinterpretatie werkt retrospectief ook economisch: docent, klas, taalopdracht en deelname verschuiven consequent naar regisseur, repetitieruimte, toneeltekst en voorstelling. Daarmee heeft B1 sterke duale compatibiliteit, een duidelijke payoff en voldoende ruimte voor een tweede lezing zonder Script A vroegtijdig te ondermijnen.",
+    "variants": [
+      {
+        "text": "Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard. De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”",
+        "angle": "Naamstickers, kring en zinnen oefenen lijken een inburgeringsles, tot het lichtteken de repetitie onthult."
+      },
+      {
+        "text": "De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek. Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.",
+        "angle": "De vloermarkering lijkt een vreemde lesafspraak, maar wordt logisch zodra de groep het podium op moet."
+      },
+      {
+        "text": "Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan. Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”",
+        "angle": "De uitspraakcorrectie en vaste plek blijken regie voor een buurtvoorstelling."
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 18177,
+      "output_tokens": 8848,
+      "total_tokens": 27025
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Nieuwe bewoners met verschillende herkomsten vestigen zich in dezelfde stad; inwoners, werkgevers, scholen en overheid regelen een ordelijke deelname aan het dagelijks leven, terwijl iedereen zich aan gedeelde regels houdt en ruimte maakt voor elkaars gebruiken.",
+          "participants_and_roles": [
+            "Nieuwe inwoners: zoeken veiligheid, werk, onderwijs, huisvesting en een plek in de samenleving; leren waar mogelijk taal en praktische regels.",
+            "Bestaande inwoners: delen publieke ruimte, voorzieningen en buurtleven; verwachten wederzijds respect en voorspelbaar gedrag.",
+            "Gemeente en rijksoverheid: organiseren registratie, huisvesting, inburgering, openbare orde en toegang tot voorzieningen.",
+            "Werkgevers en onderwijsinstellingen: bieden werk, opleiding, taalcontact en kansen op deelname.",
+            "Buurtorganisaties en maatschappelijke instellingen: helpen contact, ondersteuning en wederzijds begrip mogelijk maken."
+          ],
+          "apparent_goal": "Een samenleving vormen waarin mensen met uiteenlopende achtergronden veilig, eerlijk en vreedzaam samenleven en kunnen deelnemen.",
+          "preconditions": [
+            "Er zijn mensen die naar een nieuw land of nieuwe gemeente migreren en zich daar langdurig of tijdelijk vestigen.",
+            "Er bestaan wetten, publieke voorzieningen, taal- en onderwijsstructuren en lokale buurten waarin nieuwkomers terechtkomen.",
+            "Er zijn culturele, religieuze, talige en sociale verschillen die in het dagelijks contact zichtbaar kunnen zijn.",
+            "Er is bereidheid of noodzaak om praktische afspraken te maken over werk, wonen, onderwijs, omgangsvormen en openbare orde."
+          ],
+          "expected_actions": [
+            "Migranten regelen verblijf, wonen, school, werk en waar nodig taal- of inburgeringstrajecten.",
+            "Overheden beoordelen aanvragen, bieden of coördineren ondersteuning en handhaven algemene regels.",
+            "Scholen, werkgevers en buurtbewoners creëren dagelijks contact rond leren, werken en samenleven.",
+            "Betrokkenen communiceren, lossen misverstanden op en behandelen elkaar met wederzijds respect.",
+            "Iedereen past zich in praktische zin aan gedeelde wetten en omgangsregels aan, met ruimte voor persoonlijke en culturele gebruiken."
+          ],
+          "expected_outcome": "Een stabiele, functionerende gemeenschap waarin verschillen naast elkaar kunnen bestaan, conflicten binnen normale regels worden opgelost en zoveel mogelijk mensen meedoen.",
+          "expected_propositions": [
+            "Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.",
+            "Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.",
+            "Culturele verschillen kunnen tot misverstanden leiden, maar zijn niet automatisch onverenigbaar.",
+            "De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.",
+            "Samenleven werkt beter wanneer nieuwkomers en gevestigde inwoners allebei bereid zijn tot praktisch contact en wederzijds respect."
+          ],
+          "audience_expectation": "Een opzet over dit onderwerp activeert doorgaans het beeld van nieuwkomers en gevestigde inwoners die, met hulp van instituties, een werkbare balans zoeken tussen integratie, gedeelde regels en culturele verscheidenheid."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.",
+            "opposition_axis": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+            "opposed_proposition": "Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.",
+            "shared_anchor": "Een groep oefent zinnen in een buurthuis.",
+            "reading_a": "Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.",
+            "reading_b": "Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.",
+            "roles_b": [
+              "Regisseur: leidt de repetitie en verdeelt scènes.",
+              "Spelers: oefenen tekst, uitspraak en samenspel.",
+              "Technicus: regelt licht, geluid en het moment van opkomen.",
+              "Publiek: komt later naar de voorstelling kijken."
+            ],
+            "goal_b": "Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.",
+            "role_remapping": [
+              "De docent of inburgeringsbegeleider uit Script A wordt de regisseur.",
+              "Nieuwe inwoners worden spelers.",
+              "De klasruimte wordt een repetitielokaal.",
+              "Taalopdrachten worden toneelteksten en regieaanwijzingen.",
+              "Deelnemen aan de samenleving wordt deelnemen aan een voorstelling."
+            ],
+            "shared_cues": [
+              "Naamstickers bij binnenkomst.",
+              "Stoelen in een kring.",
+              "Een begeleider die zinnen laat herhalen.",
+              "Een whiteboard met woorden in meerdere talen.",
+              "Koffie en korte kennismakingsgesprekken."
+            ],
+            "switch_trigger": "De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.",
+            "hinge_event": "Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.",
+            "anomaly_under_a": "In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.",
+            "resolution_under_b": "Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een gemeentelijke bijeenkomst over nieuwe bewoners en gedeelde buurtregels blijkt in werkelijkheid de introductieavond van een coöperatieve buurt-speurtocht.",
+            "opposition_axis": "Werkelijk burgerlijk overleg versus speelse wedstrijdorganisatie.",
+            "opposed_proposition": "Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.",
+            "shared_anchor": "Bewoners krijgen regels en een kaart van de wijk.",
+            "reading_a": "De gemeente licht regels over afval, parkeren, veiligheid en gebruik van de openbare ruimte toe aan nieuwe en bestaande bewoners.",
+            "reading_b": "De spelleider legt de spelregels uit en geeft teams een kaart met locaties, opdrachten en verboden zones.",
+            "roles_b": [
+              "Spelleider: legt de opdrachten en puntentelling uit.",
+              "Teams: zoeken locaties en lossen gezamenlijke opdrachten op.",
+              "Vrijwillige posten: controleren antwoorden en delen aanwijzingen uit.",
+              "Buurtwinkels: fungeren als spelpunten."
+            ],
+            "goal_b": "Teams via samenwerking de wijk laten ontdekken en als eerste de eindopdracht oplossen.",
+            "role_remapping": [
+              "De gemeentelijke voorlichter uit Script A wordt de spelleider.",
+              "Nieuwe en bestaande inwoners worden gemengde teams.",
+              "Buurtorganisaties worden controleposten.",
+              "Een wijkplattegrond wordt een spelkaart.",
+              "Regels voor samenleven worden spelregels en veiligheidsinstructies."
+            ],
+            "shared_cues": [
+              "Een zaaltje in het buurthuis.",
+              "Een welkomstwoord over de wijk.",
+              "Plattegronden op tafel.",
+              "Groepjes met verschillende leeftijden en achtergronden.",
+              "Een lijst met regels en tijden."
+            ],
+            "switch_trigger": "De voorlichter deelt gekleurde polsbandjes uit, start een aftelklok en zegt dat het eerste team bij de fontein een code moet vinden.",
+            "hinge_event": "Een bewoner die een vraag stelt over parkeerregels krijgt geen gemeentelijk antwoord maar een verzegelde envelop met een raadsel.",
+            "anomaly_under_a": "Bij een serieus informatiegesprek over openbare regels is een raadsel-envelop ontwijkend en ongeschikt als antwoord op een praktische vraag.",
+            "resolution_under_b": "In de speurtocht is de envelop juist de volgende opdracht; de parkeerregel was een aanwijzing waarmee het team de juiste locatie kan afleiden."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een werkgever ontvangt een groep mensen voor een ogenschijnlijk arbeids- en taaloriëntatieprogramma, maar organiseert eigenlijk een auditie voor een reclamecampagne van een uitzendbureau.",
+            "opposition_axis": "Gelijke toegang tot werk versus selectie voor een commerciële presentatie.",
+            "opposed_proposition": "Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.",
+            "shared_anchor": "Kandidaten stellen zich voor en voeren korte gesprekken.",
+            "reading_a": "Werkzoekenden oefenen een sollicitatiegesprek, leggen hun ervaring uit en krijgen aanwijzingen over taal en werkcultuur.",
+            "reading_b": "Modellen en figuranten doen camera-audities waarin natuurlijke introducties en korte gesprekken worden opgenomen.",
+            "roles_b": [
+              "Castingdirector: beoordeelt uitstraling en spreekstijl voor de campagne.",
+              "Kandidaten: doen een korte camera-auditie.",
+              "Cameraploeg: filmt introducties en reacties.",
+              "Creatief team: kiest bruikbaar beeldmateriaal en slogans."
+            ],
+            "goal_b": "Een geloofwaardige reclamecampagne maken die een breed publiek laat zien samenwerken op de arbeidsmarkt.",
+            "role_remapping": [
+              "De werkgever of loopbaanbegeleider uit Script A wordt de castingdirector.",
+              "Werkzoekenden worden auditiekandidaten.",
+              "Het intakegesprek wordt een opgenomen screentest.",
+              "Het cv wordt een achtergrondprofiel voor casting.",
+              "Een werkplek wordt een filmset die als kantoor is ingericht."
+            ],
+            "shared_cues": [
+              "Een ontvangstbalie met aanmeldlijst.",
+              "Korte wachttijden in een hal.",
+              "Badges met voornamen.",
+              "Vragen over ervaring en talen.",
+              "Een tafel met formulieren en pennen."
+            ],
+            "switch_trigger": "Na een antwoord op de vraag naar werkervaring vraagt iemand buiten beeld om de zin nog eens te zeggen, ditmaal recht in de camera.",
+            "hinge_event": "Een medewerker schuift een reflectiescherm naast de kandidaat en telt luid af voordat het gesprek verdergaat.",
+            "anomaly_under_a": "Bij een regulier sollicitatie- of taaltraject is een reflectiescherm en een harde camera-aftelling ongepast en leidt het af van een eerlijk gesprek.",
+            "resolution_under_b": "Bij een auditie is dit precies nodig om licht, geluid en een bruikbare opname voor de campagne te verkrijgen."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een bijeenkomst die eruitziet als een gemeentelijke ontvangst voor nieuwe bewoners blijkt de start van een verrassingsfeest voor een buurtvrijwilliger die jarenlang nieuwkomers heeft geholpen.",
+            "opposition_axis": "Institutionele toelating en begeleiding versus persoonlijke erkenning en viering.",
+            "opposed_proposition": "De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.",
+            "shared_anchor": "Mensen verzamelen zich in een zaal en wachten op één persoon.",
+            "reading_a": "Nieuwe bewoners wachten met begeleiders op hun beurt voor registratie, uitleg over voorzieningen en een eerste praktische afspraak.",
+            "reading_b": "Buurtgenoten verbergen zich met versiering om de nietsvermoedende vrijwilliger feestelijk te verrassen.",
+            "roles_b": [
+              "Buurtvrijwilliger: de eregast die zonder voorkennis binnenkomt.",
+              "Buurtgenoten: organiseren de verrassing.",
+              "Ceremoniemeester: coördineert stilte, timing en toespraak.",
+              "Cateraars en muzikanten: verzorgen eten, muziek en feeststemming."
+            ],
+            "goal_b": "De vrijwilliger bedanken en zichtbaar maken hoeveel mensen door diens inzet met elkaar verbonden zijn geraakt.",
+            "role_remapping": [
+              "De gemeentelijke ontvangstmedewerker uit Script A wordt de ceremoniemeester.",
+              "Nieuwe inwoners en buurtorganisaties worden feestgasten.",
+              "De registratietafel wordt een tafel voor kaarten en cadeaus.",
+              "Wachtnummers worden een excuus om de eregast op tijd binnen te laten komen.",
+              "Praktische uitleg wordt een danktoespraak."
+            ],
+            "shared_cues": [
+              "Een gemeentelijke of buurtzaal.",
+              "Stoelen in rijen.",
+              "Een tafel bij de ingang.",
+              "Mensen die zacht praten en op hun telefoon kijken.",
+              "Een aangekondigd welkomsmoment."
+            ],
+            "switch_trigger": "Wanneer de verwachte bezoeker binnenkomt, springt de hele zaal op en roept tegelijk: 'Gefeliciteerd!'",
+            "hinge_event": "In plaats van een formulier krijgt de binnenkomende persoon een enorme ingepakte doos en een luid applaus.",
+            "anomaly_under_a": "Tijdens een formele ontvangst of registratie is een cadeau en collectief applaus onverklaarbaar; het belemmert de rustige, ordelijke afhandeling.",
+            "resolution_under_b": "Als verrassingsfeest is het cadeau de geplande blijk van waardering en het applaus het moment waarop de verborgen feestgangers hun bedoeling onthullen."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een groep deelnemers arriveert bij een cultureel centrum voor wat op een taal- en inburgeringsles lijkt, maar blijkt de eerste repetitie van een meertalige buurtvoorstelling te zijn.",
+              "opposition_axis": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+              "opposed_proposition": "Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.",
+              "shared_anchor": "Een groep oefent zinnen in een buurthuis.",
+              "reading_a": "Nieuwe inwoners volgen een taalles om dagelijkse gesprekken, werk en contact in de buurt beter aan te kunnen.",
+              "reading_b": "Acteurs en buurtbewoners repeteren teksten, uitspraak en bewegingen voor een voorstelling over de wijk.",
+              "roles_b": [
+                "Regisseur: leidt de repetitie en verdeelt scènes.",
+                "Spelers: oefenen tekst, uitspraak en samenspel.",
+                "Technicus: regelt licht, geluid en het moment van opkomen.",
+                "Publiek: komt later naar de voorstelling kijken."
+              ],
+              "goal_b": "Een geloofwaardige, toegankelijke voorstelling maken waarin verschillende talen en buurtverhalen samenkomen.",
+              "role_remapping": [
+                "De docent of inburgeringsbegeleider uit Script A wordt de regisseur.",
+                "Nieuwe inwoners worden spelers.",
+                "De klasruimte wordt een repetitielokaal.",
+                "Taalopdrachten worden toneelteksten en regieaanwijzingen.",
+                "Deelnemen aan de samenleving wordt deelnemen aan een voorstelling."
+              ],
+              "shared_cues": [
+                "Naamstickers bij binnenkomst.",
+                "Stoelen in een kring.",
+                "Een begeleider die zinnen laat herhalen.",
+                "Een whiteboard met woorden in meerdere talen.",
+                "Koffie en korte kennismakingsgesprekken."
+              ],
+              "switch_trigger": "De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.",
+              "hinge_event": "Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.",
+              "anomaly_under_a": "In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.",
+              "resolution_under_b": "Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een gemeentelijke bijeenkomst over nieuwe bewoners en gedeelde buurtregels blijkt in werkelijkheid de introductieavond van een coöperatieve buurt-speurtocht.",
+              "opposition_axis": "Werkelijk burgerlijk overleg versus speelse wedstrijdorganisatie.",
+              "opposed_proposition": "Mensen die in dezelfde buurt wonen, moeten zich aan dezelfde wetten en basisregels houden.",
+              "shared_anchor": "Bewoners krijgen regels en een kaart van de wijk.",
+              "reading_a": "De gemeente licht regels over afval, parkeren, veiligheid en gebruik van de openbare ruimte toe aan nieuwe en bestaande bewoners.",
+              "reading_b": "De spelleider legt de spelregels uit en geeft teams een kaart met locaties, opdrachten en verboden zones.",
+              "roles_b": [
+                "Spelleider: legt de opdrachten en puntentelling uit.",
+                "Teams: zoeken locaties en lossen gezamenlijke opdrachten op.",
+                "Vrijwillige posten: controleren antwoorden en delen aanwijzingen uit.",
+                "Buurtwinkels: fungeren als spelpunten."
+              ],
+              "goal_b": "Teams via samenwerking de wijk laten ontdekken en als eerste de eindopdracht oplossen.",
+              "role_remapping": [
+                "De gemeentelijke voorlichter uit Script A wordt de spelleider.",
+                "Nieuwe en bestaande inwoners worden gemengde teams.",
+                "Buurtorganisaties worden controleposten.",
+                "Een wijkplattegrond wordt een spelkaart.",
+                "Regels voor samenleven worden spelregels en veiligheidsinstructies."
+              ],
+              "shared_cues": [
+                "Een zaaltje in het buurthuis.",
+                "Een welkomstwoord over de wijk.",
+                "Plattegronden op tafel.",
+                "Groepjes met verschillende leeftijden en achtergronden.",
+                "Een lijst met regels en tijden."
+              ],
+              "switch_trigger": "De voorlichter deelt gekleurde polsbandjes uit, start een aftelklok en zegt dat het eerste team bij de fontein een code moet vinden.",
+              "hinge_event": "Een bewoner die een vraag stelt over parkeerregels krijgt geen gemeentelijk antwoord maar een verzegelde envelop met een raadsel.",
+              "anomaly_under_a": "Bij een serieus informatiegesprek over openbare regels is een raadsel-envelop ontwijkend en ongeschikt als antwoord op een praktische vraag.",
+              "resolution_under_b": "In de speurtocht is de envelop juist de volgende opdracht; de parkeerregel was een aanwijzing waarmee het team de juiste locatie kan afleiden."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een werkgever ontvangt een groep mensen voor een ogenschijnlijk arbeids- en taaloriëntatieprogramma, maar organiseert eigenlijk een auditie voor een reclamecampagne van een uitzendbureau.",
+              "opposition_axis": "Gelijke toegang tot werk versus selectie voor een commerciële presentatie.",
+              "opposed_proposition": "Werk, onderwijs en taalvaardigheid maken deelname aan de samenleving doorgaans gemakkelijker.",
+              "shared_anchor": "Kandidaten stellen zich voor en voeren korte gesprekken.",
+              "reading_a": "Werkzoekenden oefenen een sollicitatiegesprek, leggen hun ervaring uit en krijgen aanwijzingen over taal en werkcultuur.",
+              "reading_b": "Modellen en figuranten doen camera-audities waarin natuurlijke introducties en korte gesprekken worden opgenomen.",
+              "roles_b": [
+                "Castingdirector: beoordeelt uitstraling en spreekstijl voor de campagne.",
+                "Kandidaten: doen een korte camera-auditie.",
+                "Cameraploeg: filmt introducties en reacties.",
+                "Creatief team: kiest bruikbaar beeldmateriaal en slogans."
+              ],
+              "goal_b": "Een geloofwaardige reclamecampagne maken die een breed publiek laat zien samenwerken op de arbeidsmarkt.",
+              "role_remapping": [
+                "De werkgever of loopbaanbegeleider uit Script A wordt de castingdirector.",
+                "Werkzoekenden worden auditiekandidaten.",
+                "Het intakegesprek wordt een opgenomen screentest.",
+                "Het cv wordt een achtergrondprofiel voor casting.",
+                "Een werkplek wordt een filmset die als kantoor is ingericht."
+              ],
+              "shared_cues": [
+                "Een ontvangstbalie met aanmeldlijst.",
+                "Korte wachttijden in een hal.",
+                "Badges met voornamen.",
+                "Vragen over ervaring en talen.",
+                "Een tafel met formulieren en pennen."
+              ],
+              "switch_trigger": "Na een antwoord op de vraag naar werkervaring vraagt iemand buiten beeld om de zin nog eens te zeggen, ditmaal recht in de camera.",
+              "hinge_event": "Een medewerker schuift een reflectiescherm naast de kandidaat en telt luid af voordat het gesprek verdergaat.",
+              "anomaly_under_a": "Bij een regulier sollicitatie- of taaltraject is een reflectiescherm en een harde camera-aftelling ongepast en leidt het af van een eerlijk gesprek.",
+              "resolution_under_b": "Bij een auditie is dit precies nodig om licht, geluid en een bruikbare opname voor de campagne te verkrijgen."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een bijeenkomst die eruitziet als een gemeentelijke ontvangst voor nieuwe bewoners blijkt de start van een verrassingsfeest voor een buurtvrijwilliger die jarenlang nieuwkomers heeft geholpen.",
+              "opposition_axis": "Institutionele toelating en begeleiding versus persoonlijke erkenning en viering.",
+              "opposed_proposition": "De overheid heeft een rol in zowel toelating en ondersteuning als handhaving van regels.",
+              "shared_anchor": "Mensen verzamelen zich in een zaal en wachten op één persoon.",
+              "reading_a": "Nieuwe bewoners wachten met begeleiders op hun beurt voor registratie, uitleg over voorzieningen en een eerste praktische afspraak.",
+              "reading_b": "Buurtgenoten verbergen zich met versiering om de nietsvermoedende vrijwilliger feestelijk te verrassen.",
+              "roles_b": [
+                "Buurtvrijwilliger: de eregast die zonder voorkennis binnenkomt.",
+                "Buurtgenoten: organiseren de verrassing.",
+                "Ceremoniemeester: coördineert stilte, timing en toespraak.",
+                "Cateraars en muzikanten: verzorgen eten, muziek en feeststemming."
+              ],
+              "goal_b": "De vrijwilliger bedanken en zichtbaar maken hoeveel mensen door diens inzet met elkaar verbonden zijn geraakt.",
+              "role_remapping": [
+                "De gemeentelijke ontvangstmedewerker uit Script A wordt de ceremoniemeester.",
+                "Nieuwe inwoners en buurtorganisaties worden feestgasten.",
+                "De registratietafel wordt een tafel voor kaarten en cadeaus.",
+                "Wachtnummers worden een excuus om de eregast op tijd binnen te laten komen.",
+                "Praktische uitleg wordt een danktoespraak."
+              ],
+              "shared_cues": [
+                "Een gemeentelijke of buurtzaal.",
+                "Stoelen in rijen.",
+                "Een tafel bij de ingang.",
+                "Mensen die zacht praten en op hun telefoon kijken.",
+                "Een aangekondigd welkomsmoment."
+              ],
+              "switch_trigger": "Wanneer de verwachte bezoeker binnenkomt, springt de hele zaal op en roept tegelijk: 'Gefeliciteerd!'",
+              "hinge_event": "In plaats van een formulier krijgt de binnenkomende persoon een enorme ingepakte doos en een luid applaus.",
+              "anomaly_under_a": "Tijdens een formele ontvangst of registratie is een cadeau en collectief applaus onverklaarbaar; het belemmert de rustige, ordelijke afhandeling.",
+              "resolution_under_b": "Als verrassingsfeest is het cadeau de geplande blijk van waardering en het applaus het moment waarop de verborgen feestgangers hun bedoeling onthullen."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Eén realiseerbare scène met een kring stoelen, meertalige zinnen, herhaling en een begeleider kan aanvankelijk geloofwaardig als taalles/inburgering functioneren én achteraf als toneelrepetitie. De dominante tegenstelling is praktische taalverwerving voor maatschappelijke deelname tegenover het repeteren voor artistieke uitvoering; beide zijn in deze scène niet tegelijk de primaire functie. De repetitielezing is sociaal herkenbaar en blijft vóór de onthulling mogelijk, maar de opzet laat een gewone lezer eerst de inburgeringslezing kiezen. Markering op de vloer, podiumlicht en stilvallen op commando verstoren het doel van een taalles, maar zijn functioneel noodzakelijk voor mise-en-scène en lichtwissel. Daardoor veranderen eerdere taaloefeningen retrospectief in toneeltekst en regie. Wat taalverwerving belemmert, maakt de voorstelling juist mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde bijeenkomst, wijkkaart en regeluitleg kunnen realiseerbaar worden gelezen als gemeentelijke voorlichting of als briefing voor een buurtspeurtocht. De dominante as is werkelijk burgerlijk overleg over buurtregels tegenover spelorganisatie met regels, teams en opdrachten; die functies zijn lokaal onverenigbaar als primaire verklaring van de bijeenkomst. De speluitleg is herkenbaar en wordt door kaarten, groepjes en tijdschema's al mogelijk gehouden, terwijl de migratie- en buurtcontext de voorlichtingslezing eerst het sterkst maakt. De verzegelde raadsel-envelop is als antwoord op parkeerregels disfunctioneel in een serieus overleg, maar is als spelopdracht precies passend. Eerdere regels en de kaart worden daardoor retrospectief spelinstructies en aanwijzingen. Het ontwijken van het gemeentelijke informatiedoel maakt de speurtocht juist operationeel."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Aanmelden, wachten, voornaambadges, formulieren en vragen over ervaring en talen kunnen in één scène zowel een arbeids- en taaloriëntatie als een camera-auditie dragen. De duidelijke dominante tegenstelling is ondersteuning van werkzoekenden richting deelname tegenover commerciële selectie voor een campagne; het gesprek kan niet tegelijk primair een eerlijk begeleidingsgesprek en een castingopname zijn. Een reclame-auditie is een coherente, sociaal herkenbare tweede lezing en de cues laten haar vooraf mogelijk, maar het onderwerp en de arbeidscontext maken Script A aanvankelijk dominant. Reflectiescherm en luid aftellen zijn storend en ongepast voor een regulier sollicitatie- of taaltraject, maar noodzakelijk voor belichting en opname bij casting. Daardoor worden eerdere intakevragen retrospectief screentests en wordt de werkplek een set. De opnameprocedure belemmert het doel van gewone begeleiding, terwijl zij het castingdoel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Een zaal met rijen stoelen, een ingangstafel, zacht pratende aanwezigen en wachten op een welkomsmoment kan als formele ontvangst voor nieuwe bewoners én als voorbereide verrassingsbijeenkomst worden gerealiseerd. De dominante tegenstelling is institutionele ontvangst en begeleiding tegenover persoonlijke viering van één eregast; de verzamelde groep kan in deze scène niet tegelijk primair registranten en verborgen feestgangers zijn. Een verrassingsfeest is sociaal zeer herkenbaar en blijft vóór de onthulling beschikbaar via het wachten, de stilte en de coördinatie, maar de gemeentelijke setting en het onderwerp maken de formele ontvangst aanvankelijk waarschijnlijker. Een groot cadeau en collectief applaus verhinderen de ordelijke registratie onder Script A, maar vormen onder Script B het geplande onthullingsmoment. Daarmee veranderen tafel, wachttijd en aangekondigd welkom retrospectief in feestvoorbereiding. Wat de institutionele afhandeling blokkeert, verwezenlijkt het feestdoel."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Eén realiseerbare scène met een kring stoelen, meertalige zinnen, herhaling en een begeleider kan aanvankelijk geloofwaardig als taalles/inburgering functioneren én achteraf als toneelrepetitie. De dominante tegenstelling is praktische taalverwerving voor maatschappelijke deelname tegenover het repeteren voor artistieke uitvoering; beide zijn in deze scène niet tegelijk de primaire functie. De repetitielezing is sociaal herkenbaar en blijft vóór de onthulling mogelijk, maar de opzet laat een gewone lezer eerst de inburgeringslezing kiezen. Markering op de vloer, podiumlicht en stilvallen op commando verstoren het doel van een taalles, maar zijn functioneel noodzakelijk voor mise-en-scène en lichtwissel. Daardoor veranderen eerdere taaloefeningen retrospectief in toneeltekst en regie. Wat taalverwerving belemmert, maakt de voorstelling juist mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde bijeenkomst, wijkkaart en regeluitleg kunnen realiseerbaar worden gelezen als gemeentelijke voorlichting of als briefing voor een buurtspeurtocht. De dominante as is werkelijk burgerlijk overleg over buurtregels tegenover spelorganisatie met regels, teams en opdrachten; die functies zijn lokaal onverenigbaar als primaire verklaring van de bijeenkomst. De speluitleg is herkenbaar en wordt door kaarten, groepjes en tijdschema's al mogelijk gehouden, terwijl de migratie- en buurtcontext de voorlichtingslezing eerst het sterkst maakt. De verzegelde raadsel-envelop is als antwoord op parkeerregels disfunctioneel in een serieus overleg, maar is als spelopdracht precies passend. Eerdere regels en de kaart worden daardoor retrospectief spelinstructies en aanwijzingen. Het ontwijken van het gemeentelijke informatiedoel maakt de speurtocht juist operationeel."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Aanmelden, wachten, voornaambadges, formulieren en vragen over ervaring en talen kunnen in één scène zowel een arbeids- en taaloriëntatie als een camera-auditie dragen. De duidelijke dominante tegenstelling is ondersteuning van werkzoekenden richting deelname tegenover commerciële selectie voor een campagne; het gesprek kan niet tegelijk primair een eerlijk begeleidingsgesprek en een castingopname zijn. Een reclame-auditie is een coherente, sociaal herkenbare tweede lezing en de cues laten haar vooraf mogelijk, maar het onderwerp en de arbeidscontext maken Script A aanvankelijk dominant. Reflectiescherm en luid aftellen zijn storend en ongepast voor een regulier sollicitatie- of taaltraject, maar noodzakelijk voor belichting en opname bij casting. Daardoor worden eerdere intakevragen retrospectief screentests en wordt de werkplek een set. De opnameprocedure belemmert het doel van gewone begeleiding, terwijl zij het castingdoel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Een zaal met rijen stoelen, een ingangstafel, zacht pratende aanwezigen en wachten op een welkomsmoment kan als formele ontvangst voor nieuwe bewoners én als voorbereide verrassingsbijeenkomst worden gerealiseerd. De dominante tegenstelling is institutionele ontvangst en begeleiding tegenover persoonlijke viering van één eregast; de verzamelde groep kan in deze scène niet tegelijk primair registranten en verborgen feestgangers zijn. Een verrassingsfeest is sociaal zeer herkenbaar en blijft vóór de onthulling beschikbaar via het wachten, de stilte en de coördinatie, maar de gemeentelijke setting en het onderwerp maken de formele ontvangst aanvankelijk waarschijnlijker. Een groot cadeau en collectief applaus verhinderen de ordelijke registratie onder Script A, maar vormen onder Script B het geplande onthullingsmoment. Daarmee veranderen tafel, wachttijd en aangekondigd welkom retrospectief in feestvoorbereiding. Wat de institutionele afhandeling blokkeert, verwezenlijkt het feestdoel."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B1",
+        "gtvh_plan": {
+          "opposition_type": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+          "logical_mechanism": "Foute interpretatie met rolverwisseling: aanwijzingen die eerst als taalles en inburgering worden gelezen, blijken retrospectief conventies van een theaterrepetitie.",
+          "situation": "Een groep nieuwe inwoners en buurtbewoners komt bijeen in een buurthuis of cultureel centrum. Zij zitten met naamstickers en koffie in een kring, herhalen zinnen in meerdere talen vanaf een whiteboard en volgen een begeleider. De ruimte bevat echter ook vloermarkeringen, podiumlicht en technische aanwijzingen voor een aanstaande buurtvoorstelling.",
+          "target": null,
+          "narrative_strategy": "De opzet stapelt alledaagse signalen van een taal- en inburgeringsles op, zodat praktische maatschappelijke inpassing de dominante lezing wordt. De punchline activeert via het lichtteken en het opkomen voor publiek de repetitielezing, waarna alle eerdere signalen als theatrale voorbereiding worden herordend.",
+          "lexical_anchor": "op",
+          "supporting_dual_cues": [
+            "Naamstickers bij binnenkomst.",
+            "Stoelen in een kring.",
+            "Een begeleider die zinnen laat herhalen.",
+            "Een whiteboard met woorden in meerdere talen.",
+            "Koffie en korte kennismakingsgesprekken."
+          ],
+          "switch_trigger": "De begeleider zegt dat iedereen over vijf minuten op moet voor het publiek en geeft een lichtteken.",
+          "hinge_event": "Een deelnemer herhaalt niet alleen een begroeting, maar valt precies op een gemarkeerd kruis op de vloer stil terwijl de lampen aangaan.",
+          "anomaly_under_a": "In een gewone taalles is een gemarkeerde speelplek, plots podiumlicht en zwijgen op commando vreemd en niet nuttig voor taalverwerving.",
+          "resolution_under_b": "Als repetitie is het stilvallen op de markering noodzakelijk: het bepaalt de mise-en-scène, het lichtbeeld en de overgang naar de volgende scène.",
+          "role_remapping": [
+            "De docent of inburgeringsbegeleider uit Script A wordt de regisseur.",
+            "Nieuwe inwoners worden spelers.",
+            "De klasruimte wordt een repetitielokaal.",
+            "Taalopdrachten worden toneelteksten en regieaanwijzingen.",
+            "Deelnemen aan de samenleving wordt deelnemen aan een voorstelling."
+          ],
+          "setup_goal": "De aanwezigen, zinnenoefeningen, naamstickers, meertalige woorden en kringopstelling laten doorgaan voor een taal- en inburgeringsles waarin nieuwe inwoners leren deelnemen aan het dagelijkse leven.",
+          "punch_goal": "Het bevel om op te gaan voor publiek, gevolgd door het lichtteken en het stilvallen op de vloermarkering, onthult dat de groep geen les volgt maar een voorstelling repeteert.",
+          "punch_final_word": "publiek"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard.",
+            "punchline": "De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”",
+            "full_text": "Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard. De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”",
+            "angle": "Naamstickers, kring en zinnen oefenen lijken een inburgeringsles, tot het lichtteken de repetitie onthult.",
+            "anchor_surface_form": "op"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek.",
+            "punchline": "Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.",
+            "full_text": "De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek. Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.",
+            "angle": "De vloermarkering lijkt een vreemde lesafspraak, maar wordt logisch zodra de groep het podium op moet.",
+            "anchor_surface_form": "op"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan.",
+            "punchline": "Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”",
+            "full_text": "Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan. Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”",
+            "angle": "De uitspraakcorrectie en vaste plek blijken regie voor een buurtvoorstelling.",
+            "anchor_surface_form": "op"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Bij de inburgeringsles zitten nieuwe buren met naamstickers in een kring en herhalen ze begroetingen van een meertalig whiteboard. De begeleider knipt met de lampen: „Mooi, iedereen over vijf minuten op voor het publiek.”",
+            "angle": "Naamstickers, kring en zinnen oefenen lijken een inburgeringsles, tot het lichtteken de repetitie onthult."
+          },
+          {
+            "variant_id": "V2",
+            "text": "De gemeente had een taalavond geregeld: koffie, stoelen in een kring, en zinnen oefenen terwijl iedereen vriendelijk naar het kruis op de vloer keek. Toen de begeleider fluisterde: „Iedereen staat over vijf minuten op voor het publiek”, gingen de spots aan.",
+            "angle": "De vloermarkering lijkt een vreemde lesafspraak, maar wordt logisch zodra de groep het podium op moet."
+          },
+          {
+            "variant_id": "V3",
+            "text": "Ik dacht dat het buurthuis een inburgeringsgroep had: de begeleider liet ons ‘goedemorgen’ herhalen en corrigeerde zelfs waar we moesten staan. Toen één man op het kruis zweeg en het lichtteken kreeg, zei ze: „Perfect, straks op voor het publiek.”",
+            "angle": "De uitspraakcorrectie en vaste plek blijken regie voor een buurtvoorstelling."
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een inburgeringsles waarin nieuwe buren begroetingen en taal voor het dagelijks leven oefenen.",
+            "realized_script_b": "Een repetitie voor een meertalige buurtvoorstelling.",
+            "realized_opposition_axis": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De leslezing wordt dominant opgebouwd met nieuwe buren, naamstickers, kring en begroetingen; 'op voor het publiek' plus het lichtteken activeert de repetitielezing en herkadert de begeleider als regisseur."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst gebruikt de bedoelde foutieve eerste interpretatie en rolverwisseling: lesinstructies blijken theatrale repetitie-instructies."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het buurthuisachtige leskader, de naamstickers, kring, meertalige woorden, begeleider en lampen zijn functioneel aanwezig."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De opzet stapelt lescues op en bewaart de expliciete theatrale onthulling voor de slotzin."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Het scharnier 'op' in 'op voor het publiek' en de eindplaatsing van 'publiek' realiseren de beoogde lexicale en slotconstraint."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Een compacte, natuurlijke variant die de geplande les-naar-repetitieomslag en de beoogde punchline vrijwel volledig uitvoert.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Een door de gemeente georganiseerde taalavond waarin deelnemers zinnen oefenen.",
+            "realized_script_b": "Een podiumrepetitie voor een voorstelling voor publiek.",
+            "realized_opposition_axis": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De taalavond met koffie, kring en zinnen oefenen activeert Script A; het kruis op de vloer, 'op voor het publiek' en de spots maken Script B retrospectief passend."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De aanvankelijk vreemde vloermarkering wordt door de podium- en publieksinformatie retrospectief verklaard als repetitieconventie."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Gemeente, taalavond, koffie, kring, zinnenoefeningen, vloerkruis en spots realiseren de kernsituatie functioneel."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant begint in een geloofwaardig taalavondkader, introduceert een anomalie en onthult pas daarna de theaterlezing."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": false,
+              "rationale": "De relevante formulering 'op voor het publiek' is aanwezig, maar de geplande slotconstraint met 'publiek' als laatste woord is niet behouden: de tekst eindigt met 'spots aan'."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De geplande oppositionele structuur en verklaring van het vloerkruis werken goed, maar de specifieke beoogde lexicale eindplaatsing is niet gerealiseerd.",
+            "passes_required_plan": false
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Een inburgeringsgroep in het buurthuis waar deelnemers 'goedemorgen' en hun plaats in de les oefenen.",
+            "realized_script_b": "Een theaterrepetitie waarin spelers tekst, positie en lichtcues oefenen voor een optreden.",
+            "realized_opposition_axis": "Praktische maatschappelijke inpassing versus artistieke uitvoering.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De inburgeringsgroep en uitspraakcorrectie leveren de dominante leslezing; het zwijgen op een vloerkruis, lichtteken en optreden voor publiek schakelen helder naar repetitie."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Dezelfde handelingen worden retrospectief herlezen: corrigeren waar men staat is regie, het kruis is een speelmarkering en het lichtteken is een technische cue."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Buurthuis, inburgeringsgroep, begeleider, herhaalde begroeting, positieaanwijzingen, vloerkruis en lichtcue behouden de functionele situatie."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De ik-verteller houdt de eerste lezing aan tot de laatste zin, waar meerdere theatercues gezamenlijk de herinterpretatie afdwingen."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De formulering 'op voor het publiek' gebruikt het bedoelde scharnier 'op' en eindigt met het vereiste woord 'publiek'."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Deze variant voert de geplande misinterpretatie bijzonder expliciet uit: de vreemde plaatscorrectie en het vloerkruis krijgen bij de punchline een noodzakelijke theaterfunctie.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "V1 wint omdat het een passerende variant is en V2 niet: V2 mist de vereiste eindplaatsing van „publiek”. Bovendien houdt V1 de leslezing helder vast en maakt de lichtcue de repetitieomslag compact en goed spreekbaar."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "Beide varianten voldoen aan de vereiste middelen en lengte. V3 heeft de krachtigste retrospectieve herinterpretatie: uitspraak, vaste positie, vloerkruis en lichtteken krijgen tegelijk een duidelijke theatrale functie, waardoor de switch sterker landt."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V3",
+            "rationale": "V3 wint als passerende variant van V2, dat de verplichte lexicale slotconstraint niet realiseert. Daarnaast bouwt V3 met het vloerkruis, zwijgen en lichtteken een concretere en grappigere overgang van inburgeringsles naar repetitie."
+          }
+        ],
+        "selected_variant_id": "V3",
+        "selection_rationale": "V3 combineert volledige vereiste-resourcefideliteit met de duidelijkste misleiding en de sterkste herlezing van eerdere details. De theateronthulling verklaart meerdere ogenschijnlijk didactische handelingen tegelijk en blijft als gesproken grap herkenbaar."
+      }
+    }
+  },
+  "result_sha256": "88cb42a11abb4253b350ffd8674dac870970564ad66b5ec777c3c415529604f7"
+}

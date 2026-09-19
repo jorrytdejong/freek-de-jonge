@@ -1,0 +1,848 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T05-C1",
+  "topic_id": "T05",
+  "topic": "Oorlog, vrede en geweld",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:22:27.328352+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Oorlog, vrede en geweld",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke en militaire leiders: nemen besluiten, verdedigen belangen en dragen verantwoordelijkheid voor escalatie of de-escalatie.\",\n      \"Diplomaten en bemiddelaars: brengen partijen aan tafel en zoeken een aanvaardbaar compromis.\",\n      \"Soldaten en strijdende groepen: voeren bevelen uit en zijn direct betrokken bij het geweld.\",\n      \"Burgers: willen veiligheid, bescherming en een normaal leven; zij dragen vaak de zwaarste gevolgen.\",\n      \"Internationale organisaties en hulpverleners: monitoren, verlenen hulp en ondersteunen vrede of humanitaire bescherming.\"\n    ],\n    \"apparent_goal\": \"Het conflict beëindigen, burgers beschermen en een stabiele, rechtvaardige vrede tot stand brengen.\",\n    \"preconditions\": [\n      \"Er is een bestaand conflict, dreiging of daadwerkelijk geweld tussen partijen.\",\n      \"De partijen hebben botsende belangen, angst, wantrouwen of historische grieven.\",\n      \"Er bestaat voldoende contact, druk of bereidheid om over een oplossing te spreken.\",\n      \"Basisveiligheid en minimale regels, zoals een tijdelijk staakt-het-vuren, maken overleg mogelijk.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen stoppen of beperken het geweld.\",\n      \"Leiders sturen onderhandelaars naar overleg.\",\n      \"Bemiddelaars helpen bij communicatie en concessies.\",\n      \"Er worden afspraken gemaakt over veiligheid, grenzen, macht, herstel of hulp.\",\n      \"De afspraken worden gecontroleerd en nageleefd om hernieuwd geweld te voorkomen.\"\n    ],\n    \"expected_outcome\": \"Een akkoord of duurzame regeling waarbij het geweld afneemt, burgers veiliger zijn en geschillen voortaan via politieke of juridische middelen worden behandeld.\",\n    \"expected_propositions\": [\n      \"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\",\n      \"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\",\n      \"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\",\n      \"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\",\n      \"Een vredesakkoord werkt alleen wanneer betrokken partijen zich er in redelijke mate aan houden.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen proberen escalatie te stoppen en via overleg, bescherming en afspraken veiligheid en vrede te herstellen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke en militaire leiders: nemen besluiten, verdedigen belangen en dragen verantwoordelijkheid voor escalatie of de-escalatie.\",\n      \"Diplomaten en bemiddelaars: brengen partijen aan tafel en zoeken een aanvaardbaar compromis.\",\n      \"Soldaten en strijdende groepen: voeren bevelen uit en zijn direct betrokken bij het geweld.\",\n      \"Burgers: willen veiligheid, bescherming en een normaal leven; zij dragen vaak de zwaarste gevolgen.\",\n      \"Internationale organisaties en hulpverleners: monitoren, verlenen hulp en ondersteunen vrede of humanitaire bescherming.\"\n    ],\n    \"apparent_goal\": \"Het conflict beëindigen, burgers beschermen en een stabiele, rechtvaardige vrede tot stand brengen.\",\n    \"preconditions\": [\n      \"Er is een bestaand conflict, dreiging of daadwerkelijk geweld tussen partijen.\",\n      \"De partijen hebben botsende belangen, angst, wantrouwen of historische grieven.\",\n      \"Er bestaat voldoende contact, druk of bereidheid om over een oplossing te spreken.\",\n      \"Basisveiligheid en minimale regels, zoals een tijdelijk staakt-het-vuren, maken overleg mogelijk.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen stoppen of beperken het geweld.\",\n      \"Leiders sturen onderhandelaars naar overleg.\",\n      \"Bemiddelaars helpen bij communicatie en concessies.\",\n      \"Er worden afspraken gemaakt over veiligheid, grenzen, macht, herstel of hulp.\",\n      \"De afspraken worden gecontroleerd en nageleefd om hernieuwd geweld te voorkomen.\"\n    ],\n    \"expected_outcome\": \"Een akkoord of duurzame regeling waarbij het geweld afneemt, burgers veiliger zijn en geschillen voortaan via politieke of juridische middelen worden behandeld.\",\n    \"expected_propositions\": [\n      \"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\",\n      \"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\",\n      \"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\",\n      \"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\",\n      \"Een vredesakkoord werkt alleen wanneer betrokken partijen zich er in redelijke mate aan houden.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen proberen escalatie te stoppen en via overleg, bescherming en afspraken veiligheid en vrede te herstellen.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.\",\n      \"opposition_axis\": \"Werkelijk humanitair conflict versus geënsceneerde fictie\",\n      \"opposed_proposition\": \"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\",\n      \"shared_anchor\": \"Een ceremonie rond een ondertekend staakt-het-vuren\",\n      \"reading_a\": \"Werkelijke vertegenwoordigers van strijdende partijen ondertekenen een akkoord om dodelijk geweld te stoppen.\",\n      \"reading_b\": \"Acteurs voeren een vooraf geschreven ondertekeningsscène uit voor een oorlogsfilm.\",\n      \"roles_b\": [\n        \"Acteurs: vertolken staatshoofden, diplomaten, soldaten en burgers.\",\n        \"Regisseur: leidt de opname en bewaakt het verloop van de scène.\",\n        \"Cameraploeg en geluidstechnici: registreren de scène.\",\n        \"Rekwisietenmedewerkers: verzorgen documenten, uniformen, nepwapens en decor.\",\n        \"Figuranten: beelden bewakers, slachtoffers of omstanders uit.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige filmscène opnemen die spanning oproept zonder dat iemand werkelijk gevaar loopt.\",\n      \"role_remapping\": [\n        \"Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.\",\n        \"Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.\",\n        \"Soldaten en strijdende groepen worden figuranten en stuntperformers.\",\n        \"Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.\",\n        \"Het vredesdocument wordt een rekwisiet met een scripttekst.\"\n      ],\n      \"shared_cues\": [\n        \"Uniformen en bewaakte toegang tot een onderhandelingstafel.\",\n        \"Een kaart met betwiste grenzen.\",\n        \"Ernstige toespraken over slachtoffers en veiligheid.\",\n        \"Een document dat door beide partijen wordt ondertekend.\",\n        \"Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden.\"\n      ],\n      \"switch_trigger\": \"Een stem roept plotseling: \\\"En... cut, deze keer zonder de pen in beeld!\\\"\",\n      \"hinge_event\": \"Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.\",\n      \"anomaly_under_a\": \"Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.\",\n      \"resolution_under_b\": \"Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee fanatieke deelnemers spelen een strategisch bordspel waarin legers gebieden veroveren, bondgenootschappen sluiten en tijdelijk vrede afspreken. Hun gesprek klinkt als diplomatie, maar gaat over spelregels en speelstukken.\",\n      \"opposition_axis\": \"Werkelijke oorlogspolitiek versus competitief spel\",\n      \"opposed_proposition\": \"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\",\n      \"shared_anchor\": \"Een overleg over een grens en een tijdelijk staakt-het-vuren\",\n      \"reading_a\": \"Onderhandelaars proberen een echte grensoorlog te bevriezen en burgers aan beide kanten te beschermen.\",\n      \"reading_b\": \"Spelers onderhandelen over een tijdelijke afspraak zodat zij hun posities op een speelbord kunnen herverdelen.\",\n      \"roles_b\": [\n        \"Speler aan de ene kant: bestuurt een fictief leger en probeert te winnen.\",\n        \"Speler aan de andere kant: verdedigt gebieden en sluit tactische deals.\",\n        \"Spelleider: verduidelijkt regels en beslist over betwiste zetten.\",\n        \"Speelstukken: vertegenwoordigen legers, steden en verdedigingslinies.\",\n        \"Toeschouwers: volgen de strategie en geven commentaar.\"\n      ],\n      \"goal_b\": \"Volgens de spelregels winnen door gebieden, punten of de hoofdstad van de tegenstander te veroveren.\",\n      \"role_remapping\": [\n        \"Politieke en militaire leiders worden de twee spelers.\",\n        \"Diplomaten en bemiddelaars worden de spelers zelf en eventueel de spelleider.\",\n        \"Soldaten en strijdende groepen worden pionnen, kaarten of miniaturen.\",\n        \"Burgers worden puntenfiches of stadsmarkeringen zonder werkelijk welzijn.\",\n        \"Internationale controle wordt de spelleider die naleving van de regels bewaakt.\"\n      ],\n      \"shared_cues\": [\n        \"Een kaart met grenzen en strategische steden.\",\n        \"Gesprekken over terugtrekking, verdediging en een wapenstilstand.\",\n        \"Markeringen die troepenbewegingen lijken weer te geven.\",\n        \"Een neutrale derde die een betwiste beslissing beoordeelt.\",\n        \"De zorg dat de andere partij een afspraak zal breken.\"\n      ],\n      \"switch_trigger\": \"Een speler zegt: \\\"Wacht, ik geef mijn generaal drie vakjes terug; dan eindigt mijn beurt.\\\"\",\n      \"hinge_event\": \"Een leider veegt na het overleg zonder aarzeling een volledig leger van de kaart en legt het naast de doos.\",\n      \"anomaly_under_a\": \"In een echt conflict zou het wegvegen van een leger geen vreedzame oplossing zijn en zou het lot van duizenden mensen niet met één handbeweging kunnen worden afgedaan.\",\n      \"resolution_under_b\": \"Op het bord verwijdert de speler verslagen speelstukken; die handeling is noodzakelijk om de spelstand zichtbaar te maken en veroorzaakt geen werkelijk verlies.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een school organiseert een oefening in conflictoplossing waarin leerlingen een verzonnen ruzie tussen twee buurten naspelen. Zij moeten namens hun groep onderhandelen en punten verdienen voor samenwerking, luistervaardigheid en een haalbaar compromis.\",\n      \"opposition_axis\": \"Echte politieke verantwoordelijkheid versus pedagogisch rollenspel\",\n      \"opposed_proposition\": \"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\",\n      \"shared_anchor\": \"Een bemiddelde bijeenkomst na onrust tussen twee groepen\",\n      \"reading_a\": \"Verantwoordelijke leiders proberen na geweld de veiligheid van kwetsbare burgers te herstellen.\",\n      \"reading_b\": \"Leerlingen voeren een lesopdracht uit waarin zij oefenen met bemiddeling en de gevolgen van escalatie bespreken.\",\n      \"roles_b\": [\n        \"Leerlingen: spelen vertegenwoordigers van twee fictieve groepen.\",\n        \"Docent: begeleidt de oefening en bewaakt een veilige sfeer.\",\n        \"Leerling-bemiddelaars: stellen vragen en zoeken een compromis.\",\n        \"Klasgenoten: spelen bewoners, journalisten of hulpverleners.\",\n        \"Beoordelaar: kent punten toe voor constructief overleg.\"\n      ],\n      \"goal_b\": \"Leren hoe conflicten escaleren en hoe luisteren, afspraken en herstel een ruzie kunnen verminderen.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden leerlingen met rolkaartjes.\",\n        \"Diplomaten en bemiddelaars worden aangewezen leerling-bemiddelaars.\",\n        \"Strijdende groepen worden klasgroepen met fictieve belangen.\",\n        \"Burgers worden medeleerlingen die gevolgen en behoeften verwoorden.\",\n        \"Internationale organisaties en hulpverleners worden docent en beoordelaar.\"\n      ],\n      \"shared_cues\": [\n        \"Twee groepen zitten aan weerszijden van een tafel.\",\n        \"Er worden klachten geuit over angst, schade en onveiligheid.\",\n        \"Een neutrale voorzitter geeft iedereen spreektijd.\",\n        \"Er wordt gewerkt aan regels voor een tijdelijk staakt-het-vuren.\",\n        \"Een verslag bevat afspraken over herstel en bescherming.\"\n      ],\n      \"switch_trigger\": \"De docent onderbreekt het gesprek met: \\\"Stop de simulatie: wie heeft nog zijn blauwe rolkaart?\\\"\",\n      \"hinge_event\": \"Een vertegenwoordiger vraagt of zij extra punten krijgt wanneer haar groep geloofwaardig boos blijft en geen compromis sluit.\",\n      \"anomaly_under_a\": \"Een echte leider zou niet om punten vragen voor het in stand houden van vijandigheid; dat zou bescherming en de-escalatie ondermijnen.\",\n      \"resolution_under_b\": \"In de oefening maken punten en roltrouw zichtbaar hoe gedrag het overleg beïnvloedt; de docent kan juist die keuze gebruiken om escalatie te bespreken.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bedrijf houdt een competitieve paintball- en teambuildingdag. Teams gebruiken militaire taal, maken tijdelijke wapenstilstanden en proberen een vlag of controlepunt te veroveren onder toezicht van veiligheidsbegeleiders.\",\n      \"opposition_axis\": \"Dodelijk geweld versus gereguleerde recreatieve competitie\",\n      \"opposed_proposition\": \"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\",\n      \"shared_anchor\": \"Twee gewapend lijkende groepen spreken een tijdelijke wapenstilstand af\",\n      \"reading_a\": \"Strijdende partijen leggen de wapens neer om slachtoffers te helpen en een politieke regeling mogelijk te maken.\",\n      \"reading_b\": \"Paintballteams pauzeren hun wedstrijd om teams opnieuw in te delen, materiaal te controleren of een spelopdracht te wijzigen.\",\n      \"roles_b\": [\n        \"Teamcaptains: bepalen tactiek en onderhandelen over tijdelijke afspraken.\",\n        \"Spelers: proberen terrein en doelen te veroveren.\",\n        \"Scheidsrechters: handhaven veiligheidsregels en verklaren spelers uitgeschakeld.\",\n        \"Organisatoren: plannen het spel en verzorgen materiaal.\",\n        \"Toeschouwers of collega's: moedigen teams aan en wachten op hun beurt.\"\n      ],\n      \"goal_b\": \"Een spannende maar veilige wedstrijd winnen en tegelijk samenwerking binnen het team versterken.\",\n      \"role_remapping\": [\n        \"Politieke en militaire leiders worden teamcaptains.\",\n        \"Diplomaten en bemiddelaars worden scheidsrechters en organisatoren.\",\n        \"Soldaten en strijdende groepen worden paintballspelers.\",\n        \"Burgers worden wachtende collega's en toeschouwers buiten het speelveld.\",\n        \"Internationale toezichthouders worden veiligheidsbegeleiders met beschermingsregels.\"\n      ],\n      \"shared_cues\": [\n        \"Camouflagekleding, helmen en afgebakend terrein.\",\n        \"Gesprekken over posities, dekking en terugtrekking.\",\n        \"Een tijdelijk bevel om niet te schieten.\",\n        \"Een neutrale persoon die toeziet op naleving.\",\n        \"Een groep die na een treffer hulp of begeleiding krijgt.\"\n      ],\n      \"switch_trigger\": \"Een scheidsrechter fluit en roept: \\\"Rood team terug naar de startzone; eerst je masker schoonmaken!\\\"\",\n      \"hinge_event\": \"Een vermeend gewonde strijder springt op, steekt een felgekleurde marker omhoog en loopt lachend naar de kantine.\",\n      \"anomaly_under_a\": \"Na werkelijk geweld zou een gewonde niet vrolijk opstaan omdat hij met een kleurmarker is geraakt, en een kantinebezoek zou geen passende medische reactie zijn.\",\n      \"resolution_under_b\": \"De gekleurde verf markeert slechts uitschakeling in een spel; de speler verlaat volgens de veiligheidsregels het veld en kan daarna zonder gevaar pauzeren.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke en militaire leiders: nemen besluiten, verdedigen belangen en dragen verantwoordelijkheid voor escalatie of de-escalatie.\",\n      \"Diplomaten en bemiddelaars: brengen partijen aan tafel en zoeken een aanvaardbaar compromis.\",\n      \"Soldaten en strijdende groepen: voeren bevelen uit en zijn direct betrokken bij het geweld.\",\n      \"Burgers: willen veiligheid, bescherming en een normaal leven; zij dragen vaak de zwaarste gevolgen.\",\n      \"Internationale organisaties en hulpverleners: monitoren, verlenen hulp en ondersteunen vrede of humanitaire bescherming.\"\n    ],\n    \"apparent_goal\": \"Het conflict beëindigen, burgers beschermen en een stabiele, rechtvaardige vrede tot stand brengen.\",\n    \"preconditions\": [\n      \"Er is een bestaand conflict, dreiging of daadwerkelijk geweld tussen partijen.\",\n      \"De partijen hebben botsende belangen, angst, wantrouwen of historische grieven.\",\n      \"Er bestaat voldoende contact, druk of bereidheid om over een oplossing te spreken.\",\n      \"Basisveiligheid en minimale regels, zoals een tijdelijk staakt-het-vuren, maken overleg mogelijk.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen stoppen of beperken het geweld.\",\n      \"Leiders sturen onderhandelaars naar overleg.\",\n      \"Bemiddelaars helpen bij communicatie en concessies.\",\n      \"Er worden afspraken gemaakt over veiligheid, grenzen, macht, herstel of hulp.\",\n      \"De afspraken worden gecontroleerd en nageleefd om hernieuwd geweld te voorkomen.\"\n    ],\n    \"expected_outcome\": \"Een akkoord of duurzame regeling waarbij het geweld afneemt, burgers veiliger zijn en geschillen voortaan via politieke of juridische middelen worden behandeld.\",\n    \"expected_propositions\": [\n      \"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\",\n      \"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\",\n      \"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\",\n      \"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\",\n      \"Een vredesakkoord werkt alleen wanneer betrokken partijen zich er in redelijke mate aan houden.\"\n    ],\n    \"audience_expectation\": \"Een opzet rond oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen proberen escalatie te stoppen en via overleg, bescherming en afspraken veiligheid en vrede te herstellen.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.\",\n      \"opposition_axis\": \"Werkelijk humanitair conflict versus geënsceneerde fictie\",\n      \"opposed_proposition\": \"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\",\n      \"shared_anchor\": \"Een ceremonie rond een ondertekend staakt-het-vuren\",\n      \"reading_a\": \"Werkelijke vertegenwoordigers van strijdende partijen ondertekenen een akkoord om dodelijk geweld te stoppen.\",\n      \"reading_b\": \"Acteurs voeren een vooraf geschreven ondertekeningsscène uit voor een oorlogsfilm.\",\n      \"roles_b\": [\n        \"Acteurs: vertolken staatshoofden, diplomaten, soldaten en burgers.\",\n        \"Regisseur: leidt de opname en bewaakt het verloop van de scène.\",\n        \"Cameraploeg en geluidstechnici: registreren de scène.\",\n        \"Rekwisietenmedewerkers: verzorgen documenten, uniformen, nepwapens en decor.\",\n        \"Figuranten: beelden bewakers, slachtoffers of omstanders uit.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige filmscène opnemen die spanning oproept zonder dat iemand werkelijk gevaar loopt.\",\n      \"role_remapping\": [\n        \"Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.\",\n        \"Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.\",\n        \"Soldaten en strijdende groepen worden figuranten en stuntperformers.\",\n        \"Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.\",\n        \"Het vredesdocument wordt een rekwisiet met een scripttekst.\"\n      ],\n      \"shared_cues\": [\n        \"Uniformen en bewaakte toegang tot een onderhandelingstafel.\",\n        \"Een kaart met betwiste grenzen.\",\n        \"Ernstige toespraken over slachtoffers en veiligheid.\",\n        \"Een document dat door beide partijen wordt ondertekend.\",\n        \"Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden.\"\n      ],\n      \"switch_trigger\": \"Een stem roept plotseling: \\\"En... cut, deze keer zonder de pen in beeld!\\\"\",\n      \"hinge_event\": \"Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.\",\n      \"anomaly_under_a\": \"Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.\",\n      \"resolution_under_b\": \"Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee fanatieke deelnemers spelen een strategisch bordspel waarin legers gebieden veroveren, bondgenootschappen sluiten en tijdelijk vrede afspreken. Hun gesprek klinkt als diplomatie, maar gaat over spelregels en speelstukken.\",\n      \"opposition_axis\": \"Werkelijke oorlogspolitiek versus competitief spel\",\n      \"opposed_proposition\": \"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\",\n      \"shared_anchor\": \"Een overleg over een grens en een tijdelijk staakt-het-vuren\",\n      \"reading_a\": \"Onderhandelaars proberen een echte grensoorlog te bevriezen en burgers aan beide kanten te beschermen.\",\n      \"reading_b\": \"Spelers onderhandelen over een tijdelijke afspraak zodat zij hun posities op een speelbord kunnen herverdelen.\",\n      \"roles_b\": [\n        \"Speler aan de ene kant: bestuurt een fictief leger en probeert te winnen.\",\n        \"Speler aan de andere kant: verdedigt gebieden en sluit tactische deals.\",\n        \"Spelleider: verduidelijkt regels en beslist over betwiste zetten.\",\n        \"Speelstukken: vertegenwoordigen legers, steden en verdedigingslinies.\",\n        \"Toeschouwers: volgen de strategie en geven commentaar.\"\n      ],\n      \"goal_b\": \"Volgens de spelregels winnen door gebieden, punten of de hoofdstad van de tegenstander te veroveren.\",\n      \"role_remapping\": [\n        \"Politieke en militaire leiders worden de twee spelers.\",\n        \"Diplomaten en bemiddelaars worden de spelers zelf en eventueel de spelleider.\",\n        \"Soldaten en strijdende groepen worden pionnen, kaarten of miniaturen.\",\n        \"Burgers worden puntenfiches of stadsmarkeringen zonder werkelijk welzijn.\",\n        \"Internationale controle wordt de spelleider die naleving van de regels bewaakt.\"\n      ],\n      \"shared_cues\": [\n        \"Een kaart met grenzen en strategische steden.\",\n        \"Gesprekken over terugtrekking, verdediging en een wapenstilstand.\",\n        \"Markeringen die troepenbewegingen lijken weer te geven.\",\n        \"Een neutrale derde die een betwiste beslissing beoordeelt.\",\n        \"De zorg dat de andere partij een afspraak zal breken.\"\n      ],\n      \"switch_trigger\": \"Een speler zegt: \\\"Wacht, ik geef mijn generaal drie vakjes terug; dan eindigt mijn beurt.\\\"\",\n      \"hinge_event\": \"Een leider veegt na het overleg zonder aarzeling een volledig leger van de kaart en legt het naast de doos.\",\n      \"anomaly_under_a\": \"In een echt conflict zou het wegvegen van een leger geen vreedzame oplossing zijn en zou het lot van duizenden mensen niet met één handbeweging kunnen worden afgedaan.\",\n      \"resolution_under_b\": \"Op het bord verwijdert de speler verslagen speelstukken; die handeling is noodzakelijk om de spelstand zichtbaar te maken en veroorzaakt geen werkelijk verlies.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een school organiseert een oefening in conflictoplossing waarin leerlingen een verzonnen ruzie tussen twee buurten naspelen. Zij moeten namens hun groep onderhandelen en punten verdienen voor samenwerking, luistervaardigheid en een haalbaar compromis.\",\n      \"opposition_axis\": \"Echte politieke verantwoordelijkheid versus pedagogisch rollenspel\",\n      \"opposed_proposition\": \"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\",\n      \"shared_anchor\": \"Een bemiddelde bijeenkomst na onrust tussen twee groepen\",\n      \"reading_a\": \"Verantwoordelijke leiders proberen na geweld de veiligheid van kwetsbare burgers te herstellen.\",\n      \"reading_b\": \"Leerlingen voeren een lesopdracht uit waarin zij oefenen met bemiddeling en de gevolgen van escalatie bespreken.\",\n      \"roles_b\": [\n        \"Leerlingen: spelen vertegenwoordigers van twee fictieve groepen.\",\n        \"Docent: begeleidt de oefening en bewaakt een veilige sfeer.\",\n        \"Leerling-bemiddelaars: stellen vragen en zoeken een compromis.\",\n        \"Klasgenoten: spelen bewoners, journalisten of hulpverleners.\",\n        \"Beoordelaar: kent punten toe voor constructief overleg.\"\n      ],\n      \"goal_b\": \"Leren hoe conflicten escaleren en hoe luisteren, afspraken en herstel een ruzie kunnen verminderen.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden leerlingen met rolkaartjes.\",\n        \"Diplomaten en bemiddelaars worden aangewezen leerling-bemiddelaars.\",\n        \"Strijdende groepen worden klasgroepen met fictieve belangen.\",\n        \"Burgers worden medeleerlingen die gevolgen en behoeften verwoorden.\",\n        \"Internationale organisaties en hulpverleners worden docent en beoordelaar.\"\n      ],\n      \"shared_cues\": [\n        \"Twee groepen zitten aan weerszijden van een tafel.\",\n        \"Er worden klachten geuit over angst, schade en onveiligheid.\",\n        \"Een neutrale voorzitter geeft iedereen spreektijd.\",\n        \"Er wordt gewerkt aan regels voor een tijdelijk staakt-het-vuren.\",\n        \"Een verslag bevat afspraken over herstel en bescherming.\"\n      ],\n      \"switch_trigger\": \"De docent onderbreekt het gesprek met: \\\"Stop de simulatie: wie heeft nog zijn blauwe rolkaart?\\\"\",\n      \"hinge_event\": \"Een vertegenwoordiger vraagt of zij extra punten krijgt wanneer haar groep geloofwaardig boos blijft en geen compromis sluit.\",\n      \"anomaly_under_a\": \"Een echte leider zou niet om punten vragen voor het in stand houden van vijandigheid; dat zou bescherming en de-escalatie ondermijnen.\",\n      \"resolution_under_b\": \"In de oefening maken punten en roltrouw zichtbaar hoe gedrag het overleg beïnvloedt; de docent kan juist die keuze gebruiken om escalatie te bespreken.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een bedrijf houdt een competitieve paintball- en teambuildingdag. Teams gebruiken militaire taal, maken tijdelijke wapenstilstanden en proberen een vlag of controlepunt te veroveren onder toezicht van veiligheidsbegeleiders.\",\n      \"opposition_axis\": \"Dodelijk geweld versus gereguleerde recreatieve competitie\",\n      \"opposed_proposition\": \"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\",\n      \"shared_anchor\": \"Twee gewapend lijkende groepen spreken een tijdelijke wapenstilstand af\",\n      \"reading_a\": \"Strijdende partijen leggen de wapens neer om slachtoffers te helpen en een politieke regeling mogelijk te maken.\",\n      \"reading_b\": \"Paintballteams pauzeren hun wedstrijd om teams opnieuw in te delen, materiaal te controleren of een spelopdracht te wijzigen.\",\n      \"roles_b\": [\n        \"Teamcaptains: bepalen tactiek en onderhandelen over tijdelijke afspraken.\",\n        \"Spelers: proberen terrein en doelen te veroveren.\",\n        \"Scheidsrechters: handhaven veiligheidsregels en verklaren spelers uitgeschakeld.\",\n        \"Organisatoren: plannen het spel en verzorgen materiaal.\",\n        \"Toeschouwers of collega's: moedigen teams aan en wachten op hun beurt.\"\n      ],\n      \"goal_b\": \"Een spannende maar veilige wedstrijd winnen en tegelijk samenwerking binnen het team versterken.\",\n      \"role_remapping\": [\n        \"Politieke en militaire leiders worden teamcaptains.\",\n        \"Diplomaten en bemiddelaars worden scheidsrechters en organisatoren.\",\n        \"Soldaten en strijdende groepen worden paintballspelers.\",\n        \"Burgers worden wachtende collega's en toeschouwers buiten het speelveld.\",\n        \"Internationale toezichthouders worden veiligheidsbegeleiders met beschermingsregels.\"\n      ],\n      \"shared_cues\": [\n        \"Camouflagekleding, helmen en afgebakend terrein.\",\n        \"Gesprekken over posities, dekking en terugtrekking.\",\n        \"Een tijdelijk bevel om niet te schieten.\",\n        \"Een neutrale persoon die toeziet op naleving.\",\n        \"Een groep die na een treffer hulp of begeleiding krijgt.\"\n      ],\n      \"switch_trigger\": \"Een scheidsrechter fluit en roept: \\\"Rood team terug naar de startzone; eerst je masker schoonmaken!\\\"\",\n      \"hinge_event\": \"Een vermeend gewonde strijder springt op, steekt een felgekleurde marker omhoog en loopt lachend naar de kantine.\",\n      \"anomaly_under_a\": \"Na werkelijk geweld zou een gewonde niet vrolijk opstaan omdat hij met een kleurmarker is geraakt, en een kantinebezoek zou geen passende medische reactie zijn.\",\n      \"resolution_under_b\": \"De gekleurde verf markeert slechts uitschakeling in een spel; de speler verlaat volgens de veiligheidsregels het veld en kan daarna zonder gevaar pauzeren.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"plan\": {\n    \"setup_script\": \"Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.\",\n    \"opposing_script\": \"Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.\",\n    \"opposition_type\": \"Werkelijk humanitair conflict versus geënsceneerde fictie\",\n    \"trigger\": \"Een stem roept plotseling: \\\"En... cut, deze keer zonder de pen in beeld!\\\"\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Uniformen en bewaakte toegang tot een onderhandelingstafel.\",\n      \"Een kaart met betwiste grenzen.\",\n      \"Ernstige toespraken over slachtoffers en veiligheid.\",\n      \"Een document dat door beide partijen wordt ondertekend.\",\n      \"Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden.\"\n    ],\n    \"hinge_event\": \"Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.\",\n    \"anomaly_under_a\": \"Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.\",\n    \"resolution_under_b\": \"Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.\",\n    \"role_remapping\": [\n      \"Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.\",\n      \"Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.\",\n      \"Soldaten en strijdende groepen worden figuranten en stuntperformers.\",\n      \"Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.\",\n      \"Het vredesdocument wordt een rekwisiet met een scripttekst.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.\",\n      \"participants_and_roles\": [\n        \"Politieke en militaire leiders: nemen besluiten, verdedigen belangen en dragen verantwoordelijkheid voor escalatie of de-escalatie.\",\n        \"Diplomaten en bemiddelaars: brengen partijen aan tafel en zoeken een aanvaardbaar compromis.\",\n        \"Soldaten en strijdende groepen: voeren bevelen uit en zijn direct betrokken bij het geweld.\",\n        \"Burgers: willen veiligheid, bescherming en een normaal leven; zij dragen vaak de zwaarste gevolgen.\",\n        \"Internationale organisaties en hulpverleners: monitoren, verlenen hulp en ondersteunen vrede of humanitaire bescherming.\"\n      ],\n      \"apparent_goal\": \"Het conflict beëindigen, burgers beschermen en een stabiele, rechtvaardige vrede tot stand brengen.\",\n      \"preconditions\": [\n        \"Er is een bestaand conflict, dreiging of daadwerkelijk geweld tussen partijen.\",\n        \"De partijen hebben botsende belangen, angst, wantrouwen of historische grieven.\",\n        \"Er bestaat voldoende contact, druk of bereidheid om over een oplossing te spreken.\",\n        \"Basisveiligheid en minimale regels, zoals een tijdelijk staakt-het-vuren, maken overleg mogelijk.\"\n      ],\n      \"expected_actions\": [\n        \"Partijen stoppen of beperken het geweld.\",\n        \"Leiders sturen onderhandelaars naar overleg.\",\n        \"Bemiddelaars helpen bij communicatie en concessies.\",\n        \"Er worden afspraken gemaakt over veiligheid, grenzen, macht, herstel of hulp.\",\n        \"De afspraken worden gecontroleerd en nageleefd om hernieuwd geweld te voorkomen.\"\n      ],\n      \"expected_outcome\": \"Een akkoord of duurzame regeling waarbij het geweld afneemt, burgers veiliger zijn en geschillen voortaan via politieke of juridische middelen worden behandeld.\",\n      \"expected_propositions\": [\n        \"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\",\n        \"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\",\n        \"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\",\n        \"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\",\n        \"Een vredesakkoord werkt alleen wanneer betrokken partijen zich er in redelijke mate aan houden.\"\n      ],\n      \"audience_expectation\": \"Een opzet rond oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen proberen escalatie te stoppen en via overleg, bescherming en afspraken veiligheid en vrede te herstellen.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.\",\n      \"opposition_axis\": \"Werkelijk humanitair conflict versus geënsceneerde fictie\",\n      \"opposed_proposition\": \"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\",\n      \"shared_anchor\": \"Een ceremonie rond een ondertekend staakt-het-vuren\",\n      \"reading_a\": \"Werkelijke vertegenwoordigers van strijdende partijen ondertekenen een akkoord om dodelijk geweld te stoppen.\",\n      \"reading_b\": \"Acteurs voeren een vooraf geschreven ondertekeningsscène uit voor een oorlogsfilm.\",\n      \"roles_b\": [\n        \"Acteurs: vertolken staatshoofden, diplomaten, soldaten en burgers.\",\n        \"Regisseur: leidt de opname en bewaakt het verloop van de scène.\",\n        \"Cameraploeg en geluidstechnici: registreren de scène.\",\n        \"Rekwisietenmedewerkers: verzorgen documenten, uniformen, nepwapens en decor.\",\n        \"Figuranten: beelden bewakers, slachtoffers of omstanders uit.\"\n      ],\n      \"goal_b\": \"Een geloofwaardige filmscène opnemen die spanning oproept zonder dat iemand werkelijk gevaar loopt.\",\n      \"role_remapping\": [\n        \"Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.\",\n        \"Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.\",\n        \"Soldaten en strijdende groepen worden figuranten en stuntperformers.\",\n        \"Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.\",\n        \"Het vredesdocument wordt een rekwisiet met een scripttekst.\"\n      ],\n      \"shared_cues\": [\n        \"Uniformen en bewaakte toegang tot een onderhandelingstafel.\",\n        \"Een kaart met betwiste grenzen.\",\n        \"Ernstige toespraken over slachtoffers en veiligheid.\",\n        \"Een document dat door beide partijen wordt ondertekend.\",\n        \"Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden.\"\n      ],\n      \"switch_trigger\": \"Een stem roept plotseling: \\\"En... cut, deze keer zonder de pen in beeld!\\\"\",\n      \"hinge_event\": \"Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.\",\n      \"anomaly_under_a\": \"Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.\",\n      \"resolution_under_b\": \"Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.\",\n      \"opposing_script\": \"Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.\",\n      \"opposition_type\": \"Werkelijk humanitair conflict versus geënsceneerde fictie\",\n      \"trigger\": \"Een stem roept plotseling: \\\"En... cut, deze keer zonder de pen in beeld!\\\"\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Uniformen en bewaakte toegang tot een onderhandelingstafel.\",\n        \"Een kaart met betwiste grenzen.\",\n        \"Ernstige toespraken over slachtoffers en veiligheid.\",\n        \"Een document dat door beide partijen wordt ondertekend.\",\n        \"Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden.\"\n      ],\n      \"hinge_event\": \"Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.\",\n      \"anomaly_under_a\": \"Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.\",\n      \"resolution_under_b\": \"Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.\",\n      \"role_remapping\": [\n        \"Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.\",\n        \"Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.\",\n        \"Soldaten en strijdende groepen worden figuranten en stuntperformers.\",\n        \"Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.\",\n        \"Het vredesdocument wordt een rekwisiet met een scripttekst.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de grens zat iedereen strak in uniform aan de onderhandelingstafel. Na de handtekeningen vroeg een man met koptelefoon of de ontploffing en het huilende kind nog één keer konden. De eerste take had de pen in beeld.\",\n      \"angle\": \"Vredesonderhandeling blijkt filmset\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De delegaties spraken ernstig over veiligheid, terwijl camera’s elke traan registreerden. Toen beide leiders eindelijk tekenden, riep iemand: „Prachtig, maar kunnen de soldaten bij de explosie iets minder overtuigend sterven?”\",\n      \"angle\": \"Oorlogsdrama als opname\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik zag twee landen een vredesverdrag sluiten: bewaakte deur, betwiste kaart, heel veel pers. Net toen iedereen opgelucht klapte, zei de regisseur: „Mooi, maar de wapenstilstand graag opnieuw na de lunch.”\",\n      \"angle\": \"Diplomatie als repetitie\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Bij de grens zat iedereen strak in uniform aan de onderhandelingstafel. Na de handtekeningen vroeg een man met koptelefoon of de ontploffing en het huilende kind nog één keer konden. De eerste take had de pen in beeld.\",\n      \"angle\": \"Vredesonderhandeling blijkt filmset\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"De delegaties spraken ernstig over veiligheid, terwijl camera’s elke traan registreerden. Toen beide leiders eindelijk tekenden, riep iemand: „Prachtig, maar kunnen de soldaten bij de explosie iets minder overtuigend sterven?”\",\n      \"angle\": \"Oorlogsdrama als opname\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"Ik zag twee landen een vredesverdrag sluiten: bewaakte deur, betwiste kaart, heel veel pers. Net toen iedereen opgelucht klapte, zei de regisseur: „Mooi, maar de wapenstilstand graag opnieuw na de lunch.”\",\n      \"angle\": \"Diplomatie als repetitie\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een ernstige vredesonderhandeling aan de grens, met geüniformeerde delegaties die een akkoord ondertekenen.\",\n      \"realized_script_b\": \"Een filmopname van een vredesonderhandeling en oorlogsscène, waarbij de crew een take opnieuw wil doen wegens een zichtbaar rekwisiet.\",\n      \"realized_opposition_axis\": \"Werkelijk humanitair conflict versus geënsceneerde fictie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet activeert een echte vredesondertekening; de vraag om de explosie en het huilende kind opnieuw te doen, plus de verwijzing naar een 'take' en de pen in beeld, schakelt functioneel naar een filmset. De gedeelde ceremonie en de retrospectieve herlezing zijn behouden.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant realiseert de geplande overgang van vredesceremonie naar filmset helder; de formulering is compact en de slotzin levert een herkenbare punchline.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Delegaties voeren ernstige vredesbesprekingen over veiligheid en ondertekenen een akkoord.\",\n      \"realized_script_b\": \"Een opname van een oorlogsdrama waarin spelers die soldaten verbeelden hun sterfscène minder overtuigend moeten spelen.\",\n      \"realized_opposition_axis\": \"Werkelijk humanitair conflict versus geënsceneerde fictie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De ernstige delegaties, veiligheid, tranen en handtekeningen dragen eerst de vredeslezing. De instructie over minder overtuigend stervende soldaten maakt de opnamelezing noodzakelijk en herkadert de emotionele registratie als filmproductie.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Hoewel de concrete pen-/cut-trigger is vervangen, blijft de beoogde scripttegenstelling functioneel intact: een geloofwaardige vredessituatie blijkt een geregisseerde oorlogsscène.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Twee landen sluiten onder bewaking en met een betwiste kaart een werkelijk vredesverdrag.\",\n      \"realized_script_b\": \"Een regisseur laat acteurs een vredesverdrag en wapenstilstand voor een film opnieuw spelen.\",\n      \"realized_opposition_axis\": \"Werkelijk humanitair conflict versus geënsceneerde fictie.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De bewaakte deur, betwiste kaart, pers, opluchting en ondertekening zetten eerst een echte diplomatieke ceremonie neer. De regisseur en de opdracht de wapenstilstand opnieuw te doen verschuiven ondubbelzinnig naar een repetitie of opname.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Deze variant volgt het plan zeer direct: de gedeelde diplomatieke signalen ondersteunen eerst de echte-conflictlezing, waarna 'de regisseur' en 'opnieuw' de filmsetlezing activeren.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij de grens zat iedereen strak in uniform aan de onderhandelingstafel. Na de handtekeningen vroeg een man met koptelefoon of de ontploffing en het huilende kind nog één keer konden. De eerste take had de pen in beeld.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.",
+      "opposing_script": "Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.",
+      "opposition_type": "Werkelijk humanitair conflict versus geënsceneerde fictie",
+      "trigger": "Een stem roept plotseling: \"En... cut, deze keer zonder de pen in beeld!\"",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Uniformen en bewaakte toegang tot een onderhandelingstafel.",
+        "Een kaart met betwiste grenzen.",
+        "Ernstige toespraken over slachtoffers en veiligheid.",
+        "Een document dat door beide partijen wordt ondertekend.",
+        "Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden."
+      ],
+      "hinge_event": "Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.",
+      "anomaly_under_a": "Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.",
+      "resolution_under_b": "Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.",
+      "role_remapping": [
+        "Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.",
+        "Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.",
+        "Soldaten en strijdende groepen worden figuranten en stuntperformers.",
+        "Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.",
+        "Het vredesdocument wordt een rekwisiet met een scripttekst."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.\\\",\\\"participants_and_roles\\\":[\\\"Politieke en militaire leiders: nemen besluiten, verdedigen belangen en dragen verantwoordelijkheid voor escalatie of de-escalatie.\\\",\\\"Diplomaten en bemiddelaars: brengen partijen aan tafel en zoeken een aanvaardbaar compromis.\\\",\\\"Soldaten en strijdende groepen: voeren bevelen uit en zijn direct betrokken bij het geweld.\\\",\\\"Burgers: willen veiligheid, bescherming en een normaal leven; zij dragen vaak de zwaarste gevolgen.\\\",\\\"Internationale organisaties en hulpverleners: monitoren, verlenen hulp en ondersteunen vrede of humanitaire bescherming.\\\"],\\\"apparent_goal\\\":\\\"Het conflict beëindigen, burgers beschermen en een stabiele, rechtvaardige vrede tot stand brengen.\\\",\\\"preconditions\\\":[\\\"Er is een bestaand conflict, dreiging of daadwerkelijk geweld tussen partijen.\\\",\\\"De partijen hebben botsende belangen, angst, wantrouwen of historische grieven.\\\",\\\"Er bestaat voldoende contact, druk of bereidheid om over een oplossing te spreken.\\\",\\\"Basisveiligheid en minimale regels, zoals een tijdelijk staakt-het-vuren, maken overleg mogelijk.\\\"],\\\"expected_actions\\\":[\\\"Partijen stoppen of beperken het geweld.\\\",\\\"Leiders sturen onderhandelaars naar overleg.\\\",\\\"Bemiddelaars helpen bij communicatie en concessies.\\\",\\\"Er worden afspraken gemaakt over veiligheid, grenzen, macht, herstel of hulp.\\\",\\\"De afspraken worden gecontroleerd en nageleefd om hernieuwd geweld te voorkomen.\\\"],\\\"expected_outcome\\\":\\\"Een akkoord of duurzame regeling waarbij het geweld afneemt, burgers veiliger zijn en geschillen voortaan via politieke of juridische middelen worden behandeld.\\\",\\\"expected_propositions\\\":[\\\"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\\\",\\\"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\\\",\\\"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\\\",\\\"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\\\",\\\"Een vredesakkoord werkt alleen wanneer betrokken partijen zich er in redelijke mate aan houden.\\\"],\\\"audience_expectation\\\":\\\"Een opzet rond oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen proberen escalatie te stoppen en via overleg, bescherming en afspraken veiligheid en vrede te herstellen.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.\\\",\\\"opposition_axis\\\":\\\"Werkelijk humanitair conflict versus geënsceneerde fictie\\\",\\\"opposed_proposition\\\":\\\"Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.\\\",\\\"shared_anchor\\\":\\\"Een ceremonie rond een ondertekend staakt-het-vuren\\\",\\\"reading_a\\\":\\\"Werkelijke vertegenwoordigers van strijdende partijen ondertekenen een akkoord om dodelijk geweld te stoppen.\\\",\\\"reading_b\\\":\\\"Acteurs voeren een vooraf geschreven ondertekeningsscène uit voor een oorlogsfilm.\\\",\\\"roles_b\\\":[\\\"Acteurs: vertolken staatshoofden, diplomaten, soldaten en burgers.\\\",\\\"Regisseur: leidt de opname en bewaakt het verloop van de scène.\\\",\\\"Cameraploeg en geluidstechnici: registreren de scène.\\\",\\\"Rekwisietenmedewerkers: verzorgen documenten, uniformen, nepwapens en decor.\\\",\\\"Figuranten: beelden bewakers, slachtoffers of omstanders uit.\\\"],\\\"goal_b\\\":\\\"Een geloofwaardige filmscène opnemen die spanning oproept zonder dat iemand werkelijk gevaar loopt.\\\",\\\"role_remapping\\\":[\\\"Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.\\\",\\\"Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.\\\",\\\"Soldaten en strijdende groepen worden figuranten en stuntperformers.\\\",\\\"Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.\\\",\\\"Het vredesdocument wordt een rekwisiet met een scripttekst.\\\"],\\\"shared_cues\\\":[\\\"Uniformen en bewaakte toegang tot een onderhandelingstafel.\\\",\\\"Een kaart met betwiste grenzen.\\\",\\\"Ernstige toespraken over slachtoffers en veiligheid.\\\",\\\"Een document dat door beide partijen wordt ondertekend.\\\",\\\"Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden.\\\"],\\\"switch_trigger\\\":\\\"Een stem roept plotseling: \\\\\\\"En... cut, deze keer zonder de pen in beeld!\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.\\\",\\\"anomaly_under_a\\\":\\\"Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.\\\",\\\"resolution_under_b\\\":\\\"Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Twee fanatieke deelnemers spelen een strategisch bordspel waarin legers gebieden veroveren, bondgenootschappen sluiten en tijdelijk vrede afspreken. Hun gesprek klinkt als diplomatie, maar gaat over spelregels en speelstukken.\\\",\\\"opposition_axis\\\":\\\"Werkelijke oorlogspolitiek versus competitief spel\\\",\\\"opposed_proposition\\\":\\\"Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.\\\",\\\"shared_anchor\\\":\\\"Een overleg over een grens en een tijdelijk staakt-het-vuren\\\",\\\"reading_a\\\":\\\"Onderhandelaars proberen een echte grensoorlog te bevriezen en burgers aan beide kanten te beschermen.\\\",\\\"reading_b\\\":\\\"Spelers onderhandelen over een tijdelijke afspraak zodat zij hun posities op een speelbord kunnen herverdelen.\\\",\\\"roles_b\\\":[\\\"Speler aan de ene kant: bestuurt een fictief leger en probeert te winnen.\\\",\\\"Speler aan de andere kant: verdedigt gebieden en sluit tactische deals.\\\",\\\"Spelleider: verduidelijkt regels en beslist over betwiste zetten.\\\",\\\"Speelstukken: vertegenwoordigen legers, steden en verdedigingslinies.\\\",\\\"Toeschouwers: volgen de strategie en geven commentaar.\\\"],\\\"goal_b\\\":\\\"Volgens de spelregels winnen door gebieden, punten of de hoofdstad van de tegenstander te veroveren.\\\",\\\"role_remapping\\\":[\\\"Politieke en militaire leiders worden de twee spelers.\\\",\\\"Diplomaten en bemiddelaars worden de spelers zelf en eventueel de spelleider.\\\",\\\"Soldaten en strijdende groepen worden pionnen, kaarten of miniaturen.\\\",\\\"Burgers worden puntenfiches of stadsmarkeringen zonder werkelijk welzijn.\\\",\\\"Internationale controle wordt de spelleider die naleving van de regels bewaakt.\\\"],\\\"shared_cues\\\":[\\\"Een kaart met grenzen en strategische steden.\\\",\\\"Gesprekken over terugtrekking, verdediging en een wapenstilstand.\\\",\\\"Markeringen die troepenbewegingen lijken weer te geven.\\\",\\\"Een neutrale derde die een betwiste beslissing beoordeelt.\\\",\\\"De zorg dat de andere partij een afspraak zal breken.\\\"],\\\"switch_trigger\\\":\\\"Een speler zegt: \\\\\\\"Wacht, ik geef mijn generaal drie vakjes terug; dan eindigt mijn beurt.\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Een leider veegt na het overleg zonder aarzeling een volledig leger van de kaart en legt het naast de doos.\\\",\\\"anomaly_under_a\\\":\\\"In een echt conflict zou het wegvegen van een leger geen vreedzame oplossing zijn en zou het lot van duizenden mensen niet met één handbeweging kunnen worden afgedaan.\\\",\\\"resolution_under_b\\\":\\\"Op het bord verwijdert de speler verslagen speelstukken; die handeling is noodzakelijk om de spelstand zichtbaar te maken en veroorzaakt geen werkelijk verlies.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een school organiseert een oefening in conflictoplossing waarin leerlingen een verzonnen ruzie tussen twee buurten naspelen. Zij moeten namens hun groep onderhandelen en punten verdienen voor samenwerking, luistervaardigheid en een haalbaar compromis.\\\",\\\"opposition_axis\\\":\\\"Echte politieke verantwoordelijkheid versus pedagogisch rollenspel\\\",\\\"opposed_proposition\\\":\\\"Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.\\\",\\\"shared_anchor\\\":\\\"Een bemiddelde bijeenkomst na onrust tussen twee groepen\\\",\\\"reading_a\\\":\\\"Verantwoordelijke leiders proberen na geweld de veiligheid van kwetsbare burgers te herstellen.\\\",\\\"reading_b\\\":\\\"Leerlingen voeren een lesopdracht uit waarin zij oefenen met bemiddeling en de gevolgen van escalatie bespreken.\\\",\\\"roles_b\\\":[\\\"Leerlingen: spelen vertegenwoordigers van twee fictieve groepen.\\\",\\\"Docent: begeleidt de oefening en bewaakt een veilige sfeer.\\\",\\\"Leerling-bemiddelaars: stellen vragen en zoeken een compromis.\\\",\\\"Klasgenoten: spelen bewoners, journalisten of hulpverleners.\\\",\\\"Beoordelaar: kent punten toe voor constructief overleg.\\\"],\\\"goal_b\\\":\\\"Leren hoe conflicten escaleren en hoe luisteren, afspraken en herstel een ruzie kunnen verminderen.\\\",\\\"role_remapping\\\":[\\\"Politieke leiders worden leerlingen met rolkaartjes.\\\",\\\"Diplomaten en bemiddelaars worden aangewezen leerling-bemiddelaars.\\\",\\\"Strijdende groepen worden klasgroepen met fictieve belangen.\\\",\\\"Burgers worden medeleerlingen die gevolgen en behoeften verwoorden.\\\",\\\"Internationale organisaties en hulpverleners worden docent en beoordelaar.\\\"],\\\"shared_cues\\\":[\\\"Twee groepen zitten aan weerszijden van een tafel.\\\",\\\"Er worden klachten geuit over angst, schade en onveiligheid.\\\",\\\"Een neutrale voorzitter geeft iedereen spreektijd.\\\",\\\"Er wordt gewerkt aan regels voor een tijdelijk staakt-het-vuren.\\\",\\\"Een verslag bevat afspraken over herstel en bescherming.\\\"],\\\"switch_trigger\\\":\\\"De docent onderbreekt het gesprek met: \\\\\\\"Stop de simulatie: wie heeft nog zijn blauwe rolkaart?\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Een vertegenwoordiger vraagt of zij extra punten krijgt wanneer haar groep geloofwaardig boos blijft en geen compromis sluit.\\\",\\\"anomaly_under_a\\\":\\\"Een echte leider zou niet om punten vragen voor het in stand houden van vijandigheid; dat zou bescherming en de-escalatie ondermijnen.\\\",\\\"resolution_under_b\\\":\\\"In de oefening maken punten en roltrouw zichtbaar hoe gedrag het overleg beïnvloedt; de docent kan juist die keuze gebruiken om escalatie te bespreken.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een bedrijf houdt een competitieve paintball- en teambuildingdag. Teams gebruiken militaire taal, maken tijdelijke wapenstilstanden en proberen een vlag of controlepunt te veroveren onder toezicht van veiligheidsbegeleiders.\\\",\\\"opposition_axis\\\":\\\"Dodelijk geweld versus gereguleerde recreatieve competitie\\\",\\\"opposed_proposition\\\":\\\"Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.\\\",\\\"shared_anchor\\\":\\\"Twee gewapend lijkende groepen spreken een tijdelijke wapenstilstand af\\\",\\\"reading_a\\\":\\\"Strijdende partijen leggen de wapens neer om slachtoffers te helpen en een politieke regeling mogelijk te maken.\\\",\\\"reading_b\\\":\\\"Paintballteams pauzeren hun wedstrijd om teams opnieuw in te delen, materiaal te controleren of een spelopdracht te wijzigen.\\\",\\\"roles_b\\\":[\\\"Teamcaptains: bepalen tactiek en onderhandelen over tijdelijke afspraken.\\\",\\\"Spelers: proberen terrein en doelen te veroveren.\\\",\\\"Scheidsrechters: handhaven veiligheidsregels en verklaren spelers uitgeschakeld.\\\",\\\"Organisatoren: plannen het spel en verzorgen materiaal.\\\",\\\"Toeschouwers of collega's: moedigen teams aan en wachten op hun beurt.\\\"],\\\"goal_b\\\":\\\"Een spannende maar veilige wedstrijd winnen en tegelijk samenwerking binnen het team versterken.\\\",\\\"role_remapping\\\":[\\\"Politieke en militaire leiders worden teamcaptains.\\\",\\\"Diplomaten en bemiddelaars worden scheidsrechters en organisatoren.\\\",\\\"Soldaten en strijdende groepen worden paintballspelers.\\\",\\\"Burgers worden wachtende collega's en toeschouwers buiten het speelveld.\\\",\\\"Internationale toezichthouders worden veiligheidsbegeleiders met beschermingsregels.\\\"],\\\"shared_cues\\\":[\\\"Camouflagekleding, helmen en afgebakend terrein.\\\",\\\"Gesprekken over posities, dekking en terugtrekking.\\\",\\\"Een tijdelijk bevel om niet te schieten.\\\",\\\"Een neutrale persoon die toeziet op naleving.\\\",\\\"Een groep die na een treffer hulp of begeleiding krijgt.\\\"],\\\"switch_trigger\\\":\\\"Een scheidsrechter fluit en roept: \\\\\\\"Rood team terug naar de startzone; eerst je masker schoonmaken!\\\\\\\"\\\",\\\"hinge_event\\\":\\\"Een vermeend gewonde strijder springt op, steekt een felgekleurde marker omhoog en loopt lachend naar de kantine.\\\",\\\"anomaly_under_a\\\":\\\"Na werkelijk geweld zou een gewonde niet vrolijk opstaan omdat hij met een kleurmarker is geraakt, en een kantinebezoek zou geen passende medische reactie zijn.\\\",\\\"resolution_under_b\\\":\\\"De gekleurde verf markeert slechts uitschakeling in een spel; de speler verlaat volgens de veiligheidsregels het veld en kan daarna zonder gevaar pauzeren.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde ceremonie, toespraken, grenskaart en handtekening kunnen eerst als echte vredesondertekening en vervolgens als filmopname worden gelezen. Werkelijkheid versus enscenering is één dominante, lokaal onverenigbare as. De cues laten de filmlezing vooraf al toe, onder meer via registratieapparatuur, maar de ernstige conflictcontext maakt Script A aanvankelijk dominant. Het opnieuw willen doen van een explosie en huilend kind is onder A absurd, maar onder B een normale opnamevraag. Daardoor worden eerdere slachtoffers, documenten en observatieapparatuur retrospectief rekwisieten en productie-elementen. Het herhalen van geweld zou A's beschermingsdoel schenden, maar maakt B's opnamedoel juist mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Het overleg over grenzen, terugtrekking en wapenstilstand kan zowel echte diplomatie als spelonderhandeling voorstellen. De tegenstelling werkelijk oorlogspolitiek versus bordspel is lokaal incompatibel en dominant. Kaart, markeringen, een neutrale beslisser en tactisch overleg ondersteunen beide lezingen; zonder expliciete spelterm ligt Script A aanvankelijk meer voor de hand. Het achteloos van de kaart vegen van een leger is onder A onaanvaardbaar en onrealistisch, maar onder B een noodzakelijke spelhandeling. Achteraf worden leger, steden en controle eenheden op een bord. Het verwijderen van mensen zou A's beschermingsdoel blokkeren, terwijl het verwijderen van speelstukken B's spelverloop mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De bemiddelde bijeenkomst, klachten over onveiligheid en afspraken over een staakt-het-vuren kunnen zowel een echte nasleep van geweld als een klasrollenspel dragen. Echte politieke verantwoordelijkheid versus pedagogische simulatie vormt één duidelijke, incompatibele as. De gedeelde cues ondersteunen de oefenlezing al latent, maar zonder docent- of rolkaartverwijzing domineert eerst de ernstige lezing van Script A. Vragen om punten voor geloofwaardig conflictgedrag is onder A strijdig met bescherming en de-escalatie, maar onder B begrijpelijk als onderdeel van een beoordeelde simulatie. Daardoor worden leiders, burgers en bemiddeling achteraf leerlingenrollen en lesonderdelen. De gevraagde punten zijn echter niet expliciet een voorwaarde die B's genoemde doel mogelijk maakt; de functionele omkering is daarom niet voldoende ondersteund.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Gewapend ogende groepen, een wapenstilstand, posities en een neutrale toezichthouder kunnen zowel oorlog als een paintballwedstrijd voorstellen. Dodelijk geweld versus gereguleerde recreatieve competitie is de ene dominante en lokaal incompatibele as. Camouflage, helmen en afgebakend terrein maken Script B vooraf mogelijk, maar de termen strijders, wapenstilstand en gewonden doen Script A aanvankelijk domineren. Een gewonde die lachend opstaat na een gekleurde treffer en naar de kantine loopt is onder A anomalisch, maar onder B een normale uitschakeling. Eerder geweld, hulp en toezicht krijgen retrospectief de functie van spelregels, veiligheidsbegeleiding en verfmarkering. De treffer zou A's levensbeschermende doel ondermijnen, maar faciliteert B's veilige wedstrijdverloop.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest volledige oppositie: een werkelijk humanitair vredesproces tegenover een geënsceneerde filmproductie. De ceremonie rond het staakt-het-vuren, de uniformen, toespraken, grenskaart en registratie zijn eerst overtuigend compatibel met Script A, terwijl de camera’s latent als pers kunnen worden gelezen. De hinge met het opnieuw doen van een explosie en een huilend kind is onder de oorlogslezing sterk anomalisch, maar onder de filmlezing volledig functioneel. Daardoor herinterpreteert de onthulling rollen, documenten, geweld en emotie in één keer, met hoge opzetdominantie, thematische specificiteit en een duidelijk payoff-potentieel.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"Bij de grens zat iedereen strak in uniform aan de onderhandelingstafel. Na de handtekeningen vroeg een man met koptelefoon of de ontploffing en het huilende kind nog één keer konden. De eerste take had de pen in beeld.\\\",\\\"angle\\\":\\\"Vredesonderhandeling blijkt filmset\\\"},{\\\"text\\\":\\\"De delegaties spraken ernstig over veiligheid, terwijl camera’s elke traan registreerden. Toen beide leiders eindelijk tekenden, riep iemand: „Prachtig, maar kunnen de soldaten bij de explosie iets minder overtuigend sterven?”\\\",\\\"angle\\\":\\\"Oorlogsdrama als opname\\\"},{\\\"text\\\":\\\"Ik zag twee landen een vredesverdrag sluiten: bewaakte deur, betwiste kaart, heel veel pers. Net toen iedereen opgelucht klapte, zei de regisseur: „Mooi, maar de wapenstilstand graag opnieuw na de lunch.”\\\",\\\"angle\\\":\\\"Diplomatie als repetitie\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een ernstige vredesonderhandeling aan de grens, met geüniformeerde delegaties die een akkoord ondertekenen.\\\",\\\"realized_script_b\\\":\\\"Een filmopname van een vredesonderhandeling en oorlogsscène, waarbij de crew een take opnieuw wil doen wegens een zichtbaar rekwisiet.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijk humanitair conflict versus geënsceneerde fictie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet activeert een echte vredesondertekening; de vraag om de explosie en het huilende kind opnieuw te doen, plus de verwijzing naar een 'take' en de pen in beeld, schakelt functioneel naar een filmset. De gedeelde ceremonie en de retrospectieve herlezing zijn behouden.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant realiseert de geplande overgang van vredesceremonie naar filmset helder; de formulering is compact en de slotzin levert een herkenbare punchline.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Delegaties voeren ernstige vredesbesprekingen over veiligheid en ondertekenen een akkoord.\\\",\\\"realized_script_b\\\":\\\"Een opname van een oorlogsdrama waarin spelers die soldaten verbeelden hun sterfscène minder overtuigend moeten spelen.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijk humanitair conflict versus geënsceneerde fictie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De ernstige delegaties, veiligheid, tranen en handtekeningen dragen eerst de vredeslezing. De instructie over minder overtuigend stervende soldaten maakt de opnamelezing noodzakelijk en herkadert de emotionele registratie als filmproductie.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Hoewel de concrete pen-/cut-trigger is vervangen, blijft de beoogde scripttegenstelling functioneel intact: een geloofwaardige vredessituatie blijkt een geregisseerde oorlogsscène.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Twee landen sluiten onder bewaking en met een betwiste kaart een werkelijk vredesverdrag.\\\",\\\"realized_script_b\\\":\\\"Een regisseur laat acteurs een vredesverdrag en wapenstilstand voor een film opnieuw spelen.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijk humanitair conflict versus geënsceneerde fictie.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De bewaakte deur, betwiste kaart, pers, opluchting en ondertekening zetten eerst een echte diplomatieke ceremonie neer. De regisseur en de opdracht de wapenstilstand opnieuw te doen verschuiven ondubbelzinnig naar een repetitie of opname.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Deze variant volgt het plan zeer direct: de gedeelde diplomatieke signalen ondersteunen eerst de echte-conflictlezing, waarna 'de regisseur' en 'opnieuw' de filmsetlezing activeren.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengte-eis en realiseren de verplichte scripttegenstelling helder. V1 heeft de scherpere, concretere omslag: de koptelefoon, de take en vooral de pen in beeld herinterpreteren de hele ceremonie als filmopname. V2 is ook effectief, maar de cameraverwijzing maakt de filmlezing iets eerder zichtbaar.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide zijn performabele, compacte SO-grappen met een duidelijke verschuiving van diplomatie naar fictie. V1 wint door een gelaagdere punchline: de productienotitie over de zichtbare pen maakt niet alleen de wapenstilstand, maar ook de ondertekening retrospectief nep. V3 schakelt helder, maar 'de regisseur' is directer en daardoor voorspelbaarder.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide varianten behouden de vereiste scriptoppositie en passen binnen de vormeis. V2 heeft de sterkere komische escalatie: de opmerking dat soldaten minder overtuigend moeten sterven is absurd, scherp en herkadert de ernstige emoties als acteerwerk. V3 is natuurlijk verteld, maar de regisseurscue en het verzoek om opnieuw te beginnen zijn conventioneler.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste passerende variant: de ernstige onderhandeling krijgt voldoende geloofwaardige details, waarna meerdere filmsetsignalen een duidelijke en retrospectief rijke omslag veroorzaken. De zichtbare pen levert bovendien een specifieke, visuele punchline zonder overbodige uitleg.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.",
+        "candidate_id": "B1",
+        "opposition_axis": "Werkelijk humanitair conflict versus geënsceneerde fictie",
+        "opposed_expectation": "Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.",
+        "roles_b": [
+          "Acteurs: vertolken staatshoofden, diplomaten, soldaten en burgers.",
+          "Regisseur: leidt de opname en bewaakt het verloop van de scène.",
+          "Cameraploeg en geluidstechnici: registreren de scène.",
+          "Rekwisietenmedewerkers: verzorgen documenten, uniformen, nepwapens en decor.",
+          "Figuranten: beelden bewakers, slachtoffers of omstanders uit."
+        ],
+        "goal_b": "Een geloofwaardige filmscène opnemen die spanning oproept zonder dat iemand werkelijk gevaar loopt.",
+        "role_remapping": [
+          "Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.",
+          "Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.",
+          "Soldaten en strijdende groepen worden figuranten en stuntperformers.",
+          "Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.",
+          "Het vredesdocument wordt een rekwisiet met een scripttekst."
+        ],
+        "shared_cues": [
+          "Uniformen en bewaakte toegang tot een onderhandelingstafel.",
+          "Een kaart met betwiste grenzen.",
+          "Ernstige toespraken over slachtoffers en veiligheid.",
+          "Een document dat door beide partijen wordt ondertekend.",
+          "Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden."
+        ],
+        "switch_trigger": "Een stem roept plotseling: \"En... cut, deze keer zonder de pen in beeld!\"",
+        "hinge_event": "Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.",
+        "anomaly_under_a": "Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.",
+        "resolution_under_b": "Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee fanatieke deelnemers spelen een strategisch bordspel waarin legers gebieden veroveren, bondgenootschappen sluiten en tijdelijk vrede afspreken. Hun gesprek klinkt als diplomatie, maar gaat over spelregels en speelstukken.",
+        "candidate_id": "B2",
+        "opposition_axis": "Werkelijke oorlogspolitiek versus competitief spel",
+        "opposed_expectation": "Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.",
+        "roles_b": [
+          "Speler aan de ene kant: bestuurt een fictief leger en probeert te winnen.",
+          "Speler aan de andere kant: verdedigt gebieden en sluit tactische deals.",
+          "Spelleider: verduidelijkt regels en beslist over betwiste zetten.",
+          "Speelstukken: vertegenwoordigen legers, steden en verdedigingslinies.",
+          "Toeschouwers: volgen de strategie en geven commentaar."
+        ],
+        "goal_b": "Volgens de spelregels winnen door gebieden, punten of de hoofdstad van de tegenstander te veroveren.",
+        "role_remapping": [
+          "Politieke en militaire leiders worden de twee spelers.",
+          "Diplomaten en bemiddelaars worden de spelers zelf en eventueel de spelleider.",
+          "Soldaten en strijdende groepen worden pionnen, kaarten of miniaturen.",
+          "Burgers worden puntenfiches of stadsmarkeringen zonder werkelijk welzijn.",
+          "Internationale controle wordt de spelleider die naleving van de regels bewaakt."
+        ],
+        "shared_cues": [
+          "Een kaart met grenzen en strategische steden.",
+          "Gesprekken over terugtrekking, verdediging en een wapenstilstand.",
+          "Markeringen die troepenbewegingen lijken weer te geven.",
+          "Een neutrale derde die een betwiste beslissing beoordeelt.",
+          "De zorg dat de andere partij een afspraak zal breken."
+        ],
+        "switch_trigger": "Een speler zegt: \"Wacht, ik geef mijn generaal drie vakjes terug; dan eindigt mijn beurt.\"",
+        "hinge_event": "Een leider veegt na het overleg zonder aarzeling een volledig leger van de kaart en legt het naast de doos.",
+        "anomaly_under_a": "In een echt conflict zou het wegvegen van een leger geen vreedzame oplossing zijn en zou het lot van duizenden mensen niet met één handbeweging kunnen worden afgedaan.",
+        "resolution_under_b": "Op het bord verwijdert de speler verslagen speelstukken; die handeling is noodzakelijk om de spelstand zichtbaar te maken en veroorzaakt geen werkelijk verlies.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een school organiseert een oefening in conflictoplossing waarin leerlingen een verzonnen ruzie tussen twee buurten naspelen. Zij moeten namens hun groep onderhandelen en punten verdienen voor samenwerking, luistervaardigheid en een haalbaar compromis.",
+        "candidate_id": "B3",
+        "opposition_axis": "Echte politieke verantwoordelijkheid versus pedagogisch rollenspel",
+        "opposed_expectation": "Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.",
+        "roles_b": [
+          "Leerlingen: spelen vertegenwoordigers van twee fictieve groepen.",
+          "Docent: begeleidt de oefening en bewaakt een veilige sfeer.",
+          "Leerling-bemiddelaars: stellen vragen en zoeken een compromis.",
+          "Klasgenoten: spelen bewoners, journalisten of hulpverleners.",
+          "Beoordelaar: kent punten toe voor constructief overleg."
+        ],
+        "goal_b": "Leren hoe conflicten escaleren en hoe luisteren, afspraken en herstel een ruzie kunnen verminderen.",
+        "role_remapping": [
+          "Politieke leiders worden leerlingen met rolkaartjes.",
+          "Diplomaten en bemiddelaars worden aangewezen leerling-bemiddelaars.",
+          "Strijdende groepen worden klasgroepen met fictieve belangen.",
+          "Burgers worden medeleerlingen die gevolgen en behoeften verwoorden.",
+          "Internationale organisaties en hulpverleners worden docent en beoordelaar."
+        ],
+        "shared_cues": [
+          "Twee groepen zitten aan weerszijden van een tafel.",
+          "Er worden klachten geuit over angst, schade en onveiligheid.",
+          "Een neutrale voorzitter geeft iedereen spreektijd.",
+          "Er wordt gewerkt aan regels voor een tijdelijk staakt-het-vuren.",
+          "Een verslag bevat afspraken over herstel en bescherming."
+        ],
+        "switch_trigger": "De docent onderbreekt het gesprek met: \"Stop de simulatie: wie heeft nog zijn blauwe rolkaart?\"",
+        "hinge_event": "Een vertegenwoordiger vraagt of zij extra punten krijgt wanneer haar groep geloofwaardig boos blijft en geen compromis sluit.",
+        "anomaly_under_a": "Een echte leider zou niet om punten vragen voor het in stand houden van vijandigheid; dat zou bescherming en de-escalatie ondermijnen.",
+        "resolution_under_b": "In de oefening maken punten en roltrouw zichtbaar hoe gedrag het overleg beïnvloedt; de docent kan juist die keuze gebruiken om escalatie te bespreken.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een bedrijf houdt een competitieve paintball- en teambuildingdag. Teams gebruiken militaire taal, maken tijdelijke wapenstilstanden en proberen een vlag of controlepunt te veroveren onder toezicht van veiligheidsbegeleiders.",
+        "candidate_id": "B4",
+        "opposition_axis": "Dodelijk geweld versus gereguleerde recreatieve competitie",
+        "opposed_expectation": "Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.",
+        "roles_b": [
+          "Teamcaptains: bepalen tactiek en onderhandelen over tijdelijke afspraken.",
+          "Spelers: proberen terrein en doelen te veroveren.",
+          "Scheidsrechters: handhaven veiligheidsregels en verklaren spelers uitgeschakeld.",
+          "Organisatoren: plannen het spel en verzorgen materiaal.",
+          "Toeschouwers of collega's: moedigen teams aan en wachten op hun beurt."
+        ],
+        "goal_b": "Een spannende maar veilige wedstrijd winnen en tegelijk samenwerking binnen het team versterken.",
+        "role_remapping": [
+          "Politieke en militaire leiders worden teamcaptains.",
+          "Diplomaten en bemiddelaars worden scheidsrechters en organisatoren.",
+          "Soldaten en strijdende groepen worden paintballspelers.",
+          "Burgers worden wachtende collega's en toeschouwers buiten het speelveld.",
+          "Internationale toezichthouders worden veiligheidsbegeleiders met beschermingsregels."
+        ],
+        "shared_cues": [
+          "Camouflagekleding, helmen en afgebakend terrein.",
+          "Gesprekken over posities, dekking en terugtrekking.",
+          "Een tijdelijk bevel om niet te schieten.",
+          "Een neutrale persoon die toeziet op naleving.",
+          "Een groep die na een treffer hulp of begeleiding krijgt."
+        ],
+        "switch_trigger": "Een scheidsrechter fluit en roept: \"Rood team terug naar de startzone; eerst je masker schoonmaken!\"",
+        "hinge_event": "Een vermeend gewonde strijder springt op, steekt een felgekleurde marker omhoog en loopt lachend naar de kantine.",
+        "anomaly_under_a": "Na werkelijk geweld zou een gewonde niet vrolijk opstaan omdat hij met een kleurmarker is geraakt, en een kantinebezoek zou geen passende medische reactie zijn.",
+        "resolution_under_b": "De gekleurde verf markeert slechts uitschakeling in een spel; de speler verlaat volgens de veiligheidsregels het veld en kan daarna zonder gevaar pauzeren.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest volledige oppositie: een werkelijk humanitair vredesproces tegenover een geënsceneerde filmproductie. De ceremonie rond het staakt-het-vuren, de uniformen, toespraken, grenskaart en registratie zijn eerst overtuigend compatibel met Script A, terwijl de camera’s latent als pers kunnen worden gelezen. De hinge met het opnieuw doen van een explosie en een huilend kind is onder de oorlogslezing sterk anomalisch, maar onder de filmlezing volledig functioneel. Daardoor herinterpreteert de onthulling rollen, documenten, geweld en emotie in één keer, met hoge opzetdominantie, thematische specificiteit en een duidelijk payoff-potentieel.",
+    "variants": [
+      {
+        "text": "Bij de grens zat iedereen strak in uniform aan de onderhandelingstafel. Na de handtekeningen vroeg een man met koptelefoon of de ontploffing en het huilende kind nog één keer konden. De eerste take had de pen in beeld.",
+        "angle": "Vredesonderhandeling blijkt filmset"
+      },
+      {
+        "text": "De delegaties spraken ernstig over veiligheid, terwijl camera’s elke traan registreerden. Toen beide leiders eindelijk tekenden, riep iemand: „Prachtig, maar kunnen de soldaten bij de explosie iets minder overtuigend sterven?”",
+        "angle": "Oorlogsdrama als opname"
+      },
+      {
+        "text": "Ik zag twee landen een vredesverdrag sluiten: bewaakte deur, betwiste kaart, heel veel pers. Net toen iedereen opgelucht klapte, zei de regisseur: „Mooi, maar de wapenstilstand graag opnieuw na de lunch.”",
+        "angle": "Diplomatie als repetitie"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 14588,
+      "output_tokens": 6971,
+      "total_tokens": 21559
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Twee landen of groepen bevinden zich in een conflict; verantwoordelijke leiders en diplomaten proberen via onderhandelingen, een staakt-het-vuren en afspraken het geweld te stoppen en duurzame vrede te bereiken.",
+          "participants_and_roles": [
+            "Politieke en militaire leiders: nemen besluiten, verdedigen belangen en dragen verantwoordelijkheid voor escalatie of de-escalatie.",
+            "Diplomaten en bemiddelaars: brengen partijen aan tafel en zoeken een aanvaardbaar compromis.",
+            "Soldaten en strijdende groepen: voeren bevelen uit en zijn direct betrokken bij het geweld.",
+            "Burgers: willen veiligheid, bescherming en een normaal leven; zij dragen vaak de zwaarste gevolgen.",
+            "Internationale organisaties en hulpverleners: monitoren, verlenen hulp en ondersteunen vrede of humanitaire bescherming."
+          ],
+          "apparent_goal": "Het conflict beëindigen, burgers beschermen en een stabiele, rechtvaardige vrede tot stand brengen.",
+          "preconditions": [
+            "Er is een bestaand conflict, dreiging of daadwerkelijk geweld tussen partijen.",
+            "De partijen hebben botsende belangen, angst, wantrouwen of historische grieven.",
+            "Er bestaat voldoende contact, druk of bereidheid om over een oplossing te spreken.",
+            "Basisveiligheid en minimale regels, zoals een tijdelijk staakt-het-vuren, maken overleg mogelijk."
+          ],
+          "expected_actions": [
+            "Partijen stoppen of beperken het geweld.",
+            "Leiders sturen onderhandelaars naar overleg.",
+            "Bemiddelaars helpen bij communicatie en concessies.",
+            "Er worden afspraken gemaakt over veiligheid, grenzen, macht, herstel of hulp.",
+            "De afspraken worden gecontroleerd en nageleefd om hernieuwd geweld te voorkomen."
+          ],
+          "expected_outcome": "Een akkoord of duurzame regeling waarbij het geweld afneemt, burgers veiliger zijn en geschillen voortaan via politieke of juridische middelen worden behandeld.",
+          "expected_propositions": [
+            "Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.",
+            "Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.",
+            "Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.",
+            "Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.",
+            "Een vredesakkoord werkt alleen wanneer betrokken partijen zich er in redelijke mate aan houden."
+          ],
+          "audience_expectation": "Een opzet rond oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen proberen escalatie te stoppen en via overleg, bescherming en afspraken veiligheid en vrede te herstellen."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.",
+            "opposition_axis": "Werkelijk humanitair conflict versus geënsceneerde fictie",
+            "opposed_proposition": "Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.",
+            "shared_anchor": "Een ceremonie rond een ondertekend staakt-het-vuren",
+            "reading_a": "Werkelijke vertegenwoordigers van strijdende partijen ondertekenen een akkoord om dodelijk geweld te stoppen.",
+            "reading_b": "Acteurs voeren een vooraf geschreven ondertekeningsscène uit voor een oorlogsfilm.",
+            "roles_b": [
+              "Acteurs: vertolken staatshoofden, diplomaten, soldaten en burgers.",
+              "Regisseur: leidt de opname en bewaakt het verloop van de scène.",
+              "Cameraploeg en geluidstechnici: registreren de scène.",
+              "Rekwisietenmedewerkers: verzorgen documenten, uniformen, nepwapens en decor.",
+              "Figuranten: beelden bewakers, slachtoffers of omstanders uit."
+            ],
+            "goal_b": "Een geloofwaardige filmscène opnemen die spanning oproept zonder dat iemand werkelijk gevaar loopt.",
+            "role_remapping": [
+              "Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.",
+              "Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.",
+              "Soldaten en strijdende groepen worden figuranten en stuntperformers.",
+              "Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.",
+              "Het vredesdocument wordt een rekwisiet met een scripttekst."
+            ],
+            "shared_cues": [
+              "Uniformen en bewaakte toegang tot een onderhandelingstafel.",
+              "Een kaart met betwiste grenzen.",
+              "Ernstige toespraken over slachtoffers en veiligheid.",
+              "Een document dat door beide partijen wordt ondertekend.",
+              "Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden."
+            ],
+            "switch_trigger": "Een stem roept plotseling: \"En... cut, deze keer zonder de pen in beeld!\"",
+            "hinge_event": "Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.",
+            "anomaly_under_a": "Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.",
+            "resolution_under_b": "Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Twee fanatieke deelnemers spelen een strategisch bordspel waarin legers gebieden veroveren, bondgenootschappen sluiten en tijdelijk vrede afspreken. Hun gesprek klinkt als diplomatie, maar gaat over spelregels en speelstukken.",
+            "opposition_axis": "Werkelijke oorlogspolitiek versus competitief spel",
+            "opposed_proposition": "Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.",
+            "shared_anchor": "Een overleg over een grens en een tijdelijk staakt-het-vuren",
+            "reading_a": "Onderhandelaars proberen een echte grensoorlog te bevriezen en burgers aan beide kanten te beschermen.",
+            "reading_b": "Spelers onderhandelen over een tijdelijke afspraak zodat zij hun posities op een speelbord kunnen herverdelen.",
+            "roles_b": [
+              "Speler aan de ene kant: bestuurt een fictief leger en probeert te winnen.",
+              "Speler aan de andere kant: verdedigt gebieden en sluit tactische deals.",
+              "Spelleider: verduidelijkt regels en beslist over betwiste zetten.",
+              "Speelstukken: vertegenwoordigen legers, steden en verdedigingslinies.",
+              "Toeschouwers: volgen de strategie en geven commentaar."
+            ],
+            "goal_b": "Volgens de spelregels winnen door gebieden, punten of de hoofdstad van de tegenstander te veroveren.",
+            "role_remapping": [
+              "Politieke en militaire leiders worden de twee spelers.",
+              "Diplomaten en bemiddelaars worden de spelers zelf en eventueel de spelleider.",
+              "Soldaten en strijdende groepen worden pionnen, kaarten of miniaturen.",
+              "Burgers worden puntenfiches of stadsmarkeringen zonder werkelijk welzijn.",
+              "Internationale controle wordt de spelleider die naleving van de regels bewaakt."
+            ],
+            "shared_cues": [
+              "Een kaart met grenzen en strategische steden.",
+              "Gesprekken over terugtrekking, verdediging en een wapenstilstand.",
+              "Markeringen die troepenbewegingen lijken weer te geven.",
+              "Een neutrale derde die een betwiste beslissing beoordeelt.",
+              "De zorg dat de andere partij een afspraak zal breken."
+            ],
+            "switch_trigger": "Een speler zegt: \"Wacht, ik geef mijn generaal drie vakjes terug; dan eindigt mijn beurt.\"",
+            "hinge_event": "Een leider veegt na het overleg zonder aarzeling een volledig leger van de kaart en legt het naast de doos.",
+            "anomaly_under_a": "In een echt conflict zou het wegvegen van een leger geen vreedzame oplossing zijn en zou het lot van duizenden mensen niet met één handbeweging kunnen worden afgedaan.",
+            "resolution_under_b": "Op het bord verwijdert de speler verslagen speelstukken; die handeling is noodzakelijk om de spelstand zichtbaar te maken en veroorzaakt geen werkelijk verlies."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een school organiseert een oefening in conflictoplossing waarin leerlingen een verzonnen ruzie tussen twee buurten naspelen. Zij moeten namens hun groep onderhandelen en punten verdienen voor samenwerking, luistervaardigheid en een haalbaar compromis.",
+            "opposition_axis": "Echte politieke verantwoordelijkheid versus pedagogisch rollenspel",
+            "opposed_proposition": "Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.",
+            "shared_anchor": "Een bemiddelde bijeenkomst na onrust tussen twee groepen",
+            "reading_a": "Verantwoordelijke leiders proberen na geweld de veiligheid van kwetsbare burgers te herstellen.",
+            "reading_b": "Leerlingen voeren een lesopdracht uit waarin zij oefenen met bemiddeling en de gevolgen van escalatie bespreken.",
+            "roles_b": [
+              "Leerlingen: spelen vertegenwoordigers van twee fictieve groepen.",
+              "Docent: begeleidt de oefening en bewaakt een veilige sfeer.",
+              "Leerling-bemiddelaars: stellen vragen en zoeken een compromis.",
+              "Klasgenoten: spelen bewoners, journalisten of hulpverleners.",
+              "Beoordelaar: kent punten toe voor constructief overleg."
+            ],
+            "goal_b": "Leren hoe conflicten escaleren en hoe luisteren, afspraken en herstel een ruzie kunnen verminderen.",
+            "role_remapping": [
+              "Politieke leiders worden leerlingen met rolkaartjes.",
+              "Diplomaten en bemiddelaars worden aangewezen leerling-bemiddelaars.",
+              "Strijdende groepen worden klasgroepen met fictieve belangen.",
+              "Burgers worden medeleerlingen die gevolgen en behoeften verwoorden.",
+              "Internationale organisaties en hulpverleners worden docent en beoordelaar."
+            ],
+            "shared_cues": [
+              "Twee groepen zitten aan weerszijden van een tafel.",
+              "Er worden klachten geuit over angst, schade en onveiligheid.",
+              "Een neutrale voorzitter geeft iedereen spreektijd.",
+              "Er wordt gewerkt aan regels voor een tijdelijk staakt-het-vuren.",
+              "Een verslag bevat afspraken over herstel en bescherming."
+            ],
+            "switch_trigger": "De docent onderbreekt het gesprek met: \"Stop de simulatie: wie heeft nog zijn blauwe rolkaart?\"",
+            "hinge_event": "Een vertegenwoordiger vraagt of zij extra punten krijgt wanneer haar groep geloofwaardig boos blijft en geen compromis sluit.",
+            "anomaly_under_a": "Een echte leider zou niet om punten vragen voor het in stand houden van vijandigheid; dat zou bescherming en de-escalatie ondermijnen.",
+            "resolution_under_b": "In de oefening maken punten en roltrouw zichtbaar hoe gedrag het overleg beïnvloedt; de docent kan juist die keuze gebruiken om escalatie te bespreken."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een bedrijf houdt een competitieve paintball- en teambuildingdag. Teams gebruiken militaire taal, maken tijdelijke wapenstilstanden en proberen een vlag of controlepunt te veroveren onder toezicht van veiligheidsbegeleiders.",
+            "opposition_axis": "Dodelijk geweld versus gereguleerde recreatieve competitie",
+            "opposed_proposition": "Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.",
+            "shared_anchor": "Twee gewapend lijkende groepen spreken een tijdelijke wapenstilstand af",
+            "reading_a": "Strijdende partijen leggen de wapens neer om slachtoffers te helpen en een politieke regeling mogelijk te maken.",
+            "reading_b": "Paintballteams pauzeren hun wedstrijd om teams opnieuw in te delen, materiaal te controleren of een spelopdracht te wijzigen.",
+            "roles_b": [
+              "Teamcaptains: bepalen tactiek en onderhandelen over tijdelijke afspraken.",
+              "Spelers: proberen terrein en doelen te veroveren.",
+              "Scheidsrechters: handhaven veiligheidsregels en verklaren spelers uitgeschakeld.",
+              "Organisatoren: plannen het spel en verzorgen materiaal.",
+              "Toeschouwers of collega's: moedigen teams aan en wachten op hun beurt."
+            ],
+            "goal_b": "Een spannende maar veilige wedstrijd winnen en tegelijk samenwerking binnen het team versterken.",
+            "role_remapping": [
+              "Politieke en militaire leiders worden teamcaptains.",
+              "Diplomaten en bemiddelaars worden scheidsrechters en organisatoren.",
+              "Soldaten en strijdende groepen worden paintballspelers.",
+              "Burgers worden wachtende collega's en toeschouwers buiten het speelveld.",
+              "Internationale toezichthouders worden veiligheidsbegeleiders met beschermingsregels."
+            ],
+            "shared_cues": [
+              "Camouflagekleding, helmen en afgebakend terrein.",
+              "Gesprekken over posities, dekking en terugtrekking.",
+              "Een tijdelijk bevel om niet te schieten.",
+              "Een neutrale persoon die toeziet op naleving.",
+              "Een groep die na een treffer hulp of begeleiding krijgt."
+            ],
+            "switch_trigger": "Een scheidsrechter fluit en roept: \"Rood team terug naar de startzone; eerst je masker schoonmaken!\"",
+            "hinge_event": "Een vermeend gewonde strijder springt op, steekt een felgekleurde marker omhoog en loopt lachend naar de kantine.",
+            "anomaly_under_a": "Na werkelijk geweld zou een gewonde niet vrolijk opstaan omdat hij met een kleurmarker is geraakt, en een kantinebezoek zou geen passende medische reactie zijn.",
+            "resolution_under_b": "De gekleurde verf markeert slechts uitschakeling in een spel; de speler verlaat volgens de veiligheidsregels het veld en kan daarna zonder gevaar pauzeren."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een filmploeg draait een realistische scène over vredesonderhandelingen tussen twee fictieve landen. Acteurs spelen leiders, figuranten spelen soldaten en de crew probeert de scène overtuigend op te nemen.",
+              "opposition_axis": "Werkelijk humanitair conflict versus geënsceneerde fictie",
+              "opposed_proposition": "Geweld veroorzaakt schade, angst en verlies, ook bij mensen die niet zelf vechten.",
+              "shared_anchor": "Een ceremonie rond een ondertekend staakt-het-vuren",
+              "reading_a": "Werkelijke vertegenwoordigers van strijdende partijen ondertekenen een akkoord om dodelijk geweld te stoppen.",
+              "reading_b": "Acteurs voeren een vooraf geschreven ondertekeningsscène uit voor een oorlogsfilm.",
+              "roles_b": [
+                "Acteurs: vertolken staatshoofden, diplomaten, soldaten en burgers.",
+                "Regisseur: leidt de opname en bewaakt het verloop van de scène.",
+                "Cameraploeg en geluidstechnici: registreren de scène.",
+                "Rekwisietenmedewerkers: verzorgen documenten, uniformen, nepwapens en decor.",
+                "Figuranten: beelden bewakers, slachtoffers of omstanders uit."
+              ],
+              "goal_b": "Een geloofwaardige filmscène opnemen die spanning oproept zonder dat iemand werkelijk gevaar loopt.",
+              "role_remapping": [
+                "Politieke leiders en diplomaten uit Script A worden acteurs in kostuum.",
+                "Bemiddelaars worden de regisseur en scriptcontinuïteitsmedewerker.",
+                "Soldaten en strijdende groepen worden figuranten en stuntperformers.",
+                "Internationale waarnemers worden camera- en geluidstechnici die alles vastleggen.",
+                "Het vredesdocument wordt een rekwisiet met een scripttekst."
+              ],
+              "shared_cues": [
+                "Uniformen en bewaakte toegang tot een onderhandelingstafel.",
+                "Een kaart met betwiste grenzen.",
+                "Ernstige toespraken over slachtoffers en veiligheid.",
+                "Een document dat door beide partijen wordt ondertekend.",
+                "Camera-achtige apparatuur die aanvankelijk als persregistratie kan gelden."
+              ],
+              "switch_trigger": "Een stem roept plotseling: \"En... cut, deze keer zonder de pen in beeld!\"",
+              "hinge_event": "Na de plechtige handtekeningen vraagt een man of de ontploffing en het huilende kind nogmaals kunnen worden overgedaan.",
+              "anomaly_under_a": "Bij een echte vredesondertekening zou het absurd en ongevoelig zijn om een explosie en een zichtbaar getraumatiseerd kind opnieuw te willen laten gebeuren.",
+              "resolution_under_b": "Als filmopname zijn de explosie, de tranen en de handtekening herhaalbare scènes; de vraag dient om de opname technisch en dramatisch beter te maken."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Twee fanatieke deelnemers spelen een strategisch bordspel waarin legers gebieden veroveren, bondgenootschappen sluiten en tijdelijk vrede afspreken. Hun gesprek klinkt als diplomatie, maar gaat over spelregels en speelstukken.",
+              "opposition_axis": "Werkelijke oorlogspolitiek versus competitief spel",
+              "opposed_proposition": "Onderhandelingen en wederzijdse concessies zijn normale middelen om een conflict te beëindigen.",
+              "shared_anchor": "Een overleg over een grens en een tijdelijk staakt-het-vuren",
+              "reading_a": "Onderhandelaars proberen een echte grensoorlog te bevriezen en burgers aan beide kanten te beschermen.",
+              "reading_b": "Spelers onderhandelen over een tijdelijke afspraak zodat zij hun posities op een speelbord kunnen herverdelen.",
+              "roles_b": [
+                "Speler aan de ene kant: bestuurt een fictief leger en probeert te winnen.",
+                "Speler aan de andere kant: verdedigt gebieden en sluit tactische deals.",
+                "Spelleider: verduidelijkt regels en beslist over betwiste zetten.",
+                "Speelstukken: vertegenwoordigen legers, steden en verdedigingslinies.",
+                "Toeschouwers: volgen de strategie en geven commentaar."
+              ],
+              "goal_b": "Volgens de spelregels winnen door gebieden, punten of de hoofdstad van de tegenstander te veroveren.",
+              "role_remapping": [
+                "Politieke en militaire leiders worden de twee spelers.",
+                "Diplomaten en bemiddelaars worden de spelers zelf en eventueel de spelleider.",
+                "Soldaten en strijdende groepen worden pionnen, kaarten of miniaturen.",
+                "Burgers worden puntenfiches of stadsmarkeringen zonder werkelijk welzijn.",
+                "Internationale controle wordt de spelleider die naleving van de regels bewaakt."
+              ],
+              "shared_cues": [
+                "Een kaart met grenzen en strategische steden.",
+                "Gesprekken over terugtrekking, verdediging en een wapenstilstand.",
+                "Markeringen die troepenbewegingen lijken weer te geven.",
+                "Een neutrale derde die een betwiste beslissing beoordeelt.",
+                "De zorg dat de andere partij een afspraak zal breken."
+              ],
+              "switch_trigger": "Een speler zegt: \"Wacht, ik geef mijn generaal drie vakjes terug; dan eindigt mijn beurt.\"",
+              "hinge_event": "Een leider veegt na het overleg zonder aarzeling een volledig leger van de kaart en legt het naast de doos.",
+              "anomaly_under_a": "In een echt conflict zou het wegvegen van een leger geen vreedzame oplossing zijn en zou het lot van duizenden mensen niet met één handbeweging kunnen worden afgedaan.",
+              "resolution_under_b": "Op het bord verwijdert de speler verslagen speelstukken; die handeling is noodzakelijk om de spelstand zichtbaar te maken en veroorzaakt geen werkelijk verlies."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een school organiseert een oefening in conflictoplossing waarin leerlingen een verzonnen ruzie tussen twee buurten naspelen. Zij moeten namens hun groep onderhandelen en punten verdienen voor samenwerking, luistervaardigheid en een haalbaar compromis.",
+              "opposition_axis": "Echte politieke verantwoordelijkheid versus pedagogisch rollenspel",
+              "opposed_proposition": "Leiders behoren burgers te beschermen en zorgvuldig met geweld om te gaan.",
+              "shared_anchor": "Een bemiddelde bijeenkomst na onrust tussen twee groepen",
+              "reading_a": "Verantwoordelijke leiders proberen na geweld de veiligheid van kwetsbare burgers te herstellen.",
+              "reading_b": "Leerlingen voeren een lesopdracht uit waarin zij oefenen met bemiddeling en de gevolgen van escalatie bespreken.",
+              "roles_b": [
+                "Leerlingen: spelen vertegenwoordigers van twee fictieve groepen.",
+                "Docent: begeleidt de oefening en bewaakt een veilige sfeer.",
+                "Leerling-bemiddelaars: stellen vragen en zoeken een compromis.",
+                "Klasgenoten: spelen bewoners, journalisten of hulpverleners.",
+                "Beoordelaar: kent punten toe voor constructief overleg."
+              ],
+              "goal_b": "Leren hoe conflicten escaleren en hoe luisteren, afspraken en herstel een ruzie kunnen verminderen.",
+              "role_remapping": [
+                "Politieke leiders worden leerlingen met rolkaartjes.",
+                "Diplomaten en bemiddelaars worden aangewezen leerling-bemiddelaars.",
+                "Strijdende groepen worden klasgroepen met fictieve belangen.",
+                "Burgers worden medeleerlingen die gevolgen en behoeften verwoorden.",
+                "Internationale organisaties en hulpverleners worden docent en beoordelaar."
+              ],
+              "shared_cues": [
+                "Twee groepen zitten aan weerszijden van een tafel.",
+                "Er worden klachten geuit over angst, schade en onveiligheid.",
+                "Een neutrale voorzitter geeft iedereen spreektijd.",
+                "Er wordt gewerkt aan regels voor een tijdelijk staakt-het-vuren.",
+                "Een verslag bevat afspraken over herstel en bescherming."
+              ],
+              "switch_trigger": "De docent onderbreekt het gesprek met: \"Stop de simulatie: wie heeft nog zijn blauwe rolkaart?\"",
+              "hinge_event": "Een vertegenwoordiger vraagt of zij extra punten krijgt wanneer haar groep geloofwaardig boos blijft en geen compromis sluit.",
+              "anomaly_under_a": "Een echte leider zou niet om punten vragen voor het in stand houden van vijandigheid; dat zou bescherming en de-escalatie ondermijnen.",
+              "resolution_under_b": "In de oefening maken punten en roltrouw zichtbaar hoe gedrag het overleg beïnvloedt; de docent kan juist die keuze gebruiken om escalatie te bespreken."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een bedrijf houdt een competitieve paintball- en teambuildingdag. Teams gebruiken militaire taal, maken tijdelijke wapenstilstanden en proberen een vlag of controlepunt te veroveren onder toezicht van veiligheidsbegeleiders.",
+              "opposition_axis": "Dodelijk geweld versus gereguleerde recreatieve competitie",
+              "opposed_proposition": "Vrede is doorgaans beter dan oorlog, omdat zij levens beschermt en normaliteit mogelijk maakt.",
+              "shared_anchor": "Twee gewapend lijkende groepen spreken een tijdelijke wapenstilstand af",
+              "reading_a": "Strijdende partijen leggen de wapens neer om slachtoffers te helpen en een politieke regeling mogelijk te maken.",
+              "reading_b": "Paintballteams pauzeren hun wedstrijd om teams opnieuw in te delen, materiaal te controleren of een spelopdracht te wijzigen.",
+              "roles_b": [
+                "Teamcaptains: bepalen tactiek en onderhandelen over tijdelijke afspraken.",
+                "Spelers: proberen terrein en doelen te veroveren.",
+                "Scheidsrechters: handhaven veiligheidsregels en verklaren spelers uitgeschakeld.",
+                "Organisatoren: plannen het spel en verzorgen materiaal.",
+                "Toeschouwers of collega's: moedigen teams aan en wachten op hun beurt."
+              ],
+              "goal_b": "Een spannende maar veilige wedstrijd winnen en tegelijk samenwerking binnen het team versterken.",
+              "role_remapping": [
+                "Politieke en militaire leiders worden teamcaptains.",
+                "Diplomaten en bemiddelaars worden scheidsrechters en organisatoren.",
+                "Soldaten en strijdende groepen worden paintballspelers.",
+                "Burgers worden wachtende collega's en toeschouwers buiten het speelveld.",
+                "Internationale toezichthouders worden veiligheidsbegeleiders met beschermingsregels."
+              ],
+              "shared_cues": [
+                "Camouflagekleding, helmen en afgebakend terrein.",
+                "Gesprekken over posities, dekking en terugtrekking.",
+                "Een tijdelijk bevel om niet te schieten.",
+                "Een neutrale persoon die toeziet op naleving.",
+                "Een groep die na een treffer hulp of begeleiding krijgt."
+              ],
+              "switch_trigger": "Een scheidsrechter fluit en roept: \"Rood team terug naar de startzone; eerst je masker schoonmaken!\"",
+              "hinge_event": "Een vermeend gewonde strijder springt op, steekt een felgekleurde marker omhoog en loopt lachend naar de kantine.",
+              "anomaly_under_a": "Na werkelijk geweld zou een gewonde niet vrolijk opstaan omdat hij met een kleurmarker is geraakt, en een kantinebezoek zou geen passende medische reactie zijn.",
+              "resolution_under_b": "De gekleurde verf markeert slechts uitschakeling in een spel; de speler verlaat volgens de veiligheidsregels het veld en kan daarna zonder gevaar pauzeren."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde ceremonie, toespraken, grenskaart en handtekening kunnen eerst als echte vredesondertekening en vervolgens als filmopname worden gelezen. Werkelijkheid versus enscenering is één dominante, lokaal onverenigbare as. De cues laten de filmlezing vooraf al toe, onder meer via registratieapparatuur, maar de ernstige conflictcontext maakt Script A aanvankelijk dominant. Het opnieuw willen doen van een explosie en huilend kind is onder A absurd, maar onder B een normale opnamevraag. Daardoor worden eerdere slachtoffers, documenten en observatieapparatuur retrospectief rekwisieten en productie-elementen. Het herhalen van geweld zou A's beschermingsdoel schenden, maar maakt B's opnamedoel juist mogelijk."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Het overleg over grenzen, terugtrekking en wapenstilstand kan zowel echte diplomatie als spelonderhandeling voorstellen. De tegenstelling werkelijk oorlogspolitiek versus bordspel is lokaal incompatibel en dominant. Kaart, markeringen, een neutrale beslisser en tactisch overleg ondersteunen beide lezingen; zonder expliciete spelterm ligt Script A aanvankelijk meer voor de hand. Het achteloos van de kaart vegen van een leger is onder A onaanvaardbaar en onrealistisch, maar onder B een noodzakelijke spelhandeling. Achteraf worden leger, steden en controle eenheden op een bord. Het verwijderen van mensen zou A's beschermingsdoel blokkeren, terwijl het verwijderen van speelstukken B's spelverloop mogelijk maakt."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "De bemiddelde bijeenkomst, klachten over onveiligheid en afspraken over een staakt-het-vuren kunnen zowel een echte nasleep van geweld als een klasrollenspel dragen. Echte politieke verantwoordelijkheid versus pedagogische simulatie vormt één duidelijke, incompatibele as. De gedeelde cues ondersteunen de oefenlezing al latent, maar zonder docent- of rolkaartverwijzing domineert eerst de ernstige lezing van Script A. Vragen om punten voor geloofwaardig conflictgedrag is onder A strijdig met bescherming en de-escalatie, maar onder B begrijpelijk als onderdeel van een beoordeelde simulatie. Daardoor worden leiders, burgers en bemiddeling achteraf leerlingenrollen en lesonderdelen. De gevraagde punten zijn echter niet expliciet een voorwaarde die B's genoemde doel mogelijk maakt; de functionele omkering is daarom niet voldoende ondersteund."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Gewapend ogende groepen, een wapenstilstand, posities en een neutrale toezichthouder kunnen zowel oorlog als een paintballwedstrijd voorstellen. Dodelijk geweld versus gereguleerde recreatieve competitie is de ene dominante en lokaal incompatibele as. Camouflage, helmen en afgebakend terrein maken Script B vooraf mogelijk, maar de termen strijders, wapenstilstand en gewonden doen Script A aanvankelijk domineren. Een gewonde die lachend opstaat na een gekleurde treffer en naar de kantine loopt is onder A anomalisch, maar onder B een normale uitschakeling. Eerder geweld, hulp en toezicht krijgen retrospectief de functie van spelregels, veiligheidsbegeleiding en verfmarkering. De treffer zou A's levensbeschermende doel ondermijnen, maar faciliteert B's veilige wedstrijdverloop."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde ceremonie, toespraken, grenskaart en handtekening kunnen eerst als echte vredesondertekening en vervolgens als filmopname worden gelezen. Werkelijkheid versus enscenering is één dominante, lokaal onverenigbare as. De cues laten de filmlezing vooraf al toe, onder meer via registratieapparatuur, maar de ernstige conflictcontext maakt Script A aanvankelijk dominant. Het opnieuw willen doen van een explosie en huilend kind is onder A absurd, maar onder B een normale opnamevraag. Daardoor worden eerdere slachtoffers, documenten en observatieapparatuur retrospectief rekwisieten en productie-elementen. Het herhalen van geweld zou A's beschermingsdoel schenden, maar maakt B's opnamedoel juist mogelijk."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Het overleg over grenzen, terugtrekking en wapenstilstand kan zowel echte diplomatie als spelonderhandeling voorstellen. De tegenstelling werkelijk oorlogspolitiek versus bordspel is lokaal incompatibel en dominant. Kaart, markeringen, een neutrale beslisser en tactisch overleg ondersteunen beide lezingen; zonder expliciete spelterm ligt Script A aanvankelijk meer voor de hand. Het achteloos van de kaart vegen van een leger is onder A onaanvaardbaar en onrealistisch, maar onder B een noodzakelijke spelhandeling. Achteraf worden leger, steden en controle eenheden op een bord. Het verwijderen van mensen zou A's beschermingsdoel blokkeren, terwijl het verwijderen van speelstukken B's spelverloop mogelijk maakt."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "De bemiddelde bijeenkomst, klachten over onveiligheid en afspraken over een staakt-het-vuren kunnen zowel een echte nasleep van geweld als een klasrollenspel dragen. Echte politieke verantwoordelijkheid versus pedagogische simulatie vormt één duidelijke, incompatibele as. De gedeelde cues ondersteunen de oefenlezing al latent, maar zonder docent- of rolkaartverwijzing domineert eerst de ernstige lezing van Script A. Vragen om punten voor geloofwaardig conflictgedrag is onder A strijdig met bescherming en de-escalatie, maar onder B begrijpelijk als onderdeel van een beoordeelde simulatie. Daardoor worden leiders, burgers en bemiddeling achteraf leerlingenrollen en lesonderdelen. De gevraagde punten zijn echter niet expliciet een voorwaarde die B's genoemde doel mogelijk maakt; de functionele omkering is daarom niet voldoende ondersteund."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Gewapend ogende groepen, een wapenstilstand, posities en een neutrale toezichthouder kunnen zowel oorlog als een paintballwedstrijd voorstellen. Dodelijk geweld versus gereguleerde recreatieve competitie is de ene dominante en lokaal incompatibele as. Camouflage, helmen en afgebakend terrein maken Script B vooraf mogelijk, maar de termen strijders, wapenstilstand en gewonden doen Script A aanvankelijk domineren. Een gewonde die lachend opstaat na een gekleurde treffer en naar de kantine loopt is onder A anomalisch, maar onder B een normale uitschakeling. Eerder geweld, hulp en toezicht krijgen retrospectief de functie van spelregels, veiligheidsbegeleiding en verfmarkering. De treffer zou A's levensbeschermende doel ondermijnen, maar faciliteert B's veilige wedstrijdverloop."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B1"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een ernstige vredesonderhandeling aan de grens, met geüniformeerde delegaties die een akkoord ondertekenen.",
+          "realized_script_b": "Een filmopname van een vredesonderhandeling en oorlogsscène, waarbij de crew een take opnieuw wil doen wegens een zichtbaar rekwisiet.",
+          "realized_opposition_axis": "Werkelijk humanitair conflict versus geënsceneerde fictie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De opzet activeert een echte vredesondertekening; de vraag om de explosie en het huilende kind opnieuw te doen, plus de verwijzing naar een 'take' en de pen in beeld, schakelt functioneel naar een filmset. De gedeelde ceremonie en de retrospectieve herlezing zijn behouden."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De variant realiseert de geplande overgang van vredesceremonie naar filmset helder; de formulering is compact en de slotzin levert een herkenbare punchline.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Delegaties voeren ernstige vredesbesprekingen over veiligheid en ondertekenen een akkoord.",
+          "realized_script_b": "Een opname van een oorlogsdrama waarin spelers die soldaten verbeelden hun sterfscène minder overtuigend moeten spelen.",
+          "realized_opposition_axis": "Werkelijk humanitair conflict versus geënsceneerde fictie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De ernstige delegaties, veiligheid, tranen en handtekeningen dragen eerst de vredeslezing. De instructie over minder overtuigend stervende soldaten maakt de opnamelezing noodzakelijk en herkadert de emotionele registratie als filmproductie."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Hoewel de concrete pen-/cut-trigger is vervangen, blijft de beoogde scripttegenstelling functioneel intact: een geloofwaardige vredessituatie blijkt een geregisseerde oorlogsscène.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Twee landen sluiten onder bewaking en met een betwiste kaart een werkelijk vredesverdrag.",
+          "realized_script_b": "Een regisseur laat acteurs een vredesverdrag en wapenstilstand voor een film opnieuw spelen.",
+          "realized_opposition_axis": "Werkelijk humanitair conflict versus geënsceneerde fictie.",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De bewaakte deur, betwiste kaart, pers, opluchting en ondertekening zetten eerst een echte diplomatieke ceremonie neer. De regisseur en de opdracht de wapenstilstand opnieuw te doen verschuiven ondubbelzinnig naar een repetitie of opname."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Deze variant volgt het plan zeer direct: de gedeelde diplomatieke signalen ondersteunen eerst de echte-conflictlezing, waarna 'de regisseur' en 'opnieuw' de filmsetlezing activeren.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V1",
+          "rationale": "Beide varianten voldoen aan de lengte-eis en realiseren de verplichte scripttegenstelling helder. V1 heeft de scherpere, concretere omslag: de koptelefoon, de take en vooral de pen in beeld herinterpreteren de hele ceremonie als filmopname. V2 is ook effectief, maar de cameraverwijzing maakt de filmlezing iets eerder zichtbaar."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V1",
+          "rationale": "Beide zijn performabele, compacte SO-grappen met een duidelijke verschuiving van diplomatie naar fictie. V1 wint door een gelaagdere punchline: de productienotitie over de zichtbare pen maakt niet alleen de wapenstilstand, maar ook de ondertekening retrospectief nep. V3 schakelt helder, maar 'de regisseur' is directer en daardoor voorspelbaarder."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "Beide varianten behouden de vereiste scriptoppositie en passen binnen de vormeis. V2 heeft de sterkere komische escalatie: de opmerking dat soldaten minder overtuigend moeten sterven is absurd, scherp en herkadert de ernstige emoties als acteerwerk. V3 is natuurlijk verteld, maar de regisseurscue en het verzoek om opnieuw te beginnen zijn conventioneler."
+        }
+      ],
+      "selected_variant_id": "V1",
+      "selection_rationale": "V1 is de sterkste passerende variant: de ernstige onderhandeling krijgt voldoende geloofwaardige details, waarna meerdere filmsetsignalen een duidelijke en retrospectief rijke omslag veroorzaken. De zichtbare pen levert bovendien een specifieke, visuele punchline zonder overbodige uitleg."
+    }
+  },
+  "result_sha256": "8eeab730efc1e6b935526c5eedb5ff89fe9c527489174cd31c78cf0894f796ce"
+}

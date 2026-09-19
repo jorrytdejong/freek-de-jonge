@@ -1,0 +1,790 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T18-C1",
+  "topic_id": "T18",
+  "topic": "Taal, woorden en misverstanden",
+  "condition_code": "C1",
+  "pipeline_family": "script_opposition",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "4e25e2b304b2afc3287ded7dbfc705a346ece6ed1dfe2080cefb9ff6e5d8e975",
+  "dry_run": false,
+  "attempt": 1,
+  "generated_at": "2026-08-19T18:31:41.480914+00:00",
+  "result": {
+    "pipeline_code": "C1",
+    "pipeline_name": "Script-Opposition-Guided Generation with Neutral Style",
+    "request": {
+      "topic": "Taal, woorden en misverstanden",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Taal, woorden en misverstanden\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Taal, woorden en misverstanden\",\n  \"script_a\": {\n    \"script_a\": \"Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.\",\n    \"participants_and_roles\": [\n      \"Spreker: formuleert een boodschap met woorden die bij de situatie en de gesprekspartner passen.\",\n      \"Luisteraar: hoort of leest de boodschap, kent de gebruikelijke betekenis van de woorden en leidt daaruit de bedoelde informatie af.\",\n      \"Eventueel omstander of derde: deelt doorgaans dezelfde taal- en situatiekennis en kan het gesprek op dezelfde manier interpreteren.\"\n    ],\n    \"apparent_goal\": \"Een boodschap helder overbrengen zodat de ander begrijpt wat bedoeld wordt en er correct op kan reageren.\",\n    \"preconditions\": [\n      \"De deelnemers spreken of begrijpen dezelfde taal voldoende goed.\",\n      \"Woorden en uitdrukkingen hebben in de gegeven context een gangbare, gedeelde betekenis.\",\n      \"De spreker geeft genoeg context om duidelijk te maken waar, wanneer en voor wie de boodschap geldt.\",\n      \"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\"\n    ],\n    \"expected_actions\": [\n      \"De spreker kiest herkenbare woorden en formuleert de boodschap begrijpelijk.\",\n      \"De luisteraar interpreteert de woorden volgens hun gewone betekenis en de context.\",\n      \"De luisteraar stelt eventueel een verduidelijkende vraag als iets echt onduidelijk is.\",\n      \"De luisteraar reageert of handelt in overeenstemming met de begrepen boodschap.\"\n    ],\n    \"expected_outcome\": \"Beide deelnemers blijken dezelfde boodschap te hebben begrepen; de communicatie leidt zonder noemenswaardige verwarring tot een passende reactie of afspraak.\",\n    \"expected_propositions\": [\n      \"Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.\",\n      \"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\",\n      \"Context maakt duidelijk of een woord letterlijk, figuurlijk of als vaste uitdrukking wordt gebruikt.\",\n      \"Een misverstand is uitzonderlijk genoeg dat het doorgaans met een korte verduidelijking kan worden opgelost.\",\n      \"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\"\n    ],\n    \"audience_expectation\": \"Een setup activeert de verwachting van soepele, redelijke communicatie: woorden dragen een gedeelde betekenis over, context voorkomt dubbelzinnigheid en de luisteraar reageert op wat de spreker kennelijk bedoelt.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Taal, woorden en misverstanden\",\n  \"script_a\": {\n    \"script_a\": \"Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.\",\n    \"participants_and_roles\": [\n      \"Spreker: formuleert een boodschap met woorden die bij de situatie en de gesprekspartner passen.\",\n      \"Luisteraar: hoort of leest de boodschap, kent de gebruikelijke betekenis van de woorden en leidt daaruit de bedoelde informatie af.\",\n      \"Eventueel omstander of derde: deelt doorgaans dezelfde taal- en situatiekennis en kan het gesprek op dezelfde manier interpreteren.\"\n    ],\n    \"apparent_goal\": \"Een boodschap helder overbrengen zodat de ander begrijpt wat bedoeld wordt en er correct op kan reageren.\",\n    \"preconditions\": [\n      \"De deelnemers spreken of begrijpen dezelfde taal voldoende goed.\",\n      \"Woorden en uitdrukkingen hebben in de gegeven context een gangbare, gedeelde betekenis.\",\n      \"De spreker geeft genoeg context om duidelijk te maken waar, wanneer en voor wie de boodschap geldt.\",\n      \"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\"\n    ],\n    \"expected_actions\": [\n      \"De spreker kiest herkenbare woorden en formuleert de boodschap begrijpelijk.\",\n      \"De luisteraar interpreteert de woorden volgens hun gewone betekenis en de context.\",\n      \"De luisteraar stelt eventueel een verduidelijkende vraag als iets echt onduidelijk is.\",\n      \"De luisteraar reageert of handelt in overeenstemming met de begrepen boodschap.\"\n    ],\n    \"expected_outcome\": \"Beide deelnemers blijken dezelfde boodschap te hebben begrepen; de communicatie leidt zonder noemenswaardige verwarring tot een passende reactie of afspraak.\",\n    \"expected_propositions\": [\n      \"Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.\",\n      \"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\",\n      \"Context maakt duidelijk of een woord letterlijk, figuurlijk of als vaste uitdrukking wordt gebruikt.\",\n      \"Een misverstand is uitzonderlijk genoeg dat het doorgaans met een korte verduidelijking kan worden opgelost.\",\n      \"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\"\n    ],\n    \"audience_expectation\": \"Een setup activeert de verwachting van soepele, redelijke communicatie: woorden dragen een gedeelde betekenis over, context voorkomt dubbelzinnigheid en de luisteraar reageert op wat de spreker kennelijk bedoelt.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Een klant belt een technische helpdesk en gebruikt alledaagse woorden als labels voor computerfuncties. De medewerker volgt niet de gewone gesprekbetekenis, maar een strikte systeem- of vakbetekenis, waardoor de klant onbedoeld een andere handeling uitvoert.\",\n      \"opposition_axis\": \"alledaagse bedoelde betekenis versus letterlijke technische classificatie\",\n      \"opposed_proposition\": \"Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.\",\n      \"shared_anchor\": \"De klant zegt dat hij een venster wil sluiten.\",\n      \"reading_a\": \"De klant wil een zichtbaar venster op het scherm wegklikken.\",\n      \"reading_b\": \"De medewerker begrijpt „venster” als een specifiek programmavenster dat eerst als actief systeemonderdeel moet worden geselecteerd of beëindigd.\",\n      \"roles_b\": [\n        \"Klant: beschrijft een computerprobleem in gewone taal.\",\n        \"Helpdeskmedewerker: vertaalt woorden naar strikte technische categorieën.\",\n        \"Computersysteem: voert alleen de technisch geldige opdracht uit.\"\n      ],\n      \"goal_b\": \"De technische toestand van het systeem correct vaststellen en volgens een formele procedure wijzigen.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de klant die een probleem meldt.\",\n        \"De luisteraar uit Script A wordt de helpdeskmedewerker die een afwijkend vakjargon hanteert.\",\n        \"De passende reactie uit Script A wordt een technische, procedurele ingreep.\"\n      ],\n      \"shared_cues\": [\n        \"Een beller vraagt om hulp.\",\n        \"Er wordt gesproken over een venster, sluiten en klikken.\",\n        \"De medewerker stelt ogenschijnlijk normale verduidelijkende vragen.\",\n        \"De klant verwacht dat een korte opdracht volstaat.\"\n      ],\n      \"switch_trigger\": \"De medewerker vraagt op het einde: „Bedoelt u het venster, of wilt u uw baan opzeggen?”\",\n      \"hinge_event\": \"De klant antwoordt dat hij alleen „dat ding rechtsonder” wil sluiten, waarna de medewerker hem naar de afdeling personeelszaken doorverbindt.\",\n      \"anomaly_under_a\": \"In een gewoon gesprek over een scherm is doorverbinden met personeelszaken volstrekt ongepast; „venster sluiten” hoort een eenvoudige computerhandeling op te roepen.\",\n      \"resolution_under_b\": \"De medewerker heeft eerdere woorden van de klant als klacht over zijn werkcomputer én zijn arbeidscontract geclassificeerd; het doorverbinden blijkt een rigide, maar doelgerichte behandeling van een vermeende opzegging.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een docent neemt een mondeling taalexamen af waarin een leerling niet moet raden wat de docent praktisch bedoelt, maar moet aantonen dat hij dubbelzinnigheid, vaste uitdrukkingen en letterlijke lezingen kan herkennen. Het gesprek lijkt eerst een gewone instructie, maar blijkt een toets.\",\n      \"opposition_axis\": \"coöperatief informeren versus beoordelen op misinterpretatie\",\n      \"opposed_proposition\": \"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\",\n      \"shared_anchor\": \"De docent zegt: „Zet de kat even buiten.”\",\n      \"reading_a\": \"De docent vraagt de leerling om het dier naar buiten te brengen.\",\n      \"reading_b\": \"De docent legt bewust een dubbelzinnige formulering voor en verwacht dat de leerling mogelijke betekenissen en ontbrekende context benoemt.\",\n      \"roles_b\": [\n        \"Docent-examinator: formuleert gecontroleerd dubbelzinnige opdrachten.\",\n        \"Leerling-kandidaat: moet taalinterpretaties analyseren.\",\n        \"Beoordelaar: kent punten toe voor het signaleren van ambiguïteit.\"\n      ],\n      \"goal_b\": \"Vaststellen of de leerling taaluitingen kritisch kan analyseren in plaats van automatisch de meest voor de hand liggende bedoeling te volgen.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de docent die schijnbaar alledaagse instructies geeft.\",\n        \"De luisteraar uit Script A wordt de examenkandidaat.\",\n        \"De eventuele omstander uit Script A wordt een beoordelaar of surveillant.\",\n        \"De verwachte praktische reactie wordt vervangen door een gemotiveerde taalanalyse.\"\n      ],\n      \"shared_cues\": [\n        \"Een volwassene geeft korte mondelinge opdrachten.\",\n        \"Een leerling luistert aandachtig en wil correct reageren.\",\n        \"Woorden als „buiten”, „bank” en „slaan” vallen in gewone zinnen.\",\n        \"De docent vraagt steeds: „Weet je zeker wat ik bedoel?”\"\n      ],\n      \"switch_trigger\": \"De docent legt een puntenformulier neer en zegt: „U krijgt juist punten als u de opdracht niet uitvoert.”\",\n      \"hinge_event\": \"De leerling laat de kat bewust zitten en antwoordt: „Dat kan betekenen dat ik het dier naar buiten breng, maar zonder context weet ik niet welke kat of welk buiten u bedoelt.”\",\n      \"anomaly_under_a\": \"Onder een gewone instructie is weigeren om de kat buiten te zetten onbehulpzaam en overdreven pedant; een korte verduidelijking zou hooguit nodig zijn bij echte twijfel.\",\n      \"resolution_under_b\": \"In de examencontext is die weigering precies de gezochte prestatie: de leerling toont dat hij niet blind vertrouwt op schijnbaar duidelijke taal en verdient daarmee punten.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een marktkoopman verkoopt woordspelingen als producten: klanten horen aanvankelijk gewone verkooptaal, maar de koopman behandelt woorden als letterlijk verhandelbare objecten. De klant denkt informatie te krijgen, terwijl de koopman een taalspel exploiteert.\",\n      \"opposition_axis\": \"woorden als transparante verwijzingen versus woorden als koopwaar en letterlijk materiaal\",\n      \"opposed_proposition\": \"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\",\n      \"shared_anchor\": \"Een klant vraagt: „Hebt u iets tegen de kou?”\",\n      \"reading_a\": \"De klant zoekt warme kleding, een deken of een middel om niet koud te krijgen.\",\n      \"reading_b\": \"De koopman biedt letterlijk een bordje of argument aan dat „tegen de kou” is gericht.\",\n      \"roles_b\": [\n        \"Klant: zoekt een praktisch middel tegen kou.\",\n        \"Marktkoopman: verkoopt woordspelingen alsof het bruikbare artikelen zijn.\",\n        \"Omstanders: herkennen geleidelijk de dubbele lezing en reageren op de verkoopact.\"\n      ],\n      \"goal_b\": \"De klant verleiden tot een aankoop door een gewone hulpvraag om te zetten in een commercieel taalspel.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de klant met een gewone vraag.\",\n        \"De luisteraar uit Script A wordt de koopman die de vraag volgens een alternatieve lezing beantwoordt.\",\n        \"De omstander uit Script A wordt een marktpubliek dat de woordgrap begrijpt.\",\n        \"De passende handeling wordt een verkooptransactie in plaats van praktische hulp.\"\n      ],\n      \"shared_cues\": [\n        \"Een klant nadert een kraam.\",\n        \"Er wordt gevraagd naar iets tegen de kou.\",\n        \"De koopman wijst naar spullen op zijn kraam.\",\n        \"De klant verwacht een bruikbaar product.\"\n      ],\n      \"switch_trigger\": \"De koopman haalt een protestbord tevoorschijn met de tekst: „Weg met de kou!” en noemt de prijs.\",\n      \"hinge_event\": \"Hij zegt: „Dit is uitstekend tegen de kou; u kunt er de hele winter mee demonstreren.”\",\n      \"anomaly_under_a\": \"Een protestbord helpt een verkleumde klant niet warm te blijven en reageert dus niet passend op de kennelijke vraag naar bescherming tegen kou.\",\n      \"resolution_under_b\": \"De koopman verkoopt niet primair winterartikelen maar letterlijke antwoorden op formuleringen; het bord is doelgericht omdat het grammaticaal en commercieel precies „iets tegen de kou” aanbiedt.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.\",\n      \"opposition_axis\": \"oprechte informatieoverdracht versus strategische taalontwijking\",\n      \"opposed_proposition\": \"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\",\n      \"shared_anchor\": \"De rechercheur vraagt: „Was u gisteravond thuis?”\",\n      \"reading_a\": \"De rechercheur wil weten of de verdachte zich gedurende de relevante avond in zijn eigen woning bevond.\",\n      \"reading_b\": \"De verdachte beantwoordt alleen een smal, letterlijk waar deel van de vraag en gebruikt „thuis” als rekbaar of tijdelijk begrip.\",\n      \"roles_b\": [\n        \"Rechercheur: zoekt betrouwbare feiten over een gebeurtenis.\",\n        \"Verdachte: formuleert waarheden die de gewenste gevolgtrekking ontwijken.\",\n        \"Eventuele advocaat: bewaakt de formulering en herkent de juridische speelruimte.\"\n      ],\n      \"goal_b\": \"Informatie afschermen zonder aantoonbaar te liegen, of juist die ontwijking als onderzoeksaanwijzing blootleggen.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.\",\n        \"De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.\",\n        \"De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.\",\n        \"De normale verduidelijkingsvraag verandert in een verhoortechniek.\"\n      ],\n      \"shared_cues\": [\n        \"Een eenvoudige vraag over tijd en plaats.\",\n        \"Een rustig, grammaticaal correct antwoord.\",\n        \"Herhaalde woorden als „thuis”, „gisteravond” en „precies”.\",\n        \"De rechercheur vraagt om verduidelijking.\"\n      ],\n      \"switch_trigger\": \"De verdachte zegt: „Ik was thuis toen ik thuiskwam.”\",\n      \"hinge_event\": \"In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”\",\n      \"anomaly_under_a\": \"In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.\",\n      \"resolution_under_b\": \"Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Taal, woorden en misverstanden\",\n  \"script_a\": {\n    \"script_a\": \"Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.\",\n    \"participants_and_roles\": [\n      \"Spreker: formuleert een boodschap met woorden die bij de situatie en de gesprekspartner passen.\",\n      \"Luisteraar: hoort of leest de boodschap, kent de gebruikelijke betekenis van de woorden en leidt daaruit de bedoelde informatie af.\",\n      \"Eventueel omstander of derde: deelt doorgaans dezelfde taal- en situatiekennis en kan het gesprek op dezelfde manier interpreteren.\"\n    ],\n    \"apparent_goal\": \"Een boodschap helder overbrengen zodat de ander begrijpt wat bedoeld wordt en er correct op kan reageren.\",\n    \"preconditions\": [\n      \"De deelnemers spreken of begrijpen dezelfde taal voldoende goed.\",\n      \"Woorden en uitdrukkingen hebben in de gegeven context een gangbare, gedeelde betekenis.\",\n      \"De spreker geeft genoeg context om duidelijk te maken waar, wanneer en voor wie de boodschap geldt.\",\n      \"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\"\n    ],\n    \"expected_actions\": [\n      \"De spreker kiest herkenbare woorden en formuleert de boodschap begrijpelijk.\",\n      \"De luisteraar interpreteert de woorden volgens hun gewone betekenis en de context.\",\n      \"De luisteraar stelt eventueel een verduidelijkende vraag als iets echt onduidelijk is.\",\n      \"De luisteraar reageert of handelt in overeenstemming met de begrepen boodschap.\"\n    ],\n    \"expected_outcome\": \"Beide deelnemers blijken dezelfde boodschap te hebben begrepen; de communicatie leidt zonder noemenswaardige verwarring tot een passende reactie of afspraak.\",\n    \"expected_propositions\": [\n      \"Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.\",\n      \"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\",\n      \"Context maakt duidelijk of een woord letterlijk, figuurlijk of als vaste uitdrukking wordt gebruikt.\",\n      \"Een misverstand is uitzonderlijk genoeg dat het doorgaans met een korte verduidelijking kan worden opgelost.\",\n      \"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\"\n    ],\n    \"audience_expectation\": \"Een setup activeert de verwachting van soepele, redelijke communicatie: woorden dragen een gedeelde betekenis over, context voorkomt dubbelzinnigheid en de luisteraar reageert op wat de spreker kennelijk bedoelt.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Een docent neemt een mondeling taalexamen af waarin een leerling niet moet raden wat de docent praktisch bedoelt, maar moet aantonen dat hij dubbelzinnigheid, vaste uitdrukkingen en letterlijke lezingen kan herkennen. Het gesprek lijkt eerst een gewone instructie, maar blijkt een toets.\",\n      \"opposition_axis\": \"coöperatief informeren versus beoordelen op misinterpretatie\",\n      \"opposed_proposition\": \"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\",\n      \"shared_anchor\": \"De docent zegt: „Zet de kat even buiten.”\",\n      \"reading_a\": \"De docent vraagt de leerling om het dier naar buiten te brengen.\",\n      \"reading_b\": \"De docent legt bewust een dubbelzinnige formulering voor en verwacht dat de leerling mogelijke betekenissen en ontbrekende context benoemt.\",\n      \"roles_b\": [\n        \"Docent-examinator: formuleert gecontroleerd dubbelzinnige opdrachten.\",\n        \"Leerling-kandidaat: moet taalinterpretaties analyseren.\",\n        \"Beoordelaar: kent punten toe voor het signaleren van ambiguïteit.\"\n      ],\n      \"goal_b\": \"Vaststellen of de leerling taaluitingen kritisch kan analyseren in plaats van automatisch de meest voor de hand liggende bedoeling te volgen.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de docent die schijnbaar alledaagse instructies geeft.\",\n        \"De luisteraar uit Script A wordt de examenkandidaat.\",\n        \"De eventuele omstander uit Script A wordt een beoordelaar of surveillant.\",\n        \"De verwachte praktische reactie wordt vervangen door een gemotiveerde taalanalyse.\"\n      ],\n      \"shared_cues\": [\n        \"Een volwassene geeft korte mondelinge opdrachten.\",\n        \"Een leerling luistert aandachtig en wil correct reageren.\",\n        \"Woorden als „buiten”, „bank” en „slaan” vallen in gewone zinnen.\",\n        \"De docent vraagt steeds: „Weet je zeker wat ik bedoel?”\"\n      ],\n      \"switch_trigger\": \"De docent legt een puntenformulier neer en zegt: „U krijgt juist punten als u de opdracht niet uitvoert.”\",\n      \"hinge_event\": \"De leerling laat de kat bewust zitten en antwoordt: „Dat kan betekenen dat ik het dier naar buiten breng, maar zonder context weet ik niet welke kat of welk buiten u bedoelt.”\",\n      \"anomaly_under_a\": \"Onder een gewone instructie is weigeren om de kat buiten te zetten onbehulpzaam en overdreven pedant; een korte verduidelijking zou hooguit nodig zijn bij echte twijfel.\",\n      \"resolution_under_b\": \"In de examencontext is die weigering precies de gezochte prestatie: de leerling toont dat hij niet blind vertrouwt op schijnbaar duidelijke taal en verdient daarmee punten.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Een marktkoopman verkoopt woordspelingen als producten: klanten horen aanvankelijk gewone verkooptaal, maar de koopman behandelt woorden als letterlijk verhandelbare objecten. De klant denkt informatie te krijgen, terwijl de koopman een taalspel exploiteert.\",\n      \"opposition_axis\": \"woorden als transparante verwijzingen versus woorden als koopwaar en letterlijk materiaal\",\n      \"opposed_proposition\": \"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\",\n      \"shared_anchor\": \"Een klant vraagt: „Hebt u iets tegen de kou?”\",\n      \"reading_a\": \"De klant zoekt warme kleding, een deken of een middel om niet koud te krijgen.\",\n      \"reading_b\": \"De koopman biedt letterlijk een bordje of argument aan dat „tegen de kou” is gericht.\",\n      \"roles_b\": [\n        \"Klant: zoekt een praktisch middel tegen kou.\",\n        \"Marktkoopman: verkoopt woordspelingen alsof het bruikbare artikelen zijn.\",\n        \"Omstanders: herkennen geleidelijk de dubbele lezing en reageren op de verkoopact.\"\n      ],\n      \"goal_b\": \"De klant verleiden tot een aankoop door een gewone hulpvraag om te zetten in een commercieel taalspel.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de klant met een gewone vraag.\",\n        \"De luisteraar uit Script A wordt de koopman die de vraag volgens een alternatieve lezing beantwoordt.\",\n        \"De omstander uit Script A wordt een marktpubliek dat de woordgrap begrijpt.\",\n        \"De passende handeling wordt een verkooptransactie in plaats van praktische hulp.\"\n      ],\n      \"shared_cues\": [\n        \"Een klant nadert een kraam.\",\n        \"Er wordt gevraagd naar iets tegen de kou.\",\n        \"De koopman wijst naar spullen op zijn kraam.\",\n        \"De klant verwacht een bruikbaar product.\"\n      ],\n      \"switch_trigger\": \"De koopman haalt een protestbord tevoorschijn met de tekst: „Weg met de kou!” en noemt de prijs.\",\n      \"hinge_event\": \"Hij zegt: „Dit is uitstekend tegen de kou; u kunt er de hele winter mee demonstreren.”\",\n      \"anomaly_under_a\": \"Een protestbord helpt een verkleumde klant niet warm te blijven en reageert dus niet passend op de kennelijke vraag naar bescherming tegen kou.\",\n      \"resolution_under_b\": \"De koopman verkoopt niet primair winterartikelen maar letterlijke antwoorden op formuleringen; het bord is doelgericht omdat het grammaticaal en commercieel precies „iets tegen de kou” aanbiedt.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.\",\n      \"opposition_axis\": \"oprechte informatieoverdracht versus strategische taalontwijking\",\n      \"opposed_proposition\": \"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\",\n      \"shared_anchor\": \"De rechercheur vraagt: „Was u gisteravond thuis?”\",\n      \"reading_a\": \"De rechercheur wil weten of de verdachte zich gedurende de relevante avond in zijn eigen woning bevond.\",\n      \"reading_b\": \"De verdachte beantwoordt alleen een smal, letterlijk waar deel van de vraag en gebruikt „thuis” als rekbaar of tijdelijk begrip.\",\n      \"roles_b\": [\n        \"Rechercheur: zoekt betrouwbare feiten over een gebeurtenis.\",\n        \"Verdachte: formuleert waarheden die de gewenste gevolgtrekking ontwijken.\",\n        \"Eventuele advocaat: bewaakt de formulering en herkent de juridische speelruimte.\"\n      ],\n      \"goal_b\": \"Informatie afschermen zonder aantoonbaar te liegen, of juist die ontwijking als onderzoeksaanwijzing blootleggen.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.\",\n        \"De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.\",\n        \"De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.\",\n        \"De normale verduidelijkingsvraag verandert in een verhoortechniek.\"\n      ],\n      \"shared_cues\": [\n        \"Een eenvoudige vraag over tijd en plaats.\",\n        \"Een rustig, grammaticaal correct antwoord.\",\n        \"Herhaalde woorden als „thuis”, „gisteravond” en „precies”.\",\n        \"De rechercheur vraagt om verduidelijking.\"\n      ],\n      \"switch_trigger\": \"De verdachte zegt: „Ik was thuis toen ik thuiskwam.”\",\n      \"hinge_event\": \"In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”\",\n      \"anomaly_under_a\": \"In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.\",\n      \"resolution_under_b\": \"Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou write jokes from a semantic plan.\nAlways write all joke variants in Dutch.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 5: Joke generation.\nWrite three distinct joke variants that preserve the same script opposition.\nWrite each as a joke intended to be spoken aloud by one comedian to a Dutch audience.\nEach variant must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nLet the setup feel socially normal and recognizable so Script A is dominant but not exclusive.\nPlant one or two shared cues that appear ordinary under Script A and gain a second\nfunction under Script B. Introduce the smallest possible switch trigger late.\nThe punch must make a preceding action or condition anomalous under Script A but\nimmediately purposeful under Script B. After the punch, at least one earlier detail\nmust acquire a new role or meaning.\nPrefer a clear semantic reversal over shock value.\nThe second reading should feel surprisingly true, not merely fictional.\nDo not explain Script B or name the opposition. Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\nEnd on the strongest word or phrase.\nReturn structured variants with text and angle fields.\n\nInput:\n{\n  \"topic\": \"Taal, woorden en misverstanden\",\n  \"plan\": {\n    \"setup_script\": \"Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.\",\n    \"opposing_script\": \"Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.\",\n    \"opposition_type\": \"oprechte informatieoverdracht versus strategische taalontwijking\",\n    \"trigger\": \"De verdachte zegt: „Ik was thuis toen ik thuiskwam.”\",\n    \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n    \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n    \"shared_cues\": [\n      \"Een eenvoudige vraag over tijd en plaats.\",\n      \"Een rustig, grammaticaal correct antwoord.\",\n      \"Herhaalde woorden als „thuis”, „gisteravond” en „precies”.\",\n      \"De rechercheur vraagt om verduidelijking.\"\n    ],\n    \"hinge_event\": \"In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”\",\n    \"anomaly_under_a\": \"In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.\",\n    \"resolution_under_b\": \"Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.\",\n    \"role_remapping\": [\n      \"De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.\",\n      \"De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.\",\n      \"De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.\",\n      \"De normale verduidelijkingsvraag verandert in een verhoortechniek.\"\n    ],\n    \"style_mode\": \"none\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Taal, woorden en misverstanden\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.\",\n      \"participants_and_roles\": [\n        \"Spreker: formuleert een boodschap met woorden die bij de situatie en de gesprekspartner passen.\",\n        \"Luisteraar: hoort of leest de boodschap, kent de gebruikelijke betekenis van de woorden en leidt daaruit de bedoelde informatie af.\",\n        \"Eventueel omstander of derde: deelt doorgaans dezelfde taal- en situatiekennis en kan het gesprek op dezelfde manier interpreteren.\"\n      ],\n      \"apparent_goal\": \"Een boodschap helder overbrengen zodat de ander begrijpt wat bedoeld wordt en er correct op kan reageren.\",\n      \"preconditions\": [\n        \"De deelnemers spreken of begrijpen dezelfde taal voldoende goed.\",\n        \"Woorden en uitdrukkingen hebben in de gegeven context een gangbare, gedeelde betekenis.\",\n        \"De spreker geeft genoeg context om duidelijk te maken waar, wanneer en voor wie de boodschap geldt.\",\n        \"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\"\n      ],\n      \"expected_actions\": [\n        \"De spreker kiest herkenbare woorden en formuleert de boodschap begrijpelijk.\",\n        \"De luisteraar interpreteert de woorden volgens hun gewone betekenis en de context.\",\n        \"De luisteraar stelt eventueel een verduidelijkende vraag als iets echt onduidelijk is.\",\n        \"De luisteraar reageert of handelt in overeenstemming met de begrepen boodschap.\"\n      ],\n      \"expected_outcome\": \"Beide deelnemers blijken dezelfde boodschap te hebben begrepen; de communicatie leidt zonder noemenswaardige verwarring tot een passende reactie of afspraak.\",\n      \"expected_propositions\": [\n        \"Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.\",\n        \"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\",\n        \"Context maakt duidelijk of een woord letterlijk, figuurlijk of als vaste uitdrukking wordt gebruikt.\",\n        \"Een misverstand is uitzonderlijk genoeg dat het doorgaans met een korte verduidelijking kan worden opgelost.\",\n        \"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\"\n      ],\n      \"audience_expectation\": \"Een setup activeert de verwachting van soepele, redelijke communicatie: woorden dragen een gedeelde betekenis over, context voorkomt dubbelzinnigheid en de luisteraar reageert op wat de spreker kennelijk bedoelt.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.\",\n      \"opposition_axis\": \"oprechte informatieoverdracht versus strategische taalontwijking\",\n      \"opposed_proposition\": \"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\",\n      \"shared_anchor\": \"De rechercheur vraagt: „Was u gisteravond thuis?”\",\n      \"reading_a\": \"De rechercheur wil weten of de verdachte zich gedurende de relevante avond in zijn eigen woning bevond.\",\n      \"reading_b\": \"De verdachte beantwoordt alleen een smal, letterlijk waar deel van de vraag en gebruikt „thuis” als rekbaar of tijdelijk begrip.\",\n      \"roles_b\": [\n        \"Rechercheur: zoekt betrouwbare feiten over een gebeurtenis.\",\n        \"Verdachte: formuleert waarheden die de gewenste gevolgtrekking ontwijken.\",\n        \"Eventuele advocaat: bewaakt de formulering en herkent de juridische speelruimte.\"\n      ],\n      \"goal_b\": \"Informatie afschermen zonder aantoonbaar te liegen, of juist die ontwijking als onderzoeksaanwijzing blootleggen.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.\",\n        \"De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.\",\n        \"De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.\",\n        \"De normale verduidelijkingsvraag verandert in een verhoortechniek.\"\n      ],\n      \"shared_cues\": [\n        \"Een eenvoudige vraag over tijd en plaats.\",\n        \"Een rustig, grammaticaal correct antwoord.\",\n        \"Herhaalde woorden als „thuis”, „gisteravond” en „precies”.\",\n        \"De rechercheur vraagt om verduidelijking.\"\n      ],\n      \"switch_trigger\": \"De verdachte zegt: „Ik was thuis toen ik thuiskwam.”\",\n      \"hinge_event\": \"In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”\",\n      \"anomaly_under_a\": \"In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.\",\n      \"resolution_under_b\": \"Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.\"\n    },\n    \"so_realization_plan\": {\n      \"category\": null,\n      \"setup_script\": \"Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.\",\n      \"opposing_script\": \"Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.\",\n      \"opposition_type\": \"oprechte informatieoverdracht versus strategische taalontwijking\",\n      \"trigger\": \"De verdachte zegt: „Ik was thuis toen ik thuiskwam.”\",\n      \"setup_goal\": \"Maak Script A dominant met de gedeelde cues en normale rollen.\",\n      \"punch_goal\": \"Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.\",\n      \"shared_cues\": [\n        \"Een eenvoudige vraag over tijd en plaats.\",\n        \"Een rustig, grammaticaal correct antwoord.\",\n        \"Herhaalde woorden als „thuis”, „gisteravond” en „precies”.\",\n        \"De rechercheur vraagt om verduidelijking.\"\n      ],\n      \"hinge_event\": \"In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”\",\n      \"anomaly_under_a\": \"In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.\",\n      \"resolution_under_b\": \"Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.\",\n      \"role_remapping\": [\n        \"De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.\",\n        \"De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.\",\n        \"De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.\",\n        \"De normale verduidelijkingsvraag verandert in een verhoortechniek.\"\n      ],\n      \"style_mode\": \"none\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"De rechercheur vroeg rustig: „Waar was u gisteravond, precies?” De man zei: „Thuis, toen ik thuiskwam.” De rechercheur knikte: „Dank u, dan zoek ik alleen nog waar u vóór uw alibi was.”\",\n      \"angle\": \"Tautologisch alibi\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij het verhoor vroeg de rechercheur waar hij gisteravond was. De verdachte antwoordde heel netjes: „Ik was thuis toen ik thuiskwam.” Zijn advocaat glimlachte, tot de rechercheur zei: „Mooi, u bevestigt dus dat thuis pas uw eindbestemming was.”\",\n      \"angle\": \"Advocaat begrijpt het te laat\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De rechercheur vroeg: „Was u de hele avond thuis?” De verdachte zei: „Ik kan precies zeggen dat ik thuis was toen ik thuiskwam.” De rechercheur schreef mee: „Dat is de eerste eerlijke routebeschrijving die ik vandaag hoor.”\",\n      \"angle\": \"Woorden als routekaart\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Taal, woorden en misverstanden\",\n  \"required_resources\": [\n    \"SO\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"De rechercheur vroeg rustig: „Waar was u gisteravond, precies?” De man zei: „Thuis, toen ik thuiskwam.” De rechercheur knikte: „Dank u, dan zoek ik alleen nog waar u vóór uw alibi was.”\",\n      \"angle\": \"Tautologisch alibi\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij het verhoor vroeg de rechercheur waar hij gisteravond was. De verdachte antwoordde heel netjes: „Ik was thuis toen ik thuiskwam.” Zijn advocaat glimlachte, tot de rechercheur zei: „Mooi, u bevestigt dus dat thuis pas uw eindbestemming was.”\",\n      \"angle\": \"Advocaat begrijpt het te laat\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De rechercheur vroeg: „Was u de hele avond thuis?” De verdachte zei: „Ik kan precies zeggen dat ik thuis was toen ik thuiskwam.” De rechercheur schreef mee: „Dat is de eerste eerlijke routebeschrijving die ik vandaag hoor.”\",\n      \"angle\": \"Woorden als routekaart\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een rechercheur stelt een ogenschijnlijk gewone vraag naar de verblijfplaats van de man, waarop een informatief antwoord over gisteravond wordt verwacht.\",\n      \"realized_script_b\": \"De ondervraagde geeft een tautologisch, letterlijk waar antwoord dat zijn verblijfplaats vóór thuiskomst verhult; de rechercheur leest die ontwijking als belastende informatie.\",\n      \"realized_opposition_axis\": \"coöperatieve informatieoverdracht versus strategische taalontwijking\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De eenvoudige vraag, het tautologische antwoord over 'thuis' en de gevolgtrekking van de rechercheur realiseren de bedoelde tegenstelling. De formulering van de hinge wijkt af van het plan, maar gebruikt dezelfde ontwijking als aanwijzing dat de man eerder elders was.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": false,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De geplande SO wordt functioneel gerealiseerd: de schijnbaar gewone vraag krijgt door het antwoord en de deductie een verhoorbetekenis. De slotzin is echter idiomatisch onhandig: je zoekt niet vanzelfsprekend 'waar iemand vóór zijn alibi was'.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Een rechercheur vraagt naar de verblijfplaats van een verdachte en verwacht een gewone, bruikbare mededeling over waar hij gisteravond was.\",\n      \"realized_script_b\": \"De verdachte gebruikt 'thuis toen ik thuiskwam' als veilige, waarheidsgetrouwe ontwijking; de rechercheur maakt daaruit op dat thuis slechts zijn eindpunt was en niet zijn verblijf gedurende de avond.\",\n      \"realized_opposition_axis\": \"coöperatieve informatieoverdracht versus strategische taalontwijking\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant gebruikt vrijwel letterlijk de geplande trigger en laat de rechercheur de tautologie omzetten in bewijs van ontwijking. De advocaat versterkt de juridische, niet-coöperatieve lezing zonder een andere oppositionele as te introduceren.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Dit is een heldere realisatie van het bedoelde verhoor: de aanvankelijk gewone plaatsvraag wordt door de tautologie herlezen als strategische informatieonthouding. De rechercheursreactie vormt een duidelijke punchline.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een rechercheur vraagt of de verdachte de hele avond thuis was en verwacht een direct, tijdsdekkend antwoord.\",\n      \"realized_script_b\": \"De verdachte beperkt zich tot de letterlijk ware bewering dat hij thuis was bij thuiskomst; de rechercheur behandelt die beperking als een indirecte routebeschrijving die eerdere verplaatsing verraadt.\",\n      \"realized_opposition_axis\": \"coöperatieve informatieoverdracht versus strategische taalontwijking\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De vraag naar de hele avond, de kwalificatie 'precies' en het antwoord over thuiskomst realiseren de geplande ontwijking. De slotzin herkadert het antwoord als bewijs van een afgelegde route, wat de bedoelde rechercheurslezing functioneel behoudt.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LM is niet vereist.\"\n      },\n      \"situation\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"SI is niet vereist.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"NS is niet vereist.\"\n      },\n      \"language\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"LA is niet vereist.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De tekst blijft bij de geplande tegenstelling: een schijnbaar precies antwoord is juist niet informatief over de hele avond. De routebeschrijving-metafoor is een afwijkende formulering van de hinge, maar ondersteunt dezelfde retrospectieve lezing.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Bij het verhoor vroeg de rechercheur waar hij gisteravond was. De verdachte antwoordde heel netjes: „Ik was thuis toen ik thuiskwam.” Zijn advocaat glimlachte, tot de rechercheur zei: „Mooi, u bevestigt dus dat thuis pas uw eindbestemming was.”",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.",
+      "opposing_script": "Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.",
+      "opposition_type": "oprechte informatieoverdracht versus strategische taalontwijking",
+      "trigger": "De verdachte zegt: „Ik was thuis toen ik thuiskwam.”",
+      "setup_goal": "Maak Script A dominant met de gedeelde cues en normale rollen.",
+      "punch_goal": "Activeer het geselecteerde Script B laat en herinterpreteer eerder materiaal.",
+      "shared_cues": [
+        "Een eenvoudige vraag over tijd en plaats.",
+        "Een rustig, grammaticaal correct antwoord.",
+        "Herhaalde woorden als „thuis”, „gisteravond” en „precies”.",
+        "De rechercheur vraagt om verduidelijking."
+      ],
+      "hinge_event": "In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”",
+      "anomaly_under_a": "In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.",
+      "resolution_under_b": "Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.",
+      "role_remapping": [
+        "De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.",
+        "De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.",
+        "De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.",
+        "De normale verduidelijkingsvraag verandert in een verhoortechniek."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.\\\",\\\"participants_and_roles\\\":[\\\"Spreker: formuleert een boodschap met woorden die bij de situatie en de gesprekspartner passen.\\\",\\\"Luisteraar: hoort of leest de boodschap, kent de gebruikelijke betekenis van de woorden en leidt daaruit de bedoelde informatie af.\\\",\\\"Eventueel omstander of derde: deelt doorgaans dezelfde taal- en situatiekennis en kan het gesprek op dezelfde manier interpreteren.\\\"],\\\"apparent_goal\\\":\\\"Een boodschap helder overbrengen zodat de ander begrijpt wat bedoeld wordt en er correct op kan reageren.\\\",\\\"preconditions\\\":[\\\"De deelnemers spreken of begrijpen dezelfde taal voldoende goed.\\\",\\\"Woorden en uitdrukkingen hebben in de gegeven context een gangbare, gedeelde betekenis.\\\",\\\"De spreker geeft genoeg context om duidelijk te maken waar, wanneer en voor wie de boodschap geldt.\\\",\\\"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\\\"],\\\"expected_actions\\\":[\\\"De spreker kiest herkenbare woorden en formuleert de boodschap begrijpelijk.\\\",\\\"De luisteraar interpreteert de woorden volgens hun gewone betekenis en de context.\\\",\\\"De luisteraar stelt eventueel een verduidelijkende vraag als iets echt onduidelijk is.\\\",\\\"De luisteraar reageert of handelt in overeenstemming met de begrepen boodschap.\\\"],\\\"expected_outcome\\\":\\\"Beide deelnemers blijken dezelfde boodschap te hebben begrepen; de communicatie leidt zonder noemenswaardige verwarring tot een passende reactie of afspraak.\\\",\\\"expected_propositions\\\":[\\\"Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.\\\",\\\"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\\\",\\\"Context maakt duidelijk of een woord letterlijk, figuurlijk of als vaste uitdrukking wordt gebruikt.\\\",\\\"Een misverstand is uitzonderlijk genoeg dat het doorgaans met een korte verduidelijking kan worden opgelost.\\\",\\\"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\\\"],\\\"audience_expectation\\\":\\\"Een setup activeert de verwachting van soepele, redelijke communicatie: woorden dragen een gedeelde betekenis over, context voorkomt dubbelzinnigheid en de luisteraar reageert op wat de spreker kennelijk bedoelt.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Een klant belt een technische helpdesk en gebruikt alledaagse woorden als labels voor computerfuncties. De medewerker volgt niet de gewone gesprekbetekenis, maar een strikte systeem- of vakbetekenis, waardoor de klant onbedoeld een andere handeling uitvoert.\\\",\\\"opposition_axis\\\":\\\"alledaagse bedoelde betekenis versus letterlijke technische classificatie\\\",\\\"opposed_proposition\\\":\\\"Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.\\\",\\\"shared_anchor\\\":\\\"De klant zegt dat hij een venster wil sluiten.\\\",\\\"reading_a\\\":\\\"De klant wil een zichtbaar venster op het scherm wegklikken.\\\",\\\"reading_b\\\":\\\"De medewerker begrijpt „venster” als een specifiek programmavenster dat eerst als actief systeemonderdeel moet worden geselecteerd of beëindigd.\\\",\\\"roles_b\\\":[\\\"Klant: beschrijft een computerprobleem in gewone taal.\\\",\\\"Helpdeskmedewerker: vertaalt woorden naar strikte technische categorieën.\\\",\\\"Computersysteem: voert alleen de technisch geldige opdracht uit.\\\"],\\\"goal_b\\\":\\\"De technische toestand van het systeem correct vaststellen en volgens een formele procedure wijzigen.\\\",\\\"role_remapping\\\":[\\\"De spreker uit Script A wordt de klant die een probleem meldt.\\\",\\\"De luisteraar uit Script A wordt de helpdeskmedewerker die een afwijkend vakjargon hanteert.\\\",\\\"De passende reactie uit Script A wordt een technische, procedurele ingreep.\\\"],\\\"shared_cues\\\":[\\\"Een beller vraagt om hulp.\\\",\\\"Er wordt gesproken over een venster, sluiten en klikken.\\\",\\\"De medewerker stelt ogenschijnlijk normale verduidelijkende vragen.\\\",\\\"De klant verwacht dat een korte opdracht volstaat.\\\"],\\\"switch_trigger\\\":\\\"De medewerker vraagt op het einde: „Bedoelt u het venster, of wilt u uw baan opzeggen?”\\\",\\\"hinge_event\\\":\\\"De klant antwoordt dat hij alleen „dat ding rechtsonder” wil sluiten, waarna de medewerker hem naar de afdeling personeelszaken doorverbindt.\\\",\\\"anomaly_under_a\\\":\\\"In een gewoon gesprek over een scherm is doorverbinden met personeelszaken volstrekt ongepast; „venster sluiten” hoort een eenvoudige computerhandeling op te roepen.\\\",\\\"resolution_under_b\\\":\\\"De medewerker heeft eerdere woorden van de klant als klacht over zijn werkcomputer én zijn arbeidscontract geclassificeerd; het doorverbinden blijkt een rigide, maar doelgerichte behandeling van een vermeende opzegging.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Een docent neemt een mondeling taalexamen af waarin een leerling niet moet raden wat de docent praktisch bedoelt, maar moet aantonen dat hij dubbelzinnigheid, vaste uitdrukkingen en letterlijke lezingen kan herkennen. Het gesprek lijkt eerst een gewone instructie, maar blijkt een toets.\\\",\\\"opposition_axis\\\":\\\"coöperatief informeren versus beoordelen op misinterpretatie\\\",\\\"opposed_proposition\\\":\\\"Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.\\\",\\\"shared_anchor\\\":\\\"De docent zegt: „Zet de kat even buiten.”\\\",\\\"reading_a\\\":\\\"De docent vraagt de leerling om het dier naar buiten te brengen.\\\",\\\"reading_b\\\":\\\"De docent legt bewust een dubbelzinnige formulering voor en verwacht dat de leerling mogelijke betekenissen en ontbrekende context benoemt.\\\",\\\"roles_b\\\":[\\\"Docent-examinator: formuleert gecontroleerd dubbelzinnige opdrachten.\\\",\\\"Leerling-kandidaat: moet taalinterpretaties analyseren.\\\",\\\"Beoordelaar: kent punten toe voor het signaleren van ambiguïteit.\\\"],\\\"goal_b\\\":\\\"Vaststellen of de leerling taaluitingen kritisch kan analyseren in plaats van automatisch de meest voor de hand liggende bedoeling te volgen.\\\",\\\"role_remapping\\\":[\\\"De spreker uit Script A wordt de docent die schijnbaar alledaagse instructies geeft.\\\",\\\"De luisteraar uit Script A wordt de examenkandidaat.\\\",\\\"De eventuele omstander uit Script A wordt een beoordelaar of surveillant.\\\",\\\"De verwachte praktische reactie wordt vervangen door een gemotiveerde taalanalyse.\\\"],\\\"shared_cues\\\":[\\\"Een volwassene geeft korte mondelinge opdrachten.\\\",\\\"Een leerling luistert aandachtig en wil correct reageren.\\\",\\\"Woorden als „buiten”, „bank” en „slaan” vallen in gewone zinnen.\\\",\\\"De docent vraagt steeds: „Weet je zeker wat ik bedoel?”\\\"],\\\"switch_trigger\\\":\\\"De docent legt een puntenformulier neer en zegt: „U krijgt juist punten als u de opdracht niet uitvoert.”\\\",\\\"hinge_event\\\":\\\"De leerling laat de kat bewust zitten en antwoordt: „Dat kan betekenen dat ik het dier naar buiten breng, maar zonder context weet ik niet welke kat of welk buiten u bedoelt.”\\\",\\\"anomaly_under_a\\\":\\\"Onder een gewone instructie is weigeren om de kat buiten te zetten onbehulpzaam en overdreven pedant; een korte verduidelijking zou hooguit nodig zijn bij echte twijfel.\\\",\\\"resolution_under_b\\\":\\\"In de examencontext is die weigering precies de gezochte prestatie: de leerling toont dat hij niet blind vertrouwt op schijnbaar duidelijke taal en verdient daarmee punten.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Een marktkoopman verkoopt woordspelingen als producten: klanten horen aanvankelijk gewone verkooptaal, maar de koopman behandelt woorden als letterlijk verhandelbare objecten. De klant denkt informatie te krijgen, terwijl de koopman een taalspel exploiteert.\\\",\\\"opposition_axis\\\":\\\"woorden als transparante verwijzingen versus woorden als koopwaar en letterlijk materiaal\\\",\\\"opposed_proposition\\\":\\\"Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.\\\",\\\"shared_anchor\\\":\\\"Een klant vraagt: „Hebt u iets tegen de kou?”\\\",\\\"reading_a\\\":\\\"De klant zoekt warme kleding, een deken of een middel om niet koud te krijgen.\\\",\\\"reading_b\\\":\\\"De koopman biedt letterlijk een bordje of argument aan dat „tegen de kou” is gericht.\\\",\\\"roles_b\\\":[\\\"Klant: zoekt een praktisch middel tegen kou.\\\",\\\"Marktkoopman: verkoopt woordspelingen alsof het bruikbare artikelen zijn.\\\",\\\"Omstanders: herkennen geleidelijk de dubbele lezing en reageren op de verkoopact.\\\"],\\\"goal_b\\\":\\\"De klant verleiden tot een aankoop door een gewone hulpvraag om te zetten in een commercieel taalspel.\\\",\\\"role_remapping\\\":[\\\"De spreker uit Script A wordt de klant met een gewone vraag.\\\",\\\"De luisteraar uit Script A wordt de koopman die de vraag volgens een alternatieve lezing beantwoordt.\\\",\\\"De omstander uit Script A wordt een marktpubliek dat de woordgrap begrijpt.\\\",\\\"De passende handeling wordt een verkooptransactie in plaats van praktische hulp.\\\"],\\\"shared_cues\\\":[\\\"Een klant nadert een kraam.\\\",\\\"Er wordt gevraagd naar iets tegen de kou.\\\",\\\"De koopman wijst naar spullen op zijn kraam.\\\",\\\"De klant verwacht een bruikbaar product.\\\"],\\\"switch_trigger\\\":\\\"De koopman haalt een protestbord tevoorschijn met de tekst: „Weg met de kou!” en noemt de prijs.\\\",\\\"hinge_event\\\":\\\"Hij zegt: „Dit is uitstekend tegen de kou; u kunt er de hele winter mee demonstreren.”\\\",\\\"anomaly_under_a\\\":\\\"Een protestbord helpt een verkleumde klant niet warm te blijven en reageert dus niet passend op de kennelijke vraag naar bescherming tegen kou.\\\",\\\"resolution_under_b\\\":\\\"De koopman verkoopt niet primair winterartikelen maar letterlijke antwoorden op formuleringen; het bord is doelgericht omdat het grammaticaal en commercieel precies „iets tegen de kou” aanbiedt.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.\\\",\\\"opposition_axis\\\":\\\"oprechte informatieoverdracht versus strategische taalontwijking\\\",\\\"opposed_proposition\\\":\\\"Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.\\\",\\\"shared_anchor\\\":\\\"De rechercheur vraagt: „Was u gisteravond thuis?”\\\",\\\"reading_a\\\":\\\"De rechercheur wil weten of de verdachte zich gedurende de relevante avond in zijn eigen woning bevond.\\\",\\\"reading_b\\\":\\\"De verdachte beantwoordt alleen een smal, letterlijk waar deel van de vraag en gebruikt „thuis” als rekbaar of tijdelijk begrip.\\\",\\\"roles_b\\\":[\\\"Rechercheur: zoekt betrouwbare feiten over een gebeurtenis.\\\",\\\"Verdachte: formuleert waarheden die de gewenste gevolgtrekking ontwijken.\\\",\\\"Eventuele advocaat: bewaakt de formulering en herkent de juridische speelruimte.\\\"],\\\"goal_b\\\":\\\"Informatie afschermen zonder aantoonbaar te liegen, of juist die ontwijking als onderzoeksaanwijzing blootleggen.\\\",\\\"role_remapping\\\":[\\\"De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.\\\",\\\"De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.\\\",\\\"De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.\\\",\\\"De normale verduidelijkingsvraag verandert in een verhoortechniek.\\\"],\\\"shared_cues\\\":[\\\"Een eenvoudige vraag over tijd en plaats.\\\",\\\"Een rustig, grammaticaal correct antwoord.\\\",\\\"Herhaalde woorden als „thuis”, „gisteravond” en „precies”.\\\",\\\"De rechercheur vraagt om verduidelijking.\\\"],\\\"switch_trigger\\\":\\\"De verdachte zegt: „Ik was thuis toen ik thuiskwam.”\\\",\\\"hinge_event\\\":\\\"In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”\\\",\\\"anomaly_under_a\\\":\\\"In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.\\\",\\\"resolution_under_b\\\":\\\"Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":false,\\\"genuine_opposition\\\":false,\\\"single_axis\\\":false,\\\"anchor_supports_both\\\":false,\\\"recognizable_second_reading\\\":false,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":false,\\\"anomaly_resolved\\\":false,\\\"retrospective_reinterpretation\\\":false,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"De technische lezing van „venster sluiten” kan hoogstens gaan over een programmavenster, maar draagt niet natuurlijk de latere lezing „uw baan opzeggen” of een doorverwijzing naar personeelszaken. Daardoor is Script B geen samenhangende tweede interpretatie van hetzelfde anker. De kandidaat verschuift bovendien van alledaags versus technisch jargon naar schermvenster versus arbeidsrelatie; er is dus geen eenduidige, lokaal incompatibele oppositie-as. De HR-reactie wordt onder B niet door het eerder gedeelde materiaal gerechtvaardigd.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde uiting „Zet de kat even buiten” kan realiseerbaar eerst als gewone praktische instructie en vervolgens als opzettelijk dubbelzinnige examenvraag functioneren. De dominante oppositie is helder: een coöperatieve opdracht uitvoeren versus taalambiguïteit als toetsobject analyseren. Een mondeling examen waarin ambiguïteit moet worden gesignaleerd is sociaal herkenbaar en kan door de voorafgaande formulering „Weet je zeker wat ik bedoel?” latent aanwezig zijn. Het niet uitvoeren van de opdracht is onder A anomalisch, maar onder B precies de gewenste prestatie; dit herinterpreteert de eerdere instructie en blokkeert A's praktische doel terwijl het B's toetsdoel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De vraag „Hebt u iets tegen de kou?” ondersteunt zowel de normale vraag naar bescherming tegen koude als de letterlijke, woordspelmatige lezing van „tegen de kou”. De oppositie tussen taal als praktische verwijzing en taal als letterlijk verkoopbaar materiaal is dominant en lokaal onverenigbaar in de reactie op de klantvraag. De marktcontext ondersteunt beide lezingen; aanvankelijk overheerst echter vanzelfsprekend de verwachting van een bruikbaar winterproduct. Het protestbord is onder A onbruikbaar en dus anomalisch, maar wordt onder B een doelgericht commercieel woordspel. Daarmee verandert de functie van de eerdere vraag en maakt de onpraktische reactie juist de alternatieve verkoophandeling mogelijk.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"De vraag „Was u gisteravond thuis?” en het antwoord „Ik was thuis toen ik thuiskwam” kunnen eerst worden gelezen binnen de normale verwachting van relevante, coöperatieve informatieoverdracht en vervolgens als strategisch ontwijkende, letterlijk ware formulering. De oppositie tussen oprechte beantwoording en doelbewuste informatieontwijking is duidelijk dominant. Taalontwijking door een verdachte in een verhoor is sociaal herkenbaar en blijft, door de recherchecontext, als tweede mogelijkheid beschikbaar. Het antwoord is onder A niet-informatief; onder B is die niet-informatieve vorm juist aanwijzing voor verborgen verblijfplaats. De formulering frustreert de directe informatiewinst van de rechercheur, maar dient het afschermingsdoel van de verdachte en kan tegelijk als onderzoeksaanwijzing functioneren.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B4\\\",\\\"rationale\\\":\\\"B4 biedt de scherpste en meest natuurlijke tegenstelling: waar Script A uitgaat van coöperatieve, gedeelde betekenis, maakt B4 van ogenschijnlijk gewone taal juist een instrument voor strategische ontwijking. De vraag over „thuis” blijft volledig compatibel met een alledaags gesprek, terwijl het antwoord achteraf een tweede, juridisch bruikbare lezing krijgt. De onthulling herinterpreteert niet alleen de verdachte, maar ook de ongewoon tevreden reactie van de rechercheur: wat eerst pedant of frustrerend lijkt, blijkt bewijsgevoelige analyse. Dit levert een specifieke, economische setup met sterke retrospectieve payoff en duidelijke dramatische inzet.\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"text\\\":\\\"De rechercheur vroeg rustig: „Waar was u gisteravond, precies?” De man zei: „Thuis, toen ik thuiskwam.” De rechercheur knikte: „Dank u, dan zoek ik alleen nog waar u vóór uw alibi was.”\\\",\\\"angle\\\":\\\"Tautologisch alibi\\\"},{\\\"text\\\":\\\"Bij het verhoor vroeg de rechercheur waar hij gisteravond was. De verdachte antwoordde heel netjes: „Ik was thuis toen ik thuiskwam.” Zijn advocaat glimlachte, tot de rechercheur zei: „Mooi, u bevestigt dus dat thuis pas uw eindbestemming was.”\\\",\\\"angle\\\":\\\"Advocaat begrijpt het te laat\\\"},{\\\"text\\\":\\\"De rechercheur vroeg: „Was u de hele avond thuis?” De verdachte zei: „Ik kan precies zeggen dat ik thuis was toen ik thuiskwam.” De rechercheur schreef mee: „Dat is de eerste eerlijke routebeschrijving die ik vandaag hoor.”\\\",\\\"angle\\\":\\\"Woorden als routekaart\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een rechercheur stelt een ogenschijnlijk gewone vraag naar de verblijfplaats van de man, waarop een informatief antwoord over gisteravond wordt verwacht.\\\",\\\"realized_script_b\\\":\\\"De ondervraagde geeft een tautologisch, letterlijk waar antwoord dat zijn verblijfplaats vóór thuiskomst verhult; de rechercheur leest die ontwijking als belastende informatie.\\\",\\\"realized_opposition_axis\\\":\\\"coöperatieve informatieoverdracht versus strategische taalontwijking\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De eenvoudige vraag, het tautologische antwoord over 'thuis' en de gevolgtrekking van de rechercheur realiseren de bedoelde tegenstelling. De formulering van de hinge wijkt af van het plan, maar gebruikt dezelfde ontwijking als aanwijzing dat de man eerder elders was.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":false,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De geplande SO wordt functioneel gerealiseerd: de schijnbaar gewone vraag krijgt door het antwoord en de deductie een verhoorbetekenis. De slotzin is echter idiomatisch onhandig: je zoekt niet vanzelfsprekend 'waar iemand vóór zijn alibi was'.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Een rechercheur vraagt naar de verblijfplaats van een verdachte en verwacht een gewone, bruikbare mededeling over waar hij gisteravond was.\\\",\\\"realized_script_b\\\":\\\"De verdachte gebruikt 'thuis toen ik thuiskwam' als veilige, waarheidsgetrouwe ontwijking; de rechercheur maakt daaruit op dat thuis slechts zijn eindpunt was en niet zijn verblijf gedurende de avond.\\\",\\\"realized_opposition_axis\\\":\\\"coöperatieve informatieoverdracht versus strategische taalontwijking\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant gebruikt vrijwel letterlijk de geplande trigger en laat de rechercheur de tautologie omzetten in bewijs van ontwijking. De advocaat versterkt de juridische, niet-coöperatieve lezing zonder een andere oppositionele as te introduceren.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Dit is een heldere realisatie van het bedoelde verhoor: de aanvankelijk gewone plaatsvraag wordt door de tautologie herlezen als strategische informatieonthouding. De rechercheursreactie vormt een duidelijke punchline.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een rechercheur vraagt of de verdachte de hele avond thuis was en verwacht een direct, tijdsdekkend antwoord.\\\",\\\"realized_script_b\\\":\\\"De verdachte beperkt zich tot de letterlijk ware bewering dat hij thuis was bij thuiskomst; de rechercheur behandelt die beperking als een indirecte routebeschrijving die eerdere verplaatsing verraadt.\\\",\\\"realized_opposition_axis\\\":\\\"coöperatieve informatieoverdracht versus strategische taalontwijking\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De vraag naar de hele avond, de kwalificatie 'precies' en het antwoord over thuiskomst realiseren de geplande ontwijking. De slotzin herkadert het antwoord als bewijs van een afgelegde route, wat de bedoelde rechercheurslezing functioneel behoudt.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LM is niet vereist.\\\"},\\\"situation\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"SI is niet vereist.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"NS is niet vereist.\\\"},\\\"language\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"LA is niet vereist.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De tekst blijft bij de geplande tegenstelling: een schijnbaar precies antwoord is juist niet informatief over de hele avond. De routebeschrijving-metafoor is een afwijkende formulering van de hinge, maar ondersteunt dezelfde retrospectieve lezing.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 wint omdat beide teksten binnen de vormlimiet vallen, maar V2 een passerende variant is en V1 niet. V2 formuleert de onthulling natuurlijker en maakt de strategische ontwijking directer hoorbaar; V1 eindigt met de idiomatisch stroevere formulering over waar iemand vóór zijn alibi was.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V3\\\",\\\"rationale\\\":\\\"V3 wint omdat een passerende variant verplicht boven V1 staat. De vraag naar de hele avond verscherpt bovendien welke informatie ontbreekt, terwijl de routebeschrijving de eerdere verplaatsing compact herkadert. V1 heeft dezelfde kern, maar zijn slot is minder spreekbaar.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide passerende varianten realiseren de vereiste scriptoppositie helder en voldoen aan de vormlimiet. V2 wint nipt door de meest directe, plangetrouwe omslag: de reactie van de rechercheur legt meteen bloot dat het antwoord alleen een eindpunt bevestigt. De advocaat geeft daarbij een kleine, effectieve extra beat; V3's routebeeld is origineler maar iets indirecter.\\\"}],\\\"selected_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"V2 is de sterkste passerende, goed uitvoerbare grap: de normale verhoorvraag wordt door één tautologische ontwijking retrospectief verdacht, en de punchline maakt die herlezing onmiddellijk duidelijk.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Een klant belt een technische helpdesk en gebruikt alledaagse woorden als labels voor computerfuncties. De medewerker volgt niet de gewone gesprekbetekenis, maar een strikte systeem- of vakbetekenis, waardoor de klant onbedoeld een andere handeling uitvoert.",
+        "candidate_id": "B1",
+        "opposition_axis": "alledaagse bedoelde betekenis versus letterlijke technische classificatie",
+        "opposed_expectation": "Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.",
+        "roles_b": [
+          "Klant: beschrijft een computerprobleem in gewone taal.",
+          "Helpdeskmedewerker: vertaalt woorden naar strikte technische categorieën.",
+          "Computersysteem: voert alleen de technisch geldige opdracht uit."
+        ],
+        "goal_b": "De technische toestand van het systeem correct vaststellen en volgens een formele procedure wijzigen.",
+        "role_remapping": [
+          "De spreker uit Script A wordt de klant die een probleem meldt.",
+          "De luisteraar uit Script A wordt de helpdeskmedewerker die een afwijkend vakjargon hanteert.",
+          "De passende reactie uit Script A wordt een technische, procedurele ingreep."
+        ],
+        "shared_cues": [
+          "Een beller vraagt om hulp.",
+          "Er wordt gesproken over een venster, sluiten en klikken.",
+          "De medewerker stelt ogenschijnlijk normale verduidelijkende vragen.",
+          "De klant verwacht dat een korte opdracht volstaat."
+        ],
+        "switch_trigger": "De medewerker vraagt op het einde: „Bedoelt u het venster, of wilt u uw baan opzeggen?”",
+        "hinge_event": "De klant antwoordt dat hij alleen „dat ding rechtsonder” wil sluiten, waarna de medewerker hem naar de afdeling personeelszaken doorverbindt.",
+        "anomaly_under_a": "In een gewoon gesprek over een scherm is doorverbinden met personeelszaken volstrekt ongepast; „venster sluiten” hoort een eenvoudige computerhandeling op te roepen.",
+        "resolution_under_b": "De medewerker heeft eerdere woorden van de klant als klacht over zijn werkcomputer én zijn arbeidscontract geclassificeerd; het doorverbinden blijkt een rigide, maar doelgerichte behandeling van een vermeende opzegging.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een docent neemt een mondeling taalexamen af waarin een leerling niet moet raden wat de docent praktisch bedoelt, maar moet aantonen dat hij dubbelzinnigheid, vaste uitdrukkingen en letterlijke lezingen kan herkennen. Het gesprek lijkt eerst een gewone instructie, maar blijkt een toets.",
+        "candidate_id": "B2",
+        "opposition_axis": "coöperatief informeren versus beoordelen op misinterpretatie",
+        "opposed_expectation": "Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.",
+        "roles_b": [
+          "Docent-examinator: formuleert gecontroleerd dubbelzinnige opdrachten.",
+          "Leerling-kandidaat: moet taalinterpretaties analyseren.",
+          "Beoordelaar: kent punten toe voor het signaleren van ambiguïteit."
+        ],
+        "goal_b": "Vaststellen of de leerling taaluitingen kritisch kan analyseren in plaats van automatisch de meest voor de hand liggende bedoeling te volgen.",
+        "role_remapping": [
+          "De spreker uit Script A wordt de docent die schijnbaar alledaagse instructies geeft.",
+          "De luisteraar uit Script A wordt de examenkandidaat.",
+          "De eventuele omstander uit Script A wordt een beoordelaar of surveillant.",
+          "De verwachte praktische reactie wordt vervangen door een gemotiveerde taalanalyse."
+        ],
+        "shared_cues": [
+          "Een volwassene geeft korte mondelinge opdrachten.",
+          "Een leerling luistert aandachtig en wil correct reageren.",
+          "Woorden als „buiten”, „bank” en „slaan” vallen in gewone zinnen.",
+          "De docent vraagt steeds: „Weet je zeker wat ik bedoel?”"
+        ],
+        "switch_trigger": "De docent legt een puntenformulier neer en zegt: „U krijgt juist punten als u de opdracht niet uitvoert.”",
+        "hinge_event": "De leerling laat de kat bewust zitten en antwoordt: „Dat kan betekenen dat ik het dier naar buiten breng, maar zonder context weet ik niet welke kat of welk buiten u bedoelt.”",
+        "anomaly_under_a": "Onder een gewone instructie is weigeren om de kat buiten te zetten onbehulpzaam en overdreven pedant; een korte verduidelijking zou hooguit nodig zijn bij echte twijfel.",
+        "resolution_under_b": "In de examencontext is die weigering precies de gezochte prestatie: de leerling toont dat hij niet blind vertrouwt op schijnbaar duidelijke taal en verdient daarmee punten.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een marktkoopman verkoopt woordspelingen als producten: klanten horen aanvankelijk gewone verkooptaal, maar de koopman behandelt woorden als letterlijk verhandelbare objecten. De klant denkt informatie te krijgen, terwijl de koopman een taalspel exploiteert.",
+        "candidate_id": "B3",
+        "opposition_axis": "woorden als transparante verwijzingen versus woorden als koopwaar en letterlijk materiaal",
+        "opposed_expectation": "Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.",
+        "roles_b": [
+          "Klant: zoekt een praktisch middel tegen kou.",
+          "Marktkoopman: verkoopt woordspelingen alsof het bruikbare artikelen zijn.",
+          "Omstanders: herkennen geleidelijk de dubbele lezing en reageren op de verkoopact."
+        ],
+        "goal_b": "De klant verleiden tot een aankoop door een gewone hulpvraag om te zetten in een commercieel taalspel.",
+        "role_remapping": [
+          "De spreker uit Script A wordt de klant met een gewone vraag.",
+          "De luisteraar uit Script A wordt de koopman die de vraag volgens een alternatieve lezing beantwoordt.",
+          "De omstander uit Script A wordt een marktpubliek dat de woordgrap begrijpt.",
+          "De passende handeling wordt een verkooptransactie in plaats van praktische hulp."
+        ],
+        "shared_cues": [
+          "Een klant nadert een kraam.",
+          "Er wordt gevraagd naar iets tegen de kou.",
+          "De koopman wijst naar spullen op zijn kraam.",
+          "De klant verwacht een bruikbaar product."
+        ],
+        "switch_trigger": "De koopman haalt een protestbord tevoorschijn met de tekst: „Weg met de kou!” en noemt de prijs.",
+        "hinge_event": "Hij zegt: „Dit is uitstekend tegen de kou; u kunt er de hele winter mee demonstreren.”",
+        "anomaly_under_a": "Een protestbord helpt een verkleumde klant niet warm te blijven en reageert dus niet passend op de kennelijke vraag naar bescherming tegen kou.",
+        "resolution_under_b": "De koopman verkoopt niet primair winterartikelen maar letterlijke antwoorden op formuleringen; het bord is doelgericht omdat het grammaticaal en commercieel precies „iets tegen de kou” aanbiedt.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.",
+        "candidate_id": "B4",
+        "opposition_axis": "oprechte informatieoverdracht versus strategische taalontwijking",
+        "opposed_expectation": "Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.",
+        "roles_b": [
+          "Rechercheur: zoekt betrouwbare feiten over een gebeurtenis.",
+          "Verdachte: formuleert waarheden die de gewenste gevolgtrekking ontwijken.",
+          "Eventuele advocaat: bewaakt de formulering en herkent de juridische speelruimte."
+        ],
+        "goal_b": "Informatie afschermen zonder aantoonbaar te liegen, of juist die ontwijking als onderzoeksaanwijzing blootleggen.",
+        "role_remapping": [
+          "De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.",
+          "De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.",
+          "De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.",
+          "De normale verduidelijkingsvraag verandert in een verhoortechniek."
+        ],
+        "shared_cues": [
+          "Een eenvoudige vraag over tijd en plaats.",
+          "Een rustig, grammaticaal correct antwoord.",
+          "Herhaalde woorden als „thuis”, „gisteravond” en „precies”.",
+          "De rechercheur vraagt om verduidelijking."
+        ],
+        "switch_trigger": "De verdachte zegt: „Ik was thuis toen ik thuiskwam.”",
+        "hinge_event": "In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”",
+        "anomaly_under_a": "In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.",
+        "resolution_under_b": "Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B4 biedt de scherpste en meest natuurlijke tegenstelling: waar Script A uitgaat van coöperatieve, gedeelde betekenis, maakt B4 van ogenschijnlijk gewone taal juist een instrument voor strategische ontwijking. De vraag over „thuis” blijft volledig compatibel met een alledaags gesprek, terwijl het antwoord achteraf een tweede, juridisch bruikbare lezing krijgt. De onthulling herinterpreteert niet alleen de verdachte, maar ook de ongewoon tevreden reactie van de rechercheur: wat eerst pedant of frustrerend lijkt, blijkt bewijsgevoelige analyse. Dit levert een specifieke, economische setup met sterke retrospectieve payoff en duidelijke dramatische inzet.",
+    "variants": [
+      {
+        "text": "De rechercheur vroeg rustig: „Waar was u gisteravond, precies?” De man zei: „Thuis, toen ik thuiskwam.” De rechercheur knikte: „Dank u, dan zoek ik alleen nog waar u vóór uw alibi was.”",
+        "angle": "Tautologisch alibi"
+      },
+      {
+        "text": "Bij het verhoor vroeg de rechercheur waar hij gisteravond was. De verdachte antwoordde heel netjes: „Ik was thuis toen ik thuiskwam.” Zijn advocaat glimlachte, tot de rechercheur zei: „Mooi, u bevestigt dus dat thuis pas uw eindbestemming was.”",
+        "angle": "Advocaat begrijpt het te laat"
+      },
+      {
+        "text": "De rechercheur vroeg: „Was u de hele avond thuis?” De verdachte zei: „Ik kan precies zeggen dat ik thuis was toen ik thuiskwam.” De rechercheur schreef mee: „Dat is de eerste eerlijke routebeschrijving die ik vandaag hoor.”",
+        "angle": "Woorden als routekaart"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 13800,
+      "output_tokens": 7359,
+      "total_tokens": 21159
+    },
+    "metadata": {
+      "family": "script_opposition",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "shared_so_trace": {
+        "audience_expectation": {
+          "script_a": "Twee mensen voeren een alledaags gesprek en gebruiken gewone woorden om elkaar duidelijk te informeren, zodat zij dezelfde bedoeling begrijpen en passend kunnen handelen.",
+          "participants_and_roles": [
+            "Spreker: formuleert een boodschap met woorden die bij de situatie en de gesprekspartner passen.",
+            "Luisteraar: hoort of leest de boodschap, kent de gebruikelijke betekenis van de woorden en leidt daaruit de bedoelde informatie af.",
+            "Eventueel omstander of derde: deelt doorgaans dezelfde taal- en situatiekennis en kan het gesprek op dezelfde manier interpreteren."
+          ],
+          "apparent_goal": "Een boodschap helder overbrengen zodat de ander begrijpt wat bedoeld wordt en er correct op kan reageren.",
+          "preconditions": [
+            "De deelnemers spreken of begrijpen dezelfde taal voldoende goed.",
+            "Woorden en uitdrukkingen hebben in de gegeven context een gangbare, gedeelde betekenis.",
+            "De spreker geeft genoeg context om duidelijk te maken waar, wanneer en voor wie de boodschap geldt.",
+            "Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept."
+          ],
+          "expected_actions": [
+            "De spreker kiest herkenbare woorden en formuleert de boodschap begrijpelijk.",
+            "De luisteraar interpreteert de woorden volgens hun gewone betekenis en de context.",
+            "De luisteraar stelt eventueel een verduidelijkende vraag als iets echt onduidelijk is.",
+            "De luisteraar reageert of handelt in overeenstemming met de begrepen boodschap."
+          ],
+          "expected_outcome": "Beide deelnemers blijken dezelfde boodschap te hebben begrepen; de communicatie leidt zonder noemenswaardige verwarring tot een passende reactie of afspraak.",
+          "expected_propositions": [
+            "Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.",
+            "Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.",
+            "Context maakt duidelijk of een woord letterlijk, figuurlijk of als vaste uitdrukking wordt gebruikt.",
+            "Een misverstand is uitzonderlijk genoeg dat het doorgaans met een korte verduidelijking kan worden opgelost.",
+            "Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie."
+          ],
+          "audience_expectation": "Een setup activeert de verwachting van soepele, redelijke communicatie: woorden dragen een gedeelde betekenis over, context voorkomt dubbelzinnigheid en de luisteraar reageert op wat de spreker kennelijk bedoelt."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Een klant belt een technische helpdesk en gebruikt alledaagse woorden als labels voor computerfuncties. De medewerker volgt niet de gewone gesprekbetekenis, maar een strikte systeem- of vakbetekenis, waardoor de klant onbedoeld een andere handeling uitvoert.",
+            "opposition_axis": "alledaagse bedoelde betekenis versus letterlijke technische classificatie",
+            "opposed_proposition": "Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.",
+            "shared_anchor": "De klant zegt dat hij een venster wil sluiten.",
+            "reading_a": "De klant wil een zichtbaar venster op het scherm wegklikken.",
+            "reading_b": "De medewerker begrijpt „venster” als een specifiek programmavenster dat eerst als actief systeemonderdeel moet worden geselecteerd of beëindigd.",
+            "roles_b": [
+              "Klant: beschrijft een computerprobleem in gewone taal.",
+              "Helpdeskmedewerker: vertaalt woorden naar strikte technische categorieën.",
+              "Computersysteem: voert alleen de technisch geldige opdracht uit."
+            ],
+            "goal_b": "De technische toestand van het systeem correct vaststellen en volgens een formele procedure wijzigen.",
+            "role_remapping": [
+              "De spreker uit Script A wordt de klant die een probleem meldt.",
+              "De luisteraar uit Script A wordt de helpdeskmedewerker die een afwijkend vakjargon hanteert.",
+              "De passende reactie uit Script A wordt een technische, procedurele ingreep."
+            ],
+            "shared_cues": [
+              "Een beller vraagt om hulp.",
+              "Er wordt gesproken over een venster, sluiten en klikken.",
+              "De medewerker stelt ogenschijnlijk normale verduidelijkende vragen.",
+              "De klant verwacht dat een korte opdracht volstaat."
+            ],
+            "switch_trigger": "De medewerker vraagt op het einde: „Bedoelt u het venster, of wilt u uw baan opzeggen?”",
+            "hinge_event": "De klant antwoordt dat hij alleen „dat ding rechtsonder” wil sluiten, waarna de medewerker hem naar de afdeling personeelszaken doorverbindt.",
+            "anomaly_under_a": "In een gewoon gesprek over een scherm is doorverbinden met personeelszaken volstrekt ongepast; „venster sluiten” hoort een eenvoudige computerhandeling op te roepen.",
+            "resolution_under_b": "De medewerker heeft eerdere woorden van de klant als klacht over zijn werkcomputer én zijn arbeidscontract geclassificeerd; het doorverbinden blijkt een rigide, maar doelgerichte behandeling van een vermeende opzegging."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Een docent neemt een mondeling taalexamen af waarin een leerling niet moet raden wat de docent praktisch bedoelt, maar moet aantonen dat hij dubbelzinnigheid, vaste uitdrukkingen en letterlijke lezingen kan herkennen. Het gesprek lijkt eerst een gewone instructie, maar blijkt een toets.",
+            "opposition_axis": "coöperatief informeren versus beoordelen op misinterpretatie",
+            "opposed_proposition": "Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.",
+            "shared_anchor": "De docent zegt: „Zet de kat even buiten.”",
+            "reading_a": "De docent vraagt de leerling om het dier naar buiten te brengen.",
+            "reading_b": "De docent legt bewust een dubbelzinnige formulering voor en verwacht dat de leerling mogelijke betekenissen en ontbrekende context benoemt.",
+            "roles_b": [
+              "Docent-examinator: formuleert gecontroleerd dubbelzinnige opdrachten.",
+              "Leerling-kandidaat: moet taalinterpretaties analyseren.",
+              "Beoordelaar: kent punten toe voor het signaleren van ambiguïteit."
+            ],
+            "goal_b": "Vaststellen of de leerling taaluitingen kritisch kan analyseren in plaats van automatisch de meest voor de hand liggende bedoeling te volgen.",
+            "role_remapping": [
+              "De spreker uit Script A wordt de docent die schijnbaar alledaagse instructies geeft.",
+              "De luisteraar uit Script A wordt de examenkandidaat.",
+              "De eventuele omstander uit Script A wordt een beoordelaar of surveillant.",
+              "De verwachte praktische reactie wordt vervangen door een gemotiveerde taalanalyse."
+            ],
+            "shared_cues": [
+              "Een volwassene geeft korte mondelinge opdrachten.",
+              "Een leerling luistert aandachtig en wil correct reageren.",
+              "Woorden als „buiten”, „bank” en „slaan” vallen in gewone zinnen.",
+              "De docent vraagt steeds: „Weet je zeker wat ik bedoel?”"
+            ],
+            "switch_trigger": "De docent legt een puntenformulier neer en zegt: „U krijgt juist punten als u de opdracht niet uitvoert.”",
+            "hinge_event": "De leerling laat de kat bewust zitten en antwoordt: „Dat kan betekenen dat ik het dier naar buiten breng, maar zonder context weet ik niet welke kat of welk buiten u bedoelt.”",
+            "anomaly_under_a": "Onder een gewone instructie is weigeren om de kat buiten te zetten onbehulpzaam en overdreven pedant; een korte verduidelijking zou hooguit nodig zijn bij echte twijfel.",
+            "resolution_under_b": "In de examencontext is die weigering precies de gezochte prestatie: de leerling toont dat hij niet blind vertrouwt op schijnbaar duidelijke taal en verdient daarmee punten."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Een marktkoopman verkoopt woordspelingen als producten: klanten horen aanvankelijk gewone verkooptaal, maar de koopman behandelt woorden als letterlijk verhandelbare objecten. De klant denkt informatie te krijgen, terwijl de koopman een taalspel exploiteert.",
+            "opposition_axis": "woorden als transparante verwijzingen versus woorden als koopwaar en letterlijk materiaal",
+            "opposed_proposition": "Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.",
+            "shared_anchor": "Een klant vraagt: „Hebt u iets tegen de kou?”",
+            "reading_a": "De klant zoekt warme kleding, een deken of een middel om niet koud te krijgen.",
+            "reading_b": "De koopman biedt letterlijk een bordje of argument aan dat „tegen de kou” is gericht.",
+            "roles_b": [
+              "Klant: zoekt een praktisch middel tegen kou.",
+              "Marktkoopman: verkoopt woordspelingen alsof het bruikbare artikelen zijn.",
+              "Omstanders: herkennen geleidelijk de dubbele lezing en reageren op de verkoopact."
+            ],
+            "goal_b": "De klant verleiden tot een aankoop door een gewone hulpvraag om te zetten in een commercieel taalspel.",
+            "role_remapping": [
+              "De spreker uit Script A wordt de klant met een gewone vraag.",
+              "De luisteraar uit Script A wordt de koopman die de vraag volgens een alternatieve lezing beantwoordt.",
+              "De omstander uit Script A wordt een marktpubliek dat de woordgrap begrijpt.",
+              "De passende handeling wordt een verkooptransactie in plaats van praktische hulp."
+            ],
+            "shared_cues": [
+              "Een klant nadert een kraam.",
+              "Er wordt gevraagd naar iets tegen de kou.",
+              "De koopman wijst naar spullen op zijn kraam.",
+              "De klant verwacht een bruikbaar product."
+            ],
+            "switch_trigger": "De koopman haalt een protestbord tevoorschijn met de tekst: „Weg met de kou!” en noemt de prijs.",
+            "hinge_event": "Hij zegt: „Dit is uitstekend tegen de kou; u kunt er de hele winter mee demonstreren.”",
+            "anomaly_under_a": "Een protestbord helpt een verkleumde klant niet warm te blijven en reageert dus niet passend op de kennelijke vraag naar bescherming tegen kou.",
+            "resolution_under_b": "De koopman verkoopt niet primair winterartikelen maar letterlijke antwoorden op formuleringen; het bord is doelgericht omdat het grammaticaal en commercieel precies „iets tegen de kou” aanbiedt."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.",
+            "opposition_axis": "oprechte informatieoverdracht versus strategische taalontwijking",
+            "opposed_proposition": "Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.",
+            "shared_anchor": "De rechercheur vraagt: „Was u gisteravond thuis?”",
+            "reading_a": "De rechercheur wil weten of de verdachte zich gedurende de relevante avond in zijn eigen woning bevond.",
+            "reading_b": "De verdachte beantwoordt alleen een smal, letterlijk waar deel van de vraag en gebruikt „thuis” als rekbaar of tijdelijk begrip.",
+            "roles_b": [
+              "Rechercheur: zoekt betrouwbare feiten over een gebeurtenis.",
+              "Verdachte: formuleert waarheden die de gewenste gevolgtrekking ontwijken.",
+              "Eventuele advocaat: bewaakt de formulering en herkent de juridische speelruimte."
+            ],
+            "goal_b": "Informatie afschermen zonder aantoonbaar te liegen, of juist die ontwijking als onderzoeksaanwijzing blootleggen.",
+            "role_remapping": [
+              "De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.",
+              "De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.",
+              "De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.",
+              "De normale verduidelijkingsvraag verandert in een verhoortechniek."
+            ],
+            "shared_cues": [
+              "Een eenvoudige vraag over tijd en plaats.",
+              "Een rustig, grammaticaal correct antwoord.",
+              "Herhaalde woorden als „thuis”, „gisteravond” en „precies”.",
+              "De rechercheur vraagt om verduidelijking."
+            ],
+            "switch_trigger": "De verdachte zegt: „Ik was thuis toen ik thuiskwam.”",
+            "hinge_event": "In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”",
+            "anomaly_under_a": "In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.",
+            "resolution_under_b": "Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Een klant belt een technische helpdesk en gebruikt alledaagse woorden als labels voor computerfuncties. De medewerker volgt niet de gewone gesprekbetekenis, maar een strikte systeem- of vakbetekenis, waardoor de klant onbedoeld een andere handeling uitvoert.",
+              "opposition_axis": "alledaagse bedoelde betekenis versus letterlijke technische classificatie",
+              "opposed_proposition": "Een bekend woord betekent in een gewone context doorgaans wat mensen er normaal onder verstaan.",
+              "shared_anchor": "De klant zegt dat hij een venster wil sluiten.",
+              "reading_a": "De klant wil een zichtbaar venster op het scherm wegklikken.",
+              "reading_b": "De medewerker begrijpt „venster” als een specifiek programmavenster dat eerst als actief systeemonderdeel moet worden geselecteerd of beëindigd.",
+              "roles_b": [
+                "Klant: beschrijft een computerprobleem in gewone taal.",
+                "Helpdeskmedewerker: vertaalt woorden naar strikte technische categorieën.",
+                "Computersysteem: voert alleen de technisch geldige opdracht uit."
+              ],
+              "goal_b": "De technische toestand van het systeem correct vaststellen en volgens een formele procedure wijzigen.",
+              "role_remapping": [
+                "De spreker uit Script A wordt de klant die een probleem meldt.",
+                "De luisteraar uit Script A wordt de helpdeskmedewerker die een afwijkend vakjargon hanteert.",
+                "De passende reactie uit Script A wordt een technische, procedurele ingreep."
+              ],
+              "shared_cues": [
+                "Een beller vraagt om hulp.",
+                "Er wordt gesproken over een venster, sluiten en klikken.",
+                "De medewerker stelt ogenschijnlijk normale verduidelijkende vragen.",
+                "De klant verwacht dat een korte opdracht volstaat."
+              ],
+              "switch_trigger": "De medewerker vraagt op het einde: „Bedoelt u het venster, of wilt u uw baan opzeggen?”",
+              "hinge_event": "De klant antwoordt dat hij alleen „dat ding rechtsonder” wil sluiten, waarna de medewerker hem naar de afdeling personeelszaken doorverbindt.",
+              "anomaly_under_a": "In een gewoon gesprek over een scherm is doorverbinden met personeelszaken volstrekt ongepast; „venster sluiten” hoort een eenvoudige computerhandeling op te roepen.",
+              "resolution_under_b": "De medewerker heeft eerdere woorden van de klant als klacht over zijn werkcomputer én zijn arbeidscontract geclassificeerd; het doorverbinden blijkt een rigide, maar doelgerichte behandeling van een vermeende opzegging."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Een docent neemt een mondeling taalexamen af waarin een leerling niet moet raden wat de docent praktisch bedoelt, maar moet aantonen dat hij dubbelzinnigheid, vaste uitdrukkingen en letterlijke lezingen kan herkennen. Het gesprek lijkt eerst een gewone instructie, maar blijkt een toets.",
+              "opposition_axis": "coöperatief informeren versus beoordelen op misinterpretatie",
+              "opposed_proposition": "Als iemand iets duidelijk zegt, begrijpt de gesprekspartner meestal de bedoelde strekking.",
+              "shared_anchor": "De docent zegt: „Zet de kat even buiten.”",
+              "reading_a": "De docent vraagt de leerling om het dier naar buiten te brengen.",
+              "reading_b": "De docent legt bewust een dubbelzinnige formulering voor en verwacht dat de leerling mogelijke betekenissen en ontbrekende context benoemt.",
+              "roles_b": [
+                "Docent-examinator: formuleert gecontroleerd dubbelzinnige opdrachten.",
+                "Leerling-kandidaat: moet taalinterpretaties analyseren.",
+                "Beoordelaar: kent punten toe voor het signaleren van ambiguïteit."
+              ],
+              "goal_b": "Vaststellen of de leerling taaluitingen kritisch kan analyseren in plaats van automatisch de meest voor de hand liggende bedoeling te volgen.",
+              "role_remapping": [
+                "De spreker uit Script A wordt de docent die schijnbaar alledaagse instructies geeft.",
+                "De luisteraar uit Script A wordt de examenkandidaat.",
+                "De eventuele omstander uit Script A wordt een beoordelaar of surveillant.",
+                "De verwachte praktische reactie wordt vervangen door een gemotiveerde taalanalyse."
+              ],
+              "shared_cues": [
+                "Een volwassene geeft korte mondelinge opdrachten.",
+                "Een leerling luistert aandachtig en wil correct reageren.",
+                "Woorden als „buiten”, „bank” en „slaan” vallen in gewone zinnen.",
+                "De docent vraagt steeds: „Weet je zeker wat ik bedoel?”"
+              ],
+              "switch_trigger": "De docent legt een puntenformulier neer en zegt: „U krijgt juist punten als u de opdracht niet uitvoert.”",
+              "hinge_event": "De leerling laat de kat bewust zitten en antwoordt: „Dat kan betekenen dat ik het dier naar buiten breng, maar zonder context weet ik niet welke kat of welk buiten u bedoelt.”",
+              "anomaly_under_a": "Onder een gewone instructie is weigeren om de kat buiten te zetten onbehulpzaam en overdreven pedant; een korte verduidelijking zou hooguit nodig zijn bij echte twijfel.",
+              "resolution_under_b": "In de examencontext is die weigering precies de gezochte prestatie: de leerling toont dat hij niet blind vertrouwt op schijnbaar duidelijke taal en verdient daarmee punten."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Een marktkoopman verkoopt woordspelingen als producten: klanten horen aanvankelijk gewone verkooptaal, maar de koopman behandelt woorden als letterlijk verhandelbare objecten. De klant denkt informatie te krijgen, terwijl de koopman een taalspel exploiteert.",
+              "opposition_axis": "woorden als transparante verwijzingen versus woorden als koopwaar en letterlijk materiaal",
+              "opposed_proposition": "Wie om informatie of een handeling vraagt, verwacht dat de ander reageert op de bedoelde vraag of instructie.",
+              "shared_anchor": "Een klant vraagt: „Hebt u iets tegen de kou?”",
+              "reading_a": "De klant zoekt warme kleding, een deken of een middel om niet koud te krijgen.",
+              "reading_b": "De koopman biedt letterlijk een bordje of argument aan dat „tegen de kou” is gericht.",
+              "roles_b": [
+                "Klant: zoekt een praktisch middel tegen kou.",
+                "Marktkoopman: verkoopt woordspelingen alsof het bruikbare artikelen zijn.",
+                "Omstanders: herkennen geleidelijk de dubbele lezing en reageren op de verkoopact."
+              ],
+              "goal_b": "De klant verleiden tot een aankoop door een gewone hulpvraag om te zetten in een commercieel taalspel.",
+              "role_remapping": [
+                "De spreker uit Script A wordt de klant met een gewone vraag.",
+                "De luisteraar uit Script A wordt de koopman die de vraag volgens een alternatieve lezing beantwoordt.",
+                "De omstander uit Script A wordt een marktpubliek dat de woordgrap begrijpt.",
+                "De passende handeling wordt een verkooptransactie in plaats van praktische hulp."
+              ],
+              "shared_cues": [
+                "Een klant nadert een kraam.",
+                "Er wordt gevraagd naar iets tegen de kou.",
+                "De koopman wijst naar spullen op zijn kraam.",
+                "De klant verwacht een bruikbaar product."
+              ],
+              "switch_trigger": "De koopman haalt een protestbord tevoorschijn met de tekst: „Weg met de kou!” en noemt de prijs.",
+              "hinge_event": "Hij zegt: „Dit is uitstekend tegen de kou; u kunt er de hele winter mee demonstreren.”",
+              "anomaly_under_a": "Een protestbord helpt een verkleumde klant niet warm te blijven en reageert dus niet passend op de kennelijke vraag naar bescherming tegen kou.",
+              "resolution_under_b": "De koopman verkoopt niet primair winterartikelen maar letterlijke antwoorden op formuleringen; het bord is doelgericht omdat het grammaticaal en commercieel precies „iets tegen de kou” aanbiedt."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een rechercheur verhoort een verdachte die elk woord zorgvuldig zo formuleert dat het waar klinkt zonder de relevante informatie te geven. De rechercheur behandelt gewone gesprekstaal daarom niet als coöperatieve informatie, maar als bewijs van ontwijking en verborgen betekenis.",
+              "opposition_axis": "oprechte informatieoverdracht versus strategische taalontwijking",
+              "opposed_proposition": "Beide deelnemers nemen aan dat de ander coöperatief communiceert en niet doelbewust verwarring schept.",
+              "shared_anchor": "De rechercheur vraagt: „Was u gisteravond thuis?”",
+              "reading_a": "De rechercheur wil weten of de verdachte zich gedurende de relevante avond in zijn eigen woning bevond.",
+              "reading_b": "De verdachte beantwoordt alleen een smal, letterlijk waar deel van de vraag en gebruikt „thuis” als rekbaar of tijdelijk begrip.",
+              "roles_b": [
+                "Rechercheur: zoekt betrouwbare feiten over een gebeurtenis.",
+                "Verdachte: formuleert waarheden die de gewenste gevolgtrekking ontwijken.",
+                "Eventuele advocaat: bewaakt de formulering en herkent de juridische speelruimte."
+              ],
+              "goal_b": "Informatie afschermen zonder aantoonbaar te liegen, of juist die ontwijking als onderzoeksaanwijzing blootleggen.",
+              "role_remapping": [
+                "De spreker uit Script A wordt de rechercheur met een schijnbaar eenvoudige vraag.",
+                "De luisteraar uit Script A wordt de verdachte die de gedeelde bedoeling niet aanvaardt.",
+                "De omstander uit Script A wordt de advocaat die de alternatieve lezing ondersteunt.",
+                "De normale verduidelijkingsvraag verandert in een verhoortechniek."
+              ],
+              "shared_cues": [
+                "Een eenvoudige vraag over tijd en plaats.",
+                "Een rustig, grammaticaal correct antwoord.",
+                "Herhaalde woorden als „thuis”, „gisteravond” en „precies”.",
+                "De rechercheur vraagt om verduidelijking."
+              ],
+              "switch_trigger": "De verdachte zegt: „Ik was thuis toen ik thuiskwam.”",
+              "hinge_event": "In plaats van zijn antwoord te corrigeren, noteert de rechercheur tevreden: „Dank u, dan weet ik dat u vóór dat moment ergens anders was.”",
+              "anomaly_under_a": "In een alledaags gesprek is dit antwoord frustrerend niet-informatief en lijkt de reactie van de rechercheur nodeloos juridisch; de vraag vraagt kennelijk naar aanwezigheid gedurende de avond.",
+              "resolution_under_b": "Binnen een verhoor is de tautologische formulering een doelbewuste ontwijking. De rechercheur gebruikt juist het ontbreken van een gewone, coöperatieve beantwoording als aanwijzing dat de verdachte zijn verblijfplaats verbergt."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": false,
+            "genuine_opposition": false,
+            "single_axis": false,
+            "anchor_supports_both": false,
+            "recognizable_second_reading": false,
+            "setup_dominance": true,
+            "latent_second_reading": false,
+            "anomaly_resolved": false,
+            "retrospective_reinterpretation": false,
+            "functional_reversal": false,
+            "rationale": "De technische lezing van „venster sluiten” kan hoogstens gaan over een programmavenster, maar draagt niet natuurlijk de latere lezing „uw baan opzeggen” of een doorverwijzing naar personeelszaken. Daardoor is Script B geen samenhangende tweede interpretatie van hetzelfde anker. De kandidaat verschuift bovendien van alledaags versus technisch jargon naar schermvenster versus arbeidsrelatie; er is dus geen eenduidige, lokaal incompatibele oppositie-as. De HR-reactie wordt onder B niet door het eerder gedeelde materiaal gerechtvaardigd."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde uiting „Zet de kat even buiten” kan realiseerbaar eerst als gewone praktische instructie en vervolgens als opzettelijk dubbelzinnige examenvraag functioneren. De dominante oppositie is helder: een coöperatieve opdracht uitvoeren versus taalambiguïteit als toetsobject analyseren. Een mondeling examen waarin ambiguïteit moet worden gesignaleerd is sociaal herkenbaar en kan door de voorafgaande formulering „Weet je zeker wat ik bedoel?” latent aanwezig zijn. Het niet uitvoeren van de opdracht is onder A anomalisch, maar onder B precies de gewenste prestatie; dit herinterpreteert de eerdere instructie en blokkeert A's praktische doel terwijl het B's toetsdoel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De vraag „Hebt u iets tegen de kou?” ondersteunt zowel de normale vraag naar bescherming tegen koude als de letterlijke, woordspelmatige lezing van „tegen de kou”. De oppositie tussen taal als praktische verwijzing en taal als letterlijk verkoopbaar materiaal is dominant en lokaal onverenigbaar in de reactie op de klantvraag. De marktcontext ondersteunt beide lezingen; aanvankelijk overheerst echter vanzelfsprekend de verwachting van een bruikbaar winterproduct. Het protestbord is onder A onbruikbaar en dus anomalisch, maar wordt onder B een doelgericht commercieel woordspel. Daarmee verandert de functie van de eerdere vraag en maakt de onpraktische reactie juist de alternatieve verkoophandeling mogelijk."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "De vraag „Was u gisteravond thuis?” en het antwoord „Ik was thuis toen ik thuiskwam” kunnen eerst worden gelezen binnen de normale verwachting van relevante, coöperatieve informatieoverdracht en vervolgens als strategisch ontwijkende, letterlijk ware formulering. De oppositie tussen oprechte beantwoording en doelbewuste informatieontwijking is duidelijk dominant. Taalontwijking door een verdachte in een verhoor is sociaal herkenbaar en blijft, door de recherchecontext, als tweede mogelijkheid beschikbaar. Het antwoord is onder A niet-informatief; onder B is die niet-informatieve vorm juist aanwijzing voor verborgen verblijfplaats. De formulering frustreert de directe informatiewinst van de rechercheur, maar dient het afschermingsdoel van de verdachte en kan tegelijk als onderzoeksaanwijzing functioneren."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": false,
+              "genuine_opposition": false,
+              "single_axis": false,
+              "anchor_supports_both": false,
+              "recognizable_second_reading": false,
+              "setup_dominance": true,
+              "latent_second_reading": false,
+              "anomaly_resolved": false,
+              "retrospective_reinterpretation": false,
+              "functional_reversal": false,
+              "rationale": "De technische lezing van „venster sluiten” kan hoogstens gaan over een programmavenster, maar draagt niet natuurlijk de latere lezing „uw baan opzeggen” of een doorverwijzing naar personeelszaken. Daardoor is Script B geen samenhangende tweede interpretatie van hetzelfde anker. De kandidaat verschuift bovendien van alledaags versus technisch jargon naar schermvenster versus arbeidsrelatie; er is dus geen eenduidige, lokaal incompatibele oppositie-as. De HR-reactie wordt onder B niet door het eerder gedeelde materiaal gerechtvaardigd."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde uiting „Zet de kat even buiten” kan realiseerbaar eerst als gewone praktische instructie en vervolgens als opzettelijk dubbelzinnige examenvraag functioneren. De dominante oppositie is helder: een coöperatieve opdracht uitvoeren versus taalambiguïteit als toetsobject analyseren. Een mondeling examen waarin ambiguïteit moet worden gesignaleerd is sociaal herkenbaar en kan door de voorafgaande formulering „Weet je zeker wat ik bedoel?” latent aanwezig zijn. Het niet uitvoeren van de opdracht is onder A anomalisch, maar onder B precies de gewenste prestatie; dit herinterpreteert de eerdere instructie en blokkeert A's praktische doel terwijl het B's toetsdoel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De vraag „Hebt u iets tegen de kou?” ondersteunt zowel de normale vraag naar bescherming tegen koude als de letterlijke, woordspelmatige lezing van „tegen de kou”. De oppositie tussen taal als praktische verwijzing en taal als letterlijk verkoopbaar materiaal is dominant en lokaal onverenigbaar in de reactie op de klantvraag. De marktcontext ondersteunt beide lezingen; aanvankelijk overheerst echter vanzelfsprekend de verwachting van een bruikbaar winterproduct. Het protestbord is onder A onbruikbaar en dus anomalisch, maar wordt onder B een doelgericht commercieel woordspel. Daarmee verandert de functie van de eerdere vraag en maakt de onpraktische reactie juist de alternatieve verkoophandeling mogelijk."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "De vraag „Was u gisteravond thuis?” en het antwoord „Ik was thuis toen ik thuiskwam” kunnen eerst worden gelezen binnen de normale verwachting van relevante, coöperatieve informatieoverdracht en vervolgens als strategisch ontwijkende, letterlijk ware formulering. De oppositie tussen oprechte beantwoording en doelbewuste informatieontwijking is duidelijk dominant. Taalontwijking door een verdachte in een verhoor is sociaal herkenbaar en blijft, door de recherchecontext, als tweede mogelijkheid beschikbaar. Het antwoord is onder A niet-informatief; onder B is die niet-informatieve vorm juist aanwijzing voor verborgen verblijfplaats. De formulering frustreert de directe informatiewinst van de rechercheur, maar dient het afschermingsdoel van de verdachte en kan tegelijk als onderzoeksaanwijzing functioneren."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B4"
+      },
+      "plan_fidelity": [
+        {
+          "variant_id": "V1",
+          "realized_script_a": "Een rechercheur stelt een ogenschijnlijk gewone vraag naar de verblijfplaats van de man, waarop een informatief antwoord over gisteravond wordt verwacht.",
+          "realized_script_b": "De ondervraagde geeft een tautologisch, letterlijk waar antwoord dat zijn verblijfplaats vóór thuiskomst verhult; de rechercheur leest die ontwijking als belastende informatie.",
+          "realized_opposition_axis": "coöperatieve informatieoverdracht versus strategische taalontwijking",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De eenvoudige vraag, het tautologische antwoord over 'thuis' en de gevolgtrekking van de rechercheur realiseren de bedoelde tegenstelling. De formulering van de hinge wijkt af van het plan, maar gebruikt dezelfde ontwijking als aanwijzing dat de man eerder elders was."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": false,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De geplande SO wordt functioneel gerealiseerd: de schijnbaar gewone vraag krijgt door het antwoord en de deductie een verhoorbetekenis. De slotzin is echter idiomatisch onhandig: je zoekt niet vanzelfsprekend 'waar iemand vóór zijn alibi was'.",
+          "passes_required_plan": false
+        },
+        {
+          "variant_id": "V2",
+          "realized_script_a": "Een rechercheur vraagt naar de verblijfplaats van een verdachte en verwacht een gewone, bruikbare mededeling over waar hij gisteravond was.",
+          "realized_script_b": "De verdachte gebruikt 'thuis toen ik thuiskwam' als veilige, waarheidsgetrouwe ontwijking; de rechercheur maakt daaruit op dat thuis slechts zijn eindpunt was en niet zijn verblijf gedurende de avond.",
+          "realized_opposition_axis": "coöperatieve informatieoverdracht versus strategische taalontwijking",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De variant gebruikt vrijwel letterlijk de geplande trigger en laat de rechercheur de tautologie omzetten in bewijs van ontwijking. De advocaat versterkt de juridische, niet-coöperatieve lezing zonder een andere oppositionele as te introduceren."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "Dit is een heldere realisatie van het bedoelde verhoor: de aanvankelijk gewone plaatsvraag wordt door de tautologie herlezen als strategische informatieonthouding. De rechercheursreactie vormt een duidelijke punchline.",
+          "passes_required_plan": true
+        },
+        {
+          "variant_id": "V3",
+          "realized_script_a": "Een rechercheur vraagt of de verdachte de hele avond thuis was en verwacht een direct, tijdsdekkend antwoord.",
+          "realized_script_b": "De verdachte beperkt zich tot de letterlijk ware bewering dat hij thuis was bij thuiskomst; de rechercheur behandelt die beperking als een indirecte routebeschrijving die eerdere verplaatsing verraadt.",
+          "realized_opposition_axis": "coöperatieve informatieoverdracht versus strategische taalontwijking",
+          "script_opposition": {
+            "applicable": true,
+            "preserved": true,
+            "rationale": "De vraag naar de hele avond, de kwalificatie 'precies' en het antwoord over thuiskomst realiseren de geplande ontwijking. De slotzin herkadert het antwoord als bewijs van een afgelegde route, wat de bedoelde rechercheurslezing functioneel behoudt."
+          },
+          "logical_mechanism": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LM is niet vereist."
+          },
+          "situation": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "SI is niet vereist."
+          },
+          "target": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "TA is niet vereist."
+          },
+          "narrative_strategy": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "NS is niet vereist."
+          },
+          "language": {
+            "applicable": false,
+            "preserved": null,
+            "rationale": "LA is niet vereist."
+          },
+          "setup_dominance": true,
+          "latent_script_b": true,
+          "shared_cues_realized": true,
+          "switch_trigger_realized": true,
+          "retrospective_reinterpretation": true,
+          "unplanned_opposition": false,
+          "is_spoken_naturally": true,
+          "has_recognizable_setup": true,
+          "has_clear_turn": true,
+          "has_punchline": true,
+          "sounds_like_a_joke": true,
+          "rationale": "De tekst blijft bij de geplande tegenstelling: een schijnbaar precies antwoord is juist niet informatief over de hele avond. De routebeschrijving-metafoor is een afwijkende formulering van de hinge, maar ondersteunt dezelfde retrospectieve lezing.",
+          "passes_required_plan": true
+        }
+      ],
+      "passing_variant_ids": [
+        "V2",
+        "V3"
+      ],
+      "pairwise_comparisons": [
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V2",
+          "winner_variant_id": "V2",
+          "rationale": "V2 wint omdat beide teksten binnen de vormlimiet vallen, maar V2 een passerende variant is en V1 niet. V2 formuleert de onthulling natuurlijker en maakt de strategische ontwijking directer hoorbaar; V1 eindigt met de idiomatisch stroevere formulering over waar iemand vóór zijn alibi was."
+        },
+        {
+          "left_variant_id": "V1",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V3",
+          "rationale": "V3 wint omdat een passerende variant verplicht boven V1 staat. De vraag naar de hele avond verscherpt bovendien welke informatie ontbreekt, terwijl de routebeschrijving de eerdere verplaatsing compact herkadert. V1 heeft dezelfde kern, maar zijn slot is minder spreekbaar."
+        },
+        {
+          "left_variant_id": "V2",
+          "right_variant_id": "V3",
+          "winner_variant_id": "V2",
+          "rationale": "Beide passerende varianten realiseren de vereiste scriptoppositie helder en voldoen aan de vormlimiet. V2 wint nipt door de meest directe, plangetrouwe omslag: de reactie van de rechercheur legt meteen bloot dat het antwoord alleen een eindpunt bevestigt. De advocaat geeft daarbij een kleine, effectieve extra beat; V3's routebeeld is origineler maar iets indirecter."
+        }
+      ],
+      "selected_variant_id": "V2",
+      "selection_rationale": "V2 is de sterkste passerende, goed uitvoerbare grap: de normale verhoorvraag wordt door één tautologische ontwijking retrospectief verdacht, en de punchline maakt die herlezing onmiddellijk duidelijk."
+    }
+  },
+  "result_sha256": "3c9f73407d89fa78f1bcd8a27660cc2017bc3a1140b1a014c098885b34abae8a"
+}

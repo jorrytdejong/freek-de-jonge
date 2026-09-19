@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T18:15:59.923780+00:00",
+  "job": {
+    "job_id": "T10-E1",
+    "topic_id": "T10",
+    "topic": "Werk, geld en economie",
+    "condition_code": "E1"
+  },
+  "attempt": 1,
+  "exception_type": "AttributeError",
+  "message": "'JokeVariant' object has no attribute 'full_text'"
+}

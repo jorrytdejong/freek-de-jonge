@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T17:35:59.296751+00:00",
+  "job": {
+    "job_id": "T07-C1",
+    "topic_id": "T07",
+    "topic": "Gezondheid, ziekte en zorg",
+    "condition_code": "C1"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V1 must contain 20-45 words; received 47."
+}

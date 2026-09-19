@@ -1,0 +1,930 @@
+{
+  "schema_version": 2,
+  "study_id": "acl_3x2_plan_fidelity_v2",
+  "job_id": "T05-E1",
+  "topic_id": "T05",
+  "topic": "Oorlog, vrede en geweld",
+  "condition_code": "E1",
+  "pipeline_family": "validated_gtvh",
+  "style_mode": "none",
+  "model": "gpt-5.6-terra",
+  "prompt_source_sha256": "ddf7cc148e05b41f2611ea93518f4ccd9b2b33e3cea6c52ad536e2c458f73fb1",
+  "dry_run": false,
+  "attempt": 3,
+  "generated_at": "2026-08-20T05:59:49.665959+00:00",
+  "result": {
+    "pipeline_code": "E1",
+    "pipeline_name": "Validated GTVH Generation with Neutral Style",
+    "request": {
+      "topic": "Oorlog, vrede en geweld",
+      "category": null,
+      "audience": "Dutch general audience",
+      "joke_format": "short joke",
+      "constraints": []
+    },
+    "prompt": "## audience_expectation\nYou construct the audience's default interpretation, Script A, for the supplied topic.\nWrite all creative and analytical fields in Dutch.\n\nTreat the topic as a broad starting point, not a literal assignment. Use it to find\na recognizable situation, but do not force the joke to mention or enact the topic\nliterally.\n\nStage 1: Audience expectation and Script A.\nFor the supplied topic:\n1. identify the participants and their default roles\n2. state the apparent goal, normal preconditions, expected actions, and expected outcome\n3. list 2-5 concrete propositions a general audience normally assumes\n4. compress the structured situation into one concise script_a\n5. summarize the expectation a setup should activate\n\nScript A must be a structured, normal, common-sense situation rather than merely an\nattitude or opinion. Do not write a joke or introduce Script B.\nReturn script_a, participants_and_roles, apparent_goal, preconditions,\nexpected_actions, expected_outcome, expected_propositions, and audience_expectation.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\"\n}\n\nReturn the requested structured fields.\n\n---\n\n## opposition_candidates\nYou construct opposing Script B candidates for the supplied Script A.\nWrite all fields in Dutch except candidate_id.\n\nStage 2: Opposition candidates.\nGenerate exactly 4 candidates with candidate_id B1 through B4.\nTreat the topic as a broad starting point rather than a literal assignment; the\ncandidate may use an adjacent recognizable situation.\nFor every candidate:\n- state a coherent and recognizable script_b with roles_b and goal_b\n- tie it to one opposed_proposition copied from Script A\n- identify one dominant opposition_axis; local incompatibility is sufficient and\n  literal logical negation is not required\n- describe reading_a and reading_b of the shared semantic material\n- specify role_remapping between the scripts\n- provide one concise shared_anchor plus shared_cues that can occur under both readings\n- distinguish the late switch_trigger from earlier shared cues\n- propose a hinge_event that is anomalous or inappropriate under Script A\n- explain the anomaly_under_a and why it becomes purposeful in resolution_under_b\n- keep Script A dominant before the trigger and Script B latent but recoverable\n\nDo not specify a Logical Mechanism or any other GTVH Knowledge Resource here. Those\nare added only by E after the common Script Opposition has been selected.\nReturn candidate_id, script_b, opposition_axis, opposed_proposition, shared_anchor,\nreading_a, reading_b, roles_b, goal_b, role_remapping, shared_cues, switch_trigger,\nhinge_event, anomaly_under_a, and resolution_under_b for each candidate.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.\",\n      \"Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.\",\n      \"Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.\",\n      \"Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.\",\n      \"Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen.\"\n    ],\n    \"apparent_goal\": \"Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.\",\n    \"preconditions\": [\n      \"Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.\",\n      \"Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.\",\n      \"Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.\",\n      \"Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.\",\n      \"Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.\",\n      \"Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.\",\n      \"Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.\",\n      \"Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.\",\n      \"Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening.\"\n    ],\n    \"expected_outcome\": \"Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.\",\n    \"expected_propositions\": [\n      \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n      \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n      \"Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.\",\n      \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n      \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\"\n    ],\n    \"audience_expectation\": \"Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## theory_gate\nYou are a strict Script Opposition validity auditor, not a creativity judge.\nWrite rationales in Dutch.\n\nStage 3: Theory gate.\nAssess every candidate independently and return exactly one assessment per candidate_id.\nSet each criterion to true only when explicitly supported:\n- dual_compatibility: one realizable joke text could support both scripts\n- genuine_opposition: the scripts are locally incompatible on the stated axis\n- single_axis: one opposition is clearly dominant\n- anchor_supports_both: the shared material naturally supports both readings\n- recognizable_second_reading: Script B is coherent and socially recognizable\n- setup_dominance: a normal reader would initially prefer Script A\n- latent_second_reading: Script B can remain available before the trigger\n- anomaly_resolved: the hinge anomaly under A becomes purposeful under B\n- retrospective_reinterpretation: Script B changes the function or meaning of earlier material\n- functional_reversal: note whether one condition blocks A's goal while enabling B's goal;\n  this is desirable but not mandatory for passage\n\nThis gate evaluates Script Opposition only. Do not invent or assess a Logical Mechanism.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.\",\n      \"Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.\",\n      \"Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.\",\n      \"Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.\",\n      \"Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen.\"\n    ],\n    \"apparent_goal\": \"Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.\",\n    \"preconditions\": [\n      \"Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.\",\n      \"Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.\",\n      \"Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.\",\n      \"Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.\",\n      \"Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.\",\n      \"Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.\",\n      \"Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.\",\n      \"Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.\",\n      \"Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening.\"\n    ],\n    \"expected_outcome\": \"Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.\",\n    \"expected_propositions\": [\n      \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n      \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n      \"Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.\",\n      \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n      \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\"\n    ],\n    \"audience_expectation\": \"Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen.\"\n  },\n  \"candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.\",\n      \"opposition_axis\": \"Werkelijke oorlog versus gereguleerd sportief conflict\",\n      \"opposed_proposition\": \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\",\n      \"shared_anchor\": \"Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.\",\n      \"reading_a\": \"Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.\",\n      \"reading_b\": \"Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.\",\n      \"roles_b\": [\n        \"Trainers: bepalen de tactiek en kalmeren hun spelers.\",\n        \"Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.\",\n        \"Scheidsrechter: handhaaft de regels en bestraft overtredingen.\",\n        \"Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.\",\n        \"Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen.\"\n      ],\n      \"goal_b\": \"De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden trainers of clubbestuurders.\",\n        \"Militairen worden spelers op het veld.\",\n        \"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\",\n        \"Burgers worden supporters en toeschouwers.\",\n        \"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn twee duidelijk afgebakende partijen.\",\n        \"Beide kampen verdedigen een eigen gebied.\",\n        \"Er is veel spanning, lawaai en wederzijdse beschuldiging.\",\n        \"Een neutrale figuur roept op tot kalmte.\",\n        \"Er wordt gesproken over een onderbreking en afspraken.\"\n      ],\n      \"switch_trigger\": \"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\",\n      \"hinge_event\": \"Na een harde aanval kent de bemiddelaar een strafschop toe.\",\n      \"anomaly_under_a\": \"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\",\n      \"resolution_under_b\": \"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee buren ruziën over geluidsoverlast, een schutting en het gebruik van een gezamenlijke oprit; een buurtbemiddelaar probeert praktische afspraken te laten maken zodat zij naast elkaar kunnen blijven wonen.\",\n      \"opposition_axis\": \"Internationaal gewapend conflict versus alledaags burenconflict\",\n      \"opposed_proposition\": \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n      \"shared_anchor\": \"Twee partijen bespreken onder begeleiding een grens en afspraken over naleving.\",\n      \"reading_a\": \"Landen onderhandelen over grenzen, veiligheidsgaranties en controle op een vredesakkoord.\",\n      \"reading_b\": \"Buren maken afspraken over de erfgrens, stille uren en het gebruik van een gedeelde oprit.\",\n      \"roles_b\": [\n        \"Buren: verdedigen hun woonbelang en willen hun dagelijkse hinder beëindigen.\",\n        \"Buurtbemiddelaar: leidt het gesprek en formuleert afspraken.\",\n        \"Wijkagent of verhuurder: kan regels uitleggen en naleving ondersteunen.\",\n        \"Gezinsleden: ondervinden de spanning en willen rustig thuis kunnen leven.\",\n        \"Gemeente of VvE: beheert regels over erfafscheidingen, geluid en gedeelde ruimte.\"\n      ],\n      \"goal_b\": \"De overlast stoppen en een uitvoerbare regeling bereiken waardoor beide huishoudens zonder voortdurende ruzie kunnen wonen.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden de twee buren die besluiten nemen.\",\n        \"Militairen worden eventueel ingeschakelde familieleden of klusjesmensen die een grens fysiek markeren.\",\n        \"Diplomaten en onderhandelaars worden de buurtbemiddelaar.\",\n        \"Burgers worden gezinsleden die last hebben van de ruzie.\",\n        \"Internationale organisaties en bondgenoten worden de gemeente, verhuurder, VvE of wijkagent.\"\n      ],\n      \"shared_cues\": [\n        \"Er is een langdurig conflict met wederzijdse verwijten.\",\n        \"Partijen spreken over een grens en veiligheid.\",\n        \"Een derde partij organiseert een gesprek.\",\n        \"Er worden voorwaarden, garanties en controle besproken.\",\n        \"De betrokken gezinnen hopen op rust.\"\n      ],\n      \"switch_trigger\": \"Een partij schuift geen kaart van betwist grondgebied, maar een foto van een scheef geplaatste kliko op tafel.\",\n      \"hinge_event\": \"De bemiddelaar meet met een rolmaat de positie van een vuilnisbak en laat beide buren daarvoor tekenen.\",\n      \"anomaly_under_a\": \"Bij een oorlog tussen landen zou het nauwkeurig vastleggen van de plek van een kliko triviaal en ongepast zijn tegenover geweld, slachtoffers en territoriale claims.\",\n      \"resolution_under_b\": \"Voor buren is de kliko juist een concrete bron van dagelijkse irritatie; de meting maakt de afspraak controleerbaar en voorkomt nieuwe ruzie.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee rivaliserende e-sportteams nemen deel aan een online toernooi; teamcaptains, spelers en wedstrijdadministrators proberen via tactiek, pauzes en protestprocedures een eerlijke overwinning te behalen.\",\n      \"opposition_axis\": \"Levensbedreigend fysiek geweld versus virtuele competitieve strijd\",\n      \"opposed_proposition\": \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n      \"shared_anchor\": \"Twee kampen bevechten strategische posities terwijl vertegenwoordigers over een tijdelijke onderbreking overleggen.\",\n      \"reading_a\": \"Strijdende legers proberen terrein te behouden, terwijl diplomaten een humanitaire pauze bespreken.\",\n      \"reading_b\": \"E-sporters proberen virtuele zones op de spelkaart te beheersen, terwijl captains een technische time-out aanvragen.\",\n      \"roles_b\": [\n        \"Spelers: voeren digitale acties uit en proberen virtuele doelen te veroveren.\",\n        \"Teamcaptains: bepalen strategie en dienen protesten in.\",\n        \"Coaches: analyseren tegenstanders en geven aanwijzingen.\",\n        \"Toernooibeheerders: bewaken de regels, servers en uitslagen.\",\n        \"Kijkers en sponsors: volgen de wedstrijd en ondersteunen de teams.\"\n      ],\n      \"goal_b\": \"Volgens de toernooiregels de wedstrijd winnen door virtuele doelen te veroveren of de tegenstander uit te schakelen.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden teamcaptains en coaches.\",\n        \"Militairen worden e-sportspelers en hun spelavatars.\",\n        \"Diplomaten en onderhandelaars worden captains die met de administrator overleggen.\",\n        \"Burgers worden online kijkers en supporters.\",\n        \"Internationale organisaties en bondgenoten worden de toernooiorganisatie, speluitgever en sponsors.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn kaarten, frontlinies en strategische posities.\",\n        \"Partijen spreken over aanvallen, verdediging en verliezen.\",\n        \"Een neutrale instantie controleert regels en overtredingen.\",\n        \"Er is communicatie tussen vertegenwoordigers.\",\n        \"Een tijdelijke onderbreking wordt overwogen.\"\n      ],\n      \"switch_trigger\": \"De vermeende wapenstilstand blijkt een technische pauze omdat een speler vraagt of iemand de server opnieuw kan opstarten.\",\n      \"hinge_event\": \"Tijdens de onderhandelde onderbreking roept een captain dat zijn muis leeg is en de wedstrijdadministrator vervangt de batterijen.\",\n      \"anomaly_under_a\": \"Een oorlogspauze vanwege een lege computermuis zou absurd zijn wanneer echte burgers en militairen gevaar lopen.\",\n      \"resolution_under_b\": \"In een e-sporttoernooi verhindert defecte apparatuur eerlijke competitie; de technische onderbreking beschermt juist de geldigheid van de uitslag.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een basisschoolklas bereidt onder leiding van de docent een debat en rollenspel voor over een denkbeeldig grensconflict; twee leerlinggroepen vertegenwoordigen fictieve staten en moeten een creatieve overeenkomst sluiten.\",\n      \"opposition_axis\": \"Werkelijk staatsgeweld versus educatief rollenspel\",\n      \"opposed_proposition\": \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n      \"shared_anchor\": \"Vertegenwoordigers van twee kampen presenteren eisen, luisteren naar bemiddeling en zoeken een akkoord.\",\n      \"reading_a\": \"Politieke delegaties proberen na oorlog en burgerleed een reële vredesregeling te sluiten.\",\n      \"reading_b\": \"Leerlingen spelen delegaties in een les en proberen punten te verdienen voor samenwerking en argumentatie.\",\n      \"roles_b\": [\n        \"Leerlingen in delegaties: spelen leiders, onderhandelaars en inwoners van fictieve landen.\",\n        \"Docent: stelt de opdracht op, bewaakt veiligheid en begeleidt de gesprekken.\",\n        \"Leerling-bemiddelaars: leiden het overleg tussen de groepen.\",\n        \"Klasgenoten als publiek: beoordelen de voorstellen en spelen getroffen inwoners.\",\n        \"Schoolleiding of jury: beoordeelt het eindresultaat volgens lescriteria.\"\n      ],\n      \"goal_b\": \"Een overtuigende, creatieve en vreedzame oplossing presenteren waarmee de groep een goede beoordeling of wedstrijdscore behaalt.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden leerlingen die fictieve regeringen spelen.\",\n        \"Militairen worden leerlingen die in het rollenspel legers of grenswachten voorstellen.\",\n        \"Diplomaten en onderhandelaars worden leerling-bemiddelaars.\",\n        \"Burgers worden klasgenoten die fictieve inwoners uitbeelden.\",\n        \"Internationale organisaties en bondgenoten worden de docent, jury en schoolleiding.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn vlaggen, kaarten en afgebakende gebieden.\",\n        \"Twee groepen formuleren eisen en beschuldigingen.\",\n        \"Een bemiddelaar geeft ieder kamp spreektijd.\",\n        \"Er wordt over een staakt-het-vuren en garanties gesproken.\",\n        \"Getroffen inwoners vragen om veiligheid.\"\n      ],\n      \"switch_trigger\": \"De bemiddelaar onderbreekt het overleg omdat de bel gaat en alle delegaties hun boterhammen moeten pakken.\",\n      \"hinge_event\": \"Midden in de plechtige vredesondertekening deelt de docent kleurpotloden uit zodat beide partijen hun vlag op het verdrag kunnen tekenen.\",\n      \"anomaly_under_a\": \"Kleurpotloden en een lunchpauze zouden tijdens een echte internationale vredesonderhandeling schokkend kinderachtig zijn, zeker gezien de ernst van oorlogsslachtoffers.\",\n      \"resolution_under_b\": \"In de klas zijn zij functionele lesmiddelen: de vlaggen maken de rolverdeling zichtbaar en de onderbreking volgt het schoolritme, terwijl het rollenspel veilig en leerzaam blijft.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## candidate_selection\nYou select the strongest Script Opposition from candidates that passed the gate.\nWrite the rationale in Dutch.\n\nStage 4: Candidate selection.\nChoose only from approved_candidates using opposition clarity, dual compatibility,\nsetup dominance, latent second-reading support, retrospective reinterpretation, topic\nspecificity, economy, and payoff potential.\n\nReturn selected_candidate_id and rationale. Select by ID only and do not rewrite Script B.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.\",\n      \"Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.\",\n      \"Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.\",\n      \"Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.\",\n      \"Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen.\"\n    ],\n    \"apparent_goal\": \"Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.\",\n    \"preconditions\": [\n      \"Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.\",\n      \"Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.\",\n      \"Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.\",\n      \"Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.\",\n      \"Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.\",\n      \"Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.\",\n      \"Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.\",\n      \"Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.\",\n      \"Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening.\"\n    ],\n    \"expected_outcome\": \"Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.\",\n    \"expected_propositions\": [\n      \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n      \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n      \"Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.\",\n      \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n      \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\"\n    ],\n    \"audience_expectation\": \"Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen.\"\n  },\n  \"approved_candidates\": [\n    {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.\",\n      \"opposition_axis\": \"Werkelijke oorlog versus gereguleerd sportief conflict\",\n      \"opposed_proposition\": \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\",\n      \"shared_anchor\": \"Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.\",\n      \"reading_a\": \"Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.\",\n      \"reading_b\": \"Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.\",\n      \"roles_b\": [\n        \"Trainers: bepalen de tactiek en kalmeren hun spelers.\",\n        \"Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.\",\n        \"Scheidsrechter: handhaaft de regels en bestraft overtredingen.\",\n        \"Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.\",\n        \"Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen.\"\n      ],\n      \"goal_b\": \"De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden trainers of clubbestuurders.\",\n        \"Militairen worden spelers op het veld.\",\n        \"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\",\n        \"Burgers worden supporters en toeschouwers.\",\n        \"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn twee duidelijk afgebakende partijen.\",\n        \"Beide kampen verdedigen een eigen gebied.\",\n        \"Er is veel spanning, lawaai en wederzijdse beschuldiging.\",\n        \"Een neutrale figuur roept op tot kalmte.\",\n        \"Er wordt gesproken over een onderbreking en afspraken.\"\n      ],\n      \"switch_trigger\": \"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\",\n      \"hinge_event\": \"Na een harde aanval kent de bemiddelaar een strafschop toe.\",\n      \"anomaly_under_a\": \"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\",\n      \"resolution_under_b\": \"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\"\n    },\n    {\n      \"candidate_id\": \"B2\",\n      \"script_b\": \"Twee buren ruziën over geluidsoverlast, een schutting en het gebruik van een gezamenlijke oprit; een buurtbemiddelaar probeert praktische afspraken te laten maken zodat zij naast elkaar kunnen blijven wonen.\",\n      \"opposition_axis\": \"Internationaal gewapend conflict versus alledaags burenconflict\",\n      \"opposed_proposition\": \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n      \"shared_anchor\": \"Twee partijen bespreken onder begeleiding een grens en afspraken over naleving.\",\n      \"reading_a\": \"Landen onderhandelen over grenzen, veiligheidsgaranties en controle op een vredesakkoord.\",\n      \"reading_b\": \"Buren maken afspraken over de erfgrens, stille uren en het gebruik van een gedeelde oprit.\",\n      \"roles_b\": [\n        \"Buren: verdedigen hun woonbelang en willen hun dagelijkse hinder beëindigen.\",\n        \"Buurtbemiddelaar: leidt het gesprek en formuleert afspraken.\",\n        \"Wijkagent of verhuurder: kan regels uitleggen en naleving ondersteunen.\",\n        \"Gezinsleden: ondervinden de spanning en willen rustig thuis kunnen leven.\",\n        \"Gemeente of VvE: beheert regels over erfafscheidingen, geluid en gedeelde ruimte.\"\n      ],\n      \"goal_b\": \"De overlast stoppen en een uitvoerbare regeling bereiken waardoor beide huishoudens zonder voortdurende ruzie kunnen wonen.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden de twee buren die besluiten nemen.\",\n        \"Militairen worden eventueel ingeschakelde familieleden of klusjesmensen die een grens fysiek markeren.\",\n        \"Diplomaten en onderhandelaars worden de buurtbemiddelaar.\",\n        \"Burgers worden gezinsleden die last hebben van de ruzie.\",\n        \"Internationale organisaties en bondgenoten worden de gemeente, verhuurder, VvE of wijkagent.\"\n      ],\n      \"shared_cues\": [\n        \"Er is een langdurig conflict met wederzijdse verwijten.\",\n        \"Partijen spreken over een grens en veiligheid.\",\n        \"Een derde partij organiseert een gesprek.\",\n        \"Er worden voorwaarden, garanties en controle besproken.\",\n        \"De betrokken gezinnen hopen op rust.\"\n      ],\n      \"switch_trigger\": \"Een partij schuift geen kaart van betwist grondgebied, maar een foto van een scheef geplaatste kliko op tafel.\",\n      \"hinge_event\": \"De bemiddelaar meet met een rolmaat de positie van een vuilnisbak en laat beide buren daarvoor tekenen.\",\n      \"anomaly_under_a\": \"Bij een oorlog tussen landen zou het nauwkeurig vastleggen van de plek van een kliko triviaal en ongepast zijn tegenover geweld, slachtoffers en territoriale claims.\",\n      \"resolution_under_b\": \"Voor buren is de kliko juist een concrete bron van dagelijkse irritatie; de meting maakt de afspraak controleerbaar en voorkomt nieuwe ruzie.\"\n    },\n    {\n      \"candidate_id\": \"B3\",\n      \"script_b\": \"Twee rivaliserende e-sportteams nemen deel aan een online toernooi; teamcaptains, spelers en wedstrijdadministrators proberen via tactiek, pauzes en protestprocedures een eerlijke overwinning te behalen.\",\n      \"opposition_axis\": \"Levensbedreigend fysiek geweld versus virtuele competitieve strijd\",\n      \"opposed_proposition\": \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n      \"shared_anchor\": \"Twee kampen bevechten strategische posities terwijl vertegenwoordigers over een tijdelijke onderbreking overleggen.\",\n      \"reading_a\": \"Strijdende legers proberen terrein te behouden, terwijl diplomaten een humanitaire pauze bespreken.\",\n      \"reading_b\": \"E-sporters proberen virtuele zones op de spelkaart te beheersen, terwijl captains een technische time-out aanvragen.\",\n      \"roles_b\": [\n        \"Spelers: voeren digitale acties uit en proberen virtuele doelen te veroveren.\",\n        \"Teamcaptains: bepalen strategie en dienen protesten in.\",\n        \"Coaches: analyseren tegenstanders en geven aanwijzingen.\",\n        \"Toernooibeheerders: bewaken de regels, servers en uitslagen.\",\n        \"Kijkers en sponsors: volgen de wedstrijd en ondersteunen de teams.\"\n      ],\n      \"goal_b\": \"Volgens de toernooiregels de wedstrijd winnen door virtuele doelen te veroveren of de tegenstander uit te schakelen.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden teamcaptains en coaches.\",\n        \"Militairen worden e-sportspelers en hun spelavatars.\",\n        \"Diplomaten en onderhandelaars worden captains die met de administrator overleggen.\",\n        \"Burgers worden online kijkers en supporters.\",\n        \"Internationale organisaties en bondgenoten worden de toernooiorganisatie, speluitgever en sponsors.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn kaarten, frontlinies en strategische posities.\",\n        \"Partijen spreken over aanvallen, verdediging en verliezen.\",\n        \"Een neutrale instantie controleert regels en overtredingen.\",\n        \"Er is communicatie tussen vertegenwoordigers.\",\n        \"Een tijdelijke onderbreking wordt overwogen.\"\n      ],\n      \"switch_trigger\": \"De vermeende wapenstilstand blijkt een technische pauze omdat een speler vraagt of iemand de server opnieuw kan opstarten.\",\n      \"hinge_event\": \"Tijdens de onderhandelde onderbreking roept een captain dat zijn muis leeg is en de wedstrijdadministrator vervangt de batterijen.\",\n      \"anomaly_under_a\": \"Een oorlogspauze vanwege een lege computermuis zou absurd zijn wanneer echte burgers en militairen gevaar lopen.\",\n      \"resolution_under_b\": \"In een e-sporttoernooi verhindert defecte apparatuur eerlijke competitie; de technische onderbreking beschermt juist de geldigheid van de uitslag.\"\n    },\n    {\n      \"candidate_id\": \"B4\",\n      \"script_b\": \"Een basisschoolklas bereidt onder leiding van de docent een debat en rollenspel voor over een denkbeeldig grensconflict; twee leerlinggroepen vertegenwoordigen fictieve staten en moeten een creatieve overeenkomst sluiten.\",\n      \"opposition_axis\": \"Werkelijk staatsgeweld versus educatief rollenspel\",\n      \"opposed_proposition\": \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n      \"shared_anchor\": \"Vertegenwoordigers van twee kampen presenteren eisen, luisteren naar bemiddeling en zoeken een akkoord.\",\n      \"reading_a\": \"Politieke delegaties proberen na oorlog en burgerleed een reële vredesregeling te sluiten.\",\n      \"reading_b\": \"Leerlingen spelen delegaties in een les en proberen punten te verdienen voor samenwerking en argumentatie.\",\n      \"roles_b\": [\n        \"Leerlingen in delegaties: spelen leiders, onderhandelaars en inwoners van fictieve landen.\",\n        \"Docent: stelt de opdracht op, bewaakt veiligheid en begeleidt de gesprekken.\",\n        \"Leerling-bemiddelaars: leiden het overleg tussen de groepen.\",\n        \"Klasgenoten als publiek: beoordelen de voorstellen en spelen getroffen inwoners.\",\n        \"Schoolleiding of jury: beoordeelt het eindresultaat volgens lescriteria.\"\n      ],\n      \"goal_b\": \"Een overtuigende, creatieve en vreedzame oplossing presenteren waarmee de groep een goede beoordeling of wedstrijdscore behaalt.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden leerlingen die fictieve regeringen spelen.\",\n        \"Militairen worden leerlingen die in het rollenspel legers of grenswachten voorstellen.\",\n        \"Diplomaten en onderhandelaars worden leerling-bemiddelaars.\",\n        \"Burgers worden klasgenoten die fictieve inwoners uitbeelden.\",\n        \"Internationale organisaties en bondgenoten worden de docent, jury en schoolleiding.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn vlaggen, kaarten en afgebakende gebieden.\",\n        \"Twee groepen formuleren eisen en beschuldigingen.\",\n        \"Een bemiddelaar geeft ieder kamp spreektijd.\",\n        \"Er wordt over een staakt-het-vuren en garanties gesproken.\",\n        \"Getroffen inwoners vragen om veiligheid.\"\n      ],\n      \"switch_trigger\": \"De bemiddelaar onderbreekt het overleg omdat de bel gaat en alle delegaties hun boterhammen moeten pakken.\",\n      \"hinge_event\": \"Midden in de plechtige vredesondertekening deelt de docent kleurpotloden uit zodat beide partijen hun vlag op het verdrag kunnen tekenen.\",\n      \"anomaly_under_a\": \"Kleurpotloden en een lunchpauze zouden tijdens een echte internationale vredesonderhandeling schokkend kinderachtig zijn, zeker gezien de ernst van oorlogsslachtoffers.\",\n      \"resolution_under_b\": \"In de klas zijn zij functionele lesmiddelen: de vlaggen maken de rolverdeling zichtbaar en de onderbreking volgt het schoolritme, terwijl het rollenspel veilig en leerzaam blijft.\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## gtvh_plan\nYou extend an immutable validated Script Opposition with the remaining GTVH resources.\nWrite all fields in Dutch.\n\nStage 5: GTVH extension.\nSpecify:\n- opposition_type: copy the selected candidate's opposition_axis verbatim\n- logical_mechanism: the GTVH Logical Mechanism applied to the selected SO\n- situation: participants, activity, objects, and setting\n- target: the person, institution, convention, or idea being targeted; null if none\n- narrative_strategy: how setup and punchline are organized\n- lexical_anchor: the primary concrete surface expression used as a hinge; it need not\n  carry the entire opposition by itself\n- supporting_dual_cues: copy the selected candidate's shared_cues verbatim\n- switch_trigger: copy the selected candidate's switch_trigger verbatim\n- hinge_event: copy the selected candidate's hinge_event verbatim\n- anomaly_under_a: copy the selected candidate's anomaly_under_a verbatim\n- resolution_under_b: copy the selected candidate's resolution_under_b verbatim\n- role_remapping: copy the selected candidate's role_remapping verbatim\n- setup_goal: how Script A becomes the dominant expectation\n- punch_goal: how Script B reinterprets the setup\n- punch_final_word: the strongest intended final word or short phrase\n\nThe selected candidate is authoritative. Do not replace, reinterpret, or improve\nany Script Opposition field. Add Logical Mechanism, Situation, Target, Narrative\nStrategy, and Language without changing the selected SO. Return the complete\nGTVHPlanOutput shape, with the SO fields copied exactly.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.\",\n      \"Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.\",\n      \"Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.\",\n      \"Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.\",\n      \"Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen.\"\n    ],\n    \"apparent_goal\": \"Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.\",\n    \"preconditions\": [\n      \"Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.\",\n      \"Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.\",\n      \"Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.\",\n      \"Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.\",\n      \"Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.\",\n      \"Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.\",\n      \"Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.\",\n      \"Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.\",\n      \"Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening.\"\n    ],\n    \"expected_outcome\": \"Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.\",\n    \"expected_propositions\": [\n      \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n      \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n      \"Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.\",\n      \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n      \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\"\n    ],\n    \"audience_expectation\": \"Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.\",\n    \"opposition_axis\": \"Werkelijke oorlog versus gereguleerd sportief conflict\",\n    \"opposed_proposition\": \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\",\n    \"shared_anchor\": \"Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.\",\n    \"reading_a\": \"Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.\",\n    \"reading_b\": \"Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.\",\n    \"roles_b\": [\n      \"Trainers: bepalen de tactiek en kalmeren hun spelers.\",\n      \"Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.\",\n      \"Scheidsrechter: handhaaft de regels en bestraft overtredingen.\",\n      \"Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.\",\n      \"Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen.\"\n    ],\n    \"goal_b\": \"De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.\",\n    \"role_remapping\": [\n      \"Politieke leiders worden trainers of clubbestuurders.\",\n      \"Militairen worden spelers op het veld.\",\n      \"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\",\n      \"Burgers worden supporters en toeschouwers.\",\n      \"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\"\n    ],\n    \"shared_cues\": [\n      \"Er zijn twee duidelijk afgebakende partijen.\",\n      \"Beide kampen verdedigen een eigen gebied.\",\n      \"Er is veel spanning, lawaai en wederzijdse beschuldiging.\",\n      \"Een neutrale figuur roept op tot kalmte.\",\n      \"Er wordt gesproken over een onderbreking en afspraken.\"\n    ],\n    \"switch_trigger\": \"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\",\n    \"hinge_event\": \"Na een harde aanval kent de bemiddelaar een strafschop toe.\",\n    \"anomaly_under_a\": \"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\",\n    \"resolution_under_b\": \"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## variants\nYou realize a validated GTVH plan as concise Dutch jokes.\n\nTreat the topic as broad inspiration rather than a literal assignment. The joke\nmay use an adjacent situation and need not mention the topic explicitly.\n\nStage 6: Controlled joke generation.\nWrite exactly three variants with variant_id V1, V2, and V3.\nWrite each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\nWrite each variant as a joke intended to be spoken aloud by one comedian to a Dutch\naudience. Each must have a recognizable setup, a clear turn or misdirection, and a\nfinal punchline that creates the laugh.\nFor every variant:\n- preserve the supplied shared Script Opposition exactly; do not invent a new\n  Script A, Script B, opposition axis, cue, or switch\n- setup makes Script A dominant but not exclusive\n- one or two supporting dual cues appear ordinary under Script A and gain a second\n  function under Script B\n- punchline introduces the smallest possible switch trigger late\n- a preceding action or condition becomes anomalous under Script A but immediately\n  purposeful under Script B\n- full_text contains the exact setup and punchline\n- a concrete anchor_surface_form occurs verbatim in full_text\n- earlier wording remains interpretable under both scripts after the punchline\n- the switch is surprising but quickly understandable\n- the joke is specific to the supplied topic\n- full_text ends as close as possible to the planned strongest word or phrase\n\nDo not explain Script B, name the opposition, or append an unrelated surprise that\nwas not latent in the setup.\nDo not write an observation, explanation, summary, moral, slogan, or policy statement.\nDo not end with an abstract conclusion; the final sentence must be the punchline.\nMentally read each variant aloud and rewrite it if it does not sound performable.\n\nReturn variant_id, setup, punchline, full_text, angle, and anchor_surface_form.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"script_a\": {\n    \"script_a\": \"Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.\",\n    \"participants_and_roles\": [\n      \"Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.\",\n      \"Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.\",\n      \"Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.\",\n      \"Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.\",\n      \"Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen.\"\n    ],\n    \"apparent_goal\": \"Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.\",\n    \"preconditions\": [\n      \"Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.\",\n      \"Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.\",\n      \"Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.\",\n      \"Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.\",\n      \"Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling.\"\n    ],\n    \"expected_actions\": [\n      \"Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.\",\n      \"Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.\",\n      \"Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.\",\n      \"Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.\",\n      \"Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening.\"\n    ],\n    \"expected_outcome\": \"Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.\",\n    \"expected_propositions\": [\n      \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n      \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n      \"Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.\",\n      \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n      \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\"\n    ],\n    \"audience_expectation\": \"Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen.\"\n  },\n  \"selected_candidate\": {\n    \"candidate_id\": \"B1\",\n    \"script_b\": \"Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.\",\n    \"opposition_axis\": \"Werkelijke oorlog versus gereguleerd sportief conflict\",\n    \"opposed_proposition\": \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\",\n    \"shared_anchor\": \"Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.\",\n    \"reading_a\": \"Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.\",\n    \"reading_b\": \"Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.\",\n    \"roles_b\": [\n      \"Trainers: bepalen de tactiek en kalmeren hun spelers.\",\n      \"Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.\",\n      \"Scheidsrechter: handhaaft de regels en bestraft overtredingen.\",\n      \"Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.\",\n      \"Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen.\"\n    ],\n    \"goal_b\": \"De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.\",\n    \"role_remapping\": [\n      \"Politieke leiders worden trainers of clubbestuurders.\",\n      \"Militairen worden spelers op het veld.\",\n      \"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\",\n      \"Burgers worden supporters en toeschouwers.\",\n      \"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\"\n    ],\n    \"shared_cues\": [\n      \"Er zijn twee duidelijk afgebakende partijen.\",\n      \"Beide kampen verdedigen een eigen gebied.\",\n      \"Er is veel spanning, lawaai en wederzijdse beschuldiging.\",\n      \"Een neutrale figuur roept op tot kalmte.\",\n      \"Er wordt gesproken over een onderbreking en afspraken.\"\n    ],\n    \"switch_trigger\": \"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\",\n    \"hinge_event\": \"Na een harde aanval kent de bemiddelaar een strafschop toe.\",\n    \"anomaly_under_a\": \"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\",\n    \"resolution_under_b\": \"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\"\n  },\n  \"gtvh_plan\": {\n    \"opposition_type\": \"Werkelijke oorlog versus gereguleerd sportief conflict\",\n    \"logical_mechanism\": \"Scriptomschakeling via een incongrueente letterlijke herinterpretatie: diplomatieke en militaire conflictcues worden achteraf gelezen als elementen van een voetbalderby, waarbij de rode kaart en strafschop de omschakeling afdwingen.\",\n    \"situation\": \"Twee ogenschijnlijk strijdende partijen staan in een gespannen confrontatie. Leiders, uitvoerders, een neutrale bemiddelaar en omstanders proberen escalatie te beheersen. De handeling speelt aanvankelijk als een internationaal conflict met onderhandelingen en een onderbreking, maar blijkt een verhitte amateurvoetbalderby op een voetbalveld te zijn, met spelers, trainers, aanvoerders, supporters, stewards, een scheidsrechter, kaarten en een strafschopstip.\",\n    \"target\": null,\n    \"narrative_strategy\": \"De opzet gebruikt ernstige, conflictgerichte formuleringen om het script van internationale oorlog en bemiddeling dominant te maken. Gedeelde cues zoals twee kampen, eigen gebied, spanning, een neutrale derde en een onderbreking blijven dubbelzinnig. De punchline introduceert concrete voetbaltaal die de eerdere conflictlezing abrupt als sportwedstrijd herkadert.\",\n    \"lexical_anchor\": \"rode kaart\",\n    \"supporting_dual_cues\": [\n      \"Er zijn twee duidelijk afgebakende partijen.\",\n      \"Beide kampen verdedigen een eigen gebied.\",\n      \"Er is veel spanning, lawaai en wederzijdse beschuldiging.\",\n      \"Een neutrale figuur roept op tot kalmte.\",\n      \"Er wordt gesproken over een onderbreking en afspraken.\"\n    ],\n    \"switch_trigger\": \"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\",\n    \"hinge_event\": \"Na een harde aanval kent de bemiddelaar een strafschop toe.\",\n    \"anomaly_under_a\": \"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\",\n    \"resolution_under_b\": \"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\",\n    \"role_remapping\": [\n      \"Politieke leiders worden trainers of clubbestuurders.\",\n      \"Militairen worden spelers op het veld.\",\n      \"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\",\n      \"Burgers worden supporters en toeschouwers.\",\n      \"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\"\n    ],\n    \"setup_goal\": \"De lezer laten aannemen dat twee landen in een ernstig gewapend conflict verkeren en dat een neutrale bemiddelaar een staakt-het-vuren of diplomatieke oplossing probeert af te dwingen.\",\n    \"punch_goal\": \"De rode kaart en strafschopstip laten onthullen dat de confrontatie geen oorlog is, maar een gereguleerd voetbalconflict waarin de neutrale figuur een scheidsrechter is.\",\n    \"punch_final_word\": \"strafschopstip\"\n  }\n}\n\nReturn the requested structured fields.\n\n---\n\n## plan_fidelity\nYou evaluate whether completed Dutch jokes realize their supplied intended plan.\nThis is a plan-fidelity audit, not blind reconstruction and not a creativity review.\n\nEvaluation stage 1: Plan fidelity.\nAssess exactly one record for every variant_id. Compare the text with the intended\nplan; do not reward a different opposition or mechanism merely because it also works.\n\nFor every variant:\n- recover realized_script_a, realized_script_b, and realized_opposition_axis\n- assess Script Opposition fidelity: the intended A and B, axis, overlap, and switch\n- assess setup_dominance, latent_script_b, shared_cues_realized,\n  switch_trigger_realized, and retrospective_reinterpretation\n- assess joke validity independently of theory fidelity:\n  is_spoken_naturally, has_recognizable_setup, has_clear_turn, has_punchline,\n  and sounds_like_a_joke\n- set unplanned_opposition true when the joke works mainly through a different SO\n- assess LM, SI, TA, NS, and LA only when they occur in required_resources\n- for a non-required resource, set applicable=false and preserved=null\n- Target is applicable only when TA is required and the intended target is non-null\n\nResource meanings:\n- SO: intended scripts, opposition axis, overlap/shared cues, and switch\n- LM: intended way the incongruity becomes retrospectively understandable\n- SI: intended participants, activities, objects, and setting\n- TA: intended butt of the joke\n- NS: intended textual organization and punch placement\n- LA: intended lexical hinge, register, wording constraints, and ending\n\nSet preserved=true only for functional preservation, not topical resemblance.\nJoke validity is non-compensatory: a variant is not a passing joke when any of\nthe five joke-validity fields is false, even if every theory resource is preserved.\nReturn all resource objects and one concise overall rationale per variant.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"intended_plan\": {\n    \"script_a\": {\n      \"script_a\": \"Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.\",\n      \"participants_and_roles\": [\n        \"Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.\",\n        \"Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.\",\n        \"Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.\",\n        \"Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.\",\n        \"Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen.\"\n      ],\n      \"apparent_goal\": \"Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.\",\n      \"preconditions\": [\n        \"Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.\",\n        \"Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.\",\n        \"Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.\",\n        \"Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.\",\n        \"Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling.\"\n      ],\n      \"expected_actions\": [\n        \"Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.\",\n        \"Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.\",\n        \"Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.\",\n        \"Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.\",\n        \"Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening.\"\n      ],\n      \"expected_outcome\": \"Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.\",\n      \"expected_propositions\": [\n        \"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\",\n        \"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\",\n        \"Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.\",\n        \"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\",\n        \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\"\n      ],\n      \"audience_expectation\": \"Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen.\"\n    },\n    \"selected_script_opposition\": {\n      \"candidate_id\": \"B1\",\n      \"script_b\": \"Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.\",\n      \"opposition_axis\": \"Werkelijke oorlog versus gereguleerd sportief conflict\",\n      \"opposed_proposition\": \"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\",\n      \"shared_anchor\": \"Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.\",\n      \"reading_a\": \"Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.\",\n      \"reading_b\": \"Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.\",\n      \"roles_b\": [\n        \"Trainers: bepalen de tactiek en kalmeren hun spelers.\",\n        \"Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.\",\n        \"Scheidsrechter: handhaaft de regels en bestraft overtredingen.\",\n        \"Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.\",\n        \"Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen.\"\n      ],\n      \"goal_b\": \"De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden trainers of clubbestuurders.\",\n        \"Militairen worden spelers op het veld.\",\n        \"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\",\n        \"Burgers worden supporters en toeschouwers.\",\n        \"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\"\n      ],\n      \"shared_cues\": [\n        \"Er zijn twee duidelijk afgebakende partijen.\",\n        \"Beide kampen verdedigen een eigen gebied.\",\n        \"Er is veel spanning, lawaai en wederzijdse beschuldiging.\",\n        \"Een neutrale figuur roept op tot kalmte.\",\n        \"Er wordt gesproken over een onderbreking en afspraken.\"\n      ],\n      \"switch_trigger\": \"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\",\n      \"hinge_event\": \"Na een harde aanval kent de bemiddelaar een strafschop toe.\",\n      \"anomaly_under_a\": \"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\",\n      \"resolution_under_b\": \"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\"\n    },\n    \"gtvh_plan\": {\n      \"opposition_type\": \"Werkelijke oorlog versus gereguleerd sportief conflict\",\n      \"logical_mechanism\": \"Scriptomschakeling via een incongrueente letterlijke herinterpretatie: diplomatieke en militaire conflictcues worden achteraf gelezen als elementen van een voetbalderby, waarbij de rode kaart en strafschop de omschakeling afdwingen.\",\n      \"situation\": \"Twee ogenschijnlijk strijdende partijen staan in een gespannen confrontatie. Leiders, uitvoerders, een neutrale bemiddelaar en omstanders proberen escalatie te beheersen. De handeling speelt aanvankelijk als een internationaal conflict met onderhandelingen en een onderbreking, maar blijkt een verhitte amateurvoetbalderby op een voetbalveld te zijn, met spelers, trainers, aanvoerders, supporters, stewards, een scheidsrechter, kaarten en een strafschopstip.\",\n      \"target\": null,\n      \"narrative_strategy\": \"De opzet gebruikt ernstige, conflictgerichte formuleringen om het script van internationale oorlog en bemiddeling dominant te maken. Gedeelde cues zoals twee kampen, eigen gebied, spanning, een neutrale derde en een onderbreking blijven dubbelzinnig. De punchline introduceert concrete voetbaltaal die de eerdere conflictlezing abrupt als sportwedstrijd herkadert.\",\n      \"lexical_anchor\": \"rode kaart\",\n      \"supporting_dual_cues\": [\n        \"Er zijn twee duidelijk afgebakende partijen.\",\n        \"Beide kampen verdedigen een eigen gebied.\",\n        \"Er is veel spanning, lawaai en wederzijdse beschuldiging.\",\n        \"Een neutrale figuur roept op tot kalmte.\",\n        \"Er wordt gesproken over een onderbreking en afspraken.\"\n      ],\n      \"switch_trigger\": \"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\",\n      \"hinge_event\": \"Na een harde aanval kent de bemiddelaar een strafschop toe.\",\n      \"anomaly_under_a\": \"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\",\n      \"resolution_under_b\": \"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\",\n      \"role_remapping\": [\n        \"Politieke leiders worden trainers of clubbestuurders.\",\n        \"Militairen worden spelers op het veld.\",\n        \"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\",\n        \"Burgers worden supporters en toeschouwers.\",\n        \"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\"\n      ],\n      \"setup_goal\": \"De lezer laten aannemen dat twee landen in een ernstig gewapend conflict verkeren en dat een neutrale bemiddelaar een staakt-het-vuren of diplomatieke oplossing probeert af te dwingen.\",\n      \"punch_goal\": \"De rode kaart en strafschopstip laten onthullen dat de confrontatie geen oorlog is, maar een gereguleerd voetbalconflict waarin de neutrale figuur een scheidsrechter is.\",\n      \"punch_final_word\": \"strafschopstip\"\n    }\n  },\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak. De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.\",\n      \"angle\": \"Grensconflict met bemiddeling\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg. Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.\",\n      \"angle\": \"Vredesoverleg na een aanval\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af. Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.\",\n      \"angle\": \"Onderbreking tussen twee kampen\"\n    }\n  ]\n}\n\nReturn the requested structured fields.\n\n---\n\n## pairwise_selection\nYou perform the final pairwise selection among generated joke variants.\nWrite rationales in Dutch and never rewrite a joke.\n\nEvaluation stage 2: Pairwise selection.\nReturn exactly one comparison for every required pair. Judge fidelity to the\nsupplied required plan, setup clarity, switch strength, retrospective\nreinterpretation, concision, funniness, and originality.\nThe mandatory surface-length policy is: Write each joke in 20-45 words and at most 3 sentences. Remove every sentence not needed for the setup, semantic switch, or punchline. Before returning, silently count the words and sentences and rewrite any joke that falls outside these limits.\n\nSelection rules:\n- every compared variant must comply with the mandatory surface-length policy\n- if passing_variant_ids is non-empty, every passing variant outranks every failing variant\n- among variants with equal pass status, prefer stronger required-resource fidelity,\n  then the stronger joke\n- if no variant passed, select the best available variant and explain the structural failure\n- prefer a variant that is clearly performable as a spoken joke; do not select an\n  explanation, slogan, observation, or summary merely because it has good theory fidelity\n- selected_variant_id and every winner_variant_id must reference supplied IDs\n\nSelect by ID only.\n\nInput:\n{\n  \"topic\": \"Oorlog, vrede en geweld\",\n  \"required_resources\": [\n    \"SO\",\n    \"LM\",\n    \"SI\",\n    \"NS\",\n    \"LA\"\n  ],\n  \"variants\": [\n    {\n      \"variant_id\": \"V1\",\n      \"text\": \"Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak. De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.\",\n      \"angle\": \"Grensconflict met bemiddeling\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"text\": \"Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg. Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.\",\n      \"angle\": \"Vredesoverleg na een aanval\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"text\": \"De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af. Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.\",\n      \"angle\": \"Onderbreking tussen twee kampen\"\n    }\n  ],\n  \"fidelity_assessments\": [\n    {\n      \"variant_id\": \"V1\",\n      \"realized_script_a\": \"Een internationaal grensconflict tussen twee landen, met wederzijdse beschuldigingen over geschonden afspraken en een neutrale bemiddelaar die de strijd onderbreekt.\",\n      \"realized_script_b\": \"Een verhitte voetbalwedstrijd tussen twee teams, waarin een scheidsrechter ingrijpt met een rode kaart en een strafschop.\",\n      \"realized_opposition_axis\": \"Werkelijke oorlog/internationaal conflict versus gereguleerd sportief conflict.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst activeert eerst twee landen in een conflict en schakelt met de rode kaart en strafschopstip ondubbelzinnig naar voetbal. De gedeelde confrontatie-, gebieds-, spannings- en bemiddelingscues zijn functioneel aanwezig.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De letterlijke voetbalmaatregelen zijn anomalieën binnen de oorloglezing en dwingen achteraf de herinterpretatie van de bemiddelaar als scheidsrechter af.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Twee partijen, eigen gebied, beschuldigingen, een neutrale derde en een stilgelegde confrontatie realiseren de beoogde situatie; de slotwoorden concretiseren het voetbalveldscript.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan heeft geen beoogd doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De ernstige geopolitieke formulering domineert de opzet, terwijl dubbelzinnige conflictcues worden gevolgd door een slotmatige voetbalonthulling.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De vereiste lexicale ankers 'rode kaart' en 'strafschopstip' staan in de punchline; de formulering ondersteunt eerst de conflictlezing.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Een directe en volledige realisatie van het geplande oorlog-naar-voetbalcontrast, met de bedoelde omschakeling in de slotzin.\"\n    },\n    {\n      \"variant_id\": \"V2\",\n      \"realized_script_a\": \"Vredesbesprekingen rond een grensconflict, met leiders, een luidruchtige achterban, een aanval en een bemiddelaar die escalatie probeert te stoppen.\",\n      \"realized_script_b\": \"Een verhitte voetbalderby, met teamleiding, supporters, een harde overtreding en een scheidsrechter die rood geeft en een strafschop toekent.\",\n      \"realized_opposition_axis\": \"Werkelijke oorlog/vredesbemiddeling versus gereguleerd sportief conflict.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Vredesbesprekingen, grens, leiders en geweld maken de internationale-conflictlezing dominant; achterban, harde aanval, rode kaart en strafschopstip worden retrospectief voetbalcues. De beoogde oppositie en omschakeling blijven intact.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De rode kaart en strafschopstip zijn binnen vredesonderhandelingen absurd, maar worden begrijpelijk wanneer de bemiddelaar als scheidsrechter wordt herlezen.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant bevat de geplande partijen, grens/gebied, bemiddelaar, spanning, aanval en omstanders. De voetbalrollen zijn niet allemaal expliciet, maar worden functioneel door de punchline geactiveerd.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en er is geen beoogd doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De tekst begint nadrukkelijk als vredesoverleg en houdt voetbalcues zoals 'achterban' en 'harde aanval' nog voldoende dubbelzinnig tot de slotonthulling.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De geplande voetbalwoorden en de vereiste eindformule 'strafschopstip' zijn behouden; het contrast tussen vredestaal en voetbaltaal draagt de grap.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"De variant volgt het bedoelde plan goed: een vredes- en grensconflict wordt door de voetbalbeslissing aan het eind als derby herlezen.\"\n    },\n    {\n      \"variant_id\": \"V3\",\n      \"realized_script_a\": \"Een gewapende confrontatie tussen twee kampen die hun linies vasthouden, aanvallen uitvoeren en onderbrekingen verlangen, terwijl neutralen afwachten.\",\n      \"realized_script_b\": \"Een gespannen voetbalwedstrijd tussen twee teams, waarin aanvoerders protesteren of overleg zoeken en een scheidsrechter met rood en een strafschop ingrijpt.\",\n      \"realized_opposition_axis\": \"Werkelijke oorlog/militaire confrontatie versus gereguleerd sportief conflict.\",\n      \"script_opposition\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"Linies, aanvallen, kampen, neutralen en bemiddeling ondersteunen de militaire lezing; 'aanvoerders' blijft gedeeld genoeg en de rode kaart plus strafschopstip schakelen naar voetbal. De bedoelde oppositie wordt gerealiseerd.\"\n      },\n      \"logical_mechanism\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De slotmaatregelen zijn niet zinvol als ingreep in een gewapend conflict, maar zijn formele voetbalbeslissingen. Daardoor wordt de eerdere scène retrospectief herschikt.\"\n      },\n      \"situation\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De variant realiseert twee partijen, verdedigde linies, aanvallen, een neutrale figuur, spanning en een onderbreking. De formulering is algemener dan het landenconflict, maar functioneel passend bij de geplande dubbelzinnigheid.\"\n      },\n      \"target\": {\n        \"applicable\": false,\n        \"preserved\": null,\n        \"rationale\": \"TA is niet vereist en het plan specificeert geen doelwit.\"\n      },\n      \"narrative_strategy\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"De opzet houdt de setting bewust minder specifiek, maar laat een militaire confrontatie eerst overheersen en bewaart de expliciete voetbaltaal voor de laatste zin.\"\n      },\n      \"language\": {\n        \"applicable\": true,\n        \"preserved\": true,\n        \"rationale\": \"'Rode kaart' en het geplande finale woord 'strafschopstip' fungeren als de vereiste lexicale scharnierpunten. 'Aanvoerders' is een bruikbare dubbelzinnige cue.\"\n      },\n      \"setup_dominance\": true,\n      \"latent_script_b\": true,\n      \"shared_cues_realized\": true,\n      \"switch_trigger_realized\": true,\n      \"retrospective_reinterpretation\": true,\n      \"unplanned_opposition\": false,\n      \"is_spoken_naturally\": true,\n      \"has_recognizable_setup\": true,\n      \"has_clear_turn\": true,\n      \"has_punchline\": true,\n      \"sounds_like_a_joke\": true,\n      \"rationale\": \"Ondanks de algemenere militaire opzet realiseert de tekst de geplande oorlog-naar-voetbalomschakeling en plaatst hij de volledige onthulling effectief in het slot.\"\n    }\n  ],\n  \"passing_variant_ids\": [\n    \"V1\",\n    \"V2\",\n    \"V3\"\n  ],\n  \"required_pairs\": [\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V2\"\n    },\n    {\n      \"left_variant_id\": \"V1\",\n      \"right_variant_id\": \"V3\"\n    },\n    {\n      \"left_variant_id\": \"V2\",\n      \"right_variant_id\": \"V3\"\n    }\n  ]\n}\n\nReturn the requested structured fields.",
+    "joke": "Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak. De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.",
+    "semantic_plan": {
+      "category": null,
+      "setup_script": "Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.",
+      "opposing_script": "Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.",
+      "opposition_type": "Werkelijke oorlog versus gereguleerd sportief conflict",
+      "trigger": "De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.",
+      "setup_goal": "De lezer laten aannemen dat twee landen in een ernstig gewapend conflict verkeren en dat een neutrale bemiddelaar een staakt-het-vuren of diplomatieke oplossing probeert af te dwingen.",
+      "punch_goal": "De rode kaart en strafschopstip laten onthullen dat de confrontatie geen oorlog is, maar een gereguleerd voetbalconflict waarin de neutrale figuur een scheidsrechter is.",
+      "shared_cues": [
+        "Er zijn twee duidelijk afgebakende partijen.",
+        "Beide kampen verdedigen een eigen gebied.",
+        "Er is veel spanning, lawaai en wederzijdse beschuldiging.",
+        "Een neutrale figuur roept op tot kalmte.",
+        "Er wordt gesproken over een onderbreking en afspraken."
+      ],
+      "hinge_event": "Na een harde aanval kent de bemiddelaar een strafschop toe.",
+      "anomaly_under_a": "In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.",
+      "resolution_under_b": "In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.",
+      "role_remapping": [
+        "Politieke leiders worden trainers of clubbestuurders.",
+        "Militairen worden spelers op het veld.",
+        "Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.",
+        "Burgers worden supporters en toeschouwers.",
+        "Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst."
+      ],
+      "style_mode": "none"
+    },
+    "raw_response": "{\n  \"audience_expectation\": \"{\\\"script_a\\\":\\\"Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.\\\",\\\"participants_and_roles\\\":[\\\"Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.\\\",\\\"Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.\\\",\\\"Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.\\\",\\\"Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.\\\",\\\"Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen.\\\"],\\\"apparent_goal\\\":\\\"Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.\\\",\\\"preconditions\\\":[\\\"Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.\\\",\\\"Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.\\\",\\\"Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.\\\",\\\"Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.\\\",\\\"Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling.\\\"],\\\"expected_actions\\\":[\\\"Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.\\\",\\\"Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.\\\",\\\"Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.\\\",\\\"Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.\\\",\\\"Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening.\\\"],\\\"expected_outcome\\\":\\\"Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.\\\",\\\"expected_propositions\\\":[\\\"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\\\",\\\"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\\\",\\\"Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.\\\",\\\"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\\\",\\\"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\\\"],\\\"audience_expectation\\\":\\\"Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen.\\\"}\",\n  \"opposition_candidates\": \"{\\\"candidates\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"script_b\\\":\\\"Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.\\\",\\\"opposition_axis\\\":\\\"Werkelijke oorlog versus gereguleerd sportief conflict\\\",\\\"opposed_proposition\\\":\\\"Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.\\\",\\\"shared_anchor\\\":\\\"Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.\\\",\\\"reading_a\\\":\\\"Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.\\\",\\\"reading_b\\\":\\\"Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.\\\",\\\"roles_b\\\":[\\\"Trainers: bepalen de tactiek en kalmeren hun spelers.\\\",\\\"Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.\\\",\\\"Scheidsrechter: handhaaft de regels en bestraft overtredingen.\\\",\\\"Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.\\\",\\\"Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen.\\\"],\\\"goal_b\\\":\\\"De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.\\\",\\\"role_remapping\\\":[\\\"Politieke leiders worden trainers of clubbestuurders.\\\",\\\"Militairen worden spelers op het veld.\\\",\\\"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\\\",\\\"Burgers worden supporters en toeschouwers.\\\",\\\"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\\\"],\\\"shared_cues\\\":[\\\"Er zijn twee duidelijk afgebakende partijen.\\\",\\\"Beide kampen verdedigen een eigen gebied.\\\",\\\"Er is veel spanning, lawaai en wederzijdse beschuldiging.\\\",\\\"Een neutrale figuur roept op tot kalmte.\\\",\\\"Er wordt gesproken over een onderbreking en afspraken.\\\"],\\\"switch_trigger\\\":\\\"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\\\",\\\"hinge_event\\\":\\\"Na een harde aanval kent de bemiddelaar een strafschop toe.\\\",\\\"anomaly_under_a\\\":\\\"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\\\",\\\"resolution_under_b\\\":\\\"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"script_b\\\":\\\"Twee buren ruziën over geluidsoverlast, een schutting en het gebruik van een gezamenlijke oprit; een buurtbemiddelaar probeert praktische afspraken te laten maken zodat zij naast elkaar kunnen blijven wonen.\\\",\\\"opposition_axis\\\":\\\"Internationaal gewapend conflict versus alledaags burenconflict\\\",\\\"opposed_proposition\\\":\\\"Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.\\\",\\\"shared_anchor\\\":\\\"Twee partijen bespreken onder begeleiding een grens en afspraken over naleving.\\\",\\\"reading_a\\\":\\\"Landen onderhandelen over grenzen, veiligheidsgaranties en controle op een vredesakkoord.\\\",\\\"reading_b\\\":\\\"Buren maken afspraken over de erfgrens, stille uren en het gebruik van een gedeelde oprit.\\\",\\\"roles_b\\\":[\\\"Buren: verdedigen hun woonbelang en willen hun dagelijkse hinder beëindigen.\\\",\\\"Buurtbemiddelaar: leidt het gesprek en formuleert afspraken.\\\",\\\"Wijkagent of verhuurder: kan regels uitleggen en naleving ondersteunen.\\\",\\\"Gezinsleden: ondervinden de spanning en willen rustig thuis kunnen leven.\\\",\\\"Gemeente of VvE: beheert regels over erfafscheidingen, geluid en gedeelde ruimte.\\\"],\\\"goal_b\\\":\\\"De overlast stoppen en een uitvoerbare regeling bereiken waardoor beide huishoudens zonder voortdurende ruzie kunnen wonen.\\\",\\\"role_remapping\\\":[\\\"Politieke leiders worden de twee buren die besluiten nemen.\\\",\\\"Militairen worden eventueel ingeschakelde familieleden of klusjesmensen die een grens fysiek markeren.\\\",\\\"Diplomaten en onderhandelaars worden de buurtbemiddelaar.\\\",\\\"Burgers worden gezinsleden die last hebben van de ruzie.\\\",\\\"Internationale organisaties en bondgenoten worden de gemeente, verhuurder, VvE of wijkagent.\\\"],\\\"shared_cues\\\":[\\\"Er is een langdurig conflict met wederzijdse verwijten.\\\",\\\"Partijen spreken over een grens en veiligheid.\\\",\\\"Een derde partij organiseert een gesprek.\\\",\\\"Er worden voorwaarden, garanties en controle besproken.\\\",\\\"De betrokken gezinnen hopen op rust.\\\"],\\\"switch_trigger\\\":\\\"Een partij schuift geen kaart van betwist grondgebied, maar een foto van een scheef geplaatste kliko op tafel.\\\",\\\"hinge_event\\\":\\\"De bemiddelaar meet met een rolmaat de positie van een vuilnisbak en laat beide buren daarvoor tekenen.\\\",\\\"anomaly_under_a\\\":\\\"Bij een oorlog tussen landen zou het nauwkeurig vastleggen van de plek van een kliko triviaal en ongepast zijn tegenover geweld, slachtoffers en territoriale claims.\\\",\\\"resolution_under_b\\\":\\\"Voor buren is de kliko juist een concrete bron van dagelijkse irritatie; de meting maakt de afspraak controleerbaar en voorkomt nieuwe ruzie.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"script_b\\\":\\\"Twee rivaliserende e-sportteams nemen deel aan een online toernooi; teamcaptains, spelers en wedstrijdadministrators proberen via tactiek, pauzes en protestprocedures een eerlijke overwinning te behalen.\\\",\\\"opposition_axis\\\":\\\"Levensbedreigend fysiek geweld versus virtuele competitieve strijd\\\",\\\"opposed_proposition\\\":\\\"Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.\\\",\\\"shared_anchor\\\":\\\"Twee kampen bevechten strategische posities terwijl vertegenwoordigers over een tijdelijke onderbreking overleggen.\\\",\\\"reading_a\\\":\\\"Strijdende legers proberen terrein te behouden, terwijl diplomaten een humanitaire pauze bespreken.\\\",\\\"reading_b\\\":\\\"E-sporters proberen virtuele zones op de spelkaart te beheersen, terwijl captains een technische time-out aanvragen.\\\",\\\"roles_b\\\":[\\\"Spelers: voeren digitale acties uit en proberen virtuele doelen te veroveren.\\\",\\\"Teamcaptains: bepalen strategie en dienen protesten in.\\\",\\\"Coaches: analyseren tegenstanders en geven aanwijzingen.\\\",\\\"Toernooibeheerders: bewaken de regels, servers en uitslagen.\\\",\\\"Kijkers en sponsors: volgen de wedstrijd en ondersteunen de teams.\\\"],\\\"goal_b\\\":\\\"Volgens de toernooiregels de wedstrijd winnen door virtuele doelen te veroveren of de tegenstander uit te schakelen.\\\",\\\"role_remapping\\\":[\\\"Politieke leiders worden teamcaptains en coaches.\\\",\\\"Militairen worden e-sportspelers en hun spelavatars.\\\",\\\"Diplomaten en onderhandelaars worden captains die met de administrator overleggen.\\\",\\\"Burgers worden online kijkers en supporters.\\\",\\\"Internationale organisaties en bondgenoten worden de toernooiorganisatie, speluitgever en sponsors.\\\"],\\\"shared_cues\\\":[\\\"Er zijn kaarten, frontlinies en strategische posities.\\\",\\\"Partijen spreken over aanvallen, verdediging en verliezen.\\\",\\\"Een neutrale instantie controleert regels en overtredingen.\\\",\\\"Er is communicatie tussen vertegenwoordigers.\\\",\\\"Een tijdelijke onderbreking wordt overwogen.\\\"],\\\"switch_trigger\\\":\\\"De vermeende wapenstilstand blijkt een technische pauze omdat een speler vraagt of iemand de server opnieuw kan opstarten.\\\",\\\"hinge_event\\\":\\\"Tijdens de onderhandelde onderbreking roept een captain dat zijn muis leeg is en de wedstrijdadministrator vervangt de batterijen.\\\",\\\"anomaly_under_a\\\":\\\"Een oorlogspauze vanwege een lege computermuis zou absurd zijn wanneer echte burgers en militairen gevaar lopen.\\\",\\\"resolution_under_b\\\":\\\"In een e-sporttoernooi verhindert defecte apparatuur eerlijke competitie; de technische onderbreking beschermt juist de geldigheid van de uitslag.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"script_b\\\":\\\"Een basisschoolklas bereidt onder leiding van de docent een debat en rollenspel voor over een denkbeeldig grensconflict; twee leerlinggroepen vertegenwoordigen fictieve staten en moeten een creatieve overeenkomst sluiten.\\\",\\\"opposition_axis\\\":\\\"Werkelijk staatsgeweld versus educatief rollenspel\\\",\\\"opposed_proposition\\\":\\\"Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.\\\",\\\"shared_anchor\\\":\\\"Vertegenwoordigers van twee kampen presenteren eisen, luisteren naar bemiddeling en zoeken een akkoord.\\\",\\\"reading_a\\\":\\\"Politieke delegaties proberen na oorlog en burgerleed een reële vredesregeling te sluiten.\\\",\\\"reading_b\\\":\\\"Leerlingen spelen delegaties in een les en proberen punten te verdienen voor samenwerking en argumentatie.\\\",\\\"roles_b\\\":[\\\"Leerlingen in delegaties: spelen leiders, onderhandelaars en inwoners van fictieve landen.\\\",\\\"Docent: stelt de opdracht op, bewaakt veiligheid en begeleidt de gesprekken.\\\",\\\"Leerling-bemiddelaars: leiden het overleg tussen de groepen.\\\",\\\"Klasgenoten als publiek: beoordelen de voorstellen en spelen getroffen inwoners.\\\",\\\"Schoolleiding of jury: beoordeelt het eindresultaat volgens lescriteria.\\\"],\\\"goal_b\\\":\\\"Een overtuigende, creatieve en vreedzame oplossing presenteren waarmee de groep een goede beoordeling of wedstrijdscore behaalt.\\\",\\\"role_remapping\\\":[\\\"Politieke leiders worden leerlingen die fictieve regeringen spelen.\\\",\\\"Militairen worden leerlingen die in het rollenspel legers of grenswachten voorstellen.\\\",\\\"Diplomaten en onderhandelaars worden leerling-bemiddelaars.\\\",\\\"Burgers worden klasgenoten die fictieve inwoners uitbeelden.\\\",\\\"Internationale organisaties en bondgenoten worden de docent, jury en schoolleiding.\\\"],\\\"shared_cues\\\":[\\\"Er zijn vlaggen, kaarten en afgebakende gebieden.\\\",\\\"Twee groepen formuleren eisen en beschuldigingen.\\\",\\\"Een bemiddelaar geeft ieder kamp spreektijd.\\\",\\\"Er wordt over een staakt-het-vuren en garanties gesproken.\\\",\\\"Getroffen inwoners vragen om veiligheid.\\\"],\\\"switch_trigger\\\":\\\"De bemiddelaar onderbreekt het overleg omdat de bel gaat en alle delegaties hun boterhammen moeten pakken.\\\",\\\"hinge_event\\\":\\\"Midden in de plechtige vredesondertekening deelt de docent kleurpotloden uit zodat beide partijen hun vlag op het verdrag kunnen tekenen.\\\",\\\"anomaly_under_a\\\":\\\"Kleurpotloden en een lunchpauze zouden tijdens een echte internationale vredesonderhandeling schokkend kinderachtig zijn, zeker gezien de ernst van oorlogsslachtoffers.\\\",\\\"resolution_under_b\\\":\\\"In de klas zijn zij functionele lesmiddelen: de vlaggen maken de rolverdeling zichtbaar en de onderbreking volgt het schoolritme, terwijl het rollenspel veilig en leerzaam blijft.\\\"}]}\",\n  \"theory_gate\": \"{\\\"assessments\\\":[{\\\"candidate_id\\\":\\\"B1\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Dezelfde realiseerbare scène van twee kampen, gebiedsverdediging, spanning, een neutrale ingreep en een onderbreking past zowel bij oorlogsbemiddeling als bij een derby. De dominante tegenstelling is werkelijk gewapend conflict tegenover gereguleerde sportcompetitie. De oorloglezing ligt aanvankelijk voor de hand vanuit de opzet, terwijl voetbal al latent mogelijk blijft door termen als kampen, gebied, onderbreking en afspraken. Rode kaart en strafschop zijn onder script A anomalisch, maar onder script B normale, doelgerichte sancties. Zij herinterpreteren de eerdere bemiddelaar als scheidsrechter; de harde aanval belemmert vredesherstel onder A maar kan via de strafschop juist het sportieve doel onder B dienen.\\\"},{\\\"candidate_id\\\":\\\"B2\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Een gesprek over een grens, voorwaarden en nalevingsafspraken onder begeleiding is realiseerbaar als zowel internationale vredesonderhandeling als burenbemiddeling. De lokale tegenstelling is duidelijk die tussen een gewapend internationaal conflict en een alledaagse woonruzie. De ernstige oorlogskaders maken script A aanvankelijk dominant, maar grens-, veiligheids- en nalevingstaal laat script B beschikbaar. De kliko en rolmaat zijn in script A triviaal en ongepast, maar in script B een herkenbare, controleerbare oplossing voor dagelijkse overlast. Daardoor krijgen eerdere verwijzingen naar grens en controle retrospectief een buurtbetekenis. Er is niet expliciet één voorwaarde die A's vredesdoel blokkeert én B's doel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B3\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":false,\\\"rationale\\\":\\\"Strategische posities, aanvallen, verdediging, verliezen, vertegenwoordigers en een tijdelijke onderbreking kunnen één scène vormen die zowel oorlog als competitieve e-sport ondersteunt. De dominante as is levensbedreigende fysieke strijd tegenover virtuele spelcompetitie. Door de gegeven oorlogopzet is A de eerste lezing, terwijl kaarten, posities, regels en een neutrale instantie B vooraf plausibel houden. Een technische pauze wegens een lege muis is absurd bij een humanitaire oorlogspauze, maar functioneel en sociaal herkenbaar in e-sport omdat zij eerlijke voortzetting waarborgt. Daarmee worden eerdere strijd- en onderhandelingstermen retrospectief speltermen. De apparatuurstoring blokkeert echter niet expliciet het vredesdoel van A terwijl zij B's doel mogelijk maakt.\\\"},{\\\"candidate_id\\\":\\\"B4\\\",\\\"dual_compatibility\\\":true,\\\"genuine_opposition\\\":true,\\\"single_axis\\\":true,\\\"anchor_supports_both\\\":true,\\\"recognizable_second_reading\\\":true,\\\"setup_dominance\\\":true,\\\"latent_second_reading\\\":true,\\\"anomaly_resolved\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"functional_reversal\\\":true,\\\"rationale\\\":\\\"Delegaties, eisen, bemiddeling, staakt-het-vuren, garanties en getroffen inwoners kunnen zowel een echte vredesregeling als een klassikaal rollenspel dragen. De duidelijke dominante tegenstelling is werkelijk staatsgeweld tegenover educatieve simulatie. De ernstige oorlogsscripts maken A initieel dominant, maar vlaggen, kaarten, groepen en gespreksbegeleiding laten een lescontext latent toe. Lunchpauze en kleurpotloden zijn in een werkelijke vredesonderhandeling anomalisch, maar zijn onder B normale schoolritmes en lesmiddelen. Zij zetten de eerdere delegaties en het verdrag retrospectief om in gespeelde rollen en een opdracht. De schoolbel onderbreekt de reële onderhandelingsfunctie van A, maar ondersteunt onder B juist de herkenbare schoolcontext waarbinnen het rollenspeldoel wordt uitgevoerd.\\\"}]}\",\n  \"candidate_selection\": \"{\\\"selected_candidate_id\\\":\\\"B1\\\",\\\"rationale\\\":\\\"B1 biedt de scherpste en meest economische oppositie: de ernstige logica van oorlog en vredesbemiddeling blijft aanvankelijk geloofwaardig door twee kampen, territoriumverdediging, escalatie, een neutrale derde en een onderbreking. Tegelijk is de tweede lezing volledig compatibel met diezelfde structuur als een verhitte derby. De rode kaart en strafschopstip vormen een onmiddellijk, ondubbelzinnig en hoogwaardig omslagpunt: absurd binnen internationale diplomatie, maar functioneel en beslissend binnen voetbal. Daardoor herinterpreteert de onthulling retrospectief rollen, taal en conflictregels zonder dat Script B extra uitleg nodig heeft.\\\"}\",\n  \"gtvh_plan\": \"{\\\"opposition_type\\\":\\\"Werkelijke oorlog versus gereguleerd sportief conflict\\\",\\\"logical_mechanism\\\":\\\"Scriptomschakeling via een incongrueente letterlijke herinterpretatie: diplomatieke en militaire conflictcues worden achteraf gelezen als elementen van een voetbalderby, waarbij de rode kaart en strafschop de omschakeling afdwingen.\\\",\\\"situation\\\":\\\"Twee ogenschijnlijk strijdende partijen staan in een gespannen confrontatie. Leiders, uitvoerders, een neutrale bemiddelaar en omstanders proberen escalatie te beheersen. De handeling speelt aanvankelijk als een internationaal conflict met onderhandelingen en een onderbreking, maar blijkt een verhitte amateurvoetbalderby op een voetbalveld te zijn, met spelers, trainers, aanvoerders, supporters, stewards, een scheidsrechter, kaarten en een strafschopstip.\\\",\\\"target\\\":null,\\\"narrative_strategy\\\":\\\"De opzet gebruikt ernstige, conflictgerichte formuleringen om het script van internationale oorlog en bemiddeling dominant te maken. Gedeelde cues zoals twee kampen, eigen gebied, spanning, een neutrale derde en een onderbreking blijven dubbelzinnig. De punchline introduceert concrete voetbaltaal die de eerdere conflictlezing abrupt als sportwedstrijd herkadert.\\\",\\\"lexical_anchor\\\":\\\"rode kaart\\\",\\\"supporting_dual_cues\\\":[\\\"Er zijn twee duidelijk afgebakende partijen.\\\",\\\"Beide kampen verdedigen een eigen gebied.\\\",\\\"Er is veel spanning, lawaai en wederzijdse beschuldiging.\\\",\\\"Een neutrale figuur roept op tot kalmte.\\\",\\\"Er wordt gesproken over een onderbreking en afspraken.\\\"],\\\"switch_trigger\\\":\\\"De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.\\\",\\\"hinge_event\\\":\\\"Na een harde aanval kent de bemiddelaar een strafschop toe.\\\",\\\"anomaly_under_a\\\":\\\"In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.\\\",\\\"resolution_under_b\\\":\\\"In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.\\\",\\\"role_remapping\\\":[\\\"Politieke leiders worden trainers of clubbestuurders.\\\",\\\"Militairen worden spelers op het veld.\\\",\\\"Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.\\\",\\\"Burgers worden supporters en toeschouwers.\\\",\\\"Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst.\\\"],\\\"setup_goal\\\":\\\"De lezer laten aannemen dat twee landen in een ernstig gewapend conflict verkeren en dat een neutrale bemiddelaar een staakt-het-vuren of diplomatieke oplossing probeert af te dwingen.\\\",\\\"punch_goal\\\":\\\"De rode kaart en strafschopstip laten onthullen dat de confrontatie geen oorlog is, maar een gereguleerd voetbalconflict waarin de neutrale figuur een scheidsrechter is.\\\",\\\"punch_final_word\\\":\\\"strafschopstip\\\"}\",\n  \"variants\": \"{\\\"variants\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"setup\\\":\\\"Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak.\\\",\\\"punchline\\\":\\\"De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.\\\",\\\"full_text\\\":\\\"Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak. De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.\\\",\\\"angle\\\":\\\"Grensconflict met bemiddeling\\\",\\\"anchor_surface_form\\\":\\\"rode kaart\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"setup\\\":\\\"Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg.\\\",\\\"punchline\\\":\\\"Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.\\\",\\\"full_text\\\":\\\"Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg. Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.\\\",\\\"angle\\\":\\\"Vredesoverleg na een aanval\\\",\\\"anchor_surface_form\\\":\\\"rode kaart\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"setup\\\":\\\"De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af.\\\",\\\"punchline\\\":\\\"Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.\\\",\\\"full_text\\\":\\\"De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af. Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.\\\",\\\"angle\\\":\\\"Onderbreking tussen twee kampen\\\",\\\"anchor_surface_form\\\":\\\"rode kaart\\\"}]}\",\n  \"plan_fidelity\": \"{\\\"assessments\\\":[{\\\"variant_id\\\":\\\"V1\\\",\\\"realized_script_a\\\":\\\"Een internationaal grensconflict tussen twee landen, met wederzijdse beschuldigingen over geschonden afspraken en een neutrale bemiddelaar die de strijd onderbreekt.\\\",\\\"realized_script_b\\\":\\\"Een verhitte voetbalwedstrijd tussen twee teams, waarin een scheidsrechter ingrijpt met een rode kaart en een strafschop.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke oorlog/internationaal conflict versus gereguleerd sportief conflict.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst activeert eerst twee landen in een conflict en schakelt met de rode kaart en strafschopstip ondubbelzinnig naar voetbal. De gedeelde confrontatie-, gebieds-, spannings- en bemiddelingscues zijn functioneel aanwezig.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De letterlijke voetbalmaatregelen zijn anomalieën binnen de oorloglezing en dwingen achteraf de herinterpretatie van de bemiddelaar als scheidsrechter af.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Twee partijen, eigen gebied, beschuldigingen, een neutrale derde en een stilgelegde confrontatie realiseren de beoogde situatie; de slotwoorden concretiseren het voetbalveldscript.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan heeft geen beoogd doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De ernstige geopolitieke formulering domineert de opzet, terwijl dubbelzinnige conflictcues worden gevolgd door een slotmatige voetbalonthulling.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De vereiste lexicale ankers 'rode kaart' en 'strafschopstip' staan in de punchline; de formulering ondersteunt eerst de conflictlezing.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Een directe en volledige realisatie van het geplande oorlog-naar-voetbalcontrast, met de bedoelde omschakeling in de slotzin.\\\"},{\\\"variant_id\\\":\\\"V2\\\",\\\"realized_script_a\\\":\\\"Vredesbesprekingen rond een grensconflict, met leiders, een luidruchtige achterban, een aanval en een bemiddelaar die escalatie probeert te stoppen.\\\",\\\"realized_script_b\\\":\\\"Een verhitte voetbalderby, met teamleiding, supporters, een harde overtreding en een scheidsrechter die rood geeft en een strafschop toekent.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke oorlog/vredesbemiddeling versus gereguleerd sportief conflict.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Vredesbesprekingen, grens, leiders en geweld maken de internationale-conflictlezing dominant; achterban, harde aanval, rode kaart en strafschopstip worden retrospectief voetbalcues. De beoogde oppositie en omschakeling blijven intact.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De rode kaart en strafschopstip zijn binnen vredesonderhandelingen absurd, maar worden begrijpelijk wanneer de bemiddelaar als scheidsrechter wordt herlezen.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant bevat de geplande partijen, grens/gebied, bemiddelaar, spanning, aanval en omstanders. De voetbalrollen zijn niet allemaal expliciet, maar worden functioneel door de punchline geactiveerd.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en er is geen beoogd doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De tekst begint nadrukkelijk als vredesoverleg en houdt voetbalcues zoals 'achterban' en 'harde aanval' nog voldoende dubbelzinnig tot de slotonthulling.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De geplande voetbalwoorden en de vereiste eindformule 'strafschopstip' zijn behouden; het contrast tussen vredestaal en voetbaltaal draagt de grap.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"De variant volgt het bedoelde plan goed: een vredes- en grensconflict wordt door de voetbalbeslissing aan het eind als derby herlezen.\\\"},{\\\"variant_id\\\":\\\"V3\\\",\\\"realized_script_a\\\":\\\"Een gewapende confrontatie tussen twee kampen die hun linies vasthouden, aanvallen uitvoeren en onderbrekingen verlangen, terwijl neutralen afwachten.\\\",\\\"realized_script_b\\\":\\\"Een gespannen voetbalwedstrijd tussen twee teams, waarin aanvoerders protesteren of overleg zoeken en een scheidsrechter met rood en een strafschop ingrijpt.\\\",\\\"realized_opposition_axis\\\":\\\"Werkelijke oorlog/militaire confrontatie versus gereguleerd sportief conflict.\\\",\\\"script_opposition\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"Linies, aanvallen, kampen, neutralen en bemiddeling ondersteunen de militaire lezing; 'aanvoerders' blijft gedeeld genoeg en de rode kaart plus strafschopstip schakelen naar voetbal. De bedoelde oppositie wordt gerealiseerd.\\\"},\\\"logical_mechanism\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De slotmaatregelen zijn niet zinvol als ingreep in een gewapend conflict, maar zijn formele voetbalbeslissingen. Daardoor wordt de eerdere scène retrospectief herschikt.\\\"},\\\"situation\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De variant realiseert twee partijen, verdedigde linies, aanvallen, een neutrale figuur, spanning en een onderbreking. De formulering is algemener dan het landenconflict, maar functioneel passend bij de geplande dubbelzinnigheid.\\\"},\\\"target\\\":{\\\"applicable\\\":false,\\\"preserved\\\":null,\\\"rationale\\\":\\\"TA is niet vereist en het plan specificeert geen doelwit.\\\"},\\\"narrative_strategy\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"De opzet houdt de setting bewust minder specifiek, maar laat een militaire confrontatie eerst overheersen en bewaart de expliciete voetbaltaal voor de laatste zin.\\\"},\\\"language\\\":{\\\"applicable\\\":true,\\\"preserved\\\":true,\\\"rationale\\\":\\\"'Rode kaart' en het geplande finale woord 'strafschopstip' fungeren als de vereiste lexicale scharnierpunten. 'Aanvoerders' is een bruikbare dubbelzinnige cue.\\\"},\\\"setup_dominance\\\":true,\\\"latent_script_b\\\":true,\\\"shared_cues_realized\\\":true,\\\"switch_trigger_realized\\\":true,\\\"retrospective_reinterpretation\\\":true,\\\"unplanned_opposition\\\":false,\\\"is_spoken_naturally\\\":true,\\\"has_recognizable_setup\\\":true,\\\"has_clear_turn\\\":true,\\\"has_punchline\\\":true,\\\"sounds_like_a_joke\\\":true,\\\"rationale\\\":\\\"Ondanks de algemenere militaire opzet realiseert de tekst de geplande oorlog-naar-voetbalomschakeling en plaatst hij de volledige onthulling effectief in het slot.\\\"}]}\",\n  \"pairwise_selection\": \"{\\\"comparisons\\\":[{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V2\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide varianten voldoen aan de lengtegrens en realiseren de vereiste oorlog-naar-voetbalswitch. V1 heeft de helderste geopolitieke opzet met landen, gebied en geschonden afspraken; daardoor werkt de rode kaart als sterkere, directere herinterpretatie.\\\"},{\\\"left_variant_id\\\":\\\"V1\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"Beide zijn performabel en hebben een duidelijke slotomslag. V1 is specifieker en compacter: het landenconflict maakt de aanvankelijke oorloglezing overtuigender, waarna de strafschopstip de scène scherper als voetbalwedstrijd herschrijft dan de algemenere kampen in V3.\\\"},{\\\"left_variant_id\\\":\\\"V2\\\",\\\"right_variant_id\\\":\\\"V3\\\",\\\"winner_variant_id\\\":\\\"V2\\\",\\\"rationale\\\":\\\"Beide voldoen aan de vormeisen en behouden de geplande scripts. V2 biedt meer concrete conflict- en voetbalcues, zoals grens, achterban en harde aanval, waardoor de retrospectieve derby-lezing sterker is. V3 blijft functioneel, maar is abstracter en minder beeldend.\\\"}],\\\"selected_variant_id\\\":\\\"V1\\\",\\\"rationale\\\":\\\"V1 is de sterkste passerende variant. De beknopte maar concrete oorlogssituatie domineert de setup, terwijl rode kaart en strafschopstip een onmiddellijke, goed performbare voetbalonthulling leveren.\\\"}\"\n}",
+    "warnings": [],
+    "script_b_candidates": [
+      {
+        "script_b": "Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.",
+        "candidate_id": "B1",
+        "opposition_axis": "Werkelijke oorlog versus gereguleerd sportief conflict",
+        "opposed_expectation": "Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.",
+        "roles_b": [
+          "Trainers: bepalen de tactiek en kalmeren hun spelers.",
+          "Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.",
+          "Scheidsrechter: handhaaft de regels en bestraft overtredingen.",
+          "Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.",
+          "Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen."
+        ],
+        "goal_b": "De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.",
+        "role_remapping": [
+          "Politieke leiders worden trainers of clubbestuurders.",
+          "Militairen worden spelers op het veld.",
+          "Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.",
+          "Burgers worden supporters en toeschouwers.",
+          "Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst."
+        ],
+        "shared_cues": [
+          "Er zijn twee duidelijk afgebakende partijen.",
+          "Beide kampen verdedigen een eigen gebied.",
+          "Er is veel spanning, lawaai en wederzijdse beschuldiging.",
+          "Een neutrale figuur roept op tot kalmte.",
+          "Er wordt gesproken over een onderbreking en afspraken."
+        ],
+        "switch_trigger": "De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.",
+        "hinge_event": "Na een harde aanval kent de bemiddelaar een strafschop toe.",
+        "anomaly_under_a": "In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.",
+        "resolution_under_b": "In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee buren ruziën over geluidsoverlast, een schutting en het gebruik van een gezamenlijke oprit; een buurtbemiddelaar probeert praktische afspraken te laten maken zodat zij naast elkaar kunnen blijven wonen.",
+        "candidate_id": "B2",
+        "opposition_axis": "Internationaal gewapend conflict versus alledaags burenconflict",
+        "opposed_expectation": "Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.",
+        "roles_b": [
+          "Buren: verdedigen hun woonbelang en willen hun dagelijkse hinder beëindigen.",
+          "Buurtbemiddelaar: leidt het gesprek en formuleert afspraken.",
+          "Wijkagent of verhuurder: kan regels uitleggen en naleving ondersteunen.",
+          "Gezinsleden: ondervinden de spanning en willen rustig thuis kunnen leven.",
+          "Gemeente of VvE: beheert regels over erfafscheidingen, geluid en gedeelde ruimte."
+        ],
+        "goal_b": "De overlast stoppen en een uitvoerbare regeling bereiken waardoor beide huishoudens zonder voortdurende ruzie kunnen wonen.",
+        "role_remapping": [
+          "Politieke leiders worden de twee buren die besluiten nemen.",
+          "Militairen worden eventueel ingeschakelde familieleden of klusjesmensen die een grens fysiek markeren.",
+          "Diplomaten en onderhandelaars worden de buurtbemiddelaar.",
+          "Burgers worden gezinsleden die last hebben van de ruzie.",
+          "Internationale organisaties en bondgenoten worden de gemeente, verhuurder, VvE of wijkagent."
+        ],
+        "shared_cues": [
+          "Er is een langdurig conflict met wederzijdse verwijten.",
+          "Partijen spreken over een grens en veiligheid.",
+          "Een derde partij organiseert een gesprek.",
+          "Er worden voorwaarden, garanties en controle besproken.",
+          "De betrokken gezinnen hopen op rust."
+        ],
+        "switch_trigger": "Een partij schuift geen kaart van betwist grondgebied, maar een foto van een scheef geplaatste kliko op tafel.",
+        "hinge_event": "De bemiddelaar meet met een rolmaat de positie van een vuilnisbak en laat beide buren daarvoor tekenen.",
+        "anomaly_under_a": "Bij een oorlog tussen landen zou het nauwkeurig vastleggen van de plek van een kliko triviaal en ongepast zijn tegenover geweld, slachtoffers en territoriale claims.",
+        "resolution_under_b": "Voor buren is de kliko juist een concrete bron van dagelijkse irritatie; de meting maakt de afspraak controleerbaar en voorkomt nieuwe ruzie.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Twee rivaliserende e-sportteams nemen deel aan een online toernooi; teamcaptains, spelers en wedstrijdadministrators proberen via tactiek, pauzes en protestprocedures een eerlijke overwinning te behalen.",
+        "candidate_id": "B3",
+        "opposition_axis": "Levensbedreigend fysiek geweld versus virtuele competitieve strijd",
+        "opposed_expectation": "Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.",
+        "roles_b": [
+          "Spelers: voeren digitale acties uit en proberen virtuele doelen te veroveren.",
+          "Teamcaptains: bepalen strategie en dienen protesten in.",
+          "Coaches: analyseren tegenstanders en geven aanwijzingen.",
+          "Toernooibeheerders: bewaken de regels, servers en uitslagen.",
+          "Kijkers en sponsors: volgen de wedstrijd en ondersteunen de teams."
+        ],
+        "goal_b": "Volgens de toernooiregels de wedstrijd winnen door virtuele doelen te veroveren of de tegenstander uit te schakelen.",
+        "role_remapping": [
+          "Politieke leiders worden teamcaptains en coaches.",
+          "Militairen worden e-sportspelers en hun spelavatars.",
+          "Diplomaten en onderhandelaars worden captains die met de administrator overleggen.",
+          "Burgers worden online kijkers en supporters.",
+          "Internationale organisaties en bondgenoten worden de toernooiorganisatie, speluitgever en sponsors."
+        ],
+        "shared_cues": [
+          "Er zijn kaarten, frontlinies en strategische posities.",
+          "Partijen spreken over aanvallen, verdediging en verliezen.",
+          "Een neutrale instantie controleert regels en overtredingen.",
+          "Er is communicatie tussen vertegenwoordigers.",
+          "Een tijdelijke onderbreking wordt overwogen."
+        ],
+        "switch_trigger": "De vermeende wapenstilstand blijkt een technische pauze omdat een speler vraagt of iemand de server opnieuw kan opstarten.",
+        "hinge_event": "Tijdens de onderhandelde onderbreking roept een captain dat zijn muis leeg is en de wedstrijdadministrator vervangt de batterijen.",
+        "anomaly_under_a": "Een oorlogspauze vanwege een lege computermuis zou absurd zijn wanneer echte burgers en militairen gevaar lopen.",
+        "resolution_under_b": "In een e-sporttoernooi verhindert defecte apparatuur eerlijke competitie; de technische onderbreking beschermt juist de geldigheid van de uitslag.",
+        "logical_mechanism": null
+      },
+      {
+        "script_b": "Een basisschoolklas bereidt onder leiding van de docent een debat en rollenspel voor over een denkbeeldig grensconflict; twee leerlinggroepen vertegenwoordigen fictieve staten en moeten een creatieve overeenkomst sluiten.",
+        "candidate_id": "B4",
+        "opposition_axis": "Werkelijk staatsgeweld versus educatief rollenspel",
+        "opposed_expectation": "Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.",
+        "roles_b": [
+          "Leerlingen in delegaties: spelen leiders, onderhandelaars en inwoners van fictieve landen.",
+          "Docent: stelt de opdracht op, bewaakt veiligheid en begeleidt de gesprekken.",
+          "Leerling-bemiddelaars: leiden het overleg tussen de groepen.",
+          "Klasgenoten als publiek: beoordelen de voorstellen en spelen getroffen inwoners.",
+          "Schoolleiding of jury: beoordeelt het eindresultaat volgens lescriteria."
+        ],
+        "goal_b": "Een overtuigende, creatieve en vreedzame oplossing presenteren waarmee de groep een goede beoordeling of wedstrijdscore behaalt.",
+        "role_remapping": [
+          "Politieke leiders worden leerlingen die fictieve regeringen spelen.",
+          "Militairen worden leerlingen die in het rollenspel legers of grenswachten voorstellen.",
+          "Diplomaten en onderhandelaars worden leerling-bemiddelaars.",
+          "Burgers worden klasgenoten die fictieve inwoners uitbeelden.",
+          "Internationale organisaties en bondgenoten worden de docent, jury en schoolleiding."
+        ],
+        "shared_cues": [
+          "Er zijn vlaggen, kaarten en afgebakende gebieden.",
+          "Twee groepen formuleren eisen en beschuldigingen.",
+          "Een bemiddelaar geeft ieder kamp spreektijd.",
+          "Er wordt over een staakt-het-vuren en garanties gesproken.",
+          "Getroffen inwoners vragen om veiligheid."
+        ],
+        "switch_trigger": "De bemiddelaar onderbreekt het overleg omdat de bel gaat en alle delegaties hun boterhammen moeten pakken.",
+        "hinge_event": "Midden in de plechtige vredesondertekening deelt de docent kleurpotloden uit zodat beide partijen hun vlag op het verdrag kunnen tekenen.",
+        "anomaly_under_a": "Kleurpotloden en een lunchpauze zouden tijdens een echte internationale vredesonderhandeling schokkend kinderachtig zijn, zeker gezien de ernst van oorlogsslachtoffers.",
+        "resolution_under_b": "In de klas zijn zij functionele lesmiddelen: de vlaggen maken de rolverdeling zichtbaar en de onderbreking volgt het schoolritme, terwijl het rollenspel veilig en leerzaam blijft.",
+        "logical_mechanism": null
+      }
+    ],
+    "script_b_rationale": "B1 biedt de scherpste en meest economische oppositie: de ernstige logica van oorlog en vredesbemiddeling blijft aanvankelijk geloofwaardig door twee kampen, territoriumverdediging, escalatie, een neutrale derde en een onderbreking. Tegelijk is de tweede lezing volledig compatibel met diezelfde structuur als een verhitte derby. De rode kaart en strafschopstip vormen een onmiddellijk, ondubbelzinnig en hoogwaardig omslagpunt: absurd binnen internationale diplomatie, maar functioneel en beslissend binnen voetbal. Daardoor herinterpreteert de onthulling retrospectief rollen, taal en conflictregels zonder dat Script B extra uitleg nodig heeft.",
+    "variants": [
+      {
+        "text": "Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak. De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.",
+        "angle": "Grensconflict met bemiddeling"
+      },
+      {
+        "text": "Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg. Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.",
+        "angle": "Vredesoverleg na een aanval"
+      },
+      {
+        "text": "De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af. Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.",
+        "angle": "Onderbreking tussen twee kampen"
+      }
+    ],
+    "usage": {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 18825,
+      "output_tokens": 9059,
+      "total_tokens": 27884
+    },
+    "metadata": {
+      "family": "validated_gtvh",
+      "style_mode": "none",
+      "stages": [
+        "audience_expectation",
+        "opposition_candidates",
+        "theory_gate",
+        "candidate_selection",
+        "gtvh_plan",
+        "variants",
+        "plan_fidelity",
+        "pairwise_selection"
+      ],
+      "gtvh_trace": {
+        "audience_expectation": {
+          "script_a": "Twee landen verkeren in een gewapend conflict; politieke leiders, militairen en diplomaten proberen via onderhandelingen en afspraken het geweld te stoppen en een stabiele vrede te bereiken.",
+          "participants_and_roles": [
+            "Politieke leiders: vertegenwoordigen hun land, nemen besluiten en zoeken een uitweg uit het conflict.",
+            "Militairen: voeren bevelen uit, beschermen gebied en burgers, en proberen militair voordeel te behalen.",
+            "Diplomaten en onderhandelaars: voeren gesprekken, bemiddelen en leggen afspraken vast.",
+            "Burgers: proberen veilig te blijven, beschermen hun gezin en hopen op een einde aan het geweld.",
+            "Internationale organisaties en bondgenoten: oefenen druk uit, bieden hulp of bemiddelen tussen de partijen."
+          ],
+          "apparent_goal": "Het gewapende conflict beëindigen en een duurzame vrede tot stand brengen waarin burgers veilig kunnen leven.",
+          "preconditions": [
+            "Er bestaat een conflict over macht, grondgebied, veiligheid, identiteit of politieke belangen.",
+            "Er zijn minstens twee partijen met tegengestelde eisen en voldoende middelen om geweld te gebruiken.",
+            "Het geweld veroorzaakt schade, angst, slachtoffers en maatschappelijke ontwrichting.",
+            "Er is communicatie mogelijk, direct of via bemiddelaars, ook als het vertrouwen laag is.",
+            "Beide partijen zien uiteindelijk minstens enig voordeel in een staakt-het-vuren of onderhandeling."
+          ],
+          "expected_actions": [
+            "Partijen kondigen een staakt-het-vuren af of verminderen aanvallen.",
+            "Onderhandelaars bespreken eisen, grenzen, veiligheidsgaranties en herstelmaatregelen.",
+            "Bemiddelaars proberen vertrouwen op te bouwen en controleerbare afspraken te organiseren.",
+            "Leiders sluiten een vredesakkoord en spreken af hoe naleving wordt gecontroleerd.",
+            "Hulporganisaties ondersteunen burgers en helpen bij wederopbouw en verzoening."
+          ],
+          "expected_outcome": "Het geweld neemt af of stopt, er komt een formele regeling tussen de partijen en het dagelijks leven kan geleidelijk veiliger en normaler worden.",
+          "expected_propositions": [
+            "Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.",
+            "Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.",
+            "Een duurzaam akkoord vereist dat beide partijen zich aan afspraken houden.",
+            "Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.",
+            "Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op."
+          ],
+          "audience_expectation": "Een opzet over oorlog, vrede en geweld activeert de verwachting van een ernstig conflict waarin verantwoordelijke partijen via moeizame onderhandelingen proberen het geweld te beëindigen en veiligheid voor burgers te herstellen."
+        },
+        "candidates": [
+          {
+            "candidate_id": "B1",
+            "script_b": "Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.",
+            "opposition_axis": "Werkelijke oorlog versus gereguleerd sportief conflict",
+            "opposed_proposition": "Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.",
+            "shared_anchor": "Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.",
+            "reading_a": "Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.",
+            "reading_b": "Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.",
+            "roles_b": [
+              "Trainers: bepalen de tactiek en kalmeren hun spelers.",
+              "Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.",
+              "Scheidsrechter: handhaaft de regels en bestraft overtredingen.",
+              "Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.",
+              "Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen."
+            ],
+            "goal_b": "De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.",
+            "role_remapping": [
+              "Politieke leiders worden trainers of clubbestuurders.",
+              "Militairen worden spelers op het veld.",
+              "Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.",
+              "Burgers worden supporters en toeschouwers.",
+              "Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst."
+            ],
+            "shared_cues": [
+              "Er zijn twee duidelijk afgebakende partijen.",
+              "Beide kampen verdedigen een eigen gebied.",
+              "Er is veel spanning, lawaai en wederzijdse beschuldiging.",
+              "Een neutrale figuur roept op tot kalmte.",
+              "Er wordt gesproken over een onderbreking en afspraken."
+            ],
+            "switch_trigger": "De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.",
+            "hinge_event": "Na een harde aanval kent de bemiddelaar een strafschop toe.",
+            "anomaly_under_a": "In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.",
+            "resolution_under_b": "In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen."
+          },
+          {
+            "candidate_id": "B2",
+            "script_b": "Twee buren ruziën over geluidsoverlast, een schutting en het gebruik van een gezamenlijke oprit; een buurtbemiddelaar probeert praktische afspraken te laten maken zodat zij naast elkaar kunnen blijven wonen.",
+            "opposition_axis": "Internationaal gewapend conflict versus alledaags burenconflict",
+            "opposed_proposition": "Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.",
+            "shared_anchor": "Twee partijen bespreken onder begeleiding een grens en afspraken over naleving.",
+            "reading_a": "Landen onderhandelen over grenzen, veiligheidsgaranties en controle op een vredesakkoord.",
+            "reading_b": "Buren maken afspraken over de erfgrens, stille uren en het gebruik van een gedeelde oprit.",
+            "roles_b": [
+              "Buren: verdedigen hun woonbelang en willen hun dagelijkse hinder beëindigen.",
+              "Buurtbemiddelaar: leidt het gesprek en formuleert afspraken.",
+              "Wijkagent of verhuurder: kan regels uitleggen en naleving ondersteunen.",
+              "Gezinsleden: ondervinden de spanning en willen rustig thuis kunnen leven.",
+              "Gemeente of VvE: beheert regels over erfafscheidingen, geluid en gedeelde ruimte."
+            ],
+            "goal_b": "De overlast stoppen en een uitvoerbare regeling bereiken waardoor beide huishoudens zonder voortdurende ruzie kunnen wonen.",
+            "role_remapping": [
+              "Politieke leiders worden de twee buren die besluiten nemen.",
+              "Militairen worden eventueel ingeschakelde familieleden of klusjesmensen die een grens fysiek markeren.",
+              "Diplomaten en onderhandelaars worden de buurtbemiddelaar.",
+              "Burgers worden gezinsleden die last hebben van de ruzie.",
+              "Internationale organisaties en bondgenoten worden de gemeente, verhuurder, VvE of wijkagent."
+            ],
+            "shared_cues": [
+              "Er is een langdurig conflict met wederzijdse verwijten.",
+              "Partijen spreken over een grens en veiligheid.",
+              "Een derde partij organiseert een gesprek.",
+              "Er worden voorwaarden, garanties en controle besproken.",
+              "De betrokken gezinnen hopen op rust."
+            ],
+            "switch_trigger": "Een partij schuift geen kaart van betwist grondgebied, maar een foto van een scheef geplaatste kliko op tafel.",
+            "hinge_event": "De bemiddelaar meet met een rolmaat de positie van een vuilnisbak en laat beide buren daarvoor tekenen.",
+            "anomaly_under_a": "Bij een oorlog tussen landen zou het nauwkeurig vastleggen van de plek van een kliko triviaal en ongepast zijn tegenover geweld, slachtoffers en territoriale claims.",
+            "resolution_under_b": "Voor buren is de kliko juist een concrete bron van dagelijkse irritatie; de meting maakt de afspraak controleerbaar en voorkomt nieuwe ruzie."
+          },
+          {
+            "candidate_id": "B3",
+            "script_b": "Twee rivaliserende e-sportteams nemen deel aan een online toernooi; teamcaptains, spelers en wedstrijdadministrators proberen via tactiek, pauzes en protestprocedures een eerlijke overwinning te behalen.",
+            "opposition_axis": "Levensbedreigend fysiek geweld versus virtuele competitieve strijd",
+            "opposed_proposition": "Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.",
+            "shared_anchor": "Twee kampen bevechten strategische posities terwijl vertegenwoordigers over een tijdelijke onderbreking overleggen.",
+            "reading_a": "Strijdende legers proberen terrein te behouden, terwijl diplomaten een humanitaire pauze bespreken.",
+            "reading_b": "E-sporters proberen virtuele zones op de spelkaart te beheersen, terwijl captains een technische time-out aanvragen.",
+            "roles_b": [
+              "Spelers: voeren digitale acties uit en proberen virtuele doelen te veroveren.",
+              "Teamcaptains: bepalen strategie en dienen protesten in.",
+              "Coaches: analyseren tegenstanders en geven aanwijzingen.",
+              "Toernooibeheerders: bewaken de regels, servers en uitslagen.",
+              "Kijkers en sponsors: volgen de wedstrijd en ondersteunen de teams."
+            ],
+            "goal_b": "Volgens de toernooiregels de wedstrijd winnen door virtuele doelen te veroveren of de tegenstander uit te schakelen.",
+            "role_remapping": [
+              "Politieke leiders worden teamcaptains en coaches.",
+              "Militairen worden e-sportspelers en hun spelavatars.",
+              "Diplomaten en onderhandelaars worden captains die met de administrator overleggen.",
+              "Burgers worden online kijkers en supporters.",
+              "Internationale organisaties en bondgenoten worden de toernooiorganisatie, speluitgever en sponsors."
+            ],
+            "shared_cues": [
+              "Er zijn kaarten, frontlinies en strategische posities.",
+              "Partijen spreken over aanvallen, verdediging en verliezen.",
+              "Een neutrale instantie controleert regels en overtredingen.",
+              "Er is communicatie tussen vertegenwoordigers.",
+              "Een tijdelijke onderbreking wordt overwogen."
+            ],
+            "switch_trigger": "De vermeende wapenstilstand blijkt een technische pauze omdat een speler vraagt of iemand de server opnieuw kan opstarten.",
+            "hinge_event": "Tijdens de onderhandelde onderbreking roept een captain dat zijn muis leeg is en de wedstrijdadministrator vervangt de batterijen.",
+            "anomaly_under_a": "Een oorlogspauze vanwege een lege computermuis zou absurd zijn wanneer echte burgers en militairen gevaar lopen.",
+            "resolution_under_b": "In een e-sporttoernooi verhindert defecte apparatuur eerlijke competitie; de technische onderbreking beschermt juist de geldigheid van de uitslag."
+          },
+          {
+            "candidate_id": "B4",
+            "script_b": "Een basisschoolklas bereidt onder leiding van de docent een debat en rollenspel voor over een denkbeeldig grensconflict; twee leerlinggroepen vertegenwoordigen fictieve staten en moeten een creatieve overeenkomst sluiten.",
+            "opposition_axis": "Werkelijk staatsgeweld versus educatief rollenspel",
+            "opposed_proposition": "Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.",
+            "shared_anchor": "Vertegenwoordigers van twee kampen presenteren eisen, luisteren naar bemiddeling en zoeken een akkoord.",
+            "reading_a": "Politieke delegaties proberen na oorlog en burgerleed een reële vredesregeling te sluiten.",
+            "reading_b": "Leerlingen spelen delegaties in een les en proberen punten te verdienen voor samenwerking en argumentatie.",
+            "roles_b": [
+              "Leerlingen in delegaties: spelen leiders, onderhandelaars en inwoners van fictieve landen.",
+              "Docent: stelt de opdracht op, bewaakt veiligheid en begeleidt de gesprekken.",
+              "Leerling-bemiddelaars: leiden het overleg tussen de groepen.",
+              "Klasgenoten als publiek: beoordelen de voorstellen en spelen getroffen inwoners.",
+              "Schoolleiding of jury: beoordeelt het eindresultaat volgens lescriteria."
+            ],
+            "goal_b": "Een overtuigende, creatieve en vreedzame oplossing presenteren waarmee de groep een goede beoordeling of wedstrijdscore behaalt.",
+            "role_remapping": [
+              "Politieke leiders worden leerlingen die fictieve regeringen spelen.",
+              "Militairen worden leerlingen die in het rollenspel legers of grenswachten voorstellen.",
+              "Diplomaten en onderhandelaars worden leerling-bemiddelaars.",
+              "Burgers worden klasgenoten die fictieve inwoners uitbeelden.",
+              "Internationale organisaties en bondgenoten worden de docent, jury en schoolleiding."
+            ],
+            "shared_cues": [
+              "Er zijn vlaggen, kaarten en afgebakende gebieden.",
+              "Twee groepen formuleren eisen en beschuldigingen.",
+              "Een bemiddelaar geeft ieder kamp spreektijd.",
+              "Er wordt over een staakt-het-vuren en garanties gesproken.",
+              "Getroffen inwoners vragen om veiligheid."
+            ],
+            "switch_trigger": "De bemiddelaar onderbreekt het overleg omdat de bel gaat en alle delegaties hun boterhammen moeten pakken.",
+            "hinge_event": "Midden in de plechtige vredesondertekening deelt de docent kleurpotloden uit zodat beide partijen hun vlag op het verdrag kunnen tekenen.",
+            "anomaly_under_a": "Kleurpotloden en een lunchpauze zouden tijdens een echte internationale vredesonderhandeling schokkend kinderachtig zijn, zeker gezien de ernst van oorlogsslachtoffers.",
+            "resolution_under_b": "In de klas zijn zij functionele lesmiddelen: de vlaggen maken de rolverdeling zichtbaar en de onderbreking volgt het schoolritme, terwijl het rollenspel veilig en leerzaam blijft."
+          }
+        ],
+        "candidate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "script_b": "Twee fanatieke amateurvoetbalteams spelen een derby; de trainers, scheidsrechter en aanvoerders proberen een escalerende wedstrijd binnen de regels te houden en uiteindelijk te winnen.",
+              "opposition_axis": "Werkelijke oorlog versus gereguleerd sportief conflict",
+              "opposed_proposition": "Geweld lost de onderliggende oorzaken van een conflict niet vanzelf op.",
+              "shared_anchor": "Een gespannen confrontatie tussen twee partijen wordt door een neutrale derde stilgelegd.",
+              "reading_a": "Een bemiddelaar onderbreekt gevechten tussen strijdende landen om een staakt-het-vuren mogelijk te maken.",
+              "reading_b": "Een scheidsrechter legt een verhitte derby stil wegens overtredingen en dreigende vechtpartijen.",
+              "roles_b": [
+                "Trainers: bepalen de tactiek en kalmeren hun spelers.",
+                "Spelers: verdedigen hun ploeg, proberen te scoren en volgen wedstrijdaanwijzingen.",
+                "Scheidsrechter: handhaaft de regels en bestraft overtredingen.",
+                "Aanvoerders: overleggen met de scheidsrechter en spreken hun team toe.",
+                "Supporters en stewards: moedigen aan en proberen wanorde op de tribunes te voorkomen."
+              ],
+              "goal_b": "De wedstrijd eerlijk en veilig uitspelen en meer doelpunten maken dan de tegenstander.",
+              "role_remapping": [
+                "Politieke leiders worden trainers of clubbestuurders.",
+                "Militairen worden spelers op het veld.",
+                "Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.",
+                "Burgers worden supporters en toeschouwers.",
+                "Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst."
+              ],
+              "shared_cues": [
+                "Er zijn twee duidelijk afgebakende partijen.",
+                "Beide kampen verdedigen een eigen gebied.",
+                "Er is veel spanning, lawaai en wederzijdse beschuldiging.",
+                "Een neutrale figuur roept op tot kalmte.",
+                "Er wordt gesproken over een onderbreking en afspraken."
+              ],
+              "switch_trigger": "De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.",
+              "hinge_event": "Na een harde aanval kent de bemiddelaar een strafschop toe.",
+              "anomaly_under_a": "In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.",
+              "resolution_under_b": "In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen."
+            },
+            {
+              "candidate_id": "B2",
+              "script_b": "Twee buren ruziën over geluidsoverlast, een schutting en het gebruik van een gezamenlijke oprit; een buurtbemiddelaar probeert praktische afspraken te laten maken zodat zij naast elkaar kunnen blijven wonen.",
+              "opposition_axis": "Internationaal gewapend conflict versus alledaags burenconflict",
+              "opposed_proposition": "Vrede is doorgaans beter dan geweld, maar vraagt compromissen en wederzijds vertrouwen.",
+              "shared_anchor": "Twee partijen bespreken onder begeleiding een grens en afspraken over naleving.",
+              "reading_a": "Landen onderhandelen over grenzen, veiligheidsgaranties en controle op een vredesakkoord.",
+              "reading_b": "Buren maken afspraken over de erfgrens, stille uren en het gebruik van een gedeelde oprit.",
+              "roles_b": [
+                "Buren: verdedigen hun woonbelang en willen hun dagelijkse hinder beëindigen.",
+                "Buurtbemiddelaar: leidt het gesprek en formuleert afspraken.",
+                "Wijkagent of verhuurder: kan regels uitleggen en naleving ondersteunen.",
+                "Gezinsleden: ondervinden de spanning en willen rustig thuis kunnen leven.",
+                "Gemeente of VvE: beheert regels over erfafscheidingen, geluid en gedeelde ruimte."
+              ],
+              "goal_b": "De overlast stoppen en een uitvoerbare regeling bereiken waardoor beide huishoudens zonder voortdurende ruzie kunnen wonen.",
+              "role_remapping": [
+                "Politieke leiders worden de twee buren die besluiten nemen.",
+                "Militairen worden eventueel ingeschakelde familieleden of klusjesmensen die een grens fysiek markeren.",
+                "Diplomaten en onderhandelaars worden de buurtbemiddelaar.",
+                "Burgers worden gezinsleden die last hebben van de ruzie.",
+                "Internationale organisaties en bondgenoten worden de gemeente, verhuurder, VvE of wijkagent."
+              ],
+              "shared_cues": [
+                "Er is een langdurig conflict met wederzijdse verwijten.",
+                "Partijen spreken over een grens en veiligheid.",
+                "Een derde partij organiseert een gesprek.",
+                "Er worden voorwaarden, garanties en controle besproken.",
+                "De betrokken gezinnen hopen op rust."
+              ],
+              "switch_trigger": "Een partij schuift geen kaart van betwist grondgebied, maar een foto van een scheef geplaatste kliko op tafel.",
+              "hinge_event": "De bemiddelaar meet met een rolmaat de positie van een vuilnisbak en laat beide buren daarvoor tekenen.",
+              "anomaly_under_a": "Bij een oorlog tussen landen zou het nauwkeurig vastleggen van de plek van een kliko triviaal en ongepast zijn tegenover geweld, slachtoffers en territoriale claims.",
+              "resolution_under_b": "Voor buren is de kliko juist een concrete bron van dagelijkse irritatie; de meting maakt de afspraak controleerbaar en voorkomt nieuwe ruzie."
+            },
+            {
+              "candidate_id": "B3",
+              "script_b": "Twee rivaliserende e-sportteams nemen deel aan een online toernooi; teamcaptains, spelers en wedstrijdadministrators proberen via tactiek, pauzes en protestprocedures een eerlijke overwinning te behalen.",
+              "opposition_axis": "Levensbedreigend fysiek geweld versus virtuele competitieve strijd",
+              "opposed_proposition": "Oorlog brengt vooral menselijk leed, verlies en onzekerheid met zich mee.",
+              "shared_anchor": "Twee kampen bevechten strategische posities terwijl vertegenwoordigers over een tijdelijke onderbreking overleggen.",
+              "reading_a": "Strijdende legers proberen terrein te behouden, terwijl diplomaten een humanitaire pauze bespreken.",
+              "reading_b": "E-sporters proberen virtuele zones op de spelkaart te beheersen, terwijl captains een technische time-out aanvragen.",
+              "roles_b": [
+                "Spelers: voeren digitale acties uit en proberen virtuele doelen te veroveren.",
+                "Teamcaptains: bepalen strategie en dienen protesten in.",
+                "Coaches: analyseren tegenstanders en geven aanwijzingen.",
+                "Toernooibeheerders: bewaken de regels, servers en uitslagen.",
+                "Kijkers en sponsors: volgen de wedstrijd en ondersteunen de teams."
+              ],
+              "goal_b": "Volgens de toernooiregels de wedstrijd winnen door virtuele doelen te veroveren of de tegenstander uit te schakelen.",
+              "role_remapping": [
+                "Politieke leiders worden teamcaptains en coaches.",
+                "Militairen worden e-sportspelers en hun spelavatars.",
+                "Diplomaten en onderhandelaars worden captains die met de administrator overleggen.",
+                "Burgers worden online kijkers en supporters.",
+                "Internationale organisaties en bondgenoten worden de toernooiorganisatie, speluitgever en sponsors."
+              ],
+              "shared_cues": [
+                "Er zijn kaarten, frontlinies en strategische posities.",
+                "Partijen spreken over aanvallen, verdediging en verliezen.",
+                "Een neutrale instantie controleert regels en overtredingen.",
+                "Er is communicatie tussen vertegenwoordigers.",
+                "Een tijdelijke onderbreking wordt overwogen."
+              ],
+              "switch_trigger": "De vermeende wapenstilstand blijkt een technische pauze omdat een speler vraagt of iemand de server opnieuw kan opstarten.",
+              "hinge_event": "Tijdens de onderhandelde onderbreking roept een captain dat zijn muis leeg is en de wedstrijdadministrator vervangt de batterijen.",
+              "anomaly_under_a": "Een oorlogspauze vanwege een lege computermuis zou absurd zijn wanneer echte burgers en militairen gevaar lopen.",
+              "resolution_under_b": "In een e-sporttoernooi verhindert defecte apparatuur eerlijke competitie; de technische onderbreking beschermt juist de geldigheid van de uitslag."
+            },
+            {
+              "candidate_id": "B4",
+              "script_b": "Een basisschoolklas bereidt onder leiding van de docent een debat en rollenspel voor over een denkbeeldig grensconflict; twee leerlinggroepen vertegenwoordigen fictieve staten en moeten een creatieve overeenkomst sluiten.",
+              "opposition_axis": "Werkelijk staatsgeweld versus educatief rollenspel",
+              "opposed_proposition": "Burgers dragen vaak de zwaarste gevolgen van besluiten die door machthebbers worden genomen.",
+              "shared_anchor": "Vertegenwoordigers van twee kampen presenteren eisen, luisteren naar bemiddeling en zoeken een akkoord.",
+              "reading_a": "Politieke delegaties proberen na oorlog en burgerleed een reële vredesregeling te sluiten.",
+              "reading_b": "Leerlingen spelen delegaties in een les en proberen punten te verdienen voor samenwerking en argumentatie.",
+              "roles_b": [
+                "Leerlingen in delegaties: spelen leiders, onderhandelaars en inwoners van fictieve landen.",
+                "Docent: stelt de opdracht op, bewaakt veiligheid en begeleidt de gesprekken.",
+                "Leerling-bemiddelaars: leiden het overleg tussen de groepen.",
+                "Klasgenoten als publiek: beoordelen de voorstellen en spelen getroffen inwoners.",
+                "Schoolleiding of jury: beoordeelt het eindresultaat volgens lescriteria."
+              ],
+              "goal_b": "Een overtuigende, creatieve en vreedzame oplossing presenteren waarmee de groep een goede beoordeling of wedstrijdscore behaalt.",
+              "role_remapping": [
+                "Politieke leiders worden leerlingen die fictieve regeringen spelen.",
+                "Militairen worden leerlingen die in het rollenspel legers of grenswachten voorstellen.",
+                "Diplomaten en onderhandelaars worden leerling-bemiddelaars.",
+                "Burgers worden klasgenoten die fictieve inwoners uitbeelden.",
+                "Internationale organisaties en bondgenoten worden de docent, jury en schoolleiding."
+              ],
+              "shared_cues": [
+                "Er zijn vlaggen, kaarten en afgebakende gebieden.",
+                "Twee groepen formuleren eisen en beschuldigingen.",
+                "Een bemiddelaar geeft ieder kamp spreektijd.",
+                "Er wordt over een staakt-het-vuren en garanties gesproken.",
+                "Getroffen inwoners vragen om veiligheid."
+              ],
+              "switch_trigger": "De bemiddelaar onderbreekt het overleg omdat de bel gaat en alle delegaties hun boterhammen moeten pakken.",
+              "hinge_event": "Midden in de plechtige vredesondertekening deelt de docent kleurpotloden uit zodat beide partijen hun vlag op het verdrag kunnen tekenen.",
+              "anomaly_under_a": "Kleurpotloden en een lunchpauze zouden tijdens een echte internationale vredesonderhandeling schokkend kinderachtig zijn, zeker gezien de ernst van oorlogsslachtoffers.",
+              "resolution_under_b": "In de klas zijn zij functionele lesmiddelen: de vlaggen maken de rolverdeling zichtbaar en de onderbreking volgt het schoolritme, terwijl het rollenspel veilig en leerzaam blijft."
+            }
+          ]
+        ],
+        "theory_gate": [
+          {
+            "candidate_id": "B1",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Dezelfde realiseerbare scène van twee kampen, gebiedsverdediging, spanning, een neutrale ingreep en een onderbreking past zowel bij oorlogsbemiddeling als bij een derby. De dominante tegenstelling is werkelijk gewapend conflict tegenover gereguleerde sportcompetitie. De oorloglezing ligt aanvankelijk voor de hand vanuit de opzet, terwijl voetbal al latent mogelijk blijft door termen als kampen, gebied, onderbreking en afspraken. Rode kaart en strafschop zijn onder script A anomalisch, maar onder script B normale, doelgerichte sancties. Zij herinterpreteren de eerdere bemiddelaar als scheidsrechter; de harde aanval belemmert vredesherstel onder A maar kan via de strafschop juist het sportieve doel onder B dienen."
+          },
+          {
+            "candidate_id": "B2",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Een gesprek over een grens, voorwaarden en nalevingsafspraken onder begeleiding is realiseerbaar als zowel internationale vredesonderhandeling als burenbemiddeling. De lokale tegenstelling is duidelijk die tussen een gewapend internationaal conflict en een alledaagse woonruzie. De ernstige oorlogskaders maken script A aanvankelijk dominant, maar grens-, veiligheids- en nalevingstaal laat script B beschikbaar. De kliko en rolmaat zijn in script A triviaal en ongepast, maar in script B een herkenbare, controleerbare oplossing voor dagelijkse overlast. Daardoor krijgen eerdere verwijzingen naar grens en controle retrospectief een buurtbetekenis. Er is niet expliciet één voorwaarde die A's vredesdoel blokkeert én B's doel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B3",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": false,
+            "rationale": "Strategische posities, aanvallen, verdediging, verliezen, vertegenwoordigers en een tijdelijke onderbreking kunnen één scène vormen die zowel oorlog als competitieve e-sport ondersteunt. De dominante as is levensbedreigende fysieke strijd tegenover virtuele spelcompetitie. Door de gegeven oorlogopzet is A de eerste lezing, terwijl kaarten, posities, regels en een neutrale instantie B vooraf plausibel houden. Een technische pauze wegens een lege muis is absurd bij een humanitaire oorlogspauze, maar functioneel en sociaal herkenbaar in e-sport omdat zij eerlijke voortzetting waarborgt. Daarmee worden eerdere strijd- en onderhandelingstermen retrospectief speltermen. De apparatuurstoring blokkeert echter niet expliciet het vredesdoel van A terwijl zij B's doel mogelijk maakt."
+          },
+          {
+            "candidate_id": "B4",
+            "dual_compatibility": true,
+            "genuine_opposition": true,
+            "single_axis": true,
+            "anchor_supports_both": true,
+            "recognizable_second_reading": true,
+            "setup_dominance": true,
+            "latent_second_reading": true,
+            "anomaly_resolved": true,
+            "retrospective_reinterpretation": true,
+            "functional_reversal": true,
+            "rationale": "Delegaties, eisen, bemiddeling, staakt-het-vuren, garanties en getroffen inwoners kunnen zowel een echte vredesregeling als een klassikaal rollenspel dragen. De duidelijke dominante tegenstelling is werkelijk staatsgeweld tegenover educatieve simulatie. De ernstige oorlogsscripts maken A initieel dominant, maar vlaggen, kaarten, groepen en gespreksbegeleiding laten een lescontext latent toe. Lunchpauze en kleurpotloden zijn in een werkelijke vredesonderhandeling anomalisch, maar zijn onder B normale schoolritmes en lesmiddelen. Zij zetten de eerdere delegaties en het verdrag retrospectief om in gespeelde rollen en een opdracht. De schoolbel onderbreekt de reële onderhandelingsfunctie van A, maar ondersteunt onder B juist de herkenbare schoolcontext waarbinnen het rollenspeldoel wordt uitgevoerd."
+          }
+        ],
+        "theory_gate_attempts": [
+          [
+            {
+              "candidate_id": "B1",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Dezelfde realiseerbare scène van twee kampen, gebiedsverdediging, spanning, een neutrale ingreep en een onderbreking past zowel bij oorlogsbemiddeling als bij een derby. De dominante tegenstelling is werkelijk gewapend conflict tegenover gereguleerde sportcompetitie. De oorloglezing ligt aanvankelijk voor de hand vanuit de opzet, terwijl voetbal al latent mogelijk blijft door termen als kampen, gebied, onderbreking en afspraken. Rode kaart en strafschop zijn onder script A anomalisch, maar onder script B normale, doelgerichte sancties. Zij herinterpreteren de eerdere bemiddelaar als scheidsrechter; de harde aanval belemmert vredesherstel onder A maar kan via de strafschop juist het sportieve doel onder B dienen."
+            },
+            {
+              "candidate_id": "B2",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Een gesprek over een grens, voorwaarden en nalevingsafspraken onder begeleiding is realiseerbaar als zowel internationale vredesonderhandeling als burenbemiddeling. De lokale tegenstelling is duidelijk die tussen een gewapend internationaal conflict en een alledaagse woonruzie. De ernstige oorlogskaders maken script A aanvankelijk dominant, maar grens-, veiligheids- en nalevingstaal laat script B beschikbaar. De kliko en rolmaat zijn in script A triviaal en ongepast, maar in script B een herkenbare, controleerbare oplossing voor dagelijkse overlast. Daardoor krijgen eerdere verwijzingen naar grens en controle retrospectief een buurtbetekenis. Er is niet expliciet één voorwaarde die A's vredesdoel blokkeert én B's doel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B3",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": false,
+              "rationale": "Strategische posities, aanvallen, verdediging, verliezen, vertegenwoordigers en een tijdelijke onderbreking kunnen één scène vormen die zowel oorlog als competitieve e-sport ondersteunt. De dominante as is levensbedreigende fysieke strijd tegenover virtuele spelcompetitie. Door de gegeven oorlogopzet is A de eerste lezing, terwijl kaarten, posities, regels en een neutrale instantie B vooraf plausibel houden. Een technische pauze wegens een lege muis is absurd bij een humanitaire oorlogspauze, maar functioneel en sociaal herkenbaar in e-sport omdat zij eerlijke voortzetting waarborgt. Daarmee worden eerdere strijd- en onderhandelingstermen retrospectief speltermen. De apparatuurstoring blokkeert echter niet expliciet het vredesdoel van A terwijl zij B's doel mogelijk maakt."
+            },
+            {
+              "candidate_id": "B4",
+              "dual_compatibility": true,
+              "genuine_opposition": true,
+              "single_axis": true,
+              "anchor_supports_both": true,
+              "recognizable_second_reading": true,
+              "setup_dominance": true,
+              "latent_second_reading": true,
+              "anomaly_resolved": true,
+              "retrospective_reinterpretation": true,
+              "functional_reversal": true,
+              "rationale": "Delegaties, eisen, bemiddeling, staakt-het-vuren, garanties en getroffen inwoners kunnen zowel een echte vredesregeling als een klassikaal rollenspel dragen. De duidelijke dominante tegenstelling is werkelijk staatsgeweld tegenover educatieve simulatie. De ernstige oorlogsscripts maken A initieel dominant, maar vlaggen, kaarten, groepen en gespreksbegeleiding laten een lescontext latent toe. Lunchpauze en kleurpotloden zijn in een werkelijke vredesonderhandeling anomalisch, maar zijn onder B normale schoolritmes en lesmiddelen. Zij zetten de eerdere delegaties en het verdrag retrospectief om in gespeelde rollen en een opdracht. De schoolbel onderbreekt de reële onderhandelingsfunctie van A, maar ondersteunt onder B juist de herkenbare schoolcontext waarbinnen het rollenspeldoel wordt uitgevoerd."
+            }
+          ]
+        ],
+        "approved_candidate_ids": [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "selected_candidate_id": "B1",
+        "gtvh_plan": {
+          "opposition_type": "Werkelijke oorlog versus gereguleerd sportief conflict",
+          "logical_mechanism": "Scriptomschakeling via een incongrueente letterlijke herinterpretatie: diplomatieke en militaire conflictcues worden achteraf gelezen als elementen van een voetbalderby, waarbij de rode kaart en strafschop de omschakeling afdwingen.",
+          "situation": "Twee ogenschijnlijk strijdende partijen staan in een gespannen confrontatie. Leiders, uitvoerders, een neutrale bemiddelaar en omstanders proberen escalatie te beheersen. De handeling speelt aanvankelijk als een internationaal conflict met onderhandelingen en een onderbreking, maar blijkt een verhitte amateurvoetbalderby op een voetbalveld te zijn, met spelers, trainers, aanvoerders, supporters, stewards, een scheidsrechter, kaarten en een strafschopstip.",
+          "target": null,
+          "narrative_strategy": "De opzet gebruikt ernstige, conflictgerichte formuleringen om het script van internationale oorlog en bemiddeling dominant te maken. Gedeelde cues zoals twee kampen, eigen gebied, spanning, een neutrale derde en een onderbreking blijven dubbelzinnig. De punchline introduceert concrete voetbaltaal die de eerdere conflictlezing abrupt als sportwedstrijd herkadert.",
+          "lexical_anchor": "rode kaart",
+          "supporting_dual_cues": [
+            "Er zijn twee duidelijk afgebakende partijen.",
+            "Beide kampen verdedigen een eigen gebied.",
+            "Er is veel spanning, lawaai en wederzijdse beschuldiging.",
+            "Een neutrale figuur roept op tot kalmte.",
+            "Er wordt gesproken over een onderbreking en afspraken."
+          ],
+          "switch_trigger": "De neutrale bemiddelaar trekt een rode kaart en wijst naar de strafschopstip.",
+          "hinge_event": "Na een harde aanval kent de bemiddelaar een strafschop toe.",
+          "anomaly_under_a": "In een internationale oorlogssituatie is een rode kaart of strafschopstip een onzinnig middel om geweld en territoriale eisen te beslechten.",
+          "resolution_under_b": "In de voetbalwedstrijd is de kaart een formele sanctie en de strafschop een doelbewuste spelhervatting: zij herstellen de regels en kunnen de wedstrijd beslissen.",
+          "role_remapping": [
+            "Politieke leiders worden trainers of clubbestuurders.",
+            "Militairen worden spelers op het veld.",
+            "Diplomaten en onderhandelaars worden de scheidsrechter en de aanvoerders.",
+            "Burgers worden supporters en toeschouwers.",
+            "Internationale organisaties en bondgenoten worden de voetbalbond, stewards en veiligheidsdienst."
+          ],
+          "setup_goal": "De lezer laten aannemen dat twee landen in een ernstig gewapend conflict verkeren en dat een neutrale bemiddelaar een staakt-het-vuren of diplomatieke oplossing probeert af te dwingen.",
+          "punch_goal": "De rode kaart en strafschopstip laten onthullen dat de confrontatie geen oorlog is, maar een gereguleerd voetbalconflict waarin de neutrale figuur een scheidsrechter is.",
+          "punch_final_word": "strafschopstip"
+        },
+        "detailed_variants": [
+          {
+            "variant_id": "V1",
+            "setup": "Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak.",
+            "punchline": "De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.",
+            "full_text": "Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak. De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.",
+            "angle": "Grensconflict met bemiddeling",
+            "anchor_surface_form": "rode kaart"
+          },
+          {
+            "variant_id": "V2",
+            "setup": "Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg.",
+            "punchline": "Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.",
+            "full_text": "Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg. Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.",
+            "angle": "Vredesoverleg na een aanval",
+            "anchor_surface_form": "rode kaart"
+          },
+          {
+            "variant_id": "V3",
+            "setup": "De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af.",
+            "punchline": "Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.",
+            "full_text": "De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af. Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.",
+            "angle": "Onderbreking tussen twee kampen",
+            "anchor_surface_form": "rode kaart"
+          }
+        ],
+        "evaluated_variants": [
+          {
+            "variant_id": "V1",
+            "text": "Twee landen stonden tegenover elkaar, verdedigden elk hun eigen gebied en schreeuwden dat de andere partij de afspraken brak. De neutrale bemiddelaar legde de strijd stil, trok een rode kaart en wees naar de strafschopstip.",
+            "angle": "Grensconflict met bemiddeling"
+          },
+          {
+            "variant_id": "V2",
+            "text": "Bij de vredesbesprekingen stonden de leiders langs de grens, terwijl hun achterban brulde en de bemiddelaar om kalmte vroeg. Na een harde aanval maakte hij een einde aan het geweld: hij trok een rode kaart en wees naar de strafschopstip.",
+            "angle": "Vredesoverleg na een aanval"
+          },
+          {
+            "variant_id": "V3",
+            "text": "De twee kampen hielden hun linies vast; na elke aanval eisten de aanvoerders een onderbreking en de neutralen wachtten gespannen af. Toen de bemiddelaar eindelijk ingreep, trok hij een rode kaart en wees naar de strafschopstip.",
+            "angle": "Onderbreking tussen twee kampen"
+          }
+        ],
+        "joke_repaired": false,
+        "required_resources": [
+          "SO",
+          "LM",
+          "SI",
+          "NS",
+          "LA"
+        ],
+        "plan_fidelity": [
+          {
+            "variant_id": "V1",
+            "realized_script_a": "Een internationaal grensconflict tussen twee landen, met wederzijdse beschuldigingen over geschonden afspraken en een neutrale bemiddelaar die de strijd onderbreekt.",
+            "realized_script_b": "Een verhitte voetbalwedstrijd tussen twee teams, waarin een scheidsrechter ingrijpt met een rode kaart en een strafschop.",
+            "realized_opposition_axis": "Werkelijke oorlog/internationaal conflict versus gereguleerd sportief conflict.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst activeert eerst twee landen in een conflict en schakelt met de rode kaart en strafschopstip ondubbelzinnig naar voetbal. De gedeelde confrontatie-, gebieds-, spannings- en bemiddelingscues zijn functioneel aanwezig."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De letterlijke voetbalmaatregelen zijn anomalieën binnen de oorloglezing en dwingen achteraf de herinterpretatie van de bemiddelaar als scheidsrechter af."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Twee partijen, eigen gebied, beschuldigingen, een neutrale derde en een stilgelegde confrontatie realiseren de beoogde situatie; de slotwoorden concretiseren het voetbalveldscript."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan heeft geen beoogd doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De ernstige geopolitieke formulering domineert de opzet, terwijl dubbelzinnige conflictcues worden gevolgd door een slotmatige voetbalonthulling."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De vereiste lexicale ankers 'rode kaart' en 'strafschopstip' staan in de punchline; de formulering ondersteunt eerst de conflictlezing."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Een directe en volledige realisatie van het geplande oorlog-naar-voetbalcontrast, met de bedoelde omschakeling in de slotzin.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V2",
+            "realized_script_a": "Vredesbesprekingen rond een grensconflict, met leiders, een luidruchtige achterban, een aanval en een bemiddelaar die escalatie probeert te stoppen.",
+            "realized_script_b": "Een verhitte voetbalderby, met teamleiding, supporters, een harde overtreding en een scheidsrechter die rood geeft en een strafschop toekent.",
+            "realized_opposition_axis": "Werkelijke oorlog/vredesbemiddeling versus gereguleerd sportief conflict.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Vredesbesprekingen, grens, leiders en geweld maken de internationale-conflictlezing dominant; achterban, harde aanval, rode kaart en strafschopstip worden retrospectief voetbalcues. De beoogde oppositie en omschakeling blijven intact."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De rode kaart en strafschopstip zijn binnen vredesonderhandelingen absurd, maar worden begrijpelijk wanneer de bemiddelaar als scheidsrechter wordt herlezen."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant bevat de geplande partijen, grens/gebied, bemiddelaar, spanning, aanval en omstanders. De voetbalrollen zijn niet allemaal expliciet, maar worden functioneel door de punchline geactiveerd."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en er is geen beoogd doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De tekst begint nadrukkelijk als vredesoverleg en houdt voetbalcues zoals 'achterban' en 'harde aanval' nog voldoende dubbelzinnig tot de slotonthulling."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De geplande voetbalwoorden en de vereiste eindformule 'strafschopstip' zijn behouden; het contrast tussen vredestaal en voetbaltaal draagt de grap."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "De variant volgt het bedoelde plan goed: een vredes- en grensconflict wordt door de voetbalbeslissing aan het eind als derby herlezen.",
+            "passes_required_plan": true
+          },
+          {
+            "variant_id": "V3",
+            "realized_script_a": "Een gewapende confrontatie tussen twee kampen die hun linies vasthouden, aanvallen uitvoeren en onderbrekingen verlangen, terwijl neutralen afwachten.",
+            "realized_script_b": "Een gespannen voetbalwedstrijd tussen twee teams, waarin aanvoerders protesteren of overleg zoeken en een scheidsrechter met rood en een strafschop ingrijpt.",
+            "realized_opposition_axis": "Werkelijke oorlog/militaire confrontatie versus gereguleerd sportief conflict.",
+            "script_opposition": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "Linies, aanvallen, kampen, neutralen en bemiddeling ondersteunen de militaire lezing; 'aanvoerders' blijft gedeeld genoeg en de rode kaart plus strafschopstip schakelen naar voetbal. De bedoelde oppositie wordt gerealiseerd."
+            },
+            "logical_mechanism": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De slotmaatregelen zijn niet zinvol als ingreep in een gewapend conflict, maar zijn formele voetbalbeslissingen. Daardoor wordt de eerdere scène retrospectief herschikt."
+            },
+            "situation": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De variant realiseert twee partijen, verdedigde linies, aanvallen, een neutrale figuur, spanning en een onderbreking. De formulering is algemener dan het landenconflict, maar functioneel passend bij de geplande dubbelzinnigheid."
+            },
+            "target": {
+              "applicable": false,
+              "preserved": null,
+              "rationale": "TA is niet vereist en het plan specificeert geen doelwit."
+            },
+            "narrative_strategy": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "De opzet houdt de setting bewust minder specifiek, maar laat een militaire confrontatie eerst overheersen en bewaart de expliciete voetbaltaal voor de laatste zin."
+            },
+            "language": {
+              "applicable": true,
+              "preserved": true,
+              "rationale": "'Rode kaart' en het geplande finale woord 'strafschopstip' fungeren als de vereiste lexicale scharnierpunten. 'Aanvoerders' is een bruikbare dubbelzinnige cue."
+            },
+            "setup_dominance": true,
+            "latent_script_b": true,
+            "shared_cues_realized": true,
+            "switch_trigger_realized": true,
+            "retrospective_reinterpretation": true,
+            "unplanned_opposition": false,
+            "is_spoken_naturally": true,
+            "has_recognizable_setup": true,
+            "has_clear_turn": true,
+            "has_punchline": true,
+            "sounds_like_a_joke": true,
+            "rationale": "Ondanks de algemenere militaire opzet realiseert de tekst de geplande oorlog-naar-voetbalomschakeling en plaatst hij de volledige onthulling effectief in het slot.",
+            "passes_required_plan": true
+          }
+        ],
+        "passing_variant_ids": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "pairwise_comparisons": [
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V2",
+            "winner_variant_id": "V1",
+            "rationale": "Beide varianten voldoen aan de lengtegrens en realiseren de vereiste oorlog-naar-voetbalswitch. V1 heeft de helderste geopolitieke opzet met landen, gebied en geschonden afspraken; daardoor werkt de rode kaart als sterkere, directere herinterpretatie."
+          },
+          {
+            "left_variant_id": "V1",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V1",
+            "rationale": "Beide zijn performabel en hebben een duidelijke slotomslag. V1 is specifieker en compacter: het landenconflict maakt de aanvankelijke oorloglezing overtuigender, waarna de strafschopstip de scène scherper als voetbalwedstrijd herschrijft dan de algemenere kampen in V3."
+          },
+          {
+            "left_variant_id": "V2",
+            "right_variant_id": "V3",
+            "winner_variant_id": "V2",
+            "rationale": "Beide voldoen aan de vormeisen en behouden de geplande scripts. V2 biedt meer concrete conflict- en voetbalcues, zoals grens, achterban en harde aanval, waardoor de retrospectieve derby-lezing sterker is. V3 blijft functioneel, maar is abstracter en minder beeldend."
+          }
+        ],
+        "selected_variant_id": "V1",
+        "selection_rationale": "V1 is de sterkste passerende variant. De beknopte maar concrete oorlogssituatie domineert de setup, terwijl rode kaart en strafschopstip een onmiddellijke, goed performbare voetbalonthulling leveren."
+      }
+    }
+  },
+  "result_sha256": "81d0b8549caa738976747a8f7af0146de4e15f5e7f8da1e410793cf381e9a1e9"
+}

@@ -1,0 +1,12 @@
+{
+  "failed_at": "2026-08-19T17:00:01.310251+00:00",
+  "job": {
+    "job_id": "T09-C1",
+    "topic_id": "T09",
+    "topic": "Nederlandse identiteit en volksaard",
+    "condition_code": "C1"
+  },
+  "attempt": 1,
+  "exception_type": "ValueError",
+  "message": "Variant V2 must contain 20-45 words; received 47."
+}
